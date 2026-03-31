@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -25,6 +25,7 @@ public final class OkeClusterBackupConfig
     @Deprecated
     @java.beans.ConstructorProperties({
         "namespaces",
+        "excludeNamespaces",
         "backupSchedule",
         "replicateImages",
         "maxNumberOfBackupsRetained",
@@ -32,12 +33,14 @@ public final class OkeClusterBackupConfig
     })
     public OkeClusterBackupConfig(
             java.util.List<String> namespaces,
+            java.util.List<String> excludeNamespaces,
             String backupSchedule,
             OkeClusterImageReplication replicateImages,
             Integer maxNumberOfBackupsRetained,
             String imageReplicationVaultSecretId) {
         super();
         this.namespaces = namespaces;
+        this.excludeNamespaces = excludeNamespaces;
         this.backupSchedule = backupSchedule;
         this.replicateImages = replicateImages;
         this.maxNumberOfBackupsRetained = maxNumberOfBackupsRetained;
@@ -47,8 +50,9 @@ public final class OkeClusterBackupConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A list of namespaces that need to be backed up.
-         * The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+         * A list of namespaces to be included in the backup.
+         * The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up.
+         * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
          * This property applies to the OKE cluster member in primary region.
          * <p>
          * Example: ["default", "pv-nginx"]
@@ -58,8 +62,9 @@ public final class OkeClusterBackupConfig
         private java.util.List<String> namespaces;
 
         /**
-         * A list of namespaces that need to be backed up.
-         * The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+         * A list of namespaces to be included in the backup.
+         * The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up.
+         * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
          * This property applies to the OKE cluster member in primary region.
          * <p>
          * Example: ["default", "pv-nginx"]
@@ -70,6 +75,34 @@ public final class OkeClusterBackupConfig
         public Builder namespaces(java.util.List<String> namespaces) {
             this.namespaces = namespaces;
             this.__explicitlySet__.add("namespaces");
+            return this;
+        }
+        /**
+         * A list of namespaces to be excluded from the backup.
+         * The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up.
+         * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
+         * This property applies to OKE cluster members in the primary region.
+         * <p>
+         * Example: ["namespace_string_3", "namespace_string_4"]
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("excludeNamespaces")
+        private java.util.List<String> excludeNamespaces;
+
+        /**
+         * A list of namespaces to be excluded from the backup.
+         * The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up.
+         * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
+         * This property applies to OKE cluster members in the primary region.
+         * <p>
+         * Example: ["namespace_string_3", "namespace_string_4"]
+         *
+         * @param excludeNamespaces the value to set
+         * @return this builder
+         **/
+        public Builder excludeNamespaces(java.util.List<String> excludeNamespaces) {
+            this.excludeNamespaces = excludeNamespaces;
+            this.__explicitlySet__.add("excludeNamespaces");
             return this;
         }
         /**
@@ -166,6 +199,7 @@ public final class OkeClusterBackupConfig
             OkeClusterBackupConfig model =
                     new OkeClusterBackupConfig(
                             this.namespaces,
+                            this.excludeNamespaces,
                             this.backupSchedule,
                             this.replicateImages,
                             this.maxNumberOfBackupsRetained,
@@ -180,6 +214,9 @@ public final class OkeClusterBackupConfig
         public Builder copy(OkeClusterBackupConfig model) {
             if (model.wasPropertyExplicitlySet("namespaces")) {
                 this.namespaces(model.getNamespaces());
+            }
+            if (model.wasPropertyExplicitlySet("excludeNamespaces")) {
+                this.excludeNamespaces(model.getExcludeNamespaces());
             }
             if (model.wasPropertyExplicitlySet("backupSchedule")) {
                 this.backupSchedule(model.getBackupSchedule());
@@ -209,8 +246,9 @@ public final class OkeClusterBackupConfig
     }
 
     /**
-     * A list of namespaces that need to be backed up.
-     * The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+     * A list of namespaces to be included in the backup.
+     * The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up.
+     * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
      * This property applies to the OKE cluster member in primary region.
      * <p>
      * Example: ["default", "pv-nginx"]
@@ -220,8 +258,9 @@ public final class OkeClusterBackupConfig
     private final java.util.List<String> namespaces;
 
     /**
-     * A list of namespaces that need to be backed up.
-     * The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+     * A list of namespaces to be included in the backup.
+     * The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up.
+     * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
      * This property applies to the OKE cluster member in primary region.
      * <p>
      * Example: ["default", "pv-nginx"]
@@ -230,6 +269,32 @@ public final class OkeClusterBackupConfig
      **/
     public java.util.List<String> getNamespaces() {
         return namespaces;
+    }
+
+    /**
+     * A list of namespaces to be excluded from the backup.
+     * The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up.
+     * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
+     * This property applies to OKE cluster members in the primary region.
+     * <p>
+     * Example: ["namespace_string_3", "namespace_string_4"]
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("excludeNamespaces")
+    private final java.util.List<String> excludeNamespaces;
+
+    /**
+     * A list of namespaces to be excluded from the backup.
+     * The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up.
+     * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
+     * This property applies to OKE cluster members in the primary region.
+     * <p>
+     * Example: ["namespace_string_3", "namespace_string_4"]
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getExcludeNamespaces() {
+        return excludeNamespaces;
     }
 
     /**
@@ -325,6 +390,7 @@ public final class OkeClusterBackupConfig
         sb.append("OkeClusterBackupConfig(");
         sb.append("super=").append(super.toString());
         sb.append("namespaces=").append(String.valueOf(this.namespaces));
+        sb.append(", excludeNamespaces=").append(String.valueOf(this.excludeNamespaces));
         sb.append(", backupSchedule=").append(String.valueOf(this.backupSchedule));
         sb.append(", replicateImages=").append(String.valueOf(this.replicateImages));
         sb.append(", maxNumberOfBackupsRetained=")
@@ -346,6 +412,7 @@ public final class OkeClusterBackupConfig
 
         OkeClusterBackupConfig other = (OkeClusterBackupConfig) o;
         return java.util.Objects.equals(this.namespaces, other.namespaces)
+                && java.util.Objects.equals(this.excludeNamespaces, other.excludeNamespaces)
                 && java.util.Objects.equals(this.backupSchedule, other.backupSchedule)
                 && java.util.Objects.equals(this.replicateImages, other.replicateImages)
                 && java.util.Objects.equals(
@@ -360,6 +427,9 @@ public final class OkeClusterBackupConfig
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.namespaces == null ? 43 : this.namespaces.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.excludeNamespaces == null ? 43 : this.excludeNamespaces.hashCode());
         result =
                 (result * PRIME)
                         + (this.backupSchedule == null ? 43 : this.backupSchedule.hashCode());

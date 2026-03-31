@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aivision.model;
@@ -219,13 +219,13 @@ public final class VideoJob extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The current state of the batch document job.
+         * The current state of the video job.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the batch document job.
+         * The current state of the video job.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -528,7 +528,7 @@ public final class VideoJob extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The current state of the batch document job.
+     * The current state of the video job.
      **/
     public enum LifecycleState {
         Succeeded("SUCCEEDED"),
@@ -580,13 +580,13 @@ public final class VideoJob extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     };
     /**
-     * The current state of the batch document job.
+     * The current state of the video job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the batch document job.
+     * The current state of the video job.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -32,7 +32,8 @@ public final class UpdateLogAnalyticsEntityDetails
         "freeformTags",
         "definedTags",
         "timeLastDiscovered",
-        "metadata"
+        "metadata",
+        "cloudResourceId"
     })
     public UpdateLogAnalyticsEntityDetails(
             String name,
@@ -43,7 +44,8 @@ public final class UpdateLogAnalyticsEntityDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Date timeLastDiscovered,
-            LogAnalyticsMetadataDetails metadata) {
+            LogAnalyticsMetadataDetails metadata,
+            String cloudResourceId) {
         super();
         this.name = name;
         this.managementAgentId = managementAgentId;
@@ -54,6 +56,7 @@ public final class UpdateLogAnalyticsEntityDetails
         this.definedTags = definedTags;
         this.timeLastDiscovered = timeLastDiscovered;
         this.metadata = metadata;
+        this.cloudResourceId = cloudResourceId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -220,6 +223,26 @@ public final class UpdateLogAnalyticsEntityDetails
             this.__explicitlySet__.add("metadata");
             return this;
         }
+        /**
+         * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity
+         * represents a non-cloud resource that the customer may have on their premises.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudResourceId")
+        private String cloudResourceId;
+
+        /**
+         * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity
+         * represents a non-cloud resource that the customer may have on their premises.
+         *
+         * @param cloudResourceId the value to set
+         * @return this builder
+         **/
+        public Builder cloudResourceId(String cloudResourceId) {
+            this.cloudResourceId = cloudResourceId;
+            this.__explicitlySet__.add("cloudResourceId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -235,7 +258,8 @@ public final class UpdateLogAnalyticsEntityDetails
                             this.freeformTags,
                             this.definedTags,
                             this.timeLastDiscovered,
-                            this.metadata);
+                            this.metadata,
+                            this.cloudResourceId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -270,6 +294,9 @@ public final class UpdateLogAnalyticsEntityDetails
             }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("cloudResourceId")) {
+                this.cloudResourceId(model.getCloudResourceId());
             }
             return this;
         }
@@ -429,6 +456,24 @@ public final class UpdateLogAnalyticsEntityDetails
         return metadata;
     }
 
+    /**
+     * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity
+     * represents a non-cloud resource that the customer may have on their premises.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudResourceId")
+    private final String cloudResourceId;
+
+    /**
+     * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity
+     * represents a non-cloud resource that the customer may have on their premises.
+     *
+     * @return the value
+     **/
+    public String getCloudResourceId() {
+        return cloudResourceId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -452,6 +497,7 @@ public final class UpdateLogAnalyticsEntityDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", timeLastDiscovered=").append(String.valueOf(this.timeLastDiscovered));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", cloudResourceId=").append(String.valueOf(this.cloudResourceId));
         sb.append(")");
         return sb.toString();
     }
@@ -475,6 +521,7 @@ public final class UpdateLogAnalyticsEntityDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.timeLastDiscovered, other.timeLastDiscovered)
                 && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.cloudResourceId, other.cloudResourceId)
                 && super.equals(other);
     }
 
@@ -499,6 +546,9 @@ public final class UpdateLogAnalyticsEntityDetails
                                 ? 43
                                 : this.timeLastDiscovered.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudResourceId == null ? 43 : this.cloudResourceId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

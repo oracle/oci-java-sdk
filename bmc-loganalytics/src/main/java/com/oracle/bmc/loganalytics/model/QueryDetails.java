@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -30,6 +30,7 @@ public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlyS
         "maxTotalCount",
         "timeFilter",
         "scopeFilters",
+        "variables",
         "queryTimeoutInSeconds",
         "shouldRunAsync",
         "asyncMode",
@@ -47,6 +48,7 @@ public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlyS
             Integer maxTotalCount,
             TimeRange timeFilter,
             java.util.List<ScopeFilter> scopeFilters,
+            java.util.List<String> variables,
             Integer queryTimeoutInSeconds,
             Boolean shouldRunAsync,
             JobMode asyncMode,
@@ -63,6 +65,7 @@ public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlyS
         this.maxTotalCount = maxTotalCount;
         this.timeFilter = timeFilter;
         this.scopeFilters = scopeFilters;
+        this.variables = variables;
         this.queryTimeoutInSeconds = queryTimeoutInSeconds;
         this.shouldRunAsync = shouldRunAsync;
         this.asyncMode = asyncMode;
@@ -127,13 +130,13 @@ public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Query to perform. Must conform to logging analytic querylanguage syntax. Syntax errors will be returned if present.
+         * Query to perform. Must conform to log analytics querylanguage syntax. Syntax errors will be returned if present.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryString")
         private String queryString;
 
         /**
-         * Query to perform. Must conform to logging analytic querylanguage syntax. Syntax errors will be returned if present.
+         * Query to perform. Must conform to log analytics querylanguage syntax. Syntax errors will be returned if present.
          * @param queryString the value to set
          * @return this builder
          **/
@@ -203,6 +206,24 @@ public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlyS
         public Builder scopeFilters(java.util.List<ScopeFilter> scopeFilters) {
             this.scopeFilters = scopeFilters;
             this.__explicitlySet__.add("scopeFilters");
+            return this;
+        }
+        /**
+         * List of variables to be prepended to the query string.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("variables")
+        private java.util.List<String> variables;
+
+        /**
+         * List of variables to be prepended to the query string.
+         *
+         * @param variables the value to set
+         * @return this builder
+         **/
+        public Builder variables(java.util.List<String> variables) {
+            this.variables = variables;
+            this.__explicitlySet__.add("variables");
             return this;
         }
         /**
@@ -336,6 +357,7 @@ public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.maxTotalCount,
                             this.timeFilter,
                             this.scopeFilters,
+                            this.variables,
                             this.queryTimeoutInSeconds,
                             this.shouldRunAsync,
                             this.asyncMode,
@@ -374,6 +396,9 @@ public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("scopeFilters")) {
                 this.scopeFilters(model.getScopeFilters());
+            }
+            if (model.wasPropertyExplicitlySet("variables")) {
+                this.variables(model.getVariables());
             }
             if (model.wasPropertyExplicitlySet("queryTimeoutInSeconds")) {
                 this.queryTimeoutInSeconds(model.getQueryTimeoutInSeconds());
@@ -458,13 +483,13 @@ public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Query to perform. Must conform to logging analytic querylanguage syntax. Syntax errors will be returned if present.
+     * Query to perform. Must conform to log analytics querylanguage syntax. Syntax errors will be returned if present.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
     private final String queryString;
 
     /**
-     * Query to perform. Must conform to logging analytic querylanguage syntax. Syntax errors will be returned if present.
+     * Query to perform. Must conform to log analytics querylanguage syntax. Syntax errors will be returned if present.
      * @return the value
      **/
     public String getQueryString() {
@@ -524,6 +549,22 @@ public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlyS
      **/
     public java.util.List<ScopeFilter> getScopeFilters() {
         return scopeFilters;
+    }
+
+    /**
+     * List of variables to be prepended to the query string.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("variables")
+    private final java.util.List<String> variables;
+
+    /**
+     * List of variables to be prepended to the query string.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getVariables() {
+        return variables;
     }
 
     /**
@@ -650,6 +691,7 @@ public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", maxTotalCount=").append(String.valueOf(this.maxTotalCount));
         sb.append(", timeFilter=").append(String.valueOf(this.timeFilter));
         sb.append(", scopeFilters=").append(String.valueOf(this.scopeFilters));
+        sb.append(", variables=").append(String.valueOf(this.variables));
         sb.append(", queryTimeoutInSeconds=").append(String.valueOf(this.queryTimeoutInSeconds));
         sb.append(", shouldRunAsync=").append(String.valueOf(this.shouldRunAsync));
         sb.append(", asyncMode=").append(String.valueOf(this.asyncMode));
@@ -681,6 +723,7 @@ public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.maxTotalCount, other.maxTotalCount)
                 && java.util.Objects.equals(this.timeFilter, other.timeFilter)
                 && java.util.Objects.equals(this.scopeFilters, other.scopeFilters)
+                && java.util.Objects.equals(this.variables, other.variables)
                 && java.util.Objects.equals(this.queryTimeoutInSeconds, other.queryTimeoutInSeconds)
                 && java.util.Objects.equals(this.shouldRunAsync, other.shouldRunAsync)
                 && java.util.Objects.equals(this.asyncMode, other.asyncMode)
@@ -714,6 +757,7 @@ public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlyS
                         + (this.maxTotalCount == null ? 43 : this.maxTotalCount.hashCode());
         result = (result * PRIME) + (this.timeFilter == null ? 43 : this.timeFilter.hashCode());
         result = (result * PRIME) + (this.scopeFilters == null ? 43 : this.scopeFilters.hashCode());
+        result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
         result =
                 (result * PRIME)
                         + (this.queryTimeoutInSeconds == null

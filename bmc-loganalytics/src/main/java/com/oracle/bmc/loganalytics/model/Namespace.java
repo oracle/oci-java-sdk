@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * This is the namespace details of a tenancy in Logging Analytics application
+ * This is the namespace details of a tenancy in Log Analytics application
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -24,20 +24,26 @@ public final class Namespace extends com.oracle.bmc.http.internal.ExplicitlySetB
         "compartmentId",
         "isOnboarded",
         "isLogSetEnabled",
-        "isDataEverIngested"
+        "isDataEverIngested",
+        "isArchivingEnabled",
+        "lifecycleState"
     })
     public Namespace(
             String namespaceName,
             String compartmentId,
             Boolean isOnboarded,
             Boolean isLogSetEnabled,
-            Boolean isDataEverIngested) {
+            Boolean isDataEverIngested,
+            Boolean isArchivingEnabled,
+            LifecycleState lifecycleState) {
         super();
         this.namespaceName = namespaceName;
         this.compartmentId = compartmentId;
         this.isOnboarded = isOnboarded;
         this.isLogSetEnabled = isLogSetEnabled;
         this.isDataEverIngested = isDataEverIngested;
+        this.isArchivingEnabled = isArchivingEnabled;
+        this.lifecycleState = lifecycleState;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -75,13 +81,13 @@ public final class Namespace extends com.oracle.bmc.http.internal.ExplicitlySetB
             return this;
         }
         /**
-         * This indicates if the tenancy is onboarded to Logging Analytics
+         * This indicates if the tenancy is onboarded to Log Analytics
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOnboarded")
         private Boolean isOnboarded;
 
         /**
-         * This indicates if the tenancy is onboarded to Logging Analytics
+         * This indicates if the tenancy is onboarded to Log Analytics
          * @param isOnboarded the value to set
          * @return this builder
          **/
@@ -107,19 +113,51 @@ public final class Namespace extends com.oracle.bmc.http.internal.ExplicitlySetB
             return this;
         }
         /**
-         * This indicates if data has ever been ingested for the tenancy in Logging Analytics
+         * This indicates if data has ever been ingested for the tenancy in Log Analytics
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDataEverIngested")
         private Boolean isDataEverIngested;
 
         /**
-         * This indicates if data has ever been ingested for the tenancy in Logging Analytics
+         * This indicates if data has ever been ingested for the tenancy in Log Analytics
          * @param isDataEverIngested the value to set
          * @return this builder
          **/
         public Builder isDataEverIngested(Boolean isDataEverIngested) {
             this.isDataEverIngested = isDataEverIngested;
             this.__explicitlySet__.add("isDataEverIngested");
+            return this;
+        }
+        /**
+         * This indicates if old data can be archived for a tenancy
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isArchivingEnabled")
+        private Boolean isArchivingEnabled;
+
+        /**
+         * This indicates if old data can be archived for a tenancy
+         * @param isArchivingEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isArchivingEnabled(Boolean isArchivingEnabled) {
+            this.isArchivingEnabled = isArchivingEnabled;
+            this.__explicitlySet__.add("isArchivingEnabled");
+            return this;
+        }
+        /**
+         * The current state of the compartment.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        /**
+         * The current state of the compartment.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
             return this;
         }
 
@@ -133,7 +171,9 @@ public final class Namespace extends com.oracle.bmc.http.internal.ExplicitlySetB
                             this.compartmentId,
                             this.isOnboarded,
                             this.isLogSetEnabled,
-                            this.isDataEverIngested);
+                            this.isDataEverIngested,
+                            this.isArchivingEnabled,
+                            this.lifecycleState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -156,6 +196,12 @@ public final class Namespace extends com.oracle.bmc.http.internal.ExplicitlySetB
             }
             if (model.wasPropertyExplicitlySet("isDataEverIngested")) {
                 this.isDataEverIngested(model.getIsDataEverIngested());
+            }
+            if (model.wasPropertyExplicitlySet("isArchivingEnabled")) {
+                this.isArchivingEnabled(model.getIsArchivingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
             }
             return this;
         }
@@ -201,13 +247,13 @@ public final class Namespace extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * This indicates if the tenancy is onboarded to Logging Analytics
+     * This indicates if the tenancy is onboarded to Log Analytics
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOnboarded")
     private final Boolean isOnboarded;
 
     /**
-     * This indicates if the tenancy is onboarded to Logging Analytics
+     * This indicates if the tenancy is onboarded to Log Analytics
      * @return the value
      **/
     public Boolean getIsOnboarded() {
@@ -229,17 +275,93 @@ public final class Namespace extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * This indicates if data has ever been ingested for the tenancy in Logging Analytics
+     * This indicates if data has ever been ingested for the tenancy in Log Analytics
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataEverIngested")
     private final Boolean isDataEverIngested;
 
     /**
-     * This indicates if data has ever been ingested for the tenancy in Logging Analytics
+     * This indicates if data has ever been ingested for the tenancy in Log Analytics
      * @return the value
      **/
     public Boolean getIsDataEverIngested() {
         return isDataEverIngested;
+    }
+
+    /**
+     * This indicates if old data can be archived for a tenancy
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isArchivingEnabled")
+    private final Boolean isArchivingEnabled;
+
+    /**
+     * This indicates if old data can be archived for a tenancy
+     * @return the value
+     **/
+    public Boolean getIsArchivingEnabled() {
+        return isArchivingEnabled;
+    }
+
+    /**
+     * The current state of the compartment.
+     **/
+    public enum LifecycleState {
+        Active("ACTIVE"),
+        Inactive("INACTIVE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The current state of the compartment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final LifecycleState lifecycleState;
+
+    /**
+     * The current state of the compartment.
+     * @return the value
+     **/
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
     }
 
     @Override
@@ -261,6 +383,8 @@ public final class Namespace extends com.oracle.bmc.http.internal.ExplicitlySetB
         sb.append(", isOnboarded=").append(String.valueOf(this.isOnboarded));
         sb.append(", isLogSetEnabled=").append(String.valueOf(this.isLogSetEnabled));
         sb.append(", isDataEverIngested=").append(String.valueOf(this.isDataEverIngested));
+        sb.append(", isArchivingEnabled=").append(String.valueOf(this.isArchivingEnabled));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
     }
@@ -280,6 +404,8 @@ public final class Namespace extends com.oracle.bmc.http.internal.ExplicitlySetB
                 && java.util.Objects.equals(this.isOnboarded, other.isOnboarded)
                 && java.util.Objects.equals(this.isLogSetEnabled, other.isLogSetEnabled)
                 && java.util.Objects.equals(this.isDataEverIngested, other.isDataEverIngested)
+                && java.util.Objects.equals(this.isArchivingEnabled, other.isArchivingEnabled)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && super.equals(other);
     }
 
@@ -302,6 +428,14 @@ public final class Namespace extends com.oracle.bmc.http.internal.ExplicitlySetB
                         + (this.isDataEverIngested == null
                                 ? 43
                                 : this.isDataEverIngested.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isArchivingEnabled == null
+                                ? 43
+                                : this.isArchivingEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

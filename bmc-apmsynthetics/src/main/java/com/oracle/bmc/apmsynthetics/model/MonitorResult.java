@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
@@ -47,7 +47,7 @@ public final class MonitorResult extends com.oracle.bmc.http.internal.Explicitly
     public static class Builder {
         /**
          * Type of result.
-         * Example: HAR, Screenshot, Log or Network.
+         * Example: har, screenshot, log, network, diagnostics or script.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultType")
@@ -55,7 +55,7 @@ public final class MonitorResult extends com.oracle.bmc.http.internal.Explicitly
 
         /**
          * Type of result.
-         * Example: HAR, Screenshot, Log or Network.
+         * Example: har, screenshot, log, network, diagnostics or script.
          *
          * @param resultType the value to set
          * @return this builder
@@ -205,7 +205,7 @@ public final class MonitorResult extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Type of result.
-     * Example: HAR, Screenshot, Log or Network.
+     * Example: har, screenshot, log, network, diagnostics or script.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resultType")
@@ -213,7 +213,7 @@ public final class MonitorResult extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Type of result.
-     * Example: HAR, Screenshot, Log or Network.
+     * Example: har, screenshot, log, network, diagnostics or script.
      *
      * @return the value
      **/

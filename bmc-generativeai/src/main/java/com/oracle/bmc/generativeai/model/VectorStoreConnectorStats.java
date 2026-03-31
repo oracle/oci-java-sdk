@@ -1,0 +1,518 @@
+/**
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.generativeai.model;
+
+/**
+ * File synchronization statistics for a VectorStoreConnector.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = VectorStoreConnectorStats.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VectorStoreConnectorStats
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "timeGenerated",
+        "created",
+        "updated",
+        "deleted",
+        "metadataUpdated",
+        "ignored",
+        "unsupported",
+        "inProgress",
+        "failed",
+        "freeformTags",
+        "definedTags",
+        "systemTags"
+    })
+    public VectorStoreConnectorStats(
+            java.util.Date timeGenerated,
+            FileSyncStatistics created,
+            FileSyncStatistics updated,
+            FileSyncStatistics deleted,
+            FileSyncStatistics metadataUpdated,
+            FileSyncStatistics ignored,
+            FileSyncStatistics unsupported,
+            FileSyncStatistics inProgress,
+            FileSyncStatistics failed,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.timeGenerated = timeGenerated;
+        this.created = created;
+        this.updated = updated;
+        this.deleted = deleted;
+        this.metadataUpdated = metadataUpdated;
+        this.ignored = ignored;
+        this.unsupported = unsupported;
+        this.inProgress = inProgress;
+        this.failed = failed;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        /**
+         * The date and time when the statistics was generated in the format of an RFC3339 datetime string.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
+        private java.util.Date timeGenerated;
+
+        /**
+         * The date and time when the statistics was generated in the format of an RFC3339 datetime string.
+         * @param timeGenerated the value to set
+         * @return this builder
+         **/
+        public Builder timeGenerated(java.util.Date timeGenerated) {
+            this.timeGenerated = timeGenerated;
+            this.__explicitlySet__.add("timeGenerated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("created")
+        private FileSyncStatistics created;
+
+        public Builder created(FileSyncStatistics created) {
+            this.created = created;
+            this.__explicitlySet__.add("created");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("updated")
+        private FileSyncStatistics updated;
+
+        public Builder updated(FileSyncStatistics updated) {
+            this.updated = updated;
+            this.__explicitlySet__.add("updated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("deleted")
+        private FileSyncStatistics deleted;
+
+        public Builder deleted(FileSyncStatistics deleted) {
+            this.deleted = deleted;
+            this.__explicitlySet__.add("deleted");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("metadataUpdated")
+        private FileSyncStatistics metadataUpdated;
+
+        public Builder metadataUpdated(FileSyncStatistics metadataUpdated) {
+            this.metadataUpdated = metadataUpdated;
+            this.__explicitlySet__.add("metadataUpdated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ignored")
+        private FileSyncStatistics ignored;
+
+        public Builder ignored(FileSyncStatistics ignored) {
+            this.ignored = ignored;
+            this.__explicitlySet__.add("ignored");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("unsupported")
+        private FileSyncStatistics unsupported;
+
+        public Builder unsupported(FileSyncStatistics unsupported) {
+            this.unsupported = unsupported;
+            this.__explicitlySet__.add("unsupported");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("inProgress")
+        private FileSyncStatistics inProgress;
+
+        public Builder inProgress(FileSyncStatistics inProgress) {
+            this.inProgress = inProgress;
+            this.__explicitlySet__.add("inProgress");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("failed")
+        private FileSyncStatistics failed;
+
+        public Builder failed(FileSyncStatistics failed) {
+            this.failed = failed;
+            this.__explicitlySet__.add("failed");
+            return this;
+        }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public VectorStoreConnectorStats build() {
+            VectorStoreConnectorStats model =
+                    new VectorStoreConnectorStats(
+                            this.timeGenerated,
+                            this.created,
+                            this.updated,
+                            this.deleted,
+                            this.metadataUpdated,
+                            this.ignored,
+                            this.unsupported,
+                            this.inProgress,
+                            this.failed,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(VectorStoreConnectorStats model) {
+            if (model.wasPropertyExplicitlySet("timeGenerated")) {
+                this.timeGenerated(model.getTimeGenerated());
+            }
+            if (model.wasPropertyExplicitlySet("created")) {
+                this.created(model.getCreated());
+            }
+            if (model.wasPropertyExplicitlySet("updated")) {
+                this.updated(model.getUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("deleted")) {
+                this.deleted(model.getDeleted());
+            }
+            if (model.wasPropertyExplicitlySet("metadataUpdated")) {
+                this.metadataUpdated(model.getMetadataUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("ignored")) {
+                this.ignored(model.getIgnored());
+            }
+            if (model.wasPropertyExplicitlySet("unsupported")) {
+                this.unsupported(model.getUnsupported());
+            }
+            if (model.wasPropertyExplicitlySet("inProgress")) {
+                this.inProgress(model.getInProgress());
+            }
+            if (model.wasPropertyExplicitlySet("failed")) {
+                this.failed(model.getFailed());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            return this;
+        }
+    }
+
+    /**
+     * Create a new builder.
+     */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    /**
+     * The date and time when the statistics was generated in the format of an RFC3339 datetime string.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
+    private final java.util.Date timeGenerated;
+
+    /**
+     * The date and time when the statistics was generated in the format of an RFC3339 datetime string.
+     * @return the value
+     **/
+    public java.util.Date getTimeGenerated() {
+        return timeGenerated;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("created")
+    private final FileSyncStatistics created;
+
+    public FileSyncStatistics getCreated() {
+        return created;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("updated")
+    private final FileSyncStatistics updated;
+
+    public FileSyncStatistics getUpdated() {
+        return updated;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("deleted")
+    private final FileSyncStatistics deleted;
+
+    public FileSyncStatistics getDeleted() {
+        return deleted;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("metadataUpdated")
+    private final FileSyncStatistics metadataUpdated;
+
+    public FileSyncStatistics getMetadataUpdated() {
+        return metadataUpdated;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ignored")
+    private final FileSyncStatistics ignored;
+
+    public FileSyncStatistics getIgnored() {
+        return ignored;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("unsupported")
+    private final FileSyncStatistics unsupported;
+
+    public FileSyncStatistics getUnsupported() {
+        return unsupported;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("inProgress")
+    private final FileSyncStatistics inProgress;
+
+    public FileSyncStatistics getInProgress() {
+        return inProgress;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("failed")
+    private final FileSyncStatistics failed;
+
+    public FileSyncStatistics getFailed() {
+        return failed;
+    }
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("VectorStoreConnectorStats(");
+        sb.append("super=").append(super.toString());
+        sb.append("timeGenerated=").append(String.valueOf(this.timeGenerated));
+        sb.append(", created=").append(String.valueOf(this.created));
+        sb.append(", updated=").append(String.valueOf(this.updated));
+        sb.append(", deleted=").append(String.valueOf(this.deleted));
+        sb.append(", metadataUpdated=").append(String.valueOf(this.metadataUpdated));
+        sb.append(", ignored=").append(String.valueOf(this.ignored));
+        sb.append(", unsupported=").append(String.valueOf(this.unsupported));
+        sb.append(", inProgress=").append(String.valueOf(this.inProgress));
+        sb.append(", failed=").append(String.valueOf(this.failed));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof VectorStoreConnectorStats)) {
+            return false;
+        }
+
+        VectorStoreConnectorStats other = (VectorStoreConnectorStats) o;
+        return java.util.Objects.equals(this.timeGenerated, other.timeGenerated)
+                && java.util.Objects.equals(this.created, other.created)
+                && java.util.Objects.equals(this.updated, other.updated)
+                && java.util.Objects.equals(this.deleted, other.deleted)
+                && java.util.Objects.equals(this.metadataUpdated, other.metadataUpdated)
+                && java.util.Objects.equals(this.ignored, other.ignored)
+                && java.util.Objects.equals(this.unsupported, other.unsupported)
+                && java.util.Objects.equals(this.inProgress, other.inProgress)
+                && java.util.Objects.equals(this.failed, other.failed)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.timeGenerated == null ? 43 : this.timeGenerated.hashCode());
+        result = (result * PRIME) + (this.created == null ? 43 : this.created.hashCode());
+        result = (result * PRIME) + (this.updated == null ? 43 : this.updated.hashCode());
+        result = (result * PRIME) + (this.deleted == null ? 43 : this.deleted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metadataUpdated == null ? 43 : this.metadataUpdated.hashCode());
+        result = (result * PRIME) + (this.ignored == null ? 43 : this.ignored.hashCode());
+        result = (result * PRIME) + (this.unsupported == null ? 43 : this.unsupported.hashCode());
+        result = (result * PRIME) + (this.inProgress == null ? 43 : this.inProgress.hashCode());
+        result = (result * PRIME) + (this.failed == null ? 43 : this.failed.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + super.hashCode();
+        return result;
+    }
+}

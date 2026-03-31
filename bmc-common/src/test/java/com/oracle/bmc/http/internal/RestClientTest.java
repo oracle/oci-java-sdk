@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
@@ -470,5 +470,16 @@ public class RestClientTest {
                         .create(null, null, ClientConfiguration.builder().build())) {
             client.close();
         } // Client should not throw an IllegalStateException error if close() is called multiple times
+    }
+
+    @Test
+    public void testGetEndpoint() {
+        String endpoint = "https://{parameterName+Dot}service.us-phoenix-1.oraclecloud.com";
+        RestClient client =
+                RestClientFactoryBuilder.builder()
+                        .build()
+                        .create(null, null, ClientConfiguration.builder().build());
+        client.setEndpoint(endpoint);
+        assertEquals(endpoint, client.getEndpoint());
     }
 }

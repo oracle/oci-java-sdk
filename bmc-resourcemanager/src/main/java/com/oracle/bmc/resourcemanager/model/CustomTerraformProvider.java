@@ -1,15 +1,15 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager.model;
 
 /**
  * Location information about custom Terraform providers for a stack.
- * For more information, see [Custom Providers](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#features__custom-providers).
+ * For more information, see [Using Custom Providers with a Stack](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-custom-providers.htm).
  * Note: Older stacks must be explicitly updated to use Terraform Registry ({@code isThirdPartyProviderExperienceEnabled=true}).
  * See {@link #updateStack(UpdateStackRequest) updateStack}. For more information, see
- * [Using Terraform Registry with Older Stacks](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-tf-reg.htm).
+ * [Using Terraform Registry with an Older Stack](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-tf-reg.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

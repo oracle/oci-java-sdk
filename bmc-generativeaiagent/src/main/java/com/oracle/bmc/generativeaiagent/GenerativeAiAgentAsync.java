@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent;
@@ -143,6 +143,26 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a provisioned capacity into a different compartment within the same tenancy. For information about moving resources between
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeProvisionedCapacityCompartmentResponse>
+            changeProvisionedCapacityCompartment(
+                    ChangeProvisionedCapacityCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeProvisionedCapacityCompartmentRequest,
+                                    ChangeProvisionedCapacityCompartmentResponse>
+                            handler);
+
+    /**
      * Creates an agent.
      *
      *
@@ -222,6 +242,23 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
             CreateKnowledgeBaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateKnowledgeBaseRequest, CreateKnowledgeBaseResponse>
+                    handler);
+
+    /**
+     * Creates a provisioned capacity.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateProvisionedCapacityResponse> createProvisionedCapacity(
+            CreateProvisionedCapacityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateProvisionedCapacityRequest, CreateProvisionedCapacityResponse>
                     handler);
 
     /**
@@ -319,6 +356,23 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
             DeleteKnowledgeBaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteKnowledgeBaseRequest, DeleteKnowledgeBaseResponse>
+                    handler);
+
+    /**
+     * Deletes a provisioned capacity.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteProvisionedCapacityResponse> deleteProvisionedCapacity(
+            DeleteProvisionedCapacityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteProvisionedCapacityRequest, DeleteProvisionedCapacityResponse>
                     handler);
 
     /**
@@ -436,6 +490,23 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about a provisioned capacity.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetProvisionedCapacityResponse> getProvisionedCapacity(
+            GetProvisionedCapacityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetProvisionedCapacityRequest, GetProvisionedCapacityResponse>
+                    handler);
+
+    /**
      * Gets information about a tool.
      *
      *
@@ -546,6 +617,23 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
             ListKnowledgeBasesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>
+                    handler);
+
+    /**
+     * Gets a list of provisioned capacities.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProvisionedCapacitiesResponse> listProvisionedCapacities(
+            ListProvisionedCapacitiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListProvisionedCapacitiesRequest, ListProvisionedCapacitiesResponse>
                     handler);
 
     /**
@@ -676,6 +764,23 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
             UpdateKnowledgeBaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateKnowledgeBaseRequest, UpdateKnowledgeBaseResponse>
+                    handler);
+
+    /**
+     * Updates a provisioned capacity.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateProvisionedCapacityResponse> updateProvisionedCapacity(
+            UpdateProvisionedCapacityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateProvisionedCapacityRequest, UpdateProvisionedCapacityResponse>
                     handler);
 
     /**

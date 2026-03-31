@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument.model;
@@ -32,6 +32,8 @@ public final class AnalyzeDocumentResult
         "textExtractionModelVersion",
         "keyValueExtractionModelVersion",
         "tableExtractionModelVersion",
+        "signatureExtractionModelVersion",
+        "barCodeExtractionModelVersion",
         "errors",
         "searchablePdf"
     })
@@ -45,6 +47,8 @@ public final class AnalyzeDocumentResult
             String textExtractionModelVersion,
             String keyValueExtractionModelVersion,
             String tableExtractionModelVersion,
+            String signatureExtractionModelVersion,
+            String barCodeExtractionModelVersion,
             java.util.List<ProcessingError> errors,
             byte[] searchablePdf) {
         super();
@@ -57,6 +61,8 @@ public final class AnalyzeDocumentResult
         this.textExtractionModelVersion = textExtractionModelVersion;
         this.keyValueExtractionModelVersion = keyValueExtractionModelVersion;
         this.tableExtractionModelVersion = tableExtractionModelVersion;
+        this.signatureExtractionModelVersion = signatureExtractionModelVersion;
+        this.barCodeExtractionModelVersion = barCodeExtractionModelVersion;
         this.errors = errors;
         this.searchablePdf = searchablePdf;
     }
@@ -204,6 +210,38 @@ public final class AnalyzeDocumentResult
             return this;
         }
         /**
+         * The document signature extraction model version.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("signatureExtractionModelVersion")
+        private String signatureExtractionModelVersion;
+
+        /**
+         * The document signature extraction model version.
+         * @param signatureExtractionModelVersion the value to set
+         * @return this builder
+         **/
+        public Builder signatureExtractionModelVersion(String signatureExtractionModelVersion) {
+            this.signatureExtractionModelVersion = signatureExtractionModelVersion;
+            this.__explicitlySet__.add("signatureExtractionModelVersion");
+            return this;
+        }
+        /**
+         * The document bar code extraction model version.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("barCodeExtractionModelVersion")
+        private String barCodeExtractionModelVersion;
+
+        /**
+         * The document bar code extraction model version.
+         * @param barCodeExtractionModelVersion the value to set
+         * @return this builder
+         **/
+        public Builder barCodeExtractionModelVersion(String barCodeExtractionModelVersion) {
+            this.barCodeExtractionModelVersion = barCodeExtractionModelVersion;
+            this.__explicitlySet__.add("barCodeExtractionModelVersion");
+            return this;
+        }
+        /**
          * The errors encountered during document analysis.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("errors")
@@ -251,6 +289,8 @@ public final class AnalyzeDocumentResult
                             this.textExtractionModelVersion,
                             this.keyValueExtractionModelVersion,
                             this.tableExtractionModelVersion,
+                            this.signatureExtractionModelVersion,
+                            this.barCodeExtractionModelVersion,
                             this.errors,
                             this.searchablePdf);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -289,6 +329,12 @@ public final class AnalyzeDocumentResult
             }
             if (model.wasPropertyExplicitlySet("tableExtractionModelVersion")) {
                 this.tableExtractionModelVersion(model.getTableExtractionModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("signatureExtractionModelVersion")) {
+                this.signatureExtractionModelVersion(model.getSignatureExtractionModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("barCodeExtractionModelVersion")) {
+                this.barCodeExtractionModelVersion(model.getBarCodeExtractionModelVersion());
             }
             if (model.wasPropertyExplicitlySet("errors")) {
                 this.errors(model.getErrors());
@@ -431,6 +477,34 @@ public final class AnalyzeDocumentResult
     }
 
     /**
+     * The document signature extraction model version.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("signatureExtractionModelVersion")
+    private final String signatureExtractionModelVersion;
+
+    /**
+     * The document signature extraction model version.
+     * @return the value
+     **/
+    public String getSignatureExtractionModelVersion() {
+        return signatureExtractionModelVersion;
+    }
+
+    /**
+     * The document bar code extraction model version.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("barCodeExtractionModelVersion")
+    private final String barCodeExtractionModelVersion;
+
+    /**
+     * The document bar code extraction model version.
+     * @return the value
+     **/
+    public String getBarCodeExtractionModelVersion() {
+        return barCodeExtractionModelVersion;
+    }
+
+    /**
      * The errors encountered during document analysis.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
@@ -486,6 +560,10 @@ public final class AnalyzeDocumentResult
                 .append(String.valueOf(this.keyValueExtractionModelVersion));
         sb.append(", tableExtractionModelVersion=")
                 .append(String.valueOf(this.tableExtractionModelVersion));
+        sb.append(", signatureExtractionModelVersion=")
+                .append(String.valueOf(this.signatureExtractionModelVersion));
+        sb.append(", barCodeExtractionModelVersion=")
+                .append(String.valueOf(this.barCodeExtractionModelVersion));
         sb.append(", errors=").append(String.valueOf(this.errors));
         sb.append(", searchablePdf=")
                 .append(
@@ -525,6 +603,10 @@ public final class AnalyzeDocumentResult
                         this.keyValueExtractionModelVersion, other.keyValueExtractionModelVersion)
                 && java.util.Objects.equals(
                         this.tableExtractionModelVersion, other.tableExtractionModelVersion)
+                && java.util.Objects.equals(
+                        this.signatureExtractionModelVersion, other.signatureExtractionModelVersion)
+                && java.util.Objects.equals(
+                        this.barCodeExtractionModelVersion, other.barCodeExtractionModelVersion)
                 && java.util.Objects.equals(this.errors, other.errors)
                 && java.util.Arrays.equals(this.searchablePdf, other.searchablePdf)
                 && super.equals(other);
@@ -571,6 +653,16 @@ public final class AnalyzeDocumentResult
                         + (this.tableExtractionModelVersion == null
                                 ? 43
                                 : this.tableExtractionModelVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.signatureExtractionModelVersion == null
+                                ? 43
+                                : this.signatureExtractionModelVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.barCodeExtractionModelVersion == null
+                                ? 43
+                                : this.barCodeExtractionModelVersion.hashCode());
         result = (result * PRIME) + (this.errors == null ? 43 : this.errors.hashCode());
         result = (result * PRIME) + java.util.Arrays.hashCode(this.searchablePdf);
         result = (result * PRIME) + super.hashCode();

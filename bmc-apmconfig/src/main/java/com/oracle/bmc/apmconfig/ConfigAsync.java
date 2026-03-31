@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmconfig;
@@ -61,6 +61,22 @@ public interface ConfigAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Fast importing configuration items to a destination APM domain ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CopyConfigurationResponse> copyConfiguration(
+            CopyConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CopyConfigurationRequest, CopyConfigurationResponse>
+                    handler);
+
+    /**
      * Creates a new configuration item.
      *
      * @param request The request object containing the details to send
@@ -91,6 +107,22 @@ public interface ConfigAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Exports configurations for the whole domain by domainId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ExportConfigurationResponse> exportConfiguration(
+            ExportConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ExportConfigurationRequest, ExportConfigurationResponse>
+                    handler);
+
+    /**
      * Gets the configuration item identified by the OCID.
      *
      * @param request The request object containing the details to send
@@ -103,6 +135,40 @@ public interface ConfigAsync extends AutoCloseable {
     java.util.concurrent.Future<GetConfigResponse> getConfig(
             GetConfigRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetConfigRequest, GetConfigResponse> handler);
+
+    /**
+     * The domain-wide agents matching attribute key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMatchAgentsWithAttributeKeyResponse>
+            getMatchAgentsWithAttributeKey(
+                    GetMatchAgentsWithAttributeKeyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetMatchAgentsWithAttributeKeyRequest,
+                                    GetMatchAgentsWithAttributeKeyResponse>
+                            handler);
+
+    /**
+     * Import configurations Item(s) with its dependencies into a destination domain.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ImportConfigurationResponse> importConfiguration(
+            ImportConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ImportConfigurationRequest, ImportConfigurationResponse>
+                    handler);
 
     /**
      * Returns all configuration items, which can optionally be filtered by configuration type.
@@ -180,6 +246,24 @@ public interface ConfigAsync extends AutoCloseable {
             UpdateConfigRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateConfigRequest, UpdateConfigResponse>
                     handler);
+
+    /**
+     * Updates the agent matching attribute key for the APM Domain.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateMatchAgentsWithAttributeKeyResponse>
+            updateMatchAgentsWithAttributeKey(
+                    UpdateMatchAgentsWithAttributeKeyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMatchAgentsWithAttributeKeyRequest,
+                                    UpdateMatchAgentsWithAttributeKeyResponse>
+                            handler);
 
     /**
      * Validates the Span Filter pattern (filterText) for syntactic correctness.

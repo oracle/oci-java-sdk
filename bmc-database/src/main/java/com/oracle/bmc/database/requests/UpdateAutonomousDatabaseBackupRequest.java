@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -14,24 +14,24 @@ public class UpdateAutonomousDatabaseBackupRequest
                 com.oracle.bmc.database.model.UpdateAutonomousDatabaseBackupDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      */
     private String autonomousDatabaseBackupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      */
     public String getAutonomousDatabaseBackupId() {
         return autonomousDatabaseBackupId;
     }
     /**
-     * Request to update an existing Autonomous Database backup.
+     * Request to update an existing Autonomous AI Database backup.
      */
     private com.oracle.bmc.database.model.UpdateAutonomousDatabaseBackupDetails
             updateAutonomousDatabaseBackupDetails;
 
     /**
-     * Request to update an existing Autonomous Database backup.
+     * Request to update an existing Autonomous AI Database backup.
      */
     public com.oracle.bmc.database.model.UpdateAutonomousDatabaseBackupDetails
             getUpdateAutonomousDatabaseBackupDetails() {
@@ -67,6 +67,21 @@ public class UpdateAutonomousDatabaseBackupRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -87,12 +102,12 @@ public class UpdateAutonomousDatabaseBackupRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
          */
         private String autonomousDatabaseBackupId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
          * @param autonomousDatabaseBackupId the value to set
          * @return this builder instance
          */
@@ -102,13 +117,13 @@ public class UpdateAutonomousDatabaseBackupRequest
         }
 
         /**
-         * Request to update an existing Autonomous Database backup.
+         * Request to update an existing Autonomous AI Database backup.
          */
         private com.oracle.bmc.database.model.UpdateAutonomousDatabaseBackupDetails
                 updateAutonomousDatabaseBackupDetails = null;
 
         /**
-         * Request to update an existing Autonomous Database backup.
+         * Request to update an existing Autonomous AI Database backup.
          * @param updateAutonomousDatabaseBackupDetails the value to set
          * @return this builder instance
          */
@@ -158,6 +173,25 @@ public class UpdateAutonomousDatabaseBackupRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -189,6 +223,7 @@ public class UpdateAutonomousDatabaseBackupRequest
             updateAutonomousDatabaseBackupDetails(o.getUpdateAutonomousDatabaseBackupDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -238,8 +273,9 @@ public class UpdateAutonomousDatabaseBackupRequest
             request.updateAutonomousDatabaseBackupDetails = updateAutonomousDatabaseBackupDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
             return request;
-            // new UpdateAutonomousDatabaseBackupRequest(autonomousDatabaseBackupId, updateAutonomousDatabaseBackupDetails, ifMatch, opcRequestId);
+            // new UpdateAutonomousDatabaseBackupRequest(autonomousDatabaseBackupId, updateAutonomousDatabaseBackupDetails, ifMatch, opcRequestId, opcDryRun);
         }
     }
 
@@ -252,7 +288,8 @@ public class UpdateAutonomousDatabaseBackupRequest
                 .autonomousDatabaseBackupId(autonomousDatabaseBackupId)
                 .updateAutonomousDatabaseBackupDetails(updateAutonomousDatabaseBackupDetails)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -274,6 +311,7 @@ public class UpdateAutonomousDatabaseBackupRequest
                 .append(String.valueOf(this.updateAutonomousDatabaseBackupDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -295,7 +333,8 @@ public class UpdateAutonomousDatabaseBackupRequest
                         this.updateAutonomousDatabaseBackupDetails,
                         other.updateAutonomousDatabaseBackupDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -314,6 +353,7 @@ public class UpdateAutonomousDatabaseBackupRequest
                                 : this.updateAutonomousDatabaseBackupDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

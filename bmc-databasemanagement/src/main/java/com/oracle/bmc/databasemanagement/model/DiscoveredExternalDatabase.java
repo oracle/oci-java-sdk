@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -255,6 +255,22 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
             this.__explicitlySet__.add("pluggableDatabases");
             return this;
         }
+        /**
+         * The list of database instances.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbInstances")
+        private java.util.List<DiscoveredExternalDbInstance> dbInstances;
+
+        /**
+         * The list of database instances.
+         * @param dbInstances the value to set
+         * @return this builder
+         **/
+        public Builder dbInstances(java.util.List<DiscoveredExternalDbInstance> dbInstances) {
+            this.dbInstances = dbInstances;
+            this.__explicitlySet__.add("dbInstances");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("connector")
         private ExternalDbSystemDiscoveryConnector connector;
@@ -262,6 +278,38 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
         public Builder connector(ExternalDbSystemDiscoveryConnector connector) {
             this.connector = connector;
             this.__explicitlySet__.add("connector");
+            return this;
+        }
+        /**
+         * Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("canEnableAllCurrentPdbs")
+        private Boolean canEnableAllCurrentPdbs;
+
+        /**
+         * Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+         * @param canEnableAllCurrentPdbs the value to set
+         * @return this builder
+         **/
+        public Builder canEnableAllCurrentPdbs(Boolean canEnableAllCurrentPdbs) {
+            this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
+            this.__explicitlySet__.add("canEnableAllCurrentPdbs");
+            return this;
+        }
+        /**
+         * Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoEnablePluggableDatabase")
+        private Boolean isAutoEnablePluggableDatabase;
+
+        /**
+         * Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+         * @param isAutoEnablePluggableDatabase the value to set
+         * @return this builder
+         **/
+        public Builder isAutoEnablePluggableDatabase(Boolean isAutoEnablePluggableDatabase) {
+            this.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
+            this.__explicitlySet__.add("isAutoEnablePluggableDatabase");
             return this;
         }
 
@@ -288,7 +336,10 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
                             this.dbRole,
                             this.dbVersion,
                             this.pluggableDatabases,
-                            this.connector);
+                            this.dbInstances,
+                            this.connector,
+                            this.canEnableAllCurrentPdbs,
+                            this.isAutoEnablePluggableDatabase);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -348,8 +399,17 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
             if (model.wasPropertyExplicitlySet("pluggableDatabases")) {
                 this.pluggableDatabases(model.getPluggableDatabases());
             }
+            if (model.wasPropertyExplicitlySet("dbInstances")) {
+                this.dbInstances(model.getDbInstances());
+            }
             if (model.wasPropertyExplicitlySet("connector")) {
                 this.connector(model.getConnector());
+            }
+            if (model.wasPropertyExplicitlySet("canEnableAllCurrentPdbs")) {
+                this.canEnableAllCurrentPdbs(model.getCanEnableAllCurrentPdbs());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoEnablePluggableDatabase")) {
+                this.isAutoEnablePluggableDatabase(model.getIsAutoEnablePluggableDatabase());
             }
             return this;
         }
@@ -385,7 +445,10 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
             DbRole dbRole,
             String dbVersion,
             java.util.List<DiscoveredExternalPluggableDatabase> pluggableDatabases,
-            ExternalDbSystemDiscoveryConnector connector) {
+            java.util.List<DiscoveredExternalDbInstance> dbInstances,
+            ExternalDbSystemDiscoveryConnector connector,
+            Boolean canEnableAllCurrentPdbs,
+            Boolean isAutoEnablePluggableDatabase) {
         super(
                 componentId,
                 displayName,
@@ -404,7 +467,10 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
         this.dbRole = dbRole;
         this.dbVersion = dbVersion;
         this.pluggableDatabases = pluggableDatabases;
+        this.dbInstances = dbInstances;
         this.connector = connector;
+        this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
+        this.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
     }
 
     /**
@@ -601,11 +667,53 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
         return pluggableDatabases;
     }
 
+    /**
+     * The list of database instances.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbInstances")
+    private final java.util.List<DiscoveredExternalDbInstance> dbInstances;
+
+    /**
+     * The list of database instances.
+     * @return the value
+     **/
+    public java.util.List<DiscoveredExternalDbInstance> getDbInstances() {
+        return dbInstances;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("connector")
     private final ExternalDbSystemDiscoveryConnector connector;
 
     public ExternalDbSystemDiscoveryConnector getConnector() {
         return connector;
+    }
+
+    /**
+     * Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("canEnableAllCurrentPdbs")
+    private final Boolean canEnableAllCurrentPdbs;
+
+    /**
+     * Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+     * @return the value
+     **/
+    public Boolean getCanEnableAllCurrentPdbs() {
+        return canEnableAllCurrentPdbs;
+    }
+
+    /**
+     * Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoEnablePluggableDatabase")
+    private final Boolean isAutoEnablePluggableDatabase;
+
+    /**
+     * Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+     * @return the value
+     **/
+    public Boolean getIsAutoEnablePluggableDatabase() {
+        return isAutoEnablePluggableDatabase;
     }
 
     @Override
@@ -632,7 +740,12 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
         sb.append(", dbRole=").append(String.valueOf(this.dbRole));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", pluggableDatabases=").append(String.valueOf(this.pluggableDatabases));
+        sb.append(", dbInstances=").append(String.valueOf(this.dbInstances));
         sb.append(", connector=").append(String.valueOf(this.connector));
+        sb.append(", canEnableAllCurrentPdbs=")
+                .append(String.valueOf(this.canEnableAllCurrentPdbs));
+        sb.append(", isAutoEnablePluggableDatabase=")
+                .append(String.valueOf(this.isAutoEnablePluggableDatabase));
         sb.append(")");
         return sb.toString();
     }
@@ -657,7 +770,12 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
                 && java.util.Objects.equals(this.dbRole, other.dbRole)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.pluggableDatabases, other.pluggableDatabases)
+                && java.util.Objects.equals(this.dbInstances, other.dbInstances)
                 && java.util.Objects.equals(this.connector, other.connector)
+                && java.util.Objects.equals(
+                        this.canEnableAllCurrentPdbs, other.canEnableAllCurrentPdbs)
+                && java.util.Objects.equals(
+                        this.isAutoEnablePluggableDatabase, other.isAutoEnablePluggableDatabase)
                 && super.equals(other);
     }
 
@@ -681,7 +799,18 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
                         + (this.pluggableDatabases == null
                                 ? 43
                                 : this.pluggableDatabases.hashCode());
+        result = (result * PRIME) + (this.dbInstances == null ? 43 : this.dbInstances.hashCode());
         result = (result * PRIME) + (this.connector == null ? 43 : this.connector.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canEnableAllCurrentPdbs == null
+                                ? 43
+                                : this.canEnableAllCurrentPdbs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoEnablePluggableDatabase == null
+                                ? 43
+                                : this.isAutoEnablePluggableDatabase.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -42,6 +42,7 @@ public class MigrationSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         "sourceDatabaseConnectionId",
         "targetDatabaseConnectionId",
         "executingJobId",
+        "assessmentId",
         "timeCreated",
         "timeUpdated",
         "timeLastMigration",
@@ -59,6 +60,7 @@ public class MigrationSummary extends com.oracle.bmc.http.internal.ExplicitlySet
             String sourceDatabaseConnectionId,
             String targetDatabaseConnectionId,
             String executingJobId,
+            String assessmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeLastMigration,
@@ -75,6 +77,7 @@ public class MigrationSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         this.sourceDatabaseConnectionId = sourceDatabaseConnectionId;
         this.targetDatabaseConnectionId = targetDatabaseConnectionId;
         this.executingJobId = executingJobId;
+        this.assessmentId = assessmentId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeLastMigration = timeLastMigration;
@@ -189,6 +192,20 @@ public class MigrationSummary extends com.oracle.bmc.http.internal.ExplicitlySet
      **/
     public String getExecutingJobId() {
         return executingJobId;
+    }
+
+    /**
+     * The OCID of the resource being referenced.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assessmentId")
+    private final String assessmentId;
+
+    /**
+     * The OCID of the resource being referenced.
+     * @return the value
+     **/
+    public String getAssessmentId() {
+        return assessmentId;
     }
 
     /**
@@ -344,6 +361,7 @@ public class MigrationSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", targetDatabaseConnectionId=")
                 .append(String.valueOf(this.targetDatabaseConnectionId));
         sb.append(", executingJobId=").append(String.valueOf(this.executingJobId));
+        sb.append(", assessmentId=").append(String.valueOf(this.assessmentId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeLastMigration=").append(String.valueOf(this.timeLastMigration));
@@ -375,6 +393,7 @@ public class MigrationSummary extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(
                         this.targetDatabaseConnectionId, other.targetDatabaseConnectionId)
                 && java.util.Objects.equals(this.executingJobId, other.executingJobId)
+                && java.util.Objects.equals(this.assessmentId, other.assessmentId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeLastMigration, other.timeLastMigration)
@@ -409,6 +428,7 @@ public class MigrationSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         result =
                 (result * PRIME)
                         + (this.executingJobId == null ? 43 : this.executingJobId.hashCode());
+        result = (result * PRIME) + (this.assessmentId == null ? 43 : this.assessmentId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

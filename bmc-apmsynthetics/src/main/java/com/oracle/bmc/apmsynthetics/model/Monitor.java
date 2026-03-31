@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
@@ -27,6 +27,7 @@ public final class Monitor extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "vantagePointCount",
         "scriptId",
         "scriptName",
+        "contentType",
         "status",
         "repeatIntervalInSeconds",
         "isRunOnce",
@@ -55,6 +56,7 @@ public final class Monitor extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             Integer vantagePointCount,
             String scriptId,
             String scriptName,
+            ContentTypes contentType,
             MonitorStatus status,
             Integer repeatIntervalInSeconds,
             Boolean isRunOnce,
@@ -82,6 +84,7 @@ public final class Monitor extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.vantagePointCount = vantagePointCount;
         this.scriptId = scriptId;
         this.scriptName = scriptName;
+        this.contentType = contentType;
         this.status = status;
         this.repeatIntervalInSeconds = repeatIntervalInSeconds;
         this.isRunOnce = isRunOnce;
@@ -219,6 +222,22 @@ public final class Monitor extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         public Builder scriptName(String scriptName) {
             this.scriptName = scriptName;
             this.__explicitlySet__.add("scriptName");
+            return this;
+        }
+        /**
+         * Content type of the script.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("contentType")
+        private ContentTypes contentType;
+
+        /**
+         * Content type of the script.
+         * @param contentType the value to set
+         * @return this builder
+         **/
+        public Builder contentType(ContentTypes contentType) {
+            this.contentType = contentType;
+            this.__explicitlySet__.add("contentType");
             return this;
         }
         /**
@@ -566,6 +585,7 @@ public final class Monitor extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.vantagePointCount,
                             this.scriptId,
                             this.scriptName,
+                            this.contentType,
                             this.status,
                             this.repeatIntervalInSeconds,
                             this.isRunOnce,
@@ -613,6 +633,9 @@ public final class Monitor extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("scriptName")) {
                 this.scriptName(model.getScriptName());
+            }
+            if (model.wasPropertyExplicitlySet("contentType")) {
+                this.contentType(model.getContentType());
             }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
@@ -786,6 +809,20 @@ public final class Monitor extends com.oracle.bmc.http.internal.ExplicitlySetBmc
      **/
     public String getScriptName() {
         return scriptName;
+    }
+
+    /**
+     * Content type of the script.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("contentType")
+    private final ContentTypes contentType;
+
+    /**
+     * Content type of the script.
+     * @return the value
+     **/
+    public ContentTypes getContentType() {
+        return contentType;
     }
 
     /**
@@ -1098,6 +1135,7 @@ public final class Monitor extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", vantagePointCount=").append(String.valueOf(this.vantagePointCount));
         sb.append(", scriptId=").append(String.valueOf(this.scriptId));
         sb.append(", scriptName=").append(String.valueOf(this.scriptName));
+        sb.append(", contentType=").append(String.valueOf(this.contentType));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", repeatIntervalInSeconds=")
                 .append(String.valueOf(this.repeatIntervalInSeconds));
@@ -1141,6 +1179,7 @@ public final class Monitor extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.vantagePointCount, other.vantagePointCount)
                 && java.util.Objects.equals(this.scriptId, other.scriptId)
                 && java.util.Objects.equals(this.scriptName, other.scriptName)
+                && java.util.Objects.equals(this.contentType, other.contentType)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(
                         this.repeatIntervalInSeconds, other.repeatIntervalInSeconds)
@@ -1182,6 +1221,7 @@ public final class Monitor extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                         + (this.vantagePointCount == null ? 43 : this.vantagePointCount.hashCode());
         result = (result * PRIME) + (this.scriptId == null ? 43 : this.scriptId.hashCode());
         result = (result * PRIME) + (this.scriptName == null ? 43 : this.scriptName.hashCode());
+        result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result =
                 (result * PRIME)

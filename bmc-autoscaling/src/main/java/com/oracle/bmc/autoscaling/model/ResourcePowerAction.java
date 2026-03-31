@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * A power action against a resource.
+ * An action that starts, stops, or resets a resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -77,6 +77,7 @@ public final class ResourcePowerAction extends ResourceAction {
     /**
      **/
     public enum Action {
+        Softstop("SOFTSTOP"),
         Stop("STOP"),
         Start("START"),
         Softreset("SOFTRESET"),

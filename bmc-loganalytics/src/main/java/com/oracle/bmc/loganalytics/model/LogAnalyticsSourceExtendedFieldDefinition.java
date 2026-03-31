@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -38,7 +38,9 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
         "isSystem",
         "regularExpression",
         "sourceId",
-        "timeUpdated"
+        "timeUpdated",
+        "conditionString",
+        "conditionBlock"
     })
     public LogAnalyticsSourceExtendedFieldDefinition(
             LogAnalyticsField field,
@@ -56,7 +58,9 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
             Boolean isSystem,
             String regularExpression,
             Long sourceId,
-            java.util.Date timeUpdated) {
+            java.util.Date timeUpdated,
+            String conditionString,
+            GenericConditionBlock conditionBlock) {
         super();
         this.field = field;
         this.displayRegularExpression = displayRegularExpression;
@@ -74,6 +78,8 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
         this.regularExpression = regularExpression;
         this.sourceId = sourceId;
         this.timeUpdated = timeUpdated;
+        this.conditionString = conditionString;
+        this.conditionBlock = conditionBlock;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -168,13 +174,13 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
             return this;
         }
         /**
-         * The onditional field.
+         * The conditional field.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("conditionField")
         private String conditionField;
 
         /**
-         * The onditional field.
+         * The conditional field.
          * @param conditionField the value to set
          * @return this builder
          **/
@@ -232,14 +238,14 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
             return this;
         }
         /**
-         * A flag inidcating whether or not the extended definition is enabled.
+         * A flag indicating whether or not the extended definition is enabled.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * A flag inidcating whether or not the extended definition is enabled.
+         * A flag indicating whether or not the extended definition is enabled.
          *
          * @param isEnabled the value to set
          * @return this builder
@@ -333,6 +339,33 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /**
+         * String representation of the extended field condition. This supports specifying multiple condition blocks at various nested levels.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("conditionString")
+        private String conditionString;
+
+        /**
+         * String representation of the extended field condition. This supports specifying multiple condition blocks at various nested levels.
+         *
+         * @param conditionString the value to set
+         * @return this builder
+         **/
+        public Builder conditionString(String conditionString) {
+            this.conditionString = conditionString;
+            this.__explicitlySet__.add("conditionString");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("conditionBlock")
+        private GenericConditionBlock conditionBlock;
+
+        public Builder conditionBlock(GenericConditionBlock conditionBlock) {
+            this.conditionBlock = conditionBlock;
+            this.__explicitlySet__.add("conditionBlock");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -355,7 +388,9 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
                             this.isSystem,
                             this.regularExpression,
                             this.sourceId,
-                            this.timeUpdated);
+                            this.timeUpdated,
+                            this.conditionString,
+                            this.conditionBlock);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -411,6 +446,12 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("conditionString")) {
+                this.conditionString(model.getConditionString());
+            }
+            if (model.wasPropertyExplicitlySet("conditionBlock")) {
+                this.conditionBlock(model.getConditionBlock());
             }
             return this;
         }
@@ -505,13 +546,13 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
     }
 
     /**
-     * The onditional field.
+     * The conditional field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionField")
     private final String conditionField;
 
     /**
-     * The onditional field.
+     * The conditional field.
      * @return the value
      **/
     public String getConditionField() {
@@ -561,14 +602,14 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
     }
 
     /**
-     * A flag inidcating whether or not the extended definition is enabled.
+     * A flag indicating whether or not the extended definition is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * A flag inidcating whether or not the extended definition is enabled.
+     * A flag indicating whether or not the extended definition is enabled.
      *
      * @return the value
      **/
@@ -650,6 +691,29 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
         return timeUpdated;
     }
 
+    /**
+     * String representation of the extended field condition. This supports specifying multiple condition blocks at various nested levels.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("conditionString")
+    private final String conditionString;
+
+    /**
+     * String representation of the extended field condition. This supports specifying multiple condition blocks at various nested levels.
+     *
+     * @return the value
+     **/
+    public String getConditionString() {
+        return conditionString;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("conditionBlock")
+    private final GenericConditionBlock conditionBlock;
+
+    public GenericConditionBlock getConditionBlock() {
+        return conditionBlock;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -683,6 +747,8 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
         sb.append(", regularExpression=").append(String.valueOf(this.regularExpression));
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", conditionString=").append(String.valueOf(this.conditionString));
+        sb.append(", conditionBlock=").append(String.valueOf(this.conditionBlock));
         sb.append(")");
         return sb.toString();
     }
@@ -717,6 +783,8 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
                 && java.util.Objects.equals(this.regularExpression, other.regularExpression)
                 && java.util.Objects.equals(this.sourceId, other.sourceId)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.conditionString, other.conditionString)
+                && java.util.Objects.equals(this.conditionBlock, other.conditionBlock)
                 && super.equals(other);
     }
 
@@ -768,6 +836,12 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
                         + (this.regularExpression == null ? 43 : this.regularExpression.hashCode());
         result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.conditionString == null ? 43 : this.conditionString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.conditionBlock == null ? 43 : this.conditionBlock.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
- * Details relevant to the support ticket.
+ * Details relevant to the support request.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -46,13 +46,13 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The severity of the support ticket.
+         * The severity of the support request.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
         /**
-         * The severity of the support ticket.
+         * The severity of the support request.
          * @param severity the value to set
          * @return this builder
          **/
@@ -78,13 +78,13 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The title of the support ticket. Avoid entering confidential information.
+         * The title of the support request. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("title")
         private String title;
 
         /**
-         * The title of the support ticket. Avoid entering confidential information.
+         * The title of the support request. Avoid entering confidential information.
          * @param title the value to set
          * @return this builder
          **/
@@ -94,13 +94,17 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The description of the support ticket. Avoid entering confidential information.
+         * <b>Important</b>: On January 27, 2026, the <b>Max Length</b> value will change to 1500.
+         * The description of the support request. Avoid entering confidential information.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The description of the support ticket. Avoid entering confidential information.
+         * <b>Important</b>: On January 27, 2026, the <b>Max Length</b> value will change to 1500.
+         * The description of the support request. Avoid entering confidential information.
+         *
          * @param description the value to set
          * @return this builder
          **/
@@ -169,7 +173,7 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The severity of the support ticket.
+     * The severity of the support request.
      **/
     public enum Severity {
         Highest("HIGHEST"),
@@ -206,13 +210,13 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * The severity of the support ticket.
+     * The severity of the support request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
     /**
-     * The severity of the support ticket.
+     * The severity of the support request.
      * @return the value
      **/
     public Severity getSeverity() {
@@ -234,13 +238,13 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The title of the support ticket. Avoid entering confidential information.
+     * The title of the support request. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     private final String title;
 
     /**
-     * The title of the support ticket. Avoid entering confidential information.
+     * The title of the support request. Avoid entering confidential information.
      * @return the value
      **/
     public String getTitle() {
@@ -248,13 +252,17 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The description of the support ticket. Avoid entering confidential information.
+     * <b>Important</b>: On January 27, 2026, the <b>Max Length</b> value will change to 1500.
+     * The description of the support request. Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description of the support ticket. Avoid entering confidential information.
+     * <b>Important</b>: On January 27, 2026, the <b>Max Length</b> value will change to 1500.
+     * The description of the support request. Avoid entering confidential information.
+     *
      * @return the value
      **/
     public String getDescription() {

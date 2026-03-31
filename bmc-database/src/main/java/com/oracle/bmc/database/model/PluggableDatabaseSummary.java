@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -39,11 +39,13 @@ public final class PluggableDatabaseSummary
         "compartmentId",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "pluggableDatabaseManagementConfig",
         "kmsKeyId",
         "kmsKeyVersionId",
         "refreshableCloneConfig",
-        "pdbNodeLevelDetails"
+        "pdbNodeLevelDetails",
+        "patchVersion"
     })
     public PluggableDatabaseSummary(
             String id,
@@ -58,11 +60,13 @@ public final class PluggableDatabaseSummary
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig,
             String kmsKeyId,
             String kmsKeyVersionId,
             PluggableDatabaseRefreshableCloneConfig refreshableCloneConfig,
-            java.util.List<PluggableDatabaseNodeLevelDetails> pdbNodeLevelDetails) {
+            java.util.List<PluggableDatabaseNodeLevelDetails> pdbNodeLevelDetails,
+            String patchVersion) {
         super();
         this.id = id;
         this.containerDatabaseId = containerDatabaseId;
@@ -76,11 +80,13 @@ public final class PluggableDatabaseSummary
         this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.pluggableDatabaseManagementConfig = pluggableDatabaseManagementConfig;
         this.kmsKeyId = kmsKeyId;
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.refreshableCloneConfig = refreshableCloneConfig;
         this.pdbNodeLevelDetails = pdbNodeLevelDetails;
+        this.patchVersion = patchVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -291,6 +297,26 @@ public final class PluggableDatabaseSummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabaseManagementConfig")
         private PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig;
@@ -318,14 +344,14 @@ public final class PluggableDatabaseSummary
             return this;
         }
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -366,6 +392,22 @@ public final class PluggableDatabaseSummary
             this.__explicitlySet__.add("pdbNodeLevelDetails");
             return this;
         }
+        /**
+         * The patch version of the pluggable database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("patchVersion")
+        private String patchVersion;
+
+        /**
+         * The patch version of the pluggable database.
+         * @param patchVersion the value to set
+         * @return this builder
+         **/
+        public Builder patchVersion(String patchVersion) {
+            this.patchVersion = patchVersion;
+            this.__explicitlySet__.add("patchVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -385,11 +427,13 @@ public final class PluggableDatabaseSummary
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.pluggableDatabaseManagementConfig,
                             this.kmsKeyId,
                             this.kmsKeyVersionId,
                             this.refreshableCloneConfig,
-                            this.pdbNodeLevelDetails);
+                            this.pdbNodeLevelDetails,
+                            this.patchVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -434,6 +478,9 @@ public final class PluggableDatabaseSummary
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("pluggableDatabaseManagementConfig")) {
                 this.pluggableDatabaseManagementConfig(
                         model.getPluggableDatabaseManagementConfig());
@@ -449,6 +496,9 @@ public final class PluggableDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("pdbNodeLevelDetails")) {
                 this.pdbNodeLevelDetails(model.getPdbNodeLevelDetails());
+            }
+            if (model.wasPropertyExplicitlySet("patchVersion")) {
+                this.patchVersion(model.getPatchVersion());
             }
             return this;
         }
@@ -757,6 +807,24 @@ public final class PluggableDatabaseSummary
         return definedTags;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabaseManagementConfig")
     private final PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig;
 
@@ -779,14 +847,14 @@ public final class PluggableDatabaseSummary
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      *
      * @return the value
      **/
@@ -819,6 +887,20 @@ public final class PluggableDatabaseSummary
         return pdbNodeLevelDetails;
     }
 
+    /**
+     * The patch version of the pluggable database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchVersion")
+    private final String patchVersion;
+
+    /**
+     * The patch version of the pluggable database.
+     * @return the value
+     **/
+    public String getPatchVersion() {
+        return patchVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -845,12 +927,14 @@ public final class PluggableDatabaseSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", pluggableDatabaseManagementConfig=")
                 .append(String.valueOf(this.pluggableDatabaseManagementConfig));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", refreshableCloneConfig=").append(String.valueOf(this.refreshableCloneConfig));
         sb.append(", pdbNodeLevelDetails=").append(String.valueOf(this.pdbNodeLevelDetails));
+        sb.append(", patchVersion=").append(String.valueOf(this.patchVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -877,6 +961,7 @@ public final class PluggableDatabaseSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.pluggableDatabaseManagementConfig,
                         other.pluggableDatabaseManagementConfig)
@@ -885,6 +970,7 @@ public final class PluggableDatabaseSummary
                 && java.util.Objects.equals(
                         this.refreshableCloneConfig, other.refreshableCloneConfig)
                 && java.util.Objects.equals(this.pdbNodeLevelDetails, other.pdbNodeLevelDetails)
+                && java.util.Objects.equals(this.patchVersion, other.patchVersion)
                 && super.equals(other);
     }
 
@@ -916,6 +1002,7 @@ public final class PluggableDatabaseSummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.pluggableDatabaseManagementConfig == null
@@ -935,6 +1022,7 @@ public final class PluggableDatabaseSummary
                         + (this.pdbNodeLevelDetails == null
                                 ? 43
                                 : this.pdbNodeLevelDetails.hashCode());
+        result = (result * PRIME) + (this.patchVersion == null ? 43 : this.patchVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

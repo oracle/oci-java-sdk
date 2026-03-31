@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -27,6 +27,7 @@ public final class ComputeInstanceMovableVnicMapping
         "destinationSubnetId",
         "destinationPrimaryPrivateIpAddress",
         "destinationPrimaryPrivateIpHostnameLabel",
+        "destinationReservedPublicIpId",
         "destinationNsgIdList"
     })
     public ComputeInstanceMovableVnicMapping(
@@ -34,12 +35,14 @@ public final class ComputeInstanceMovableVnicMapping
             String destinationSubnetId,
             String destinationPrimaryPrivateIpAddress,
             String destinationPrimaryPrivateIpHostnameLabel,
+            String destinationReservedPublicIpId,
             java.util.List<String> destinationNsgIdList) {
         super();
         this.sourceVnicId = sourceVnicId;
         this.destinationSubnetId = destinationSubnetId;
         this.destinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
         this.destinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
+        this.destinationReservedPublicIpId = destinationReservedPublicIpId;
         this.destinationNsgIdList = destinationNsgIdList;
     }
 
@@ -143,6 +146,28 @@ public final class ComputeInstanceMovableVnicMapping
             return this;
         }
         /**
+         * The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.
+         * <p>
+         * Example: {@code ocid1.publicip.oc1..uniqueID}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationReservedPublicIpId")
+        private String destinationReservedPublicIpId;
+
+        /**
+         * The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.
+         * <p>
+         * Example: {@code ocid1.publicip.oc1..uniqueID}
+         *
+         * @param destinationReservedPublicIpId the value to set
+         * @return this builder
+         **/
+        public Builder destinationReservedPublicIpId(String destinationReservedPublicIpId) {
+            this.destinationReservedPublicIpId = destinationReservedPublicIpId;
+            this.__explicitlySet__.add("destinationReservedPublicIpId");
+            return this;
+        }
+        /**
          * A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to
          * the source VNIC.
          * <p>
@@ -177,6 +202,7 @@ public final class ComputeInstanceMovableVnicMapping
                             this.destinationSubnetId,
                             this.destinationPrimaryPrivateIpAddress,
                             this.destinationPrimaryPrivateIpHostnameLabel,
+                            this.destinationReservedPublicIpId,
                             this.destinationNsgIdList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -199,6 +225,9 @@ public final class ComputeInstanceMovableVnicMapping
             if (model.wasPropertyExplicitlySet("destinationPrimaryPrivateIpHostnameLabel")) {
                 this.destinationPrimaryPrivateIpHostnameLabel(
                         model.getDestinationPrimaryPrivateIpHostnameLabel());
+            }
+            if (model.wasPropertyExplicitlySet("destinationReservedPublicIpId")) {
+                this.destinationReservedPublicIpId(model.getDestinationReservedPublicIpId());
             }
             if (model.wasPropertyExplicitlySet("destinationNsgIdList")) {
                 this.destinationNsgIdList(model.getDestinationNsgIdList());
@@ -305,6 +334,26 @@ public final class ComputeInstanceMovableVnicMapping
     }
 
     /**
+     * The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.
+     * <p>
+     * Example: {@code ocid1.publicip.oc1..uniqueID}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationReservedPublicIpId")
+    private final String destinationReservedPublicIpId;
+
+    /**
+     * The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.
+     * <p>
+     * Example: {@code ocid1.publicip.oc1..uniqueID}
+     *
+     * @return the value
+     **/
+    public String getDestinationReservedPublicIpId() {
+        return destinationReservedPublicIpId;
+    }
+
+    /**
      * A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to
      * the source VNIC.
      * <p>
@@ -346,6 +395,8 @@ public final class ComputeInstanceMovableVnicMapping
                 .append(String.valueOf(this.destinationPrimaryPrivateIpAddress));
         sb.append(", destinationPrimaryPrivateIpHostnameLabel=")
                 .append(String.valueOf(this.destinationPrimaryPrivateIpHostnameLabel));
+        sb.append(", destinationReservedPublicIpId=")
+                .append(String.valueOf(this.destinationReservedPublicIpId));
         sb.append(", destinationNsgIdList=").append(String.valueOf(this.destinationNsgIdList));
         sb.append(")");
         return sb.toString();
@@ -369,6 +420,8 @@ public final class ComputeInstanceMovableVnicMapping
                 && java.util.Objects.equals(
                         this.destinationPrimaryPrivateIpHostnameLabel,
                         other.destinationPrimaryPrivateIpHostnameLabel)
+                && java.util.Objects.equals(
+                        this.destinationReservedPublicIpId, other.destinationReservedPublicIpId)
                 && java.util.Objects.equals(this.destinationNsgIdList, other.destinationNsgIdList)
                 && super.equals(other);
     }
@@ -393,6 +446,11 @@ public final class ComputeInstanceMovableVnicMapping
                         + (this.destinationPrimaryPrivateIpHostnameLabel == null
                                 ? 43
                                 : this.destinationPrimaryPrivateIpHostnameLabel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationReservedPublicIpId == null
+                                ? 43
+                                : this.destinationReservedPublicIpId.hashCode());
         result =
                 (result * PRIME)
                         + (this.destinationNsgIdList == null

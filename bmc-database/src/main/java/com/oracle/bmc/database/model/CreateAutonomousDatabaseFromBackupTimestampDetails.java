@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create a point-in-time clone of an Oracle Autonomous Database by specifying a timestamp. Point-in-time clones use backups as the source of the data for the clone.
+ * Details to create a point-in-time clone of an Oracle Autonomous AI Database by specifying a timestamp. Point-in-time clones use backups as the source of the data for the clone.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -448,6 +448,16 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseMaintenanceWindow")
+        private AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow;
+
+        public Builder autonomousDatabaseMaintenanceWindow(
+                AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow) {
+            this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
+            this.__explicitlySet__.add("autonomousDatabaseMaintenanceWindow");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
         private java.util.List<ScheduledOperationDetails> scheduledOperations;
 
@@ -511,14 +521,24 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             this.__explicitlySet__.add("secretVersionNumber");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("transportableTablespace")
+        private ImportTransportableTablespaceDetails transportableTablespace;
+
+        public Builder transportableTablespace(
+                ImportTransportableTablespaceDetails transportableTablespace) {
+            this.transportableTablespace = transportableTablespace;
+            this.__explicitlySet__.add("transportableTablespace");
+            return this;
+        }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
          * @param autonomousDatabaseId the value to set
          * @return this builder
          **/
@@ -528,13 +548,13 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
         /**
-         * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+         * The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+         * The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
          * @param timestamp the value to set
          * @return this builder
          **/
@@ -544,13 +564,13 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
         /**
-         * The Autonomous Database clone type.
+         * The Autonomous AI Database clone type.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
         private CloneType cloneType;
 
         /**
-         * The Autonomous Database clone type.
+         * The Autonomous AI Database clone type.
          * @param cloneType the value to set
          * @return this builder
          **/
@@ -579,13 +599,13 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
         /**
-         * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+         * A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
         private java.util.List<Integer> cloneTableSpaceList;
 
         /**
-         * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+         * A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
          * @param cloneTableSpaceList the value to set
          * @return this builder
          **/
@@ -647,6 +667,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                             this.resourcePoolLeaderId,
                             this.resourcePoolSummary,
                             this.autonomousMaintenanceScheduleType,
+                            this.autonomousDatabaseMaintenanceWindow,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.databaseEdition,
@@ -654,6 +675,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                             this.isBackupRetentionLocked,
                             this.secretId,
                             this.secretVersionNumber,
+                            this.transportableTablespace,
                             this.autonomousDatabaseId,
                             this.timestamp,
                             this.cloneType,
@@ -807,6 +829,10 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                 this.autonomousMaintenanceScheduleType(
                         model.getAutonomousMaintenanceScheduleType());
             }
+            if (model.wasPropertyExplicitlySet("autonomousDatabaseMaintenanceWindow")) {
+                this.autonomousDatabaseMaintenanceWindow(
+                        model.getAutonomousDatabaseMaintenanceWindow());
+            }
             if (model.wasPropertyExplicitlySet("scheduledOperations")) {
                 this.scheduledOperations(model.getScheduledOperations());
             }
@@ -827,6 +853,9 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             }
             if (model.wasPropertyExplicitlySet("secretVersionNumber")) {
                 this.secretVersionNumber(model.getSecretVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("transportableTablespace")) {
+                this.transportableTablespace(model.getTransportableTablespace());
             }
             if (model.wasPropertyExplicitlySet("autonomousDatabaseId")) {
                 this.autonomousDatabaseId(model.getAutonomousDatabaseId());
@@ -907,6 +936,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             String resourcePoolLeaderId,
             ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
@@ -914,6 +944,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber,
+            ImportTransportableTablespaceDetails transportableTablespace,
             String autonomousDatabaseId,
             java.util.Date timestamp,
             CloneType cloneType,
@@ -966,13 +997,15 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                 resourcePoolLeaderId,
                 resourcePoolSummary,
                 autonomousMaintenanceScheduleType,
+                autonomousDatabaseMaintenanceWindow,
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
                 databaseEdition,
                 dbToolsDetails,
                 isBackupRetentionLocked,
                 secretId,
-                secretVersionNumber);
+                secretVersionNumber,
+                transportableTablespace);
         this.autonomousDatabaseId = autonomousDatabaseId;
         this.timestamp = timestamp;
         this.cloneType = cloneType;
@@ -981,13 +1014,13 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     private final String autonomousDatabaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
      * @return the value
      **/
     public String getAutonomousDatabaseId() {
@@ -995,13 +1028,13 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
     }
 
     /**
-     * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+     * The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+     * The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
      * @return the value
      **/
     public java.util.Date getTimestamp() {
@@ -1009,7 +1042,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
     }
 
     /**
-     * The Autonomous Database clone type.
+     * The Autonomous AI Database clone type.
      **/
     public enum CloneType {
         Full("FULL"),
@@ -1045,13 +1078,13 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
         }
     };
     /**
-     * The Autonomous Database clone type.
+     * The Autonomous AI Database clone type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
     private final CloneType cloneType;
 
     /**
-     * The Autonomous Database clone type.
+     * The Autonomous AI Database clone type.
      * @return the value
      **/
     public CloneType getCloneType() {
@@ -1075,13 +1108,13 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
     }
 
     /**
-     * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+     * A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
     private final java.util.List<Integer> cloneTableSpaceList;
 
     /**
-     * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+     * A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
      * @return the value
      **/
     public java.util.List<Integer> getCloneTableSpaceList() {

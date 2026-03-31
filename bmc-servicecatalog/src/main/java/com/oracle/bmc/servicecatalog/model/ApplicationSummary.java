@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.servicecatalog.model;
@@ -30,7 +30,9 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         "shortDescription",
         "logo",
         "pricingType",
-        "packageType"
+        "packageType",
+        "categories",
+        "systemTags"
     })
     public ApplicationSummary(
             String entityId,
@@ -41,7 +43,9 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
             String shortDescription,
             UploadData logo,
             PricingTypeEnum pricingType,
-            PackageTypeEnum packageType) {
+            PackageTypeEnum packageType,
+            java.util.List<String> categories,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.entityId = entityId;
         this.entityType = entityType;
@@ -52,6 +56,8 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         this.logo = logo;
         this.pricingType = pricingType;
         this.packageType = packageType;
+        this.categories = categories;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -186,6 +192,42 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("packageType");
             return this;
         }
+        /**
+         * Product categories that the application belongs to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("categories")
+        private java.util.List<String> categories;
+
+        /**
+         * Product categories that the application belongs to.
+         * @param categories the value to set
+         * @return this builder
+         **/
+        public Builder categories(java.util.List<String> categories) {
+            this.categories = categories;
+            this.__explicitlySet__.add("categories");
+            return this;
+        }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -201,7 +243,9 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
                             this.shortDescription,
                             this.logo,
                             this.pricingType,
-                            this.packageType);
+                            this.packageType,
+                            this.categories,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -236,6 +280,12 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("packageType")) {
                 this.packageType(model.getPackageType());
+            }
+            if (model.wasPropertyExplicitlySet("categories")) {
+                this.categories(model.getCategories());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -364,6 +414,38 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         return packageType;
     }
 
+    /**
+     * Product categories that the application belongs to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("categories")
+    private final java.util.List<String> categories;
+
+    /**
+     * Product categories that the application belongs to.
+     * @return the value
+     **/
+    public java.util.List<String> getCategories() {
+        return categories;
+    }
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -387,6 +469,8 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", logo=").append(String.valueOf(this.logo));
         sb.append(", pricingType=").append(String.valueOf(this.pricingType));
         sb.append(", packageType=").append(String.valueOf(this.packageType));
+        sb.append(", categories=").append(String.valueOf(this.categories));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -410,6 +494,8 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.logo, other.logo)
                 && java.util.Objects.equals(this.pricingType, other.pricingType)
                 && java.util.Objects.equals(this.packageType, other.packageType)
+                && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -428,6 +514,8 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         result = (result * PRIME) + (this.logo == null ? 43 : this.logo.hashCode());
         result = (result * PRIME) + (this.pricingType == null ? 43 : this.pricingType.hashCode());
         result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
+        result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

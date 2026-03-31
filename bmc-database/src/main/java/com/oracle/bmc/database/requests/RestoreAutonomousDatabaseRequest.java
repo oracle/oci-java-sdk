@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -25,13 +25,13 @@ public class RestoreAutonomousDatabaseRequest
         return autonomousDatabaseId;
     }
     /**
-     * Request to perform an Autonomous Database restore.
+     * Request to perform an Autonomous AI Database restore.
      */
     private com.oracle.bmc.database.model.RestoreAutonomousDatabaseDetails
             restoreAutonomousDatabaseDetails;
 
     /**
-     * Request to perform an Autonomous Database restore.
+     * Request to perform an Autonomous AI Database restore.
      */
     public com.oracle.bmc.database.model.RestoreAutonomousDatabaseDetails
             getRestoreAutonomousDatabaseDetails() {
@@ -53,6 +53,21 @@ public class RestoreAutonomousDatabaseRequest
      */
     public String getIfMatch() {
         return ifMatch;
+    }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
     }
 
     /**
@@ -89,13 +104,13 @@ public class RestoreAutonomousDatabaseRequest
         }
 
         /**
-         * Request to perform an Autonomous Database restore.
+         * Request to perform an Autonomous AI Database restore.
          */
         private com.oracle.bmc.database.model.RestoreAutonomousDatabaseDetails
                 restoreAutonomousDatabaseDetails = null;
 
         /**
-         * Request to perform an Autonomous Database restore.
+         * Request to perform an Autonomous AI Database restore.
          * @param restoreAutonomousDatabaseDetails the value to set
          * @return this builder instance
          */
@@ -124,6 +139,25 @@ public class RestoreAutonomousDatabaseRequest
          */
         public Builder ifMatch(String ifMatch) {
             this.ifMatch = ifMatch;
+            return this;
+        }
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
             return this;
         }
 
@@ -158,6 +192,7 @@ public class RestoreAutonomousDatabaseRequest
             autonomousDatabaseId(o.getAutonomousDatabaseId());
             restoreAutonomousDatabaseDetails(o.getRestoreAutonomousDatabaseDetails());
             ifMatch(o.getIfMatch());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -204,8 +239,9 @@ public class RestoreAutonomousDatabaseRequest
             request.autonomousDatabaseId = autonomousDatabaseId;
             request.restoreAutonomousDatabaseDetails = restoreAutonomousDatabaseDetails;
             request.ifMatch = ifMatch;
+            request.opcDryRun = opcDryRun;
             return request;
-            // new RestoreAutonomousDatabaseRequest(autonomousDatabaseId, restoreAutonomousDatabaseDetails, ifMatch);
+            // new RestoreAutonomousDatabaseRequest(autonomousDatabaseId, restoreAutonomousDatabaseDetails, ifMatch, opcDryRun);
         }
     }
 
@@ -217,7 +253,8 @@ public class RestoreAutonomousDatabaseRequest
         return new Builder()
                 .autonomousDatabaseId(autonomousDatabaseId)
                 .restoreAutonomousDatabaseDetails(restoreAutonomousDatabaseDetails)
-                .ifMatch(ifMatch);
+                .ifMatch(ifMatch)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -237,6 +274,7 @@ public class RestoreAutonomousDatabaseRequest
         sb.append(",restoreAutonomousDatabaseDetails=")
                 .append(String.valueOf(this.restoreAutonomousDatabaseDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -256,7 +294,8 @@ public class RestoreAutonomousDatabaseRequest
                 && java.util.Objects.equals(
                         this.restoreAutonomousDatabaseDetails,
                         other.restoreAutonomousDatabaseDetails)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -274,6 +313,7 @@ public class RestoreAutonomousDatabaseRequest
                                 ? 43
                                 : this.restoreAutonomousDatabaseDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

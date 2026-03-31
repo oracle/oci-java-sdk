@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.desktops.model;
@@ -30,8 +30,10 @@ public final class DesktopPoolDesktopSummary
         "desktopId",
         "isAssigned",
         "timeCreated",
+        "image",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "connection"
     })
     public DesktopPoolDesktopSummary(
             LifecycleState lifecycleState,
@@ -40,8 +42,10 @@ public final class DesktopPoolDesktopSummary
             String desktopId,
             Boolean isAssigned,
             java.util.Date timeCreated,
+            DesktopImage image,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            DesktopConnection connection) {
         super();
         this.lifecycleState = lifecycleState;
         this.instanceId = instanceId;
@@ -49,8 +53,10 @@ public final class DesktopPoolDesktopSummary
         this.desktopId = desktopId;
         this.isAssigned = isAssigned;
         this.timeCreated = timeCreated;
+        this.image = image;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.connection = connection;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -151,6 +157,15 @@ public final class DesktopPoolDesktopSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("image")
+        private DesktopImage image;
+
+        public Builder image(DesktopImage image) {
+            this.image = image;
+            this.__explicitlySet__.add("image");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
@@ -195,6 +210,15 @@ public final class DesktopPoolDesktopSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("connection")
+        private DesktopConnection connection;
+
+        public Builder connection(DesktopConnection connection) {
+            this.connection = connection;
+            this.__explicitlySet__.add("connection");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -207,8 +231,10 @@ public final class DesktopPoolDesktopSummary
                             this.desktopId,
                             this.isAssigned,
                             this.timeCreated,
+                            this.image,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.connection);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -235,11 +261,17 @@ public final class DesktopPoolDesktopSummary
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
+            if (model.wasPropertyExplicitlySet("image")) {
+                this.image(model.getImage());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("connection")) {
+                this.connection(model.getConnection());
             }
             return this;
         }
@@ -340,6 +372,13 @@ public final class DesktopPoolDesktopSummary
         return timeCreated;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("image")
+    private final DesktopImage image;
+
+    public DesktopImage getImage() {
+        return image;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
@@ -378,6 +417,13 @@ public final class DesktopPoolDesktopSummary
         return definedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("connection")
+    private final DesktopConnection connection;
+
+    public DesktopConnection getConnection() {
+        return connection;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -398,8 +444,10 @@ public final class DesktopPoolDesktopSummary
         sb.append(", desktopId=").append(String.valueOf(this.desktopId));
         sb.append(", isAssigned=").append(String.valueOf(this.isAssigned));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", image=").append(String.valueOf(this.image));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", connection=").append(String.valueOf(this.connection));
         sb.append(")");
         return sb.toString();
     }
@@ -420,8 +468,10 @@ public final class DesktopPoolDesktopSummary
                 && java.util.Objects.equals(this.desktopId, other.desktopId)
                 && java.util.Objects.equals(this.isAssigned, other.isAssigned)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.image, other.image)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.connection, other.connection)
                 && super.equals(other);
     }
 
@@ -437,8 +487,10 @@ public final class DesktopPoolDesktopSummary
         result = (result * PRIME) + (this.desktopId == null ? 43 : this.desktopId.hashCode());
         result = (result * PRIME) + (this.isAssigned == null ? 43 : this.isAssigned.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.image == null ? 43 : this.image.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.connection == null ? 43 : this.connection.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

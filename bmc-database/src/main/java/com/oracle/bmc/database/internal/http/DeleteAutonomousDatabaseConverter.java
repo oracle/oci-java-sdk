@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.internal.http;
@@ -40,6 +40,14 @@ public class DeleteAutonomousDatabaseConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getAutonomousDatabaseId()));
 
+        if (request.getMustDeleteAssociatedLongTermBackups() != null) {
+            target =
+                    target.queryParam(
+                            "mustDeleteAssociatedLongTermBackups",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getMustDeleteAssociatedLongTermBackups()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -50,6 +58,10 @@ public class DeleteAutonomousDatabaseConverter {
 
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
+        }
+
+        if (request.getOpcDryRun() != null) {
+            ib.header("opc-dry-run", request.getOpcDryRun());
         }
 
         if (client.getClientConfigurator() != null) {

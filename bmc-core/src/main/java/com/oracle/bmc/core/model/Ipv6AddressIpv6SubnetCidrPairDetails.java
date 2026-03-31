@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -23,15 +23,35 @@ package com.oracle.bmc.core.model;
 public final class Ipv6AddressIpv6SubnetCidrPairDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"ipv6SubnetCidr", "ipv6Address"})
-    public Ipv6AddressIpv6SubnetCidrPairDetails(String ipv6SubnetCidr, String ipv6Address) {
+    @java.beans.ConstructorProperties({"ipv6Id", "ipv6SubnetCidr", "ipv6Address"})
+    public Ipv6AddressIpv6SubnetCidrPairDetails(
+            String ipv6Id, String ipv6SubnetCidr, String ipv6Address) {
         super();
+        this.ipv6Id = ipv6Id;
         this.ipv6SubnetCidr = ipv6SubnetCidr;
         this.ipv6Address = ipv6Address;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6Id")
+        private String ipv6Id;
+
+        /**
+         * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+         *
+         * @param ipv6Id the value to set
+         * @return this builder
+         **/
+        public Builder ipv6Id(String ipv6Id) {
+            this.ipv6Id = ipv6Id;
+            this.__explicitlySet__.add("ipv6Id");
+            return this;
+        }
         /**
          * The IPv6 prefix allocated to the subnet.
          *
@@ -80,7 +100,8 @@ public final class Ipv6AddressIpv6SubnetCidrPairDetails
 
         public Ipv6AddressIpv6SubnetCidrPairDetails build() {
             Ipv6AddressIpv6SubnetCidrPairDetails model =
-                    new Ipv6AddressIpv6SubnetCidrPairDetails(this.ipv6SubnetCidr, this.ipv6Address);
+                    new Ipv6AddressIpv6SubnetCidrPairDetails(
+                            this.ipv6Id, this.ipv6SubnetCidr, this.ipv6Address);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -89,6 +110,9 @@ public final class Ipv6AddressIpv6SubnetCidrPairDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Ipv6AddressIpv6SubnetCidrPairDetails model) {
+            if (model.wasPropertyExplicitlySet("ipv6Id")) {
+                this.ipv6Id(model.getIpv6Id());
+            }
             if (model.wasPropertyExplicitlySet("ipv6SubnetCidr")) {
                 this.ipv6SubnetCidr(model.getIpv6SubnetCidr());
             }
@@ -108,6 +132,22 @@ public final class Ipv6AddressIpv6SubnetCidrPairDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6Id")
+    private final String ipv6Id;
+
+    /**
+     * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+     *
+     * @return the value
+     **/
+    public String getIpv6Id() {
+        return ipv6Id;
     }
 
     /**
@@ -162,7 +202,8 @@ public final class Ipv6AddressIpv6SubnetCidrPairDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Ipv6AddressIpv6SubnetCidrPairDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("ipv6SubnetCidr=").append(String.valueOf(this.ipv6SubnetCidr));
+        sb.append("ipv6Id=").append(String.valueOf(this.ipv6Id));
+        sb.append(", ipv6SubnetCidr=").append(String.valueOf(this.ipv6SubnetCidr));
         sb.append(", ipv6Address=").append(String.valueOf(this.ipv6Address));
         sb.append(")");
         return sb.toString();
@@ -178,7 +219,8 @@ public final class Ipv6AddressIpv6SubnetCidrPairDetails
         }
 
         Ipv6AddressIpv6SubnetCidrPairDetails other = (Ipv6AddressIpv6SubnetCidrPairDetails) o;
-        return java.util.Objects.equals(this.ipv6SubnetCidr, other.ipv6SubnetCidr)
+        return java.util.Objects.equals(this.ipv6Id, other.ipv6Id)
+                && java.util.Objects.equals(this.ipv6SubnetCidr, other.ipv6SubnetCidr)
                 && java.util.Objects.equals(this.ipv6Address, other.ipv6Address)
                 && super.equals(other);
     }
@@ -187,6 +229,7 @@ public final class Ipv6AddressIpv6SubnetCidrPairDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.ipv6Id == null ? 43 : this.ipv6Id.hashCode());
         result =
                 (result * PRIME)
                         + (this.ipv6SubnetCidr == null ? 43 : this.ipv6SubnetCidr.hashCode());

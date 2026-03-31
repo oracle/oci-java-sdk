@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * Parameters for creating a Autonomous Database Software Image
+ * Parameters for creating a Autonomous AI Database Software Image
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -66,13 +66,13 @@ public final class CreateAutonomousDatabaseSoftwareImageDetails
             return this;
         }
         /**
-         * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+         * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+         * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -82,13 +82,13 @@ public final class CreateAutonomousDatabaseSoftwareImageDetails
             return this;
         }
         /**
-         * The source Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+         * The source Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceCdbId")
         private String sourceCdbId;
 
         /**
-         * The source Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+         * The source Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
          * @param sourceCdbId the value to set
          * @return this builder
          **/
@@ -227,13 +227,13 @@ public final class CreateAutonomousDatabaseSoftwareImageDetails
     }
 
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      * @return the value
      **/
     public String getDisplayName() {
@@ -241,13 +241,13 @@ public final class CreateAutonomousDatabaseSoftwareImageDetails
     }
 
     /**
-     * The source Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+     * The source Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceCdbId")
     private final String sourceCdbId;
 
     /**
-     * The source Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+     * The source Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
      * @return the value
      **/
     public String getSourceCdbId() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -25,6 +25,12 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         "displayName",
         "description",
         "compartmentId",
+        "availabilityDomain",
+        "faultDomain",
+        "deploymentRole",
+        "timeRoleChanged",
+        "sourceDeploymentId",
+        "placements",
         "deploymentBackupId",
         "timeCreated",
         "timeUpdated",
@@ -40,6 +46,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         "loadBalancerId",
         "fqdn",
         "licenseModel",
+        "isByolCpuCoreCountLimitEnabled",
+        "byolCpuCoreCountLimit",
         "environmentType",
         "category",
         "cpuCoreCount",
@@ -66,13 +74,22 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         "backupSchedule",
         "timeLastBackupScheduled",
         "timeNextBackupScheduled",
-        "ingressIps"
+        "ingressIps",
+        "subscriptionId",
+        "clusterPlacementGroupId",
+        "securityAttributes"
     })
     public Deployment(
             String id,
             String displayName,
             String description,
             String compartmentId,
+            String availabilityDomain,
+            String faultDomain,
+            DeploymentRole deploymentRole,
+            java.util.Date timeRoleChanged,
+            String sourceDeploymentId,
+            java.util.List<DeploymentPlacementInfo> placements,
             String deploymentBackupId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -88,6 +105,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             String loadBalancerId,
             String fqdn,
             LicenseModel licenseModel,
+            Boolean isByolCpuCoreCountLimitEnabled,
+            Integer byolCpuCoreCountLimit,
             EnvironmentType environmentType,
             DeploymentCategory category,
             Integer cpuCoreCount,
@@ -114,12 +133,21 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             BackupSchedule backupSchedule,
             java.util.Date timeLastBackupScheduled,
             java.util.Date timeNextBackupScheduled,
-            java.util.List<IngressIpDetails> ingressIps) {
+            java.util.List<IngressIpDetails> ingressIps,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.id = id;
         this.displayName = displayName;
         this.description = description;
         this.compartmentId = compartmentId;
+        this.availabilityDomain = availabilityDomain;
+        this.faultDomain = faultDomain;
+        this.deploymentRole = deploymentRole;
+        this.timeRoleChanged = timeRoleChanged;
+        this.sourceDeploymentId = sourceDeploymentId;
+        this.placements = placements;
         this.deploymentBackupId = deploymentBackupId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -135,6 +163,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         this.loadBalancerId = loadBalancerId;
         this.fqdn = fqdn;
         this.licenseModel = licenseModel;
+        this.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
+        this.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
         this.environmentType = environmentType;
         this.category = category;
         this.cpuCoreCount = cpuCoreCount;
@@ -162,6 +192,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         this.timeLastBackupScheduled = timeLastBackupScheduled;
         this.timeNextBackupScheduled = timeNextBackupScheduled;
         this.ingressIps = ingressIps;
+        this.subscriptionId = subscriptionId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.securityAttributes = securityAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -236,6 +269,112 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The availability domain of a placement.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        /**
+         * The availability domain of a placement.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+        /**
+         * The fault domain of a placement.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+        private String faultDomain;
+
+        /**
+         * The fault domain of a placement.
+         * @param faultDomain the value to set
+         * @return this builder
+         **/
+        public Builder faultDomain(String faultDomain) {
+            this.faultDomain = faultDomain;
+            this.__explicitlySet__.add("faultDomain");
+            return this;
+        }
+        /**
+         * The type of the deployment role.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentRole")
+        private DeploymentRole deploymentRole;
+
+        /**
+         * The type of the deployment role.
+         *
+         * @param deploymentRole the value to set
+         * @return this builder
+         **/
+        public Builder deploymentRole(DeploymentRole deploymentRole) {
+            this.deploymentRole = deploymentRole;
+            this.__explicitlySet__.add("deploymentRole");
+            return this;
+        }
+        /**
+         * The time of the last role change. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeRoleChanged")
+        private java.util.Date timeRoleChanged;
+
+        /**
+         * The time of the last role change. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeRoleChanged the value to set
+         * @return this builder
+         **/
+        public Builder timeRoleChanged(java.util.Date timeRoleChanged) {
+            this.timeRoleChanged = timeRoleChanged;
+            this.__explicitlySet__.add("timeRoleChanged");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDeploymentId")
+        private String sourceDeploymentId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         *
+         * @param sourceDeploymentId the value to set
+         * @return this builder
+         **/
+        public Builder sourceDeploymentId(String sourceDeploymentId) {
+            this.sourceDeploymentId = sourceDeploymentId;
+            this.__explicitlySet__.add("sourceDeploymentId");
+            return this;
+        }
+        /**
+         * An array of local peers of deployment
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("placements")
+        private java.util.List<DeploymentPlacementInfo> placements;
+
+        /**
+         * An array of local peers of deployment
+         *
+         * @param placements the value to set
+         * @return this builder
+         **/
+        public Builder placements(java.util.List<DeploymentPlacementInfo> placements) {
+            this.placements = placements;
+            this.__explicitlySet__.add("placements");
             return this;
         }
         /**
@@ -531,6 +670,46 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+        /**
+         * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+         * If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isByolCpuCoreCountLimitEnabled")
+        private Boolean isByolCpuCoreCountLimitEnabled;
+
+        /**
+         * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+         * If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+         *
+         * @param isByolCpuCoreCountLimitEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isByolCpuCoreCountLimitEnabled(Boolean isByolCpuCoreCountLimitEnabled) {
+            this.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
+            this.__explicitlySet__.add("isByolCpuCoreCountLimitEnabled");
+            return this;
+        }
+        /**
+         * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+         * Any CPU usage above this limit is considered as License Included and billed.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("byolCpuCoreCountLimit")
+        private Integer byolCpuCoreCountLimit;
+
+        /**
+         * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+         * Any CPU usage above this limit is considered as License Included and billed.
+         *
+         * @param byolCpuCoreCountLimit the value to set
+         * @return this builder
+         **/
+        public Builder byolCpuCoreCountLimit(Integer byolCpuCoreCountLimit) {
+            this.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
+            this.__explicitlySet__.add("byolCpuCoreCountLimit");
             return this;
         }
         /**
@@ -1015,6 +1194,69 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             this.__explicitlySet__.add("ingressIps");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+        /**
+         * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+         * Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+         * subscription id is provided. Otherwise the cluster placement group must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+         * Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+         * subscription id is provided. Otherwise the cluster placement group must not be provided.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1026,6 +1268,12 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.displayName,
                             this.description,
                             this.compartmentId,
+                            this.availabilityDomain,
+                            this.faultDomain,
+                            this.deploymentRole,
+                            this.timeRoleChanged,
+                            this.sourceDeploymentId,
+                            this.placements,
                             this.deploymentBackupId,
                             this.timeCreated,
                             this.timeUpdated,
@@ -1041,6 +1289,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.loadBalancerId,
                             this.fqdn,
                             this.licenseModel,
+                            this.isByolCpuCoreCountLimitEnabled,
+                            this.byolCpuCoreCountLimit,
                             this.environmentType,
                             this.category,
                             this.cpuCoreCount,
@@ -1067,7 +1317,10 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.backupSchedule,
                             this.timeLastBackupScheduled,
                             this.timeNextBackupScheduled,
-                            this.ingressIps);
+                            this.ingressIps,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1087,6 +1340,24 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomain")) {
+                this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentRole")) {
+                this.deploymentRole(model.getDeploymentRole());
+            }
+            if (model.wasPropertyExplicitlySet("timeRoleChanged")) {
+                this.timeRoleChanged(model.getTimeRoleChanged());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDeploymentId")) {
+                this.sourceDeploymentId(model.getSourceDeploymentId());
+            }
+            if (model.wasPropertyExplicitlySet("placements")) {
+                this.placements(model.getPlacements());
             }
             if (model.wasPropertyExplicitlySet("deploymentBackupId")) {
                 this.deploymentBackupId(model.getDeploymentBackupId());
@@ -1132,6 +1403,12 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("isByolCpuCoreCountLimitEnabled")) {
+                this.isByolCpuCoreCountLimitEnabled(model.getIsByolCpuCoreCountLimitEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("byolCpuCoreCountLimit")) {
+                this.byolCpuCoreCountLimit(model.getByolCpuCoreCountLimit());
             }
             if (model.wasPropertyExplicitlySet("environmentType")) {
                 this.environmentType(model.getEnvironmentType());
@@ -1215,6 +1492,15 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             if (model.wasPropertyExplicitlySet("ingressIps")) {
                 this.ingressIps(model.getIngressIps());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             return this;
         }
     }
@@ -1292,6 +1578,100 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The availability domain of a placement.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    private final String availabilityDomain;
+
+    /**
+     * The availability domain of a placement.
+     * @return the value
+     **/
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+
+    /**
+     * The fault domain of a placement.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+    private final String faultDomain;
+
+    /**
+     * The fault domain of a placement.
+     * @return the value
+     **/
+    public String getFaultDomain() {
+        return faultDomain;
+    }
+
+    /**
+     * The type of the deployment role.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentRole")
+    private final DeploymentRole deploymentRole;
+
+    /**
+     * The type of the deployment role.
+     *
+     * @return the value
+     **/
+    public DeploymentRole getDeploymentRole() {
+        return deploymentRole;
+    }
+
+    /**
+     * The time of the last role change. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeRoleChanged")
+    private final java.util.Date timeRoleChanged;
+
+    /**
+     * The time of the last role change. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeRoleChanged() {
+        return timeRoleChanged;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDeploymentId")
+    private final String sourceDeploymentId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     *
+     * @return the value
+     **/
+    public String getSourceDeploymentId() {
+        return sourceDeploymentId;
+    }
+
+    /**
+     * An array of local peers of deployment
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("placements")
+    private final java.util.List<DeploymentPlacementInfo> placements;
+
+    /**
+     * An array of local peers of deployment
+     *
+     * @return the value
+     **/
+    public java.util.List<DeploymentPlacementInfo> getPlacements() {
+        return placements;
     }
 
     /**
@@ -1556,6 +1936,42 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
      **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
+    }
+
+    /**
+     * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+     * If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isByolCpuCoreCountLimitEnabled")
+    private final Boolean isByolCpuCoreCountLimitEnabled;
+
+    /**
+     * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+     * If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     *
+     * @return the value
+     **/
+    public Boolean getIsByolCpuCoreCountLimitEnabled() {
+        return isByolCpuCoreCountLimitEnabled;
+    }
+
+    /**
+     * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+     * Any CPU usage above this limit is considered as License Included and billed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("byolCpuCoreCountLimit")
+    private final Integer byolCpuCoreCountLimit;
+
+    /**
+     * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+     * Any CPU usage above this limit is considered as License Included and billed.
+     *
+     * @return the value
+     **/
+    public Integer getByolCpuCoreCountLimit() {
+        return byolCpuCoreCountLimit;
     }
 
     /**
@@ -1985,6 +2401,62 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         return ingressIps;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    /**
+     * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+     * Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+     * subscription id is provided. Otherwise the cluster placement group must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+     * Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+     * subscription id is provided. Otherwise the cluster placement group must not be provided.
+     *
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2003,6 +2475,12 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", deploymentRole=").append(String.valueOf(this.deploymentRole));
+        sb.append(", timeRoleChanged=").append(String.valueOf(this.timeRoleChanged));
+        sb.append(", sourceDeploymentId=").append(String.valueOf(this.sourceDeploymentId));
+        sb.append(", placements=").append(String.valueOf(this.placements));
         sb.append(", deploymentBackupId=").append(String.valueOf(this.deploymentBackupId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -2018,6 +2496,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", isByolCpuCoreCountLimitEnabled=")
+                .append(String.valueOf(this.isByolCpuCoreCountLimitEnabled));
+        sb.append(", byolCpuCoreCountLimit=").append(String.valueOf(this.byolCpuCoreCountLimit));
         sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
@@ -2054,6 +2535,10 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", timeNextBackupScheduled=")
                 .append(String.valueOf(this.timeNextBackupScheduled));
         sb.append(", ingressIps=").append(String.valueOf(this.ingressIps));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -2072,6 +2557,12 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.deploymentRole, other.deploymentRole)
+                && java.util.Objects.equals(this.timeRoleChanged, other.timeRoleChanged)
+                && java.util.Objects.equals(this.sourceDeploymentId, other.sourceDeploymentId)
+                && java.util.Objects.equals(this.placements, other.placements)
                 && java.util.Objects.equals(this.deploymentBackupId, other.deploymentBackupId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -2087,6 +2578,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(
+                        this.isByolCpuCoreCountLimitEnabled, other.isByolCpuCoreCountLimitEnabled)
+                && java.util.Objects.equals(this.byolCpuCoreCountLimit, other.byolCpuCoreCountLimit)
                 && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
@@ -2124,6 +2618,10 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(
                         this.timeNextBackupScheduled, other.timeNextBackupScheduled)
                 && java.util.Objects.equals(this.ingressIps, other.ingressIps)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
 
@@ -2137,6 +2635,24 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentRole == null ? 43 : this.deploymentRole.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRoleChanged == null ? 43 : this.timeRoleChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDeploymentId == null
+                                ? 43
+                                : this.sourceDeploymentId.hashCode());
+        result = (result * PRIME) + (this.placements == null ? 43 : this.placements.hashCode());
         result =
                 (result * PRIME)
                         + (this.deploymentBackupId == null
@@ -2168,6 +2684,16 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                         + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
         result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isByolCpuCoreCountLimitEnabled == null
+                                ? 43
+                                : this.isByolCpuCoreCountLimitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.byolCpuCoreCountLimit == null
+                                ? 43
+                                : this.byolCpuCoreCountLimit.hashCode());
         result =
                 (result * PRIME)
                         + (this.environmentType == null ? 43 : this.environmentType.hashCode());
@@ -2259,6 +2785,19 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                                 ? 43
                                 : this.timeNextBackupScheduled.hashCode());
         result = (result * PRIME) + (this.ingressIps == null ? 43 : this.ingressIps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

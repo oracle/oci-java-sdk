@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -41,7 +41,7 @@ public final class OnPremConnectorSummary
             String compartmentId,
             String description,
             java.util.Date timeCreated,
-            LifecycleState lifecycleState,
+            OnPremConnectorLifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -147,14 +147,14 @@ public final class OnPremConnectorSummary
          * The current state of the on-premises connector.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
+        private OnPremConnectorLifecycleState lifecycleState;
 
         /**
          * The current state of the on-premises connector.
          * @param lifecycleState the value to set
          * @return this builder
          **/
-        public Builder lifecycleState(LifecycleState lifecycleState) {
+        public Builder lifecycleState(OnPremConnectorLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -402,13 +402,13 @@ public final class OnPremConnectorSummary
      * The current state of the on-premises connector.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final LifecycleState lifecycleState;
+    private final OnPremConnectorLifecycleState lifecycleState;
 
     /**
      * The current state of the on-premises connector.
      * @return the value
      **/
-    public LifecycleState getLifecycleState() {
+    public OnPremConnectorLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 

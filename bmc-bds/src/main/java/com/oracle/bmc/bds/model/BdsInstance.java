@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -25,6 +25,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         "displayName",
         "lifecycleState",
         "clusterVersion",
+        "secretId",
+        "isSecretReused",
         "isHighAvailability",
         "isSecure",
         "isCloudSqlConfigured",
@@ -43,7 +45,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         "definedTags",
         "kmsKeyId",
         "clusterProfile",
-        "bdsClusterVersionSummary"
+        "bdsClusterVersionSummary",
+        "timeEarliestCertificateExpiration"
     })
     public BdsInstance(
             String id,
@@ -51,6 +54,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             String displayName,
             LifecycleState lifecycleState,
             ClusterVersion clusterVersion,
+            String secretId,
+            Boolean isSecretReused,
             Boolean isHighAvailability,
             Boolean isSecure,
             Boolean isCloudSqlConfigured,
@@ -69,13 +74,16 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String kmsKeyId,
             ClusterProfile clusterProfile,
-            BdsClusterVersionSummary bdsClusterVersionSummary) {
+            BdsClusterVersionSummary bdsClusterVersionSummary,
+            java.util.Date timeEarliestCertificateExpiration) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.lifecycleState = lifecycleState;
         this.clusterVersion = clusterVersion;
+        this.secretId = secretId;
+        this.isSecretReused = isSecretReused;
         this.isHighAvailability = isHighAvailability;
         this.isSecure = isSecure;
         this.isCloudSqlConfigured = isCloudSqlConfigured;
@@ -95,6 +103,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         this.kmsKeyId = kmsKeyId;
         this.clusterProfile = clusterProfile;
         this.bdsClusterVersionSummary = bdsClusterVersionSummary;
+        this.timeEarliestCertificateExpiration = timeEarliestCertificateExpiration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -177,6 +186,38 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         public Builder clusterVersion(ClusterVersion clusterVersion) {
             this.clusterVersion = clusterVersion;
             this.__explicitlySet__.add("clusterVersion");
+            return this;
+        }
+        /**
+         * The secretId for the clusterAdminPassword.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         * @param secretId the value to set
+         * @return this builder
+         **/
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
+        /**
+         * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSecretReused")
+        private Boolean isSecretReused;
+
+        /**
+         * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+         * @param isSecretReused the value to set
+         * @return this builder
+         **/
+        public Builder isSecretReused(Boolean isSecretReused) {
+            this.isSecretReused = isSecretReused;
+            this.__explicitlySet__.add("isSecretReused");
             return this;
         }
         /**
@@ -465,6 +506,23 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("bdsClusterVersionSummary");
             return this;
         }
+        /**
+         * The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestCertificateExpiration")
+        private java.util.Date timeEarliestCertificateExpiration;
+
+        /**
+         * The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+         * @param timeEarliestCertificateExpiration the value to set
+         * @return this builder
+         **/
+        public Builder timeEarliestCertificateExpiration(
+                java.util.Date timeEarliestCertificateExpiration) {
+            this.timeEarliestCertificateExpiration = timeEarliestCertificateExpiration;
+            this.__explicitlySet__.add("timeEarliestCertificateExpiration");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -477,6 +535,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.displayName,
                             this.lifecycleState,
                             this.clusterVersion,
+                            this.secretId,
+                            this.isSecretReused,
                             this.isHighAvailability,
                             this.isSecure,
                             this.isCloudSqlConfigured,
@@ -495,7 +555,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.definedTags,
                             this.kmsKeyId,
                             this.clusterProfile,
-                            this.bdsClusterVersionSummary);
+                            this.bdsClusterVersionSummary,
+                            this.timeEarliestCertificateExpiration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -518,6 +579,12 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("clusterVersion")) {
                 this.clusterVersion(model.getClusterVersion());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("isSecretReused")) {
+                this.isSecretReused(model.getIsSecretReused());
             }
             if (model.wasPropertyExplicitlySet("isHighAvailability")) {
                 this.isHighAvailability(model.getIsHighAvailability());
@@ -576,6 +643,10 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("bdsClusterVersionSummary")) {
                 this.bdsClusterVersionSummary(model.getBdsClusterVersionSummary());
+            }
+            if (model.wasPropertyExplicitlySet("timeEarliestCertificateExpiration")) {
+                this.timeEarliestCertificateExpiration(
+                        model.getTimeEarliestCertificateExpiration());
             }
             return this;
         }
@@ -767,6 +838,34 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
      **/
     public ClusterVersion getClusterVersion() {
         return clusterVersion;
+    }
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     * @return the value
+     **/
+    public String getSecretId() {
+        return secretId;
+    }
+
+    /**
+     * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSecretReused")
+    private final Boolean isSecretReused;
+
+    /**
+     * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     * @return the value
+     **/
+    public Boolean getIsSecretReused() {
+        return isSecretReused;
     }
 
     /**
@@ -1068,6 +1167,20 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         return bdsClusterVersionSummary;
     }
 
+    /**
+     * The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestCertificateExpiration")
+    private final java.util.Date timeEarliestCertificateExpiration;
+
+    /**
+     * The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+     * @return the value
+     **/
+    public java.util.Date getTimeEarliestCertificateExpiration() {
+        return timeEarliestCertificateExpiration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1087,6 +1200,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", clusterVersion=").append(String.valueOf(this.clusterVersion));
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
+        sb.append(", isSecretReused=").append(String.valueOf(this.isSecretReused));
         sb.append(", isHighAvailability=").append(String.valueOf(this.isHighAvailability));
         sb.append(", isSecure=").append(String.valueOf(this.isSecure));
         sb.append(", isCloudSqlConfigured=").append(String.valueOf(this.isCloudSqlConfigured));
@@ -1108,6 +1223,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", clusterProfile=").append(String.valueOf(this.clusterProfile));
         sb.append(", bdsClusterVersionSummary=")
                 .append(String.valueOf(this.bdsClusterVersionSummary));
+        sb.append(", timeEarliestCertificateExpiration=")
+                .append(String.valueOf(this.timeEarliestCertificateExpiration));
         sb.append(")");
         return sb.toString();
     }
@@ -1127,6 +1244,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.clusterVersion, other.clusterVersion)
+                && java.util.Objects.equals(this.secretId, other.secretId)
+                && java.util.Objects.equals(this.isSecretReused, other.isSecretReused)
                 && java.util.Objects.equals(this.isHighAvailability, other.isHighAvailability)
                 && java.util.Objects.equals(this.isSecure, other.isSecure)
                 && java.util.Objects.equals(this.isCloudSqlConfigured, other.isCloudSqlConfigured)
@@ -1149,6 +1268,9 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.clusterProfile, other.clusterProfile)
                 && java.util.Objects.equals(
                         this.bdsClusterVersionSummary, other.bdsClusterVersionSummary)
+                && java.util.Objects.equals(
+                        this.timeEarliestCertificateExpiration,
+                        other.timeEarliestCertificateExpiration)
                 && super.equals(other);
     }
 
@@ -1167,6 +1289,10 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         result =
                 (result * PRIME)
                         + (this.clusterVersion == null ? 43 : this.clusterVersion.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSecretReused == null ? 43 : this.isSecretReused.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighAvailability == null
@@ -1218,6 +1344,11 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                         + (this.bdsClusterVersionSummary == null
                                 ? 43
                                 : this.bdsClusterVersionSummary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeEarliestCertificateExpiration == null
+                                ? 43
+                                : this.timeEarliestCertificateExpiration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

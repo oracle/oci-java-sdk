@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.internal.http;
@@ -10,7 +10,7 @@ import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class CreatePlatformConfigurationConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -37,7 +37,7 @@ public class CreatePlatformConfigurationConverter {
                 "createPlatformConfigurationDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20230831").path("platformConfigurations");
+                client.getBaseTarget().path("/20250228").path("platformConfigurations");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
@@ -124,6 +124,28 @@ public class CreatePlatformConfigurationConverter {
 
                                 builder.platformConfiguration(response.getItem());
 
+                                java.util.Optional<java.util.List<String>> locationHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "location");
+                                if (locationHeader.isPresent()) {
+                                    builder.location(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "location",
+                                                    locationHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> contentLocationHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "content-location");
+                                if (contentLocationHeader.isPresent()) {
+                                    builder.contentLocation(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "content-location",
+                                                    contentLocationHeader.get().get(0),
+                                                    String.class));
+                                }
+
                                 java.util.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "etag");
@@ -131,6 +153,17 @@ public class CreatePlatformConfigurationConverter {
                                     builder.etag(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "etag", etagHeader.get().get(0), String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-work-request-id");
+                                if (opcWorkRequestIdHeader.isPresent()) {
+                                    builder.opcWorkRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-work-request-id",
+                                                    opcWorkRequestIdHeader.get().get(0),
+                                                    String.class));
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =

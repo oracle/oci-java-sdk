@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateFleetDetails.Builder.class
 )
@@ -25,27 +25,33 @@ public final class UpdateFleetDetails extends com.oracle.bmc.http.internal.Expli
         "displayName",
         "description",
         "notificationPreferences",
-        "ruleSelectionCriteria",
         "isTargetAutoConfirm",
+        "resourceSelection",
+        "products",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "environmentType"
     })
     public UpdateFleetDetails(
             String displayName,
             String description,
-            NotificationPreferences notificationPreferences,
-            SelectionCriteria ruleSelectionCriteria,
+            java.util.List<NotificationPreference> notificationPreferences,
             Boolean isTargetAutoConfirm,
+            ResourceSelection resourceSelection,
+            java.util.List<String> products,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String environmentType) {
         super();
         this.displayName = displayName;
         this.description = description;
         this.notificationPreferences = notificationPreferences;
-        this.ruleSelectionCriteria = ruleSelectionCriteria;
         this.isTargetAutoConfirm = isTargetAutoConfirm;
+        this.resourceSelection = resourceSelection;
+        this.products = products;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.environmentType = environmentType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -94,22 +100,25 @@ public final class UpdateFleetDetails extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Notification Preferences associated with the Fleet.
+         * An UPDATE operation replaces the existing notification preferences list entirely
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notificationPreferences")
-        private NotificationPreferences notificationPreferences;
+        private java.util.List<NotificationPreference> notificationPreferences;
 
-        public Builder notificationPreferences(NotificationPreferences notificationPreferences) {
+        /**
+         * Notification Preferences associated with the Fleet.
+         * An UPDATE operation replaces the existing notification preferences list entirely
+         *
+         * @param notificationPreferences the value to set
+         * @return this builder
+         **/
+        public Builder notificationPreferences(
+                java.util.List<NotificationPreference> notificationPreferences) {
             this.notificationPreferences = notificationPreferences;
             this.__explicitlySet__.add("notificationPreferences");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("ruleSelectionCriteria")
-        private SelectionCriteria ruleSelectionCriteria;
-
-        public Builder ruleSelectionCriteria(SelectionCriteria ruleSelectionCriteria) {
-            this.ruleSelectionCriteria = ruleSelectionCriteria;
-            this.__explicitlySet__.add("ruleSelectionCriteria");
             return this;
         }
         /**
@@ -130,6 +139,35 @@ public final class UpdateFleetDetails extends com.oracle.bmc.http.internal.Expli
         public Builder isTargetAutoConfirm(Boolean isTargetAutoConfirm) {
             this.isTargetAutoConfirm = isTargetAutoConfirm;
             this.__explicitlySet__.add("isTargetAutoConfirm");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceSelection")
+        private ResourceSelection resourceSelection;
+
+        public Builder resourceSelection(ResourceSelection resourceSelection) {
+            this.resourceSelection = resourceSelection;
+            this.__explicitlySet__.add("resourceSelection");
+            return this;
+        }
+        /**
+         * Products associated with the Fleet.
+         * Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("products")
+        private java.util.List<String> products;
+
+        /**
+         * Products associated with the Fleet.
+         * Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
+         *
+         * @param products the value to set
+         * @return this builder
+         **/
+        public Builder products(java.util.List<String> products) {
+            this.products = products;
+            this.__explicitlySet__.add("products");
             return this;
         }
         /**
@@ -173,6 +211,26 @@ public final class UpdateFleetDetails extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Environment Type associated with the Fleet.
+         * Applicable for ENVIRONMENT fleet types.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private String environmentType;
+
+        /**
+         * Environment Type associated with the Fleet.
+         * Applicable for ENVIRONMENT fleet types.
+         *
+         * @param environmentType the value to set
+         * @return this builder
+         **/
+        public Builder environmentType(String environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -183,10 +241,12 @@ public final class UpdateFleetDetails extends com.oracle.bmc.http.internal.Expli
                             this.displayName,
                             this.description,
                             this.notificationPreferences,
-                            this.ruleSelectionCriteria,
                             this.isTargetAutoConfirm,
+                            this.resourceSelection,
+                            this.products,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.environmentType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -204,17 +264,23 @@ public final class UpdateFleetDetails extends com.oracle.bmc.http.internal.Expli
             if (model.wasPropertyExplicitlySet("notificationPreferences")) {
                 this.notificationPreferences(model.getNotificationPreferences());
             }
-            if (model.wasPropertyExplicitlySet("ruleSelectionCriteria")) {
-                this.ruleSelectionCriteria(model.getRuleSelectionCriteria());
-            }
             if (model.wasPropertyExplicitlySet("isTargetAutoConfirm")) {
                 this.isTargetAutoConfirm(model.getIsTargetAutoConfirm());
+            }
+            if (model.wasPropertyExplicitlySet("resourceSelection")) {
+                this.resourceSelection(model.getResourceSelection());
+            }
+            if (model.wasPropertyExplicitlySet("products")) {
+                this.products(model.getProducts());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
             }
             return this;
         }
@@ -271,18 +337,22 @@ public final class UpdateFleetDetails extends com.oracle.bmc.http.internal.Expli
         return description;
     }
 
+    /**
+     * Notification Preferences associated with the Fleet.
+     * An UPDATE operation replaces the existing notification preferences list entirely
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notificationPreferences")
-    private final NotificationPreferences notificationPreferences;
+    private final java.util.List<NotificationPreference> notificationPreferences;
 
-    public NotificationPreferences getNotificationPreferences() {
+    /**
+     * Notification Preferences associated with the Fleet.
+     * An UPDATE operation replaces the existing notification preferences list entirely
+     *
+     * @return the value
+     **/
+    public java.util.List<NotificationPreference> getNotificationPreferences() {
         return notificationPreferences;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("ruleSelectionCriteria")
-    private final SelectionCriteria ruleSelectionCriteria;
-
-    public SelectionCriteria getRuleSelectionCriteria() {
-        return ruleSelectionCriteria;
     }
 
     /**
@@ -301,6 +371,31 @@ public final class UpdateFleetDetails extends com.oracle.bmc.http.internal.Expli
      **/
     public Boolean getIsTargetAutoConfirm() {
         return isTargetAutoConfirm;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceSelection")
+    private final ResourceSelection resourceSelection;
+
+    public ResourceSelection getResourceSelection() {
+        return resourceSelection;
+    }
+
+    /**
+     * Products associated with the Fleet.
+     * Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("products")
+    private final java.util.List<String> products;
+
+    /**
+     * Products associated with the Fleet.
+     * Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getProducts() {
+        return products;
     }
 
     /**
@@ -339,6 +434,24 @@ public final class UpdateFleetDetails extends com.oracle.bmc.http.internal.Expli
         return definedTags;
     }
 
+    /**
+     * Environment Type associated with the Fleet.
+     * Applicable for ENVIRONMENT fleet types.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+    private final String environmentType;
+
+    /**
+     * Environment Type associated with the Fleet.
+     * Applicable for ENVIRONMENT fleet types.
+     *
+     * @return the value
+     **/
+    public String getEnvironmentType() {
+        return environmentType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -357,10 +470,12 @@ public final class UpdateFleetDetails extends com.oracle.bmc.http.internal.Expli
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", notificationPreferences=")
                 .append(String.valueOf(this.notificationPreferences));
-        sb.append(", ruleSelectionCriteria=").append(String.valueOf(this.ruleSelectionCriteria));
         sb.append(", isTargetAutoConfirm=").append(String.valueOf(this.isTargetAutoConfirm));
+        sb.append(", resourceSelection=").append(String.valueOf(this.resourceSelection));
+        sb.append(", products=").append(String.valueOf(this.products));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(")");
         return sb.toString();
     }
@@ -379,10 +494,12 @@ public final class UpdateFleetDetails extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(
                         this.notificationPreferences, other.notificationPreferences)
-                && java.util.Objects.equals(this.ruleSelectionCriteria, other.ruleSelectionCriteria)
                 && java.util.Objects.equals(this.isTargetAutoConfirm, other.isTargetAutoConfirm)
+                && java.util.Objects.equals(this.resourceSelection, other.resourceSelection)
+                && java.util.Objects.equals(this.products, other.products)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && super.equals(other);
     }
 
@@ -399,16 +516,18 @@ public final class UpdateFleetDetails extends com.oracle.bmc.http.internal.Expli
                                 : this.notificationPreferences.hashCode());
         result =
                 (result * PRIME)
-                        + (this.ruleSelectionCriteria == null
-                                ? 43
-                                : this.ruleSelectionCriteria.hashCode());
-        result =
-                (result * PRIME)
                         + (this.isTargetAutoConfirm == null
                                 ? 43
                                 : this.isTargetAutoConfirm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceSelection == null ? 43 : this.resourceSelection.hashCode());
+        result = (result * PRIME) + (this.products == null ? 43 : this.products.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentType == null ? 43 : this.environmentType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

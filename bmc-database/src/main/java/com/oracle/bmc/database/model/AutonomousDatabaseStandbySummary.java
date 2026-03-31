@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -75,13 +75,13 @@ public final class AutonomousDatabaseStandbySummary
             return this;
         }
         /**
-         * The current state of the Autonomous Database.
+         * The current state of the Autonomous AI Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Autonomous Database.
+         * The current state of the Autonomous AI Database.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -107,13 +107,13 @@ public final class AutonomousDatabaseStandbySummary
             return this;
         }
         /**
-         * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
+         * The date and time the Autonomous Data Guard role was switched for the standby Autonomous AI Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataGuardRoleChanged")
         private java.util.Date timeDataGuardRoleChanged;
 
         /**
-         * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
+         * The date and time the Autonomous Data Guard role was switched for the standby Autonomous AI Database.
          * @param timeDataGuardRoleChanged the value to set
          * @return this builder
          **/
@@ -123,13 +123,13 @@ public final class AutonomousDatabaseStandbySummary
             return this;
         }
         /**
-         * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDisasterRecoveryRoleChanged")
         private java.util.Date timeDisasterRecoveryRoleChanged;
 
         /**
-         * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
          * @param timeDisasterRecoveryRoleChanged the value to set
          * @return this builder
          **/
@@ -188,13 +188,13 @@ public final class AutonomousDatabaseStandbySummary
             return this;
         }
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
          * @param availabilityDomain the value to set
          * @return this builder
          **/
@@ -284,7 +284,7 @@ public final class AutonomousDatabaseStandbySummary
     }
 
     /**
-     * The current state of the Autonomous Database.
+     * The current state of the Autonomous AI Database.
      **/
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
@@ -308,6 +308,7 @@ public final class AutonomousDatabaseStandbySummary
         Upgrading("UPGRADING"),
         Inaccessible("INACCESSIBLE"),
         Standby("STANDBY"),
+        Transporting("TRANSPORTING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -351,13 +352,13 @@ public final class AutonomousDatabaseStandbySummary
         }
     };
     /**
-     * The current state of the Autonomous Database.
+     * The current state of the Autonomous AI Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Autonomous Database.
+     * The current state of the Autonomous AI Database.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -379,13 +380,13 @@ public final class AutonomousDatabaseStandbySummary
     }
 
     /**
-     * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
+     * The date and time the Autonomous Data Guard role was switched for the standby Autonomous AI Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataGuardRoleChanged")
     private final java.util.Date timeDataGuardRoleChanged;
 
     /**
-     * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
+     * The date and time the Autonomous Data Guard role was switched for the standby Autonomous AI Database.
      * @return the value
      **/
     public java.util.Date getTimeDataGuardRoleChanged() {
@@ -393,13 +394,13 @@ public final class AutonomousDatabaseStandbySummary
     }
 
     /**
-     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDisasterRecoveryRoleChanged")
     private final java.util.Date timeDisasterRecoveryRoleChanged;
 
     /**
-     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
      * @return the value
      **/
     public java.util.Date getTimeDisasterRecoveryRoleChanged() {
@@ -449,13 +450,13 @@ public final class AutonomousDatabaseStandbySummary
     }
 
     /**
-     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * @return the value
      **/
     public String getAvailabilityDomain() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -43,8 +43,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
         "lifecycleState",
         "options",
         "timeCreated",
-        "vcnId",
-        "domainNameType"
+        "vcnId"
     })
     public DhcpOptions(
             String compartmentId,
@@ -55,8 +54,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
             LifecycleState lifecycleState,
             java.util.List<DhcpOption> options,
             java.util.Date timeCreated,
-            String vcnId,
-            DomainNameType domainNameType) {
+            String vcnId) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -67,7 +65,6 @@ public final class DhcpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
         this.options = options;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
-        this.domainNameType = domainNameType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -235,22 +232,6 @@ public final class DhcpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-        /**
-         * The search domain name type of DHCP options
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("domainNameType")
-        private DomainNameType domainNameType;
-
-        /**
-         * The search domain name type of DHCP options
-         * @param domainNameType the value to set
-         * @return this builder
-         **/
-        public Builder domainNameType(DomainNameType domainNameType) {
-            this.domainNameType = domainNameType;
-            this.__explicitlySet__.add("domainNameType");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -266,8 +247,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.lifecycleState,
                             this.options,
                             this.timeCreated,
-                            this.vcnId,
-                            this.domainNameType);
+                            this.vcnId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -302,9 +282,6 @@ public final class DhcpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
-            }
-            if (model.wasPropertyExplicitlySet("domainNameType")) {
-                this.domainNameType(model.getDomainNameType());
             }
             return this;
         }
@@ -502,56 +479,6 @@ public final class DhcpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
         return vcnId;
     }
 
-    /**
-     * The search domain name type of DHCP options
-     **/
-    public enum DomainNameType {
-        SubnetDomain("SUBNET_DOMAIN"),
-        VcnDomain("VCN_DOMAIN"),
-        CustomDomain("CUSTOM_DOMAIN"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, DomainNameType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (DomainNameType v : DomainNameType.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        DomainNameType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static DomainNameType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid DomainNameType: " + key);
-        }
-    };
-    /**
-     * The search domain name type of DHCP options
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("domainNameType")
-    private final DomainNameType domainNameType;
-
-    /**
-     * The search domain name type of DHCP options
-     * @return the value
-     **/
-    public DomainNameType getDomainNameType() {
-        return domainNameType;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -575,7 +502,6 @@ public final class DhcpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", options=").append(String.valueOf(this.options));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
-        sb.append(", domainNameType=").append(String.valueOf(this.domainNameType));
         sb.append(")");
         return sb.toString();
     }
@@ -599,7 +525,6 @@ public final class DhcpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.options, other.options)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
-                && java.util.Objects.equals(this.domainNameType, other.domainNameType)
                 && super.equals(other);
     }
 
@@ -620,9 +545,6 @@ public final class DhcpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
         result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.domainNameType == null ? 43 : this.domainNameType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

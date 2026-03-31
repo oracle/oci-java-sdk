@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.internal.http;
@@ -110,6 +110,22 @@ public class ListComputeHostsConverter {
                             "computeHostHealth",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getComputeHostHealth()));
+        }
+
+        if (request.getComputeHostGroupId() != null) {
+            target =
+                    target.queryParam(
+                            "computeHostGroupId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getComputeHostGroupId()));
+        }
+
+        if (request.getComputeHostInSubtree() != null) {
+            target =
+                    target.queryParam(
+                            "computeHostInSubtree",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getComputeHostInSubtree()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

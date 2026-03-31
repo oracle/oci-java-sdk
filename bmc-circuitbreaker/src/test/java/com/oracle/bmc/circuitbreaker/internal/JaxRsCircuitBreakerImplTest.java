@@ -1,15 +1,21 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.circuitbreaker.internal;
 
 import static org.junit.Assert.*;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerState;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerEventListener;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import org.junit.Before;
 import org.junit.Test;
@@ -53,18 +59,25 @@ public class JaxRsCircuitBreakerImplTest {
     private final int MIN_NUM_CALLS = 4;
     private final int SLIDING_WINDOW_SIZE = 40;
 
+    private CircuitBreakerEventListener eventListener;
+    private CircuitBreakerConfiguration circuitBreakerConfiguration;
+
     @Before
     public void setup() throws ExecutionException, InterruptedException {
-        CircuitBreakerConfiguration config =
+
+        eventListener = mock(CircuitBreakerEventListener.class);
+
+        circuitBreakerConfiguration =
                 CircuitBreakerConfiguration.builder()
                         .failureRateThreshold(50)
                         .permittedNumberOfCallsInHalfOpenState(4)
                         .slidingWindowSize(SLIDING_WINDOW_SIZE)
                         .minimumNumberOfCalls(MIN_NUM_CALLS)
                         .waitDurationInOpenState(Duration.ofSeconds(2))
+                        .circuitBreakerEventListener(eventListener)
                         .build();
 
-        circuitBreaker = new JaxRsCircuitBreakerImpl(config);
+        circuitBreaker = new JaxRsCircuitBreakerImpl(circuitBreakerConfiguration);
 
         Response response503 = mock(Response.class);
         Mockito.when(response503.getStatus()).thenReturn(503);
@@ -453,6 +466,159 @@ public class JaxRsCircuitBreakerImplTest {
         assertEquals(
                 CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
         assertEquals(CircuitBreakerState.OPEN, circuitBreaker.getState());
+    }
+
+    @Test
+    public void testCircuitBreakerEventListenerOnSuccess() {
+
+        JaxRsCircuitBreakerImpl circuitBreaker =
+                new JaxRsCircuitBreakerImpl(circuitBreakerConfiguration);
+        Supplier<Response> clientCall = circuitBreaker.decorateSupplier(invocation200::invoke);
+        clientCall.get();
+        verify(eventListener, times(1)).onSuccess(any());
+    }
+
+    @Test
+    public void testCircuitBreakerEventListenerOnError() {
+        JaxRsCircuitBreakerImpl circuitBreaker =
+                new JaxRsCircuitBreakerImpl(circuitBreakerConfiguration);
+        Supplier<Response> clientCall = circuitBreaker.decorateSupplier(invocation503::invoke);
+        clientCall.get();
+        verify(eventListener, times(1)).onError(any());
+    }
+
+    @Test
+    public void testCircuitBreakerEventListenerOnStateTransition() {
+        JaxRsCircuitBreakerImpl circuitBreaker =
+                new JaxRsCircuitBreakerImpl(circuitBreakerConfiguration);
+        for (int i = 0; i < MIN_NUM_CALLS + 2; i++) {
+            Supplier<Response> clientCall = circuitBreaker.decorateSupplier(invocation503::invoke);
+            try {
+                clientCall.get();
+            } catch (CallNotAllowedException ex) {
+                break;
+            }
+        }
+        verify(eventListener, atLeastOnce()).onStateTransition(any());
+    }
+
+    @Test
+    public void testCircuitBreakerEventListenerOnCallNotPermitted() {
+        JaxRsCircuitBreakerImpl circuitBreaker =
+                new JaxRsCircuitBreakerImpl(circuitBreakerConfiguration);
+        for (int i = 0; i < MIN_NUM_CALLS + 2; i++) {
+            Supplier<Response> clientCall = circuitBreaker.decorateSupplier(invocation503::invoke);
+            try {
+                clientCall.get();
+            } catch (CallNotAllowedException ex) {
+                break;
+            }
+        }
+        Supplier<Response> clientCall = circuitBreaker.decorateSupplier(invocation503::invoke);
+        try {
+            clientCall.get();
+            fail("CallNotAllowedException is expected");
+        } catch (CallNotAllowedException e) {
+            verify(eventListener, atLeastOnce()).onCallNotPermitted();
+        }
+    }
+
+    @Test
+    public void testCircuitBreakerEventListenerOnFailureRateExceeded() {
+        JaxRsCircuitBreakerImpl circuitBreaker =
+                new JaxRsCircuitBreakerImpl(circuitBreakerConfiguration);
+        for (int i = 0; i < MIN_NUM_CALLS + 2; i++) {
+            Supplier<Response> clientCall = circuitBreaker.decorateSupplier(invocation503::invoke);
+            try {
+                clientCall.get();
+            } catch (CallNotAllowedException ex) {
+                break;
+            }
+        }
+        verify(eventListener, atLeastOnce()).onFailureRateExceeded();
+    }
+
+    @Test
+    public void testMaxWaitDurationInHalfOpenState() {
+        Duration maxWaitDurationInHalfOpenState = Duration.ofSeconds(1);
+        CircuitBreakerConfiguration config =
+                CircuitBreakerConfiguration.builder()
+                        .failureRateThreshold(50)
+                        .permittedNumberOfCallsInHalfOpenState(4)
+                        .slidingWindowSize(SLIDING_WINDOW_SIZE)
+                        .minimumNumberOfCalls(MIN_NUM_CALLS)
+                        .waitDurationInOpenState(Duration.ofSeconds(2))
+                        .circuitBreakerEventListener(eventListener)
+                        .maxWaitDurationInHalfOpenState(maxWaitDurationInHalfOpenState)
+                        .build();
+
+        JaxRsCircuitBreakerImpl circuitBreaker = new JaxRsCircuitBreakerImpl(config);
+
+        // Open the circuit breaker
+        for (int i = 0; i < MIN_NUM_CALLS + 2; i++) {
+            Supplier<Response> clientCall = circuitBreaker.decorateSupplier(invocation503::invoke);
+            try {
+                clientCall.get();
+            } catch (CallNotAllowedException ex) {
+                break;
+            }
+        }
+        assertEquals(
+                CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+
+        // Wait for the circuit breaker to transition to HALF_OPEN state
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        assertEquals(
+                CircuitBreaker.State.HALF_OPEN,
+                circuitBreaker.getInternalCircuitBreaker().getState());
+
+        // Make a call in HALF_OPEN state
+        Supplier<Response> clientCall = circuitBreaker.decorateSupplier(invocation503::invoke);
+        try {
+            clientCall.get();
+        } catch (CallNotAllowedException ex) {
+            verify(eventListener, atLeastOnce()).onCallNotPermitted();
+        }
+
+        // Wait for maxWaitDurationInHalfOpenState
+        try {
+            Thread.sleep(
+                    maxWaitDurationInHalfOpenState.toMillis()
+                            + 100); // add some extra time to account for test variability
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        // The circuit breaker should still be in OPEN state because maxWaitDurationInHalfOpenState has passed
+        assertEquals(
+                CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+    }
+
+    @Test
+    public void testCircuitBreakerEventListenerOnNull() {
+        CircuitBreakerConfiguration config =
+                CircuitBreakerConfiguration.builder()
+                        .failureRateThreshold(50)
+                        .permittedNumberOfCallsInHalfOpenState(4)
+                        .slidingWindowSize(SLIDING_WINDOW_SIZE)
+                        .minimumNumberOfCalls(MIN_NUM_CALLS)
+                        .waitDurationInOpenState(Duration.ofSeconds(2))
+                        .circuitBreakerEventListener(null)
+                        .build();
+        JaxRsCircuitBreakerImpl circuitBreaker = new JaxRsCircuitBreakerImpl(config);
+        for (int i = 0; i < MIN_NUM_CALLS + 2; i++) {
+            Supplier<Response> clientCall = circuitBreaker.decorateSupplier(invocation503::invoke);
+            try {
+                clientCall.get();
+            } catch (CallNotAllowedException ex) {
+                break;
+            }
+        }
+        verify(eventListener, never()).onFailureRateExceeded();
     }
 
     private static Response.StatusType buildIncorrectStateResponse() {

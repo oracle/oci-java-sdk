@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplacepublisher.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.marketplacepublisher.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Product.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -22,6 +22,7 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     @java.beans.ConstructorProperties({
         "name",
         "code",
+        "additionalFilters",
         "productGroup",
         "lifecycleState",
         "timeCreated",
@@ -30,6 +31,7 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     public Product(
             String name,
             String code,
+            java.util.List<AdditionalFilter> additionalFilters,
             String productGroup,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
@@ -37,6 +39,7 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         super();
         this.name = name;
         this.code = code;
+        this.additionalFilters = additionalFilters;
         this.productGroup = productGroup;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
@@ -75,6 +78,22 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
+            return this;
+        }
+        /**
+         * Additional filter properties for product
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalFilters")
+        private java.util.List<AdditionalFilter> additionalFilters;
+
+        /**
+         * Additional filter properties for product
+         * @param additionalFilters the value to set
+         * @return this builder
+         **/
+        public Builder additionalFilters(java.util.List<AdditionalFilter> additionalFilters) {
+            this.additionalFilters = additionalFilters;
+            this.__explicitlySet__.add("additionalFilters");
             return this;
         }
         /**
@@ -162,6 +181,7 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                     new Product(
                             this.name,
                             this.code,
+                            this.additionalFilters,
                             this.productGroup,
                             this.lifecycleState,
                             this.timeCreated,
@@ -179,6 +199,9 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("code")) {
                 this.code(model.getCode());
+            }
+            if (model.wasPropertyExplicitlySet("additionalFilters")) {
+                this.additionalFilters(model.getAdditionalFilters());
             }
             if (model.wasPropertyExplicitlySet("productGroup")) {
                 this.productGroup(model.getProductGroup());
@@ -233,6 +256,20 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
      **/
     public String getCode() {
         return code;
+    }
+
+    /**
+     * Additional filter properties for product
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalFilters")
+    private final java.util.List<AdditionalFilter> additionalFilters;
+
+    /**
+     * Additional filter properties for product
+     * @return the value
+     **/
+    public java.util.List<AdditionalFilter> getAdditionalFilters() {
+        return additionalFilters;
     }
 
     /**
@@ -367,6 +404,7 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", code=").append(String.valueOf(this.code));
+        sb.append(", additionalFilters=").append(String.valueOf(this.additionalFilters));
         sb.append(", productGroup=").append(String.valueOf(this.productGroup));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -387,6 +425,7 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         Product other = (Product) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.code, other.code)
+                && java.util.Objects.equals(this.additionalFilters, other.additionalFilters)
                 && java.util.Objects.equals(this.productGroup, other.productGroup)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -400,6 +439,9 @@ public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.code == null ? 43 : this.code.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalFilters == null ? 43 : this.additionalFilters.hashCode());
         result = (result * PRIME) + (this.productGroup == null ? 43 : this.productGroup.hashCode());
         result =
                 (result * PRIME)

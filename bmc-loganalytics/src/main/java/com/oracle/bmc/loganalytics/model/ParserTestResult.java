@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -24,20 +24,23 @@ public final class ParserTestResult extends com.oracle.bmc.http.internal.Explici
         "entries",
         "exampleContent",
         "lines",
-        "namedCaptureGroups"
+        "namedCaptureGroups",
+        "violations"
     })
     public ParserTestResult(
             java.util.Map<String, String> additionalInfo,
             java.util.List<AbstractParserTestResultLogEntry> entries,
             String exampleContent,
             java.util.List<AbstractParserTestResultLogLine> lines,
-            java.util.List<String> namedCaptureGroups) {
+            java.util.List<String> namedCaptureGroups,
+            java.util.List<Violation> violations) {
         super();
         this.additionalInfo = additionalInfo;
         this.entries = entries;
         this.exampleContent = exampleContent;
         this.lines = lines;
         this.namedCaptureGroups = namedCaptureGroups;
+        this.violations = violations;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -122,6 +125,22 @@ public final class ParserTestResult extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("namedCaptureGroups");
             return this;
         }
+        /**
+         * The test violations.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("violations")
+        private java.util.List<Violation> violations;
+
+        /**
+         * The test violations.
+         * @param violations the value to set
+         * @return this builder
+         **/
+        public Builder violations(java.util.List<Violation> violations) {
+            this.violations = violations;
+            this.__explicitlySet__.add("violations");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -133,7 +152,8 @@ public final class ParserTestResult extends com.oracle.bmc.http.internal.Explici
                             this.entries,
                             this.exampleContent,
                             this.lines,
-                            this.namedCaptureGroups);
+                            this.namedCaptureGroups,
+                            this.violations);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -156,6 +176,9 @@ public final class ParserTestResult extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("namedCaptureGroups")) {
                 this.namedCaptureGroups(model.getNamedCaptureGroups());
+            }
+            if (model.wasPropertyExplicitlySet("violations")) {
+                this.violations(model.getViolations());
             }
             return this;
         }
@@ -242,6 +265,20 @@ public final class ParserTestResult extends com.oracle.bmc.http.internal.Explici
         return namedCaptureGroups;
     }
 
+    /**
+     * The test violations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("violations")
+    private final java.util.List<Violation> violations;
+
+    /**
+     * The test violations.
+     * @return the value
+     **/
+    public java.util.List<Violation> getViolations() {
+        return violations;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -261,6 +298,7 @@ public final class ParserTestResult extends com.oracle.bmc.http.internal.Explici
         sb.append(", exampleContent=").append(String.valueOf(this.exampleContent));
         sb.append(", lines=").append(String.valueOf(this.lines));
         sb.append(", namedCaptureGroups=").append(String.valueOf(this.namedCaptureGroups));
+        sb.append(", violations=").append(String.valueOf(this.violations));
         sb.append(")");
         return sb.toString();
     }
@@ -280,6 +318,7 @@ public final class ParserTestResult extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.exampleContent, other.exampleContent)
                 && java.util.Objects.equals(this.lines, other.lines)
                 && java.util.Objects.equals(this.namedCaptureGroups, other.namedCaptureGroups)
+                && java.util.Objects.equals(this.violations, other.violations)
                 && super.equals(other);
     }
 
@@ -300,6 +339,7 @@ public final class ParserTestResult extends com.oracle.bmc.http.internal.Explici
                         + (this.namedCaptureGroups == null
                                 ? 43
                                 : this.namedCaptureGroups.hashCode());
+        result = (result * PRIME) + (this.violations == null ? 43 : this.violations.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

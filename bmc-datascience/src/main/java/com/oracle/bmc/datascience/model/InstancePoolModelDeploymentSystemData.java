@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -27,6 +27,14 @@ package com.oracle.bmc.datascience.model;
 public final class InstancePoolModelDeploymentSystemData extends ModelDeploymentSystemData {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("modelType")
+        private ModelDeploymentModelType modelType;
+
+        public Builder modelType(ModelDeploymentModelType modelType) {
+            this.modelType = modelType;
+            this.__explicitlySet__.add("modelType");
+            return this;
+        }
         /**
          * This value is the current count of the model deployment instances.
          **/
@@ -49,7 +57,8 @@ public final class InstancePoolModelDeploymentSystemData extends ModelDeployment
 
         public InstancePoolModelDeploymentSystemData build() {
             InstancePoolModelDeploymentSystemData model =
-                    new InstancePoolModelDeploymentSystemData(this.currentInstanceCount);
+                    new InstancePoolModelDeploymentSystemData(
+                            this.modelType, this.currentInstanceCount);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -58,6 +67,9 @@ public final class InstancePoolModelDeploymentSystemData extends ModelDeployment
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstancePoolModelDeploymentSystemData model) {
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
             if (model.wasPropertyExplicitlySet("currentInstanceCount")) {
                 this.currentInstanceCount(model.getCurrentInstanceCount());
             }
@@ -77,8 +89,9 @@ public final class InstancePoolModelDeploymentSystemData extends ModelDeployment
     }
 
     @Deprecated
-    public InstancePoolModelDeploymentSystemData(Integer currentInstanceCount) {
-        super();
+    public InstancePoolModelDeploymentSystemData(
+            ModelDeploymentModelType modelType, Integer currentInstanceCount) {
+        super(modelType);
         this.currentInstanceCount = currentInstanceCount;
     }
 

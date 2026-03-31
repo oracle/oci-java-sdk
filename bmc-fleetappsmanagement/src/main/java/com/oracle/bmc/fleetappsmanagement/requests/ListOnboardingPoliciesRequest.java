@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,10 +8,21 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListOnboardingPoliciesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListOnboardingPoliciesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListOnboardingPoliciesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
+    private String compartmentId;
+
+    /**
+     * The ID of the compartment in which to list resources.
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * The maximum number of items to return.
      */
@@ -112,6 +123,21 @@ public class ListOnboardingPoliciesRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
 
         /**
          * The maximum number of items to return.
@@ -218,6 +244,7 @@ public class ListOnboardingPoliciesRequest
          * @return this builder instance
          */
         public Builder copy(ListOnboardingPoliciesRequest o) {
+            compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -255,13 +282,14 @@ public class ListOnboardingPoliciesRequest
          */
         public ListOnboardingPoliciesRequest buildWithoutInvocationCallback() {
             ListOnboardingPoliciesRequest request = new ListOnboardingPoliciesRequest();
+            request.compartmentId = compartmentId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListOnboardingPoliciesRequest(limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListOnboardingPoliciesRequest(compartmentId, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -271,6 +299,7 @@ public class ListOnboardingPoliciesRequest
      */
     public Builder toBuilder() {
         return new Builder()
+                .compartmentId(compartmentId)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -291,6 +320,7 @@ public class ListOnboardingPoliciesRequest
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -311,6 +341,7 @@ public class ListOnboardingPoliciesRequest
 
         ListOnboardingPoliciesRequest other = (ListOnboardingPoliciesRequest) o;
         return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -322,6 +353,9 @@ public class ListOnboardingPoliciesRequest
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

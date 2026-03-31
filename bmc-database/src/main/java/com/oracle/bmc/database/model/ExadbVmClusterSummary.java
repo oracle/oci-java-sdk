@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -70,7 +70,8 @@ public final class ExadbVmClusterSummary
         "exascaleDbStorageVaultId",
         "memorySizeInGBs",
         "clusterPlacementGroupId",
-        "subscriptionId"
+        "subscriptionId",
+        "shapeAttribute"
     })
     public ExadbVmClusterSummary(
             String id,
@@ -119,7 +120,8 @@ public final class ExadbVmClusterSummary
             String exascaleDbStorageVaultId,
             Integer memorySizeInGBs,
             String clusterPlacementGroupId,
-            String subscriptionId) {
+            String subscriptionId,
+            ShapeAttribute shapeAttribute) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -168,6 +170,7 @@ public final class ExadbVmClusterSummary
         this.memorySizeInGBs = memorySizeInGBs;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.subscriptionId = subscriptionId;
+        this.shapeAttribute = shapeAttribute;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -261,7 +264,7 @@ public final class ExadbVmClusterSummary
         /**
          * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -270,7 +273,7 @@ public final class ExadbVmClusterSummary
         /**
          * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -976,13 +979,13 @@ public final class ExadbVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
         private String clusterPlacementGroupId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
          * @param clusterPlacementGroupId the value to set
          * @return this builder
          **/
@@ -1005,6 +1008,24 @@ public final class ExadbVmClusterSummary
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+        /**
+         * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeAttribute")
+        private ShapeAttribute shapeAttribute;
+
+        /**
+         * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+         *
+         * @param shapeAttribute the value to set
+         * @return this builder
+         **/
+        public Builder shapeAttribute(ShapeAttribute shapeAttribute) {
+            this.shapeAttribute = shapeAttribute;
+            this.__explicitlySet__.add("shapeAttribute");
             return this;
         }
 
@@ -1060,7 +1081,8 @@ public final class ExadbVmClusterSummary
                             this.exascaleDbStorageVaultId,
                             this.memorySizeInGBs,
                             this.clusterPlacementGroupId,
-                            this.subscriptionId);
+                            this.subscriptionId,
+                            this.shapeAttribute);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1210,6 +1232,9 @@ public final class ExadbVmClusterSummary
             if (model.wasPropertyExplicitlySet("subscriptionId")) {
                 this.subscriptionId(model.getSubscriptionId());
             }
+            if (model.wasPropertyExplicitlySet("shapeAttribute")) {
+                this.shapeAttribute(model.getShapeAttribute());
+            }
             return this;
         }
     }
@@ -1304,7 +1329,7 @@ public final class ExadbVmClusterSummary
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -1313,7 +1338,7 @@ public final class ExadbVmClusterSummary
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
      **/
@@ -2086,13 +2111,13 @@ public final class ExadbVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
     private final String clusterPlacementGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * @return the value
      **/
     public String getClusterPlacementGroupId() {
@@ -2111,6 +2136,71 @@ public final class ExadbVmClusterSummary
      **/
     public String getSubscriptionId() {
         return subscriptionId;
+    }
+
+    /**
+     * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     *
+     **/
+    public enum ShapeAttribute {
+        SmartStorage("SMART_STORAGE"),
+        BlockStorage("BLOCK_STORAGE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ShapeAttribute.class);
+
+        private final String value;
+        private static java.util.Map<String, ShapeAttribute> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ShapeAttribute v : ShapeAttribute.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ShapeAttribute(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ShapeAttribute create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ShapeAttribute', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeAttribute")
+    private final ShapeAttribute shapeAttribute;
+
+    /**
+     * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     *
+     * @return the value
+     **/
+    public ShapeAttribute getShapeAttribute() {
+        return shapeAttribute;
     }
 
     @Override
@@ -2178,6 +2268,7 @@ public final class ExadbVmClusterSummary
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", shapeAttribute=").append(String.valueOf(this.shapeAttribute));
         sb.append(")");
         return sb.toString();
     }
@@ -2245,6 +2336,7 @@ public final class ExadbVmClusterSummary
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.shapeAttribute, other.shapeAttribute)
                 && super.equals(other);
     }
 
@@ -2373,6 +2465,9 @@ public final class ExadbVmClusterSummary
         result =
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shapeAttribute == null ? 43 : this.shapeAttribute.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

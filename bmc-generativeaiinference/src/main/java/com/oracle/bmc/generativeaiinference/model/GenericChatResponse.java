@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
@@ -60,11 +60,38 @@ public final class GenericChatResponse extends BaseChatResponse {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("usage")
+        private Usage usage;
+
+        public Builder usage(Usage usage) {
+            this.usage = usage;
+            this.__explicitlySet__.add("usage");
+            return this;
+        }
+        /**
+         * Specifies the processing type used for serving the request.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceTier")
+        private String serviceTier;
+
+        /**
+         * Specifies the processing type used for serving the request.
+         * @param serviceTier the value to set
+         * @return this builder
+         **/
+        public Builder serviceTier(String serviceTier) {
+            this.serviceTier = serviceTier;
+            this.__explicitlySet__.add("serviceTier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenericChatResponse build() {
-            GenericChatResponse model = new GenericChatResponse(this.timeCreated, this.choices);
+            GenericChatResponse model =
+                    new GenericChatResponse(
+                            this.timeCreated, this.choices, this.usage, this.serviceTier);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +105,12 @@ public final class GenericChatResponse extends BaseChatResponse {
             }
             if (model.wasPropertyExplicitlySet("choices")) {
                 this.choices(model.getChoices());
+            }
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
+            }
+            if (model.wasPropertyExplicitlySet("serviceTier")) {
+                this.serviceTier(model.getServiceTier());
             }
             return this;
         }
@@ -95,10 +128,16 @@ public final class GenericChatResponse extends BaseChatResponse {
     }
 
     @Deprecated
-    public GenericChatResponse(java.util.Date timeCreated, java.util.List<ChatChoice> choices) {
+    public GenericChatResponse(
+            java.util.Date timeCreated,
+            java.util.List<ChatChoice> choices,
+            Usage usage,
+            String serviceTier) {
         super();
         this.timeCreated = timeCreated;
         this.choices = choices;
+        this.usage = usage;
+        this.serviceTier = serviceTier;
     }
 
     /**
@@ -129,6 +168,27 @@ public final class GenericChatResponse extends BaseChatResponse {
         return choices;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("usage")
+    private final Usage usage;
+
+    public Usage getUsage() {
+        return usage;
+    }
+
+    /**
+     * Specifies the processing type used for serving the request.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceTier")
+    private final String serviceTier;
+
+    /**
+     * Specifies the processing type used for serving the request.
+     * @return the value
+     **/
+    public String getServiceTier() {
+        return serviceTier;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -145,6 +205,8 @@ public final class GenericChatResponse extends BaseChatResponse {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", choices=").append(String.valueOf(this.choices));
+        sb.append(", usage=").append(String.valueOf(this.usage));
+        sb.append(", serviceTier=").append(String.valueOf(this.serviceTier));
         sb.append(")");
         return sb.toString();
     }
@@ -161,6 +223,8 @@ public final class GenericChatResponse extends BaseChatResponse {
         GenericChatResponse other = (GenericChatResponse) o;
         return java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.choices, other.choices)
+                && java.util.Objects.equals(this.usage, other.usage)
+                && java.util.Objects.equals(this.serviceTier, other.serviceTier)
                 && super.equals(other);
     }
 
@@ -170,6 +234,8 @@ public final class GenericChatResponse extends BaseChatResponse {
         int result = super.hashCode();
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.choices == null ? 43 : this.choices.hashCode());
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
+        result = (result * PRIME) + (this.serviceTier == null ? 43 : this.serviceTier.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -35,6 +35,7 @@ public final class CreateMountTargetDetails
         "kerberos",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "locks",
         "requestedThroughput"
     })
@@ -51,6 +52,7 @@ public final class CreateMountTargetDetails
             CreateKerberosDetails kerberos,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.List<ResourceLock> locks,
             Long requestedThroughput) {
         super();
@@ -66,6 +68,7 @@ public final class CreateMountTargetDetails
         this.kerberos = kerberos;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.locks = locks;
         this.requestedThroughput = requestedThroughput;
     }
@@ -143,12 +146,23 @@ public final class CreateMountTargetDetails
          * with [RFC 952](https://tools.ietf.org/html/rfc952)
          * and [RFC 1123](https://tools.ietf.org/html/rfc1123).
          * <p>
-         * Note: This attribute value is stored in the [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource,
+         * Note:
+         * <p>
+         * If the IP address is IPv4, this attribute value is stored in the
+         * [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource,
          * not in the {@code mountTarget} resource.
          * To update the {@code hostnameLabel}, use {@code GetMountTarget} to obtain the
          * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's
          * private IPs ({@code privateIpIds}). Then, you can use
          * [UpdatePrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
+         * to update the {@code hostnameLabel} value.
+         * <p>
+         * If the IP address is IPv6, it is stored in the
+         * [Ipv6] (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource
+         * To update the {@code hostnameLabel}, use {@code GetMountTarget} to obtain the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's
+         * IPv6 address ({@code mountTargetIpv6Ids}). Then, you can use
+         * [UpdateIpv6](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6)
          * to update the {@code hostnameLabel} value.
          * <p>
          * For more information, see
@@ -169,12 +183,23 @@ public final class CreateMountTargetDetails
          * with [RFC 952](https://tools.ietf.org/html/rfc952)
          * and [RFC 1123](https://tools.ietf.org/html/rfc1123).
          * <p>
-         * Note: This attribute value is stored in the [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource,
+         * Note:
+         * <p>
+         * If the IP address is IPv4, this attribute value is stored in the
+         * [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource,
          * not in the {@code mountTarget} resource.
          * To update the {@code hostnameLabel}, use {@code GetMountTarget} to obtain the
          * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's
          * private IPs ({@code privateIpIds}). Then, you can use
          * [UpdatePrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
+         * to update the {@code hostnameLabel} value.
+         * <p>
+         * If the IP address is IPv6, it is stored in the
+         * [Ipv6] (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource
+         * To update the {@code hostnameLabel}, use {@code GetMountTarget} to obtain the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's
+         * IPv6 address ({@code mountTargetIpv6Ids}). Then, you can use
+         * [UpdateIpv6](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6)
          * to update the {@code hostnameLabel} value.
          * <p>
          * For more information, see
@@ -340,6 +365,33 @@ public final class CreateMountTargetDetails
             return this;
         }
         /**
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+         * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+         * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * Locks associated with this resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
@@ -394,6 +446,7 @@ public final class CreateMountTargetDetails
                             this.kerberos,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.locks,
                             this.requestedThroughput);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -439,6 +492,9 @@ public final class CreateMountTargetDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
@@ -526,12 +582,23 @@ public final class CreateMountTargetDetails
      * with [RFC 952](https://tools.ietf.org/html/rfc952)
      * and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * <p>
-     * Note: This attribute value is stored in the [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource,
+     * Note:
+     * <p>
+     * If the IP address is IPv4, this attribute value is stored in the
+     * [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource,
      * not in the {@code mountTarget} resource.
      * To update the {@code hostnameLabel}, use {@code GetMountTarget} to obtain the
      * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's
      * private IPs ({@code privateIpIds}). Then, you can use
      * [UpdatePrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
+     * to update the {@code hostnameLabel} value.
+     * <p>
+     * If the IP address is IPv6, it is stored in the
+     * [Ipv6] (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource
+     * To update the {@code hostnameLabel}, use {@code GetMountTarget} to obtain the
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's
+     * IPv6 address ({@code mountTargetIpv6Ids}). Then, you can use
+     * [UpdateIpv6](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6)
      * to update the {@code hostnameLabel} value.
      * <p>
      * For more information, see
@@ -552,12 +619,23 @@ public final class CreateMountTargetDetails
      * with [RFC 952](https://tools.ietf.org/html/rfc952)
      * and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * <p>
-     * Note: This attribute value is stored in the [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource,
+     * Note:
+     * <p>
+     * If the IP address is IPv4, this attribute value is stored in the
+     * [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource,
      * not in the {@code mountTarget} resource.
      * To update the {@code hostnameLabel}, use {@code GetMountTarget} to obtain the
      * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's
      * private IPs ({@code privateIpIds}). Then, you can use
      * [UpdatePrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
+     * to update the {@code hostnameLabel} value.
+     * <p>
+     * If the IP address is IPv6, it is stored in the
+     * [Ipv6] (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource
+     * To update the {@code hostnameLabel}, use {@code GetMountTarget} to obtain the
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's
+     * IPv6 address ({@code mountTargetIpv6Ids}). Then, you can use
+     * [UpdateIpv6](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6)
      * to update the {@code hostnameLabel} value.
      * <p>
      * For more information, see
@@ -704,6 +782,30 @@ public final class CreateMountTargetDetails
     }
 
     /**
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+     * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+     * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * Locks associated with this resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
@@ -761,6 +863,7 @@ public final class CreateMountTargetDetails
         sb.append(", kerberos=").append(String.valueOf(this.kerberos));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", requestedThroughput=").append(String.valueOf(this.requestedThroughput));
         sb.append(")");
@@ -789,6 +892,7 @@ public final class CreateMountTargetDetails
                 && java.util.Objects.equals(this.kerberos, other.kerberos)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.requestedThroughput, other.requestedThroughput)
                 && super.equals(other);
@@ -818,6 +922,11 @@ public final class CreateMountTargetDetails
         result = (result * PRIME) + (this.kerberos == null ? 43 : this.kerberos.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result =
                 (result * PRIME)

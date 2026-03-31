@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -45,6 +45,38 @@ public final class DatabaseSqlWatchFeatureDetails extends DatabaseFeatureDetails
             this.__explicitlySet__.add("connectorDetails");
             return this;
         }
+        /**
+         * Indicates whether SQL Watch should be enabled for all the current pluggable databases in the container database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("canEnableAllCurrentPdbs")
+        private Boolean canEnableAllCurrentPdbs;
+
+        /**
+         * Indicates whether SQL Watch should be enabled for all the current pluggable databases in the container database.
+         * @param canEnableAllCurrentPdbs the value to set
+         * @return this builder
+         **/
+        public Builder canEnableAllCurrentPdbs(Boolean canEnableAllCurrentPdbs) {
+            this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
+            this.__explicitlySet__.add("canEnableAllCurrentPdbs");
+            return this;
+        }
+        /**
+         * Indicates whether SQL Watch should be enabled automatically for all the pluggable databases in the container database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoEnablePluggableDatabase")
+        private Boolean isAutoEnablePluggableDatabase;
+
+        /**
+         * Indicates whether SQL Watch should be enabled automatically for all the pluggable databases in the container database.
+         * @param isAutoEnablePluggableDatabase the value to set
+         * @return this builder
+         **/
+        public Builder isAutoEnablePluggableDatabase(Boolean isAutoEnablePluggableDatabase) {
+            this.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
+            this.__explicitlySet__.add("isAutoEnablePluggableDatabase");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -52,7 +84,10 @@ public final class DatabaseSqlWatchFeatureDetails extends DatabaseFeatureDetails
         public DatabaseSqlWatchFeatureDetails build() {
             DatabaseSqlWatchFeatureDetails model =
                     new DatabaseSqlWatchFeatureDetails(
-                            this.databaseConnectionDetails, this.connectorDetails);
+                            this.databaseConnectionDetails,
+                            this.connectorDetails,
+                            this.canEnableAllCurrentPdbs,
+                            this.isAutoEnablePluggableDatabase);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -66,6 +101,12 @@ public final class DatabaseSqlWatchFeatureDetails extends DatabaseFeatureDetails
             }
             if (model.wasPropertyExplicitlySet("connectorDetails")) {
                 this.connectorDetails(model.getConnectorDetails());
+            }
+            if (model.wasPropertyExplicitlySet("canEnableAllCurrentPdbs")) {
+                this.canEnableAllCurrentPdbs(model.getCanEnableAllCurrentPdbs());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoEnablePluggableDatabase")) {
+                this.isAutoEnablePluggableDatabase(model.getIsAutoEnablePluggableDatabase());
             }
             return this;
         }
@@ -85,8 +126,40 @@ public final class DatabaseSqlWatchFeatureDetails extends DatabaseFeatureDetails
     @Deprecated
     public DatabaseSqlWatchFeatureDetails(
             DatabaseConnectionDetails databaseConnectionDetails,
-            ConnectorDetails connectorDetails) {
+            ConnectorDetails connectorDetails,
+            Boolean canEnableAllCurrentPdbs,
+            Boolean isAutoEnablePluggableDatabase) {
         super(databaseConnectionDetails, connectorDetails);
+        this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
+        this.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
+    }
+
+    /**
+     * Indicates whether SQL Watch should be enabled for all the current pluggable databases in the container database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("canEnableAllCurrentPdbs")
+    private final Boolean canEnableAllCurrentPdbs;
+
+    /**
+     * Indicates whether SQL Watch should be enabled for all the current pluggable databases in the container database.
+     * @return the value
+     **/
+    public Boolean getCanEnableAllCurrentPdbs() {
+        return canEnableAllCurrentPdbs;
+    }
+
+    /**
+     * Indicates whether SQL Watch should be enabled automatically for all the pluggable databases in the container database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoEnablePluggableDatabase")
+    private final Boolean isAutoEnablePluggableDatabase;
+
+    /**
+     * Indicates whether SQL Watch should be enabled automatically for all the pluggable databases in the container database.
+     * @return the value
+     **/
+    public Boolean getIsAutoEnablePluggableDatabase() {
+        return isAutoEnablePluggableDatabase;
     }
 
     @Override
@@ -103,6 +176,10 @@ public final class DatabaseSqlWatchFeatureDetails extends DatabaseFeatureDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseSqlWatchFeatureDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", canEnableAllCurrentPdbs=")
+                .append(String.valueOf(this.canEnableAllCurrentPdbs));
+        sb.append(", isAutoEnablePluggableDatabase=")
+                .append(String.valueOf(this.isAutoEnablePluggableDatabase));
         sb.append(")");
         return sb.toString();
     }
@@ -117,13 +194,26 @@ public final class DatabaseSqlWatchFeatureDetails extends DatabaseFeatureDetails
         }
 
         DatabaseSqlWatchFeatureDetails other = (DatabaseSqlWatchFeatureDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.canEnableAllCurrentPdbs, other.canEnableAllCurrentPdbs)
+                && java.util.Objects.equals(
+                        this.isAutoEnablePluggableDatabase, other.isAutoEnablePluggableDatabase)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.canEnableAllCurrentPdbs == null
+                                ? 43
+                                : this.canEnableAllCurrentPdbs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoEnablePluggableDatabase == null
+                                ? 43
+                                : this.isAutoEnablePluggableDatabase.hashCode());
         return result;
     }
 }

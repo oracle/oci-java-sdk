@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration;
@@ -7,6 +7,8 @@ package com.oracle.bmc.databasemigration;
 import com.oracle.bmc.databasemigration.internal.http.*;
 import com.oracle.bmc.databasemigration.requests.*;
 import com.oracle.bmc.databasemigration.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for DatabaseMigration service. <br/>
@@ -28,7 +30,7 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATABASEMIGRATION")
+                    .serviceName(DatabaseMigrationClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://odms.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -299,7 +310,7 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
         if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
                     com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
-                            "DatabaseMigrationAsyncClient", "getJobOutputContent"));
+                            "DatabaseMigrationAsyncClient", "getJobOutputContent,getScript"));
         }
     }
 
@@ -406,12 +417,21 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -441,15 +461,7 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -506,6 +518,58 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddAssessmentObjectsResponse> addAssessmentObjects(
+            AddAssessmentObjectsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddAssessmentObjectsRequest, AddAssessmentObjectsResponse>
+                    handler) {
+        LOG.trace("Called async addAssessmentObjects");
+        final AddAssessmentObjectsRequest interceptedRequest =
+                AddAssessmentObjectsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddAssessmentObjectsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "AddAssessmentObjects",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Assessment/AddAssessmentObjects");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddAssessmentObjectsResponse>
+                transformer =
+                        AddAssessmentObjectsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddAssessmentObjectsRequest, AddAssessmentObjectsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddAssessmentObjectsRequest, AddAssessmentObjectsResponse>,
+                        java.util.concurrent.Future<AddAssessmentObjectsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddAssessmentObjectsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddAssessmentObjectsRequest, AddAssessmentObjectsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AddMigrationObjectsResponse> addMigrationObjects(
             AddMigrationObjectsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -545,6 +609,63 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     AddMigrationObjectsRequest, AddMigrationObjectsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeAssessmentCompartmentResponse>
+            changeAssessmentCompartment(
+                    ChangeAssessmentCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAssessmentCompartmentRequest,
+                                    ChangeAssessmentCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeAssessmentCompartment");
+        final ChangeAssessmentCompartmentRequest interceptedRequest =
+                ChangeAssessmentCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeAssessmentCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ChangeAssessmentCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Assessment/ChangeAssessmentCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeAssessmentCompartmentResponse>
+                transformer =
+                        ChangeAssessmentCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeAssessmentCompartmentRequest, ChangeAssessmentCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeAssessmentCompartmentRequest,
+                                ChangeAssessmentCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeAssessmentCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeAssessmentCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeAssessmentCompartmentRequest, ChangeAssessmentCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -672,6 +793,58 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CloneAssessmentResponse> cloneAssessment(
+            CloneAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CloneAssessmentRequest, CloneAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async cloneAssessment");
+        final CloneAssessmentRequest interceptedRequest =
+                CloneAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CloneAssessmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "CloneAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Assessment/CloneAssessment");
+        final java.util.function.Function<javax.ws.rs.core.Response, CloneAssessmentResponse>
+                transformer =
+                        CloneAssessmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CloneAssessmentRequest, CloneAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CloneAssessmentRequest, CloneAssessmentResponse>,
+                        java.util.concurrent.Future<CloneAssessmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCloneAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CloneAssessmentRequest, CloneAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CloneMigrationResponse> cloneMigration(
             CloneMigrationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -723,6 +896,55 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CollectTracesResponse> collectTraces(
+            CollectTracesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CollectTracesRequest, CollectTracesResponse>
+                    handler) {
+        LOG.trace("Called async collectTraces");
+        final CollectTracesRequest interceptedRequest =
+                CollectTracesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CollectTracesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "CollectTraces",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/CollectTraces");
+        final java.util.function.Function<javax.ws.rs.core.Response, CollectTracesResponse>
+                transformer =
+                        CollectTracesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CollectTracesRequest, CollectTracesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CollectTracesRequest, CollectTracesResponse>,
+                        java.util.concurrent.Future<CollectTracesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCollectTracesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CollectTracesRequest, CollectTracesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ConnectionDiagnosticsResponse> connectionDiagnostics(
             ConnectionDiagnosticsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -758,6 +980,58 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ConnectionDiagnosticsRequest, ConnectionDiagnosticsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAssessmentResponse> createAssessment(
+            CreateAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateAssessmentRequest, CreateAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async createAssessment");
+        final CreateAssessmentRequest interceptedRequest =
+                CreateAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAssessmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "CreateAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Assessment/CreateAssessment");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateAssessmentResponse>
+                transformer =
+                        CreateAssessmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateAssessmentRequest, CreateAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateAssessmentRequest, CreateAssessmentResponse>,
+                        java.util.concurrent.Future<CreateAssessmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateAssessmentRequest, CreateAssessmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -916,6 +1190,52 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateParameterFileVersionRequest, CreateParameterFileVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAssessmentResponse> deleteAssessment(
+            DeleteAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAssessmentRequest, DeleteAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async deleteAssessment");
+        final DeleteAssessmentRequest interceptedRequest =
+                DeleteAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAssessmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "DeleteAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Assessment/DeleteAssessment");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteAssessmentResponse>
+                transformer =
+                        DeleteAssessmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteAssessmentRequest, DeleteAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteAssessmentRequest, DeleteAssessmentResponse>,
+                        java.util.concurrent.Future<DeleteAssessmentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteAssessmentRequest, DeleteAssessmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1207,6 +1527,140 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetAssessmentResponse> getAssessment(
+            GetAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetAssessmentRequest, GetAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async getAssessment");
+        final GetAssessmentRequest interceptedRequest =
+                GetAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAssessmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "GetAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Assessment/GetAssessment");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAssessmentResponse>
+                transformer =
+                        GetAssessmentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetAssessmentRequest, GetAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAssessmentRequest, GetAssessmentResponse>,
+                        java.util.concurrent.Future<GetAssessmentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAssessmentRequest, GetAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssessorResponse> getAssessor(
+            GetAssessorRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetAssessorRequest, GetAssessorResponse>
+                    handler) {
+        LOG.trace("Called async getAssessor");
+        final GetAssessorRequest interceptedRequest =
+                GetAssessorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAssessorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "GetAssessor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Assessor/GetAssessor");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAssessorResponse>
+                transformer =
+                        GetAssessorConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetAssessorRequest, GetAssessorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAssessorRequest, GetAssessorResponse>,
+                        java.util.concurrent.Future<GetAssessorResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAssessorRequest, GetAssessorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssessorCheckResponse> getAssessorCheck(
+            GetAssessorCheckRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAssessorCheckRequest, GetAssessorCheckResponse>
+                    handler) {
+        LOG.trace("Called async getAssessorCheck");
+        final GetAssessorCheckRequest interceptedRequest =
+                GetAssessorCheckConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAssessorCheckConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "GetAssessorCheck",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/AssessorCheck/GetAssessorCheck");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAssessorCheckResponse>
+                transformer =
+                        GetAssessorCheckConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetAssessorCheckRequest, GetAssessorCheckResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAssessorCheckRequest, GetAssessorCheckResponse>,
+                        java.util.concurrent.Future<GetAssessorCheckResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAssessorCheckRequest, GetAssessorCheckResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectionResponse> getConnection(
             GetConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
@@ -1429,6 +1883,46 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetScriptResponse> getScript(
+            GetScriptRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetScriptRequest, GetScriptResponse>
+                    handler) {
+        LOG.trace("Called async getScript");
+        final GetScriptRequest interceptedRequest = GetScriptConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetScriptConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration", "GetScript", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetScriptResponse>
+                transformer =
+                        GetScriptConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetScriptRequest, GetScriptResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetScriptRequest, GetScriptResponse>,
+                        java.util.concurrent.Future<GetScriptResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetScriptRequest, GetScriptResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1461,6 +1955,384 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdvisorReportCheckObjectsResponse>
+            listAdvisorReportCheckObjects(
+                    ListAdvisorReportCheckObjectsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAdvisorReportCheckObjectsRequest,
+                                    ListAdvisorReportCheckObjectsResponse>
+                            handler) {
+        LOG.trace("Called async listAdvisorReportCheckObjects");
+        final ListAdvisorReportCheckObjectsRequest interceptedRequest =
+                ListAdvisorReportCheckObjectsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAdvisorReportCheckObjectsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListAdvisorReportCheckObjects",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/ListAdvisorReportCheckObjects");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAdvisorReportCheckObjectsResponse>
+                transformer =
+                        ListAdvisorReportCheckObjectsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAdvisorReportCheckObjectsRequest, ListAdvisorReportCheckObjectsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAdvisorReportCheckObjectsRequest,
+                                ListAdvisorReportCheckObjectsResponse>,
+                        java.util.concurrent.Future<ListAdvisorReportCheckObjectsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAdvisorReportCheckObjectsRequest, ListAdvisorReportCheckObjectsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdvisorReportChecksResponse> listAdvisorReportChecks(
+            ListAdvisorReportChecksRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAdvisorReportChecksRequest, ListAdvisorReportChecksResponse>
+                    handler) {
+        LOG.trace("Called async listAdvisorReportChecks");
+        final ListAdvisorReportChecksRequest interceptedRequest =
+                ListAdvisorReportChecksConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAdvisorReportChecksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListAdvisorReportChecks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/ListAdvisorReportChecks");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAdvisorReportChecksResponse>
+                transformer =
+                        ListAdvisorReportChecksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAdvisorReportChecksRequest, ListAdvisorReportChecksResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAdvisorReportChecksRequest, ListAdvisorReportChecksResponse>,
+                        java.util.concurrent.Future<ListAdvisorReportChecksResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAdvisorReportChecksRequest, ListAdvisorReportChecksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAffectedObjectsResponse> listAffectedObjects(
+            ListAffectedObjectsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAffectedObjectsRequest, ListAffectedObjectsResponse>
+                    handler) {
+        LOG.trace("Called async listAffectedObjects");
+        final ListAffectedObjectsRequest interceptedRequest =
+                ListAffectedObjectsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAffectedObjectsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListAffectedObjects",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/AssessorCheck/ListAffectedObjects");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAffectedObjectsResponse>
+                transformer =
+                        ListAffectedObjectsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAffectedObjectsRequest, ListAffectedObjectsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAffectedObjectsRequest, ListAffectedObjectsResponse>,
+                        java.util.concurrent.Future<ListAffectedObjectsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAffectedObjectsRequest, ListAffectedObjectsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssessmentObjectTypesResponse> listAssessmentObjectTypes(
+            ListAssessmentObjectTypesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAssessmentObjectTypesRequest, ListAssessmentObjectTypesResponse>
+                    handler) {
+        LOG.trace("Called async listAssessmentObjectTypes");
+        final ListAssessmentObjectTypesRequest interceptedRequest =
+                ListAssessmentObjectTypesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAssessmentObjectTypesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListAssessmentObjectTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/AssessmentObjectTypeSummary/ListAssessmentObjectTypes");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAssessmentObjectTypesResponse>
+                transformer =
+                        ListAssessmentObjectTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAssessmentObjectTypesRequest, ListAssessmentObjectTypesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAssessmentObjectTypesRequest,
+                                ListAssessmentObjectTypesResponse>,
+                        java.util.concurrent.Future<ListAssessmentObjectTypesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAssessmentObjectTypesRequest, ListAssessmentObjectTypesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssessmentObjectsResponse> listAssessmentObjects(
+            ListAssessmentObjectsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAssessmentObjectsRequest, ListAssessmentObjectsResponse>
+                    handler) {
+        LOG.trace("Called async listAssessmentObjects");
+        final ListAssessmentObjectsRequest interceptedRequest =
+                ListAssessmentObjectsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAssessmentObjectsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListAssessmentObjects",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/AssessmentObjectCollection/ListAssessmentObjects");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAssessmentObjectsResponse>
+                transformer =
+                        ListAssessmentObjectsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAssessmentObjectsRequest, ListAssessmentObjectsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAssessmentObjectsRequest, ListAssessmentObjectsResponse>,
+                        java.util.concurrent.Future<ListAssessmentObjectsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAssessmentObjectsRequest, ListAssessmentObjectsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssessmentsResponse> listAssessments(
+            ListAssessmentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAssessmentsRequest, ListAssessmentsResponse>
+                    handler) {
+        LOG.trace("Called async listAssessments");
+        final ListAssessmentsRequest interceptedRequest =
+                ListAssessmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAssessmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListAssessments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/AssessmentSummary/ListAssessments");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAssessmentsResponse>
+                transformer =
+                        ListAssessmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAssessmentsRequest, ListAssessmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAssessmentsRequest, ListAssessmentsResponse>,
+                        java.util.concurrent.Future<ListAssessmentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAssessmentsRequest, ListAssessmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssessorChecksResponse> listAssessorChecks(
+            ListAssessorChecksRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAssessorChecksRequest, ListAssessorChecksResponse>
+                    handler) {
+        LOG.trace("Called async listAssessorChecks");
+        final ListAssessorChecksRequest interceptedRequest =
+                ListAssessorChecksConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAssessorChecksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListAssessorChecks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/AssessorCheckSummary/ListAssessorChecks");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAssessorChecksResponse>
+                transformer =
+                        ListAssessorChecksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAssessorChecksRequest, ListAssessorChecksResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAssessorChecksRequest, ListAssessorChecksResponse>,
+                        java.util.concurrent.Future<ListAssessorChecksResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAssessorChecksRequest, ListAssessorChecksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssessorsResponse> listAssessors(
+            ListAssessorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListAssessorsRequest, ListAssessorsResponse>
+                    handler) {
+        LOG.trace("Called async listAssessors");
+        final ListAssessorsRequest interceptedRequest =
+                ListAssessorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAssessorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListAssessors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/AssessorSummary/ListAssessors");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAssessorsResponse>
+                transformer =
+                        ListAssessorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAssessorsRequest, ListAssessorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAssessorsRequest, ListAssessorsResponse>,
+                        java.util.concurrent.Future<ListAssessorsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAssessorsRequest, ListAssessorsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1507,6 +2379,57 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListConnectionsRequest, ListConnectionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatabaseConnectionTypeResponse>
+            listDatabaseConnectionType(
+                    ListDatabaseConnectionTypeRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseConnectionTypeRequest,
+                                    ListDatabaseConnectionTypeResponse>
+                            handler) {
+        LOG.trace("Called async listDatabaseConnectionType");
+        final ListDatabaseConnectionTypeRequest interceptedRequest =
+                ListDatabaseConnectionTypeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseConnectionTypeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListDatabaseConnectionType",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DatabaseConnectionTypeSummary/ListDatabaseConnectionType");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDatabaseConnectionTypeResponse>
+                transformer =
+                        ListDatabaseConnectionTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDatabaseConnectionTypeRequest, ListDatabaseConnectionTypeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDatabaseConnectionTypeRequest,
+                                ListDatabaseConnectionTypeResponse>,
+                        java.util.concurrent.Future<ListDatabaseConnectionTypeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDatabaseConnectionTypeRequest, ListDatabaseConnectionTypeResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2084,6 +3007,222 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PerformAssessorActionResponse> performAssessorAction(
+            PerformAssessorActionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PerformAssessorActionRequest, PerformAssessorActionResponse>
+                    handler) {
+        LOG.trace("Called async performAssessorAction");
+        final PerformAssessorActionRequest interceptedRequest =
+                PerformAssessorActionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PerformAssessorActionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "PerformAssessorAction",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Assessment/PerformAssessorAction");
+        final java.util.function.Function<javax.ws.rs.core.Response, PerformAssessorActionResponse>
+                transformer =
+                        PerformAssessorActionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PerformAssessorActionRequest, PerformAssessorActionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PerformAssessorActionRequest, PerformAssessorActionResponse>,
+                        java.util.concurrent.Future<PerformAssessorActionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPerformAssessorActionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PerformAssessorActionRequest, PerformAssessorActionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PerformAssessorActionDownloadSqlResponse>
+            performAssessorActionDownloadSql(
+                    PerformAssessorActionDownloadSqlRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PerformAssessorActionDownloadSqlRequest,
+                                    PerformAssessorActionDownloadSqlResponse>
+                            handler) {
+        LOG.trace("Called async performAssessorActionDownloadSql");
+        final PerformAssessorActionDownloadSqlRequest interceptedRequest =
+                PerformAssessorActionDownloadSqlConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PerformAssessorActionDownloadSqlConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "PerformAssessorActionDownloadSql",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Assessment/PerformAssessorActionDownloadSql");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PerformAssessorActionDownloadSqlResponse>
+                transformer =
+                        PerformAssessorActionDownloadSqlConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PerformAssessorActionDownloadSqlRequest,
+                        PerformAssessorActionDownloadSqlResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PerformAssessorActionDownloadSqlRequest,
+                                PerformAssessorActionDownloadSqlResponse>,
+                        java.util.concurrent.Future<PerformAssessorActionDownloadSqlResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PerformAssessorActionDownloadSqlRequest,
+                    PerformAssessorActionDownloadSqlResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PerformAssessorCheckActionResponse>
+            performAssessorCheckAction(
+                    PerformAssessorCheckActionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PerformAssessorCheckActionRequest,
+                                    PerformAssessorCheckActionResponse>
+                            handler) {
+        LOG.trace("Called async performAssessorCheckAction");
+        final PerformAssessorCheckActionRequest interceptedRequest =
+                PerformAssessorCheckActionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PerformAssessorCheckActionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "PerformAssessorCheckAction",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Assessment/PerformAssessorCheckAction");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PerformAssessorCheckActionResponse>
+                transformer =
+                        PerformAssessorCheckActionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PerformAssessorCheckActionRequest, PerformAssessorCheckActionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PerformAssessorCheckActionRequest,
+                                PerformAssessorCheckActionResponse>,
+                        java.util.concurrent.Future<PerformAssessorCheckActionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPerformAssessorCheckActionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PerformAssessorCheckActionRequest, PerformAssessorCheckActionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveAssessmentObjectsResponse> removeAssessmentObjects(
+            RemoveAssessmentObjectsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveAssessmentObjectsRequest, RemoveAssessmentObjectsResponse>
+                    handler) {
+        LOG.trace("Called async removeAssessmentObjects");
+        final RemoveAssessmentObjectsRequest interceptedRequest =
+                RemoveAssessmentObjectsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveAssessmentObjectsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "RemoveAssessmentObjects",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Assessment/RemoveAssessmentObjects");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveAssessmentObjectsResponse>
+                transformer =
+                        RemoveAssessmentObjectsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveAssessmentObjectsRequest, RemoveAssessmentObjectsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveAssessmentObjectsRequest, RemoveAssessmentObjectsResponse>,
+                        java.util.concurrent.Future<RemoveAssessmentObjectsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveAssessmentObjectsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveAssessmentObjectsRequest, RemoveAssessmentObjectsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveMigrationObjectsResponse> removeMigrationObjects(
             RemoveMigrationObjectsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2314,6 +3453,224 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     SuspendJobRequest, SuspendJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAdvisorReportCheckResponse> updateAdvisorReportCheck(
+            UpdateAdvisorReportCheckRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAdvisorReportCheckRequest, UpdateAdvisorReportCheckResponse>
+                    handler) {
+        LOG.trace("Called async updateAdvisorReportCheck");
+        final UpdateAdvisorReportCheckRequest interceptedRequest =
+                UpdateAdvisorReportCheckConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAdvisorReportCheckConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "UpdateAdvisorReportCheck",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateAdvisorReportCheckResponse>
+                transformer =
+                        UpdateAdvisorReportCheckConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateAdvisorReportCheckRequest, UpdateAdvisorReportCheckResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAdvisorReportCheckRequest, UpdateAdvisorReportCheckResponse>,
+                        java.util.concurrent.Future<UpdateAdvisorReportCheckResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAdvisorReportCheck(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAdvisorReportCheckRequest, UpdateAdvisorReportCheckResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAdvisorReportCheckObjectsResponse>
+            updateAdvisorReportCheckObjects(
+                    UpdateAdvisorReportCheckObjectsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAdvisorReportCheckObjectsRequest,
+                                    UpdateAdvisorReportCheckObjectsResponse>
+                            handler) {
+        LOG.trace("Called async updateAdvisorReportCheckObjects");
+        final UpdateAdvisorReportCheckObjectsRequest interceptedRequest =
+                UpdateAdvisorReportCheckObjectsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAdvisorReportCheckObjectsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "UpdateAdvisorReportCheckObjects",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/AdvisorReportCheckCollection/UpdateAdvisorReportCheckObjects");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateAdvisorReportCheckObjectsResponse>
+                transformer =
+                        UpdateAdvisorReportCheckObjectsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateAdvisorReportCheckObjectsRequest,
+                        UpdateAdvisorReportCheckObjectsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAdvisorReportCheckObjectsRequest,
+                                UpdateAdvisorReportCheckObjectsResponse>,
+                        java.util.concurrent.Future<UpdateAdvisorReportCheckObjectsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAdvisorReportCheckObjectsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAdvisorReportCheckObjectsRequest,
+                    UpdateAdvisorReportCheckObjectsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAssessmentResponse> updateAssessment(
+            UpdateAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAssessmentRequest, UpdateAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async updateAssessment");
+        final UpdateAssessmentRequest interceptedRequest =
+                UpdateAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAssessmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "UpdateAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Assessment/UpdateAssessment");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateAssessmentResponse>
+                transformer =
+                        UpdateAssessmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateAssessmentRequest, UpdateAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAssessmentRequest, UpdateAssessmentResponse>,
+                        java.util.concurrent.Future<UpdateAssessmentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAssessmentRequest, UpdateAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCheckActionUpdateObjectResponse>
+            updateCheckActionUpdateObject(
+                    UpdateCheckActionUpdateObjectRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCheckActionUpdateObjectRequest,
+                                    UpdateCheckActionUpdateObjectResponse>
+                            handler) {
+        LOG.trace("Called async updateCheckActionUpdateObject");
+        final UpdateCheckActionUpdateObjectRequest interceptedRequest =
+                UpdateCheckActionUpdateObjectConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCheckActionUpdateObjectConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "UpdateCheckActionUpdateObject",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/AdvisorReportCheckCollection/UpdateCheckActionUpdateObject");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateCheckActionUpdateObjectResponse>
+                transformer =
+                        UpdateCheckActionUpdateObjectConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCheckActionUpdateObjectRequest, UpdateCheckActionUpdateObjectResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCheckActionUpdateObjectRequest,
+                                UpdateCheckActionUpdateObjectResponse>,
+                        java.util.concurrent.Future<UpdateCheckActionUpdateObjectResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCheckActionUpdateObjectDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCheckActionUpdateObjectRequest, UpdateCheckActionUpdateObjectResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

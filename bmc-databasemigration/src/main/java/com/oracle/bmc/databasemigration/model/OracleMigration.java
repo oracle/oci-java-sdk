@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -103,6 +103,15 @@ public final class OracleMigration extends Migration {
         public Builder executingJobId(String executingJobId) {
             this.executingJobId = executingJobId;
             this.__explicitlySet__.add("executingJobId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("assessmentId")
+        private String assessmentId;
+
+        public Builder assessmentId(String assessmentId) {
+            this.assessmentId = assessmentId;
+            this.__explicitlySet__.add("assessmentId");
             return this;
         }
 
@@ -242,6 +251,22 @@ public final class OracleMigration extends Migration {
             return this;
         }
         /**
+         * The OCID of the resource being referenced.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceStandbyDatabaseConnectionId")
+        private String sourceStandbyDatabaseConnectionId;
+
+        /**
+         * The OCID of the resource being referenced.
+         * @param sourceStandbyDatabaseConnectionId the value to set
+         * @return this builder
+         **/
+        public Builder sourceStandbyDatabaseConnectionId(String sourceStandbyDatabaseConnectionId) {
+            this.sourceStandbyDatabaseConnectionId = sourceStandbyDatabaseConnectionId;
+            this.__explicitlySet__.add("sourceStandbyDatabaseConnectionId");
+            return this;
+        }
+        /**
          * List of Migration Parameter objects.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("advancedParameters")
@@ -274,6 +299,7 @@ public final class OracleMigration extends Migration {
                             this.sourceDatabaseConnectionId,
                             this.targetDatabaseConnectionId,
                             this.executingJobId,
+                            this.assessmentId,
                             this.timeCreated,
                             this.timeUpdated,
                             this.timeLastMigration,
@@ -288,6 +314,7 @@ public final class OracleMigration extends Migration {
                             this.hubDetails,
                             this.ggsDetails,
                             this.sourceContainerDatabaseConnectionId,
+                            this.sourceStandbyDatabaseConnectionId,
                             this.advancedParameters);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -323,6 +350,9 @@ public final class OracleMigration extends Migration {
             }
             if (model.wasPropertyExplicitlySet("executingJobId")) {
                 this.executingJobId(model.getExecutingJobId());
+            }
+            if (model.wasPropertyExplicitlySet("assessmentId")) {
+                this.assessmentId(model.getAssessmentId());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -367,6 +397,10 @@ public final class OracleMigration extends Migration {
                 this.sourceContainerDatabaseConnectionId(
                         model.getSourceContainerDatabaseConnectionId());
             }
+            if (model.wasPropertyExplicitlySet("sourceStandbyDatabaseConnectionId")) {
+                this.sourceStandbyDatabaseConnectionId(
+                        model.getSourceStandbyDatabaseConnectionId());
+            }
             if (model.wasPropertyExplicitlySet("advancedParameters")) {
                 this.advancedParameters(model.getAdvancedParameters());
             }
@@ -396,6 +430,7 @@ public final class OracleMigration extends Migration {
             String sourceDatabaseConnectionId,
             String targetDatabaseConnectionId,
             String executingJobId,
+            String assessmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeLastMigration,
@@ -410,6 +445,7 @@ public final class OracleMigration extends Migration {
             GoldenGateHubDetails hubDetails,
             OracleGgsDeploymentDetails ggsDetails,
             String sourceContainerDatabaseConnectionId,
+            String sourceStandbyDatabaseConnectionId,
             java.util.List<MigrationParameterDetails> advancedParameters) {
         super(
                 id,
@@ -421,6 +457,7 @@ public final class OracleMigration extends Migration {
                 sourceDatabaseConnectionId,
                 targetDatabaseConnectionId,
                 executingJobId,
+                assessmentId,
                 timeCreated,
                 timeUpdated,
                 timeLastMigration,
@@ -435,6 +472,7 @@ public final class OracleMigration extends Migration {
         this.hubDetails = hubDetails;
         this.ggsDetails = ggsDetails;
         this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
+        this.sourceStandbyDatabaseConnectionId = sourceStandbyDatabaseConnectionId;
         this.advancedParameters = advancedParameters;
     }
 
@@ -488,6 +526,20 @@ public final class OracleMigration extends Migration {
     }
 
     /**
+     * The OCID of the resource being referenced.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceStandbyDatabaseConnectionId")
+    private final String sourceStandbyDatabaseConnectionId;
+
+    /**
+     * The OCID of the resource being referenced.
+     * @return the value
+     **/
+    public String getSourceStandbyDatabaseConnectionId() {
+        return sourceStandbyDatabaseConnectionId;
+    }
+
+    /**
      * List of Migration Parameter objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("advancedParameters")
@@ -523,6 +575,8 @@ public final class OracleMigration extends Migration {
         sb.append(", ggsDetails=").append(String.valueOf(this.ggsDetails));
         sb.append(", sourceContainerDatabaseConnectionId=")
                 .append(String.valueOf(this.sourceContainerDatabaseConnectionId));
+        sb.append(", sourceStandbyDatabaseConnectionId=")
+                .append(String.valueOf(this.sourceStandbyDatabaseConnectionId));
         sb.append(", advancedParameters=").append(String.valueOf(this.advancedParameters));
         sb.append(")");
         return sb.toString();
@@ -547,6 +601,9 @@ public final class OracleMigration extends Migration {
                 && java.util.Objects.equals(
                         this.sourceContainerDatabaseConnectionId,
                         other.sourceContainerDatabaseConnectionId)
+                && java.util.Objects.equals(
+                        this.sourceStandbyDatabaseConnectionId,
+                        other.sourceStandbyDatabaseConnectionId)
                 && java.util.Objects.equals(this.advancedParameters, other.advancedParameters)
                 && super.equals(other);
     }
@@ -575,6 +632,11 @@ public final class OracleMigration extends Migration {
                         + (this.sourceContainerDatabaseConnectionId == null
                                 ? 43
                                 : this.sourceContainerDatabaseConnectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceStandbyDatabaseConnectionId == null
+                                ? 43
+                                : this.sourceStandbyDatabaseConnectionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.advancedParameters == null

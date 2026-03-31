@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -141,6 +141,17 @@ public class ListAuditPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     public String getTargetId() {
         return targetId;
+    }
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    private String targetDatabaseGroupId;
+
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
     }
     /**
      * The current state of the audit policy.
@@ -406,6 +417,21 @@ public class ListAuditPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
+         * A filter to return the target database group that matches the specified OCID.
+         */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
          * The current state of the audit policy.
          */
         private com.oracle.bmc.datasafe.model.AuditPolicyLifecycleState lifecycleState = null;
@@ -522,6 +548,7 @@ public class ListAuditPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             limit(o.getLimit());
             page(o.getPage());
             targetId(o.getTargetId());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             lifecycleState(o.getLifecycleState());
             auditPolicyId(o.getAuditPolicyId());
             sortOrder(o.getSortOrder());
@@ -566,13 +593,14 @@ public class ListAuditPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             request.limit = limit;
             request.page = page;
             request.targetId = targetId;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             request.lifecycleState = lifecycleState;
             request.auditPolicyId = auditPolicyId;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAuditPoliciesRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, limit, page, targetId, lifecycleState, auditPolicyId, sortOrder, sortBy, opcRequestId);
+            // new ListAuditPoliciesRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, limit, page, targetId, targetDatabaseGroupId, lifecycleState, auditPolicyId, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -589,6 +617,7 @@ public class ListAuditPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
                 .limit(limit)
                 .page(page)
                 .targetId(targetId)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
                 .lifecycleState(lifecycleState)
                 .auditPolicyId(auditPolicyId)
                 .sortOrder(sortOrder)
@@ -616,6 +645,7 @@ public class ListAuditPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",auditPolicyId=").append(String.valueOf(this.auditPolicyId));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -644,6 +674,7 @@ public class ListAuditPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.auditPolicyId, other.auditPolicyId)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -668,6 +699,11 @@ public class ListAuditPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

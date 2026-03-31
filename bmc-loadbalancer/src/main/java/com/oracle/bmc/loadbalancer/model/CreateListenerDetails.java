@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -110,8 +110,9 @@ public final class CreateListenerDetails
             return this;
         }
         /**
-         * The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC.
-         * You can also use the {@link #listProtocols(ListProtocolsRequest) listProtocols} operation to get a list of valid protocols.
+         * The protocol on which the listener accepts connection requests.
+         * To get a list of valid protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols}
+         * operation.
          * <p>
          * Example: {@code HTTP}
          *
@@ -120,8 +121,9 @@ public final class CreateListenerDetails
         private String protocol;
 
         /**
-         * The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC.
-         * You can also use the {@link #listProtocols(ListProtocolsRequest) listProtocols} operation to get a list of valid protocols.
+         * The protocol on which the listener accepts connection requests.
+         * To get a list of valid protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols}
+         * operation.
          * <p>
          * Example: {@code HTTP}
          *
@@ -374,8 +376,9 @@ public final class CreateListenerDetails
     }
 
     /**
-     * The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC.
-     * You can also use the {@link #listProtocols(ListProtocolsRequest) listProtocols} operation to get a list of valid protocols.
+     * The protocol on which the listener accepts connection requests.
+     * To get a list of valid protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols}
+     * operation.
      * <p>
      * Example: {@code HTTP}
      *
@@ -384,8 +387,9 @@ public final class CreateListenerDetails
     private final String protocol;
 
     /**
-     * The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC.
-     * You can also use the {@link #listProtocols(ListProtocolsRequest) listProtocols} operation to get a list of valid protocols.
+     * The protocol on which the listener accepts connection requests.
+     * To get a list of valid protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols}
+     * operation.
      * <p>
      * Example: {@code HTTP}
      *

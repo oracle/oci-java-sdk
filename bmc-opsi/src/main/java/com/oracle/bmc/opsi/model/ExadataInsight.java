@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -47,13 +47,15 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "exadataRackType",
         "isVirtualizedExadata",
         "status",
+        "chargebackPlanDetails",
         "freeformTags",
         "definedTags",
         "systemTags",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "statusDetails"
     })
     protected ExadataInsight(
             String id,
@@ -64,13 +66,15 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
             ExadataRackType exadataRackType,
             Boolean isVirtualizedExadata,
             ResourceStatus status,
+            ChargebackPlanDetails chargebackPlanDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             ExadataInsightLifecycleState lifecycleState,
-            String lifecycleDetails) {
+            String lifecycleDetails,
+            String statusDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -80,6 +84,7 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.exadataRackType = exadataRackType;
         this.isVirtualizedExadata = isVirtualizedExadata;
         this.status = status;
+        this.chargebackPlanDetails = chargebackPlanDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -87,6 +92,7 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.statusDetails = statusDetails;
     }
 
     /**
@@ -201,6 +207,13 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return status;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("chargebackPlanDetails")
+    private final ChargebackPlanDetails chargebackPlanDetails;
+
+    public ChargebackPlanDetails getChargebackPlanDetails() {
+        return chargebackPlanDetails;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
@@ -311,6 +324,20 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return lifecycleDetails;
     }
 
+    /**
+     * A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
+    private final String statusDetails;
+
+    /**
+     * A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     * @return the value
+     **/
+    public String getStatusDetails() {
+        return statusDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -333,6 +360,7 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", exadataRackType=").append(String.valueOf(this.exadataRackType));
         sb.append(", isVirtualizedExadata=").append(String.valueOf(this.isVirtualizedExadata));
         sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", chargebackPlanDetails=").append(String.valueOf(this.chargebackPlanDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -340,6 +368,7 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", statusDetails=").append(String.valueOf(this.statusDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -362,6 +391,7 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.exadataRackType, other.exadataRackType)
                 && java.util.Objects.equals(this.isVirtualizedExadata, other.isVirtualizedExadata)
                 && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.chargebackPlanDetails, other.chargebackPlanDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -369,6 +399,7 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.statusDetails, other.statusDetails)
                 && super.equals(other);
     }
 
@@ -396,6 +427,11 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
                                 ? 43
                                 : this.isVirtualizedExadata.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.chargebackPlanDetails == null
+                                ? 43
+                                : this.chargebackPlanDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
@@ -407,6 +443,9 @@ public class ExadataInsight extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.statusDetails == null ? 43 : this.statusDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

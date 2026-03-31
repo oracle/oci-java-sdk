@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -64,6 +64,15 @@ public final class VxlanInspectionRuleSummary extends TunnelInspectionRuleSummar
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private VxlanInspectionRuleMatchCriteria condition;
 
@@ -92,6 +101,7 @@ public final class VxlanInspectionRuleSummary extends TunnelInspectionRuleSummar
                             this.action,
                             this.priorityOrder,
                             this.parentResourceId,
+                            this.description,
                             this.condition,
                             this.profile);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -113,6 +123,9 @@ public final class VxlanInspectionRuleSummary extends TunnelInspectionRuleSummar
             }
             if (model.wasPropertyExplicitlySet("parentResourceId")) {
                 this.parentResourceId(model.getParentResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("condition")) {
                 this.condition(model.getCondition());
@@ -141,9 +154,10 @@ public final class VxlanInspectionRuleSummary extends TunnelInspectionRuleSummar
             InspectActionType action,
             Long priorityOrder,
             String parentResourceId,
+            String description,
             VxlanInspectionRuleMatchCriteria condition,
             VxlanInspectionRuleProfile profile) {
-        super(name, action, priorityOrder, parentResourceId);
+        super(name, action, priorityOrder, parentResourceId, description);
         this.condition = condition;
         this.profile = profile;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -25,6 +25,7 @@ public final class InventoryResourceSummary
     @java.beans.ConstructorProperties({
         "resourceName",
         "resourceType",
+        "macAddress",
         "ipAddressCollection",
         "region",
         "compartmentId"
@@ -32,12 +33,14 @@ public final class InventoryResourceSummary
     public InventoryResourceSummary(
             String resourceName,
             ResourceType resourceType,
+            String macAddress,
             java.util.List<InventoryIpAddressSummary> ipAddressCollection,
             String region,
             String compartmentId) {
         super();
         this.resourceName = resourceName;
         this.resourceType = resourceType;
+        this.macAddress = macAddress;
         this.ipAddressCollection = ipAddressCollection;
         this.region = region;
         this.compartmentId = compartmentId;
@@ -75,6 +78,22 @@ public final class InventoryResourceSummary
         public Builder resourceType(ResourceType resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+        /**
+         * Mac Address of IP Resource
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
+        private String macAddress;
+
+        /**
+         * Mac Address of IP Resource
+         * @param macAddress the value to set
+         * @return this builder
+         **/
+        public Builder macAddress(String macAddress) {
+            this.macAddress = macAddress;
+            this.__explicitlySet__.add("macAddress");
             return this;
         }
         /**
@@ -137,6 +156,7 @@ public final class InventoryResourceSummary
                     new InventoryResourceSummary(
                             this.resourceName,
                             this.resourceType,
+                            this.macAddress,
                             this.ipAddressCollection,
                             this.region,
                             this.compartmentId);
@@ -153,6 +173,9 @@ public final class InventoryResourceSummary
             }
             if (model.wasPropertyExplicitlySet("resourceType")) {
                 this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("macAddress")) {
+                this.macAddress(model.getMacAddress());
             }
             if (model.wasPropertyExplicitlySet("ipAddressCollection")) {
                 this.ipAddressCollection(model.getIpAddressCollection());
@@ -254,6 +277,20 @@ public final class InventoryResourceSummary
     }
 
     /**
+     * Mac Address of IP Resource
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
+    private final String macAddress;
+
+    /**
+     * Mac Address of IP Resource
+     * @return the value
+     **/
+    public String getMacAddress() {
+        return macAddress;
+    }
+
+    /**
      * Lists the 'IpAddressCollection' object.
      *
      **/
@@ -313,6 +350,7 @@ public final class InventoryResourceSummary
         sb.append("super=").append(super.toString());
         sb.append("resourceName=").append(String.valueOf(this.resourceName));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", macAddress=").append(String.valueOf(this.macAddress));
         sb.append(", ipAddressCollection=").append(String.valueOf(this.ipAddressCollection));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -332,6 +370,7 @@ public final class InventoryResourceSummary
         InventoryResourceSummary other = (InventoryResourceSummary) o;
         return java.util.Objects.equals(this.resourceName, other.resourceName)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.macAddress, other.macAddress)
                 && java.util.Objects.equals(this.ipAddressCollection, other.ipAddressCollection)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
@@ -344,6 +383,7 @@ public final class InventoryResourceSummary
         int result = 1;
         result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.macAddress == null ? 43 : this.macAddress.hashCode());
         result =
                 (result * PRIME)
                         + (this.ipAddressCollection == null

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiscoveredTarget.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DiscoveredTarget extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -25,16 +25,23 @@ public final class DiscoveredTarget extends com.oracle.bmc.http.internal.Explici
         "targetName",
         "product",
         "resourceId",
-        "version"
+        "version",
+        "operation"
     })
     public DiscoveredTarget(
-            String targetId, String targetName, String product, String resourceId, String version) {
+            String targetId,
+            String targetName,
+            String product,
+            String resourceId,
+            String version,
+            Operation operation) {
         super();
         this.targetId = targetId;
         this.targetName = targetName;
         this.product = product;
         this.resourceId = resourceId;
         this.version = version;
+        this.operation = operation;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -119,6 +126,28 @@ public final class DiscoveredTarget extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("version");
             return this;
         }
+        /**
+         * Type of operation to be done against given target.
+         * ADD - Add target.
+         * REMOVE - Delete target.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("operation")
+        private Operation operation;
+
+        /**
+         * Type of operation to be done against given target.
+         * ADD - Add target.
+         * REMOVE - Delete target.
+         *
+         * @param operation the value to set
+         * @return this builder
+         **/
+        public Builder operation(Operation operation) {
+            this.operation = operation;
+            this.__explicitlySet__.add("operation");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -130,7 +159,8 @@ public final class DiscoveredTarget extends com.oracle.bmc.http.internal.Explici
                             this.targetName,
                             this.product,
                             this.resourceId,
-                            this.version);
+                            this.version,
+                            this.operation);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -153,6 +183,9 @@ public final class DiscoveredTarget extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("version")) {
                 this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("operation")) {
+                this.operation(model.getOperation());
             }
             return this;
         }
@@ -239,6 +272,64 @@ public final class DiscoveredTarget extends com.oracle.bmc.http.internal.Explici
         return version;
     }
 
+    /**
+     * Type of operation to be done against given target.
+     * ADD - Add target.
+     * REMOVE - Delete target.
+     *
+     **/
+    public enum Operation {
+        Add("ADD"),
+        Remove("REMOVE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Operation> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Operation v : Operation.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Operation(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Operation create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Operation: " + key);
+        }
+    };
+    /**
+     * Type of operation to be done against given target.
+     * ADD - Add target.
+     * REMOVE - Delete target.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("operation")
+    private final Operation operation;
+
+    /**
+     * Type of operation to be done against given target.
+     * ADD - Add target.
+     * REMOVE - Delete target.
+     *
+     * @return the value
+     **/
+    public Operation getOperation() {
+        return operation;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -258,6 +349,7 @@ public final class DiscoveredTarget extends com.oracle.bmc.http.internal.Explici
         sb.append(", product=").append(String.valueOf(this.product));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", operation=").append(String.valueOf(this.operation));
         sb.append(")");
         return sb.toString();
     }
@@ -277,6 +369,7 @@ public final class DiscoveredTarget extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.product, other.product)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.operation, other.operation)
                 && super.equals(other);
     }
 
@@ -289,6 +382,7 @@ public final class DiscoveredTarget extends com.oracle.bmc.http.internal.Explici
         result = (result * PRIME) + (this.product == null ? 43 : this.product.hashCode());
         result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

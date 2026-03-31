@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -41,6 +41,7 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         "isAutoScalingEnabled",
         "sourceConnectionDetails",
         "targetConnectionDetails",
+        "pipelineDiagnosticData",
         "freeformTags",
         "definedTags",
         "systemTags",
@@ -49,7 +50,9 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         "lifecycleSubState",
         "lifecycleDetails",
         "timeCreated",
-        "timeUpdated"
+        "timeUpdated",
+        "subnetId",
+        "ingressIps"
     })
     protected Pipeline(
             String id,
@@ -61,6 +64,7 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
             Boolean isAutoScalingEnabled,
             SourcePipelineConnectionDetails sourceConnectionDetails,
             TargetPipelineConnectionDetails targetConnectionDetails,
+            PipelineDiagnosticData pipelineDiagnosticData,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -69,7 +73,9 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
             PipelineLifecycleSubState lifecycleSubState,
             String lifecycleDetails,
             java.util.Date timeCreated,
-            java.util.Date timeUpdated) {
+            java.util.Date timeUpdated,
+            String subnetId,
+            java.util.List<IngressIpDetails> ingressIps) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -80,6 +86,7 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         this.isAutoScalingEnabled = isAutoScalingEnabled;
         this.sourceConnectionDetails = sourceConnectionDetails;
         this.targetConnectionDetails = targetConnectionDetails;
+        this.pipelineDiagnosticData = pipelineDiagnosticData;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -89,6 +96,8 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.subnetId = subnetId;
+        this.ingressIps = ingressIps;
     }
 
     /**
@@ -217,6 +226,13 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         return targetConnectionDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("pipelineDiagnosticData")
+    private final PipelineDiagnosticData pipelineDiagnosticData;
+
+    public PipelineDiagnosticData getPipelineDiagnosticData() {
+        return pipelineDiagnosticData;
+    }
+
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
      * for cross-compatibility only.
@@ -309,6 +325,7 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Inactive("INACTIVE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -437,6 +454,42 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         return timeUpdated;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint.
+     * The subnet must be a private subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint.
+     * The subnet must be a private subnet.
+     *
+     * @return the value
+     **/
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    /**
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
+     * Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
+    private final java.util.List<IngressIpDetails> ingressIps;
+
+    /**
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
+     * Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     *
+     * @return the value
+     **/
+    public java.util.List<IngressIpDetails> getIngressIps() {
+        return ingressIps;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -462,6 +515,7 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
                 .append(String.valueOf(this.sourceConnectionDetails));
         sb.append(", targetConnectionDetails=")
                 .append(String.valueOf(this.targetConnectionDetails));
+        sb.append(", pipelineDiagnosticData=").append(String.valueOf(this.pipelineDiagnosticData));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -471,6 +525,8 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", ingressIps=").append(String.valueOf(this.ingressIps));
         sb.append(")");
         return sb.toString();
     }
@@ -496,6 +552,8 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
                         this.sourceConnectionDetails, other.sourceConnectionDetails)
                 && java.util.Objects.equals(
                         this.targetConnectionDetails, other.targetConnectionDetails)
+                && java.util.Objects.equals(
+                        this.pipelineDiagnosticData, other.pipelineDiagnosticData)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -505,6 +563,8 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.ingressIps, other.ingressIps)
                 && super.equals(other);
     }
 
@@ -535,6 +595,11 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
                         + (this.targetConnectionDetails == null
                                 ? 43
                                 : this.targetConnectionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pipelineDiagnosticData == null
+                                ? 43
+                                : this.pipelineDiagnosticData.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
@@ -550,6 +615,8 @@ public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.ingressIps == null ? 43 : this.ingressIps.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

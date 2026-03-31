@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -29,6 +29,7 @@ public final class RepositoryPathSummary
         "path",
         "sha",
         "submoduleGitUrl",
+        "lastCommitDetails",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -40,6 +41,7 @@ public final class RepositoryPathSummary
             String path,
             String sha,
             String submoduleGitUrl,
+            RepositoryPathCommitDetails lastCommitDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -50,6 +52,7 @@ public final class RepositoryPathSummary
         this.path = path;
         this.sha = sha;
         this.submoduleGitUrl = submoduleGitUrl;
+        this.lastCommitDetails = lastCommitDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -153,6 +156,15 @@ public final class RepositoryPathSummary
             this.__explicitlySet__.add("submoduleGitUrl");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lastCommitDetails")
+        private RepositoryPathCommitDetails lastCommitDetails;
+
+        public Builder lastCommitDetails(RepositoryPathCommitDetails lastCommitDetails) {
+            this.lastCommitDetails = lastCommitDetails;
+            this.__explicitlySet__.add("lastCommitDetails");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
          **/
@@ -215,6 +227,7 @@ public final class RepositoryPathSummary
                             this.path,
                             this.sha,
                             this.submoduleGitUrl,
+                            this.lastCommitDetails,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -243,6 +256,9 @@ public final class RepositoryPathSummary
             }
             if (model.wasPropertyExplicitlySet("submoduleGitUrl")) {
                 this.submoduleGitUrl(model.getSubmoduleGitUrl());
+            }
+            if (model.wasPropertyExplicitlySet("lastCommitDetails")) {
+                this.lastCommitDetails(model.getLastCommitDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -352,6 +368,13 @@ public final class RepositoryPathSummary
         return submoduleGitUrl;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lastCommitDetails")
+    private final RepositoryPathCommitDetails lastCommitDetails;
+
+    public RepositoryPathCommitDetails getLastCommitDetails() {
+        return lastCommitDetails;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
      **/
@@ -414,6 +437,7 @@ public final class RepositoryPathSummary
         sb.append(", path=").append(String.valueOf(this.path));
         sb.append(", sha=").append(String.valueOf(this.sha));
         sb.append(", submoduleGitUrl=").append(String.valueOf(this.submoduleGitUrl));
+        sb.append(", lastCommitDetails=").append(String.valueOf(this.lastCommitDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -437,6 +461,7 @@ public final class RepositoryPathSummary
                 && java.util.Objects.equals(this.path, other.path)
                 && java.util.Objects.equals(this.sha, other.sha)
                 && java.util.Objects.equals(this.submoduleGitUrl, other.submoduleGitUrl)
+                && java.util.Objects.equals(this.lastCommitDetails, other.lastCommitDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -455,6 +480,9 @@ public final class RepositoryPathSummary
         result =
                 (result * PRIME)
                         + (this.submoduleGitUrl == null ? 43 : this.submoduleGitUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastCommitDetails == null ? 43 : this.lastCommitDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

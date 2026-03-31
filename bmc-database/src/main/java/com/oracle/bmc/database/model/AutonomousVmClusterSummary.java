@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -40,6 +40,7 @@ public final class AutonomousVmClusterSummary
         "availableCpus",
         "totalContainerDatabases",
         "memoryPerOracleComputeUnitInGBs",
+        "memoryPerComputeUnitInGBs",
         "cpuCoreCountPerNode",
         "autonomousDataStorageSizeInTBs",
         "maintenanceWindow",
@@ -62,6 +63,7 @@ public final class AutonomousVmClusterSummary
         "licenseModel",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "dbServers",
         "reclaimableCpus",
         "availableContainerDatabases",
@@ -92,6 +94,7 @@ public final class AutonomousVmClusterSummary
             Integer availableCpus,
             Integer totalContainerDatabases,
             Integer memoryPerOracleComputeUnitInGBs,
+            Float memoryPerComputeUnitInGBs,
             Integer cpuCoreCountPerNode,
             Double autonomousDataStorageSizeInTBs,
             MaintenanceWindow maintenanceWindow,
@@ -114,6 +117,7 @@ public final class AutonomousVmClusterSummary
             LicenseModel licenseModel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<String> dbServers,
             Integer reclaimableCpus,
             Integer availableContainerDatabases,
@@ -143,6 +147,7 @@ public final class AutonomousVmClusterSummary
         this.availableCpus = availableCpus;
         this.totalContainerDatabases = totalContainerDatabases;
         this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+        this.memoryPerComputeUnitInGBs = memoryPerComputeUnitInGBs;
         this.cpuCoreCountPerNode = cpuCoreCountPerNode;
         this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
         this.maintenanceWindow = maintenanceWindow;
@@ -166,6 +171,7 @@ public final class AutonomousVmClusterSummary
         this.licenseModel = licenseModel;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.dbServers = dbServers;
         this.reclaimableCpus = reclaimableCpus;
         this.availableContainerDatabases = availableContainerDatabases;
@@ -427,14 +433,14 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
-         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         * The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         * The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -442,6 +448,24 @@ public final class AutonomousVmClusterSummary
         public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
             this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
             this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
+            return this;
+        }
+        /**
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryPerComputeUnitInGBs")
+        private Float memoryPerComputeUnitInGBs;
+
+        /**
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         *
+         * @param memoryPerComputeUnitInGBs the value to set
+         * @return this builder
+         **/
+        public Builder memoryPerComputeUnitInGBs(Float memoryPerComputeUnitInGBs) {
+            this.memoryPerComputeUnitInGBs = memoryPerComputeUnitInGBs;
+            this.__explicitlySet__.add("memoryPerComputeUnitInGBs");
             return this;
         }
         /**
@@ -817,6 +841,26 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
@@ -1036,6 +1080,7 @@ public final class AutonomousVmClusterSummary
                             this.availableCpus,
                             this.totalContainerDatabases,
                             this.memoryPerOracleComputeUnitInGBs,
+                            this.memoryPerComputeUnitInGBs,
                             this.cpuCoreCountPerNode,
                             this.autonomousDataStorageSizeInTBs,
                             this.maintenanceWindow,
@@ -1058,6 +1103,7 @@ public final class AutonomousVmClusterSummary
                             this.licenseModel,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.dbServers,
                             this.reclaimableCpus,
                             this.availableContainerDatabases,
@@ -1125,6 +1171,9 @@ public final class AutonomousVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("memoryPerOracleComputeUnitInGBs")) {
                 this.memoryPerOracleComputeUnitInGBs(model.getMemoryPerOracleComputeUnitInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("memoryPerComputeUnitInGBs")) {
+                this.memoryPerComputeUnitInGBs(model.getMemoryPerComputeUnitInGBs());
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCountPerNode")) {
                 this.cpuCoreCountPerNode(model.getCpuCoreCountPerNode());
@@ -1194,6 +1243,9 @@ public final class AutonomousVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("dbServers")) {
                 this.dbServers(model.getDbServers());
@@ -1566,19 +1618,35 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      *
      * @return the value
      **/
     public Integer getMemoryPerOracleComputeUnitInGBs() {
         return memoryPerOracleComputeUnitInGBs;
+    }
+
+    /**
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryPerComputeUnitInGBs")
+    private final Float memoryPerComputeUnitInGBs;
+
+    /**
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     *
+     * @return the value
+     **/
+    public Float getMemoryPerComputeUnitInGBs() {
+        return memoryPerComputeUnitInGBs;
     }
 
     /**
@@ -1952,6 +2020,24 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
@@ -2154,6 +2240,8 @@ public final class AutonomousVmClusterSummary
                 .append(String.valueOf(this.totalContainerDatabases));
         sb.append(", memoryPerOracleComputeUnitInGBs=")
                 .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
+        sb.append(", memoryPerComputeUnitInGBs=")
+                .append(String.valueOf(this.memoryPerComputeUnitInGBs));
         sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
         sb.append(", autonomousDataStorageSizeInTBs=")
                 .append(String.valueOf(this.autonomousDataStorageSizeInTBs));
@@ -2183,6 +2271,7 @@ public final class AutonomousVmClusterSummary
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", dbServers=").append(String.valueOf(this.dbServers));
         sb.append(", reclaimableCpus=").append(String.valueOf(this.reclaimableCpus));
         sb.append(", availableContainerDatabases=")
@@ -2234,6 +2323,8 @@ public final class AutonomousVmClusterSummary
                         this.totalContainerDatabases, other.totalContainerDatabases)
                 && java.util.Objects.equals(
                         this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
+                && java.util.Objects.equals(
+                        this.memoryPerComputeUnitInGBs, other.memoryPerComputeUnitInGBs)
                 && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
                 && java.util.Objects.equals(
                         this.autonomousDataStorageSizeInTBs, other.autonomousDataStorageSizeInTBs)
@@ -2267,6 +2358,7 @@ public final class AutonomousVmClusterSummary
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.dbServers, other.dbServers)
                 && java.util.Objects.equals(this.reclaimableCpus, other.reclaimableCpus)
                 && java.util.Objects.equals(
@@ -2340,6 +2432,11 @@ public final class AutonomousVmClusterSummary
                         + (this.memoryPerOracleComputeUnitInGBs == null
                                 ? 43
                                 : this.memoryPerOracleComputeUnitInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryPerComputeUnitInGBs == null
+                                ? 43
+                                : this.memoryPerComputeUnitInGBs.hashCode());
         result =
                 (result * PRIME)
                         + (this.cpuCoreCountPerNode == null
@@ -2422,6 +2519,7 @@ public final class AutonomousVmClusterSummary
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
         result =
                 (result * PRIME)

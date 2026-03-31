@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.util.internal;
@@ -314,5 +314,66 @@ public enum HttpUtils {
             target = target.queryParam(name, attemptEncodeQueryParam(value));
         }
         return target;
+    }
+
+    /**
+     * Attempts to encode a header parameter which is described by a list of values for that parameter and a
+     * {@link com.oracle.bmc.util.internal.CollectionFormatType} which describes how the values should appear
+     * in the header
+     *
+     * @param paramName the name of the query parameter as it should appear in the query string
+     * @param values the values for the query parameter. An empty or null list will result in no action being taken
+     * on the target instance. Additionally, any null values inside the list will be ignored
+     * @param collectionFormatType describes how entries should appear in the query string, for example as a single
+     * parameter with its values separated by a delimiter character (comma, space, tab or pipe)
+     * @return a String
+     */
+    public static <T> String encodeCollectionFormatHeaderParam(
+            String paramName, List<T> values, CollectionFormatType collectionFormatType) {
+
+        if (StringUtils.isBlank(paramName)) {
+            throw new IllegalArgumentException("A non-blank paramName must be provided");
+        }
+
+        if (values != null && !values.isEmpty()) {
+            final List<Object> valuesToUse = new ArrayList<>();
+            for (T v : values) {
+                if (v == null) {
+                    continue;
+                }
+
+                if (v instanceof Enum) {
+                    final Object rawValue = ReflectionUtils.invokeGetter(v, "getValue");
+                    if (rawValue != null) {
+                        valuesToUse.add((String) rawValue);
+                    } else {
+                        throw new IllegalArgumentException(
+                                String.format(
+                                        "Could not get the correct value for enum %s",
+                                        v.getClass().getCanonicalName()));
+                    }
+                } else {
+                    valuesToUse.add(v);
+                }
+            }
+
+            if (valuesToUse.isEmpty()) {
+                return null;
+            }
+
+            if (collectionFormatType == CollectionFormatType.CommaSeparated) {
+                return StringUtils.join(valuesToUse, ",");
+            } else if (collectionFormatType == CollectionFormatType.PipeSeparated) {
+                return StringUtils.join(valuesToUse, "|");
+            } else if (collectionFormatType == CollectionFormatType.SpaceSeparated) {
+                return StringUtils.join(valuesToUse, " ");
+            } else if (collectionFormatType == CollectionFormatType.TabSeparated) {
+                return StringUtils.join(valuesToUse, "\t");
+            } else {
+                throw new IllegalArgumentException(
+                        String.format("Unknown collection format type: %s", collectionFormatType));
+            }
+        }
+        return null;
     }
 }

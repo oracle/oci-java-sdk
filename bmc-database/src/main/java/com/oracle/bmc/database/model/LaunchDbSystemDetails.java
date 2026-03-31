@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -283,12 +283,48 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
         private DataCollectionOptions dataCollectionOptions;
 
         public Builder dataCollectionOptions(DataCollectionOptions dataCollectionOptions) {
             this.dataCollectionOptions = dataCollectionOptions;
             this.__explicitlySet__.add("dataCollectionOptions");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Integer computeCount;
+
+        public Builder computeCount(Integer computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
             return this;
         }
 
@@ -404,7 +440,11 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
                             this.securityAttributes,
                             this.privateIp,
                             this.privateIpV6,
+                            this.clusterPlacementGroupId,
+                            this.subscriptionId,
                             this.dataCollectionOptions,
+                            this.computeModel,
+                            this.computeCount,
                             this.dbHome,
                             this.databaseEdition,
                             this.diskRedundancy,
@@ -502,8 +542,20 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
             if (model.wasPropertyExplicitlySet("privateIpV6")) {
                 this.privateIpV6(model.getPrivateIpV6());
             }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
             }
             if (model.wasPropertyExplicitlySet("dbHome")) {
                 this.dbHome(model.getDbHome());
@@ -565,7 +617,11 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateIp,
             String privateIpV6,
+            String clusterPlacementGroupId,
+            String subscriptionId,
             DataCollectionOptions dataCollectionOptions,
+            ComputeModel computeModel,
+            Integer computeCount,
             CreateDbHomeDetails dbHome,
             DatabaseEdition databaseEdition,
             DiskRedundancy diskRedundancy,
@@ -600,7 +656,11 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
                 securityAttributes,
                 privateIp,
                 privateIpV6,
-                dataCollectionOptions);
+                clusterPlacementGroupId,
+                subscriptionId,
+                dataCollectionOptions,
+                computeModel,
+                computeCount);
         this.dbHome = dbHome;
         this.databaseEdition = databaseEdition;
         this.diskRedundancy = diskRedundancy;
@@ -625,6 +685,7 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
         EnterpriseEdition("ENTERPRISE_EDITION"),
         EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
         EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
+        EnterpriseEditionDeveloper("ENTERPRISE_EDITION_DEVELOPER"),
         ;
 
         private final String value;

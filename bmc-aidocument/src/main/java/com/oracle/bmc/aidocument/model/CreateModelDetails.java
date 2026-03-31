@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument.model;
@@ -26,9 +26,12 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         "description",
         "modelVersion",
         "modelType",
+        "modelSubType",
+        "inferenceUnits",
         "compartmentId",
         "isQuickMode",
         "maxTrainingTimeInHours",
+        "language",
         "trainingDataset",
         "testingDataset",
         "validationDataset",
@@ -43,9 +46,12 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
             String description,
             String modelVersion,
             Model.ModelType modelType,
+            ModelSubType modelSubType,
+            Integer inferenceUnits,
             String compartmentId,
             Boolean isQuickMode,
             Double maxTrainingTimeInHours,
+            String language,
             Dataset trainingDataset,
             Dataset testingDataset,
             Dataset validationDataset,
@@ -59,9 +65,12 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         this.description = description;
         this.modelVersion = modelVersion;
         this.modelType = modelType;
+        this.modelSubType = modelSubType;
+        this.inferenceUnits = inferenceUnits;
         this.compartmentId = compartmentId;
         this.isQuickMode = isQuickMode;
         this.maxTrainingTimeInHours = maxTrainingTimeInHours;
+        this.language = language;
         this.trainingDataset = trainingDataset;
         this.testingDataset = testingDataset;
         this.validationDataset = validationDataset;
@@ -139,6 +148,38 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("modelSubType")
+        private ModelSubType modelSubType;
+
+        /**
+         * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+         * @param modelSubType the value to set
+         * @return this builder
+         **/
+        public Builder modelSubType(ModelSubType modelSubType) {
+            this.modelSubType = modelSubType;
+            this.__explicitlySet__.add("modelSubType");
+            return this;
+        }
+        /**
+         * Number of replicas required for this model.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("inferenceUnits")
+        private Integer inferenceUnits;
+
+        /**
+         * Number of replicas required for this model.
+         * @param inferenceUnits the value to set
+         * @return this builder
+         **/
+        public Builder inferenceUnits(Integer inferenceUnits) {
+            this.inferenceUnits = inferenceUnits;
+            this.__explicitlySet__.add("inferenceUnits");
+            return this;
+        }
+        /**
          * The compartment identifier.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -184,6 +225,22 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         public Builder maxTrainingTimeInHours(Double maxTrainingTimeInHours) {
             this.maxTrainingTimeInHours = maxTrainingTimeInHours;
             this.__explicitlySet__.add("maxTrainingTimeInHours");
+            return this;
+        }
+        /**
+         * The document language for model training, abbreviated according to the BCP 47 syntax.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("language")
+        private String language;
+
+        /**
+         * The document language for model training, abbreviated according to the BCP 47 syntax.
+         * @param language the value to set
+         * @return this builder
+         **/
+        public Builder language(String language) {
+            this.language = language;
+            this.__explicitlySet__.add("language");
             return this;
         }
 
@@ -313,9 +370,12 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
                             this.description,
                             this.modelVersion,
                             this.modelType,
+                            this.modelSubType,
+                            this.inferenceUnits,
                             this.compartmentId,
                             this.isQuickMode,
                             this.maxTrainingTimeInHours,
+                            this.language,
                             this.trainingDataset,
                             this.testingDataset,
                             this.validationDataset,
@@ -344,6 +404,12 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
             if (model.wasPropertyExplicitlySet("modelType")) {
                 this.modelType(model.getModelType());
             }
+            if (model.wasPropertyExplicitlySet("modelSubType")) {
+                this.modelSubType(model.getModelSubType());
+            }
+            if (model.wasPropertyExplicitlySet("inferenceUnits")) {
+                this.inferenceUnits(model.getInferenceUnits());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -352,6 +418,9 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("maxTrainingTimeInHours")) {
                 this.maxTrainingTimeInHours(model.getMaxTrainingTimeInHours());
+            }
+            if (model.wasPropertyExplicitlySet("language")) {
+                this.language(model.getLanguage());
             }
             if (model.wasPropertyExplicitlySet("trainingDataset")) {
                 this.trainingDataset(model.getTrainingDataset());
@@ -449,6 +518,34 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("modelSubType")
+    private final ModelSubType modelSubType;
+
+    /**
+     * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+     * @return the value
+     **/
+    public ModelSubType getModelSubType() {
+        return modelSubType;
+    }
+
+    /**
+     * Number of replicas required for this model.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("inferenceUnits")
+    private final Integer inferenceUnits;
+
+    /**
+     * Number of replicas required for this model.
+     * @return the value
+     **/
+    public Integer getInferenceUnits() {
+        return inferenceUnits;
+    }
+
+    /**
      * The compartment identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -488,6 +585,20 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
      **/
     public Double getMaxTrainingTimeInHours() {
         return maxTrainingTimeInHours;
+    }
+
+    /**
+     * The document language for model training, abbreviated according to the BCP 47 syntax.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("language")
+    private final String language;
+
+    /**
+     * The document language for model training, abbreviated according to the BCP 47 syntax.
+     * @return the value
+     **/
+    public String getLanguage() {
+        return language;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("trainingDataset")
@@ -607,9 +718,12 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", modelSubType=").append(String.valueOf(this.modelSubType));
+        sb.append(", inferenceUnits=").append(String.valueOf(this.inferenceUnits));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", isQuickMode=").append(String.valueOf(this.isQuickMode));
         sb.append(", maxTrainingTimeInHours=").append(String.valueOf(this.maxTrainingTimeInHours));
+        sb.append(", language=").append(String.valueOf(this.language));
         sb.append(", trainingDataset=").append(String.valueOf(this.trainingDataset));
         sb.append(", testingDataset=").append(String.valueOf(this.testingDataset));
         sb.append(", validationDataset=").append(String.valueOf(this.validationDataset));
@@ -636,10 +750,13 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.modelVersion, other.modelVersion)
                 && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.modelSubType, other.modelSubType)
+                && java.util.Objects.equals(this.inferenceUnits, other.inferenceUnits)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.isQuickMode, other.isQuickMode)
                 && java.util.Objects.equals(
                         this.maxTrainingTimeInHours, other.maxTrainingTimeInHours)
+                && java.util.Objects.equals(this.language, other.language)
                 && java.util.Objects.equals(this.trainingDataset, other.trainingDataset)
                 && java.util.Objects.equals(this.testingDataset, other.testingDataset)
                 && java.util.Objects.equals(this.validationDataset, other.validationDataset)
@@ -659,6 +776,10 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
         result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.modelSubType == null ? 43 : this.modelSubType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inferenceUnits == null ? 43 : this.inferenceUnits.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
@@ -668,6 +789,7 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
                         + (this.maxTrainingTimeInHours == null
                                 ? 43
                                 : this.maxTrainingTimeInHours.hashCode());
+        result = (result * PRIME) + (this.language == null ? 43 : this.language.hashCode());
         result =
                 (result * PRIME)
                         + (this.trainingDataset == null ? 43 : this.trainingDataset.hashCode());

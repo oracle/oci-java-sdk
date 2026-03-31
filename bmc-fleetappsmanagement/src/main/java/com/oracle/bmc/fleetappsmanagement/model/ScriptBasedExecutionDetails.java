@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ScriptBasedExecutionDetails.Builder.class
 )
@@ -83,6 +83,54 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
             this.__explicitlySet__.add("credentials");
             return this;
         }
+        /**
+         * Is the script locked to prevent changes directly in Object Storage?
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isLocked")
+        private Boolean isLocked;
+
+        /**
+         * Is the script locked to prevent changes directly in Object Storage?
+         * @param isLocked the value to set
+         * @return this builder
+         **/
+        public Builder isLocked(Boolean isLocked) {
+            this.isLocked = isLocked;
+            this.__explicitlySet__.add("isLocked");
+            return this;
+        }
+        /**
+         * Is the Content an executable file?
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isExecutableContent")
+        private Boolean isExecutableContent;
+
+        /**
+         * Is the Content an executable file?
+         * @param isExecutableContent the value to set
+         * @return this builder
+         **/
+        public Builder isExecutableContent(Boolean isExecutableContent) {
+            this.isExecutableContent = isExecutableContent;
+            this.__explicitlySet__.add("isExecutableContent");
+            return this;
+        }
+        /**
+         * The list of system variables.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemVariables")
+        private java.util.List<String> systemVariables;
+
+        /**
+         * The list of system variables.
+         * @param systemVariables the value to set
+         * @return this builder
+         **/
+        public Builder systemVariables(java.util.List<String> systemVariables) {
+            this.systemVariables = systemVariables;
+            this.__explicitlySet__.add("systemVariables");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -90,7 +138,13 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
         public ScriptBasedExecutionDetails build() {
             ScriptBasedExecutionDetails model =
                     new ScriptBasedExecutionDetails(
-                            this.variables, this.content, this.command, this.credentials);
+                            this.variables,
+                            this.content,
+                            this.command,
+                            this.credentials,
+                            this.isLocked,
+                            this.isExecutableContent,
+                            this.systemVariables);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -110,6 +164,15 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
             }
             if (model.wasPropertyExplicitlySet("credentials")) {
                 this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("isLocked")) {
+                this.isLocked(model.getIsLocked());
+            }
+            if (model.wasPropertyExplicitlySet("isExecutableContent")) {
+                this.isExecutableContent(model.getIsExecutableContent());
+            }
+            if (model.wasPropertyExplicitlySet("systemVariables")) {
+                this.systemVariables(model.getSystemVariables());
             }
             return this;
         }
@@ -131,12 +194,18 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
             TaskVariable variables,
             ContentDetails content,
             String command,
-            java.util.List<ConfigAssociationDetails> credentials) {
+            java.util.List<ConfigAssociationDetails> credentials,
+            Boolean isLocked,
+            Boolean isExecutableContent,
+            java.util.List<String> systemVariables) {
         super();
         this.variables = variables;
         this.content = content;
         this.command = command;
         this.credentials = credentials;
+        this.isLocked = isLocked;
+        this.isExecutableContent = isExecutableContent;
+        this.systemVariables = systemVariables;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
@@ -187,6 +256,48 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
         return credentials;
     }
 
+    /**
+     * Is the script locked to prevent changes directly in Object Storage?
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLocked")
+    private final Boolean isLocked;
+
+    /**
+     * Is the script locked to prevent changes directly in Object Storage?
+     * @return the value
+     **/
+    public Boolean getIsLocked() {
+        return isLocked;
+    }
+
+    /**
+     * Is the Content an executable file?
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isExecutableContent")
+    private final Boolean isExecutableContent;
+
+    /**
+     * Is the Content an executable file?
+     * @return the value
+     **/
+    public Boolean getIsExecutableContent() {
+        return isExecutableContent;
+    }
+
+    /**
+     * The list of system variables.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemVariables")
+    private final java.util.List<String> systemVariables;
+
+    /**
+     * The list of system variables.
+     * @return the value
+     **/
+    public java.util.List<String> getSystemVariables() {
+        return systemVariables;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -205,6 +316,9 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
         sb.append(", content=").append(String.valueOf(this.content));
         sb.append(", command=").append(String.valueOf(this.command));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", isLocked=").append(String.valueOf(this.isLocked));
+        sb.append(", isExecutableContent=").append(String.valueOf(this.isExecutableContent));
+        sb.append(", systemVariables=").append(String.valueOf(this.systemVariables));
         sb.append(")");
         return sb.toString();
     }
@@ -223,6 +337,9 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
                 && java.util.Objects.equals(this.content, other.content)
                 && java.util.Objects.equals(this.command, other.command)
                 && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.isLocked, other.isLocked)
+                && java.util.Objects.equals(this.isExecutableContent, other.isExecutableContent)
+                && java.util.Objects.equals(this.systemVariables, other.systemVariables)
                 && super.equals(other);
     }
 
@@ -234,6 +351,15 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
         result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
         result = (result * PRIME) + (this.command == null ? 43 : this.command.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result = (result * PRIME) + (this.isLocked == null ? 43 : this.isLocked.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isExecutableContent == null
+                                ? 43
+                                : this.isExecutableContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVariables == null ? 43 : this.systemVariables.hashCode());
         return result;
     }
 }

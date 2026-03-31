@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -35,6 +35,11 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
         "offlineMonths",
         "auditCollectedVolume",
         "isOverrideGlobalRetentionSetting",
+        "isOverrideGlobalPaidUsage",
+        "onlineMonthsSource",
+        "offlineMonthsSource",
+        "paidUsageSource",
+        "targetType",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -55,6 +60,11 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
             Integer offlineMonths,
             Long auditCollectedVolume,
             Boolean isOverrideGlobalRetentionSetting,
+            Boolean isOverrideGlobalPaidUsage,
+            String onlineMonthsSource,
+            String offlineMonthsSource,
+            String paidUsageSource,
+            AuditProfileTargetType targetType,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -74,6 +84,11 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
         this.offlineMonths = offlineMonths;
         this.auditCollectedVolume = auditCollectedVolume;
         this.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
+        this.isOverrideGlobalPaidUsage = isOverrideGlobalPaidUsage;
+        this.onlineMonthsSource = onlineMonthsSource;
+        this.offlineMonthsSource = offlineMonthsSource;
+        this.paidUsageSource = paidUsageSource;
+        this.targetType = targetType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -98,13 +113,13 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The OCID of the compartment that contains the audit.
+         * The OCID of the compartment that contains the audit profile.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment that contains the audit.
+         * The OCID of the compartment that contains the audit profile.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -194,13 +209,13 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The OCID of the Data Safe target for which the audit profile is created.
+         * The OCID of the target database or target database group for which the audit profile is created.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The OCID of the Data Safe target for which the audit profile is created.
+         * The OCID of the target database or target database group for which the audit profile is created.
          * @param targetId the value to set
          * @return this builder
          **/
@@ -226,13 +241,13 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Indicates the list of available audit trails on the target.
+         * Contains the list of available audit trails on the target database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditTrails")
         private java.util.List<AuditTrail> auditTrails;
 
         /**
-         * Indicates the list of available audit trails on the target.
+         * Contains the list of available audit trails on the target database.
          * @param auditTrails the value to set
          * @return this builder
          **/
@@ -264,7 +279,7 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.
+         * Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.
          * Minimum: 1; Maximum: 12 months
          *
          **/
@@ -272,7 +287,7 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
         private Integer onlineMonths;
 
         /**
-         * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.
+         * Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.
          * Minimum: 1; Maximum: 12 months
          *
          * @param onlineMonths the value to set
@@ -284,18 +299,18 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
+         * Number of months the audit records will be stored offline in the offline archive.
          * Minimum: 0; Maximum: 72 months.
-         * If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+         * If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("offlineMonths")
         private Integer offlineMonths;
 
         /**
-         * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
+         * Number of months the audit records will be stored offline in the offline archive.
          * Minimum: 0; Maximum: 72 months.
-         * If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+         * If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
          *
          * @param offlineMonths the value to set
          * @return this builder
@@ -306,7 +321,7 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Indicates number of audit records collected by Data Safe in the current calendar month.
+         * Number of audit records collected in the current calendar month.
          * Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
          *
          **/
@@ -314,7 +329,7 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
         private Long auditCollectedVolume;
 
         /**
-         * Indicates number of audit records collected by Data Safe in the current calendar month.
+         * Number of audit records collected in the current calendar month.
          * Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
          *
          * @param auditCollectedVolume the value to set
@@ -326,16 +341,16 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Indicates whether audit retention settings like online and offline months is set at the
-         * target level overriding the global audit retention settings.
+         * Indicates whether audit retention settings like online and offline months set at the
+         * target level override both the global settings and the target group level audit retention settings.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOverrideGlobalRetentionSetting")
         private Boolean isOverrideGlobalRetentionSetting;
 
         /**
-         * Indicates whether audit retention settings like online and offline months is set at the
-         * target level overriding the global audit retention settings.
+         * Indicates whether audit retention settings like online and offline months set at the
+         * target level override both the global settings and the target group level audit retention settings.
          *
          * @param isOverrideGlobalRetentionSetting the value to set
          * @return this builder
@@ -343,6 +358,92 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
         public Builder isOverrideGlobalRetentionSetting(Boolean isOverrideGlobalRetentionSetting) {
             this.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
             this.__explicitlySet__.add("isOverrideGlobalRetentionSetting");
+            return this;
+        }
+        /**
+         * Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings.
+         * Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database,
+         * potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isOverrideGlobalPaidUsage")
+        private Boolean isOverrideGlobalPaidUsage;
+
+        /**
+         * Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings.
+         * Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database,
+         * potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+         *
+         * @param isOverrideGlobalPaidUsage the value to set
+         * @return this builder
+         **/
+        public Builder isOverrideGlobalPaidUsage(Boolean isOverrideGlobalPaidUsage) {
+            this.isOverrideGlobalPaidUsage = isOverrideGlobalPaidUsage;
+            this.__explicitlySet__.add("isOverrideGlobalPaidUsage");
+            return this;
+        }
+        /**
+         * The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("onlineMonthsSource")
+        private String onlineMonthsSource;
+
+        /**
+         * The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+         * @param onlineMonthsSource the value to set
+         * @return this builder
+         **/
+        public Builder onlineMonthsSource(String onlineMonthsSource) {
+            this.onlineMonthsSource = onlineMonthsSource;
+            this.__explicitlySet__.add("onlineMonthsSource");
+            return this;
+        }
+        /**
+         * The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("offlineMonthsSource")
+        private String offlineMonthsSource;
+
+        /**
+         * The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+         * @param offlineMonthsSource the value to set
+         * @return this builder
+         **/
+        public Builder offlineMonthsSource(String offlineMonthsSource) {
+            this.offlineMonthsSource = offlineMonthsSource;
+            this.__explicitlySet__.add("offlineMonthsSource");
+            return this;
+        }
+        /**
+         * The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("paidUsageSource")
+        private String paidUsageSource;
+
+        /**
+         * The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+         * @param paidUsageSource the value to set
+         * @return this builder
+         **/
+        public Builder paidUsageSource(String paidUsageSource) {
+            this.paidUsageSource = paidUsageSource;
+            this.__explicitlySet__.add("paidUsageSource");
+            return this;
+        }
+        /**
+         * The resource type that is represented by the audit profile.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+        private AuditProfileTargetType targetType;
+
+        /**
+         * The resource type that is represented by the audit profile.
+         * @param targetType the value to set
+         * @return this builder
+         **/
+        public Builder targetType(AuditProfileTargetType targetType) {
+            this.targetType = targetType;
+            this.__explicitlySet__.add("targetType");
             return this;
         }
         /**
@@ -430,6 +531,11 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.offlineMonths,
                             this.auditCollectedVolume,
                             this.isOverrideGlobalRetentionSetting,
+                            this.isOverrideGlobalPaidUsage,
+                            this.onlineMonthsSource,
+                            this.offlineMonthsSource,
+                            this.paidUsageSource,
+                            this.targetType,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -486,6 +592,21 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
             if (model.wasPropertyExplicitlySet("isOverrideGlobalRetentionSetting")) {
                 this.isOverrideGlobalRetentionSetting(model.getIsOverrideGlobalRetentionSetting());
             }
+            if (model.wasPropertyExplicitlySet("isOverrideGlobalPaidUsage")) {
+                this.isOverrideGlobalPaidUsage(model.getIsOverrideGlobalPaidUsage());
+            }
+            if (model.wasPropertyExplicitlySet("onlineMonthsSource")) {
+                this.onlineMonthsSource(model.getOnlineMonthsSource());
+            }
+            if (model.wasPropertyExplicitlySet("offlineMonthsSource")) {
+                this.offlineMonthsSource(model.getOfflineMonthsSource());
+            }
+            if (model.wasPropertyExplicitlySet("paidUsageSource")) {
+                this.paidUsageSource(model.getPaidUsageSource());
+            }
+            if (model.wasPropertyExplicitlySet("targetType")) {
+                this.targetType(model.getTargetType());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -525,13 +646,13 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The OCID of the compartment that contains the audit.
+     * The OCID of the compartment that contains the audit profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the audit.
+     * The OCID of the compartment that contains the audit profile.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -609,13 +730,13 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The OCID of the Data Safe target for which the audit profile is created.
+     * The OCID of the target database or target database group for which the audit profile is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The OCID of the Data Safe target for which the audit profile is created.
+     * The OCID of the target database or target database group for which the audit profile is created.
      * @return the value
      **/
     public String getTargetId() {
@@ -637,13 +758,13 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Indicates the list of available audit trails on the target.
+     * Contains the list of available audit trails on the target database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditTrails")
     private final java.util.List<AuditTrail> auditTrails;
 
     /**
-     * Indicates the list of available audit trails on the target.
+     * Contains the list of available audit trails on the target database.
      * @return the value
      **/
     public java.util.List<AuditTrail> getAuditTrails() {
@@ -671,7 +792,7 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.
+     * Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.
      * Minimum: 1; Maximum: 12 months
      *
      **/
@@ -679,7 +800,7 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
     private final Integer onlineMonths;
 
     /**
-     * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.
+     * Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.
      * Minimum: 1; Maximum: 12 months
      *
      * @return the value
@@ -689,18 +810,18 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
+     * Number of months the audit records will be stored offline in the offline archive.
      * Minimum: 0; Maximum: 72 months.
-     * If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+     * If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offlineMonths")
     private final Integer offlineMonths;
 
     /**
-     * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
+     * Number of months the audit records will be stored offline in the offline archive.
      * Minimum: 0; Maximum: 72 months.
-     * If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+     * If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
      *
      * @return the value
      **/
@@ -709,7 +830,7 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Indicates number of audit records collected by Data Safe in the current calendar month.
+     * Number of audit records collected in the current calendar month.
      * Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      *
      **/
@@ -717,7 +838,7 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
     private final Long auditCollectedVolume;
 
     /**
-     * Indicates number of audit records collected by Data Safe in the current calendar month.
+     * Number of audit records collected in the current calendar month.
      * Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      *
      * @return the value
@@ -727,21 +848,97 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Indicates whether audit retention settings like online and offline months is set at the
-     * target level overriding the global audit retention settings.
+     * Indicates whether audit retention settings like online and offline months set at the
+     * target level override both the global settings and the target group level audit retention settings.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOverrideGlobalRetentionSetting")
     private final Boolean isOverrideGlobalRetentionSetting;
 
     /**
-     * Indicates whether audit retention settings like online and offline months is set at the
-     * target level overriding the global audit retention settings.
+     * Indicates whether audit retention settings like online and offline months set at the
+     * target level override both the global settings and the target group level audit retention settings.
      *
      * @return the value
      **/
     public Boolean getIsOverrideGlobalRetentionSetting() {
         return isOverrideGlobalRetentionSetting;
+    }
+
+    /**
+     * Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings.
+     * Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database,
+     * potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isOverrideGlobalPaidUsage")
+    private final Boolean isOverrideGlobalPaidUsage;
+
+    /**
+     * Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings.
+     * Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database,
+     * potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+     *
+     * @return the value
+     **/
+    public Boolean getIsOverrideGlobalPaidUsage() {
+        return isOverrideGlobalPaidUsage;
+    }
+
+    /**
+     * The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("onlineMonthsSource")
+    private final String onlineMonthsSource;
+
+    /**
+     * The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * @return the value
+     **/
+    public String getOnlineMonthsSource() {
+        return onlineMonthsSource;
+    }
+
+    /**
+     * The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("offlineMonthsSource")
+    private final String offlineMonthsSource;
+
+    /**
+     * The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * @return the value
+     **/
+    public String getOfflineMonthsSource() {
+        return offlineMonthsSource;
+    }
+
+    /**
+     * The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("paidUsageSource")
+    private final String paidUsageSource;
+
+    /**
+     * The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+     * @return the value
+     **/
+    public String getPaidUsageSource() {
+        return paidUsageSource;
+    }
+
+    /**
+     * The resource type that is represented by the audit profile.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+    private final AuditProfileTargetType targetType;
+
+    /**
+     * The resource type that is represented by the audit profile.
+     * @return the value
+     **/
+    public AuditProfileTargetType getTargetType() {
+        return targetType;
     }
 
     /**
@@ -830,6 +1027,12 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", auditCollectedVolume=").append(String.valueOf(this.auditCollectedVolume));
         sb.append(", isOverrideGlobalRetentionSetting=")
                 .append(String.valueOf(this.isOverrideGlobalRetentionSetting));
+        sb.append(", isOverrideGlobalPaidUsage=")
+                .append(String.valueOf(this.isOverrideGlobalPaidUsage));
+        sb.append(", onlineMonthsSource=").append(String.valueOf(this.onlineMonthsSource));
+        sb.append(", offlineMonthsSource=").append(String.valueOf(this.offlineMonthsSource));
+        sb.append(", paidUsageSource=").append(String.valueOf(this.paidUsageSource));
+        sb.append(", targetType=").append(String.valueOf(this.targetType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -864,6 +1067,12 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(
                         this.isOverrideGlobalRetentionSetting,
                         other.isOverrideGlobalRetentionSetting)
+                && java.util.Objects.equals(
+                        this.isOverrideGlobalPaidUsage, other.isOverrideGlobalPaidUsage)
+                && java.util.Objects.equals(this.onlineMonthsSource, other.onlineMonthsSource)
+                && java.util.Objects.equals(this.offlineMonthsSource, other.offlineMonthsSource)
+                && java.util.Objects.equals(this.paidUsageSource, other.paidUsageSource)
+                && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -909,6 +1118,25 @@ public final class AuditProfile extends com.oracle.bmc.http.internal.ExplicitlyS
                         + (this.isOverrideGlobalRetentionSetting == null
                                 ? 43
                                 : this.isOverrideGlobalRetentionSetting.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOverrideGlobalPaidUsage == null
+                                ? 43
+                                : this.isOverrideGlobalPaidUsage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.onlineMonthsSource == null
+                                ? 43
+                                : this.onlineMonthsSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.offlineMonthsSource == null
+                                ? 43
+                                : this.offlineMonthsSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.paidUsageSource == null ? 43 : this.paidUsageSource.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

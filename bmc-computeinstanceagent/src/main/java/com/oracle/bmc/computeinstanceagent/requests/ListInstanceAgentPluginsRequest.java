@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.computeinstanceagent.requests;
@@ -24,12 +24,12 @@ public class ListInstanceAgentPluginsRequest
         return compartmentId;
     }
     /**
-     * The OCID of the instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
     private String instanceagentId;
 
     /**
-     * The OCID of the instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
     public String getInstanceagentId() {
         return instanceagentId;
@@ -50,12 +50,12 @@ public class ListInstanceAgentPluginsRequest
         return opcRequestId;
     }
     /**
-     * The plugin status
+     * The plugin status.
      */
     private Status status;
 
     /**
-     * The plugin status
+     * The plugin status.
      **/
     public enum Status {
         Running("RUNNING"),
@@ -93,7 +93,7 @@ public class ListInstanceAgentPluginsRequest
     };
 
     /**
-     * The plugin status
+     * The plugin status.
      */
     public Status getStatus() {
         return status;
@@ -254,12 +254,12 @@ public class ListInstanceAgentPluginsRequest
         return sortOrder;
     }
     /**
-     * The plugin name
+     * The plugin name.
      */
     private String name;
 
     /**
-     * The plugin name
+     * The plugin name.
      */
     public String getName() {
         return name;
@@ -288,12 +288,12 @@ public class ListInstanceAgentPluginsRequest
         }
 
         /**
-         * The OCID of the instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
          */
         private String instanceagentId = null;
 
         /**
-         * The OCID of the instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
          * @param instanceagentId the value to set
          * @return this builder instance
          */
@@ -322,12 +322,12 @@ public class ListInstanceAgentPluginsRequest
         }
 
         /**
-         * The plugin status
+         * The plugin status.
          */
         private Status status = null;
 
         /**
-         * The plugin status
+         * The plugin status.
          * @param status the value to set
          * @return this builder instance
          */
@@ -427,12 +427,12 @@ public class ListInstanceAgentPluginsRequest
         }
 
         /**
-         * The plugin name
+         * The plugin name.
          */
         private String name = null;
 
         /**
-         * The plugin name
+         * The plugin name.
          * @param name the value to set
          * @return this builder instance
          */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -116,6 +116,16 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
         public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
             this.doesUseSecretIds = doesUseSecretIds;
             this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -283,14 +293,16 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
             return this;
         }
         /**
-         * Indicates that the user intents to connect to the instance through resource principal.
+         * Specifies that the user intends to authenticate to the instance using a resource principal.
+         * Default: false
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
         private Boolean shouldUseResourcePrincipal;
 
         /**
-         * Indicates that the user intents to connect to the instance through resource principal.
+         * Specifies that the user intends to authenticate to the instance using a resource principal.
+         * Default: false
          *
          * @param shouldUseResourcePrincipal the value to set
          * @return this builder
@@ -317,6 +329,7 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.tenancyId,
                             this.region,
                             this.userId,
@@ -363,6 +376,9 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("tenancyId")) {
                 this.tenancyId(model.getTenancyId());
@@ -418,6 +434,7 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String tenancyId,
             String region,
             String userId,
@@ -437,7 +454,8 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.tenancyId = tenancyId;
         this.region = region;
         this.userId = userId;
@@ -598,14 +616,16 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
     }
 
     /**
-     * Indicates that the user intents to connect to the instance through resource principal.
+     * Specifies that the user intends to authenticate to the instance using a resource principal.
+     * Default: false
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
     private final Boolean shouldUseResourcePrincipal;
 
     /**
-     * Indicates that the user intents to connect to the instance through resource principal.
+     * Specifies that the user intends to authenticate to the instance using a resource principal.
+     * Default: false
      *
      * @return the value
      **/

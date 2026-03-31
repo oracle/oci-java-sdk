@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -197,6 +197,34 @@ public final class Db2Connection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The DB2 technology type.
          **/
@@ -348,6 +376,8 @@ public final class Db2Connection extends Connection {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
          * which created at the client containing the server certificate / CA root certificate.
+         * This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+         * <p>
          * Note: When provided, 'sslClientKeystoredb' field must not be provided.
          *
          **/
@@ -357,6 +387,8 @@ public final class Db2Connection extends Connection {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
          * which created at the client containing the server certificate / CA root certificate.
+         * This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+         * <p>
          * Note: When provided, 'sslClientKeystoredb' field must not be provided.
          *
          * @param sslClientKeystoredbSecretId the value to set
@@ -370,6 +402,8 @@ public final class Db2Connection extends Connection {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
          * which contains the encrypted password to the key database file.
+         * This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+         * <p>
          * Note: When provided, 'sslClientKeystash' field must not be provided.
          *
          **/
@@ -379,6 +413,8 @@ public final class Db2Connection extends Connection {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
          * which contains the encrypted password to the key database file.
+         * This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+         * <p>
          * Note: When provided, 'sslClientKeystash' field must not be provided.
          *
          * @param sslClientKeystashSecretId the value to set
@@ -387,6 +423,26 @@ public final class Db2Connection extends Connection {
         public Builder sslClientKeystashSecretId(String sslClientKeystashSecretId) {
             this.sslClientKeystashSecretId = sslClientKeystashSecretId;
             this.__explicitlySet__.add("sslClientKeystashSecretId");
+            return this;
+        }
+        /**
+         * The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sslServerCertificate")
+        private String sslServerCertificate;
+
+        /**
+         * The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         * @param sslServerCertificate the value to set
+         * @return this builder
+         **/
+        public Builder sslServerCertificate(String sslServerCertificate) {
+            this.sslServerCertificate = sslServerCertificate;
+            this.__explicitlySet__.add("sslServerCertificate");
             return this;
         }
 
@@ -415,6 +471,9 @@ public final class Db2Connection extends Connection {
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.username,
                             this.host,
@@ -424,7 +483,8 @@ public final class Db2Connection extends Connection {
                             this.securityProtocol,
                             this.passwordSecretId,
                             this.sslClientKeystoredbSecretId,
-                            this.sslClientKeystashSecretId);
+                            this.sslClientKeystashSecretId,
+                            this.sslServerCertificate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -490,6 +550,15 @@ public final class Db2Connection extends Connection {
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -519,6 +588,9 @@ public final class Db2Connection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("sslClientKeystashSecretId")) {
                 this.sslClientKeystashSecretId(model.getSslClientKeystashSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("sslServerCertificate")) {
+                this.sslServerCertificate(model.getSslServerCertificate());
             }
             return this;
         }
@@ -556,6 +628,9 @@ public final class Db2Connection extends Connection {
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             TechnologyType technologyType,
             String username,
             String host,
@@ -565,7 +640,8 @@ public final class Db2Connection extends Connection {
             SecurityProtocol securityProtocol,
             String passwordSecretId,
             String sslClientKeystoredbSecretId,
-            String sslClientKeystashSecretId) {
+            String sslClientKeystashSecretId,
+            String sslServerCertificate) {
         super(
                 id,
                 displayName,
@@ -585,7 +661,10 @@ public final class Db2Connection extends Connection {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.username = username;
         this.host = host;
@@ -596,12 +675,14 @@ public final class Db2Connection extends Connection {
         this.passwordSecretId = passwordSecretId;
         this.sslClientKeystoredbSecretId = sslClientKeystoredbSecretId;
         this.sslClientKeystashSecretId = sslClientKeystashSecretId;
+        this.sslServerCertificate = sslServerCertificate;
     }
 
     /**
      * The DB2 technology type.
      **/
     public enum TechnologyType {
+        Db2I("DB2_I"),
         Db2Zos("DB2_ZOS"),
 
         /**
@@ -828,6 +909,8 @@ public final class Db2Connection extends Connection {
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
      * which created at the client containing the server certificate / CA root certificate.
+     * This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * <p>
      * Note: When provided, 'sslClientKeystoredb' field must not be provided.
      *
      **/
@@ -837,6 +920,8 @@ public final class Db2Connection extends Connection {
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
      * which created at the client containing the server certificate / CA root certificate.
+     * This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * <p>
      * Note: When provided, 'sslClientKeystoredb' field must not be provided.
      *
      * @return the value
@@ -848,6 +933,8 @@ public final class Db2Connection extends Connection {
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
      * which contains the encrypted password to the key database file.
+     * This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * <p>
      * Note: When provided, 'sslClientKeystash' field must not be provided.
      *
      **/
@@ -857,12 +944,32 @@ public final class Db2Connection extends Connection {
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
      * which contains the encrypted password to the key database file.
+     * This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * <p>
      * Note: When provided, 'sslClientKeystash' field must not be provided.
      *
      * @return the value
      **/
     public String getSslClientKeystashSecretId() {
         return sslClientKeystashSecretId;
+    }
+
+    /**
+     * The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sslServerCertificate")
+    private final String sslServerCertificate;
+
+    /**
+     * The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     * @return the value
+     **/
+    public String getSslServerCertificate() {
+        return sslServerCertificate;
     }
 
     @Override
@@ -891,6 +998,7 @@ public final class Db2Connection extends Connection {
                 .append(String.valueOf(this.sslClientKeystoredbSecretId));
         sb.append(", sslClientKeystashSecretId=")
                 .append(String.valueOf(this.sslClientKeystashSecretId));
+        sb.append(", sslServerCertificate=").append(String.valueOf(this.sslServerCertificate));
         sb.append(")");
         return sb.toString();
     }
@@ -917,6 +1025,7 @@ public final class Db2Connection extends Connection {
                         this.sslClientKeystoredbSecretId, other.sslClientKeystoredbSecretId)
                 && java.util.Objects.equals(
                         this.sslClientKeystashSecretId, other.sslClientKeystashSecretId)
+                && java.util.Objects.equals(this.sslServerCertificate, other.sslServerCertificate)
                 && super.equals(other);
     }
 
@@ -952,6 +1061,11 @@ public final class Db2Connection extends Connection {
                         + (this.sslClientKeystashSecretId == null
                                 ? 43
                                 : this.sslClientKeystashSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslServerCertificate == null
+                                ? 43
+                                : this.sslServerCertificate.hashCode());
         return result;
     }
 }

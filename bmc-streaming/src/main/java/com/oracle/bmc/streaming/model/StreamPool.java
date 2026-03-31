@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.streaming.model;
@@ -32,6 +32,7 @@ public final class StreamPool extends com.oracle.bmc.http.internal.ExplicitlySet
         "endpointFqdn",
         "privateEndpointSettings",
         "freeformTags",
+        "securityAttributes",
         "definedTags"
     })
     public StreamPool(
@@ -47,6 +48,7 @@ public final class StreamPool extends com.oracle.bmc.http.internal.ExplicitlySet
             String endpointFqdn,
             PrivateEndpointSettings privateEndpointSettings,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.id = id;
@@ -61,6 +63,7 @@ public final class StreamPool extends com.oracle.bmc.http.internal.ExplicitlySet
         this.endpointFqdn = endpointFqdn;
         this.privateEndpointSettings = privateEndpointSettings;
         this.freeformTags = freeformTags;
+        this.securityAttributes = securityAttributes;
         this.definedTags = definedTags;
     }
 
@@ -262,6 +265,31 @@ public final class StreamPool extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {"Operations": {"CostCenter": "42"}}'
@@ -303,6 +331,7 @@ public final class StreamPool extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.endpointFqdn,
                             this.privateEndpointSettings,
                             this.freeformTags,
+                            this.securityAttributes,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -347,6 +376,9 @@ public final class StreamPool extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -590,6 +622,28 @@ public final class StreamPool extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {"Operations": {"CostCenter": "42"}}'
@@ -636,6 +690,7 @@ public final class StreamPool extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", privateEndpointSettings=")
                 .append(String.valueOf(this.privateEndpointSettings));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
@@ -664,6 +719,7 @@ public final class StreamPool extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(
                         this.privateEndpointSettings, other.privateEndpointSettings)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
@@ -702,6 +758,11 @@ public final class StreamPool extends com.oracle.bmc.http.internal.ExplicitlySet
                                 ? 43
                                 : this.privateEndpointSettings.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

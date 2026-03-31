@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai.model;
@@ -696,6 +696,39 @@ public final class DedicatedAiCluster extends com.oracle.bmc.http.internal.Expli
         SmallGenericV2("SMALL_GENERIC_V2"),
         LargeGeneric2("LARGE_GENERIC_2"),
         LargeGenericV2("LARGE_GENERIC_V2"),
+        LargeGenericV3("LARGE_GENERIC_V3"),
+        LargeCohereV3("LARGE_COHERE_V3"),
+        RerankCohere("RERANK_COHERE"),
+        SmallGenericV1("SMALL_GENERIC_V1"),
+        MediumGenericV1("MEDIUM_GENERIC_V1"),
+        LargeGenericV1("LARGE_GENERIC_V1"),
+        A10X1("A10_X1"),
+        A10X2("A10_X2"),
+        A10X4("A10_X4"),
+        A10040GX1("A100_40G_X1"),
+        A10040GX2("A100_40G_X2"),
+        A10040GX4("A100_40G_X4"),
+        A10040GX8("A100_40G_X8"),
+        A10080GX1("A100_80G_X1"),
+        A10080GX2("A100_80G_X2"),
+        A10080GX4("A100_80G_X4"),
+        A10080GX8("A100_80G_X8"),
+        H100X1("H100_X1"),
+        H100X2("H100_X2"),
+        H100X4("H100_X4"),
+        H100X8("H100_X8"),
+        H200X1("H200_X1"),
+        H200X2("H200_X2"),
+        H200X4("H200_X4"),
+        H200X8("H200_X8"),
+        OaiA10X2("OAI_A10_X2"),
+        OaiH100X1("OAI_H100_X1"),
+        OaiH100X2("OAI_H100_X2"),
+        OaiH200X1("OAI_H200_X1"),
+        OaiA10080GX1("OAI_A100_80G_X1"),
+        OaiA10080GX2("OAI_A100_80G_X2"),
+        OaiA10040GX1("OAI_A100_40G_X1"),
+        OaiA10040GX4("OAI_A100_40G_X4"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

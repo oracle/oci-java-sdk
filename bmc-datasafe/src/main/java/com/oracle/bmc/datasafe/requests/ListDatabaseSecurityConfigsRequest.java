@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -208,6 +208,17 @@ public class ListDatabaseSecurityConfigsRequest
      */
     public String getTargetId() {
         return targetId;
+    }
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    private String targetDatabaseGroupId;
+
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
     }
     /**
      * The sort order to use, either ascending (ASC) or descending (DESC).
@@ -536,6 +547,21 @@ public class ListDatabaseSecurityConfigsRequest
         }
 
         /**
+         * A filter to return the target database group that matches the specified OCID.
+         */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
          */
         private SortOrder sortOrder = null;
@@ -625,6 +651,7 @@ public class ListDatabaseSecurityConfigsRequest
             timeCreatedGreaterThanOrEqualTo(o.getTimeCreatedGreaterThanOrEqualTo());
             timeCreatedLessThan(o.getTimeCreatedLessThan());
             targetId(o.getTargetId());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
@@ -671,11 +698,12 @@ public class ListDatabaseSecurityConfigsRequest
             request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             request.timeCreatedLessThan = timeCreatedLessThan;
             request.targetId = targetId;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDatabaseSecurityConfigsRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, limit, page, lifecycleState, databaseSecurityConfigId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, targetId, sortOrder, sortBy, opcRequestId);
+            // new ListDatabaseSecurityConfigsRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, limit, page, lifecycleState, databaseSecurityConfigId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, targetId, targetDatabaseGroupId, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -696,6 +724,7 @@ public class ListDatabaseSecurityConfigsRequest
                 .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo)
                 .timeCreatedLessThan(timeCreatedLessThan)
                 .targetId(targetId)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId);
@@ -727,6 +756,7 @@ public class ListDatabaseSecurityConfigsRequest
                 .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
         sb.append(",timeCreatedLessThan=").append(String.valueOf(this.timeCreatedLessThan));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -759,6 +789,7 @@ public class ListDatabaseSecurityConfigsRequest
                         this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
                 && java.util.Objects.equals(this.timeCreatedLessThan, other.timeCreatedLessThan)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -799,6 +830,11 @@ public class ListDatabaseSecurityConfigsRequest
                                 ? 43
                                 : this.timeCreatedLessThan.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

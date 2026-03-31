@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -32,6 +32,14 @@ public final class ComputeGpuMemoryFabricSummary
         "lifecycleState",
         "fabricHealth",
         "totalHostCount",
+        "availableHostCount",
+        "healthyHostCount",
+        "hostPlatformName",
+        "switchPlatformName",
+        "currentFirmwareBundleId",
+        "targetFirmwareBundleId",
+        "firmwareUpdateState",
+        "memoryFabricPreferences",
         "timeCreated",
         "definedTags",
         "freeformTags",
@@ -47,6 +55,14 @@ public final class ComputeGpuMemoryFabricSummary
             ComputeGpuMemoryFabric.LifecycleState lifecycleState,
             ComputeGpuMemoryFabric.FabricHealth fabricHealth,
             Long totalHostCount,
+            Long availableHostCount,
+            Long healthyHostCount,
+            String hostPlatformName,
+            String switchPlatformName,
+            String currentFirmwareBundleId,
+            String targetFirmwareBundleId,
+            FirmwareUpdateState firmwareUpdateState,
+            MemoryFabricPreferencesDescriptor memoryFabricPreferences,
             java.util.Date timeCreated,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
@@ -61,6 +77,14 @@ public final class ComputeGpuMemoryFabricSummary
         this.lifecycleState = lifecycleState;
         this.fabricHealth = fabricHealth;
         this.totalHostCount = totalHostCount;
+        this.availableHostCount = availableHostCount;
+        this.healthyHostCount = healthyHostCount;
+        this.hostPlatformName = hostPlatformName;
+        this.switchPlatformName = switchPlatformName;
+        this.currentFirmwareBundleId = currentFirmwareBundleId;
+        this.targetFirmwareBundleId = targetFirmwareBundleId;
+        this.firmwareUpdateState = firmwareUpdateState;
+        this.memoryFabricPreferences = memoryFabricPreferences;
         this.timeCreated = timeCreated;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
@@ -215,6 +239,138 @@ public final class ComputeGpuMemoryFabricSummary
             return this;
         }
         /**
+         * The total number of available bare metal hosts located in this compute GPU memory fabric.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("availableHostCount")
+        private Long availableHostCount;
+
+        /**
+         * The total number of available bare metal hosts located in this compute GPU memory fabric.
+         * @param availableHostCount the value to set
+         * @return this builder
+         **/
+        public Builder availableHostCount(Long availableHostCount) {
+            this.availableHostCount = availableHostCount;
+            this.__explicitlySet__.add("availableHostCount");
+            return this;
+        }
+        /**
+         * The total number of healthy bare metal hosts located in this compute GPU memory fabric.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("healthyHostCount")
+        private Long healthyHostCount;
+
+        /**
+         * The total number of healthy bare metal hosts located in this compute GPU memory fabric.
+         * @param healthyHostCount the value to set
+         * @return this builder
+         **/
+        public Builder healthyHostCount(Long healthyHostCount) {
+            this.healthyHostCount = healthyHostCount;
+            this.__explicitlySet__.add("healthyHostCount");
+            return this;
+        }
+        /**
+         * The host platform identifier used for bundle queries
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("hostPlatformName")
+        private String hostPlatformName;
+
+        /**
+         * The host platform identifier used for bundle queries
+         *
+         * @param hostPlatformName the value to set
+         * @return this builder
+         **/
+        public Builder hostPlatformName(String hostPlatformName) {
+            this.hostPlatformName = hostPlatformName;
+            this.__explicitlySet__.add("hostPlatformName");
+            return this;
+        }
+        /**
+         * The switch platform identifier used for bundle queries
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("switchPlatformName")
+        private String switchPlatformName;
+
+        /**
+         * The switch platform identifier used for bundle queries
+         *
+         * @param switchPlatformName the value to set
+         * @return this builder
+         **/
+        public Builder switchPlatformName(String switchPlatformName) {
+            this.switchPlatformName = switchPlatformName;
+            this.__explicitlySet__.add("switchPlatformName");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("currentFirmwareBundleId")
+        private String currentFirmwareBundleId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+         *
+         * @param currentFirmwareBundleId the value to set
+         * @return this builder
+         **/
+        public Builder currentFirmwareBundleId(String currentFirmwareBundleId) {
+            this.currentFirmwareBundleId = currentFirmwareBundleId;
+            this.__explicitlySet__.add("currentFirmwareBundleId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetFirmwareBundleId")
+        private String targetFirmwareBundleId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+         *
+         * @param targetFirmwareBundleId the value to set
+         * @return this builder
+         **/
+        public Builder targetFirmwareBundleId(String targetFirmwareBundleId) {
+            this.targetFirmwareBundleId = targetFirmwareBundleId;
+            this.__explicitlySet__.add("targetFirmwareBundleId");
+            return this;
+        }
+        /**
+         * The state of Memory Fabric Firmware update
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("firmwareUpdateState")
+        private FirmwareUpdateState firmwareUpdateState;
+
+        /**
+         * The state of Memory Fabric Firmware update
+         *
+         * @param firmwareUpdateState the value to set
+         * @return this builder
+         **/
+        public Builder firmwareUpdateState(FirmwareUpdateState firmwareUpdateState) {
+            this.firmwareUpdateState = firmwareUpdateState;
+            this.__explicitlySet__.add("firmwareUpdateState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryFabricPreferences")
+        private MemoryFabricPreferencesDescriptor memoryFabricPreferences;
+
+        public Builder memoryFabricPreferences(
+                MemoryFabricPreferencesDescriptor memoryFabricPreferences) {
+            this.memoryFabricPreferences = memoryFabricPreferences;
+            this.__explicitlySet__.add("memoryFabricPreferences");
+            return this;
+        }
+        /**
          * The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339]
          * (https://tools.ietf.org/html/rfc3339).
          * <p>
@@ -342,6 +498,14 @@ public final class ComputeGpuMemoryFabricSummary
                             this.lifecycleState,
                             this.fabricHealth,
                             this.totalHostCount,
+                            this.availableHostCount,
+                            this.healthyHostCount,
+                            this.hostPlatformName,
+                            this.switchPlatformName,
+                            this.currentFirmwareBundleId,
+                            this.targetFirmwareBundleId,
+                            this.firmwareUpdateState,
+                            this.memoryFabricPreferences,
                             this.timeCreated,
                             this.definedTags,
                             this.freeformTags,
@@ -378,6 +542,30 @@ public final class ComputeGpuMemoryFabricSummary
             }
             if (model.wasPropertyExplicitlySet("totalHostCount")) {
                 this.totalHostCount(model.getTotalHostCount());
+            }
+            if (model.wasPropertyExplicitlySet("availableHostCount")) {
+                this.availableHostCount(model.getAvailableHostCount());
+            }
+            if (model.wasPropertyExplicitlySet("healthyHostCount")) {
+                this.healthyHostCount(model.getHealthyHostCount());
+            }
+            if (model.wasPropertyExplicitlySet("hostPlatformName")) {
+                this.hostPlatformName(model.getHostPlatformName());
+            }
+            if (model.wasPropertyExplicitlySet("switchPlatformName")) {
+                this.switchPlatformName(model.getSwitchPlatformName());
+            }
+            if (model.wasPropertyExplicitlySet("currentFirmwareBundleId")) {
+                this.currentFirmwareBundleId(model.getCurrentFirmwareBundleId());
+            }
+            if (model.wasPropertyExplicitlySet("targetFirmwareBundleId")) {
+                this.targetFirmwareBundleId(model.getTargetFirmwareBundleId());
+            }
+            if (model.wasPropertyExplicitlySet("firmwareUpdateState")) {
+                this.firmwareUpdateState(model.getFirmwareUpdateState());
+            }
+            if (model.wasPropertyExplicitlySet("memoryFabricPreferences")) {
+                this.memoryFabricPreferences(model.getMemoryFabricPreferences());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -538,6 +726,171 @@ public final class ComputeGpuMemoryFabricSummary
     }
 
     /**
+     * The total number of available bare metal hosts located in this compute GPU memory fabric.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableHostCount")
+    private final Long availableHostCount;
+
+    /**
+     * The total number of available bare metal hosts located in this compute GPU memory fabric.
+     * @return the value
+     **/
+    public Long getAvailableHostCount() {
+        return availableHostCount;
+    }
+
+    /**
+     * The total number of healthy bare metal hosts located in this compute GPU memory fabric.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("healthyHostCount")
+    private final Long healthyHostCount;
+
+    /**
+     * The total number of healthy bare metal hosts located in this compute GPU memory fabric.
+     * @return the value
+     **/
+    public Long getHealthyHostCount() {
+        return healthyHostCount;
+    }
+
+    /**
+     * The host platform identifier used for bundle queries
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostPlatformName")
+    private final String hostPlatformName;
+
+    /**
+     * The host platform identifier used for bundle queries
+     *
+     * @return the value
+     **/
+    public String getHostPlatformName() {
+        return hostPlatformName;
+    }
+
+    /**
+     * The switch platform identifier used for bundle queries
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("switchPlatformName")
+    private final String switchPlatformName;
+
+    /**
+     * The switch platform identifier used for bundle queries
+     *
+     * @return the value
+     **/
+    public String getSwitchPlatformName() {
+        return switchPlatformName;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("currentFirmwareBundleId")
+    private final String currentFirmwareBundleId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+     *
+     * @return the value
+     **/
+    public String getCurrentFirmwareBundleId() {
+        return currentFirmwareBundleId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetFirmwareBundleId")
+    private final String targetFirmwareBundleId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+     *
+     * @return the value
+     **/
+    public String getTargetFirmwareBundleId() {
+        return targetFirmwareBundleId;
+    }
+
+    /**
+     * The state of Memory Fabric Firmware update
+     *
+     **/
+    public enum FirmwareUpdateState {
+        WillUpdate("WILL_UPDATE"),
+        NoUpdate("NO_UPDATE"),
+        SkipRecycleEnabled("SKIP_RECYCLE_ENABLED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(FirmwareUpdateState.class);
+
+        private final String value;
+        private static java.util.Map<String, FirmwareUpdateState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (FirmwareUpdateState v : FirmwareUpdateState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        FirmwareUpdateState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static FirmwareUpdateState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'FirmwareUpdateState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The state of Memory Fabric Firmware update
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("firmwareUpdateState")
+    private final FirmwareUpdateState firmwareUpdateState;
+
+    /**
+     * The state of Memory Fabric Firmware update
+     *
+     * @return the value
+     **/
+    public FirmwareUpdateState getFirmwareUpdateState() {
+        return firmwareUpdateState;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryFabricPreferences")
+    private final MemoryFabricPreferencesDescriptor memoryFabricPreferences;
+
+    public MemoryFabricPreferencesDescriptor getMemoryFabricPreferences() {
+        return memoryFabricPreferences;
+    }
+
+    /**
      * The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339]
      * (https://tools.ietf.org/html/rfc3339).
      * <p>
@@ -661,6 +1014,16 @@ public final class ComputeGpuMemoryFabricSummary
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", fabricHealth=").append(String.valueOf(this.fabricHealth));
         sb.append(", totalHostCount=").append(String.valueOf(this.totalHostCount));
+        sb.append(", availableHostCount=").append(String.valueOf(this.availableHostCount));
+        sb.append(", healthyHostCount=").append(String.valueOf(this.healthyHostCount));
+        sb.append(", hostPlatformName=").append(String.valueOf(this.hostPlatformName));
+        sb.append(", switchPlatformName=").append(String.valueOf(this.switchPlatformName));
+        sb.append(", currentFirmwareBundleId=")
+                .append(String.valueOf(this.currentFirmwareBundleId));
+        sb.append(", targetFirmwareBundleId=").append(String.valueOf(this.targetFirmwareBundleId));
+        sb.append(", firmwareUpdateState=").append(String.valueOf(this.firmwareUpdateState));
+        sb.append(", memoryFabricPreferences=")
+                .append(String.valueOf(this.memoryFabricPreferences));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -688,6 +1051,17 @@ public final class ComputeGpuMemoryFabricSummary
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.fabricHealth, other.fabricHealth)
                 && java.util.Objects.equals(this.totalHostCount, other.totalHostCount)
+                && java.util.Objects.equals(this.availableHostCount, other.availableHostCount)
+                && java.util.Objects.equals(this.healthyHostCount, other.healthyHostCount)
+                && java.util.Objects.equals(this.hostPlatformName, other.hostPlatformName)
+                && java.util.Objects.equals(this.switchPlatformName, other.switchPlatformName)
+                && java.util.Objects.equals(
+                        this.currentFirmwareBundleId, other.currentFirmwareBundleId)
+                && java.util.Objects.equals(
+                        this.targetFirmwareBundleId, other.targetFirmwareBundleId)
+                && java.util.Objects.equals(this.firmwareUpdateState, other.firmwareUpdateState)
+                && java.util.Objects.equals(
+                        this.memoryFabricPreferences, other.memoryFabricPreferences)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -726,6 +1100,42 @@ public final class ComputeGpuMemoryFabricSummary
         result =
                 (result * PRIME)
                         + (this.totalHostCount == null ? 43 : this.totalHostCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableHostCount == null
+                                ? 43
+                                : this.availableHostCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.healthyHostCount == null ? 43 : this.healthyHostCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostPlatformName == null ? 43 : this.hostPlatformName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.switchPlatformName == null
+                                ? 43
+                                : this.switchPlatformName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentFirmwareBundleId == null
+                                ? 43
+                                : this.currentFirmwareBundleId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetFirmwareBundleId == null
+                                ? 43
+                                : this.targetFirmwareBundleId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.firmwareUpdateState == null
+                                ? 43
+                                : this.firmwareUpdateState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryFabricPreferences == null
+                                ? 43
+                                : this.memoryFabricPreferences.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

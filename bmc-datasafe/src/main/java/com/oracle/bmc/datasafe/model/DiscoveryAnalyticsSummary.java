@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -22,12 +22,17 @@ package com.oracle.bmc.datasafe.model;
 public final class DiscoveryAnalyticsSummary
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"metricName", "dimensions", "count"})
-    public DiscoveryAnalyticsSummary(MetricName metricName, Dimensions dimensions, Long count) {
+    @java.beans.ConstructorProperties({"metricName", "dimensions", "count", "timeLastDiscovered"})
+    public DiscoveryAnalyticsSummary(
+            MetricName metricName,
+            Dimensions dimensions,
+            Long count,
+            java.util.Date timeLastDiscovered) {
         super();
         this.metricName = metricName;
         this.dimensions = dimensions;
         this.count = count;
+        this.timeLastDiscovered = timeLastDiscovered;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -73,13 +78,30 @@ public final class DiscoveryAnalyticsSummary
             this.__explicitlySet__.add("count");
             return this;
         }
+        /**
+         * The date and time when data discovery was last done on the target database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastDiscovered")
+        private java.util.Date timeLastDiscovered;
+
+        /**
+         * The date and time when data discovery was last done on the target database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeLastDiscovered the value to set
+         * @return this builder
+         **/
+        public Builder timeLastDiscovered(java.util.Date timeLastDiscovered) {
+            this.timeLastDiscovered = timeLastDiscovered;
+            this.__explicitlySet__.add("timeLastDiscovered");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DiscoveryAnalyticsSummary build() {
             DiscoveryAnalyticsSummary model =
-                    new DiscoveryAnalyticsSummary(this.metricName, this.dimensions, this.count);
+                    new DiscoveryAnalyticsSummary(
+                            this.metricName, this.dimensions, this.count, this.timeLastDiscovered);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -96,6 +118,9 @@ public final class DiscoveryAnalyticsSummary
             }
             if (model.wasPropertyExplicitlySet("count")) {
                 this.count(model.getCount());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastDiscovered")) {
+                this.timeLastDiscovered(model.getTimeLastDiscovered());
             }
             return this;
         }
@@ -200,6 +225,20 @@ public final class DiscoveryAnalyticsSummary
         return count;
     }
 
+    /**
+     * The date and time when data discovery was last done on the target database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastDiscovered")
+    private final java.util.Date timeLastDiscovered;
+
+    /**
+     * The date and time when data discovery was last done on the target database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
+    public java.util.Date getTimeLastDiscovered() {
+        return timeLastDiscovered;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -217,6 +256,7 @@ public final class DiscoveryAnalyticsSummary
         sb.append("metricName=").append(String.valueOf(this.metricName));
         sb.append(", dimensions=").append(String.valueOf(this.dimensions));
         sb.append(", count=").append(String.valueOf(this.count));
+        sb.append(", timeLastDiscovered=").append(String.valueOf(this.timeLastDiscovered));
         sb.append(")");
         return sb.toString();
     }
@@ -234,6 +274,7 @@ public final class DiscoveryAnalyticsSummary
         return java.util.Objects.equals(this.metricName, other.metricName)
                 && java.util.Objects.equals(this.dimensions, other.dimensions)
                 && java.util.Objects.equals(this.count, other.count)
+                && java.util.Objects.equals(this.timeLastDiscovered, other.timeLastDiscovered)
                 && super.equals(other);
     }
 
@@ -244,6 +285,11 @@ public final class DiscoveryAnalyticsSummary
         result = (result * PRIME) + (this.metricName == null ? 43 : this.metricName.hashCode());
         result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
         result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastDiscovered == null
+                                ? 43
+                                : this.timeLastDiscovered.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

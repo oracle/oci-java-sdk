@@ -1,14 +1,15 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
 
 /**
- * The target to collect JFR data. A target is a managed instance, with options to further limit to specific application and/or Java Runtime.
+ * The target to collect JFR data. A target is a managed instance, with options to further limit to specific container and/or application and/or Java Runtime.
  * When the applicationKey isn't specified, then all applications are selected.
  * When the jreKey isn't specified, then all supported Java Runtime versions are selected.
  * When the applicationInstallationKey isn't specified, then all application installations are selected.
+ * When the containerKey isn't specified, then all containers are selected.
  * Keys applicationKey and applicationInstallationKey are mutually exclusive.
  *
  * <br/>
@@ -30,18 +31,21 @@ public final class JfrAttachmentTarget extends com.oracle.bmc.http.internal.Expl
         "managedInstanceId",
         "applicationKey",
         "applicationInstallationKey",
-        "jreKey"
+        "jreKey",
+        "containerKey"
     })
     public JfrAttachmentTarget(
             String managedInstanceId,
             String applicationKey,
             String applicationInstallationKey,
-            String jreKey) {
+            String jreKey,
+            String containerKey) {
         super();
         this.managedInstanceId = managedInstanceId;
         this.applicationKey = applicationKey;
         this.applicationInstallationKey = applicationInstallationKey;
         this.jreKey = jreKey;
+        this.containerKey = containerKey;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -110,6 +114,22 @@ public final class JfrAttachmentTarget extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("jreKey");
             return this;
         }
+        /**
+         * Unique key that identifies the container for JFR data collection.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("containerKey")
+        private String containerKey;
+
+        /**
+         * Unique key that identifies the container for JFR data collection.
+         * @param containerKey the value to set
+         * @return this builder
+         **/
+        public Builder containerKey(String containerKey) {
+            this.containerKey = containerKey;
+            this.__explicitlySet__.add("containerKey");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -120,7 +140,8 @@ public final class JfrAttachmentTarget extends com.oracle.bmc.http.internal.Expl
                             this.managedInstanceId,
                             this.applicationKey,
                             this.applicationInstallationKey,
-                            this.jreKey);
+                            this.jreKey,
+                            this.containerKey);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -140,6 +161,9 @@ public final class JfrAttachmentTarget extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("jreKey")) {
                 this.jreKey(model.getJreKey());
+            }
+            if (model.wasPropertyExplicitlySet("containerKey")) {
+                this.containerKey(model.getContainerKey());
             }
             return this;
         }
@@ -212,6 +236,20 @@ public final class JfrAttachmentTarget extends com.oracle.bmc.http.internal.Expl
         return jreKey;
     }
 
+    /**
+     * Unique key that identifies the container for JFR data collection.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("containerKey")
+    private final String containerKey;
+
+    /**
+     * Unique key that identifies the container for JFR data collection.
+     * @return the value
+     **/
+    public String getContainerKey() {
+        return containerKey;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -231,6 +269,7 @@ public final class JfrAttachmentTarget extends com.oracle.bmc.http.internal.Expl
         sb.append(", applicationInstallationKey=")
                 .append(String.valueOf(this.applicationInstallationKey));
         sb.append(", jreKey=").append(String.valueOf(this.jreKey));
+        sb.append(", containerKey=").append(String.valueOf(this.containerKey));
         sb.append(")");
         return sb.toString();
     }
@@ -250,6 +289,7 @@ public final class JfrAttachmentTarget extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(
                         this.applicationInstallationKey, other.applicationInstallationKey)
                 && java.util.Objects.equals(this.jreKey, other.jreKey)
+                && java.util.Objects.equals(this.containerKey, other.containerKey)
                 && super.equals(other);
     }
 
@@ -269,6 +309,7 @@ public final class JfrAttachmentTarget extends com.oracle.bmc.http.internal.Expl
                                 ? 43
                                 : this.applicationInstallationKey.hashCode());
         result = (result * PRIME) + (this.jreKey == null ? 43 : this.jreKey.hashCode());
+        result = (result * PRIME) + (this.containerKey == null ? 43 : this.containerKey.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

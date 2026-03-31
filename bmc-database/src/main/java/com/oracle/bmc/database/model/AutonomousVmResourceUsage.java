@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -122,7 +122,7 @@ public final class AutonomousVmResourceUsage
         }
         /**
          * CPU cores that continue to be included in the count of OCPUs available to the
-         * Autonomous Container Database even after one of its Autonomous Database is
+         * Autonomous Container Database even after one of its Autonomous AI Database is
          * terminated or scaled down. You can release them to the available OCPUs at its
          * parent AVMC level by restarting the Autonomous Container Database.
          *
@@ -132,7 +132,7 @@ public final class AutonomousVmResourceUsage
 
         /**
          * CPU cores that continue to be included in the count of OCPUs available to the
-         * Autonomous Container Database even after one of its Autonomous Database is
+         * Autonomous Container Database even after one of its Autonomous AI Database is
          * terminated or scaled down. You can release them to the available OCPUs at its
          * parent AVMC level by restarting the Autonomous Container Database.
          *
@@ -315,7 +315,7 @@ public final class AutonomousVmResourceUsage
 
     /**
      * CPU cores that continue to be included in the count of OCPUs available to the
-     * Autonomous Container Database even after one of its Autonomous Database is
+     * Autonomous Container Database even after one of its Autonomous AI Database is
      * terminated or scaled down. You can release them to the available OCPUs at its
      * parent AVMC level by restarting the Autonomous Container Database.
      *
@@ -325,7 +325,7 @@ public final class AutonomousVmResourceUsage
 
     /**
      * CPU cores that continue to be included in the count of OCPUs available to the
-     * Autonomous Container Database even after one of its Autonomous Database is
+     * Autonomous Container Database even after one of its Autonomous AI Database is
      * terminated or scaled down. You can release them to the available OCPUs at its
      * parent AVMC level by restarting the Autonomous Container Database.
      *

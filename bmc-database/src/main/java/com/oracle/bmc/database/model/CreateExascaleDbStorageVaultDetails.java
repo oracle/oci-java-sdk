@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -35,7 +35,9 @@ public final class CreateExascaleDbStorageVaultDetails
         "definedTags",
         "exadataInfrastructureId",
         "clusterPlacementGroupId",
-        "subscriptionId"
+        "subscriptionId",
+        "isAutoscaleEnabled",
+        "autoscaleLimitInGBs"
     })
     public CreateExascaleDbStorageVaultDetails(
             String compartmentId,
@@ -49,7 +51,9 @@ public final class CreateExascaleDbStorageVaultDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String exadataInfrastructureId,
             String clusterPlacementGroupId,
-            String subscriptionId) {
+            String subscriptionId,
+            Boolean isAutoscaleEnabled,
+            Integer autoscaleLimitInGBs) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -63,6 +67,8 @@ public final class CreateExascaleDbStorageVaultDetails
         this.exadataInfrastructureId = exadataInfrastructureId;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.subscriptionId = subscriptionId;
+        this.isAutoscaleEnabled = isAutoscaleEnabled;
+        this.autoscaleLimitInGBs = autoscaleLimitInGBs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -239,13 +245,13 @@ public final class CreateExascaleDbStorageVaultDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
         private String clusterPlacementGroupId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
          * @param clusterPlacementGroupId the value to set
          * @return this builder
          **/
@@ -270,6 +276,38 @@ public final class CreateExascaleDbStorageVaultDetails
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is {@code FALSE}.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoscaleEnabled")
+        private Boolean isAutoscaleEnabled;
+
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is {@code FALSE}.
+         * @param isAutoscaleEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isAutoscaleEnabled(Boolean isAutoscaleEnabled) {
+            this.isAutoscaleEnabled = isAutoscaleEnabled;
+            this.__explicitlySet__.add("isAutoscaleEnabled");
+            return this;
+        }
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autoscaleLimitInGBs")
+        private Integer autoscaleLimitInGBs;
+
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
+         * @param autoscaleLimitInGBs the value to set
+         * @return this builder
+         **/
+        public Builder autoscaleLimitInGBs(Integer autoscaleLimitInGBs) {
+            this.autoscaleLimitInGBs = autoscaleLimitInGBs;
+            this.__explicitlySet__.add("autoscaleLimitInGBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -288,7 +326,9 @@ public final class CreateExascaleDbStorageVaultDetails
                             this.definedTags,
                             this.exadataInfrastructureId,
                             this.clusterPlacementGroupId,
-                            this.subscriptionId);
+                            this.subscriptionId,
+                            this.isAutoscaleEnabled,
+                            this.autoscaleLimitInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -332,6 +372,12 @@ public final class CreateExascaleDbStorageVaultDetails
             }
             if (model.wasPropertyExplicitlySet("subscriptionId")) {
                 this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoscaleEnabled")) {
+                this.isAutoscaleEnabled(model.getIsAutoscaleEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("autoscaleLimitInGBs")) {
+                this.autoscaleLimitInGBs(model.getAutoscaleLimitInGBs());
             }
             return this;
         }
@@ -498,13 +544,13 @@ public final class CreateExascaleDbStorageVaultDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
     private final String clusterPlacementGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * @return the value
      **/
     public String getClusterPlacementGroupId() {
@@ -523,6 +569,34 @@ public final class CreateExascaleDbStorageVaultDetails
      **/
     public String getSubscriptionId() {
         return subscriptionId;
+    }
+
+    /**
+     * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is {@code FALSE}.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoscaleEnabled")
+    private final Boolean isAutoscaleEnabled;
+
+    /**
+     * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is {@code FALSE}.
+     * @return the value
+     **/
+    public Boolean getIsAutoscaleEnabled() {
+        return isAutoscaleEnabled;
+    }
+
+    /**
+     * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autoscaleLimitInGBs")
+    private final Integer autoscaleLimitInGBs;
+
+    /**
+     * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
+     * @return the value
+     **/
+    public Integer getAutoscaleLimitInGBs() {
+        return autoscaleLimitInGBs;
     }
 
     @Override
@@ -555,6 +629,8 @@ public final class CreateExascaleDbStorageVaultDetails
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", isAutoscaleEnabled=").append(String.valueOf(this.isAutoscaleEnabled));
+        sb.append(", autoscaleLimitInGBs=").append(String.valueOf(this.autoscaleLimitInGBs));
         sb.append(")");
         return sb.toString();
     }
@@ -585,6 +661,8 @@ public final class CreateExascaleDbStorageVaultDetails
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.isAutoscaleEnabled, other.isAutoscaleEnabled)
+                && java.util.Objects.equals(this.autoscaleLimitInGBs, other.autoscaleLimitInGBs)
                 && super.equals(other);
     }
 
@@ -628,6 +706,16 @@ public final class CreateExascaleDbStorageVaultDetails
         result =
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoscaleEnabled == null
+                                ? 43
+                                : this.isAutoscaleEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoscaleLimitInGBs == null
+                                ? 43
+                                : this.autoscaleLimitInGBs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

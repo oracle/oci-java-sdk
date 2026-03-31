@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -154,10 +154,6 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting this as
          * an empty array removes the VNIC from all network security groups.
          * <p>
-         * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-         * belonging to a subnet), the value of the {@code nsgIds} attribute is ignored. Instead, the
-         * VNIC belongs to the NSGs that are associated with the VLAN itself. See {@link Vlan}.
-         * <p>
          * For more information about NSGs, see
          * {@link NetworkSecurityGroup}.
          *
@@ -168,10 +164,6 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
         /**
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting this as
          * an empty array removes the VNIC from all network security groups.
-         * <p>
-         * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-         * belonging to a subnet), the value of the {@code nsgIds} attribute is ignored. Instead, the
-         * VNIC belongs to the NSGs that are associated with the VLAN itself. See {@link Vlan}.
          * <p>
          * For more information about NSGs, see
          * {@link NetworkSecurityGroup}.
@@ -189,10 +181,6 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * Defaults to {@code false}, which means the check is performed. For information about why you would
          * skip the source/destination check, see
          * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-         * <p>
-         * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-         * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
-         * This is because the source/destination check is always disabled for VNICs in a VLAN.
          * Example: {@code true}
          *
          **/
@@ -204,10 +192,6 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * Defaults to {@code false}, which means the check is performed. For information about why you would
          * skip the source/destination check, see
          * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-         * <p>
-         * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-         * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
-         * This is because the source/destination check is always disabled for VNICs in a VLAN.
          * Example: {@code true}
          *
          * @param skipSourceDestCheck the value to set
@@ -370,10 +354,6 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting this as
      * an empty array removes the VNIC from all network security groups.
      * <p>
-     * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-     * belonging to a subnet), the value of the {@code nsgIds} attribute is ignored. Instead, the
-     * VNIC belongs to the NSGs that are associated with the VLAN itself. See {@link Vlan}.
-     * <p>
      * For more information about NSGs, see
      * {@link NetworkSecurityGroup}.
      *
@@ -384,10 +364,6 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
     /**
      * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting this as
      * an empty array removes the VNIC from all network security groups.
-     * <p>
-     * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-     * belonging to a subnet), the value of the {@code nsgIds} attribute is ignored. Instead, the
-     * VNIC belongs to the NSGs that are associated with the VLAN itself. See {@link Vlan}.
      * <p>
      * For more information about NSGs, see
      * {@link NetworkSecurityGroup}.
@@ -403,10 +379,6 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * Defaults to {@code false}, which means the check is performed. For information about why you would
      * skip the source/destination check, see
      * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-     * <p>
-     * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-     * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
-     * This is because the source/destination check is always disabled for VNICs in a VLAN.
      * Example: {@code true}
      *
      **/
@@ -418,10 +390,6 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * Defaults to {@code false}, which means the check is performed. For information about why you would
      * skip the source/destination check, see
      * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-     * <p>
-     * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-     * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
-     * This is because the source/destination check is always disabled for VNICs in a VLAN.
      * Example: {@code true}
      *
      * @return the value

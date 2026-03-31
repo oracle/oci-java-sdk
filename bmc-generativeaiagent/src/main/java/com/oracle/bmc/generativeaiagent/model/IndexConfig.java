@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent.model;
@@ -85,10 +85,6 @@ public class IndexConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
 
     /**
      * The type of index.
-     * The allowed values are:
-     * - {@code DEFAULT_INDEX_CONFIG}: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-     * - {@code OCI_OPEN_SEARCH_INDEX_CONFIG}: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-     * - {@code OCI_DATABASE_CONFIG}: OciDatabaseConfig allows customer to configure their Database.
      *
      **/
     public enum IndexConfigType {

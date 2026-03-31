@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -23,12 +23,17 @@ package com.oracle.bmc.core.model;
 public final class CapacityReportInstanceShapeConfig
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs", "nvmes"})
-    public CapacityReportInstanceShapeConfig(Float ocpus, Float memoryInGBs, Integer nvmes) {
+    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs", "nvmes", "baselineOcpuUtilization"})
+    public CapacityReportInstanceShapeConfig(
+            Float ocpus,
+            Float memoryInGBs,
+            Integer nvmes,
+            BaselineOcpuUtilization baselineOcpuUtilization) {
         super();
         this.ocpus = ocpus;
         this.memoryInGBs = memoryInGBs;
         this.nvmes = nvmes;
+        this.baselineOcpuUtilization = baselineOcpuUtilization;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -87,13 +92,44 @@ public final class CapacityReportInstanceShapeConfig
             this.__explicitlySet__.add("nvmes");
             return this;
         }
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+         * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+         * <p>
+         * The following values are supported:
+         * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+         * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+         * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
+        private BaselineOcpuUtilization baselineOcpuUtilization;
+
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+         * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+         * <p>
+         * The following values are supported:
+         * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+         * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+         * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         *
+         * @param baselineOcpuUtilization the value to set
+         * @return this builder
+         **/
+        public Builder baselineOcpuUtilization(BaselineOcpuUtilization baselineOcpuUtilization) {
+            this.baselineOcpuUtilization = baselineOcpuUtilization;
+            this.__explicitlySet__.add("baselineOcpuUtilization");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CapacityReportInstanceShapeConfig build() {
             CapacityReportInstanceShapeConfig model =
-                    new CapacityReportInstanceShapeConfig(this.ocpus, this.memoryInGBs, this.nvmes);
+                    new CapacityReportInstanceShapeConfig(
+                            this.ocpus, this.memoryInGBs, this.nvmes, this.baselineOcpuUtilization);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -110,6 +146,9 @@ public final class CapacityReportInstanceShapeConfig
             }
             if (model.wasPropertyExplicitlySet("nvmes")) {
                 this.nvmes(model.getNvmes());
+            }
+            if (model.wasPropertyExplicitlySet("baselineOcpuUtilization")) {
+                this.baselineOcpuUtilization(model.getBaselineOcpuUtilization());
             }
             return this;
         }
@@ -174,6 +213,90 @@ public final class CapacityReportInstanceShapeConfig
         return nvmes;
     }
 
+    /**
+     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * <p>
+     * The following values are supported:
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     *
+     **/
+    public enum BaselineOcpuUtilization {
+        Baseline18("BASELINE_1_8"),
+        Baseline12("BASELINE_1_2"),
+        Baseline11("BASELINE_1_1"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BaselineOcpuUtilization.class);
+
+        private final String value;
+        private static java.util.Map<String, BaselineOcpuUtilization> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BaselineOcpuUtilization v : BaselineOcpuUtilization.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BaselineOcpuUtilization(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BaselineOcpuUtilization create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BaselineOcpuUtilization', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * <p>
+     * The following values are supported:
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
+    private final BaselineOcpuUtilization baselineOcpuUtilization;
+
+    /**
+     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * <p>
+     * The following values are supported:
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     *
+     * @return the value
+     **/
+    public BaselineOcpuUtilization getBaselineOcpuUtilization() {
+        return baselineOcpuUtilization;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -191,6 +314,8 @@ public final class CapacityReportInstanceShapeConfig
         sb.append("ocpus=").append(String.valueOf(this.ocpus));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
         sb.append(", nvmes=").append(String.valueOf(this.nvmes));
+        sb.append(", baselineOcpuUtilization=")
+                .append(String.valueOf(this.baselineOcpuUtilization));
         sb.append(")");
         return sb.toString();
     }
@@ -208,6 +333,8 @@ public final class CapacityReportInstanceShapeConfig
         return java.util.Objects.equals(this.ocpus, other.ocpus)
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
                 && java.util.Objects.equals(this.nvmes, other.nvmes)
+                && java.util.Objects.equals(
+                        this.baselineOcpuUtilization, other.baselineOcpuUtilization)
                 && super.equals(other);
     }
 
@@ -218,6 +345,11 @@ public final class CapacityReportInstanceShapeConfig
         result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
         result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
         result = (result * PRIME) + (this.nvmes == null ? 43 : this.nvmes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.baselineOcpuUtilization == null
+                                ? 43
+                                : this.baselineOcpuUtilization.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

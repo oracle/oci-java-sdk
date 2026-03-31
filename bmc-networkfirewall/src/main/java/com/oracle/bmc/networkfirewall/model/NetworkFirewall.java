@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -29,6 +29,8 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
         "ipv6Address",
         "networkFirewallPolicyId",
         "availabilityDomain",
+        "natConfiguration",
+        "shape",
         "networkSecurityGroupIds",
         "timeCreated",
         "timeUpdated",
@@ -47,6 +49,8 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
             String ipv6Address,
             String networkFirewallPolicyId,
             String availabilityDomain,
+            NatConfigurationResponse natConfiguration,
+            String shape,
             java.util.List<String> networkSecurityGroupIds,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -64,6 +68,8 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
         this.ipv6Address = ipv6Address;
         this.networkFirewallPolicyId = networkFirewallPolicyId;
         this.availabilityDomain = availabilityDomain;
+        this.natConfiguration = natConfiguration;
+        this.shape = shape;
         this.networkSecurityGroupIds = networkSecurityGroupIds;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -208,6 +214,31 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("natConfiguration")
+        private NatConfigurationResponse natConfiguration;
+
+        public Builder natConfiguration(NatConfigurationResponse natConfiguration) {
+            this.natConfiguration = natConfiguration;
+            this.__explicitlySet__.add("natConfiguration");
+            return this;
+        }
+        /**
+         * The shape of a firewall to determine the bandwidth that the firewall allows.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        /**
+         * The shape of a firewall to determine the bandwidth that the firewall allows.
+         * @param shape the value to set
+         * @return this builder
+         **/
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
             return this;
         }
         /**
@@ -378,6 +409,8 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
                             this.ipv6Address,
                             this.networkFirewallPolicyId,
                             this.availabilityDomain,
+                            this.natConfiguration,
+                            this.shape,
                             this.networkSecurityGroupIds,
                             this.timeCreated,
                             this.timeUpdated,
@@ -417,6 +450,12 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("natConfiguration")) {
+                this.natConfiguration(model.getNatConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
             }
             if (model.wasPropertyExplicitlySet("networkSecurityGroupIds")) {
                 this.networkSecurityGroupIds(model.getNetworkSecurityGroupIds());
@@ -573,6 +612,27 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
      **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("natConfiguration")
+    private final NatConfigurationResponse natConfiguration;
+
+    public NatConfigurationResponse getNatConfiguration() {
+        return natConfiguration;
+    }
+
+    /**
+     * The shape of a firewall to determine the bandwidth that the firewall allows.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    private final String shape;
+
+    /**
+     * The shape of a firewall to determine the bandwidth that the firewall allows.
+     * @return the value
+     **/
+    public String getShape() {
+        return shape;
     }
 
     /**
@@ -734,6 +794,8 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
         sb.append(", networkFirewallPolicyId=")
                 .append(String.valueOf(this.networkFirewallPolicyId));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", natConfiguration=").append(String.valueOf(this.natConfiguration));
+        sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", networkSecurityGroupIds=")
                 .append(String.valueOf(this.networkSecurityGroupIds));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -766,6 +828,8 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(
                         this.networkFirewallPolicyId, other.networkFirewallPolicyId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.natConfiguration, other.natConfiguration)
+                && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(
                         this.networkSecurityGroupIds, other.networkSecurityGroupIds)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -800,6 +864,10 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.natConfiguration == null ? 43 : this.natConfiguration.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkSecurityGroupIds == null

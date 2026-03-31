@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -34,7 +34,8 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         "displayName",
         "isEnabled",
         "lastExecutionStatus",
-        "timeLastExecuted"
+        "timeLastExecuted",
+        "taskStatus"
     })
     public RuleSummary(
             String id,
@@ -50,7 +51,8 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             String displayName,
             Boolean isEnabled,
             LastExecutionStatus lastExecutionStatus,
-            java.util.Date timeLastExecuted) {
+            java.util.Date timeLastExecuted,
+            TaskStatus taskStatus) {
         super();
         this.id = id;
         this.description = description;
@@ -66,6 +68,7 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         this.isEnabled = isEnabled;
         this.lastExecutionStatus = lastExecutionStatus;
         this.timeLastExecuted = timeLastExecuted;
+        this.taskStatus = taskStatus;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -202,14 +205,14 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The current state of the logging analytics rule.
+         * The current state of the Log Analytics rule.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ConfigLifecycleState lifecycleState;
 
         /**
-         * The current state of the logging analytics rule.
+         * The current state of the Log Analytics rule.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -317,6 +320,22 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("timeLastExecuted");
             return this;
         }
+        /**
+         * The task status of the rule.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
+        private TaskStatus taskStatus;
+
+        /**
+         * The task status of the rule.
+         * @param taskStatus the value to set
+         * @return this builder
+         **/
+        public Builder taskStatus(TaskStatus taskStatus) {
+            this.taskStatus = taskStatus;
+            this.__explicitlySet__.add("taskStatus");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -337,7 +356,8 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.displayName,
                             this.isEnabled,
                             this.lastExecutionStatus,
-                            this.timeLastExecuted);
+                            this.timeLastExecuted,
+                            this.taskStatus);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -387,6 +407,9 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("timeLastExecuted")) {
                 this.timeLastExecuted(model.getTimeLastExecuted());
+            }
+            if (model.wasPropertyExplicitlySet("taskStatus")) {
+                this.taskStatus(model.getTaskStatus());
             }
             return this;
         }
@@ -520,14 +543,14 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The current state of the logging analytics rule.
+     * The current state of the Log Analytics rule.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ConfigLifecycleState lifecycleState;
 
     /**
-     * The current state of the logging analytics rule.
+     * The current state of the Log Analytics rule.
      *
      * @return the value
      **/
@@ -669,6 +692,70 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         return timeLastExecuted;
     }
 
+    /**
+     * The task status of the rule.
+     **/
+    public enum TaskStatus {
+        Ready("READY"),
+        Paused("PAUSED"),
+        Completed("COMPLETED"),
+        Blocked("BLOCKED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TaskStatus.class);
+
+        private final String value;
+        private static java.util.Map<String, TaskStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TaskStatus v : TaskStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        TaskStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TaskStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TaskStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The task status of the rule.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
+    private final TaskStatus taskStatus;
+
+    /**
+     * The task status of the rule.
+     * @return the value
+     **/
+    public TaskStatus getTaskStatus() {
+        return taskStatus;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -697,6 +784,7 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", lastExecutionStatus=").append(String.valueOf(this.lastExecutionStatus));
         sb.append(", timeLastExecuted=").append(String.valueOf(this.timeLastExecuted));
+        sb.append(", taskStatus=").append(String.valueOf(this.taskStatus));
         sb.append(")");
         return sb.toString();
     }
@@ -725,6 +813,7 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.lastExecutionStatus, other.lastExecutionStatus)
                 && java.util.Objects.equals(this.timeLastExecuted, other.timeLastExecuted)
+                && java.util.Objects.equals(this.taskStatus, other.taskStatus)
                 && super.equals(other);
     }
 
@@ -758,6 +847,7 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         result =
                 (result * PRIME)
                         + (this.timeLastExecuted == null ? 43 : this.timeLastExecuted.hashCode());
+        result = (result * PRIME) + (this.taskStatus == null ? 43 : this.taskStatus.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

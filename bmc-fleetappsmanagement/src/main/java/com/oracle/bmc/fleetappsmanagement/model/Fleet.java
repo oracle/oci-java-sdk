@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Fleet.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -28,17 +28,15 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "description",
         "timeCreated",
         "timeUpdated",
-        "fleetType",
         "products",
-        "applicationType",
+        "details",
         "environmentType",
-        "groupType",
-        "resourceSelectionType",
-        "ruleSelectionCriteria",
+        "resourceSelection",
         "notificationPreferences",
         "resources",
         "properties",
         "credentials",
+        "parentFleetId",
         "isTargetAutoConfirm",
         "lifecycleState",
         "lifecycleDetails",
@@ -54,17 +52,15 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             String description,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            FleetType fleetType,
             java.util.List<String> products,
-            String applicationType,
+            FleetDetails details,
             String environmentType,
-            GroupType groupType,
-            ResourceSelectionType resourceSelectionType,
-            SelectionCriteria ruleSelectionCriteria,
-            NotificationPreferences notificationPreferences,
+            ResourceSelection resourceSelection,
+            java.util.List<NotificationPreference> notificationPreferences,
             java.util.List<AssociatedFleetResourceDetails> resources,
             java.util.List<AssociatedFleetPropertyDetails> properties,
             java.util.List<AssociatedFleetCredentialDetails> credentials,
+            String parentFleetId,
             Boolean isTargetAutoConfirm,
             LifecycleState lifecycleState,
             String lifecycleDetails,
@@ -79,17 +75,15 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.description = description;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
-        this.fleetType = fleetType;
         this.products = products;
-        this.applicationType = applicationType;
+        this.details = details;
         this.environmentType = environmentType;
-        this.groupType = groupType;
-        this.resourceSelectionType = resourceSelectionType;
-        this.ruleSelectionCriteria = ruleSelectionCriteria;
+        this.resourceSelection = resourceSelection;
         this.notificationPreferences = notificationPreferences;
         this.resources = resources;
         this.properties = properties;
         this.credentials = credentials;
+        this.parentFleetId = parentFleetId;
         this.isTargetAutoConfirm = isTargetAutoConfirm;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -117,13 +111,13 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
         /**
-         * Tenancy OCID
+         * Compartment OCID
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Tenancy OCID
+         * Compartment OCID
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -225,39 +219,17 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
         /**
-         * Type of the Fleet.
-         * PRODUCT - A fleet of product-specific resources for a product type.
-         * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
-         * GROUP - A fleet of a fleet of either environment or product fleets.
-         * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
-        private FleetType fleetType;
-
-        /**
-         * Type of the Fleet.
-         * PRODUCT - A fleet of product-specific resources for a product type.
-         * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
-         * GROUP - A fleet of a fleet of either environment or product fleets.
-         * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
-         *
-         * @param fleetType the value to set
-         * @return this builder
-         **/
-        public Builder fleetType(FleetType fleetType) {
-            this.fleetType = fleetType;
-            this.__explicitlySet__.add("fleetType");
-            return this;
-        }
-        /**
          * Products associated with the Fleet.
+         * PlatformConfiguration Ids corresponding to the Products.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("products")
         private java.util.List<String> products;
 
         /**
          * Products associated with the Fleet.
+         * PlatformConfiguration Ids corresponding to the Products.
+         *
          * @param products the value to set
          * @return this builder
          **/
@@ -266,24 +238,13 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             this.__explicitlySet__.add("products");
             return this;
         }
-        /**
-         * Product stack associated with the Fleet.
-         * Applicable for ENVIRONMENT fleet types.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
-        private String applicationType;
 
-        /**
-         * Product stack associated with the Fleet.
-         * Applicable for ENVIRONMENT fleet types.
-         *
-         * @param applicationType the value to set
-         * @return this builder
-         **/
-        public Builder applicationType(String applicationType) {
-            this.applicationType = applicationType;
-            this.__explicitlySet__.add("applicationType");
+        @com.fasterxml.jackson.annotation.JsonProperty("details")
+        private FleetDetails details;
+
+        public Builder details(FleetDetails details) {
+            this.details = details;
+            this.__explicitlySet__.add("details");
             return this;
         }
         /**
@@ -306,60 +267,28 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             this.__explicitlySet__.add("environmentType");
             return this;
         }
-        /**
-         * Group Type associated with Group Fleet.
-         * Applicable for GROUP fleet types.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("groupType")
-        private GroupType groupType;
 
-        /**
-         * Group Type associated with Group Fleet.
-         * Applicable for GROUP fleet types.
-         *
-         * @param groupType the value to set
-         * @return this builder
-         **/
-        public Builder groupType(GroupType groupType) {
-            this.groupType = groupType;
-            this.__explicitlySet__.add("groupType");
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceSelection")
+        private ResourceSelection resourceSelection;
+
+        public Builder resourceSelection(ResourceSelection resourceSelection) {
+            this.resourceSelection = resourceSelection;
+            this.__explicitlySet__.add("resourceSelection");
             return this;
         }
         /**
-         * Type of resource selection in a Fleet.
-         * Select resources manually or select resources based on rules.
-         *
+         * Notification Preferences associated with the Fleet.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("resourceSelectionType")
-        private ResourceSelectionType resourceSelectionType;
-
-        /**
-         * Type of resource selection in a Fleet.
-         * Select resources manually or select resources based on rules.
-         *
-         * @param resourceSelectionType the value to set
-         * @return this builder
-         **/
-        public Builder resourceSelectionType(ResourceSelectionType resourceSelectionType) {
-            this.resourceSelectionType = resourceSelectionType;
-            this.__explicitlySet__.add("resourceSelectionType");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("ruleSelectionCriteria")
-        private SelectionCriteria ruleSelectionCriteria;
-
-        public Builder ruleSelectionCriteria(SelectionCriteria ruleSelectionCriteria) {
-            this.ruleSelectionCriteria = ruleSelectionCriteria;
-            this.__explicitlySet__.add("ruleSelectionCriteria");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("notificationPreferences")
-        private NotificationPreferences notificationPreferences;
+        private java.util.List<NotificationPreference> notificationPreferences;
 
-        public Builder notificationPreferences(NotificationPreferences notificationPreferences) {
+        /**
+         * Notification Preferences associated with the Fleet.
+         * @param notificationPreferences the value to set
+         * @return this builder
+         **/
+        public Builder notificationPreferences(
+                java.util.List<NotificationPreference> notificationPreferences) {
             this.notificationPreferences = notificationPreferences;
             this.__explicitlySet__.add("notificationPreferences");
             return this;
@@ -410,6 +339,24 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         public Builder credentials(java.util.List<AssociatedFleetCredentialDetails> credentials) {
             this.credentials = credentials;
             this.__explicitlySet__.add("credentials");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parentFleetId")
+        private String parentFleetId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
+         *
+         * @param parentFleetId the value to set
+         * @return this builder
+         **/
+        public Builder parentFleetId(String parentFleetId) {
+            this.parentFleetId = parentFleetId;
+            this.__explicitlySet__.add("parentFleetId");
             return this;
         }
         /**
@@ -539,17 +486,15 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                             this.description,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.fleetType,
                             this.products,
-                            this.applicationType,
+                            this.details,
                             this.environmentType,
-                            this.groupType,
-                            this.resourceSelectionType,
-                            this.ruleSelectionCriteria,
+                            this.resourceSelection,
                             this.notificationPreferences,
                             this.resources,
                             this.properties,
                             this.credentials,
+                            this.parentFleetId,
                             this.isTargetAutoConfirm,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -585,26 +530,17 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
-            if (model.wasPropertyExplicitlySet("fleetType")) {
-                this.fleetType(model.getFleetType());
-            }
             if (model.wasPropertyExplicitlySet("products")) {
                 this.products(model.getProducts());
             }
-            if (model.wasPropertyExplicitlySet("applicationType")) {
-                this.applicationType(model.getApplicationType());
+            if (model.wasPropertyExplicitlySet("details")) {
+                this.details(model.getDetails());
             }
             if (model.wasPropertyExplicitlySet("environmentType")) {
                 this.environmentType(model.getEnvironmentType());
             }
-            if (model.wasPropertyExplicitlySet("groupType")) {
-                this.groupType(model.getGroupType());
-            }
-            if (model.wasPropertyExplicitlySet("resourceSelectionType")) {
-                this.resourceSelectionType(model.getResourceSelectionType());
-            }
-            if (model.wasPropertyExplicitlySet("ruleSelectionCriteria")) {
-                this.ruleSelectionCriteria(model.getRuleSelectionCriteria());
+            if (model.wasPropertyExplicitlySet("resourceSelection")) {
+                this.resourceSelection(model.getResourceSelection());
             }
             if (model.wasPropertyExplicitlySet("notificationPreferences")) {
                 this.notificationPreferences(model.getNotificationPreferences());
@@ -617,6 +553,9 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             }
             if (model.wasPropertyExplicitlySet("credentials")) {
                 this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("parentFleetId")) {
+                this.parentFleetId(model.getParentFleetId());
             }
             if (model.wasPropertyExplicitlySet("isTargetAutoConfirm")) {
                 this.isTargetAutoConfirm(model.getIsTargetAutoConfirm());
@@ -666,13 +605,13 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * Tenancy OCID
+     * Compartment OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Tenancy OCID
+     * Compartment OCID
      * @return the value
      **/
     public String getCompartmentId() {
@@ -762,114 +701,28 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * Type of the Fleet.
-     * PRODUCT - A fleet of product-specific resources for a product type.
-     * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
-     * GROUP - A fleet of a fleet of either environment or product fleets.
-     * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
-     *
-     **/
-    public enum FleetType {
-        Product("PRODUCT"),
-        Environment("ENVIRONMENT"),
-        Generic("GENERIC"),
-        Group("GROUP"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(FleetType.class);
-
-        private final String value;
-        private static java.util.Map<String, FleetType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (FleetType v : FleetType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        FleetType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static FleetType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'FleetType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * Type of the Fleet.
-     * PRODUCT - A fleet of product-specific resources for a product type.
-     * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
-     * GROUP - A fleet of a fleet of either environment or product fleets.
-     * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
-    private final FleetType fleetType;
-
-    /**
-     * Type of the Fleet.
-     * PRODUCT - A fleet of product-specific resources for a product type.
-     * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
-     * GROUP - A fleet of a fleet of either environment or product fleets.
-     * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
-     *
-     * @return the value
-     **/
-    public FleetType getFleetType() {
-        return fleetType;
-    }
-
-    /**
      * Products associated with the Fleet.
+     * PlatformConfiguration Ids corresponding to the Products.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("products")
     private final java.util.List<String> products;
 
     /**
      * Products associated with the Fleet.
+     * PlatformConfiguration Ids corresponding to the Products.
+     *
      * @return the value
      **/
     public java.util.List<String> getProducts() {
         return products;
     }
 
-    /**
-     * Product stack associated with the Fleet.
-     * Applicable for ENVIRONMENT fleet types.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
-    private final String applicationType;
+    @com.fasterxml.jackson.annotation.JsonProperty("details")
+    private final FleetDetails details;
 
-    /**
-     * Product stack associated with the Fleet.
-     * Applicable for ENVIRONMENT fleet types.
-     *
-     * @return the value
-     **/
-    public String getApplicationType() {
-        return applicationType;
+    public FleetDetails getDetails() {
+        return details;
     }
 
     /**
@@ -890,153 +743,24 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return environmentType;
     }
 
-    /**
-     * Group Type associated with Group Fleet.
-     * Applicable for GROUP fleet types.
-     *
-     **/
-    public enum GroupType {
-        Environment("ENVIRONMENT"),
-        Product("PRODUCT"),
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceSelection")
+    private final ResourceSelection resourceSelection;
 
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(GroupType.class);
-
-        private final String value;
-        private static java.util.Map<String, GroupType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (GroupType v : GroupType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        GroupType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static GroupType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'GroupType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * Group Type associated with Group Fleet.
-     * Applicable for GROUP fleet types.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("groupType")
-    private final GroupType groupType;
-
-    /**
-     * Group Type associated with Group Fleet.
-     * Applicable for GROUP fleet types.
-     *
-     * @return the value
-     **/
-    public GroupType getGroupType() {
-        return groupType;
+    public ResourceSelection getResourceSelection() {
+        return resourceSelection;
     }
 
     /**
-     * Type of resource selection in a Fleet.
-     * Select resources manually or select resources based on rules.
-     *
+     * Notification Preferences associated with the Fleet.
      **/
-    public enum ResourceSelectionType {
-        Dynamic("DYNAMIC"),
-        Manual("MANUAL"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(ResourceSelectionType.class);
-
-        private final String value;
-        private static java.util.Map<String, ResourceSelectionType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (ResourceSelectionType v : ResourceSelectionType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        ResourceSelectionType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static ResourceSelectionType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'ResourceSelectionType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * Type of resource selection in a Fleet.
-     * Select resources manually or select resources based on rules.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceSelectionType")
-    private final ResourceSelectionType resourceSelectionType;
-
-    /**
-     * Type of resource selection in a Fleet.
-     * Select resources manually or select resources based on rules.
-     *
-     * @return the value
-     **/
-    public ResourceSelectionType getResourceSelectionType() {
-        return resourceSelectionType;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("ruleSelectionCriteria")
-    private final SelectionCriteria ruleSelectionCriteria;
-
-    public SelectionCriteria getRuleSelectionCriteria() {
-        return ruleSelectionCriteria;
-    }
-
     @com.fasterxml.jackson.annotation.JsonProperty("notificationPreferences")
-    private final NotificationPreferences notificationPreferences;
+    private final java.util.List<NotificationPreference> notificationPreferences;
 
-    public NotificationPreferences getNotificationPreferences() {
+    /**
+     * Notification Preferences associated with the Fleet.
+     * @return the value
+     **/
+    public java.util.List<NotificationPreference> getNotificationPreferences() {
         return notificationPreferences;
     }
 
@@ -1080,6 +804,22 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
      **/
     public java.util.List<AssociatedFleetCredentialDetails> getCredentials() {
         return credentials;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentFleetId")
+    private final String parentFleetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
+     *
+     * @return the value
+     **/
+    public String getParentFleetId() {
+        return parentFleetId;
     }
 
     /**
@@ -1257,18 +997,16 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append(", fleetType=").append(String.valueOf(this.fleetType));
         sb.append(", products=").append(String.valueOf(this.products));
-        sb.append(", applicationType=").append(String.valueOf(this.applicationType));
+        sb.append(", details=").append(String.valueOf(this.details));
         sb.append(", environmentType=").append(String.valueOf(this.environmentType));
-        sb.append(", groupType=").append(String.valueOf(this.groupType));
-        sb.append(", resourceSelectionType=").append(String.valueOf(this.resourceSelectionType));
-        sb.append(", ruleSelectionCriteria=").append(String.valueOf(this.ruleSelectionCriteria));
+        sb.append(", resourceSelection=").append(String.valueOf(this.resourceSelection));
         sb.append(", notificationPreferences=")
                 .append(String.valueOf(this.notificationPreferences));
         sb.append(", resources=").append(String.valueOf(this.resources));
         sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", parentFleetId=").append(String.valueOf(this.parentFleetId));
         sb.append(", isTargetAutoConfirm=").append(String.valueOf(this.isTargetAutoConfirm));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -1296,18 +1034,16 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.fleetType, other.fleetType)
                 && java.util.Objects.equals(this.products, other.products)
-                && java.util.Objects.equals(this.applicationType, other.applicationType)
+                && java.util.Objects.equals(this.details, other.details)
                 && java.util.Objects.equals(this.environmentType, other.environmentType)
-                && java.util.Objects.equals(this.groupType, other.groupType)
-                && java.util.Objects.equals(this.resourceSelectionType, other.resourceSelectionType)
-                && java.util.Objects.equals(this.ruleSelectionCriteria, other.ruleSelectionCriteria)
+                && java.util.Objects.equals(this.resourceSelection, other.resourceSelection)
                 && java.util.Objects.equals(
                         this.notificationPreferences, other.notificationPreferences)
                 && java.util.Objects.equals(this.resources, other.resources)
                 && java.util.Objects.equals(this.properties, other.properties)
                 && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.parentFleetId, other.parentFleetId)
                 && java.util.Objects.equals(this.isTargetAutoConfirm, other.isTargetAutoConfirm)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -1332,25 +1068,14 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
-        result = (result * PRIME) + (this.fleetType == null ? 43 : this.fleetType.hashCode());
         result = (result * PRIME) + (this.products == null ? 43 : this.products.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.applicationType == null ? 43 : this.applicationType.hashCode());
+        result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
         result =
                 (result * PRIME)
                         + (this.environmentType == null ? 43 : this.environmentType.hashCode());
-        result = (result * PRIME) + (this.groupType == null ? 43 : this.groupType.hashCode());
         result =
                 (result * PRIME)
-                        + (this.resourceSelectionType == null
-                                ? 43
-                                : this.resourceSelectionType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.ruleSelectionCriteria == null
-                                ? 43
-                                : this.ruleSelectionCriteria.hashCode());
+                        + (this.resourceSelection == null ? 43 : this.resourceSelection.hashCode());
         result =
                 (result * PRIME)
                         + (this.notificationPreferences == null
@@ -1359,6 +1084,9 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         result = (result * PRIME) + (this.resources == null ? 43 : this.resources.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentFleetId == null ? 43 : this.parentFleetId.hashCode());
         result =
                 (result * PRIME)
                         + (this.isTargetAutoConfirm == null

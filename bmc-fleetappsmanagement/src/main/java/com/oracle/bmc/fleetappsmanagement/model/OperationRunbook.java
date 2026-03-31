@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,15 +14,19 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OperationRunbook.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OperationRunbook extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "inputParameters"})
-    public OperationRunbook(String id, java.util.List<InputParameter> inputParameters) {
+    @java.beans.ConstructorProperties({"runbookId", "runbookVersionName", "inputParameters"})
+    public OperationRunbook(
+            String runbookId,
+            String runbookVersionName,
+            java.util.List<InputParameter> inputParameters) {
         super();
-        this.id = id;
+        this.runbookId = runbookId;
+        this.runbookVersionName = runbookVersionName;
         this.inputParameters = inputParameters;
     }
 
@@ -31,17 +35,33 @@ public final class OperationRunbook extends com.oracle.bmc.http.internal.Explici
         /**
          * The ID of the Runbook
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
+        @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
+        private String runbookId;
 
         /**
          * The ID of the Runbook
-         * @param id the value to set
+         * @param runbookId the value to set
          * @return this builder
          **/
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
+        public Builder runbookId(String runbookId) {
+            this.runbookId = runbookId;
+            this.__explicitlySet__.add("runbookId");
+            return this;
+        }
+        /**
+         * The runbook version name
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("runbookVersionName")
+        private String runbookVersionName;
+
+        /**
+         * The runbook version name
+         * @param runbookVersionName the value to set
+         * @return this builder
+         **/
+        public Builder runbookVersionName(String runbookVersionName) {
+            this.runbookVersionName = runbookVersionName;
+            this.__explicitlySet__.add("runbookVersionName");
             return this;
         }
         /**
@@ -65,7 +85,9 @@ public final class OperationRunbook extends com.oracle.bmc.http.internal.Explici
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OperationRunbook build() {
-            OperationRunbook model = new OperationRunbook(this.id, this.inputParameters);
+            OperationRunbook model =
+                    new OperationRunbook(
+                            this.runbookId, this.runbookVersionName, this.inputParameters);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -74,8 +96,11 @@ public final class OperationRunbook extends com.oracle.bmc.http.internal.Explici
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(OperationRunbook model) {
-            if (model.wasPropertyExplicitlySet("id")) {
-                this.id(model.getId());
+            if (model.wasPropertyExplicitlySet("runbookId")) {
+                this.runbookId(model.getRunbookId());
+            }
+            if (model.wasPropertyExplicitlySet("runbookVersionName")) {
+                this.runbookVersionName(model.getRunbookVersionName());
             }
             if (model.wasPropertyExplicitlySet("inputParameters")) {
                 this.inputParameters(model.getInputParameters());
@@ -98,15 +123,29 @@ public final class OperationRunbook extends com.oracle.bmc.http.internal.Explici
     /**
      * The ID of the Runbook
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("id")
-    private final String id;
+    @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
+    private final String runbookId;
 
     /**
      * The ID of the Runbook
      * @return the value
      **/
-    public String getId() {
-        return id;
+    public String getRunbookId() {
+        return runbookId;
+    }
+
+    /**
+     * The runbook version name
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("runbookVersionName")
+    private final String runbookVersionName;
+
+    /**
+     * The runbook version name
+     * @return the value
+     **/
+    public String getRunbookVersionName() {
+        return runbookVersionName;
     }
 
     /**
@@ -137,7 +176,8 @@ public final class OperationRunbook extends com.oracle.bmc.http.internal.Explici
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OperationRunbook(");
         sb.append("super=").append(super.toString());
-        sb.append("id=").append(String.valueOf(this.id));
+        sb.append("runbookId=").append(String.valueOf(this.runbookId));
+        sb.append(", runbookVersionName=").append(String.valueOf(this.runbookVersionName));
         sb.append(", inputParameters=").append(String.valueOf(this.inputParameters));
         sb.append(")");
         return sb.toString();
@@ -153,7 +193,8 @@ public final class OperationRunbook extends com.oracle.bmc.http.internal.Explici
         }
 
         OperationRunbook other = (OperationRunbook) o;
-        return java.util.Objects.equals(this.id, other.id)
+        return java.util.Objects.equals(this.runbookId, other.runbookId)
+                && java.util.Objects.equals(this.runbookVersionName, other.runbookVersionName)
                 && java.util.Objects.equals(this.inputParameters, other.inputParameters)
                 && super.equals(other);
     }
@@ -162,7 +203,12 @@ public final class OperationRunbook extends com.oracle.bmc.http.internal.Explici
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.runbookId == null ? 43 : this.runbookId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runbookVersionName == null
+                                ? 43
+                                : this.runbookVersionName.hashCode());
         result =
                 (result * PRIME)
                         + (this.inputParameters == null ? 43 : this.inputParameters.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.servicecatalog.model;
@@ -25,17 +25,20 @@ public final class CreateServiceCatalogDetails
     @java.beans.ConstructorProperties({
         "compartmentId",
         "displayName",
+        "status",
         "definedTags",
         "freeformTags"
     })
     public CreateServiceCatalogDetails(
             String compartmentId,
             String displayName,
+            ServiceCatalogStatusEnum status,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
+        this.status = status;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
     }
@@ -72,6 +75,22 @@ public final class CreateServiceCatalogDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * The status of a service catalog.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("status")
+        private ServiceCatalogStatusEnum status;
+
+        /**
+         * The status of a service catalog.
+         * @param status the value to set
+         * @return this builder
+         **/
+        public Builder status(ServiceCatalogStatusEnum status) {
+            this.status = status;
+            this.__explicitlySet__.add("status");
             return this;
         }
         /**
@@ -124,6 +143,7 @@ public final class CreateServiceCatalogDetails
                     new CreateServiceCatalogDetails(
                             this.compartmentId,
                             this.displayName,
+                            this.status,
                             this.definedTags,
                             this.freeformTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -139,6 +159,9 @@ public final class CreateServiceCatalogDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -187,6 +210,20 @@ public final class CreateServiceCatalogDetails
      **/
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * The status of a service catalog.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
+    private final ServiceCatalogStatusEnum status;
+
+    /**
+     * The status of a service catalog.
+     * @return the value
+     **/
+    public ServiceCatalogStatusEnum getStatus() {
+        return status;
     }
 
     /**
@@ -241,6 +278,7 @@ public final class CreateServiceCatalogDetails
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(")");
@@ -259,6 +297,7 @@ public final class CreateServiceCatalogDetails
         CreateServiceCatalogDetails other = (CreateServiceCatalogDetails) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && super.equals(other);
@@ -272,6 +311,7 @@ public final class CreateServiceCatalogDetails
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + super.hashCode();

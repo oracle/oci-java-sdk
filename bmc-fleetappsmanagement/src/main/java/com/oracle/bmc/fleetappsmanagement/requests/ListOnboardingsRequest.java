@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,16 +8,20 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListOnboardingsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListOnboardingsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListOnboardingsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The ID of the compartment in which to list resources.
+     * Empty only if the resource OCID query param is not specified.
+     *
      */
     private String compartmentId;
 
     /**
      * The ID of the compartment in which to list resources.
+     * Empty only if the resource OCID query param is not specified.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -34,12 +38,16 @@ public class ListOnboardingsRequest extends com.oracle.bmc.requests.BmcRequest<j
         return lifecycleState;
     }
     /**
-     * unique onboarding identifier
+     * Unique identifier or OCID for listing a single onboarding by id.
+     * Either compartmentId or id must be provided.
+     *
      */
     private String id;
 
     /**
-     * unique onboarding identifier
+     * Unique identifier or OCID for listing a single onboarding by id.
+     * Either compartmentId or id must be provided.
+     *
      */
     public String getId() {
         return id;
@@ -81,50 +89,13 @@ public class ListOnboardingsRequest extends com.oracle.bmc.requests.BmcRequest<j
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
      *
      */
-    private SortBy sortBy;
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
-     **/
-    public enum SortBy {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
+    private com.oracle.bmc.fleetappsmanagement.model.SortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
      *
      */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.SortBy getSortBy() {
         return sortBy;
     }
     /**
@@ -148,11 +119,15 @@ public class ListOnboardingsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * The ID of the compartment in which to list resources.
+         * Empty only if the resource OCID query param is not specified.
+         *
          */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * Empty only if the resource OCID query param is not specified.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -179,12 +154,16 @@ public class ListOnboardingsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * unique onboarding identifier
+         * Unique identifier or OCID for listing a single onboarding by id.
+         * Either compartmentId or id must be provided.
+         *
          */
         private String id = null;
 
         /**
-         * unique onboarding identifier
+         * Unique identifier or OCID for listing a single onboarding by id.
+         * Either compartmentId or id must be provided.
+         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -242,7 +221,7 @@ public class ListOnboardingsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
@@ -250,7 +229,7 @@ public class ListOnboardingsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(com.oracle.bmc.fleetappsmanagement.model.SortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }

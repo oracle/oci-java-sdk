@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -23,6 +23,14 @@ package com.oracle.bmc.datascience.model;
     defaultImpl = JobInfrastructureConfigurationDetails.class
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MultiNodeJobInfrastructureConfigurationDetails.class,
+        name = "MULTI_NODE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EmptyJobInfrastructureConfigurationDetails.class,
+        name = "EMPTY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ManagedEgressStandaloneJobInfrastructureConfigurationDetails.class,
         name = "ME_STANDALONE"
@@ -86,6 +94,8 @@ public class JobInfrastructureConfigurationDetails
     public enum JobInfrastructureType {
         Standalone("STANDALONE"),
         MeStandalone("ME_STANDALONE"),
+        MultiNode("MULTI_NODE"),
+        Empty("EMPTY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplacepublisher.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.marketplacepublisher.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProductSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ProductSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -24,6 +24,7 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
         "code",
         "productGroup",
         "lifecycleState",
+        "additionalFilters",
         "timeCreated",
         "timeUpdated"
     })
@@ -32,6 +33,7 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
             String code,
             String productGroup,
             Product.LifecycleState lifecycleState,
+            java.util.List<AdditionalFilter> additionalFilters,
             java.util.Date timeCreated,
             java.util.Date timeUpdated) {
         super();
@@ -39,6 +41,7 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
         this.code = code;
         this.productGroup = productGroup;
         this.lifecycleState = lifecycleState;
+        this.additionalFilters = additionalFilters;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
     }
@@ -110,6 +113,22 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
+         * Additional filter properties for product
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalFilters")
+        private java.util.List<AdditionalFilter> additionalFilters;
+
+        /**
+         * Additional filter properties for product
+         * @param additionalFilters the value to set
+         * @return this builder
+         **/
+        public Builder additionalFilters(java.util.List<AdditionalFilter> additionalFilters) {
+            this.additionalFilters = additionalFilters;
+            this.__explicitlySet__.add("additionalFilters");
+            return this;
+        }
+        /**
          * The date and time the product was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2022-09-15T21:10:29.600Z}
@@ -164,6 +183,7 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
                             this.code,
                             this.productGroup,
                             this.lifecycleState,
+                            this.additionalFilters,
                             this.timeCreated,
                             this.timeUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -185,6 +205,9 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("additionalFilters")) {
+                this.additionalFilters(model.getAdditionalFilters());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -264,6 +287,20 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
+     * Additional filter properties for product
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalFilters")
+    private final java.util.List<AdditionalFilter> additionalFilters;
+
+    /**
+     * Additional filter properties for product
+     * @return the value
+     **/
+    public java.util.List<AdditionalFilter> getAdditionalFilters() {
+        return additionalFilters;
+    }
+
+    /**
      * The date and time the product was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2022-09-15T21:10:29.600Z}
@@ -321,6 +358,7 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", code=").append(String.valueOf(this.code));
         sb.append(", productGroup=").append(String.valueOf(this.productGroup));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", additionalFilters=").append(String.valueOf(this.additionalFilters));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(")");
@@ -341,6 +379,7 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.code, other.code)
                 && java.util.Objects.equals(this.productGroup, other.productGroup)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.additionalFilters, other.additionalFilters)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && super.equals(other);
@@ -356,6 +395,9 @@ public final class ProductSummary extends com.oracle.bmc.http.internal.Explicitl
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalFilters == null ? 43 : this.additionalFilters.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + super.hashCode();

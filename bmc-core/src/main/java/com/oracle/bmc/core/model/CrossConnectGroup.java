@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -40,6 +40,7 @@ public final class CrossConnectGroup extends com.oracle.bmc.http.internal.Explic
         "displayName",
         "freeformTags",
         "id",
+        "systemTags",
         "lifecycleState",
         "customerReferenceName",
         "timeCreated",
@@ -53,6 +54,7 @@ public final class CrossConnectGroup extends com.oracle.bmc.http.internal.Explic
             String displayName,
             java.util.Map<String, String> freeformTags,
             String id,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             LifecycleState lifecycleState,
             String customerReferenceName,
             java.util.Date timeCreated,
@@ -65,6 +67,7 @@ public final class CrossConnectGroup extends com.oracle.bmc.http.internal.Explic
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.id = id;
+        this.systemTags = systemTags;
         this.lifecycleState = lifecycleState;
         this.customerReferenceName = customerReferenceName;
         this.timeCreated = timeCreated;
@@ -174,6 +177,26 @@ public final class CrossConnectGroup extends com.oracle.bmc.http.internal.Explic
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
+            return this;
+        }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
             return this;
         }
         /**
@@ -293,6 +316,7 @@ public final class CrossConnectGroup extends com.oracle.bmc.http.internal.Explic
                             this.displayName,
                             this.freeformTags,
                             this.id,
+                            this.systemTags,
                             this.lifecycleState,
                             this.customerReferenceName,
                             this.timeCreated,
@@ -321,6 +345,9 @@ public final class CrossConnectGroup extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -443,6 +470,24 @@ public final class CrossConnectGroup extends com.oracle.bmc.http.internal.Explic
      **/
     public String getId() {
         return id;
+    }
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
     }
 
     /**
@@ -608,6 +653,7 @@ public final class CrossConnectGroup extends com.oracle.bmc.http.internal.Explic
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", customerReferenceName=").append(String.valueOf(this.customerReferenceName));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -633,6 +679,7 @@ public final class CrossConnectGroup extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.customerReferenceName, other.customerReferenceName)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -653,6 +700,7 @@ public final class CrossConnectGroup extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

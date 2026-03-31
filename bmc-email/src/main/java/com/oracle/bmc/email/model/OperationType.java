@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.model;
@@ -20,6 +20,10 @@ public enum OperationType {
     CreateReturnPath("CREATE_RETURN_PATH"),
     DeleteReturnPath("DELETE_RETURN_PATH"),
     UpdateReturnPath("UPDATE_RETURN_PATH"),
+    CreateIpPool("CREATE_IP_POOL"),
+    UpdateIpPool("UPDATE_IP_POOL"),
+    DeleteIpPool("DELETE_IP_POOL"),
+    MoveIpPool("MOVE_IP_POOL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

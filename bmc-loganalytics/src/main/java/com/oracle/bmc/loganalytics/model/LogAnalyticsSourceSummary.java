@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -59,7 +59,8 @@ public final class LogAnalyticsSourceSummary
         "userParsers",
         "timeUpdated",
         "endpoints",
-        "sourceProperties"
+        "sourceProperties",
+        "lifecycleState"
     })
     public LogAnalyticsSourceSummary(
             java.util.List<LogAnalyticsSourceLabelCondition> labelConditions,
@@ -98,7 +99,8 @@ public final class LogAnalyticsSourceSummary
             java.util.List<LogAnalyticsParser> userParsers,
             java.util.Date timeUpdated,
             java.util.List<LogAnalyticsEndpoint> endpoints,
-            java.util.List<LogAnalyticsProperty> sourceProperties) {
+            java.util.List<LogAnalyticsProperty> sourceProperties,
+            LogAnalyticsSource.LifecycleState lifecycleState) {
         super();
         this.labelConditions = labelConditions;
         this.associationCount = associationCount;
@@ -137,6 +139,7 @@ public final class LogAnalyticsSourceSummary
         this.timeUpdated = timeUpdated;
         this.endpoints = endpoints;
         this.sourceProperties = sourceProperties;
+        this.lifecycleState = lifecycleState;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -541,14 +544,14 @@ public final class LogAnalyticsSourceSummary
             return this;
         }
         /**
-         * A flag indicating whether or not the auto-association state should be overriden.
+         * A flag indicating whether or not the auto-association state should be overridden.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoAssociationOverride")
         private Boolean isAutoAssociationOverride;
 
         /**
-         * A flag indicating whether or not the auto-association state should be overriden.
+         * A flag indicating whether or not the auto-association state should be overridden.
          *
          * @param isAutoAssociationOverride the value to set
          * @return this builder
@@ -754,6 +757,24 @@ public final class LogAnalyticsSourceSummary
             this.__explicitlySet__.add("sourceProperties");
             return this;
         }
+        /**
+         * The current state of the Log Analytics source.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LogAnalyticsSource.LifecycleState lifecycleState;
+
+        /**
+         * The current state of the Log Analytics source.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleState(LogAnalyticsSource.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -797,7 +818,8 @@ public final class LogAnalyticsSourceSummary
                             this.userParsers,
                             this.timeUpdated,
                             this.endpoints,
-                            this.sourceProperties);
+                            this.sourceProperties,
+                            this.lifecycleState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -916,6 +938,9 @@ public final class LogAnalyticsSourceSummary
             }
             if (model.wasPropertyExplicitlySet("sourceProperties")) {
                 this.sourceProperties(model.getSourceProperties());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
             }
             return this;
         }
@@ -1280,14 +1305,14 @@ public final class LogAnalyticsSourceSummary
     }
 
     /**
-     * A flag indicating whether or not the auto-association state should be overriden.
+     * A flag indicating whether or not the auto-association state should be overridden.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoAssociationOverride")
     private final Boolean isAutoAssociationOverride;
 
     /**
-     * A flag indicating whether or not the auto-association state should be overriden.
+     * A flag indicating whether or not the auto-association state should be overridden.
      *
      * @return the value
      **/
@@ -1465,6 +1490,22 @@ public final class LogAnalyticsSourceSummary
         return sourceProperties;
     }
 
+    /**
+     * The current state of the Log Analytics source.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final LogAnalyticsSource.LifecycleState lifecycleState;
+
+    /**
+     * The current state of the Log Analytics source.
+     *
+     * @return the value
+     **/
+    public LogAnalyticsSource.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1519,6 +1560,7 @@ public final class LogAnalyticsSourceSummary
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", endpoints=").append(String.valueOf(this.endpoints));
         sb.append(", sourceProperties=").append(String.valueOf(this.sourceProperties));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
     }
@@ -1573,6 +1615,7 @@ public final class LogAnalyticsSourceSummary
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.endpoints, other.endpoints)
                 && java.util.Objects.equals(this.sourceProperties, other.sourceProperties)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && super.equals(other);
     }
 
@@ -1661,6 +1704,9 @@ public final class LogAnalyticsSourceSummary
         result =
                 (result * PRIME)
                         + (this.sourceProperties == null ? 43 : this.sourceProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

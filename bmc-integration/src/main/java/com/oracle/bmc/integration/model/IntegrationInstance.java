@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.integration.model;
@@ -34,6 +34,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         "freeformTags",
         "definedTags",
         "systemTags",
+        "securityAttributes",
         "isByol",
         "instanceUrl",
         "instanceDesignTimeUrl",
@@ -50,7 +51,8 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         "privateEndpointOutboundConnection",
         "isDisasterRecoveryEnabled",
         "disasterRecoveryDetails",
-        "dataRetentionPeriod"
+        "dataRetentionPeriod",
+        "logGroupId"
     })
     public IntegrationInstance(
             String id,
@@ -65,6 +67,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             Boolean isByol,
             String instanceUrl,
             String instanceDesignTimeUrl,
@@ -81,7 +84,8 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             OutboundConnection privateEndpointOutboundConnection,
             Boolean isDisasterRecoveryEnabled,
             DisasterRecoveryDetails disasterRecoveryDetails,
-            DataRetentionPeriod dataRetentionPeriod) {
+            DataRetentionPeriod dataRetentionPeriod,
+            String logGroupId) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -95,6 +99,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.securityAttributes = securityAttributes;
         this.isByol = isByol;
         this.instanceUrl = instanceUrl;
         this.instanceDesignTimeUrl = instanceDesignTimeUrl;
@@ -112,6 +117,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
         this.disasterRecoveryDetails = disasterRecoveryDetails;
         this.dataRetentionPeriod = dataRetentionPeriod;
+        this.logGroupId = logGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -167,7 +173,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         /**
          * Standard or Enterprise type,
          * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
-         * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         * Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
@@ -176,7 +182,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         /**
          * Standard or Enterprise type,
          * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
-         * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         * Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
          *
          * @param integrationInstanceType the value to set
          * @return this builder
@@ -329,6 +335,31 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -574,6 +605,22 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("dataRetentionPeriod");
             return this;
         }
+        /**
+         * OCID of LogAnalytics LogGroup, enabled for given integration instance
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+        private String logGroupId;
+
+        /**
+         * OCID of LogAnalytics LogGroup, enabled for given integration instance
+         * @param logGroupId the value to set
+         * @return this builder
+         **/
+        public Builder logGroupId(String logGroupId) {
+            this.logGroupId = logGroupId;
+            this.__explicitlySet__.add("logGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -593,6 +640,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.securityAttributes,
                             this.isByol,
                             this.instanceUrl,
                             this.instanceDesignTimeUrl,
@@ -609,7 +657,8 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
                             this.privateEndpointOutboundConnection,
                             this.isDisasterRecoveryEnabled,
                             this.disasterRecoveryDetails,
-                            this.dataRetentionPeriod);
+                            this.dataRetentionPeriod,
+                            this.logGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -653,6 +702,9 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("isByol")) {
                 this.isByol(model.getIsByol());
@@ -705,6 +757,9 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("dataRetentionPeriod")) {
                 this.dataRetentionPeriod(model.getDataRetentionPeriod());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupId")) {
+                this.logGroupId(model.getLogGroupId());
             }
             return this;
         }
@@ -766,7 +821,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
     /**
      * Standard or Enterprise type,
      * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
-     * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
      *
      **/
     public enum IntegrationInstanceType {
@@ -820,7 +875,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
     /**
      * Standard or Enterprise type,
      * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
-     * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
@@ -829,7 +884,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
     /**
      * Standard or Enterprise type,
      * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
-     * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
      *
      * @return the value
      **/
@@ -1016,6 +1071,28 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
      **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
+    }
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -1370,6 +1447,20 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         return dataRetentionPeriod;
     }
 
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given integration instance
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+    private final String logGroupId;
+
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given integration instance
+     * @return the value
+     **/
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1397,6 +1488,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", isByol=").append(String.valueOf(this.isByol));
         sb.append(", instanceUrl=").append(String.valueOf(this.instanceUrl));
         sb.append(", instanceDesignTimeUrl=").append(String.valueOf(this.instanceDesignTimeUrl));
@@ -1418,6 +1510,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         sb.append(", disasterRecoveryDetails=")
                 .append(String.valueOf(this.disasterRecoveryDetails));
         sb.append(", dataRetentionPeriod=").append(String.valueOf(this.dataRetentionPeriod));
+        sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -1445,6 +1538,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.isByol, other.isByol)
                 && java.util.Objects.equals(this.instanceUrl, other.instanceUrl)
                 && java.util.Objects.equals(this.instanceDesignTimeUrl, other.instanceDesignTimeUrl)
@@ -1469,6 +1563,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(
                         this.disasterRecoveryDetails, other.disasterRecoveryDetails)
                 && java.util.Objects.equals(this.dataRetentionPeriod, other.dataRetentionPeriod)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
                 && super.equals(other);
     }
 
@@ -1498,6 +1593,11 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.isByol == null ? 43 : this.isByol.hashCode());
         result = (result * PRIME) + (this.instanceUrl == null ? 43 : this.instanceUrl.hashCode());
         result =
@@ -1555,6 +1655,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
                         + (this.dataRetentionPeriod == null
                                 ? 43
                                 : this.dataRetentionPeriod.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -63,6 +63,15 @@ public final class OracleCloneMigrationDetails extends CloneMigrationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("assessmentId")
+        private String assessmentId;
+
+        public Builder assessmentId(String assessmentId) {
+            this.assessmentId = assessmentId;
+            this.__explicitlySet__.add("assessmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -98,6 +107,22 @@ public final class OracleCloneMigrationDetails extends CloneMigrationDetails {
             this.__explicitlySet__.add("sourceContainerDatabaseConnectionId");
             return this;
         }
+        /**
+         * The OCID of the resource being referenced.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceStandbyDatabaseConnectionId")
+        private String sourceStandbyDatabaseConnectionId;
+
+        /**
+         * The OCID of the resource being referenced.
+         * @param sourceStandbyDatabaseConnectionId the value to set
+         * @return this builder
+         **/
+        public Builder sourceStandbyDatabaseConnectionId(String sourceStandbyDatabaseConnectionId) {
+            this.sourceStandbyDatabaseConnectionId = sourceStandbyDatabaseConnectionId;
+            this.__explicitlySet__.add("sourceStandbyDatabaseConnectionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -109,9 +134,11 @@ public final class OracleCloneMigrationDetails extends CloneMigrationDetails {
                             this.compartmentId,
                             this.sourceDatabaseConnectionId,
                             this.targetDatabaseConnectionId,
+                            this.assessmentId,
                             this.freeformTags,
                             this.definedTags,
-                            this.sourceContainerDatabaseConnectionId);
+                            this.sourceContainerDatabaseConnectionId,
+                            this.sourceStandbyDatabaseConnectionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -132,6 +159,9 @@ public final class OracleCloneMigrationDetails extends CloneMigrationDetails {
             if (model.wasPropertyExplicitlySet("targetDatabaseConnectionId")) {
                 this.targetDatabaseConnectionId(model.getTargetDatabaseConnectionId());
             }
+            if (model.wasPropertyExplicitlySet("assessmentId")) {
+                this.assessmentId(model.getAssessmentId());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -141,6 +171,10 @@ public final class OracleCloneMigrationDetails extends CloneMigrationDetails {
             if (model.wasPropertyExplicitlySet("sourceContainerDatabaseConnectionId")) {
                 this.sourceContainerDatabaseConnectionId(
                         model.getSourceContainerDatabaseConnectionId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceStandbyDatabaseConnectionId")) {
+                this.sourceStandbyDatabaseConnectionId(
+                        model.getSourceStandbyDatabaseConnectionId());
             }
             return this;
         }
@@ -163,17 +197,21 @@ public final class OracleCloneMigrationDetails extends CloneMigrationDetails {
             String compartmentId,
             String sourceDatabaseConnectionId,
             String targetDatabaseConnectionId,
+            String assessmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String sourceContainerDatabaseConnectionId) {
+            String sourceContainerDatabaseConnectionId,
+            String sourceStandbyDatabaseConnectionId) {
         super(
                 displayName,
                 compartmentId,
                 sourceDatabaseConnectionId,
                 targetDatabaseConnectionId,
+                assessmentId,
                 freeformTags,
                 definedTags);
         this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
+        this.sourceStandbyDatabaseConnectionId = sourceStandbyDatabaseConnectionId;
     }
 
     /**
@@ -188,6 +226,20 @@ public final class OracleCloneMigrationDetails extends CloneMigrationDetails {
      **/
     public String getSourceContainerDatabaseConnectionId() {
         return sourceContainerDatabaseConnectionId;
+    }
+
+    /**
+     * The OCID of the resource being referenced.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceStandbyDatabaseConnectionId")
+    private final String sourceStandbyDatabaseConnectionId;
+
+    /**
+     * The OCID of the resource being referenced.
+     * @return the value
+     **/
+    public String getSourceStandbyDatabaseConnectionId() {
+        return sourceStandbyDatabaseConnectionId;
     }
 
     @Override
@@ -206,6 +258,8 @@ public final class OracleCloneMigrationDetails extends CloneMigrationDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sourceContainerDatabaseConnectionId=")
                 .append(String.valueOf(this.sourceContainerDatabaseConnectionId));
+        sb.append(", sourceStandbyDatabaseConnectionId=")
+                .append(String.valueOf(this.sourceStandbyDatabaseConnectionId));
         sb.append(")");
         return sb.toString();
     }
@@ -223,6 +277,9 @@ public final class OracleCloneMigrationDetails extends CloneMigrationDetails {
         return java.util.Objects.equals(
                         this.sourceContainerDatabaseConnectionId,
                         other.sourceContainerDatabaseConnectionId)
+                && java.util.Objects.equals(
+                        this.sourceStandbyDatabaseConnectionId,
+                        other.sourceStandbyDatabaseConnectionId)
                 && super.equals(other);
     }
 
@@ -235,6 +292,11 @@ public final class OracleCloneMigrationDetails extends CloneMigrationDetails {
                         + (this.sourceContainerDatabaseConnectionId == null
                                 ? 43
                                 : this.sourceContainerDatabaseConnectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceStandbyDatabaseConnectionId == null
+                                ? 43
+                                : this.sourceStandbyDatabaseConnectionId.hashCode());
         return result;
     }
 }

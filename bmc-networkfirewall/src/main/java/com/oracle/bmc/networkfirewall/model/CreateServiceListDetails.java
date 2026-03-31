@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -22,11 +22,13 @@ package com.oracle.bmc.networkfirewall.model;
 public final class CreateServiceListDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "services"})
-    public CreateServiceListDetails(String name, java.util.List<String> services) {
+    @java.beans.ConstructorProperties({"name", "services", "description"})
+    public CreateServiceListDetails(
+            String name, java.util.List<String> services, String description) {
         super();
         this.name = name;
         this.services = services;
+        this.description = description;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -63,12 +65,29 @@ public final class CreateServiceListDetails
             this.__explicitlySet__.add("services");
             return this;
         }
+        /**
+         * The description of the service list. This field can be used to add additional info.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * The description of the service list. This field can be used to add additional info.
+         * @param description the value to set
+         * @return this builder
+         **/
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateServiceListDetails build() {
-            CreateServiceListDetails model = new CreateServiceListDetails(this.name, this.services);
+            CreateServiceListDetails model =
+                    new CreateServiceListDetails(this.name, this.services, this.description);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +101,9 @@ public final class CreateServiceListDetails
             }
             if (model.wasPropertyExplicitlySet("services")) {
                 this.services(model.getServices());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             return this;
         }
@@ -126,6 +148,20 @@ public final class CreateServiceListDetails
         return services;
     }
 
+    /**
+     * The description of the service list. This field can be used to add additional info.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * The description of the service list. This field can be used to add additional info.
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -142,6 +178,7 @@ public final class CreateServiceListDetails
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", services=").append(String.valueOf(this.services));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
     }
@@ -158,6 +195,7 @@ public final class CreateServiceListDetails
         CreateServiceListDetails other = (CreateServiceListDetails) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.services, other.services)
+                && java.util.Objects.equals(this.description, other.description)
                 && super.equals(other);
     }
 
@@ -167,6 +205,7 @@ public final class CreateServiceListDetails
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.services == null ? 43 : this.services.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

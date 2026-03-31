@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StepSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class StepSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -55,13 +55,13 @@ public final class StepSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of taskRecord assocaited with the step
+         * The OCID of taskRecord assocaited with the step.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskRecordId")
         private String taskRecordId;
 
         /**
-         * The OCID of taskRecord assocaited with the step
+         * The OCID of taskRecord assocaited with the step.
          * @param taskRecordId the value to set
          * @return this builder
          **/
@@ -71,13 +71,13 @@ public final class StepSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * Name of the Step
+         * Name of the Step.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepName")
         private String stepName;
 
         /**
-         * Name of the Step
+         * Name of the Step.
          * @param stepName the value to set
          * @return this builder
          **/
@@ -87,13 +87,13 @@ public final class StepSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The sequence of the step
+         * The sequence of the step.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sequence")
         private String sequence;
 
         /**
-         * The sequence of the step
+         * The sequence of the step.
          * @param sequence the value to set
          * @return this builder
          **/
@@ -103,13 +103,13 @@ public final class StepSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * Status of the Task
+         * Status of the Task.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobStatus status;
 
         /**
-         * Status of the Task
+         * Status of the Task.
          * @param status the value to set
          * @return this builder
          **/
@@ -167,13 +167,13 @@ public final class StepSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * Description of the step Execution
+         * Description of the step Execution.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of the step Execution
+         * Description of the step Execution.
          * @param description the value to set
          * @return this builder
          **/
@@ -269,13 +269,13 @@ public final class StepSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The OCID of taskRecord assocaited with the step
+     * The OCID of taskRecord assocaited with the step.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskRecordId")
     private final String taskRecordId;
 
     /**
-     * The OCID of taskRecord assocaited with the step
+     * The OCID of taskRecord assocaited with the step.
      * @return the value
      **/
     public String getTaskRecordId() {
@@ -283,13 +283,13 @@ public final class StepSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Name of the Step
+     * Name of the Step.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepName")
     private final String stepName;
 
     /**
-     * Name of the Step
+     * Name of the Step.
      * @return the value
      **/
     public String getStepName() {
@@ -297,13 +297,13 @@ public final class StepSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The sequence of the step
+     * The sequence of the step.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sequence")
     private final String sequence;
 
     /**
-     * The sequence of the step
+     * The sequence of the step.
      * @return the value
      **/
     public String getSequence() {
@@ -311,13 +311,13 @@ public final class StepSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Status of the Task
+     * Status of the Task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobStatus status;
 
     /**
-     * Status of the Task
+     * Status of the Task.
      * @return the value
      **/
     public JobStatus getStatus() {
@@ -367,13 +367,13 @@ public final class StepSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Description of the step Execution
+     * Description of the step Execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of the step Execution
+     * Description of the step Execution.
      * @return the value
      **/
     public String getDescription() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -32,6 +32,7 @@ public final class ComputeGpuMemoryCluster
         "gpuMemoryFabricId",
         "computeClusterId",
         "size",
+        "gpuMemoryClusterScaleConfig",
         "definedTags",
         "freeformTags",
         "systemTags",
@@ -47,6 +48,7 @@ public final class ComputeGpuMemoryCluster
             String gpuMemoryFabricId,
             String computeClusterId,
             Long size,
+            ComputeGpuMemoryClusterScaleConfig gpuMemoryClusterScaleConfig,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -61,6 +63,7 @@ public final class ComputeGpuMemoryCluster
         this.gpuMemoryFabricId = gpuMemoryFabricId;
         this.computeClusterId = computeClusterId;
         this.size = size;
+        this.gpuMemoryClusterScaleConfig = gpuMemoryClusterScaleConfig;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
         this.systemTags = systemTags;
@@ -214,6 +217,16 @@ public final class ComputeGpuMemoryCluster
             this.__explicitlySet__.add("size");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("gpuMemoryClusterScaleConfig")
+        private ComputeGpuMemoryClusterScaleConfig gpuMemoryClusterScaleConfig;
+
+        public Builder gpuMemoryClusterScaleConfig(
+                ComputeGpuMemoryClusterScaleConfig gpuMemoryClusterScaleConfig) {
+            this.gpuMemoryClusterScaleConfig = gpuMemoryClusterScaleConfig;
+            this.__explicitlySet__.add("gpuMemoryClusterScaleConfig");
+            return this;
+        }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
          * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -340,6 +353,7 @@ public final class ComputeGpuMemoryCluster
                             this.gpuMemoryFabricId,
                             this.computeClusterId,
                             this.size,
+                            this.gpuMemoryClusterScaleConfig,
                             this.definedTags,
                             this.freeformTags,
                             this.systemTags,
@@ -376,6 +390,9 @@ public final class ComputeGpuMemoryCluster
             }
             if (model.wasPropertyExplicitlySet("size")) {
                 this.size(model.getSize());
+            }
+            if (model.wasPropertyExplicitlySet("gpuMemoryClusterScaleConfig")) {
+                this.gpuMemoryClusterScaleConfig(model.getGpuMemoryClusterScaleConfig());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -587,6 +604,13 @@ public final class ComputeGpuMemoryCluster
         return size;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("gpuMemoryClusterScaleConfig")
+    private final ComputeGpuMemoryClusterScaleConfig gpuMemoryClusterScaleConfig;
+
+    public ComputeGpuMemoryClusterScaleConfig getGpuMemoryClusterScaleConfig() {
+        return gpuMemoryClusterScaleConfig;
+    }
+
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -710,6 +734,8 @@ public final class ComputeGpuMemoryCluster
         sb.append(", gpuMemoryFabricId=").append(String.valueOf(this.gpuMemoryFabricId));
         sb.append(", computeClusterId=").append(String.valueOf(this.computeClusterId));
         sb.append(", size=").append(String.valueOf(this.size));
+        sb.append(", gpuMemoryClusterScaleConfig=")
+                .append(String.valueOf(this.gpuMemoryClusterScaleConfig));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -738,6 +764,8 @@ public final class ComputeGpuMemoryCluster
                 && java.util.Objects.equals(this.gpuMemoryFabricId, other.gpuMemoryFabricId)
                 && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
                 && java.util.Objects.equals(this.size, other.size)
+                && java.util.Objects.equals(
+                        this.gpuMemoryClusterScaleConfig, other.gpuMemoryClusterScaleConfig)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -774,6 +802,11 @@ public final class ComputeGpuMemoryCluster
                 (result * PRIME)
                         + (this.computeClusterId == null ? 43 : this.computeClusterId.hashCode());
         result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.gpuMemoryClusterScaleConfig == null
+                                ? 43
+                                : this.gpuMemoryClusterScaleConfig.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
@@ -28,7 +28,8 @@ public final class RerankTextDetails extends com.oracle.bmc.http.internal.Explic
         "documents",
         "topN",
         "isEcho",
-        "maxChunksPerDocument"
+        "maxChunksPerDocument",
+        "maxTokensPerDocument"
     })
     public RerankTextDetails(
             String input,
@@ -37,7 +38,8 @@ public final class RerankTextDetails extends com.oracle.bmc.http.internal.Explic
             java.util.List<String> documents,
             Integer topN,
             Boolean isEcho,
-            Integer maxChunksPerDocument) {
+            Integer maxChunksPerDocument,
+            Integer maxTokensPerDocument) {
         super();
         this.input = input;
         this.compartmentId = compartmentId;
@@ -46,6 +48,7 @@ public final class RerankTextDetails extends com.oracle.bmc.http.internal.Explic
         this.topN = topN;
         this.isEcho = isEcho;
         this.maxChunksPerDocument = maxChunksPerDocument;
+        this.maxTokensPerDocument = maxTokensPerDocument;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -155,6 +158,22 @@ public final class RerankTextDetails extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("maxChunksPerDocument");
             return this;
         }
+        /**
+         * Used to truncate the long documents with the specified no of tokens.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxTokensPerDocument")
+        private Integer maxTokensPerDocument;
+
+        /**
+         * Used to truncate the long documents with the specified no of tokens.
+         * @param maxTokensPerDocument the value to set
+         * @return this builder
+         **/
+        public Builder maxTokensPerDocument(Integer maxTokensPerDocument) {
+            this.maxTokensPerDocument = maxTokensPerDocument;
+            this.__explicitlySet__.add("maxTokensPerDocument");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -168,7 +187,8 @@ public final class RerankTextDetails extends com.oracle.bmc.http.internal.Explic
                             this.documents,
                             this.topN,
                             this.isEcho,
-                            this.maxChunksPerDocument);
+                            this.maxChunksPerDocument,
+                            this.maxTokensPerDocument);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -197,6 +217,9 @@ public final class RerankTextDetails extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("maxChunksPerDocument")) {
                 this.maxChunksPerDocument(model.getMaxChunksPerDocument());
+            }
+            if (model.wasPropertyExplicitlySet("maxTokensPerDocument")) {
+                this.maxTokensPerDocument(model.getMaxTokensPerDocument());
             }
             return this;
         }
@@ -304,6 +327,20 @@ public final class RerankTextDetails extends com.oracle.bmc.http.internal.Explic
         return maxChunksPerDocument;
     }
 
+    /**
+     * Used to truncate the long documents with the specified no of tokens.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxTokensPerDocument")
+    private final Integer maxTokensPerDocument;
+
+    /**
+     * Used to truncate the long documents with the specified no of tokens.
+     * @return the value
+     **/
+    public Integer getMaxTokensPerDocument() {
+        return maxTokensPerDocument;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -325,6 +362,7 @@ public final class RerankTextDetails extends com.oracle.bmc.http.internal.Explic
         sb.append(", topN=").append(String.valueOf(this.topN));
         sb.append(", isEcho=").append(String.valueOf(this.isEcho));
         sb.append(", maxChunksPerDocument=").append(String.valueOf(this.maxChunksPerDocument));
+        sb.append(", maxTokensPerDocument=").append(String.valueOf(this.maxTokensPerDocument));
         sb.append(")");
         return sb.toString();
     }
@@ -346,6 +384,7 @@ public final class RerankTextDetails extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.topN, other.topN)
                 && java.util.Objects.equals(this.isEcho, other.isEcho)
                 && java.util.Objects.equals(this.maxChunksPerDocument, other.maxChunksPerDocument)
+                && java.util.Objects.equals(this.maxTokensPerDocument, other.maxTokensPerDocument)
                 && super.equals(other);
     }
 
@@ -366,6 +405,11 @@ public final class RerankTextDetails extends com.oracle.bmc.http.internal.Explic
                         + (this.maxChunksPerDocument == null
                                 ? 43
                                 : this.maxChunksPerDocument.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxTokensPerDocument == null
+                                ? 43
+                                : this.maxTokensPerDocument.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

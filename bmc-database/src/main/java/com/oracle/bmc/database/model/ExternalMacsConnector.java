@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -53,6 +53,15 @@ public final class ExternalMacsConnector extends ExternalDatabaseConnector {
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
             return this;
         }
 
@@ -176,6 +185,7 @@ public final class ExternalMacsConnector extends ExternalDatabaseConnector {
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.displayName,
                             this.id,
                             this.lifecycleState,
@@ -203,6 +213,9 @@ public final class ExternalMacsConnector extends ExternalDatabaseConnector {
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -257,6 +270,7 @@ public final class ExternalMacsConnector extends ExternalDatabaseConnector {
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String displayName,
             String id,
             LifecycleState lifecycleState,
@@ -272,6 +286,7 @@ public final class ExternalMacsConnector extends ExternalDatabaseConnector {
                 compartmentId,
                 freeformTags,
                 definedTags,
+                systemTags,
                 displayName,
                 id,
                 lifecycleState,

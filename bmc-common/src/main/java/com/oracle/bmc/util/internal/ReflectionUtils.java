@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.util.internal;
@@ -19,7 +19,7 @@ public class ReflectionUtils {
     /**
      * Invokes a 'getter' method of the given name on the given instance.
      * The method is assumed to be a basic getter with no parameters.
-     * If no method exists, or there is an problem invoking the method, null
+     * If no method exists, or there is a problem invoking the method, null
      * will be returned.
      *
      * @param instance The instance to invoke the method on.

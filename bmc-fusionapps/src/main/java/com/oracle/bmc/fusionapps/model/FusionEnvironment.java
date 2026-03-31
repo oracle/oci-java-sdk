@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fusionapps.model;
@@ -39,6 +39,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
         "publicUrl",
         "dnsPrefix",
         "additionalLanguagePacks",
+        "isIPv6DualStackEnabled",
         "lockboxId",
         "isBreakGlassEnabled",
         "refresh",
@@ -71,6 +72,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
             String publicUrl,
             String dnsPrefix,
             java.util.List<String> additionalLanguagePacks,
+            Boolean isIPv6DualStackEnabled,
             String lockboxId,
             Boolean isBreakGlassEnabled,
             RefreshDetails refresh,
@@ -102,6 +104,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
         this.publicUrl = publicUrl;
         this.dnsPrefix = dnsPrefix;
         this.additionalLanguagePacks = additionalLanguagePacks;
+        this.isIPv6DualStackEnabled = isIPv6DualStackEnabled;
         this.lockboxId = lockboxId;
         this.isBreakGlassEnabled = isBreakGlassEnabled;
         this.refresh = refresh;
@@ -385,6 +388,22 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
+        private Boolean isIPv6DualStackEnabled;
+
+        /**
+         * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         * @param isIPv6DualStackEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isIPv6DualStackEnabled(Boolean isIPv6DualStackEnabled) {
+            this.isIPv6DualStackEnabled = isIPv6DualStackEnabled;
+            this.__explicitlySet__.add("isIPv6DualStackEnabled");
+            return this;
+        }
+        /**
          * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lockboxId")
@@ -611,6 +630,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
                             this.publicUrl,
                             this.dnsPrefix,
                             this.additionalLanguagePacks,
+                            this.isIPv6DualStackEnabled,
                             this.lockboxId,
                             this.isBreakGlassEnabled,
                             this.refresh,
@@ -682,6 +702,9 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("additionalLanguagePacks")) {
                 this.additionalLanguagePacks(model.getAdditionalLanguagePacks());
+            }
+            if (model.wasPropertyExplicitlySet("isIPv6DualStackEnabled")) {
+                this.isIPv6DualStackEnabled(model.getIsIPv6DualStackEnabled());
             }
             if (model.wasPropertyExplicitlySet("lockboxId")) {
                 this.lockboxId(model.getLockboxId());
@@ -1018,6 +1041,20 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
+    private final Boolean isIPv6DualStackEnabled;
+
+    /**
+     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * @return the value
+     **/
+    public Boolean getIsIPv6DualStackEnabled() {
+        return isIPv6DualStackEnabled;
+    }
+
+    /**
      * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lockboxId")
@@ -1280,6 +1317,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
         sb.append(", dnsPrefix=").append(String.valueOf(this.dnsPrefix));
         sb.append(", additionalLanguagePacks=")
                 .append(String.valueOf(this.additionalLanguagePacks));
+        sb.append(", isIPv6DualStackEnabled=").append(String.valueOf(this.isIPv6DualStackEnabled));
         sb.append(", lockboxId=").append(String.valueOf(this.lockboxId));
         sb.append(", isBreakGlassEnabled=").append(String.valueOf(this.isBreakGlassEnabled));
         sb.append(", refresh=").append(String.valueOf(this.refresh));
@@ -1327,6 +1365,8 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.dnsPrefix, other.dnsPrefix)
                 && java.util.Objects.equals(
                         this.additionalLanguagePacks, other.additionalLanguagePacks)
+                && java.util.Objects.equals(
+                        this.isIPv6DualStackEnabled, other.isIPv6DualStackEnabled)
                 && java.util.Objects.equals(this.lockboxId, other.lockboxId)
                 && java.util.Objects.equals(this.isBreakGlassEnabled, other.isBreakGlassEnabled)
                 && java.util.Objects.equals(this.refresh, other.refresh)
@@ -1392,6 +1432,11 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
                         + (this.additionalLanguagePacks == null
                                 ? 43
                                 : this.additionalLanguagePacks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIPv6DualStackEnabled == null
+                                ? 43
+                                : this.isIPv6DualStackEnabled.hashCode());
         result = (result * PRIME) + (this.lockboxId == null ? 43 : this.lockboxId.hashCode());
         result =
                 (result * PRIME)

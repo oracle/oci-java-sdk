@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.autoscaling.model;
@@ -21,7 +21,7 @@ package com.oracle.bmc.autoscaling.model;
 public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"action", "displayName", "id", "metric"})
-    public Condition(Action action, String displayName, String id, Metric metric) {
+    public Condition(Action action, String displayName, String id, MetricBase metric) {
         super();
         this.action = action;
         this.displayName = displayName;
@@ -76,9 +76,9 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("metric")
-        private Metric metric;
+        private MetricBase metric;
 
-        public Builder metric(Metric metric) {
+        public Builder metric(MetricBase metric) {
             this.metric = metric;
             this.__explicitlySet__.add("metric");
             return this;
@@ -162,9 +162,9 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metric")
-    private final Metric metric;
+    private final MetricBase metric;
 
-    public Metric getMetric() {
+    public MetricBase getMetric() {
         return metric;
     }
 

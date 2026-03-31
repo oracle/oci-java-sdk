@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -31,6 +31,8 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         "id",
         "displayName",
         "description",
+        "softDelete",
+        "backupValidationDetails",
         "compartmentId",
         "timeCreated",
         "timeUpdated",
@@ -50,12 +52,15 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         "systemTags",
         "immediateSourceBackupId",
         "originalSourceBackupId",
-        "timeCopyCreated"
+        "timeCopyCreated",
+        "encryptData"
     })
     public Backup(
             String id,
             String displayName,
             String description,
+            SoftDelete softDelete,
+            BackupValidationDetails backupValidationDetails,
             String compartmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -75,11 +80,14 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String immediateSourceBackupId,
             String originalSourceBackupId,
-            java.util.Date timeCopyCreated) {
+            java.util.Date timeCopyCreated,
+            EncryptDataDetails encryptData) {
         super();
         this.id = id;
         this.displayName = displayName;
         this.description = description;
+        this.softDelete = softDelete;
+        this.backupValidationDetails = backupValidationDetails;
         this.compartmentId = compartmentId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -100,6 +108,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         this.immediateSourceBackupId = immediateSourceBackupId;
         this.originalSourceBackupId = originalSourceBackupId;
         this.timeCopyCreated = timeCopyCreated;
+        this.encryptData = encryptData;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -150,6 +159,35 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+         * state for 7 days before permanently deleting it.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+        private SoftDelete softDelete;
+
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+         * state for 7 days before permanently deleting it.
+         *
+         * @param softDelete the value to set
+         * @return this builder
+         **/
+        public Builder softDelete(SoftDelete softDelete) {
+            this.softDelete = softDelete;
+            this.__explicitlySet__.add("softDelete");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupValidationDetails")
+        private BackupValidationDetails backupValidationDetails;
+
+        public Builder backupValidationDetails(BackupValidationDetails backupValidationDetails) {
+            this.backupValidationDetails = backupValidationDetails;
+            this.__explicitlySet__.add("backupValidationDetails");
             return this;
         }
         /**
@@ -489,6 +527,15 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+        private EncryptDataDetails encryptData;
+
+        public Builder encryptData(EncryptDataDetails encryptData) {
+            this.encryptData = encryptData;
+            this.__explicitlySet__.add("encryptData");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -498,6 +545,8 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                             this.id,
                             this.displayName,
                             this.description,
+                            this.softDelete,
+                            this.backupValidationDetails,
                             this.compartmentId,
                             this.timeCreated,
                             this.timeUpdated,
@@ -517,7 +566,8 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                             this.systemTags,
                             this.immediateSourceBackupId,
                             this.originalSourceBackupId,
-                            this.timeCopyCreated);
+                            this.timeCopyCreated,
+                            this.encryptData);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -534,6 +584,12 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("softDelete")) {
+                this.softDelete(model.getSoftDelete());
+            }
+            if (model.wasPropertyExplicitlySet("backupValidationDetails")) {
+                this.backupValidationDetails(model.getBackupValidationDetails());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -595,6 +651,9 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             if (model.wasPropertyExplicitlySet("timeCopyCreated")) {
                 this.timeCopyCreated(model.getTimeCopyCreated());
             }
+            if (model.wasPropertyExplicitlySet("encryptData")) {
+                this.encryptData(model.getEncryptData());
+            }
             return this;
         }
     }
@@ -653,6 +712,31 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+     * state for 7 days before permanently deleting it.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+    private final SoftDelete softDelete;
+
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+     * state for 7 days before permanently deleting it.
+     *
+     * @return the value
+     **/
+    public SoftDelete getSoftDelete() {
+        return softDelete;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("backupValidationDetails")
+    private final BackupValidationDetails backupValidationDetails;
+
+    public BackupValidationDetails getBackupValidationDetails() {
+        return backupValidationDetails;
+    }
+
+    /**
      * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -705,6 +789,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        DeleteScheduled("DELETE_SCHEDULED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1098,6 +1183,13 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return timeCopyCreated;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+    private final EncryptDataDetails encryptData;
+
+    public EncryptDataDetails getEncryptData() {
+        return encryptData;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1115,6 +1207,9 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", softDelete=").append(String.valueOf(this.softDelete));
+        sb.append(", backupValidationDetails=")
+                .append(String.valueOf(this.backupValidationDetails));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -1136,6 +1231,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 .append(String.valueOf(this.immediateSourceBackupId));
         sb.append(", originalSourceBackupId=").append(String.valueOf(this.originalSourceBackupId));
         sb.append(", timeCopyCreated=").append(String.valueOf(this.timeCopyCreated));
+        sb.append(", encryptData=").append(String.valueOf(this.encryptData));
         sb.append(")");
         return sb.toString();
     }
@@ -1153,6 +1249,9 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.softDelete, other.softDelete)
+                && java.util.Objects.equals(
+                        this.backupValidationDetails, other.backupValidationDetails)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -1175,6 +1274,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 && java.util.Objects.equals(
                         this.originalSourceBackupId, other.originalSourceBackupId)
                 && java.util.Objects.equals(this.timeCopyCreated, other.timeCopyCreated)
+                && java.util.Objects.equals(this.encryptData, other.encryptData)
                 && super.equals(other);
     }
 
@@ -1185,6 +1285,12 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupValidationDetails == null
+                                ? 43
+                                : this.backupValidationDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
@@ -1231,6 +1337,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         result =
                 (result * PRIME)
                         + (this.timeCopyCreated == null ? 43 : this.timeCopyCreated.hashCode());
+        result = (result * PRIME) + (this.encryptData == null ? 43 : this.encryptData.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

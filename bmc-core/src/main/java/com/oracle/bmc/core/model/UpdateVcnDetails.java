@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -23,18 +23,21 @@ public final class UpdateVcnDetails extends com.oracle.bmc.http.internal.Explici
         "definedTags",
         "displayName",
         "freeformTags",
-        "securityAttributes"
+        "securityAttributes",
+        "isZprOnly"
     })
     public UpdateVcnDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            Boolean isZprOnly) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.securityAttributes = securityAttributes;
+        this.isZprOnly = isZprOnly;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -135,6 +138,24 @@ public final class UpdateVcnDetails extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("securityAttributes");
             return this;
         }
+        /**
+         * Indicates whether ZPR Only mode is enforced.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isZprOnly")
+        private Boolean isZprOnly;
+
+        /**
+         * Indicates whether ZPR Only mode is enforced.
+         *
+         * @param isZprOnly the value to set
+         * @return this builder
+         **/
+        public Builder isZprOnly(Boolean isZprOnly) {
+            this.isZprOnly = isZprOnly;
+            this.__explicitlySet__.add("isZprOnly");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -145,7 +166,8 @@ public final class UpdateVcnDetails extends com.oracle.bmc.http.internal.Explici
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
-                            this.securityAttributes);
+                            this.securityAttributes,
+                            this.isZprOnly);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -165,6 +187,9 @@ public final class UpdateVcnDetails extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("isZprOnly")) {
+                this.isZprOnly(model.getIsZprOnly());
             }
             return this;
         }
@@ -267,6 +292,22 @@ public final class UpdateVcnDetails extends com.oracle.bmc.http.internal.Explici
         return securityAttributes;
     }
 
+    /**
+     * Indicates whether ZPR Only mode is enforced.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isZprOnly")
+    private final Boolean isZprOnly;
+
+    /**
+     * Indicates whether ZPR Only mode is enforced.
+     *
+     * @return the value
+     **/
+    public Boolean getIsZprOnly() {
+        return isZprOnly;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -285,6 +326,7 @@ public final class UpdateVcnDetails extends com.oracle.bmc.http.internal.Explici
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", isZprOnly=").append(String.valueOf(this.isZprOnly));
         sb.append(")");
         return sb.toString();
     }
@@ -303,6 +345,7 @@ public final class UpdateVcnDetails extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(this.isZprOnly, other.isZprOnly)
                 && super.equals(other);
     }
 
@@ -318,6 +361,7 @@ public final class UpdateVcnDetails extends com.oracle.bmc.http.internal.Explici
                         + (this.securityAttributes == null
                                 ? 43
                                 : this.securityAttributes.hashCode());
+        result = (result * PRIME) + (this.isZprOnly == null ? 43 : this.isZprOnly.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

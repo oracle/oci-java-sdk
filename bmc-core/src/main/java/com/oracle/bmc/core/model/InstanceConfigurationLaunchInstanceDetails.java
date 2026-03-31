@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -29,6 +29,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
     @java.beans.ConstructorProperties({
         "availabilityDomain",
         "capacityReservationId",
+        "isAIEnterpriseEnabled",
+        "placementConstraintDetails",
+        "computeClusterId",
         "compartmentId",
         "clusterPlacementGroupId",
         "createVnicDetails",
@@ -58,6 +61,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
     public InstanceConfigurationLaunchInstanceDetails(
             String availabilityDomain,
             String capacityReservationId,
+            Boolean isAIEnterpriseEnabled,
+            InstanceConfigurationPlacementConstraintDetails placementConstraintDetails,
+            String computeClusterId,
             String compartmentId,
             String clusterPlacementGroupId,
             InstanceConfigurationCreateVnicDetails createVnicDetails,
@@ -86,6 +92,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
+        this.isAIEnterpriseEnabled = isAIEnterpriseEnabled;
+        this.placementConstraintDetails = placementConstraintDetails;
+        this.computeClusterId = computeClusterId;
         this.compartmentId = compartmentId;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.createVnicDetails = createVnicDetails;
@@ -151,6 +160,54 @@ public final class InstanceConfigurationLaunchInstanceDetails
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = capacityReservationId;
             this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
+        /**
+         * Whether to enable AI enterprise on the instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAIEnterpriseEnabled")
+        private Boolean isAIEnterpriseEnabled;
+
+        /**
+         * Whether to enable AI enterprise on the instance.
+         *
+         * @param isAIEnterpriseEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isAIEnterpriseEnabled(Boolean isAIEnterpriseEnabled) {
+            this.isAIEnterpriseEnabled = isAIEnterpriseEnabled;
+            this.__explicitlySet__.add("isAIEnterpriseEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+        private InstanceConfigurationPlacementConstraintDetails placementConstraintDetails;
+
+        public Builder placementConstraintDetails(
+                InstanceConfigurationPlacementConstraintDetails placementConstraintDetails) {
+            this.placementConstraintDetails = placementConstraintDetails;
+            this.__explicitlySet__.add("placementConstraintDetails");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
+        private String computeClusterId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         *
+         * @param computeClusterId the value to set
+         * @return this builder
+         **/
+        public Builder computeClusterId(String computeClusterId) {
+            this.computeClusterId = computeClusterId;
+            this.__explicitlySet__.add("computeClusterId");
             return this;
         }
         /**
@@ -764,6 +821,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
                     new InstanceConfigurationLaunchInstanceDetails(
                             this.availabilityDomain,
                             this.capacityReservationId,
+                            this.isAIEnterpriseEnabled,
+                            this.placementConstraintDetails,
+                            this.computeClusterId,
                             this.compartmentId,
                             this.clusterPlacementGroupId,
                             this.createVnicDetails,
@@ -802,6 +862,15 @@ public final class InstanceConfigurationLaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("capacityReservationId")) {
                 this.capacityReservationId(model.getCapacityReservationId());
+            }
+            if (model.wasPropertyExplicitlySet("isAIEnterpriseEnabled")) {
+                this.isAIEnterpriseEnabled(model.getIsAIEnterpriseEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
+                this.placementConstraintDetails(model.getPlacementConstraintDetails());
+            }
+            if (model.wasPropertyExplicitlySet("computeClusterId")) {
+                this.computeClusterId(model.getComputeClusterId());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -925,6 +994,47 @@ public final class InstanceConfigurationLaunchInstanceDetails
      **/
     public String getCapacityReservationId() {
         return capacityReservationId;
+    }
+
+    /**
+     * Whether to enable AI enterprise on the instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAIEnterpriseEnabled")
+    private final Boolean isAIEnterpriseEnabled;
+
+    /**
+     * Whether to enable AI enterprise on the instance.
+     *
+     * @return the value
+     **/
+    public Boolean getIsAIEnterpriseEnabled() {
+        return isAIEnterpriseEnabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+    private final InstanceConfigurationPlacementConstraintDetails placementConstraintDetails;
+
+    public InstanceConfigurationPlacementConstraintDetails getPlacementConstraintDetails() {
+        return placementConstraintDetails;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
+    private final String computeClusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     *
+     * @return the value
+     **/
+    public String getComputeClusterId() {
+        return computeClusterId;
     }
 
     /**
@@ -1592,6 +1702,10 @@ public final class InstanceConfigurationLaunchInstanceDetails
         sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(", isAIEnterpriseEnabled=").append(String.valueOf(this.isAIEnterpriseEnabled));
+        sb.append(", placementConstraintDetails=")
+                .append(String.valueOf(this.placementConstraintDetails));
+        sb.append(", computeClusterId=").append(String.valueOf(this.computeClusterId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
@@ -1638,6 +1752,10 @@ public final class InstanceConfigurationLaunchInstanceDetails
                 (InstanceConfigurationLaunchInstanceDetails) o;
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(this.isAIEnterpriseEnabled, other.isAIEnterpriseEnabled)
+                && java.util.Objects.equals(
+                        this.placementConstraintDetails, other.placementConstraintDetails)
+                && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
@@ -1684,6 +1802,19 @@ public final class InstanceConfigurationLaunchInstanceDetails
                         + (this.capacityReservationId == null
                                 ? 43
                                 : this.capacityReservationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAIEnterpriseEnabled == null
+                                ? 43
+                                : this.isAIEnterpriseEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraintDetails == null
+                                ? 43
+                                : this.placementConstraintDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeClusterId == null ? 43 : this.computeClusterId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

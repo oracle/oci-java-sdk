@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.internal.http;
@@ -66,6 +66,14 @@ public class ListSecurityFeatureAnalyticsConverter {
                             "targetId",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getTargetId()));
+        }
+
+        if (request.getTargetDatabaseGroupId() != null) {
+            target =
+                    target.queryParam(
+                            "targetDatabaseGroupId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTargetDatabaseGroupId()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement;
@@ -7,6 +7,8 @@ package com.oracle.bmc.fleetappsmanagement;
 import com.oracle.bmc.fleetappsmanagement.internal.http.*;
 import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for FleetAppsManagementAdmin service. <br/>
@@ -21,14 +23,14 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementAdminAsync {
     /**
      * Service instance for FleetAppsManagementAdmin.
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FLEETAPPSMANAGEMENTADMIN")
+                    .serviceName(FleetAppsManagementAdminClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://fams.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -401,12 +412,21 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -436,15 +456,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -456,6 +468,122 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangePlatformConfigurationCompartmentResponse>
+            changePlatformConfigurationCompartment(
+                    ChangePlatformConfigurationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePlatformConfigurationCompartmentRequest,
+                                    ChangePlatformConfigurationCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changePlatformConfigurationCompartment");
+        final ChangePlatformConfigurationCompartmentRequest interceptedRequest =
+                ChangePlatformConfigurationCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePlatformConfigurationCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementAdmin",
+                        "ChangePlatformConfigurationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PlatformConfiguration/ChangePlatformConfigurationCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangePlatformConfigurationCompartmentResponse>
+                transformer =
+                        ChangePlatformConfigurationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangePlatformConfigurationCompartmentRequest,
+                        ChangePlatformConfigurationCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangePlatformConfigurationCompartmentRequest,
+                                ChangePlatformConfigurationCompartmentResponse>,
+                        java.util.concurrent.Future<ChangePlatformConfigurationCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangePlatformConfigurationCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangePlatformConfigurationCompartmentRequest,
+                    ChangePlatformConfigurationCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangePropertyCompartmentResponse> changePropertyCompartment(
+            ChangePropertyCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangePropertyCompartmentRequest, ChangePropertyCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changePropertyCompartment");
+        final ChangePropertyCompartmentRequest interceptedRequest =
+                ChangePropertyCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePropertyCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementAdmin",
+                        "ChangePropertyCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Property/ChangePropertyCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangePropertyCompartmentResponse>
+                transformer =
+                        ChangePropertyCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangePropertyCompartmentRequest, ChangePropertyCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangePropertyCompartmentRequest,
+                                ChangePropertyCompartmentResponse>,
+                        java.util.concurrent.Future<ChangePropertyCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangePropertyCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangePropertyCompartmentRequest, ChangePropertyCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 
     @Override
@@ -477,7 +605,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "CreateCompliancePolicyRule",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRule/CreateCompliancePolicyRule");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicyRule/CreateCompliancePolicyRule");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateCompliancePolicyRuleResponse>
                 transformer =
@@ -532,7 +660,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "CreateOnboarding",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/CreateOnboarding");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Onboarding/CreateOnboarding");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateOnboardingResponse>
                 transformer =
                         CreateOnboardingConverter.fromResponse(
@@ -586,7 +714,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "CreatePlatformConfiguration",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfiguration/CreatePlatformConfiguration");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PlatformConfiguration/CreatePlatformConfiguration");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreatePlatformConfigurationResponse>
                 transformer =
@@ -641,7 +769,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "CreateProperty",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/CreateProperty");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Property/CreateProperty");
         final java.util.function.Function<javax.ws.rs.core.Response, CreatePropertyResponse>
                 transformer =
                         CreatePropertyConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -693,7 +821,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "DeleteCompliancePolicyRule",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRule/DeleteCompliancePolicyRule");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicyRule/DeleteCompliancePolicyRule");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteCompliancePolicyRuleResponse>
                 transformer =
@@ -742,7 +870,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "DeleteOnboarding",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/DeleteOnboarding");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Onboarding/DeleteOnboarding");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteOnboardingResponse>
                 transformer =
                         DeleteOnboardingConverter.fromResponse(
@@ -790,7 +918,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "DeletePlatformConfiguration",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfiguration/DeletePlatformConfiguration");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PlatformConfiguration/DeletePlatformConfiguration");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeletePlatformConfigurationResponse>
                 transformer =
@@ -839,7 +967,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "DeleteProperty",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/DeleteProperty");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Property/DeleteProperty");
         final java.util.function.Function<javax.ws.rs.core.Response, DeletePropertyResponse>
                 transformer =
                         DeletePropertyConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -885,7 +1013,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "EnableLatestPolicy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/EnableLatestPolicy");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Onboarding/EnableLatestPolicy");
         final java.util.function.Function<javax.ws.rs.core.Response, EnableLatestPolicyResponse>
                 transformer =
                         EnableLatestPolicyConverter.fromResponse(
@@ -936,7 +1064,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "GetCompliancePolicy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicy/GetCompliancePolicy");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicy/GetCompliancePolicy");
         final java.util.function.Function<javax.ws.rs.core.Response, GetCompliancePolicyResponse>
                 transformer =
                         GetCompliancePolicyConverter.fromResponse(
@@ -983,7 +1111,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "GetCompliancePolicyRule",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRule/GetCompliancePolicyRule");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicyRule/GetCompliancePolicyRule");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetCompliancePolicyRuleResponse>
                 transformer =
@@ -1030,7 +1158,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "GetOnboarding",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/GetOnboarding");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Onboarding/GetOnboarding");
         final java.util.function.Function<javax.ws.rs.core.Response, GetOnboardingResponse>
                 transformer =
                         GetOnboardingConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1075,7 +1203,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "GetPlatformConfiguration",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfiguration/GetPlatformConfiguration");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PlatformConfiguration/GetPlatformConfiguration");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetPlatformConfigurationResponse>
                 transformer =
@@ -1122,7 +1250,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "GetProperty",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/GetProperty");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Property/GetProperty");
         final java.util.function.Function<javax.ws.rs.core.Response, GetPropertyResponse>
                 transformer =
                         GetPropertyConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1167,7 +1295,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "ListCompliancePolicies",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyCollection/ListCompliancePolicies");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicyCollection/ListCompliancePolicies");
         final java.util.function.Function<javax.ws.rs.core.Response, ListCompliancePoliciesResponse>
                 transformer =
                         ListCompliancePoliciesConverter.fromResponse(
@@ -1214,7 +1342,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "ListCompliancePolicyRules",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRuleCollection/ListCompliancePolicyRules");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicyRuleCollection/ListCompliancePolicyRules");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListCompliancePolicyRulesResponse>
                 transformer =
@@ -1263,7 +1391,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "ListOnboardingPolicies",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/OnboardingPolicyCollection/ListOnboardingPolicies");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/OnboardingPolicyCollection/ListOnboardingPolicies");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOnboardingPoliciesResponse>
                 transformer =
                         ListOnboardingPoliciesConverter.fromResponse(
@@ -1310,7 +1438,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "ListOnboardings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/OnboardingCollection/ListOnboardings");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/OnboardingCollection/ListOnboardings");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOnboardingsResponse>
                 transformer =
                         ListOnboardingsConverter.fromResponse(
@@ -1358,7 +1486,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "ListPlatformConfigurations",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfigurationCollection/ListPlatformConfigurations");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PlatformConfigurationCollection/ListPlatformConfigurations");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListPlatformConfigurationsResponse>
                 transformer =
@@ -1407,7 +1535,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "ListProperties",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PropertyCollection/ListProperties");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PropertyCollection/ListProperties");
         final java.util.function.Function<javax.ws.rs.core.Response, ListPropertiesResponse>
                 transformer =
                         ListPropertiesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1453,7 +1581,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "ManageSettings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/ManageSettings");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Onboarding/ManageSettings");
         final java.util.function.Function<javax.ws.rs.core.Response, ManageSettingsResponse>
                 transformer =
                         ManageSettingsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1505,7 +1633,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "UpdateCompliancePolicyRule",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRule/UpdateCompliancePolicyRule");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CompliancePolicyRule/UpdateCompliancePolicyRule");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateCompliancePolicyRuleResponse>
                 transformer =
@@ -1559,7 +1687,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "UpdateOnboarding",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/UpdateOnboarding");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Onboarding/UpdateOnboarding");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateOnboardingResponse>
                 transformer =
                         UpdateOnboardingConverter.fromResponse(
@@ -1612,7 +1740,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "UpdatePlatformConfiguration",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfiguration/UpdatePlatformConfiguration");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PlatformConfiguration/UpdatePlatformConfiguration");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdatePlatformConfigurationResponse>
                 transformer =
@@ -1666,7 +1794,7 @@ public class FleetAppsManagementAdminAsyncClient implements FleetAppsManagementA
                         "FleetAppsManagementAdmin",
                         "UpdateProperty",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/UpdateProperty");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Property/UpdateProperty");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdatePropertyResponse>
                 transformer =
                         UpdatePropertyConverter.fromResponse(java.util.Optional.of(serviceDetails));

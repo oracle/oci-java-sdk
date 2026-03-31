@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -19,14 +19,25 @@ package com.oracle.bmc.loganalytics.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UsageStatusItem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"dataType", "isMultiValued", "currentUsage", "maxAvailable"})
+    @java.beans.ConstructorProperties({
+        "dataType",
+        "isMultiValued",
+        "currentUsage",
+        "maxAvailable",
+        "isKeepDuplicates"
+    })
     public UsageStatusItem(
-            String dataType, Boolean isMultiValued, Long currentUsage, Integer maxAvailable) {
+            String dataType,
+            Boolean isMultiValued,
+            Long currentUsage,
+            Integer maxAvailable,
+            Boolean isKeepDuplicates) {
         super();
         this.dataType = dataType;
         this.isMultiValued = isMultiValued;
         this.currentUsage = currentUsage;
         this.maxAvailable = maxAvailable;
+        this.isKeepDuplicates = isKeepDuplicates;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -97,6 +108,24 @@ public final class UsageStatusItem extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("maxAvailable");
             return this;
         }
+        /**
+         * A flag indicating whether duplicates should be retained while processing multi-valued fields.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isKeepDuplicates")
+        private Boolean isKeepDuplicates;
+
+        /**
+         * A flag indicating whether duplicates should be retained while processing multi-valued fields.
+         *
+         * @param isKeepDuplicates the value to set
+         * @return this builder
+         **/
+        public Builder isKeepDuplicates(Boolean isKeepDuplicates) {
+            this.isKeepDuplicates = isKeepDuplicates;
+            this.__explicitlySet__.add("isKeepDuplicates");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -107,7 +136,8 @@ public final class UsageStatusItem extends com.oracle.bmc.http.internal.Explicit
                             this.dataType,
                             this.isMultiValued,
                             this.currentUsage,
-                            this.maxAvailable);
+                            this.maxAvailable,
+                            this.isKeepDuplicates);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -127,6 +157,9 @@ public final class UsageStatusItem extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("maxAvailable")) {
                 this.maxAvailable(model.getMaxAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("isKeepDuplicates")) {
+                this.isKeepDuplicates(model.getIsKeepDuplicates());
             }
             return this;
         }
@@ -201,6 +234,22 @@ public final class UsageStatusItem extends com.oracle.bmc.http.internal.Explicit
         return maxAvailable;
     }
 
+    /**
+     * A flag indicating whether duplicates should be retained while processing multi-valued fields.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isKeepDuplicates")
+    private final Boolean isKeepDuplicates;
+
+    /**
+     * A flag indicating whether duplicates should be retained while processing multi-valued fields.
+     *
+     * @return the value
+     **/
+    public Boolean getIsKeepDuplicates() {
+        return isKeepDuplicates;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -219,6 +268,7 @@ public final class UsageStatusItem extends com.oracle.bmc.http.internal.Explicit
         sb.append(", isMultiValued=").append(String.valueOf(this.isMultiValued));
         sb.append(", currentUsage=").append(String.valueOf(this.currentUsage));
         sb.append(", maxAvailable=").append(String.valueOf(this.maxAvailable));
+        sb.append(", isKeepDuplicates=").append(String.valueOf(this.isKeepDuplicates));
         sb.append(")");
         return sb.toString();
     }
@@ -237,6 +287,7 @@ public final class UsageStatusItem extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.isMultiValued, other.isMultiValued)
                 && java.util.Objects.equals(this.currentUsage, other.currentUsage)
                 && java.util.Objects.equals(this.maxAvailable, other.maxAvailable)
+                && java.util.Objects.equals(this.isKeepDuplicates, other.isKeepDuplicates)
                 && super.equals(other);
     }
 
@@ -250,6 +301,9 @@ public final class UsageStatusItem extends com.oracle.bmc.http.internal.Explicit
                         + (this.isMultiValued == null ? 43 : this.isMultiValued.hashCode());
         result = (result * PRIME) + (this.currentUsage == null ? 43 : this.currentUsage.hashCode());
         result = (result * PRIME) + (this.maxAvailable == null ? 43 : this.maxAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isKeepDuplicates == null ? 43 : this.isKeepDuplicates.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

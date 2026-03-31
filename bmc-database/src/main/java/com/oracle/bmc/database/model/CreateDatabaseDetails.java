@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -43,7 +43,8 @@ public final class CreateDatabaseDetails
         "vaultId",
         "sidPrefix",
         "keyStoreId",
-        "encryptionKeyLocationDetails"
+        "encryptionKeyLocationDetails",
+        "storageSizeDetails"
     })
     public CreateDatabaseDetails(
             String dbName,
@@ -63,7 +64,8 @@ public final class CreateDatabaseDetails
             String vaultId,
             String sidPrefix,
             String keyStoreId,
-            EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
+            EncryptionKeyLocationDetails encryptionKeyLocationDetails,
+            DatabaseStorageSizeDetails storageSizeDetails) {
         super();
         this.dbName = dbName;
         this.dbUniqueName = dbUniqueName;
@@ -83,6 +85,7 @@ public final class CreateDatabaseDetails
         this.sidPrefix = sidPrefix;
         this.keyStoreId = keyStoreId;
         this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+        this.storageSizeDetails = storageSizeDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -320,14 +323,14 @@ public final class CreateDatabaseDetails
             return this;
         }
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -398,6 +401,15 @@ public final class CreateDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageSizeDetails")
+        private DatabaseStorageSizeDetails storageSizeDetails;
+
+        public Builder storageSizeDetails(DatabaseStorageSizeDetails storageSizeDetails) {
+            this.storageSizeDetails = storageSizeDetails;
+            this.__explicitlySet__.add("storageSizeDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -421,7 +433,8 @@ public final class CreateDatabaseDetails
                             this.vaultId,
                             this.sidPrefix,
                             this.keyStoreId,
-                            this.encryptionKeyLocationDetails);
+                            this.encryptionKeyLocationDetails,
+                            this.storageSizeDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -483,6 +496,9 @@ public final class CreateDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("encryptionKeyLocationDetails")) {
                 this.encryptionKeyLocationDetails(model.getEncryptionKeyLocationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("storageSizeDetails")) {
+                this.storageSizeDetails(model.getStorageSizeDetails());
             }
             return this;
         }
@@ -744,14 +760,14 @@ public final class CreateDatabaseDetails
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      *
      * @return the value
      **/
@@ -810,6 +826,13 @@ public final class CreateDatabaseDetails
         return encryptionKeyLocationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("storageSizeDetails")
+    private final DatabaseStorageSizeDetails storageSizeDetails;
+
+    public DatabaseStorageSizeDetails getStorageSizeDetails() {
+        return storageSizeDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -844,6 +867,7 @@ public final class CreateDatabaseDetails
         sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
         sb.append(", encryptionKeyLocationDetails=")
                 .append(String.valueOf(this.encryptionKeyLocationDetails));
+        sb.append(", storageSizeDetails=").append(String.valueOf(this.storageSizeDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -878,6 +902,7 @@ public final class CreateDatabaseDetails
                 && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
                 && java.util.Objects.equals(
                         this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
+                && java.util.Objects.equals(this.storageSizeDetails, other.storageSizeDetails)
                 && super.equals(other);
     }
 
@@ -921,6 +946,11 @@ public final class CreateDatabaseDetails
                         + (this.encryptionKeyLocationDetails == null
                                 ? 43
                                 : this.encryptionKeyLocationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageSizeDetails == null
+                                ? 43
+                                : this.storageSizeDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

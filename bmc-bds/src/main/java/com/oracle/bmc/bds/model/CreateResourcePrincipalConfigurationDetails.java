@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -25,15 +25,18 @@ public final class CreateResourcePrincipalConfigurationDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "clusterAdminPassword",
+        "secretId",
         "sessionTokenLifeSpanDurationInHours"
     })
     public CreateResourcePrincipalConfigurationDetails(
             String displayName,
             String clusterAdminPassword,
+            String secretId,
             Integer sessionTokenLifeSpanDurationInHours) {
         super();
         this.displayName = displayName;
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
         this.sessionTokenLifeSpanDurationInHours = sessionTokenLifeSpanDurationInHours;
     }
 
@@ -72,6 +75,22 @@ public final class CreateResourcePrincipalConfigurationDetails
             return this;
         }
         /**
+         * The secretId for the clusterAdminPassword.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         * @param secretId the value to set
+         * @return this builder
+         **/
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
+        /**
          * Life span in hours for the resource principal session token.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionTokenLifeSpanDurationInHours")
@@ -97,6 +116,7 @@ public final class CreateResourcePrincipalConfigurationDetails
                     new CreateResourcePrincipalConfigurationDetails(
                             this.displayName,
                             this.clusterAdminPassword,
+                            this.secretId,
                             this.sessionTokenLifeSpanDurationInHours);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -111,6 +131,9 @@ public final class CreateResourcePrincipalConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("sessionTokenLifeSpanDurationInHours")) {
                 this.sessionTokenLifeSpanDurationInHours(
@@ -160,6 +183,20 @@ public final class CreateResourcePrincipalConfigurationDetails
     }
 
     /**
+     * The secretId for the clusterAdminPassword.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     * @return the value
+     **/
+    public String getSecretId() {
+        return secretId;
+    }
+
+    /**
      * Life span in hours for the resource principal session token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionTokenLifeSpanDurationInHours")
@@ -189,6 +226,7 @@ public final class CreateResourcePrincipalConfigurationDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", sessionTokenLifeSpanDurationInHours=")
                 .append(String.valueOf(this.sessionTokenLifeSpanDurationInHours));
         sb.append(")");
@@ -208,6 +246,7 @@ public final class CreateResourcePrincipalConfigurationDetails
                 (CreateResourcePrincipalConfigurationDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(
                         this.sessionTokenLifeSpanDurationInHours,
                         other.sessionTokenLifeSpanDurationInHours)
@@ -224,6 +263,7 @@ public final class CreateResourcePrincipalConfigurationDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.sessionTokenLifeSpanDurationInHours == null

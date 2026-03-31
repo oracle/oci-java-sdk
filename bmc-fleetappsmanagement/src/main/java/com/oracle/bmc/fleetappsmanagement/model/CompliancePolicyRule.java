@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -16,7 +16,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CompliancePolicyRule.Builder.class
 )
@@ -28,7 +28,7 @@ public final class CompliancePolicyRule extends com.oracle.bmc.http.internal.Exp
         "displayName",
         "compliancePolicyId",
         "productVersion",
-        "patchType",
+        "patchTypeId",
         "severity",
         "patchSelection",
         "gracePeriod",
@@ -46,7 +46,7 @@ public final class CompliancePolicyRule extends com.oracle.bmc.http.internal.Exp
             String displayName,
             String compliancePolicyId,
             ProductVersionDetails productVersion,
-            java.util.List<String> patchType,
+            java.util.List<String> patchTypeId,
             java.util.List<ComplianceRuleSeverity> severity,
             PatchSelectionDetails patchSelection,
             String gracePeriod,
@@ -63,7 +63,7 @@ public final class CompliancePolicyRule extends com.oracle.bmc.http.internal.Exp
         this.displayName = displayName;
         this.compliancePolicyId = compliancePolicyId;
         this.productVersion = productVersion;
-        this.patchType = patchType;
+        this.patchTypeId = patchTypeId;
         this.severity = severity;
         this.patchSelection = patchSelection;
         this.gracePeriod = gracePeriod;
@@ -147,17 +147,17 @@ public final class CompliancePolicyRule extends com.oracle.bmc.http.internal.Exp
         /**
          * PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("patchType")
-        private java.util.List<String> patchType;
+        @com.fasterxml.jackson.annotation.JsonProperty("patchTypeId")
+        private java.util.List<String> patchTypeId;
 
         /**
          * PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
-         * @param patchType the value to set
+         * @param patchTypeId the value to set
          * @return this builder
          **/
-        public Builder patchType(java.util.List<String> patchType) {
-            this.patchType = patchType;
-            this.__explicitlySet__.add("patchType");
+        public Builder patchTypeId(java.util.List<String> patchTypeId) {
+            this.patchTypeId = patchTypeId;
+            this.__explicitlySet__.add("patchTypeId");
             return this;
         }
         /**
@@ -373,7 +373,7 @@ public final class CompliancePolicyRule extends com.oracle.bmc.http.internal.Exp
                             this.displayName,
                             this.compliancePolicyId,
                             this.productVersion,
-                            this.patchType,
+                            this.patchTypeId,
                             this.severity,
                             this.patchSelection,
                             this.gracePeriod,
@@ -405,8 +405,8 @@ public final class CompliancePolicyRule extends com.oracle.bmc.http.internal.Exp
             if (model.wasPropertyExplicitlySet("productVersion")) {
                 this.productVersion(model.getProductVersion());
             }
-            if (model.wasPropertyExplicitlySet("patchType")) {
-                this.patchType(model.getPatchType());
+            if (model.wasPropertyExplicitlySet("patchTypeId")) {
+                this.patchTypeId(model.getPatchTypeId());
             }
             if (model.wasPropertyExplicitlySet("severity")) {
                 this.severity(model.getSeverity());
@@ -516,15 +516,15 @@ public final class CompliancePolicyRule extends com.oracle.bmc.http.internal.Exp
     /**
      * PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("patchType")
-    private final java.util.List<String> patchType;
+    @com.fasterxml.jackson.annotation.JsonProperty("patchTypeId")
+    private final java.util.List<String> patchTypeId;
 
     /**
      * PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
      * @return the value
      **/
-    public java.util.List<String> getPatchType() {
-        return patchType;
+    public java.util.List<String> getPatchTypeId() {
+        return patchTypeId;
     }
 
     /**
@@ -776,7 +776,7 @@ public final class CompliancePolicyRule extends com.oracle.bmc.http.internal.Exp
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compliancePolicyId=").append(String.valueOf(this.compliancePolicyId));
         sb.append(", productVersion=").append(String.valueOf(this.productVersion));
-        sb.append(", patchType=").append(String.valueOf(this.patchType));
+        sb.append(", patchTypeId=").append(String.valueOf(this.patchTypeId));
         sb.append(", severity=").append(String.valueOf(this.severity));
         sb.append(", patchSelection=").append(String.valueOf(this.patchSelection));
         sb.append(", gracePeriod=").append(String.valueOf(this.gracePeriod));
@@ -806,7 +806,7 @@ public final class CompliancePolicyRule extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compliancePolicyId, other.compliancePolicyId)
                 && java.util.Objects.equals(this.productVersion, other.productVersion)
-                && java.util.Objects.equals(this.patchType, other.patchType)
+                && java.util.Objects.equals(this.patchTypeId, other.patchTypeId)
                 && java.util.Objects.equals(this.severity, other.severity)
                 && java.util.Objects.equals(this.patchSelection, other.patchSelection)
                 && java.util.Objects.equals(this.gracePeriod, other.gracePeriod)
@@ -835,7 +835,7 @@ public final class CompliancePolicyRule extends com.oracle.bmc.http.internal.Exp
         result =
                 (result * PRIME)
                         + (this.productVersion == null ? 43 : this.productVersion.hashCode());
-        result = (result * PRIME) + (this.patchType == null ? 43 : this.patchType.hashCode());
+        result = (result * PRIME) + (this.patchTypeId == null ? 43 : this.patchTypeId.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
         result =
                 (result * PRIME)

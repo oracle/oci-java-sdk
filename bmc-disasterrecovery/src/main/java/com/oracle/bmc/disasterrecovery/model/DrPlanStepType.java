@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -32,6 +32,10 @@ package com.oracle.bmc.disasterrecovery.model;
  * - AUTONOMOUS_DATABASE_STOP_DRILL_DELETE_CLONE_STANDBY - A DR plan step to delete an autonomous database clone at standby during a stop drill.
  * - AUTONOMOUS_DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY - A DR plan step to convert an autonomous database to a snapshot at standby during a start drill.
  * - AUTONOMOUS_DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY - A DR plan step to convert an autonomous database to a physical instance at standby during a stop drill.
+ * - DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY_PRECHECK - A precheck step for validating the conversion of a database to a snapshot at standby during a start drill.
+ * - DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY_PRECHECK - A precheck step for validating the conversion of a database to a physical instance at standby during a stop drill.
+ * - DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY - A DR plan step to convert a database to a snapshot at standby during a start drill.
+ * - DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY - A DR plan step to convert a database to a physical instance at standby during a stop drill.
  * - USER_DEFINED_PRECHECK - A precheck step for validating a user-defined step.
  * - COMPUTE_INSTANCE_LAUNCH - A DR plan step to launch a compute instance.
  * - COMPUTE_INSTANCE_STOP - A DR plan step to stop a compute instance.
@@ -48,6 +52,7 @@ package com.oracle.bmc.disasterrecovery.model;
  * - VOLUME_GROUP_REMOVE - A DR plan step to remove a volume group.
  * - VOLUME_GROUP_TERMINATE - A DR plan step to terminate a volume group.
  * - USER_DEFINED - User-defined step
+ * - USER_DEFINED_CUSTOM_PRECHECK - User-defined custom precheck step.
  * - VOLUME_GROUP_RESTORE_START_DRILL_PRECHECK - A precheck step for validating a volume group restoration during a start drill.
  * - VOLUME_GROUP_REMOVE_PRECHECK - A precheck step for validating a volume group removal.
  * - VOLUME_GROUP_TERMINATE_PRECHECK - A precheck step for validating a volume group termination.
@@ -115,6 +120,18 @@ package com.oracle.bmc.disasterrecovery.model;
  * - OBJECT_STORAGE_BUCKET_SWITCHOVER_SETUP_REVERSE_REPLICATION_STANDBY - A DR plan step to set up an object storage bucket reverse replication in the standby region during a switchover.
  * - OBJECT_STORAGE_BUCKET_FAILOVER_DELETE_REPLICATION_STANDBY - A DR plan step to delete an object storage bucket replication in the standby region during a failover.
  * - OBJECT_STORAGE_BUCKET_FAILOVER_SETUP_REVERSE_REPLICATION_STANDBY - A DR plan step to set up an object storage bucket reverse replication in the standby region during a failover.
+ * - MYSQL_DB_SYSTEM_SWITCHOVER_PRECHECK - A precheck step for validating HeatWave MySQL DB System switchover.
+ * - MYSQL_DB_SYSTEM_SWITCHOVER - A DR plan step to perform a HeatWave MySQL DB System switchover.
+ * - MYSQL_DB_SYSTEM_FAILOVER_PRECHECK - A precheck step for validating HeatWave MySQL DB System failover.
+ * - MYSQL_DB_SYSTEM_FAILOVER -  A DR plan step to perform a HeatWave MySQL DB System failover.
+ * - MYSQL_DB_SYSTEM_START_DRILL_PRECHECK - A precheck step for validating HeatWave MySQL DB System start drill.
+ * - MYSQL_DB_SYSTEM_START_DRILL - A DR plan step to perform a HeatWave MySQL DB System start drill.
+ * - MYSQL_DB_SYSTEM_STOP_DRILL_PRECHECK - A precheck step for validating HeatWave MySQL DB System stop drill.
+ * - MYSQL_DB_SYSTEM_STOP_DRILL - A DR plan step to perform a HeatWave MySQL DB System stop drill.
+ * - INTEGRATION_INSTANCE_SWITCHOVER_PRECHECK - A precheck step for validating an integration instance (OIC) for switchover.
+ * - INTEGRATION_INSTANCE_SWITCHOVER - A DR plan step to perform a switchover operation for an integration instance (OIC).
+ * - INTEGRATION_INSTANCE_FAILOVER_PRECHECK -A precheck step for validating an integration instance (OIC) for failover.
+ * - INTEGRATION_INSTANCE_FAILOVER - A DR plan step to perform a failover operation for an integration instance (OIC).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
@@ -158,6 +175,12 @@ public enum DrPlanStepType {
             "AUTONOMOUS_DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY"),
     AutonomousDatabaseStopDrillConvertToPhysicalStandby(
             "AUTONOMOUS_DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY"),
+    DatabaseStartDrillConvertToSnapshotStandbyPrecheck(
+            "DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY_PRECHECK"),
+    DatabaseStopDrillConvertToPhysicalStandbyPrecheck(
+            "DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY_PRECHECK"),
+    DatabaseStartDrillConvertToSnapshotStandby("DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY"),
+    DatabaseStopDrillConvertToPhysicalStandby("DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY"),
     UserDefinedPrecheck("USER_DEFINED_PRECHECK"),
     ComputeInstanceLaunch("COMPUTE_INSTANCE_LAUNCH"),
     ComputeInstanceStop("COMPUTE_INSTANCE_STOP"),
@@ -174,6 +197,7 @@ public enum DrPlanStepType {
     VolumeGroupRemove("VOLUME_GROUP_REMOVE"),
     VolumeGroupTerminate("VOLUME_GROUP_TERMINATE"),
     UserDefined("USER_DEFINED"),
+    UserDefinedCustomPrecheck("USER_DEFINED_CUSTOM_PRECHECK"),
     VolumeGroupRestoreStartDrillPrecheck("VOLUME_GROUP_RESTORE_START_DRILL_PRECHECK"),
     VolumeGroupRemovePrecheck("VOLUME_GROUP_REMOVE_PRECHECK"),
     VolumeGroupTerminatePrecheck("VOLUME_GROUP_TERMINATE_PRECHECK"),
@@ -255,6 +279,18 @@ public enum DrPlanStepType {
             "OBJECT_STORAGE_BUCKET_FAILOVER_DELETE_REPLICATION_STANDBY"),
     ObjectStorageBucketFailoverSetupReverseReplicationStandby(
             "OBJECT_STORAGE_BUCKET_FAILOVER_SETUP_REVERSE_REPLICATION_STANDBY"),
+    MysqlDbSystemSwitchoverPrecheck("MYSQL_DB_SYSTEM_SWITCHOVER_PRECHECK"),
+    MysqlDbSystemSwitchover("MYSQL_DB_SYSTEM_SWITCHOVER"),
+    MysqlDbSystemFailoverPrecheck("MYSQL_DB_SYSTEM_FAILOVER_PRECHECK"),
+    MysqlDbSystemFailover("MYSQL_DB_SYSTEM_FAILOVER"),
+    MysqlDbSystemStartDrillPrecheck("MYSQL_DB_SYSTEM_START_DRILL_PRECHECK"),
+    MysqlDbSystemStartDrill("MYSQL_DB_SYSTEM_START_DRILL"),
+    MysqlDbSystemStopDrillPrecheck("MYSQL_DB_SYSTEM_STOP_DRILL_PRECHECK"),
+    MysqlDbSystemStopDrill("MYSQL_DB_SYSTEM_STOP_DRILL"),
+    IntegrationInstanceSwitchoverPrecheck("INTEGRATION_INSTANCE_SWITCHOVER_PRECHECK"),
+    IntegrationInstanceSwitchover("INTEGRATION_INSTANCE_SWITCHOVER"),
+    IntegrationInstanceFailoverPrecheck("INTEGRATION_INSTANCE_FAILOVER_PRECHECK"),
+    IntegrationInstanceFailover("INTEGRATION_INSTANCE_FAILOVER"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

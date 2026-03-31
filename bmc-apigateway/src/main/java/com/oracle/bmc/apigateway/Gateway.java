@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway;
@@ -63,6 +63,18 @@ public interface Gateway extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a Gateway resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/AddGatewayLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddGatewayLock API.
+     */
+    AddGatewayLockResponse addGatewayLock(AddGatewayLockRequest request);
+
+    /**
      * Changes the gateway compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -124,6 +136,18 @@ public interface Gateway extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGateways API.
      */
     ListGatewaysResponse listGateways(ListGatewaysRequest request);
+
+    /**
+     * Removes a lock from a Gateway resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/RemoveGatewayLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveGatewayLock API.
+     */
+    RemoveGatewayLockResponse removeGatewayLock(RemoveGatewayLockRequest request);
 
     /**
      * Updates the gateway with the given identifier.

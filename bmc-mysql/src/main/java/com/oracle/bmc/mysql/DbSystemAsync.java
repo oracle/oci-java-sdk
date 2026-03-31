@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -76,6 +76,23 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update the chosen subset of MySQL instances based on their role.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ControlledUpdateDbSystemResponse> controlledUpdateDbSystem(
+            ControlledUpdateDbSystemRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ControlledUpdateDbSystemRequest, ControlledUpdateDbSystemResponse>
+                    handler);
+
+    /**
      * Creates and launches a DB System.
      *
      *
@@ -127,6 +144,24 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Initiates an asynchronous request to collect the current status of the specified DB System,
+     * including the status of any attached Channels (if requested).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateDbSystemStatusResponse> generateDbSystemStatus(
+            GenerateDbSystemStatusRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GenerateDbSystemStatusRequest, GenerateDbSystemStatusResponse>
+                    handler);
+
+    /**
      * Sends a request to estimate the memory footprints of user tables when loaded to HeatWave cluster memory.
      *
      *
@@ -158,6 +193,24 @@ public interface DbSystemAsync extends AutoCloseable {
     java.util.concurrent.Future<GetDbSystemResponse> getDbSystem(
             GetDbSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetDbSystemRequest, GetDbSystemResponse> handler);
+
+    /**
+     * Returns the most up-to-date status of the specified DB System,
+     * including the status of any requested Channels.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDbSystemStatusResponse> getDbSystemStatus(
+            GetDbSystemStatusRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDbSystemStatusRequest, GetDbSystemStatusResponse>
+                    handler);
 
     /**
      * Gets information about the HeatWave cluster.
@@ -210,6 +263,22 @@ public interface DbSystemAsync extends AutoCloseable {
     java.util.concurrent.Future<ListDbSystemsResponse> listDbSystems(
             ListDbSystemsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListDbSystemsRequest, ListDbSystemsResponse>
+                    handler);
+
+    /**
+     * List all the maintenance events.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMaintenanceEventsResponse> listMaintenanceEvents(
+            ListMaintenanceEventsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMaintenanceEventsRequest, ListMaintenanceEventsResponse>
                     handler);
 
     /**

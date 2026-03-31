@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.requests;
@@ -60,12 +60,16 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return fleetId;
     }
     /**
-     * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+     * The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * that identifies the Agent.
+     *
      */
     private String agentId;
 
     /**
-     * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+     * The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * that identifies the Agent.
+     *
      */
     public String getAgentId() {
         return agentId;
@@ -272,12 +276,16 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+         * The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * that identifies the Agent.
+         *
          */
         private String agentId = null;
 
         /**
-         * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+         * The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * that identifies the Agent.
+         *
          * @param agentId the value to set
          * @return this builder instance
          */

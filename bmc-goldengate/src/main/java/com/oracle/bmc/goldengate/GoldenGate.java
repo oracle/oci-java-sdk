@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate;
@@ -85,6 +85,19 @@ public interface GoldenGate extends AutoCloseable {
     AddDeploymentBackupLockResponse addDeploymentBackupLock(AddDeploymentBackupLockRequest request);
 
     /**
+     * Adds a new local peer to the deployment, this will add the given placement to deployment placement attribute. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/AddDeploymentLocalPeerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDeploymentLocalPeer API.
+     */
+    AddDeploymentLocalPeerResponse addDeploymentLocalPeer(AddDeploymentLocalPeerRequest request);
+
+    /**
      * Adds a lock to a Deployment resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -153,6 +166,20 @@ public interface GoldenGate extends AutoCloseable {
             ChangeConnectionCompartmentRequest request);
 
     /**
+     * Associate a GoldanGate connection with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ChangeConnectionSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeConnectionSubscription API.
+     */
+    ChangeConnectionSubscriptionResponse changeConnectionSubscription(
+            ChangeConnectionSubscriptionRequest request);
+
+    /**
      * Note: Deprecated. Use the /connections API instead.
      * Moves the DatabaseRegistration into a different compartment within the same tenancy. When
      * provided, If-Match is checked against ETag values of the resource.  For information about
@@ -205,6 +232,20 @@ public interface GoldenGate extends AutoCloseable {
             ChangeDeploymentCompartmentRequest request);
 
     /**
+     * Associate a GoldanGate deployment with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ChangeDeploymentSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDeploymentSubscription API.
+     */
+    ChangeDeploymentSubscriptionResponse changeDeploymentSubscription(
+            ChangeDeploymentSubscriptionRequest request);
+
+    /**
      * Moves the Pipeline into a different compartment within the same tenancy. When
      * provided, If-Match is checked against ETag values of the resource.  For information about
      * moving resources between compartments, see [Moving Resources Between
@@ -234,6 +275,20 @@ public interface GoldenGate extends AutoCloseable {
      */
     CollectDeploymentDiagnosticResponse collectDeploymentDiagnostic(
             CollectDeploymentDiagnosticRequest request);
+
+    /**
+     * Collects diagnostics for the pipeline
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CollectPipelineDiagnosticExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CollectPipelineDiagnostic API.
+     */
+    CollectPipelineDiagnosticResponse collectPipelineDiagnostic(
+            CollectPipelineDiagnosticRequest request);
 
     /**
      * Creates a copy of a Deployment Backup.
@@ -683,6 +738,19 @@ public interface GoldenGate extends AutoCloseable {
             ListDeploymentEnvironmentsRequest request);
 
     /**
+     * Lists the local and remote peers in a deployment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListDeploymentPeersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeploymentPeers API.
+     */
+    ListDeploymentPeersResponse listDeploymentPeers(ListDeploymentPeersRequest request);
+
+    /**
      * Returns an array of DeploymentTypeDescriptor
      *
      * @param request The request object containing the details to send
@@ -776,7 +844,7 @@ public interface GoldenGate extends AutoCloseable {
             ListPipelineInitializationStepsRequest request);
 
     /**
-     * Retrieves a Pipeline's running replication process's status like extracts/replicats.
+     * Retrieves a Pipeline's running replication process's status like Capture/Apply.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -910,6 +978,19 @@ public interface GoldenGate extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Pauses the pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/PausePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PausePipeline API.
+     */
+    PausePipelineResponse pausePipeline(PausePipelineRequest request);
+
+    /**
      * Refresh the external Connection attributes.
      *
      * @param request The request object containing the details to send
@@ -946,6 +1027,20 @@ public interface GoldenGate extends AutoCloseable {
      */
     RemoveDeploymentBackupLockResponse removeDeploymentBackupLock(
             RemoveDeploymentBackupLockRequest request);
+
+    /**
+     * Removes a local peer of the deployment, this will remove the given placement entry from the deployment placement attribute. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/RemoveDeploymentLocalPeerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDeploymentLocalPeer API.
+     */
+    RemoveDeploymentLocalPeerResponse removeDeploymentLocalPeer(
+            RemoveDeploymentLocalPeerRequest request);
 
     /**
      * Removes a lock from a Deployment resource.
@@ -1063,6 +1158,20 @@ public interface GoldenGate extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/StopPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopPipeline API.
      */
     StopPipelineResponse stopPipeline(StopPipelineRequest request);
+
+    /**
+     * Switchover to the selected standby peer, which can be a local placement or a standby deployment in different region. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/SwitchoverDeploymentPeerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchoverDeploymentPeer API.
+     */
+    SwitchoverDeploymentPeerResponse switchoverDeploymentPeer(
+            SwitchoverDeploymentPeerRequest request);
 
     /**
      * Tests the connectivity between given GoldenGate deployment and one of the associated database / service.

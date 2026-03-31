@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -38,6 +38,10 @@ package com.oracle.bmc.vnmonitoring.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OnPremEndpoint.class,
         name = "ON_PREM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PrivateServiceAccessEndpoint.class,
+        name = "PRIVATE_SERVICE_ACCESS"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = LoadBalancerEndpoint.class,
@@ -119,6 +123,7 @@ public class Endpoint extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         NetworkLoadBalancerListener("NETWORK_LOAD_BALANCER_LISTENER"),
         Vlan("VLAN"),
         OnPrem("ON_PREM"),
+        PrivateServiceAccess("PRIVATE_SERVICE_ACCESS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

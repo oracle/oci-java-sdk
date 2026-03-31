@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -51,7 +51,8 @@ public final class Shape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "isSubcore",
         "isFlexible",
         "resizeCompatibleShapes",
-        "recommendedAlternatives"
+        "recommendedAlternatives",
+        "platformNames"
     })
     public Shape(
             java.util.List<BaselineOcpuUtilizations> baselineOcpuUtilizations,
@@ -82,7 +83,8 @@ public final class Shape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             Boolean isSubcore,
             Boolean isFlexible,
             java.util.List<String> resizeCompatibleShapes,
-            java.util.List<ShapeAlternativeObject> recommendedAlternatives) {
+            java.util.List<ShapeAlternativeObject> recommendedAlternatives,
+            java.util.List<String> platformNames) {
         super();
         this.baselineOcpuUtilizations = baselineOcpuUtilizations;
         this.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
@@ -113,6 +115,7 @@ public final class Shape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.isFlexible = isFlexible;
         this.resizeCompatibleShapes = resizeCompatibleShapes;
         this.recommendedAlternatives = recommendedAlternatives;
+        this.platformNames = platformNames;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -629,6 +632,24 @@ public final class Shape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             this.__explicitlySet__.add("recommendedAlternatives");
             return this;
         }
+        /**
+         * The list of platform names that can be used for this shapes
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("platformNames")
+        private java.util.List<String> platformNames;
+
+        /**
+         * The list of platform names that can be used for this shapes
+         *
+         * @param platformNames the value to set
+         * @return this builder
+         **/
+        public Builder platformNames(java.util.List<String> platformNames) {
+            this.platformNames = platformNames;
+            this.__explicitlySet__.add("platformNames");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -664,7 +685,8 @@ public final class Shape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                             this.isSubcore,
                             this.isFlexible,
                             this.resizeCompatibleShapes,
-                            this.recommendedAlternatives);
+                            this.recommendedAlternatives,
+                            this.platformNames);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -759,6 +781,9 @@ public final class Shape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             }
             if (model.wasPropertyExplicitlySet("recommendedAlternatives")) {
                 this.recommendedAlternatives(model.getRecommendedAlternatives());
+            }
+            if (model.wasPropertyExplicitlySet("platformNames")) {
+                this.platformNames(model.getPlatformNames());
             }
             return this;
         }
@@ -1322,6 +1347,22 @@ public final class Shape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return recommendedAlternatives;
     }
 
+    /**
+     * The list of platform names that can be used for this shapes
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("platformNames")
+    private final java.util.List<String> platformNames;
+
+    /**
+     * The list of platform names that can be used for this shapes
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getPlatformNames() {
+        return platformNames;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1374,6 +1415,7 @@ public final class Shape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         sb.append(", resizeCompatibleShapes=").append(String.valueOf(this.resizeCompatibleShapes));
         sb.append(", recommendedAlternatives=")
                 .append(String.valueOf(this.recommendedAlternatives));
+        sb.append(", platformNames=").append(String.valueOf(this.platformNames));
         sb.append(")");
         return sb.toString();
     }
@@ -1427,6 +1469,7 @@ public final class Shape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                         this.resizeCompatibleShapes, other.resizeCompatibleShapes)
                 && java.util.Objects.equals(
                         this.recommendedAlternatives, other.recommendedAlternatives)
+                && java.util.Objects.equals(this.platformNames, other.platformNames)
                 && super.equals(other);
     }
 
@@ -1527,6 +1570,9 @@ public final class Shape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                         + (this.recommendedAlternatives == null
                                 ? 43
                                 : this.recommendedAlternatives.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.platformNames == null ? 43 : this.platformNames.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

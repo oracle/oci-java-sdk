@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.model;
@@ -34,6 +34,7 @@ public final class CatalogPrivateEndpointSummary
         "freeformTags",
         "systemTags",
         "definedTags",
+        "securityAttributes",
         "lifecycleState",
         "attachedCatalogs",
         "locks"
@@ -50,6 +51,7 @@ public final class CatalogPrivateEndpointSummary
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             LifecycleState lifecycleState,
             java.util.List<String> attachedCatalogs,
             java.util.List<ResourceLock> locks) {
@@ -65,6 +67,7 @@ public final class CatalogPrivateEndpointSummary
         this.freeformTags = freeformTags;
         this.systemTags = systemTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.lifecycleState = lifecycleState;
         this.attachedCatalogs = attachedCatalogs;
         this.locks = locks;
@@ -272,6 +275,31 @@ public final class CatalogPrivateEndpointSummary
             return this;
         }
         /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * The current state of the private endpoint resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -337,6 +365,7 @@ public final class CatalogPrivateEndpointSummary
                             this.freeformTags,
                             this.systemTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.lifecycleState,
                             this.attachedCatalogs,
                             this.locks);
@@ -380,6 +409,9 @@ public final class CatalogPrivateEndpointSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -582,6 +614,28 @@ public final class CatalogPrivateEndpointSummary
     }
 
     /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * The current state of the private endpoint resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -648,6 +702,7 @@ public final class CatalogPrivateEndpointSummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", attachedCatalogs=").append(String.valueOf(this.attachedCatalogs));
         sb.append(", locks=").append(String.valueOf(this.locks));
@@ -676,6 +731,7 @@ public final class CatalogPrivateEndpointSummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.attachedCatalogs, other.attachedCatalogs)
                 && java.util.Objects.equals(this.locks, other.locks)
@@ -701,6 +757,11 @@ public final class CatalogPrivateEndpointSummary
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

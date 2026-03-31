@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -23,6 +23,7 @@ public final class UpdateInstanceDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "isAIEnterpriseEnabled",
         "capacityReservationId",
         "definedTags",
         "securityAttributes",
@@ -45,6 +46,7 @@ public final class UpdateInstanceDetails
         "licensingConfigs"
     })
     public UpdateInstanceDetails(
+            Boolean isAIEnterpriseEnabled,
             String capacityReservationId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
@@ -66,6 +68,7 @@ public final class UpdateInstanceDetails
             UpdateInstancePlatformConfig platformConfig,
             java.util.List<UpdateInstanceLicensingConfig> licensingConfigs) {
         super();
+        this.isAIEnterpriseEnabled = isAIEnterpriseEnabled;
         this.capacityReservationId = capacityReservationId;
         this.definedTags = definedTags;
         this.securityAttributes = securityAttributes;
@@ -90,6 +93,24 @@ public final class UpdateInstanceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether to enable AI enterprise on the instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAIEnterpriseEnabled")
+        private Boolean isAIEnterpriseEnabled;
+
+        /**
+         * Whether to enable AI enterprise on the instance.
+         *
+         * @param isAIEnterpriseEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isAIEnterpriseEnabled(Boolean isAIEnterpriseEnabled) {
+            this.isAIEnterpriseEnabled = isAIEnterpriseEnabled;
+            this.__explicitlySet__.add("isAIEnterpriseEnabled");
+            return this;
+        }
         /**
          * The OCID of the compute capacity reservation this instance is launched under.
          * You can remove the instance from a reservation by specifying an empty string as input for this field.
@@ -571,6 +592,7 @@ public final class UpdateInstanceDetails
         public UpdateInstanceDetails build() {
             UpdateInstanceDetails model =
                     new UpdateInstanceDetails(
+                            this.isAIEnterpriseEnabled,
                             this.capacityReservationId,
                             this.definedTags,
                             this.securityAttributes,
@@ -599,6 +621,9 @@ public final class UpdateInstanceDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("isAIEnterpriseEnabled")) {
+                this.isAIEnterpriseEnabled(model.getIsAIEnterpriseEnabled());
+            }
             if (model.wasPropertyExplicitlySet("capacityReservationId")) {
                 this.capacityReservationId(model.getCapacityReservationId());
             }
@@ -672,6 +697,22 @@ public final class UpdateInstanceDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Whether to enable AI enterprise on the instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAIEnterpriseEnabled")
+    private final Boolean isAIEnterpriseEnabled;
+
+    /**
+     * Whether to enable AI enterprise on the instance.
+     *
+     * @return the value
+     **/
+    public Boolean getIsAIEnterpriseEnabled() {
+        return isAIEnterpriseEnabled;
     }
 
     /**
@@ -1158,7 +1199,8 @@ public final class UpdateInstanceDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateInstanceDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append("isAIEnterpriseEnabled=").append(String.valueOf(this.isAIEnterpriseEnabled));
+        sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -1194,7 +1236,8 @@ public final class UpdateInstanceDetails
         }
 
         UpdateInstanceDetails other = (UpdateInstanceDetails) o;
-        return java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+        return java.util.Objects.equals(this.isAIEnterpriseEnabled, other.isAIEnterpriseEnabled)
+                && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -1223,6 +1266,11 @@ public final class UpdateInstanceDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isAIEnterpriseEnabled == null
+                                ? 43
+                                : this.isAIEnterpriseEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.capacityReservationId == null

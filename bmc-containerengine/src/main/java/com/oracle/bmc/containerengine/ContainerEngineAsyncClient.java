@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine;
@@ -7,6 +7,8 @@ package com.oracle.bmc.containerengine;
 import com.oracle.bmc.containerengine.internal.http.*;
 import com.oracle.bmc.containerengine.requests.*;
 import com.oracle.bmc.containerengine.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for ContainerEngine service. <br/>
@@ -28,7 +30,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("CONTAINERENGINE")
+                    .serviceName(ContainerEngineClient.class.getName())
                     .serviceEndpointPrefix("containerengine")
                     .serviceEndpointTemplate(
                             "https://containerengine.{region}.oci.{secondLevelDomain}")
@@ -51,6 +53,10 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -262,6 +268,11 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -407,12 +418,21 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -442,15 +462,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -1145,6 +1157,69 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ExtendEndpointDecommissionRollbackDeadlineResponse>
+            extendEndpointDecommissionRollbackDeadline(
+                    ExtendEndpointDecommissionRollbackDeadlineRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ExtendEndpointDecommissionRollbackDeadlineRequest,
+                                    ExtendEndpointDecommissionRollbackDeadlineResponse>
+                            handler) {
+        LOG.trace("Called async extendEndpointDecommissionRollbackDeadline");
+        final ExtendEndpointDecommissionRollbackDeadlineRequest interceptedRequest =
+                ExtendEndpointDecommissionRollbackDeadlineConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExtendEndpointDecommissionRollbackDeadlineConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "ExtendEndpointDecommissionRollbackDeadline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ExtendEndpointDecommissionRollbackDeadline");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ExtendEndpointDecommissionRollbackDeadlineResponse>
+                transformer =
+                        ExtendEndpointDecommissionRollbackDeadlineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ExtendEndpointDecommissionRollbackDeadlineRequest,
+                        ExtendEndpointDecommissionRollbackDeadlineResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ExtendEndpointDecommissionRollbackDeadlineRequest,
+                                ExtendEndpointDecommissionRollbackDeadlineResponse>,
+                        java.util.concurrent.Future<
+                                ExtendEndpointDecommissionRollbackDeadlineResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getExtendEndpointDecommissionRollbackDeadlineDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ExtendEndpointDecommissionRollbackDeadlineRequest,
+                    ExtendEndpointDecommissionRollbackDeadlineResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAddonResponse> getAddon(
             GetAddonRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetAddonRequest, GetAddonResponse>
@@ -1456,6 +1531,60 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetNodePoolOptionsRequest, GetNodePoolOptionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPublicApiEndpointDecommissionStatusResponse>
+            getPublicApiEndpointDecommissionStatus(
+                    GetPublicApiEndpointDecommissionStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetPublicApiEndpointDecommissionStatusRequest,
+                                    GetPublicApiEndpointDecommissionStatusResponse>
+                            handler) {
+        LOG.trace("Called async getPublicApiEndpointDecommissionStatus");
+        final GetPublicApiEndpointDecommissionStatusRequest interceptedRequest =
+                GetPublicApiEndpointDecommissionStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPublicApiEndpointDecommissionStatusConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "GetPublicApiEndpointDecommissionStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetPublicApiEndpointDecommissionStatus");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetPublicApiEndpointDecommissionStatusResponse>
+                transformer =
+                        GetPublicApiEndpointDecommissionStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetPublicApiEndpointDecommissionStatusRequest,
+                        GetPublicApiEndpointDecommissionStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPublicApiEndpointDecommissionStatusRequest,
+                                GetPublicApiEndpointDecommissionStatusResponse>,
+                        java.util.concurrent.Future<GetPublicApiEndpointDecommissionStatusResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPublicApiEndpointDecommissionStatusRequest,
+                    GetPublicApiEndpointDecommissionStatusResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2202,6 +2331,170 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RebootClusterNodeResponse> rebootClusterNode(
+            RebootClusterNodeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RebootClusterNodeRequest, RebootClusterNodeResponse>
+                    handler) {
+        LOG.trace("Called async rebootClusterNode");
+        final RebootClusterNodeRequest interceptedRequest =
+                RebootClusterNodeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RebootClusterNodeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "RebootClusterNode",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/RebootClusterNode");
+        final java.util.function.Function<javax.ws.rs.core.Response, RebootClusterNodeResponse>
+                transformer =
+                        RebootClusterNodeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RebootClusterNodeRequest, RebootClusterNodeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RebootClusterNodeRequest, RebootClusterNodeResponse>,
+                        java.util.concurrent.Future<RebootClusterNodeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRebootClusterNodeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RebootClusterNodeRequest, RebootClusterNodeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplaceBootVolumeClusterNodeResponse>
+            replaceBootVolumeClusterNode(
+                    ReplaceBootVolumeClusterNodeRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ReplaceBootVolumeClusterNodeRequest,
+                                    ReplaceBootVolumeClusterNodeResponse>
+                            handler) {
+        LOG.trace("Called async replaceBootVolumeClusterNode");
+        final ReplaceBootVolumeClusterNodeRequest interceptedRequest =
+                ReplaceBootVolumeClusterNodeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReplaceBootVolumeClusterNodeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "ReplaceBootVolumeClusterNode",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ReplaceBootVolumeClusterNode");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ReplaceBootVolumeClusterNodeResponse>
+                transformer =
+                        ReplaceBootVolumeClusterNodeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ReplaceBootVolumeClusterNodeRequest, ReplaceBootVolumeClusterNodeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ReplaceBootVolumeClusterNodeRequest,
+                                ReplaceBootVolumeClusterNodeResponse>,
+                        java.util.concurrent.Future<ReplaceBootVolumeClusterNodeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getReplaceBootVolumeClusterNodeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ReplaceBootVolumeClusterNodeRequest, ReplaceBootVolumeClusterNodeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RollbackPublicApiEndpointDecommissionResponse>
+            rollbackPublicApiEndpointDecommission(
+                    RollbackPublicApiEndpointDecommissionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RollbackPublicApiEndpointDecommissionRequest,
+                                    RollbackPublicApiEndpointDecommissionResponse>
+                            handler) {
+        LOG.trace("Called async rollbackPublicApiEndpointDecommission");
+        final RollbackPublicApiEndpointDecommissionRequest interceptedRequest =
+                RollbackPublicApiEndpointDecommissionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RollbackPublicApiEndpointDecommissionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "RollbackPublicApiEndpointDecommission",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/RollbackPublicApiEndpointDecommission");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RollbackPublicApiEndpointDecommissionResponse>
+                transformer =
+                        RollbackPublicApiEndpointDecommissionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RollbackPublicApiEndpointDecommissionRequest,
+                        RollbackPublicApiEndpointDecommissionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RollbackPublicApiEndpointDecommissionRequest,
+                                RollbackPublicApiEndpointDecommissionResponse>,
+                        java.util.concurrent.Future<RollbackPublicApiEndpointDecommissionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RollbackPublicApiEndpointDecommissionRequest,
+                    RollbackPublicApiEndpointDecommissionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<StartCredentialRotationResponse> startCredentialRotation(
             StartCredentialRotationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2243,6 +2536,60 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     StartCredentialRotationRequest, StartCredentialRotationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartPublicApiEndpointDecommissionResponse>
+            startPublicApiEndpointDecommission(
+                    StartPublicApiEndpointDecommissionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    StartPublicApiEndpointDecommissionRequest,
+                                    StartPublicApiEndpointDecommissionResponse>
+                            handler) {
+        LOG.trace("Called async startPublicApiEndpointDecommission");
+        final StartPublicApiEndpointDecommissionRequest interceptedRequest =
+                StartPublicApiEndpointDecommissionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartPublicApiEndpointDecommissionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "StartPublicApiEndpointDecommission",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/StartPublicApiEndpointDecommission");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, StartPublicApiEndpointDecommissionResponse>
+                transformer =
+                        StartPublicApiEndpointDecommissionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        StartPublicApiEndpointDecommissionRequest,
+                        StartPublicApiEndpointDecommissionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartPublicApiEndpointDecommissionRequest,
+                                StartPublicApiEndpointDecommissionResponse>,
+                        java.util.concurrent.Future<StartPublicApiEndpointDecommissionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartPublicApiEndpointDecommissionRequest,
+                    StartPublicApiEndpointDecommissionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

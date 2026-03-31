@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -26,6 +26,10 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "description",
         "compartmentId",
         "subnetId",
+        "nsgIds",
+        "securityAttributes",
+        "rest",
+        "databaseConsole",
         "isHighlyAvailable",
         "currentPlacement",
         "isHeatWaveClusterAttached",
@@ -34,6 +38,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "faultDomain",
         "shapeName",
         "mysqlVersion",
+        "controlledUpdate",
         "backupPolicy",
         "source",
         "configurationId",
@@ -58,10 +63,12 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "pointInTimeRecoveryDetails",
         "databaseManagement",
         "secureConnections",
+        "encryptData",
         "databaseMode",
         "accessMode",
         "customerContacts",
-        "readEndpoint"
+        "readEndpoint",
+        "telemetryConfiguration"
     })
     public DbSystem(
             String id,
@@ -69,6 +76,10 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             String description,
             String compartmentId,
             String subnetId,
+            java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            RestDetails rest,
+            DatabaseConsoleDetails databaseConsole,
             Boolean isHighlyAvailable,
             DbSystemPlacement currentPlacement,
             Boolean isHeatWaveClusterAttached,
@@ -77,6 +88,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             String faultDomain,
             String shapeName,
             String mysqlVersion,
+            ControlledUpdate controlledUpdate,
             BackupPolicy backupPolicy,
             DbSystemSource source,
             String configurationId,
@@ -101,16 +113,22 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             PointInTimeRecoveryDetails pointInTimeRecoveryDetails,
             DatabaseManagementStatus databaseManagement,
             SecureConnectionDetails secureConnections,
+            EncryptDataDetails encryptData,
             DatabaseMode databaseMode,
             AccessMode accessMode,
             java.util.List<CustomerContact> customerContacts,
-            ReadEndpointDetails readEndpoint) {
+            ReadEndpointDetails readEndpoint,
+            TelemetryConfigurationDetails telemetryConfiguration) {
         super();
         this.id = id;
         this.displayName = displayName;
         this.description = description;
         this.compartmentId = compartmentId;
         this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
+        this.rest = rest;
+        this.databaseConsole = databaseConsole;
         this.isHighlyAvailable = isHighlyAvailable;
         this.currentPlacement = currentPlacement;
         this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
@@ -119,6 +137,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.faultDomain = faultDomain;
         this.shapeName = shapeName;
         this.mysqlVersion = mysqlVersion;
+        this.controlledUpdate = controlledUpdate;
         this.backupPolicy = backupPolicy;
         this.source = source;
         this.configurationId = configurationId;
@@ -143,10 +162,12 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
+        this.encryptData = encryptData;
         this.databaseMode = databaseMode;
         this.accessMode = accessMode;
         this.customerContacts = customerContacts;
         this.readEndpoint = readEndpoint;
+        this.telemetryConfiguration = telemetryConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -231,6 +252,63 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rest")
+        private RestDetails rest;
+
+        public Builder rest(RestDetails rest) {
+            this.rest = rest;
+            this.__explicitlySet__.add("rest");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+        private DatabaseConsoleDetails databaseConsole;
+
+        public Builder databaseConsole(DatabaseConsoleDetails databaseConsole) {
+            this.databaseConsole = databaseConsole;
+            this.__explicitlySet__.add("databaseConsole");
             return this;
         }
         /**
@@ -387,6 +465,15 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         public Builder mysqlVersion(String mysqlVersion) {
             this.mysqlVersion = mysqlVersion;
             this.__explicitlySet__.add("mysqlVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("controlledUpdate")
+        private ControlledUpdate controlledUpdate;
+
+        public Builder controlledUpdate(ControlledUpdate controlledUpdate) {
+            this.controlledUpdate = controlledUpdate;
+            this.__explicitlySet__.add("controlledUpdate");
             return this;
         }
 
@@ -768,6 +855,15 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             this.__explicitlySet__.add("secureConnections");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+        private EncryptDataDetails encryptData;
+
+        public Builder encryptData(EncryptDataDetails encryptData) {
+            this.encryptData = encryptData;
+            this.__explicitlySet__.add("encryptData");
+            return this;
+        }
         /**
          * The database mode indicating the types of statements that are allowed to run in the the DB system.
          * This mode applies only to statements run by user connections. Replicated write statements continue
@@ -854,6 +950,16 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("telemetryConfiguration")
+        private TelemetryConfigurationDetails telemetryConfiguration;
+
+        public Builder telemetryConfiguration(
+                TelemetryConfigurationDetails telemetryConfiguration) {
+            this.telemetryConfiguration = telemetryConfiguration;
+            this.__explicitlySet__.add("telemetryConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -865,6 +971,10 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.description,
                             this.compartmentId,
                             this.subnetId,
+                            this.nsgIds,
+                            this.securityAttributes,
+                            this.rest,
+                            this.databaseConsole,
                             this.isHighlyAvailable,
                             this.currentPlacement,
                             this.isHeatWaveClusterAttached,
@@ -873,6 +983,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.faultDomain,
                             this.shapeName,
                             this.mysqlVersion,
+                            this.controlledUpdate,
                             this.backupPolicy,
                             this.source,
                             this.configurationId,
@@ -897,10 +1008,12 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.pointInTimeRecoveryDetails,
                             this.databaseManagement,
                             this.secureConnections,
+                            this.encryptData,
                             this.databaseMode,
                             this.accessMode,
                             this.customerContacts,
-                            this.readEndpoint);
+                            this.readEndpoint,
+                            this.telemetryConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -923,6 +1036,18 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("rest")) {
+                this.rest(model.getRest());
+            }
+            if (model.wasPropertyExplicitlySet("databaseConsole")) {
+                this.databaseConsole(model.getDatabaseConsole());
             }
             if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
                 this.isHighlyAvailable(model.getIsHighlyAvailable());
@@ -947,6 +1072,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("mysqlVersion")) {
                 this.mysqlVersion(model.getMysqlVersion());
+            }
+            if (model.wasPropertyExplicitlySet("controlledUpdate")) {
+                this.controlledUpdate(model.getControlledUpdate());
             }
             if (model.wasPropertyExplicitlySet("backupPolicy")) {
                 this.backupPolicy(model.getBackupPolicy());
@@ -1020,6 +1148,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             if (model.wasPropertyExplicitlySet("secureConnections")) {
                 this.secureConnections(model.getSecureConnections());
             }
+            if (model.wasPropertyExplicitlySet("encryptData")) {
+                this.encryptData(model.getEncryptData());
+            }
             if (model.wasPropertyExplicitlySet("databaseMode")) {
                 this.databaseMode(model.getDatabaseMode());
             }
@@ -1031,6 +1162,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("readEndpoint")) {
                 this.readEndpoint(model.getReadEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("telemetryConfiguration")) {
+                this.telemetryConfiguration(model.getTelemetryConfiguration());
             }
             return this;
         }
@@ -1117,6 +1251,54 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
      **/
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     * @return the value
+     **/
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("rest")
+    private final RestDetails rest;
+
+    public RestDetails getRest() {
+        return rest;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+    private final DatabaseConsoleDetails databaseConsole;
+
+    public DatabaseConsoleDetails getDatabaseConsole() {
+        return databaseConsole;
     }
 
     /**
@@ -1257,6 +1439,13 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
      **/
     public String getMysqlVersion() {
         return mysqlVersion;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("controlledUpdate")
+    private final ControlledUpdate controlledUpdate;
+
+    public ControlledUpdate getControlledUpdate() {
+        return controlledUpdate;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
@@ -1641,6 +1830,13 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return secureConnections;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+    private final EncryptDataDetails encryptData;
+
+    public EncryptDataDetails getEncryptData() {
+        return encryptData;
+    }
+
     /**
      * The database mode indicating the types of statements that are allowed to run in the the DB system.
      * This mode applies only to statements run by user connections. Replicated write statements continue
@@ -1825,6 +2021,13 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return readEndpoint;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("telemetryConfiguration")
+    private final TelemetryConfigurationDetails telemetryConfiguration;
+
+    public TelemetryConfigurationDetails getTelemetryConfiguration() {
+        return telemetryConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1844,6 +2047,10 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", rest=").append(String.valueOf(this.rest));
+        sb.append(", databaseConsole=").append(String.valueOf(this.databaseConsole));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", currentPlacement=").append(String.valueOf(this.currentPlacement));
         sb.append(", isHeatWaveClusterAttached=")
@@ -1853,6 +2060,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", mysqlVersion=").append(String.valueOf(this.mysqlVersion));
+        sb.append(", controlledUpdate=").append(String.valueOf(this.controlledUpdate));
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
         sb.append(", source=").append(String.valueOf(this.source));
         sb.append(", configurationId=").append(String.valueOf(this.configurationId));
@@ -1878,10 +2086,12 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 .append(String.valueOf(this.pointInTimeRecoveryDetails));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", encryptData=").append(String.valueOf(this.encryptData));
         sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
         sb.append(", accessMode=").append(String.valueOf(this.accessMode));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
+        sb.append(", telemetryConfiguration=").append(String.valueOf(this.telemetryConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -1901,6 +2111,10 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(this.rest, other.rest)
+                && java.util.Objects.equals(this.databaseConsole, other.databaseConsole)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.currentPlacement, other.currentPlacement)
                 && java.util.Objects.equals(
@@ -1910,6 +2124,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.mysqlVersion, other.mysqlVersion)
+                && java.util.Objects.equals(this.controlledUpdate, other.controlledUpdate)
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
                 && java.util.Objects.equals(this.source, other.source)
                 && java.util.Objects.equals(this.configurationId, other.configurationId)
@@ -1935,10 +2150,13 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         this.pointInTimeRecoveryDetails, other.pointInTimeRecoveryDetails)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.encryptData, other.encryptData)
                 && java.util.Objects.equals(this.databaseMode, other.databaseMode)
                 && java.util.Objects.equals(this.accessMode, other.accessMode)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
+                && java.util.Objects.equals(
+                        this.telemetryConfiguration, other.telemetryConfiguration)
                 && super.equals(other);
     }
 
@@ -1953,6 +2171,16 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
+        result = (result * PRIME) + (this.rest == null ? 43 : this.rest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseConsole == null ? 43 : this.databaseConsole.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());
@@ -1975,6 +2203,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.mysqlVersion == null ? 43 : this.mysqlVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.controlledUpdate == null ? 43 : this.controlledUpdate.hashCode());
         result = (result * PRIME) + (this.backupPolicy == null ? 43 : this.backupPolicy.hashCode());
         result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
         result =
@@ -2025,12 +2256,18 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result =
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.encryptData == null ? 43 : this.encryptData.hashCode());
         result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
         result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
         result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.telemetryConfiguration == null
+                                ? 43
+                                : this.telemetryConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

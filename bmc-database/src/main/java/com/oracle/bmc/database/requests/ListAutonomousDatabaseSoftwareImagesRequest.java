@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -106,13 +106,13 @@ public class ListAutonomousDatabaseSoftwareImagesRequest
         return sortOrder;
     }
     /**
-     * parameter according to which Autonomous Database Software Images will be sorted.
+     * parameter according to which Autonomous AI Database Software Images will be sorted.
      *
      */
     private SortBy sortBy;
 
     /**
-     * parameter according to which Autonomous Database Software Images will be sorted.
+     * parameter according to which Autonomous AI Database Software Images will be sorted.
      *
      **/
     public enum SortBy {
@@ -149,7 +149,7 @@ public class ListAutonomousDatabaseSoftwareImagesRequest
     };
 
     /**
-     * parameter according to which Autonomous Database Software Images will be sorted.
+     * parameter according to which Autonomous AI Database Software Images will be sorted.
      *
      */
     public SortBy getSortBy() {
@@ -279,13 +279,13 @@ public class ListAutonomousDatabaseSoftwareImagesRequest
         }
 
         /**
-         * parameter according to which Autonomous Database Software Images will be sorted.
+         * parameter according to which Autonomous AI Database Software Images will be sorted.
          *
          */
         private SortBy sortBy = null;
 
         /**
-         * parameter according to which Autonomous Database Software Images will be sorted.
+         * parameter according to which Autonomous AI Database Software Images will be sorted.
          *
          * @param sortBy the value to set
          * @return this builder instance

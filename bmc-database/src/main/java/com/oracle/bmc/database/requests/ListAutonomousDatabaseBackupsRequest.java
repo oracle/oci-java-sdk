@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -195,6 +195,41 @@ public class ListAutonomousDatabaseBackupsRequest
         return type;
     }
     /**
+     * A filter to return only resources that have the given backup destination id.
+     */
+    private String backupDestinationId;
+
+    /**
+     * A filter to return only resources that have the given backup destination id.
+     */
+    public String getBackupDestinationId() {
+        return backupDestinationId;
+    }
+    /**
+     * A filter to return only resources that have the given key store id.
+     */
+    private String keyStoreId;
+
+    /**
+     * A filter to return only resources that have the given key store id.
+     */
+    public String getKeyStoreId() {
+        return keyStoreId;
+    }
+    /**
+     * A filter to return only resources that match the given Infrastructure Type.
+     */
+    private com.oracle.bmc.database.model.AutonomousDatabaseBackupSummary.InfrastructureType
+            infrastructureType;
+
+    /**
+     * A filter to return only resources that match the given Infrastructure Type.
+     */
+    public com.oracle.bmc.database.model.AutonomousDatabaseBackupSummary.InfrastructureType
+            getInfrastructureType() {
+        return infrastructureType;
+    }
+    /**
      * Unique identifier for the request.
      *
      */
@@ -360,6 +395,54 @@ public class ListAutonomousDatabaseBackupsRequest
         }
 
         /**
+         * A filter to return only resources that have the given backup destination id.
+         */
+        private String backupDestinationId = null;
+
+        /**
+         * A filter to return only resources that have the given backup destination id.
+         * @param backupDestinationId the value to set
+         * @return this builder instance
+         */
+        public Builder backupDestinationId(String backupDestinationId) {
+            this.backupDestinationId = backupDestinationId;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources that have the given key store id.
+         */
+        private String keyStoreId = null;
+
+        /**
+         * A filter to return only resources that have the given key store id.
+         * @param keyStoreId the value to set
+         * @return this builder instance
+         */
+        public Builder keyStoreId(String keyStoreId) {
+            this.keyStoreId = keyStoreId;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources that match the given Infrastructure Type.
+         */
+        private com.oracle.bmc.database.model.AutonomousDatabaseBackupSummary.InfrastructureType
+                infrastructureType = null;
+
+        /**
+         * A filter to return only resources that match the given Infrastructure Type.
+         * @param infrastructureType the value to set
+         * @return this builder instance
+         */
+        public Builder infrastructureType(
+                com.oracle.bmc.database.model.AutonomousDatabaseBackupSummary.InfrastructureType
+                        infrastructureType) {
+            this.infrastructureType = infrastructureType;
+            return this;
+        }
+
+        /**
          * Unique identifier for the request.
          *
          */
@@ -413,6 +496,9 @@ public class ListAutonomousDatabaseBackupsRequest
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
             type(o.getType());
+            backupDestinationId(o.getBackupDestinationId());
+            keyStoreId(o.getKeyStoreId());
+            infrastructureType(o.getInfrastructureType());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -456,9 +542,12 @@ public class ListAutonomousDatabaseBackupsRequest
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
             request.type = type;
+            request.backupDestinationId = backupDestinationId;
+            request.keyStoreId = keyStoreId;
+            request.infrastructureType = infrastructureType;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAutonomousDatabaseBackupsRequest(autonomousDatabaseId, compartmentId, limit, page, sortBy, sortOrder, lifecycleState, displayName, type, opcRequestId);
+            // new ListAutonomousDatabaseBackupsRequest(autonomousDatabaseId, compartmentId, limit, page, sortBy, sortOrder, lifecycleState, displayName, type, backupDestinationId, keyStoreId, infrastructureType, opcRequestId);
         }
     }
 
@@ -477,6 +566,9 @@ public class ListAutonomousDatabaseBackupsRequest
                 .lifecycleState(lifecycleState)
                 .displayName(displayName)
                 .type(type)
+                .backupDestinationId(backupDestinationId)
+                .keyStoreId(keyStoreId)
+                .infrastructureType(infrastructureType)
                 .opcRequestId(opcRequestId);
     }
 
@@ -502,6 +594,9 @@ public class ListAutonomousDatabaseBackupsRequest
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",type=").append(String.valueOf(this.type));
+        sb.append(",backupDestinationId=").append(String.valueOf(this.backupDestinationId));
+        sb.append(",keyStoreId=").append(String.valueOf(this.keyStoreId));
+        sb.append(",infrastructureType=").append(String.valueOf(this.infrastructureType));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -527,6 +622,9 @@ public class ListAutonomousDatabaseBackupsRequest
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.backupDestinationId, other.backupDestinationId)
+                && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
+                && java.util.Objects.equals(this.infrastructureType, other.infrastructureType)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -551,6 +649,17 @@ public class ListAutonomousDatabaseBackupsRequest
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupDestinationId == null
+                                ? 43
+                                : this.backupDestinationId.hashCode());
+        result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.infrastructureType == null
+                                ? 43
+                                : this.infrastructureType.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

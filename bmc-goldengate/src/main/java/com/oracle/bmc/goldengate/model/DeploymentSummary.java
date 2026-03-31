@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -38,6 +38,8 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
         "loadBalancerSubnetId",
         "loadBalancerId",
         "licenseModel",
+        "isByolCpuCoreCountLimitEnabled",
+        "byolCpuCoreCountLimit",
         "environmentType",
         "category",
         "fqdn",
@@ -53,6 +55,9 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
         "deploymentType",
         "storageUtilizationInBytes",
         "isStorageUtilizationLimitExceeded",
+        "subscriptionId",
+        "clusterPlacementGroupId",
+        "securityAttributes",
         "locks"
     })
     public DeploymentSummary(
@@ -71,6 +76,8 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
             String loadBalancerSubnetId,
             String loadBalancerId,
             LicenseModel licenseModel,
+            Boolean isByolCpuCoreCountLimitEnabled,
+            Integer byolCpuCoreCountLimit,
             EnvironmentType environmentType,
             DeploymentCategory category,
             String fqdn,
@@ -86,6 +93,9 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
             DeploymentType deploymentType,
             Long storageUtilizationInBytes,
             Boolean isStorageUtilizationLimitExceeded,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
@@ -103,6 +113,8 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
         this.loadBalancerSubnetId = loadBalancerSubnetId;
         this.loadBalancerId = loadBalancerId;
         this.licenseModel = licenseModel;
+        this.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
+        this.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
         this.environmentType = environmentType;
         this.category = category;
         this.fqdn = fqdn;
@@ -118,6 +130,9 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
         this.deploymentType = deploymentType;
         this.storageUtilizationInBytes = storageUtilizationInBytes;
         this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
+        this.subscriptionId = subscriptionId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.securityAttributes = securityAttributes;
         this.locks = locks;
     }
 
@@ -418,6 +433,46 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+        /**
+         * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+         * If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isByolCpuCoreCountLimitEnabled")
+        private Boolean isByolCpuCoreCountLimitEnabled;
+
+        /**
+         * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+         * If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+         *
+         * @param isByolCpuCoreCountLimitEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isByolCpuCoreCountLimitEnabled(Boolean isByolCpuCoreCountLimitEnabled) {
+            this.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
+            this.__explicitlySet__.add("isByolCpuCoreCountLimitEnabled");
+            return this;
+        }
+        /**
+         * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+         * Any CPU usage above this limit is considered as License Included and billed.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("byolCpuCoreCountLimit")
+        private Integer byolCpuCoreCountLimit;
+
+        /**
+         * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+         * Any CPU usage above this limit is considered as License Included and billed.
+         *
+         * @param byolCpuCoreCountLimit the value to set
+         * @return this builder
+         **/
+        public Builder byolCpuCoreCountLimit(Integer byolCpuCoreCountLimit) {
+            this.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
+            this.__explicitlySet__.add("byolCpuCoreCountLimit");
             return this;
         }
         /**
@@ -722,6 +777,69 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+        /**
+         * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+         * Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+         * subscription id is provided. Otherwise the cluster placement group must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+         * Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+         * subscription id is provided. Otherwise the cluster placement group must not be provided.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * Locks associated with this resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
@@ -759,6 +877,8 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
                             this.loadBalancerSubnetId,
                             this.loadBalancerId,
                             this.licenseModel,
+                            this.isByolCpuCoreCountLimitEnabled,
+                            this.byolCpuCoreCountLimit,
                             this.environmentType,
                             this.category,
                             this.fqdn,
@@ -774,6 +894,9 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
                             this.deploymentType,
                             this.storageUtilizationInBytes,
                             this.isStorageUtilizationLimitExceeded,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -828,6 +951,12 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
             }
+            if (model.wasPropertyExplicitlySet("isByolCpuCoreCountLimitEnabled")) {
+                this.isByolCpuCoreCountLimitEnabled(model.getIsByolCpuCoreCountLimitEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("byolCpuCoreCountLimit")) {
+                this.byolCpuCoreCountLimit(model.getByolCpuCoreCountLimit());
+            }
             if (model.wasPropertyExplicitlySet("environmentType")) {
                 this.environmentType(model.getEnvironmentType());
             }
@@ -873,6 +1002,15 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
             if (model.wasPropertyExplicitlySet("isStorageUtilizationLimitExceeded")) {
                 this.isStorageUtilizationLimitExceeded(
                         model.getIsStorageUtilizationLimitExceeded());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
@@ -1159,6 +1297,42 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+     * If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isByolCpuCoreCountLimitEnabled")
+    private final Boolean isByolCpuCoreCountLimitEnabled;
+
+    /**
+     * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+     * If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     *
+     * @return the value
+     **/
+    public Boolean getIsByolCpuCoreCountLimitEnabled() {
+        return isByolCpuCoreCountLimitEnabled;
+    }
+
+    /**
+     * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+     * Any CPU usage above this limit is considered as License Included and billed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("byolCpuCoreCountLimit")
+    private final Integer byolCpuCoreCountLimit;
+
+    /**
+     * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+     * Any CPU usage above this limit is considered as License Included and billed.
+     *
+     * @return the value
+     **/
+    public Integer getByolCpuCoreCountLimit() {
+        return byolCpuCoreCountLimit;
+    }
+
+    /**
      * Specifies whether the deployment is used in a production or development/testing environment.
      *
      **/
@@ -1429,6 +1603,62 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    /**
+     * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+     * Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+     * subscription id is provided. Otherwise the cluster placement group must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+     * Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+     * subscription id is provided. Otherwise the cluster placement group must not be provided.
+     *
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * Locks associated with this resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
@@ -1471,6 +1701,9 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
         sb.append(", loadBalancerSubnetId=").append(String.valueOf(this.loadBalancerSubnetId));
         sb.append(", loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", isByolCpuCoreCountLimitEnabled=")
+                .append(String.valueOf(this.isByolCpuCoreCountLimitEnabled));
+        sb.append(", byolCpuCoreCountLimit=").append(String.valueOf(this.byolCpuCoreCountLimit));
         sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
@@ -1488,6 +1721,10 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
                 .append(String.valueOf(this.storageUtilizationInBytes));
         sb.append(", isStorageUtilizationLimitExceeded=")
                 .append(String.valueOf(this.isStorageUtilizationLimitExceeded));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
@@ -1518,6 +1755,9 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.loadBalancerSubnetId, other.loadBalancerSubnetId)
                 && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(
+                        this.isByolCpuCoreCountLimitEnabled, other.isByolCpuCoreCountLimitEnabled)
+                && java.util.Objects.equals(this.byolCpuCoreCountLimit, other.byolCpuCoreCountLimit)
                 && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
@@ -1536,6 +1776,10 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(
                         this.isStorageUtilizationLimitExceeded,
                         other.isStorageUtilizationLimitExceeded)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
@@ -1573,6 +1817,16 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
                 (result * PRIME)
                         + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isByolCpuCoreCountLimitEnabled == null
+                                ? 43
+                                : this.isByolCpuCoreCountLimitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.byolCpuCoreCountLimit == null
+                                ? 43
+                                : this.byolCpuCoreCountLimit.hashCode());
         result =
                 (result * PRIME)
                         + (this.environmentType == null ? 43 : this.environmentType.hashCode());
@@ -1616,6 +1870,19 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
                         + (this.isStorageUtilizationLimitExceeded == null
                                 ? 43
                                 : this.isStorageUtilizationLimitExceeded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

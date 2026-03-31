@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools.model;
@@ -136,6 +136,24 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeEndpoint")
+        private String runtimeEndpoint;
+
+        public Builder runtimeEndpoint(String runtimeEndpoint) {
+            this.runtimeEndpoint = runtimeEndpoint;
+            this.__explicitlySet__.add("runtimeEndpoint");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeIdentity")
+        private RuntimeIdentity runtimeIdentity;
+
+        public Builder runtimeIdentity(RuntimeIdentity runtimeIdentity) {
+            this.runtimeIdentity = runtimeIdentity;
+            this.__explicitlySet__.add("runtimeIdentity");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
         private DatabaseToolsRelatedResource relatedResource;
 
@@ -265,6 +283,8 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
                             this.systemTags,
                             this.locks,
                             this.runtimeSupport,
+                            this.runtimeEndpoint,
+                            this.runtimeIdentity,
                             this.relatedResource,
                             this.connectionString,
                             this.userName,
@@ -316,6 +336,12 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
             }
             if (model.wasPropertyExplicitlySet("runtimeSupport")) {
                 this.runtimeSupport(model.getRuntimeSupport());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeEndpoint")) {
+                this.runtimeEndpoint(model.getRuntimeEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeIdentity")) {
+                this.runtimeIdentity(model.getRuntimeIdentity());
             }
             if (model.wasPropertyExplicitlySet("relatedResource")) {
                 this.relatedResource(model.getRelatedResource());
@@ -370,6 +396,8 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<ResourceLock> locks,
             RuntimeSupport runtimeSupport,
+            String runtimeEndpoint,
+            RuntimeIdentity runtimeIdentity,
             DatabaseToolsRelatedResource relatedResource,
             String connectionString,
             String userName,
@@ -390,7 +418,9 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
                 freeformTags,
                 systemTags,
                 locks,
-                runtimeSupport);
+                runtimeSupport,
+                runtimeEndpoint,
+                runtimeIdentity);
         this.relatedResource = relatedResource;
         this.connectionString = connectionString;
         this.userName = userName;

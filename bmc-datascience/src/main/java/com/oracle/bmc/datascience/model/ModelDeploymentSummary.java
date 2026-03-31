@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -34,6 +34,7 @@ public final class ModelDeploymentSummary
         "categoryLogDetails",
         "modelDeploymentUrl",
         "lifecycleState",
+        "modelDeploymentSystemData",
         "freeformTags",
         "definedTags"
     })
@@ -49,6 +50,7 @@ public final class ModelDeploymentSummary
             CategoryLogDetails categoryLogDetails,
             String modelDeploymentUrl,
             ModelDeploymentLifecycleState lifecycleState,
+            ModelDeploymentSystemData modelDeploymentSystemData,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -63,6 +65,7 @@ public final class ModelDeploymentSummary
         this.categoryLogDetails = categoryLogDetails;
         this.modelDeploymentUrl = modelDeploymentUrl;
         this.lifecycleState = lifecycleState;
+        this.modelDeploymentSystemData = modelDeploymentSystemData;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -240,6 +243,16 @@ public final class ModelDeploymentSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("modelDeploymentSystemData")
+        private ModelDeploymentSystemData modelDeploymentSystemData;
+
+        public Builder modelDeploymentSystemData(
+                ModelDeploymentSystemData modelDeploymentSystemData) {
+            this.modelDeploymentSystemData = modelDeploymentSystemData;
+            this.__explicitlySet__.add("modelDeploymentSystemData");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
@@ -299,6 +312,7 @@ public final class ModelDeploymentSummary
                             this.categoryLogDetails,
                             this.modelDeploymentUrl,
                             this.lifecycleState,
+                            this.modelDeploymentSystemData,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -342,6 +356,9 @@ public final class ModelDeploymentSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("modelDeploymentSystemData")) {
+                this.modelDeploymentSystemData(model.getModelDeploymentSystemData());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -512,6 +529,13 @@ public final class ModelDeploymentSummary
         return lifecycleState;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("modelDeploymentSystemData")
+    private final ModelDeploymentSystemData modelDeploymentSystemData;
+
+    public ModelDeploymentSystemData getModelDeploymentSystemData() {
+        return modelDeploymentSystemData;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
@@ -574,6 +598,8 @@ public final class ModelDeploymentSummary
         sb.append(", categoryLogDetails=").append(String.valueOf(this.categoryLogDetails));
         sb.append(", modelDeploymentUrl=").append(String.valueOf(this.modelDeploymentUrl));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", modelDeploymentSystemData=")
+                .append(String.valueOf(this.modelDeploymentSystemData));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -603,6 +629,8 @@ public final class ModelDeploymentSummary
                 && java.util.Objects.equals(this.categoryLogDetails, other.categoryLogDetails)
                 && java.util.Objects.equals(this.modelDeploymentUrl, other.modelDeploymentUrl)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.modelDeploymentSystemData, other.modelDeploymentSystemData)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -639,6 +667,11 @@ public final class ModelDeploymentSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelDeploymentSystemData == null
+                                ? 43
+                                : this.modelDeploymentSystemData.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

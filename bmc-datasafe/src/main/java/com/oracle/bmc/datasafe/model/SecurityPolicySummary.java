@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -28,6 +28,7 @@ public final class SecurityPolicySummary
         "compartmentId",
         "displayName",
         "description",
+        "securityPolicyType",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -41,6 +42,7 @@ public final class SecurityPolicySummary
             String compartmentId,
             String displayName,
             String description,
+            SecurityPolicy.SecurityPolicyType securityPolicyType,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             SecurityPolicyLifecycleState lifecycleState,
@@ -53,6 +55,7 @@ public final class SecurityPolicySummary
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.description = description;
+        this.securityPolicyType = securityPolicyType;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -126,6 +129,22 @@ public final class SecurityPolicySummary
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * The type of the security policy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityPolicyType")
+        private SecurityPolicy.SecurityPolicyType securityPolicyType;
+
+        /**
+         * The type of the security policy.
+         * @param securityPolicyType the value to set
+         * @return this builder
+         **/
+        public Builder securityPolicyType(SecurityPolicy.SecurityPolicyType securityPolicyType) {
+            this.securityPolicyType = securityPolicyType;
+            this.__explicitlySet__.add("securityPolicyType");
             return this;
         }
         /**
@@ -266,6 +285,7 @@ public final class SecurityPolicySummary
                             this.compartmentId,
                             this.displayName,
                             this.description,
+                            this.securityPolicyType,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -292,6 +312,9 @@ public final class SecurityPolicySummary
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("securityPolicyType")) {
+                this.securityPolicyType(model.getSecurityPolicyType());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -383,6 +406,20 @@ public final class SecurityPolicySummary
      **/
     public String getDescription() {
         return description;
+    }
+
+    /**
+     * The type of the security policy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityPolicyType")
+    private final SecurityPolicy.SecurityPolicyType securityPolicyType;
+
+    /**
+     * The type of the security policy.
+     * @return the value
+     **/
+    public SecurityPolicy.SecurityPolicyType getSecurityPolicyType() {
+        return securityPolicyType;
     }
 
     /**
@@ -515,6 +552,7 @@ public final class SecurityPolicySummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", securityPolicyType=").append(String.valueOf(this.securityPolicyType));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -540,6 +578,7 @@ public final class SecurityPolicySummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.securityPolicyType, other.securityPolicyType)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -560,6 +599,11 @@ public final class SecurityPolicySummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityPolicyType == null
+                                ? 43
+                                : this.securityPolicyType.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataflow.model;
@@ -31,7 +31,8 @@ public final class UpdatePrivateEndpointDetails
         "freeformTags",
         "maxHostCount",
         "nsgIds",
-        "scanDetails"
+        "scanDetails",
+        "securityAttributes"
     })
     public UpdatePrivateEndpointDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -41,7 +42,8 @@ public final class UpdatePrivateEndpointDetails
             java.util.Map<String, String> freeformTags,
             Integer maxHostCount,
             java.util.List<String> nsgIds,
-            java.util.List<Scan> scanDetails) {
+            java.util.List<Scan> scanDetails,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.definedTags = definedTags;
         this.description = description;
@@ -51,6 +53,7 @@ public final class UpdatePrivateEndpointDetails
         this.maxHostCount = maxHostCount;
         this.nsgIds = nsgIds;
         this.scanDetails = scanDetails;
+        this.securityAttributes = securityAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -216,6 +219,31 @@ public final class UpdatePrivateEndpointDetails
             this.__explicitlySet__.add("scanDetails");
             return this;
         }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -230,7 +258,8 @@ public final class UpdatePrivateEndpointDetails
                             this.freeformTags,
                             this.maxHostCount,
                             this.nsgIds,
-                            this.scanDetails);
+                            this.scanDetails,
+                            this.securityAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -262,6 +291,9 @@ public final class UpdatePrivateEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("scanDetails")) {
                 this.scanDetails(model.getScanDetails());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             return this;
         }
@@ -422,6 +454,28 @@ public final class UpdatePrivateEndpointDetails
         return scanDetails;
     }
 
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -444,6 +498,7 @@ public final class UpdatePrivateEndpointDetails
         sb.append(", maxHostCount=").append(String.valueOf(this.maxHostCount));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", scanDetails=").append(String.valueOf(this.scanDetails));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -466,6 +521,7 @@ public final class UpdatePrivateEndpointDetails
                 && java.util.Objects.equals(this.maxHostCount, other.maxHostCount)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.scanDetails, other.scanDetails)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
 
@@ -481,6 +537,11 @@ public final class UpdatePrivateEndpointDetails
         result = (result * PRIME) + (this.maxHostCount == null ? 43 : this.maxHostCount.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.scanDetails == null ? 43 : this.scanDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

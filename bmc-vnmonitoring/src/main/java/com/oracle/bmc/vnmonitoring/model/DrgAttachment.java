@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -34,7 +34,6 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
         "networkDetails",
         "definedTags",
         "freeformTags",
-        "routeTableId",
         "vcnId",
         "exportDrgRouteDistributionId",
         "isCrossTenancy"
@@ -50,7 +49,6 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
             DrgAttachmentNetworkDetails networkDetails,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
-            String routeTableId,
             String vcnId,
             String exportDrgRouteDistributionId,
             Boolean isCrossTenancy) {
@@ -65,7 +63,6 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
         this.networkDetails = networkDetails;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
-        this.routeTableId = routeTableId;
         this.vcnId = vcnId;
         this.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
         this.isCrossTenancy = isCrossTenancy;
@@ -252,38 +249,6 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
-         * <p>
-         * For information about why you would associate a route table with a DRG attachment, see:
-         * <p>
-         * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-         *   * [Transit Routing: Private Access to Oracle Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
-         * <p>
-         * This field is deprecated. Instead, use the {@code networkDetails} field to view the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-        private String routeTableId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
-         * <p>
-         * For information about why you would associate a route table with a DRG attachment, see:
-         * <p>
-         * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-         *   * [Transit Routing: Private Access to Oracle Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
-         * <p>
-         * This field is deprecated. Instead, use the {@code networkDetails} field to view the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-         *
-         * @param routeTableId the value to set
-         * @return this builder
-         **/
-        public Builder routeTableId(String routeTableId) {
-            this.routeTableId = routeTableId;
-            this.__explicitlySet__.add("routeTableId");
-            return this;
-        }
-        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
          * This field is deprecated. Instead, use the {@code networkDetails} field to view the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
          *
@@ -364,7 +329,6 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
                             this.networkDetails,
                             this.definedTags,
                             this.freeformTags,
-                            this.routeTableId,
                             this.vcnId,
                             this.exportDrgRouteDistributionId,
                             this.isCrossTenancy);
@@ -405,9 +369,6 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
-            }
-            if (model.wasPropertyExplicitlySet("routeTableId")) {
-                this.routeTableId(model.getRouteTableId());
             }
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
@@ -628,36 +589,6 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
-     * <p>
-     * For information about why you would associate a route table with a DRG attachment, see:
-     * <p>
-     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-     *   * [Transit Routing: Private Access to Oracle Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
-     * <p>
-     * This field is deprecated. Instead, use the {@code networkDetails} field to view the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    private final String routeTableId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
-     * <p>
-     * For information about why you would associate a route table with a DRG attachment, see:
-     * <p>
-     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-     *   * [Transit Routing: Private Access to Oracle Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
-     * <p>
-     * This field is deprecated. Instead, use the {@code networkDetails} field to view the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-     *
-     * @return the value
-     **/
-    public String getRouteTableId() {
-        return routeTableId;
-    }
-
-    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * This field is deprecated. Instead, use the {@code networkDetails} field to view the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
      *
@@ -739,7 +670,6 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", networkDetails=").append(String.valueOf(this.networkDetails));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
-        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", exportDrgRouteDistributionId=")
                 .append(String.valueOf(this.exportDrgRouteDistributionId));
@@ -768,7 +698,6 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.networkDetails, other.networkDetails)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(
                         this.exportDrgRouteDistributionId, other.exportDrgRouteDistributionId)
@@ -798,7 +727,6 @@ public final class DrgAttachment extends com.oracle.bmc.http.internal.Explicitly
                         + (this.networkDetails == null ? 43 : this.networkDetails.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
-        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result =
                 (result * PRIME)

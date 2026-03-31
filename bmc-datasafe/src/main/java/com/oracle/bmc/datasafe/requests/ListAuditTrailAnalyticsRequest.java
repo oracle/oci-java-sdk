@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -180,6 +180,60 @@ public class ListAuditTrailAnalyticsRequest
         return targetId;
     }
     /**
+     * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     */
+    private java.util.Date timeStarted;
+
+    /**
+     * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     */
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
+    /**
+     * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     */
+    private java.util.Date timeEnded;
+
+    /**
+     * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     */
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
+    /**
+     * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
+     *
+     */
+    private String queryTimeZone;
+
+    /**
+     * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
+     *
+     */
+    public String getQueryTimeZone() {
+        return queryTimeZone;
+    }
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    private String targetDatabaseGroupId;
+
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
+    /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
@@ -325,6 +379,76 @@ public class ListAuditTrailAnalyticsRequest
         }
 
         /**
+         * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         */
+        private java.util.Date timeStarted = null;
+
+        /**
+         * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeStarted the value to set
+         * @return this builder instance
+         */
+        public Builder timeStarted(java.util.Date timeStarted) {
+            this.timeStarted = timeStarted;
+            return this;
+        }
+
+        /**
+         * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         */
+        private java.util.Date timeEnded = null;
+
+        /**
+         * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeEnded the value to set
+         * @return this builder instance
+         */
+        public Builder timeEnded(java.util.Date timeEnded) {
+            this.timeEnded = timeEnded;
+            return this;
+        }
+
+        /**
+         * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
+         *
+         */
+        private String queryTimeZone = null;
+
+        /**
+         * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
+         *
+         * @param queryTimeZone the value to set
+         * @return this builder instance
+         */
+        public Builder queryTimeZone(String queryTimeZone) {
+            this.queryTimeZone = queryTimeZone;
+            return this;
+        }
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
          * Unique identifier for the request.
          */
         private String opcRequestId = null;
@@ -374,6 +498,10 @@ public class ListAuditTrailAnalyticsRequest
             page(o.getPage());
             groupBy(o.getGroupBy());
             targetId(o.getTargetId());
+            timeStarted(o.getTimeStarted());
+            timeEnded(o.getTimeEnded());
+            queryTimeZone(o.getQueryTimeZone());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -414,9 +542,13 @@ public class ListAuditTrailAnalyticsRequest
             request.page = page;
             request.groupBy = groupBy;
             request.targetId = targetId;
+            request.timeStarted = timeStarted;
+            request.timeEnded = timeEnded;
+            request.queryTimeZone = queryTimeZone;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAuditTrailAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, limit, page, groupBy, targetId, opcRequestId);
+            // new ListAuditTrailAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, limit, page, groupBy, targetId, timeStarted, timeEnded, queryTimeZone, targetDatabaseGroupId, opcRequestId);
         }
     }
 
@@ -433,6 +565,10 @@ public class ListAuditTrailAnalyticsRequest
                 .page(page)
                 .groupBy(groupBy)
                 .targetId(targetId)
+                .timeStarted(timeStarted)
+                .timeEnded(timeEnded)
+                .queryTimeZone(queryTimeZone)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
                 .opcRequestId(opcRequestId);
     }
 
@@ -456,6 +592,10 @@ public class ListAuditTrailAnalyticsRequest
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",groupBy=").append(String.valueOf(this.groupBy));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(",timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(",queryTimeZone=").append(String.valueOf(this.queryTimeZone));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -480,6 +620,10 @@ public class ListAuditTrailAnalyticsRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.groupBy, other.groupBy)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.queryTimeZone, other.queryTimeZone)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -500,6 +644,16 @@ public class ListAuditTrailAnalyticsRequest
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.groupBy == null ? 43 : this.groupBy.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryTimeZone == null ? 43 : this.queryTimeZone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

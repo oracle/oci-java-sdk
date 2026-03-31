@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AssociatedSchedulerDefinition.Builder.class
 )
@@ -22,13 +22,11 @@ package com.oracle.bmc.fleetappsmanagement.model;
 public final class AssociatedSchedulerDefinition
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "displayName", "tenancyId", "isRecurring"})
-    public AssociatedSchedulerDefinition(
-            String id, String displayName, String tenancyId, Boolean isRecurring) {
+    @java.beans.ConstructorProperties({"id", "displayName", "isRecurring"})
+    public AssociatedSchedulerDefinition(String id, String displayName, Boolean isRecurring) {
         super();
         this.id = id;
         this.displayName = displayName;
-        this.tenancyId = tenancyId;
         this.isRecurring = isRecurring;
     }
 
@@ -75,22 +73,6 @@ public final class AssociatedSchedulerDefinition
             return this;
         }
         /**
-         * OCID of the tenancy to which the resource belongs to.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-        private String tenancyId;
-
-        /**
-         * OCID of the tenancy to which the resource belongs to.
-         * @param tenancyId the value to set
-         * @return this builder
-         **/
-        public Builder tenancyId(String tenancyId) {
-            this.tenancyId = tenancyId;
-            this.__explicitlySet__.add("tenancyId");
-            return this;
-        }
-        /**
          * Is this a recurring schedule?
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRecurring")
@@ -112,8 +94,7 @@ public final class AssociatedSchedulerDefinition
 
         public AssociatedSchedulerDefinition build() {
             AssociatedSchedulerDefinition model =
-                    new AssociatedSchedulerDefinition(
-                            this.id, this.displayName, this.tenancyId, this.isRecurring);
+                    new AssociatedSchedulerDefinition(this.id, this.displayName, this.isRecurring);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -127,9 +108,6 @@ public final class AssociatedSchedulerDefinition
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
-            }
-            if (model.wasPropertyExplicitlySet("tenancyId")) {
-                this.tenancyId(model.getTenancyId());
             }
             if (model.wasPropertyExplicitlySet("isRecurring")) {
                 this.isRecurring(model.getIsRecurring());
@@ -186,20 +164,6 @@ public final class AssociatedSchedulerDefinition
     }
 
     /**
-     * OCID of the tenancy to which the resource belongs to.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-    private final String tenancyId;
-
-    /**
-     * OCID of the tenancy to which the resource belongs to.
-     * @return the value
-     **/
-    public String getTenancyId() {
-        return tenancyId;
-    }
-
-    /**
      * Is this a recurring schedule?
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRecurring")
@@ -229,7 +193,6 @@ public final class AssociatedSchedulerDefinition
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
-        sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(", isRecurring=").append(String.valueOf(this.isRecurring));
         sb.append(")");
         return sb.toString();
@@ -247,7 +210,6 @@ public final class AssociatedSchedulerDefinition
         AssociatedSchedulerDefinition other = (AssociatedSchedulerDefinition) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
                 && java.util.Objects.equals(this.isRecurring, other.isRecurring)
                 && super.equals(other);
     }
@@ -258,7 +220,6 @@ public final class AssociatedSchedulerDefinition
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
-        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
         result = (result * PRIME) + (this.isRecurring == null ? 43 : this.isRecurring.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.responses;
@@ -41,6 +41,19 @@ public class EmbedTextResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
+     * Provides deprecation details for models, included only when a model is deprecated.
+     */
+    private String modelDeprecationInfo;
+
+    /**
+     * Provides deprecation details for models, included only when a model is deprecated.
+     * @return the value
+     */
+    public String getModelDeprecationInfo() {
+        return modelDeprecationInfo;
+    }
+
+    /**
      * The returned EmbedTextResult instance.
      */
     private com.oracle.bmc.generativeaiinference.model.EmbedTextResult embedTextResult;
@@ -58,6 +71,7 @@ public class EmbedTextResponse extends com.oracle.bmc.responses.BmcResponse {
         "headers",
         "etag",
         "opcRequestId",
+        "modelDeprecationInfo",
         "embedTextResult"
     })
     private EmbedTextResponse(
@@ -65,10 +79,12 @@ public class EmbedTextResponse extends com.oracle.bmc.responses.BmcResponse {
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
+            String modelDeprecationInfo,
             com.oracle.bmc.generativeaiinference.model.EmbedTextResult embedTextResult) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
+        this.modelDeprecationInfo = modelDeprecationInfo;
         this.embedTextResult = embedTextResult;
     }
 
@@ -124,6 +140,21 @@ public class EmbedTextResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
+         * Provides deprecation details for models, included only when a model is deprecated.
+         */
+        private String modelDeprecationInfo;
+
+        /**
+         * Provides deprecation details for models, included only when a model is deprecated.
+         * @param modelDeprecationInfo the value to set
+         * @return this builder
+         */
+        public Builder modelDeprecationInfo(String modelDeprecationInfo) {
+            this.modelDeprecationInfo = modelDeprecationInfo;
+            return this;
+        }
+
+        /**
          * The returned EmbedTextResult instance.
          */
         private com.oracle.bmc.generativeaiinference.model.EmbedTextResult embedTextResult;
@@ -148,6 +179,7 @@ public class EmbedTextResponse extends com.oracle.bmc.responses.BmcResponse {
             headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            modelDeprecationInfo(o.getModelDeprecationInfo());
             embedTextResult(o.getEmbedTextResult());
 
             return this;
@@ -159,7 +191,12 @@ public class EmbedTextResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public EmbedTextResponse build() {
             return new EmbedTextResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, embedTextResult);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    modelDeprecationInfo,
+                    embedTextResult);
         }
     }
 
@@ -178,6 +215,7 @@ public class EmbedTextResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",modelDeprecationInfo=").append(String.valueOf(modelDeprecationInfo));
         sb.append(",embedTextResult=").append(String.valueOf(embedTextResult));
         sb.append(")");
         return sb.toString();
@@ -196,6 +234,7 @@ public class EmbedTextResponse extends com.oracle.bmc.responses.BmcResponse {
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.modelDeprecationInfo, other.modelDeprecationInfo)
                 && java.util.Objects.equals(this.embedTextResult, other.embedTextResult);
     }
 
@@ -205,6 +244,11 @@ public class EmbedTextResponse extends com.oracle.bmc.responses.BmcResponse {
         int result = super.hashCode();
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelDeprecationInfo == null
+                                ? 43
+                                : this.modelDeprecationInfo.hashCode());
         result =
                 (result * PRIME)
                         + (this.embedTextResult == null ? 43 : this.embedTextResult.hashCode());

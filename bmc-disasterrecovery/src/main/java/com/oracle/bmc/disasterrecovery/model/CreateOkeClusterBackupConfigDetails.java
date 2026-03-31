@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -24,6 +24,7 @@ public final class CreateOkeClusterBackupConfigDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "namespaces",
+        "excludeNamespaces",
         "backupSchedule",
         "replicateImages",
         "maxNumberOfBackupsRetained",
@@ -31,12 +32,14 @@ public final class CreateOkeClusterBackupConfigDetails
     })
     public CreateOkeClusterBackupConfigDetails(
             java.util.List<String> namespaces,
+            java.util.List<String> excludeNamespaces,
             String backupSchedule,
             OkeClusterImageReplication replicateImages,
             Integer maxNumberOfBackupsRetained,
             String imageReplicationVaultSecretId) {
         super();
         this.namespaces = namespaces;
+        this.excludeNamespaces = excludeNamespaces;
         this.backupSchedule = backupSchedule;
         this.replicateImages = replicateImages;
         this.maxNumberOfBackupsRetained = maxNumberOfBackupsRetained;
@@ -46,8 +49,9 @@ public final class CreateOkeClusterBackupConfigDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A list of namespaces that need to be backed up.
-         * The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+         * A list of namespaces to be included in the backup.
+         * The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up.
+         * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
          * This property applies to the OKE cluster member in primary region.
          * <p>
          * Example: ["default", "pv-nginx"]
@@ -57,8 +61,9 @@ public final class CreateOkeClusterBackupConfigDetails
         private java.util.List<String> namespaces;
 
         /**
-         * A list of namespaces that need to be backed up.
-         * The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+         * A list of namespaces to be included in the backup.
+         * The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up.
+         * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
          * This property applies to the OKE cluster member in primary region.
          * <p>
          * Example: ["default", "pv-nginx"]
@@ -69,6 +74,34 @@ public final class CreateOkeClusterBackupConfigDetails
         public Builder namespaces(java.util.List<String> namespaces) {
             this.namespaces = namespaces;
             this.__explicitlySet__.add("namespaces");
+            return this;
+        }
+        /**
+         * A list of namespaces to be excluded from the backup.
+         * The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up.
+         * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
+         * This property applies to OKE cluster members in the primary region.
+         * <p>
+         * Example: ["namespace_string_3", "namespace_string_4"]
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("excludeNamespaces")
+        private java.util.List<String> excludeNamespaces;
+
+        /**
+         * A list of namespaces to be excluded from the backup.
+         * The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up.
+         * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
+         * This property applies to OKE cluster members in the primary region.
+         * <p>
+         * Example: ["namespace_string_3", "namespace_string_4"]
+         *
+         * @param excludeNamespaces the value to set
+         * @return this builder
+         **/
+        public Builder excludeNamespaces(java.util.List<String> excludeNamespaces) {
+            this.excludeNamespaces = excludeNamespaces;
+            this.__explicitlySet__.add("excludeNamespaces");
             return this;
         }
         /**
@@ -92,19 +125,19 @@ public final class CreateOkeClusterBackupConfigDetails
          *     - Maximum = 12
          * <p>
          * Examples:
-         *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every week on monday and wednesday at 10:00 AM.
-         *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid configuration (can not specify interval of 2).
+         *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every Monday and Wednesday at 10:00 AM.
+         *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid configuration (Cannot specify an interval of 2).
          * <p>
-         * FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (can not specify interval of 25).
-         *         FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+         * FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (Cannot specify an interval of 25).
+         *         FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
          *         FREQ=HOURLY;INTERVAL=24 -> Run a backup every 24 hours.
          *         FREQ=HOURLY;INTERVAL=1 -> Run a backup every hour.
          *         FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 -> Run a backup every 15 hours at the 30th minute.
          *
-         *         FREQ=DAILY;INTERVAL=31 -> Invalid configuration (can not specify interval of 31).
-         *         FREQ=DAILY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+         *         FREQ=DAILY;INTERVAL=31 -> Invalid configuration (Cannot specify an interval of 31).
+         *         FREQ=DAILY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
          *         FREQ=DAILY;INTERVAL=30 -> Run a backup every 30 days at 12:00 midnight.
-         *         FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup every day at 05:10 PM.
+         *         FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup daily at 05:10 PM.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupSchedule")
@@ -131,19 +164,19 @@ public final class CreateOkeClusterBackupConfigDetails
          *     - Maximum = 12
          * <p>
          * Examples:
-         *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every week on monday and wednesday at 10:00 AM.
-         *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid configuration (can not specify interval of 2).
+         *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every Monday and Wednesday at 10:00 AM.
+         *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid configuration (Cannot specify an interval of 2).
          * <p>
-         * FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (can not specify interval of 25).
-         *         FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+         * FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (Cannot specify an interval of 25).
+         *         FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
          *         FREQ=HOURLY;INTERVAL=24 -> Run a backup every 24 hours.
          *         FREQ=HOURLY;INTERVAL=1 -> Run a backup every hour.
          *         FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 -> Run a backup every 15 hours at the 30th minute.
          *
-         *         FREQ=DAILY;INTERVAL=31 -> Invalid configuration (can not specify interval of 31).
-         *         FREQ=DAILY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+         *         FREQ=DAILY;INTERVAL=31 -> Invalid configuration (Cannot specify an interval of 31).
+         *         FREQ=DAILY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
          *         FREQ=DAILY;INTERVAL=30 -> Run a backup every 30 days at 12:00 midnight.
-         *         FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup every day at 05:10 PM.
+         *         FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup daily at 05:10 PM.
          *
          * @param backupSchedule the value to set
          * @return this builder
@@ -223,6 +256,7 @@ public final class CreateOkeClusterBackupConfigDetails
             CreateOkeClusterBackupConfigDetails model =
                     new CreateOkeClusterBackupConfigDetails(
                             this.namespaces,
+                            this.excludeNamespaces,
                             this.backupSchedule,
                             this.replicateImages,
                             this.maxNumberOfBackupsRetained,
@@ -237,6 +271,9 @@ public final class CreateOkeClusterBackupConfigDetails
         public Builder copy(CreateOkeClusterBackupConfigDetails model) {
             if (model.wasPropertyExplicitlySet("namespaces")) {
                 this.namespaces(model.getNamespaces());
+            }
+            if (model.wasPropertyExplicitlySet("excludeNamespaces")) {
+                this.excludeNamespaces(model.getExcludeNamespaces());
             }
             if (model.wasPropertyExplicitlySet("backupSchedule")) {
                 this.backupSchedule(model.getBackupSchedule());
@@ -266,8 +303,9 @@ public final class CreateOkeClusterBackupConfigDetails
     }
 
     /**
-     * A list of namespaces that need to be backed up.
-     * The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+     * A list of namespaces to be included in the backup.
+     * The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up.
+     * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
      * This property applies to the OKE cluster member in primary region.
      * <p>
      * Example: ["default", "pv-nginx"]
@@ -277,8 +315,9 @@ public final class CreateOkeClusterBackupConfigDetails
     private final java.util.List<String> namespaces;
 
     /**
-     * A list of namespaces that need to be backed up.
-     * The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+     * A list of namespaces to be included in the backup.
+     * The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up.
+     * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
      * This property applies to the OKE cluster member in primary region.
      * <p>
      * Example: ["default", "pv-nginx"]
@@ -287,6 +326,32 @@ public final class CreateOkeClusterBackupConfigDetails
      **/
     public java.util.List<String> getNamespaces() {
         return namespaces;
+    }
+
+    /**
+     * A list of namespaces to be excluded from the backup.
+     * The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up.
+     * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
+     * This property applies to OKE cluster members in the primary region.
+     * <p>
+     * Example: ["namespace_string_3", "namespace_string_4"]
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("excludeNamespaces")
+    private final java.util.List<String> excludeNamespaces;
+
+    /**
+     * A list of namespaces to be excluded from the backup.
+     * The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up.
+     * Specify either the {@code namespaces} or the {@code excludeNamespaces} parameter, but not both.
+     * This property applies to OKE cluster members in the primary region.
+     * <p>
+     * Example: ["namespace_string_3", "namespace_string_4"]
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getExcludeNamespaces() {
+        return excludeNamespaces;
     }
 
     /**
@@ -310,19 +375,19 @@ public final class CreateOkeClusterBackupConfigDetails
      *     - Maximum = 12
      * <p>
      * Examples:
-     *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every week on monday and wednesday at 10:00 AM.
-     *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid configuration (can not specify interval of 2).
+     *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every Monday and Wednesday at 10:00 AM.
+     *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid configuration (Cannot specify an interval of 2).
      * <p>
-     * FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (can not specify interval of 25).
-     *         FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+     * FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (Cannot specify an interval of 25).
+     *         FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
      *         FREQ=HOURLY;INTERVAL=24 -> Run a backup every 24 hours.
      *         FREQ=HOURLY;INTERVAL=1 -> Run a backup every hour.
      *         FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 -> Run a backup every 15 hours at the 30th minute.
      *
-     *         FREQ=DAILY;INTERVAL=31 -> Invalid configuration (can not specify interval of 31).
-     *         FREQ=DAILY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+     *         FREQ=DAILY;INTERVAL=31 -> Invalid configuration (Cannot specify an interval of 31).
+     *         FREQ=DAILY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
      *         FREQ=DAILY;INTERVAL=30 -> Run a backup every 30 days at 12:00 midnight.
-     *         FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup every day at 05:10 PM.
+     *         FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup daily at 05:10 PM.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupSchedule")
@@ -349,19 +414,19 @@ public final class CreateOkeClusterBackupConfigDetails
      *     - Maximum = 12
      * <p>
      * Examples:
-     *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every week on monday and wednesday at 10:00 AM.
-     *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid configuration (can not specify interval of 2).
+     *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every Monday and Wednesday at 10:00 AM.
+     *         FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid configuration (Cannot specify an interval of 2).
      * <p>
-     * FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (can not specify interval of 25).
-     *         FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+     * FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (Cannot specify an interval of 25).
+     *         FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
      *         FREQ=HOURLY;INTERVAL=24 -> Run a backup every 24 hours.
      *         FREQ=HOURLY;INTERVAL=1 -> Run a backup every hour.
      *         FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 -> Run a backup every 15 hours at the 30th minute.
      *
-     *         FREQ=DAILY;INTERVAL=31 -> Invalid configuration (can not specify interval of 31).
-     *         FREQ=DAILY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+     *         FREQ=DAILY;INTERVAL=31 -> Invalid configuration (Cannot specify an interval of 31).
+     *         FREQ=DAILY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
      *         FREQ=DAILY;INTERVAL=30 -> Run a backup every 30 days at 12:00 midnight.
-     *         FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup every day at 05:10 PM.
+     *         FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup daily at 05:10 PM.
      *
      * @return the value
      **/
@@ -440,6 +505,7 @@ public final class CreateOkeClusterBackupConfigDetails
         sb.append("CreateOkeClusterBackupConfigDetails(");
         sb.append("super=").append(super.toString());
         sb.append("namespaces=").append(String.valueOf(this.namespaces));
+        sb.append(", excludeNamespaces=").append(String.valueOf(this.excludeNamespaces));
         sb.append(", backupSchedule=").append(String.valueOf(this.backupSchedule));
         sb.append(", replicateImages=").append(String.valueOf(this.replicateImages));
         sb.append(", maxNumberOfBackupsRetained=")
@@ -461,6 +527,7 @@ public final class CreateOkeClusterBackupConfigDetails
 
         CreateOkeClusterBackupConfigDetails other = (CreateOkeClusterBackupConfigDetails) o;
         return java.util.Objects.equals(this.namespaces, other.namespaces)
+                && java.util.Objects.equals(this.excludeNamespaces, other.excludeNamespaces)
                 && java.util.Objects.equals(this.backupSchedule, other.backupSchedule)
                 && java.util.Objects.equals(this.replicateImages, other.replicateImages)
                 && java.util.Objects.equals(
@@ -475,6 +542,9 @@ public final class CreateOkeClusterBackupConfigDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.namespaces == null ? 43 : this.namespaces.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.excludeNamespaces == null ? 43 : this.excludeNamespaces.hashCode());
         result =
                 (result * PRIME)
                         + (this.backupSchedule == null ? 43 : this.backupSchedule.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudmigrations.model;
@@ -25,6 +25,10 @@ package com.oracle.bmc.cloudmigrations.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateVmTargetAssetDetails.class,
         name = "INSTANCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateOlvmTargetAssetDetails.class,
+        name = "OLVM_INSTANCE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -101,6 +105,7 @@ public class UpdateTargetAssetDetails extends com.oracle.bmc.http.internal.Expli
      **/
     public enum Type {
         Instance("INSTANCE"),
+        OlvmInstance("OLVM_INSTANCE"),
         ;
 
         private final String value;

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -38,13 +38,28 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
         return opcRequestId;
     }
     /**
-     * Details for deregistering an Autonomous Database with Data Safe.
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
+    /**
+     * Details for deregistering an Autonomous AI Database with Data Safe.
      */
     private com.oracle.bmc.database.model.DeregisterAutonomousDatabaseDataSafeDetails
             deregisterAutonomousDatabaseDataSafeDetails;
 
     /**
-     * Details for deregistering an Autonomous Database with Data Safe.
+     * Details for deregistering an Autonomous AI Database with Data Safe.
      */
     public com.oracle.bmc.database.model.DeregisterAutonomousDatabaseDataSafeDetails
             getDeregisterAutonomousDatabaseDataSafeDetails() {
@@ -102,13 +117,32 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
         }
 
         /**
-         * Details for deregistering an Autonomous Database with Data Safe.
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
+         * Details for deregistering an Autonomous AI Database with Data Safe.
          */
         private com.oracle.bmc.database.model.DeregisterAutonomousDatabaseDataSafeDetails
                 deregisterAutonomousDatabaseDataSafeDetails = null;
 
         /**
-         * Details for deregistering an Autonomous Database with Data Safe.
+         * Details for deregistering an Autonomous AI Database with Data Safe.
          * @param deregisterAutonomousDatabaseDataSafeDetails the value to set
          * @return this builder instance
          */
@@ -150,6 +184,7 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
         public Builder copy(DeregisterAutonomousDatabaseDataSafeRequest o) {
             autonomousDatabaseId(o.getAutonomousDatabaseId());
             opcRequestId(o.getOpcRequestId());
+            opcDryRun(o.getOpcDryRun());
             deregisterAutonomousDatabaseDataSafeDetails(
                     o.getDeregisterAutonomousDatabaseDataSafeDetails());
             invocationCallback(o.getInvocationCallback());
@@ -199,10 +234,11 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
                     new DeregisterAutonomousDatabaseDataSafeRequest();
             request.autonomousDatabaseId = autonomousDatabaseId;
             request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
             request.deregisterAutonomousDatabaseDataSafeDetails =
                     deregisterAutonomousDatabaseDataSafeDetails;
             return request;
-            // new DeregisterAutonomousDatabaseDataSafeRequest(autonomousDatabaseId, opcRequestId, deregisterAutonomousDatabaseDataSafeDetails);
+            // new DeregisterAutonomousDatabaseDataSafeRequest(autonomousDatabaseId, opcRequestId, opcDryRun, deregisterAutonomousDatabaseDataSafeDetails);
         }
     }
 
@@ -214,6 +250,7 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
         return new Builder()
                 .autonomousDatabaseId(autonomousDatabaseId)
                 .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun)
                 .deregisterAutonomousDatabaseDataSafeDetails(
                         deregisterAutonomousDatabaseDataSafeDetails);
     }
@@ -233,6 +270,7 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
         sb.append("super=").append(super.toString());
         sb.append(",autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(",deregisterAutonomousDatabaseDataSafeDetails=")
                 .append(String.valueOf(this.deregisterAutonomousDatabaseDataSafeDetails));
         sb.append(")");
@@ -253,6 +291,7 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun)
                 && java.util.Objects.equals(
                         this.deregisterAutonomousDatabaseDataSafeDetails,
                         other.deregisterAutonomousDatabaseDataSafeDetails);
@@ -268,6 +307,7 @@ public class DeregisterAutonomousDatabaseDataSafeRequest
                                 ? 43
                                 : this.autonomousDatabaseId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         result =
                 (result * PRIME)
                         + (this.deregisterAutonomousDatabaseDataSafeDetails == null

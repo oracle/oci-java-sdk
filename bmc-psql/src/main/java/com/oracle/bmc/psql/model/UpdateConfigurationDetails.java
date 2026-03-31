@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.psql.model;
@@ -22,17 +22,25 @@ package com.oracle.bmc.psql.model;
 public final class UpdateConfigurationDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "description", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "freeformTags",
+        "definedTags",
+        "compatibleShapes"
+    })
     public UpdateConfigurationDetails(
             String displayName,
             String description,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<String> compatibleShapes) {
         super();
         this.displayName = displayName;
         this.description = description;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.compatibleShapes = compatibleShapes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -110,6 +118,24 @@ public final class UpdateConfigurationDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Indicates the collection of compatible shapes for this configuration.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
+        private java.util.List<String> compatibleShapes;
+
+        /**
+         * Indicates the collection of compatible shapes for this configuration.
+         *
+         * @param compatibleShapes the value to set
+         * @return this builder
+         **/
+        public Builder compatibleShapes(java.util.List<String> compatibleShapes) {
+            this.compatibleShapes = compatibleShapes;
+            this.__explicitlySet__.add("compatibleShapes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -120,7 +146,8 @@ public final class UpdateConfigurationDetails
                             this.displayName,
                             this.description,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.compatibleShapes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -140,6 +167,9 @@ public final class UpdateConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("compatibleShapes")) {
+                this.compatibleShapes(model.getCompatibleShapes());
             }
             return this;
         }
@@ -220,6 +250,22 @@ public final class UpdateConfigurationDetails
         return definedTags;
     }
 
+    /**
+     * Indicates the collection of compatible shapes for this configuration.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
+    private final java.util.List<String> compatibleShapes;
+
+    /**
+     * Indicates the collection of compatible shapes for this configuration.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getCompatibleShapes() {
+        return compatibleShapes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -238,6 +284,7 @@ public final class UpdateConfigurationDetails
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", compatibleShapes=").append(String.valueOf(this.compatibleShapes));
         sb.append(")");
         return sb.toString();
     }
@@ -256,6 +303,7 @@ public final class UpdateConfigurationDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.compatibleShapes, other.compatibleShapes)
                 && super.equals(other);
     }
 
@@ -267,6 +315,9 @@ public final class UpdateConfigurationDetails
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compatibleShapes == null ? 43 : this.compatibleShapes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

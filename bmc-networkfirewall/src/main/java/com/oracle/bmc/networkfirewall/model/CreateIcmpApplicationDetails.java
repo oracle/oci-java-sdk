@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -33,6 +33,15 @@ public final class CreateIcmpApplicationDetails extends CreateApplicationDetails
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
             return this;
         }
         /**
@@ -73,7 +82,8 @@ public final class CreateIcmpApplicationDetails extends CreateApplicationDetails
 
         public CreateIcmpApplicationDetails build() {
             CreateIcmpApplicationDetails model =
-                    new CreateIcmpApplicationDetails(this.name, this.icmpType, this.icmpCode);
+                    new CreateIcmpApplicationDetails(
+                            this.name, this.description, this.icmpType, this.icmpCode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -84,6 +94,9 @@ public final class CreateIcmpApplicationDetails extends CreateApplicationDetails
         public Builder copy(CreateIcmpApplicationDetails model) {
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("icmpType")) {
                 this.icmpType(model.getIcmpType());
@@ -107,8 +120,9 @@ public final class CreateIcmpApplicationDetails extends CreateApplicationDetails
     }
 
     @Deprecated
-    public CreateIcmpApplicationDetails(String name, Integer icmpType, Integer icmpCode) {
-        super(name);
+    public CreateIcmpApplicationDetails(
+            String name, String description, Integer icmpType, Integer icmpCode) {
+        super(name, description);
         this.icmpType = icmpType;
         this.icmpCode = icmpCode;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -137,6 +137,23 @@ public class ListDiscoveryJobResultsRequest
         return sortOrder;
     }
     /**
+     * A filter to return the discovery job results with the specified confidence level.
+     * Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.
+     * While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+     *
+     */
+    private java.util.List<com.oracle.bmc.datasafe.model.ConfidenceLevelEnum> confidenceLevel;
+
+    /**
+     * A filter to return the discovery job results with the specified confidence level.
+     * Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.
+     * While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+     *
+     */
+    public java.util.List<com.oracle.bmc.datasafe.model.ConfidenceLevelEnum> getConfidenceLevel() {
+        return confidenceLevel;
+    }
+    /**
      * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeFinished is descending.
      * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
      *
@@ -155,6 +172,7 @@ public class ListDiscoveryJobResultsRequest
         ObjectName("objectName"),
         ColumnName("columnName"),
         PlannedAction("plannedAction"),
+        ConfidenceLevel("confidenceLevel"),
         ;
 
         private final String value;
@@ -384,6 +402,41 @@ public class ListDiscoveryJobResultsRequest
         }
 
         /**
+         * A filter to return the discovery job results with the specified confidence level.
+         * Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.
+         * While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+         *
+         */
+        private java.util.List<com.oracle.bmc.datasafe.model.ConfidenceLevelEnum> confidenceLevel =
+                null;
+
+        /**
+         * A filter to return the discovery job results with the specified confidence level.
+         * Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.
+         * While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+         *
+         * @param confidenceLevel the value to set
+         * @return this builder instance
+         */
+        public Builder confidenceLevel(
+                java.util.List<com.oracle.bmc.datasafe.model.ConfidenceLevelEnum> confidenceLevel) {
+            this.confidenceLevel = confidenceLevel;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return the discovery job results with the specified confidence level.
+         * Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.
+         * While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder confidenceLevel(ConfidenceLevelEnum singularValue) {
+            return this.confidenceLevel(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeFinished is descending.
          * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
          *
@@ -483,6 +536,7 @@ public class ListDiscoveryJobResultsRequest
             objectName(o.getObjectName());
             columnName(o.getColumnName());
             sortOrder(o.getSortOrder());
+            confidenceLevel(o.getConfidenceLevel());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
@@ -527,12 +581,13 @@ public class ListDiscoveryJobResultsRequest
             request.objectName = objectName;
             request.columnName = columnName;
             request.sortOrder = sortOrder;
+            request.confidenceLevel = confidenceLevel;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListDiscoveryJobResultsRequest(discoveryJobId, discoveryType, plannedAction, isResultApplied, schemaName, objectName, columnName, sortOrder, sortBy, opcRequestId, limit, page);
+            // new ListDiscoveryJobResultsRequest(discoveryJobId, discoveryType, plannedAction, isResultApplied, schemaName, objectName, columnName, sortOrder, confidenceLevel, sortBy, opcRequestId, limit, page);
         }
     }
 
@@ -550,6 +605,7 @@ public class ListDiscoveryJobResultsRequest
                 .objectName(objectName)
                 .columnName(columnName)
                 .sortOrder(sortOrder)
+                .confidenceLevel(confidenceLevel)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
                 .limit(limit)
@@ -577,6 +633,7 @@ public class ListDiscoveryJobResultsRequest
         sb.append(",objectName=").append(String.valueOf(this.objectName));
         sb.append(",columnName=").append(String.valueOf(this.columnName));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",confidenceLevel=").append(String.valueOf(this.confidenceLevel));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -604,6 +661,7 @@ public class ListDiscoveryJobResultsRequest
                 && java.util.Objects.equals(this.objectName, other.objectName)
                 && java.util.Objects.equals(this.columnName, other.columnName)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.confidenceLevel, other.confidenceLevel)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -630,6 +688,9 @@ public class ListDiscoveryJobResultsRequest
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
         result = (result * PRIME) + (this.columnName == null ? 43 : this.columnName.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.confidenceLevel == null ? 43 : this.confidenceLevel.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

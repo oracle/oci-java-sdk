@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -77,8 +77,14 @@ public final class CloudVmClusterSummary
         "giSoftwareImageId",
         "fileSystemConfigurationDetails",
         "cloudAutomationUpdateDetails",
+        "exascaleDbStorageVaultId",
+        "storageManagementType",
         "vmClusterType",
-        "computeModel"
+        "computeModel",
+        "multiCloudIdentityConnectorConfigs",
+        "tdeKeyStoreType",
+        "vmFileSystemStorageType",
+        "vmBackupStorageType"
     })
     public CloudVmClusterSummary(
             String id,
@@ -134,8 +140,14 @@ public final class CloudVmClusterSummary
             String giSoftwareImageId,
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
             CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
+            String exascaleDbStorageVaultId,
+            StorageManagementType storageManagementType,
             VmClusterType vmClusterType,
-            ComputeModel computeModel) {
+            ComputeModel computeModel,
+            java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs,
+            TdeKeyStoreType tdeKeyStoreType,
+            VmFileSystemStorageType vmFileSystemStorageType,
+            VmBackupStorageType vmBackupStorageType) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -190,8 +202,14 @@ public final class CloudVmClusterSummary
         this.giSoftwareImageId = giSoftwareImageId;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
         this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+        this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+        this.storageManagementType = storageManagementType;
         this.vmClusterType = vmClusterType;
         this.computeModel = computeModel;
+        this.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
+        this.tdeKeyStoreType = tdeKeyStoreType;
+        this.vmFileSystemStorageType = vmFileSystemStorageType;
+        this.vmBackupStorageType = vmBackupStorageType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -317,7 +335,7 @@ public final class CloudVmClusterSummary
         /**
          * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -326,7 +344,7 @@ public final class CloudVmClusterSummary
         /**
          * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -1155,6 +1173,38 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+        private String exascaleDbStorageVaultId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         * @param exascaleDbStorageVaultId the value to set
+         * @return this builder
+         **/
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+            this.__explicitlySet__.add("exascaleDbStorageVaultId");
+            return this;
+        }
+        /**
+         * Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("storageManagementType")
+        private StorageManagementType storageManagementType;
+
+        /**
+         * Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+         * @param storageManagementType the value to set
+         * @return this builder
+         **/
+        public Builder storageManagementType(StorageManagementType storageManagementType) {
+            this.storageManagementType = storageManagementType;
+            this.__explicitlySet__.add("storageManagementType");
+            return this;
+        }
+        /**
          * The vmcluster type for the VM cluster/Cloud VM cluster.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
@@ -1171,19 +1221,84 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
          * @param computeModel the value to set
          * @return this builder
          **/
         public Builder computeModel(ComputeModel computeModel) {
             this.computeModel = computeModel;
             this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
+         * Details of the multi cloud identity connectors of the VM cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("multiCloudIdentityConnectorConfigs")
+        private java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs;
+
+        /**
+         * Details of the multi cloud identity connectors of the VM cluster.
+         * @param multiCloudIdentityConnectorConfigs the value to set
+         * @return this builder
+         **/
+        public Builder multiCloudIdentityConnectorConfigs(
+                java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs) {
+            this.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
+            this.__explicitlySet__.add("multiCloudIdentityConnectorConfigs");
+            return this;
+        }
+        /**
+         * TDE keystore type
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("tdeKeyStoreType")
+        private TdeKeyStoreType tdeKeyStoreType;
+
+        /**
+         * TDE keystore type
+         * @param tdeKeyStoreType the value to set
+         * @return this builder
+         **/
+        public Builder tdeKeyStoreType(TdeKeyStoreType tdeKeyStoreType) {
+            this.tdeKeyStoreType = tdeKeyStoreType;
+            this.__explicitlySet__.add("tdeKeyStoreType");
+            return this;
+        }
+        /**
+         * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vmFileSystemStorageType")
+        private VmFileSystemStorageType vmFileSystemStorageType;
+
+        /**
+         * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+         * @param vmFileSystemStorageType the value to set
+         * @return this builder
+         **/
+        public Builder vmFileSystemStorageType(VmFileSystemStorageType vmFileSystemStorageType) {
+            this.vmFileSystemStorageType = vmFileSystemStorageType;
+            this.__explicitlySet__.add("vmFileSystemStorageType");
+            return this;
+        }
+        /**
+         * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vmBackupStorageType")
+        private VmBackupStorageType vmBackupStorageType;
+
+        /**
+         * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+         * @param vmBackupStorageType the value to set
+         * @return this builder
+         **/
+        public Builder vmBackupStorageType(VmBackupStorageType vmBackupStorageType) {
+            this.vmBackupStorageType = vmBackupStorageType;
+            this.__explicitlySet__.add("vmBackupStorageType");
             return this;
         }
 
@@ -1246,8 +1361,14 @@ public final class CloudVmClusterSummary
                             this.giSoftwareImageId,
                             this.fileSystemConfigurationDetails,
                             this.cloudAutomationUpdateDetails,
+                            this.exascaleDbStorageVaultId,
+                            this.storageManagementType,
                             this.vmClusterType,
-                            this.computeModel);
+                            this.computeModel,
+                            this.multiCloudIdentityConnectorConfigs,
+                            this.tdeKeyStoreType,
+                            this.vmFileSystemStorageType,
+                            this.vmBackupStorageType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1415,11 +1536,30 @@ public final class CloudVmClusterSummary
             if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
                 this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
             }
+            if (model.wasPropertyExplicitlySet("exascaleDbStorageVaultId")) {
+                this.exascaleDbStorageVaultId(model.getExascaleDbStorageVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("storageManagementType")) {
+                this.storageManagementType(model.getStorageManagementType());
+            }
             if (model.wasPropertyExplicitlySet("vmClusterType")) {
                 this.vmClusterType(model.getVmClusterType());
             }
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("multiCloudIdentityConnectorConfigs")) {
+                this.multiCloudIdentityConnectorConfigs(
+                        model.getMultiCloudIdentityConnectorConfigs());
+            }
+            if (model.wasPropertyExplicitlySet("tdeKeyStoreType")) {
+                this.tdeKeyStoreType(model.getTdeKeyStoreType());
+            }
+            if (model.wasPropertyExplicitlySet("vmFileSystemStorageType")) {
+                this.vmFileSystemStorageType(model.getVmFileSystemStorageType());
+            }
+            if (model.wasPropertyExplicitlySet("vmBackupStorageType")) {
+                this.vmBackupStorageType(model.getVmBackupStorageType());
             }
             return this;
         }
@@ -1545,7 +1685,7 @@ public final class CloudVmClusterSummary
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -1554,7 +1694,7 @@ public final class CloudVmClusterSummary
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
      **/
@@ -2438,6 +2578,82 @@ public final class CloudVmClusterSummary
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+    private final String exascaleDbStorageVaultId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * @return the value
+     **/
+    public String getExascaleDbStorageVaultId() {
+        return exascaleDbStorageVaultId;
+    }
+
+    /**
+     * Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+     **/
+    public enum StorageManagementType {
+        Asm("ASM"),
+        Exascale("EXASCALE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(StorageManagementType.class);
+
+        private final String value;
+        private static java.util.Map<String, StorageManagementType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (StorageManagementType v : StorageManagementType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        StorageManagementType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static StorageManagementType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'StorageManagementType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageManagementType")
+    private final StorageManagementType storageManagementType;
+
+    /**
+     * Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+     * @return the value
+     **/
+    public StorageManagementType getStorageManagementType() {
+        return storageManagementType;
+    }
+
+    /**
      * The vmcluster type for the VM cluster/Cloud VM cluster.
      **/
     public enum VmClusterType {
@@ -2500,7 +2716,7 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      **/
     public enum ComputeModel {
         Ecpu("ECPU"),
@@ -2548,17 +2764,219 @@ public final class CloudVmClusterSummary
         }
     };
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * @return the value
      **/
     public ComputeModel getComputeModel() {
         return computeModel;
+    }
+
+    /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("multiCloudIdentityConnectorConfigs")
+    private final java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs;
+
+    /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     * @return the value
+     **/
+    public java.util.List<IdentityConnectorDetails> getMultiCloudIdentityConnectorConfigs() {
+        return multiCloudIdentityConnectorConfigs;
+    }
+
+    /**
+     * TDE keystore type
+     **/
+    public enum TdeKeyStoreType {
+        Azure("AZURE"),
+        Oci("OCI"),
+        Gcp("GCP"),
+        Aws("AWS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TdeKeyStoreType.class);
+
+        private final String value;
+        private static java.util.Map<String, TdeKeyStoreType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TdeKeyStoreType v : TdeKeyStoreType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        TdeKeyStoreType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TdeKeyStoreType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TdeKeyStoreType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * TDE keystore type
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tdeKeyStoreType")
+    private final TdeKeyStoreType tdeKeyStoreType;
+
+    /**
+     * TDE keystore type
+     * @return the value
+     **/
+    public TdeKeyStoreType getTdeKeyStoreType() {
+        return tdeKeyStoreType;
+    }
+
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     **/
+    public enum VmFileSystemStorageType {
+        Local("LOCAL"),
+        Exascale("EXASCALE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(VmFileSystemStorageType.class);
+
+        private final String value;
+        private static java.util.Map<String, VmFileSystemStorageType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VmFileSystemStorageType v : VmFileSystemStorageType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        VmFileSystemStorageType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VmFileSystemStorageType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'VmFileSystemStorageType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmFileSystemStorageType")
+    private final VmFileSystemStorageType vmFileSystemStorageType;
+
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * @return the value
+     **/
+    public VmFileSystemStorageType getVmFileSystemStorageType() {
+        return vmFileSystemStorageType;
+    }
+
+    /**
+     * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     **/
+    public enum VmBackupStorageType {
+        Local("LOCAL"),
+        Exascale("EXASCALE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(VmBackupStorageType.class);
+
+        private final String value;
+        private static java.util.Map<String, VmBackupStorageType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VmBackupStorageType v : VmBackupStorageType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        VmBackupStorageType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VmBackupStorageType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'VmBackupStorageType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmBackupStorageType")
+    private final VmBackupStorageType vmBackupStorageType;
+
+    /**
+     * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * @return the value
+     **/
+    public VmBackupStorageType getVmBackupStorageType() {
+        return vmBackupStorageType;
     }
 
     @Override
@@ -2633,8 +3051,17 @@ public final class CloudVmClusterSummary
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
         sb.append(", cloudAutomationUpdateDetails=")
                 .append(String.valueOf(this.cloudAutomationUpdateDetails));
+        sb.append(", exascaleDbStorageVaultId=")
+                .append(String.valueOf(this.exascaleDbStorageVaultId));
+        sb.append(", storageManagementType=").append(String.valueOf(this.storageManagementType));
         sb.append(", vmClusterType=").append(String.valueOf(this.vmClusterType));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", multiCloudIdentityConnectorConfigs=")
+                .append(String.valueOf(this.multiCloudIdentityConnectorConfigs));
+        sb.append(", tdeKeyStoreType=").append(String.valueOf(this.tdeKeyStoreType));
+        sb.append(", vmFileSystemStorageType=")
+                .append(String.valueOf(this.vmFileSystemStorageType));
+        sb.append(", vmBackupStorageType=").append(String.valueOf(this.vmBackupStorageType));
         sb.append(")");
         return sb.toString();
     }
@@ -2709,8 +3136,18 @@ public final class CloudVmClusterSummary
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
                 && java.util.Objects.equals(
                         this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
+                && java.util.Objects.equals(
+                        this.exascaleDbStorageVaultId, other.exascaleDbStorageVaultId)
+                && java.util.Objects.equals(this.storageManagementType, other.storageManagementType)
                 && java.util.Objects.equals(this.vmClusterType, other.vmClusterType)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(
+                        this.multiCloudIdentityConnectorConfigs,
+                        other.multiCloudIdentityConnectorConfigs)
+                && java.util.Objects.equals(this.tdeKeyStoreType, other.tdeKeyStoreType)
+                && java.util.Objects.equals(
+                        this.vmFileSystemStorageType, other.vmFileSystemStorageType)
+                && java.util.Objects.equals(this.vmBackupStorageType, other.vmBackupStorageType)
                 && super.equals(other);
     }
 
@@ -2857,8 +3294,36 @@ public final class CloudVmClusterSummary
                                 : this.cloudAutomationUpdateDetails.hashCode());
         result =
                 (result * PRIME)
+                        + (this.exascaleDbStorageVaultId == null
+                                ? 43
+                                : this.exascaleDbStorageVaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageManagementType == null
+                                ? 43
+                                : this.storageManagementType.hashCode());
+        result =
+                (result * PRIME)
                         + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.multiCloudIdentityConnectorConfigs == null
+                                ? 43
+                                : this.multiCloudIdentityConnectorConfigs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tdeKeyStoreType == null ? 43 : this.tdeKeyStoreType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmFileSystemStorageType == null
+                                ? 43
+                                : this.vmFileSystemStorageType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmBackupStorageType == null
+                                ? 43
+                                : this.vmBackupStorageType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

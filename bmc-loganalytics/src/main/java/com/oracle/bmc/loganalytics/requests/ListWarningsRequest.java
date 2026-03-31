@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -12,13 +12,13 @@ import com.oracle.bmc.loganalytics.model.*;
 public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     private String namespaceName;
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     public String getNamespaceName() {
@@ -133,15 +133,13 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return warningMessage;
     }
     /**
-     * The entity name used for filtering.  Only warnings associated with an entity with the
-     * specified name will be returned.
+     * The entity name used for filtering.
      *
      */
     private String entityName;
 
     /**
-     * The entity name used for filtering.  Only warnings associated with an entity with the
-     * specified name will be returned.
+     * The entity name used for filtering.
      *
      */
     public String getEntityName() {
@@ -357,13 +355,13 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          */
         private String namespaceName = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          * @param namespaceName the value to set
          * @return this builder instance
@@ -461,15 +459,13 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The entity name used for filtering.  Only warnings associated with an entity with the
-         * specified name will be returned.
+         * The entity name used for filtering.
          *
          */
         private String entityName = null;
 
         /**
-         * The entity name used for filtering.  Only warnings associated with an entity with the
-         * specified name will be returned.
+         * The entity name used for filtering.
          *
          * @param entityName the value to set
          * @return this builder instance

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.model;
@@ -21,11 +21,13 @@ package com.oracle.bmc.queue.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PurgeQueueDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"purgeType", "channelIds"})
-    public PurgeQueueDetails(PurgeType purgeType, java.util.List<String> channelIds) {
+    @java.beans.ConstructorProperties({"purgeType", "channelIds", "consumerGroupId"})
+    public PurgeQueueDetails(
+            PurgeType purgeType, java.util.List<String> channelIds, String consumerGroupId) {
         super();
         this.purgeType = purgeType;
         this.channelIds = channelIds;
+        this.consumerGroupId = consumerGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -76,12 +78,35 @@ public final class PurgeQueueDetails extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("channelIds");
             return this;
         }
+        /**
+         * The consumer group ID to purge. If the CONSUMER_GROUPS capability is enabled on the queue, omitting that field
+         * will purge the "Primary Consumer Group", otherwise it will purge the queue.
+         * If you wish to purge all consumer groups in the queue, you can pass the special value 'all'.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("consumerGroupId")
+        private String consumerGroupId;
+
+        /**
+         * The consumer group ID to purge. If the CONSUMER_GROUPS capability is enabled on the queue, omitting that field
+         * will purge the "Primary Consumer Group", otherwise it will purge the queue.
+         * If you wish to purge all consumer groups in the queue, you can pass the special value 'all'.
+         *
+         * @param consumerGroupId the value to set
+         * @return this builder
+         **/
+        public Builder consumerGroupId(String consumerGroupId) {
+            this.consumerGroupId = consumerGroupId;
+            this.__explicitlySet__.add("consumerGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PurgeQueueDetails build() {
-            PurgeQueueDetails model = new PurgeQueueDetails(this.purgeType, this.channelIds);
+            PurgeQueueDetails model =
+                    new PurgeQueueDetails(this.purgeType, this.channelIds, this.consumerGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -95,6 +120,9 @@ public final class PurgeQueueDetails extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("channelIds")) {
                 this.channelIds(model.getChannelIds());
+            }
+            if (model.wasPropertyExplicitlySet("consumerGroupId")) {
+                this.consumerGroupId(model.getConsumerGroupId());
             }
             return this;
         }
@@ -193,6 +221,26 @@ public final class PurgeQueueDetails extends com.oracle.bmc.http.internal.Explic
         return channelIds;
     }
 
+    /**
+     * The consumer group ID to purge. If the CONSUMER_GROUPS capability is enabled on the queue, omitting that field
+     * will purge the "Primary Consumer Group", otherwise it will purge the queue.
+     * If you wish to purge all consumer groups in the queue, you can pass the special value 'all'.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("consumerGroupId")
+    private final String consumerGroupId;
+
+    /**
+     * The consumer group ID to purge. If the CONSUMER_GROUPS capability is enabled on the queue, omitting that field
+     * will purge the "Primary Consumer Group", otherwise it will purge the queue.
+     * If you wish to purge all consumer groups in the queue, you can pass the special value 'all'.
+     *
+     * @return the value
+     **/
+    public String getConsumerGroupId() {
+        return consumerGroupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -209,6 +257,7 @@ public final class PurgeQueueDetails extends com.oracle.bmc.http.internal.Explic
         sb.append("super=").append(super.toString());
         sb.append("purgeType=").append(String.valueOf(this.purgeType));
         sb.append(", channelIds=").append(String.valueOf(this.channelIds));
+        sb.append(", consumerGroupId=").append(String.valueOf(this.consumerGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -225,6 +274,7 @@ public final class PurgeQueueDetails extends com.oracle.bmc.http.internal.Explic
         PurgeQueueDetails other = (PurgeQueueDetails) o;
         return java.util.Objects.equals(this.purgeType, other.purgeType)
                 && java.util.Objects.equals(this.channelIds, other.channelIds)
+                && java.util.Objects.equals(this.consumerGroupId, other.consumerGroupId)
                 && super.equals(other);
     }
 
@@ -234,6 +284,9 @@ public final class PurgeQueueDetails extends com.oracle.bmc.http.internal.Explic
         int result = 1;
         result = (result * PRIME) + (this.purgeType == null ? 43 : this.purgeType.hashCode());
         result = (result * PRIME) + (this.channelIds == null ? 43 : this.channelIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consumerGroupId == null ? 43 : this.consumerGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

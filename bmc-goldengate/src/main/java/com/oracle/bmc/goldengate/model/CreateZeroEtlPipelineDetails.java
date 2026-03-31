@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -112,6 +112,15 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("processOptions")
         private ProcessOptions processOptions;
 
@@ -136,6 +145,7 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
                             this.locks,
                             this.sourceConnectionDetails,
                             this.targetConnectionDetails,
+                            this.subnetId,
                             this.processOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -172,6 +182,9 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
             if (model.wasPropertyExplicitlySet("targetConnectionDetails")) {
                 this.targetConnectionDetails(model.getTargetConnectionDetails());
             }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
             if (model.wasPropertyExplicitlySet("processOptions")) {
                 this.processOptions(model.getProcessOptions());
             }
@@ -201,6 +214,7 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
             java.util.List<ResourceLock> locks,
             SourcePipelineConnectionDetails sourceConnectionDetails,
             TargetPipelineConnectionDetails targetConnectionDetails,
+            String subnetId,
             ProcessOptions processOptions) {
         super(
                 displayName,
@@ -211,7 +225,8 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
                 definedTags,
                 locks,
                 sourceConnectionDetails,
-                targetConnectionDetails);
+                targetConnectionDetails,
+                subnetId);
         this.processOptions = processOptions;
     }
 

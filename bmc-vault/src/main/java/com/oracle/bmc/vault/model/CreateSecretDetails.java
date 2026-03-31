@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vault.model;
@@ -29,6 +29,7 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
         "keyId",
         "metadata",
         "secretContent",
+        "replicationConfig",
         "rotationConfig",
         "secretName",
         "secretRules",
@@ -44,6 +45,7 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
             String keyId,
             java.util.Map<String, Object> metadata,
             SecretContentDetails secretContent,
+            ReplicationConfig replicationConfig,
             RotationConfig rotationConfig,
             String secretName,
             java.util.List<SecretRule> secretRules,
@@ -58,6 +60,7 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
         this.keyId = keyId;
         this.metadata = metadata;
         this.secretContent = secretContent;
+        this.replicationConfig = replicationConfig;
         this.rotationConfig = rotationConfig;
         this.secretName = secretName;
         this.secretRules = secretRules;
@@ -195,6 +198,15 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+        private ReplicationConfig replicationConfig;
+
+        public Builder replicationConfig(ReplicationConfig replicationConfig) {
+            this.replicationConfig = replicationConfig;
+            this.__explicitlySet__.add("replicationConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
         private RotationConfig rotationConfig;
 
@@ -294,6 +306,7 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
                             this.keyId,
                             this.metadata,
                             this.secretContent,
+                            this.replicationConfig,
                             this.rotationConfig,
                             this.secretName,
                             this.secretRules,
@@ -328,6 +341,9 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("secretContent")) {
                 this.secretContent(model.getSecretContent());
+            }
+            if (model.wasPropertyExplicitlySet("replicationConfig")) {
+                this.replicationConfig(model.getReplicationConfig());
             }
             if (model.wasPropertyExplicitlySet("rotationConfig")) {
                 this.rotationConfig(model.getRotationConfig());
@@ -473,6 +489,13 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
         return secretContent;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+    private final ReplicationConfig replicationConfig;
+
+    public ReplicationConfig getReplicationConfig() {
+        return replicationConfig;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
     private final RotationConfig rotationConfig;
 
@@ -568,6 +591,7 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", secretContent=").append(String.valueOf(this.secretContent));
+        sb.append(", replicationConfig=").append(String.valueOf(this.replicationConfig));
         sb.append(", rotationConfig=").append(String.valueOf(this.rotationConfig));
         sb.append(", secretName=").append(String.valueOf(this.secretName));
         sb.append(", secretRules=").append(String.valueOf(this.secretRules));
@@ -596,6 +620,7 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.secretContent, other.secretContent)
+                && java.util.Objects.equals(this.replicationConfig, other.replicationConfig)
                 && java.util.Objects.equals(this.rotationConfig, other.rotationConfig)
                 && java.util.Objects.equals(this.secretName, other.secretName)
                 && java.util.Objects.equals(this.secretRules, other.secretRules)
@@ -621,6 +646,9 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
         result =
                 (result * PRIME)
                         + (this.secretContent == null ? 43 : this.secretContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationConfig == null ? 43 : this.replicationConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.rotationConfig == null ? 43 : this.rotationConfig.hashCode());

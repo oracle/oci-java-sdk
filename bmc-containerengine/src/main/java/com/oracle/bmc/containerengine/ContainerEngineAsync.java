@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine;
@@ -278,6 +278,26 @@ public interface ContainerEngineAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Extend the rollback deadline of public api endpoint decommission for a cluster.
+     * The operation can only be performed within decommission rollback deadline.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ExtendEndpointDecommissionRollbackDeadlineResponse>
+            extendEndpointDecommissionRollbackDeadline(
+                    ExtendEndpointDecommissionRollbackDeadlineRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ExtendEndpointDecommissionRollbackDeadlineRequest,
+                                    ExtendEndpointDecommissionRollbackDeadlineResponse>
+                            handler);
+
+    /**
      * Get the specified addon for a cluster.
      *
      * @param request The request object containing the details to send
@@ -384,6 +404,24 @@ public interface ContainerEngineAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetNodePoolOptionsRequest, GetNodePoolOptionsResponse>
                     handler);
+
+    /**
+     * Get cluster public api endpoint decommission status.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPublicApiEndpointDecommissionStatusResponse>
+            getPublicApiEndpointDecommissionStatus(
+                    GetPublicApiEndpointDecommissionStatusRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetPublicApiEndpointDecommissionStatusRequest,
+                                    GetPublicApiEndpointDecommissionStatusResponse>
+                            handler);
 
     /**
      * Get the details of a virtual node.
@@ -631,6 +669,59 @@ public interface ContainerEngineAsync extends AutoCloseable {
                     handler);
 
     /**
+     * perform reboot action to node in cluster
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RebootClusterNodeResponse> rebootClusterNode(
+            RebootClusterNodeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RebootClusterNodeRequest, RebootClusterNodeResponse>
+                    handler);
+
+    /**
+     * perform cycle action to node in cluster
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ReplaceBootVolumeClusterNodeResponse> replaceBootVolumeClusterNode(
+            ReplaceBootVolumeClusterNodeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ReplaceBootVolumeClusterNodeRequest,
+                            ReplaceBootVolumeClusterNodeResponse>
+                    handler);
+
+    /**
+     * Rollback public api endpoint decommission for a cluster, legacy kubernetes endpoint will be brought back once the operation is completed.
+     * The operation can only be performed within decommission rollback deadline.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RollbackPublicApiEndpointDecommissionResponse>
+            rollbackPublicApiEndpointDecommission(
+                    RollbackPublicApiEndpointDecommissionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RollbackPublicApiEndpointDecommissionRequest,
+                                    RollbackPublicApiEndpointDecommissionResponse>
+                            handler);
+
+    /**
      * Start cluster credential rotation by adding new credentials, old credentials will still work after this operation.
      *
      * @param request The request object containing the details to send
@@ -645,6 +736,24 @@ public interface ContainerEngineAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             StartCredentialRotationRequest, StartCredentialRotationResponse>
                     handler);
+
+    /**
+     * Start public api endpoint decommission for a cluster, legacy kubernetes endpoint will no longer available after this operation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StartPublicApiEndpointDecommissionResponse>
+            startPublicApiEndpointDecommission(
+                    StartPublicApiEndpointDecommissionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    StartPublicApiEndpointDecommissionRequest,
+                                    StartPublicApiEndpointDecommissionResponse>
+                            handler);
 
     /**
      * Update addon details for a cluster.

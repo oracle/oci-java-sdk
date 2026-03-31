@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -35,7 +35,6 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         "freeformTags",
         "id",
         "ipAddress",
-        "cpeDeviceShapeId",
         "timeCreated",
         "isPrivate"
     })
@@ -46,7 +45,6 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             java.util.Map<String, String> freeformTags,
             String id,
             String ipAddress,
-            String cpeDeviceShapeId,
             java.util.Date timeCreated,
             Boolean isPrivate) {
         super();
@@ -56,7 +54,6 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         this.freeformTags = freeformTags;
         this.id = id;
         this.ipAddress = ipAddress;
-        this.cpeDeviceShapeId = cpeDeviceShapeId;
         this.timeCreated = timeCreated;
         this.isPrivate = isPrivate;
     }
@@ -173,50 +170,6 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
-         * The Networking service maintains a general list of CPE device types (for example,
-         * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
-         * a network engineer configure the CPE. The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
-         * device. To get the OCIDs for the device types on the list, see
-         * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
-         * <p>
-         * For information about how to generate CPE configuration content for a
-         * CPE device type, see:
-         * <p>
-         * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
-         *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
-         *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
-         *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
-        private String cpeDeviceShapeId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
-         * The Networking service maintains a general list of CPE device types (for example,
-         * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
-         * a network engineer configure the CPE. The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
-         * device. To get the OCIDs for the device types on the list, see
-         * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
-         * <p>
-         * For information about how to generate CPE configuration content for a
-         * CPE device type, see:
-         * <p>
-         * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
-         *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
-         *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
-         *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
-         *
-         * @param cpeDeviceShapeId the value to set
-         * @return this builder
-         **/
-        public Builder cpeDeviceShapeId(String cpeDeviceShapeId) {
-            this.cpeDeviceShapeId = cpeDeviceShapeId;
-            this.__explicitlySet__.add("cpeDeviceShapeId");
-            return this;
-        }
-        /**
          * The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
@@ -269,7 +222,6 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                             this.freeformTags,
                             this.id,
                             this.ipAddress,
-                            this.cpeDeviceShapeId,
                             this.timeCreated,
                             this.isPrivate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -297,9 +249,6 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
-            }
-            if (model.wasPropertyExplicitlySet("cpeDeviceShapeId")) {
-                this.cpeDeviceShapeId(model.getCpeDeviceShapeId());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -419,48 +368,6 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
-     * The Networking service maintains a general list of CPE device types (for example,
-     * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
-     * a network engineer configure the CPE. The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
-     * device. To get the OCIDs for the device types on the list, see
-     * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
-     * <p>
-     * For information about how to generate CPE configuration content for a
-     * CPE device type, see:
-     * <p>
-     * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
-     *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
-     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
-     *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
-    private final String cpeDeviceShapeId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
-     * The Networking service maintains a general list of CPE device types (for example,
-     * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
-     * a network engineer configure the CPE. The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
-     * device. To get the OCIDs for the device types on the list, see
-     * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
-     * <p>
-     * For information about how to generate CPE configuration content for a
-     * CPE device type, see:
-     * <p>
-     * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
-     *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
-     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
-     *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
-     *
-     * @return the value
-     **/
-    public String getCpeDeviceShapeId() {
-        return cpeDeviceShapeId;
-    }
-
-    /**
      * The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
@@ -516,7 +423,6 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
-        sb.append(", cpeDeviceShapeId=").append(String.valueOf(this.cpeDeviceShapeId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
         sb.append(")");
@@ -539,7 +445,6 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
-                && java.util.Objects.equals(this.cpeDeviceShapeId, other.cpeDeviceShapeId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.isPrivate, other.isPrivate)
                 && super.equals(other);
@@ -557,9 +462,6 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.cpeDeviceShapeId == null ? 43 : this.cpeDeviceShapeId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.isPrivate == null ? 43 : this.isPrivate.hashCode());
         result = (result * PRIME) + super.hashCode();

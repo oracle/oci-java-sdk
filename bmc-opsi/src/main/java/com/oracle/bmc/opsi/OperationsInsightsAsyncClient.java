@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi;
@@ -7,6 +7,8 @@ package com.oracle.bmc.opsi;
 import com.oracle.bmc.opsi.internal.http.*;
 import com.oracle.bmc.opsi.requests.*;
 import com.oracle.bmc.opsi.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for OperationsInsights service. <br/>
@@ -28,7 +30,7 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("OPERATIONSINSIGHTS")
+                    .serviceName(OperationsInsightsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://operationsinsights.{region}.oci.{secondLevelDomain}")
@@ -51,6 +53,10 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -262,6 +268,11 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -301,7 +312,7 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
             LOG.warn(
                     com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
                             "OperationsInsightsAsyncClient",
-                            "downloadOperationsInsightsWarehouseWallet,getAwrHubObject"));
+                            "downloadOperationsInsightsWarehouseWallet,getAwrHubObject,getChargebackPlanReportContent"));
         }
     }
 
@@ -408,12 +419,21 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -443,15 +463,7 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -627,6 +639,65 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeAwrHubSourceCompartmentRequest, ChangeAwrHubSourceCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeChargebackPlanCompartmentResponse>
+            changeChargebackPlanCompartment(
+                    ChangeChargebackPlanCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeChargebackPlanCompartmentRequest,
+                                    ChangeChargebackPlanCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeChargebackPlanCompartment");
+        final ChangeChargebackPlanCompartmentRequest interceptedRequest =
+                ChangeChargebackPlanCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeChargebackPlanCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ChangeChargebackPlanCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ChargebackPlan/ChangeChargebackPlanCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeChargebackPlanCompartmentResponse>
+                transformer =
+                        ChangeChargebackPlanCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeChargebackPlanCompartmentRequest,
+                        ChangeChargebackPlanCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeChargebackPlanCompartmentRequest,
+                                ChangeChargebackPlanCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeChargebackPlanCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeChargebackPlanCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeChargebackPlanCompartmentRequest,
+                    ChangeChargebackPlanCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -926,6 +997,70 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeHostInsightCompartmentRequest, ChangeHostInsightCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse>
+            changeMacsManagedAutonomousDatabaseInsightConnection(
+                    ChangeMacsManagedAutonomousDatabaseInsightConnectionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMacsManagedAutonomousDatabaseInsightConnectionRequest,
+                                    ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse>
+                            handler) {
+        LOG.trace("Called async changeMacsManagedAutonomousDatabaseInsightConnection");
+        final ChangeMacsManagedAutonomousDatabaseInsightConnectionRequest interceptedRequest =
+                ChangeMacsManagedAutonomousDatabaseInsightConnectionConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMacsManagedAutonomousDatabaseInsightConnectionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ChangeMacsManagedAutonomousDatabaseInsightConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeMacsManagedAutonomousDatabaseInsightConnection");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse>
+                transformer =
+                        ChangeMacsManagedAutonomousDatabaseInsightConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMacsManagedAutonomousDatabaseInsightConnectionRequest,
+                        ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMacsManagedAutonomousDatabaseInsightConnectionRequest,
+                                ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse>,
+                        java.util.concurrent.Future<
+                                ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeMacsManagedAutonomousDatabaseInsightConnectionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMacsManagedAutonomousDatabaseInsightConnectionRequest,
+                    ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1393,6 +1528,116 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateAwrHubSourceRequest, CreateAwrHubSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChargebackPlanResponse> createChargebackPlan(
+            CreateChargebackPlanRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateChargebackPlanRequest, CreateChargebackPlanResponse>
+                    handler) {
+        LOG.trace("Called async createChargebackPlan");
+        final CreateChargebackPlanRequest interceptedRequest =
+                CreateChargebackPlanConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateChargebackPlanConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "CreateChargebackPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ChargebackPlan/CreateChargebackPlan");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateChargebackPlanResponse>
+                transformer =
+                        CreateChargebackPlanConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateChargebackPlanRequest, CreateChargebackPlanResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateChargebackPlanRequest, CreateChargebackPlanResponse>,
+                        java.util.concurrent.Future<CreateChargebackPlanResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateChargebackPlanDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateChargebackPlanRequest, CreateChargebackPlanResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChargebackPlanReportResponse>
+            createChargebackPlanReport(
+                    CreateChargebackPlanReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateChargebackPlanReportRequest,
+                                    CreateChargebackPlanReportResponse>
+                            handler) {
+        LOG.trace("Called async createChargebackPlanReport");
+        final CreateChargebackPlanReportRequest interceptedRequest =
+                CreateChargebackPlanReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateChargebackPlanReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "CreateChargebackPlanReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ChargebackPlan/CreateChargebackPlanReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateChargebackPlanReportResponse>
+                transformer =
+                        CreateChargebackPlanReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateChargebackPlanReportRequest, CreateChargebackPlanReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateChargebackPlanReportRequest,
+                                CreateChargebackPlanReportResponse>,
+                        java.util.concurrent.Future<CreateChargebackPlanReportResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateChargebackPlanReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateChargebackPlanReportRequest, CreateChargebackPlanReportResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2032,6 +2277,104 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteAwrHubSourceRequest, DeleteAwrHubSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChargebackPlanResponse> deleteChargebackPlan(
+            DeleteChargebackPlanRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteChargebackPlanRequest, DeleteChargebackPlanResponse>
+                    handler) {
+        LOG.trace("Called async deleteChargebackPlan");
+        final DeleteChargebackPlanRequest interceptedRequest =
+                DeleteChargebackPlanConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteChargebackPlanConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "DeleteChargebackPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ChargebackPlan/DeleteChargebackPlan");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteChargebackPlanResponse>
+                transformer =
+                        DeleteChargebackPlanConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteChargebackPlanRequest, DeleteChargebackPlanResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteChargebackPlanRequest, DeleteChargebackPlanResponse>,
+                        java.util.concurrent.Future<DeleteChargebackPlanResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteChargebackPlanRequest, DeleteChargebackPlanResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChargebackPlanReportResponse>
+            deleteChargebackPlanReport(
+                    DeleteChargebackPlanReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteChargebackPlanReportRequest,
+                                    DeleteChargebackPlanReportResponse>
+                            handler) {
+        LOG.trace("Called async deleteChargebackPlanReport");
+        final DeleteChargebackPlanReportRequest interceptedRequest =
+                DeleteChargebackPlanReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteChargebackPlanReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "DeleteChargebackPlanReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ChargebackPlan/DeleteChargebackPlanReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteChargebackPlanReportResponse>
+                transformer =
+                        DeleteChargebackPlanReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteChargebackPlanReportRequest, DeleteChargebackPlanReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteChargebackPlanReportRequest,
+                                DeleteChargebackPlanReportResponse>,
+                        java.util.concurrent.Future<DeleteChargebackPlanReportResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteChargebackPlanReportRequest, DeleteChargebackPlanReportResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2740,6 +3083,56 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisablePlanExadataInsightResponse> disablePlanExadataInsight(
+            DisablePlanExadataInsightRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisablePlanExadataInsightRequest, DisablePlanExadataInsightResponse>
+                    handler) {
+        LOG.trace("Called async disablePlanExadataInsight");
+        final DisablePlanExadataInsightRequest interceptedRequest =
+                DisablePlanExadataInsightConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisablePlanExadataInsightConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "DisablePlanExadataInsight",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/DisablePlanExadataInsight");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DisablePlanExadataInsightResponse>
+                transformer =
+                        DisablePlanExadataInsightConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisablePlanExadataInsightRequest, DisablePlanExadataInsightResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisablePlanExadataInsightRequest,
+                                DisablePlanExadataInsightResponse>,
+                        java.util.concurrent.Future<DisablePlanExadataInsightResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisablePlanExadataInsightRequest, DisablePlanExadataInsightResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DownloadOperationsInsightsWarehouseWalletResponse>
             downloadOperationsInsightsWarehouseWallet(
                     DownloadOperationsInsightsWarehouseWalletRequest request,
@@ -3071,6 +3464,60 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<EnablePlanExadataInsightResponse> enablePlanExadataInsight(
+            EnablePlanExadataInsightRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EnablePlanExadataInsightRequest, EnablePlanExadataInsightResponse>
+                    handler) {
+        LOG.trace("Called async enablePlanExadataInsight");
+        final EnablePlanExadataInsightRequest interceptedRequest =
+                EnablePlanExadataInsightConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnablePlanExadataInsightConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "EnablePlanExadataInsight",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/EnablePlanExadataInsight");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, EnablePlanExadataInsightResponse>
+                transformer =
+                        EnablePlanExadataInsightConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnablePlanExadataInsightRequest, EnablePlanExadataInsightResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnablePlanExadataInsightRequest, EnablePlanExadataInsightResponse>,
+                        java.util.concurrent.Future<EnablePlanExadataInsightResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnablePlanExadataInsightDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnablePlanExadataInsightRequest, EnablePlanExadataInsightResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAwrDatabaseReportResponse> getAwrDatabaseReport(
             GetAwrDatabaseReportRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3331,6 +3778,152 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetAwrReportRequest, GetAwrReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetChargebackPlanResponse> getChargebackPlan(
+            GetChargebackPlanRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetChargebackPlanRequest, GetChargebackPlanResponse>
+                    handler) {
+        LOG.trace("Called async getChargebackPlan");
+        final GetChargebackPlanRequest interceptedRequest =
+                GetChargebackPlanConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetChargebackPlanConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "GetChargebackPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ChargebackPlan/GetChargebackPlan");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetChargebackPlanResponse>
+                transformer =
+                        GetChargebackPlanConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetChargebackPlanRequest, GetChargebackPlanResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetChargebackPlanRequest, GetChargebackPlanResponse>,
+                        java.util.concurrent.Future<GetChargebackPlanResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetChargebackPlanRequest, GetChargebackPlanResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetChargebackPlanReportResponse> getChargebackPlanReport(
+            GetChargebackPlanReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetChargebackPlanReportRequest, GetChargebackPlanReportResponse>
+                    handler) {
+        LOG.trace("Called async getChargebackPlanReport");
+        final GetChargebackPlanReportRequest interceptedRequest =
+                GetChargebackPlanReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetChargebackPlanReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "GetChargebackPlanReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ChargebackPlan/GetChargebackPlanReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetChargebackPlanReportResponse>
+                transformer =
+                        GetChargebackPlanReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetChargebackPlanReportRequest, GetChargebackPlanReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetChargebackPlanReportRequest, GetChargebackPlanReportResponse>,
+                        java.util.concurrent.Future<GetChargebackPlanReportResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetChargebackPlanReportRequest, GetChargebackPlanReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetChargebackPlanReportContentResponse>
+            getChargebackPlanReportContent(
+                    GetChargebackPlanReportContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetChargebackPlanReportContentRequest,
+                                    GetChargebackPlanReportContentResponse>
+                            handler) {
+        LOG.trace("Called async getChargebackPlanReportContent");
+        final GetChargebackPlanReportContentRequest interceptedRequest =
+                GetChargebackPlanReportContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetChargebackPlanReportContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "GetChargebackPlanReportContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ChargebackPlan/GetChargebackPlanReportContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetChargebackPlanReportContentResponse>
+                transformer =
+                        GetChargebackPlanReportContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetChargebackPlanReportContentRequest,
+                        GetChargebackPlanReportContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetChargebackPlanReportContentRequest,
+                                GetChargebackPlanReportContentResponse>,
+                        java.util.concurrent.Future<GetChargebackPlanReportContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetChargebackPlanReportContentRequest, GetChargebackPlanReportContentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5024,6 +5617,102 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListChargebackPlanReportsResponse> listChargebackPlanReports(
+            ListChargebackPlanReportsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListChargebackPlanReportsRequest, ListChargebackPlanReportsResponse>
+                    handler) {
+        LOG.trace("Called async listChargebackPlanReports");
+        final ListChargebackPlanReportsRequest interceptedRequest =
+                ListChargebackPlanReportsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListChargebackPlanReportsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ListChargebackPlanReports",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ChargebackPlan/ListChargebackPlanReports");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListChargebackPlanReportsResponse>
+                transformer =
+                        ListChargebackPlanReportsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListChargebackPlanReportsRequest, ListChargebackPlanReportsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListChargebackPlanReportsRequest,
+                                ListChargebackPlanReportsResponse>,
+                        java.util.concurrent.Future<ListChargebackPlanReportsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListChargebackPlanReportsRequest, ListChargebackPlanReportsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChargebackPlansResponse> listChargebackPlans(
+            ListChargebackPlansRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListChargebackPlansRequest, ListChargebackPlansResponse>
+                    handler) {
+        LOG.trace("Called async listChargebackPlans");
+        final ListChargebackPlansRequest interceptedRequest =
+                ListChargebackPlansConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListChargebackPlansConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ListChargebackPlans",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ChargebackPlan/ListChargebackPlans");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListChargebackPlansResponse>
+                transformer =
+                        ListChargebackPlansConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListChargebackPlansRequest, ListChargebackPlansResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListChargebackPlansRequest, ListChargebackPlansResponse>,
+                        java.util.concurrent.Future<ListChargebackPlansResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListChargebackPlansRequest, ListChargebackPlansResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDatabaseConfigurationsResponse>
             listDatabaseConfigurations(
                     ListDatabaseConfigurationsRequest request,
@@ -5580,7 +6269,7 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                         "OperationsInsights",
                         "ListNewsReports",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReport/ListNewsReports");
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/ListNewsReports");
         final java.util.function.Function<javax.ws.rs.core.Response, ListNewsReportsResponse>
                 transformer =
                         ListNewsReportsConverter.fromResponse(
@@ -9253,6 +9942,131 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SynchronizeAutonomousDatabaseToExadataResponse>
+            synchronizeAutonomousDatabaseToExadata(
+                    SynchronizeAutonomousDatabaseToExadataRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SynchronizeAutonomousDatabaseToExadataRequest,
+                                    SynchronizeAutonomousDatabaseToExadataResponse>
+                            handler) {
+        LOG.trace("Called async synchronizeAutonomousDatabaseToExadata");
+        final SynchronizeAutonomousDatabaseToExadataRequest interceptedRequest =
+                SynchronizeAutonomousDatabaseToExadataConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SynchronizeAutonomousDatabaseToExadataConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SynchronizeAutonomousDatabaseToExadata",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SynchronizeAutonomousDatabaseToExadata");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SynchronizeAutonomousDatabaseToExadataResponse>
+                transformer =
+                        SynchronizeAutonomousDatabaseToExadataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SynchronizeAutonomousDatabaseToExadataRequest,
+                        SynchronizeAutonomousDatabaseToExadataResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SynchronizeAutonomousDatabaseToExadataRequest,
+                                SynchronizeAutonomousDatabaseToExadataResponse>,
+                        java.util.concurrent.Future<SynchronizeAutonomousDatabaseToExadataResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getSynchronizeAutonomousDatabaseToExadataDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SynchronizeAutonomousDatabaseToExadataRequest,
+                    SynchronizeAutonomousDatabaseToExadataResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestMacsManagedAutonomousDatabaseInsightConnectionResponse>
+            testMacsManagedAutonomousDatabaseInsightConnection(
+                    TestMacsManagedAutonomousDatabaseInsightConnectionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    TestMacsManagedAutonomousDatabaseInsightConnectionRequest,
+                                    TestMacsManagedAutonomousDatabaseInsightConnectionResponse>
+                            handler) {
+        LOG.trace("Called async testMacsManagedAutonomousDatabaseInsightConnection");
+        final TestMacsManagedAutonomousDatabaseInsightConnectionRequest interceptedRequest =
+                TestMacsManagedAutonomousDatabaseInsightConnectionConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TestMacsManagedAutonomousDatabaseInsightConnectionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "TestMacsManagedAutonomousDatabaseInsightConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/TestMacsManagedAutonomousDatabaseInsightConnection");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        TestMacsManagedAutonomousDatabaseInsightConnectionResponse>
+                transformer =
+                        TestMacsManagedAutonomousDatabaseInsightConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        TestMacsManagedAutonomousDatabaseInsightConnectionRequest,
+                        TestMacsManagedAutonomousDatabaseInsightConnectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                TestMacsManagedAutonomousDatabaseInsightConnectionRequest,
+                                TestMacsManagedAutonomousDatabaseInsightConnectionResponse>,
+                        java.util.concurrent.Future<
+                                TestMacsManagedAutonomousDatabaseInsightConnectionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getTestMacsManagedAutonomousDatabaseInsightConnectionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    TestMacsManagedAutonomousDatabaseInsightConnectionRequest,
+                    TestMacsManagedAutonomousDatabaseInsightConnectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<TestMacsManagedCloudDatabaseInsightConnectionResponse>
             testMacsManagedCloudDatabaseInsightConnection(
                     TestMacsManagedCloudDatabaseInsightConnectionRequest request,
@@ -9403,6 +10217,114 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateAwrHubSourceRequest, UpdateAwrHubSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateChargebackPlanResponse> updateChargebackPlan(
+            UpdateChargebackPlanRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateChargebackPlanRequest, UpdateChargebackPlanResponse>
+                    handler) {
+        LOG.trace("Called async updateChargebackPlan");
+        final UpdateChargebackPlanRequest interceptedRequest =
+                UpdateChargebackPlanConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateChargebackPlanConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "UpdateChargebackPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ChargebackPlan/UpdateChargebackPlan");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateChargebackPlanResponse>
+                transformer =
+                        UpdateChargebackPlanConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateChargebackPlanRequest, UpdateChargebackPlanResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateChargebackPlanRequest, UpdateChargebackPlanResponse>,
+                        java.util.concurrent.Future<UpdateChargebackPlanResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateChargebackPlanDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateChargebackPlanRequest, UpdateChargebackPlanResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateChargebackPlanReportResponse>
+            updateChargebackPlanReport(
+                    UpdateChargebackPlanReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateChargebackPlanReportRequest,
+                                    UpdateChargebackPlanReportResponse>
+                            handler) {
+        LOG.trace("Called async updateChargebackPlanReport");
+        final UpdateChargebackPlanReportRequest interceptedRequest =
+                UpdateChargebackPlanReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateChargebackPlanReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "UpdateChargebackPlanReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ChargebackPlan/UpdateChargebackPlanReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateChargebackPlanReportResponse>
+                transformer =
+                        UpdateChargebackPlanReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateChargebackPlanReportRequest, UpdateChargebackPlanReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateChargebackPlanReportRequest,
+                                UpdateChargebackPlanReportResponse>,
+                        java.util.concurrent.Future<UpdateChargebackPlanReportResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateChargebackPlanReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateChargebackPlanReportRequest, UpdateChargebackPlanReportResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

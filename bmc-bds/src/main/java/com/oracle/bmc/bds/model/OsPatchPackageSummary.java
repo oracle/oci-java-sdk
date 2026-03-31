@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -22,17 +22,25 @@ package com.oracle.bmc.bds.model;
 public final class OsPatchPackageSummary
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"packageName", "targetVersion", "updateType", "relatedCVEs"})
+    @java.beans.ConstructorProperties({
+        "packageName",
+        "targetVersion",
+        "updateType",
+        "relatedCVEs",
+        "packageType"
+    })
     public OsPatchPackageSummary(
             String packageName,
             String targetVersion,
             UpdateType updateType,
-            java.util.List<String> relatedCVEs) {
+            java.util.List<String> relatedCVEs,
+            PackageType packageType) {
         super();
         this.packageName = packageName;
         this.targetVersion = targetVersion;
         this.updateType = updateType;
         this.relatedCVEs = relatedCVEs;
+        this.packageType = packageType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -101,6 +109,22 @@ public final class OsPatchPackageSummary
             this.__explicitlySet__.add("relatedCVEs");
             return this;
         }
+        /**
+         * Package type based on package installation manager.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("packageType")
+        private PackageType packageType;
+
+        /**
+         * Package type based on package installation manager.
+         * @param packageType the value to set
+         * @return this builder
+         **/
+        public Builder packageType(PackageType packageType) {
+            this.packageType = packageType;
+            this.__explicitlySet__.add("packageType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -111,7 +135,8 @@ public final class OsPatchPackageSummary
                             this.packageName,
                             this.targetVersion,
                             this.updateType,
-                            this.relatedCVEs);
+                            this.relatedCVEs,
+                            this.packageType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -131,6 +156,9 @@ public final class OsPatchPackageSummary
             }
             if (model.wasPropertyExplicitlySet("relatedCVEs")) {
                 this.relatedCVEs(model.getRelatedCVEs());
+            }
+            if (model.wasPropertyExplicitlySet("packageType")) {
+                this.packageType(model.getPackageType());
             }
             return this;
         }
@@ -252,6 +280,70 @@ public final class OsPatchPackageSummary
         return relatedCVEs;
     }
 
+    /**
+     * Package type based on package installation manager.
+     **/
+    public enum PackageType {
+        Rpm("RPM"),
+        Pip("PIP"),
+        Pip3("PIP3"),
+        Pip38("PIP3_8"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PackageType.class);
+
+        private final String value;
+        private static java.util.Map<String, PackageType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PackageType v : PackageType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PackageType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PackageType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PackageType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Package type based on package installation manager.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("packageType")
+    private final PackageType packageType;
+
+    /**
+     * Package type based on package installation manager.
+     * @return the value
+     **/
+    public PackageType getPackageType() {
+        return packageType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -270,6 +362,7 @@ public final class OsPatchPackageSummary
         sb.append(", targetVersion=").append(String.valueOf(this.targetVersion));
         sb.append(", updateType=").append(String.valueOf(this.updateType));
         sb.append(", relatedCVEs=").append(String.valueOf(this.relatedCVEs));
+        sb.append(", packageType=").append(String.valueOf(this.packageType));
         sb.append(")");
         return sb.toString();
     }
@@ -288,6 +381,7 @@ public final class OsPatchPackageSummary
                 && java.util.Objects.equals(this.targetVersion, other.targetVersion)
                 && java.util.Objects.equals(this.updateType, other.updateType)
                 && java.util.Objects.equals(this.relatedCVEs, other.relatedCVEs)
+                && java.util.Objects.equals(this.packageType, other.packageType)
                 && super.equals(other);
     }
 
@@ -301,6 +395,7 @@ public final class OsPatchPackageSummary
                         + (this.targetVersion == null ? 43 : this.targetVersion.hashCode());
         result = (result * PRIME) + (this.updateType == null ? 43 : this.updateType.hashCode());
         result = (result * PRIME) + (this.relatedCVEs == null ? 43 : this.relatedCVEs.hashCode());
+        result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

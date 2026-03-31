@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -12,30 +12,17 @@ import com.oracle.bmc.loganalytics.model.*;
 public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     private String namespaceName;
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     public String getNamespaceName() {
         return namespaceName;
-    }
-    /**
-     * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
-     *
-     */
-    private String uploadName;
-
-    /**
-     * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
-     *
-     */
-    public String getUploadName() {
-        return uploadName;
     }
     /**
      * Name of the log source that will be used to process the files being uploaded.
@@ -86,6 +73,19 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     public java.io.InputStream getUploadLogFileBody() {
         return uploadLogFileBody;
+    }
+    /**
+     * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
+     *
+     */
+    private String uploadName;
+
+    /**
+     * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
+     *
+     */
+    public String getUploadName() {
+        return uploadName;
     }
     /**
      * The entity OCID.
@@ -177,7 +177,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return opcRequestId;
     }
     /**
-     * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging Analytics performs an integrity check
+     * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Log Analytics performs an integrity check
      * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
      * If the two hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
      * <p>
@@ -187,7 +187,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
     private String contentMd5;
 
     /**
-     * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging Analytics performs an integrity check
+     * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Log Analytics performs an integrity check
      * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
      * If the two hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
      * <p>
@@ -283,36 +283,19 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          */
         private String namespaceName = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
-            return this;
-        }
-
-        /**
-         * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
-         *
-         */
-        private String uploadName = null;
-
-        /**
-         * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
-         *
-         * @param uploadName the value to set
-         * @return this builder instance
-         */
-        public Builder uploadName(String uploadName) {
-            this.uploadName = uploadName;
             return this;
         }
 
@@ -379,6 +362,23 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
          */
         public Builder uploadLogFileBody(java.io.InputStream uploadLogFileBody) {
             this.uploadLogFileBody = uploadLogFileBody;
+            return this;
+        }
+
+        /**
+         * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
+         *
+         */
+        private String uploadName = null;
+
+        /**
+         * The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
+         *
+         * @param uploadName the value to set
+         * @return this builder instance
+         */
+        public Builder uploadName(String uploadName) {
+            this.uploadName = uploadName;
             return this;
         }
 
@@ -500,7 +500,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging Analytics performs an integrity check
+         * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Log Analytics performs an integrity check
          * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
          * If the two hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
          * <p>
@@ -510,7 +510,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private String contentMd5 = null;
 
         /**
-         * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging Analytics performs an integrity check
+         * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Log Analytics performs an integrity check
          * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
          * If the two hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
          * <p>
@@ -631,11 +631,11 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
          */
         public Builder copy(UploadLogFileRequest o) {
             namespaceName(o.getNamespaceName());
-            uploadName(o.getUploadName());
             logSourceName(o.getLogSourceName());
             filename(o.getFilename());
             opcMetaLoggrpid(o.getOpcMetaLoggrpid());
             uploadLogFileBody(o.getUploadLogFileBody());
+            uploadName(o.getUploadName());
             entityId(o.getEntityId());
             timezone(o.getTimezone());
             charEncoding(o.getCharEncoding());
@@ -692,11 +692,11 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         public UploadLogFileRequest buildWithoutInvocationCallback() {
             UploadLogFileRequest request = new UploadLogFileRequest();
             request.namespaceName = namespaceName;
-            request.uploadName = uploadName;
             request.logSourceName = logSourceName;
             request.filename = filename;
             request.opcMetaLoggrpid = opcMetaLoggrpid;
             request.uploadLogFileBody = uploadLogFileBody;
+            request.uploadName = uploadName;
             request.entityId = entityId;
             request.timezone = timezone;
             request.charEncoding = charEncoding;
@@ -710,7 +710,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.logSet = logSet;
             request.expect = expect;
             return request;
-            // new UploadLogFileRequest(namespaceName, uploadName, logSourceName, filename, opcMetaLoggrpid, uploadLogFileBody, entityId, timezone, charEncoding, dateFormat, dateYear, invalidateCache, opcRequestId, contentMd5, contentType, opcRetryToken, logSet, expect);
+            // new UploadLogFileRequest(namespaceName, logSourceName, filename, opcMetaLoggrpid, uploadLogFileBody, uploadName, entityId, timezone, charEncoding, dateFormat, dateYear, invalidateCache, opcRequestId, contentMd5, contentType, opcRetryToken, logSet, expect);
         }
     }
 
@@ -721,11 +721,11 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public Builder toBuilder() {
         return new Builder()
                 .namespaceName(namespaceName)
-                .uploadName(uploadName)
                 .logSourceName(logSourceName)
                 .filename(filename)
                 .opcMetaLoggrpid(opcMetaLoggrpid)
                 .uploadLogFileBody(uploadLogFileBody)
+                .uploadName(uploadName)
                 .entityId(entityId)
                 .timezone(timezone)
                 .charEncoding(charEncoding)
@@ -754,11 +754,11 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
-        sb.append(",uploadName=").append(String.valueOf(this.uploadName));
         sb.append(",logSourceName=").append(String.valueOf(this.logSourceName));
         sb.append(",filename=").append(String.valueOf(this.filename));
         sb.append(",opcMetaLoggrpid=").append(String.valueOf(this.opcMetaLoggrpid));
         sb.append(",uploadLogFileBody=").append(String.valueOf(this.uploadLogFileBody));
+        sb.append(",uploadName=").append(String.valueOf(this.uploadName));
         sb.append(",entityId=").append(String.valueOf(this.entityId));
         sb.append(",timezone=").append(String.valueOf(this.timezone));
         sb.append(",charEncoding=").append(String.valueOf(this.charEncoding));
@@ -787,11 +787,11 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         UploadLogFileRequest other = (UploadLogFileRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.namespaceName, other.namespaceName)
-                && java.util.Objects.equals(this.uploadName, other.uploadName)
                 && java.util.Objects.equals(this.logSourceName, other.logSourceName)
                 && java.util.Objects.equals(this.filename, other.filename)
                 && java.util.Objects.equals(this.opcMetaLoggrpid, other.opcMetaLoggrpid)
                 && java.util.Objects.equals(this.uploadLogFileBody, other.uploadLogFileBody)
+                && java.util.Objects.equals(this.uploadName, other.uploadName)
                 && java.util.Objects.equals(this.entityId, other.entityId)
                 && java.util.Objects.equals(this.timezone, other.timezone)
                 && java.util.Objects.equals(this.charEncoding, other.charEncoding)
@@ -813,7 +813,6 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result =
                 (result * PRIME)
                         + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
-        result = (result * PRIME) + (this.uploadName == null ? 43 : this.uploadName.hashCode());
         result =
                 (result * PRIME)
                         + (this.logSourceName == null ? 43 : this.logSourceName.hashCode());
@@ -824,6 +823,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result =
                 (result * PRIME)
                         + (this.uploadLogFileBody == null ? 43 : this.uploadLogFileBody.hashCode());
+        result = (result * PRIME) + (this.uploadName == null ? 43 : this.uploadName.hashCode());
         result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
         result = (result * PRIME) + (this.timezone == null ? 43 : this.timezone.hashCode());
         result = (result * PRIME) + (this.charEncoding == null ? 43 : this.charEncoding.hashCode());

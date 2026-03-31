@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aivision;
@@ -7,6 +7,8 @@ package com.oracle.bmc.aivision;
 import com.oracle.bmc.aivision.internal.http.*;
 import com.oracle.bmc.aivision.requests.*;
 import com.oracle.bmc.aivision.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for AIServiceVision service. <br/>
@@ -28,7 +30,7 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("AISERVICEVISION")
+                    .serviceName(AIServiceVisionClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://vision.aiservice.{region}.oci.{secondLevelDomain}")
@@ -51,6 +53,10 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -262,6 +268,11 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -402,12 +413,21 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -437,15 +457,7 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -847,6 +859,238 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeStreamGroupCompartmentResponse>
+            changeStreamGroupCompartment(
+                    ChangeStreamGroupCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeStreamGroupCompartmentRequest,
+                                    ChangeStreamGroupCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeStreamGroupCompartment");
+        final ChangeStreamGroupCompartmentRequest interceptedRequest =
+                ChangeStreamGroupCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeStreamGroupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "ChangeStreamGroupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamGroup/ChangeStreamGroupCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeStreamGroupCompartmentResponse>
+                transformer =
+                        ChangeStreamGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeStreamGroupCompartmentRequest, ChangeStreamGroupCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeStreamGroupCompartmentRequest,
+                                ChangeStreamGroupCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeStreamGroupCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeStreamGroupCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeStreamGroupCompartmentRequest, ChangeStreamGroupCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeStreamJobCompartmentResponse>
+            changeStreamJobCompartment(
+                    ChangeStreamJobCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeStreamJobCompartmentRequest,
+                                    ChangeStreamJobCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeStreamJobCompartment");
+        final ChangeStreamJobCompartmentRequest interceptedRequest =
+                ChangeStreamJobCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeStreamJobCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "ChangeStreamJobCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/ChangeStreamJobCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeStreamJobCompartmentResponse>
+                transformer =
+                        ChangeStreamJobCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeStreamJobCompartmentRequest, ChangeStreamJobCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeStreamJobCompartmentRequest,
+                                ChangeStreamJobCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeStreamJobCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeStreamJobCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeStreamJobCompartmentRequest, ChangeStreamJobCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeStreamSourceCompartmentResponse>
+            changeStreamSourceCompartment(
+                    ChangeStreamSourceCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeStreamSourceCompartmentRequest,
+                                    ChangeStreamSourceCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeStreamSourceCompartment");
+        final ChangeStreamSourceCompartmentRequest interceptedRequest =
+                ChangeStreamSourceCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeStreamSourceCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "ChangeStreamSourceCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamSource/ChangeStreamSourceCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeStreamSourceCompartmentResponse>
+                transformer =
+                        ChangeStreamSourceCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeStreamSourceCompartmentRequest, ChangeStreamSourceCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeStreamSourceCompartmentRequest,
+                                ChangeStreamSourceCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeStreamSourceCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeStreamSourceCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeStreamSourceCompartmentRequest, ChangeStreamSourceCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeVisionPrivateEndpointCompartmentResponse>
+            changeVisionPrivateEndpointCompartment(
+                    ChangeVisionPrivateEndpointCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeVisionPrivateEndpointCompartmentRequest,
+                                    ChangeVisionPrivateEndpointCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeVisionPrivateEndpointCompartment");
+        final ChangeVisionPrivateEndpointCompartmentRequest interceptedRequest =
+                ChangeVisionPrivateEndpointCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeVisionPrivateEndpointCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "ChangeVisionPrivateEndpointCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VisionPrivateEndpoint/ChangeVisionPrivateEndpointCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeVisionPrivateEndpointCompartmentResponse>
+                transformer =
+                        ChangeVisionPrivateEndpointCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeVisionPrivateEndpointCompartmentRequest,
+                        ChangeVisionPrivateEndpointCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeVisionPrivateEndpointCompartmentRequest,
+                                ChangeVisionPrivateEndpointCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeVisionPrivateEndpointCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeVisionPrivateEndpointCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeVisionPrivateEndpointCompartmentRequest,
+                    ChangeVisionPrivateEndpointCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDocumentJobResponse> createDocumentJob(
             CreateDocumentJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1044,6 +1288,162 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateStreamGroupResponse> createStreamGroup(
+            CreateStreamGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateStreamGroupRequest, CreateStreamGroupResponse>
+                    handler) {
+        LOG.trace("Called async createStreamGroup");
+        final CreateStreamGroupRequest interceptedRequest =
+                CreateStreamGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateStreamGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "CreateStreamGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamGroup/CreateStreamGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateStreamGroupResponse>
+                transformer =
+                        CreateStreamGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateStreamGroupRequest, CreateStreamGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateStreamGroupRequest, CreateStreamGroupResponse>,
+                        java.util.concurrent.Future<CreateStreamGroupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateStreamGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateStreamGroupRequest, CreateStreamGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStreamJobResponse> createStreamJob(
+            CreateStreamJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateStreamJobRequest, CreateStreamJobResponse>
+                    handler) {
+        LOG.trace("Called async createStreamJob");
+        final CreateStreamJobRequest interceptedRequest =
+                CreateStreamJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateStreamJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "CreateStreamJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/CreateStreamJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateStreamJobResponse>
+                transformer =
+                        CreateStreamJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateStreamJobRequest, CreateStreamJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateStreamJobRequest, CreateStreamJobResponse>,
+                        java.util.concurrent.Future<CreateStreamJobResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateStreamJobDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateStreamJobRequest, CreateStreamJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStreamSourceResponse> createStreamSource(
+            CreateStreamSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateStreamSourceRequest, CreateStreamSourceResponse>
+                    handler) {
+        LOG.trace("Called async createStreamSource");
+        final CreateStreamSourceRequest interceptedRequest =
+                CreateStreamSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateStreamSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "CreateStreamSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamSource/CreateStreamSource");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateStreamSourceResponse>
+                transformer =
+                        CreateStreamSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateStreamSourceRequest, CreateStreamSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateStreamSourceRequest, CreateStreamSourceResponse>,
+                        java.util.concurrent.Future<CreateStreamSourceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateStreamSourceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateStreamSourceRequest, CreateStreamSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateVideoJobResponse> createVideoJob(
             CreateVideoJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1082,6 +1482,63 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateVideoJobRequest, CreateVideoJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVisionPrivateEndpointResponse>
+            createVisionPrivateEndpoint(
+                    CreateVisionPrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateVisionPrivateEndpointRequest,
+                                    CreateVisionPrivateEndpointResponse>
+                            handler) {
+        LOG.trace("Called async createVisionPrivateEndpoint");
+        final CreateVisionPrivateEndpointRequest interceptedRequest =
+                CreateVisionPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVisionPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "CreateVisionPrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateVisionPrivateEndpointResponse>
+                transformer =
+                        CreateVisionPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateVisionPrivateEndpointRequest, CreateVisionPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateVisionPrivateEndpointRequest,
+                                CreateVisionPrivateEndpointResponse>,
+                        java.util.concurrent.Future<CreateVisionPrivateEndpointResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVisionPrivateEndpointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateVisionPrivateEndpointRequest, CreateVisionPrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1170,6 +1627,195 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteProjectRequest, DeleteProjectResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStreamGroupResponse> deleteStreamGroup(
+            DeleteStreamGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteStreamGroupRequest, DeleteStreamGroupResponse>
+                    handler) {
+        LOG.trace("Called async deleteStreamGroup");
+        final DeleteStreamGroupRequest interceptedRequest =
+                DeleteStreamGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteStreamGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "DeleteStreamGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamGroup/DeleteStreamGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteStreamGroupResponse>
+                transformer =
+                        DeleteStreamGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteStreamGroupRequest, DeleteStreamGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteStreamGroupRequest, DeleteStreamGroupResponse>,
+                        java.util.concurrent.Future<DeleteStreamGroupResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteStreamGroupRequest, DeleteStreamGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStreamJobResponse> deleteStreamJob(
+            DeleteStreamJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteStreamJobRequest, DeleteStreamJobResponse>
+                    handler) {
+        LOG.trace("Called async deleteStreamJob");
+        final DeleteStreamJobRequest interceptedRequest =
+                DeleteStreamJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteStreamJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "DeleteStreamJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/DeleteStreamJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteStreamJobResponse>
+                transformer =
+                        DeleteStreamJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteStreamJobRequest, DeleteStreamJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteStreamJobRequest, DeleteStreamJobResponse>,
+                        java.util.concurrent.Future<DeleteStreamJobResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteStreamJobRequest, DeleteStreamJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStreamSourceResponse> deleteStreamSource(
+            DeleteStreamSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteStreamSourceRequest, DeleteStreamSourceResponse>
+                    handler) {
+        LOG.trace("Called async deleteStreamSource");
+        final DeleteStreamSourceRequest interceptedRequest =
+                DeleteStreamSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteStreamSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "DeleteStreamSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamSource/DeleteStreamSource");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteStreamSourceResponse>
+                transformer =
+                        DeleteStreamSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteStreamSourceRequest, DeleteStreamSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteStreamSourceRequest, DeleteStreamSourceResponse>,
+                        java.util.concurrent.Future<DeleteStreamSourceResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteStreamSourceRequest, DeleteStreamSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVisionPrivateEndpointResponse>
+            deleteVisionPrivateEndpoint(
+                    DeleteVisionPrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteVisionPrivateEndpointRequest,
+                                    DeleteVisionPrivateEndpointResponse>
+                            handler) {
+        LOG.trace("Called async deleteVisionPrivateEndpoint");
+        final DeleteVisionPrivateEndpointRequest interceptedRequest =
+                DeleteVisionPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVisionPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "DeleteVisionPrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VisionPrivateEndpoint/DeleteVisionPrivateEndpoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteVisionPrivateEndpointResponse>
+                transformer =
+                        DeleteVisionPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteVisionPrivateEndpointRequest, DeleteVisionPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteVisionPrivateEndpointRequest,
+                                DeleteVisionPrivateEndpointResponse>,
+                        java.util.concurrent.Future<DeleteVisionPrivateEndpointResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteVisionPrivateEndpointRequest, DeleteVisionPrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1356,6 +2002,141 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetStreamGroupResponse> getStreamGroup(
+            GetStreamGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetStreamGroupRequest, GetStreamGroupResponse>
+                    handler) {
+        LOG.trace("Called async getStreamGroup");
+        final GetStreamGroupRequest interceptedRequest =
+                GetStreamGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStreamGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "GetStreamGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamGroup/GetStreamGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetStreamGroupResponse>
+                transformer =
+                        GetStreamGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetStreamGroupRequest, GetStreamGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetStreamGroupRequest, GetStreamGroupResponse>,
+                        java.util.concurrent.Future<GetStreamGroupResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetStreamGroupRequest, GetStreamGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStreamJobResponse> getStreamJob(
+            GetStreamJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetStreamJobRequest, GetStreamJobResponse>
+                    handler) {
+        LOG.trace("Called async getStreamJob");
+        final GetStreamJobRequest interceptedRequest =
+                GetStreamJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStreamJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "GetStreamJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/GetStreamJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetStreamJobResponse>
+                transformer =
+                        GetStreamJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetStreamJobRequest, GetStreamJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetStreamJobRequest, GetStreamJobResponse>,
+                        java.util.concurrent.Future<GetStreamJobResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetStreamJobRequest, GetStreamJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStreamSourceResponse> getStreamSource(
+            GetStreamSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetStreamSourceRequest, GetStreamSourceResponse>
+                    handler) {
+        LOG.trace("Called async getStreamSource");
+        final GetStreamSourceRequest interceptedRequest =
+                GetStreamSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStreamSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "GetStreamSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamSource/GetStreamSource");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetStreamSourceResponse>
+                transformer =
+                        GetStreamSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetStreamSourceRequest, GetStreamSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetStreamSourceRequest, GetStreamSourceResponse>,
+                        java.util.concurrent.Future<GetStreamSourceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetStreamSourceRequest, GetStreamSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetVideoJobResponse> getVideoJob(
             GetVideoJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetVideoJobRequest, GetVideoJobResponse>
@@ -1387,6 +2168,54 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetVideoJobRequest, GetVideoJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVisionPrivateEndpointResponse> getVisionPrivateEndpoint(
+            GetVisionPrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetVisionPrivateEndpointRequest, GetVisionPrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async getVisionPrivateEndpoint");
+        final GetVisionPrivateEndpointRequest interceptedRequest =
+                GetVisionPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVisionPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "GetVisionPrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VisionPrivateEndpoint/GetVisionPrivateEndpoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetVisionPrivateEndpointResponse>
+                transformer =
+                        GetVisionPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetVisionPrivateEndpointRequest, GetVisionPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetVisionPrivateEndpointRequest, GetVisionPrivateEndpointResponse>,
+                        java.util.concurrent.Future<GetVisionPrivateEndpointResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetVisionPrivateEndpointRequest, GetVisionPrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1519,6 +2348,194 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListProjectsRequest, ListProjectsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamGroupsResponse> listStreamGroups(
+            ListStreamGroupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListStreamGroupsRequest, ListStreamGroupsResponse>
+                    handler) {
+        LOG.trace("Called async listStreamGroups");
+        final ListStreamGroupsRequest interceptedRequest =
+                ListStreamGroupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStreamGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "ListStreamGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamGroupCollection/ListStreamGroups");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListStreamGroupsResponse>
+                transformer =
+                        ListStreamGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListStreamGroupsRequest, ListStreamGroupsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListStreamGroupsRequest, ListStreamGroupsResponse>,
+                        java.util.concurrent.Future<ListStreamGroupsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListStreamGroupsRequest, ListStreamGroupsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamJobsResponse> listStreamJobs(
+            ListStreamJobsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListStreamJobsRequest, ListStreamJobsResponse>
+                    handler) {
+        LOG.trace("Called async listStreamJobs");
+        final ListStreamJobsRequest interceptedRequest =
+                ListStreamJobsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStreamJobsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "ListStreamJobs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJobCollection/ListStreamJobs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListStreamJobsResponse>
+                transformer =
+                        ListStreamJobsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListStreamJobsRequest, ListStreamJobsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListStreamJobsRequest, ListStreamJobsResponse>,
+                        java.util.concurrent.Future<ListStreamJobsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListStreamJobsRequest, ListStreamJobsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamSourcesResponse> listStreamSources(
+            ListStreamSourcesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListStreamSourcesRequest, ListStreamSourcesResponse>
+                    handler) {
+        LOG.trace("Called async listStreamSources");
+        final ListStreamSourcesRequest interceptedRequest =
+                ListStreamSourcesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStreamSourcesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "ListStreamSources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamSourceCollection/ListStreamSources");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListStreamSourcesResponse>
+                transformer =
+                        ListStreamSourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListStreamSourcesRequest, ListStreamSourcesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListStreamSourcesRequest, ListStreamSourcesResponse>,
+                        java.util.concurrent.Future<ListStreamSourcesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListStreamSourcesRequest, ListStreamSourcesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVisionPrivateEndpointsResponse>
+            listVisionPrivateEndpoints(
+                    ListVisionPrivateEndpointsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListVisionPrivateEndpointsRequest,
+                                    ListVisionPrivateEndpointsResponse>
+                            handler) {
+        LOG.trace("Called async listVisionPrivateEndpoints");
+        final ListVisionPrivateEndpointsRequest interceptedRequest =
+                ListVisionPrivateEndpointsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVisionPrivateEndpointsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "ListVisionPrivateEndpoints",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VisionPrivateEndpointCollection/ListVisionPrivateEndpoints");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListVisionPrivateEndpointsResponse>
+                transformer =
+                        ListVisionPrivateEndpointsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListVisionPrivateEndpointsRequest, ListVisionPrivateEndpointsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListVisionPrivateEndpointsRequest,
+                                ListVisionPrivateEndpointsResponse>,
+                        java.util.concurrent.Future<ListVisionPrivateEndpointsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListVisionPrivateEndpointsRequest, ListVisionPrivateEndpointsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1672,6 +2689,97 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StartStreamJobResponse> startStreamJob(
+            StartStreamJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartStreamJobRequest, StartStreamJobResponse>
+                    handler) {
+        LOG.trace("Called async startStreamJob");
+        final StartStreamJobRequest interceptedRequest =
+                StartStreamJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartStreamJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "StartStreamJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/StartStreamJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, StartStreamJobResponse>
+                transformer =
+                        StartStreamJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StartStreamJobRequest, StartStreamJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartStreamJobRequest, StartStreamJobResponse>,
+                        java.util.concurrent.Future<StartStreamJobResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartStreamJobRequest, StartStreamJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamJobResponse> stopStreamJob(
+            StopStreamJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<StopStreamJobRequest, StopStreamJobResponse>
+                    handler) {
+        LOG.trace("Called async stopStreamJob");
+        final StopStreamJobRequest interceptedRequest =
+                StopStreamJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopStreamJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "StopStreamJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/StopStreamJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, StopStreamJobResponse>
+                transformer =
+                        StopStreamJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StopStreamJobRequest, StopStreamJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StopStreamJobRequest, StopStreamJobResponse>,
+                        java.util.concurrent.Future<StopStreamJobResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StopStreamJobRequest, StopStreamJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateModelResponse> updateModel(
             UpdateModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse>
@@ -1757,6 +2865,215 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateProjectRequest, UpdateProjectResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStreamGroupResponse> updateStreamGroup(
+            UpdateStreamGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateStreamGroupRequest, UpdateStreamGroupResponse>
+                    handler) {
+        LOG.trace("Called async updateStreamGroup");
+        final UpdateStreamGroupRequest interceptedRequest =
+                UpdateStreamGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateStreamGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "UpdateStreamGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamGroup/UpdateStreamGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateStreamGroupResponse>
+                transformer =
+                        UpdateStreamGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateStreamGroupRequest, UpdateStreamGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateStreamGroupRequest, UpdateStreamGroupResponse>,
+                        java.util.concurrent.Future<UpdateStreamGroupResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateStreamGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateStreamGroupRequest, UpdateStreamGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStreamJobResponse> updateStreamJob(
+            UpdateStreamJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateStreamJobRequest, UpdateStreamJobResponse>
+                    handler) {
+        LOG.trace("Called async updateStreamJob");
+        final UpdateStreamJobRequest interceptedRequest =
+                UpdateStreamJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateStreamJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "UpdateStreamJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamJob/UpdateStreamJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateStreamJobResponse>
+                transformer =
+                        UpdateStreamJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateStreamJobRequest, UpdateStreamJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateStreamJobRequest, UpdateStreamJobResponse>,
+                        java.util.concurrent.Future<UpdateStreamJobResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateStreamJobDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateStreamJobRequest, UpdateStreamJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStreamSourceResponse> updateStreamSource(
+            UpdateStreamSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateStreamSourceRequest, UpdateStreamSourceResponse>
+                    handler) {
+        LOG.trace("Called async updateStreamSource");
+        final UpdateStreamSourceRequest interceptedRequest =
+                UpdateStreamSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateStreamSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "UpdateStreamSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/StreamSource/UpdateStreamSource");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateStreamSourceResponse>
+                transformer =
+                        UpdateStreamSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateStreamSourceRequest, UpdateStreamSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateStreamSourceRequest, UpdateStreamSourceResponse>,
+                        java.util.concurrent.Future<UpdateStreamSourceResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateStreamSourceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateStreamSourceRequest, UpdateStreamSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVisionPrivateEndpointResponse>
+            updateVisionPrivateEndpoint(
+                    UpdateVisionPrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateVisionPrivateEndpointRequest,
+                                    UpdateVisionPrivateEndpointResponse>
+                            handler) {
+        LOG.trace("Called async updateVisionPrivateEndpoint");
+        final UpdateVisionPrivateEndpointRequest interceptedRequest =
+                UpdateVisionPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVisionPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "UpdateVisionPrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VisionPrivateEndpoint/UpdateVisionPrivateEndpoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateVisionPrivateEndpointResponse>
+                transformer =
+                        UpdateVisionPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateVisionPrivateEndpointRequest, UpdateVisionPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateVisionPrivateEndpointRequest,
+                                UpdateVisionPrivateEndpointResponse>,
+                        java.util.concurrent.Future<UpdateVisionPrivateEndpointResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVisionPrivateEndpointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateVisionPrivateEndpointRequest, UpdateVisionPrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

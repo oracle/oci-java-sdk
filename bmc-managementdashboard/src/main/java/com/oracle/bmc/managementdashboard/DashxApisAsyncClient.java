@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.managementdashboard;
@@ -7,6 +7,8 @@ package com.oracle.bmc.managementdashboard;
 import com.oracle.bmc.managementdashboard.internal.http.*;
 import com.oracle.bmc.managementdashboard.requests.*;
 import com.oracle.bmc.managementdashboard.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for DashxApis service. <br/>
@@ -28,7 +30,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DASHXAPIS")
+                    .serviceName(DashxApisClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://managementdashboard.{region}.oci.{secondLevelDomain}")
@@ -51,6 +53,10 @@ public class DashxApisAsyncClient implements DashxApisAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -262,6 +268,11 @@ public class DashxApisAsyncClient implements DashxApisAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -401,12 +412,21 @@ public class DashxApisAsyncClient implements DashxApisAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -436,15 +456,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -938,6 +950,106 @@ public class DashxApisAsyncClient implements DashxApisAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetOobManagementDashboardResponse> getOobManagementDashboard(
+            GetOobManagementDashboardRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOobManagementDashboardRequest, GetOobManagementDashboardResponse>
+                    handler) {
+        LOG.trace("Called async getOobManagementDashboard");
+        final GetOobManagementDashboardRequest interceptedRequest =
+                GetOobManagementDashboardConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOobManagementDashboardConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "GetOobManagementDashboard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/GetOobManagementDashboard");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetOobManagementDashboardResponse>
+                transformer =
+                        GetOobManagementDashboardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOobManagementDashboardRequest, GetOobManagementDashboardResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOobManagementDashboardRequest,
+                                GetOobManagementDashboardResponse>,
+                        java.util.concurrent.Future<GetOobManagementDashboardResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOobManagementDashboardRequest, GetOobManagementDashboardResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOobManagementSavedSearchResponse>
+            getOobManagementSavedSearch(
+                    GetOobManagementSavedSearchRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetOobManagementSavedSearchRequest,
+                                    GetOobManagementSavedSearchResponse>
+                            handler) {
+        LOG.trace("Called async getOobManagementSavedSearch");
+        final GetOobManagementSavedSearchRequest interceptedRequest =
+                GetOobManagementSavedSearchConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOobManagementSavedSearchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "GetOobManagementSavedSearch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/GetOobManagementSavedSearch");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetOobManagementSavedSearchResponse>
+                transformer =
+                        GetOobManagementSavedSearchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOobManagementSavedSearchRequest, GetOobManagementSavedSearchResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOobManagementSavedSearchRequest,
+                                GetOobManagementSavedSearchResponse>,
+                        java.util.concurrent.Future<GetOobManagementSavedSearchResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOobManagementSavedSearchRequest, GetOobManagementSavedSearchResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportDashboardResponse> importDashboard(
             ImportDashboardRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1076,6 +1188,109 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListManagementSavedSearchesRequest, ListManagementSavedSearchesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOobManagementDashboardsResponse>
+            listOobManagementDashboards(
+                    ListOobManagementDashboardsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOobManagementDashboardsRequest,
+                                    ListOobManagementDashboardsResponse>
+                            handler) {
+        LOG.trace("Called async listOobManagementDashboards");
+        final ListOobManagementDashboardsRequest interceptedRequest =
+                ListOobManagementDashboardsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOobManagementDashboardsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "ListOobManagementDashboards",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/ListOobManagementDashboards");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOobManagementDashboardsResponse>
+                transformer =
+                        ListOobManagementDashboardsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOobManagementDashboardsRequest, ListOobManagementDashboardsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOobManagementDashboardsRequest,
+                                ListOobManagementDashboardsResponse>,
+                        java.util.concurrent.Future<ListOobManagementDashboardsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOobManagementDashboardsRequest, ListOobManagementDashboardsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOobManagementSavedSearchesResponse>
+            listOobManagementSavedSearches(
+                    ListOobManagementSavedSearchesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOobManagementSavedSearchesRequest,
+                                    ListOobManagementSavedSearchesResponse>
+                            handler) {
+        LOG.trace("Called async listOobManagementSavedSearches");
+        final ListOobManagementSavedSearchesRequest interceptedRequest =
+                ListOobManagementSavedSearchesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOobManagementSavedSearchesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashxApis",
+                        "ListOobManagementSavedSearches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/ListOobManagementSavedSearches");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOobManagementSavedSearchesResponse>
+                transformer =
+                        ListOobManagementSavedSearchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOobManagementSavedSearchesRequest,
+                        ListOobManagementSavedSearchesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOobManagementSavedSearchesRequest,
+                                ListOobManagementSavedSearchesResponse>,
+                        java.util.concurrent.Future<ListOobManagementSavedSearchesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOobManagementSavedSearchesRequest, ListOobManagementSavedSearchesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

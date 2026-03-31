@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools.model;
 
 /**
- * DatabaseToolsConnectionSummary of an Oracle Database.
+ * Database Tools connection summary of an Oracle Database.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -137,6 +137,24 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeEndpoint")
+        private String runtimeEndpoint;
+
+        public Builder runtimeEndpoint(String runtimeEndpoint) {
+            this.runtimeEndpoint = runtimeEndpoint;
+            this.__explicitlySet__.add("runtimeEndpoint");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeIdentity")
+        private RuntimeIdentity runtimeIdentity;
+
+        public Builder runtimeIdentity(RuntimeIdentity runtimeIdentity) {
+            this.runtimeIdentity = runtimeIdentity;
+            this.__explicitlySet__.add("runtimeIdentity");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
         private DatabaseToolsRelatedResource relatedResource;
 
@@ -223,13 +241,13 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
          * @param privateEndpointId the value to set
          * @return this builder
          **/
@@ -267,6 +285,8 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
                             this.systemTags,
                             this.locks,
                             this.runtimeSupport,
+                            this.runtimeEndpoint,
+                            this.runtimeIdentity,
                             this.relatedResource,
                             this.connectionString,
                             this.userName,
@@ -318,6 +338,12 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("runtimeSupport")) {
                 this.runtimeSupport(model.getRuntimeSupport());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeEndpoint")) {
+                this.runtimeEndpoint(model.getRuntimeEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeIdentity")) {
+                this.runtimeIdentity(model.getRuntimeIdentity());
             }
             if (model.wasPropertyExplicitlySet("relatedResource")) {
                 this.relatedResource(model.getRelatedResource());
@@ -372,6 +398,8 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<ResourceLock> locks,
             RuntimeSupport runtimeSupport,
+            String runtimeEndpoint,
+            RuntimeIdentity runtimeIdentity,
             DatabaseToolsRelatedResource relatedResource,
             String connectionString,
             String userName,
@@ -392,7 +420,9 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
                 freeformTags,
                 systemTags,
                 locks,
-                runtimeSupport);
+                runtimeSupport,
+                runtimeEndpoint,
+                runtimeIdentity);
         this.relatedResource = relatedResource;
         this.connectionString = connectionString;
         this.userName = userName;
@@ -478,13 +508,13 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * @return the value
      **/
     public String getPrivateEndpointId() {

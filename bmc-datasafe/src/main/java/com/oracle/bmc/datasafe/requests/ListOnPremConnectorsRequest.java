@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -50,15 +50,13 @@ public class ListOnPremConnectorsRequest
     /**
      * A filter to return only on-premises connector resources that match the specified lifecycle state.
      */
-    private com.oracle.bmc.datasafe.model.OnPremConnectorLifecycleState
-            onPremConnectorLifecycleState;
+    private com.oracle.bmc.datasafe.model.OnPremConnectorLifecycleState lifecycleState;
 
     /**
      * A filter to return only on-premises connector resources that match the specified lifecycle state.
      */
-    public com.oracle.bmc.datasafe.model.OnPremConnectorLifecycleState
-            getOnPremConnectorLifecycleState() {
-        return onPremConnectorLifecycleState;
+    public com.oracle.bmc.datasafe.model.OnPremConnectorLifecycleState getLifecycleState() {
+        return lifecycleState;
     }
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -328,18 +326,16 @@ public class ListOnPremConnectorsRequest
         /**
          * A filter to return only on-premises connector resources that match the specified lifecycle state.
          */
-        private com.oracle.bmc.datasafe.model.OnPremConnectorLifecycleState
-                onPremConnectorLifecycleState = null;
+        private com.oracle.bmc.datasafe.model.OnPremConnectorLifecycleState lifecycleState = null;
 
         /**
          * A filter to return only on-premises connector resources that match the specified lifecycle state.
-         * @param onPremConnectorLifecycleState the value to set
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
-        public Builder onPremConnectorLifecycleState(
-                com.oracle.bmc.datasafe.model.OnPremConnectorLifecycleState
-                        onPremConnectorLifecycleState) {
-            this.onPremConnectorLifecycleState = onPremConnectorLifecycleState;
+        public Builder lifecycleState(
+                com.oracle.bmc.datasafe.model.OnPremConnectorLifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
             return this;
         }
 
@@ -497,7 +493,7 @@ public class ListOnPremConnectorsRequest
             compartmentId(o.getCompartmentId());
             onPremConnectorId(o.getOnPremConnectorId());
             displayName(o.getDisplayName());
-            onPremConnectorLifecycleState(o.getOnPremConnectorLifecycleState());
+            lifecycleState(o.getLifecycleState());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -540,7 +536,7 @@ public class ListOnPremConnectorsRequest
             request.compartmentId = compartmentId;
             request.onPremConnectorId = onPremConnectorId;
             request.displayName = displayName;
-            request.onPremConnectorLifecycleState = onPremConnectorLifecycleState;
+            request.lifecycleState = lifecycleState;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -549,7 +545,7 @@ public class ListOnPremConnectorsRequest
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.accessLevel = accessLevel;
             return request;
-            // new ListOnPremConnectorsRequest(compartmentId, onPremConnectorId, displayName, onPremConnectorLifecycleState, limit, page, sortOrder, sortBy, opcRequestId, compartmentIdInSubtree, accessLevel);
+            // new ListOnPremConnectorsRequest(compartmentId, onPremConnectorId, displayName, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId, compartmentIdInSubtree, accessLevel);
         }
     }
 
@@ -562,7 +558,7 @@ public class ListOnPremConnectorsRequest
                 .compartmentId(compartmentId)
                 .onPremConnectorId(onPremConnectorId)
                 .displayName(displayName)
-                .onPremConnectorLifecycleState(onPremConnectorLifecycleState)
+                .lifecycleState(lifecycleState)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -588,8 +584,7 @@ public class ListOnPremConnectorsRequest
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",onPremConnectorId=").append(String.valueOf(this.onPremConnectorId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
-        sb.append(",onPremConnectorLifecycleState=")
-                .append(String.valueOf(this.onPremConnectorLifecycleState));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -615,8 +610,7 @@ public class ListOnPremConnectorsRequest
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.onPremConnectorId, other.onPremConnectorId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(
-                        this.onPremConnectorLifecycleState, other.onPremConnectorLifecycleState)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -640,9 +634,7 @@ public class ListOnPremConnectorsRequest
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
-                        + (this.onPremConnectorLifecycleState == null
-                                ? 43
-                                : this.onPremConnectorLifecycleState.hashCode());
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

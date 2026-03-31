@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.model;
@@ -33,6 +33,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
         "networkConfiguration",
         "vmwareSoftwareVersion",
         "esxiSoftwareVersion",
+        "clusterByolAllocationDetails",
         "freeformTags",
         "definedTags"
     })
@@ -41,6 +42,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
             NetworkConfiguration networkConfiguration,
             String vmwareSoftwareVersion,
             String esxiSoftwareVersion,
+            ClusterByolAllocationDetails clusterByolAllocationDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -48,6 +50,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
         this.networkConfiguration = networkConfiguration;
         this.vmwareSoftwareVersion = vmwareSoftwareVersion;
         this.esxiSoftwareVersion = esxiSoftwareVersion;
+        this.clusterByolAllocationDetails = clusterByolAllocationDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -56,7 +59,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
-         * Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+         * Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -64,7 +67,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
-         * Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+         * Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
          *
          * @param displayName the value to set
          * @return this builder
@@ -129,6 +132,16 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("esxiSoftwareVersion");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterByolAllocationDetails")
+        private ClusterByolAllocationDetails clusterByolAllocationDetails;
+
+        public Builder clusterByolAllocationDetails(
+                ClusterByolAllocationDetails clusterByolAllocationDetails) {
+            this.clusterByolAllocationDetails = clusterByolAllocationDetails;
+            this.__explicitlySet__.add("clusterByolAllocationDetails");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
          * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -189,6 +202,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
                             this.networkConfiguration,
                             this.vmwareSoftwareVersion,
                             this.esxiSoftwareVersion,
+                            this.clusterByolAllocationDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -210,6 +224,9 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("esxiSoftwareVersion")) {
                 this.esxiSoftwareVersion(model.getEsxiSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("clusterByolAllocationDetails")) {
+                this.clusterByolAllocationDetails(model.getClusterByolAllocationDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -234,7 +251,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
-     * Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+     * Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -242,7 +259,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
-     * Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+     * Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
      *
      * @return the value
      **/
@@ -297,6 +314,13 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
      **/
     public String getEsxiSoftwareVersion() {
         return esxiSoftwareVersion;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterByolAllocationDetails")
+    private final ClusterByolAllocationDetails clusterByolAllocationDetails;
+
+    public ClusterByolAllocationDetails getClusterByolAllocationDetails() {
+        return clusterByolAllocationDetails;
     }
 
     /**
@@ -361,6 +385,8 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
         sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
         sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
         sb.append(", esxiSoftwareVersion=").append(String.valueOf(this.esxiSoftwareVersion));
+        sb.append(", clusterByolAllocationDetails=")
+                .append(String.valueOf(this.clusterByolAllocationDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -381,6 +407,8 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
                 && java.util.Objects.equals(this.vmwareSoftwareVersion, other.vmwareSoftwareVersion)
                 && java.util.Objects.equals(this.esxiSoftwareVersion, other.esxiSoftwareVersion)
+                && java.util.Objects.equals(
+                        this.clusterByolAllocationDetails, other.clusterByolAllocationDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -406,6 +434,11 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
                         + (this.esxiSoftwareVersion == null
                                 ? 43
                                 : this.esxiSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterByolAllocationDetails == null
+                                ? 43
+                                : this.clusterByolAllocationDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

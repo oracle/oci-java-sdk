@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -13,26 +13,26 @@ public class GetLogAnalyticsEntityRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     private String namespaceName;
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * The log analytics entity OCID.
+     * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
      *
      */
     private String logAnalyticsEntityId;
 
     /**
-     * The log analytics entity OCID.
+     * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
      *
      */
     public String getLogAnalyticsEntityId() {
@@ -49,6 +49,17 @@ public class GetLogAnalyticsEntityRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Option to return count of associated log sources for log analytics entity(s).
+     */
+    private Boolean isShowAssociatedSourcesCount;
+
+    /**
+     * Option to return count of associated log sources for log analytics entity(s).
+     */
+    public Boolean getIsShowAssociatedSourcesCount() {
+        return isShowAssociatedSourcesCount;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -58,13 +69,13 @@ public class GetLogAnalyticsEntityRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          */
         private String namespaceName = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          * @param namespaceName the value to set
          * @return this builder instance
@@ -75,13 +86,13 @@ public class GetLogAnalyticsEntityRequest
         }
 
         /**
-         * The log analytics entity OCID.
+         * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
          *
          */
         private String logAnalyticsEntityId = null;
 
         /**
-         * The log analytics entity OCID.
+         * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
          *
          * @param logAnalyticsEntityId the value to set
          * @return this builder instance
@@ -103,6 +114,21 @@ public class GetLogAnalyticsEntityRequest
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Option to return count of associated log sources for log analytics entity(s).
+         */
+        private Boolean isShowAssociatedSourcesCount = null;
+
+        /**
+         * Option to return count of associated log sources for log analytics entity(s).
+         * @param isShowAssociatedSourcesCount the value to set
+         * @return this builder instance
+         */
+        public Builder isShowAssociatedSourcesCount(Boolean isShowAssociatedSourcesCount) {
+            this.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
             return this;
         }
 
@@ -137,6 +163,7 @@ public class GetLogAnalyticsEntityRequest
             namespaceName(o.getNamespaceName());
             logAnalyticsEntityId(o.getLogAnalyticsEntityId());
             opcRequestId(o.getOpcRequestId());
+            isShowAssociatedSourcesCount(o.getIsShowAssociatedSourcesCount());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -172,8 +199,9 @@ public class GetLogAnalyticsEntityRequest
             request.namespaceName = namespaceName;
             request.logAnalyticsEntityId = logAnalyticsEntityId;
             request.opcRequestId = opcRequestId;
+            request.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
             return request;
-            // new GetLogAnalyticsEntityRequest(namespaceName, logAnalyticsEntityId, opcRequestId);
+            // new GetLogAnalyticsEntityRequest(namespaceName, logAnalyticsEntityId, opcRequestId, isShowAssociatedSourcesCount);
         }
     }
 
@@ -185,7 +213,8 @@ public class GetLogAnalyticsEntityRequest
         return new Builder()
                 .namespaceName(namespaceName)
                 .logAnalyticsEntityId(logAnalyticsEntityId)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isShowAssociatedSourcesCount(isShowAssociatedSourcesCount);
     }
 
     /**
@@ -204,6 +233,8 @@ public class GetLogAnalyticsEntityRequest
         sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
         sb.append(",logAnalyticsEntityId=").append(String.valueOf(this.logAnalyticsEntityId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isShowAssociatedSourcesCount=")
+                .append(String.valueOf(this.isShowAssociatedSourcesCount));
         sb.append(")");
         return sb.toString();
     }
@@ -221,7 +252,9 @@ public class GetLogAnalyticsEntityRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.namespaceName, other.namespaceName)
                 && java.util.Objects.equals(this.logAnalyticsEntityId, other.logAnalyticsEntityId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.isShowAssociatedSourcesCount, other.isShowAssociatedSourcesCount);
     }
 
     @Override
@@ -237,6 +270,11 @@ public class GetLogAnalyticsEntityRequest
                                 ? 43
                                 : this.logAnalyticsEntityId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isShowAssociatedSourcesCount == null
+                                ? 43
+                                : this.isShowAssociatedSourcesCount.hashCode());
         return result;
     }
 }

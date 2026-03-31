@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplacepublisher.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.marketplacepublisher.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ListingRevisionAttachmentSummary.Builder.class
 )
@@ -28,6 +28,7 @@ public final class ListingRevisionAttachmentSummary
         "compartmentId",
         "displayName",
         "attachmentType",
+        "documentCategory",
         "contentUrl",
         "mimeType",
         "lifecycleState",
@@ -43,6 +44,7 @@ public final class ListingRevisionAttachmentSummary
             String compartmentId,
             String displayName,
             ListingRevisionAttachment.AttachmentType attachmentType,
+            DocumentCategory documentCategory,
             String contentUrl,
             String mimeType,
             ListingRevisionAttachment.LifecycleState lifecycleState,
@@ -57,6 +59,7 @@ public final class ListingRevisionAttachmentSummary
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.attachmentType = attachmentType;
+        this.documentCategory = documentCategory;
         this.contentUrl = contentUrl;
         this.mimeType = mimeType;
         this.lifecycleState = lifecycleState;
@@ -147,6 +150,22 @@ public final class ListingRevisionAttachmentSummary
         public Builder attachmentType(ListingRevisionAttachment.AttachmentType attachmentType) {
             this.attachmentType = attachmentType;
             this.__explicitlySet__.add("attachmentType");
+            return this;
+        }
+        /**
+         * Possible lifecycle states.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("documentCategory")
+        private DocumentCategory documentCategory;
+
+        /**
+         * Possible lifecycle states.
+         * @param documentCategory the value to set
+         * @return this builder
+         **/
+        public Builder documentCategory(DocumentCategory documentCategory) {
+            this.documentCategory = documentCategory;
+            this.__explicitlySet__.add("documentCategory");
             return this;
         }
         /**
@@ -318,6 +337,7 @@ public final class ListingRevisionAttachmentSummary
                             this.compartmentId,
                             this.displayName,
                             this.attachmentType,
+                            this.documentCategory,
                             this.contentUrl,
                             this.mimeType,
                             this.lifecycleState,
@@ -348,6 +368,9 @@ public final class ListingRevisionAttachmentSummary
             }
             if (model.wasPropertyExplicitlySet("attachmentType")) {
                 this.attachmentType(model.getAttachmentType());
+            }
+            if (model.wasPropertyExplicitlySet("documentCategory")) {
+                this.documentCategory(model.getDocumentCategory());
             }
             if (model.wasPropertyExplicitlySet("contentUrl")) {
                 this.contentUrl(model.getContentUrl());
@@ -456,6 +479,74 @@ public final class ListingRevisionAttachmentSummary
      **/
     public ListingRevisionAttachment.AttachmentType getAttachmentType() {
         return attachmentType;
+    }
+
+    /**
+     * Possible lifecycle states.
+     **/
+    public enum DocumentCategory {
+        CaseStudies("CASE_STUDIES"),
+        CustomizationGuides("CUSTOMIZATION_GUIDES"),
+        DataSheets("DATA_SHEETS"),
+        PressRelease("PRESS_RELEASE"),
+        ProductDocumentation("PRODUCT_DOCUMENTATION"),
+        UserGuides("USER_GUIDES"),
+        Webinars("WEBINARS"),
+        Whitepapers("WHITEPAPERS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DocumentCategory.class);
+
+        private final String value;
+        private static java.util.Map<String, DocumentCategory> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DocumentCategory v : DocumentCategory.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DocumentCategory(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DocumentCategory create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DocumentCategory', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Possible lifecycle states.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("documentCategory")
+    private final DocumentCategory documentCategory;
+
+    /**
+     * Possible lifecycle states.
+     * @return the value
+     **/
+    public DocumentCategory getDocumentCategory() {
+        return documentCategory;
     }
 
     /**
@@ -617,6 +708,7 @@ public final class ListingRevisionAttachmentSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", attachmentType=").append(String.valueOf(this.attachmentType));
+        sb.append(", documentCategory=").append(String.valueOf(this.documentCategory));
         sb.append(", contentUrl=").append(String.valueOf(this.contentUrl));
         sb.append(", mimeType=").append(String.valueOf(this.mimeType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -644,6 +736,7 @@ public final class ListingRevisionAttachmentSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.attachmentType, other.attachmentType)
+                && java.util.Objects.equals(this.documentCategory, other.documentCategory)
                 && java.util.Objects.equals(this.contentUrl, other.contentUrl)
                 && java.util.Objects.equals(this.mimeType, other.mimeType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -670,6 +763,9 @@ public final class ListingRevisionAttachmentSummary
         result =
                 (result * PRIME)
                         + (this.attachmentType == null ? 43 : this.attachmentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.documentCategory == null ? 43 : this.documentCategory.hashCode());
         result = (result * PRIME) + (this.contentUrl == null ? 43 : this.contentUrl.hashCode());
         result = (result * PRIME) + (this.mimeType == null ? 43 : this.mimeType.hashCode());
         result =

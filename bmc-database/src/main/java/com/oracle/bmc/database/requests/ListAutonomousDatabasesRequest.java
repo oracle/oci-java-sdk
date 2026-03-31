@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -198,23 +198,23 @@ public class ListAutonomousDatabasesRequest
         return lifecycleStateNotEqualTo;
     }
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload type.
      */
     private com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload dbWorkload;
 
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload type.
      */
     public com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload getDbWorkload() {
         return dbWorkload;
     }
     /**
-     * A filter to return only autonomous database resources that match the specified dbVersion.
+     * A filter to return only Autonomous AI Database resources that match the specified dbVersion.
      */
     private String dbVersion;
 
     /**
-     * A filter to return only autonomous database resources that match the specified dbVersion.
+     * A filter to return only Autonomous AI Database resources that match the specified dbVersion.
      */
     public String getDbVersion() {
         return dbVersion;
@@ -298,12 +298,12 @@ public class ListAutonomousDatabasesRequest
         return isResourcePoolLeader;
     }
     /**
-     * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
      */
     private String resourcePoolLeaderId;
 
     /**
-     * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
      */
     public String getResourcePoolLeaderId() {
         return resourcePoolLeaderId;
@@ -467,13 +467,13 @@ public class ListAutonomousDatabasesRequest
         }
 
         /**
-         * A filter to return only autonomous database resources that match the specified workload type.
+         * A filter to return only Autonomous AI Database resources that match the specified workload type.
          */
         private com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload dbWorkload =
                 null;
 
         /**
-         * A filter to return only autonomous database resources that match the specified workload type.
+         * A filter to return only Autonomous AI Database resources that match the specified workload type.
          * @param dbWorkload the value to set
          * @return this builder instance
          */
@@ -484,12 +484,12 @@ public class ListAutonomousDatabasesRequest
         }
 
         /**
-         * A filter to return only autonomous database resources that match the specified dbVersion.
+         * A filter to return only Autonomous AI Database resources that match the specified dbVersion.
          */
         private String dbVersion = null;
 
         /**
-         * A filter to return only autonomous database resources that match the specified dbVersion.
+         * A filter to return only Autonomous AI Database resources that match the specified dbVersion.
          * @param dbVersion the value to set
          * @return this builder instance
          */
@@ -601,12 +601,12 @@ public class ListAutonomousDatabasesRequest
         }
 
         /**
-         * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+         * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
          */
         private String resourcePoolLeaderId = null;
 
         /**
-         * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+         * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
          * @param resourcePoolLeaderId the value to set
          * @return this builder instance
          */

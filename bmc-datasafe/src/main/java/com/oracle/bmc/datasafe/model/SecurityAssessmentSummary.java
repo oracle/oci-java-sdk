@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -24,6 +24,8 @@ public final class SecurityAssessmentSummary
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
+        "targetDatabaseGroupId",
+        "targetType",
         "description",
         "lifecycleState",
         "lifecycleDetails",
@@ -39,6 +41,8 @@ public final class SecurityAssessmentSummary
         "isDeviatedFromBaseline",
         "lastComparedBaselineId",
         "scheduleSecurityAssessmentId",
+        "templateAssessmentId",
+        "baselineAssessmentId",
         "schedule",
         "triggeredBy",
         "link",
@@ -49,6 +53,8 @@ public final class SecurityAssessmentSummary
     })
     public SecurityAssessmentSummary(
             String id,
+            String targetDatabaseGroupId,
+            SecurityAssessmentTargetType targetType,
             String description,
             SecurityAssessmentLifecycleState lifecycleState,
             String lifecycleDetails,
@@ -64,6 +70,8 @@ public final class SecurityAssessmentSummary
             Boolean isDeviatedFromBaseline,
             String lastComparedBaselineId,
             String scheduleSecurityAssessmentId,
+            String templateAssessmentId,
+            String baselineAssessmentId,
             String schedule,
             TriggeredBy triggeredBy,
             String link,
@@ -73,6 +81,8 @@ public final class SecurityAssessmentSummary
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.id = id;
+        this.targetDatabaseGroupId = targetDatabaseGroupId;
+        this.targetType = targetType;
         this.description = description;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -88,6 +98,8 @@ public final class SecurityAssessmentSummary
         this.isDeviatedFromBaseline = isDeviatedFromBaseline;
         this.lastComparedBaselineId = lastComparedBaselineId;
         this.scheduleSecurityAssessmentId = scheduleSecurityAssessmentId;
+        this.templateAssessmentId = templateAssessmentId;
+        this.baselineAssessmentId = baselineAssessmentId;
         this.schedule = schedule;
         this.triggeredBy = triggeredBy;
         this.link = link;
@@ -113,6 +125,38 @@ public final class SecurityAssessmentSummary
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
+            return this;
+        }
+        /**
+         * The OCID of target database group.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseGroupId")
+        private String targetDatabaseGroupId;
+
+        /**
+         * The OCID of target database group.
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder
+         **/
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            this.__explicitlySet__.add("targetDatabaseGroupId");
+            return this;
+        }
+        /**
+         * Indicates whether the security assessment is for a target database or a target database group.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+        private SecurityAssessmentTargetType targetType;
+
+        /**
+         * Indicates whether the security assessment is for a target database or a target database group.
+         * @param targetType the value to set
+         * @return this builder
+         **/
+        public Builder targetType(SecurityAssessmentTargetType targetType) {
+            this.targetType = targetType;
+            this.__explicitlySet__.add("targetType");
             return this;
         }
         /**
@@ -364,6 +408,38 @@ public final class SecurityAssessmentSummary
             return this;
         }
         /**
+         * The OCID of the security assessment of type TEMPLATE.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("templateAssessmentId")
+        private String templateAssessmentId;
+
+        /**
+         * The OCID of the security assessment of type TEMPLATE.
+         * @param templateAssessmentId the value to set
+         * @return this builder
+         **/
+        public Builder templateAssessmentId(String templateAssessmentId) {
+            this.templateAssessmentId = templateAssessmentId;
+            this.__explicitlySet__.add("templateAssessmentId");
+            return this;
+        }
+        /**
+         * The OCID of the security assessment of type TEMPLATE_BASELINE.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("baselineAssessmentId")
+        private String baselineAssessmentId;
+
+        /**
+         * The OCID of the security assessment of type TEMPLATE_BASELINE.
+         * @param baselineAssessmentId the value to set
+         * @return this builder
+         **/
+        public Builder baselineAssessmentId(String baselineAssessmentId) {
+            this.baselineAssessmentId = baselineAssessmentId;
+            this.__explicitlySet__.add("baselineAssessmentId");
+            return this;
+        }
+        /**
          * Schedule of the assessment that runs periodically in the specified format: -
          * <version-string>;<version-specific-schedule>
          * <p>
@@ -447,6 +523,8 @@ public final class SecurityAssessmentSummary
          * LATEST: The most up-to-date assessment that is running automatically for a target. It is system generated.
          * SAVED: A saved security assessment. LATEST assessments are always saved in order to maintain the history of runs. A SAVED assessment is also generated by a 'refresh' action (triggered by the user).
          * SAVE_SCHEDULE: The schedule for periodic saves of LATEST assessments.
+         * TEMPLATE: The security assessment contains the checks that the user would like to run. It is user defined.
+         * TEMPLATE_BASELINE: The security assessment contains the checks that the user would like to run, together with the max allowed severity. The max allowed severity can be defined by the user.
          * COMPARTMENT: An automatically managed assessment type that stores all details of targets in one compartment.
          * This type keeps an up-to-date assessment of all database risks in one compartment. It is automatically updated when the latest assessment or refresh action is executed. It is also automatically updated when a target is deleted or move to a different compartment.
          *
@@ -460,6 +538,8 @@ public final class SecurityAssessmentSummary
          * LATEST: The most up-to-date assessment that is running automatically for a target. It is system generated.
          * SAVED: A saved security assessment. LATEST assessments are always saved in order to maintain the history of runs. A SAVED assessment is also generated by a 'refresh' action (triggered by the user).
          * SAVE_SCHEDULE: The schedule for periodic saves of LATEST assessments.
+         * TEMPLATE: The security assessment contains the checks that the user would like to run. It is user defined.
+         * TEMPLATE_BASELINE: The security assessment contains the checks that the user would like to run, together with the max allowed severity. The max allowed severity can be defined by the user.
          * COMPARTMENT: An automatically managed assessment type that stores all details of targets in one compartment.
          * This type keeps an up-to-date assessment of all database risks in one compartment. It is automatically updated when the latest assessment or refresh action is executed. It is also automatically updated when a target is deleted or move to a different compartment.
          *
@@ -531,6 +611,8 @@ public final class SecurityAssessmentSummary
             SecurityAssessmentSummary model =
                     new SecurityAssessmentSummary(
                             this.id,
+                            this.targetDatabaseGroupId,
+                            this.targetType,
                             this.description,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -546,6 +628,8 @@ public final class SecurityAssessmentSummary
                             this.isDeviatedFromBaseline,
                             this.lastComparedBaselineId,
                             this.scheduleSecurityAssessmentId,
+                            this.templateAssessmentId,
+                            this.baselineAssessmentId,
                             this.schedule,
                             this.triggeredBy,
                             this.link,
@@ -563,6 +647,12 @@ public final class SecurityAssessmentSummary
         public Builder copy(SecurityAssessmentSummary model) {
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("targetDatabaseGroupId")) {
+                this.targetDatabaseGroupId(model.getTargetDatabaseGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("targetType")) {
+                this.targetType(model.getTargetType());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -608,6 +698,12 @@ public final class SecurityAssessmentSummary
             }
             if (model.wasPropertyExplicitlySet("scheduleSecurityAssessmentId")) {
                 this.scheduleSecurityAssessmentId(model.getScheduleSecurityAssessmentId());
+            }
+            if (model.wasPropertyExplicitlySet("templateAssessmentId")) {
+                this.templateAssessmentId(model.getTemplateAssessmentId());
+            }
+            if (model.wasPropertyExplicitlySet("baselineAssessmentId")) {
+                this.baselineAssessmentId(model.getBaselineAssessmentId());
             }
             if (model.wasPropertyExplicitlySet("schedule")) {
                 this.schedule(model.getSchedule());
@@ -657,6 +753,34 @@ public final class SecurityAssessmentSummary
      **/
     public String getId() {
         return id;
+    }
+
+    /**
+     * The OCID of target database group.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseGroupId")
+    private final String targetDatabaseGroupId;
+
+    /**
+     * The OCID of target database group.
+     * @return the value
+     **/
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
+
+    /**
+     * Indicates whether the security assessment is for a target database or a target database group.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+    private final SecurityAssessmentTargetType targetType;
+
+    /**
+     * Indicates whether the security assessment is for a target database or a target database group.
+     * @return the value
+     **/
+    public SecurityAssessmentTargetType getTargetType() {
+        return targetType;
     }
 
     /**
@@ -878,6 +1002,34 @@ public final class SecurityAssessmentSummary
     }
 
     /**
+     * The OCID of the security assessment of type TEMPLATE.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("templateAssessmentId")
+    private final String templateAssessmentId;
+
+    /**
+     * The OCID of the security assessment of type TEMPLATE.
+     * @return the value
+     **/
+    public String getTemplateAssessmentId() {
+        return templateAssessmentId;
+    }
+
+    /**
+     * The OCID of the security assessment of type TEMPLATE_BASELINE.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("baselineAssessmentId")
+    private final String baselineAssessmentId;
+
+    /**
+     * The OCID of the security assessment of type TEMPLATE_BASELINE.
+     * @return the value
+     **/
+    public String getBaselineAssessmentId() {
+        return baselineAssessmentId;
+    }
+
+    /**
      * Schedule of the assessment that runs periodically in the specified format: -
      * <version-string>;<version-specific-schedule>
      * <p>
@@ -1003,6 +1155,8 @@ public final class SecurityAssessmentSummary
      * LATEST: The most up-to-date assessment that is running automatically for a target. It is system generated.
      * SAVED: A saved security assessment. LATEST assessments are always saved in order to maintain the history of runs. A SAVED assessment is also generated by a 'refresh' action (triggered by the user).
      * SAVE_SCHEDULE: The schedule for periodic saves of LATEST assessments.
+     * TEMPLATE: The security assessment contains the checks that the user would like to run. It is user defined.
+     * TEMPLATE_BASELINE: The security assessment contains the checks that the user would like to run, together with the max allowed severity. The max allowed severity can be defined by the user.
      * COMPARTMENT: An automatically managed assessment type that stores all details of targets in one compartment.
      * This type keeps an up-to-date assessment of all database risks in one compartment. It is automatically updated when the latest assessment or refresh action is executed. It is also automatically updated when a target is deleted or move to a different compartment.
      *
@@ -1012,6 +1166,8 @@ public final class SecurityAssessmentSummary
         Saved("SAVED"),
         SaveSchedule("SAVE_SCHEDULE"),
         Compartment("COMPARTMENT"),
+        Template("TEMPLATE"),
+        TemplateBaseline("TEMPLATE_BASELINE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1058,6 +1214,8 @@ public final class SecurityAssessmentSummary
      * LATEST: The most up-to-date assessment that is running automatically for a target. It is system generated.
      * SAVED: A saved security assessment. LATEST assessments are always saved in order to maintain the history of runs. A SAVED assessment is also generated by a 'refresh' action (triggered by the user).
      * SAVE_SCHEDULE: The schedule for periodic saves of LATEST assessments.
+     * TEMPLATE: The security assessment contains the checks that the user would like to run. It is user defined.
+     * TEMPLATE_BASELINE: The security assessment contains the checks that the user would like to run, together with the max allowed severity. The max allowed severity can be defined by the user.
      * COMPARTMENT: An automatically managed assessment type that stores all details of targets in one compartment.
      * This type keeps an up-to-date assessment of all database risks in one compartment. It is automatically updated when the latest assessment or refresh action is executed. It is also automatically updated when a target is deleted or move to a different compartment.
      *
@@ -1071,6 +1229,8 @@ public final class SecurityAssessmentSummary
      * LATEST: The most up-to-date assessment that is running automatically for a target. It is system generated.
      * SAVED: A saved security assessment. LATEST assessments are always saved in order to maintain the history of runs. A SAVED assessment is also generated by a 'refresh' action (triggered by the user).
      * SAVE_SCHEDULE: The schedule for periodic saves of LATEST assessments.
+     * TEMPLATE: The security assessment contains the checks that the user would like to run. It is user defined.
+     * TEMPLATE_BASELINE: The security assessment contains the checks that the user would like to run, together with the max allowed severity. The max allowed severity can be defined by the user.
      * COMPARTMENT: An automatically managed assessment type that stores all details of targets in one compartment.
      * This type keeps an up-to-date assessment of all database risks in one compartment. It is automatically updated when the latest assessment or refresh action is executed. It is also automatically updated when a target is deleted or move to a different compartment.
      *
@@ -1140,6 +1300,8 @@ public final class SecurityAssessmentSummary
         sb.append("SecurityAssessmentSummary(");
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
+        sb.append(", targetType=").append(String.valueOf(this.targetType));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -1156,6 +1318,8 @@ public final class SecurityAssessmentSummary
         sb.append(", lastComparedBaselineId=").append(String.valueOf(this.lastComparedBaselineId));
         sb.append(", scheduleSecurityAssessmentId=")
                 .append(String.valueOf(this.scheduleSecurityAssessmentId));
+        sb.append(", templateAssessmentId=").append(String.valueOf(this.templateAssessmentId));
+        sb.append(", baselineAssessmentId=").append(String.valueOf(this.baselineAssessmentId));
         sb.append(", schedule=").append(String.valueOf(this.schedule));
         sb.append(", triggeredBy=").append(String.valueOf(this.triggeredBy));
         sb.append(", link=").append(String.valueOf(this.link));
@@ -1178,6 +1342,8 @@ public final class SecurityAssessmentSummary
 
         SecurityAssessmentSummary other = (SecurityAssessmentSummary) o;
         return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
+                && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -1196,6 +1362,8 @@ public final class SecurityAssessmentSummary
                         this.lastComparedBaselineId, other.lastComparedBaselineId)
                 && java.util.Objects.equals(
                         this.scheduleSecurityAssessmentId, other.scheduleSecurityAssessmentId)
+                && java.util.Objects.equals(this.templateAssessmentId, other.templateAssessmentId)
+                && java.util.Objects.equals(this.baselineAssessmentId, other.baselineAssessmentId)
                 && java.util.Objects.equals(this.schedule, other.schedule)
                 && java.util.Objects.equals(this.triggeredBy, other.triggeredBy)
                 && java.util.Objects.equals(this.link, other.link)
@@ -1211,6 +1379,12 @@ public final class SecurityAssessmentSummary
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =
                 (result * PRIME)
@@ -1252,6 +1426,16 @@ public final class SecurityAssessmentSummary
                         + (this.scheduleSecurityAssessmentId == null
                                 ? 43
                                 : this.scheduleSecurityAssessmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.templateAssessmentId == null
+                                ? 43
+                                : this.templateAssessmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.baselineAssessmentId == null
+                                ? 43
+                                : this.baselineAssessmentId.hashCode());
         result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
         result = (result * PRIME) + (this.triggeredBy == null ? 43 : this.triggeredBy.hashCode());
         result = (result * PRIME) + (this.link == null ? 43 : this.link.hashCode());

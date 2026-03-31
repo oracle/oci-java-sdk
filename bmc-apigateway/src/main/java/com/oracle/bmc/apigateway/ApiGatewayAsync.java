@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway;
@@ -60,6 +60,50 @@ public interface ApiGatewayAsync extends AutoCloseable {
      * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
+     * Adds a lock to a Api resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddApiLockResponse> addApiLock(
+            AddApiLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddApiLockRequest, AddApiLockResponse> handler);
+
+    /**
+     * Adds a lock to a Certificate resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddCertificateLockResponse> addCertificateLock(
+            AddCertificateLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddCertificateLockRequest, AddCertificateLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a Sdk resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddSdkLockResponse> addSdkLock(
+            AddSdkLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddSdkLockRequest, AddSdkLockResponse> handler);
 
     /**
      * Changes the API compartment.
@@ -336,6 +380,52 @@ public interface ApiGatewayAsync extends AutoCloseable {
     java.util.concurrent.Future<ListSdksResponse> listSdks(
             ListSdksRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListSdksRequest, ListSdksResponse> handler);
+
+    /**
+     * Removes a lock from a Api resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveApiLockResponse> removeApiLock(
+            RemoveApiLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RemoveApiLockRequest, RemoveApiLockResponse>
+                    handler);
+
+    /**
+     * Removes a lock from a Certificate resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveCertificateLockResponse> removeCertificateLock(
+            RemoveCertificateLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveCertificateLockRequest, RemoveCertificateLockResponse>
+                    handler);
+
+    /**
+     * Removes a lock from a Sdk resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveSdkLockResponse> removeSdkLock(
+            RemoveSdkLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RemoveSdkLockRequest, RemoveSdkLockResponse>
+                    handler);
 
     /**
      * Updates the API with the given identifier.

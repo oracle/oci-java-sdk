@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -50,7 +50,8 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
         "timeCreated",
         "macsecProperties",
         "ociPhysicalDeviceName",
-        "ociLogicalDeviceName"
+        "ociLogicalDeviceName",
+        "interfaceName"
     })
     public CrossConnect(
             String compartmentId,
@@ -67,7 +68,8 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
             java.util.Date timeCreated,
             MacsecProperties macsecProperties,
             String ociPhysicalDeviceName,
-            String ociLogicalDeviceName) {
+            String ociLogicalDeviceName,
+            String interfaceName) {
         super();
         this.compartmentId = compartmentId;
         this.crossConnectGroupId = crossConnectGroupId;
@@ -84,6 +86,7 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
         this.macsecProperties = macsecProperties;
         this.ociPhysicalDeviceName = ociPhysicalDeviceName;
         this.ociLogicalDeviceName = ociLogicalDeviceName;
+        this.interfaceName = interfaceName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -368,6 +371,24 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
             this.__explicitlySet__.add("ociLogicalDeviceName");
             return this;
         }
+        /**
+         * The name of the FastConnect interface where this cross-connect is installed.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("interfaceName")
+        private String interfaceName;
+
+        /**
+         * The name of the FastConnect interface where this cross-connect is installed.
+         *
+         * @param interfaceName the value to set
+         * @return this builder
+         **/
+        public Builder interfaceName(String interfaceName) {
+            this.interfaceName = interfaceName;
+            this.__explicitlySet__.add("interfaceName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -389,7 +410,8 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.timeCreated,
                             this.macsecProperties,
                             this.ociPhysicalDeviceName,
-                            this.ociLogicalDeviceName);
+                            this.ociLogicalDeviceName,
+                            this.interfaceName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -442,6 +464,9 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("ociLogicalDeviceName")) {
                 this.ociLogicalDeviceName(model.getOciLogicalDeviceName());
+            }
+            if (model.wasPropertyExplicitlySet("interfaceName")) {
+                this.interfaceName(model.getInterfaceName());
             }
             return this;
         }
@@ -759,6 +784,22 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
         return ociLogicalDeviceName;
     }
 
+    /**
+     * The name of the FastConnect interface where this cross-connect is installed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("interfaceName")
+    private final String interfaceName;
+
+    /**
+     * The name of the FastConnect interface where this cross-connect is installed.
+     *
+     * @return the value
+     **/
+    public String getInterfaceName() {
+        return interfaceName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -788,6 +829,7 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", macsecProperties=").append(String.valueOf(this.macsecProperties));
         sb.append(", ociPhysicalDeviceName=").append(String.valueOf(this.ociPhysicalDeviceName));
         sb.append(", ociLogicalDeviceName=").append(String.valueOf(this.ociLogicalDeviceName));
+        sb.append(", interfaceName=").append(String.valueOf(this.interfaceName));
         sb.append(")");
         return sb.toString();
     }
@@ -817,6 +859,7 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.macsecProperties, other.macsecProperties)
                 && java.util.Objects.equals(this.ociPhysicalDeviceName, other.ociPhysicalDeviceName)
                 && java.util.Objects.equals(this.ociLogicalDeviceName, other.ociLogicalDeviceName)
+                && java.util.Objects.equals(this.interfaceName, other.interfaceName)
                 && super.equals(other);
     }
 
@@ -865,6 +908,9 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
                         + (this.ociLogicalDeviceName == null
                                 ? 43
                                 : this.ociLogicalDeviceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.interfaceName == null ? 43 : this.interfaceName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcescheduler.model;
@@ -20,11 +20,15 @@ package com.oracle.bmc.resourcescheduler.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class Resource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "metadata"})
-    public Resource(String id, java.util.Map<String, String> metadata) {
+    @java.beans.ConstructorProperties({"id", "metadata", "parameters"})
+    public Resource(
+            String id,
+            java.util.Map<String, String> metadata,
+            java.util.List<Parameter> parameters) {
         super();
         this.id = id;
         this.metadata = metadata;
+        this.parameters = parameters;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -81,12 +85,110 @@ public final class Resource extends com.oracle.bmc.http.internal.ExplicitlySetBm
             this.__explicitlySet__.add("metadata");
             return this;
         }
+        /**
+         * This is the user input parameters to use when acting on the resource.
+         * <p>
+         * {
+         *     "parameters": [
+         *         {
+         *             "parameterType": "BODY",
+         *             "value": {
+         *                 "ip": "192.168.44.44",
+         *                 "memory": "1024",
+         *                 "synced_folders": [
+         *                     {
+         *                         "host_path": "data/",
+         *                         "guest_path": "/var/www",
+         *                         "type": "default"
+         *                     }
+         *                 ],
+         *                 "forwarded_ports": []
+         *             }
+         *         },
+         *         {
+         *             "parameterType": "PATH",
+         *             "value": {
+         *                 "compartmentId": "ocid1.compartment.oc1..xxxxx",
+         *                 "instanceId": "ocid1.vcn.oc1..yyyy"
+         *             }
+         *         },
+         *         {
+         *             "parameterType": "QUERY",
+         *             "value": {
+         *                 "limit": "10",
+         *                 "tenantId": "ocid1.tenant.oc1..zzzz"
+         *             }
+         *         },
+         *         {
+         *             "parameterType": "HEADER",
+         *             "value": {
+         *               "token": "xxxx"
+         *             }
+         *         }
+         *     ]
+         * }
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parameters")
+        private java.util.List<Parameter> parameters;
+
+        /**
+         * This is the user input parameters to use when acting on the resource.
+         * <p>
+         * {
+         *     "parameters": [
+         *         {
+         *             "parameterType": "BODY",
+         *             "value": {
+         *                 "ip": "192.168.44.44",
+         *                 "memory": "1024",
+         *                 "synced_folders": [
+         *                     {
+         *                         "host_path": "data/",
+         *                         "guest_path": "/var/www",
+         *                         "type": "default"
+         *                     }
+         *                 ],
+         *                 "forwarded_ports": []
+         *             }
+         *         },
+         *         {
+         *             "parameterType": "PATH",
+         *             "value": {
+         *                 "compartmentId": "ocid1.compartment.oc1..xxxxx",
+         *                 "instanceId": "ocid1.vcn.oc1..yyyy"
+         *             }
+         *         },
+         *         {
+         *             "parameterType": "QUERY",
+         *             "value": {
+         *                 "limit": "10",
+         *                 "tenantId": "ocid1.tenant.oc1..zzzz"
+         *             }
+         *         },
+         *         {
+         *             "parameterType": "HEADER",
+         *             "value": {
+         *               "token": "xxxx"
+         *             }
+         *         }
+         *     ]
+         * }
+         *
+         * @param parameters the value to set
+         * @return this builder
+         **/
+        public Builder parameters(java.util.List<Parameter> parameters) {
+            this.parameters = parameters;
+            this.__explicitlySet__.add("parameters");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Resource build() {
-            Resource model = new Resource(this.id, this.metadata);
+            Resource model = new Resource(this.id, this.metadata, this.parameters);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -100,6 +202,9 @@ public final class Resource extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
             }
             return this;
         }
@@ -164,6 +269,102 @@ public final class Resource extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return metadata;
     }
 
+    /**
+     * This is the user input parameters to use when acting on the resource.
+     * <p>
+     * {
+     *     "parameters": [
+     *         {
+     *             "parameterType": "BODY",
+     *             "value": {
+     *                 "ip": "192.168.44.44",
+     *                 "memory": "1024",
+     *                 "synced_folders": [
+     *                     {
+     *                         "host_path": "data/",
+     *                         "guest_path": "/var/www",
+     *                         "type": "default"
+     *                     }
+     *                 ],
+     *                 "forwarded_ports": []
+     *             }
+     *         },
+     *         {
+     *             "parameterType": "PATH",
+     *             "value": {
+     *                 "compartmentId": "ocid1.compartment.oc1..xxxxx",
+     *                 "instanceId": "ocid1.vcn.oc1..yyyy"
+     *             }
+     *         },
+     *         {
+     *             "parameterType": "QUERY",
+     *             "value": {
+     *                 "limit": "10",
+     *                 "tenantId": "ocid1.tenant.oc1..zzzz"
+     *             }
+     *         },
+     *         {
+     *             "parameterType": "HEADER",
+     *             "value": {
+     *               "token": "xxxx"
+     *             }
+     *         }
+     *     ]
+     * }
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parameters")
+    private final java.util.List<Parameter> parameters;
+
+    /**
+     * This is the user input parameters to use when acting on the resource.
+     * <p>
+     * {
+     *     "parameters": [
+     *         {
+     *             "parameterType": "BODY",
+     *             "value": {
+     *                 "ip": "192.168.44.44",
+     *                 "memory": "1024",
+     *                 "synced_folders": [
+     *                     {
+     *                         "host_path": "data/",
+     *                         "guest_path": "/var/www",
+     *                         "type": "default"
+     *                     }
+     *                 ],
+     *                 "forwarded_ports": []
+     *             }
+     *         },
+     *         {
+     *             "parameterType": "PATH",
+     *             "value": {
+     *                 "compartmentId": "ocid1.compartment.oc1..xxxxx",
+     *                 "instanceId": "ocid1.vcn.oc1..yyyy"
+     *             }
+     *         },
+     *         {
+     *             "parameterType": "QUERY",
+     *             "value": {
+     *                 "limit": "10",
+     *                 "tenantId": "ocid1.tenant.oc1..zzzz"
+     *             }
+     *         },
+     *         {
+     *             "parameterType": "HEADER",
+     *             "value": {
+     *               "token": "xxxx"
+     *             }
+     *         }
+     *     ]
+     * }
+     *
+     * @return the value
+     **/
+    public java.util.List<Parameter> getParameters() {
+        return parameters;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -180,6 +381,7 @@ public final class Resource extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(")");
         return sb.toString();
     }
@@ -196,6 +398,7 @@ public final class Resource extends com.oracle.bmc.http.internal.ExplicitlySetBm
         Resource other = (Resource) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.parameters, other.parameters)
                 && super.equals(other);
     }
 
@@ -205,6 +408,7 @@ public final class Resource extends com.oracle.bmc.http.internal.ExplicitlySetBm
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

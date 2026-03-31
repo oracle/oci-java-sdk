@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument.model;
@@ -27,12 +27,28 @@ package com.oracle.bmc.aidocument.model;
 public final class DocumentTableExtractionFeature extends DocumentFeature {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier custom model OCID that should be used for inference.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+        private String modelId;
+
+        /**
+         * Unique identifier custom model OCID that should be used for inference.
+         * @param modelId the value to set
+         * @return this builder
+         **/
+        public Builder modelId(String modelId) {
+            this.modelId = modelId;
+            this.__explicitlySet__.add("modelId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DocumentTableExtractionFeature build() {
-            DocumentTableExtractionFeature model = new DocumentTableExtractionFeature();
+            DocumentTableExtractionFeature model = new DocumentTableExtractionFeature(this.modelId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -41,6 +57,9 @@ public final class DocumentTableExtractionFeature extends DocumentFeature {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DocumentTableExtractionFeature model) {
+            if (model.wasPropertyExplicitlySet("modelId")) {
+                this.modelId(model.getModelId());
+            }
             return this;
         }
     }
@@ -57,8 +76,23 @@ public final class DocumentTableExtractionFeature extends DocumentFeature {
     }
 
     @Deprecated
-    public DocumentTableExtractionFeature() {
+    public DocumentTableExtractionFeature(String modelId) {
         super();
+        this.modelId = modelId;
+    }
+
+    /**
+     * Unique identifier custom model OCID that should be used for inference.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+    private final String modelId;
+
+    /**
+     * Unique identifier custom model OCID that should be used for inference.
+     * @return the value
+     **/
+    public String getModelId() {
+        return modelId;
     }
 
     @Override
@@ -75,6 +109,7 @@ public final class DocumentTableExtractionFeature extends DocumentFeature {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DocumentTableExtractionFeature(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", modelId=").append(String.valueOf(this.modelId));
         sb.append(")");
         return sb.toString();
     }
@@ -89,13 +124,14 @@ public final class DocumentTableExtractionFeature extends DocumentFeature {
         }
 
         DocumentTableExtractionFeature other = (DocumentTableExtractionFeature) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.modelId, other.modelId) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
         return result;
     }
 }

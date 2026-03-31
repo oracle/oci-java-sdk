@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi;
@@ -1092,6 +1092,236 @@ public class OperationsInsightsPaginators {
                     public java.util.List<com.oracle.bmc.opsi.model.AwrSnapshotSummary> apply(
                             ListAwrSnapshotsResponse response) {
                         return response.getAwrSnapshotCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listChargebackPlanReports operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListChargebackPlanReportsResponse> listChargebackPlanReportsResponseIterator(
+            final ListChargebackPlanReportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListChargebackPlanReportsRequest.Builder, ListChargebackPlanReportsRequest,
+                ListChargebackPlanReportsResponse>(
+                new java.util.function.Supplier<ListChargebackPlanReportsRequest.Builder>() {
+                    @Override
+                    public ListChargebackPlanReportsRequest.Builder get() {
+                        return ListChargebackPlanReportsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListChargebackPlanReportsResponse, String>() {
+                    @Override
+                    public String apply(ListChargebackPlanReportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListChargebackPlanReportsRequest.Builder>,
+                        ListChargebackPlanReportsRequest>() {
+                    @Override
+                    public ListChargebackPlanReportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListChargebackPlanReportsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListChargebackPlanReportsRequest, ListChargebackPlanReportsResponse>() {
+                    @Override
+                    public ListChargebackPlanReportsResponse apply(
+                            ListChargebackPlanReportsRequest request) {
+                        return client.listChargebackPlanReports(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.ChargebackPlanReportSummary} objects
+     * contained in responses from the listChargebackPlanReports operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.ChargebackPlanReportSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.ChargebackPlanReportSummary>
+            listChargebackPlanReportsRecordIterator(
+                    final ListChargebackPlanReportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListChargebackPlanReportsRequest.Builder, ListChargebackPlanReportsRequest,
+                ListChargebackPlanReportsResponse,
+                com.oracle.bmc.opsi.model.ChargebackPlanReportSummary>(
+                new java.util.function.Supplier<ListChargebackPlanReportsRequest.Builder>() {
+                    @Override
+                    public ListChargebackPlanReportsRequest.Builder get() {
+                        return ListChargebackPlanReportsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListChargebackPlanReportsResponse, String>() {
+                    @Override
+                    public String apply(ListChargebackPlanReportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListChargebackPlanReportsRequest.Builder>,
+                        ListChargebackPlanReportsRequest>() {
+                    @Override
+                    public ListChargebackPlanReportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListChargebackPlanReportsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListChargebackPlanReportsRequest, ListChargebackPlanReportsResponse>() {
+                    @Override
+                    public ListChargebackPlanReportsResponse apply(
+                            ListChargebackPlanReportsRequest request) {
+                        return client.listChargebackPlanReports(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListChargebackPlanReportsResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.ChargebackPlanReportSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.ChargebackPlanReportSummary>
+                            apply(ListChargebackPlanReportsResponse response) {
+                        return response.getChargebackPlanReportCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listChargebackPlans operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListChargebackPlansResponse> listChargebackPlansResponseIterator(
+            final ListChargebackPlansRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListChargebackPlansRequest.Builder, ListChargebackPlansRequest,
+                ListChargebackPlansResponse>(
+                new java.util.function.Supplier<ListChargebackPlansRequest.Builder>() {
+                    @Override
+                    public ListChargebackPlansRequest.Builder get() {
+                        return ListChargebackPlansRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListChargebackPlansResponse, String>() {
+                    @Override
+                    public String apply(ListChargebackPlansResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListChargebackPlansRequest.Builder>,
+                        ListChargebackPlansRequest>() {
+                    @Override
+                    public ListChargebackPlansRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListChargebackPlansRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListChargebackPlansRequest, ListChargebackPlansResponse>() {
+                    @Override
+                    public ListChargebackPlansResponse apply(ListChargebackPlansRequest request) {
+                        return client.listChargebackPlans(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.ChargebackPlanSummary} objects
+     * contained in responses from the listChargebackPlans operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.ChargebackPlanSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.ChargebackPlanSummary>
+            listChargebackPlansRecordIterator(final ListChargebackPlansRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListChargebackPlansRequest.Builder, ListChargebackPlansRequest,
+                ListChargebackPlansResponse, com.oracle.bmc.opsi.model.ChargebackPlanSummary>(
+                new java.util.function.Supplier<ListChargebackPlansRequest.Builder>() {
+                    @Override
+                    public ListChargebackPlansRequest.Builder get() {
+                        return ListChargebackPlansRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListChargebackPlansResponse, String>() {
+                    @Override
+                    public String apply(ListChargebackPlansResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListChargebackPlansRequest.Builder>,
+                        ListChargebackPlansRequest>() {
+                    @Override
+                    public ListChargebackPlansRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListChargebackPlansRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListChargebackPlansRequest, ListChargebackPlansResponse>() {
+                    @Override
+                    public ListChargebackPlansResponse apply(ListChargebackPlansRequest request) {
+                        return client.listChargebackPlans(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListChargebackPlansResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.ChargebackPlanSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.ChargebackPlanSummary> apply(
+                            ListChargebackPlansResponse response) {
+                        return response.getChargebackPlanCollection().getItems();
                     }
                 });
     }

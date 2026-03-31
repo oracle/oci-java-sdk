@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -109,6 +109,15 @@ public final class ZeroEtlPipeline extends Pipeline {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pipelineDiagnosticData")
+        private PipelineDiagnosticData pipelineDiagnosticData;
+
+        public Builder pipelineDiagnosticData(PipelineDiagnosticData pipelineDiagnosticData) {
+            this.pipelineDiagnosticData = pipelineDiagnosticData;
+            this.__explicitlySet__.add("pipelineDiagnosticData");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -190,6 +199,24 @@ public final class ZeroEtlPipeline extends Pipeline {
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
+        private java.util.List<IngressIpDetails> ingressIps;
+
+        public Builder ingressIps(java.util.List<IngressIpDetails> ingressIps) {
+            this.ingressIps = ingressIps;
+            this.__explicitlySet__.add("ingressIps");
+            return this;
+        }
         /**
          * Mapping for source/target schema/tables for the pipeline data replication.
          *
@@ -253,6 +280,7 @@ public final class ZeroEtlPipeline extends Pipeline {
                             this.isAutoScalingEnabled,
                             this.sourceConnectionDetails,
                             this.targetConnectionDetails,
+                            this.pipelineDiagnosticData,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -262,6 +290,8 @@ public final class ZeroEtlPipeline extends Pipeline {
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.subnetId,
+                            this.ingressIps,
                             this.mappingRules,
                             this.processOptions,
                             this.timeLastRecorded);
@@ -300,6 +330,9 @@ public final class ZeroEtlPipeline extends Pipeline {
             if (model.wasPropertyExplicitlySet("targetConnectionDetails")) {
                 this.targetConnectionDetails(model.getTargetConnectionDetails());
             }
+            if (model.wasPropertyExplicitlySet("pipelineDiagnosticData")) {
+                this.pipelineDiagnosticData(model.getPipelineDiagnosticData());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -326,6 +359,12 @@ public final class ZeroEtlPipeline extends Pipeline {
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("ingressIps")) {
+                this.ingressIps(model.getIngressIps());
             }
             if (model.wasPropertyExplicitlySet("mappingRules")) {
                 this.mappingRules(model.getMappingRules());
@@ -362,6 +401,7 @@ public final class ZeroEtlPipeline extends Pipeline {
             Boolean isAutoScalingEnabled,
             SourcePipelineConnectionDetails sourceConnectionDetails,
             TargetPipelineConnectionDetails targetConnectionDetails,
+            PipelineDiagnosticData pipelineDiagnosticData,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -371,6 +411,8 @@ public final class ZeroEtlPipeline extends Pipeline {
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String subnetId,
+            java.util.List<IngressIpDetails> ingressIps,
             java.util.List<MappingRule> mappingRules,
             ProcessOptions processOptions,
             java.util.Date timeLastRecorded) {
@@ -384,6 +426,7 @@ public final class ZeroEtlPipeline extends Pipeline {
                 isAutoScalingEnabled,
                 sourceConnectionDetails,
                 targetConnectionDetails,
+                pipelineDiagnosticData,
                 freeformTags,
                 definedTags,
                 systemTags,
@@ -392,7 +435,9 @@ public final class ZeroEtlPipeline extends Pipeline {
                 lifecycleSubState,
                 lifecycleDetails,
                 timeCreated,
-                timeUpdated);
+                timeUpdated,
+                subnetId,
+                ingressIps);
         this.mappingRules = mappingRules;
         this.processOptions = processOptions;
         this.timeLastRecorded = timeLastRecorded;

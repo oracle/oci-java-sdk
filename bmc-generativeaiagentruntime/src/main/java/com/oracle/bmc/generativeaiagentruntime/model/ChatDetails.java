@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagentruntime.model;
@@ -25,6 +25,7 @@ public final class ChatDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         "shouldStream",
         "sessionId",
         "toolParameters",
+        "toolInputs",
         "performedActions"
     })
     public ChatDetails(
@@ -32,12 +33,14 @@ public final class ChatDetails extends com.oracle.bmc.http.internal.ExplicitlySe
             Boolean shouldStream,
             String sessionId,
             java.util.Map<String, String> toolParameters,
+            java.util.List<ToolInput> toolInputs,
             java.util.List<PerformedAction> performedActions) {
         super();
         this.userMessage = userMessage;
         this.shouldStream = shouldStream;
         this.sessionId = sessionId;
         this.toolParameters = toolParameters;
+        this.toolInputs = toolInputs;
         this.performedActions = performedActions;
     }
 
@@ -92,19 +95,37 @@ public final class ChatDetails extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * A map where each key is a toolId and the value contains tool type and additional dynamic parameters.
+         * A map where each key is a toolId and the value contains tool type and additional dynamic parameters. This field is deprecated and will be removed after July 02 2026.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("toolParameters")
         private java.util.Map<String, String> toolParameters;
 
         /**
-         * A map where each key is a toolId and the value contains tool type and additional dynamic parameters.
+         * A map where each key is a toolId and the value contains tool type and additional dynamic parameters. This field is deprecated and will be removed after July 02 2026.
          * @param toolParameters the value to set
          * @return this builder
          **/
         public Builder toolParameters(java.util.Map<String, String> toolParameters) {
             this.toolParameters = toolParameters;
             this.__explicitlySet__.add("toolParameters");
+            return this;
+        }
+        /**
+         * Array of tool input objects, each specifying a tool's ID, type, and corresponding input parameters required for execution.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("toolInputs")
+        private java.util.List<ToolInput> toolInputs;
+
+        /**
+         * Array of tool input objects, each specifying a tool's ID, type, and corresponding input parameters required for execution.
+         *
+         * @param toolInputs the value to set
+         * @return this builder
+         **/
+        public Builder toolInputs(java.util.List<ToolInput> toolInputs) {
+            this.toolInputs = toolInputs;
+            this.__explicitlySet__.add("toolInputs");
             return this;
         }
         /**
@@ -134,6 +155,7 @@ public final class ChatDetails extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.shouldStream,
                             this.sessionId,
                             this.toolParameters,
+                            this.toolInputs,
                             this.performedActions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -154,6 +176,9 @@ public final class ChatDetails extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("toolParameters")) {
                 this.toolParameters(model.getToolParameters());
+            }
+            if (model.wasPropertyExplicitlySet("toolInputs")) {
+                this.toolInputs(model.getToolInputs());
             }
             if (model.wasPropertyExplicitlySet("performedActions")) {
                 this.performedActions(model.getPerformedActions());
@@ -216,17 +241,33 @@ public final class ChatDetails extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * A map where each key is a toolId and the value contains tool type and additional dynamic parameters.
+     * A map where each key is a toolId and the value contains tool type and additional dynamic parameters. This field is deprecated and will be removed after July 02 2026.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("toolParameters")
     private final java.util.Map<String, String> toolParameters;
 
     /**
-     * A map where each key is a toolId and the value contains tool type and additional dynamic parameters.
+     * A map where each key is a toolId and the value contains tool type and additional dynamic parameters. This field is deprecated and will be removed after July 02 2026.
      * @return the value
      **/
     public java.util.Map<String, String> getToolParameters() {
         return toolParameters;
+    }
+
+    /**
+     * Array of tool input objects, each specifying a tool's ID, type, and corresponding input parameters required for execution.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("toolInputs")
+    private final java.util.List<ToolInput> toolInputs;
+
+    /**
+     * Array of tool input objects, each specifying a tool's ID, type, and corresponding input parameters required for execution.
+     *
+     * @return the value
+     **/
+    public java.util.List<ToolInput> getToolInputs() {
+        return toolInputs;
     }
 
     /**
@@ -261,6 +302,7 @@ public final class ChatDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", shouldStream=").append(String.valueOf(this.shouldStream));
         sb.append(", sessionId=").append(String.valueOf(this.sessionId));
         sb.append(", toolParameters=").append(String.valueOf(this.toolParameters));
+        sb.append(", toolInputs=").append(String.valueOf(this.toolInputs));
         sb.append(", performedActions=").append(String.valueOf(this.performedActions));
         sb.append(")");
         return sb.toString();
@@ -280,6 +322,7 @@ public final class ChatDetails extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.shouldStream, other.shouldStream)
                 && java.util.Objects.equals(this.sessionId, other.sessionId)
                 && java.util.Objects.equals(this.toolParameters, other.toolParameters)
+                && java.util.Objects.equals(this.toolInputs, other.toolInputs)
                 && java.util.Objects.equals(this.performedActions, other.performedActions)
                 && super.equals(other);
     }
@@ -294,6 +337,7 @@ public final class ChatDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         result =
                 (result * PRIME)
                         + (this.toolParameters == null ? 43 : this.toolParameters.hashCode());
+        result = (result * PRIME) + (this.toolInputs == null ? 43 : this.toolInputs.hashCode());
         result =
                 (result * PRIME)
                         + (this.performedActions == null ? 43 : this.performedActions.hashCode());

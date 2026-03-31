@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -82,6 +82,15 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("startupProbeDetails")
+        private JobProbeDetails startupProbeDetails;
+
+        public Builder startupProbeDetails(JobProbeDetails startupProbeDetails) {
+            this.startupProbeDetails = startupProbeDetails;
+            this.__explicitlySet__.add("startupProbeDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -90,7 +99,8 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
                     new DefaultJobConfigurationDetails(
                             this.environmentVariables,
                             this.commandLineArguments,
-                            this.maximumRuntimeInMinutes);
+                            this.maximumRuntimeInMinutes,
+                            this.startupProbeDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -107,6 +117,9 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
             }
             if (model.wasPropertyExplicitlySet("maximumRuntimeInMinutes")) {
                 this.maximumRuntimeInMinutes(model.getMaximumRuntimeInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("startupProbeDetails")) {
+                this.startupProbeDetails(model.getStartupProbeDetails());
             }
             return this;
         }
@@ -127,11 +140,13 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
     public DefaultJobConfigurationDetails(
             java.util.Map<String, String> environmentVariables,
             String commandLineArguments,
-            Long maximumRuntimeInMinutes) {
+            Long maximumRuntimeInMinutes,
+            JobProbeDetails startupProbeDetails) {
         super();
         this.environmentVariables = environmentVariables;
         this.commandLineArguments = commandLineArguments;
         this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
+        this.startupProbeDetails = startupProbeDetails;
     }
 
     /**
@@ -182,6 +197,13 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
         return maximumRuntimeInMinutes;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("startupProbeDetails")
+    private final JobProbeDetails startupProbeDetails;
+
+    public JobProbeDetails getStartupProbeDetails() {
+        return startupProbeDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -200,6 +222,7 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
         sb.append(", commandLineArguments=").append(String.valueOf(this.commandLineArguments));
         sb.append(", maximumRuntimeInMinutes=")
                 .append(String.valueOf(this.maximumRuntimeInMinutes));
+        sb.append(", startupProbeDetails=").append(String.valueOf(this.startupProbeDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -218,6 +241,7 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
                 && java.util.Objects.equals(this.commandLineArguments, other.commandLineArguments)
                 && java.util.Objects.equals(
                         this.maximumRuntimeInMinutes, other.maximumRuntimeInMinutes)
+                && java.util.Objects.equals(this.startupProbeDetails, other.startupProbeDetails)
                 && super.equals(other);
     }
 
@@ -240,6 +264,11 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
                         + (this.maximumRuntimeInMinutes == null
                                 ? 43
                                 : this.maximumRuntimeInMinutes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.startupProbeDetails == null
+                                ? 43
+                                : this.startupProbeDetails.hashCode());
         return result;
     }
 }

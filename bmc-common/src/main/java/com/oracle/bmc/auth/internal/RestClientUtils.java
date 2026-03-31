@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth.internal;
@@ -19,6 +19,7 @@ import com.oracle.bmc.http.signing.SigningStrategy;
 import com.oracle.bmc.http.signing.internal.Constants;
 import com.oracle.bmc.http.signing.internal.KeySupplier;
 import com.oracle.bmc.http.signing.internal.RequestSignerImpl;
+import com.oracle.bmc.util.VisibleForTesting;
 
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPrivateKey;
@@ -71,7 +72,8 @@ public class RestClientUtils {
                 circuitBreakerConfiguration);
     }
 
-    static RestClient createRestClient(
+    @VisibleForTesting
+    public static RestClient createRestClient(
             String endpoint,
             ClientConfigurator clientConfigurator,
             List<ClientConfigurator> additionalClientConfigurators,

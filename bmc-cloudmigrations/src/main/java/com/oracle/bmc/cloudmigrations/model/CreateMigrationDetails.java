@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudmigrations.model;
@@ -23,31 +23,53 @@ public final class CreateMigrationDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "migrationType",
         "displayName",
         "compartmentId",
         "replicationScheduleId",
         "isCompleted",
+        "migrationConfig",
         "freeformTags",
         "definedTags"
     })
     public CreateMigrationDetails(
+            Migration.MigrationType migrationType,
             String displayName,
             String compartmentId,
             String replicationScheduleId,
             Boolean isCompleted,
+            MigrationConfig migrationConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.migrationType = migrationType;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.replicationScheduleId = replicationScheduleId;
         this.isCompleted = isCompleted;
+        this.migrationConfig = migrationConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationType")
+        private Migration.MigrationType migrationType;
+
+        /**
+         * Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+         * @param migrationType the value to set
+         * @return this builder
+         **/
+        public Builder migrationType(Migration.MigrationType migrationType) {
+            this.migrationType = migrationType;
+            this.__explicitlySet__.add("migrationType");
+            return this;
+        }
         /**
          * Migration identifier
          **/
@@ -112,6 +134,15 @@ public final class CreateMigrationDetails
             this.__explicitlySet__.add("isCompleted");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationConfig")
+        private MigrationConfig migrationConfig;
+
+        public Builder migrationConfig(MigrationConfig migrationConfig) {
+            this.migrationConfig = migrationConfig;
+            this.__explicitlySet__.add("migrationConfig");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
          * Example: {@code {"bar-key": "value"}}
@@ -160,10 +191,12 @@ public final class CreateMigrationDetails
         public CreateMigrationDetails build() {
             CreateMigrationDetails model =
                     new CreateMigrationDetails(
+                            this.migrationType,
                             this.displayName,
                             this.compartmentId,
                             this.replicationScheduleId,
                             this.isCompleted,
+                            this.migrationConfig,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -174,6 +207,9 @@ public final class CreateMigrationDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateMigrationDetails model) {
+            if (model.wasPropertyExplicitlySet("migrationType")) {
+                this.migrationType(model.getMigrationType());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
@@ -185,6 +221,9 @@ public final class CreateMigrationDetails
             }
             if (model.wasPropertyExplicitlySet("isCompleted")) {
                 this.isCompleted(model.getIsCompleted());
+            }
+            if (model.wasPropertyExplicitlySet("migrationConfig")) {
+                this.migrationConfig(model.getMigrationConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -205,6 +244,20 @@ public final class CreateMigrationDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationType")
+    private final Migration.MigrationType migrationType;
+
+    /**
+     * Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     * @return the value
+     **/
+    public Migration.MigrationType getMigrationType() {
+        return migrationType;
     }
 
     /**
@@ -263,6 +316,13 @@ public final class CreateMigrationDetails
         return isCompleted;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationConfig")
+    private final MigrationConfig migrationConfig;
+
+    public MigrationConfig getMigrationConfig() {
+        return migrationConfig;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
      * Example: {@code {"bar-key": "value"}}
@@ -313,10 +373,12 @@ public final class CreateMigrationDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateMigrationDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append("migrationType=").append(String.valueOf(this.migrationType));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", replicationScheduleId=").append(String.valueOf(this.replicationScheduleId));
         sb.append(", isCompleted=").append(String.valueOf(this.isCompleted));
+        sb.append(", migrationConfig=").append(String.valueOf(this.migrationConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -333,10 +395,12 @@ public final class CreateMigrationDetails
         }
 
         CreateMigrationDetails other = (CreateMigrationDetails) o;
-        return java.util.Objects.equals(this.displayName, other.displayName)
+        return java.util.Objects.equals(this.migrationType, other.migrationType)
+                && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.replicationScheduleId, other.replicationScheduleId)
                 && java.util.Objects.equals(this.isCompleted, other.isCompleted)
+                && java.util.Objects.equals(this.migrationConfig, other.migrationConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -346,6 +410,9 @@ public final class CreateMigrationDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.migrationType == null ? 43 : this.migrationType.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
@@ -356,6 +423,9 @@ public final class CreateMigrationDetails
                                 ? 43
                                 : this.replicationScheduleId.hashCode());
         result = (result * PRIME) + (this.isCompleted == null ? 43 : this.isCompleted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.migrationConfig == null ? 43 : this.migrationConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

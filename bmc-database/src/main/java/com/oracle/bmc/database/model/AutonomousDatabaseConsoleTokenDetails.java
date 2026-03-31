@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * The token that allows the OCI Console to access the Autonomous Database Service Console.
+ * The token that allows the OCI Console to access the Autonomous AI Database Service Console.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -32,13 +32,13 @@ public final class AutonomousDatabaseConsoleTokenDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+         * The token that allows the OCI Console to access the Autonomous AI Transaction Processing Service Console.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("token")
         private String token;
 
         /**
-         * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+         * The token that allows the OCI Console to access the Autonomous AI Transaction Processing Service Console.
          * @param token the value to set
          * @return this builder
          **/
@@ -48,13 +48,13 @@ public final class AutonomousDatabaseConsoleTokenDetails
             return this;
         }
         /**
-         * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+         * The login URL that allows the OCI Console to access the Autonomous AI Transaction Processing Service Console.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("loginUrl")
         private String loginUrl;
 
         /**
-         * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+         * The login URL that allows the OCI Console to access the Autonomous AI Transaction Processing Service Console.
          * @param loginUrl the value to set
          * @return this builder
          **/
@@ -100,13 +100,13 @@ public final class AutonomousDatabaseConsoleTokenDetails
     }
 
     /**
-     * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+     * The token that allows the OCI Console to access the Autonomous AI Transaction Processing Service Console.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("token")
     private final String token;
 
     /**
-     * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+     * The token that allows the OCI Console to access the Autonomous AI Transaction Processing Service Console.
      * @return the value
      **/
     public String getToken() {
@@ -114,13 +114,13 @@ public final class AutonomousDatabaseConsoleTokenDetails
     }
 
     /**
-     * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+     * The login URL that allows the OCI Console to access the Autonomous AI Transaction Processing Service Console.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loginUrl")
     private final String loginUrl;
 
     /**
-     * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+     * The login URL that allows the OCI Console to access the Autonomous AI Transaction Processing Service Console.
      * @return the value
      **/
     public String getLoginUrl() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi.requests;
@@ -53,12 +53,12 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return page;
     }
     /**
-     * The maximumimum number of items to return.
+     * The maximum number of items to return.
      */
     private Integer limit;
 
     /**
-     * The maximumimum number of items to return.
+     * The maximum number of items to return.
      */
     public Integer getLimit() {
         return limit;
@@ -161,13 +161,13 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return sortOrder;
     }
     /**
-     * Query parameter for filtering by name
+     * The query parameter for filtering by name.
      *
      */
     private String name;
 
     /**
-     * Query parameter for filtering by name
+     * The query parameter for filtering by name.
      *
      */
     public String getName() {
@@ -235,12 +235,12 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The maximumimum number of items to return.
+         * The maximum number of items to return.
          */
         private Integer limit = null;
 
         /**
-         * The maximumimum number of items to return.
+         * The maximum number of items to return.
          * @param limit the value to set
          * @return this builder instance
          */
@@ -282,13 +282,13 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Query parameter for filtering by name
+         * The query parameter for filtering by name.
          *
          */
         private String name = null;
 
         /**
-         * Query parameter for filtering by name
+         * The query parameter for filtering by name.
          *
          * @param name the value to set
          * @return this builder instance

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -107,6 +107,17 @@ public class ListSensitiveColumnAnalyticsRequest
      */
     public String getTargetId() {
         return targetId;
+    }
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    private String targetDatabaseGroupId;
+
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
     }
     /**
      * A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
@@ -332,6 +343,21 @@ public class ListSensitiveColumnAnalyticsRequest
          */
         public Builder targetId(String targetId) {
             this.targetId = targetId;
+            return this;
+        }
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
             return this;
         }
 
@@ -562,6 +588,7 @@ public class ListSensitiveColumnAnalyticsRequest
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             accessLevel(o.getAccessLevel());
             targetId(o.getTargetId());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             sensitiveTypeId(o.getSensitiveTypeId());
             sensitiveTypeGroupId(o.getSensitiveTypeGroupId());
             sensitiveDataModelId(o.getSensitiveDataModelId());
@@ -608,6 +635,7 @@ public class ListSensitiveColumnAnalyticsRequest
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.accessLevel = accessLevel;
             request.targetId = targetId;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             request.sensitiveTypeId = sensitiveTypeId;
             request.sensitiveTypeGroupId = sensitiveTypeGroupId;
             request.sensitiveDataModelId = sensitiveDataModelId;
@@ -619,7 +647,7 @@ public class ListSensitiveColumnAnalyticsRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSensitiveColumnAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, targetId, sensitiveTypeId, sensitiveTypeGroupId, sensitiveDataModelId, groupBy, schemaName, objectName, columnName, limit, page, opcRequestId);
+            // new ListSensitiveColumnAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, targetId, targetDatabaseGroupId, sensitiveTypeId, sensitiveTypeGroupId, sensitiveDataModelId, groupBy, schemaName, objectName, columnName, limit, page, opcRequestId);
         }
     }
 
@@ -633,6 +661,7 @@ public class ListSensitiveColumnAnalyticsRequest
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .accessLevel(accessLevel)
                 .targetId(targetId)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
                 .sensitiveTypeId(sensitiveTypeId)
                 .sensitiveTypeGroupId(sensitiveTypeGroupId)
                 .sensitiveDataModelId(sensitiveDataModelId)
@@ -662,6 +691,7 @@ public class ListSensitiveColumnAnalyticsRequest
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(",sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
         sb.append(",sensitiveTypeGroupId=").append(String.valueOf(this.sensitiveTypeGroupId));
         sb.append(",sensitiveDataModelId=").append(String.valueOf(this.sensitiveDataModelId));
@@ -692,6 +722,7 @@ public class ListSensitiveColumnAnalyticsRequest
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.accessLevel, other.accessLevel)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
                 && java.util.Objects.equals(this.sensitiveTypeId, other.sensitiveTypeId)
                 && java.util.Objects.equals(this.sensitiveTypeGroupId, other.sensitiveTypeGroupId)
                 && java.util.Objects.equals(this.sensitiveDataModelId, other.sensitiveDataModelId)
@@ -718,6 +749,11 @@ public class ListSensitiveColumnAnalyticsRequest
                                 : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.sensitiveTypeId == null ? 43 : this.sensitiveTypeId.hashCode());

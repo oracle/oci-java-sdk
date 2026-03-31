@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * The agent plugin
+ * An Oracle Cloud Agent plugin.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -37,13 +37,13 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The plugin name
+         * The plugin name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The plugin name
+         * The plugin name.
          * @param name the value to set
          * @return this builder
          **/
@@ -53,13 +53,13 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The plugin version
+         * The plugin version.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * The plugin version
+         * The plugin version.
          * @param version the value to set
          * @return this builder
          **/
@@ -69,13 +69,13 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The plugin status
+         * The plugin status.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
-         * The plugin status
+         * The plugin status.
          * @param status the value to set
          * @return this builder
          **/
@@ -85,13 +85,13 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The last update time of the plugin
+         * The last updated time of the plugin, in UTC.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastUpdateTime")
         private java.util.Date lastUpdateTime;
 
         /**
-         * The last update time of the plugin
+         * The last updated time of the plugin, in UTC.
          * @param lastUpdateTime the value to set
          * @return this builder
          **/
@@ -101,13 +101,13 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The optional message from the agent plugin
+         * An optional message from the plugin.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * The optional message from the agent plugin
+         * An optional message from the plugin.
          * @param message the value to set
          * @return this builder
          **/
@@ -167,13 +167,13 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The plugin name
+     * The plugin name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The plugin name
+     * The plugin name.
      * @return the value
      **/
     public String getName() {
@@ -181,13 +181,13 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The plugin version
+     * The plugin version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * The plugin version
+     * The plugin version.
      * @return the value
      **/
     public String getVersion() {
@@ -195,13 +195,13 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The plugin status
+     * The plugin status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
-     * The plugin status
+     * The plugin status.
      * @return the value
      **/
     public String getStatus() {
@@ -209,13 +209,13 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The last update time of the plugin
+     * The last updated time of the plugin, in UTC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastUpdateTime")
     private final java.util.Date lastUpdateTime;
 
     /**
-     * The last update time of the plugin
+     * The last updated time of the plugin, in UTC.
      * @return the value
      **/
     public java.util.Date getLastUpdateTime() {
@@ -223,13 +223,13 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The optional message from the agent plugin
+     * An optional message from the plugin.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * The optional message from the agent plugin
+     * An optional message from the plugin.
      * @return the value
      **/
     public String getMessage() {

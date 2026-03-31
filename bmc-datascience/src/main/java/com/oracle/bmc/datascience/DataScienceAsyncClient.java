@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience;
@@ -7,6 +7,8 @@ package com.oracle.bmc.datascience;
 import com.oracle.bmc.datascience.internal.http.*;
 import com.oracle.bmc.datascience.requests.*;
 import com.oracle.bmc.datascience.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for DataScience service. <br/>
@@ -28,7 +30,7 @@ public class DataScienceAsyncClient implements DataScienceAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATASCIENCE")
+                    .serviceName(DataScienceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://datascience.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -300,7 +311,7 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             LOG.warn(
                     com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
                             "DataScienceAsyncClient",
-                            "getJobArtifactContent,getModelArtifactContent,getModelCustomMetadatumArtifactContent,getModelDefinedMetadatumArtifactContent,getStepArtifactContent"));
+                            "getJobArtifactContent,getMlApplicationHistoricalPackageContent,getMlApplicationPackageContent,getModelArtifactContent,getModelCustomMetadatumArtifactContent,getModelDefinedMetadatumArtifactContent,getModelGroupArtifactContent,getStepArtifactContent"));
         }
     }
 
@@ -406,12 +417,21 @@ public class DataScienceAsyncClient implements DataScienceAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -441,15 +461,7 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -543,6 +555,52 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ActivateModelDeploymentRequest, ActivateModelDeploymentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ActivateModelGroupResponse> activateModelGroup(
+            ActivateModelGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ActivateModelGroupRequest, ActivateModelGroupResponse>
+                    handler) {
+        LOG.trace("Called async activateModelGroup");
+        final ActivateModelGroupRequest interceptedRequest =
+                ActivateModelGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateModelGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ActivateModelGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/ActivateModelGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, ActivateModelGroupResponse>
+                transformer =
+                        ActivateModelGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ActivateModelGroupRequest, ActivateModelGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ActivateModelGroupRequest, ActivateModelGroupResponse>,
+                        java.util.concurrent.Future<ActivateModelGroupResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ActivateModelGroupRequest, ActivateModelGroupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -956,6 +1014,251 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeMlApplicationCompartmentResponse>
+            changeMlApplicationCompartment(
+                    ChangeMlApplicationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMlApplicationCompartmentRequest,
+                                    ChangeMlApplicationCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeMlApplicationCompartment");
+        final ChangeMlApplicationCompartmentRequest interceptedRequest =
+                ChangeMlApplicationCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMlApplicationCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ChangeMlApplicationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/ChangeMlApplicationCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeMlApplicationCompartmentResponse>
+                transformer =
+                        ChangeMlApplicationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMlApplicationCompartmentRequest,
+                        ChangeMlApplicationCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMlApplicationCompartmentRequest,
+                                ChangeMlApplicationCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeMlApplicationCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeMlApplicationCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMlApplicationCompartmentRequest, ChangeMlApplicationCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeMlApplicationImplementationCompartmentResponse>
+            changeMlApplicationImplementationCompartment(
+                    ChangeMlApplicationImplementationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMlApplicationImplementationCompartmentRequest,
+                                    ChangeMlApplicationImplementationCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeMlApplicationImplementationCompartment");
+        final ChangeMlApplicationImplementationCompartmentRequest interceptedRequest =
+                ChangeMlApplicationImplementationCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMlApplicationImplementationCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ChangeMlApplicationImplementationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/ChangeMlApplicationImplementationCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeMlApplicationImplementationCompartmentResponse>
+                transformer =
+                        ChangeMlApplicationImplementationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMlApplicationImplementationCompartmentRequest,
+                        ChangeMlApplicationImplementationCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMlApplicationImplementationCompartmentRequest,
+                                ChangeMlApplicationImplementationCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeMlApplicationImplementationCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeMlApplicationImplementationCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMlApplicationImplementationCompartmentRequest,
+                    ChangeMlApplicationImplementationCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeMlApplicationInstanceCompartmentResponse>
+            changeMlApplicationInstanceCompartment(
+                    ChangeMlApplicationInstanceCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMlApplicationInstanceCompartmentRequest,
+                                    ChangeMlApplicationInstanceCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeMlApplicationInstanceCompartment");
+        final ChangeMlApplicationInstanceCompartmentRequest interceptedRequest =
+                ChangeMlApplicationInstanceCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMlApplicationInstanceCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ChangeMlApplicationInstanceCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/ChangeMlApplicationInstanceCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeMlApplicationInstanceCompartmentResponse>
+                transformer =
+                        ChangeMlApplicationInstanceCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMlApplicationInstanceCompartmentRequest,
+                        ChangeMlApplicationInstanceCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMlApplicationInstanceCompartmentRequest,
+                                ChangeMlApplicationInstanceCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeMlApplicationInstanceCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeMlApplicationInstanceCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMlApplicationInstanceCompartmentRequest,
+                    ChangeMlApplicationInstanceCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeMlApplicationInstanceViewCompartmentResponse>
+            changeMlApplicationInstanceViewCompartment(
+                    ChangeMlApplicationInstanceViewCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMlApplicationInstanceViewCompartmentRequest,
+                                    ChangeMlApplicationInstanceViewCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeMlApplicationInstanceViewCompartment");
+        final ChangeMlApplicationInstanceViewCompartmentRequest interceptedRequest =
+                ChangeMlApplicationInstanceViewCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMlApplicationInstanceViewCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ChangeMlApplicationInstanceViewCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/ChangeMlApplicationInstanceViewCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeMlApplicationInstanceViewCompartmentResponse>
+                transformer =
+                        ChangeMlApplicationInstanceViewCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMlApplicationInstanceViewCompartmentRequest,
+                        ChangeMlApplicationInstanceViewCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMlApplicationInstanceViewCompartmentRequest,
+                                ChangeMlApplicationInstanceViewCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeMlApplicationInstanceViewCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeMlApplicationInstanceViewCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMlApplicationInstanceViewCompartmentRequest,
+                    ChangeMlApplicationInstanceViewCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeModelCompartmentResponse> changeModelCompartment(
             ChangeModelCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1055,6 +1358,126 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeModelDeploymentCompartmentRequest,
                     ChangeModelDeploymentCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeModelGroupCompartmentResponse>
+            changeModelGroupCompartment(
+                    ChangeModelGroupCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeModelGroupCompartmentRequest,
+                                    ChangeModelGroupCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeModelGroupCompartment");
+        final ChangeModelGroupCompartmentRequest interceptedRequest =
+                ChangeModelGroupCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeModelGroupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ChangeModelGroupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/ChangeModelGroupCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeModelGroupCompartmentResponse>
+                transformer =
+                        ChangeModelGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeModelGroupCompartmentRequest, ChangeModelGroupCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeModelGroupCompartmentRequest,
+                                ChangeModelGroupCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeModelGroupCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeModelGroupCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeModelGroupCompartmentRequest, ChangeModelGroupCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeModelGroupVersionHistoryCompartmentResponse>
+            changeModelGroupVersionHistoryCompartment(
+                    ChangeModelGroupVersionHistoryCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeModelGroupVersionHistoryCompartmentRequest,
+                                    ChangeModelGroupVersionHistoryCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeModelGroupVersionHistoryCompartment");
+        final ChangeModelGroupVersionHistoryCompartmentRequest interceptedRequest =
+                ChangeModelGroupVersionHistoryCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeModelGroupVersionHistoryCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ChangeModelGroupVersionHistoryCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupVersionHistory/ChangeModelGroupVersionHistoryCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeModelGroupVersionHistoryCompartmentResponse>
+                transformer =
+                        ChangeModelGroupVersionHistoryCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeModelGroupVersionHistoryCompartmentRequest,
+                        ChangeModelGroupVersionHistoryCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeModelGroupVersionHistoryCompartmentRequest,
+                                ChangeModelGroupVersionHistoryCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeModelGroupVersionHistoryCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeModelGroupVersionHistoryCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeModelGroupVersionHistoryCompartmentRequest,
+                    ChangeModelGroupVersionHistoryCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1630,6 +2053,175 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMlApplicationResponse> createMlApplication(
+            CreateMlApplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMlApplicationRequest, CreateMlApplicationResponse>
+                    handler) {
+        LOG.trace("Called async createMlApplication");
+        final CreateMlApplicationRequest interceptedRequest =
+                CreateMlApplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMlApplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "CreateMlApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/CreateMlApplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateMlApplicationResponse>
+                transformer =
+                        CreateMlApplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateMlApplicationRequest, CreateMlApplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMlApplicationRequest, CreateMlApplicationResponse>,
+                        java.util.concurrent.Future<CreateMlApplicationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMlApplicationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMlApplicationRequest, CreateMlApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMlApplicationImplementationResponse>
+            createMlApplicationImplementation(
+                    CreateMlApplicationImplementationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateMlApplicationImplementationRequest,
+                                    CreateMlApplicationImplementationResponse>
+                            handler) {
+        LOG.trace("Called async createMlApplicationImplementation");
+        final CreateMlApplicationImplementationRequest interceptedRequest =
+                CreateMlApplicationImplementationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMlApplicationImplementationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "CreateMlApplicationImplementation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/CreateMlApplicationImplementation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateMlApplicationImplementationResponse>
+                transformer =
+                        CreateMlApplicationImplementationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateMlApplicationImplementationRequest,
+                        CreateMlApplicationImplementationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMlApplicationImplementationRequest,
+                                CreateMlApplicationImplementationResponse>,
+                        java.util.concurrent.Future<CreateMlApplicationImplementationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMlApplicationImplementationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMlApplicationImplementationRequest,
+                    CreateMlApplicationImplementationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMlApplicationInstanceResponse>
+            createMlApplicationInstance(
+                    CreateMlApplicationInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateMlApplicationInstanceRequest,
+                                    CreateMlApplicationInstanceResponse>
+                            handler) {
+        LOG.trace("Called async createMlApplicationInstance");
+        final CreateMlApplicationInstanceRequest interceptedRequest =
+                CreateMlApplicationInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMlApplicationInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "CreateMlApplicationInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/CreateMlApplicationInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateMlApplicationInstanceResponse>
+                transformer =
+                        CreateMlApplicationInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateMlApplicationInstanceRequest, CreateMlApplicationInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMlApplicationInstanceRequest,
+                                CreateMlApplicationInstanceResponse>,
+                        java.util.concurrent.Future<CreateMlApplicationInstanceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMlApplicationInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMlApplicationInstanceRequest, CreateMlApplicationInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateModelResponse> createModel(
             CreateModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse>
@@ -1938,6 +2530,186 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateModelDeploymentRequest, CreateModelDeploymentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateModelGroupResponse> createModelGroup(
+            CreateModelGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateModelGroupRequest, CreateModelGroupResponse>
+                    handler) {
+        LOG.trace("Called async createModelGroup");
+        final CreateModelGroupRequest interceptedRequest =
+                CreateModelGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateModelGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "CreateModelGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/CreateModelGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateModelGroupResponse>
+                transformer =
+                        CreateModelGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateModelGroupRequest, CreateModelGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateModelGroupRequest, CreateModelGroupResponse>,
+                        java.util.concurrent.Future<CreateModelGroupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBaseModelGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateModelGroupRequest, CreateModelGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateModelGroupArtifactResponse> createModelGroupArtifact(
+            CreateModelGroupArtifactRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateModelGroupArtifactRequest, CreateModelGroupArtifactResponse>
+                    handler) {
+        LOG.trace("Called async createModelGroupArtifact");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, CreateModelGroupArtifactRequest.builder());
+        }
+        final CreateModelGroupArtifactRequest interceptedRequest =
+                CreateModelGroupArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateModelGroupArtifactConverter.fromRequest(client, interceptedRequest);
+
+        ib.property(
+                com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "CreateModelGroupArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/CreateModelGroupArtifact");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateModelGroupArtifactResponse>
+                transformer =
+                        CreateModelGroupArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateModelGroupArtifactRequest, CreateModelGroupArtifactResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateModelGroupArtifactRequest, CreateModelGroupArtifactResponse>,
+                        java.util.concurrent.Future<CreateModelGroupArtifactResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getModelGroupArtifact(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateModelGroupArtifactRequest, CreateModelGroupArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getModelGroupArtifact(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateModelGroupVersionHistoryResponse>
+            createModelGroupVersionHistory(
+                    CreateModelGroupVersionHistoryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateModelGroupVersionHistoryRequest,
+                                    CreateModelGroupVersionHistoryResponse>
+                            handler) {
+        LOG.trace("Called async createModelGroupVersionHistory");
+        final CreateModelGroupVersionHistoryRequest interceptedRequest =
+                CreateModelGroupVersionHistoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateModelGroupVersionHistoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "CreateModelGroupVersionHistory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupVersionHistory/CreateModelGroupVersionHistory");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateModelGroupVersionHistoryResponse>
+                transformer =
+                        CreateModelGroupVersionHistoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateModelGroupVersionHistoryRequest,
+                        CreateModelGroupVersionHistoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateModelGroupVersionHistoryRequest,
+                                CreateModelGroupVersionHistoryResponse>,
+                        java.util.concurrent.Future<CreateModelGroupVersionHistoryResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateModelGroupVersionHistoryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateModelGroupVersionHistoryRequest, CreateModelGroupVersionHistoryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2477,6 +3249,53 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeactivateModelGroupResponse> deactivateModelGroup(
+            DeactivateModelGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeactivateModelGroupRequest, DeactivateModelGroupResponse>
+                    handler) {
+        LOG.trace("Called async deactivateModelGroup");
+        final DeactivateModelGroupRequest interceptedRequest =
+                DeactivateModelGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeactivateModelGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeactivateModelGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/DeactivateModelGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeactivateModelGroupResponse>
+                transformer =
+                        DeactivateModelGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeactivateModelGroupRequest, DeactivateModelGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeactivateModelGroupRequest, DeactivateModelGroupResponse>,
+                        java.util.concurrent.Future<DeactivateModelGroupResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeactivateModelGroupRequest, DeactivateModelGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeactivateNotebookSessionResponse> deactivateNotebookSession(
             DeactivateNotebookSessionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2712,6 +3531,157 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMlApplicationResponse> deleteMlApplication(
+            DeleteMlApplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMlApplicationRequest, DeleteMlApplicationResponse>
+                    handler) {
+        LOG.trace("Called async deleteMlApplication");
+        final DeleteMlApplicationRequest interceptedRequest =
+                DeleteMlApplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMlApplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteMlApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/DeleteMlApplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMlApplicationResponse>
+                transformer =
+                        DeleteMlApplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteMlApplicationRequest, DeleteMlApplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMlApplicationRequest, DeleteMlApplicationResponse>,
+                        java.util.concurrent.Future<DeleteMlApplicationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMlApplicationRequest, DeleteMlApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMlApplicationImplementationResponse>
+            deleteMlApplicationImplementation(
+                    DeleteMlApplicationImplementationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteMlApplicationImplementationRequest,
+                                    DeleteMlApplicationImplementationResponse>
+                            handler) {
+        LOG.trace("Called async deleteMlApplicationImplementation");
+        final DeleteMlApplicationImplementationRequest interceptedRequest =
+                DeleteMlApplicationImplementationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMlApplicationImplementationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteMlApplicationImplementation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/DeleteMlApplicationImplementation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteMlApplicationImplementationResponse>
+                transformer =
+                        DeleteMlApplicationImplementationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteMlApplicationImplementationRequest,
+                        DeleteMlApplicationImplementationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMlApplicationImplementationRequest,
+                                DeleteMlApplicationImplementationResponse>,
+                        java.util.concurrent.Future<DeleteMlApplicationImplementationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMlApplicationImplementationRequest,
+                    DeleteMlApplicationImplementationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMlApplicationInstanceResponse>
+            deleteMlApplicationInstance(
+                    DeleteMlApplicationInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteMlApplicationInstanceRequest,
+                                    DeleteMlApplicationInstanceResponse>
+                            handler) {
+        LOG.trace("Called async deleteMlApplicationInstance");
+        final DeleteMlApplicationInstanceRequest interceptedRequest =
+                DeleteMlApplicationInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMlApplicationInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteMlApplicationInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/DeleteMlApplicationInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteMlApplicationInstanceResponse>
+                transformer =
+                        DeleteMlApplicationInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteMlApplicationInstanceRequest, DeleteMlApplicationInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMlApplicationInstanceRequest,
+                                DeleteMlApplicationInstanceResponse>,
+                        java.util.concurrent.Future<DeleteMlApplicationInstanceResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMlApplicationInstanceRequest, DeleteMlApplicationInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteModelResponse> deleteModel(
             DeleteModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse>
@@ -2897,6 +3867,104 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelGroupResponse> deleteModelGroup(
+            DeleteModelGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteModelGroupRequest, DeleteModelGroupResponse>
+                    handler) {
+        LOG.trace("Called async deleteModelGroup");
+        final DeleteModelGroupRequest interceptedRequest =
+                DeleteModelGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteModelGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteModelGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/DeleteModelGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteModelGroupResponse>
+                transformer =
+                        DeleteModelGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteModelGroupRequest, DeleteModelGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteModelGroupRequest, DeleteModelGroupResponse>,
+                        java.util.concurrent.Future<DeleteModelGroupResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteModelGroupRequest, DeleteModelGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelGroupVersionHistoryResponse>
+            deleteModelGroupVersionHistory(
+                    DeleteModelGroupVersionHistoryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteModelGroupVersionHistoryRequest,
+                                    DeleteModelGroupVersionHistoryResponse>
+                            handler) {
+        LOG.trace("Called async deleteModelGroupVersionHistory");
+        final DeleteModelGroupVersionHistoryRequest interceptedRequest =
+                DeleteModelGroupVersionHistoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteModelGroupVersionHistoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteModelGroupVersionHistory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupVersionHistory/DeleteModelGroupVersionHistory");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteModelGroupVersionHistoryResponse>
+                transformer =
+                        DeleteModelGroupVersionHistoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteModelGroupVersionHistoryRequest,
+                        DeleteModelGroupVersionHistoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteModelGroupVersionHistoryRequest,
+                                DeleteModelGroupVersionHistoryResponse>,
+                        java.util.concurrent.Future<DeleteModelGroupVersionHistoryResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteModelGroupVersionHistoryRequest, DeleteModelGroupVersionHistoryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3184,6 +4252,129 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableMlApplicationInstanceViewTriggerResponse>
+            disableMlApplicationInstanceViewTrigger(
+                    DisableMlApplicationInstanceViewTriggerRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableMlApplicationInstanceViewTriggerRequest,
+                                    DisableMlApplicationInstanceViewTriggerResponse>
+                            handler) {
+        LOG.trace("Called async disableMlApplicationInstanceViewTrigger");
+        final DisableMlApplicationInstanceViewTriggerRequest interceptedRequest =
+                DisableMlApplicationInstanceViewTriggerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableMlApplicationInstanceViewTriggerConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DisableMlApplicationInstanceViewTrigger",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/DisableMlApplicationInstanceViewTrigger");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DisableMlApplicationInstanceViewTriggerResponse>
+                transformer =
+                        DisableMlApplicationInstanceViewTriggerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableMlApplicationInstanceViewTriggerRequest,
+                        DisableMlApplicationInstanceViewTriggerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableMlApplicationInstanceViewTriggerRequest,
+                                DisableMlApplicationInstanceViewTriggerResponse>,
+                        java.util.concurrent.Future<
+                                DisableMlApplicationInstanceViewTriggerResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getDisableMlApplicationInstanceViewTriggerDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableMlApplicationInstanceViewTriggerRequest,
+                    DisableMlApplicationInstanceViewTriggerResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableMlApplicationInstanceViewTriggerResponse>
+            enableMlApplicationInstanceViewTrigger(
+                    EnableMlApplicationInstanceViewTriggerRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableMlApplicationInstanceViewTriggerRequest,
+                                    EnableMlApplicationInstanceViewTriggerResponse>
+                            handler) {
+        LOG.trace("Called async enableMlApplicationInstanceViewTrigger");
+        final EnableMlApplicationInstanceViewTriggerRequest interceptedRequest =
+                EnableMlApplicationInstanceViewTriggerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableMlApplicationInstanceViewTriggerConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "EnableMlApplicationInstanceViewTrigger",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/EnableMlApplicationInstanceViewTrigger");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, EnableMlApplicationInstanceViewTriggerResponse>
+                transformer =
+                        EnableMlApplicationInstanceViewTriggerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableMlApplicationInstanceViewTriggerRequest,
+                        EnableMlApplicationInstanceViewTriggerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableMlApplicationInstanceViewTriggerRequest,
+                                EnableMlApplicationInstanceViewTriggerResponse>,
+                        java.util.concurrent.Future<EnableMlApplicationInstanceViewTriggerResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getEnableMlApplicationInstanceViewTriggerDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableMlApplicationInstanceViewTriggerRequest,
+                    EnableMlApplicationInstanceViewTriggerResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportModelArtifactResponse> exportModelArtifact(
             ExportModelArtifactRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3403,6 +4594,364 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetJobRunRequest, GetJobRunResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMlApplicationResponse> getMlApplication(
+            GetMlApplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMlApplicationRequest, GetMlApplicationResponse>
+                    handler) {
+        LOG.trace("Called async getMlApplication");
+        final GetMlApplicationRequest interceptedRequest =
+                GetMlApplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMlApplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetMlApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/GetMlApplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMlApplicationResponse>
+                transformer =
+                        GetMlApplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetMlApplicationRequest, GetMlApplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMlApplicationRequest, GetMlApplicationResponse>,
+                        java.util.concurrent.Future<GetMlApplicationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMlApplicationRequest, GetMlApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMlApplicationHistoricalPackageContentResponse>
+            getMlApplicationHistoricalPackageContent(
+                    GetMlApplicationHistoricalPackageContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetMlApplicationHistoricalPackageContentRequest,
+                                    GetMlApplicationHistoricalPackageContentResponse>
+                            handler) {
+        LOG.trace("Called async getMlApplicationHistoricalPackageContent");
+        final GetMlApplicationHistoricalPackageContentRequest interceptedRequest =
+                GetMlApplicationHistoricalPackageContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMlApplicationHistoricalPackageContentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetMlApplicationHistoricalPackageContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementationVersion/GetMlApplicationHistoricalPackageContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetMlApplicationHistoricalPackageContentResponse>
+                transformer =
+                        GetMlApplicationHistoricalPackageContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMlApplicationHistoricalPackageContentRequest,
+                        GetMlApplicationHistoricalPackageContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMlApplicationHistoricalPackageContentRequest,
+                                GetMlApplicationHistoricalPackageContentResponse>,
+                        java.util.concurrent.Future<
+                                GetMlApplicationHistoricalPackageContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMlApplicationHistoricalPackageContentRequest,
+                    GetMlApplicationHistoricalPackageContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMlApplicationImplementationResponse>
+            getMlApplicationImplementation(
+                    GetMlApplicationImplementationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetMlApplicationImplementationRequest,
+                                    GetMlApplicationImplementationResponse>
+                            handler) {
+        LOG.trace("Called async getMlApplicationImplementation");
+        final GetMlApplicationImplementationRequest interceptedRequest =
+                GetMlApplicationImplementationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMlApplicationImplementationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetMlApplicationImplementation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/GetMlApplicationImplementation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetMlApplicationImplementationResponse>
+                transformer =
+                        GetMlApplicationImplementationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMlApplicationImplementationRequest,
+                        GetMlApplicationImplementationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMlApplicationImplementationRequest,
+                                GetMlApplicationImplementationResponse>,
+                        java.util.concurrent.Future<GetMlApplicationImplementationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMlApplicationImplementationRequest, GetMlApplicationImplementationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMlApplicationImplementationVersionResponse>
+            getMlApplicationImplementationVersion(
+                    GetMlApplicationImplementationVersionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetMlApplicationImplementationVersionRequest,
+                                    GetMlApplicationImplementationVersionResponse>
+                            handler) {
+        LOG.trace("Called async getMlApplicationImplementationVersion");
+        final GetMlApplicationImplementationVersionRequest interceptedRequest =
+                GetMlApplicationImplementationVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMlApplicationImplementationVersionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetMlApplicationImplementationVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementationVersion/GetMlApplicationImplementationVersion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetMlApplicationImplementationVersionResponse>
+                transformer =
+                        GetMlApplicationImplementationVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMlApplicationImplementationVersionRequest,
+                        GetMlApplicationImplementationVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMlApplicationImplementationVersionRequest,
+                                GetMlApplicationImplementationVersionResponse>,
+                        java.util.concurrent.Future<GetMlApplicationImplementationVersionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMlApplicationImplementationVersionRequest,
+                    GetMlApplicationImplementationVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMlApplicationInstanceResponse> getMlApplicationInstance(
+            GetMlApplicationInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMlApplicationInstanceRequest, GetMlApplicationInstanceResponse>
+                    handler) {
+        LOG.trace("Called async getMlApplicationInstance");
+        final GetMlApplicationInstanceRequest interceptedRequest =
+                GetMlApplicationInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMlApplicationInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetMlApplicationInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/GetMlApplicationInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetMlApplicationInstanceResponse>
+                transformer =
+                        GetMlApplicationInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMlApplicationInstanceRequest, GetMlApplicationInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMlApplicationInstanceRequest, GetMlApplicationInstanceResponse>,
+                        java.util.concurrent.Future<GetMlApplicationInstanceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMlApplicationInstanceRequest, GetMlApplicationInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMlApplicationInstanceViewResponse>
+            getMlApplicationInstanceView(
+                    GetMlApplicationInstanceViewRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetMlApplicationInstanceViewRequest,
+                                    GetMlApplicationInstanceViewResponse>
+                            handler) {
+        LOG.trace("Called async getMlApplicationInstanceView");
+        final GetMlApplicationInstanceViewRequest interceptedRequest =
+                GetMlApplicationInstanceViewConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMlApplicationInstanceViewConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetMlApplicationInstanceView",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/GetMlApplicationInstanceView");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetMlApplicationInstanceViewResponse>
+                transformer =
+                        GetMlApplicationInstanceViewConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMlApplicationInstanceViewRequest, GetMlApplicationInstanceViewResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMlApplicationInstanceViewRequest,
+                                GetMlApplicationInstanceViewResponse>,
+                        java.util.concurrent.Future<GetMlApplicationInstanceViewResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMlApplicationInstanceViewRequest, GetMlApplicationInstanceViewResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMlApplicationPackageContentResponse>
+            getMlApplicationPackageContent(
+                    GetMlApplicationPackageContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetMlApplicationPackageContentRequest,
+                                    GetMlApplicationPackageContentResponse>
+                            handler) {
+        LOG.trace("Called async getMlApplicationPackageContent");
+        final GetMlApplicationPackageContentRequest interceptedRequest =
+                GetMlApplicationPackageContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMlApplicationPackageContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetMlApplicationPackageContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/GetMlApplicationPackageContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetMlApplicationPackageContentResponse>
+                transformer =
+                        GetMlApplicationPackageContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMlApplicationPackageContentRequest,
+                        GetMlApplicationPackageContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMlApplicationPackageContentRequest,
+                                GetMlApplicationPackageContentResponse>,
+                        java.util.concurrent.Future<GetMlApplicationPackageContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMlApplicationPackageContentRequest, GetMlApplicationPackageContentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3647,6 +5196,152 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetModelDeploymentRequest, GetModelDeploymentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModelGroupResponse> getModelGroup(
+            GetModelGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetModelGroupRequest, GetModelGroupResponse>
+                    handler) {
+        LOG.trace("Called async getModelGroup");
+        final GetModelGroupRequest interceptedRequest =
+                GetModelGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModelGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetModelGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/GetModelGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetModelGroupResponse>
+                transformer =
+                        GetModelGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetModelGroupRequest, GetModelGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetModelGroupRequest, GetModelGroupResponse>,
+                        java.util.concurrent.Future<GetModelGroupResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetModelGroupRequest, GetModelGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModelGroupArtifactContentResponse>
+            getModelGroupArtifactContent(
+                    GetModelGroupArtifactContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetModelGroupArtifactContentRequest,
+                                    GetModelGroupArtifactContentResponse>
+                            handler) {
+        LOG.trace("Called async getModelGroupArtifactContent");
+        final GetModelGroupArtifactContentRequest interceptedRequest =
+                GetModelGroupArtifactContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModelGroupArtifactContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetModelGroupArtifactContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/GetModelGroupArtifactContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetModelGroupArtifactContentResponse>
+                transformer =
+                        GetModelGroupArtifactContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetModelGroupArtifactContentRequest, GetModelGroupArtifactContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetModelGroupArtifactContentRequest,
+                                GetModelGroupArtifactContentResponse>,
+                        java.util.concurrent.Future<GetModelGroupArtifactContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetModelGroupArtifactContentRequest, GetModelGroupArtifactContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModelGroupVersionHistoryResponse>
+            getModelGroupVersionHistory(
+                    GetModelGroupVersionHistoryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetModelGroupVersionHistoryRequest,
+                                    GetModelGroupVersionHistoryResponse>
+                            handler) {
+        LOG.trace("Called async getModelGroupVersionHistory");
+        final GetModelGroupVersionHistoryRequest interceptedRequest =
+                GetModelGroupVersionHistoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModelGroupVersionHistoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetModelGroupVersionHistory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupVersionHistory/GetModelGroupVersionHistory");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetModelGroupVersionHistoryResponse>
+                transformer =
+                        GetModelGroupVersionHistoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetModelGroupVersionHistoryRequest, GetModelGroupVersionHistoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetModelGroupVersionHistoryRequest,
+                                GetModelGroupVersionHistoryResponse>,
+                        java.util.concurrent.Future<GetModelGroupVersionHistoryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetModelGroupVersionHistoryRequest, GetModelGroupVersionHistoryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4268,6 +5963,53 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<HeadModelGroupArtifactResponse> headModelGroupArtifact(
+            HeadModelGroupArtifactRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            HeadModelGroupArtifactRequest, HeadModelGroupArtifactResponse>
+                    handler) {
+        LOG.trace("Called async headModelGroupArtifact");
+        final HeadModelGroupArtifactRequest interceptedRequest =
+                HeadModelGroupArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                HeadModelGroupArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "HeadModelGroupArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/HeadModelGroupArtifact");
+        final java.util.function.Function<javax.ws.rs.core.Response, HeadModelGroupArtifactResponse>
+                transformer =
+                        HeadModelGroupArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        HeadModelGroupArtifactRequest, HeadModelGroupArtifactResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                HeadModelGroupArtifactRequest, HeadModelGroupArtifactResponse>,
+                        java.util.concurrent.Future<HeadModelGroupArtifactResponse>>
+                futureSupplier = client.headFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    HeadModelGroupArtifactRequest, HeadModelGroupArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<HeadStepArtifactResponse> headStepArtifact(
             HeadStepArtifactRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4641,6 +6383,316 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListMlApplicationImplementationVersionsResponse>
+            listMlApplicationImplementationVersions(
+                    ListMlApplicationImplementationVersionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMlApplicationImplementationVersionsRequest,
+                                    ListMlApplicationImplementationVersionsResponse>
+                            handler) {
+        LOG.trace("Called async listMlApplicationImplementationVersions");
+        final ListMlApplicationImplementationVersionsRequest interceptedRequest =
+                ListMlApplicationImplementationVersionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMlApplicationImplementationVersionsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListMlApplicationImplementationVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementationVersion/ListMlApplicationImplementationVersions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMlApplicationImplementationVersionsResponse>
+                transformer =
+                        ListMlApplicationImplementationVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMlApplicationImplementationVersionsRequest,
+                        ListMlApplicationImplementationVersionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMlApplicationImplementationVersionsRequest,
+                                ListMlApplicationImplementationVersionsResponse>,
+                        java.util.concurrent.Future<
+                                ListMlApplicationImplementationVersionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMlApplicationImplementationVersionsRequest,
+                    ListMlApplicationImplementationVersionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMlApplicationImplementationsResponse>
+            listMlApplicationImplementations(
+                    ListMlApplicationImplementationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMlApplicationImplementationsRequest,
+                                    ListMlApplicationImplementationsResponse>
+                            handler) {
+        LOG.trace("Called async listMlApplicationImplementations");
+        final ListMlApplicationImplementationsRequest interceptedRequest =
+                ListMlApplicationImplementationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMlApplicationImplementationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListMlApplicationImplementations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/ListMlApplicationImplementations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMlApplicationImplementationsResponse>
+                transformer =
+                        ListMlApplicationImplementationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMlApplicationImplementationsRequest,
+                        ListMlApplicationImplementationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMlApplicationImplementationsRequest,
+                                ListMlApplicationImplementationsResponse>,
+                        java.util.concurrent.Future<ListMlApplicationImplementationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMlApplicationImplementationsRequest,
+                    ListMlApplicationImplementationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMlApplicationInstanceViewsResponse>
+            listMlApplicationInstanceViews(
+                    ListMlApplicationInstanceViewsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMlApplicationInstanceViewsRequest,
+                                    ListMlApplicationInstanceViewsResponse>
+                            handler) {
+        LOG.trace("Called async listMlApplicationInstanceViews");
+        final ListMlApplicationInstanceViewsRequest interceptedRequest =
+                ListMlApplicationInstanceViewsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMlApplicationInstanceViewsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListMlApplicationInstanceViews",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/ListMlApplicationInstanceViews");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMlApplicationInstanceViewsResponse>
+                transformer =
+                        ListMlApplicationInstanceViewsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMlApplicationInstanceViewsRequest,
+                        ListMlApplicationInstanceViewsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMlApplicationInstanceViewsRequest,
+                                ListMlApplicationInstanceViewsResponse>,
+                        java.util.concurrent.Future<ListMlApplicationInstanceViewsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMlApplicationInstanceViewsRequest, ListMlApplicationInstanceViewsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMlApplicationInstancesResponse>
+            listMlApplicationInstances(
+                    ListMlApplicationInstancesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMlApplicationInstancesRequest,
+                                    ListMlApplicationInstancesResponse>
+                            handler) {
+        LOG.trace("Called async listMlApplicationInstances");
+        final ListMlApplicationInstancesRequest interceptedRequest =
+                ListMlApplicationInstancesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMlApplicationInstancesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListMlApplicationInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/ListMlApplicationInstances");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMlApplicationInstancesResponse>
+                transformer =
+                        ListMlApplicationInstancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMlApplicationInstancesRequest, ListMlApplicationInstancesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMlApplicationInstancesRequest,
+                                ListMlApplicationInstancesResponse>,
+                        java.util.concurrent.Future<ListMlApplicationInstancesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMlApplicationInstancesRequest, ListMlApplicationInstancesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMlApplicationsResponse> listMlApplications(
+            ListMlApplicationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMlApplicationsRequest, ListMlApplicationsResponse>
+                    handler) {
+        LOG.trace("Called async listMlApplications");
+        final ListMlApplicationsRequest interceptedRequest =
+                ListMlApplicationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMlApplicationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListMlApplications",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/ListMlApplications");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMlApplicationsResponse>
+                transformer =
+                        ListMlApplicationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListMlApplicationsRequest, ListMlApplicationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMlApplicationsRequest, ListMlApplicationsResponse>,
+                        java.util.concurrent.Future<ListMlApplicationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMlApplicationsRequest, ListMlApplicationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelDeploymentModelStatesResponse>
+            listModelDeploymentModelStates(
+                    ListModelDeploymentModelStatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListModelDeploymentModelStatesRequest,
+                                    ListModelDeploymentModelStatesResponse>
+                            handler) {
+        LOG.trace("Called async listModelDeploymentModelStates");
+        final ListModelDeploymentModelStatesRequest interceptedRequest =
+                ListModelDeploymentModelStatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModelDeploymentModelStatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListModelDeploymentModelStates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeploymentModelStateSummary/ListModelDeploymentModelStates");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListModelDeploymentModelStatesResponse>
+                transformer =
+                        ListModelDeploymentModelStatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListModelDeploymentModelStatesRequest,
+                        ListModelDeploymentModelStatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListModelDeploymentModelStatesRequest,
+                                ListModelDeploymentModelStatesResponse>,
+                        java.util.concurrent.Future<ListModelDeploymentModelStatesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListModelDeploymentModelStatesRequest, ListModelDeploymentModelStatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListModelDeploymentShapesResponse> listModelDeploymentShapes(
             ListModelDeploymentShapesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4724,6 +6776,151 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListModelDeploymentsRequest, ListModelDeploymentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelGroupModelsResponse> listModelGroupModels(
+            ListModelGroupModelsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListModelGroupModelsRequest, ListModelGroupModelsResponse>
+                    handler) {
+        LOG.trace("Called async listModelGroupModels");
+        final ListModelGroupModelsRequest interceptedRequest =
+                ListModelGroupModelsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModelGroupModelsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListModelGroupModels",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/ListModelGroupModels");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListModelGroupModelsResponse>
+                transformer =
+                        ListModelGroupModelsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListModelGroupModelsRequest, ListModelGroupModelsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListModelGroupModelsRequest, ListModelGroupModelsResponse>,
+                        java.util.concurrent.Future<ListModelGroupModelsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListModelGroupModelsRequest, ListModelGroupModelsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelGroupVersionHistoriesResponse>
+            listModelGroupVersionHistories(
+                    ListModelGroupVersionHistoriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListModelGroupVersionHistoriesRequest,
+                                    ListModelGroupVersionHistoriesResponse>
+                            handler) {
+        LOG.trace("Called async listModelGroupVersionHistories");
+        final ListModelGroupVersionHistoriesRequest interceptedRequest =
+                ListModelGroupVersionHistoriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModelGroupVersionHistoriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListModelGroupVersionHistories",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupVersionHistorySummary/ListModelGroupVersionHistories");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListModelGroupVersionHistoriesResponse>
+                transformer =
+                        ListModelGroupVersionHistoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListModelGroupVersionHistoriesRequest,
+                        ListModelGroupVersionHistoriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListModelGroupVersionHistoriesRequest,
+                                ListModelGroupVersionHistoriesResponse>,
+                        java.util.concurrent.Future<ListModelGroupVersionHistoriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListModelGroupVersionHistoriesRequest, ListModelGroupVersionHistoriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelGroupsResponse> listModelGroups(
+            ListModelGroupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListModelGroupsRequest, ListModelGroupsResponse>
+                    handler) {
+        LOG.trace("Called async listModelGroups");
+        final ListModelGroupsRequest interceptedRequest =
+                ListModelGroupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModelGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListModelGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupSummary/ListModelGroups");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListModelGroupsResponse>
+                transformer =
+                        ListModelGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListModelGroupsRequest, ListModelGroupsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListModelGroupsRequest, ListModelGroupsResponse>,
+                        java.util.concurrent.Future<ListModelGroupsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListModelGroupsRequest, ListModelGroupsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5241,6 +7438,126 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PutMlApplicationPackageResponse> putMlApplicationPackage(
+            PutMlApplicationPackageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PutMlApplicationPackageRequest, PutMlApplicationPackageResponse>
+                    handler) {
+        LOG.trace("Called async putMlApplicationPackage");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, PutMlApplicationPackageRequest.builder());
+        }
+        final PutMlApplicationPackageRequest interceptedRequest =
+                PutMlApplicationPackageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutMlApplicationPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "PutMlApplicationPackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/PutMlApplicationPackage");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PutMlApplicationPackageResponse>
+                transformer =
+                        PutMlApplicationPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PutMlApplicationPackageRequest, PutMlApplicationPackageResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PutMlApplicationPackageRequest, PutMlApplicationPackageResponse>,
+                        java.util.concurrent.Future<PutMlApplicationPackageResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPutMlApplicationPackage(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PutMlApplicationPackageRequest, PutMlApplicationPackageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getPutMlApplicationPackage(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RecoverMlApplicationInstanceViewResponse>
+            recoverMlApplicationInstanceView(
+                    RecoverMlApplicationInstanceViewRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RecoverMlApplicationInstanceViewRequest,
+                                    RecoverMlApplicationInstanceViewResponse>
+                            handler) {
+        LOG.trace("Called async recoverMlApplicationInstanceView");
+        final RecoverMlApplicationInstanceViewRequest interceptedRequest =
+                RecoverMlApplicationInstanceViewConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RecoverMlApplicationInstanceViewConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "RecoverMlApplicationInstanceView",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/RecoverMlApplicationInstanceView");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RecoverMlApplicationInstanceViewResponse>
+                transformer =
+                        RecoverMlApplicationInstanceViewConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RecoverMlApplicationInstanceViewRequest,
+                        RecoverMlApplicationInstanceViewResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RecoverMlApplicationInstanceViewRequest,
+                                RecoverMlApplicationInstanceViewResponse>,
+                        java.util.concurrent.Future<RecoverMlApplicationInstanceViewResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RecoverMlApplicationInstanceViewRequest,
+                    RecoverMlApplicationInstanceViewResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterModelArtifactReferenceResponse>
             registerModelArtifactReference(
                     RegisterModelArtifactReferenceRequest request,
@@ -5338,6 +7655,125 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RestoreArchivedModelArtifactRequest, RestoreArchivedModelArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<TriggerMlApplicationInstanceFlowResponse>
+            triggerMlApplicationInstanceFlow(
+                    TriggerMlApplicationInstanceFlowRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    TriggerMlApplicationInstanceFlowRequest,
+                                    TriggerMlApplicationInstanceFlowResponse>
+                            handler) {
+        LOG.trace("Called async triggerMlApplicationInstanceFlow");
+        final TriggerMlApplicationInstanceFlowRequest interceptedRequest =
+                TriggerMlApplicationInstanceFlowConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TriggerMlApplicationInstanceFlowConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "TriggerMlApplicationInstanceFlow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/TriggerMlApplicationInstanceFlow");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, TriggerMlApplicationInstanceFlowResponse>
+                transformer =
+                        TriggerMlApplicationInstanceFlowConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        TriggerMlApplicationInstanceFlowRequest,
+                        TriggerMlApplicationInstanceFlowResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                TriggerMlApplicationInstanceFlowRequest,
+                                TriggerMlApplicationInstanceFlowResponse>,
+                        java.util.concurrent.Future<TriggerMlApplicationInstanceFlowResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getTriggerMlApplicationInstanceFlowDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    TriggerMlApplicationInstanceFlowRequest,
+                    TriggerMlApplicationInstanceFlowResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<TriggerMlApplicationInstanceViewFlowResponse>
+            triggerMlApplicationInstanceViewFlow(
+                    TriggerMlApplicationInstanceViewFlowRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    TriggerMlApplicationInstanceViewFlowRequest,
+                                    TriggerMlApplicationInstanceViewFlowResponse>
+                            handler) {
+        LOG.trace("Called async triggerMlApplicationInstanceViewFlow");
+        final TriggerMlApplicationInstanceViewFlowRequest interceptedRequest =
+                TriggerMlApplicationInstanceViewFlowConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TriggerMlApplicationInstanceViewFlowConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "TriggerMlApplicationInstanceViewFlow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/TriggerMlApplicationInstanceViewFlow");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, TriggerMlApplicationInstanceViewFlowResponse>
+                transformer =
+                        TriggerMlApplicationInstanceViewFlowConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        TriggerMlApplicationInstanceViewFlowRequest,
+                        TriggerMlApplicationInstanceViewFlowResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                TriggerMlApplicationInstanceViewFlowRequest,
+                                TriggerMlApplicationInstanceViewFlowResponse>,
+                        java.util.concurrent.Future<TriggerMlApplicationInstanceViewFlowResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getTriggerMlApplicationInstanceViewFlowDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    TriggerMlApplicationInstanceViewFlowRequest,
+                    TriggerMlApplicationInstanceViewFlowResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5492,6 +7928,291 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateJobRunRequest, UpdateJobRunResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMlApplicationResponse> updateMlApplication(
+            UpdateMlApplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMlApplicationRequest, UpdateMlApplicationResponse>
+                    handler) {
+        LOG.trace("Called async updateMlApplication");
+        final UpdateMlApplicationRequest interceptedRequest =
+                UpdateMlApplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMlApplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateMlApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/UpdateMlApplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMlApplicationResponse>
+                transformer =
+                        UpdateMlApplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMlApplicationRequest, UpdateMlApplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMlApplicationRequest, UpdateMlApplicationResponse>,
+                        java.util.concurrent.Future<UpdateMlApplicationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMlApplicationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMlApplicationRequest, UpdateMlApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMlApplicationImplementationResponse>
+            updateMlApplicationImplementation(
+                    UpdateMlApplicationImplementationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMlApplicationImplementationRequest,
+                                    UpdateMlApplicationImplementationResponse>
+                            handler) {
+        LOG.trace("Called async updateMlApplicationImplementation");
+        final UpdateMlApplicationImplementationRequest interceptedRequest =
+                UpdateMlApplicationImplementationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMlApplicationImplementationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateMlApplicationImplementation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/UpdateMlApplicationImplementation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateMlApplicationImplementationResponse>
+                transformer =
+                        UpdateMlApplicationImplementationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMlApplicationImplementationRequest,
+                        UpdateMlApplicationImplementationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMlApplicationImplementationRequest,
+                                UpdateMlApplicationImplementationResponse>,
+                        java.util.concurrent.Future<UpdateMlApplicationImplementationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMlApplicationImplementationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMlApplicationImplementationRequest,
+                    UpdateMlApplicationImplementationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMlApplicationImplementationVersionResponse>
+            updateMlApplicationImplementationVersion(
+                    UpdateMlApplicationImplementationVersionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMlApplicationImplementationVersionRequest,
+                                    UpdateMlApplicationImplementationVersionResponse>
+                            handler) {
+        LOG.trace("Called async updateMlApplicationImplementationVersion");
+        final UpdateMlApplicationImplementationVersionRequest interceptedRequest =
+                UpdateMlApplicationImplementationVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMlApplicationImplementationVersionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateMlApplicationImplementationVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementationVersion/UpdateMlApplicationImplementationVersion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateMlApplicationImplementationVersionResponse>
+                transformer =
+                        UpdateMlApplicationImplementationVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMlApplicationImplementationVersionRequest,
+                        UpdateMlApplicationImplementationVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMlApplicationImplementationVersionRequest,
+                                UpdateMlApplicationImplementationVersionResponse>,
+                        java.util.concurrent.Future<
+                                UpdateMlApplicationImplementationVersionResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getUpdateMlApplicationImplementationVersionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMlApplicationImplementationVersionRequest,
+                    UpdateMlApplicationImplementationVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMlApplicationInstanceResponse>
+            updateMlApplicationInstance(
+                    UpdateMlApplicationInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMlApplicationInstanceRequest,
+                                    UpdateMlApplicationInstanceResponse>
+                            handler) {
+        LOG.trace("Called async updateMlApplicationInstance");
+        final UpdateMlApplicationInstanceRequest interceptedRequest =
+                UpdateMlApplicationInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMlApplicationInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateMlApplicationInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/UpdateMlApplicationInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateMlApplicationInstanceResponse>
+                transformer =
+                        UpdateMlApplicationInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMlApplicationInstanceRequest, UpdateMlApplicationInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMlApplicationInstanceRequest,
+                                UpdateMlApplicationInstanceResponse>,
+                        java.util.concurrent.Future<UpdateMlApplicationInstanceResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMlApplicationInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMlApplicationInstanceRequest, UpdateMlApplicationInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMlApplicationInstanceViewResponse>
+            updateMlApplicationInstanceView(
+                    UpdateMlApplicationInstanceViewRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMlApplicationInstanceViewRequest,
+                                    UpdateMlApplicationInstanceViewResponse>
+                            handler) {
+        LOG.trace("Called async updateMlApplicationInstanceView");
+        final UpdateMlApplicationInstanceViewRequest interceptedRequest =
+                UpdateMlApplicationInstanceViewConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMlApplicationInstanceViewConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateMlApplicationInstanceView",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/UpdateMlApplicationInstanceView");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateMlApplicationInstanceViewResponse>
+                transformer =
+                        UpdateMlApplicationInstanceViewConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMlApplicationInstanceViewRequest,
+                        UpdateMlApplicationInstanceViewResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMlApplicationInstanceViewRequest,
+                                UpdateMlApplicationInstanceViewResponse>,
+                        java.util.concurrent.Future<UpdateMlApplicationInstanceViewResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMlApplicationInstanceViewDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMlApplicationInstanceViewRequest,
+                    UpdateMlApplicationInstanceViewResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5742,6 +8463,114 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateModelDeploymentRequest, UpdateModelDeploymentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelGroupResponse> updateModelGroup(
+            UpdateModelGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateModelGroupRequest, UpdateModelGroupResponse>
+                    handler) {
+        LOG.trace("Called async updateModelGroup");
+        final UpdateModelGroupRequest interceptedRequest =
+                UpdateModelGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateModelGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateModelGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroup/UpdateModelGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateModelGroupResponse>
+                transformer =
+                        UpdateModelGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateModelGroupRequest, UpdateModelGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateModelGroupRequest, UpdateModelGroupResponse>,
+                        java.util.concurrent.Future<UpdateModelGroupResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateModelGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateModelGroupRequest, UpdateModelGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelGroupVersionHistoryResponse>
+            updateModelGroupVersionHistory(
+                    UpdateModelGroupVersionHistoryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateModelGroupVersionHistoryRequest,
+                                    UpdateModelGroupVersionHistoryResponse>
+                            handler) {
+        LOG.trace("Called async updateModelGroupVersionHistory");
+        final UpdateModelGroupVersionHistoryRequest interceptedRequest =
+                UpdateModelGroupVersionHistoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateModelGroupVersionHistoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateModelGroupVersionHistory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelGroupVersionHistory/UpdateModelGroupVersionHistory");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateModelGroupVersionHistoryResponse>
+                transformer =
+                        UpdateModelGroupVersionHistoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateModelGroupVersionHistoryRequest,
+                        UpdateModelGroupVersionHistoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateModelGroupVersionHistoryRequest,
+                                UpdateModelGroupVersionHistoryResponse>,
+                        java.util.concurrent.Future<UpdateModelGroupVersionHistoryResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateModelGroupVersionHistoryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateModelGroupVersionHistoryRequest, UpdateModelGroupVersionHistoryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

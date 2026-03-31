@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,30 +8,30 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateTaskRecordExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTaskRecordRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class UpdateTaskRecordRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails> {
 
     /**
-     * unique TaskDetail identifier
+     * The OCID of the task record.
      */
     private String taskRecordId;
 
     /**
-     * unique TaskDetail identifier
+     * The OCID of the task record.
      */
     public String getTaskRecordId() {
         return taskRecordId;
     }
     /**
-     * The information to be updated.
+     * Attributes to update a task record.
      */
     private com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails
             updateTaskRecordDetails;
 
     /**
-     * The information to be updated.
+     * Attributes to update a task record.
      */
     public com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails
             getUpdateTaskRecordDetails() {
@@ -89,12 +89,12 @@ public class UpdateTaskRecordRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * unique TaskDetail identifier
+         * The OCID of the task record.
          */
         private String taskRecordId = null;
 
         /**
-         * unique TaskDetail identifier
+         * The OCID of the task record.
          * @param taskRecordId the value to set
          * @return this builder instance
          */
@@ -104,13 +104,13 @@ public class UpdateTaskRecordRequest
         }
 
         /**
-         * The information to be updated.
+         * Attributes to update a task record.
          */
         private com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails
                 updateTaskRecordDetails = null;
 
         /**
-         * The information to be updated.
+         * Attributes to update a task record.
          * @param updateTaskRecordDetails the value to set
          * @return this builder instance
          */

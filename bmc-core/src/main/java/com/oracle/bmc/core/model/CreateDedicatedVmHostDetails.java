@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -30,7 +30,10 @@ public final class CreateDedicatedVmHostDetails
         "definedTags",
         "displayName",
         "faultDomain",
-        "freeformTags"
+        "freeformTags",
+        "placementConstraintDetails",
+        "capacityConfig",
+        "isMemoryEncryptionEnabled"
     })
     public CreateDedicatedVmHostDetails(
             String availabilityDomain,
@@ -39,7 +42,10 @@ public final class CreateDedicatedVmHostDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             String faultDomain,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            PlacementConstraintDetails placementConstraintDetails,
+            String capacityConfig,
+            Boolean isMemoryEncryptionEnabled) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -48,6 +54,9 @@ public final class CreateDedicatedVmHostDetails
         this.displayName = displayName;
         this.faultDomain = faultDomain;
         this.freeformTags = freeformTags;
+        this.placementConstraintDetails = placementConstraintDetails;
+        this.capacityConfig = capacityConfig;
+        this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -214,6 +223,54 @@ public final class CreateDedicatedVmHostDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+        private PlacementConstraintDetails placementConstraintDetails;
+
+        public Builder placementConstraintDetails(
+                PlacementConstraintDetails placementConstraintDetails) {
+            this.placementConstraintDetails = placementConstraintDetails;
+            this.__explicitlySet__.add("placementConstraintDetails");
+            return this;
+        }
+        /**
+         * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+         * Run {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest) listDedicatedVmHostShapes} API first to see the capacity configuration options.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityConfig")
+        private String capacityConfig;
+
+        /**
+         * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+         * Run {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest) listDedicatedVmHostShapes} API first to see the capacity configuration options.
+         *
+         * @param capacityConfig the value to set
+         * @return this builder
+         **/
+        public Builder capacityConfig(String capacityConfig) {
+            this.capacityConfig = capacityConfig;
+            this.__explicitlySet__.add("capacityConfig");
+            return this;
+        }
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code false}, Confidential VMs cannot be launched.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+        private Boolean isMemoryEncryptionEnabled;
+
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code false}, Confidential VMs cannot be launched.
+         *
+         * @param isMemoryEncryptionEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            this.__explicitlySet__.add("isMemoryEncryptionEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -226,7 +283,10 @@ public final class CreateDedicatedVmHostDetails
                             this.definedTags,
                             this.displayName,
                             this.faultDomain,
-                            this.freeformTags);
+                            this.freeformTags,
+                            this.placementConstraintDetails,
+                            this.capacityConfig,
+                            this.isMemoryEncryptionEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -255,6 +315,15 @@ public final class CreateDedicatedVmHostDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
+                this.placementConstraintDetails(model.getPlacementConstraintDetails());
+            }
+            if (model.wasPropertyExplicitlySet("capacityConfig")) {
+                this.capacityConfig(model.getCapacityConfig());
+            }
+            if (model.wasPropertyExplicitlySet("isMemoryEncryptionEnabled")) {
+                this.isMemoryEncryptionEnabled(model.getIsMemoryEncryptionEnabled());
             }
             return this;
         }
@@ -417,6 +486,47 @@ public final class CreateDedicatedVmHostDetails
         return freeformTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+    private final PlacementConstraintDetails placementConstraintDetails;
+
+    public PlacementConstraintDetails getPlacementConstraintDetails() {
+        return placementConstraintDetails;
+    }
+
+    /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+     * Run {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest) listDedicatedVmHostShapes} API first to see the capacity configuration options.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityConfig")
+    private final String capacityConfig;
+
+    /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+     * Run {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest) listDedicatedVmHostShapes} API first to see the capacity configuration options.
+     *
+     * @return the value
+     **/
+    public String getCapacityConfig() {
+        return capacityConfig;
+    }
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code false}, Confidential VMs cannot be launched.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+    private final Boolean isMemoryEncryptionEnabled;
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code false}, Confidential VMs cannot be launched.
+     *
+     * @return the value
+     **/
+    public Boolean getIsMemoryEncryptionEnabled() {
+        return isMemoryEncryptionEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -438,6 +548,11 @@ public final class CreateDedicatedVmHostDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", placementConstraintDetails=")
+                .append(String.valueOf(this.placementConstraintDetails));
+        sb.append(", capacityConfig=").append(String.valueOf(this.capacityConfig));
+        sb.append(", isMemoryEncryptionEnabled=")
+                .append(String.valueOf(this.isMemoryEncryptionEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -459,6 +574,11 @@ public final class CreateDedicatedVmHostDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(
+                        this.placementConstraintDetails, other.placementConstraintDetails)
+                && java.util.Objects.equals(this.capacityConfig, other.capacityConfig)
+                && java.util.Objects.equals(
+                        this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled)
                 && super.equals(other);
     }
 
@@ -483,6 +603,19 @@ public final class CreateDedicatedVmHostDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraintDetails == null
+                                ? 43
+                                : this.placementConstraintDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityConfig == null ? 43 : this.capacityConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMemoryEncryptionEnabled == null
+                                ? 43
+                                : this.isMemoryEncryptionEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

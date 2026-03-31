@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -40,7 +40,8 @@ public class CreatePipelineDetails extends com.oracle.bmc.http.internal.Explicit
         "definedTags",
         "locks",
         "sourceConnectionDetails",
-        "targetConnectionDetails"
+        "targetConnectionDetails",
+        "subnetId"
     })
     protected CreatePipelineDetails(
             String displayName,
@@ -51,7 +52,8 @@ public class CreatePipelineDetails extends com.oracle.bmc.http.internal.Explicit
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<ResourceLock> locks,
             SourcePipelineConnectionDetails sourceConnectionDetails,
-            TargetPipelineConnectionDetails targetConnectionDetails) {
+            TargetPipelineConnectionDetails targetConnectionDetails,
+            String subnetId) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -62,6 +64,7 @@ public class CreatePipelineDetails extends com.oracle.bmc.http.internal.Explicit
         this.locks = locks;
         this.sourceConnectionDetails = sourceConnectionDetails;
         this.targetConnectionDetails = targetConnectionDetails;
+        this.subnetId = subnetId;
     }
 
     /**
@@ -198,6 +201,24 @@ public class CreatePipelineDetails extends com.oracle.bmc.http.internal.Explicit
         return targetConnectionDetails;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint.
+     * The subnet must be a private subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint.
+     * The subnet must be a private subnet.
+     *
+     * @return the value
+     **/
+    public String getSubnetId() {
+        return subnetId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -223,6 +244,7 @@ public class CreatePipelineDetails extends com.oracle.bmc.http.internal.Explicit
                 .append(String.valueOf(this.sourceConnectionDetails));
         sb.append(", targetConnectionDetails=")
                 .append(String.valueOf(this.targetConnectionDetails));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(")");
         return sb.toString();
     }
@@ -248,6 +270,7 @@ public class CreatePipelineDetails extends com.oracle.bmc.http.internal.Explicit
                         this.sourceConnectionDetails, other.sourceConnectionDetails)
                 && java.util.Objects.equals(
                         this.targetConnectionDetails, other.targetConnectionDetails)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && super.equals(other);
     }
 
@@ -274,6 +297,7 @@ public class CreatePipelineDetails extends com.oracle.bmc.http.internal.Explicit
                         + (this.targetConnectionDetails == null
                                 ? 43
                                 : this.targetConnectionDetails.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

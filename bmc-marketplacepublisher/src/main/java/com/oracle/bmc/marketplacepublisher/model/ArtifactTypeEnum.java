@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplacepublisher.model;
@@ -7,10 +7,12 @@ package com.oracle.bmc.marketplacepublisher.model;
 /**
  * Artifact type for the artifact. Artifact type identifies the type of the provided image.
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public enum ArtifactTypeEnum {
     ContainerImage("CONTAINER_IMAGE"),
     HelmChart("HELM_CHART"),
+    MachineImage("MACHINE_IMAGE"),
+    Stack("STACK"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

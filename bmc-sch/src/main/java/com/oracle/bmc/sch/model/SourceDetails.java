@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.model;
@@ -101,14 +101,7 @@ public class SourceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         Monitoring("monitoring"),
         Streaming("streaming"),
         Plugin("plugin"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Kind.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, Kind> map;
@@ -116,9 +109,7 @@ public class SourceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         static {
             map = new java.util.HashMap<>();
             for (Kind v : Kind.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -136,9 +127,7 @@ public class SourceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Kind', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid Kind: " + key);
         }
     };
 }

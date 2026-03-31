@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -82,6 +82,17 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     public com.oracle.bmc.database.model.DbSystemOptions.StorageManagement getStorageManagement() {
         return storageManagement;
+    }
+    /**
+     * If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+     */
+    private String shapeAttribute;
+
+    /**
+     * If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+     */
+    public String getShapeAttribute() {
+        return shapeAttribute;
     }
     /**
      * If provided, filters the results to the set of database versions which are supported for Upgrade.
@@ -212,6 +223,21 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
+         * If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+         */
+        private String shapeAttribute = null;
+
+        /**
+         * If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+         * @param shapeAttribute the value to set
+         * @return this builder instance
+         */
+        public Builder shapeAttribute(String shapeAttribute) {
+            this.shapeAttribute = shapeAttribute;
+            return this;
+        }
+
+        /**
          * If provided, filters the results to the set of database versions which are supported for Upgrade.
          */
         private Boolean isUpgradeSupported = null;
@@ -275,6 +301,7 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             dbSystemShape(o.getDbSystemShape());
             dbSystemId(o.getDbSystemId());
             storageManagement(o.getStorageManagement());
+            shapeAttribute(o.getShapeAttribute());
             isUpgradeSupported(o.getIsUpgradeSupported());
             isDatabaseSoftwareImageSupported(o.getIsDatabaseSoftwareImageSupported());
             invocationCallback(o.getInvocationCallback());
@@ -315,10 +342,11 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.dbSystemShape = dbSystemShape;
             request.dbSystemId = dbSystemId;
             request.storageManagement = storageManagement;
+            request.shapeAttribute = shapeAttribute;
             request.isUpgradeSupported = isUpgradeSupported;
             request.isDatabaseSoftwareImageSupported = isDatabaseSoftwareImageSupported;
             return request;
-            // new ListDbVersionsRequest(compartmentId, limit, page, dbSystemShape, dbSystemId, storageManagement, isUpgradeSupported, isDatabaseSoftwareImageSupported);
+            // new ListDbVersionsRequest(compartmentId, limit, page, dbSystemShape, dbSystemId, storageManagement, shapeAttribute, isUpgradeSupported, isDatabaseSoftwareImageSupported);
         }
     }
 
@@ -334,6 +362,7 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .dbSystemShape(dbSystemShape)
                 .dbSystemId(dbSystemId)
                 .storageManagement(storageManagement)
+                .shapeAttribute(shapeAttribute)
                 .isUpgradeSupported(isUpgradeSupported)
                 .isDatabaseSoftwareImageSupported(isDatabaseSoftwareImageSupported);
     }
@@ -357,6 +386,7 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",dbSystemShape=").append(String.valueOf(this.dbSystemShape));
         sb.append(",dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(",storageManagement=").append(String.valueOf(this.storageManagement));
+        sb.append(",shapeAttribute=").append(String.valueOf(this.shapeAttribute));
         sb.append(",isUpgradeSupported=").append(String.valueOf(this.isUpgradeSupported));
         sb.append(",isDatabaseSoftwareImageSupported=")
                 .append(String.valueOf(this.isDatabaseSoftwareImageSupported));
@@ -381,6 +411,7 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 && java.util.Objects.equals(this.dbSystemShape, other.dbSystemShape)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.storageManagement, other.storageManagement)
+                && java.util.Objects.equals(this.shapeAttribute, other.shapeAttribute)
                 && java.util.Objects.equals(this.isUpgradeSupported, other.isUpgradeSupported)
                 && java.util.Objects.equals(
                         this.isDatabaseSoftwareImageSupported,
@@ -403,6 +434,9 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         result =
                 (result * PRIME)
                         + (this.storageManagement == null ? 43 : this.storageManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shapeAttribute == null ? 43 : this.shapeAttribute.hashCode());
         result =
                 (result * PRIME)
                         + (this.isUpgradeSupported == null

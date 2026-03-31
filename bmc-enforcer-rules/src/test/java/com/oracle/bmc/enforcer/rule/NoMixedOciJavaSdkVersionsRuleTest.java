@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.enforcer.rule;
@@ -16,6 +16,7 @@ import java.util.stream.Stream;
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.artifact.DefaultArtifact;
 import org.apache.maven.enforcer.rule.api.EnforcerLogger;
+import org.apache.maven.enforcer.rule.api.EnforcerRuleException;
 import org.apache.maven.project.MavenProject;
 import org.junit.Test;
 
@@ -124,9 +125,100 @@ public class NoMixedOciJavaSdkVersionsRuleTest {
         assertThat(e.getVersionsInConflict().keySet(), containsInAnyOrder("1.0", "2.0"));
     }
 
+    @Test
+    public void distinguishTimedSnapshots() {
+        MavenProject project = new MavenProject();
+        Set<Artifact> artifacts =
+                Stream.of(
+                                BANNED_GROUP_ID
+                                        + ":"
+                                        + BANNED_ARTIFACT_ID_PREFIX
+                                        + "-lib1:2.84.1-preview1-SNAPSHOT",
+                                BANNED_GROUP_ID
+                                        + ":"
+                                        + BANNED_ARTIFACT_ID_PREFIX
+                                        + "-lib2:2.84.1-preview1-20250522.215840-14(2.84.1-preview1-SNAPSHOT)",
+                                BANNED_GROUP_ID
+                                        + ":"
+                                        + BANNED_ARTIFACT_ID_PREFIX
+                                        + "-lib3:2.84.1-preview1-20250522.215840-13(2.84.1-preview1-SNAPSHOT)",
+                                "javax.inject:javax.inject:1",
+                                "javax.crypto:javax.crypto:1",
+                                "javax.servlet:javax.servlet-api:2.1.0",
+                                "other.servlet:other.servlet:1")
+                        .map(NoMixedOciJavaSdkVersionsRuleTest::toArtifact)
+                        .collect(Collectors.toSet());
+        project.setArtifacts(artifacts);
+
+        // this is the way it will come in when someone uses <NoMixedOciJavaSdkVersions/>
+        List<String> allowedList = new ArrayList<>();
+        allowedList.add("");
+
+        TestingLogger logger = new TestingLogger();
+        NoMixedOciJavaSdkVersionsRule rule =
+                new NoMixedOciJavaSdkVersionsRule(logger, project, allowedList, true);
+        NoMixedOciJavaSdkVersionsException e =
+                assertThrows(NoMixedOciJavaSdkVersionsException.class, rule::execute);
+        assertThat(
+                e.getMessage(),
+                startsWith(
+                        "Multiple different versions of com.oracle.oci.sdk:oci-java-sdk* dependencies have been found.\nMixing different versions is not allowed.\n"));
+        assertThat(
+                e.getVersionsInConflict().keySet(),
+                containsInAnyOrder(
+                        "2.84.1-preview1-20250522.215840-13",
+                        "2.84.1-preview1-20250522.215840-14",
+                        "2.84.1-preview1-SNAPSHOT"));
+    }
+
+    @Test
+    public void doNotDistinguishTimedSnapshots() throws EnforcerRuleException {
+        MavenProject project = new MavenProject();
+        Set<Artifact> artifacts =
+                Stream.of(
+                                BANNED_GROUP_ID
+                                        + ":"
+                                        + BANNED_ARTIFACT_ID_PREFIX
+                                        + "-lib1:2.84.1-preview1-SNAPSHOT",
+                                BANNED_GROUP_ID
+                                        + ":"
+                                        + BANNED_ARTIFACT_ID_PREFIX
+                                        + "-lib2:2.84.1-preview1-20250522.215840-14(2.84.1-preview1-SNAPSHOT)",
+                                BANNED_GROUP_ID
+                                        + ":"
+                                        + BANNED_ARTIFACT_ID_PREFIX
+                                        + "-lib3:2.84.1-preview1-20250522.215840-13(2.84.1-preview1-SNAPSHOT)",
+                                "javax.inject:javax.inject:1",
+                                "javax.crypto:javax.crypto:1",
+                                "javax.servlet:javax.servlet-api:2.1.0",
+                                "other.servlet:other.servlet:1")
+                        .map(NoMixedOciJavaSdkVersionsRuleTest::toArtifact)
+                        .collect(Collectors.toSet());
+        project.setArtifacts(artifacts);
+
+        // this is the way it will come in when someone uses <NoMixedOciJavaSdkVersions/>
+        List<String> allowedList = new ArrayList<>();
+        allowedList.add("");
+
+        TestingLogger logger = new TestingLogger();
+        NoMixedOciJavaSdkVersionsRule rule =
+                new NoMixedOciJavaSdkVersionsRule(logger, project, allowedList, false);
+        rule.execute();
+    }
+
     static Artifact toArtifact(String simpleGav) {
         String[] split = simpleGav.split(":");
-        return new DefaultArtifact(split[0], split[1], split[2], "", "", "", null);
+        String version = split[2];
+        String baseVersion = null;
+        if (version.contains("(") && version.contains("-SNAPSHOT)")) {
+            baseVersion = version.substring(version.indexOf("(") + 1, version.indexOf(")"));
+            version = version.substring(0, version.indexOf("("));
+        }
+        DefaultArtifact a = new DefaultArtifact(split[0], split[1], version, "", "", "", null);
+        if (baseVersion != null) {
+            a.setBaseVersion(baseVersion);
+        }
+        return a;
     }
 
     static String toSimpleGav(Artifact gav) {

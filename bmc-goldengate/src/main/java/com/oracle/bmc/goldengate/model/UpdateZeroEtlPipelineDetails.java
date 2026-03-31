@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -74,6 +74,15 @@ public final class UpdateZeroEtlPipelineDetails extends UpdatePipelineDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("processOptions")
         private ProcessOptions processOptions;
 
@@ -112,6 +121,7 @@ public final class UpdateZeroEtlPipelineDetails extends UpdatePipelineDetails {
                             this.licenseModel,
                             this.freeformTags,
                             this.definedTags,
+                            this.subnetId,
                             this.processOptions,
                             this.mappingRules);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -136,6 +146,9 @@ public final class UpdateZeroEtlPipelineDetails extends UpdatePipelineDetails {
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
             }
             if (model.wasPropertyExplicitlySet("processOptions")) {
                 this.processOptions(model.getProcessOptions());
@@ -165,9 +178,10 @@ public final class UpdateZeroEtlPipelineDetails extends UpdatePipelineDetails {
             LicenseModel licenseModel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String subnetId,
             ProcessOptions processOptions,
             java.util.List<MappingRule> mappingRules) {
-        super(displayName, description, licenseModel, freeformTags, definedTags);
+        super(displayName, description, licenseModel, freeformTags, definedTags, subnetId);
         this.processOptions = processOptions;
         this.mappingRules = mappingRules;
     }

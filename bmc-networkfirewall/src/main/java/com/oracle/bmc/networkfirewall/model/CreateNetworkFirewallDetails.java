@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -31,6 +31,8 @@ public final class CreateNetworkFirewallDetails
         "ipv4Address",
         "ipv6Address",
         "networkSecurityGroupIds",
+        "natConfiguration",
+        "shape",
         "freeformTags",
         "definedTags"
     })
@@ -43,6 +45,8 @@ public final class CreateNetworkFirewallDetails
             String ipv4Address,
             String ipv6Address,
             java.util.List<String> networkSecurityGroupIds,
+            NatConfigurationRequest natConfiguration,
+            String shape,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -54,6 +58,8 @@ public final class CreateNetworkFirewallDetails
         this.ipv4Address = ipv4Address;
         this.ipv6Address = ipv6Address;
         this.networkSecurityGroupIds = networkSecurityGroupIds;
+        this.natConfiguration = natConfiguration;
+        this.shape = shape;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -194,6 +200,31 @@ public final class CreateNetworkFirewallDetails
             this.__explicitlySet__.add("networkSecurityGroupIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("natConfiguration")
+        private NatConfigurationRequest natConfiguration;
+
+        public Builder natConfiguration(NatConfigurationRequest natConfiguration) {
+            this.natConfiguration = natConfiguration;
+            this.__explicitlySet__.add("natConfiguration");
+            return this;
+        }
+        /**
+         * The shape of a firewall to determine the bandwidth that the firewall allows.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        /**
+         * The shape of a firewall to determine the bandwidth that the firewall allows.
+         * @param shape the value to set
+         * @return this builder
+         **/
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -254,6 +285,8 @@ public final class CreateNetworkFirewallDetails
                             this.ipv4Address,
                             this.ipv6Address,
                             this.networkSecurityGroupIds,
+                            this.natConfiguration,
+                            this.shape,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -287,6 +320,12 @@ public final class CreateNetworkFirewallDetails
             }
             if (model.wasPropertyExplicitlySet("networkSecurityGroupIds")) {
                 this.networkSecurityGroupIds(model.getNetworkSecurityGroupIds());
+            }
+            if (model.wasPropertyExplicitlySet("natConfiguration")) {
+                this.natConfiguration(model.getNatConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -427,6 +466,27 @@ public final class CreateNetworkFirewallDetails
         return networkSecurityGroupIds;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("natConfiguration")
+    private final NatConfigurationRequest natConfiguration;
+
+    public NatConfigurationRequest getNatConfiguration() {
+        return natConfiguration;
+    }
+
+    /**
+     * The shape of a firewall to determine the bandwidth that the firewall allows.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    private final String shape;
+
+    /**
+     * The shape of a firewall to determine the bandwidth that the firewall allows.
+     * @return the value
+     **/
+    public String getShape() {
+        return shape;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -491,6 +551,8 @@ public final class CreateNetworkFirewallDetails
         sb.append(", ipv6Address=").append(String.valueOf(this.ipv6Address));
         sb.append(", networkSecurityGroupIds=")
                 .append(String.valueOf(this.networkSecurityGroupIds));
+        sb.append(", natConfiguration=").append(String.valueOf(this.natConfiguration));
+        sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -517,6 +579,8 @@ public final class CreateNetworkFirewallDetails
                 && java.util.Objects.equals(this.ipv6Address, other.ipv6Address)
                 && java.util.Objects.equals(
                         this.networkSecurityGroupIds, other.networkSecurityGroupIds)
+                && java.util.Objects.equals(this.natConfiguration, other.natConfiguration)
+                && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -548,6 +612,10 @@ public final class CreateNetworkFirewallDetails
                         + (this.networkSecurityGroupIds == null
                                 ? 43
                                 : this.networkSecurityGroupIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.natConfiguration == null ? 43 : this.natConfiguration.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

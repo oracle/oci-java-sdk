@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
@@ -15,6 +15,7 @@ import org.junit.Test;
 import static com.oracle.bmc.http.ApacheConnectorProperties.DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_IN_SECONDS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 public class IdleConnectionMonitorTest {
@@ -197,6 +198,52 @@ public class IdleConnectionMonitorTest {
         waitTimeInSeconds = IdleConnectionMonitor.getInstance().getWaitTimeInSeconds();
         assertEquals(
                 DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_IN_SECONDS, waitTimeInSeconds);
+    }
+
+    @Test
+    public void testThreadInterruptAndCleanup() throws InterruptedException {
+        HttpClientConnectionManager connectionManager = new BasicHttpClientConnectionManager();
+
+        // Register connectionManager to IdleConnectionMonitor
+        assertTrue(IdleConnectionMonitor.registerConnectionManager(connectionManager, 2, 10));
+        assertEquals(1, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
+
+        // Manually interrupt the thread
+        IdleConnectionMonitor.getInstance().interrupt();
+        assertEquals(1, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
+        assertFalse(IdleConnectionMonitor.getInstance().isIdleConnectionMonitorThreadClosed());
+
+        garbageCollect(3, 0);
+
+        // Loop should be terminated with thread size 0 and instance set to null
+        assertEquals(0, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
+        assertNull(IdleConnectionMonitor.getInstance());
+
+        // Ensuring shutdown is idempotent
+        assertFalse(IdleConnectionMonitor.shutdown());
+    }
+
+    @Test
+    public void testThreadInterruptAndRestart() throws InterruptedException {
+        HttpClientConnectionManager connectionManager = new BasicHttpClientConnectionManager();
+
+        // Register connectionManager to IdleConnectionMonitor
+        assertTrue(IdleConnectionMonitor.registerConnectionManager(connectionManager, 2, 10));
+        assertEquals(1, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
+
+        // Manually interrupt the thread
+        IdleConnectionMonitor.getInstance().interrupt();
+
+        garbageCollect(3, 0);
+
+        // Loop should be terminated with thread size 0 and instance set to null
+        assertEquals(0, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
+        assertNull(IdleConnectionMonitor.getInstance());
+
+        // Restart IdleConnectionMonitor thread with new connectionManager
+        HttpClientConnectionManager connectionManager2 = new BasicHttpClientConnectionManager();
+        assertTrue(IdleConnectionMonitor.registerConnectionManager(connectionManager2, 2, 10));
+        assertEquals(1, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
     }
 
     private static void garbageCollect(int maxAttempts, int expectedConnectionMonitorThreadSize)

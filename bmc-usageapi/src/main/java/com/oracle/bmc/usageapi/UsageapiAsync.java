@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi;
@@ -8,7 +8,7 @@ import com.oracle.bmc.usageapi.requests.*;
 import com.oracle.bmc.usageapi.responses.*;
 
 /**
- * Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data that meets the specified filter criteria, and to group that data by the chosen dimension. The Usage API is used by the Cost Analysis and Carbon Emissions Analysis tools in the Console. See [Cost Analysis Overview](https://docs.oracle.com/iaas/Content/Billing/Concepts/costanalysisoverview.htm) and [Using the Usage API](https://docs.oracle.com/iaas/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api) for more information.
+ * Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data that meets the specified filter criteria, and to group that data by the chosen dimension. The Usage API is used by [Cost Analysis](https://docs.oracle.com/iaas/Content/Billing/Concepts/costanalysisoverview.htm), [Scheduled Reports](https://docs.oracle.com/iaas/Content/Billing/Concepts/scheduledreportoverview.htm), and [Carbon Emissions Analysis](https://docs.oracle.com/iaas/Content/General/Concepts/emissions-management.htm) in the Console. Also see [Using the Usage API](https://docs.oracle.com/iaas/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api) for more information.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public interface UsageapiAsync extends AutoCloseable {
@@ -76,7 +76,7 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Add a list of email recipients that can receive usage statements for the subscription.
+     * Creates a list of email recipients that can receive usage statements for the subscription.
      *
      *
      * @param request The request object containing the details to send
@@ -124,7 +124,7 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the created usage carbon emissions query.
+     * Returns the created carbon emissions usage query.
      *
      *
      * @param request The request object containing the details to send
@@ -160,7 +160,7 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the email recipients group for the usage statement subscription.
+     * Deletes the email recipients group for the usage statement subscription.
      *
      *
      * @param request The request object containing the details to send
@@ -208,7 +208,7 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete a usage carbon emissions saved query by the OCID.
+     * Delete a carbon emissions usage saved query by the OCID.
      *
      *
      * @param request The request object containing the details to send
@@ -243,7 +243,7 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      *
      *
      * @param request The request object containing the details to send
@@ -306,7 +306,7 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the usage carbon emissions saved query.
+     * Returns the carbon emissions usage saved query.
      *
      *
      * @param request The request object containing the details to send
@@ -340,7 +340,7 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      *
      *
      * @param request The request object containing the details to send
@@ -372,7 +372,7 @@ public interface UsageapiAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListQueriesRequest, ListQueriesResponse> handler);
 
     /**
-     * Returns schedule history list.
+     * Returns the schedule history list.
      *
      *
      * @param request The request object containing the details to send
@@ -405,7 +405,7 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the usage carbon emissions saved query list.
+     * Returns the carbon emissions usage saved query list.
      *
      *
      * @param request The request object containing the details to send
@@ -495,7 +495,7 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     * Returns the configuration list for the Console's carbon emission user interface drop-down list.
      *
      *
      * @param request The request object containing the details to send
@@ -514,7 +514,7 @@ public interface UsageapiAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns usage carbon emission for the given account.
+     * Returns carbon emission usage for the given account.
      *
      *
      * @param request The request object containing the details to send
@@ -531,7 +531,7 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update a saved custom table by table id.
+     * Update a saved custom table by table ID.
      *
      *
      * @param request The request object containing the details to send
@@ -548,7 +548,7 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update a saved email recipients group.
+     * Updates a saved email recipients group.
      *
      *
      * @param request The request object containing the details to send
@@ -580,7 +580,7 @@ public interface UsageapiAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateQueryRequest, UpdateQueryResponse> handler);
 
     /**
-     * Update a saved schedule
+     * Update a saved schedule.
      *
      *
      * @param request The request object containing the details to send
@@ -596,7 +596,7 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update a usage carbon emissions saved query by the OCID.
+     * Update a carbon emissions usage saved query by the OCID.
      *
      *
      * @param request The request object containing the details to send

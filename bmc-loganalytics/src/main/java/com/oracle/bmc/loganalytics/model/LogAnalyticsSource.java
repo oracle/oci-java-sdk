@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -60,7 +60,8 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
         "eventTypes",
         "categories",
         "endpoints",
-        "sourceProperties"
+        "sourceProperties",
+        "lifecycleState"
     })
     public LogAnalyticsSource(
             java.util.List<LogAnalyticsSourceLabelCondition> labelConditions,
@@ -101,7 +102,8 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
             java.util.List<EventType> eventTypes,
             java.util.List<LogAnalyticsCategory> categories,
             java.util.List<LogAnalyticsEndpoint> endpoints,
-            java.util.List<LogAnalyticsProperty> sourceProperties) {
+            java.util.List<LogAnalyticsProperty> sourceProperties,
+            LifecycleState lifecycleState) {
         super();
         this.labelConditions = labelConditions;
         this.associationCount = associationCount;
@@ -142,6 +144,7 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
         this.categories = categories;
         this.endpoints = endpoints;
         this.sourceProperties = sourceProperties;
+        this.lifecycleState = lifecycleState;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -546,14 +549,14 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * A flag indicating whether or not the auto-association state should be overriden.
+         * A flag indicating whether or not the auto-association state should be overridden.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoAssociationOverride")
         private Boolean isAutoAssociationOverride;
 
         /**
-         * A flag indicating whether or not the auto-association state should be overriden.
+         * A flag indicating whether or not the auto-association state should be overridden.
          *
          * @param isAutoAssociationOverride the value to set
          * @return this builder
@@ -645,13 +648,13 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The labls used by the source.
+         * The labels used by the source.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelDefinitions")
         private java.util.List<LogAnalyticsLabelDefinition> labelDefinitions;
 
         /**
-         * The labls used by the source.
+         * The labels used by the source.
          * @param labelDefinitions the value to set
          * @return this builder
          **/
@@ -795,6 +798,24 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("sourceProperties");
             return this;
         }
+        /**
+         * The current state of the Log Analytics source.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        /**
+         * The current state of the Log Analytics source.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -840,7 +861,8 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
                             this.eventTypes,
                             this.categories,
                             this.endpoints,
-                            this.sourceProperties);
+                            this.sourceProperties,
+                            this.lifecycleState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -965,6 +987,9 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("sourceProperties")) {
                 this.sourceProperties(model.getSourceProperties());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
             }
             return this;
         }
@@ -1329,14 +1354,14 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * A flag indicating whether or not the auto-association state should be overriden.
+     * A flag indicating whether or not the auto-association state should be overridden.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoAssociationOverride")
     private final Boolean isAutoAssociationOverride;
 
     /**
-     * A flag indicating whether or not the auto-association state should be overriden.
+     * A flag indicating whether or not the auto-association state should be overridden.
      *
      * @return the value
      **/
@@ -1415,13 +1440,13 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The labls used by the source.
+     * The labels used by the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelDefinitions")
     private final java.util.List<LogAnalyticsLabelDefinition> labelDefinitions;
 
     /**
-     * The labls used by the source.
+     * The labels used by the source.
      * @return the value
      **/
     public java.util.List<LogAnalyticsLabelDefinition> getLabelDefinitions() {
@@ -1546,6 +1571,71 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
         return sourceProperties;
     }
 
+    /**
+     * The current state of the Log Analytics source.
+     *
+     **/
+    public enum LifecycleState {
+        Active("ACTIVE"),
+        Deleted("DELETED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The current state of the Log Analytics source.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final LifecycleState lifecycleState;
+
+    /**
+     * The current state of the Log Analytics source.
+     *
+     * @return the value
+     **/
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1602,6 +1692,7 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
         sb.append(", categories=").append(String.valueOf(this.categories));
         sb.append(", endpoints=").append(String.valueOf(this.endpoints));
         sb.append(", sourceProperties=").append(String.valueOf(this.sourceProperties));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
     }
@@ -1658,6 +1749,7 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.categories, other.categories)
                 && java.util.Objects.equals(this.endpoints, other.endpoints)
                 && java.util.Objects.equals(this.sourceProperties, other.sourceProperties)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && super.equals(other);
     }
 
@@ -1748,6 +1840,9 @@ public final class LogAnalyticsSource extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.sourceProperties == null ? 43 : this.sourceProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

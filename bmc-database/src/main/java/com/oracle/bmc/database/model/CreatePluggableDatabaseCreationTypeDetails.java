@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -9,12 +9,14 @@ package com.oracle.bmc.database.model;
  * Use {@code LOCAL_CLONE_PDB} for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a
  * pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the {@code READ_WRITE} openMode to
  * perform the clone operation.
+ * sourcePluggableDatabaseSnapshotId and
  * isThinClone options are supported for Exadata VM cluster on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure
  * Use {@code REMOTE_CLONE_PDB} for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable
  * database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone
  * operation. The source PDB must be in the {@code READ_WRITE} openMode when performing the clone.
  * For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the
  * target container database (CDB) to create a remote clone.
+ * sourcePluggableDatabaseSnapshotId and
  * isThinClone options are supported for Exadata VM cluster on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure.
  * Use {@code RELOCATE_PDB} for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a
  * pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the {@code READ_WRITE} openMode when

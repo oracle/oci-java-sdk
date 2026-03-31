@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -207,6 +207,17 @@ public class ListAuditPolicyAnalyticsRequest
         return targetId;
     }
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    private String targetDatabaseGroupId;
+
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
+    /**
      * The current state of the audit policy.
      */
     private com.oracle.bmc.datasafe.model.AuditPolicyLifecycleState lifecycleState;
@@ -400,6 +411,21 @@ public class ListAuditPolicyAnalyticsRequest
         }
 
         /**
+         * A filter to return the target database group that matches the specified OCID.
+         */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
          * The current state of the audit policy.
          */
         private com.oracle.bmc.datasafe.model.AuditPolicyLifecycleState lifecycleState = null;
@@ -467,6 +493,7 @@ public class ListAuditPolicyAnalyticsRequest
             auditPolicyCategory(o.getAuditPolicyCategory());
             auditPolicyName(o.getAuditPolicyName());
             targetId(o.getTargetId());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             lifecycleState(o.getLifecycleState());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -510,10 +537,11 @@ public class ListAuditPolicyAnalyticsRequest
             request.auditPolicyCategory = auditPolicyCategory;
             request.auditPolicyName = auditPolicyName;
             request.targetId = targetId;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             request.lifecycleState = lifecycleState;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAuditPolicyAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, limit, page, groupBy, auditPolicyCategory, auditPolicyName, targetId, lifecycleState, opcRequestId);
+            // new ListAuditPolicyAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, limit, page, groupBy, auditPolicyCategory, auditPolicyName, targetId, targetDatabaseGroupId, lifecycleState, opcRequestId);
         }
     }
 
@@ -532,6 +560,7 @@ public class ListAuditPolicyAnalyticsRequest
                 .auditPolicyCategory(auditPolicyCategory)
                 .auditPolicyName(auditPolicyName)
                 .targetId(targetId)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
                 .lifecycleState(lifecycleState)
                 .opcRequestId(opcRequestId);
     }
@@ -558,6 +587,7 @@ public class ListAuditPolicyAnalyticsRequest
         sb.append(",auditPolicyCategory=").append(String.valueOf(this.auditPolicyCategory));
         sb.append(",auditPolicyName=").append(String.valueOf(this.auditPolicyName));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -585,6 +615,7 @@ public class ListAuditPolicyAnalyticsRequest
                 && java.util.Objects.equals(this.auditPolicyCategory, other.auditPolicyCategory)
                 && java.util.Objects.equals(this.auditPolicyName, other.auditPolicyName)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -614,6 +645,11 @@ public class ListAuditPolicyAnalyticsRequest
                 (result * PRIME)
                         + (this.auditPolicyName == null ? 43 : this.auditPolicyName.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

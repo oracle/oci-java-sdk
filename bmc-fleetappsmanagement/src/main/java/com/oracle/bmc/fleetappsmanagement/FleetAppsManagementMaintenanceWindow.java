@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement;
@@ -12,7 +12,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public interface FleetAppsManagementMaintenanceWindow extends AutoCloseable {
 
     /**
@@ -98,7 +98,8 @@ public interface FleetAppsManagementMaintenanceWindow extends AutoCloseable {
     GetMaintenanceWindowResponse getMaintenanceWindow(GetMaintenanceWindowRequest request);
 
     /**
-     * List maintenance windows for a specified tenancy in\u00A0Fleet Application Management.
+     * Returns a list of all the Maintenance Windows in the specified compartment.
+     * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

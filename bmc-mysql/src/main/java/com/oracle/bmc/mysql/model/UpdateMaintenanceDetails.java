@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -23,10 +23,25 @@ package com.oracle.bmc.mysql.model;
 public final class UpdateMaintenanceDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"windowStartTime"})
-    public UpdateMaintenanceDetails(String windowStartTime) {
+    @java.beans.ConstructorProperties({
+        "windowStartTime",
+        "versionPreference",
+        "versionTrackPreference",
+        "maintenanceScheduleType",
+        "maintenanceDisabledWindows"
+    })
+    public UpdateMaintenanceDetails(
+            String windowStartTime,
+            VersionPreference versionPreference,
+            VersionTrackPreference versionTrackPreference,
+            MaintenanceScheduleType maintenanceScheduleType,
+            java.util.List<MaintenanceDisabledWindow> maintenanceDisabledWindows) {
         super();
         this.windowStartTime = windowStartTime;
+        this.versionPreference = versionPreference;
+        this.versionTrackPreference = versionTrackPreference;
+        this.maintenanceScheduleType = maintenanceScheduleType;
+        this.maintenanceDisabledWindows = maintenanceDisabledWindows;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -67,12 +82,113 @@ public final class UpdateMaintenanceDetails
             this.__explicitlySet__.add("windowStartTime");
             return this;
         }
+        /**
+         * The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+         * <p>
+         * OLDEST: Choose the oldest available MySQL version based on the current version of the DB System.
+         * SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade.
+         * NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("versionPreference")
+        private VersionPreference versionPreference;
+
+        /**
+         * The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+         * <p>
+         * OLDEST: Choose the oldest available MySQL version based on the current version of the DB System.
+         * SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade.
+         * NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+         *
+         * @param versionPreference the value to set
+         * @return this builder
+         **/
+        public Builder versionPreference(VersionPreference versionPreference) {
+            this.versionPreference = versionPreference;
+            this.__explicitlySet__.add("versionPreference");
+            return this;
+        }
+        /**
+         * The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW.
+         * LONG_TERM_SUPPORT: No MySQL database behavior changes.
+         * INNOVATION:        Provides access to the latest features and all bug fixes.
+         * FOLLOW:            Follows the track of the current MySQL version.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("versionTrackPreference")
+        private VersionTrackPreference versionTrackPreference;
+
+        /**
+         * The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW.
+         * LONG_TERM_SUPPORT: No MySQL database behavior changes.
+         * INNOVATION:        Provides access to the latest features and all bug fixes.
+         * FOLLOW:            Follows the track of the current MySQL version.
+         *
+         * @param versionTrackPreference the value to set
+         * @return this builder
+         **/
+        public Builder versionTrackPreference(VersionTrackPreference versionTrackPreference) {
+            this.versionTrackPreference = versionTrackPreference;
+            this.__explicitlySet__.add("versionTrackPreference");
+            return this;
+        }
+        /**
+         * The maintenance schedule type of the DB system. Defaults to REGULAR.
+         * EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+         * REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceScheduleType")
+        private MaintenanceScheduleType maintenanceScheduleType;
+
+        /**
+         * The maintenance schedule type of the DB system. Defaults to REGULAR.
+         * EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+         * REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+         *
+         * @param maintenanceScheduleType the value to set
+         * @return this builder
+         **/
+        public Builder maintenanceScheduleType(MaintenanceScheduleType maintenanceScheduleType) {
+            this.maintenanceScheduleType = maintenanceScheduleType;
+            this.__explicitlySet__.add("maintenanceScheduleType");
+            return this;
+        }
+        /**
+         * Time window during which downtime-inducing maintenance shall not be performed.
+         * Downtime-free maintenance may be performed to apply required security patches.
+         * At most one configured window is supported.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceDisabledWindows")
+        private java.util.List<MaintenanceDisabledWindow> maintenanceDisabledWindows;
+
+        /**
+         * Time window during which downtime-inducing maintenance shall not be performed.
+         * Downtime-free maintenance may be performed to apply required security patches.
+         * At most one configured window is supported.
+         *
+         * @param maintenanceDisabledWindows the value to set
+         * @return this builder
+         **/
+        public Builder maintenanceDisabledWindows(
+                java.util.List<MaintenanceDisabledWindow> maintenanceDisabledWindows) {
+            this.maintenanceDisabledWindows = maintenanceDisabledWindows;
+            this.__explicitlySet__.add("maintenanceDisabledWindows");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateMaintenanceDetails build() {
-            UpdateMaintenanceDetails model = new UpdateMaintenanceDetails(this.windowStartTime);
+            UpdateMaintenanceDetails model =
+                    new UpdateMaintenanceDetails(
+                            this.windowStartTime,
+                            this.versionPreference,
+                            this.versionTrackPreference,
+                            this.maintenanceScheduleType,
+                            this.maintenanceDisabledWindows);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -83,6 +199,18 @@ public final class UpdateMaintenanceDetails
         public Builder copy(UpdateMaintenanceDetails model) {
             if (model.wasPropertyExplicitlySet("windowStartTime")) {
                 this.windowStartTime(model.getWindowStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("versionPreference")) {
+                this.versionPreference(model.getVersionPreference());
+            }
+            if (model.wasPropertyExplicitlySet("versionTrackPreference")) {
+                this.versionTrackPreference(model.getVersionTrackPreference());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceScheduleType")) {
+                this.maintenanceScheduleType(model.getMaintenanceScheduleType());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceDisabledWindows")) {
+                this.maintenanceDisabledWindows(model.getMaintenanceDisabledWindows());
             }
             return this;
         }
@@ -133,6 +261,92 @@ public final class UpdateMaintenanceDetails
         return windowStartTime;
     }
 
+    /**
+     * The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+     * <p>
+     * OLDEST: Choose the oldest available MySQL version based on the current version of the DB System.
+     * SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade.
+     * NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("versionPreference")
+    private final VersionPreference versionPreference;
+
+    /**
+     * The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+     * <p>
+     * OLDEST: Choose the oldest available MySQL version based on the current version of the DB System.
+     * SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade.
+     * NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+     *
+     * @return the value
+     **/
+    public VersionPreference getVersionPreference() {
+        return versionPreference;
+    }
+
+    /**
+     * The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW.
+     * LONG_TERM_SUPPORT: No MySQL database behavior changes.
+     * INNOVATION:        Provides access to the latest features and all bug fixes.
+     * FOLLOW:            Follows the track of the current MySQL version.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("versionTrackPreference")
+    private final VersionTrackPreference versionTrackPreference;
+
+    /**
+     * The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW.
+     * LONG_TERM_SUPPORT: No MySQL database behavior changes.
+     * INNOVATION:        Provides access to the latest features and all bug fixes.
+     * FOLLOW:            Follows the track of the current MySQL version.
+     *
+     * @return the value
+     **/
+    public VersionTrackPreference getVersionTrackPreference() {
+        return versionTrackPreference;
+    }
+
+    /**
+     * The maintenance schedule type of the DB system. Defaults to REGULAR.
+     * EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+     * REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceScheduleType")
+    private final MaintenanceScheduleType maintenanceScheduleType;
+
+    /**
+     * The maintenance schedule type of the DB system. Defaults to REGULAR.
+     * EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+     * REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+     *
+     * @return the value
+     **/
+    public MaintenanceScheduleType getMaintenanceScheduleType() {
+        return maintenanceScheduleType;
+    }
+
+    /**
+     * Time window during which downtime-inducing maintenance shall not be performed.
+     * Downtime-free maintenance may be performed to apply required security patches.
+     * At most one configured window is supported.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceDisabledWindows")
+    private final java.util.List<MaintenanceDisabledWindow> maintenanceDisabledWindows;
+
+    /**
+     * Time window during which downtime-inducing maintenance shall not be performed.
+     * Downtime-free maintenance may be performed to apply required security patches.
+     * At most one configured window is supported.
+     *
+     * @return the value
+     **/
+    public java.util.List<MaintenanceDisabledWindow> getMaintenanceDisabledWindows() {
+        return maintenanceDisabledWindows;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -148,6 +362,12 @@ public final class UpdateMaintenanceDetails
         sb.append("UpdateMaintenanceDetails(");
         sb.append("super=").append(super.toString());
         sb.append("windowStartTime=").append(String.valueOf(this.windowStartTime));
+        sb.append(", versionPreference=").append(String.valueOf(this.versionPreference));
+        sb.append(", versionTrackPreference=").append(String.valueOf(this.versionTrackPreference));
+        sb.append(", maintenanceScheduleType=")
+                .append(String.valueOf(this.maintenanceScheduleType));
+        sb.append(", maintenanceDisabledWindows=")
+                .append(String.valueOf(this.maintenanceDisabledWindows));
         sb.append(")");
         return sb.toString();
     }
@@ -163,6 +383,13 @@ public final class UpdateMaintenanceDetails
 
         UpdateMaintenanceDetails other = (UpdateMaintenanceDetails) o;
         return java.util.Objects.equals(this.windowStartTime, other.windowStartTime)
+                && java.util.Objects.equals(this.versionPreference, other.versionPreference)
+                && java.util.Objects.equals(
+                        this.versionTrackPreference, other.versionTrackPreference)
+                && java.util.Objects.equals(
+                        this.maintenanceScheduleType, other.maintenanceScheduleType)
+                && java.util.Objects.equals(
+                        this.maintenanceDisabledWindows, other.maintenanceDisabledWindows)
                 && super.equals(other);
     }
 
@@ -173,6 +400,24 @@ public final class UpdateMaintenanceDetails
         result =
                 (result * PRIME)
                         + (this.windowStartTime == null ? 43 : this.windowStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.versionPreference == null ? 43 : this.versionPreference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.versionTrackPreference == null
+                                ? 43
+                                : this.versionTrackPreference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceScheduleType == null
+                                ? 43
+                                : this.maintenanceScheduleType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceDisabledWindows == null
+                                ? 43
+                                : this.maintenanceDisabledWindows.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai.model;
@@ -20,6 +20,35 @@ public enum OperationType {
     DeleteEndpoint("DELETE_ENDPOINT"),
     UpdateEndpoint("UPDATE_ENDPOINT"),
     MoveEndpoint("MOVE_ENDPOINT"),
+    CreateImportedModel("CREATE_IMPORTED_MODEL"),
+    UpdateImportedModel("UPDATE_IMPORTED_MODEL"),
+    DeleteImportedModel("DELETE_IMPORTED_MODEL"),
+    CreatePrivateEndpoint("CREATE_PRIVATE_ENDPOINT"),
+    DeletePrivateEndpoint("DELETE_PRIVATE_ENDPOINT"),
+    UpdatePrivateEndpoint("UPDATE_PRIVATE_ENDPOINT"),
+    MovePrivateEndpoint("MOVE_PRIVATE_ENDPOINT"),
+    CreateVectorStoreConnector("CREATE_VECTOR_STORE_CONNECTOR"),
+    UpdateVectorStoreConnector("UPDATE_VECTOR_STORE_CONNECTOR"),
+    DeleteVectorStoreConnector("DELETE_VECTOR_STORE_CONNECTOR"),
+    ScheduleFileSync("SCHEDULE_FILE_SYNC"),
+    TriggerFileSync("TRIGGER_FILE_SYNC"),
+    CreateSemanticStore("CREATE_SEMANTIC_STORE"),
+    DeleteSemanticStore("DELETE_SEMANTIC_STORE"),
+    MoveSemanticStore("MOVE_SEMANTIC_STORE"),
+    CreateApplicationDeployment("CREATE_APPLICATION_DEPLOYMENT"),
+    UpdateApplicationDeployment("UPDATE_APPLICATION_DEPLOYMENT"),
+    DeleteApplicationDeployment("DELETE_APPLICATION_DEPLOYMENT"),
+    MoveApplicationDeployment("MOVE_APPLICATION_DEPLOYMENT"),
+    CreateHostedDeployment("CREATE_HOSTED_DEPLOYMENT"),
+    UpdateHostedDeployment("UPDATE_HOSTED_DEPLOYMENT"),
+    MoveHostedDeployment("MOVE_HOSTED_DEPLOYMENT"),
+    DeleteHostedDeployment("DELETE_HOSTED_DEPLOYMENT"),
+    StartLogging("START_LOGGING"),
+    StopLogging("STOP_LOGGING"),
+    CreateApplicationStorage("CREATE_APPLICATION_STORAGE"),
+    UpdateApplicationStorage("UPDATE_APPLICATION_STORAGE"),
+    MoveApplicationStorage("MOVE_APPLICATION_STORAGE"),
+    DeleteApplicationStorage("DELETE_APPLICATION_STORAGE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

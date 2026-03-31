@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.internal.http;
@@ -57,6 +57,23 @@ public class ListFindingsConverter {
                                     request.getSeverity().getValue()));
         }
 
+        if (request.getContainsSeverity() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "containsSeverity",
+                            request.getContainsSeverity(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getCategory() != null) {
+            target =
+                    target.queryParam(
+                            "category",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCategory()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(
@@ -73,6 +90,15 @@ public class ListFindingsConverter {
                                     request.getReferences().getValue()));
         }
 
+        if (request.getContainsReferences() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "containsReferences",
+                            request.getContainsReferences(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(
@@ -87,6 +113,14 @@ public class ListFindingsConverter {
                             "page",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getPage()));
+        }
+
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
         }
 
         if (request.getCompartmentIdInSubtree() != null) {
@@ -113,6 +147,15 @@ public class ListFindingsConverter {
                                     request.getTargetId()));
         }
 
+        if (request.getTargetIds() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "targetIds",
+                            request.getTargetIds(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getScimQuery() != null) {
             target =
                     target.queryParam(
@@ -136,6 +179,14 @@ public class ListFindingsConverter {
                             "sortBy",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getSortBy().getValue()));
+        }
+
+        if (request.getSortOrder() != null) {
+            target =
+                    target.queryParam(
+                            "sortOrder",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortOrder().getValue()));
         }
 
         if (request.getFindingKey() != null) {

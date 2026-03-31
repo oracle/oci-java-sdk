@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai.responses;
@@ -58,6 +58,19 @@ public class CreateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
+     * Provides deprecation details for models, included only when a model is deprecated.
+     */
+    private String modelDeprecationInfo;
+
+    /**
+     * Provides deprecation details for models, included only when a model is deprecated.
+     * @return the value
+     */
+    public String getModelDeprecationInfo() {
+        return modelDeprecationInfo;
+    }
+
+    /**
      * The returned Endpoint instance.
      */
     private com.oracle.bmc.generativeai.model.Endpoint endpoint;
@@ -76,6 +89,7 @@ public class CreateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
         "etag",
         "opcWorkRequestId",
         "opcRequestId",
+        "modelDeprecationInfo",
         "endpoint"
     })
     private CreateEndpointResponse(
@@ -84,11 +98,13 @@ public class CreateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
+            String modelDeprecationInfo,
             com.oracle.bmc.generativeai.model.Endpoint endpoint) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
+        this.modelDeprecationInfo = modelDeprecationInfo;
         this.endpoint = endpoint;
     }
 
@@ -163,6 +179,21 @@ public class CreateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
+         * Provides deprecation details for models, included only when a model is deprecated.
+         */
+        private String modelDeprecationInfo;
+
+        /**
+         * Provides deprecation details for models, included only when a model is deprecated.
+         * @param modelDeprecationInfo the value to set
+         * @return this builder
+         */
+        public Builder modelDeprecationInfo(String modelDeprecationInfo) {
+            this.modelDeprecationInfo = modelDeprecationInfo;
+            return this;
+        }
+
+        /**
          * The returned Endpoint instance.
          */
         private com.oracle.bmc.generativeai.model.Endpoint endpoint;
@@ -187,6 +218,7 @@ public class CreateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
+            modelDeprecationInfo(o.getModelDeprecationInfo());
             endpoint(o.getEndpoint());
 
             return this;
@@ -198,7 +230,13 @@ public class CreateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public CreateEndpointResponse build() {
             return new CreateEndpointResponse(
-                    __httpStatusCode__, headers, etag, opcWorkRequestId, opcRequestId, endpoint);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    modelDeprecationInfo,
+                    endpoint);
         }
     }
 
@@ -218,6 +256,7 @@ public class CreateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",modelDeprecationInfo=").append(String.valueOf(modelDeprecationInfo));
         sb.append(",endpoint=").append(String.valueOf(endpoint));
         sb.append(")");
         return sb.toString();
@@ -237,6 +276,7 @@ public class CreateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.modelDeprecationInfo, other.modelDeprecationInfo)
                 && java.util.Objects.equals(this.endpoint, other.endpoint);
     }
 
@@ -249,6 +289,11 @@ public class CreateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
                 (result * PRIME)
                         + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelDeprecationInfo == null
+                                ? 43
+                                : this.modelDeprecationInfo.hashCode());
         result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
         return result;
     }

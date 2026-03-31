@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -36,8 +36,11 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         "timeEnded",
         "executionDurationInSec",
         "groupExecutions",
+        "stepStatusCounts",
         "lifecycleState",
         "lifeCycleDetails",
+        "isAutomatic",
+        "automaticExecutionDetails",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -59,8 +62,11 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             java.util.Date timeEnded,
             Integer executionDurationInSec,
             java.util.List<DrPlanGroupExecution> groupExecutions,
+            DrPlanExecutionStepStatusCounts stepStatusCounts,
             DrPlanExecutionLifecycleState lifecycleState,
             String lifeCycleDetails,
+            Boolean isAutomatic,
+            AutomaticExecutionDetails automaticExecutionDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -81,8 +87,11 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         this.timeEnded = timeEnded;
         this.executionDurationInSec = executionDurationInSec;
         this.groupExecutions = groupExecutions;
+        this.stepStatusCounts = stepStatusCounts;
         this.lifecycleState = lifecycleState;
         this.lifeCycleDetails = lifeCycleDetails;
+        this.isAutomatic = isAutomatic;
+        this.automaticExecutionDetails = automaticExecutionDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -414,6 +423,15 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("groupExecutions");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("stepStatusCounts")
+        private DrPlanExecutionStepStatusCounts stepStatusCounts;
+
+        public Builder stepStatusCounts(DrPlanExecutionStepStatusCounts stepStatusCounts) {
+            this.stepStatusCounts = stepStatusCounts;
+            this.__explicitlySet__.add("stepStatusCounts");
+            return this;
+        }
         /**
          * The current state of the DR plan execution.
          *
@@ -448,6 +466,38 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         public Builder lifeCycleDetails(String lifeCycleDetails) {
             this.lifeCycleDetails = lifeCycleDetails;
             this.__explicitlySet__.add("lifeCycleDetails");
+            return this;
+        }
+        /**
+         * A flag indicating whether execution was submitted automatically by Automatic DR Configuration.
+         * <p>
+         * Example: {@code false}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutomatic")
+        private Boolean isAutomatic;
+
+        /**
+         * A flag indicating whether execution was submitted automatically by Automatic DR Configuration.
+         * <p>
+         * Example: {@code false}
+         *
+         * @param isAutomatic the value to set
+         * @return this builder
+         **/
+        public Builder isAutomatic(Boolean isAutomatic) {
+            this.isAutomatic = isAutomatic;
+            this.__explicitlySet__.add("isAutomatic");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("automaticExecutionDetails")
+        private AutomaticExecutionDetails automaticExecutionDetails;
+
+        public Builder automaticExecutionDetails(
+                AutomaticExecutionDetails automaticExecutionDetails) {
+            this.automaticExecutionDetails = automaticExecutionDetails;
+            this.__explicitlySet__.add("automaticExecutionDetails");
             return this;
         }
         /**
@@ -540,8 +590,11 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
                             this.timeEnded,
                             this.executionDurationInSec,
                             this.groupExecutions,
+                            this.stepStatusCounts,
                             this.lifecycleState,
                             this.lifeCycleDetails,
+                            this.isAutomatic,
+                            this.automaticExecutionDetails,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -601,11 +654,20 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("groupExecutions")) {
                 this.groupExecutions(model.getGroupExecutions());
             }
+            if (model.wasPropertyExplicitlySet("stepStatusCounts")) {
+                this.stepStatusCounts(model.getStepStatusCounts());
+            }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
             if (model.wasPropertyExplicitlySet("lifeCycleDetails")) {
                 this.lifeCycleDetails(model.getLifeCycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isAutomatic")) {
+                this.isAutomatic(model.getIsAutomatic());
+            }
+            if (model.wasPropertyExplicitlySet("automaticExecutionDetails")) {
+                this.automaticExecutionDetails(model.getAutomaticExecutionDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -923,6 +985,13 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         return groupExecutions;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("stepStatusCounts")
+    private final DrPlanExecutionStepStatusCounts stepStatusCounts;
+
+    public DrPlanExecutionStepStatusCounts getStepStatusCounts() {
+        return stepStatusCounts;
+    }
+
     /**
      * The current state of the DR plan execution.
      *
@@ -953,6 +1022,33 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
      **/
     public String getLifeCycleDetails() {
         return lifeCycleDetails;
+    }
+
+    /**
+     * A flag indicating whether execution was submitted automatically by Automatic DR Configuration.
+     * <p>
+     * Example: {@code false}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutomatic")
+    private final Boolean isAutomatic;
+
+    /**
+     * A flag indicating whether execution was submitted automatically by Automatic DR Configuration.
+     * <p>
+     * Example: {@code false}
+     *
+     * @return the value
+     **/
+    public Boolean getIsAutomatic() {
+        return isAutomatic;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("automaticExecutionDetails")
+    private final AutomaticExecutionDetails automaticExecutionDetails;
+
+    public AutomaticExecutionDetails getAutomaticExecutionDetails() {
+        return automaticExecutionDetails;
     }
 
     /**
@@ -1046,8 +1142,12 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
         sb.append(", executionDurationInSec=").append(String.valueOf(this.executionDurationInSec));
         sb.append(", groupExecutions=").append(String.valueOf(this.groupExecutions));
+        sb.append(", stepStatusCounts=").append(String.valueOf(this.stepStatusCounts));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifeCycleDetails=").append(String.valueOf(this.lifeCycleDetails));
+        sb.append(", isAutomatic=").append(String.valueOf(this.isAutomatic));
+        sb.append(", automaticExecutionDetails=")
+                .append(String.valueOf(this.automaticExecutionDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1083,8 +1183,12 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(
                         this.executionDurationInSec, other.executionDurationInSec)
                 && java.util.Objects.equals(this.groupExecutions, other.groupExecutions)
+                && java.util.Objects.equals(this.stepStatusCounts, other.stepStatusCounts)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifeCycleDetails, other.lifeCycleDetails)
+                && java.util.Objects.equals(this.isAutomatic, other.isAutomatic)
+                && java.util.Objects.equals(
+                        this.automaticExecutionDetails, other.automaticExecutionDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1133,10 +1237,19 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
                         + (this.groupExecutions == null ? 43 : this.groupExecutions.hashCode());
         result =
                 (result * PRIME)
+                        + (this.stepStatusCounts == null ? 43 : this.stepStatusCounts.hashCode());
+        result =
+                (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifeCycleDetails == null ? 43 : this.lifeCycleDetails.hashCode());
+        result = (result * PRIME) + (this.isAutomatic == null ? 43 : this.isAutomatic.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.automaticExecutionDetails == null
+                                ? 43
+                                : this.automaticExecutionDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

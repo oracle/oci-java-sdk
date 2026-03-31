@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -58,7 +58,7 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
     public static class Builder {
         /**
          * Clients these options should apply to. Must be a either
-         * single IPv4 address or single IPv4 CIDR block.
+         * single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
          * <p>
          **Note:** Access will also be limited by any applicable VCN
          * security rules and the ability to route IP packets to the
@@ -70,7 +70,7 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
 
         /**
          * Clients these options should apply to. Must be a either
-         * single IPv4 address or single IPv4 CIDR block.
+         * single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
          * <p>
          **Note:** Access will also be limited by any applicable VCN
          * security rules and the ability to route IP packets to the
@@ -298,7 +298,7 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Clients these options should apply to. Must be a either
-     * single IPv4 address or single IPv4 CIDR block.
+     * single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
      * <p>
      **Note:** Access will also be limited by any applicable VCN
      * security rules and the ability to route IP packets to the
@@ -310,7 +310,7 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Clients these options should apply to. Must be a either
-     * single IPv4 address or single IPv4 CIDR block.
+     * single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
      * <p>
      **Note:** Access will also be limited by any applicable VCN
      * security rules and the ability to route IP packets to the

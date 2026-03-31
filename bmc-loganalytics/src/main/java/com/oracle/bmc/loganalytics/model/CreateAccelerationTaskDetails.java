@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -48,6 +48,15 @@ public final class CreateAccelerationTaskDetails extends CreateScheduledTaskDeta
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -91,6 +100,7 @@ public final class CreateAccelerationTaskDetails extends CreateScheduledTaskDeta
                     new CreateAccelerationTaskDetails(
                             this.compartmentId,
                             this.displayName,
+                            this.description,
                             this.freeformTags,
                             this.definedTags,
                             this.savedSearchId);
@@ -107,6 +117,9 @@ public final class CreateAccelerationTaskDetails extends CreateScheduledTaskDeta
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -136,10 +149,11 @@ public final class CreateAccelerationTaskDetails extends CreateScheduledTaskDeta
     public CreateAccelerationTaskDetails(
             String compartmentId,
             String displayName,
+            String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String savedSearchId) {
-        super(compartmentId, displayName, freeformTags, definedTags);
+        super(compartmentId, displayName, description, freeformTags, definedTags);
         this.savedSearchId = savedSearchId;
     }
 

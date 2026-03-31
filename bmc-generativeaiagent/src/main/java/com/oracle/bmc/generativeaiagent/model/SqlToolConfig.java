@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent.model;
@@ -135,6 +135,22 @@ public final class SqlToolConfig extends ToolConfig {
             this.__explicitlySet__.add("databaseConnection");
             return this;
         }
+        /**
+         * The runtimeVersion of the system prompt.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeVersion")
+        private String runtimeVersion;
+
+        /**
+         * The runtimeVersion of the system prompt.
+         * @param runtimeVersion the value to set
+         * @return this builder
+         **/
+        public Builder runtimeVersion(String runtimeVersion) {
+            this.runtimeVersion = runtimeVersion;
+            this.__explicitlySet__.add("runtimeVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -150,7 +166,8 @@ public final class SqlToolConfig extends ToolConfig {
                             this.shouldEnableSelfCorrection,
                             this.tableAndColumnDescription,
                             this.generationLlmCustomization,
-                            this.databaseConnection);
+                            this.databaseConnection,
+                            this.runtimeVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -186,6 +203,9 @@ public final class SqlToolConfig extends ToolConfig {
             if (model.wasPropertyExplicitlySet("databaseConnection")) {
                 this.databaseConnection(model.getDatabaseConnection());
             }
+            if (model.wasPropertyExplicitlySet("runtimeVersion")) {
+                this.runtimeVersion(model.getRuntimeVersion());
+            }
             return this;
         }
     }
@@ -211,7 +231,8 @@ public final class SqlToolConfig extends ToolConfig {
             Boolean shouldEnableSelfCorrection,
             InputLocation tableAndColumnDescription,
             LlmCustomization generationLlmCustomization,
-            DatabaseConnection databaseConnection) {
+            DatabaseConnection databaseConnection,
+            String runtimeVersion) {
         super();
         this.iclExamples = iclExamples;
         this.databaseSchema = databaseSchema;
@@ -222,6 +243,7 @@ public final class SqlToolConfig extends ToolConfig {
         this.tableAndColumnDescription = tableAndColumnDescription;
         this.generationLlmCustomization = generationLlmCustomization;
         this.databaseConnection = databaseConnection;
+        this.runtimeVersion = runtimeVersion;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("iclExamples")
@@ -411,6 +433,20 @@ public final class SqlToolConfig extends ToolConfig {
         return databaseConnection;
     }
 
+    /**
+     * The runtimeVersion of the system prompt.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("runtimeVersion")
+    private final String runtimeVersion;
+
+    /**
+     * The runtimeVersion of the system prompt.
+     * @return the value
+     **/
+    public String getRuntimeVersion() {
+        return runtimeVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -438,6 +474,7 @@ public final class SqlToolConfig extends ToolConfig {
         sb.append(", generationLlmCustomization=")
                 .append(String.valueOf(this.generationLlmCustomization));
         sb.append(", databaseConnection=").append(String.valueOf(this.databaseConnection));
+        sb.append(", runtimeVersion=").append(String.valueOf(this.runtimeVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -465,6 +502,7 @@ public final class SqlToolConfig extends ToolConfig {
                 && java.util.Objects.equals(
                         this.generationLlmCustomization, other.generationLlmCustomization)
                 && java.util.Objects.equals(this.databaseConnection, other.databaseConnection)
+                && java.util.Objects.equals(this.runtimeVersion, other.runtimeVersion)
                 && super.equals(other);
     }
 
@@ -503,6 +541,9 @@ public final class SqlToolConfig extends ToolConfig {
                         + (this.databaseConnection == null
                                 ? 43
                                 : this.databaseConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runtimeVersion == null ? 43 : this.runtimeVersion.hashCode());
         return result;
     }
 }

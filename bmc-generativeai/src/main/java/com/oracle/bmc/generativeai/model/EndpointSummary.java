@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai.model;
@@ -26,11 +26,14 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
         "modelId",
         "compartmentId",
         "dedicatedAiClusterId",
+        "generativeAiPrivateEndpointId",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
         "lifecycleDetails",
         "contentModerationConfig",
+        "promptInjectionConfig",
+        "piiDetectionConfig",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -42,11 +45,14 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
             String modelId,
             String compartmentId,
             String dedicatedAiClusterId,
+            String generativeAiPrivateEndpointId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             Endpoint.LifecycleState lifecycleState,
             String lifecycleDetails,
             ContentModerationConfig contentModerationConfig,
+            PromptInjectionConfig promptInjectionConfig,
+            PiiDetectionConfig piiDetectionConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -57,11 +63,14 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
         this.modelId = modelId;
         this.compartmentId = compartmentId;
         this.dedicatedAiClusterId = dedicatedAiClusterId;
+        this.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.contentModerationConfig = contentModerationConfig;
+        this.promptInjectionConfig = promptInjectionConfig;
+        this.piiDetectionConfig = piiDetectionConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -166,6 +175,22 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("generativeAiPrivateEndpointId")
+        private String generativeAiPrivateEndpointId;
+
+        /**
+         * The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+         * @param generativeAiPrivateEndpointId the value to set
+         * @return this builder
+         **/
+        public Builder generativeAiPrivateEndpointId(String generativeAiPrivateEndpointId) {
+            this.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
+            this.__explicitlySet__.add("generativeAiPrivateEndpointId");
+            return this;
+        }
+        /**
          * The date and time that the endpoint was created in the format of an RFC3339 datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -256,6 +281,24 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("contentModerationConfig");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("promptInjectionConfig")
+        private PromptInjectionConfig promptInjectionConfig;
+
+        public Builder promptInjectionConfig(PromptInjectionConfig promptInjectionConfig) {
+            this.promptInjectionConfig = promptInjectionConfig;
+            this.__explicitlySet__.add("promptInjectionConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("piiDetectionConfig")
+        private PiiDetectionConfig piiDetectionConfig;
+
+        public Builder piiDetectionConfig(PiiDetectionConfig piiDetectionConfig) {
+            this.piiDetectionConfig = piiDetectionConfig;
+            this.__explicitlySet__.add("piiDetectionConfig");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -340,11 +383,14 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
                             this.modelId,
                             this.compartmentId,
                             this.dedicatedAiClusterId,
+                            this.generativeAiPrivateEndpointId,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.contentModerationConfig,
+                            this.promptInjectionConfig,
+                            this.piiDetectionConfig,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -374,6 +420,9 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("dedicatedAiClusterId")) {
                 this.dedicatedAiClusterId(model.getDedicatedAiClusterId());
             }
+            if (model.wasPropertyExplicitlySet("generativeAiPrivateEndpointId")) {
+                this.generativeAiPrivateEndpointId(model.getGenerativeAiPrivateEndpointId());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
@@ -388,6 +437,12 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("contentModerationConfig")) {
                 this.contentModerationConfig(model.getContentModerationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("promptInjectionConfig")) {
+                this.promptInjectionConfig(model.getPromptInjectionConfig());
+            }
+            if (model.wasPropertyExplicitlySet("piiDetectionConfig")) {
+                this.piiDetectionConfig(model.getPiiDetectionConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -498,6 +553,20 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("generativeAiPrivateEndpointId")
+    private final String generativeAiPrivateEndpointId;
+
+    /**
+     * The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+     * @return the value
+     **/
+    public String getGenerativeAiPrivateEndpointId() {
+        return generativeAiPrivateEndpointId;
+    }
+
+    /**
      * The date and time that the endpoint was created in the format of an RFC3339 datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -576,6 +645,20 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
 
     public ContentModerationConfig getContentModerationConfig() {
         return contentModerationConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("promptInjectionConfig")
+    private final PromptInjectionConfig promptInjectionConfig;
+
+    public PromptInjectionConfig getPromptInjectionConfig() {
+        return promptInjectionConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("piiDetectionConfig")
+    private final PiiDetectionConfig piiDetectionConfig;
+
+    public PiiDetectionConfig getPiiDetectionConfig() {
+        return piiDetectionConfig;
     }
 
     /**
@@ -662,12 +745,16 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", modelId=").append(String.valueOf(this.modelId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", dedicatedAiClusterId=").append(String.valueOf(this.dedicatedAiClusterId));
+        sb.append(", generativeAiPrivateEndpointId=")
+                .append(String.valueOf(this.generativeAiPrivateEndpointId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", contentModerationConfig=")
                 .append(String.valueOf(this.contentModerationConfig));
+        sb.append(", promptInjectionConfig=").append(String.valueOf(this.promptInjectionConfig));
+        sb.append(", piiDetectionConfig=").append(String.valueOf(this.piiDetectionConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -691,12 +778,16 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.modelId, other.modelId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.dedicatedAiClusterId, other.dedicatedAiClusterId)
+                && java.util.Objects.equals(
+                        this.generativeAiPrivateEndpointId, other.generativeAiPrivateEndpointId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(
                         this.contentModerationConfig, other.contentModerationConfig)
+                && java.util.Objects.equals(this.promptInjectionConfig, other.promptInjectionConfig)
+                && java.util.Objects.equals(this.piiDetectionConfig, other.piiDetectionConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -719,6 +810,11 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
                         + (this.dedicatedAiClusterId == null
                                 ? 43
                                 : this.dedicatedAiClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.generativeAiPrivateEndpointId == null
+                                ? 43
+                                : this.generativeAiPrivateEndpointId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
@@ -732,6 +828,16 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
                         + (this.contentModerationConfig == null
                                 ? 43
                                 : this.contentModerationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.promptInjectionConfig == null
+                                ? 43
+                                : this.promptInjectionConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.piiDetectionConfig == null
+                                ? 43
+                                : this.piiDetectionConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
