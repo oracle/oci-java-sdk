@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplacepublisher;
@@ -7,6 +7,8 @@ package com.oracle.bmc.marketplacepublisher;
 import com.oracle.bmc.marketplacepublisher.internal.http.*;
 import com.oracle.bmc.marketplacepublisher.requests.*;
 import com.oracle.bmc.marketplacepublisher.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for MarketplacePublisher service. <br/>
@@ -21,14 +23,14 @@ import com.oracle.bmc.marketplacepublisher.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsync {
     /**
      * Service instance for MarketplacePublisher.
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MARKETPLACEPUBLISHER")
+                    .serviceName(MarketplacePublisherClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://marketplace-publisher.{region}.oci.{secondLevelDomain}")
@@ -51,6 +53,10 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -262,6 +268,11 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -296,6 +307,12 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
         }
         if (endpoint != null) {
             setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "MarketplacePublisherAsyncClient",
+                            "getListingRevisionAttachmentContent,getListingRevisionIconContent,getSupportDocContent,getTermVersionContent"));
         }
     }
 
@@ -402,12 +419,21 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -437,15 +463,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -475,7 +493,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ActivateTermVersion",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/ActivateTermVersion");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/ActivateTermVersion");
         final java.util.function.Function<javax.ws.rs.core.Response, ActivateTermVersionResponse>
                 transformer =
                         ActivateTermVersionConverter.fromResponse(
@@ -522,7 +540,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "CancelWorkRequest",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/CancelWorkRequest");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/WorkRequest/CancelWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -569,7 +587,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "CascadingDeleteListing",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/CascadingDeleteListing");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Listing/CascadingDeleteListing");
         final java.util.function.Function<javax.ws.rs.core.Response, CascadingDeleteListingResponse>
                 transformer =
                         CascadingDeleteListingConverter.fromResponse(
@@ -619,7 +637,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "CascadingDeleteListingRevision",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CascadingDeleteListingRevision");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/CascadingDeleteListingRevision");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CascadingDeleteListingRevisionResponse>
                 transformer =
@@ -670,7 +688,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ChangeArtifactCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/ChangeArtifactCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/ChangeArtifactCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeArtifactCompartmentResponse>
                 transformer =
@@ -725,7 +743,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ChangeListingCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/ChangeListingCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Listing/ChangeListingCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeListingCompartmentResponse>
                 transformer =
@@ -780,7 +798,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ChangeListingRevisionToNewStatus",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/ChangeListingRevisionToNewStatus");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/ChangeListingRevisionToNewStatus");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeListingRevisionToNewStatusResponse>
                 transformer =
@@ -832,7 +850,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ChangeTermCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/ChangeTermCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Term/ChangeTermCompartment");
         final java.util.function.Function<javax.ws.rs.core.Response, ChangeTermCompartmentResponse>
                 transformer =
                         ChangeTermCompartmentConverter.fromResponse(
@@ -885,7 +903,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "CloneListingRevision",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CloneListingRevision");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/CloneListingRevision");
         final java.util.function.Function<javax.ws.rs.core.Response, CloneListingRevisionResponse>
                 transformer =
                         CloneListingRevisionConverter.fromResponse(
@@ -933,7 +951,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "CreateArtifact",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/CreateArtifact");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/CreateArtifact");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateArtifactResponse>
                 transformer =
                         CreateArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -983,7 +1001,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "CreateListing",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/CreateListing");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Listing/CreateListing");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateListingResponse>
                 transformer =
                         CreateListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1034,7 +1052,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "CreateListingRevision",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CreateListingRevision");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/CreateListingRevision");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateListingRevisionResponse>
                 transformer =
                         CreateListingRevisionConverter.fromResponse(
@@ -1089,7 +1107,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "CreateListingRevisionAttachment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/CreateListingRevisionAttachment");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachment/CreateListingRevisionAttachment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateListingRevisionAttachmentResponse>
                 transformer =
@@ -1146,7 +1164,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "CreateListingRevisionNote",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/CreateListingRevisionNote");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionNote/CreateListingRevisionNote");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateListingRevisionNoteResponse>
                 transformer =
@@ -1203,7 +1221,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "CreateListingRevisionPackage",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/CreateListingRevisionPackage");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/CreateListingRevisionPackage");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateListingRevisionPackageResponse>
                 transformer =
@@ -1256,7 +1274,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "CreateTerm",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/CreateTerm");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Term/CreateTerm");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateTermResponse>
                 transformer =
                         CreateTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1314,7 +1332,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "CreateTermVersion",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/CreateTermVersion");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/CreateTermVersion");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateTermVersionResponse>
                 transformer =
                         CreateTermVersionConverter.fromResponse(
@@ -1371,7 +1389,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "DeleteArtifact",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/DeleteArtifact");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/DeleteArtifact");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteArtifactResponse>
                 transformer =
                         DeleteArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1415,7 +1433,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "DeleteListing",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/DeleteListing");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Listing/DeleteListing");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteListingResponse>
                 transformer =
                         DeleteListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1460,7 +1478,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "DeleteListingRevision",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/DeleteListingRevision");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/DeleteListingRevision");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteListingRevisionResponse>
                 transformer =
                         DeleteListingRevisionConverter.fromResponse(
@@ -1509,7 +1527,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "DeleteListingRevisionAttachment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/DeleteListingRevisionAttachment");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachment/DeleteListingRevisionAttachment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteListingRevisionAttachmentResponse>
                 transformer =
@@ -1560,7 +1578,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "DeleteListingRevisionNote",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/DeleteListingRevisionNote");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionNote/DeleteListingRevisionNote");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteListingRevisionNoteResponse>
                 transformer =
@@ -1611,7 +1629,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "DeleteListingRevisionPackage",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/DeleteListingRevisionPackage");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/DeleteListingRevisionPackage");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteListingRevisionPackageResponse>
                 transformer =
@@ -1658,7 +1676,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "DeleteTerm",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/DeleteTerm");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Term/DeleteTerm");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteTermResponse>
                 transformer =
                         DeleteTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1703,7 +1721,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "DeleteTermVersion",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/DeleteTermVersion");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/DeleteTermVersion");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteTermVersionResponse>
                 transformer =
                         DeleteTermVersionConverter.fromResponse(
@@ -1748,7 +1766,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetArtifact",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/GetArtifact");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/GetArtifact");
         final java.util.function.Function<javax.ws.rs.core.Response, GetArtifactResponse>
                 transformer =
                         GetArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1792,7 +1810,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetCategory",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Category/GetCategory");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Category/GetCategory");
         final java.util.function.Function<javax.ws.rs.core.Response, GetCategoryResponse>
                 transformer =
                         GetCategoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1822,6 +1840,46 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetLeadResponse> getLead(
+            GetLeadRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetLeadRequest, GetLeadResponse> handler) {
+        LOG.trace("Called async getLead");
+        final GetLeadRequest interceptedRequest = GetLeadConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLeadConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetLead",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Lead/GetLead");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetLeadResponse> transformer =
+                GetLeadConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetLeadRequest, GetLeadResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetLeadRequest, GetLeadResponse>,
+                        java.util.concurrent.Future<GetLeadResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetLeadRequest, GetLeadResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetListingResponse> getListing(
             GetListingRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetListingRequest, GetListingResponse>
@@ -1835,7 +1893,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetListing",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/GetListing");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Listing/GetListing");
         final java.util.function.Function<javax.ws.rs.core.Response, GetListingResponse>
                 transformer =
                         GetListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1880,7 +1938,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetListingRevision",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/GetListingRevision");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/GetListingRevision");
         final java.util.function.Function<javax.ws.rs.core.Response, GetListingRevisionResponse>
                 transformer =
                         GetListingRevisionConverter.fromResponse(
@@ -1928,7 +1986,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetListingRevisionAttachment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/GetListingRevisionAttachment");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachment/GetListingRevisionAttachment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetListingRevisionAttachmentResponse>
                 transformer =
@@ -1962,6 +2020,111 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetListingRevisionAttachmentContentResponse>
+            getListingRevisionAttachmentContent(
+                    GetListingRevisionAttachmentContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetListingRevisionAttachmentContentRequest,
+                                    GetListingRevisionAttachmentContentResponse>
+                            handler) {
+        LOG.trace("Called async getListingRevisionAttachmentContent");
+        final GetListingRevisionAttachmentContentRequest interceptedRequest =
+                GetListingRevisionAttachmentContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetListingRevisionAttachmentContentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetListingRevisionAttachmentContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachment/GetListingRevisionAttachmentContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetListingRevisionAttachmentContentResponse>
+                transformer =
+                        GetListingRevisionAttachmentContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetListingRevisionAttachmentContentRequest,
+                        GetListingRevisionAttachmentContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetListingRevisionAttachmentContentRequest,
+                                GetListingRevisionAttachmentContentResponse>,
+                        java.util.concurrent.Future<GetListingRevisionAttachmentContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetListingRevisionAttachmentContentRequest,
+                    GetListingRevisionAttachmentContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetListingRevisionIconContentResponse>
+            getListingRevisionIconContent(
+                    GetListingRevisionIconContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetListingRevisionIconContentRequest,
+                                    GetListingRevisionIconContentResponse>
+                            handler) {
+        LOG.trace("Called async getListingRevisionIconContent");
+        final GetListingRevisionIconContentRequest interceptedRequest =
+                GetListingRevisionIconContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetListingRevisionIconContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetListingRevisionIconContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/GetListingRevisionIconContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetListingRevisionIconContentResponse>
+                transformer =
+                        GetListingRevisionIconContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetListingRevisionIconContentRequest, GetListingRevisionIconContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetListingRevisionIconContentRequest,
+                                GetListingRevisionIconContentResponse>,
+                        java.util.concurrent.Future<GetListingRevisionIconContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetListingRevisionIconContentRequest, GetListingRevisionIconContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetListingRevisionNoteResponse> getListingRevisionNote(
             GetListingRevisionNoteRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1977,7 +2140,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetListingRevisionNote",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/GetListingRevisionNote");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionNote/GetListingRevisionNote");
         final java.util.function.Function<javax.ws.rs.core.Response, GetListingRevisionNoteResponse>
                 transformer =
                         GetListingRevisionNoteConverter.fromResponse(
@@ -2024,7 +2187,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetListingRevisionPackage",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/GetListingRevisionPackage");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/GetListingRevisionPackage");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetListingRevisionPackageResponse>
                 transformer =
@@ -2071,7 +2234,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetMarket",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Market/GetMarket");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Market/GetMarket");
         final java.util.function.Function<javax.ws.rs.core.Response, GetMarketResponse>
                 transformer =
                         GetMarketConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2113,7 +2276,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetProduct",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Product/GetProduct");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Product/GetProduct");
         final java.util.function.Function<javax.ws.rs.core.Response, GetProductResponse>
                 transformer =
                         GetProductConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2157,7 +2320,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetPublisher",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Publisher/GetPublisher");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Publisher/GetPublisher");
         final java.util.function.Function<javax.ws.rs.core.Response, GetPublisherResponse>
                 transformer =
                         GetPublisherConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2187,6 +2350,97 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetSupportDocResponse> getSupportDoc(
+            GetSupportDocRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetSupportDocRequest, GetSupportDocResponse>
+                    handler) {
+        LOG.trace("Called async getSupportDoc");
+        final GetSupportDocRequest interceptedRequest =
+                GetSupportDocConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSupportDocConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetSupportDoc",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/SupportDoc/GetSupportDoc");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSupportDocResponse>
+                transformer =
+                        GetSupportDocConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetSupportDocRequest, GetSupportDocResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSupportDocRequest, GetSupportDocResponse>,
+                        java.util.concurrent.Future<GetSupportDocResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSupportDocRequest, GetSupportDocResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSupportDocContentResponse> getSupportDocContent(
+            GetSupportDocContentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSupportDocContentRequest, GetSupportDocContentResponse>
+                    handler) {
+        LOG.trace("Called async getSupportDocContent");
+        final GetSupportDocContentRequest interceptedRequest =
+                GetSupportDocContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSupportDocContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetSupportDocContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/SupportDoc/GetSupportDocContent");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSupportDocContentResponse>
+                transformer =
+                        GetSupportDocContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSupportDocContentRequest, GetSupportDocContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSupportDocContentRequest, GetSupportDocContentResponse>,
+                        java.util.concurrent.Future<GetSupportDocContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSupportDocContentRequest, GetSupportDocContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTermResponse> getTerm(
             GetTermRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetTermRequest, GetTermResponse> handler) {
@@ -2199,7 +2453,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetTerm",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/GetTerm");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Term/GetTerm");
         final java.util.function.Function<javax.ws.rs.core.Response, GetTermResponse> transformer =
                 GetTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetTermRequest, GetTermResponse> handlerToUse =
@@ -2242,7 +2496,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetTermVersion",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/GetTermVersion");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/GetTermVersion");
         final java.util.function.Function<javax.ws.rs.core.Response, GetTermVersionResponse>
                 transformer =
                         GetTermVersionConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2272,6 +2526,53 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetTermVersionContentResponse> getTermVersionContent(
+            GetTermVersionContentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetTermVersionContentRequest, GetTermVersionContentResponse>
+                    handler) {
+        LOG.trace("Called async getTermVersionContent");
+        final GetTermVersionContentRequest interceptedRequest =
+                GetTermVersionContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTermVersionContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetTermVersionContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/GetTermVersionContent");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTermVersionContentResponse>
+                transformer =
+                        GetTermVersionContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetTermVersionContentRequest, GetTermVersionContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTermVersionContentRequest, GetTermVersionContentResponse>,
+                        java.util.concurrent.Future<GetTermVersionContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTermVersionContentRequest, GetTermVersionContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2287,7 +2588,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/GetWorkRequest");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2331,7 +2632,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListArtifacts",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ArtifactCollection/ListArtifacts");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ArtifactCollection/ListArtifacts");
         final java.util.function.Function<javax.ws.rs.core.Response, ListArtifactsResponse>
                 transformer =
                         ListArtifactsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2361,6 +2662,53 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ListAvailableServicesResponse> listAvailableServices(
+            ListAvailableServicesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAvailableServicesRequest, ListAvailableServicesResponse>
+                    handler) {
+        LOG.trace("Called async listAvailableServices");
+        final ListAvailableServicesRequest interceptedRequest =
+                ListAvailableServicesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAvailableServicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListAvailableServices",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/AvailableServiceCollection/ListAvailableServices");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAvailableServicesResponse>
+                transformer =
+                        ListAvailableServicesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAvailableServicesRequest, ListAvailableServicesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAvailableServicesRequest, ListAvailableServicesResponse>,
+                        java.util.concurrent.Future<ListAvailableServicesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAvailableServicesRequest, ListAvailableServicesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCategoriesResponse> listCategories(
             ListCategoriesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2376,7 +2724,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListCategories",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/CategoryCollection/ListCategories");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CategoryCollection/ListCategories");
         final java.util.function.Function<javax.ws.rs.core.Response, ListCategoriesResponse>
                 transformer =
                         ListCategoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2393,6 +2741,152 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListCategoriesRequest, ListCategoriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomerInstanceReportRecordsResponse>
+            listCustomerInstanceReportRecords(
+                    ListCustomerInstanceReportRecordsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCustomerInstanceReportRecordsRequest,
+                                    ListCustomerInstanceReportRecordsResponse>
+                            handler) {
+        LOG.trace("Called async listCustomerInstanceReportRecords");
+        final ListCustomerInstanceReportRecordsRequest interceptedRequest =
+                ListCustomerInstanceReportRecordsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCustomerInstanceReportRecordsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListCustomerInstanceReportRecords",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportRecordCollection/ListCustomerInstanceReportRecords");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCustomerInstanceReportRecordsResponse>
+                transformer =
+                        ListCustomerInstanceReportRecordsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCustomerInstanceReportRecordsRequest,
+                        ListCustomerInstanceReportRecordsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCustomerInstanceReportRecordsRequest,
+                                ListCustomerInstanceReportRecordsResponse>,
+                        java.util.concurrent.Future<ListCustomerInstanceReportRecordsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCustomerInstanceReportRecordsRequest,
+                    ListCustomerInstanceReportRecordsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDisbursementReportRecordsResponse>
+            listDisbursementReportRecords(
+                    ListDisbursementReportRecordsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDisbursementReportRecordsRequest,
+                                    ListDisbursementReportRecordsResponse>
+                            handler) {
+        LOG.trace("Called async listDisbursementReportRecords");
+        final ListDisbursementReportRecordsRequest interceptedRequest =
+                ListDisbursementReportRecordsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDisbursementReportRecordsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListDisbursementReportRecords",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/DisbursementReportRecordCollection/ListDisbursementReportRecords");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDisbursementReportRecordsResponse>
+                transformer =
+                        ListDisbursementReportRecordsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDisbursementReportRecordsRequest, ListDisbursementReportRecordsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDisbursementReportRecordsRequest,
+                                ListDisbursementReportRecordsResponse>,
+                        java.util.concurrent.Future<ListDisbursementReportRecordsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDisbursementReportRecordsRequest, ListDisbursementReportRecordsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLeadsResponse> listLeads(
+            ListLeadsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListLeadsRequest, ListLeadsResponse>
+                    handler) {
+        LOG.trace("Called async listLeads");
+        final ListLeadsRequest interceptedRequest = ListLeadsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLeadsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListLeads",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/LeadCollection/ListLeads");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListLeadsResponse>
+                transformer =
+                        ListLeadsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListLeadsRequest, ListLeadsResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListLeadsRequest, ListLeadsResponse>,
+                        java.util.concurrent.Future<ListLeadsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListLeadsRequest, ListLeadsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2423,7 +2917,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListListingRevisionAttachments",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachmentCollection/ListListingRevisionAttachments");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachmentCollection/ListListingRevisionAttachments");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListListingRevisionAttachmentsResponse>
                 transformer =
@@ -2473,7 +2967,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListListingRevisionNotes",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNoteCollection/ListListingRevisionNotes");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionNoteCollection/ListListingRevisionNotes");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListListingRevisionNotesResponse>
                 transformer =
@@ -2523,7 +3017,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListListingRevisionPackages",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackageCollection/ListListingRevisionPackages");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackageCollection/ListListingRevisionPackages");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListListingRevisionPackagesResponse>
                 transformer =
@@ -2572,7 +3066,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListListingRevisions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionCollection/ListListingRevisions");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionCollection/ListListingRevisions");
         final java.util.function.Function<javax.ws.rs.core.Response, ListListingRevisionsResponse>
                 transformer =
                         ListListingRevisionsConverter.fromResponse(
@@ -2618,7 +3112,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListListings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingCollection/ListListings");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingCollection/ListListings");
         final java.util.function.Function<javax.ws.rs.core.Response, ListListingsResponse>
                 transformer =
                         ListListingsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2662,7 +3156,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListMarkets",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/MarketCollection/ListMarkets");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/MarketCollection/ListMarkets");
         final java.util.function.Function<javax.ws.rs.core.Response, ListMarketsResponse>
                 transformer =
                         ListMarketsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2706,7 +3200,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListProducts",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ProductCollection/ListProducts");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ProductCollection/ListProducts");
         final java.util.function.Function<javax.ws.rs.core.Response, ListProductsResponse>
                 transformer =
                         ListProductsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2751,7 +3245,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListPublishers",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/PublisherCollection/ListPublishers");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/PublisherCollection/ListPublishers");
         final java.util.function.Function<javax.ws.rs.core.Response, ListPublishersResponse>
                 transformer =
                         ListPublishersConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2781,6 +3275,147 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ListSupportDocsResponse> listSupportDocs(
+            ListSupportDocsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSupportDocsRequest, ListSupportDocsResponse>
+                    handler) {
+        LOG.trace("Called async listSupportDocs");
+        final ListSupportDocsRequest interceptedRequest =
+                ListSupportDocsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSupportDocsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListSupportDocs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/SupportDocCollection/ListSupportDocs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSupportDocsResponse>
+                transformer =
+                        ListSupportDocsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListSupportDocsRequest, ListSupportDocsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSupportDocsRequest, ListSupportDocsResponse>,
+                        java.util.concurrent.Future<ListSupportDocsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSupportDocsRequest, ListSupportDocsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSupportedCurrenciesResponse> listSupportedCurrencies(
+            ListSupportedCurrenciesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSupportedCurrenciesRequest, ListSupportedCurrenciesResponse>
+                    handler) {
+        LOG.trace("Called async listSupportedCurrencies");
+        final ListSupportedCurrenciesRequest interceptedRequest =
+                ListSupportedCurrenciesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSupportedCurrenciesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListSupportedCurrencies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/SupportedCurrencyCollection/ListSupportedCurrencies");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSupportedCurrenciesResponse>
+                transformer =
+                        ListSupportedCurrenciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSupportedCurrenciesRequest, ListSupportedCurrenciesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSupportedCurrenciesRequest, ListSupportedCurrenciesResponse>,
+                        java.util.concurrent.Future<ListSupportedCurrenciesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSupportedCurrenciesRequest, ListSupportedCurrenciesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSupportedShapesResponse> listSupportedShapes(
+            ListSupportedShapesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSupportedShapesRequest, ListSupportedShapesResponse>
+                    handler) {
+        LOG.trace("Called async listSupportedShapes");
+        final ListSupportedShapesRequest interceptedRequest =
+                ListSupportedShapesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSupportedShapesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListSupportedShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/SupportedShapeCollection/ListSupportedShapes");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSupportedShapesResponse>
+                transformer =
+                        ListSupportedShapesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSupportedShapesRequest, ListSupportedShapesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSupportedShapesRequest, ListSupportedShapesResponse>,
+                        java.util.concurrent.Future<ListSupportedShapesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSupportedShapesRequest, ListSupportedShapesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTermVersionsResponse> listTermVersions(
             ListTermVersionsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2796,7 +3431,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListTermVersions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersionCollection/ListTermVersions");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersionCollection/ListTermVersions");
         final java.util.function.Function<javax.ws.rs.core.Response, ListTermVersionsResponse>
                 transformer =
                         ListTermVersionsConverter.fromResponse(
@@ -2840,7 +3475,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListTerms",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermCollection/ListTerms");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermCollection/ListTerms");
         final java.util.function.Function<javax.ws.rs.core.Response, ListTermsResponse>
                 transformer =
                         ListTermsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2884,7 +3519,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequestError/ListWorkRequestErrors");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/WorkRequestError/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -2931,7 +3566,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequestLogEntry/ListWorkRequestLogs");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/WorkRequestLogEntry/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -2978,7 +3613,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/ListWorkRequests");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/WorkRequest/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -3028,7 +3663,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "MarkListingRevisionPackageAsDefault",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/MarkListingRevisionPackageAsDefault");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/MarkListingRevisionPackageAsDefault");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, MarkListingRevisionPackageAsDefaultResponse>
                 transformer =
@@ -3080,7 +3715,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "PublishListingRevision",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/PublishListingRevision");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/PublishListingRevision");
         final java.util.function.Function<javax.ws.rs.core.Response, PublishListingRevisionResponse>
                 transformer =
                         PublishListingRevisionConverter.fromResponse(
@@ -3130,7 +3765,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "PublishListingRevisionAsPrivate",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/PublishListingRevisionAsPrivate");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/PublishListingRevisionAsPrivate");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, PublishListingRevisionAsPrivateResponse>
                 transformer =
@@ -3189,7 +3824,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "PublishListingRevisionPackage",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/PublishListingRevisionPackage");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/PublishListingRevisionPackage");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, PublishListingRevisionPackageResponse>
                 transformer =
@@ -3241,7 +3876,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "SubmitListingRevisionForReview",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/SubmitListingRevisionForReview");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/SubmitListingRevisionForReview");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, SubmitListingRevisionForReviewResponse>
                 transformer =
@@ -3299,7 +3934,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "UnPublishListingRevisionPackage",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/UnPublishListingRevisionPackage");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/UnPublishListingRevisionPackage");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UnPublishListingRevisionPackageResponse>
                 transformer =
@@ -3350,7 +3985,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "UpdateArtifact",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/UpdateArtifact");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/UpdateArtifact");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateArtifactResponse>
                 transformer =
                         UpdateArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -3399,7 +4034,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "UpdateListing",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/UpdateListing");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Listing/UpdateListing");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateListingResponse>
                 transformer =
                         UpdateListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -3449,7 +4084,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "UpdateListingRevision",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/UpdateListingRevision");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/UpdateListingRevision");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateListingRevisionResponse>
                 transformer =
                         UpdateListingRevisionConverter.fromResponse(
@@ -3503,7 +4138,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "UpdateListingRevisionAttachment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/UpdateListingRevisionAttachment");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachment/UpdateListingRevisionAttachment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateListingRevisionAttachmentResponse>
                 transformer =
@@ -3569,7 +4204,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "UpdateListingRevisionAttachmentContent",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/UpdateListingRevisionAttachmentContent");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionAttachment/UpdateListingRevisionAttachmentContent");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateListingRevisionAttachmentContentResponse>
                 transformer =
@@ -3639,7 +4274,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "UpdateListingRevisionIconContent",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/UpdateListingRevisionIconContent");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/UpdateListingRevisionIconContent");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateListingRevisionIconContentResponse>
                 transformer =
@@ -3685,6 +4320,60 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateListingRevisionNoteResponse> updateListingRevisionNote(
+            UpdateListingRevisionNoteRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateListingRevisionNoteRequest, UpdateListingRevisionNoteResponse>
+                    handler) {
+        LOG.trace("Called async updateListingRevisionNote");
+        final UpdateListingRevisionNoteRequest interceptedRequest =
+                UpdateListingRevisionNoteConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateListingRevisionNoteConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UpdateListingRevisionNote",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionNote/UpdateListingRevisionNote");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateListingRevisionNoteResponse>
+                transformer =
+                        UpdateListingRevisionNoteConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateListingRevisionNoteRequest, UpdateListingRevisionNoteResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateListingRevisionNoteRequest,
+                                UpdateListingRevisionNoteResponse>,
+                        java.util.concurrent.Future<UpdateListingRevisionNoteResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateListingRevisionNoteDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateListingRevisionNoteRequest, UpdateListingRevisionNoteResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateListingRevisionPackageResponse>
             updateListingRevisionPackage(
                     UpdateListingRevisionPackageRequest request,
@@ -3702,7 +4391,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "UpdateListingRevisionPackage",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/UpdateListingRevisionPackage");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevisionPackage/UpdateListingRevisionPackage");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateListingRevisionPackageResponse>
                 transformer =
@@ -3754,7 +4443,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "UpdateTerm",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/UpdateTerm");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Term/UpdateTerm");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateTermResponse>
                 transformer =
                         UpdateTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -3804,7 +4493,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "UpdateTermVersion",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/UpdateTermVersion");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/UpdateTermVersion");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateTermVersionResponse>
                 transformer =
                         UpdateTermVersionConverter.fromResponse(
@@ -3862,7 +4551,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "UpdateTermVersionContent",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/UpdateTermVersionContent");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/TermVersion/UpdateTermVersionContent");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateTermVersionContentResponse>
                 transformer =
@@ -3923,7 +4612,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "ValidateAndPublishArtifact",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/ValidateAndPublishArtifact");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/ValidateAndPublishArtifact");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateAndPublishArtifactResponse>
                 transformer =
@@ -3973,7 +4662,7 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                         "MarketplacePublisher",
                         "WithdrawListingRevision",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/WithdrawListingRevision");
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/WithdrawListingRevision");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, WithdrawListingRevisionResponse>
                 transformer =

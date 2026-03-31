@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.emaildataplane;
@@ -7,6 +7,8 @@ package com.oracle.bmc.emaildataplane;
 import com.oracle.bmc.emaildataplane.internal.http.*;
 import com.oracle.bmc.emaildataplane.requests.*;
 import com.oracle.bmc.emaildataplane.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for EmailDP service. <br/>
@@ -28,7 +30,7 @@ public class EmailDPAsyncClient implements EmailDPAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("EMAILDP")
+                    .serviceName(EmailDPClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://cell0.submit.email.{region}.oci.{secondLevelDomain}")
@@ -51,6 +53,10 @@ public class EmailDPAsyncClient implements EmailDPAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -262,6 +268,11 @@ public class EmailDPAsyncClient implements EmailDPAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -401,12 +412,21 @@ public class EmailDPAsyncClient implements EmailDPAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -436,15 +456,7 @@ public class EmailDPAsyncClient implements EmailDPAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -501,6 +513,68 @@ public class EmailDPAsyncClient implements EmailDPAsync {
                     futureSupplier) {
                 @Override
                 protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitRawEmailResponse> submitRawEmail(
+            SubmitRawEmailRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SubmitRawEmailRequest, SubmitRawEmailResponse>
+                    handler) {
+        LOG.trace("Called async submitRawEmail");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, SubmitRawEmailRequest.builder());
+        }
+        final SubmitRawEmailRequest interceptedRequest =
+                SubmitRawEmailConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SubmitRawEmailConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EmailDP",
+                        "SubmitRawEmail",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildeliverysubmission/20220926/EmailRawSubmittedResponse/SubmitRawEmail");
+        final java.util.function.Function<javax.ws.rs.core.Response, SubmitRawEmailResponse>
+                transformer =
+                        SubmitRawEmailConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<SubmitRawEmailRequest, SubmitRawEmailResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SubmitRawEmailRequest, SubmitRawEmailResponse>,
+                        java.util.concurrent.Future<SubmitRawEmailResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRawMessage(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SubmitRawEmailRequest, SubmitRawEmailResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getRawMessage(), true);
+                }
             };
         } else {
             return futureSupplier.apply(handlerToUse);

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument.model;
@@ -27,7 +27,10 @@ public final class Page extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "words",
         "lines",
         "tables",
-        "documentFields"
+        "documentFields",
+        "signatures",
+        "barCodes",
+        "selectionMarks"
     })
     public Page(
             Integer pageNumber,
@@ -37,7 +40,10 @@ public final class Page extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             java.util.List<Word> words,
             java.util.List<Line> lines,
             java.util.List<Table> tables,
-            java.util.List<DocumentField> documentFields) {
+            java.util.List<DocumentField> documentFields,
+            java.util.List<Signature> signatures,
+            java.util.List<BarCode> barCodes,
+            java.util.List<SelectionMark> selectionMarks) {
         super();
         this.pageNumber = pageNumber;
         this.dimensions = dimensions;
@@ -47,6 +53,9 @@ public final class Page extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.lines = lines;
         this.tables = tables;
         this.documentFields = documentFields;
+        this.signatures = signatures;
+        this.barCodes = barCodes;
+        this.selectionMarks = selectionMarks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -173,6 +182,54 @@ public final class Page extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             this.__explicitlySet__.add("documentFields");
             return this;
         }
+        /**
+         * The signatures detected on the page.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("signatures")
+        private java.util.List<Signature> signatures;
+
+        /**
+         * The signatures detected on the page.
+         * @param signatures the value to set
+         * @return this builder
+         **/
+        public Builder signatures(java.util.List<Signature> signatures) {
+            this.signatures = signatures;
+            this.__explicitlySet__.add("signatures");
+            return this;
+        }
+        /**
+         * The bar codes detected on the page.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("barCodes")
+        private java.util.List<BarCode> barCodes;
+
+        /**
+         * The bar codes detected on the page.
+         * @param barCodes the value to set
+         * @return this builder
+         **/
+        public Builder barCodes(java.util.List<BarCode> barCodes) {
+            this.barCodes = barCodes;
+            this.__explicitlySet__.add("barCodes");
+            return this;
+        }
+        /**
+         * The checkboxes and selection marks detected on the page.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("selectionMarks")
+        private java.util.List<SelectionMark> selectionMarks;
+
+        /**
+         * The checkboxes and selection marks detected on the page.
+         * @param selectionMarks the value to set
+         * @return this builder
+         **/
+        public Builder selectionMarks(java.util.List<SelectionMark> selectionMarks) {
+            this.selectionMarks = selectionMarks;
+            this.__explicitlySet__.add("selectionMarks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -187,7 +244,10 @@ public final class Page extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.words,
                             this.lines,
                             this.tables,
-                            this.documentFields);
+                            this.documentFields,
+                            this.signatures,
+                            this.barCodes,
+                            this.selectionMarks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -219,6 +279,15 @@ public final class Page extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("documentFields")) {
                 this.documentFields(model.getDocumentFields());
+            }
+            if (model.wasPropertyExplicitlySet("signatures")) {
+                this.signatures(model.getSignatures());
+            }
+            if (model.wasPropertyExplicitlySet("barCodes")) {
+                this.barCodes(model.getBarCodes());
+            }
+            if (model.wasPropertyExplicitlySet("selectionMarks")) {
+                this.selectionMarks(model.getSelectionMarks());
             }
             return this;
         }
@@ -340,6 +409,48 @@ public final class Page extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return documentFields;
     }
 
+    /**
+     * The signatures detected on the page.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("signatures")
+    private final java.util.List<Signature> signatures;
+
+    /**
+     * The signatures detected on the page.
+     * @return the value
+     **/
+    public java.util.List<Signature> getSignatures() {
+        return signatures;
+    }
+
+    /**
+     * The bar codes detected on the page.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("barCodes")
+    private final java.util.List<BarCode> barCodes;
+
+    /**
+     * The bar codes detected on the page.
+     * @return the value
+     **/
+    public java.util.List<BarCode> getBarCodes() {
+        return barCodes;
+    }
+
+    /**
+     * The checkboxes and selection marks detected on the page.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("selectionMarks")
+    private final java.util.List<SelectionMark> selectionMarks;
+
+    /**
+     * The checkboxes and selection marks detected on the page.
+     * @return the value
+     **/
+    public java.util.List<SelectionMark> getSelectionMarks() {
+        return selectionMarks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -362,6 +473,9 @@ public final class Page extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", lines=").append(String.valueOf(this.lines));
         sb.append(", tables=").append(String.valueOf(this.tables));
         sb.append(", documentFields=").append(String.valueOf(this.documentFields));
+        sb.append(", signatures=").append(String.valueOf(this.signatures));
+        sb.append(", barCodes=").append(String.valueOf(this.barCodes));
+        sb.append(", selectionMarks=").append(String.valueOf(this.selectionMarks));
         sb.append(")");
         return sb.toString();
     }
@@ -384,6 +498,9 @@ public final class Page extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.lines, other.lines)
                 && java.util.Objects.equals(this.tables, other.tables)
                 && java.util.Objects.equals(this.documentFields, other.documentFields)
+                && java.util.Objects.equals(this.signatures, other.signatures)
+                && java.util.Objects.equals(this.barCodes, other.barCodes)
+                && java.util.Objects.equals(this.selectionMarks, other.selectionMarks)
                 && super.equals(other);
     }
 
@@ -407,6 +524,11 @@ public final class Page extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result =
                 (result * PRIME)
                         + (this.documentFields == null ? 43 : this.documentFields.hashCode());
+        result = (result * PRIME) + (this.signatures == null ? 43 : this.signatures.hashCode());
+        result = (result * PRIME) + (this.barCodes == null ? 43 : this.barCodes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.selectionMarks == null ? 43 : this.selectionMarks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

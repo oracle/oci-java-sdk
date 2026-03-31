@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.requests;
@@ -77,6 +77,90 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     public Integer getLimit() {
         return limit;
+    }
+    /**
+     * A filter to return only resources their lifecycleState matches the given OperationStatus.
+     */
+    private com.oracle.bmc.email.model.OperationStatus status;
+
+    /**
+     * A filter to return only resources their lifecycleState matches the given OperationStatus.
+     */
+    public com.oracle.bmc.email.model.OperationStatus getStatus() {
+        return status;
+    }
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     *
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     *
+     **/
+    public enum SortBy {
+        TimeAccepted("timeAccepted"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
+        }
+    };
+
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     *
+     */
+    public SortBy getSortBy() {
+        return sortBy;
+    }
+    /**
+     * The sort order to use, either ascending or descending order.
+     *
+     */
+    private com.oracle.bmc.email.model.SortOrder sortOrder;
+
+    /**
+     * The sort order to use, either ascending or descending order.
+     *
+     */
+    public com.oracle.bmc.email.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
+    /**
+     * A filter to return only resources matching the given operation type.
+     */
+    private com.oracle.bmc.email.model.OperationType operationType;
+
+    /**
+     * A filter to return only resources matching the given operation type.
+     */
+    public com.oracle.bmc.email.model.OperationType getOperationType() {
+        return operationType;
     }
 
     public static class Builder
@@ -174,6 +258,70 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * A filter to return only resources their lifecycleState matches the given OperationStatus.
+         */
+        private com.oracle.bmc.email.model.OperationStatus status = null;
+
+        /**
+         * A filter to return only resources their lifecycleState matches the given OperationStatus.
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(com.oracle.bmc.email.model.OperationStatus status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+         *
+         */
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+         *
+         * @param sortBy the value to set
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        /**
+         * The sort order to use, either ascending or descending order.
+         *
+         */
+        private com.oracle.bmc.email.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending or descending order.
+         *
+         * @param sortOrder the value to set
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.email.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources matching the given operation type.
+         */
+        private com.oracle.bmc.email.model.OperationType operationType = null;
+
+        /**
+         * A filter to return only resources matching the given operation type.
+         * @param operationType the value to set
+         * @return this builder instance
+         */
+        public Builder operationType(com.oracle.bmc.email.model.OperationType operationType) {
+            this.operationType = operationType;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -206,6 +354,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());
+            status(o.getStatus());
+            sortBy(o.getSortBy());
+            sortOrder(o.getSortOrder());
+            operationType(o.getOperationType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -243,8 +395,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.opcRequestId = opcRequestId;
             request.page = page;
             request.limit = limit;
+            request.status = status;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.operationType = operationType;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, workRequestId, opcRequestId, page, limit);
+            // new ListWorkRequestsRequest(compartmentId, workRequestId, opcRequestId, page, limit, status, sortBy, sortOrder, operationType);
         }
     }
 
@@ -258,7 +414,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .workRequestId(workRequestId)
                 .opcRequestId(opcRequestId)
                 .page(page)
-                .limit(limit);
+                .limit(limit)
+                .status(status)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .operationType(operationType);
     }
 
     /**
@@ -279,6 +439,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",status=").append(String.valueOf(this.status));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",operationType=").append(String.valueOf(this.operationType));
         sb.append(")");
         return sb.toString();
     }
@@ -298,7 +462,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.workRequestId, other.workRequestId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.limit, other.limit);
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.operationType, other.operationType);
     }
 
     @Override
@@ -314,6 +482,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationType == null ? 43 : this.operationType.hashCode());
         return result;
     }
 }

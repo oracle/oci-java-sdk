@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall;
@@ -7,6 +7,8 @@ package com.oracle.bmc.networkfirewall;
 import com.oracle.bmc.networkfirewall.internal.http.*;
 import com.oracle.bmc.networkfirewall.requests.*;
 import com.oracle.bmc.networkfirewall.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for NetworkFirewall service. <br/>
@@ -28,7 +30,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("NETWORKFIREWALL")
+                    .serviceName(NetworkFirewallClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://network-firewall.{region}.ocs.{secondLevelDomain}")
@@ -51,6 +53,10 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -262,6 +268,11 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -402,12 +413,21 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -437,15 +457,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -910,6 +922,70 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                     LOG.debug("Resetting stream");
                     com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
                             interceptedRequest.getBulkUploadMappedSecretsDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUploadNatRulesResponse> bulkUploadNatRules(
+            BulkUploadNatRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUploadNatRulesRequest, BulkUploadNatRulesResponse>
+                    handler) {
+        LOG.trace("Called async bulkUploadNatRules");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, BulkUploadNatRulesRequest.builder());
+        }
+        final BulkUploadNatRulesRequest interceptedRequest =
+                BulkUploadNatRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUploadNatRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadNatRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NatRule/BulkUploadNatRules");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkUploadNatRulesResponse>
+                transformer =
+                        BulkUploadNatRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<BulkUploadNatRulesRequest, BulkUploadNatRulesResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUploadNatRulesRequest, BulkUploadNatRulesResponse>,
+                        java.util.concurrent.Future<BulkUploadNatRulesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUploadNatRulesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUploadNatRulesRequest, BulkUploadNatRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getBulkUploadNatRulesDetails(), true);
                 }
             };
         } else {
@@ -1787,6 +1863,56 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNatRuleResponse> createNatRule(
+            CreateNatRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateNatRuleRequest, CreateNatRuleResponse>
+                    handler) {
+        LOG.trace("Called async createNatRule");
+        final CreateNatRuleRequest interceptedRequest =
+                CreateNatRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateNatRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateNatRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NatRule/CreateNatRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateNatRuleResponse>
+                transformer =
+                        CreateNatRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateNatRuleRequest, CreateNatRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateNatRuleRequest, CreateNatRuleResponse>,
+                        java.util.concurrent.Future<CreateNatRuleResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateNatRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateNatRuleRequest, CreateNatRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateNetworkFirewallResponse> createNetworkFirewall(
             CreateNetworkFirewallRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2438,6 +2564,50 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteNatRuleResponse> deleteNatRule(
+            DeleteNatRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteNatRuleRequest, DeleteNatRuleResponse>
+                    handler) {
+        LOG.trace("Called async deleteNatRule");
+        final DeleteNatRuleRequest interceptedRequest =
+                DeleteNatRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteNatRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteNatRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NatRule/DeleteNatRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteNatRuleResponse>
+                transformer =
+                        DeleteNatRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteNatRuleRequest, DeleteNatRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteNatRuleRequest, DeleteNatRuleResponse>,
+                        java.util.concurrent.Future<DeleteNatRuleResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteNatRuleRequest, DeleteNatRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNetworkFirewallResponse> deleteNetworkFirewall(
             DeleteNetworkFirewallRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3030,6 +3200,49 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetMappedSecretRequest, GetMappedSecretResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNatRuleResponse> getNatRule(
+            GetNatRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetNatRuleRequest, GetNatRuleResponse>
+                    handler) {
+        LOG.trace("Called async getNatRule");
+        final GetNatRuleRequest interceptedRequest = GetNatRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNatRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetNatRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NatRule/GetNatRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetNatRuleResponse>
+                transformer =
+                        GetNatRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetNatRuleRequest, GetNatRuleResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetNatRuleRequest, GetNatRuleResponse>,
+                        java.util.concurrent.Future<GetNatRuleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetNatRuleRequest, GetNatRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3673,6 +3886,50 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListMappedSecretsRequest, ListMappedSecretsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNatRulesResponse> listNatRules(
+            ListNatRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListNatRulesRequest, ListNatRulesResponse>
+                    handler) {
+        LOG.trace("Called async listNatRules");
+        final ListNatRulesRequest interceptedRequest =
+                ListNatRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListNatRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListNatRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NatRule/ListNatRules");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListNatRulesResponse>
+                transformer =
+                        ListNatRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListNatRulesRequest, ListNatRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListNatRulesRequest, ListNatRulesResponse>,
+                        java.util.concurrent.Future<ListNatRulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListNatRulesRequest, ListNatRulesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4502,6 +4759,55 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateMappedSecretRequest, UpdateMappedSecretResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNatRuleResponse> updateNatRule(
+            UpdateNatRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateNatRuleRequest, UpdateNatRuleResponse>
+                    handler) {
+        LOG.trace("Called async updateNatRule");
+        final UpdateNatRuleRequest interceptedRequest =
+                UpdateNatRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateNatRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateNatRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NatRule/UpdateNatRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateNatRuleResponse>
+                transformer =
+                        UpdateNatRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateNatRuleRequest, UpdateNatRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateNatRuleRequest, UpdateNatRuleResponse>,
+                        java.util.concurrent.Future<UpdateNatRuleResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateNatRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateNatRuleRequest, UpdateNatRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

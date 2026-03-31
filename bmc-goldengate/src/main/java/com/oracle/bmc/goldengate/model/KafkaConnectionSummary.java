@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -199,6 +199,34 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The Kafka technology type.
          *
@@ -233,6 +261,26 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
         public Builder streamPoolId(String streamPoolId) {
             this.streamPoolId = streamPoolId;
             this.__explicitlySet__.add("streamPoolId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster
+         * being referenced from OCI Streaming with Apache Kafka.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
+        private String clusterId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster
+         * being referenced from OCI Streaming with Apache Kafka.
+         *
+         * @param clusterId the value to set
+         * @return this builder
+         **/
+        public Builder clusterId(String clusterId) {
+            this.clusterId = clusterId;
+            this.__explicitlySet__.add("clusterId");
             return this;
         }
         /**
@@ -425,6 +473,32 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("sslKeyPasswordSecretId");
             return this;
         }
+        /**
+         * Specifies that the user intends to authenticate to the instance using a resource principal.
+         * Applicable only for OCI Streaming connections.
+         * Only available from 23.9.0.0.0 GoldenGate versions.
+         * Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided.
+         * Default: false
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
+        private Boolean shouldUseResourcePrincipal;
+
+        /**
+         * Specifies that the user intends to authenticate to the instance using a resource principal.
+         * Applicable only for OCI Streaming connections.
+         * Only available from 23.9.0.0.0 GoldenGate versions.
+         * Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided.
+         * Default: false
+         *
+         * @param shouldUseResourcePrincipal the value to set
+         * @return this builder
+         **/
+        public Builder shouldUseResourcePrincipal(Boolean shouldUseResourcePrincipal) {
+            this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
+            this.__explicitlySet__.add("shouldUseResourcePrincipal");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -451,8 +525,12 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
                             this.routingMethod,
                             this.locks,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.streamPoolId,
+                            this.clusterId,
                             this.bootstrapServers,
                             this.securityProtocol,
                             this.username,
@@ -461,7 +539,8 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
                             this.trustStorePasswordSecretId,
                             this.keyStoreSecretId,
                             this.keyStorePasswordSecretId,
-                            this.sslKeyPasswordSecretId);
+                            this.sslKeyPasswordSecretId,
+                            this.shouldUseResourcePrincipal);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -527,11 +606,23 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
             if (model.wasPropertyExplicitlySet("streamPoolId")) {
                 this.streamPoolId(model.getStreamPoolId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterId")) {
+                this.clusterId(model.getClusterId());
             }
             if (model.wasPropertyExplicitlySet("bootstrapServers")) {
                 this.bootstrapServers(model.getBootstrapServers());
@@ -559,6 +650,9 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
             }
             if (model.wasPropertyExplicitlySet("sslKeyPasswordSecretId")) {
                 this.sslKeyPasswordSecretId(model.getSslKeyPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("shouldUseResourcePrincipal")) {
+                this.shouldUseResourcePrincipal(model.getShouldUseResourcePrincipal());
             }
             return this;
         }
@@ -596,8 +690,12 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
             RoutingMethod routingMethod,
             java.util.List<ResourceLock> locks,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             KafkaConnection.TechnologyType technologyType,
             String streamPoolId,
+            String clusterId,
             java.util.List<KafkaBootstrapServer> bootstrapServers,
             KafkaConnection.SecurityProtocol securityProtocol,
             String username,
@@ -606,7 +704,8 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
             String trustStorePasswordSecretId,
             String keyStoreSecretId,
             String keyStorePasswordSecretId,
-            String sslKeyPasswordSecretId) {
+            String sslKeyPasswordSecretId,
+            Boolean shouldUseResourcePrincipal) {
         super(
                 id,
                 displayName,
@@ -626,9 +725,13 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
                 subnetId,
                 routingMethod,
                 locks,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.streamPoolId = streamPoolId;
+        this.clusterId = clusterId;
         this.bootstrapServers = bootstrapServers;
         this.securityProtocol = securityProtocol;
         this.username = username;
@@ -638,6 +741,7 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
         this.keyStoreSecretId = keyStoreSecretId;
         this.keyStorePasswordSecretId = keyStorePasswordSecretId;
         this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
+        this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
     }
 
     /**
@@ -670,6 +774,24 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
      **/
     public String getStreamPoolId() {
         return streamPoolId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster
+     * being referenced from OCI Streaming with Apache Kafka.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
+    private final String clusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster
+     * being referenced from OCI Streaming with Apache Kafka.
+     *
+     * @return the value
+     **/
+    public String getClusterId() {
+        return clusterId;
     }
 
     /**
@@ -844,6 +966,30 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
         return sslKeyPasswordSecretId;
     }
 
+    /**
+     * Specifies that the user intends to authenticate to the instance using a resource principal.
+     * Applicable only for OCI Streaming connections.
+     * Only available from 23.9.0.0.0 GoldenGate versions.
+     * Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided.
+     * Default: false
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
+    private final Boolean shouldUseResourcePrincipal;
+
+    /**
+     * Specifies that the user intends to authenticate to the instance using a resource principal.
+     * Applicable only for OCI Streaming connections.
+     * Only available from 23.9.0.0.0 GoldenGate versions.
+     * Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided.
+     * Default: false
+     *
+     * @return the value
+     **/
+    public Boolean getShouldUseResourcePrincipal() {
+        return shouldUseResourcePrincipal;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -860,6 +1006,7 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
         sb.append(", streamPoolId=").append(String.valueOf(this.streamPoolId));
+        sb.append(", clusterId=").append(String.valueOf(this.clusterId));
         sb.append(", bootstrapServers=").append(String.valueOf(this.bootstrapServers));
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", username=").append(String.valueOf(this.username));
@@ -871,6 +1018,8 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
         sb.append(", keyStorePasswordSecretId=")
                 .append(String.valueOf(this.keyStorePasswordSecretId));
         sb.append(", sslKeyPasswordSecretId=").append(String.valueOf(this.sslKeyPasswordSecretId));
+        sb.append(", shouldUseResourcePrincipal=")
+                .append(String.valueOf(this.shouldUseResourcePrincipal));
         sb.append(")");
         return sb.toString();
     }
@@ -887,6 +1036,7 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
         KafkaConnectionSummary other = (KafkaConnectionSummary) o;
         return java.util.Objects.equals(this.technologyType, other.technologyType)
                 && java.util.Objects.equals(this.streamPoolId, other.streamPoolId)
+                && java.util.Objects.equals(this.clusterId, other.clusterId)
                 && java.util.Objects.equals(this.bootstrapServers, other.bootstrapServers)
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.username, other.username)
@@ -899,6 +1049,8 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
                         this.keyStorePasswordSecretId, other.keyStorePasswordSecretId)
                 && java.util.Objects.equals(
                         this.sslKeyPasswordSecretId, other.sslKeyPasswordSecretId)
+                && java.util.Objects.equals(
+                        this.shouldUseResourcePrincipal, other.shouldUseResourcePrincipal)
                 && super.equals(other);
     }
 
@@ -910,6 +1062,7 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
                 (result * PRIME)
                         + (this.technologyType == null ? 43 : this.technologyType.hashCode());
         result = (result * PRIME) + (this.streamPoolId == null ? 43 : this.streamPoolId.hashCode());
+        result = (result * PRIME) + (this.clusterId == null ? 43 : this.clusterId.hashCode());
         result =
                 (result * PRIME)
                         + (this.bootstrapServers == null ? 43 : this.bootstrapServers.hashCode());
@@ -943,6 +1096,11 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
                         + (this.sslKeyPasswordSecretId == null
                                 ? 43
                                 : this.sslKeyPasswordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldUseResourcePrincipal == null
+                                ? 43
+                                : this.shouldUseResourcePrincipal.hashCode());
         return result;
     }
 }

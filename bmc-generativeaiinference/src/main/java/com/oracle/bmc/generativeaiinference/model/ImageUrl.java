@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Provide a base64 encoded image.
+ * Provide a base64 encoded image or an image uri if it's supported.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,7 +29,7 @@ public final class ImageUrl extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The base64 encoded image data.
+         * The base64 encoded image data or an image uri if it's supported.
          * <p>
          * Example for a png image:
          *   {@code {
@@ -38,19 +38,35 @@ public final class ImageUrl extends com.oracle.bmc.http.internal.ExplicitlySetBm
          *       "url": "data:image/png;base64,<base64 encoded image content>"
          *     }
          *   }}
+         * <p>
+         * Example with an image uri:
+         *   {@code {
+         *     "type": "IMAGE",
+         *     "imageUrl": {
+         *       "url": "data:image/png;uri,<image uri>"
+         *     }
+         *   }}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
-         * The base64 encoded image data.
+         * The base64 encoded image data or an image uri if it's supported.
          * <p>
          * Example for a png image:
          *   {@code {
          *     "type": "IMAGE",
          *     "imageUrl": {
          *       "url": "data:image/png;base64,<base64 encoded image content>"
+         *     }
+         *   }}
+         * <p>
+         * Example with an image uri:
+         *   {@code {
+         *     "type": "IMAGE",
+         *     "imageUrl": {
+         *       "url": "data:image/png;uri,<image uri>"
          *     }
          *   }}
          *
@@ -114,7 +130,7 @@ public final class ImageUrl extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The base64 encoded image data.
+     * The base64 encoded image data or an image uri if it's supported.
      * <p>
      * Example for a png image:
      *   {@code {
@@ -123,19 +139,35 @@ public final class ImageUrl extends com.oracle.bmc.http.internal.ExplicitlySetBm
      *       "url": "data:image/png;base64,<base64 encoded image content>"
      *     }
      *   }}
+     * <p>
+     * Example with an image uri:
+     *   {@code {
+     *     "type": "IMAGE",
+     *     "imageUrl": {
+     *       "url": "data:image/png;uri,<image uri>"
+     *     }
+     *   }}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
-     * The base64 encoded image data.
+     * The base64 encoded image data or an image uri if it's supported.
      * <p>
      * Example for a png image:
      *   {@code {
      *     "type": "IMAGE",
      *     "imageUrl": {
      *       "url": "data:image/png;base64,<base64 encoded image content>"
+     *     }
+     *   }}
+     * <p>
+     * Example with an image uri:
+     *   {@code {
+     *     "type": "IMAGE",
+     *     "imageUrl": {
+     *       "url": "data:image/png;uri,<image uri>"
      *     }
      *   }}
      *

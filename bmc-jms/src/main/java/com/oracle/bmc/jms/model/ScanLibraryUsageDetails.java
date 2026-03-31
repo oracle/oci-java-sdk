@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -23,10 +23,19 @@ package com.oracle.bmc.jms.model;
 public final class ScanLibraryUsageDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"managedInstanceIds"})
-    public ScanLibraryUsageDetails(java.util.List<String> managedInstanceIds) {
+    @java.beans.ConstructorProperties({
+        "managedInstanceIds",
+        "isDynamicScan",
+        "dynamicScanDurationInMinutes"
+    })
+    public ScanLibraryUsageDetails(
+            java.util.List<String> managedInstanceIds,
+            Boolean isDynamicScan,
+            Integer dynamicScanDurationInMinutes) {
         super();
         this.managedInstanceIds = managedInstanceIds;
+        this.isDynamicScan = isDynamicScan;
+        this.dynamicScanDurationInMinutes = dynamicScanDurationInMinutes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -49,12 +58,52 @@ public final class ScanLibraryUsageDetails
             this.__explicitlySet__.add("managedInstanceIds");
             return this;
         }
+        /**
+         * Indicates whether the scan is dynamic or static.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDynamicScan")
+        private Boolean isDynamicScan;
+
+        /**
+         * Indicates whether the scan is dynamic or static.
+         *
+         * @param isDynamicScan the value to set
+         * @return this builder
+         **/
+        public Builder isDynamicScan(Boolean isDynamicScan) {
+            this.isDynamicScan = isDynamicScan;
+            this.__explicitlySet__.add("isDynamicScan");
+            return this;
+        }
+        /**
+         * The duration of the dynamic scan in minutes.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dynamicScanDurationInMinutes")
+        private Integer dynamicScanDurationInMinutes;
+
+        /**
+         * The duration of the dynamic scan in minutes.
+         *
+         * @param dynamicScanDurationInMinutes the value to set
+         * @return this builder
+         **/
+        public Builder dynamicScanDurationInMinutes(Integer dynamicScanDurationInMinutes) {
+            this.dynamicScanDurationInMinutes = dynamicScanDurationInMinutes;
+            this.__explicitlySet__.add("dynamicScanDurationInMinutes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScanLibraryUsageDetails build() {
-            ScanLibraryUsageDetails model = new ScanLibraryUsageDetails(this.managedInstanceIds);
+            ScanLibraryUsageDetails model =
+                    new ScanLibraryUsageDetails(
+                            this.managedInstanceIds,
+                            this.isDynamicScan,
+                            this.dynamicScanDurationInMinutes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -65,6 +114,12 @@ public final class ScanLibraryUsageDetails
         public Builder copy(ScanLibraryUsageDetails model) {
             if (model.wasPropertyExplicitlySet("managedInstanceIds")) {
                 this.managedInstanceIds(model.getManagedInstanceIds());
+            }
+            if (model.wasPropertyExplicitlySet("isDynamicScan")) {
+                this.isDynamicScan(model.getIsDynamicScan());
+            }
+            if (model.wasPropertyExplicitlySet("dynamicScanDurationInMinutes")) {
+                this.dynamicScanDurationInMinutes(model.getDynamicScanDurationInMinutes());
             }
             return this;
         }
@@ -97,6 +152,38 @@ public final class ScanLibraryUsageDetails
         return managedInstanceIds;
     }
 
+    /**
+     * Indicates whether the scan is dynamic or static.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDynamicScan")
+    private final Boolean isDynamicScan;
+
+    /**
+     * Indicates whether the scan is dynamic or static.
+     *
+     * @return the value
+     **/
+    public Boolean getIsDynamicScan() {
+        return isDynamicScan;
+    }
+
+    /**
+     * The duration of the dynamic scan in minutes.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dynamicScanDurationInMinutes")
+    private final Integer dynamicScanDurationInMinutes;
+
+    /**
+     * The duration of the dynamic scan in minutes.
+     *
+     * @return the value
+     **/
+    public Integer getDynamicScanDurationInMinutes() {
+        return dynamicScanDurationInMinutes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -112,6 +199,9 @@ public final class ScanLibraryUsageDetails
         sb.append("ScanLibraryUsageDetails(");
         sb.append("super=").append(super.toString());
         sb.append("managedInstanceIds=").append(String.valueOf(this.managedInstanceIds));
+        sb.append(", isDynamicScan=").append(String.valueOf(this.isDynamicScan));
+        sb.append(", dynamicScanDurationInMinutes=")
+                .append(String.valueOf(this.dynamicScanDurationInMinutes));
         sb.append(")");
         return sb.toString();
     }
@@ -127,6 +217,9 @@ public final class ScanLibraryUsageDetails
 
         ScanLibraryUsageDetails other = (ScanLibraryUsageDetails) o;
         return java.util.Objects.equals(this.managedInstanceIds, other.managedInstanceIds)
+                && java.util.Objects.equals(this.isDynamicScan, other.isDynamicScan)
+                && java.util.Objects.equals(
+                        this.dynamicScanDurationInMinutes, other.dynamicScanDurationInMinutes)
                 && super.equals(other);
     }
 
@@ -139,6 +232,14 @@ public final class ScanLibraryUsageDetails
                         + (this.managedInstanceIds == null
                                 ? 43
                                 : this.managedInstanceIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDynamicScan == null ? 43 : this.isDynamicScan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dynamicScanDurationInMinutes == null
+                                ? 43
+                                : this.dynamicScanDurationInMinutes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

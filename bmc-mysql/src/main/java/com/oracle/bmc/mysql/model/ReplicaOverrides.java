@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -23,12 +23,28 @@ package com.oracle.bmc.mysql.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ReplicaOverrides extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"mysqlVersion", "shapeName", "configurationId"})
-    public ReplicaOverrides(String mysqlVersion, String shapeName, String configurationId) {
+    @java.beans.ConstructorProperties({
+        "mysqlVersion",
+        "shapeName",
+        "configurationId",
+        "nsgIds",
+        "securityAttributes",
+        "telemetryConfiguration"
+    })
+    public ReplicaOverrides(
+            String mysqlVersion,
+            String shapeName,
+            String configurationId,
+            java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            TelemetryConfigurationDetails telemetryConfiguration) {
         super();
         this.mysqlVersion = mysqlVersion;
         this.shapeName = shapeName;
         this.configurationId = configurationId;
+        this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
+        this.telemetryConfiguration = telemetryConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -87,13 +103,68 @@ public final class ReplicaOverrides extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("configurationId");
             return this;
         }
+        /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("telemetryConfiguration")
+        private TelemetryConfigurationDetails telemetryConfiguration;
+
+        public Builder telemetryConfiguration(
+                TelemetryConfigurationDetails telemetryConfiguration) {
+            this.telemetryConfiguration = telemetryConfiguration;
+            this.__explicitlySet__.add("telemetryConfiguration");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ReplicaOverrides build() {
             ReplicaOverrides model =
-                    new ReplicaOverrides(this.mysqlVersion, this.shapeName, this.configurationId);
+                    new ReplicaOverrides(
+                            this.mysqlVersion,
+                            this.shapeName,
+                            this.configurationId,
+                            this.nsgIds,
+                            this.securityAttributes,
+                            this.telemetryConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -110,6 +181,15 @@ public final class ReplicaOverrides extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("configurationId")) {
                 this.configurationId(model.getConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("telemetryConfiguration")) {
+                this.telemetryConfiguration(model.getTelemetryConfiguration());
             }
             return this;
         }
@@ -174,6 +254,47 @@ public final class ReplicaOverrides extends com.oracle.bmc.http.internal.Explici
         return configurationId;
     }
 
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     * @return the value
+     **/
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("telemetryConfiguration")
+    private final TelemetryConfigurationDetails telemetryConfiguration;
+
+    public TelemetryConfigurationDetails getTelemetryConfiguration() {
+        return telemetryConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -191,6 +312,9 @@ public final class ReplicaOverrides extends com.oracle.bmc.http.internal.Explici
         sb.append("mysqlVersion=").append(String.valueOf(this.mysqlVersion));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", configurationId=").append(String.valueOf(this.configurationId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", telemetryConfiguration=").append(String.valueOf(this.telemetryConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -208,6 +332,10 @@ public final class ReplicaOverrides extends com.oracle.bmc.http.internal.Explici
         return java.util.Objects.equals(this.mysqlVersion, other.mysqlVersion)
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.configurationId, other.configurationId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(
+                        this.telemetryConfiguration, other.telemetryConfiguration)
                 && super.equals(other);
     }
 
@@ -220,6 +348,17 @@ public final class ReplicaOverrides extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.configurationId == null ? 43 : this.configurationId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.telemetryConfiguration == null
+                                ? 43
+                                : this.telemetryConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

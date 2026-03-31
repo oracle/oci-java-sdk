@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -28,7 +28,8 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
         "action",
         "inspection",
         "position",
-        "parentResourceId"
+        "parentResourceId",
+        "description"
     })
     public SecurityRule(
             String name,
@@ -36,7 +37,8 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
             TrafficActionType action,
             TrafficInspectionType inspection,
             RulePosition position,
-            String parentResourceId) {
+            String parentResourceId,
+            String description) {
         super();
         this.name = name;
         this.condition = condition;
@@ -44,6 +46,7 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
         this.inspection = inspection;
         this.position = position;
         this.parentResourceId = parentResourceId;
+        this.description = description;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -150,6 +153,22 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
             this.__explicitlySet__.add("parentResourceId");
             return this;
         }
+        /**
+         * The description of the security rule. This field can be used to add additional info.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * The description of the security rule. This field can be used to add additional info.
+         * @param description the value to set
+         * @return this builder
+         **/
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -162,7 +181,8 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.action,
                             this.inspection,
                             this.position,
-                            this.parentResourceId);
+                            this.parentResourceId,
+                            this.description);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -188,6 +208,9 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("parentResourceId")) {
                 this.parentResourceId(model.getParentResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             return this;
         }
@@ -294,6 +317,20 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
         return parentResourceId;
     }
 
+    /**
+     * The description of the security rule. This field can be used to add additional info.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * The description of the security rule. This field can be used to add additional info.
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -314,6 +351,7 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", inspection=").append(String.valueOf(this.inspection));
         sb.append(", position=").append(String.valueOf(this.position));
         sb.append(", parentResourceId=").append(String.valueOf(this.parentResourceId));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
     }
@@ -334,6 +372,7 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.inspection, other.inspection)
                 && java.util.Objects.equals(this.position, other.position)
                 && java.util.Objects.equals(this.parentResourceId, other.parentResourceId)
+                && java.util.Objects.equals(this.description, other.description)
                 && super.equals(other);
     }
 
@@ -349,6 +388,7 @@ public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlyS
         result =
                 (result * PRIME)
                         + (this.parentResourceId == null ? 43 : this.parentResourceId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

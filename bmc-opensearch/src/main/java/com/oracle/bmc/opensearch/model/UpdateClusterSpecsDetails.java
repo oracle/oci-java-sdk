@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opensearch.model;
@@ -26,29 +26,56 @@ public final class UpdateClusterSpecsDetails
         "clusterId",
         "masterNodeHostOcpuCount",
         "masterNodeHostMemoryGB",
+        "masterNodeHostShape",
         "dataNodeHostOcpuCount",
         "dataNodeHostMemoryGB",
+        "dataNodeHostShape",
+        "searchNodeHostShape",
+        "searchNodeHostOcpuCount",
+        "searchNodeHostMemoryGB",
+        "mlNodeHostShape",
+        "mlNodeHostOcpuCount",
+        "mlNodeHostMemoryGB",
         "softwareVersion",
         "dashboardSoftwareVersion",
+        "opendashboardNodeHostShape",
         "clusterPrivateEndpoint"
     })
     public UpdateClusterSpecsDetails(
             String clusterId,
             Integer masterNodeHostOcpuCount,
             Integer masterNodeHostMemoryGB,
+            String masterNodeHostShape,
             Integer dataNodeHostOcpuCount,
             Integer dataNodeHostMemoryGB,
+            String dataNodeHostShape,
+            String searchNodeHostShape,
+            Integer searchNodeHostOcpuCount,
+            Integer searchNodeHostMemoryGB,
+            String mlNodeHostShape,
+            Integer mlNodeHostOcpuCount,
+            Integer mlNodeHostMemoryGB,
             String softwareVersion,
             String dashboardSoftwareVersion,
+            String opendashboardNodeHostShape,
             String clusterPrivateEndpoint) {
         super();
         this.clusterId = clusterId;
         this.masterNodeHostOcpuCount = masterNodeHostOcpuCount;
         this.masterNodeHostMemoryGB = masterNodeHostMemoryGB;
+        this.masterNodeHostShape = masterNodeHostShape;
         this.dataNodeHostOcpuCount = dataNodeHostOcpuCount;
         this.dataNodeHostMemoryGB = dataNodeHostMemoryGB;
+        this.dataNodeHostShape = dataNodeHostShape;
+        this.searchNodeHostShape = searchNodeHostShape;
+        this.searchNodeHostOcpuCount = searchNodeHostOcpuCount;
+        this.searchNodeHostMemoryGB = searchNodeHostMemoryGB;
+        this.mlNodeHostShape = mlNodeHostShape;
+        this.mlNodeHostOcpuCount = mlNodeHostOcpuCount;
+        this.mlNodeHostMemoryGB = mlNodeHostMemoryGB;
         this.softwareVersion = softwareVersion;
         this.dashboardSoftwareVersion = dashboardSoftwareVersion;
+        this.opendashboardNodeHostShape = opendashboardNodeHostShape;
         this.clusterPrivateEndpoint = clusterPrivateEndpoint;
     }
 
@@ -103,6 +130,22 @@ public final class UpdateClusterSpecsDetails
             return this;
         }
         /**
+         * The node shape for the cluster's master nodes.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostShape")
+        private String masterNodeHostShape;
+
+        /**
+         * The node shape for the cluster's master nodes.
+         * @param masterNodeHostShape the value to set
+         * @return this builder
+         **/
+        public Builder masterNodeHostShape(String masterNodeHostShape) {
+            this.masterNodeHostShape = masterNodeHostShape;
+            this.__explicitlySet__.add("masterNodeHostShape");
+            return this;
+        }
+        /**
          * Updated value of OCPU's configured for data nodes of the cluster.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostOcpuCount")
@@ -132,6 +175,118 @@ public final class UpdateClusterSpecsDetails
         public Builder dataNodeHostMemoryGB(Integer dataNodeHostMemoryGB) {
             this.dataNodeHostMemoryGB = dataNodeHostMemoryGB;
             this.__explicitlySet__.add("dataNodeHostMemoryGB");
+            return this;
+        }
+        /**
+         * The node shape for the cluster's data nodes.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostShape")
+        private String dataNodeHostShape;
+
+        /**
+         * The node shape for the cluster's data nodes.
+         * @param dataNodeHostShape the value to set
+         * @return this builder
+         **/
+        public Builder dataNodeHostShape(String dataNodeHostShape) {
+            this.dataNodeHostShape = dataNodeHostShape;
+            this.__explicitlySet__.add("dataNodeHostShape");
+            return this;
+        }
+        /**
+         * The node shape for the cluster's search nodes.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("searchNodeHostShape")
+        private String searchNodeHostShape;
+
+        /**
+         * The node shape for the cluster's search nodes.
+         * @param searchNodeHostShape the value to set
+         * @return this builder
+         **/
+        public Builder searchNodeHostShape(String searchNodeHostShape) {
+            this.searchNodeHostShape = searchNodeHostShape;
+            this.__explicitlySet__.add("searchNodeHostShape");
+            return this;
+        }
+        /**
+         * The number of OCPUs configured for the cluster's search nodes.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("searchNodeHostOcpuCount")
+        private Integer searchNodeHostOcpuCount;
+
+        /**
+         * The number of OCPUs configured for the cluster's search nodes.
+         * @param searchNodeHostOcpuCount the value to set
+         * @return this builder
+         **/
+        public Builder searchNodeHostOcpuCount(Integer searchNodeHostOcpuCount) {
+            this.searchNodeHostOcpuCount = searchNodeHostOcpuCount;
+            this.__explicitlySet__.add("searchNodeHostOcpuCount");
+            return this;
+        }
+        /**
+         * The amount of memory in GB, for the cluster's search nodes.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("searchNodeHostMemoryGB")
+        private Integer searchNodeHostMemoryGB;
+
+        /**
+         * The amount of memory in GB, for the cluster's search nodes.
+         * @param searchNodeHostMemoryGB the value to set
+         * @return this builder
+         **/
+        public Builder searchNodeHostMemoryGB(Integer searchNodeHostMemoryGB) {
+            this.searchNodeHostMemoryGB = searchNodeHostMemoryGB;
+            this.__explicitlySet__.add("searchNodeHostMemoryGB");
+            return this;
+        }
+        /**
+         * The node shape for the cluster's ML nodes.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostShape")
+        private String mlNodeHostShape;
+
+        /**
+         * The node shape for the cluster's ML nodes.
+         * @param mlNodeHostShape the value to set
+         * @return this builder
+         **/
+        public Builder mlNodeHostShape(String mlNodeHostShape) {
+            this.mlNodeHostShape = mlNodeHostShape;
+            this.__explicitlySet__.add("mlNodeHostShape");
+            return this;
+        }
+        /**
+         * The number of OCPUs configured for the cluster's ML nodes.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostOcpuCount")
+        private Integer mlNodeHostOcpuCount;
+
+        /**
+         * The number of OCPUs configured for the cluster's ML nodes.
+         * @param mlNodeHostOcpuCount the value to set
+         * @return this builder
+         **/
+        public Builder mlNodeHostOcpuCount(Integer mlNodeHostOcpuCount) {
+            this.mlNodeHostOcpuCount = mlNodeHostOcpuCount;
+            this.__explicitlySet__.add("mlNodeHostOcpuCount");
+            return this;
+        }
+        /**
+         * The amount of memory in GB, for the cluster's ML nodes.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostMemoryGB")
+        private Integer mlNodeHostMemoryGB;
+
+        /**
+         * The amount of memory in GB, for the cluster's ML nodes.
+         * @param mlNodeHostMemoryGB the value to set
+         * @return this builder
+         **/
+        public Builder mlNodeHostMemoryGB(Integer mlNodeHostMemoryGB) {
+            this.mlNodeHostMemoryGB = mlNodeHostMemoryGB;
+            this.__explicitlySet__.add("mlNodeHostMemoryGB");
             return this;
         }
         /**
@@ -167,6 +322,22 @@ public final class UpdateClusterSpecsDetails
             return this;
         }
         /**
+         * The shape node for the cluster's OpenSearch Dashboard nodes.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("opendashboardNodeHostShape")
+        private String opendashboardNodeHostShape;
+
+        /**
+         * The shape node for the cluster's OpenSearch Dashboard nodes.
+         * @param opendashboardNodeHostShape the value to set
+         * @return this builder
+         **/
+        public Builder opendashboardNodeHostShape(String opendashboardNodeHostShape) {
+            this.opendashboardNodeHostShape = opendashboardNodeHostShape;
+            this.__explicitlySet__.add("opendashboardNodeHostShape");
+            return this;
+        }
+        /**
          * Updated Private endpoint of cluster.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterPrivateEndpoint")
@@ -192,10 +363,19 @@ public final class UpdateClusterSpecsDetails
                             this.clusterId,
                             this.masterNodeHostOcpuCount,
                             this.masterNodeHostMemoryGB,
+                            this.masterNodeHostShape,
                             this.dataNodeHostOcpuCount,
                             this.dataNodeHostMemoryGB,
+                            this.dataNodeHostShape,
+                            this.searchNodeHostShape,
+                            this.searchNodeHostOcpuCount,
+                            this.searchNodeHostMemoryGB,
+                            this.mlNodeHostShape,
+                            this.mlNodeHostOcpuCount,
+                            this.mlNodeHostMemoryGB,
                             this.softwareVersion,
                             this.dashboardSoftwareVersion,
+                            this.opendashboardNodeHostShape,
                             this.clusterPrivateEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -214,17 +394,44 @@ public final class UpdateClusterSpecsDetails
             if (model.wasPropertyExplicitlySet("masterNodeHostMemoryGB")) {
                 this.masterNodeHostMemoryGB(model.getMasterNodeHostMemoryGB());
             }
+            if (model.wasPropertyExplicitlySet("masterNodeHostShape")) {
+                this.masterNodeHostShape(model.getMasterNodeHostShape());
+            }
             if (model.wasPropertyExplicitlySet("dataNodeHostOcpuCount")) {
                 this.dataNodeHostOcpuCount(model.getDataNodeHostOcpuCount());
             }
             if (model.wasPropertyExplicitlySet("dataNodeHostMemoryGB")) {
                 this.dataNodeHostMemoryGB(model.getDataNodeHostMemoryGB());
             }
+            if (model.wasPropertyExplicitlySet("dataNodeHostShape")) {
+                this.dataNodeHostShape(model.getDataNodeHostShape());
+            }
+            if (model.wasPropertyExplicitlySet("searchNodeHostShape")) {
+                this.searchNodeHostShape(model.getSearchNodeHostShape());
+            }
+            if (model.wasPropertyExplicitlySet("searchNodeHostOcpuCount")) {
+                this.searchNodeHostOcpuCount(model.getSearchNodeHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("searchNodeHostMemoryGB")) {
+                this.searchNodeHostMemoryGB(model.getSearchNodeHostMemoryGB());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostShape")) {
+                this.mlNodeHostShape(model.getMlNodeHostShape());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostOcpuCount")) {
+                this.mlNodeHostOcpuCount(model.getMlNodeHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("mlNodeHostMemoryGB")) {
+                this.mlNodeHostMemoryGB(model.getMlNodeHostMemoryGB());
+            }
             if (model.wasPropertyExplicitlySet("softwareVersion")) {
                 this.softwareVersion(model.getSoftwareVersion());
             }
             if (model.wasPropertyExplicitlySet("dashboardSoftwareVersion")) {
                 this.dashboardSoftwareVersion(model.getDashboardSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("opendashboardNodeHostShape")) {
+                this.opendashboardNodeHostShape(model.getOpendashboardNodeHostShape());
             }
             if (model.wasPropertyExplicitlySet("clusterPrivateEndpoint")) {
                 this.clusterPrivateEndpoint(model.getClusterPrivateEndpoint());
@@ -287,6 +494,20 @@ public final class UpdateClusterSpecsDetails
     }
 
     /**
+     * The node shape for the cluster's master nodes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostShape")
+    private final String masterNodeHostShape;
+
+    /**
+     * The node shape for the cluster's master nodes.
+     * @return the value
+     **/
+    public String getMasterNodeHostShape() {
+        return masterNodeHostShape;
+    }
+
+    /**
      * Updated value of OCPU's configured for data nodes of the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostOcpuCount")
@@ -315,6 +536,104 @@ public final class UpdateClusterSpecsDetails
     }
 
     /**
+     * The node shape for the cluster's data nodes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostShape")
+    private final String dataNodeHostShape;
+
+    /**
+     * The node shape for the cluster's data nodes.
+     * @return the value
+     **/
+    public String getDataNodeHostShape() {
+        return dataNodeHostShape;
+    }
+
+    /**
+     * The node shape for the cluster's search nodes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("searchNodeHostShape")
+    private final String searchNodeHostShape;
+
+    /**
+     * The node shape for the cluster's search nodes.
+     * @return the value
+     **/
+    public String getSearchNodeHostShape() {
+        return searchNodeHostShape;
+    }
+
+    /**
+     * The number of OCPUs configured for the cluster's search nodes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("searchNodeHostOcpuCount")
+    private final Integer searchNodeHostOcpuCount;
+
+    /**
+     * The number of OCPUs configured for the cluster's search nodes.
+     * @return the value
+     **/
+    public Integer getSearchNodeHostOcpuCount() {
+        return searchNodeHostOcpuCount;
+    }
+
+    /**
+     * The amount of memory in GB, for the cluster's search nodes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("searchNodeHostMemoryGB")
+    private final Integer searchNodeHostMemoryGB;
+
+    /**
+     * The amount of memory in GB, for the cluster's search nodes.
+     * @return the value
+     **/
+    public Integer getSearchNodeHostMemoryGB() {
+        return searchNodeHostMemoryGB;
+    }
+
+    /**
+     * The node shape for the cluster's ML nodes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostShape")
+    private final String mlNodeHostShape;
+
+    /**
+     * The node shape for the cluster's ML nodes.
+     * @return the value
+     **/
+    public String getMlNodeHostShape() {
+        return mlNodeHostShape;
+    }
+
+    /**
+     * The number of OCPUs configured for the cluster's ML nodes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostOcpuCount")
+    private final Integer mlNodeHostOcpuCount;
+
+    /**
+     * The number of OCPUs configured for the cluster's ML nodes.
+     * @return the value
+     **/
+    public Integer getMlNodeHostOcpuCount() {
+        return mlNodeHostOcpuCount;
+    }
+
+    /**
+     * The amount of memory in GB, for the cluster's ML nodes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostMemoryGB")
+    private final Integer mlNodeHostMemoryGB;
+
+    /**
+     * The amount of memory in GB, for the cluster's ML nodes.
+     * @return the value
+     **/
+    public Integer getMlNodeHostMemoryGB() {
+        return mlNodeHostMemoryGB;
+    }
+
+    /**
      * Updated version of the software the cluster is currently running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
@@ -340,6 +659,20 @@ public final class UpdateClusterSpecsDetails
      **/
     public String getDashboardSoftwareVersion() {
         return dashboardSoftwareVersion;
+    }
+
+    /**
+     * The shape node for the cluster's OpenSearch Dashboard nodes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("opendashboardNodeHostShape")
+    private final String opendashboardNodeHostShape;
+
+    /**
+     * The shape node for the cluster's OpenSearch Dashboard nodes.
+     * @return the value
+     **/
+    public String getOpendashboardNodeHostShape() {
+        return opendashboardNodeHostShape;
     }
 
     /**
@@ -374,11 +707,22 @@ public final class UpdateClusterSpecsDetails
         sb.append(", masterNodeHostOcpuCount=")
                 .append(String.valueOf(this.masterNodeHostOcpuCount));
         sb.append(", masterNodeHostMemoryGB=").append(String.valueOf(this.masterNodeHostMemoryGB));
+        sb.append(", masterNodeHostShape=").append(String.valueOf(this.masterNodeHostShape));
         sb.append(", dataNodeHostOcpuCount=").append(String.valueOf(this.dataNodeHostOcpuCount));
         sb.append(", dataNodeHostMemoryGB=").append(String.valueOf(this.dataNodeHostMemoryGB));
+        sb.append(", dataNodeHostShape=").append(String.valueOf(this.dataNodeHostShape));
+        sb.append(", searchNodeHostShape=").append(String.valueOf(this.searchNodeHostShape));
+        sb.append(", searchNodeHostOcpuCount=")
+                .append(String.valueOf(this.searchNodeHostOcpuCount));
+        sb.append(", searchNodeHostMemoryGB=").append(String.valueOf(this.searchNodeHostMemoryGB));
+        sb.append(", mlNodeHostShape=").append(String.valueOf(this.mlNodeHostShape));
+        sb.append(", mlNodeHostOcpuCount=").append(String.valueOf(this.mlNodeHostOcpuCount));
+        sb.append(", mlNodeHostMemoryGB=").append(String.valueOf(this.mlNodeHostMemoryGB));
         sb.append(", softwareVersion=").append(String.valueOf(this.softwareVersion));
         sb.append(", dashboardSoftwareVersion=")
                 .append(String.valueOf(this.dashboardSoftwareVersion));
+        sb.append(", opendashboardNodeHostShape=")
+                .append(String.valueOf(this.opendashboardNodeHostShape));
         sb.append(", clusterPrivateEndpoint=").append(String.valueOf(this.clusterPrivateEndpoint));
         sb.append(")");
         return sb.toString();
@@ -399,11 +743,23 @@ public final class UpdateClusterSpecsDetails
                         this.masterNodeHostOcpuCount, other.masterNodeHostOcpuCount)
                 && java.util.Objects.equals(
                         this.masterNodeHostMemoryGB, other.masterNodeHostMemoryGB)
+                && java.util.Objects.equals(this.masterNodeHostShape, other.masterNodeHostShape)
                 && java.util.Objects.equals(this.dataNodeHostOcpuCount, other.dataNodeHostOcpuCount)
                 && java.util.Objects.equals(this.dataNodeHostMemoryGB, other.dataNodeHostMemoryGB)
+                && java.util.Objects.equals(this.dataNodeHostShape, other.dataNodeHostShape)
+                && java.util.Objects.equals(this.searchNodeHostShape, other.searchNodeHostShape)
+                && java.util.Objects.equals(
+                        this.searchNodeHostOcpuCount, other.searchNodeHostOcpuCount)
+                && java.util.Objects.equals(
+                        this.searchNodeHostMemoryGB, other.searchNodeHostMemoryGB)
+                && java.util.Objects.equals(this.mlNodeHostShape, other.mlNodeHostShape)
+                && java.util.Objects.equals(this.mlNodeHostOcpuCount, other.mlNodeHostOcpuCount)
+                && java.util.Objects.equals(this.mlNodeHostMemoryGB, other.mlNodeHostMemoryGB)
                 && java.util.Objects.equals(this.softwareVersion, other.softwareVersion)
                 && java.util.Objects.equals(
                         this.dashboardSoftwareVersion, other.dashboardSoftwareVersion)
+                && java.util.Objects.equals(
+                        this.opendashboardNodeHostShape, other.opendashboardNodeHostShape)
                 && java.util.Objects.equals(
                         this.clusterPrivateEndpoint, other.clusterPrivateEndpoint)
                 && super.equals(other);
@@ -426,6 +782,11 @@ public final class UpdateClusterSpecsDetails
                                 : this.masterNodeHostMemoryGB.hashCode());
         result =
                 (result * PRIME)
+                        + (this.masterNodeHostShape == null
+                                ? 43
+                                : this.masterNodeHostShape.hashCode());
+        result =
+                (result * PRIME)
                         + (this.dataNodeHostOcpuCount == null
                                 ? 43
                                 : this.dataNodeHostOcpuCount.hashCode());
@@ -436,12 +797,48 @@ public final class UpdateClusterSpecsDetails
                                 : this.dataNodeHostMemoryGB.hashCode());
         result =
                 (result * PRIME)
+                        + (this.dataNodeHostShape == null ? 43 : this.dataNodeHostShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.searchNodeHostShape == null
+                                ? 43
+                                : this.searchNodeHostShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.searchNodeHostOcpuCount == null
+                                ? 43
+                                : this.searchNodeHostOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.searchNodeHostMemoryGB == null
+                                ? 43
+                                : this.searchNodeHostMemoryGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostShape == null ? 43 : this.mlNodeHostShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostOcpuCount == null
+                                ? 43
+                                : this.mlNodeHostOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mlNodeHostMemoryGB == null
+                                ? 43
+                                : this.mlNodeHostMemoryGB.hashCode());
+        result =
+                (result * PRIME)
                         + (this.softwareVersion == null ? 43 : this.softwareVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.dashboardSoftwareVersion == null
                                 ? 43
                                 : this.dashboardSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opendashboardNodeHostShape == null
+                                ? 43
+                                : this.opendashboardNodeHostShape.hashCode());
         result =
                 (result * PRIME)
                         + (this.clusterPrivateEndpoint == null

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -14,13 +14,13 @@ public class CreateAutonomousDatabaseBackupRequest
                 com.oracle.bmc.database.model.CreateAutonomousDatabaseBackupDetails> {
 
     /**
-     * Request to create a new Autonomous Database backup.
+     * Request to create a new Autonomous AI Database backup.
      */
     private com.oracle.bmc.database.model.CreateAutonomousDatabaseBackupDetails
             createAutonomousDatabaseBackupDetails;
 
     /**
-     * Request to create a new Autonomous Database backup.
+     * Request to create a new Autonomous AI Database backup.
      */
     public com.oracle.bmc.database.model.CreateAutonomousDatabaseBackupDetails
             getCreateAutonomousDatabaseBackupDetails() {
@@ -60,6 +60,21 @@ public class CreateAutonomousDatabaseBackupRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -80,13 +95,13 @@ public class CreateAutonomousDatabaseBackupRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Request to create a new Autonomous Database backup.
+         * Request to create a new Autonomous AI Database backup.
          */
         private com.oracle.bmc.database.model.CreateAutonomousDatabaseBackupDetails
                 createAutonomousDatabaseBackupDetails = null;
 
         /**
-         * Request to create a new Autonomous Database backup.
+         * Request to create a new Autonomous AI Database backup.
          * @param createAutonomousDatabaseBackupDetails the value to set
          * @return this builder instance
          */
@@ -140,6 +155,25 @@ public class CreateAutonomousDatabaseBackupRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -170,6 +204,7 @@ public class CreateAutonomousDatabaseBackupRequest
             createAutonomousDatabaseBackupDetails(o.getCreateAutonomousDatabaseBackupDetails());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -218,8 +253,9 @@ public class CreateAutonomousDatabaseBackupRequest
             request.createAutonomousDatabaseBackupDetails = createAutonomousDatabaseBackupDetails;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
             return request;
-            // new CreateAutonomousDatabaseBackupRequest(createAutonomousDatabaseBackupDetails, opcRetryToken, opcRequestId);
+            // new CreateAutonomousDatabaseBackupRequest(createAutonomousDatabaseBackupDetails, opcRetryToken, opcRequestId, opcDryRun);
         }
     }
 
@@ -231,7 +267,8 @@ public class CreateAutonomousDatabaseBackupRequest
         return new Builder()
                 .createAutonomousDatabaseBackupDetails(createAutonomousDatabaseBackupDetails)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -251,6 +288,7 @@ public class CreateAutonomousDatabaseBackupRequest
                 .append(String.valueOf(this.createAutonomousDatabaseBackupDetails));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -270,7 +308,8 @@ public class CreateAutonomousDatabaseBackupRequest
                         this.createAutonomousDatabaseBackupDetails,
                         other.createAutonomousDatabaseBackupDetails)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -286,6 +325,7 @@ public class CreateAutonomousDatabaseBackupRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

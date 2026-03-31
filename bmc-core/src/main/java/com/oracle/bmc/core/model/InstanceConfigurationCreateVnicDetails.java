@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -35,7 +35,9 @@ public final class InstanceConfigurationCreateVnicDetails
         "ipv6AddressIpv6SubnetCidrPairDetails",
         "hostnameLabel",
         "nsgIds",
+        "subnetCidr",
         "privateIp",
+        "privateIpId",
         "skipSourceDestCheck",
         "subnetId"
     })
@@ -51,7 +53,9 @@ public final class InstanceConfigurationCreateVnicDetails
                     ipv6AddressIpv6SubnetCidrPairDetails,
             String hostnameLabel,
             java.util.List<String> nsgIds,
+            String subnetCidr,
             String privateIp,
+            String privateIpId,
             Boolean skipSourceDestCheck,
             String subnetId) {
         super();
@@ -65,7 +69,9 @@ public final class InstanceConfigurationCreateVnicDetails
         this.ipv6AddressIpv6SubnetCidrPairDetails = ipv6AddressIpv6SubnetCidrPairDetails;
         this.hostnameLabel = hostnameLabel;
         this.nsgIds = nsgIds;
+        this.subnetCidr = subnetCidr;
         this.privateIp = privateIp;
+        this.privateIpId = privateIpId;
         this.skipSourceDestCheck = skipSourceDestCheck;
         this.subnetId = subnetId;
     }
@@ -304,6 +310,36 @@ public final class InstanceConfigurationCreateVnicDetails
             return this;
         }
         /**
+         * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range
+         * from which the VNIC's private IP address will be assigned if {@code privateIp} or
+         * {@code privateIpId} is not specified.
+         * Either this field or the {@code privateIp} (or {@code privateIpId}, if applicable) field
+         * must be provided, but not both simultaneously.
+         * Example: {@code 192.168.1.0/28}
+         * See the {@code subnetCidr} attribute of {@link CreateVnicDetails} for more information.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetCidr")
+        private String subnetCidr;
+
+        /**
+         * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range
+         * from which the VNIC's private IP address will be assigned if {@code privateIp} or
+         * {@code privateIpId} is not specified.
+         * Either this field or the {@code privateIp} (or {@code privateIpId}, if applicable) field
+         * must be provided, but not both simultaneously.
+         * Example: {@code 192.168.1.0/28}
+         * See the {@code subnetCidr} attribute of {@link CreateVnicDetails} for more information.
+         *
+         * @param subnetCidr the value to set
+         * @return this builder
+         **/
+        public Builder subnetCidr(String subnetCidr) {
+            this.subnetCidr = subnetCidr;
+            this.__explicitlySet__.add("subnetCidr");
+            return this;
+        }
+        /**
          * A private IP address of your choice to assign to the VNIC.
          * See the {@code privateIp} attribute of {@link CreateVnicDetails} for more information.
          *
@@ -321,6 +357,26 @@ public final class InstanceConfigurationCreateVnicDetails
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
+            return this;
+        }
+        /**
+         * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC.
+         * See the {@code privateIpId} attribute of {@link CreateVnicDetails} for more information.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
+        private String privateIpId;
+
+        /**
+         * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC.
+         * See the {@code privateIpId} attribute of {@link CreateVnicDetails} for more information.
+         *
+         * @param privateIpId the value to set
+         * @return this builder
+         **/
+        public Builder privateIpId(String privateIpId) {
+            this.privateIpId = privateIpId;
+            this.__explicitlySet__.add("privateIpId");
             return this;
         }
         /**
@@ -380,7 +436,9 @@ public final class InstanceConfigurationCreateVnicDetails
                             this.ipv6AddressIpv6SubnetCidrPairDetails,
                             this.hostnameLabel,
                             this.nsgIds,
+                            this.subnetCidr,
                             this.privateIp,
+                            this.privateIpId,
                             this.skipSourceDestCheck,
                             this.subnetId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -422,8 +480,14 @@ public final class InstanceConfigurationCreateVnicDetails
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
             }
+            if (model.wasPropertyExplicitlySet("subnetCidr")) {
+                this.subnetCidr(model.getSubnetCidr());
+            }
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
+            }
+            if (model.wasPropertyExplicitlySet("privateIpId")) {
+                this.privateIpId(model.getPrivateIpId());
             }
             if (model.wasPropertyExplicitlySet("skipSourceDestCheck")) {
                 this.skipSourceDestCheck(model.getSkipSourceDestCheck());
@@ -655,6 +719,34 @@ public final class InstanceConfigurationCreateVnicDetails
     }
 
     /**
+     * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range
+     * from which the VNIC's private IP address will be assigned if {@code privateIp} or
+     * {@code privateIpId} is not specified.
+     * Either this field or the {@code privateIp} (or {@code privateIpId}, if applicable) field
+     * must be provided, but not both simultaneously.
+     * Example: {@code 192.168.1.0/28}
+     * See the {@code subnetCidr} attribute of {@link CreateVnicDetails} for more information.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetCidr")
+    private final String subnetCidr;
+
+    /**
+     * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range
+     * from which the VNIC's private IP address will be assigned if {@code privateIp} or
+     * {@code privateIpId} is not specified.
+     * Either this field or the {@code privateIp} (or {@code privateIpId}, if applicable) field
+     * must be provided, but not both simultaneously.
+     * Example: {@code 192.168.1.0/28}
+     * See the {@code subnetCidr} attribute of {@link CreateVnicDetails} for more information.
+     *
+     * @return the value
+     **/
+    public String getSubnetCidr() {
+        return subnetCidr;
+    }
+
+    /**
      * A private IP address of your choice to assign to the VNIC.
      * See the {@code privateIp} attribute of {@link CreateVnicDetails} for more information.
      *
@@ -670,6 +762,24 @@ public final class InstanceConfigurationCreateVnicDetails
      **/
     public String getPrivateIp() {
         return privateIp;
+    }
+
+    /**
+     * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC.
+     * See the {@code privateIpId} attribute of {@link CreateVnicDetails} for more information.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
+    private final String privateIpId;
+
+    /**
+     * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC.
+     * See the {@code privateIpId} attribute of {@link CreateVnicDetails} for more information.
+     *
+     * @return the value
+     **/
+    public String getPrivateIpId() {
+        return privateIpId;
     }
 
     /**
@@ -733,7 +843,9 @@ public final class InstanceConfigurationCreateVnicDetails
                 .append(String.valueOf(this.ipv6AddressIpv6SubnetCidrPairDetails));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", subnetCidr=").append(String.valueOf(this.subnetCidr));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", privateIpId=").append(String.valueOf(this.privateIpId));
         sb.append(", skipSourceDestCheck=").append(String.valueOf(this.skipSourceDestCheck));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(")");
@@ -763,7 +875,9 @@ public final class InstanceConfigurationCreateVnicDetails
                         other.ipv6AddressIpv6SubnetCidrPairDetails)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.subnetCidr, other.subnetCidr)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(this.privateIpId, other.privateIpId)
                 && java.util.Objects.equals(this.skipSourceDestCheck, other.skipSourceDestCheck)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && super.equals(other);
@@ -799,7 +913,9 @@ public final class InstanceConfigurationCreateVnicDetails
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.subnetCidr == null ? 43 : this.subnetCidr.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result = (result * PRIME) + (this.privateIpId == null ? 43 : this.privateIpId.hashCode());
         result =
                 (result * PRIME)
                         + (this.skipSourceDestCheck == null

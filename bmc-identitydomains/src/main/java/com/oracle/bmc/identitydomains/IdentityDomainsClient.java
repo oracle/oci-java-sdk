@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains;
@@ -7,8 +7,9 @@ package com.oracle.bmc.identitydomains;
 import com.oracle.bmc.identitydomains.internal.http.*;
 import com.oracle.bmc.identitydomains.requests.*;
 import com.oracle.bmc.identitydomains.responses.*;
-import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class IdentityDomainsClient implements IdentityDomains {
@@ -17,7 +18,7 @@ public class IdentityDomainsClient implements IdentityDomains {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("IDENTITYDOMAINS")
+                    .serviceName(IdentityDomainsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://idcs-guid.identity.oraclecloud.com")
                     .build();
@@ -47,6 +48,10 @@ public class IdentityDomainsClient implements IdentityDomains {
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -260,6 +265,11 @@ public class IdentityDomainsClient implements IdentityDomains {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -398,12 +408,21 @@ public class IdentityDomainsClient implements IdentityDomains {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -1033,6 +1052,96 @@ public class IdentityDomainsClient implements IdentityDomains {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest.getGroup(), retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateIdentityProofingProviderResponse createIdentityProofingProvider(
+            CreateIdentityProofingProviderRequest request) {
+        LOG.trace("Called createIdentityProofingProvider");
+        final CreateIdentityProofingProviderRequest interceptedRequest =
+                CreateIdentityProofingProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateIdentityProofingProviderConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "CreateIdentityProofingProvider",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateIdentityProofingProviderResponse>
+                transformer =
+                        CreateIdentityProofingProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getIdentityProofingProvider(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateIdentityProofingProviderTemplateResponse createIdentityProofingProviderTemplate(
+            CreateIdentityProofingProviderTemplateRequest request) {
+        LOG.trace("Called createIdentityProofingProviderTemplate");
+        final CreateIdentityProofingProviderTemplateRequest interceptedRequest =
+                CreateIdentityProofingProviderTemplateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateIdentityProofingProviderTemplateConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "CreateIdentityProofingProviderTemplate",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateIdentityProofingProviderTemplateResponse>
+                transformer =
+                        CreateIdentityProofingProviderTemplateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getIdentityProofingProviderTemplate(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -2195,6 +2304,49 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public CreateVerificationClaimResponse createVerificationClaim(
+            CreateVerificationClaimRequest request) {
+        LOG.trace("Called createVerificationClaim");
+        final CreateVerificationClaimRequest interceptedRequest =
+                CreateVerificationClaimConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVerificationClaimConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "CreateVerificationClaim",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateVerificationClaimResponse>
+                transformer =
+                        CreateVerificationClaimConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getVerificationClaim(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteApiKeyResponse deleteApiKey(DeleteApiKeyRequest request) {
         LOG.trace("Called deleteApiKey");
         final DeleteApiKeyRequest interceptedRequest =
@@ -2760,6 +2912,89 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Group/DeleteGroup");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteGroupResponse> transformer =
                 DeleteGroupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteIdentityProofingProviderResponse deleteIdentityProofingProvider(
+            DeleteIdentityProofingProviderRequest request) {
+        LOG.trace("Called deleteIdentityProofingProvider");
+        final DeleteIdentityProofingProviderRequest interceptedRequest =
+                DeleteIdentityProofingProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteIdentityProofingProviderConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "DeleteIdentityProofingProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProvider/DeleteIdentityProofingProvider");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteIdentityProofingProviderResponse>
+                transformer =
+                        DeleteIdentityProofingProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteIdentityProofingProviderTemplateResponse deleteIdentityProofingProviderTemplate(
+            DeleteIdentityProofingProviderTemplateRequest request) {
+        LOG.trace("Called deleteIdentityProofingProviderTemplate");
+        final DeleteIdentityProofingProviderTemplateRequest interceptedRequest =
+                DeleteIdentityProofingProviderTemplateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteIdentityProofingProviderTemplateConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "DeleteIdentityProofingProviderTemplate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProviderTemplate/DeleteIdentityProofingProviderTemplate");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteIdentityProofingProviderTemplateResponse>
+                transformer =
+                        DeleteIdentityProofingProviderTemplateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4429,6 +4664,86 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public GetIdentityProofingProviderResponse getIdentityProofingProvider(
+            GetIdentityProofingProviderRequest request) {
+        LOG.trace("Called getIdentityProofingProvider");
+        final GetIdentityProofingProviderRequest interceptedRequest =
+                GetIdentityProofingProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIdentityProofingProviderConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "GetIdentityProofingProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProvider/GetIdentityProofingProvider");
+        java.util.function.Function<javax.ws.rs.core.Response, GetIdentityProofingProviderResponse>
+                transformer =
+                        GetIdentityProofingProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetIdentityProofingProviderTemplateResponse getIdentityProofingProviderTemplate(
+            GetIdentityProofingProviderTemplateRequest request) {
+        LOG.trace("Called getIdentityProofingProviderTemplate");
+        final GetIdentityProofingProviderTemplateRequest interceptedRequest =
+                GetIdentityProofingProviderTemplateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIdentityProofingProviderTemplateConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "GetIdentityProofingProviderTemplate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProviderTemplate/GetIdentityProofingProviderTemplate");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetIdentityProofingProviderTemplateResponse>
+                transformer =
+                        GetIdentityProofingProviderTemplateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetIdentityPropagationTrustResponse getIdentityPropagationTrust(
             GetIdentityPropagationTrustRequest request) {
         LOG.trace("Called getIdentityPropagationTrust");
@@ -4564,6 +4879,44 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/KmsiSetting/GetKmsiSetting");
         java.util.function.Function<javax.ws.rs.core.Response, GetKmsiSettingResponse> transformer =
                 GetKmsiSettingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetMappedAttributeResponse getMappedAttribute(GetMappedAttributeRequest request) {
+        LOG.trace("Called getMappedAttribute");
+        final GetMappedAttributeRequest interceptedRequest =
+                GetMappedAttributeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMappedAttributeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "GetMappedAttribute",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MappedAttribute/GetMappedAttribute");
+        java.util.function.Function<javax.ws.rs.core.Response, GetMappedAttributeResponse>
+                transformer =
+                        GetMappedAttributeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6498,6 +6851,87 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public ListIdentityProofingProviderTemplatesResponse listIdentityProofingProviderTemplates(
+            ListIdentityProofingProviderTemplatesRequest request) {
+        LOG.trace("Called listIdentityProofingProviderTemplates");
+        final ListIdentityProofingProviderTemplatesRequest interceptedRequest =
+                ListIdentityProofingProviderTemplatesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIdentityProofingProviderTemplatesConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "ListIdentityProofingProviderTemplates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProviderTemplate/ListIdentityProofingProviderTemplates");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListIdentityProofingProviderTemplatesResponse>
+                transformer =
+                        ListIdentityProofingProviderTemplatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListIdentityProofingProvidersResponse listIdentityProofingProviders(
+            ListIdentityProofingProvidersRequest request) {
+        LOG.trace("Called listIdentityProofingProviders");
+        final ListIdentityProofingProvidersRequest interceptedRequest =
+                ListIdentityProofingProvidersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIdentityProofingProvidersConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "ListIdentityProofingProviders",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProvider/ListIdentityProofingProviders");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListIdentityProofingProvidersResponse>
+                transformer =
+                        ListIdentityProofingProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListIdentityPropagationTrustsResponse listIdentityPropagationTrusts(
             ListIdentityPropagationTrustsRequest request) {
         LOG.trace("Called listIdentityPropagationTrusts");
@@ -6636,6 +7070,44 @@ public class IdentityDomainsClient implements IdentityDomains {
         java.util.function.Function<javax.ws.rs.core.Response, ListKmsiSettingsResponse>
                 transformer =
                         ListKmsiSettingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListMappedAttributesResponse listMappedAttributes(ListMappedAttributesRequest request) {
+        LOG.trace("Called listMappedAttributes");
+        final ListMappedAttributesRequest interceptedRequest =
+                ListMappedAttributesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMappedAttributesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "ListMappedAttributes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MappedAttribute/ListMappedAttributes");
+        java.util.function.Function<javax.ws.rs.core.Response, ListMappedAttributesResponse>
+                transformer =
+                        ListMappedAttributesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -7851,7 +8323,7 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "IdentityDomains",
                         "ListSocialIdentityProviders",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/ListSocialIdentityProviders");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/ListSocialIdentityProviders");
         java.util.function.Function<javax.ws.rs.core.Response, ListSocialIdentityProvidersResponse>
                 transformer =
                         ListSocialIdentityProvidersConverter.fromResponse(
@@ -8572,6 +9044,91 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public PatchIdentityProofingProviderResponse patchIdentityProofingProvider(
+            PatchIdentityProofingProviderRequest request) {
+        LOG.trace("Called patchIdentityProofingProvider");
+        final PatchIdentityProofingProviderRequest interceptedRequest =
+                PatchIdentityProofingProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchIdentityProofingProviderConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "PatchIdentityProofingProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProvider/PatchIdentityProofingProvider");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, PatchIdentityProofingProviderResponse>
+                transformer =
+                        PatchIdentityProofingProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.patch(
+                                                ib, retriedRequest.getPatchOp(), retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public PatchIdentityProofingProviderTemplateResponse patchIdentityProofingProviderTemplate(
+            PatchIdentityProofingProviderTemplateRequest request) {
+        LOG.trace("Called patchIdentityProofingProviderTemplate");
+        final PatchIdentityProofingProviderTemplateRequest interceptedRequest =
+                PatchIdentityProofingProviderTemplateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchIdentityProofingProviderTemplateConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "PatchIdentityProofingProviderTemplate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProviderTemplate/PatchIdentityProofingProviderTemplate");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, PatchIdentityProofingProviderTemplateResponse>
+                transformer =
+                        PatchIdentityProofingProviderTemplateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.patch(
+                                                ib, retriedRequest.getPatchOp(), retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public PatchIdentityPropagationTrustResponse patchIdentityPropagationTrust(
             PatchIdentityPropagationTrustRequest request) {
         LOG.trace("Called patchIdentityPropagationTrust");
@@ -8716,6 +9273,46 @@ public class IdentityDomainsClient implements IdentityDomains {
         java.util.function.Function<javax.ws.rs.core.Response, PatchKmsiSettingResponse>
                 transformer =
                         PatchKmsiSettingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.patch(
+                                                ib, retriedRequest.getPatchOp(), retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public PatchMappedAttributeResponse patchMappedAttribute(PatchMappedAttributeRequest request) {
+        LOG.trace("Called patchMappedAttribute");
+        final PatchMappedAttributeRequest interceptedRequest =
+                PatchMappedAttributeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchMappedAttributeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "PatchMappedAttribute",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MappedAttribute/PatchMappedAttribute");
+        java.util.function.Function<javax.ws.rs.core.Response, PatchMappedAttributeResponse>
+                transformer =
+                        PatchMappedAttributeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -10092,6 +10689,95 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public PutIdentityProofingProviderResponse putIdentityProofingProvider(
+            PutIdentityProofingProviderRequest request) {
+        LOG.trace("Called putIdentityProofingProvider");
+        final PutIdentityProofingProviderRequest interceptedRequest =
+                PutIdentityProofingProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutIdentityProofingProviderConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "PutIdentityProofingProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProvider/PutIdentityProofingProvider");
+        java.util.function.Function<javax.ws.rs.core.Response, PutIdentityProofingProviderResponse>
+                transformer =
+                        PutIdentityProofingProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getIdentityProofingProvider(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public PutIdentityProofingProviderTemplateResponse putIdentityProofingProviderTemplate(
+            PutIdentityProofingProviderTemplateRequest request) {
+        LOG.trace("Called putIdentityProofingProviderTemplate");
+        final PutIdentityProofingProviderTemplateRequest interceptedRequest =
+                PutIdentityProofingProviderTemplateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutIdentityProofingProviderTemplateConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "PutIdentityProofingProviderTemplate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProviderTemplate/PutIdentityProofingProviderTemplate");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, PutIdentityProofingProviderTemplateResponse>
+                transformer =
+                        PutIdentityProofingProviderTemplateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getIdentityProofingProviderTemplate(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public PutIdentityPropagationTrustResponse putIdentityPropagationTrust(
             PutIdentityPropagationTrustRequest request) {
         LOG.trace("Called putIdentityPropagationTrust");
@@ -10252,6 +10938,48 @@ public class IdentityDomainsClient implements IdentityDomains {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getKmsiSetting(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public PutMappedAttributeResponse putMappedAttribute(PutMappedAttributeRequest request) {
+        LOG.trace("Called putMappedAttribute");
+        final PutMappedAttributeRequest interceptedRequest =
+                PutMappedAttributeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutMappedAttributeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "PutMappedAttribute",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MappedAttribute/PutMappedAttribute");
+        java.util.function.Function<javax.ws.rs.core.Response, PutMappedAttributeResponse>
+                transformer =
+                        PutMappedAttributeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getMappedAttribute(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -11530,6 +12258,51 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public SearchIdentityProofingProvidersResponse searchIdentityProofingProviders(
+            SearchIdentityProofingProvidersRequest request) {
+        LOG.trace("Called searchIdentityProofingProviders");
+        final SearchIdentityProofingProvidersRequest interceptedRequest =
+                SearchIdentityProofingProvidersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SearchIdentityProofingProvidersConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "SearchIdentityProofingProviders",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProvider/SearchIdentityProofingProviders");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SearchIdentityProofingProvidersResponse>
+                transformer =
+                        SearchIdentityProofingProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getIdentityProofingProviderSearchRequest(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public SearchIdentityProvidersResponse searchIdentityProviders(
             SearchIdentityProvidersRequest request) {
         LOG.trace("Called searchIdentityProviders");
@@ -11651,6 +12424,49 @@ public class IdentityDomainsClient implements IdentityDomains {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getKmsiSettingsSearchRequest(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SearchMappedAttributesResponse searchMappedAttributes(
+            SearchMappedAttributesRequest request) {
+        LOG.trace("Called searchMappedAttributes");
+        final SearchMappedAttributesRequest interceptedRequest =
+                SearchMappedAttributesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SearchMappedAttributesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "SearchMappedAttributes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MappedAttribute/SearchMappedAttributes");
+        java.util.function.Function<javax.ws.rs.core.Response, SearchMappedAttributesResponse>
+                transformer =
+                        SearchMappedAttributesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getMappedAttributeSearchRequest(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -12533,7 +13349,7 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "IdentityDomains",
                         "SearchSocialIdentityProviders",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/SearchSocialIdentityProviders");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/SearchSocialIdentityProviders");
         java.util.function.Function<
                         javax.ws.rs.core.Response, SearchSocialIdentityProvidersResponse>
                 transformer =

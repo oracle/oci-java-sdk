@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateFleetPropertyDetails.Builder.class
 )
@@ -22,32 +22,15 @@ package com.oracle.bmc.fleetappsmanagement.model;
 public final class CreateFleetPropertyDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"compartmentId", "value", "propertyId"})
-    public CreateFleetPropertyDetails(String compartmentId, String value, String propertyId) {
+    @java.beans.ConstructorProperties({"value", "propertyId"})
+    public CreateFleetPropertyDetails(String value, String propertyId) {
         super();
-        this.compartmentId = compartmentId;
         this.value = value;
         this.propertyId = propertyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Tenancy OCID
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-        private String compartmentId;
-
-        /**
-         * Tenancy OCID
-         * @param compartmentId the value to set
-         * @return this builder
-         **/
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            this.__explicitlySet__.add("compartmentId");
-            return this;
-        }
         /**
          * Value of the Property.
          **/
@@ -86,7 +69,7 @@ public final class CreateFleetPropertyDetails
 
         public CreateFleetPropertyDetails build() {
             CreateFleetPropertyDetails model =
-                    new CreateFleetPropertyDetails(this.compartmentId, this.value, this.propertyId);
+                    new CreateFleetPropertyDetails(this.value, this.propertyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -95,9 +78,6 @@ public final class CreateFleetPropertyDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateFleetPropertyDetails model) {
-            if (model.wasPropertyExplicitlySet("compartmentId")) {
-                this.compartmentId(model.getCompartmentId());
-            }
             if (model.wasPropertyExplicitlySet("value")) {
                 this.value(model.getValue());
             }
@@ -117,20 +97,6 @@ public final class CreateFleetPropertyDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
-    }
-
-    /**
-     * Tenancy OCID
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    private final String compartmentId;
-
-    /**
-     * Tenancy OCID
-     * @return the value
-     **/
-    public String getCompartmentId() {
-        return compartmentId;
     }
 
     /**
@@ -175,8 +141,7 @@ public final class CreateFleetPropertyDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateFleetPropertyDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(", value=").append(String.valueOf(this.value));
+        sb.append("value=").append(String.valueOf(this.value));
         sb.append(", propertyId=").append(String.valueOf(this.propertyId));
         sb.append(")");
         return sb.toString();
@@ -192,8 +157,7 @@ public final class CreateFleetPropertyDetails
         }
 
         CreateFleetPropertyDetails other = (CreateFleetPropertyDetails) o;
-        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.value, other.value)
+        return java.util.Objects.equals(this.value, other.value)
                 && java.util.Objects.equals(this.propertyId, other.propertyId)
                 && super.equals(other);
     }
@@ -202,9 +166,6 @@ public final class CreateFleetPropertyDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result =
-                (result * PRIME)
-                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
         result = (result * PRIME) + (this.propertyId == null ? 43 : this.propertyId.hashCode());
         result = (result * PRIME) + super.hashCode();

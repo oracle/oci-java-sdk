@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.graalvm;
@@ -36,27 +36,28 @@ import com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse;
 import com.oracle.bmc.identity.responses.ListGroupsResponse;
 import com.oracle.bmc.identity.responses.ListUsersResponse;
 import com.oracle.bmc.model.BmcException;
-import net.jodah.failsafe.Failsafe;
-import net.jodah.failsafe.RetryPolicy;
+import dev.failsafe.Failsafe;
+import dev.failsafe.RetryPolicy;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 
 public class TestUserResource implements TestResource {
     // This retry policy is intended to be used when we try and ensure that a policy has been applied
     // to the user created inside this resource. We retry on 404s as they'd indicate we're not authorised
     // (or the compartment doesn't exist, but that shouldn't be the case based on where this policy is used)
     final RetryPolicy CHECK_IAM_POLICY_APPLIED_RETRY_POLICY =
-            new RetryPolicy()
-                    .retryOn(
-                            e ->
-                                    e instanceof BmcException
-                                            && ((BmcException) e).getStatusCode() == 404)
-                    .withDelay(10, TimeUnit.SECONDS)
-                    .withMaxRetries(10);
+            RetryPolicy.builder()
+                    .handleIf(
+                            throwable ->
+                                    throwable instanceof BmcException
+                                            && ((BmcException) throwable).getStatusCode() == 404)
+                    .withDelay(Duration.ofSeconds(10))
+                    .withMaxRetries(10)
+                    .build();
     final String TEST_USER_NAME = "JavaSDK.TestUser";
 
     private final List<String> availabilityDomains = new ArrayList<>();
@@ -286,8 +287,9 @@ public class TestUserResource implements TestResource {
             //Try and create the policy. We don't have any waiters since a successful creation should be sufficient to know that
             //temporary user's policy has been applied and is being used/evaluated
             final CreatePolicyResponse createPolicyResponse =
-                    Failsafe.with(CHECK_IAM_POLICY_APPLIED_RETRY_POLICY)
-                            .get(() -> testClient.createPolicy(createPolicyRequest));
+                    (CreatePolicyResponse)
+                            Failsafe.with(CHECK_IAM_POLICY_APPLIED_RETRY_POLICY)
+                                    .get(() -> testClient.createPolicy(createPolicyRequest));
         }
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -118,6 +118,16 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The base64 encoded content of the service account key file containing
          * the credentials required to use Google BigQuery.
@@ -142,7 +152,7 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
-         * which containing the credentials required to use Google BigQuery.
+         * which contains the credentials required to use Google BigQuery.
          * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
          *
          **/
@@ -151,7 +161,7 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
-         * which containing the credentials required to use Google BigQuery.
+         * which contains the credentials required to use Google BigQuery.
          * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
          *
          * @param serviceAccountKeyFileSecretId the value to set
@@ -179,6 +189,7 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.serviceAccountKeyFile,
                             this.serviceAccountKeyFileSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -219,6 +230,9 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("serviceAccountKeyFile")) {
                 this.serviceAccountKeyFile(model.getServiceAccountKeyFile());
             }
@@ -252,6 +266,7 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String serviceAccountKeyFile,
             String serviceAccountKeyFileSecretId) {
         super(
@@ -264,7 +279,8 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.serviceAccountKeyFile = serviceAccountKeyFile;
         this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
     }
@@ -291,7 +307,7 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
-     * which containing the credentials required to use Google BigQuery.
+     * which contains the credentials required to use Google BigQuery.
      * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
      *
      **/
@@ -300,7 +316,7 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
-     * which containing the credentials required to use Google BigQuery.
+     * which contains the credentials required to use Google BigQuery.
      * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
      *
      * @return the value

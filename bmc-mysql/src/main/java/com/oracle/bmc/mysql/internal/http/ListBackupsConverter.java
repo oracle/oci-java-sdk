@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.internal.http;
@@ -70,6 +70,30 @@ public class ListBackupsConverter {
                             "displayName",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getDisplayName()));
+        }
+
+        if (request.getSoftDelete() != null) {
+            target =
+                    target.queryParam(
+                            "softDelete",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSoftDelete().getValue()));
+        }
+
+        if (request.getBackupPreparationStatus() != null) {
+            target =
+                    target.queryParam(
+                            "backupPreparationStatus",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getBackupPreparationStatus().getValue()));
+        }
+
+        if (request.getValidationStatus() != null) {
+            target =
+                    target.queryParam(
+                            "validationStatus",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getValidationStatus().getValue()));
         }
 
         if (request.getCreationType() != null) {

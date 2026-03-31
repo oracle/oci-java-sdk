@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -31,7 +31,8 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         "dnsLabel",
         "freeformTags",
         "securityAttributes",
-        "isIpv6Enabled"
+        "isIpv6Enabled",
+        "isZprOnly"
     })
     public CreateVcnDetails(
             String cidrBlock,
@@ -45,7 +46,8 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
             String dnsLabel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
-            Boolean isIpv6Enabled) {
+            Boolean isIpv6Enabled,
+            Boolean isZprOnly) {
         super();
         this.cidrBlock = cidrBlock;
         this.cidrBlocks = cidrBlocks;
@@ -59,6 +61,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         this.freeformTags = freeformTags;
         this.securityAttributes = securityAttributes;
         this.isIpv6Enabled = isIpv6Enabled;
+        this.isZprOnly = isZprOnly;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -363,6 +366,24 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("isIpv6Enabled");
             return this;
         }
+        /**
+         * Indicates whether ZPR Only mode is enforced.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isZprOnly")
+        private Boolean isZprOnly;
+
+        /**
+         * Indicates whether ZPR Only mode is enforced.
+         *
+         * @param isZprOnly the value to set
+         * @return this builder
+         **/
+        public Builder isZprOnly(Boolean isZprOnly) {
+            this.isZprOnly = isZprOnly;
+            this.__explicitlySet__.add("isZprOnly");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -381,7 +402,8 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
                             this.dnsLabel,
                             this.freeformTags,
                             this.securityAttributes,
-                            this.isIpv6Enabled);
+                            this.isIpv6Enabled,
+                            this.isZprOnly);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -425,6 +447,9 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("isIpv6Enabled")) {
                 this.isIpv6Enabled(model.getIsIpv6Enabled());
+            }
+            if (model.wasPropertyExplicitlySet("isZprOnly")) {
+                this.isZprOnly(model.getIsZprOnly());
             }
             return this;
         }
@@ -715,6 +740,22 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         return isIpv6Enabled;
     }
 
+    /**
+     * Indicates whether ZPR Only mode is enforced.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isZprOnly")
+    private final Boolean isZprOnly;
+
+    /**
+     * Indicates whether ZPR Only mode is enforced.
+     *
+     * @return the value
+     **/
+    public Boolean getIsZprOnly() {
+        return isZprOnly;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -742,6 +783,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", isIpv6Enabled=").append(String.valueOf(this.isIpv6Enabled));
+        sb.append(", isZprOnly=").append(String.valueOf(this.isZprOnly));
         sb.append(")");
         return sb.toString();
     }
@@ -769,6 +811,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.isIpv6Enabled, other.isIpv6Enabled)
+                && java.util.Objects.equals(this.isZprOnly, other.isZprOnly)
                 && super.equals(other);
     }
 
@@ -808,6 +851,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.isIpv6Enabled == null ? 43 : this.isIpv6Enabled.hashCode());
+        result = (result * PRIME) + (this.isZprOnly == null ? 43 : this.isZprOnly.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -41,6 +41,56 @@ public class ListDbSystemStoragePerformancesRequest
         return shapeType;
     }
     /**
+     * The database edition of quota (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME_PERFORMANCE/ENTERPRISE_EDITION_DEVELOPER)
+     */
+    private DatabaseEdition databaseEdition;
+
+    /**
+     * The database edition of quota (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME_PERFORMANCE/ENTERPRISE_EDITION_DEVELOPER)
+     **/
+    public enum DatabaseEdition {
+        StandardEdition("STANDARD_EDITION"),
+        EnterpriseEdition("ENTERPRISE_EDITION"),
+        EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
+        EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
+        EnterpriseEditionDeveloper("ENTERPRISE_EDITION_DEVELOPER"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DatabaseEdition> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DatabaseEdition v : DatabaseEdition.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DatabaseEdition(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DatabaseEdition create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid DatabaseEdition: " + key);
+        }
+    };
+
+    /**
+     * The database edition of quota (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME_PERFORMANCE/ENTERPRISE_EDITION_DEVELOPER)
+     */
+    public DatabaseEdition getDatabaseEdition() {
+        return databaseEdition;
+    }
+    /**
      * Unique identifier for the request.
      *
      */
@@ -52,6 +102,17 @@ public class ListDbSystemStoragePerformancesRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    private String compartmentId;
+
+    /**
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    public String getCompartmentId() {
+        return compartmentId;
     }
 
     public static class Builder
@@ -100,6 +161,21 @@ public class ListDbSystemStoragePerformancesRequest
         }
 
         /**
+         * The database edition of quota (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME_PERFORMANCE/ENTERPRISE_EDITION_DEVELOPER)
+         */
+        private DatabaseEdition databaseEdition = null;
+
+        /**
+         * The database edition of quota (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME_PERFORMANCE/ENTERPRISE_EDITION_DEVELOPER)
+         * @param databaseEdition the value to set
+         * @return this builder instance
+         */
+        public Builder databaseEdition(DatabaseEdition databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            return this;
+        }
+
+        /**
          * Unique identifier for the request.
          *
          */
@@ -113,6 +189,21 @@ public class ListDbSystemStoragePerformancesRequest
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        private String compartmentId = null;
+
+        /**
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
 
@@ -146,7 +237,9 @@ public class ListDbSystemStoragePerformancesRequest
         public Builder copy(ListDbSystemStoragePerformancesRequest o) {
             storageManagement(o.getStorageManagement());
             shapeType(o.getShapeType());
+            databaseEdition(o.getDatabaseEdition());
             opcRequestId(o.getOpcRequestId());
+            compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -182,9 +275,11 @@ public class ListDbSystemStoragePerformancesRequest
                     new ListDbSystemStoragePerformancesRequest();
             request.storageManagement = storageManagement;
             request.shapeType = shapeType;
+            request.databaseEdition = databaseEdition;
             request.opcRequestId = opcRequestId;
+            request.compartmentId = compartmentId;
             return request;
-            // new ListDbSystemStoragePerformancesRequest(storageManagement, shapeType, opcRequestId);
+            // new ListDbSystemStoragePerformancesRequest(storageManagement, shapeType, databaseEdition, opcRequestId, compartmentId);
         }
     }
 
@@ -196,7 +291,9 @@ public class ListDbSystemStoragePerformancesRequest
         return new Builder()
                 .storageManagement(storageManagement)
                 .shapeType(shapeType)
-                .opcRequestId(opcRequestId);
+                .databaseEdition(databaseEdition)
+                .opcRequestId(opcRequestId)
+                .compartmentId(compartmentId);
     }
 
     /**
@@ -214,7 +311,9 @@ public class ListDbSystemStoragePerformancesRequest
         sb.append("super=").append(super.toString());
         sb.append(",storageManagement=").append(String.valueOf(this.storageManagement));
         sb.append(",shapeType=").append(String.valueOf(this.shapeType));
+        sb.append(",databaseEdition=").append(String.valueOf(this.databaseEdition));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -232,7 +331,9 @@ public class ListDbSystemStoragePerformancesRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.storageManagement, other.storageManagement)
                 && java.util.Objects.equals(this.shapeType, other.shapeType)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId);
     }
 
     @Override
@@ -243,7 +344,13 @@ public class ListDbSystemStoragePerformancesRequest
                 (result * PRIME)
                         + (this.storageManagement == null ? 43 : this.storageManagement.hashCode());
         result = (result * PRIME) + (this.shapeType == null ? 43 : this.shapeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         return result;
     }
 }

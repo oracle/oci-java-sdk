@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -51,13 +51,74 @@ public final class LoopBackDrgAttachmentNetworkDetails extends DrgAttachmentNetw
             this.__explicitlySet__.add("ids");
             return this;
         }
+        /**
+         * The MPLS label of the DRG attachment.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("mplsLabel")
+        private Integer mplsLabel;
+
+        /**
+         * The MPLS label of the DRG attachment.
+         * @param mplsLabel the value to set
+         * @return this builder
+         **/
+        public Builder mplsLabel(Integer mplsLabel) {
+            this.mplsLabel = mplsLabel;
+            this.__explicitlySet__.add("mplsLabel");
+            return this;
+        }
+        /**
+         * Routes which may be imported from the attachment (subject to import policy) appear in the route reflectors
+         * tagged with the attachment's import route target.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("importRouteTarget")
+        private String importRouteTarget;
+
+        /**
+         * Routes which may be imported from the attachment (subject to import policy) appear in the route reflectors
+         * tagged with the attachment's import route target.
+         *
+         * @param importRouteTarget the value to set
+         * @return this builder
+         **/
+        public Builder importRouteTarget(String importRouteTarget) {
+            this.importRouteTarget = importRouteTarget;
+            this.__explicitlySet__.add("importRouteTarget");
+            return this;
+        }
+        /**
+         * Routes which are exported to the attachment are exported to the route reflectors
+         * with the route target set to the value of the attachment's export route target.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("exportRouteTarget")
+        private String exportRouteTarget;
+
+        /**
+         * Routes which are exported to the attachment are exported to the route reflectors
+         * with the route target set to the value of the attachment's export route target.
+         *
+         * @param exportRouteTarget the value to set
+         * @return this builder
+         **/
+        public Builder exportRouteTarget(String exportRouteTarget) {
+            this.exportRouteTarget = exportRouteTarget;
+            this.__explicitlySet__.add("exportRouteTarget");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LoopBackDrgAttachmentNetworkDetails build() {
             LoopBackDrgAttachmentNetworkDetails model =
-                    new LoopBackDrgAttachmentNetworkDetails(this.id, this.ids);
+                    new LoopBackDrgAttachmentNetworkDetails(
+                            this.id,
+                            this.ids,
+                            this.mplsLabel,
+                            this.importRouteTarget,
+                            this.exportRouteTarget);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -71,6 +132,15 @@ public final class LoopBackDrgAttachmentNetworkDetails extends DrgAttachmentNetw
             }
             if (model.wasPropertyExplicitlySet("ids")) {
                 this.ids(model.getIds());
+            }
+            if (model.wasPropertyExplicitlySet("mplsLabel")) {
+                this.mplsLabel(model.getMplsLabel());
+            }
+            if (model.wasPropertyExplicitlySet("importRouteTarget")) {
+                this.importRouteTarget(model.getImportRouteTarget());
+            }
+            if (model.wasPropertyExplicitlySet("exportRouteTarget")) {
+                this.exportRouteTarget(model.getExportRouteTarget());
             }
             return this;
         }
@@ -88,9 +158,17 @@ public final class LoopBackDrgAttachmentNetworkDetails extends DrgAttachmentNetw
     }
 
     @Deprecated
-    public LoopBackDrgAttachmentNetworkDetails(String id, java.util.List<String> ids) {
+    public LoopBackDrgAttachmentNetworkDetails(
+            String id,
+            java.util.List<String> ids,
+            Integer mplsLabel,
+            String importRouteTarget,
+            String exportRouteTarget) {
         super(id);
         this.ids = ids;
+        this.mplsLabel = mplsLabel;
+        this.importRouteTarget = importRouteTarget;
+        this.exportRouteTarget = exportRouteTarget;
     }
 
     /**
@@ -105,6 +183,56 @@ public final class LoopBackDrgAttachmentNetworkDetails extends DrgAttachmentNetw
      **/
     public java.util.List<String> getIds() {
         return ids;
+    }
+
+    /**
+     * The MPLS label of the DRG attachment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("mplsLabel")
+    private final Integer mplsLabel;
+
+    /**
+     * The MPLS label of the DRG attachment.
+     * @return the value
+     **/
+    public Integer getMplsLabel() {
+        return mplsLabel;
+    }
+
+    /**
+     * Routes which may be imported from the attachment (subject to import policy) appear in the route reflectors
+     * tagged with the attachment's import route target.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("importRouteTarget")
+    private final String importRouteTarget;
+
+    /**
+     * Routes which may be imported from the attachment (subject to import policy) appear in the route reflectors
+     * tagged with the attachment's import route target.
+     *
+     * @return the value
+     **/
+    public String getImportRouteTarget() {
+        return importRouteTarget;
+    }
+
+    /**
+     * Routes which are exported to the attachment are exported to the route reflectors
+     * with the route target set to the value of the attachment's export route target.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exportRouteTarget")
+    private final String exportRouteTarget;
+
+    /**
+     * Routes which are exported to the attachment are exported to the route reflectors
+     * with the route target set to the value of the attachment's export route target.
+     *
+     * @return the value
+     **/
+    public String getExportRouteTarget() {
+        return exportRouteTarget;
     }
 
     @Override
@@ -122,6 +250,9 @@ public final class LoopBackDrgAttachmentNetworkDetails extends DrgAttachmentNetw
         sb.append("LoopBackDrgAttachmentNetworkDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", ids=").append(String.valueOf(this.ids));
+        sb.append(", mplsLabel=").append(String.valueOf(this.mplsLabel));
+        sb.append(", importRouteTarget=").append(String.valueOf(this.importRouteTarget));
+        sb.append(", exportRouteTarget=").append(String.valueOf(this.exportRouteTarget));
         sb.append(")");
         return sb.toString();
     }
@@ -136,7 +267,11 @@ public final class LoopBackDrgAttachmentNetworkDetails extends DrgAttachmentNetw
         }
 
         LoopBackDrgAttachmentNetworkDetails other = (LoopBackDrgAttachmentNetworkDetails) o;
-        return java.util.Objects.equals(this.ids, other.ids) && super.equals(other);
+        return java.util.Objects.equals(this.ids, other.ids)
+                && java.util.Objects.equals(this.mplsLabel, other.mplsLabel)
+                && java.util.Objects.equals(this.importRouteTarget, other.importRouteTarget)
+                && java.util.Objects.equals(this.exportRouteTarget, other.exportRouteTarget)
+                && super.equals(other);
     }
 
     @Override
@@ -144,6 +279,13 @@ public final class LoopBackDrgAttachmentNetworkDetails extends DrgAttachmentNetw
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.ids == null ? 43 : this.ids.hashCode());
+        result = (result * PRIME) + (this.mplsLabel == null ? 43 : this.mplsLabel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.importRouteTarget == null ? 43 : this.importRouteTarget.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exportRouteTarget == null ? 43 : this.exportRouteTarget.hashCode());
         return result;
     }
 }

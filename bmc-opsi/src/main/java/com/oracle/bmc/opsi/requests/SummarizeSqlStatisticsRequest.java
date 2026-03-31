@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.requests;
@@ -56,6 +56,22 @@ public class SummarizeSqlStatisticsRequest
         ComanagedExaccNoncdb("COMANAGED-EXACC-NONCDB"),
         MdsMysql("MDS-MYSQL"),
         ExternalMysql("EXTERNAL-MYSQL"),
+        AtpExacc("ATP-EXACC"),
+        AdwExacc("ADW-EXACC"),
+        ExternalAdw("EXTERNAL-ADW"),
+        ExternalAtp("EXTERNAL-ATP"),
+        LhD("LH-D"),
+        ApexD("APEX-D"),
+        AjdD("AJD-D"),
+        AvdD("AVD-D"),
+        LhS("LH-S"),
+        ApexS("APEX-S"),
+        AjdS("AJD-S"),
+        AvdS("AVD-S"),
+        LhExacc("LH-EXACC"),
+        ApexExacc("APEX-EXACC"),
+        AjdExacc("AJD-EXACC"),
+        AvdExacc("AVD-EXACC"),
         ;
 
         private final String value;

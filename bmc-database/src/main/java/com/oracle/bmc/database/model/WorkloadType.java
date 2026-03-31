@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -30,13 +30,13 @@ public final class WorkloadType extends com.oracle.bmc.http.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+         * The total number of OCPU cores in use for Autonomous AI Transaction Processing databases in the infrastructure instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("atp")
         private Float atp;
 
         /**
-         * The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+         * The total number of OCPU cores in use for Autonomous AI Transaction Processing databases in the infrastructure instance.
          * @param atp the value to set
          * @return this builder
          **/
@@ -46,13 +46,13 @@ public final class WorkloadType extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+         * The total number of OCPU cores in use for Autonomous AI Lakehouse databases in the infrastructure instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("adw")
         private Float adw;
 
         /**
-         * The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+         * The total number of OCPU cores in use for Autonomous AI Lakehouse databases in the infrastructure instance.
          * @param adw the value to set
          * @return this builder
          **/
@@ -97,13 +97,13 @@ public final class WorkloadType extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+     * The total number of OCPU cores in use for Autonomous AI Transaction Processing databases in the infrastructure instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("atp")
     private final Float atp;
 
     /**
-     * The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+     * The total number of OCPU cores in use for Autonomous AI Transaction Processing databases in the infrastructure instance.
      * @return the value
      **/
     public Float getAtp() {
@@ -111,13 +111,13 @@ public final class WorkloadType extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+     * The total number of OCPU cores in use for Autonomous AI Lakehouse databases in the infrastructure instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adw")
     private final Float adw;
 
     /**
-     * The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+     * The total number of OCPU cores in use for Autonomous AI Lakehouse databases in the infrastructure instance.
      * @return the value
      **/
     public Float getAdw() {

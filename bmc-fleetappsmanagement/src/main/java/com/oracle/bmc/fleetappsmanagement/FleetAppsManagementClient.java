@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement;
@@ -7,17 +7,18 @@ package com.oracle.bmc.fleetappsmanagement;
 import com.oracle.bmc.fleetappsmanagement.internal.http.*;
 import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
-import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementClient implements FleetAppsManagement {
     /**
      * Service instance for FleetAppsManagement.
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FLEETAPPSMANAGEMENT")
+                    .serviceName(FleetAppsManagementClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://fams.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -50,6 +51,10 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -303,6 +308,11 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -491,12 +501,21 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -526,15 +545,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -546,6 +557,49 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public ChangeFleetCompartmentResponse changeFleetCompartment(
+            ChangeFleetCompartmentRequest request) {
+        LOG.trace("Called changeFleetCompartment");
+        final ChangeFleetCompartmentRequest interceptedRequest =
+                ChangeFleetCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeFleetCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagement",
+                        "ChangeFleetCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/ChangeFleetCompartment");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeFleetCompartmentResponse>
+                transformer =
+                        ChangeFleetCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeFleetCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -566,7 +620,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "CheckResourceTagging",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CheckResourceTagging");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/CheckResourceTagging");
         java.util.function.Function<javax.ws.rs.core.Response, CheckResourceTaggingResponse>
                 transformer =
                         CheckResourceTaggingConverter.fromResponse(
@@ -608,7 +662,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "ConfirmTargets",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/ConfirmTargets");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/ConfirmTargets");
         java.util.function.Function<javax.ws.rs.core.Response, ConfirmTargetsResponse> transformer =
                 ConfirmTargetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -648,7 +702,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "CreateFleet",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CreateFleet");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/CreateFleet");
         java.util.function.Function<javax.ws.rs.core.Response, CreateFleetResponse> transformer =
                 CreateFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -689,7 +743,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "CreateFleetCredential",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/CreateFleetCredential");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetCredential/CreateFleetCredential");
         java.util.function.Function<javax.ws.rs.core.Response, CreateFleetCredentialResponse>
                 transformer =
                         CreateFleetCredentialConverter.fromResponse(
@@ -731,7 +785,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "CreateFleetProperty",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/CreateFleetProperty");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetProperty/CreateFleetProperty");
         java.util.function.Function<javax.ws.rs.core.Response, CreateFleetPropertyResponse>
                 transformer =
                         CreateFleetPropertyConverter.fromResponse(
@@ -773,7 +827,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "CreateFleetResource",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/CreateFleetResource");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetResource/CreateFleetResource");
         java.util.function.Function<javax.ws.rs.core.Response, CreateFleetResourceResponse>
                 transformer =
                         CreateFleetResourceConverter.fromResponse(
@@ -814,7 +868,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "DeleteFleet",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/DeleteFleet");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/DeleteFleet");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetResponse> transformer =
                 DeleteFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -851,7 +905,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "DeleteFleetCredential",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/DeleteFleetCredential");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetCredential/DeleteFleetCredential");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetCredentialResponse>
                 transformer =
                         DeleteFleetCredentialConverter.fromResponse(
@@ -889,7 +943,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "DeleteFleetProperty",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/DeleteFleetProperty");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetProperty/DeleteFleetProperty");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetPropertyResponse>
                 transformer =
                         DeleteFleetPropertyConverter.fromResponse(
@@ -927,7 +981,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "DeleteFleetResource",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/DeleteFleetResource");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetResource/DeleteFleetResource");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetResourceResponse>
                 transformer =
                         DeleteFleetResourceConverter.fromResponse(
@@ -967,7 +1021,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "GenerateComplianceReport",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GenerateComplianceReport");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/GenerateComplianceReport");
         java.util.function.Function<javax.ws.rs.core.Response, GenerateComplianceReportResponse>
                 transformer =
                         GenerateComplianceReportConverter.fromResponse(
@@ -992,6 +1046,41 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
     }
 
     @Override
+    public GetComplianceResponse getCompliance(GetComplianceRequest request) {
+        LOG.trace("Called getCompliance");
+        final GetComplianceRequest interceptedRequest =
+                GetComplianceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComplianceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagement",
+                        "GetCompliance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Compliance/GetCompliance");
+        java.util.function.Function<javax.ws.rs.core.Response, GetComplianceResponse> transformer =
+                GetComplianceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetComplianceReportResponse getComplianceReport(GetComplianceReportRequest request) {
         LOG.trace("Called getComplianceReport");
         final GetComplianceReportRequest interceptedRequest =
@@ -1008,7 +1097,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "GetComplianceReport",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceReport/GetComplianceReport");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ComplianceReport/GetComplianceReport");
         java.util.function.Function<javax.ws.rs.core.Response, GetComplianceReportResponse>
                 transformer =
                         GetComplianceReportConverter.fromResponse(
@@ -1044,7 +1133,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "GetFleet",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GetFleet");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/GetFleet");
         java.util.function.Function<javax.ws.rs.core.Response, GetFleetResponse> transformer =
                 GetFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1079,7 +1168,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "GetFleetCredential",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/GetFleetCredential");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetCredential/GetFleetCredential");
         java.util.function.Function<javax.ws.rs.core.Response, GetFleetCredentialResponse>
                 transformer =
                         GetFleetCredentialConverter.fromResponse(
@@ -1116,7 +1205,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "GetFleetProperty",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/GetFleetProperty");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetProperty/GetFleetProperty");
         java.util.function.Function<javax.ws.rs.core.Response, GetFleetPropertyResponse>
                 transformer =
                         GetFleetPropertyConverter.fromResponse(
@@ -1153,46 +1242,11 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "GetFleetResource",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/GetFleetResource");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetResource/GetFleetResource");
         java.util.function.Function<javax.ws.rs.core.Response, GetFleetResourceResponse>
                 transformer =
                         GetFleetResourceConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
-        LOG.trace("Called getWorkRequest");
-        final GetWorkRequestRequest interceptedRequest =
-                GetWorkRequestConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "FleetAppsManagement",
-                        "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/GetWorkRequest");
-        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
-                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1225,7 +1279,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "ListAnnouncements",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/AnnouncementCollection/ListAnnouncements");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/AnnouncementCollection/ListAnnouncements");
         java.util.function.Function<javax.ws.rs.core.Response, ListAnnouncementsResponse>
                 transformer =
                         ListAnnouncementsConverter.fromResponse(
@@ -1262,7 +1316,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "ListFleetCredentials",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredentialCollection/ListFleetCredentials");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetCredentialCollection/ListFleetCredentials");
         java.util.function.Function<javax.ws.rs.core.Response, ListFleetCredentialsResponse>
                 transformer =
                         ListFleetCredentialsConverter.fromResponse(
@@ -1299,7 +1353,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "ListFleetProducts",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProductCollection/ListFleetProducts");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetProductCollection/ListFleetProducts");
         java.util.function.Function<javax.ws.rs.core.Response, ListFleetProductsResponse>
                 transformer =
                         ListFleetProductsConverter.fromResponse(
@@ -1336,7 +1390,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "ListFleetProperties",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetPropertyCollection/ListFleetProperties");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetPropertyCollection/ListFleetProperties");
         java.util.function.Function<javax.ws.rs.core.Response, ListFleetPropertiesResponse>
                 transformer =
                         ListFleetPropertiesConverter.fromResponse(
@@ -1373,7 +1427,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "ListFleetResources",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResourceCollection/ListFleetResources");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetResourceCollection/ListFleetResources");
         java.util.function.Function<javax.ws.rs.core.Response, ListFleetResourcesResponse>
                 transformer =
                         ListFleetResourcesConverter.fromResponse(
@@ -1410,7 +1464,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "ListFleetTargets",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListFleetTargets");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetTargetCollection/ListFleetTargets");
         java.util.function.Function<javax.ws.rs.core.Response, ListFleetTargetsResponse>
                 transformer =
                         ListFleetTargetsConverter.fromResponse(
@@ -1446,7 +1500,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "ListFleets",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCollection/ListFleets");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetCollection/ListFleets");
         java.util.function.Function<javax.ws.rs.core.Response, ListFleetsResponse> transformer =
                 ListFleetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1482,7 +1536,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "ListInventoryResources",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/InventoryResourceCollection/ListInventoryResources");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/InventoryResourceCollection/ListInventoryResources");
         java.util.function.Function<javax.ws.rs.core.Response, ListInventoryResourcesResponse>
                 transformer =
                         ListInventoryResourcesConverter.fromResponse(
@@ -1519,121 +1573,9 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "ListTargets",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListTargets");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetTargetCollection/ListTargets");
         java.util.function.Function<javax.ws.rs.core.Response, ListTargetsResponse> transformer =
                 ListTargetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public ListWorkRequestErrorsResponse listWorkRequestErrors(
-            ListWorkRequestErrorsRequest request) {
-        LOG.trace("Called listWorkRequestErrors");
-        final ListWorkRequestErrorsRequest interceptedRequest =
-                ListWorkRequestErrorsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "FleetAppsManagement",
-                        "ListWorkRequestErrors",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestError/ListWorkRequestErrors");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer =
-                        ListWorkRequestErrorsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
-        LOG.trace("Called listWorkRequestLogs");
-        final ListWorkRequestLogsRequest interceptedRequest =
-                ListWorkRequestLogsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "FleetAppsManagement",
-                        "ListWorkRequestLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestLogEntry/ListWorkRequestLogs");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer =
-                        ListWorkRequestLogsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
-        LOG.trace("Called listWorkRequests");
-        final ListWorkRequestsRequest interceptedRequest =
-                ListWorkRequestsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "FleetAppsManagement",
-                        "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/ListWorkRequests");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer =
-                        ListWorkRequestsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1668,7 +1610,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "RequestResourceValidation",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestResourceValidation");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/RequestResourceValidation");
         java.util.function.Function<javax.ws.rs.core.Response, RequestResourceValidationResponse>
                 transformer =
                         RequestResourceValidationConverter.fromResponse(
@@ -1712,7 +1654,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "RequestTargetDiscovery",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestTargetDiscovery");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/RequestTargetDiscovery");
         java.util.function.Function<javax.ws.rs.core.Response, RequestTargetDiscoveryResponse>
                 transformer =
                         RequestTargetDiscoveryConverter.fromResponse(
@@ -1753,7 +1695,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "UpdateFleet",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/UpdateFleet");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Fleet/UpdateFleet");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetResponse> transformer =
                 UpdateFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1793,7 +1735,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "UpdateFleetCredential",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/UpdateFleetCredential");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetCredential/UpdateFleetCredential");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetCredentialResponse>
                 transformer =
                         UpdateFleetCredentialConverter.fromResponse(
@@ -1834,7 +1776,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "UpdateFleetProperty",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/UpdateFleetProperty");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetProperty/UpdateFleetProperty");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetPropertyResponse>
                 transformer =
                         UpdateFleetPropertyConverter.fromResponse(
@@ -1875,7 +1817,7 @@ public class FleetAppsManagementClient implements FleetAppsManagement {
                         "FleetAppsManagement",
                         "UpdateFleetResource",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/UpdateFleetResource");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/FleetResource/UpdateFleetResource");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetResourceResponse>
                 transformer =
                         UpdateFleetResourceConverter.fromResponse(

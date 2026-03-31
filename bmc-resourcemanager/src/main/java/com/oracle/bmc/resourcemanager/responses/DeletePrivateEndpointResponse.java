@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager.responses;
@@ -21,13 +21,33 @@ public class DeletePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
     private DeletePrivateEndpointResponse(
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
-            String opcRequestId) {
+            String opcRequestId,
+            String opcWorkRequestId) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
     }
 
     public static class Builder {
@@ -61,6 +81,21 @@ public class DeletePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
@@ -68,6 +103,7 @@ public class DeletePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
         }
@@ -77,7 +113,8 @@ public class DeletePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
          * @return the response object
          */
         public DeletePrivateEndpointResponse build() {
-            return new DeletePrivateEndpointResponse(__httpStatusCode__, headers, opcRequestId);
+            return new DeletePrivateEndpointResponse(
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
         }
     }
 
@@ -95,6 +132,7 @@ public class DeletePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -109,7 +147,9 @@ public class DeletePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         }
 
         DeletePrivateEndpointResponse other = (DeletePrivateEndpointResponse) o;
-        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId);
     }
 
     @Override
@@ -117,6 +157,9 @@ public class DeletePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         return result;
     }
 }

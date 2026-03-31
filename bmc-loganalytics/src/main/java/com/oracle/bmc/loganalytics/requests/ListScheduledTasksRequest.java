@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -12,13 +12,13 @@ import com.oracle.bmc.loganalytics.model.*;
 public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     private String namespaceName;
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     public String getNamespaceName() {
@@ -194,6 +194,21 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
         return sortBy;
     }
     /**
+     * A filter to return only scheduled tasks whose stream action templateId matches the given
+     * id  exactly.
+     *
+     */
+    private String templateId;
+
+    /**
+     * A filter to return only scheduled tasks whose stream action templateId matches the given
+     * id  exactly.
+     *
+     */
+    public String getTemplateId() {
+        return templateId;
+    }
+    /**
      * A filter to return only scheduled tasks whose stream action savedSearchId matches the given
      * ManagementSavedSearch id [OCID] exactly.
      *
@@ -243,13 +258,13 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          */
         private String namespaceName = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          * @param namespaceName the value to set
          * @return this builder instance
@@ -386,6 +401,25 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
+         * A filter to return only scheduled tasks whose stream action templateId matches the given
+         * id  exactly.
+         *
+         */
+        private String templateId = null;
+
+        /**
+         * A filter to return only scheduled tasks whose stream action templateId matches the given
+         * id  exactly.
+         *
+         * @param templateId the value to set
+         * @return this builder instance
+         */
+        public Builder templateId(String templateId) {
+            this.templateId = templateId;
+            return this;
+        }
+
+        /**
          * A filter to return only scheduled tasks whose stream action savedSearchId matches the given
          * ManagementSavedSearch id [OCID] exactly.
          *
@@ -475,6 +509,7 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             displayName(o.getDisplayName());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            templateId(o.getTemplateId());
             savedSearchId(o.getSavedSearchId());
             displayNameContains(o.getDisplayNameContains());
             targetService(o.getTargetService());
@@ -519,11 +554,12 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             request.displayName = displayName;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.templateId = templateId;
             request.savedSearchId = savedSearchId;
             request.displayNameContains = displayNameContains;
             request.targetService = targetService;
             return request;
-            // new ListScheduledTasksRequest(namespaceName, taskType, compartmentId, opcRequestId, limit, page, displayName, sortOrder, sortBy, savedSearchId, displayNameContains, targetService);
+            // new ListScheduledTasksRequest(namespaceName, taskType, compartmentId, opcRequestId, limit, page, displayName, sortOrder, sortBy, templateId, savedSearchId, displayNameContains, targetService);
         }
     }
 
@@ -542,6 +578,7 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
                 .displayName(displayName)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
+                .templateId(templateId)
                 .savedSearchId(savedSearchId)
                 .displayNameContains(displayNameContains)
                 .targetService(targetService);
@@ -569,6 +606,7 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",templateId=").append(String.valueOf(this.templateId));
         sb.append(",savedSearchId=").append(String.valueOf(this.savedSearchId));
         sb.append(",displayNameContains=").append(String.valueOf(this.displayNameContains));
         sb.append(",targetService=").append(String.valueOf(this.targetService));
@@ -596,6 +634,7 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.templateId, other.templateId)
                 && java.util.Objects.equals(this.savedSearchId, other.savedSearchId)
                 && java.util.Objects.equals(this.displayNameContains, other.displayNameContains)
                 && java.util.Objects.equals(this.targetService, other.targetService);
@@ -618,6 +657,7 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.templateId == null ? 43 : this.templateId.hashCode());
         result =
                 (result * PRIME)
                         + (this.savedSearchId == null ? 43 : this.savedSearchId.hashCode());

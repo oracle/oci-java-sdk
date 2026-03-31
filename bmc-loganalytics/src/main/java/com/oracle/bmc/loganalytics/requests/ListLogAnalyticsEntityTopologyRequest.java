@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -13,26 +13,26 @@ public class ListLogAnalyticsEntityTopologyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     private String namespaceName;
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * The log analytics entity OCID.
+     * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
      *
      */
     private String logAnalyticsEntityId;
 
     /**
-     * The log analytics entity OCID.
+     * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
      *
      */
     public String getLogAnalyticsEntityId() {
@@ -205,6 +205,19 @@ public class ListLogAnalyticsEntityTopologyRequest
     public java.util.List<String> getMetadataEquals() {
         return metadataEquals;
     }
+    /**
+     * A filter to return log analytics entity toplogy whose context matches the specified string.
+     *
+     */
+    private String context;
+
+    /**
+     * A filter to return log analytics entity toplogy whose context matches the specified string.
+     *
+     */
+    public String getContext() {
+        return context;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -214,13 +227,13 @@ public class ListLogAnalyticsEntityTopologyRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          */
         private String namespaceName = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          * @param namespaceName the value to set
          * @return this builder instance
@@ -231,13 +244,13 @@ public class ListLogAnalyticsEntityTopologyRequest
         }
 
         /**
-         * The log analytics entity OCID.
+         * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
          *
          */
         private String logAnalyticsEntityId = null;
 
         /**
-         * The log analytics entity OCID.
+         * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
          *
          * @param logAnalyticsEntityId the value to set
          * @return this builder instance
@@ -379,6 +392,23 @@ public class ListLogAnalyticsEntityTopologyRequest
         }
 
         /**
+         * A filter to return log analytics entity toplogy whose context matches the specified string.
+         *
+         */
+        private String context = null;
+
+        /**
+         * A filter to return log analytics entity toplogy whose context matches the specified string.
+         *
+         * @param context the value to set
+         * @return this builder instance
+         */
+        public Builder context(String context) {
+            this.context = context;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -415,6 +445,7 @@ public class ListLogAnalyticsEntityTopologyRequest
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             metadataEquals(o.getMetadataEquals());
+            context(o.getContext());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -457,8 +488,9 @@ public class ListLogAnalyticsEntityTopologyRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             request.metadataEquals = metadataEquals;
+            request.context = context;
             return request;
-            // new ListLogAnalyticsEntityTopologyRequest(namespaceName, logAnalyticsEntityId, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId, metadataEquals);
+            // new ListLogAnalyticsEntityTopologyRequest(namespaceName, logAnalyticsEntityId, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId, metadataEquals, context);
         }
     }
 
@@ -476,7 +508,8 @@ public class ListLogAnalyticsEntityTopologyRequest
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
-                .metadataEquals(metadataEquals);
+                .metadataEquals(metadataEquals)
+                .context(context);
     }
 
     /**
@@ -501,6 +534,7 @@ public class ListLogAnalyticsEntityTopologyRequest
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",metadataEquals=").append(String.valueOf(this.metadataEquals));
+        sb.append(",context=").append(String.valueOf(this.context));
         sb.append(")");
         return sb.toString();
     }
@@ -524,7 +558,8 @@ public class ListLogAnalyticsEntityTopologyRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.metadataEquals, other.metadataEquals);
+                && java.util.Objects.equals(this.metadataEquals, other.metadataEquals)
+                && java.util.Objects.equals(this.context, other.context);
     }
 
     @Override
@@ -550,6 +585,7 @@ public class ListLogAnalyticsEntityTopologyRequest
         result =
                 (result * PRIME)
                         + (this.metadataEquals == null ? 43 : this.metadataEquals.hashCode());
+        result = (result * PRIME) + (this.context == null ? 43 : this.context.hashCode());
         return result;
     }
 }

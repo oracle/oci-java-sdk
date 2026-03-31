@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -13,13 +13,13 @@ public class ListResourceCategoriesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     private String namespaceName;
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     public String getNamespaceName() {
@@ -65,6 +65,17 @@ public class ListResourceCategoriesRequest
      */
     public String getResourceIds() {
         return resourceIds;
+    }
+    /**
+     * The compartment id
+     */
+    private String compartmentId;
+
+    /**
+     * The compartment id
+     */
+    public String getCompartmentId() {
+        return compartmentId;
     }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
@@ -206,13 +217,13 @@ public class ListResourceCategoriesRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          */
         private String namespaceName = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          * @param namespaceName the value to set
          * @return this builder instance
@@ -272,6 +283,21 @@ public class ListResourceCategoriesRequest
          */
         public Builder resourceIds(String resourceIds) {
             this.resourceIds = resourceIds;
+            return this;
+        }
+
+        /**
+         * The compartment id
+         */
+        private String compartmentId = null;
+
+        /**
+         * The compartment id
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
 
@@ -384,6 +410,7 @@ public class ListResourceCategoriesRequest
             categories(o.getCategories());
             resourceTypes(o.getResourceTypes());
             resourceIds(o.getResourceIds());
+            compartmentId(o.getCompartmentId());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             limit(o.getLimit());
@@ -425,13 +452,14 @@ public class ListResourceCategoriesRequest
             request.categories = categories;
             request.resourceTypes = resourceTypes;
             request.resourceIds = resourceIds;
+            request.compartmentId = compartmentId;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListResourceCategoriesRequest(namespaceName, categories, resourceTypes, resourceIds, sortOrder, sortBy, limit, page, opcRequestId);
+            // new ListResourceCategoriesRequest(namespaceName, categories, resourceTypes, resourceIds, compartmentId, sortOrder, sortBy, limit, page, opcRequestId);
         }
     }
 
@@ -445,6 +473,7 @@ public class ListResourceCategoriesRequest
                 .categories(categories)
                 .resourceTypes(resourceTypes)
                 .resourceIds(resourceIds)
+                .compartmentId(compartmentId)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .limit(limit)
@@ -469,6 +498,7 @@ public class ListResourceCategoriesRequest
         sb.append(",categories=").append(String.valueOf(this.categories));
         sb.append(",resourceTypes=").append(String.valueOf(this.resourceTypes));
         sb.append(",resourceIds=").append(String.valueOf(this.resourceIds));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -493,6 +523,7 @@ public class ListResourceCategoriesRequest
                 && java.util.Objects.equals(this.categories, other.categories)
                 && java.util.Objects.equals(this.resourceTypes, other.resourceTypes)
                 && java.util.Objects.equals(this.resourceIds, other.resourceIds)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -512,6 +543,9 @@ public class ListResourceCategoriesRequest
                 (result * PRIME)
                         + (this.resourceTypes == null ? 43 : this.resourceTypes.hashCode());
         result = (result * PRIME) + (this.resourceIds == null ? 43 : this.resourceIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

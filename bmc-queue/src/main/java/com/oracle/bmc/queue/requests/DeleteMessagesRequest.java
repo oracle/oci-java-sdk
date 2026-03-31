@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.requests;
@@ -34,6 +34,17 @@ public class DeleteMessagesRequest
      */
     public com.oracle.bmc.queue.model.DeleteMessagesDetails getDeleteMessagesDetails() {
         return deleteMessagesDetails;
+    }
+    /**
+     * Optional parameter to specify a consumer group.
+     */
+    private String consumerGroupId;
+
+    /**
+     * Optional parameter to specify a consumer group.
+     */
+    public String getConsumerGroupId() {
+        return consumerGroupId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -96,6 +107,21 @@ public class DeleteMessagesRequest
         }
 
         /**
+         * Optional parameter to specify a consumer group.
+         */
+        private String consumerGroupId = null;
+
+        /**
+         * Optional parameter to specify a consumer group.
+         * @param consumerGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder consumerGroupId(String consumerGroupId) {
+            this.consumerGroupId = consumerGroupId;
+            return this;
+        }
+
+        /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
@@ -140,6 +166,7 @@ public class DeleteMessagesRequest
         public Builder copy(DeleteMessagesRequest o) {
             queueId(o.getQueueId());
             deleteMessagesDetails(o.getDeleteMessagesDetails());
+            consumerGroupId(o.getConsumerGroupId());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -186,9 +213,10 @@ public class DeleteMessagesRequest
             DeleteMessagesRequest request = new DeleteMessagesRequest();
             request.queueId = queueId;
             request.deleteMessagesDetails = deleteMessagesDetails;
+            request.consumerGroupId = consumerGroupId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DeleteMessagesRequest(queueId, deleteMessagesDetails, opcRequestId);
+            // new DeleteMessagesRequest(queueId, deleteMessagesDetails, consumerGroupId, opcRequestId);
         }
     }
 
@@ -200,6 +228,7 @@ public class DeleteMessagesRequest
         return new Builder()
                 .queueId(queueId)
                 .deleteMessagesDetails(deleteMessagesDetails)
+                .consumerGroupId(consumerGroupId)
                 .opcRequestId(opcRequestId);
     }
 
@@ -218,6 +247,7 @@ public class DeleteMessagesRequest
         sb.append("super=").append(super.toString());
         sb.append(",queueId=").append(String.valueOf(this.queueId));
         sb.append(",deleteMessagesDetails=").append(String.valueOf(this.deleteMessagesDetails));
+        sb.append(",consumerGroupId=").append(String.valueOf(this.consumerGroupId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -236,6 +266,7 @@ public class DeleteMessagesRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.queueId, other.queueId)
                 && java.util.Objects.equals(this.deleteMessagesDetails, other.deleteMessagesDetails)
+                && java.util.Objects.equals(this.consumerGroupId, other.consumerGroupId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -249,6 +280,9 @@ public class DeleteMessagesRequest
                         + (this.deleteMessagesDetails == null
                                 ? 43
                                 : this.deleteMessagesDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consumerGroupId == null ? 43 : this.consumerGroupId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument.model;
@@ -22,6 +22,10 @@ package com.oracle.bmc.aidocument.model;
     defaultImpl = DocumentFeature.class
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DocumentElementsExtractionFeature.class,
+        name = "DOCUMENT_ELEMENTS_EXTRACTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DocumentClassificationFeature.class,
         name = "DOCUMENT_CLASSIFICATION"
@@ -98,6 +102,7 @@ public class DocumentFeature extends com.oracle.bmc.http.internal.ExplicitlySetB
      * - {@code TABLE_EXTRACTION}: Detect and extract data in tables.
      * - {@code KEY_VALUE_EXTRACTION}: Extract form fields.
      * - {@code DOCUMENT_CLASSIFICATION}: Identify the type of document.
+     * - {@code DOCUMENT_ELEMENTS_EXTRACTION}: Extract information from bar code
      *
      **/
     public enum FeatureType {
@@ -106,6 +111,7 @@ public class DocumentFeature extends com.oracle.bmc.http.internal.ExplicitlySetB
         TableExtraction("TABLE_EXTRACTION"),
         KeyValueExtraction("KEY_VALUE_EXTRACTION"),
         DocumentClassification("DOCUMENT_CLASSIFICATION"),
+        DocumentElementsExtraction("DOCUMENT_ELEMENTS_EXTRACTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

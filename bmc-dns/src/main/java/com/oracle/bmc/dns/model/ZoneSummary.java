@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns.model;
@@ -30,6 +30,7 @@ public final class ZoneSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         "scope",
         "freeformTags",
         "definedTags",
+        "resolutionMode",
         "dnssecState",
         "self",
         "id",
@@ -48,6 +49,7 @@ public final class ZoneSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             Scope scope,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            ZoneResolutionMode resolutionMode,
             ZoneDnssecState dnssecState,
             String self,
             String id,
@@ -65,6 +67,7 @@ public final class ZoneSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         this.scope = scope;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.resolutionMode = resolutionMode;
         this.dnssecState = dnssecState;
         this.self = self;
         this.id = id;
@@ -217,6 +220,24 @@ public final class ZoneSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * The resolution mode of a zone defines behavior related to how query responses can be handled.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("resolutionMode")
+        private ZoneResolutionMode resolutionMode;
+
+        /**
+         * The resolution mode of a zone defines behavior related to how query responses can be handled.
+         *
+         * @param resolutionMode the value to set
+         * @return this builder
+         **/
+        public Builder resolutionMode(ZoneResolutionMode resolutionMode) {
+            this.resolutionMode = resolutionMode;
+            this.__explicitlySet__.add("resolutionMode");
             return this;
         }
         /**
@@ -438,6 +459,7 @@ public final class ZoneSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.scope,
                             this.freeformTags,
                             this.definedTags,
+                            this.resolutionMode,
                             this.dnssecState,
                             this.self,
                             this.id,
@@ -475,6 +497,9 @@ public final class ZoneSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("resolutionMode")) {
+                this.resolutionMode(model.getResolutionMode());
             }
             if (model.wasPropertyExplicitlySet("dnssecState")) {
                 this.dnssecState(model.getDnssecState());
@@ -691,6 +716,22 @@ public final class ZoneSummary extends com.oracle.bmc.http.internal.ExplicitlySe
      **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * The resolution mode of a zone defines behavior related to how query responses can be handled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resolutionMode")
+    private final ZoneResolutionMode resolutionMode;
+
+    /**
+     * The resolution mode of a zone defines behavior related to how query responses can be handled.
+     *
+     * @return the value
+     **/
+    public ZoneResolutionMode getResolutionMode() {
+        return resolutionMode;
     }
 
     /**
@@ -953,6 +994,7 @@ public final class ZoneSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", resolutionMode=").append(String.valueOf(this.resolutionMode));
         sb.append(", dnssecState=").append(String.valueOf(this.dnssecState));
         sb.append(", self=").append(String.valueOf(this.self));
         sb.append(", id=").append(String.valueOf(this.id));
@@ -983,6 +1025,7 @@ public final class ZoneSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.resolutionMode, other.resolutionMode)
                 && java.util.Objects.equals(this.dnssecState, other.dnssecState)
                 && java.util.Objects.equals(this.self, other.self)
                 && java.util.Objects.equals(this.id, other.id)
@@ -1008,6 +1051,9 @@ public final class ZoneSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resolutionMode == null ? 43 : this.resolutionMode.hashCode());
         result = (result * PRIME) + (this.dnssecState == null ? 43 : this.dnssecState.hashCode());
         result = (result * PRIME) + (this.self == null ? 43 : this.self.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());

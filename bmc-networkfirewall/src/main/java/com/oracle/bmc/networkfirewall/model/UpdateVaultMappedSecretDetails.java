@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -33,6 +33,15 @@ public final class UpdateVaultMappedSecretDetails extends UpdateMappedSecretDeta
         public Builder type(InspectionType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
             return this;
         }
         /**
@@ -74,7 +83,7 @@ public final class UpdateVaultMappedSecretDetails extends UpdateMappedSecretDeta
         public UpdateVaultMappedSecretDetails build() {
             UpdateVaultMappedSecretDetails model =
                     new UpdateVaultMappedSecretDetails(
-                            this.type, this.vaultSecretId, this.versionNumber);
+                            this.type, this.description, this.vaultSecretId, this.versionNumber);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -85,6 +94,9 @@ public final class UpdateVaultMappedSecretDetails extends UpdateMappedSecretDeta
         public Builder copy(UpdateVaultMappedSecretDetails model) {
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("vaultSecretId")) {
                 this.vaultSecretId(model.getVaultSecretId());
@@ -109,8 +121,8 @@ public final class UpdateVaultMappedSecretDetails extends UpdateMappedSecretDeta
 
     @Deprecated
     public UpdateVaultMappedSecretDetails(
-            InspectionType type, String vaultSecretId, Integer versionNumber) {
-        super(type);
+            InspectionType type, String description, String vaultSecretId, Integer versionNumber) {
+        super(type, description);
         this.vaultSecretId = vaultSecretId;
         this.versionNumber = versionNumber;
     }

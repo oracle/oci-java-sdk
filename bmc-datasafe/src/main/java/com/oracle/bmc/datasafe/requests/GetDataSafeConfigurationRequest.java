@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -13,12 +13,12 @@ public class GetDataSafeConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * A filter to return only resources that match the specified compartment OCID.
+     * A filter to return the Data Safe configuration for the specified tenancy OCID.
      */
     private String compartmentId;
 
     /**
-     * A filter to return only resources that match the specified compartment OCID.
+     * A filter to return the Data Safe configuration for the specified tenancy OCID.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -43,12 +43,12 @@ public class GetDataSafeConfigurationRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * A filter to return only resources that match the specified compartment OCID.
+         * A filter to return the Data Safe configuration for the specified tenancy OCID.
          */
         private String compartmentId = null;
 
         /**
-         * A filter to return only resources that match the specified compartment OCID.
+         * A filter to return the Data Safe configuration for the specified tenancy OCID.
          * @param compartmentId the value to set
          * @return this builder instance
          */

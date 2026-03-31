@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -13,13 +13,13 @@ public class ListEntitySourceAssociationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     private String namespaceName;
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     public String getNamespaceName() {
@@ -35,6 +35,17 @@ public class ListEntitySourceAssociationsRequest
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+    /**
+     * The source name.
+     */
+    private String sourceName;
+
+    /**
+     * The source name.
+     */
+    public String getSourceName() {
+        return sourceName;
     }
     /**
      * The entity OCID.
@@ -286,13 +297,13 @@ public class ListEntitySourceAssociationsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          */
         private String namespaceName = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          * @param namespaceName the value to set
          * @return this builder instance
@@ -314,6 +325,21 @@ public class ListEntitySourceAssociationsRequest
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * The source name.
+         */
+        private String sourceName = null;
+
+        /**
+         * The source name.
+         * @param sourceName the value to set
+         * @return this builder instance
+         */
+        public Builder sourceName(String sourceName) {
+            this.sourceName = sourceName;
             return this;
         }
 
@@ -513,6 +539,7 @@ public class ListEntitySourceAssociationsRequest
         public Builder copy(ListEntitySourceAssociationsRequest o) {
             namespaceName(o.getNamespaceName());
             compartmentId(o.getCompartmentId());
+            sourceName(o.getSourceName());
             entityId(o.getEntityId());
             entityType(o.getEntityType());
             entityTypeDisplayName(o.getEntityTypeDisplayName());
@@ -557,6 +584,7 @@ public class ListEntitySourceAssociationsRequest
             ListEntitySourceAssociationsRequest request = new ListEntitySourceAssociationsRequest();
             request.namespaceName = namespaceName;
             request.compartmentId = compartmentId;
+            request.sourceName = sourceName;
             request.entityId = entityId;
             request.entityType = entityType;
             request.entityTypeDisplayName = entityTypeDisplayName;
@@ -568,7 +596,7 @@ public class ListEntitySourceAssociationsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListEntitySourceAssociationsRequest(namespaceName, compartmentId, entityId, entityType, entityTypeDisplayName, lifeCycleState, isShowTotal, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListEntitySourceAssociationsRequest(namespaceName, compartmentId, sourceName, entityId, entityType, entityTypeDisplayName, lifeCycleState, isShowTotal, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -580,6 +608,7 @@ public class ListEntitySourceAssociationsRequest
         return new Builder()
                 .namespaceName(namespaceName)
                 .compartmentId(compartmentId)
+                .sourceName(sourceName)
                 .entityId(entityId)
                 .entityType(entityType)
                 .entityTypeDisplayName(entityTypeDisplayName)
@@ -607,6 +636,7 @@ public class ListEntitySourceAssociationsRequest
         sb.append("super=").append(super.toString());
         sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",sourceName=").append(String.valueOf(this.sourceName));
         sb.append(",entityId=").append(String.valueOf(this.entityId));
         sb.append(",entityType=").append(String.valueOf(this.entityType));
         sb.append(",entityTypeDisplayName=").append(String.valueOf(this.entityTypeDisplayName));
@@ -634,6 +664,7 @@ public class ListEntitySourceAssociationsRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.namespaceName, other.namespaceName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.sourceName, other.sourceName)
                 && java.util.Objects.equals(this.entityId, other.entityId)
                 && java.util.Objects.equals(this.entityType, other.entityType)
                 && java.util.Objects.equals(this.entityTypeDisplayName, other.entityTypeDisplayName)
@@ -656,6 +687,7 @@ public class ListEntitySourceAssociationsRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
         result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
         result =

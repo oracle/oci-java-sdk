@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -10,6 +10,7 @@ package com.oracle.bmc.disasterrecovery.model;
  * - DISABLED - DR plan step execution has been disabled.
  * - IN_PROGRESS - DR plan step execution is in progress.
  * - SUCCEEDED - DR plan step execution has succeeded.
+ * - SUCCEEDED_WITH_WARNING - DR plan step execution has succeeded, but with warnings.
  * - FAILED - DR plan step execution has failed.
  * - FAILED_IGNORED - DR plan step execution has failed, but was ignored.
  * - TIMED_OUT - DR plan step execution has timed out.
@@ -24,6 +25,7 @@ public enum DrPlanStepExecutionStatus {
     Disabled("DISABLED"),
     InProgress("IN_PROGRESS"),
     Succeeded("SUCCEEDED"),
+    SucceededWithWarning("SUCCEEDED_WITH_WARNING"),
     Failed("FAILED"),
     FailedIgnored("FAILED_IGNORED"),
     TimedOut("TIMED_OUT"),

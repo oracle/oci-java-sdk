@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -28,6 +28,8 @@ public final class CreateBdsInstanceDetails
         "clusterVersion",
         "clusterPublicKey",
         "clusterAdminPassword",
+        "secretId",
+        "isSecretReused",
         "isHighAvailability",
         "isSecure",
         "networkConfig",
@@ -46,6 +48,8 @@ public final class CreateBdsInstanceDetails
             BdsInstance.ClusterVersion clusterVersion,
             String clusterPublicKey,
             String clusterAdminPassword,
+            String secretId,
+            Boolean isSecretReused,
             Boolean isHighAvailability,
             Boolean isSecure,
             NetworkConfig networkConfig,
@@ -63,6 +67,8 @@ public final class CreateBdsInstanceDetails
         this.clusterVersion = clusterVersion;
         this.clusterPublicKey = clusterPublicKey;
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
+        this.isSecretReused = isSecretReused;
         this.isHighAvailability = isHighAvailability;
         this.isSecure = isSecure;
         this.networkConfig = networkConfig;
@@ -143,19 +149,51 @@ public final class CreateBdsInstanceDetails
             return this;
         }
         /**
-         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
         /**
-         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
          * @param clusterAdminPassword the value to set
          * @return this builder
          **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+        /**
+         * The secretId for the clusterAdminPassword.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         * @param secretId the value to set
+         * @return this builder
+         **/
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
+        /**
+         * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSecretReused")
+        private Boolean isSecretReused;
+
+        /**
+         * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+         * @param isSecretReused the value to set
+         * @return this builder
+         **/
+        public Builder isSecretReused(Boolean isSecretReused) {
+            this.isSecretReused = isSecretReused;
+            this.__explicitlySet__.add("isSecretReused");
             return this;
         }
         /**
@@ -341,6 +379,8 @@ public final class CreateBdsInstanceDetails
                             this.clusterVersion,
                             this.clusterPublicKey,
                             this.clusterAdminPassword,
+                            this.secretId,
+                            this.isSecretReused,
                             this.isHighAvailability,
                             this.isSecure,
                             this.networkConfig,
@@ -374,6 +414,12 @@ public final class CreateBdsInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("isSecretReused")) {
+                this.isSecretReused(model.getIsSecretReused());
             }
             if (model.wasPropertyExplicitlySet("isHighAvailability")) {
                 this.isHighAvailability(model.getIsHighAvailability());
@@ -480,17 +526,45 @@ public final class CreateBdsInstanceDetails
     }
 
     /**
-     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
     /**
-     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
      * @return the value
      **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
+    }
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     * @return the value
+     **/
+    public String getSecretId() {
+        return secretId;
+    }
+
+    /**
+     * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSecretReused")
+    private final Boolean isSecretReused;
+
+    /**
+     * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     * @return the value
+     **/
+    public Boolean getIsSecretReused() {
+        return isSecretReused;
     }
 
     /**
@@ -660,6 +734,8 @@ public final class CreateBdsInstanceDetails
         sb.append(", clusterVersion=").append(String.valueOf(this.clusterVersion));
         sb.append(", clusterPublicKey=").append(String.valueOf(this.clusterPublicKey));
         sb.append(", clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
+        sb.append(", isSecretReused=").append(String.valueOf(this.isSecretReused));
         sb.append(", isHighAvailability=").append(String.valueOf(this.isHighAvailability));
         sb.append(", isSecure=").append(String.valueOf(this.isSecure));
         sb.append(", networkConfig=").append(String.valueOf(this.networkConfig));
@@ -691,6 +767,8 @@ public final class CreateBdsInstanceDetails
                 && java.util.Objects.equals(this.clusterVersion, other.clusterVersion)
                 && java.util.Objects.equals(this.clusterPublicKey, other.clusterPublicKey)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
+                && java.util.Objects.equals(this.isSecretReused, other.isSecretReused)
                 && java.util.Objects.equals(this.isHighAvailability, other.isHighAvailability)
                 && java.util.Objects.equals(this.isSecure, other.isSecure)
                 && java.util.Objects.equals(this.networkConfig, other.networkConfig)
@@ -725,6 +803,10 @@ public final class CreateBdsInstanceDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSecretReused == null ? 43 : this.isSecretReused.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighAvailability == null

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway.model;
@@ -28,10 +28,17 @@ package com.oracle.bmc.apigateway.model;
 public final class OAuth2LogoutBackend extends ApiSpecificationRouteBackend {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /**
+         * A list of allowed post-logout URLs to which a request can be redirected after revoke access
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedPostLogoutUris")
         private java.util.List<String> allowedPostLogoutUris;
 
+        /**
+         * A list of allowed post-logout URLs to which a request can be redirected after revoke access
+         * @param allowedPostLogoutUris the value to set
+         * @return this builder
+         **/
         public Builder allowedPostLogoutUris(java.util.List<String> allowedPostLogoutUris) {
             this.allowedPostLogoutUris = allowedPostLogoutUris;
             this.__explicitlySet__.add("allowedPostLogoutUris");
@@ -99,9 +106,16 @@ public final class OAuth2LogoutBackend extends ApiSpecificationRouteBackend {
         this.postLogoutState = postLogoutState;
     }
 
+    /**
+     * A list of allowed post-logout URLs to which a request can be redirected after revoke access
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedPostLogoutUris")
     private final java.util.List<String> allowedPostLogoutUris;
 
+    /**
+     * A list of allowed post-logout URLs to which a request can be redirected after revoke access
+     * @return the value
+     **/
     public java.util.List<String> getAllowedPostLogoutUris() {
         return allowedPostLogoutUris;
     }

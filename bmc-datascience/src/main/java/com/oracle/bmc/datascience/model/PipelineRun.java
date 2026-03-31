@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -33,6 +33,9 @@ public final class PipelineRun extends com.oracle.bmc.http.internal.ExplicitlySe
         "configurationDetails",
         "configurationOverrideDetails",
         "logConfigurationOverrideDetails",
+        "infrastructureConfigurationOverrideDetails",
+        "storageMountConfigurationOverrideDetailsList",
+        "parametersOverride",
         "stepOverrideDetails",
         "logDetails",
         "stepRuns",
@@ -56,6 +59,10 @@ public final class PipelineRun extends com.oracle.bmc.http.internal.ExplicitlySe
             PipelineConfigurationDetails configurationDetails,
             PipelineConfigurationDetails configurationOverrideDetails,
             PipelineLogConfigurationDetails logConfigurationOverrideDetails,
+            PipelineInfrastructureConfigurationDetails infrastructureConfigurationOverrideDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    storageMountConfigurationOverrideDetailsList,
+            java.util.Map<String, String> parametersOverride,
             java.util.List<PipelineStepOverrideDetails> stepOverrideDetails,
             PipelineRunLogDetails logDetails,
             java.util.List<PipelineStepRun> stepRuns,
@@ -78,6 +85,11 @@ public final class PipelineRun extends com.oracle.bmc.http.internal.ExplicitlySe
         this.configurationDetails = configurationDetails;
         this.configurationOverrideDetails = configurationOverrideDetails;
         this.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
+        this.infrastructureConfigurationOverrideDetails =
+                infrastructureConfigurationOverrideDetails;
+        this.storageMountConfigurationOverrideDetailsList =
+                storageMountConfigurationOverrideDetailsList;
+        this.parametersOverride = parametersOverride;
         this.stepOverrideDetails = stepOverrideDetails;
         this.logDetails = logDetails;
         this.stepRuns = stepRuns;
@@ -279,6 +291,56 @@ public final class PipelineRun extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("logConfigurationOverrideDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("infrastructureConfigurationOverrideDetails")
+        private PipelineInfrastructureConfigurationDetails
+                infrastructureConfigurationOverrideDetails;
+
+        public Builder infrastructureConfigurationOverrideDetails(
+                PipelineInfrastructureConfigurationDetails
+                        infrastructureConfigurationOverrideDetails) {
+            this.infrastructureConfigurationOverrideDetails =
+                    infrastructureConfigurationOverrideDetails;
+            this.__explicitlySet__.add("infrastructureConfigurationOverrideDetails");
+            return this;
+        }
+        /**
+         * The storage mount override details to mount to the instance running the pipeline step.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "storageMountConfigurationOverrideDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                storageMountConfigurationOverrideDetailsList;
+
+        /**
+         * The storage mount override details to mount to the instance running the pipeline step.
+         * @param storageMountConfigurationOverrideDetailsList the value to set
+         * @return this builder
+         **/
+        public Builder storageMountConfigurationOverrideDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        storageMountConfigurationOverrideDetailsList) {
+            this.storageMountConfigurationOverrideDetailsList =
+                    storageMountConfigurationOverrideDetailsList;
+            this.__explicitlySet__.add("storageMountConfigurationOverrideDetailsList");
+            return this;
+        }
+        /**
+         * Parameters override used in the pipeline run.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parametersOverride")
+        private java.util.Map<String, String> parametersOverride;
+
+        /**
+         * Parameters override used in the pipeline run.
+         * @param parametersOverride the value to set
+         * @return this builder
+         **/
+        public Builder parametersOverride(java.util.Map<String, String> parametersOverride) {
+            this.parametersOverride = parametersOverride;
+            this.__explicitlySet__.add("parametersOverride");
+            return this;
+        }
         /**
          * Array of step override details. Only Step Configuration is allowed to be overridden.
          **/
@@ -434,6 +496,9 @@ public final class PipelineRun extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.configurationDetails,
                             this.configurationOverrideDetails,
                             this.logConfigurationOverrideDetails,
+                            this.infrastructureConfigurationOverrideDetails,
+                            this.storageMountConfigurationOverrideDetailsList,
+                            this.parametersOverride,
                             this.stepOverrideDetails,
                             this.logDetails,
                             this.stepRuns,
@@ -488,6 +553,17 @@ public final class PipelineRun extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("logConfigurationOverrideDetails")) {
                 this.logConfigurationOverrideDetails(model.getLogConfigurationOverrideDetails());
+            }
+            if (model.wasPropertyExplicitlySet("infrastructureConfigurationOverrideDetails")) {
+                this.infrastructureConfigurationOverrideDetails(
+                        model.getInfrastructureConfigurationOverrideDetails());
+            }
+            if (model.wasPropertyExplicitlySet("storageMountConfigurationOverrideDetailsList")) {
+                this.storageMountConfigurationOverrideDetailsList(
+                        model.getStorageMountConfigurationOverrideDetailsList());
+            }
+            if (model.wasPropertyExplicitlySet("parametersOverride")) {
+                this.parametersOverride(model.getParametersOverride());
             }
             if (model.wasPropertyExplicitlySet("stepOverrideDetails")) {
                 this.stepOverrideDetails(model.getStepOverrideDetails());
@@ -689,6 +765,45 @@ public final class PipelineRun extends com.oracle.bmc.http.internal.ExplicitlySe
         return logConfigurationOverrideDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("infrastructureConfigurationOverrideDetails")
+    private final PipelineInfrastructureConfigurationDetails
+            infrastructureConfigurationOverrideDetails;
+
+    public PipelineInfrastructureConfigurationDetails
+            getInfrastructureConfigurationOverrideDetails() {
+        return infrastructureConfigurationOverrideDetails;
+    }
+
+    /**
+     * The storage mount override details to mount to the instance running the pipeline step.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationOverrideDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            storageMountConfigurationOverrideDetailsList;
+
+    /**
+     * The storage mount override details to mount to the instance running the pipeline step.
+     * @return the value
+     **/
+    public java.util.List<StorageMountConfigurationDetails>
+            getStorageMountConfigurationOverrideDetailsList() {
+        return storageMountConfigurationOverrideDetailsList;
+    }
+
+    /**
+     * Parameters override used in the pipeline run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parametersOverride")
+    private final java.util.Map<String, String> parametersOverride;
+
+    /**
+     * Parameters override used in the pipeline run.
+     * @return the value
+     **/
+    public java.util.Map<String, String> getParametersOverride() {
+        return parametersOverride;
+    }
+
     /**
      * Array of step override details. Only Step Configuration is allowed to be overridden.
      **/
@@ -835,6 +950,11 @@ public final class PipelineRun extends com.oracle.bmc.http.internal.ExplicitlySe
                 .append(String.valueOf(this.configurationOverrideDetails));
         sb.append(", logConfigurationOverrideDetails=")
                 .append(String.valueOf(this.logConfigurationOverrideDetails));
+        sb.append(", infrastructureConfigurationOverrideDetails=")
+                .append(String.valueOf(this.infrastructureConfigurationOverrideDetails));
+        sb.append(", storageMountConfigurationOverrideDetailsList=")
+                .append(String.valueOf(this.storageMountConfigurationOverrideDetailsList));
+        sb.append(", parametersOverride=").append(String.valueOf(this.parametersOverride));
         sb.append(", stepOverrideDetails=").append(String.valueOf(this.stepOverrideDetails));
         sb.append(", logDetails=").append(String.valueOf(this.logDetails));
         sb.append(", stepRuns=").append(String.valueOf(this.stepRuns));
@@ -872,6 +992,13 @@ public final class PipelineRun extends com.oracle.bmc.http.internal.ExplicitlySe
                         this.configurationOverrideDetails, other.configurationOverrideDetails)
                 && java.util.Objects.equals(
                         this.logConfigurationOverrideDetails, other.logConfigurationOverrideDetails)
+                && java.util.Objects.equals(
+                        this.infrastructureConfigurationOverrideDetails,
+                        other.infrastructureConfigurationOverrideDetails)
+                && java.util.Objects.equals(
+                        this.storageMountConfigurationOverrideDetailsList,
+                        other.storageMountConfigurationOverrideDetailsList)
+                && java.util.Objects.equals(this.parametersOverride, other.parametersOverride)
                 && java.util.Objects.equals(this.stepOverrideDetails, other.stepOverrideDetails)
                 && java.util.Objects.equals(this.logDetails, other.logDetails)
                 && java.util.Objects.equals(this.stepRuns, other.stepRuns)
@@ -914,6 +1041,21 @@ public final class PipelineRun extends com.oracle.bmc.http.internal.ExplicitlySe
                         + (this.logConfigurationOverrideDetails == null
                                 ? 43
                                 : this.logConfigurationOverrideDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.infrastructureConfigurationOverrideDetails == null
+                                ? 43
+                                : this.infrastructureConfigurationOverrideDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageMountConfigurationOverrideDetailsList == null
+                                ? 43
+                                : this.storageMountConfigurationOverrideDetailsList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parametersOverride == null
+                                ? 43
+                                : this.parametersOverride.hashCode());
         result =
                 (result * PRIME)
                         + (this.stepOverrideDetails == null

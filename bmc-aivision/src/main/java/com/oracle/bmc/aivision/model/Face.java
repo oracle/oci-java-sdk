@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aivision.model;
@@ -23,18 +23,21 @@ public final class Face extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "confidence",
         "boundingPolygon",
         "qualityScore",
-        "landmarks"
+        "landmarks",
+        "embeddings"
     })
     public Face(
             Float confidence,
             BoundingPolygon boundingPolygon,
             Float qualityScore,
-            java.util.List<Landmark> landmarks) {
+            java.util.List<Landmark> landmarks,
+            java.util.List<Float> embeddings) {
         super();
         this.confidence = confidence;
         this.boundingPolygon = boundingPolygon;
         this.qualityScore = qualityScore;
         this.landmarks = landmarks;
+        this.embeddings = embeddings;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -96,6 +99,22 @@ public final class Face extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             this.__explicitlySet__.add("landmarks");
             return this;
         }
+        /**
+         * The facial feature vectors of detected faces
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("embeddings")
+        private java.util.List<Float> embeddings;
+
+        /**
+         * The facial feature vectors of detected faces
+         * @param embeddings the value to set
+         * @return this builder
+         **/
+        public Builder embeddings(java.util.List<Float> embeddings) {
+            this.embeddings = embeddings;
+            this.__explicitlySet__.add("embeddings");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -106,7 +125,8 @@ public final class Face extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.confidence,
                             this.boundingPolygon,
                             this.qualityScore,
-                            this.landmarks);
+                            this.landmarks,
+                            this.embeddings);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -126,6 +146,9 @@ public final class Face extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("landmarks")) {
                 this.landmarks(model.getLandmarks());
+            }
+            if (model.wasPropertyExplicitlySet("embeddings")) {
+                this.embeddings(model.getEmbeddings());
             }
             return this;
         }
@@ -191,6 +214,20 @@ public final class Face extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return landmarks;
     }
 
+    /**
+     * The facial feature vectors of detected faces
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("embeddings")
+    private final java.util.List<Float> embeddings;
+
+    /**
+     * The facial feature vectors of detected faces
+     * @return the value
+     **/
+    public java.util.List<Float> getEmbeddings() {
+        return embeddings;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -209,6 +246,7 @@ public final class Face extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", boundingPolygon=").append(String.valueOf(this.boundingPolygon));
         sb.append(", qualityScore=").append(String.valueOf(this.qualityScore));
         sb.append(", landmarks=").append(String.valueOf(this.landmarks));
+        sb.append(", embeddings=").append(String.valueOf(this.embeddings));
         sb.append(")");
         return sb.toString();
     }
@@ -227,6 +265,7 @@ public final class Face extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.boundingPolygon, other.boundingPolygon)
                 && java.util.Objects.equals(this.qualityScore, other.qualityScore)
                 && java.util.Objects.equals(this.landmarks, other.landmarks)
+                && java.util.Objects.equals(this.embeddings, other.embeddings)
                 && super.equals(other);
     }
 
@@ -240,6 +279,7 @@ public final class Face extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                         + (this.boundingPolygon == null ? 43 : this.boundingPolygon.hashCode());
         result = (result * PRIME) + (this.qualityScore == null ? 43 : this.qualityScore.hashCode());
         result = (result * PRIME) + (this.landmarks == null ? 43 : this.landmarks.hashCode());
+        result = (result * PRIME) + (this.embeddings == null ? 43 : this.embeddings.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -30,8 +30,13 @@ public final class BackupDestinationDetailsSummary
         "id",
         "vpcUser",
         "vpcPassword",
+        "isZeroDataLossEnabled",
         "internetProxy",
-        "dbrsPolicyId"
+        "dbrsPolicyId",
+        "isRetentionLockEnabled",
+        "backupRetentionPolicyOnTerminate",
+        "isRemote",
+        "remoteRegion"
     })
     public BackupDestinationDetailsSummary(
             java.util.List<java.util.Date> backupDestinationAttachHistory,
@@ -41,8 +46,13 @@ public final class BackupDestinationDetailsSummary
             String id,
             String vpcUser,
             String vpcPassword,
+            Boolean isZeroDataLossEnabled,
             String internetProxy,
-            String dbrsPolicyId) {
+            String dbrsPolicyId,
+            Boolean isRetentionLockEnabled,
+            BackupRetentionPolicyOnTerminate backupRetentionPolicyOnTerminate,
+            Boolean isRemote,
+            String remoteRegion) {
         super();
         this.backupDestinationAttachHistory = backupDestinationAttachHistory;
         this.spaceUtilizedInGBs = spaceUtilizedInGBs;
@@ -51,8 +61,13 @@ public final class BackupDestinationDetailsSummary
         this.id = id;
         this.vpcUser = vpcUser;
         this.vpcPassword = vpcPassword;
+        this.isZeroDataLossEnabled = isZeroDataLossEnabled;
         this.internetProxy = internetProxy;
         this.dbrsPolicyId = dbrsPolicyId;
+        this.isRetentionLockEnabled = isRetentionLockEnabled;
+        this.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
+        this.isRemote = isRemote;
+        this.remoteRegion = remoteRegion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -172,6 +187,22 @@ public final class BackupDestinationDetailsSummary
             return this;
         }
         /**
+         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isZeroDataLossEnabled")
+        private Boolean isZeroDataLossEnabled;
+
+        /**
+         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
+         * @param isZeroDataLossEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isZeroDataLossEnabled(Boolean isZeroDataLossEnabled) {
+            this.isZeroDataLossEnabled = isZeroDataLossEnabled;
+            this.__explicitlySet__.add("isZeroDataLossEnabled");
+            return this;
+        }
+        /**
          * Proxy URL to connect to object store.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
@@ -203,6 +234,91 @@ public final class BackupDestinationDetailsSummary
             this.__explicitlySet__.add("dbrsPolicyId");
             return this;
         }
+        /**
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled.
+         * Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period.
+         * If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire.
+         * The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRetentionLockEnabled")
+        private Boolean isRetentionLockEnabled;
+
+        /**
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled.
+         * Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period.
+         * If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire.
+         * The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         *
+         * @param isRetentionLockEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
+            this.__explicitlySet__.add("isRetentionLockEnabled");
+            return this;
+        }
+        /**
+         * Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.
+         * The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         * Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPolicyOnTerminate")
+        private BackupRetentionPolicyOnTerminate backupRetentionPolicyOnTerminate;
+
+        /**
+         * Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.
+         * The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         * Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         *
+         * @param backupRetentionPolicyOnTerminate the value to set
+         * @return this builder
+         **/
+        public Builder backupRetentionPolicyOnTerminate(
+                BackupRetentionPolicyOnTerminate backupRetentionPolicyOnTerminate) {
+            this.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
+            this.__explicitlySet__.add("backupRetentionPolicyOnTerminate");
+            return this;
+        }
+        /**
+         * Indicates whether the backup destination is cross-region or local.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRemote")
+        private Boolean isRemote;
+
+        /**
+         * Indicates whether the backup destination is cross-region or local.
+         * @param isRemote the value to set
+         * @return this builder
+         **/
+        public Builder isRemote(Boolean isRemote) {
+            this.isRemote = isRemote;
+            this.__explicitlySet__.add("isRemote");
+            return this;
+        }
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored.
+         * For information about valid region names, see
+         * [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteRegion")
+        private String remoteRegion;
+
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored.
+         * For information about valid region names, see
+         * [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         *
+         * @param remoteRegion the value to set
+         * @return this builder
+         **/
+        public Builder remoteRegion(String remoteRegion) {
+            this.remoteRegion = remoteRegion;
+            this.__explicitlySet__.add("remoteRegion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -217,8 +333,13 @@ public final class BackupDestinationDetailsSummary
                             this.id,
                             this.vpcUser,
                             this.vpcPassword,
+                            this.isZeroDataLossEnabled,
                             this.internetProxy,
-                            this.dbrsPolicyId);
+                            this.dbrsPolicyId,
+                            this.isRetentionLockEnabled,
+                            this.backupRetentionPolicyOnTerminate,
+                            this.isRemote,
+                            this.remoteRegion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -249,11 +370,26 @@ public final class BackupDestinationDetailsSummary
             if (model.wasPropertyExplicitlySet("vpcPassword")) {
                 this.vpcPassword(model.getVpcPassword());
             }
+            if (model.wasPropertyExplicitlySet("isZeroDataLossEnabled")) {
+                this.isZeroDataLossEnabled(model.getIsZeroDataLossEnabled());
+            }
             if (model.wasPropertyExplicitlySet("internetProxy")) {
                 this.internetProxy(model.getInternetProxy());
             }
             if (model.wasPropertyExplicitlySet("dbrsPolicyId")) {
                 this.dbrsPolicyId(model.getDbrsPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("isRetentionLockEnabled")) {
+                this.isRetentionLockEnabled(model.getIsRetentionLockEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("backupRetentionPolicyOnTerminate")) {
+                this.backupRetentionPolicyOnTerminate(model.getBackupRetentionPolicyOnTerminate());
+            }
+            if (model.wasPropertyExplicitlySet("isRemote")) {
+                this.isRemote(model.getIsRemote());
+            }
+            if (model.wasPropertyExplicitlySet("remoteRegion")) {
+                this.remoteRegion(model.getRemoteRegion());
             }
             return this;
         }
@@ -321,6 +457,7 @@ public final class BackupDestinationDetailsSummary
         ObjectStore("OBJECT_STORE"),
         Local("LOCAL"),
         Dbrs("DBRS"),
+        AwsS3("AWS_S3"),
         ;
 
         private final String value;
@@ -407,6 +544,20 @@ public final class BackupDestinationDetailsSummary
     }
 
     /**
+     * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isZeroDataLossEnabled")
+    private final Boolean isZeroDataLossEnabled;
+
+    /**
+     * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
+     * @return the value
+     **/
+    public Boolean getIsZeroDataLossEnabled() {
+        return isZeroDataLossEnabled;
+    }
+
+    /**
      * Proxy URL to connect to object store.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
@@ -434,6 +585,120 @@ public final class BackupDestinationDetailsSummary
         return dbrsPolicyId;
     }
 
+    /**
+     * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled.
+     * Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period.
+     * If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire.
+     * The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRetentionLockEnabled")
+    private final Boolean isRetentionLockEnabled;
+
+    /**
+     * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled.
+     * Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period.
+     * If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire.
+     * The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     *
+     * @return the value
+     **/
+    public Boolean getIsRetentionLockEnabled() {
+        return isRetentionLockEnabled;
+    }
+
+    /**
+     * Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.
+     * The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+     *
+     **/
+    public enum BackupRetentionPolicyOnTerminate {
+        RetainPerRetentionWindow("RETAIN_PER_RETENTION_WINDOW"),
+        RetainFor72Hours("RETAIN_FOR_72_HOURS"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, BackupRetentionPolicyOnTerminate> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BackupRetentionPolicyOnTerminate v : BackupRetentionPolicyOnTerminate.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        BackupRetentionPolicyOnTerminate(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BackupRetentionPolicyOnTerminate create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid BackupRetentionPolicyOnTerminate: " + key);
+        }
+    };
+    /**
+     * Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.
+     * The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPolicyOnTerminate")
+    private final BackupRetentionPolicyOnTerminate backupRetentionPolicyOnTerminate;
+
+    /**
+     * Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.
+     * The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+     *
+     * @return the value
+     **/
+    public BackupRetentionPolicyOnTerminate getBackupRetentionPolicyOnTerminate() {
+        return backupRetentionPolicyOnTerminate;
+    }
+
+    /**
+     * Indicates whether the backup destination is cross-region or local.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRemote")
+    private final Boolean isRemote;
+
+    /**
+     * Indicates whether the backup destination is cross-region or local.
+     * @return the value
+     **/
+    public Boolean getIsRemote() {
+        return isRemote;
+    }
+
+    /**
+     * The name of the remote region where the remote automatic incremental backups will be stored.
+     * For information about valid region names, see
+     * [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteRegion")
+    private final String remoteRegion;
+
+    /**
+     * The name of the remote region where the remote automatic incremental backups will be stored.
+     * For information about valid region names, see
+     * [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     *
+     * @return the value
+     **/
+    public String getRemoteRegion() {
+        return remoteRegion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -457,8 +722,14 @@ public final class BackupDestinationDetailsSummary
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", vpcUser=").append(String.valueOf(this.vpcUser));
         sb.append(", vpcPassword=").append(String.valueOf(this.vpcPassword));
+        sb.append(", isZeroDataLossEnabled=").append(String.valueOf(this.isZeroDataLossEnabled));
         sb.append(", internetProxy=").append(String.valueOf(this.internetProxy));
         sb.append(", dbrsPolicyId=").append(String.valueOf(this.dbrsPolicyId));
+        sb.append(", isRetentionLockEnabled=").append(String.valueOf(this.isRetentionLockEnabled));
+        sb.append(", backupRetentionPolicyOnTerminate=")
+                .append(String.valueOf(this.backupRetentionPolicyOnTerminate));
+        sb.append(", isRemote=").append(String.valueOf(this.isRemote));
+        sb.append(", remoteRegion=").append(String.valueOf(this.remoteRegion));
         sb.append(")");
         return sb.toString();
     }
@@ -483,8 +754,16 @@ public final class BackupDestinationDetailsSummary
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.vpcUser, other.vpcUser)
                 && java.util.Objects.equals(this.vpcPassword, other.vpcPassword)
+                && java.util.Objects.equals(this.isZeroDataLossEnabled, other.isZeroDataLossEnabled)
                 && java.util.Objects.equals(this.internetProxy, other.internetProxy)
                 && java.util.Objects.equals(this.dbrsPolicyId, other.dbrsPolicyId)
+                && java.util.Objects.equals(
+                        this.isRetentionLockEnabled, other.isRetentionLockEnabled)
+                && java.util.Objects.equals(
+                        this.backupRetentionPolicyOnTerminate,
+                        other.backupRetentionPolicyOnTerminate)
+                && java.util.Objects.equals(this.isRemote, other.isRemote)
+                && java.util.Objects.equals(this.remoteRegion, other.remoteRegion)
                 && super.equals(other);
     }
 
@@ -513,8 +792,25 @@ public final class BackupDestinationDetailsSummary
         result = (result * PRIME) + (this.vpcPassword == null ? 43 : this.vpcPassword.hashCode());
         result =
                 (result * PRIME)
+                        + (this.isZeroDataLossEnabled == null
+                                ? 43
+                                : this.isZeroDataLossEnabled.hashCode());
+        result =
+                (result * PRIME)
                         + (this.internetProxy == null ? 43 : this.internetProxy.hashCode());
         result = (result * PRIME) + (this.dbrsPolicyId == null ? 43 : this.dbrsPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRetentionLockEnabled == null
+                                ? 43
+                                : this.isRetentionLockEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupRetentionPolicyOnTerminate == null
+                                ? 43
+                                : this.backupRetentionPolicyOnTerminate.hashCode());
+        result = (result * PRIME) + (this.isRemote == null ? 43 : this.isRemote.hashCode());
+        result = (result * PRIME) + (this.remoteRegion == null ? 43 : this.remoteRegion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

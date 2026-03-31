@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
@@ -28,6 +28,7 @@ public final class ManagedListSummary extends com.oracle.bmc.http.internal.Expli
         "compartmentId",
         "sourceManagedListId",
         "listType",
+        "group",
         "feedProvider",
         "isEditable",
         "listItems",
@@ -46,6 +47,7 @@ public final class ManagedListSummary extends com.oracle.bmc.http.internal.Expli
             String compartmentId,
             String sourceManagedListId,
             ManagedListType listType,
+            String group,
             FeedProviderType feedProvider,
             Boolean isEditable,
             java.util.List<String> listItems,
@@ -63,6 +65,7 @@ public final class ManagedListSummary extends com.oracle.bmc.http.internal.Expli
         this.compartmentId = compartmentId;
         this.sourceManagedListId = sourceManagedListId;
         this.listType = listType;
+        this.group = group;
         this.feedProvider = feedProvider;
         this.isEditable = isEditable;
         this.listItems = listItems;
@@ -171,6 +174,22 @@ public final class ManagedListSummary extends com.oracle.bmc.http.internal.Expli
         public Builder listType(ManagedListType listType) {
             this.listType = listType;
             this.__explicitlySet__.add("listType");
+            return this;
+        }
+        /**
+         * Managed list type group
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("group")
+        private String group;
+
+        /**
+         * Managed list type group
+         * @param group the value to set
+         * @return this builder
+         **/
+        public Builder group(String group) {
+            this.group = group;
+            this.__explicitlySet__.add("group");
             return this;
         }
         /**
@@ -369,6 +388,7 @@ public final class ManagedListSummary extends com.oracle.bmc.http.internal.Expli
                             this.compartmentId,
                             this.sourceManagedListId,
                             this.listType,
+                            this.group,
                             this.feedProvider,
                             this.isEditable,
                             this.listItems,
@@ -404,6 +424,9 @@ public final class ManagedListSummary extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("listType")) {
                 this.listType(model.getListType());
+            }
+            if (model.wasPropertyExplicitlySet("group")) {
+                this.group(model.getGroup());
             }
             if (model.wasPropertyExplicitlySet("feedProvider")) {
                 this.feedProvider(model.getFeedProvider());
@@ -532,6 +555,20 @@ public final class ManagedListSummary extends com.oracle.bmc.http.internal.Expli
      **/
     public ManagedListType getListType() {
         return listType;
+    }
+
+    /**
+     * Managed list type group
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("group")
+    private final String group;
+
+    /**
+     * Managed list type group
+     * @return the value
+     **/
+    public String getGroup() {
+        return group;
     }
 
     /**
@@ -716,6 +753,7 @@ public final class ManagedListSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", sourceManagedListId=").append(String.valueOf(this.sourceManagedListId));
         sb.append(", listType=").append(String.valueOf(this.listType));
+        sb.append(", group=").append(String.valueOf(this.group));
         sb.append(", feedProvider=").append(String.valueOf(this.feedProvider));
         sb.append(", isEditable=").append(String.valueOf(this.isEditable));
         sb.append(", listItems=").append(String.valueOf(this.listItems));
@@ -746,6 +784,7 @@ public final class ManagedListSummary extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.sourceManagedListId, other.sourceManagedListId)
                 && java.util.Objects.equals(this.listType, other.listType)
+                && java.util.Objects.equals(this.group, other.group)
                 && java.util.Objects.equals(this.feedProvider, other.feedProvider)
                 && java.util.Objects.equals(this.isEditable, other.isEditable)
                 && java.util.Objects.equals(this.listItems, other.listItems)
@@ -775,6 +814,7 @@ public final class ManagedListSummary extends com.oracle.bmc.http.internal.Expli
                                 ? 43
                                 : this.sourceManagedListId.hashCode());
         result = (result * PRIME) + (this.listType == null ? 43 : this.listType.hashCode());
+        result = (result * PRIME) + (this.group == null ? 43 : this.group.hashCode());
         result = (result * PRIME) + (this.feedProvider == null ? 43 : this.feedProvider.hashCode());
         result = (result * PRIME) + (this.isEditable == null ? 43 : this.isEditable.hashCode());
         result = (result * PRIME) + (this.listItems == null ? 43 : this.listItems.hashCode());

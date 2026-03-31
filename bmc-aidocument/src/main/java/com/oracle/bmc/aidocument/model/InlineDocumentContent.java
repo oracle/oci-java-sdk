@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument.model;
@@ -43,12 +43,28 @@ public final class InlineDocumentContent extends InputLocation {
             this.__explicitlySet__.add("data");
             return this;
         }
+        /**
+         * The page ranges to be analysed.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pageRange")
+        private java.util.List<String> pageRange;
+
+        /**
+         * The page ranges to be analysed.
+         * @param pageRange the value to set
+         * @return this builder
+         **/
+        public Builder pageRange(java.util.List<String> pageRange) {
+            this.pageRange = pageRange;
+            this.__explicitlySet__.add("pageRange");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InlineDocumentContent build() {
-            InlineDocumentContent model = new InlineDocumentContent(this.data);
+            InlineDocumentContent model = new InlineDocumentContent(this.data, this.pageRange);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -59,6 +75,9 @@ public final class InlineDocumentContent extends InputLocation {
         public Builder copy(InlineDocumentContent model) {
             if (model.wasPropertyExplicitlySet("data")) {
                 this.data(model.getData());
+            }
+            if (model.wasPropertyExplicitlySet("pageRange")) {
+                this.pageRange(model.getPageRange());
             }
             return this;
         }
@@ -76,9 +95,10 @@ public final class InlineDocumentContent extends InputLocation {
     }
 
     @Deprecated
-    public InlineDocumentContent(byte[] data) {
+    public InlineDocumentContent(byte[] data, java.util.List<String> pageRange) {
         super();
         this.data = data;
+        this.pageRange = pageRange;
     }
 
     /**
@@ -93,6 +113,20 @@ public final class InlineDocumentContent extends InputLocation {
      **/
     public byte[] getData() {
         return data;
+    }
+
+    /**
+     * The page ranges to be analysed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pageRange")
+    private final java.util.List<String> pageRange;
+
+    /**
+     * The page ranges to be analysed.
+     * @return the value
+     **/
+    public java.util.List<String> getPageRange() {
+        return pageRange;
     }
 
     @Override
@@ -117,6 +151,7 @@ public final class InlineDocumentContent extends InputLocation {
                                         + (this.data != null
                                                 ? " (byte[" + this.data.length + "])"
                                                 : ""))));
+        sb.append(", pageRange=").append(String.valueOf(this.pageRange));
         sb.append(")");
         return sb.toString();
     }
@@ -131,7 +166,9 @@ public final class InlineDocumentContent extends InputLocation {
         }
 
         InlineDocumentContent other = (InlineDocumentContent) o;
-        return java.util.Arrays.equals(this.data, other.data) && super.equals(other);
+        return java.util.Arrays.equals(this.data, other.data)
+                && java.util.Objects.equals(this.pageRange, other.pageRange)
+                && super.equals(other);
     }
 
     @Override
@@ -139,6 +176,7 @@ public final class InlineDocumentContent extends InputLocation {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + java.util.Arrays.hashCode(this.data);
+        result = (result * PRIME) + (this.pageRange == null ? 43 : this.pageRange.hashCode());
         return result;
     }
 }

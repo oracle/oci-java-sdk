@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.model;
@@ -26,6 +26,8 @@ public final class UpdateEsxiHostDetails
         "displayName",
         "nextCommitment",
         "billingDonorHostId",
+        "vcfByolAllocationId",
+        "isVsanByolEnabled",
         "freeformTags",
         "definedTags"
     })
@@ -33,12 +35,16 @@ public final class UpdateEsxiHostDetails
             String displayName,
             Commitment nextCommitment,
             String billingDonorHostId,
+            String vcfByolAllocationId,
+            Boolean isVsanByolEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.nextCommitment = nextCommitment;
         this.billingDonorHostId = billingDonorHostId;
+        this.vcfByolAllocationId = vcfByolAllocationId;
+        this.isVsanByolEnabled = isVsanByolEnabled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -47,7 +53,7 @@ public final class UpdateEsxiHostDetails
     public static class Builder {
         /**
          * A descriptive name for the ESXi host. It's changeable.
-         * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+         * Esxi Host name requirements are 1-25 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
          * <p>
          * Avoid entering confidential information.
          *
@@ -57,7 +63,7 @@ public final class UpdateEsxiHostDetails
 
         /**
          * A descriptive name for the ESXi host. It's changeable.
-         * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+         * Esxi Host name requirements are 1-25 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
          * <p>
          * Avoid entering confidential information.
          *
@@ -92,14 +98,20 @@ public final class UpdateEsxiHostDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with leftover billing cycle.
+         * <p>
+         **Note:** This option also requires the {@code nextCommitment} parameter to be populated with a value other than {@code HOUR}. Otherwise,
+         * any update request fails with the error \u201CNext SKU can\u2019t be NULL or Hourly.\u201D
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("billingDonorHostId")
         private String billingDonorHostId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with leftover billing cycle.
+         * <p>
+         **Note:** This option also requires the {@code nextCommitment} parameter to be populated with a value other than {@code HOUR}. Otherwise,
+         * any update request fails with the error \u201CNext SKU can\u2019t be NULL or Hourly.\u201D
          *
          * @param billingDonorHostId the value to set
          * @return this builder
@@ -107,6 +119,42 @@ public final class UpdateEsxiHostDetails
         public Builder billingDonorHostId(String billingDonorHostId) {
             this.billingDonorHostId = billingDonorHostId;
             this.__explicitlySet__.add("billingDonorHostId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vcfByolAllocationId")
+        private String vcfByolAllocationId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+         *
+         * @param vcfByolAllocationId the value to set
+         * @return this builder
+         **/
+        public Builder vcfByolAllocationId(String vcfByolAllocationId) {
+            this.vcfByolAllocationId = vcfByolAllocationId;
+            this.__explicitlySet__.add("vcfByolAllocationId");
+            return this;
+        }
+        /**
+         * Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isVsanByolEnabled")
+        private Boolean isVsanByolEnabled;
+
+        /**
+         * Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+         *
+         * @param isVsanByolEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isVsanByolEnabled(Boolean isVsanByolEnabled) {
+            this.isVsanByolEnabled = isVsanByolEnabled;
+            this.__explicitlySet__.add("isVsanByolEnabled");
             return this;
         }
         /**
@@ -168,6 +216,8 @@ public final class UpdateEsxiHostDetails
                             this.displayName,
                             this.nextCommitment,
                             this.billingDonorHostId,
+                            this.vcfByolAllocationId,
+                            this.isVsanByolEnabled,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -186,6 +236,12 @@ public final class UpdateEsxiHostDetails
             }
             if (model.wasPropertyExplicitlySet("billingDonorHostId")) {
                 this.billingDonorHostId(model.getBillingDonorHostId());
+            }
+            if (model.wasPropertyExplicitlySet("vcfByolAllocationId")) {
+                this.vcfByolAllocationId(model.getVcfByolAllocationId());
+            }
+            if (model.wasPropertyExplicitlySet("isVsanByolEnabled")) {
+                this.isVsanByolEnabled(model.getIsVsanByolEnabled());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -210,7 +266,7 @@ public final class UpdateEsxiHostDetails
 
     /**
      * A descriptive name for the ESXi host. It's changeable.
-     * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+     * Esxi Host name requirements are 1-25 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      * <p>
      * Avoid entering confidential information.
      *
@@ -220,7 +276,7 @@ public final class UpdateEsxiHostDetails
 
     /**
      * A descriptive name for the ESXi host. It's changeable.
-     * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+     * Esxi Host name requirements are 1-25 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      * <p>
      * Avoid entering confidential information.
      *
@@ -251,19 +307,57 @@ public final class UpdateEsxiHostDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with leftover billing cycle.
+     * <p>
+     **Note:** This option also requires the {@code nextCommitment} parameter to be populated with a value other than {@code HOUR}. Otherwise,
+     * any update request fails with the error \u201CNext SKU can\u2019t be NULL or Hourly.\u201D
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("billingDonorHostId")
     private final String billingDonorHostId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with leftover billing cycle.
+     * <p>
+     **Note:** This option also requires the {@code nextCommitment} parameter to be populated with a value other than {@code HOUR}. Otherwise,
+     * any update request fails with the error \u201CNext SKU can\u2019t be NULL or Hourly.\u201D
      *
      * @return the value
      **/
     public String getBillingDonorHostId() {
         return billingDonorHostId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vcfByolAllocationId")
+    private final String vcfByolAllocationId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     *
+     * @return the value
+     **/
+    public String getVcfByolAllocationId() {
+        return vcfByolAllocationId;
+    }
+
+    /**
+     * Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isVsanByolEnabled")
+    private final Boolean isVsanByolEnabled;
+
+    /**
+     * Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     *
+     * @return the value
+     **/
+    public Boolean getIsVsanByolEnabled() {
+        return isVsanByolEnabled;
     }
 
     /**
@@ -327,6 +421,8 @@ public final class UpdateEsxiHostDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", nextCommitment=").append(String.valueOf(this.nextCommitment));
         sb.append(", billingDonorHostId=").append(String.valueOf(this.billingDonorHostId));
+        sb.append(", vcfByolAllocationId=").append(String.valueOf(this.vcfByolAllocationId));
+        sb.append(", isVsanByolEnabled=").append(String.valueOf(this.isVsanByolEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -346,6 +442,8 @@ public final class UpdateEsxiHostDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.nextCommitment, other.nextCommitment)
                 && java.util.Objects.equals(this.billingDonorHostId, other.billingDonorHostId)
+                && java.util.Objects.equals(this.vcfByolAllocationId, other.vcfByolAllocationId)
+                && java.util.Objects.equals(this.isVsanByolEnabled, other.isVsanByolEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -364,6 +462,14 @@ public final class UpdateEsxiHostDetails
                         + (this.billingDonorHostId == null
                                 ? 43
                                 : this.billingDonorHostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vcfByolAllocationId == null
+                                ? 43
+                                : this.vcfByolAllocationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isVsanByolEnabled == null ? 43 : this.isVsanByolEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

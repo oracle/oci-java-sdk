@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -25,7 +25,6 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
         "displayName",
         "freeformTags",
         "ipAddress",
-        "cpeDeviceShapeId",
         "isPrivate"
     })
     public CreateCpeDetails(
@@ -34,7 +33,6 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
             String displayName,
             java.util.Map<String, String> freeformTags,
             String ipAddress,
-            String cpeDeviceShapeId,
             Boolean isPrivate) {
         super();
         this.compartmentId = compartmentId;
@@ -42,7 +40,6 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.ipAddress = ipAddress;
-        this.cpeDeviceShapeId = cpeDeviceShapeId;
         this.isPrivate = isPrivate;
     }
 
@@ -148,46 +145,6 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
-         * a value if you want to later generate CPE device configuration content for IPSec connections
-         * that use this CPE. You can also call {@link #updateCpe(UpdateCpeRequest) updateCpe} later to
-         * provide a value. For a list of possible values, see
-         * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
-         * <p>
-         * For more information about generating CPE device configuration content, see:
-         * <p>
-         * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
-         *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
-         *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
-         *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
-        private String cpeDeviceShapeId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
-         * a value if you want to later generate CPE device configuration content for IPSec connections
-         * that use this CPE. You can also call {@link #updateCpe(UpdateCpeRequest) updateCpe} later to
-         * provide a value. For a list of possible values, see
-         * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
-         * <p>
-         * For more information about generating CPE device configuration content, see:
-         * <p>
-         * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
-         *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
-         *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
-         *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
-         *
-         * @param cpeDeviceShapeId the value to set
-         * @return this builder
-         **/
-        public Builder cpeDeviceShapeId(String cpeDeviceShapeId) {
-            this.cpeDeviceShapeId = cpeDeviceShapeId;
-            this.__explicitlySet__.add("cpeDeviceShapeId");
-            return this;
-        }
-        /**
          * Indicates whether this CPE is of type {@code private} or not.
          *
          **/
@@ -217,7 +174,6 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
                             this.displayName,
                             this.freeformTags,
                             this.ipAddress,
-                            this.cpeDeviceShapeId,
                             this.isPrivate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -241,9 +197,6 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
-            }
-            if (model.wasPropertyExplicitlySet("cpeDeviceShapeId")) {
-                this.cpeDeviceShapeId(model.getCpeDeviceShapeId());
             }
             if (model.wasPropertyExplicitlySet("isPrivate")) {
                 this.isPrivate(model.getIsPrivate());
@@ -352,44 +305,6 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
-     * a value if you want to later generate CPE device configuration content for IPSec connections
-     * that use this CPE. You can also call {@link #updateCpe(UpdateCpeRequest) updateCpe} later to
-     * provide a value. For a list of possible values, see
-     * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
-     * <p>
-     * For more information about generating CPE device configuration content, see:
-     * <p>
-     * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
-     *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
-     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
-     *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
-    private final String cpeDeviceShapeId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
-     * a value if you want to later generate CPE device configuration content for IPSec connections
-     * that use this CPE. You can also call {@link #updateCpe(UpdateCpeRequest) updateCpe} later to
-     * provide a value. For a list of possible values, see
-     * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
-     * <p>
-     * For more information about generating CPE device configuration content, see:
-     * <p>
-     * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
-     *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
-     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
-     *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
-     *
-     * @return the value
-     **/
-    public String getCpeDeviceShapeId() {
-        return cpeDeviceShapeId;
-    }
-
-    /**
      * Indicates whether this CPE is of type {@code private} or not.
      *
      **/
@@ -424,7 +339,6 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
-        sb.append(", cpeDeviceShapeId=").append(String.valueOf(this.cpeDeviceShapeId));
         sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
         sb.append(")");
         return sb.toString();
@@ -445,7 +359,6 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
-                && java.util.Objects.equals(this.cpeDeviceShapeId, other.cpeDeviceShapeId)
                 && java.util.Objects.equals(this.isPrivate, other.isPrivate)
                 && super.equals(other);
     }
@@ -461,9 +374,6 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.cpeDeviceShapeId == null ? 43 : this.cpeDeviceShapeId.hashCode());
         result = (result * PRIME) + (this.isPrivate == null ? 43 : this.isPrivate.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -43,6 +43,15 @@ public final class TcpService extends Service {
             this.__explicitlySet__.add("parentResourceId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
         /**
          * List of port-ranges used.
          **/
@@ -64,7 +73,9 @@ public final class TcpService extends Service {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TcpService build() {
-            TcpService model = new TcpService(this.name, this.parentResourceId, this.portRanges);
+            TcpService model =
+                    new TcpService(
+                            this.name, this.parentResourceId, this.description, this.portRanges);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +89,9 @@ public final class TcpService extends Service {
             }
             if (model.wasPropertyExplicitlySet("parentResourceId")) {
                 this.parentResourceId(model.getParentResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("portRanges")) {
                 this.portRanges(model.getPortRanges());
@@ -98,8 +112,12 @@ public final class TcpService extends Service {
     }
 
     @Deprecated
-    public TcpService(String name, String parentResourceId, java.util.List<PortRange> portRanges) {
-        super(name, parentResourceId);
+    public TcpService(
+            String name,
+            String parentResourceId,
+            String description,
+            java.util.List<PortRange> portRanges) {
+        super(name, parentResourceId, description);
         this.portRanges = portRanges;
     }
 

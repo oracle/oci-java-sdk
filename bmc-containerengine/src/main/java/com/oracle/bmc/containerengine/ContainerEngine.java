@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine;
@@ -233,6 +233,21 @@ public interface ContainerEngine extends AutoCloseable {
     DisableAddonResponse disableAddon(DisableAddonRequest request);
 
     /**
+     * Extend the rollback deadline of public api endpoint decommission for a cluster.
+     * The operation can only be performed within decommission rollback deadline.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ExtendEndpointDecommissionRollbackDeadlineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExtendEndpointDecommissionRollbackDeadline API.
+     */
+    ExtendEndpointDecommissionRollbackDeadlineResponse extendEndpointDecommissionRollbackDeadline(
+            ExtendEndpointDecommissionRollbackDeadlineRequest request);
+
+    /**
      * Get the specified addon for a cluster.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -317,6 +332,19 @@ public interface ContainerEngine extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetNodePoolOptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNodePoolOptions API.
      */
     GetNodePoolOptionsResponse getNodePoolOptions(GetNodePoolOptionsRequest request);
+
+    /**
+     * Get cluster public api endpoint decommission status.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetPublicApiEndpointDecommissionStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublicApiEndpointDecommissionStatus API.
+     */
+    GetPublicApiEndpointDecommissionStatusResponse getPublicApiEndpointDecommissionStatus(
+            GetPublicApiEndpointDecommissionStatusRequest request);
 
     /**
      * Get the details of a virtual node.
@@ -511,6 +539,46 @@ public interface ContainerEngine extends AutoCloseable {
     ListWorkloadMappingsResponse listWorkloadMappings(ListWorkloadMappingsRequest request);
 
     /**
+     * perform reboot action to node in cluster
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/RebootClusterNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RebootClusterNode API.
+     */
+    RebootClusterNodeResponse rebootClusterNode(RebootClusterNodeRequest request);
+
+    /**
+     * perform cycle action to node in cluster
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ReplaceBootVolumeClusterNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReplaceBootVolumeClusterNode API.
+     */
+    ReplaceBootVolumeClusterNodeResponse replaceBootVolumeClusterNode(
+            ReplaceBootVolumeClusterNodeRequest request);
+
+    /**
+     * Rollback public api endpoint decommission for a cluster, legacy kubernetes endpoint will be brought back once the operation is completed.
+     * The operation can only be performed within decommission rollback deadline.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/RollbackPublicApiEndpointDecommissionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RollbackPublicApiEndpointDecommission API.
+     */
+    RollbackPublicApiEndpointDecommissionResponse rollbackPublicApiEndpointDecommission(
+            RollbackPublicApiEndpointDecommissionRequest request);
+
+    /**
      * Start cluster credential rotation by adding new credentials, old credentials will still work after this operation.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -521,6 +589,19 @@ public interface ContainerEngine extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/StartCredentialRotationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartCredentialRotation API.
      */
     StartCredentialRotationResponse startCredentialRotation(StartCredentialRotationRequest request);
+
+    /**
+     * Start public api endpoint decommission for a cluster, legacy kubernetes endpoint will no longer available after this operation.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/StartPublicApiEndpointDecommissionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartPublicApiEndpointDecommission API.
+     */
+    StartPublicApiEndpointDecommissionResponse startPublicApiEndpointDecommission(
+            StartPublicApiEndpointDecommissionRequest request);
 
     /**
      * Update addon details for a cluster.

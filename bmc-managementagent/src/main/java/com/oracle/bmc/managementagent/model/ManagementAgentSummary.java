@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.managementagent.model;
@@ -44,9 +44,11 @@ public final class ManagementAgentSummary
         "lifecycleDetails",
         "isCustomerDeployed",
         "installType",
+        "latestSupportedVersion",
         "dataSourceSummaryList",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     public ManagementAgentSummary(
             String id,
@@ -70,9 +72,11 @@ public final class ManagementAgentSummary
             String lifecycleDetails,
             Boolean isCustomerDeployed,
             InstallTypes installType,
+            String latestSupportedVersion,
             java.util.List<DataSourceSummaryItem> dataSourceSummaryList,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.installKeyId = installKeyId;
@@ -95,9 +99,11 @@ public final class ManagementAgentSummary
         this.lifecycleDetails = lifecycleDetails;
         this.isCustomerDeployed = isCustomerDeployed;
         this.installType = installType;
+        this.latestSupportedVersion = latestSupportedVersion;
         this.dataSourceSummaryList = dataSourceSummaryList;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -449,6 +455,22 @@ public final class ManagementAgentSummary
             return this;
         }
         /**
+         * The latest supported management agent version
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("latestSupportedVersion")
+        private String latestSupportedVersion;
+
+        /**
+         * The latest supported management agent version
+         * @param latestSupportedVersion the value to set
+         * @return this builder
+         **/
+        public Builder latestSupportedVersion(String latestSupportedVersion) {
+            this.latestSupportedVersion = latestSupportedVersion;
+            this.__explicitlySet__.add("latestSupportedVersion");
+            return this;
+        }
+        /**
          * list of dataSources summaries associated with the agent
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataSourceSummaryList")
@@ -506,6 +528,26 @@ public final class ManagementAgentSummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -534,9 +576,11 @@ public final class ManagementAgentSummary
                             this.lifecycleDetails,
                             this.isCustomerDeployed,
                             this.installType,
+                            this.latestSupportedVersion,
                             this.dataSourceSummaryList,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -608,6 +652,9 @@ public final class ManagementAgentSummary
             if (model.wasPropertyExplicitlySet("installType")) {
                 this.installType(model.getInstallType());
             }
+            if (model.wasPropertyExplicitlySet("latestSupportedVersion")) {
+                this.latestSupportedVersion(model.getLatestSupportedVersion());
+            }
             if (model.wasPropertyExplicitlySet("dataSourceSummaryList")) {
                 this.dataSourceSummaryList(model.getDataSourceSummaryList());
             }
@@ -616,6 +663,9 @@ public final class ManagementAgentSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -937,6 +987,20 @@ public final class ManagementAgentSummary
     }
 
     /**
+     * The latest supported management agent version
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("latestSupportedVersion")
+    private final String latestSupportedVersion;
+
+    /**
+     * The latest supported management agent version
+     * @return the value
+     **/
+    public String getLatestSupportedVersion() {
+        return latestSupportedVersion;
+    }
+
+    /**
      * list of dataSources summaries associated with the agent
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataSourceSummaryList")
@@ -986,6 +1050,24 @@ public final class ManagementAgentSummary
         return definedTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1022,9 +1104,11 @@ public final class ManagementAgentSummary
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", isCustomerDeployed=").append(String.valueOf(this.isCustomerDeployed));
         sb.append(", installType=").append(String.valueOf(this.installType));
+        sb.append(", latestSupportedVersion=").append(String.valueOf(this.latestSupportedVersion));
         sb.append(", dataSourceSummaryList=").append(String.valueOf(this.dataSourceSummaryList));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -1061,9 +1145,12 @@ public final class ManagementAgentSummary
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.isCustomerDeployed, other.isCustomerDeployed)
                 && java.util.Objects.equals(this.installType, other.installType)
+                && java.util.Objects.equals(
+                        this.latestSupportedVersion, other.latestSupportedVersion)
                 && java.util.Objects.equals(this.dataSourceSummaryList, other.dataSourceSummaryList)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -1120,11 +1207,17 @@ public final class ManagementAgentSummary
         result = (result * PRIME) + (this.installType == null ? 43 : this.installType.hashCode());
         result =
                 (result * PRIME)
+                        + (this.latestSupportedVersion == null
+                                ? 43
+                                : this.latestSupportedVersion.hashCode());
+        result =
+                (result * PRIME)
                         + (this.dataSourceSummaryList == null
                                 ? 43
                                 : this.dataSourceSummaryList.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

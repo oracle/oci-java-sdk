@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops;
@@ -7,6 +7,8 @@ package com.oracle.bmc.devops;
 import com.oracle.bmc.devops.internal.http.*;
 import com.oracle.bmc.devops.requests.*;
 import com.oracle.bmc.devops.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for Devops service. <br/>
@@ -28,7 +30,7 @@ public class DevopsAsyncClient implements DevopsAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DEVOPS")
+                    .serviceName(DevopsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://devops.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class DevopsAsyncClient implements DevopsAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -406,12 +417,21 @@ public class DevopsAsyncClient implements DevopsAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -441,15 +461,7 @@ public class DevopsAsyncClient implements DevopsAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -3509,59 +3521,6 @@ public class DevopsAsyncClient implements DevopsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<GetPullRequestChangeSummaryMetricsResponse>
-            getPullRequestChangeSummaryMetrics(
-                    GetPullRequestChangeSummaryMetricsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetPullRequestChangeSummaryMetricsRequest,
-                                    GetPullRequestChangeSummaryMetricsResponse>
-                            handler) {
-        LOG.trace("Called async getPullRequestChangeSummaryMetrics");
-        final GetPullRequestChangeSummaryMetricsRequest interceptedRequest =
-                GetPullRequestChangeSummaryMetricsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPullRequestChangeSummaryMetricsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Devops",
-                        "GetPullRequestChangeSummaryMetrics",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/GetPullRequestChangeSummaryMetrics");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetPullRequestChangeSummaryMetricsResponse>
-                transformer =
-                        GetPullRequestChangeSummaryMetricsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetPullRequestChangeSummaryMetricsRequest,
-                        GetPullRequestChangeSummaryMetricsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetPullRequestChangeSummaryMetricsRequest,
-                                GetPullRequestChangeSummaryMetricsResponse>,
-                        java.util.concurrent.Future<GetPullRequestChangeSummaryMetricsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetPullRequestChangeSummaryMetricsRequest,
-                    GetPullRequestChangeSummaryMetricsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
     public java.util.concurrent.Future<GetPullRequestCommentResponse> getPullRequestComment(
             GetPullRequestCommentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5244,104 +5203,6 @@ public class DevopsAsyncClient implements DevopsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<ListPullRequestCommitsResponse> listPullRequestCommits(
-            ListPullRequestCommitsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListPullRequestCommitsRequest, ListPullRequestCommitsResponse>
-                    handler) {
-        LOG.trace("Called async listPullRequestCommits");
-        final ListPullRequestCommitsRequest interceptedRequest =
-                ListPullRequestCommitsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPullRequestCommitsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Devops",
-                        "ListPullRequestCommits",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestCommits");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListPullRequestCommitsResponse>
-                transformer =
-                        ListPullRequestCommitsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListPullRequestCommitsRequest, ListPullRequestCommitsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListPullRequestCommitsRequest, ListPullRequestCommitsResponse>,
-                        java.util.concurrent.Future<ListPullRequestCommitsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListPullRequestCommitsRequest, ListPullRequestCommitsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListPullRequestFileChangesResponse>
-            listPullRequestFileChanges(
-                    ListPullRequestFileChangesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListPullRequestFileChangesRequest,
-                                    ListPullRequestFileChangesResponse>
-                            handler) {
-        LOG.trace("Called async listPullRequestFileChanges");
-        final ListPullRequestFileChangesRequest interceptedRequest =
-                ListPullRequestFileChangesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPullRequestFileChangesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Devops",
-                        "ListPullRequestFileChanges",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestFileChanges");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListPullRequestFileChangesResponse>
-                transformer =
-                        ListPullRequestFileChangesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListPullRequestFileChangesRequest, ListPullRequestFileChangesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListPullRequestFileChangesRequest,
-                                ListPullRequestFileChangesResponse>,
-                        java.util.concurrent.Future<ListPullRequestFileChangesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListPullRequestFileChangesRequest, ListPullRequestFileChangesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
     public java.util.concurrent.Future<ListPullRequestsResponse> listPullRequests(
             ListPullRequestsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6219,6 +6080,60 @@ public class DevopsAsyncClient implements DevopsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     SyncRepositoryRequest, SyncRepositoryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<TriggerDeploymentDryRunResponse> triggerDeploymentDryRun(
+            TriggerDeploymentDryRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            TriggerDeploymentDryRunRequest, TriggerDeploymentDryRunResponse>
+                    handler) {
+        LOG.trace("Called async triggerDeploymentDryRun");
+        final TriggerDeploymentDryRunRequest interceptedRequest =
+                TriggerDeploymentDryRunConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TriggerDeploymentDryRunConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "TriggerDeploymentDryRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/TriggerDryRunResult/TriggerDeploymentDryRun");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, TriggerDeploymentDryRunResponse>
+                transformer =
+                        TriggerDeploymentDryRunConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        TriggerDeploymentDryRunRequest, TriggerDeploymentDryRunResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                TriggerDeploymentDryRunRequest, TriggerDeploymentDryRunResponse>,
+                        java.util.concurrent.Future<TriggerDeploymentDryRunResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getTriggerDeploymentDryRunDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    TriggerDeploymentDryRunRequest, TriggerDeploymentDryRunResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

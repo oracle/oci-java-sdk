@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -195,6 +195,38 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
         /**
+         * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+         * @param computeModel the value to set
+         * @return this builder
+         **/
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
+         * The number of compute servers for the DB system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Integer computeCount;
+
+        /**
+         * The number of compute servers for the DB system.
+         * @param computeCount the value to set
+         * @return this builder
+         **/
+        public Builder computeCount(Integer computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+        /**
          * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
          *
          **/
@@ -245,7 +277,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -254,7 +286,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -427,14 +459,14 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
         /**
-         * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+         * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+         * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
          *
          * @param licenseModel the value to set
          * @return this builder
@@ -566,6 +598,38 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -586,6 +650,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                             this.shape,
                             this.cpuCoreCount,
                             this.storageVolumePerformanceMode,
+                            this.computeModel,
+                            this.computeCount,
                             this.nodeCount,
                             this.subnetId,
                             this.nsgIds,
@@ -602,7 +668,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                             this.dbSystemSecurityAttributes,
                             this.databaseFreeformTags,
                             this.databaseDefinedTags,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.clusterPlacementGroupId,
+                            this.subscriptionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -650,6 +718,12 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("storageVolumePerformanceMode")) {
                 this.storageVolumePerformanceMode(model.getStorageVolumePerformanceMode());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
             }
             if (model.wasPropertyExplicitlySet("nodeCount")) {
                 this.nodeCount(model.getNodeCount());
@@ -702,6 +776,12 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
             }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             return this;
         }
     }
@@ -732,6 +812,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             String shape,
             Integer cpuCoreCount,
             StorageVolumePerformanceMode storageVolumePerformanceMode,
+            ComputeModel computeModel,
+            Integer computeCount,
             Integer nodeCount,
             String subnetId,
             java.util.List<String> nsgIds,
@@ -748,7 +830,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             java.util.Map<String, java.util.Map<String, Object>> dbSystemSecurityAttributes,
             java.util.Map<String, String> databaseFreeformTags,
             java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            String clusterPlacementGroupId,
+            String subscriptionId) {
         super(
                 databaseSoftwareImageId,
                 databaseAdminPassword,
@@ -763,6 +847,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         this.shape = shape;
         this.cpuCoreCount = cpuCoreCount;
         this.storageVolumePerformanceMode = storageVolumePerformanceMode;
+        this.computeModel = computeModel;
+        this.computeCount = computeCount;
         this.nodeCount = nodeCount;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
@@ -780,6 +866,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         this.databaseFreeformTags = databaseFreeformTags;
         this.databaseDefinedTags = databaseDefinedTags;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.subscriptionId = subscriptionId;
     }
 
     /**
@@ -899,6 +987,69 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     }
 
     /**
+     * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     **/
+    public enum ComputeModel {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ComputeModel: " + key);
+        }
+    };
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * @return the value
+     **/
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /**
+     * The number of compute servers for the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Integer computeCount;
+
+    /**
+     * The number of compute servers for the DB system.
+     * @return the value
+     **/
+    public Integer getComputeCount() {
+        return computeCount;
+    }
+
+    /**
      * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
      *
      **/
@@ -945,7 +1096,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -954,7 +1105,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
      **/
@@ -1111,7 +1262,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     }
 
     /**
-     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      *
      **/
     public enum LicenseModel {
@@ -1147,14 +1298,14 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         }
     };
     /**
-     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      *
      * @return the value
      **/
@@ -1269,6 +1420,34 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         return dataCollectionOptions;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1289,6 +1468,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", storageVolumePerformanceMode=")
                 .append(String.valueOf(this.storageVolumePerformanceMode));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
@@ -1307,6 +1488,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         sb.append(", databaseFreeformTags=").append(String.valueOf(this.databaseFreeformTags));
         sb.append(", databaseDefinedTags=").append(String.valueOf(this.databaseDefinedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(")");
         return sb.toString();
     }
@@ -1328,6 +1512,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(
                         this.storageVolumePerformanceMode, other.storageVolumePerformanceMode)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
@@ -1346,6 +1532,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                 && java.util.Objects.equals(this.databaseFreeformTags, other.databaseFreeformTags)
                 && java.util.Objects.equals(this.databaseDefinedTags, other.databaseDefinedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && super.equals(other);
     }
 
@@ -1366,6 +1555,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                         + (this.storageVolumePerformanceMode == null
                                 ? 43
                                 : this.storageVolumePerformanceMode.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
@@ -1411,6 +1602,14 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         return result;
     }
 }

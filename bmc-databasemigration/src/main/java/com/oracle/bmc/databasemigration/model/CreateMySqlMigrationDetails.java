@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -97,6 +97,15 @@ public final class CreateMySqlMigrationDetails extends CreateMigrationDetails {
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("assessmentId")
+        private String assessmentId;
+
+        public Builder assessmentId(String assessmentId) {
+            this.assessmentId = assessmentId;
+            this.__explicitlySet__.add("assessmentId");
             return this;
         }
 
@@ -214,6 +223,7 @@ public final class CreateMySqlMigrationDetails extends CreateMigrationDetails {
                             this.targetDatabaseConnectionId,
                             this.freeformTags,
                             this.definedTags,
+                            this.assessmentId,
                             this.dataTransferMediumDetails,
                             this.initialLoadSettings,
                             this.advisorSettings,
@@ -253,6 +263,9 @@ public final class CreateMySqlMigrationDetails extends CreateMigrationDetails {
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("assessmentId")) {
+                this.assessmentId(model.getAssessmentId());
             }
             if (model.wasPropertyExplicitlySet("dataTransferMediumDetails")) {
                 this.dataTransferMediumDetails(model.getDataTransferMediumDetails());
@@ -303,6 +316,7 @@ public final class CreateMySqlMigrationDetails extends CreateMigrationDetails {
             String targetDatabaseConnectionId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String assessmentId,
             CreateMySqlDataTransferMediumDetails dataTransferMediumDetails,
             CreateMySqlInitialLoadSettings initialLoadSettings,
             CreateMySqlAdvisorSettings advisorSettings,
@@ -319,7 +333,8 @@ public final class CreateMySqlMigrationDetails extends CreateMigrationDetails {
                 sourceDatabaseConnectionId,
                 targetDatabaseConnectionId,
                 freeformTags,
-                definedTags);
+                definedTags,
+                assessmentId);
         this.dataTransferMediumDetails = dataTransferMediumDetails;
         this.initialLoadSettings = initialLoadSettings;
         this.advisorSettings = advisorSettings;

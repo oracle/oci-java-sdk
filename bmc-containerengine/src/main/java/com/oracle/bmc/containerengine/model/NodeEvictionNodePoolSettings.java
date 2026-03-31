@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.model;
@@ -22,12 +22,19 @@ package com.oracle.bmc.containerengine.model;
 public final class NodeEvictionNodePoolSettings
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"evictionGraceDuration", "isForceDeleteAfterGraceDuration"})
+    @java.beans.ConstructorProperties({
+        "evictionGraceDuration",
+        "isForceDeleteAfterGraceDuration",
+        "isForceActionAfterGraceDuration"
+    })
     public NodeEvictionNodePoolSettings(
-            String evictionGraceDuration, Boolean isForceDeleteAfterGraceDuration) {
+            String evictionGraceDuration,
+            Boolean isForceDeleteAfterGraceDuration,
+            Boolean isForceActionAfterGraceDuration) {
         super();
         this.evictionGraceDuration = evictionGraceDuration;
         this.isForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;
+        this.isForceActionAfterGraceDuration = isForceActionAfterGraceDuration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -68,6 +75,22 @@ public final class NodeEvictionNodePoolSettings
             this.__explicitlySet__.add("isForceDeleteAfterGraceDuration");
             return this;
         }
+        /**
+         * If the node action should be performed if not all the pods can be evicted in the grace period
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isForceActionAfterGraceDuration")
+        private Boolean isForceActionAfterGraceDuration;
+
+        /**
+         * If the node action should be performed if not all the pods can be evicted in the grace period
+         * @param isForceActionAfterGraceDuration the value to set
+         * @return this builder
+         **/
+        public Builder isForceActionAfterGraceDuration(Boolean isForceActionAfterGraceDuration) {
+            this.isForceActionAfterGraceDuration = isForceActionAfterGraceDuration;
+            this.__explicitlySet__.add("isForceActionAfterGraceDuration");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -75,7 +98,9 @@ public final class NodeEvictionNodePoolSettings
         public NodeEvictionNodePoolSettings build() {
             NodeEvictionNodePoolSettings model =
                     new NodeEvictionNodePoolSettings(
-                            this.evictionGraceDuration, this.isForceDeleteAfterGraceDuration);
+                            this.evictionGraceDuration,
+                            this.isForceDeleteAfterGraceDuration,
+                            this.isForceActionAfterGraceDuration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -89,6 +114,9 @@ public final class NodeEvictionNodePoolSettings
             }
             if (model.wasPropertyExplicitlySet("isForceDeleteAfterGraceDuration")) {
                 this.isForceDeleteAfterGraceDuration(model.getIsForceDeleteAfterGraceDuration());
+            }
+            if (model.wasPropertyExplicitlySet("isForceActionAfterGraceDuration")) {
+                this.isForceActionAfterGraceDuration(model.getIsForceActionAfterGraceDuration());
             }
             return this;
         }
@@ -137,6 +165,20 @@ public final class NodeEvictionNodePoolSettings
         return isForceDeleteAfterGraceDuration;
     }
 
+    /**
+     * If the node action should be performed if not all the pods can be evicted in the grace period
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isForceActionAfterGraceDuration")
+    private final Boolean isForceActionAfterGraceDuration;
+
+    /**
+     * If the node action should be performed if not all the pods can be evicted in the grace period
+     * @return the value
+     **/
+    public Boolean getIsForceActionAfterGraceDuration() {
+        return isForceActionAfterGraceDuration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -154,6 +196,8 @@ public final class NodeEvictionNodePoolSettings
         sb.append("evictionGraceDuration=").append(String.valueOf(this.evictionGraceDuration));
         sb.append(", isForceDeleteAfterGraceDuration=")
                 .append(String.valueOf(this.isForceDeleteAfterGraceDuration));
+        sb.append(", isForceActionAfterGraceDuration=")
+                .append(String.valueOf(this.isForceActionAfterGraceDuration));
         sb.append(")");
         return sb.toString();
     }
@@ -171,6 +215,8 @@ public final class NodeEvictionNodePoolSettings
         return java.util.Objects.equals(this.evictionGraceDuration, other.evictionGraceDuration)
                 && java.util.Objects.equals(
                         this.isForceDeleteAfterGraceDuration, other.isForceDeleteAfterGraceDuration)
+                && java.util.Objects.equals(
+                        this.isForceActionAfterGraceDuration, other.isForceActionAfterGraceDuration)
                 && super.equals(other);
     }
 
@@ -188,6 +234,11 @@ public final class NodeEvictionNodePoolSettings
                         + (this.isForceDeleteAfterGraceDuration == null
                                 ? 43
                                 : this.isForceDeleteAfterGraceDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isForceActionAfterGraceDuration == null
+                                ? 43
+                                : this.isForceActionAfterGraceDuration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

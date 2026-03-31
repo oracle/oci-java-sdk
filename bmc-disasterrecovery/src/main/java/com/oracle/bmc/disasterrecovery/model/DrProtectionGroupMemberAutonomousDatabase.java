@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -85,6 +85,15 @@ public final class DrProtectionGroupMemberAutonomousDatabase extends DrProtectio
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationEncryptionKey")
+        private VaultAndEncryptionKey destinationEncryptionKey;
+
+        public Builder destinationEncryptionKey(VaultAndEncryptionKey destinationEncryptionKey) {
+            this.destinationEncryptionKey = destinationEncryptionKey;
+            this.__explicitlySet__.add("destinationEncryptionKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -93,7 +102,8 @@ public final class DrProtectionGroupMemberAutonomousDatabase extends DrProtectio
                     new DrProtectionGroupMemberAutonomousDatabase(
                             this.memberId,
                             this.autonomousDatabaseStandbyTypeForDrDrills,
-                            this.passwordVaultSecretId);
+                            this.passwordVaultSecretId,
+                            this.destinationEncryptionKey);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -111,6 +121,9 @@ public final class DrProtectionGroupMemberAutonomousDatabase extends DrProtectio
             }
             if (model.wasPropertyExplicitlySet("passwordVaultSecretId")) {
                 this.passwordVaultSecretId(model.getPasswordVaultSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("destinationEncryptionKey")) {
+                this.destinationEncryptionKey(model.getDestinationEncryptionKey());
             }
             return this;
         }
@@ -131,10 +144,12 @@ public final class DrProtectionGroupMemberAutonomousDatabase extends DrProtectio
     public DrProtectionGroupMemberAutonomousDatabase(
             String memberId,
             AutonomousDatabaseStandbyTypeForDrDrills autonomousDatabaseStandbyTypeForDrDrills,
-            String passwordVaultSecretId) {
+            String passwordVaultSecretId,
+            VaultAndEncryptionKey destinationEncryptionKey) {
         super(memberId);
         this.autonomousDatabaseStandbyTypeForDrDrills = autonomousDatabaseStandbyTypeForDrDrills;
         this.passwordVaultSecretId = passwordVaultSecretId;
+        this.destinationEncryptionKey = destinationEncryptionKey;
     }
 
     /**
@@ -179,6 +194,13 @@ public final class DrProtectionGroupMemberAutonomousDatabase extends DrProtectio
         return passwordVaultSecretId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationEncryptionKey")
+    private final VaultAndEncryptionKey destinationEncryptionKey;
+
+    public VaultAndEncryptionKey getDestinationEncryptionKey() {
+        return destinationEncryptionKey;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -196,6 +218,8 @@ public final class DrProtectionGroupMemberAutonomousDatabase extends DrProtectio
         sb.append(", autonomousDatabaseStandbyTypeForDrDrills=")
                 .append(String.valueOf(this.autonomousDatabaseStandbyTypeForDrDrills));
         sb.append(", passwordVaultSecretId=").append(String.valueOf(this.passwordVaultSecretId));
+        sb.append(", destinationEncryptionKey=")
+                .append(String.valueOf(this.destinationEncryptionKey));
         sb.append(")");
         return sb.toString();
     }
@@ -215,6 +239,8 @@ public final class DrProtectionGroupMemberAutonomousDatabase extends DrProtectio
                         this.autonomousDatabaseStandbyTypeForDrDrills,
                         other.autonomousDatabaseStandbyTypeForDrDrills)
                 && java.util.Objects.equals(this.passwordVaultSecretId, other.passwordVaultSecretId)
+                && java.util.Objects.equals(
+                        this.destinationEncryptionKey, other.destinationEncryptionKey)
                 && super.equals(other);
     }
 
@@ -232,6 +258,11 @@ public final class DrProtectionGroupMemberAutonomousDatabase extends DrProtectio
                         + (this.passwordVaultSecretId == null
                                 ? 43
                                 : this.passwordVaultSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationEncryptionKey == null
+                                ? 43
+                                : this.destinationEncryptionKey.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -142,6 +142,17 @@ public class ListSecurityPoliciesRequest
      */
     public com.oracle.bmc.datasafe.model.SecurityPolicyLifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+    /**
+     * The type of the security policy.
+     */
+    private com.oracle.bmc.datasafe.model.SecurityPolicy.SecurityPolicyType securityPolicyType;
+
+    /**
+     * The type of the security policy.
+     */
+    public com.oracle.bmc.datasafe.model.SecurityPolicy.SecurityPolicyType getSecurityPolicyType() {
+        return securityPolicyType;
     }
     /**
      * An optional filter to return only resources that match the specified OCID of the security policy resource.
@@ -397,6 +408,24 @@ public class ListSecurityPoliciesRequest
         }
 
         /**
+         * The type of the security policy.
+         */
+        private com.oracle.bmc.datasafe.model.SecurityPolicy.SecurityPolicyType securityPolicyType =
+                null;
+
+        /**
+         * The type of the security policy.
+         * @param securityPolicyType the value to set
+         * @return this builder instance
+         */
+        public Builder securityPolicyType(
+                com.oracle.bmc.datasafe.model.SecurityPolicy.SecurityPolicyType
+                        securityPolicyType) {
+            this.securityPolicyType = securityPolicyType;
+            return this;
+        }
+
+        /**
          * An optional filter to return only resources that match the specified OCID of the security policy resource.
          */
         private String securityPolicyId = null;
@@ -497,6 +526,7 @@ public class ListSecurityPoliciesRequest
             limit(o.getLimit());
             page(o.getPage());
             lifecycleState(o.getLifecycleState());
+            securityPolicyType(o.getSecurityPolicyType());
             securityPolicyId(o.getSecurityPolicyId());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
@@ -540,12 +570,13 @@ public class ListSecurityPoliciesRequest
             request.limit = limit;
             request.page = page;
             request.lifecycleState = lifecycleState;
+            request.securityPolicyType = securityPolicyType;
             request.securityPolicyId = securityPolicyId;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSecurityPoliciesRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, limit, page, lifecycleState, securityPolicyId, sortOrder, sortBy, opcRequestId);
+            // new ListSecurityPoliciesRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, limit, page, lifecycleState, securityPolicyType, securityPolicyId, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -562,6 +593,7 @@ public class ListSecurityPoliciesRequest
                 .limit(limit)
                 .page(page)
                 .lifecycleState(lifecycleState)
+                .securityPolicyType(securityPolicyType)
                 .securityPolicyId(securityPolicyId)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
@@ -588,6 +620,7 @@ public class ListSecurityPoliciesRequest
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",securityPolicyType=").append(String.valueOf(this.securityPolicyType));
         sb.append(",securityPolicyId=").append(String.valueOf(this.securityPolicyId));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
@@ -615,6 +648,7 @@ public class ListSecurityPoliciesRequest
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.securityPolicyType, other.securityPolicyType)
                 && java.util.Objects.equals(this.securityPolicyId, other.securityPolicyId)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
@@ -640,6 +674,11 @@ public class ListSecurityPoliciesRequest
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityPolicyType == null
+                                ? 43
+                                : this.securityPolicyType.hashCode());
         result =
                 (result * PRIME)
                         + (this.securityPolicyId == null ? 43 : this.securityPolicyId.hashCode());

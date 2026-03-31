@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The saved email recipient group to receive usage statement email.
+ * The saved email recipient group to receive usage statement emails.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -49,13 +49,13 @@ public final class CreateEmailRecipientsGroupDetails
             return this;
         }
         /**
-         * The list of recipient will receive the usage statement email.
+         * The list of recipients that will receive usage statement emails.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("recipientsList")
         private java.util.List<EmailRecipient> recipientsList;
 
         /**
-         * The list of recipient will receive the usage statement email.
+         * The list of recipients that will receive usage statement emails.
          * @param recipientsList the value to set
          * @return this builder
          **/
@@ -115,13 +115,13 @@ public final class CreateEmailRecipientsGroupDetails
     }
 
     /**
-     * The list of recipient will receive the usage statement email.
+     * The list of recipients that will receive usage statement emails.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recipientsList")
     private final java.util.List<EmailRecipient> recipientsList;
 
     /**
-     * The list of recipient will receive the usage statement email.
+     * The list of recipients that will receive usage statement emails.
      * @return the value
      **/
     public java.util.List<EmailRecipient> getRecipientsList() {

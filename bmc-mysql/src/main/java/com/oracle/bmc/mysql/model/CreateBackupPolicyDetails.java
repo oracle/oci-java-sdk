@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -25,6 +25,7 @@ public final class CreateBackupPolicyDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
+        "softDelete",
         "copyPolicies",
         "windowStartTime",
         "retentionInDays",
@@ -34,6 +35,7 @@ public final class CreateBackupPolicyDetails
     })
     public CreateBackupPolicyDetails(
             Boolean isEnabled,
+            SoftDelete softDelete,
             java.util.List<CopyPolicy> copyPolicies,
             String windowStartTime,
             Integer retentionInDays,
@@ -42,6 +44,7 @@ public final class CreateBackupPolicyDetails
             PitrPolicy pitrPolicy) {
         super();
         this.isEnabled = isEnabled;
+        this.softDelete = softDelete;
         this.copyPolicies = copyPolicies;
         this.windowStartTime = windowStartTime;
         this.retentionInDays = retentionInDays;
@@ -68,6 +71,26 @@ public final class CreateBackupPolicyDetails
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+         * state for 7 days before permanently deleting it.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+        private SoftDelete softDelete;
+
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+         * state for 7 days before permanently deleting it.
+         *
+         * @param softDelete the value to set
+         * @return this builder
+         **/
+        public Builder softDelete(SoftDelete softDelete) {
+            this.softDelete = softDelete;
+            this.__explicitlySet__.add("softDelete");
             return this;
         }
         /**
@@ -210,6 +233,7 @@ public final class CreateBackupPolicyDetails
             CreateBackupPolicyDetails model =
                     new CreateBackupPolicyDetails(
                             this.isEnabled,
+                            this.softDelete,
                             this.copyPolicies,
                             this.windowStartTime,
                             this.retentionInDays,
@@ -226,6 +250,9 @@ public final class CreateBackupPolicyDetails
         public Builder copy(CreateBackupPolicyDetails model) {
             if (model.wasPropertyExplicitlySet("isEnabled")) {
                 this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("softDelete")) {
+                this.softDelete(model.getSoftDelete());
             }
             if (model.wasPropertyExplicitlySet("copyPolicies")) {
                 this.copyPolicies(model.getCopyPolicies());
@@ -274,6 +301,24 @@ public final class CreateBackupPolicyDetails
      **/
     public Boolean getIsEnabled() {
         return isEnabled;
+    }
+
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+     * state for 7 days before permanently deleting it.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+    private final SoftDelete softDelete;
+
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+     * state for 7 days before permanently deleting it.
+     *
+     * @return the value
+     **/
+    public SoftDelete getSoftDelete() {
+        return softDelete;
     }
 
     /**
@@ -410,6 +455,7 @@ public final class CreateBackupPolicyDetails
         sb.append("CreateBackupPolicyDetails(");
         sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", softDelete=").append(String.valueOf(this.softDelete));
         sb.append(", copyPolicies=").append(String.valueOf(this.copyPolicies));
         sb.append(", windowStartTime=").append(String.valueOf(this.windowStartTime));
         sb.append(", retentionInDays=").append(String.valueOf(this.retentionInDays));
@@ -431,6 +477,7 @@ public final class CreateBackupPolicyDetails
 
         CreateBackupPolicyDetails other = (CreateBackupPolicyDetails) o;
         return java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.softDelete, other.softDelete)
                 && java.util.Objects.equals(this.copyPolicies, other.copyPolicies)
                 && java.util.Objects.equals(this.windowStartTime, other.windowStartTime)
                 && java.util.Objects.equals(this.retentionInDays, other.retentionInDays)
@@ -445,6 +492,7 @@ public final class CreateBackupPolicyDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
         result = (result * PRIME) + (this.copyPolicies == null ? 43 : this.copyPolicies.hashCode());
         result =
                 (result * PRIME)

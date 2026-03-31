@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the support ticket being updated.
+ * Details about the support request being updated.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -38,12 +38,12 @@ public final class UpdateIncident extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The kind of support ticket (type of support request).
-         * For information about {@code ACCOUNT} support tickets, see
+         * The kind of support request (type of support request).
+         * For information about {@code ACCOUNT} support requests, see
          * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-         * For information about {@code LIMIT} support tickets, see
+         * For information about {@code LIMIT} support requests, see
          * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
-         * For information about {@code TECH} support tickets, see
+         * For information about {@code TECH} support requests, see
          * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          *
          **/
@@ -51,12 +51,12 @@ public final class UpdateIncident extends com.oracle.bmc.http.internal.Explicitl
         private ProblemType problemType;
 
         /**
-         * The kind of support ticket (type of support request).
-         * For information about {@code ACCOUNT} support tickets, see
+         * The kind of support request (type of support request).
+         * For information about {@code ACCOUNT} support requests, see
          * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-         * For information about {@code LIMIT} support tickets, see
+         * For information about {@code LIMIT} support requests, see
          * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
-         * For information about {@code TECH} support tickets, see
+         * For information about {@code TECH} support requests, see
          * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          *
          * @param problemType the value to set
@@ -110,12 +110,12 @@ public final class UpdateIncident extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The kind of support ticket (type of support request).
-     * For information about {@code ACCOUNT} support tickets, see
+     * The kind of support request (type of support request).
+     * For information about {@code ACCOUNT} support requests, see
      * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-     * For information about {@code LIMIT} support tickets, see
+     * For information about {@code LIMIT} support requests, see
      * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
-     * For information about {@code TECH} support tickets, see
+     * For information about {@code TECH} support requests, see
      * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      *
      **/
@@ -123,12 +123,12 @@ public final class UpdateIncident extends com.oracle.bmc.http.internal.Explicitl
     private final ProblemType problemType;
 
     /**
-     * The kind of support ticket (type of support request).
-     * For information about {@code ACCOUNT} support tickets, see
+     * The kind of support request (type of support request).
+     * For information about {@code ACCOUNT} support requests, see
      * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-     * For information about {@code LIMIT} support tickets, see
+     * For information about {@code LIMIT} support requests, see
      * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
-     * For information about {@code TECH} support tickets, see
+     * For information about {@code TECH} support requests, see
      * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      *
      * @return the value

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -30,6 +30,7 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
         "jobEnvironmentConfigurationDetails",
         "jobLogConfigurationDetails",
         "jobStorageMountConfigurationDetailsList",
+        "jobNodeConfigurationDetails",
         "freeformTags",
         "definedTags"
     })
@@ -44,6 +45,7 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
             JobLogConfigurationDetails jobLogConfigurationDetails,
             java.util.List<StorageMountConfigurationDetails>
                     jobStorageMountConfigurationDetailsList,
+            JobNodeConfigurationDetails jobNodeConfigurationDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -56,6 +58,7 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
         this.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
         this.jobLogConfigurationDetails = jobLogConfigurationDetails;
         this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
+        this.jobNodeConfigurationDetails = jobNodeConfigurationDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -184,6 +187,16 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("jobStorageMountConfigurationDetailsList");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("jobNodeConfigurationDetails")
+        private JobNodeConfigurationDetails jobNodeConfigurationDetails;
+
+        public Builder jobNodeConfigurationDetails(
+                JobNodeConfigurationDetails jobNodeConfigurationDetails) {
+            this.jobNodeConfigurationDetails = jobNodeConfigurationDetails;
+            this.__explicitlySet__.add("jobNodeConfigurationDetails");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
@@ -241,6 +254,7 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
                             this.jobEnvironmentConfigurationDetails,
                             this.jobLogConfigurationDetails,
                             this.jobStorageMountConfigurationDetailsList,
+                            this.jobNodeConfigurationDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -280,6 +294,9 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
             if (model.wasPropertyExplicitlySet("jobStorageMountConfigurationDetailsList")) {
                 this.jobStorageMountConfigurationDetailsList(
                         model.getJobStorageMountConfigurationDetailsList());
+            }
+            if (model.wasPropertyExplicitlySet("jobNodeConfigurationDetails")) {
+                this.jobNodeConfigurationDetails(model.getJobNodeConfigurationDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -402,6 +419,13 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
         return jobStorageMountConfigurationDetailsList;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobNodeConfigurationDetails")
+    private final JobNodeConfigurationDetails jobNodeConfigurationDetails;
+
+    public JobNodeConfigurationDetails getJobNodeConfigurationDetails() {
+        return jobNodeConfigurationDetails;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
@@ -466,6 +490,8 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
                 .append(String.valueOf(this.jobLogConfigurationDetails));
         sb.append(", jobStorageMountConfigurationDetailsList=")
                 .append(String.valueOf(this.jobStorageMountConfigurationDetailsList));
+        sb.append(", jobNodeConfigurationDetails=")
+                .append(String.valueOf(this.jobNodeConfigurationDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -499,6 +525,8 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(
                         this.jobStorageMountConfigurationDetailsList,
                         other.jobStorageMountConfigurationDetailsList)
+                && java.util.Objects.equals(
+                        this.jobNodeConfigurationDetails, other.jobNodeConfigurationDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -539,6 +567,11 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
                         + (this.jobStorageMountConfigurationDetailsList == null
                                 ? 43
                                 : this.jobStorageMountConfigurationDetailsList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobNodeConfigurationDetails == null
+                                ? 43
+                                : this.jobNodeConfigurationDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

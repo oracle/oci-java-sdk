@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument.model;
@@ -44,13 +44,13 @@ public final class DocumentClassificationFeature extends DocumentFeature {
             return this;
         }
         /**
-         * The custom model ID.
+         * Unique identifier custom model OCID that should be used for inference.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
-         * The custom model ID.
+         * Unique identifier custom model OCID that should be used for inference.
          * @param modelId the value to set
          * @return this builder
          **/
@@ -59,13 +59,30 @@ public final class DocumentClassificationFeature extends DocumentFeature {
             this.__explicitlySet__.add("modelId");
             return this;
         }
+        /**
+         * The custom model tenancy ID when modelId represents aliasName.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
+        private String tenancyId;
+
+        /**
+         * The custom model tenancy ID when modelId represents aliasName.
+         * @param tenancyId the value to set
+         * @return this builder
+         **/
+        public Builder tenancyId(String tenancyId) {
+            this.tenancyId = tenancyId;
+            this.__explicitlySet__.add("tenancyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DocumentClassificationFeature build() {
             DocumentClassificationFeature model =
-                    new DocumentClassificationFeature(this.maxResults, this.modelId);
+                    new DocumentClassificationFeature(
+                            this.maxResults, this.modelId, this.tenancyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +96,9 @@ public final class DocumentClassificationFeature extends DocumentFeature {
             }
             if (model.wasPropertyExplicitlySet("modelId")) {
                 this.modelId(model.getModelId());
+            }
+            if (model.wasPropertyExplicitlySet("tenancyId")) {
+                this.tenancyId(model.getTenancyId());
             }
             return this;
         }
@@ -96,10 +116,11 @@ public final class DocumentClassificationFeature extends DocumentFeature {
     }
 
     @Deprecated
-    public DocumentClassificationFeature(Integer maxResults, String modelId) {
+    public DocumentClassificationFeature(Integer maxResults, String modelId, String tenancyId) {
         super();
         this.maxResults = maxResults;
         this.modelId = modelId;
+        this.tenancyId = tenancyId;
     }
 
     /**
@@ -117,17 +138,31 @@ public final class DocumentClassificationFeature extends DocumentFeature {
     }
 
     /**
-     * The custom model ID.
+     * Unique identifier custom model OCID that should be used for inference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
-     * The custom model ID.
+     * Unique identifier custom model OCID that should be used for inference.
      * @return the value
      **/
     public String getModelId() {
         return modelId;
+    }
+
+    /**
+     * The custom model tenancy ID when modelId represents aliasName.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
+    private final String tenancyId;
+
+    /**
+     * The custom model tenancy ID when modelId represents aliasName.
+     * @return the value
+     **/
+    public String getTenancyId() {
+        return tenancyId;
     }
 
     @Override
@@ -146,6 +181,7 @@ public final class DocumentClassificationFeature extends DocumentFeature {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", maxResults=").append(String.valueOf(this.maxResults));
         sb.append(", modelId=").append(String.valueOf(this.modelId));
+        sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(")");
         return sb.toString();
     }
@@ -162,6 +198,7 @@ public final class DocumentClassificationFeature extends DocumentFeature {
         DocumentClassificationFeature other = (DocumentClassificationFeature) o;
         return java.util.Objects.equals(this.maxResults, other.maxResults)
                 && java.util.Objects.equals(this.modelId, other.modelId)
+                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
                 && super.equals(other);
     }
 
@@ -171,6 +208,7 @@ public final class DocumentClassificationFeature extends DocumentFeature {
         int result = super.hashCode();
         result = (result * PRIME) + (this.maxResults == null ? 43 : this.maxResults.hashCode());
         result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
         return result;
     }
 }

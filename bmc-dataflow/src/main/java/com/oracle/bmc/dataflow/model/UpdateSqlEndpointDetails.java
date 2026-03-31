@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataflow.model;
@@ -35,6 +35,11 @@ public final class UpdateSqlEndpointDetails
         "maxExecutorCount",
         "metastoreId",
         "lakeId",
+        "logGroupId",
+        "logCompartmentId",
+        "logDisplayName",
+        "logRetentionDuration",
+        "logOperation",
         "sparkAdvancedConfigurations"
     })
     public UpdateSqlEndpointDetails(
@@ -50,6 +55,11 @@ public final class UpdateSqlEndpointDetails
             Integer maxExecutorCount,
             String metastoreId,
             String lakeId,
+            String logGroupId,
+            String logCompartmentId,
+            String logDisplayName,
+            Integer logRetentionDuration,
+            SqlEndpointLogOperation logOperation,
             java.util.Map<String, String> sparkAdvancedConfigurations) {
         super();
         this.definedTags = definedTags;
@@ -64,6 +74,11 @@ public final class UpdateSqlEndpointDetails
         this.maxExecutorCount = maxExecutorCount;
         this.metastoreId = metastoreId;
         this.lakeId = lakeId;
+        this.logGroupId = logGroupId;
+        this.logCompartmentId = logCompartmentId;
+        this.logDisplayName = logDisplayName;
+        this.logRetentionDuration = logRetentionDuration;
+        this.logOperation = logOperation;
         this.sparkAdvancedConfigurations = sparkAdvancedConfigurations;
     }
 
@@ -259,6 +274,86 @@ public final class UpdateSqlEndpointDetails
             return this;
         }
         /**
+         * The identifier of the log group used with the SQL Endpoint.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+        private String logGroupId;
+
+        /**
+         * The identifier of the log group used with the SQL Endpoint.
+         * @param logGroupId the value to set
+         * @return this builder
+         **/
+        public Builder logGroupId(String logGroupId) {
+            this.logGroupId = logGroupId;
+            this.__explicitlySet__.add("logGroupId");
+            return this;
+        }
+        /**
+         * The identifier of the log group compartment used with the SQL Endpoint.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logCompartmentId")
+        private String logCompartmentId;
+
+        /**
+         * The identifier of the log group compartment used with the SQL Endpoint.
+         * @param logCompartmentId the value to set
+         * @return this builder
+         **/
+        public Builder logCompartmentId(String logCompartmentId) {
+            this.logCompartmentId = logCompartmentId;
+            this.__explicitlySet__.add("logCompartmentId");
+            return this;
+        }
+        /**
+         * The friendly name of the log object used with the SQL Endpoint.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logDisplayName")
+        private String logDisplayName;
+
+        /**
+         * The friendly name of the log object used with the SQL Endpoint.
+         * @param logDisplayName the value to set
+         * @return this builder
+         **/
+        public Builder logDisplayName(String logDisplayName) {
+            this.logDisplayName = logDisplayName;
+            this.__explicitlySet__.add("logDisplayName");
+            return this;
+        }
+        /**
+         * Log retention duration in days
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logRetentionDuration")
+        private Integer logRetentionDuration;
+
+        /**
+         * Log retention duration in days
+         * @param logRetentionDuration the value to set
+         * @return this builder
+         **/
+        public Builder logRetentionDuration(Integer logRetentionDuration) {
+            this.logRetentionDuration = logRetentionDuration;
+            this.__explicitlySet__.add("logRetentionDuration");
+            return this;
+        }
+        /**
+         * The log operation will be performed for the Sql Endpoint.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logOperation")
+        private SqlEndpointLogOperation logOperation;
+
+        /**
+         * The log operation will be performed for the Sql Endpoint.
+         * @param logOperation the value to set
+         * @return this builder
+         **/
+        public Builder logOperation(SqlEndpointLogOperation logOperation) {
+            this.logOperation = logOperation;
+            this.__explicitlySet__.add("logOperation");
+            return this;
+        }
+        /**
          * The Spark configuration passed to the running process.
          * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
          * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
@@ -304,6 +399,11 @@ public final class UpdateSqlEndpointDetails
                             this.maxExecutorCount,
                             this.metastoreId,
                             this.lakeId,
+                            this.logGroupId,
+                            this.logCompartmentId,
+                            this.logDisplayName,
+                            this.logRetentionDuration,
+                            this.logOperation,
                             this.sparkAdvancedConfigurations);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -348,6 +448,21 @@ public final class UpdateSqlEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("lakeId")) {
                 this.lakeId(model.getLakeId());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupId")) {
+                this.logGroupId(model.getLogGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("logCompartmentId")) {
+                this.logCompartmentId(model.getLogCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("logDisplayName")) {
+                this.logDisplayName(model.getLogDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("logRetentionDuration")) {
+                this.logRetentionDuration(model.getLogRetentionDuration());
+            }
+            if (model.wasPropertyExplicitlySet("logOperation")) {
+                this.logOperation(model.getLogOperation());
             }
             if (model.wasPropertyExplicitlySet("sparkAdvancedConfigurations")) {
                 this.sparkAdvancedConfigurations(model.getSparkAdvancedConfigurations());
@@ -532,6 +647,76 @@ public final class UpdateSqlEndpointDetails
     }
 
     /**
+     * The identifier of the log group used with the SQL Endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+    private final String logGroupId;
+
+    /**
+     * The identifier of the log group used with the SQL Endpoint.
+     * @return the value
+     **/
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
+    /**
+     * The identifier of the log group compartment used with the SQL Endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logCompartmentId")
+    private final String logCompartmentId;
+
+    /**
+     * The identifier of the log group compartment used with the SQL Endpoint.
+     * @return the value
+     **/
+    public String getLogCompartmentId() {
+        return logCompartmentId;
+    }
+
+    /**
+     * The friendly name of the log object used with the SQL Endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logDisplayName")
+    private final String logDisplayName;
+
+    /**
+     * The friendly name of the log object used with the SQL Endpoint.
+     * @return the value
+     **/
+    public String getLogDisplayName() {
+        return logDisplayName;
+    }
+
+    /**
+     * Log retention duration in days
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logRetentionDuration")
+    private final Integer logRetentionDuration;
+
+    /**
+     * Log retention duration in days
+     * @return the value
+     **/
+    public Integer getLogRetentionDuration() {
+        return logRetentionDuration;
+    }
+
+    /**
+     * The log operation will be performed for the Sql Endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logOperation")
+    private final SqlEndpointLogOperation logOperation;
+
+    /**
+     * The log operation will be performed for the Sql Endpoint.
+     * @return the value
+     **/
+    public SqlEndpointLogOperation getLogOperation() {
+        return logOperation;
+    }
+
+    /**
      * The Spark configuration passed to the running process.
      * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
      * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
@@ -581,6 +766,11 @@ public final class UpdateSqlEndpointDetails
         sb.append(", maxExecutorCount=").append(String.valueOf(this.maxExecutorCount));
         sb.append(", metastoreId=").append(String.valueOf(this.metastoreId));
         sb.append(", lakeId=").append(String.valueOf(this.lakeId));
+        sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(", logCompartmentId=").append(String.valueOf(this.logCompartmentId));
+        sb.append(", logDisplayName=").append(String.valueOf(this.logDisplayName));
+        sb.append(", logRetentionDuration=").append(String.valueOf(this.logRetentionDuration));
+        sb.append(", logOperation=").append(String.valueOf(this.logOperation));
         sb.append(", sparkAdvancedConfigurations=")
                 .append(String.valueOf(this.sparkAdvancedConfigurations));
         sb.append(")");
@@ -609,6 +799,11 @@ public final class UpdateSqlEndpointDetails
                 && java.util.Objects.equals(this.maxExecutorCount, other.maxExecutorCount)
                 && java.util.Objects.equals(this.metastoreId, other.metastoreId)
                 && java.util.Objects.equals(this.lakeId, other.lakeId)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(this.logCompartmentId, other.logCompartmentId)
+                && java.util.Objects.equals(this.logDisplayName, other.logDisplayName)
+                && java.util.Objects.equals(this.logRetentionDuration, other.logRetentionDuration)
+                && java.util.Objects.equals(this.logOperation, other.logOperation)
                 && java.util.Objects.equals(
                         this.sparkAdvancedConfigurations, other.sparkAdvancedConfigurations)
                 && super.equals(other);
@@ -642,6 +837,19 @@ public final class UpdateSqlEndpointDetails
                         + (this.maxExecutorCount == null ? 43 : this.maxExecutorCount.hashCode());
         result = (result * PRIME) + (this.metastoreId == null ? 43 : this.metastoreId.hashCode());
         result = (result * PRIME) + (this.lakeId == null ? 43 : this.lakeId.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logCompartmentId == null ? 43 : this.logCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logDisplayName == null ? 43 : this.logDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logRetentionDuration == null
+                                ? 43
+                                : this.logRetentionDuration.hashCode());
+        result = (result * PRIME) + (this.logOperation == null ? 43 : this.logOperation.hashCode());
         result =
                 (result * PRIME)
                         + (this.sparkAdvancedConfigurations == null

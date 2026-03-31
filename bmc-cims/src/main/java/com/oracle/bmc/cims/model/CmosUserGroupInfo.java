@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
- * Identifier and name of the technical support request's user group ({@code userGroupId} and {@code userGroupName}).
+ * Identifier and name of a user group ({@code userGroupId} and {@code userGroupName}) that the current user has access to.
+ * Note: The Customer User Administrator (CUA) can manage user groups by name using
+ * [My Oracle Cloud Support portal](https://support.oracle.com).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -32,14 +34,14 @@ public final class CmosUserGroupInfo extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: The identifier of a user group in My Oracle Cloud Support portal.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
         private String userGroupId;
 
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: The identifier of a user group in My Oracle Cloud Support portal.
          *
          * @param userGroupId the value to set
          * @return this builder
@@ -50,14 +52,14 @@ public final class CmosUserGroupInfo extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Technical support type ({@code TECH}) only: Name of the support request's user group in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: Name of a user group in My Oracle Cloud Support portal.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("userGroupName")
         private String userGroupName;
 
         /**
-         * Technical support type ({@code TECH}) only: Name of the support request's user group in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: Name of a user group in My Oracle Cloud Support portal.
          *
          * @param userGroupName the value to set
          * @return this builder
@@ -103,14 +105,14 @@ public final class CmosUserGroupInfo extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: The identifier of a user group in My Oracle Cloud Support portal.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
     private final String userGroupId;
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: The identifier of a user group in My Oracle Cloud Support portal.
      *
      * @return the value
      **/
@@ -119,14 +121,14 @@ public final class CmosUserGroupInfo extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Technical support type ({@code TECH}) only: Name of the support request's user group in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: Name of a user group in My Oracle Cloud Support portal.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userGroupName")
     private final String userGroupName;
 
     /**
-     * Technical support type ({@code TECH}) only: Name of the support request's user group in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: Name of a user group in My Oracle Cloud Support portal.
      *
      * @return the value
      **/

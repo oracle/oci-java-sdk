@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -134,6 +134,34 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
             this.doesUseSecretIds = doesUseSecretIds;
             this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -331,6 +359,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         /**
          * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
          * The supported file formats are .pem and .crt.
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
@@ -339,6 +368,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         /**
          * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
          * The supported file formats are .pem and .crt.
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
          *
          * @param sslCa the value to set
          * @return this builder
@@ -350,6 +380,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         }
         /**
          * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
@@ -357,6 +388,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
         /**
          * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
          *
          * @param sslCrl the value to set
          * @return this builder
@@ -368,6 +400,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         }
         /**
          * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
@@ -375,6 +408,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
         /**
          * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
          *
          * @param sslCert the value to set
          * @return this builder
@@ -493,6 +527,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.databaseName,
                             this.host,
@@ -553,6 +590,15 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -634,6 +680,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             PostgresqlConnection.TechnologyType technologyType,
             String databaseName,
             String host,
@@ -663,7 +712,10 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.databaseName = databaseName;
         this.host = host;
@@ -858,6 +910,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     /**
      * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
      * The supported file formats are .pem and .crt.
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
@@ -866,6 +919,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     /**
      * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
      * The supported file formats are .pem and .crt.
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
      *
      * @return the value
      **/
@@ -875,6 +929,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
     /**
      * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
@@ -882,6 +937,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
     /**
      * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
      *
      * @return the value
      **/
@@ -891,6 +947,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
     /**
      * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
@@ -898,6 +955,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
     /**
      * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
      *
      * @return the value
      **/

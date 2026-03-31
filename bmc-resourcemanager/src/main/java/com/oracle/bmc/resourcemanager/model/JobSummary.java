@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager.model;
@@ -32,7 +32,8 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         "timeFinished",
         "lifecycleState",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     public JobSummary(
             String id,
@@ -47,7 +48,8 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
             java.util.Date timeFinished,
             Job.LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.stackId = stackId;
@@ -62,6 +64,7 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         this.lifecycleState = lifecycleState;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -115,13 +118,15 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The job's display name.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The job's display name.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         *
          * @param displayName the value to set
          * @return this builder
          **/
@@ -232,14 +237,6 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
          * Current state of the specified job.
          * For more information about job lifecycle states in Resource Manager, see
          * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
-         * <p>
-         * Allowable values:
-         * - ACCEPTED
-         * - IN_PROGRESS
-         * - FAILED
-         * - SUCCEEDED
-         * - CANCELING
-         * - CANCELED
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -249,14 +246,6 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
          * Current state of the specified job.
          * For more information about job lifecycle states in Resource Manager, see
          * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
-         * <p>
-         * Allowable values:
-         * - ACCEPTED
-         * - IN_PROGRESS
-         * - FAILED
-         * - SUCCEEDED
-         * - CANCELING
-         * - CANCELED
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -267,7 +256,7 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+         * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
@@ -276,7 +265,7 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+         * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
@@ -311,6 +300,28 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -330,7 +341,8 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.timeFinished,
                             this.lifecycleState,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -377,6 +389,9 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -436,13 +451,15 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The job's display name.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The job's display name.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     *
      * @return the value
      **/
     public String getDisplayName() {
@@ -539,14 +556,6 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
      * Current state of the specified job.
      * For more information about job lifecycle states in Resource Manager, see
      * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
-     * <p>
-     * Allowable values:
-     * - ACCEPTED
-     * - IN_PROGRESS
-     * - FAILED
-     * - SUCCEEDED
-     * - CANCELING
-     * - CANCELED
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -556,14 +565,6 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
      * Current state of the specified job.
      * For more information about job lifecycle states in Resource Manager, see
      * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
-     * <p>
-     * Allowable values:
-     * - ACCEPTED
-     * - IN_PROGRESS
-     * - FAILED
-     * - SUCCEEDED
-     * - CANCELING
-     * - CANCELED
      *
      * @return the value
      **/
@@ -572,7 +573,7 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+     * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
@@ -581,7 +582,7 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+     * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
@@ -611,6 +612,26 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         return definedTags;
     }
 
+    /**
+     * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -638,6 +659,7 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -666,6 +688,7 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -700,6 +723,7 @@ public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySet
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

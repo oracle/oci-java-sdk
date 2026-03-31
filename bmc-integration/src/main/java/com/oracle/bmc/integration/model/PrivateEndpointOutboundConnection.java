@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.integration.model;
@@ -60,13 +60,30 @@ public final class PrivateEndpointOutboundConnection extends OutboundConnection 
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+        /**
+         * Indicates if all traffic should go through configured outbound connection
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAllOutboundTrafficPrivate")
+        private Boolean isAllOutboundTrafficPrivate;
+
+        /**
+         * Indicates if all traffic should go through configured outbound connection
+         * @param isAllOutboundTrafficPrivate the value to set
+         * @return this builder
+         **/
+        public Builder isAllOutboundTrafficPrivate(Boolean isAllOutboundTrafficPrivate) {
+            this.isAllOutboundTrafficPrivate = isAllOutboundTrafficPrivate;
+            this.__explicitlySet__.add("isAllOutboundTrafficPrivate");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PrivateEndpointOutboundConnection build() {
             PrivateEndpointOutboundConnection model =
-                    new PrivateEndpointOutboundConnection(this.subnetId, this.nsgIds);
+                    new PrivateEndpointOutboundConnection(
+                            this.subnetId, this.nsgIds, this.isAllOutboundTrafficPrivate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -80,6 +97,9 @@ public final class PrivateEndpointOutboundConnection extends OutboundConnection 
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("isAllOutboundTrafficPrivate")) {
+                this.isAllOutboundTrafficPrivate(model.getIsAllOutboundTrafficPrivate());
             }
             return this;
         }
@@ -97,10 +117,12 @@ public final class PrivateEndpointOutboundConnection extends OutboundConnection 
     }
 
     @Deprecated
-    public PrivateEndpointOutboundConnection(String subnetId, java.util.List<String> nsgIds) {
+    public PrivateEndpointOutboundConnection(
+            String subnetId, java.util.List<String> nsgIds, Boolean isAllOutboundTrafficPrivate) {
         super();
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
+        this.isAllOutboundTrafficPrivate = isAllOutboundTrafficPrivate;
     }
 
     /**
@@ -131,6 +153,20 @@ public final class PrivateEndpointOutboundConnection extends OutboundConnection 
         return nsgIds;
     }
 
+    /**
+     * Indicates if all traffic should go through configured outbound connection
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAllOutboundTrafficPrivate")
+    private final Boolean isAllOutboundTrafficPrivate;
+
+    /**
+     * Indicates if all traffic should go through configured outbound connection
+     * @return the value
+     **/
+    public Boolean getIsAllOutboundTrafficPrivate() {
+        return isAllOutboundTrafficPrivate;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -147,6 +183,8 @@ public final class PrivateEndpointOutboundConnection extends OutboundConnection 
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", isAllOutboundTrafficPrivate=")
+                .append(String.valueOf(this.isAllOutboundTrafficPrivate));
         sb.append(")");
         return sb.toString();
     }
@@ -163,6 +201,8 @@ public final class PrivateEndpointOutboundConnection extends OutboundConnection 
         PrivateEndpointOutboundConnection other = (PrivateEndpointOutboundConnection) o;
         return java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(
+                        this.isAllOutboundTrafficPrivate, other.isAllOutboundTrafficPrivate)
                 && super.equals(other);
     }
 
@@ -172,6 +212,11 @@ public final class PrivateEndpointOutboundConnection extends OutboundConnection 
         int result = super.hashCode();
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAllOutboundTrafficPrivate == null
+                                ? 43
+                                : this.isAllOutboundTrafficPrivate.hashCode());
         return result;
     }
 }

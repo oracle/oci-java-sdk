@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway.model;
@@ -32,10 +32,17 @@ public final class HeaderValidationRequestPolicy
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /**
+         * The List of Headers
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private java.util.List<HeaderValidationItem> headers;
 
+        /**
+         * The List of Headers
+         * @param headers the value to set
+         * @return this builder
+         **/
         public Builder headers(java.util.List<HeaderValidationItem> headers) {
             this.headers = headers;
             this.__explicitlySet__.add("headers");
@@ -111,9 +118,16 @@ public final class HeaderValidationRequestPolicy
         return new Builder().copy(this);
     }
 
+    /**
+     * The List of Headers
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     private final java.util.List<HeaderValidationItem> headers;
 
+    /**
+     * The List of Headers
+     * @return the value
+     **/
     public java.util.List<HeaderValidationItem> getHeaders() {
         return headers;
     }

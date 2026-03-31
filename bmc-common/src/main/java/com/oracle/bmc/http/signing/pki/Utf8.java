@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.signing.pki;
@@ -40,51 +40,7 @@ interface Utf8 extends CharSequence, Sensitive {
      * @throws IOException
      */
     static Utf8 of(ReadableByteChannel content) throws IOException {
-        try (final ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-                final WritableByteChannel sink = Channels.newChannel(bytes)) {
-            final ByteBuffer buffer = ByteBuffer.allocate(4096);
-            CompletableFuture<Void> readTask =
-                    CompletableFuture.runAsync(
-                            () -> {
-                                try {
-                                    while (true) {
-                                        int bytesRead = content.read(buffer);
-                                        if (bytesRead == -1) {
-                                            break; // End of stream
-                                        }
-                                        // cast is necessary to avoid NoSuchMethodError in Java 8
-                                        // see https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
-                                        ((Buffer) buffer).flip();
-                                        while (buffer.hasRemaining()) {
-                                            sink.write(buffer); // Write to the sink channel
-                                        }
-                                        // cast is necessary to avoid NoSuchMethodError in Java 8
-                                        // see https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
-                                        ((Buffer) buffer).clear();
-                                    }
-                                } catch (IOException e) {
-                                    throw new RuntimeException(
-                                            "Error reading ReadableByteChannel content", e);
-                                }
-                            });
-
-            // Wait for the task to complete
-            readTask.join();
-
-            // cast is necessary to avoid NoSuchMethodError in Java 8
-            // see https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
-            ((Buffer) buffer).flip();
-            while (buffer.hasRemaining()) {
-                sink.write(buffer);
-            }
-            final byte[] buffered = bytes.toByteArray();
-            try {
-                return Utf8.of(buffered);
-            } finally {
-                Eraser.erase(buffer);
-                Eraser.erase(buffered);
-            }
-        }
+        return Utf8Utils.of(content);
     }
 
     /**

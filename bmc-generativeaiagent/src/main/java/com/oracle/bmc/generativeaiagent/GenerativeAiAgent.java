@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent;
@@ -126,6 +126,21 @@ public interface GenerativeAiAgent extends AutoCloseable {
             ChangeKnowledgeBaseCompartmentRequest request);
 
     /**
+     * Moves a provisioned capacity into a different compartment within the same tenancy. For information about moving resources between
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/ChangeProvisionedCapacityCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeProvisionedCapacityCompartment API.
+     */
+    ChangeProvisionedCapacityCompartmentResponse changeProvisionedCapacityCompartment(
+            ChangeProvisionedCapacityCompartmentRequest request);
+
+    /**
      * Creates an agent.
      *
      * @param request The request object containing the details to send
@@ -189,6 +204,20 @@ public interface GenerativeAiAgent extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/CreateKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateKnowledgeBase API.
      */
     CreateKnowledgeBaseResponse createKnowledgeBase(CreateKnowledgeBaseRequest request);
+
+    /**
+     * Creates a provisioned capacity.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/CreateProvisionedCapacityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProvisionedCapacity API.
+     */
+    CreateProvisionedCapacityResponse createProvisionedCapacity(
+            CreateProvisionedCapacityRequest request);
 
     /**
      * Creates a tool.
@@ -267,6 +296,20 @@ public interface GenerativeAiAgent extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/DeleteKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteKnowledgeBase API.
      */
     DeleteKnowledgeBaseResponse deleteKnowledgeBase(DeleteKnowledgeBaseRequest request);
+
+    /**
+     * Deletes a provisioned capacity.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/DeleteProvisionedCapacityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProvisionedCapacity API.
+     */
+    DeleteProvisionedCapacityResponse deleteProvisionedCapacity(
+            DeleteProvisionedCapacityRequest request);
 
     /**
      * Deletes a tool.
@@ -361,6 +404,19 @@ public interface GenerativeAiAgent extends AutoCloseable {
     GetKnowledgeBaseResponse getKnowledgeBase(GetKnowledgeBaseRequest request);
 
     /**
+     * Gets information about a provisioned capacity.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/GetProvisionedCapacityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProvisionedCapacity API.
+     */
+    GetProvisionedCapacityResponse getProvisionedCapacity(GetProvisionedCapacityRequest request);
+
+    /**
      * Gets information about a tool.
      *
      * @param request The request object containing the details to send
@@ -450,6 +506,20 @@ public interface GenerativeAiAgent extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/ListKnowledgeBasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListKnowledgeBases API.
      */
     ListKnowledgeBasesResponse listKnowledgeBases(ListKnowledgeBasesRequest request);
+
+    /**
+     * Gets a list of provisioned capacities.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/ListProvisionedCapacitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProvisionedCapacities API.
+     */
+    ListProvisionedCapacitiesResponse listProvisionedCapacities(
+            ListProvisionedCapacitiesRequest request);
 
     /**
      * Gets a list of tools.
@@ -554,6 +624,20 @@ public interface GenerativeAiAgent extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/UpdateKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateKnowledgeBase API.
      */
     UpdateKnowledgeBaseResponse updateKnowledgeBase(UpdateKnowledgeBaseRequest request);
+
+    /**
+     * Updates a provisioned capacity.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/UpdateProvisionedCapacityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProvisionedCapacity API.
+     */
+    UpdateProvisionedCapacityResponse updateProvisionedCapacity(
+            UpdateProvisionedCapacityRequest request);
 
     /**
      * Updates a tool.

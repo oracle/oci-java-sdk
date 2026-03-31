@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
@@ -156,14 +156,25 @@ public final class CohereChatRequest extends BaseChatRequest {
             this.__explicitlySet__.add("isStream");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("streamOptions")
+        private StreamOptions streamOptions;
+
+        public Builder streamOptions(StreamOptions streamOptions) {
+            this.streamOptions = streamOptions;
+            this.__explicitlySet__.add("streamOptions");
+            return this;
+        }
         /**
-         * The maximum number of output tokens that the model will generate for the response.
+         * The maximum number of output tokens that the model will generate for the response. The token count of your prompt plus maxTokens must not exceed the model's context length. For on-demand inferencing, the response length is capped at 4,000 tokens for each run.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
         private Integer maxTokens;
 
         /**
-         * The maximum number of output tokens that the model will generate for the response.
+         * The maximum number of output tokens that the model will generate for the response. The token count of your prompt plus maxTokens must not exceed the model's context length. For on-demand inferencing, the response length is capped at 4,000 tokens for each run.
+         *
          * @param maxTokens the value to set
          * @return this builder
          **/
@@ -444,6 +455,32 @@ public final class CohereChatRequest extends BaseChatRequest {
             this.__explicitlySet__.add("citationQuality");
             return this;
         }
+        /**
+         * Safety mode: Adds a safety instruction for the model to use when generating responses.
+         * Contextual: (Default) Puts fewer constraints on the output. It maintains core protections by aiming to reject harmful or illegal suggestions, but it allows profanity and some toxic content, sexually explicit and violent content, and content that contains medical, financial, or legal information. Contextual mode is suited for entertainment, creative, or academic use.
+         * Strict: Aims to avoid sensitive topics, such as violent or sexual acts and profanity. This mode aims to provide a safer experience by prohibiting responses or recommendations that it finds inappropriate. Strict mode is suited for corporate use, such as for corporate communications and customer service.
+         * Off: No safety mode is applied.
+         * Note: This parameter is only compatible with models cohere.command-r-08-2024, cohere.command-r-plus-08-2024 and Cohere models released after these models. See [release dates](https://docs.oracle.com/iaas/Content/generative-ai/deprecating.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("safetyMode")
+        private SafetyMode safetyMode;
+
+        /**
+         * Safety mode: Adds a safety instruction for the model to use when generating responses.
+         * Contextual: (Default) Puts fewer constraints on the output. It maintains core protections by aiming to reject harmful or illegal suggestions, but it allows profanity and some toxic content, sexually explicit and violent content, and content that contains medical, financial, or legal information. Contextual mode is suited for entertainment, creative, or academic use.
+         * Strict: Aims to avoid sensitive topics, such as violent or sexual acts and profanity. This mode aims to provide a safer experience by prohibiting responses or recommendations that it finds inappropriate. Strict mode is suited for corporate use, such as for corporate communications and customer service.
+         * Off: No safety mode is applied.
+         * Note: This parameter is only compatible with models cohere.command-r-08-2024, cohere.command-r-plus-08-2024 and Cohere models released after these models. See [release dates](https://docs.oracle.com/iaas/Content/generative-ai/deprecating.htm).
+         *
+         * @param safetyMode the value to set
+         * @return this builder
+         **/
+        public Builder safetyMode(SafetyMode safetyMode) {
+            this.safetyMode = safetyMode;
+            this.__explicitlySet__.add("safetyMode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -458,6 +495,7 @@ public final class CohereChatRequest extends BaseChatRequest {
                             this.isSearchQueriesOnly,
                             this.preambleOverride,
                             this.isStream,
+                            this.streamOptions,
                             this.maxTokens,
                             this.maxInputTokens,
                             this.temperature,
@@ -473,7 +511,8 @@ public final class CohereChatRequest extends BaseChatRequest {
                             this.isForceSingleStep,
                             this.stopSequences,
                             this.isRawPrompting,
-                            this.citationQuality);
+                            this.citationQuality,
+                            this.safetyMode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -502,6 +541,9 @@ public final class CohereChatRequest extends BaseChatRequest {
             }
             if (model.wasPropertyExplicitlySet("isStream")) {
                 this.isStream(model.getIsStream());
+            }
+            if (model.wasPropertyExplicitlySet("streamOptions")) {
+                this.streamOptions(model.getStreamOptions());
             }
             if (model.wasPropertyExplicitlySet("maxTokens")) {
                 this.maxTokens(model.getMaxTokens());
@@ -551,6 +593,9 @@ public final class CohereChatRequest extends BaseChatRequest {
             if (model.wasPropertyExplicitlySet("citationQuality")) {
                 this.citationQuality(model.getCitationQuality());
             }
+            if (model.wasPropertyExplicitlySet("safetyMode")) {
+                this.safetyMode(model.getSafetyMode());
+            }
             return this;
         }
     }
@@ -575,6 +620,7 @@ public final class CohereChatRequest extends BaseChatRequest {
             Boolean isSearchQueriesOnly,
             String preambleOverride,
             Boolean isStream,
+            StreamOptions streamOptions,
             Integer maxTokens,
             Integer maxInputTokens,
             Double temperature,
@@ -590,7 +636,8 @@ public final class CohereChatRequest extends BaseChatRequest {
             Boolean isForceSingleStep,
             java.util.List<String> stopSequences,
             Boolean isRawPrompting,
-            CitationQuality citationQuality) {
+            CitationQuality citationQuality,
+            SafetyMode safetyMode) {
         super();
         this.message = message;
         this.chatHistory = chatHistory;
@@ -599,6 +646,7 @@ public final class CohereChatRequest extends BaseChatRequest {
         this.isSearchQueriesOnly = isSearchQueriesOnly;
         this.preambleOverride = preambleOverride;
         this.isStream = isStream;
+        this.streamOptions = streamOptions;
         this.maxTokens = maxTokens;
         this.maxInputTokens = maxInputTokens;
         this.temperature = temperature;
@@ -615,6 +663,7 @@ public final class CohereChatRequest extends BaseChatRequest {
         this.stopSequences = stopSequences;
         this.isRawPrompting = isRawPrompting;
         this.citationQuality = citationQuality;
+        this.safetyMode = safetyMode;
     }
 
     /**
@@ -732,14 +781,23 @@ public final class CohereChatRequest extends BaseChatRequest {
         return isStream;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("streamOptions")
+    private final StreamOptions streamOptions;
+
+    public StreamOptions getStreamOptions() {
+        return streamOptions;
+    }
+
     /**
-     * The maximum number of output tokens that the model will generate for the response.
+     * The maximum number of output tokens that the model will generate for the response. The token count of your prompt plus maxTokens must not exceed the model's context length. For on-demand inferencing, the response length is capped at 4,000 tokens for each run.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
     private final Integer maxTokens;
 
     /**
-     * The maximum number of output tokens that the model will generate for the response.
+     * The maximum number of output tokens that the model will generate for the response. The token count of your prompt plus maxTokens must not exceed the model's context length. For on-demand inferencing, the response length is capped at 4,000 tokens for each run.
+     *
      * @return the value
      **/
     public Integer getMaxTokens() {
@@ -1060,6 +1118,71 @@ public final class CohereChatRequest extends BaseChatRequest {
         return citationQuality;
     }
 
+    /**
+     * Safety mode: Adds a safety instruction for the model to use when generating responses.
+     * Contextual: (Default) Puts fewer constraints on the output. It maintains core protections by aiming to reject harmful or illegal suggestions, but it allows profanity and some toxic content, sexually explicit and violent content, and content that contains medical, financial, or legal information. Contextual mode is suited for entertainment, creative, or academic use.
+     * Strict: Aims to avoid sensitive topics, such as violent or sexual acts and profanity. This mode aims to provide a safer experience by prohibiting responses or recommendations that it finds inappropriate. Strict mode is suited for corporate use, such as for corporate communications and customer service.
+     * Off: No safety mode is applied.
+     * Note: This parameter is only compatible with models cohere.command-r-08-2024, cohere.command-r-plus-08-2024 and Cohere models released after these models. See [release dates](https://docs.oracle.com/iaas/Content/generative-ai/deprecating.htm).
+     *
+     **/
+    public enum SafetyMode {
+        Contextual("CONTEXTUAL"),
+        Strict("STRICT"),
+        Off("OFF"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SafetyMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SafetyMode v : SafetyMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SafetyMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SafetyMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SafetyMode: " + key);
+        }
+    };
+    /**
+     * Safety mode: Adds a safety instruction for the model to use when generating responses.
+     * Contextual: (Default) Puts fewer constraints on the output. It maintains core protections by aiming to reject harmful or illegal suggestions, but it allows profanity and some toxic content, sexually explicit and violent content, and content that contains medical, financial, or legal information. Contextual mode is suited for entertainment, creative, or academic use.
+     * Strict: Aims to avoid sensitive topics, such as violent or sexual acts and profanity. This mode aims to provide a safer experience by prohibiting responses or recommendations that it finds inappropriate. Strict mode is suited for corporate use, such as for corporate communications and customer service.
+     * Off: No safety mode is applied.
+     * Note: This parameter is only compatible with models cohere.command-r-08-2024, cohere.command-r-plus-08-2024 and Cohere models released after these models. See [release dates](https://docs.oracle.com/iaas/Content/generative-ai/deprecating.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("safetyMode")
+    private final SafetyMode safetyMode;
+
+    /**
+     * Safety mode: Adds a safety instruction for the model to use when generating responses.
+     * Contextual: (Default) Puts fewer constraints on the output. It maintains core protections by aiming to reject harmful or illegal suggestions, but it allows profanity and some toxic content, sexually explicit and violent content, and content that contains medical, financial, or legal information. Contextual mode is suited for entertainment, creative, or academic use.
+     * Strict: Aims to avoid sensitive topics, such as violent or sexual acts and profanity. This mode aims to provide a safer experience by prohibiting responses or recommendations that it finds inappropriate. Strict mode is suited for corporate use, such as for corporate communications and customer service.
+     * Off: No safety mode is applied.
+     * Note: This parameter is only compatible with models cohere.command-r-08-2024, cohere.command-r-plus-08-2024 and Cohere models released after these models. See [release dates](https://docs.oracle.com/iaas/Content/generative-ai/deprecating.htm).
+     *
+     * @return the value
+     **/
+    public SafetyMode getSafetyMode() {
+        return safetyMode;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1081,6 +1204,7 @@ public final class CohereChatRequest extends BaseChatRequest {
         sb.append(", isSearchQueriesOnly=").append(String.valueOf(this.isSearchQueriesOnly));
         sb.append(", preambleOverride=").append(String.valueOf(this.preambleOverride));
         sb.append(", isStream=").append(String.valueOf(this.isStream));
+        sb.append(", streamOptions=").append(String.valueOf(this.streamOptions));
         sb.append(", maxTokens=").append(String.valueOf(this.maxTokens));
         sb.append(", maxInputTokens=").append(String.valueOf(this.maxInputTokens));
         sb.append(", temperature=").append(String.valueOf(this.temperature));
@@ -1097,6 +1221,7 @@ public final class CohereChatRequest extends BaseChatRequest {
         sb.append(", stopSequences=").append(String.valueOf(this.stopSequences));
         sb.append(", isRawPrompting=").append(String.valueOf(this.isRawPrompting));
         sb.append(", citationQuality=").append(String.valueOf(this.citationQuality));
+        sb.append(", safetyMode=").append(String.valueOf(this.safetyMode));
         sb.append(")");
         return sb.toString();
     }
@@ -1118,6 +1243,7 @@ public final class CohereChatRequest extends BaseChatRequest {
                 && java.util.Objects.equals(this.isSearchQueriesOnly, other.isSearchQueriesOnly)
                 && java.util.Objects.equals(this.preambleOverride, other.preambleOverride)
                 && java.util.Objects.equals(this.isStream, other.isStream)
+                && java.util.Objects.equals(this.streamOptions, other.streamOptions)
                 && java.util.Objects.equals(this.maxTokens, other.maxTokens)
                 && java.util.Objects.equals(this.maxInputTokens, other.maxInputTokens)
                 && java.util.Objects.equals(this.temperature, other.temperature)
@@ -1134,6 +1260,7 @@ public final class CohereChatRequest extends BaseChatRequest {
                 && java.util.Objects.equals(this.stopSequences, other.stopSequences)
                 && java.util.Objects.equals(this.isRawPrompting, other.isRawPrompting)
                 && java.util.Objects.equals(this.citationQuality, other.citationQuality)
+                && java.util.Objects.equals(this.safetyMode, other.safetyMode)
                 && super.equals(other);
     }
 
@@ -1156,6 +1283,9 @@ public final class CohereChatRequest extends BaseChatRequest {
                 (result * PRIME)
                         + (this.preambleOverride == null ? 43 : this.preambleOverride.hashCode());
         result = (result * PRIME) + (this.isStream == null ? 43 : this.isStream.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.streamOptions == null ? 43 : this.streamOptions.hashCode());
         result = (result * PRIME) + (this.maxTokens == null ? 43 : this.maxTokens.hashCode());
         result =
                 (result * PRIME)
@@ -1188,6 +1318,7 @@ public final class CohereChatRequest extends BaseChatRequest {
         result =
                 (result * PRIME)
                         + (this.citationQuality == null ? 43 : this.citationQuality.hashCode());
+        result = (result * PRIME) + (this.safetyMode == null ? 43 : this.safetyMode.hashCode());
         return result;
     }
 }

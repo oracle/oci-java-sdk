@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway.requests;
@@ -12,12 +12,12 @@ import com.oracle.bmc.apigateway.model.*;
 public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ocid of the SDK.
+     * The ocid of the SDK. This value must be present unless apiId is present.
      */
     private String sdkId;
 
     /**
-     * The ocid of the SDK.
+     * The ocid of the SDK. This value must be present unless apiId is present.
      */
     public String getSdkId() {
         return sdkId;
@@ -185,12 +185,12 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         return sortBy;
     }
     /**
-     * The ocid of the API.
+     * The ocid of the API. This value must be present unless sdkId is present.
      */
     private String apiId;
 
     /**
-     * The ocid of the API.
+     * The ocid of the API. This value must be present unless sdkId is present.
      */
     public String getApiId() {
         return apiId;
@@ -214,12 +214,12 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ocid of the SDK.
+         * The ocid of the SDK. This value must be present unless apiId is present.
          */
         private String sdkId = null;
 
         /**
-         * The ocid of the SDK.
+         * The ocid of the SDK. This value must be present unless apiId is present.
          * @param sdkId the value to set
          * @return this builder instance
          */
@@ -340,12 +340,12 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The ocid of the API.
+         * The ocid of the API. This value must be present unless sdkId is present.
          */
         private String apiId = null;
 
         /**
-         * The ocid of the API.
+         * The ocid of the API. This value must be present unless sdkId is present.
          * @param apiId the value to set
          * @return this builder instance
          */

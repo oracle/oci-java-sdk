@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -54,6 +54,7 @@ public final class MaintenanceRunSummary
         "estimatedPatchingTime",
         "currentPatchingComponent",
         "estimatedComponentPatchingStartTime",
+        "systemTags",
         "isMaintenanceRunGranular",
         "totalTimeTakenInMins",
         "databaseSoftwareImageId"
@@ -89,6 +90,7 @@ public final class MaintenanceRunSummary
             EstimatedPatchingTime estimatedPatchingTime,
             String currentPatchingComponent,
             java.util.Date estimatedComponentPatchingStartTime,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Boolean isMaintenanceRunGranular,
             Integer totalTimeTakenInMins,
             String databaseSoftwareImageId) {
@@ -123,6 +125,7 @@ public final class MaintenanceRunSummary
         this.estimatedPatchingTime = estimatedPatchingTime;
         this.currentPatchingComponent = currentPatchingComponent;
         this.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
+        this.systemTags = systemTags;
         this.isMaintenanceRunGranular = isMaintenanceRunGranular;
         this.totalTimeTakenInMins = totalTimeTakenInMins;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
@@ -195,14 +198,14 @@ public final class MaintenanceRunSummary
             return this;
         }
         /**
-         * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+         * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+         * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -325,13 +328,13 @@ public final class MaintenanceRunSummary
             return this;
         }
         /**
-         * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+         * The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchId")
         private String patchId;
 
         /**
-         * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+         * The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
          * @param patchId the value to set
          * @return this builder
          **/
@@ -617,6 +620,26 @@ public final class MaintenanceRunSummary
             return this;
         }
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceRunGranular")
@@ -649,13 +672,13 @@ public final class MaintenanceRunSummary
             return this;
         }
         /**
-         * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * The Autonomous AI Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
         /**
-         * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * The Autonomous AI Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * @param databaseSoftwareImageId the value to set
          * @return this builder
          **/
@@ -701,6 +724,7 @@ public final class MaintenanceRunSummary
                             this.estimatedPatchingTime,
                             this.currentPatchingComponent,
                             this.estimatedComponentPatchingStartTime,
+                            this.systemTags,
                             this.isMaintenanceRunGranular,
                             this.totalTimeTakenInMins,
                             this.databaseSoftwareImageId);
@@ -803,6 +827,9 @@ public final class MaintenanceRunSummary
                 this.estimatedComponentPatchingStartTime(
                         model.getEstimatedComponentPatchingStartTime());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("isMaintenanceRunGranular")) {
                 this.isMaintenanceRunGranular(model.getIsMaintenanceRunGranular());
             }
@@ -884,7 +911,7 @@ public final class MaintenanceRunSummary
     }
 
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      *
      **/
     public enum LifecycleState {
@@ -897,6 +924,7 @@ public final class MaintenanceRunSummary
         Deleting("DELETING"),
         Deleted("DELETED"),
         Canceled("CANCELED"),
+        PartialSuccess("PARTIAL_SUCCESS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -940,14 +968,14 @@ public final class MaintenanceRunSummary
         }
     };
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      *
      * @return the value
      **/
@@ -1156,13 +1184,13 @@ public final class MaintenanceRunSummary
     }
 
     /**
-     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
     private final String patchId;
 
     /**
-     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
      * @return the value
      **/
     public String getPatchId() {
@@ -1446,6 +1474,8 @@ public final class MaintenanceRunSummary
         Patching("PATCHING"),
         Waiting("WAITING"),
         Scheduled("SCHEDULED"),
+        Complete("COMPLETE"),
+        Failed("FAILED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1566,6 +1596,24 @@ public final class MaintenanceRunSummary
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceRunGranular")
@@ -1594,13 +1642,13 @@ public final class MaintenanceRunSummary
     }
 
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Autonomous AI Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Autonomous AI Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * @return the value
      **/
     public String getDatabaseSoftwareImageId() {
@@ -1657,6 +1705,7 @@ public final class MaintenanceRunSummary
                 .append(String.valueOf(this.currentPatchingComponent));
         sb.append(", estimatedComponentPatchingStartTime=")
                 .append(String.valueOf(this.estimatedComponentPatchingStartTime));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", isMaintenanceRunGranular=")
                 .append(String.valueOf(this.isMaintenanceRunGranular));
         sb.append(", totalTimeTakenInMins=").append(String.valueOf(this.totalTimeTakenInMins));
@@ -1715,6 +1764,7 @@ public final class MaintenanceRunSummary
                 && java.util.Objects.equals(
                         this.estimatedComponentPatchingStartTime,
                         other.estimatedComponentPatchingStartTime)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.isMaintenanceRunGranular, other.isMaintenanceRunGranular)
                 && java.util.Objects.equals(this.totalTimeTakenInMins, other.totalTimeTakenInMins)
@@ -1829,6 +1879,7 @@ public final class MaintenanceRunSummary
                         + (this.estimatedComponentPatchingStartTime == null
                                 ? 43
                                 : this.estimatedComponentPatchingStartTime.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.isMaintenanceRunGranular == null

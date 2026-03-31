@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -13,26 +13,26 @@ public class DeleteLogAnalyticsEntityRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     private String namespaceName;
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * The log analytics entity OCID.
+     * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
      *
      */
     private String logAnalyticsEntityId;
 
     /**
-     * The log analytics entity OCID.
+     * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
      *
      */
     public String getLogAnalyticsEntityId() {
@@ -70,6 +70,17 @@ public class DeleteLogAnalyticsEntityRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Option to delete entity even if the entity is associated with a log source and stop any log collections associated with this entity.
+     */
+    private Boolean isForceDelete;
+
+    /**
+     * Option to delete entity even if the entity is associated with a log source and stop any log collections associated with this entity.
+     */
+    public Boolean getIsForceDelete() {
+        return isForceDelete;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -79,13 +90,13 @@ public class DeleteLogAnalyticsEntityRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          */
         private String namespaceName = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          * @param namespaceName the value to set
          * @return this builder instance
@@ -96,13 +107,13 @@ public class DeleteLogAnalyticsEntityRequest
         }
 
         /**
-         * The log analytics entity OCID.
+         * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
          *
          */
         private String logAnalyticsEntityId = null;
 
         /**
-         * The log analytics entity OCID.
+         * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
          *
          * @param logAnalyticsEntityId the value to set
          * @return this builder instance
@@ -153,6 +164,21 @@ public class DeleteLogAnalyticsEntityRequest
         }
 
         /**
+         * Option to delete entity even if the entity is associated with a log source and stop any log collections associated with this entity.
+         */
+        private Boolean isForceDelete = null;
+
+        /**
+         * Option to delete entity even if the entity is associated with a log source and stop any log collections associated with this entity.
+         * @param isForceDelete the value to set
+         * @return this builder instance
+         */
+        public Builder isForceDelete(Boolean isForceDelete) {
+            this.isForceDelete = isForceDelete;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -184,6 +210,7 @@ public class DeleteLogAnalyticsEntityRequest
             logAnalyticsEntityId(o.getLogAnalyticsEntityId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isForceDelete(o.getIsForceDelete());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -220,8 +247,9 @@ public class DeleteLogAnalyticsEntityRequest
             request.logAnalyticsEntityId = logAnalyticsEntityId;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isForceDelete = isForceDelete;
             return request;
-            // new DeleteLogAnalyticsEntityRequest(namespaceName, logAnalyticsEntityId, ifMatch, opcRequestId);
+            // new DeleteLogAnalyticsEntityRequest(namespaceName, logAnalyticsEntityId, ifMatch, opcRequestId, isForceDelete);
         }
     }
 
@@ -234,7 +262,8 @@ public class DeleteLogAnalyticsEntityRequest
                 .namespaceName(namespaceName)
                 .logAnalyticsEntityId(logAnalyticsEntityId)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isForceDelete(isForceDelete);
     }
 
     /**
@@ -254,6 +283,7 @@ public class DeleteLogAnalyticsEntityRequest
         sb.append(",logAnalyticsEntityId=").append(String.valueOf(this.logAnalyticsEntityId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isForceDelete=").append(String.valueOf(this.isForceDelete));
         sb.append(")");
         return sb.toString();
     }
@@ -272,7 +302,8 @@ public class DeleteLogAnalyticsEntityRequest
                 && java.util.Objects.equals(this.namespaceName, other.namespaceName)
                 && java.util.Objects.equals(this.logAnalyticsEntityId, other.logAnalyticsEntityId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isForceDelete, other.isForceDelete);
     }
 
     @Override
@@ -289,6 +320,9 @@ public class DeleteLogAnalyticsEntityRequest
                                 : this.logAnalyticsEntityId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isForceDelete == null ? 43 : this.isForceDelete.hashCode());
         return result;
     }
 }

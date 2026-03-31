@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -49,10 +49,12 @@ public class ExadataInsightSummary extends com.oracle.bmc.http.internal.Explicit
         "definedTags",
         "systemTags",
         "status",
+        "chargebackPlanDetails",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "statusDetails"
     })
     protected ExadataInsightSummary(
             String id,
@@ -65,10 +67,12 @@ public class ExadataInsightSummary extends com.oracle.bmc.http.internal.Explicit
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             ResourceStatus status,
+            ChargebackPlanDetails chargebackPlanDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             ExadataInsightLifecycleState lifecycleState,
-            String lifecycleDetails) {
+            String lifecycleDetails,
+            String statusDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -80,10 +84,12 @@ public class ExadataInsightSummary extends com.oracle.bmc.http.internal.Explicit
         this.definedTags = definedTags;
         this.systemTags = systemTags;
         this.status = status;
+        this.chargebackPlanDetails = chargebackPlanDetails;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.statusDetails = statusDetails;
     }
 
     /**
@@ -238,6 +244,13 @@ public class ExadataInsightSummary extends com.oracle.bmc.http.internal.Explicit
         return status;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("chargebackPlanDetails")
+    private final ChargebackPlanDetails chargebackPlanDetails;
+
+    public ChargebackPlanDetails getChargebackPlanDetails() {
+        return chargebackPlanDetails;
+    }
+
     /**
      * The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
      **/
@@ -294,6 +307,20 @@ public class ExadataInsightSummary extends com.oracle.bmc.http.internal.Explicit
         return lifecycleDetails;
     }
 
+    /**
+     * A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
+    private final String statusDetails;
+
+    /**
+     * A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     * @return the value
+     **/
+    public String getStatusDetails() {
+        return statusDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -318,10 +345,12 @@ public class ExadataInsightSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", chargebackPlanDetails=").append(String.valueOf(this.chargebackPlanDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", statusDetails=").append(String.valueOf(this.statusDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -346,10 +375,12 @@ public class ExadataInsightSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.chargebackPlanDetails, other.chargebackPlanDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.statusDetails, other.statusDetails)
                 && super.equals(other);
     }
 
@@ -375,6 +406,11 @@ public class ExadataInsightSummary extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.chargebackPlanDetails == null
+                                ? 43
+                                : this.chargebackPlanDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
@@ -383,6 +419,9 @@ public class ExadataInsightSummary extends com.oracle.bmc.http.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.statusDetails == null ? 43 : this.statusDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

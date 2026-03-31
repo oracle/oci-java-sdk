@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.requests;
@@ -50,6 +50,19 @@ public class ListDedicatedVmHostInstancesRequest
      */
     public String getAvailabilityDomain() {
         return availabilityDomain;
+    }
+    /**
+     * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     *
+     */
+    private Boolean isMemoryEncryptionEnabled;
+
+    /**
+     * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     *
+     */
+    public Boolean getIsMemoryEncryptionEnabled() {
+        return isMemoryEncryptionEnabled;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -288,6 +301,23 @@ public class ListDedicatedVmHostInstancesRequest
         }
 
         /**
+         * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+         *
+         */
+        private Boolean isMemoryEncryptionEnabled = null;
+
+        /**
+         * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+         *
+         * @param isMemoryEncryptionEnabled the value to set
+         * @return this builder instance
+         */
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            return this;
+        }
+
+        /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated
          * "List" call. For important details about how pagination works, see
          * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -433,6 +463,7 @@ public class ListDedicatedVmHostInstancesRequest
             compartmentId(o.getCompartmentId());
             dedicatedVmHostId(o.getDedicatedVmHostId());
             availabilityDomain(o.getAvailabilityDomain());
+            isMemoryEncryptionEnabled(o.getIsMemoryEncryptionEnabled());
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
@@ -473,13 +504,14 @@ public class ListDedicatedVmHostInstancesRequest
             request.compartmentId = compartmentId;
             request.dedicatedVmHostId = dedicatedVmHostId;
             request.availabilityDomain = availabilityDomain;
+            request.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListDedicatedVmHostInstancesRequest(compartmentId, dedicatedVmHostId, availabilityDomain, limit, page, opcRequestId, sortBy, sortOrder);
+            // new ListDedicatedVmHostInstancesRequest(compartmentId, dedicatedVmHostId, availabilityDomain, isMemoryEncryptionEnabled, limit, page, opcRequestId, sortBy, sortOrder);
         }
     }
 
@@ -492,6 +524,7 @@ public class ListDedicatedVmHostInstancesRequest
                 .compartmentId(compartmentId)
                 .dedicatedVmHostId(dedicatedVmHostId)
                 .availabilityDomain(availabilityDomain)
+                .isMemoryEncryptionEnabled(isMemoryEncryptionEnabled)
                 .limit(limit)
                 .page(page)
                 .opcRequestId(opcRequestId)
@@ -515,6 +548,8 @@ public class ListDedicatedVmHostInstancesRequest
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(",isMemoryEncryptionEnabled=")
+                .append(String.valueOf(this.isMemoryEncryptionEnabled));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -538,6 +573,8 @@ public class ListDedicatedVmHostInstancesRequest
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(
+                        this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
@@ -560,6 +597,11 @@ public class ListDedicatedVmHostInstancesRequest
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMemoryEncryptionEnabled == null
+                                ? 43
+                                : this.isMemoryEncryptionEnabled.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

@@ -1,0 +1,635 @@
+/**
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.multicloud.model;
+
+/**
+ * Flat Map of CSP Region -> CSP-Physical-AZ -> CSP-Logical-AZ -> OCI Site Group -> CPG-ID
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = ExternalLocationsMetadatumSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExternalLocationsMetadatumSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "freeformTags",
+        "definedTags",
+        "systemTags",
+        "externalLocation",
+        "ociPhysicalAd",
+        "ociLogicalAd",
+        "ociRegion",
+        "cpgId",
+        "clusterPlacementGroupId",
+        "partnerCloudName",
+        "partnerCloudAccountName",
+        "partnerCloudAccountUrl"
+    })
+    public ExternalLocationsMetadatumSummary(
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            ExternalLocationDetail externalLocation,
+            String ociPhysicalAd,
+            String ociLogicalAd,
+            String ociRegion,
+            String cpgId,
+            String clusterPlacementGroupId,
+            String partnerCloudName,
+            String partnerCloudAccountName,
+            String partnerCloudAccountUrl) {
+        super();
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+        this.externalLocation = externalLocation;
+        this.ociPhysicalAd = ociPhysicalAd;
+        this.ociLogicalAd = ociLogicalAd;
+        this.ociRegion = ociRegion;
+        this.cpgId = cpgId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.partnerCloudName = partnerCloudName;
+        this.partnerCloudAccountName = partnerCloudAccountName;
+        this.partnerCloudAccountUrl = partnerCloudAccountUrl;
+    }
+
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalLocation")
+        private ExternalLocationDetail externalLocation;
+
+        public Builder externalLocation(ExternalLocationDetail externalLocation) {
+            this.externalLocation = externalLocation;
+            this.__explicitlySet__.add("externalLocation");
+            return this;
+        }
+        /**
+         * OCI physical ad name
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ociPhysicalAd")
+        private String ociPhysicalAd;
+
+        /**
+         * OCI physical ad name
+         * @param ociPhysicalAd the value to set
+         * @return this builder
+         **/
+        public Builder ociPhysicalAd(String ociPhysicalAd) {
+            this.ociPhysicalAd = ociPhysicalAd;
+            this.__explicitlySet__.add("ociPhysicalAd");
+            return this;
+        }
+        /**
+         * OCI logical ad name
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ociLogicalAd")
+        private String ociLogicalAd;
+
+        /**
+         * OCI logical ad name
+         * @param ociLogicalAd the value to set
+         * @return this builder
+         **/
+        public Builder ociLogicalAd(String ociLogicalAd) {
+            this.ociLogicalAd = ociLogicalAd;
+            this.__explicitlySet__.add("ociLogicalAd");
+            return this;
+        }
+        /**
+         * OCI region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ociRegion")
+        private String ociRegion;
+
+        /**
+         * OCI region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+         * @param ociRegion the value to set
+         * @return this builder
+         **/
+        public Builder ociRegion(String ociRegion) {
+            this.ociRegion = ociRegion;
+            this.__explicitlySet__.add("ociRegion");
+            return this;
+        }
+        /**
+         * Cluster Placement Group OCID (deprecated representation)
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cpgId")
+        private String cpgId;
+
+        /**
+         * Cluster Placement Group OCID (deprecated representation)
+         * @param cpgId the value to set
+         * @return this builder
+         **/
+        public Builder cpgId(String cpgId) {
+            this.cpgId = cpgId;
+            this.__explicitlySet__.add("cpgId");
+            return this;
+        }
+        /**
+         * Cluster Placement Group OCID
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * Cluster Placement Group OCID
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * Partner Cloud Name based on service name
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudName")
+        private String partnerCloudName;
+
+        /**
+         * Partner Cloud Name based on service name
+         * @param partnerCloudName the value to set
+         * @return this builder
+         **/
+        public Builder partnerCloudName(String partnerCloudName) {
+            this.partnerCloudName = partnerCloudName;
+            this.__explicitlySet__.add("partnerCloudName");
+            return this;
+        }
+        /**
+         * User friendly name of account name for customer's subscription
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudAccountName")
+        private String partnerCloudAccountName;
+
+        /**
+         * User friendly name of account name for customer's subscription
+         * @param partnerCloudAccountName the value to set
+         * @return this builder
+         **/
+        public Builder partnerCloudAccountName(String partnerCloudAccountName) {
+            this.partnerCloudAccountName = partnerCloudAccountName;
+            this.__explicitlySet__.add("partnerCloudAccountName");
+            return this;
+        }
+        /**
+         * Direct URL to partner cloud for customer's account
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudAccountUrl")
+        private String partnerCloudAccountUrl;
+
+        /**
+         * Direct URL to partner cloud for customer's account
+         * @param partnerCloudAccountUrl the value to set
+         * @return this builder
+         **/
+        public Builder partnerCloudAccountUrl(String partnerCloudAccountUrl) {
+            this.partnerCloudAccountUrl = partnerCloudAccountUrl;
+            this.__explicitlySet__.add("partnerCloudAccountUrl");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public ExternalLocationsMetadatumSummary build() {
+            ExternalLocationsMetadatumSummary model =
+                    new ExternalLocationsMetadatumSummary(
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.externalLocation,
+                            this.ociPhysicalAd,
+                            this.ociLogicalAd,
+                            this.ociRegion,
+                            this.cpgId,
+                            this.clusterPlacementGroupId,
+                            this.partnerCloudName,
+                            this.partnerCloudAccountName,
+                            this.partnerCloudAccountUrl);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(ExternalLocationsMetadatumSummary model) {
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("externalLocation")) {
+                this.externalLocation(model.getExternalLocation());
+            }
+            if (model.wasPropertyExplicitlySet("ociPhysicalAd")) {
+                this.ociPhysicalAd(model.getOciPhysicalAd());
+            }
+            if (model.wasPropertyExplicitlySet("ociLogicalAd")) {
+                this.ociLogicalAd(model.getOciLogicalAd());
+            }
+            if (model.wasPropertyExplicitlySet("ociRegion")) {
+                this.ociRegion(model.getOciRegion());
+            }
+            if (model.wasPropertyExplicitlySet("cpgId")) {
+                this.cpgId(model.getCpgId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("partnerCloudName")) {
+                this.partnerCloudName(model.getPartnerCloudName());
+            }
+            if (model.wasPropertyExplicitlySet("partnerCloudAccountName")) {
+                this.partnerCloudAccountName(model.getPartnerCloudAccountName());
+            }
+            if (model.wasPropertyExplicitlySet("partnerCloudAccountUrl")) {
+                this.partnerCloudAccountUrl(model.getPartnerCloudAccountUrl());
+            }
+            return this;
+        }
+    }
+
+    /**
+     * Create a new builder.
+     */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("externalLocation")
+    private final ExternalLocationDetail externalLocation;
+
+    public ExternalLocationDetail getExternalLocation() {
+        return externalLocation;
+    }
+
+    /**
+     * OCI physical ad name
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ociPhysicalAd")
+    private final String ociPhysicalAd;
+
+    /**
+     * OCI physical ad name
+     * @return the value
+     **/
+    public String getOciPhysicalAd() {
+        return ociPhysicalAd;
+    }
+
+    /**
+     * OCI logical ad name
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ociLogicalAd")
+    private final String ociLogicalAd;
+
+    /**
+     * OCI logical ad name
+     * @return the value
+     **/
+    public String getOciLogicalAd() {
+        return ociLogicalAd;
+    }
+
+    /**
+     * OCI region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ociRegion")
+    private final String ociRegion;
+
+    /**
+     * OCI region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+     * @return the value
+     **/
+    public String getOciRegion() {
+        return ociRegion;
+    }
+
+    /**
+     * Cluster Placement Group OCID (deprecated representation)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpgId")
+    private final String cpgId;
+
+    /**
+     * Cluster Placement Group OCID (deprecated representation)
+     * @return the value
+     **/
+    public String getCpgId() {
+        return cpgId;
+    }
+
+    /**
+     * Cluster Placement Group OCID
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * Cluster Placement Group OCID
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * Partner Cloud Name based on service name
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudName")
+    private final String partnerCloudName;
+
+    /**
+     * Partner Cloud Name based on service name
+     * @return the value
+     **/
+    public String getPartnerCloudName() {
+        return partnerCloudName;
+    }
+
+    /**
+     * User friendly name of account name for customer's subscription
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudAccountName")
+    private final String partnerCloudAccountName;
+
+    /**
+     * User friendly name of account name for customer's subscription
+     * @return the value
+     **/
+    public String getPartnerCloudAccountName() {
+        return partnerCloudAccountName;
+    }
+
+    /**
+     * Direct URL to partner cloud for customer's account
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudAccountUrl")
+    private final String partnerCloudAccountUrl;
+
+    /**
+     * Direct URL to partner cloud for customer's account
+     * @return the value
+     **/
+    public String getPartnerCloudAccountUrl() {
+        return partnerCloudAccountUrl;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExternalLocationsMetadatumSummary(");
+        sb.append("super=").append(super.toString());
+        sb.append("freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", externalLocation=").append(String.valueOf(this.externalLocation));
+        sb.append(", ociPhysicalAd=").append(String.valueOf(this.ociPhysicalAd));
+        sb.append(", ociLogicalAd=").append(String.valueOf(this.ociLogicalAd));
+        sb.append(", ociRegion=").append(String.valueOf(this.ociRegion));
+        sb.append(", cpgId=").append(String.valueOf(this.cpgId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", partnerCloudName=").append(String.valueOf(this.partnerCloudName));
+        sb.append(", partnerCloudAccountName=")
+                .append(String.valueOf(this.partnerCloudAccountName));
+        sb.append(", partnerCloudAccountUrl=").append(String.valueOf(this.partnerCloudAccountUrl));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExternalLocationsMetadatumSummary)) {
+            return false;
+        }
+
+        ExternalLocationsMetadatumSummary other = (ExternalLocationsMetadatumSummary) o;
+        return java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.externalLocation, other.externalLocation)
+                && java.util.Objects.equals(this.ociPhysicalAd, other.ociPhysicalAd)
+                && java.util.Objects.equals(this.ociLogicalAd, other.ociLogicalAd)
+                && java.util.Objects.equals(this.ociRegion, other.ociRegion)
+                && java.util.Objects.equals(this.cpgId, other.cpgId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.partnerCloudName, other.partnerCloudName)
+                && java.util.Objects.equals(
+                        this.partnerCloudAccountName, other.partnerCloudAccountName)
+                && java.util.Objects.equals(
+                        this.partnerCloudAccountUrl, other.partnerCloudAccountUrl)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalLocation == null ? 43 : this.externalLocation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ociPhysicalAd == null ? 43 : this.ociPhysicalAd.hashCode());
+        result = (result * PRIME) + (this.ociLogicalAd == null ? 43 : this.ociLogicalAd.hashCode());
+        result = (result * PRIME) + (this.ociRegion == null ? 43 : this.ociRegion.hashCode());
+        result = (result * PRIME) + (this.cpgId == null ? 43 : this.cpgId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partnerCloudName == null ? 43 : this.partnerCloudName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partnerCloudAccountName == null
+                                ? 43
+                                : this.partnerCloudAccountName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partnerCloudAccountUrl == null
+                                ? 43
+                                : this.partnerCloudAccountUrl.hashCode());
+        result = (result * PRIME) + super.hashCode();
+        return result;
+    }
+}

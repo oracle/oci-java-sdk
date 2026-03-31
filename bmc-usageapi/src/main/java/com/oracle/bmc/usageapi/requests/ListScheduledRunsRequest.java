@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi.requests;
@@ -12,12 +12,12 @@ import com.oracle.bmc.usageapi.model.*;
 public class ListScheduledRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The unique ID of a schedule.
+     * The schedule unique ID.
      */
     private String scheduleId;
 
     /**
-     * The unique ID of a schedule.
+     * The schedule unique ID.
      */
     public String getScheduleId() {
         return scheduleId;
@@ -53,12 +53,12 @@ public class ListScheduledRunsRequest extends com.oracle.bmc.requests.BmcRequest
         return page;
     }
     /**
-     * The maximumimum number of items to return.
+     * The maximum number of items to return.
      */
     private Integer limit;
 
     /**
-     * The maximumimum number of items to return.
+     * The maximum number of items to return.
      */
     public Integer getLimit() {
         return limit;
@@ -168,12 +168,12 @@ public class ListScheduledRunsRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The unique ID of a schedule.
+         * The schedule unique ID.
          */
         private String scheduleId = null;
 
         /**
-         * The unique ID of a schedule.
+         * The schedule unique ID.
          * @param scheduleId the value to set
          * @return this builder instance
          */
@@ -221,12 +221,12 @@ public class ListScheduledRunsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The maximumimum number of items to return.
+         * The maximum number of items to return.
          */
         private Integer limit = null;
 
         /**
-         * The maximumimum number of items to return.
+         * The maximum number of items to return.
          * @param limit the value to set
          * @return this builder instance
          */

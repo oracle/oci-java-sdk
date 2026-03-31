@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * Autonomous Database Software Images created from Autonomous Container Database
+ * Autonomous AI Database Software Images created from Autonomous Container Database
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -34,6 +34,7 @@ public final class AutonomousDatabaseSoftwareImage
         "releaseUpdate",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "autonomousDsiOneOffPatches",
         "imageShapeFamily",
         "dstFileVersion"
@@ -49,6 +50,7 @@ public final class AutonomousDatabaseSoftwareImage
             String releaseUpdate,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<String> autonomousDsiOneOffPatches,
             ImageShapeFamily imageShapeFamily,
             String dstFileVersion) {
@@ -63,6 +65,7 @@ public final class AutonomousDatabaseSoftwareImage
         this.releaseUpdate = releaseUpdate;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.autonomousDsiOneOffPatches = autonomousDsiOneOffPatches;
         this.imageShapeFamily = imageShapeFamily;
         this.dstFileVersion = dstFileVersion;
@@ -71,13 +74,13 @@ public final class AutonomousDatabaseSoftwareImage
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
          * @param id the value to set
          * @return this builder
          **/
@@ -103,13 +106,13 @@ public final class AutonomousDatabaseSoftwareImage
             return this;
         }
         /**
-         * The database version with which the Autonomous Database Software Image is to be built.
+         * The database version with which the Autonomous AI Database Software Image is to be built.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
         private String databaseVersion;
 
         /**
-         * The database version with which the Autonomous Database Software Image is to be built.
+         * The database version with which the Autonomous AI Database Software Image is to be built.
          * @param databaseVersion the value to set
          * @return this builder
          **/
@@ -119,13 +122,13 @@ public final class AutonomousDatabaseSoftwareImage
             return this;
         }
         /**
-         * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+         * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+         * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -135,13 +138,13 @@ public final class AutonomousDatabaseSoftwareImage
             return this;
         }
         /**
-         * The current state of the Autonomous Database Software Image.
+         * The current state of the Autonomous AI Database Software Image.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Autonomous Database Software Image.
+         * The current state of the Autonomous AI Database Software Image.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -167,13 +170,13 @@ public final class AutonomousDatabaseSoftwareImage
             return this;
         }
         /**
-         * The date and time the Autonomous Database Software Image was created.
+         * The date and time the Autonomous AI Database Software Image was created.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the Autonomous Database Software Image was created.
+         * The date and time the Autonomous AI Database Software Image was created.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -244,13 +247,33 @@ public final class AutonomousDatabaseSoftwareImage
             return this;
         }
         /**
-         * One-off patches included in the Autonomous Database Software Image
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
+         * One-off patches included in the Autonomous AI Database Software Image
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDsiOneOffPatches")
         private java.util.List<String> autonomousDsiOneOffPatches;
 
         /**
-         * One-off patches included in the Autonomous Database Software Image
+         * One-off patches included in the Autonomous AI Database Software Image
          * @param autonomousDsiOneOffPatches the value to set
          * @return this builder
          **/
@@ -309,6 +332,7 @@ public final class AutonomousDatabaseSoftwareImage
                             this.releaseUpdate,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.autonomousDsiOneOffPatches,
                             this.imageShapeFamily,
                             this.dstFileVersion);
@@ -350,6 +374,9 @@ public final class AutonomousDatabaseSoftwareImage
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("autonomousDsiOneOffPatches")) {
                 this.autonomousDsiOneOffPatches(model.getAutonomousDsiOneOffPatches());
             }
@@ -375,13 +402,13 @@ public final class AutonomousDatabaseSoftwareImage
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
      * @return the value
      **/
     public String getId() {
@@ -403,13 +430,13 @@ public final class AutonomousDatabaseSoftwareImage
     }
 
     /**
-     * The database version with which the Autonomous Database Software Image is to be built.
+     * The database version with which the Autonomous AI Database Software Image is to be built.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
     private final String databaseVersion;
 
     /**
-     * The database version with which the Autonomous Database Software Image is to be built.
+     * The database version with which the Autonomous AI Database Software Image is to be built.
      * @return the value
      **/
     public String getDatabaseVersion() {
@@ -417,13 +444,13 @@ public final class AutonomousDatabaseSoftwareImage
     }
 
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      * @return the value
      **/
     public String getDisplayName() {
@@ -431,7 +458,7 @@ public final class AutonomousDatabaseSoftwareImage
     }
 
     /**
-     * The current state of the Autonomous Database Software Image.
+     * The current state of the Autonomous AI Database Software Image.
      **/
     public enum LifecycleState {
         Available("AVAILABLE"),
@@ -484,13 +511,13 @@ public final class AutonomousDatabaseSoftwareImage
         }
     };
     /**
-     * The current state of the Autonomous Database Software Image.
+     * The current state of the Autonomous AI Database Software Image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Autonomous Database Software Image.
+     * The current state of the Autonomous AI Database Software Image.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -512,13 +539,13 @@ public final class AutonomousDatabaseSoftwareImage
     }
 
     /**
-     * The date and time the Autonomous Database Software Image was created.
+     * The date and time the Autonomous AI Database Software Image was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the Autonomous Database Software Image was created.
+     * The date and time the Autonomous AI Database Software Image was created.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -580,13 +607,31 @@ public final class AutonomousDatabaseSoftwareImage
     }
 
     /**
-     * One-off patches included in the Autonomous Database Software Image
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
+     * One-off patches included in the Autonomous AI Database Software Image
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDsiOneOffPatches")
     private final java.util.List<String> autonomousDsiOneOffPatches;
 
     /**
-     * One-off patches included in the Autonomous Database Software Image
+     * One-off patches included in the Autonomous AI Database Software Image
      * @return the value
      **/
     public java.util.List<String> getAutonomousDsiOneOffPatches() {
@@ -693,6 +738,7 @@ public final class AutonomousDatabaseSoftwareImage
         sb.append(", releaseUpdate=").append(String.valueOf(this.releaseUpdate));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", autonomousDsiOneOffPatches=")
                 .append(String.valueOf(this.autonomousDsiOneOffPatches));
         sb.append(", imageShapeFamily=").append(String.valueOf(this.imageShapeFamily));
@@ -721,6 +767,7 @@ public final class AutonomousDatabaseSoftwareImage
                 && java.util.Objects.equals(this.releaseUpdate, other.releaseUpdate)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.autonomousDsiOneOffPatches, other.autonomousDsiOneOffPatches)
                 && java.util.Objects.equals(this.imageShapeFamily, other.imageShapeFamily)
@@ -752,6 +799,7 @@ public final class AutonomousDatabaseSoftwareImage
                         + (this.releaseUpdate == null ? 43 : this.releaseUpdate.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.autonomousDsiOneOffPatches == null

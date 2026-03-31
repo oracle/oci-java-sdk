@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe;
@@ -138,6 +138,19 @@ public interface DataSafe extends AutoCloseable {
             ApplySdmMaskingPolicyDifferenceRequest request);
 
     /**
+     * Apply the checks from the template to the specified security assessment.The security assessment provided in the path needs to be of type 'LATEST'.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ApplySecurityAssessmentTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ApplySecurityAssessmentTemplate API.
+     */
+    ApplySecurityAssessmentTemplateResponse applySecurityAssessmentTemplate(
+            ApplySecurityAssessmentTemplateRequest request);
+
+    /**
      * Uploads a sensitive types xml file (also called template) to create new sensitive types.
      *
      *
@@ -190,6 +203,19 @@ public interface DataSafe extends AutoCloseable {
      */
     BulkCreateSqlFirewallAllowedSqlsResponse bulkCreateSqlFirewallAllowedSqls(
             BulkCreateSqlFirewallAllowedSqlsRequest request);
+
+    /**
+     * Bulk create unified audit policies.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/BulkCreateUnifiedAuditPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkCreateUnifiedAuditPolicy API.
+     */
+    BulkCreateUnifiedAuditPolicyResponse bulkCreateUnifiedAuditPolicy(
+            BulkCreateUnifiedAuditPolicyRequest request);
 
     /**
      * Delete multiple allowed sqls from the SQL firewall policy.
@@ -267,6 +293,20 @@ public interface DataSafe extends AutoCloseable {
      */
     ChangeAlertPolicyCompartmentResponse changeAlertPolicyCompartment(
             ChangeAlertPolicyCompartmentRequest request);
+
+    /**
+     * Moves the attribute set to the specified compartment. When provided, if-Match is checked against ETag value of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeAttributeSetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAttributeSetCompartment API.
+     */
+    ChangeAttributeSetCompartmentResponse changeAttributeSetCompartment(
+            ChangeAttributeSetCompartmentRequest request);
 
     /**
      * Moves the archive retreival to the specified compartment. When provided, if-Match is checked against ETag value of the resource.
@@ -481,6 +521,19 @@ public interface DataSafe extends AutoCloseable {
             ChangeSecurityPolicyCompartmentRequest request);
 
     /**
+     * Moves the specified security policy configuration and its dependent resources into a different compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeSecurityPolicyConfigCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecurityPolicyConfigCompartment API.
+     */
+    ChangeSecurityPolicyConfigCompartmentResponse changeSecurityPolicyConfigCompartment(
+            ChangeSecurityPolicyConfigCompartmentRequest request);
+
+    /**
      * Moves the specified security policy deployment and its dependent resources into a different compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -599,6 +652,46 @@ public interface DataSafe extends AutoCloseable {
             ChangeTargetDatabaseCompartmentRequest request);
 
     /**
+     * Moves the target database group to the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeTargetDatabaseGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeTargetDatabaseGroupCompartment API.
+     */
+    ChangeTargetDatabaseGroupCompartmentResponse changeTargetDatabaseGroupCompartment(
+            ChangeTargetDatabaseGroupCompartmentRequest request);
+
+    /**
+     * Moves the specified Unified Audit policy and its dependent resources into a different compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeUnifiedAuditPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeUnifiedAuditPolicyCompartment API.
+     */
+    ChangeUnifiedAuditPolicyCompartmentResponse changeUnifiedAuditPolicyCompartment(
+            ChangeUnifiedAuditPolicyCompartmentRequest request);
+
+    /**
+     * Moves the specified unified audit policy definition and its dependent resources into a different compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeUnifiedAuditPolicyDefinitionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeUnifiedAuditPolicyDefinitionCompartment API.
+     */
+    ChangeUnifiedAuditPolicyDefinitionCompartmentResponse
+            changeUnifiedAuditPolicyDefinitionCompartment(
+                    ChangeUnifiedAuditPolicyDefinitionCompartmentRequest request);
+
+    /**
      * Moves the specified saved user assessment or future scheduled assessments into a different compartment.
      * To start storing scheduled user assessments on a different compartment, first call the operation ListUserAssessments with
      * the filters \"type = save_schedule\". That call returns the scheduleAssessmentId. Then call
@@ -630,6 +723,20 @@ public interface DataSafe extends AutoCloseable {
      */
     CompareSecurityAssessmentResponse compareSecurityAssessment(
             CompareSecurityAssessmentRequest request);
+
+    /**
+     * Compares two security assessments. For this comparison, the security assessment in the path needs to be a latest assessment of a target group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CompareToTemplateBaselineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CompareToTemplateBaseline API.
+     */
+    CompareToTemplateBaselineResponse compareToTemplateBaseline(
+            CompareToTemplateBaselineRequest request);
 
     /**
      * Compares two user assessments. For this comparison, a user assessment can be a saved, a latest assessment, or a baseline.
@@ -672,6 +779,19 @@ public interface DataSafe extends AutoCloseable {
     CreateAlertPolicyRuleResponse createAlertPolicyRule(CreateAlertPolicyRuleRequest request);
 
     /**
+     * Creates an attribute set.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateAttributeSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAttributeSet API.
+     */
+    CreateAttributeSetResponse createAttributeSet(CreateAttributeSetRequest request);
+
+    /**
      * Creates a work request to retrieve archived audit data. This asynchronous process will usually take over an hour to complete.
      * Save the id from the response of this operation. Call GetAuditArchiveRetrieval operation after an hour, passing the id to know the status of
      * this operation.
@@ -686,6 +806,18 @@ public interface DataSafe extends AutoCloseable {
      */
     CreateAuditArchiveRetrievalResponse createAuditArchiveRetrieval(
             CreateAuditArchiveRetrievalRequest request);
+
+    /**
+     * Create a new audit profile resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateAuditProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAuditProfile API.
+     */
+    CreateAuditProfileResponse createAuditProfile(CreateAuditProfileRequest request);
 
     /**
      * Creates a new Data Safe private endpoint.
@@ -885,6 +1017,47 @@ public interface DataSafe extends AutoCloseable {
             CreateSecurityAssessmentRequest request);
 
     /**
+     * Creates a Data Safe security policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateSecurityPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityPolicy API.
+     */
+    CreateSecurityPolicyResponse createSecurityPolicy(CreateSecurityPolicyRequest request);
+
+    /**
+     * Creates a new security policy configuration resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateSecurityPolicyConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityPolicyConfig API.
+     */
+    CreateSecurityPolicyConfigResponse createSecurityPolicyConfig(
+            CreateSecurityPolicyConfigRequest request);
+
+    /**
+     * Creates a Data Safe security policy deployment in the Data Safe Console.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateSecurityPolicyDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityPolicyDeployment API.
+     */
+    CreateSecurityPolicyDeploymentResponse createSecurityPolicyDeployment(
+            CreateSecurityPolicyDeploymentRequest request);
+
+    /**
      * Creates a new sensitive column in the specified sensitive data model.
      *
      * @param request The request object containing the details to send
@@ -999,6 +1172,34 @@ public interface DataSafe extends AutoCloseable {
     CreateTargetDatabaseResponse createTargetDatabase(CreateTargetDatabaseRequest request);
 
     /**
+     * Creates a new target database group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateTargetDatabaseGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTargetDatabaseGroup API.
+     */
+    CreateTargetDatabaseGroupResponse createTargetDatabaseGroup(
+            CreateTargetDatabaseGroupRequest request);
+
+    /**
+     * Creates the specified unified audit policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateUnifiedAuditPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUnifiedAuditPolicy API.
+     */
+    CreateUnifiedAuditPolicyResponse createUnifiedAuditPolicy(
+            CreateUnifiedAuditPolicyRequest request);
+
+    /**
      * Creates a new saved user assessment for one or multiple targets in a compartment. It saves the latest assessments in the
      * specified compartment. If a scheduled is passed in, this operation persists the latest assessments that exist at the defined
      * date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -1052,6 +1253,19 @@ public interface DataSafe extends AutoCloseable {
     DeleteAlertPolicyRuleResponse deleteAlertPolicyRule(DeleteAlertPolicyRuleRequest request);
 
     /**
+     * Submits a work request to delete an attribute set.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteAttributeSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAttributeSet API.
+     */
+    DeleteAttributeSetResponse deleteAttributeSet(DeleteAttributeSetRequest request);
+
+    /**
      * To unload retrieved archive data, call the operation ListAuditArchiveRetrieval first.
      * This will return the auditArchiveRetrievalId. Then call this operation with auditArchiveRetrievalId.
      *
@@ -1065,6 +1279,20 @@ public interface DataSafe extends AutoCloseable {
      */
     DeleteAuditArchiveRetrievalResponse deleteAuditArchiveRetrieval(
             DeleteAuditArchiveRetrievalRequest request);
+
+    /**
+     * Deletes the specified audit profile.
+     * The audit profile delete operation is only supported for audit profiles with target type as TARGET_DATABASE_GROUP.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteAuditProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAuditProfile API.
+     */
+    DeleteAuditProfileResponse deleteAuditProfile(DeleteAuditProfileRequest request);
 
     /**
      * Deletes the specified audit trail.
@@ -1259,6 +1487,44 @@ public interface DataSafe extends AutoCloseable {
             DeleteSecurityAssessmentRequest request);
 
     /**
+     * Deletes the specified security policy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteSecurityPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityPolicy API.
+     */
+    DeleteSecurityPolicyResponse deleteSecurityPolicy(DeleteSecurityPolicyRequest request);
+
+    /**
+     * Deletes the specified Security policy configuration.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteSecurityPolicyConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityPolicyConfig API.
+     */
+    DeleteSecurityPolicyConfigResponse deleteSecurityPolicyConfig(
+            DeleteSecurityPolicyConfigRequest request);
+
+    /**
+     * Deletes the specified Security policy deployment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteSecurityPolicyDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityPolicyDeployment API.
+     */
+    DeleteSecurityPolicyDeploymentResponse deleteSecurityPolicyDeployment(
+            DeleteSecurityPolicyDeploymentRequest request);
+
+    /**
      * Deletes the specified sensitive column.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1385,6 +1651,46 @@ public interface DataSafe extends AutoCloseable {
     DeleteTargetDatabaseResponse deleteTargetDatabase(DeleteTargetDatabaseRequest request);
 
     /**
+     * Deletes the specified target database group.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteTargetDatabaseGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTargetDatabaseGroup API.
+     */
+    DeleteTargetDatabaseGroupResponse deleteTargetDatabaseGroup(
+            DeleteTargetDatabaseGroupRequest request);
+
+    /**
+     * Deletes the Unified Audit policy resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteUnifiedAuditPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUnifiedAuditPolicy API.
+     */
+    DeleteUnifiedAuditPolicyResponse deleteUnifiedAuditPolicy(
+            DeleteUnifiedAuditPolicyRequest request);
+
+    /**
+     * Deletes the specified Unified audit policy definition.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteUnifiedAuditPolicyDefinitionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUnifiedAuditPolicyDefinition API.
+     */
+    DeleteUnifiedAuditPolicyDefinitionResponse deleteUnifiedAuditPolicyDefinition(
+            DeleteUnifiedAuditPolicyDefinitionRequest request);
+
+    /**
      * Deletes the specified saved user assessment or schedule. To delete a user assessment schedule, first call the operation
      * ListUserAssessments with filters \"type = save_schedule\".
      * That call returns the scheduleAssessmentId. Then call DeleteUserAssessment with the scheduleAssessmentId.
@@ -1399,6 +1705,19 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteUserAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUserAssessment API.
      */
     DeleteUserAssessmentResponse deleteUserAssessment(DeleteUserAssessmentRequest request);
+
+    /**
+     * Deploy the security policy to the specified target or target groups.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeploySecurityPolicyDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeploySecurityPolicyDeployment API.
+     */
+    DeploySecurityPolicyDeploymentResponse deploySecurityPolicyDeployment(
+            DeploySecurityPolicyDeploymentRequest request);
 
     /**
      * Updates the list of audit trails created under audit profile.The
@@ -1752,6 +2071,18 @@ public interface DataSafe extends AutoCloseable {
     GetAlertPolicyRuleResponse getAlertPolicyRule(GetAlertPolicyRuleRequest request);
 
     /**
+     * Gets the details of the specified attribute set.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetAttributeSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAttributeSet API.
+     */
+    GetAttributeSetResponse getAttributeSet(GetAttributeSetRequest request);
+
+    /**
      * Gets the details of the specified archive retreival.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1937,6 +2268,19 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetDiscoveryJobResultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDiscoveryJobResult API.
      */
     GetDiscoveryJobResultResponse getDiscoveryJobResult(GetDiscoveryJobResultRequest request);
+
+    /**
+     * Retrieves the members of the target database group with the specified OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetGroupMembersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGroupMembers API.
+     */
+    GetGroupMembersResponse getGroupMembers(GetGroupMembersRequest request);
 
     /**
      * Gets the details of the specified library masking format.
@@ -2139,6 +2483,18 @@ public interface DataSafe extends AutoCloseable {
     GetSecurityPolicyResponse getSecurityPolicy(GetSecurityPolicyRequest request);
 
     /**
+     * Gets a security policy configuration by identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSecurityPolicyConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityPolicyConfig API.
+     */
+    GetSecurityPolicyConfigResponse getSecurityPolicyConfig(GetSecurityPolicyConfigRequest request);
+
+    /**
      * Gets a security policy deployment by identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2301,6 +2657,57 @@ public interface DataSafe extends AutoCloseable {
     GetTargetDatabaseResponse getTargetDatabase(GetTargetDatabaseRequest request);
 
     /**
+     * Returns the details of the specified target database group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetTargetDatabaseGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetDatabaseGroup API.
+     */
+    GetTargetDatabaseGroupResponse getTargetDatabaseGroup(GetTargetDatabaseGroupRequest request);
+
+    /**
+     * Gets the details of the comparison report for the security assessments submitted for comparison.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetTemplateBaselineComparisonExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTemplateBaselineComparison API.
+     */
+    GetTemplateBaselineComparisonResponse getTemplateBaselineComparison(
+            GetTemplateBaselineComparisonRequest request);
+
+    /**
+     * Gets a Unified Audit policy by identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetUnifiedAuditPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUnifiedAuditPolicy API.
+     */
+    GetUnifiedAuditPolicyResponse getUnifiedAuditPolicy(GetUnifiedAuditPolicyRequest request);
+
+    /**
+     * Gets a unified audit policy definition by the specified OCID of the unified audit policy definition resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetUnifiedAuditPolicyDefinitionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUnifiedAuditPolicyDefinition API.
+     */
+    GetUnifiedAuditPolicyDefinitionResponse getUnifiedAuditPolicyDefinition(
+            GetUnifiedAuditPolicyDefinitionRequest request);
+
+    /**
      * Gets a user assessment by identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2389,6 +2796,44 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListAlertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAlerts API.
      */
     ListAlertsResponse listAlerts(ListAlertsRequest request);
+
+    /**
+     * Returns list of all associated resources.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListAssociatedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssociatedResources API.
+     */
+    ListAssociatedResourcesResponse listAssociatedResources(ListAssociatedResourcesRequest request);
+
+    /**
+     * Retrieves the list of attribute sets.
+     * <p>
+     * The ListAttributeSets operation returns only the attribute sets in the specified `compartmentId`.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAttributeSet on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListAttributeSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAttributeSets API.
+     */
+    ListAttributeSetsResponse listAttributeSets(ListAttributeSetsRequest request);
 
     /**
      * Returns the list of audit archive retrieval.
@@ -2628,6 +3073,19 @@ public interface DataSafe extends AutoCloseable {
             ListAvailableAuditVolumesRequest request);
 
     /**
+     * Lists all the security checks in the specified compartment for security assessment of type TEMPLATE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListChecksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListChecks API.
+     */
+    ListChecksResponse listChecks(ListChecksRequest request);
+
+    /**
      * Gets a list of all collected audit volume data points.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2800,7 +3258,7 @@ public interface DataSafe extends AutoCloseable {
     ListFindingAnalyticsResponse listFindingAnalytics(ListFindingAnalyticsRequest request);
 
     /**
-     * List all the findings from all the targets in the specified compartment.
+     * Lists all the findings for the specified assessment except for type TEMPLATE. If the assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with the user-defined severity from the template.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3301,6 +3759,33 @@ public interface DataSafe extends AutoCloseable {
     ListSecurityPoliciesResponse listSecurityPolicies(ListSecurityPoliciesRequest request);
 
     /**
+     * Retrieves a list of all security policy configurations in Data Safe.
+     * <p>
+     * The ListSecurityPolicyConfigs operation returns only the security policy configurations in the specified `compartmentId`.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyConfigs on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSecurityPolicyConfigsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityPolicyConfigs API.
+     */
+    ListSecurityPolicyConfigsResponse listSecurityPolicyConfigs(
+            ListSecurityPolicyConfigsRequest request);
+
+    /**
      * Retrieves a list of all security policy deployments in Data Safe.
      * <p>
      * The ListSecurityPolicyDeployments operation returns only the security policy deployments in the specified `compartmentId`.
@@ -3728,6 +4213,20 @@ public interface DataSafe extends AutoCloseable {
             ListTargetAlertPolicyAssociationsRequest request);
 
     /**
+     * Retrieves a list of target database groups according to the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListTargetDatabaseGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetDatabaseGroups API.
+     */
+    ListTargetDatabaseGroupsResponse listTargetDatabaseGroups(
+            ListTargetDatabaseGroupsRequest request);
+
+    /**
      * Returns the list of registered target databases in Data Safe.
      *
      * @param request The request object containing the details to send
@@ -3739,6 +4238,126 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListTargetDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetDatabases API.
      */
     ListTargetDatabasesResponse listTargetDatabases(ListTargetDatabasesRequest request);
+
+    /**
+     * Gets a list of all targets whose audit settings override the target group setting.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListTargetOverridesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetOverrides API.
+     */
+    ListTargetOverridesResponse listTargetOverrides(ListTargetOverridesRequest request);
+
+    /**
+     * Gets a list of template aggregated details in the specified compartment. This provides information about the
+     * overall template usage, by returning the count of the target databases/target groups using the templates. It also provides information
+     * about the statistics for the template baseline and the comparison related. If the comparison is done, it will show if there is any drift,
+     * and how many checks have drifts.
+     * The dimension field - isGroup identifies if the targetId belongs to a target group or a individual target.
+     * The dimension field - isCompared identifies if the comparison between the latest assessment and the template baseline assessment is done or not.
+     * The dimension field - isCompliant identifies if the latest assessment is compliant with the template baseline assessment or not.
+     * The dimension field - totalChecksFailed identifies how many checks in the template have drifts in the comparison.
+     * <p>
+     * When you perform the ListTemplateAnalytics operation, if the parameter compartmentIdInSubtree is set to \"true,\" and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then \"Not Authorized\" is returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListTemplateAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTemplateAnalytics API.
+     */
+    ListTemplateAnalyticsResponse listTemplateAnalytics(ListTemplateAnalyticsRequest request);
+
+    /**
+     * Gets a list of template association details in the specified compartment. This provides information about the
+     * overall template usage, by returning the count of the target databases/target groups using the templates.
+     * <p>
+     * If the template baseline is created for a target group which contains several targets, we will have each individual target
+     * listed there as targetId field together with targetDatabaseGroupId. And if the template baseline is created for an individual target,
+     * it will have targetId field only.
+     * <p>
+     * By leveraging the targetId filter, you will be able to know all the template or template baseline that this target has something to do with.
+     * No matter if they are directly applied or created for this target, or they are for the target group the target belongs to.
+     * <p>
+     * When you perform the ListTemplateAssociationAnalytics operation, if the parameter compartmentIdInSubtree is set to \"true,\" and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then \"Not Authorized\" is returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListTemplateAssociationAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTemplateAssociationAnalytics API.
+     */
+    ListTemplateAssociationAnalyticsResponse listTemplateAssociationAnalytics(
+            ListTemplateAssociationAnalyticsRequest request);
+
+    /**
+     * Retrieves a list of all Unified Audit policies.
+     * <p>
+     * The ListUnifiedAuditPolicies operation returns only the Unified Audit policies in the specified `compartmentId`.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a sub-compartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and sub-compartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListUnifiedAuditPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUnifiedAuditPolicies API.
+     */
+    ListUnifiedAuditPoliciesResponse listUnifiedAuditPolicies(
+            ListUnifiedAuditPoliciesRequest request);
+
+    /**
+     * Retrieves a list of all unified audit policy definitions in Data Safe.
+     * <p>
+     * The ListUnifiedAuditPolicyDefinitions operation returns only the unified audit policy definitions in the specified `compartmentId`.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicyDefinitions on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListUnifiedAuditPolicyDefinitionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUnifiedAuditPolicyDefinitions API.
+     */
+    ListUnifiedAuditPolicyDefinitionsResponse listUnifiedAuditPolicyDefinitions(
+            ListUnifiedAuditPolicyDefinitionsRequest request);
 
     /**
      * Gets a list of aggregated user access analytics in the specified target in a compartment.
@@ -3900,6 +4519,20 @@ public interface DataSafe extends AutoCloseable {
     PatchAlertsResponse patchAlerts(PatchAlertsRequest request);
 
     /**
+     * Patches one or more checks in the specified template type security assessment. Use it to add or delete checks.
+     * To add check, use CreateCheckDetails as the patch value.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/PatchChecksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchChecks API.
+     */
+    PatchChecksResponse patchChecks(PatchChecksRequest request);
+
+    /**
      * Patches one or more discovery results. You can use this operation to set the plannedAction attribute before using
      * ApplyDiscoveryJobResults to process the results based on this attribute.
      *
@@ -3913,6 +4546,19 @@ public interface DataSafe extends AutoCloseable {
      */
     PatchDiscoveryJobResultsResponse patchDiscoveryJobResults(
             PatchDiscoveryJobResultsRequest request);
+
+    /**
+     * Patches one or more findings in the specified template baseline type security assessment. Use it to modify max allowed risk level in template baseline.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/PatchFindingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchFindings API.
+     */
+    PatchFindingsResponse patchFindings(PatchFindingsRequest request);
 
     /**
      * Patches one or more sensitive types in a sensitive type group. You can use this operation to add or remove
@@ -4056,6 +4702,19 @@ public interface DataSafe extends AutoCloseable {
             RefreshSecurityAssessmentRequest request);
 
     /**
+     * Retrieve all the security policies from the associated target or target group and refresh the same on Data safe.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/RefreshSecurityPolicyDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshSecurityPolicyDeployment API.
+     */
+    RefreshSecurityPolicyDeploymentResponse refreshSecurityPolicyDeployment(
+            RefreshSecurityPolicyDeploymentRequest request);
+
+    /**
      * Refresh the specified SQL collection Log Insights.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4107,6 +4766,19 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/RemoveScheduleReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveScheduleReport API.
      */
     RemoveScheduleReportResponse removeScheduleReport(RemoveScheduleReportRequest request);
+
+    /**
+     * Remove the checks from the template to the specified security assessment.The security assessment provided in the path needs to be of type 'LATEST'.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/RemoveSecurityAssessmentTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveSecurityAssessmentTemplate API.
+     */
+    RemoveSecurityAssessmentTemplateResponse removeSecurityAssessmentTemplate(
+            RemoveSecurityAssessmentTemplateRequest request);
 
     /**
      * Resumes the specified audit trail once it got stopped.
@@ -4311,6 +4983,18 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateAlertPolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAlertPolicyRule API.
      */
     UpdateAlertPolicyRuleResponse updateAlertPolicyRule(UpdateAlertPolicyRuleRequest request);
+
+    /**
+     * Updates an attribute set.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateAttributeSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAttributeSet API.
+     */
+    UpdateAttributeSetResponse updateAttributeSet(UpdateAttributeSetRequest request);
 
     /**
      * Updates the audit archive retrieval.
@@ -4541,6 +5225,19 @@ public interface DataSafe extends AutoCloseable {
     UpdateSecurityPolicyResponse updateSecurityPolicy(UpdateSecurityPolicyRequest request);
 
     /**
+     * Updates the security policy configuration.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateSecurityPolicyConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityPolicyConfig API.
+     */
+    UpdateSecurityPolicyConfigResponse updateSecurityPolicyConfig(
+            UpdateSecurityPolicyConfigRequest request);
+
+    /**
      * Updates the security policy deployment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4666,6 +5363,45 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateTargetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetDatabase API.
      */
     UpdateTargetDatabaseResponse updateTargetDatabase(UpdateTargetDatabaseRequest request);
+
+    /**
+     * Updates one or more attributes of the specified target database group.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateTargetDatabaseGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetDatabaseGroup API.
+     */
+    UpdateTargetDatabaseGroupResponse updateTargetDatabaseGroup(
+            UpdateTargetDatabaseGroupRequest request);
+
+    /**
+     * Updates the Unified Audit policy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateUnifiedAuditPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateUnifiedAuditPolicy API.
+     */
+    UpdateUnifiedAuditPolicyResponse updateUnifiedAuditPolicy(
+            UpdateUnifiedAuditPolicyRequest request);
+
+    /**
+     * Updates the unified audit policy definition.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateUnifiedAuditPolicyDefinitionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateUnifiedAuditPolicyDefinition API.
+     */
+    UpdateUnifiedAuditPolicyDefinitionResponse updateUnifiedAuditPolicyDefinition(
+            UpdateUnifiedAuditPolicyDefinitionRequest request);
 
     /**
      * Updates one or more attributes of the specified user assessment. This operation allows to update the user assessment displayName, description, or schedule.

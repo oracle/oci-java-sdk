@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.psql.requests;
@@ -46,19 +46,39 @@ public class ListDefaultConfigurationsRequest
         return dbVersion;
     }
     /**
-     * The name of the shape for the configuration.
-     * Example: {@code VM.Standard.E4.Flex}
+     * The compute name of the shape for the configuration.
      *
      */
     private String shape;
 
     /**
-     * The name of the shape for the configuration.
-     * Example: {@code VM.Standard.E4.Flex}
+     * The compute name of the shape for the configuration.
      *
      */
     public String getShape() {
         return shape;
+    }
+    /**
+     * The instance ocpu count for the configuration.
+     */
+    private Integer instanceOcpuCount;
+
+    /**
+     * The instance ocpu count for the configuration.
+     */
+    public Integer getInstanceOcpuCount() {
+        return instanceOcpuCount;
+    }
+    /**
+     * The instance memory size in GBs for the configuration.
+     */
+    private Integer instanceMemorySizeInGBs;
+
+    /**
+     * The instance memory size in GBs for the configuration.
+     */
+    public Integer getInstanceMemorySizeInGBs() {
+        return instanceMemorySizeInGBs;
     }
     /**
      * A unique identifier for the configuration.
@@ -220,21 +240,49 @@ public class ListDefaultConfigurationsRequest
         }
 
         /**
-         * The name of the shape for the configuration.
-         * Example: {@code VM.Standard.E4.Flex}
+         * The compute name of the shape for the configuration.
          *
          */
         private String shape = null;
 
         /**
-         * The name of the shape for the configuration.
-         * Example: {@code VM.Standard.E4.Flex}
+         * The compute name of the shape for the configuration.
          *
          * @param shape the value to set
          * @return this builder instance
          */
         public Builder shape(String shape) {
             this.shape = shape;
+            return this;
+        }
+
+        /**
+         * The instance ocpu count for the configuration.
+         */
+        private Integer instanceOcpuCount = null;
+
+        /**
+         * The instance ocpu count for the configuration.
+         * @param instanceOcpuCount the value to set
+         * @return this builder instance
+         */
+        public Builder instanceOcpuCount(Integer instanceOcpuCount) {
+            this.instanceOcpuCount = instanceOcpuCount;
+            return this;
+        }
+
+        /**
+         * The instance memory size in GBs for the configuration.
+         */
+        private Integer instanceMemorySizeInGBs = null;
+
+        /**
+         * The instance memory size in GBs for the configuration.
+         * @param instanceMemorySizeInGBs the value to set
+         * @return this builder instance
+         */
+        public Builder instanceMemorySizeInGBs(Integer instanceMemorySizeInGBs) {
+            this.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
             return this;
         }
 
@@ -362,6 +410,8 @@ public class ListDefaultConfigurationsRequest
             displayName(o.getDisplayName());
             dbVersion(o.getDbVersion());
             shape(o.getShape());
+            instanceOcpuCount(o.getInstanceOcpuCount());
+            instanceMemorySizeInGBs(o.getInstanceMemorySizeInGBs());
             configurationId(o.getConfigurationId());
             limit(o.getLimit());
             page(o.getPage());
@@ -404,6 +454,8 @@ public class ListDefaultConfigurationsRequest
             request.displayName = displayName;
             request.dbVersion = dbVersion;
             request.shape = shape;
+            request.instanceOcpuCount = instanceOcpuCount;
+            request.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
             request.configurationId = configurationId;
             request.limit = limit;
             request.page = page;
@@ -411,7 +463,7 @@ public class ListDefaultConfigurationsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDefaultConfigurationsRequest(lifecycleState, displayName, dbVersion, shape, configurationId, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListDefaultConfigurationsRequest(lifecycleState, displayName, dbVersion, shape, instanceOcpuCount, instanceMemorySizeInGBs, configurationId, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -425,6 +477,8 @@ public class ListDefaultConfigurationsRequest
                 .displayName(displayName)
                 .dbVersion(dbVersion)
                 .shape(shape)
+                .instanceOcpuCount(instanceOcpuCount)
+                .instanceMemorySizeInGBs(instanceMemorySizeInGBs)
                 .configurationId(configurationId)
                 .limit(limit)
                 .page(page)
@@ -450,6 +504,8 @@ public class ListDefaultConfigurationsRequest
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(",shape=").append(String.valueOf(this.shape));
+        sb.append(",instanceOcpuCount=").append(String.valueOf(this.instanceOcpuCount));
+        sb.append(",instanceMemorySizeInGBs=").append(String.valueOf(this.instanceMemorySizeInGBs));
         sb.append(",configurationId=").append(String.valueOf(this.configurationId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -475,6 +531,9 @@ public class ListDefaultConfigurationsRequest
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.instanceOcpuCount, other.instanceOcpuCount)
+                && java.util.Objects.equals(
+                        this.instanceMemorySizeInGBs, other.instanceMemorySizeInGBs)
                 && java.util.Objects.equals(this.configurationId, other.configurationId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -493,6 +552,14 @@ public class ListDefaultConfigurationsRequest
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceOcpuCount == null ? 43 : this.instanceOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceMemorySizeInGBs == null
+                                ? 43
+                                : this.instanceMemorySizeInGBs.hashCode());
         result =
                 (result * PRIME)
                         + (this.configurationId == null ? 43 : this.configurationId.hashCode());

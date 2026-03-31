@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -53,6 +53,15 @@ public final class VaultMappedSecret extends MappedSecret {
             this.__explicitlySet__.add("parentResourceId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
         /**
          * OCID for the Vault Secret to be used.
          **/
@@ -95,6 +104,7 @@ public final class VaultMappedSecret extends MappedSecret {
                             this.name,
                             this.type,
                             this.parentResourceId,
+                            this.description,
                             this.vaultSecretId,
                             this.versionNumber);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -113,6 +123,9 @@ public final class VaultMappedSecret extends MappedSecret {
             }
             if (model.wasPropertyExplicitlySet("parentResourceId")) {
                 this.parentResourceId(model.getParentResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("vaultSecretId")) {
                 this.vaultSecretId(model.getVaultSecretId());
@@ -140,9 +153,10 @@ public final class VaultMappedSecret extends MappedSecret {
             String name,
             InspectionType type,
             String parentResourceId,
+            String description,
             String vaultSecretId,
             Integer versionNumber) {
-        super(name, type, parentResourceId);
+        super(name, type, parentResourceId, description);
         this.vaultSecretId = vaultSecretId;
         this.versionNumber = versionNumber;
     }

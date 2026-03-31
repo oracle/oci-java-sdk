@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -34,6 +34,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "freeformTags",
         "id",
         "ipAddress",
+        "cidrPrefixLength",
         "lifecycleState",
         "subnetId",
         "timeCreated",
@@ -49,6 +50,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             java.util.Map<String, String> freeformTags,
             String id,
             String ipAddress,
+            Integer cidrPrefixLength,
             LifecycleState lifecycleState,
             String subnetId,
             java.util.Date timeCreated,
@@ -63,6 +65,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.freeformTags = freeformTags;
         this.id = id;
         this.ipAddress = ipAddress;
+        this.cidrPrefixLength = cidrPrefixLength;
         this.lifecycleState = lifecycleState;
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
@@ -204,6 +207,22 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
+         * Length of cidr range. Optional field to specify flexible cidr.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
+        private Integer cidrPrefixLength;
+
+        /**
+         * Length of cidr range. Optional field to specify flexible cidr.
+         * @param cidrPrefixLength the value to set
+         * @return this builder
+         **/
+        public Builder cidrPrefixLength(Integer cidrPrefixLength) {
+            this.cidrPrefixLength = cidrPrefixLength;
+            this.__explicitlySet__.add("cidrPrefixLength");
+            return this;
+        }
+        /**
          * The IPv6's current state.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -297,7 +316,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
         /**
          * Lifetime of the IP address.
-         * There are two types of IPv6 IPs:
+         * There are two types of IPs:
          *  - Ephemeral
          *  - Reserved
          *
@@ -307,7 +326,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
         /**
          * Lifetime of the IP address.
-         * There are two types of IPv6 IPs:
+         * There are two types of IPs:
          *  - Ephemeral
          *  - Reserved
          *
@@ -321,7 +340,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
-         * [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+         * [Per-resource Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
@@ -329,7 +348,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
-         * [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+         * [Per-resource Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
          * @param routeTableId the value to set
          * @return this builder
@@ -352,6 +371,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.freeformTags,
                             this.id,
                             this.ipAddress,
+                            this.cidrPrefixLength,
                             this.lifecycleState,
                             this.subnetId,
                             this.timeCreated,
@@ -384,6 +404,9 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("cidrPrefixLength")) {
+                this.cidrPrefixLength(model.getCidrPrefixLength());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -535,6 +558,20 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
      **/
     public String getIpAddress() {
         return ipAddress;
+    }
+
+    /**
+     * Length of cidr range. Optional field to specify flexible cidr.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
+    private final Integer cidrPrefixLength;
+
+    /**
+     * Length of cidr range. Optional field to specify flexible cidr.
+     * @return the value
+     **/
+    public Integer getCidrPrefixLength() {
+        return cidrPrefixLength;
     }
 
     /**
@@ -720,7 +757,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Lifetime of the IP address.
-     * There are two types of IPv6 IPs:
+     * There are two types of IPs:
      *  - Ephemeral
      *  - Reserved
      *
@@ -772,7 +809,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     };
     /**
      * Lifetime of the IP address.
-     * There are two types of IPv6 IPs:
+     * There are two types of IPs:
      *  - Ephemeral
      *  - Reserved
      *
@@ -782,7 +819,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Lifetime of the IP address.
-     * There are two types of IPv6 IPs:
+     * There are two types of IPs:
      *  - Ephemeral
      *  - Reserved
      *
@@ -794,7 +831,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
-     * [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     * [Per-resource Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
@@ -802,7 +839,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
-     * [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     * [Per-resource Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
      * @return the value
      **/
@@ -830,6 +867,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", cidrPrefixLength=").append(String.valueOf(this.cidrPrefixLength));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -857,6 +895,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.cidrPrefixLength, other.cidrPrefixLength)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -879,6 +918,9 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cidrPrefixLength == null ? 43 : this.cidrPrefixLength.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

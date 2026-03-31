@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -28,6 +28,10 @@ package com.oracle.bmc.database.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = LaunchDbSystemDetails.class,
         name = "NONE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = LaunchStandbyDbSystemDetails.class,
+        name = "DATAGUARD"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = LaunchDbSystemFromDbSystemDetails.class,
@@ -74,7 +78,11 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
         "securityAttributes",
         "privateIp",
         "privateIpV6",
-        "dataCollectionOptions"
+        "clusterPlacementGroupId",
+        "subscriptionId",
+        "dataCollectionOptions",
+        "computeModel",
+        "computeCount"
     })
     protected LaunchDbSystemBase(
             String compartmentId,
@@ -105,7 +113,11 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateIp,
             String privateIpV6,
-            DataCollectionOptions dataCollectionOptions) {
+            String clusterPlacementGroupId,
+            String subscriptionId,
+            DataCollectionOptions dataCollectionOptions,
+            ComputeModel computeModel,
+            Integer computeCount) {
         super();
         this.compartmentId = compartmentId;
         this.faultDomains = faultDomains;
@@ -135,7 +147,11 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
         this.securityAttributes = securityAttributes;
         this.privateIp = privateIp;
         this.privateIpV6 = privateIpV6;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.subscriptionId = subscriptionId;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.computeModel = computeModel;
+        this.computeCount = computeCount;
     }
 
     /**
@@ -283,7 +299,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -292,7 +308,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
      **/
@@ -572,14 +588,14 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume.
+     * Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialDataStorageSizeInGB")
     private final Integer initialDataStorageSizeInGB;
 
     /**
-     * Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume.
+     * Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256.
      *
      * @return the value
      **/
@@ -602,14 +618,14 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      *
      * @return the value
      **/
@@ -618,14 +634,14 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+     * The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     private final Integer nodeCount;
 
     /**
-     * The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+     * The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
      *
      * @return the value
      **/
@@ -729,11 +745,102 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
         return privateIpV6;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
     private final DataCollectionOptions dataCollectionOptions;
 
     public DataCollectionOptions getDataCollectionOptions() {
         return dataCollectionOptions;
+    }
+
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     **/
+    public enum ComputeModel {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ComputeModel: " + key);
+        }
+    };
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * @return the value
+     **/
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /**
+     * The number of compute servers for the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Integer computeCount;
+
+    /**
+     * The number of compute servers for the DB system.
+     * @return the value
+     **/
+    public Integer getComputeCount() {
+        return computeCount;
     }
 
     @Override
@@ -780,7 +887,12 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", privateIpV6=").append(String.valueOf(this.privateIpV6));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(")");
         return sb.toString();
     }
@@ -825,7 +937,12 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.privateIpV6, other.privateIpV6)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && super.equals(other);
     }
 
@@ -899,9 +1016,19 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
         result = (result * PRIME) + (this.privateIpV6 == null ? 43 : this.privateIpV6.hashCode());
         result =
                 (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
@@ -917,6 +1044,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
         DbBackup("DB_BACKUP"),
         Database("DATABASE"),
         DbSystem("DB_SYSTEM"),
+        Dataguard("DATAGUARD"),
         ;
 
         private final String value;

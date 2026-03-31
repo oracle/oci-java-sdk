@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds;
@@ -259,6 +259,130 @@ public class BdsPaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.bds.model.BdsApiKeySummary> apply(
                             ListBdsApiKeysResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listBdsCertificateConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBdsCertificateConfigurationsResponse>
+            listBdsCertificateConfigurationsResponseIterator(
+                    final ListBdsCertificateConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBdsCertificateConfigurationsRequest.Builder,
+                ListBdsCertificateConfigurationsRequest, ListBdsCertificateConfigurationsResponse>(
+                new java.util.function.Supplier<ListBdsCertificateConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListBdsCertificateConfigurationsRequest.Builder get() {
+                        return ListBdsCertificateConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCertificateConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListBdsCertificateConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsCertificateConfigurationsRequest.Builder>,
+                        ListBdsCertificateConfigurationsRequest>() {
+                    @Override
+                    public ListBdsCertificateConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsCertificateConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCertificateConfigurationsRequest,
+                        ListBdsCertificateConfigurationsResponse>() {
+                    @Override
+                    public ListBdsCertificateConfigurationsResponse apply(
+                            ListBdsCertificateConfigurationsRequest request) {
+                        return client.listBdsCertificateConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.BdsCertificateConfigurationSummary} objects
+     * contained in responses from the listBdsCertificateConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.BdsCertificateConfigurationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.BdsCertificateConfigurationSummary>
+            listBdsCertificateConfigurationsRecordIterator(
+                    final ListBdsCertificateConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBdsCertificateConfigurationsRequest.Builder,
+                ListBdsCertificateConfigurationsRequest, ListBdsCertificateConfigurationsResponse,
+                com.oracle.bmc.bds.model.BdsCertificateConfigurationSummary>(
+                new java.util.function.Supplier<ListBdsCertificateConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListBdsCertificateConfigurationsRequest.Builder get() {
+                        return ListBdsCertificateConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCertificateConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListBdsCertificateConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsCertificateConfigurationsRequest.Builder>,
+                        ListBdsCertificateConfigurationsRequest>() {
+                    @Override
+                    public ListBdsCertificateConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsCertificateConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCertificateConfigurationsRequest,
+                        ListBdsCertificateConfigurationsResponse>() {
+                    @Override
+                    public ListBdsCertificateConfigurationsResponse apply(
+                            ListBdsCertificateConfigurationsRequest request) {
+                        return client.listBdsCertificateConfigurations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCertificateConfigurationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.bds.model.BdsCertificateConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.bds.model.BdsCertificateConfigurationSummary>
+                            apply(ListBdsCertificateConfigurationsResponse response) {
                         return response.getItems();
                     }
                 });
@@ -1537,6 +1661,119 @@ public class BdsPaginators {
                                     com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary>
                             apply(ListResourcePrincipalConfigurationsResponse response) {
                         return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSoftwareUpdates operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSoftwareUpdatesResponse> listSoftwareUpdatesResponseIterator(
+            final ListSoftwareUpdatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSoftwareUpdatesRequest.Builder, ListSoftwareUpdatesRequest,
+                ListSoftwareUpdatesResponse>(
+                new java.util.function.Supplier<ListSoftwareUpdatesRequest.Builder>() {
+                    @Override
+                    public ListSoftwareUpdatesRequest.Builder get() {
+                        return ListSoftwareUpdatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSoftwareUpdatesResponse, String>() {
+                    @Override
+                    public String apply(ListSoftwareUpdatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSoftwareUpdatesRequest.Builder>,
+                        ListSoftwareUpdatesRequest>() {
+                    @Override
+                    public ListSoftwareUpdatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSoftwareUpdatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSoftwareUpdatesRequest, ListSoftwareUpdatesResponse>() {
+                    @Override
+                    public ListSoftwareUpdatesResponse apply(ListSoftwareUpdatesRequest request) {
+                        return client.listSoftwareUpdates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.SoftwareUpdateSummary} objects
+     * contained in responses from the listSoftwareUpdates operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.SoftwareUpdateSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.SoftwareUpdateSummary>
+            listSoftwareUpdatesRecordIterator(final ListSoftwareUpdatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSoftwareUpdatesRequest.Builder, ListSoftwareUpdatesRequest,
+                ListSoftwareUpdatesResponse, com.oracle.bmc.bds.model.SoftwareUpdateSummary>(
+                new java.util.function.Supplier<ListSoftwareUpdatesRequest.Builder>() {
+                    @Override
+                    public ListSoftwareUpdatesRequest.Builder get() {
+                        return ListSoftwareUpdatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSoftwareUpdatesResponse, String>() {
+                    @Override
+                    public String apply(ListSoftwareUpdatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSoftwareUpdatesRequest.Builder>,
+                        ListSoftwareUpdatesRequest>() {
+                    @Override
+                    public ListSoftwareUpdatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSoftwareUpdatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSoftwareUpdatesRequest, ListSoftwareUpdatesResponse>() {
+                    @Override
+                    public ListSoftwareUpdatesResponse apply(ListSoftwareUpdatesRequest request) {
+                        return client.listSoftwareUpdates(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSoftwareUpdatesResponse,
+                        java.util.List<com.oracle.bmc.bds.model.SoftwareUpdateSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.SoftwareUpdateSummary> apply(
+                            ListSoftwareUpdatesResponse response) {
+                        return response.getSoftwareUpdateCollection().getItems();
                     }
                 });
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -116,6 +116,16 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
             this.doesUseSecretIds = doesUseSecretIds;
             this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -270,7 +280,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             return this;
         }
         /**
-         * Database Certificate - The base64 encoded content of a .pem or .crt file.
+         * Database Certificate - The base64 encoded content of a .pem or .crt file
          * containing the server public key (for 1-way SSL).
          *
          **/
@@ -278,7 +288,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         private String sslCa;
 
         /**
-         * Database Certificate - The base64 encoded content of a .pem or .crt file.
+         * Database Certificate - The base64 encoded content of a .pem or .crt file
          * containing the server public key (for 1-way SSL).
          *
          * @param sslCa the value to set
@@ -356,6 +366,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.databaseName,
                             this.host,
                             this.port,
@@ -404,6 +415,9 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("databaseName")) {
                 this.databaseName(model.getDatabaseName());
@@ -465,6 +479,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String databaseName,
             String host,
             Integer port,
@@ -486,7 +501,8 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.databaseName = databaseName;
         this.host = host;
         this.port = port;
@@ -635,7 +651,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
     }
 
     /**
-     * Database Certificate - The base64 encoded content of a .pem or .crt file.
+     * Database Certificate - The base64 encoded content of a .pem or .crt file
      * containing the server public key (for 1-way SSL).
      *
      **/
@@ -643,7 +659,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
     private final String sslCa;
 
     /**
-     * Database Certificate - The base64 encoded content of a .pem or .crt file.
+     * Database Certificate - The base64 encoded content of a .pem or .crt file
      * containing the server public key (for 1-way SSL).
      *
      * @return the value

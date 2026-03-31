@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.model;
@@ -25,17 +25,20 @@ public final class CreateSenderDetails extends com.oracle.bmc.http.internal.Expl
     @java.beans.ConstructorProperties({
         "compartmentId",
         "emailAddress",
+        "emailIpPoolId",
         "freeformTags",
         "definedTags"
     })
     public CreateSenderDetails(
             String compartmentId,
             String emailAddress,
+            String emailIpPoolId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.compartmentId = compartmentId;
         this.emailAddress = emailAddress;
+        this.emailIpPoolId = emailIpPoolId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -72,6 +75,22 @@ public final class CreateSenderDetails extends com.oracle.bmc.http.internal.Expl
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = emailAddress;
             this.__explicitlySet__.add("emailAddress");
+            return this;
+        }
+        /**
+         * An optional field. The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("emailIpPoolId")
+        private String emailIpPoolId;
+
+        /**
+         * An optional field. The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+         * @param emailIpPoolId the value to set
+         * @return this builder
+         **/
+        public Builder emailIpPoolId(String emailIpPoolId) {
+            this.emailIpPoolId = emailIpPoolId;
+            this.__explicitlySet__.add("emailIpPoolId");
             return this;
         }
         /**
@@ -132,6 +151,7 @@ public final class CreateSenderDetails extends com.oracle.bmc.http.internal.Expl
                     new CreateSenderDetails(
                             this.compartmentId,
                             this.emailAddress,
+                            this.emailIpPoolId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -147,6 +167,9 @@ public final class CreateSenderDetails extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("emailAddress")) {
                 this.emailAddress(model.getEmailAddress());
+            }
+            if (model.wasPropertyExplicitlySet("emailIpPoolId")) {
+                this.emailIpPoolId(model.getEmailIpPoolId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -195,6 +218,20 @@ public final class CreateSenderDetails extends com.oracle.bmc.http.internal.Expl
      **/
     public String getEmailAddress() {
         return emailAddress;
+    }
+
+    /**
+     * An optional field. The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("emailIpPoolId")
+    private final String emailIpPoolId;
+
+    /**
+     * An optional field. The IpPool [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+     * @return the value
+     **/
+    public String getEmailIpPoolId() {
+        return emailIpPoolId;
     }
 
     /**
@@ -257,6 +294,7 @@ public final class CreateSenderDetails extends com.oracle.bmc.http.internal.Expl
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", emailAddress=").append(String.valueOf(this.emailAddress));
+        sb.append(", emailIpPoolId=").append(String.valueOf(this.emailIpPoolId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -275,6 +313,7 @@ public final class CreateSenderDetails extends com.oracle.bmc.http.internal.Expl
         CreateSenderDetails other = (CreateSenderDetails) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.emailAddress, other.emailAddress)
+                && java.util.Objects.equals(this.emailIpPoolId, other.emailIpPoolId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -288,6 +327,9 @@ public final class CreateSenderDetails extends com.oracle.bmc.http.internal.Expl
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.emailAddress == null ? 43 : this.emailAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.emailIpPoolId == null ? 43 : this.emailIpPoolId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FleetTargetSummary.Builder.class
 )
@@ -33,6 +33,7 @@ public final class FleetTargetSummary extends com.oracle.bmc.http.internal.Expli
         "timeOfLastDiscoveryAttempt",
         "isLastDiscoveryAttemptSuccessful",
         "lifecycleState",
+        "parentTargetName",
         "systemTags"
     })
     public FleetTargetSummary(
@@ -47,6 +48,7 @@ public final class FleetTargetSummary extends com.oracle.bmc.http.internal.Expli
             java.util.Date timeOfLastDiscoveryAttempt,
             Boolean isLastDiscoveryAttemptSuccessful,
             FleetTarget.LifecycleState lifecycleState,
+            String parentTargetName,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
@@ -60,6 +62,7 @@ public final class FleetTargetSummary extends com.oracle.bmc.http.internal.Expli
         this.timeOfLastDiscoveryAttempt = timeOfLastDiscoveryAttempt;
         this.isLastDiscoveryAttemptSuccessful = isLastDiscoveryAttemptSuccessful;
         this.lifecycleState = lifecycleState;
+        this.parentTargetName = parentTargetName;
         this.systemTags = systemTags;
     }
 
@@ -82,13 +85,13 @@ public final class FleetTargetSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Tenancy OCID
+         * compartment OCID
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Tenancy OCID
+         * compartment OCID
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -243,6 +246,22 @@ public final class FleetTargetSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * Name of the parent target.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parentTargetName")
+        private String parentTargetName;
+
+        /**
+         * Name of the parent target.
+         * @param parentTargetName the value to set
+         * @return this builder
+         **/
+        public Builder parentTargetName(String parentTargetName) {
+            this.parentTargetName = parentTargetName;
+            this.__explicitlySet__.add("parentTargetName");
+            return this;
+        }
+        /**
          * System tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
@@ -280,6 +299,7 @@ public final class FleetTargetSummary extends com.oracle.bmc.http.internal.Expli
                             this.timeOfLastDiscoveryAttempt,
                             this.isLastDiscoveryAttemptSuccessful,
                             this.lifecycleState,
+                            this.parentTargetName,
                             this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -322,6 +342,9 @@ public final class FleetTargetSummary extends com.oracle.bmc.http.internal.Expli
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("parentTargetName")) {
+                this.parentTargetName(model.getParentTargetName());
+            }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
@@ -355,13 +378,13 @@ public final class FleetTargetSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Tenancy OCID
+     * compartment OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Tenancy OCID
+     * compartment OCID
      * @return the value
      **/
     public String getCompartmentId() {
@@ -496,6 +519,20 @@ public final class FleetTargetSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * Name of the parent target.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentTargetName")
+    private final String parentTargetName;
+
+    /**
+     * Name of the parent target.
+     * @return the value
+     **/
+    public String getParentTargetName() {
+        return parentTargetName;
+    }
+
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
      * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
@@ -541,6 +578,7 @@ public final class FleetTargetSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", isLastDiscoveryAttemptSuccessful=")
                 .append(String.valueOf(this.isLastDiscoveryAttemptSuccessful));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", parentTargetName=").append(String.valueOf(this.parentTargetName));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
@@ -571,6 +609,7 @@ public final class FleetTargetSummary extends com.oracle.bmc.http.internal.Expli
                         this.isLastDiscoveryAttemptSuccessful,
                         other.isLastDiscoveryAttemptSuccessful)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.parentTargetName, other.parentTargetName)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
@@ -608,6 +647,9 @@ public final class FleetTargetSummary extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentTargetName == null ? 43 : this.parentTargetName.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

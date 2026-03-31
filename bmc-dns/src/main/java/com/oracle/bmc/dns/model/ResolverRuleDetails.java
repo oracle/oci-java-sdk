@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns.model;
@@ -43,16 +43,16 @@ public class ResolverRuleDetails extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action
-     * to apply.
+     * A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of
+     * the CIDR blocks.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientAddressConditions")
     private final java.util.List<String> clientAddressConditions;
 
     /**
-     * A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action
-     * to apply.
+     * A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of
+     * the CIDR blocks.
      *
      * @return the value
      **/
@@ -61,14 +61,16 @@ public class ResolverRuleDetails extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+     * A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain
+     * of one of the listed domains.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("qnameCoverConditions")
     private final java.util.List<String> qnameCoverConditions;
 
     /**
-     * A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+     * A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain
+     * of one of the listed domains.
      *
      * @return the value
      **/

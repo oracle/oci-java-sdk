@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.requests;
@@ -138,6 +138,21 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
     public SortBy getSortBy() {
         return sortBy;
     }
+    /**
+     * Specifies whether all add-on versions should be displayed. The default value is false. If set to true, the API will return all available add-on versions, including deprecated versions and detailed build numbers.
+     * Please note that the use of deprecated versions, as well as the specification of a particular build of a supported version, is not recommended for standard operations.
+     *
+     */
+    private Boolean shouldShowAllVersions;
+
+    /**
+     * Specifies whether all add-on versions should be displayed. The default value is false. If set to true, the API will return all available add-on versions, including deprecated versions and detailed build numbers.
+     * Please note that the use of deprecated versions, as well as the specification of a particular build of a supported version, is not recommended for standard operations.
+     *
+     */
+    public Boolean getShouldShowAllVersions() {
+        return shouldShowAllVersions;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -266,6 +281,25 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * Specifies whether all add-on versions should be displayed. The default value is false. If set to true, the API will return all available add-on versions, including deprecated versions and detailed build numbers.
+         * Please note that the use of deprecated versions, as well as the specification of a particular build of a supported version, is not recommended for standard operations.
+         *
+         */
+        private Boolean shouldShowAllVersions = null;
+
+        /**
+         * Specifies whether all add-on versions should be displayed. The default value is false. If set to true, the API will return all available add-on versions, including deprecated versions and detailed build numbers.
+         * Please note that the use of deprecated versions, as well as the specification of a particular build of a supported version, is not recommended for standard operations.
+         *
+         * @param shouldShowAllVersions the value to set
+         * @return this builder instance
+         */
+        public Builder shouldShowAllVersions(Boolean shouldShowAllVersions) {
+            this.shouldShowAllVersions = shouldShowAllVersions;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -300,6 +334,7 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            shouldShowAllVersions(o.getShouldShowAllVersions());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -339,8 +374,9 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.shouldShowAllVersions = shouldShowAllVersions;
             return request;
-            // new ListAddonOptionsRequest(kubernetesVersion, addonName, opcRequestId, limit, page, sortOrder, sortBy);
+            // new ListAddonOptionsRequest(kubernetesVersion, addonName, opcRequestId, limit, page, sortOrder, sortBy, shouldShowAllVersions);
         }
     }
 
@@ -356,7 +392,8 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
-                .sortBy(sortBy);
+                .sortBy(sortBy)
+                .shouldShowAllVersions(shouldShowAllVersions);
     }
 
     /**
@@ -379,6 +416,7 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",shouldShowAllVersions=").append(String.valueOf(this.shouldShowAllVersions));
         sb.append(")");
         return sb.toString();
     }
@@ -400,7 +438,9 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.sortBy, other.sortBy);
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(
+                        this.shouldShowAllVersions, other.shouldShowAllVersions);
     }
 
     @Override
@@ -416,6 +456,11 @@ public class ListAddonOptionsRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldShowAllVersions == null
+                                ? 43
+                                : this.shouldShowAllVersions.hashCode());
         return result;
     }
 }

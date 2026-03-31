@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -45,6 +45,7 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
         "dbBackupConfig",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "connectionStrings",
         "kmsKeyId",
         "kmsKeyVersionId",
@@ -57,7 +58,9 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
         "keyStoreId",
         "keyStoreWalletName",
         "dataGuardGroup",
-        "encryptionKeyLocationDetails"
+        "encryptionKeyLocationDetails",
+        "storageSizeDetails",
+        "patchVersion"
     })
     public DatabaseSummary(
             String id,
@@ -80,6 +83,7 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
             DbBackupConfig dbBackupConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             DatabaseConnectionStrings connectionStrings,
             String kmsKeyId,
             String kmsKeyVersionId,
@@ -92,7 +96,9 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
             String keyStoreId,
             String keyStoreWalletName,
             DataGuardGroup dataGuardGroup,
-            EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
+            EncryptionKeyLocationDetails encryptionKeyLocationDetails,
+            DatabaseStorageSizeResponseDetails storageSizeDetails,
+            String patchVersion) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -114,6 +120,7 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
         this.dbBackupConfig = dbBackupConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.connectionStrings = connectionStrings;
         this.kmsKeyId = kmsKeyId;
         this.kmsKeyVersionId = kmsKeyVersionId;
@@ -128,6 +135,8 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
         this.keyStoreWalletName = keyStoreWalletName;
         this.dataGuardGroup = dataGuardGroup;
         this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+        this.storageSizeDetails = storageSizeDetails;
+        this.patchVersion = patchVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -469,6 +478,26 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The Connection strings used to connect to the Oracle Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
@@ -501,14 +530,14 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -664,6 +693,31 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageSizeDetails")
+        private DatabaseStorageSizeResponseDetails storageSizeDetails;
+
+        public Builder storageSizeDetails(DatabaseStorageSizeResponseDetails storageSizeDetails) {
+            this.storageSizeDetails = storageSizeDetails;
+            this.__explicitlySet__.add("storageSizeDetails");
+            return this;
+        }
+        /**
+         * The patch version of the database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("patchVersion")
+        private String patchVersion;
+
+        /**
+         * The patch version of the database.
+         * @param patchVersion the value to set
+         * @return this builder
+         **/
+        public Builder patchVersion(String patchVersion) {
+            this.patchVersion = patchVersion;
+            this.__explicitlySet__.add("patchVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -690,6 +744,7 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
                             this.dbBackupConfig,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.connectionStrings,
                             this.kmsKeyId,
                             this.kmsKeyVersionId,
@@ -702,7 +757,9 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
                             this.keyStoreId,
                             this.keyStoreWalletName,
                             this.dataGuardGroup,
-                            this.encryptionKeyLocationDetails);
+                            this.encryptionKeyLocationDetails,
+                            this.storageSizeDetails,
+                            this.patchVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -771,6 +828,9 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("connectionStrings")) {
                 this.connectionStrings(model.getConnectionStrings());
             }
@@ -810,6 +870,12 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("encryptionKeyLocationDetails")) {
                 this.encryptionKeyLocationDetails(model.getEncryptionKeyLocationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("storageSizeDetails")) {
+                this.storageSizeDetails(model.getStorageSizeDetails());
+            }
+            if (model.wasPropertyExplicitlySet("patchVersion")) {
+                this.patchVersion(model.getPatchVersion());
             }
             return this;
         }
@@ -1178,6 +1244,24 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The Connection strings used to connect to the Oracle Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
@@ -1206,14 +1290,14 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      *
      * @return the value
      **/
@@ -1342,6 +1426,27 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
         return encryptionKeyLocationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("storageSizeDetails")
+    private final DatabaseStorageSizeResponseDetails storageSizeDetails;
+
+    public DatabaseStorageSizeResponseDetails getStorageSizeDetails() {
+        return storageSizeDetails;
+    }
+
+    /**
+     * The patch version of the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchVersion")
+    private final String patchVersion;
+
+    /**
+     * The patch version of the database.
+     * @return the value
+     **/
+    public String getPatchVersion() {
+        return patchVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1378,6 +1483,7 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", dbBackupConfig=").append(String.valueOf(this.dbBackupConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", connectionStrings=").append(String.valueOf(this.connectionStrings));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
@@ -1395,6 +1501,8 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", dataGuardGroup=").append(String.valueOf(this.dataGuardGroup));
         sb.append(", encryptionKeyLocationDetails=")
                 .append(String.valueOf(this.encryptionKeyLocationDetails));
+        sb.append(", storageSizeDetails=").append(String.valueOf(this.storageSizeDetails));
+        sb.append(", patchVersion=").append(String.valueOf(this.patchVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -1431,6 +1539,7 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.dbBackupConfig, other.dbBackupConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.connectionStrings, other.connectionStrings)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
@@ -1449,6 +1558,8 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.dataGuardGroup, other.dataGuardGroup)
                 && java.util.Objects.equals(
                         this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
+                && java.util.Objects.equals(this.storageSizeDetails, other.storageSizeDetails)
+                && java.util.Objects.equals(this.patchVersion, other.patchVersion)
                 && super.equals(other);
     }
 
@@ -1498,6 +1609,7 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
                         + (this.dbBackupConfig == null ? 43 : this.dbBackupConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.connectionStrings == null ? 43 : this.connectionStrings.hashCode());
@@ -1537,6 +1649,12 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
                         + (this.encryptionKeyLocationDetails == null
                                 ? 43
                                 : this.encryptionKeyLocationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageSizeDetails == null
+                                ? 43
+                                : this.storageSizeDetails.hashCode());
+        result = (result * PRIME) + (this.patchVersion == null ? 43 : this.patchVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

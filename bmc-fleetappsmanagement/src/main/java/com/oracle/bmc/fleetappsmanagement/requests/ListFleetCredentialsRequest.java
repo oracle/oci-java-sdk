@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,7 +8,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetCredentialsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFleetCredentialsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListFleetCredentialsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -22,17 +22,6 @@ public class ListFleetCredentialsRequest
      */
     public String getFleetId() {
         return fleetId;
-    }
-    /**
-     * The ID of the compartment in which to list resources.
-     */
-    private String compartmentId;
-
-    /**
-     * The ID of the compartment in which to list resources.
-     */
-    public String getCompartmentId() {
-        return compartmentId;
     }
     /**
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
@@ -140,50 +129,13 @@ public class ListFleetCredentialsRequest
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
      *
      */
-    private SortBy sortBy;
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
-     **/
-    public enum SortBy {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
+    private com.oracle.bmc.fleetappsmanagement.model.FleetCredentialSortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
      *
      */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.FleetCredentialSortBy getSortBy() {
         return sortBy;
     }
     /**
@@ -217,21 +169,6 @@ public class ListFleetCredentialsRequest
          */
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
-            return this;
-        }
-
-        /**
-         * The ID of the compartment in which to list resources.
-         */
-        private String compartmentId = null;
-
-        /**
-         * The ID of the compartment in which to list resources.
-         * @param compartmentId the value to set
-         * @return this builder instance
-         */
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
             return this;
         }
 
@@ -382,7 +319,7 @@ public class ListFleetCredentialsRequest
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.FleetCredentialSortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
@@ -390,7 +327,8 @@ public class ListFleetCredentialsRequest
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(
+                com.oracle.bmc.fleetappsmanagement.model.FleetCredentialSortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }
@@ -439,7 +377,6 @@ public class ListFleetCredentialsRequest
          */
         public Builder copy(ListFleetCredentialsRequest o) {
             fleetId(o.getFleetId());
-            compartmentId(o.getCompartmentId());
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
             resourceId(o.getResourceId());
@@ -484,7 +421,6 @@ public class ListFleetCredentialsRequest
         public ListFleetCredentialsRequest buildWithoutInvocationCallback() {
             ListFleetCredentialsRequest request = new ListFleetCredentialsRequest();
             request.fleetId = fleetId;
-            request.compartmentId = compartmentId;
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
             request.resourceId = resourceId;
@@ -497,7 +433,7 @@ public class ListFleetCredentialsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListFleetCredentialsRequest(fleetId, compartmentId, lifecycleState, displayName, resourceId, target, credentialLevel, id, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListFleetCredentialsRequest(fleetId, lifecycleState, displayName, resourceId, target, credentialLevel, id, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -508,7 +444,6 @@ public class ListFleetCredentialsRequest
     public Builder toBuilder() {
         return new Builder()
                 .fleetId(fleetId)
-                .compartmentId(compartmentId)
                 .lifecycleState(lifecycleState)
                 .displayName(displayName)
                 .resourceId(resourceId)
@@ -536,7 +471,6 @@ public class ListFleetCredentialsRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",fleetId=").append(String.valueOf(this.fleetId));
-        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",resourceId=").append(String.valueOf(this.resourceId));
@@ -564,7 +498,6 @@ public class ListFleetCredentialsRequest
         ListFleetCredentialsRequest other = (ListFleetCredentialsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
@@ -583,9 +516,6 @@ public class ListFleetCredentialsRequest
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.fleetId == null ? 43 : this.fleetId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Exadata Fleet Update Cycle resource creation details.
+ * Details to create an Exadata Fleet Update Cycle.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -26,6 +26,10 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreatePatchFsuCycle.class,
         name = "PATCH"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateUpgradeFsuCycle.class,
+        name = "UPGRADE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -68,14 +72,14 @@ public class CreateFsuCycleDetails extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Exadata Fleet Update Cycle display name.
+     * The user-friendly name for the Exadata Fleet Update Cycle.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Exadata Fleet Update Cycle display name.
+     * The user-friendly name for the Exadata Fleet Update Cycle.
      *
      * @return the value
      **/
@@ -84,14 +88,14 @@ public class CreateFsuCycleDetails extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Compartment Identifier.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      *
      * @return the value
      **/
@@ -100,14 +104,14 @@ public class CreateFsuCycleDetails extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fsuCollectionId")
     private final String fsuCollectionId;
 
     /**
-     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
      *
      * @return the value
      **/

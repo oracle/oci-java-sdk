@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.managementdashboard.requests;
@@ -53,6 +53,21 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * Indicates whether tags must be included when exporting dashboards and saved searches. If this attribute is set to true, then both defined and free-form tags are included in the response. The default is false and tag fields are empty objects in the response.
+     * If set to true, NotAuthorizedException is returned if you do not have the permission to access tags, even if you have the permission to access dashboards and saved searches.
+     *
+     */
+    private String exportTags;
+
+    /**
+     * Indicates whether tags must be included when exporting dashboards and saved searches. If this attribute is set to true, then both defined and free-form tags are included in the response. The default is false and tag fields are empty objects in the response.
+     * If set to true, NotAuthorizedException is returned if you do not have the permission to access tags, even if you have the permission to access dashboards and saved searches.
+     *
+     */
+    public String getExportTags() {
+        return exportTags;
     }
 
     public static class Builder
@@ -118,6 +133,25 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
+         * Indicates whether tags must be included when exporting dashboards and saved searches. If this attribute is set to true, then both defined and free-form tags are included in the response. The default is false and tag fields are empty objects in the response.
+         * If set to true, NotAuthorizedException is returned if you do not have the permission to access tags, even if you have the permission to access dashboards and saved searches.
+         *
+         */
+        private String exportTags = null;
+
+        /**
+         * Indicates whether tags must be included when exporting dashboards and saved searches. If this attribute is set to true, then both defined and free-form tags are included in the response. The default is false and tag fields are empty objects in the response.
+         * If set to true, NotAuthorizedException is returned if you do not have the permission to access tags, even if you have the permission to access dashboards and saved searches.
+         *
+         * @param exportTags the value to set
+         * @return this builder instance
+         */
+        public Builder exportTags(String exportTags) {
+            this.exportTags = exportTags;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -148,6 +182,7 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
             exportDashboardId(o.getExportDashboardId());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            exportTags(o.getExportTags());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -183,8 +218,9 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.exportDashboardId = exportDashboardId;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.exportTags = exportTags;
             return request;
-            // new ExportDashboardRequest(exportDashboardId, opcRetryToken, opcRequestId);
+            // new ExportDashboardRequest(exportDashboardId, opcRetryToken, opcRequestId, exportTags);
         }
     }
 
@@ -196,7 +232,8 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
         return new Builder()
                 .exportDashboardId(exportDashboardId)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .exportTags(exportTags);
     }
 
     /**
@@ -215,6 +252,7 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
         sb.append(",exportDashboardId=").append(String.valueOf(this.exportDashboardId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",exportTags=").append(String.valueOf(this.exportTags));
         sb.append(")");
         return sb.toString();
     }
@@ -232,7 +270,8 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
         return super.equals(o)
                 && java.util.Objects.equals(this.exportDashboardId, other.exportDashboardId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.exportTags, other.exportTags);
     }
 
     @Override
@@ -246,6 +285,7 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.exportTags == null ? 43 : this.exportTags.hashCode());
         return result;
     }
 }

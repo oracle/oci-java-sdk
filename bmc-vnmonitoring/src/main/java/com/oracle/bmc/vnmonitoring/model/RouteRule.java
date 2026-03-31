@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -25,24 +25,18 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
         "cidrBlock",
         "destination",
         "destinationType",
-        "networkEntityId",
-        "description",
-        "routeType"
+        "networkEntityId"
     })
     public RouteRule(
             String cidrBlock,
             String destination,
             DestinationType destinationType,
-            String networkEntityId,
-            String description,
-            RouteType routeType) {
+            String networkEntityId) {
         super();
         this.cidrBlock = cidrBlock;
         this.destination = destination;
         this.destinationType = destinationType;
         this.networkEntityId = networkEntityId;
-        this.description = description;
-        this.routeType = routeType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -54,7 +48,7 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
          * A destination IP address range in CIDR notation. Matching packets will
          * be routed to the indicated network entity (the target).
          * <p>
-         * Cannot be an IPv6 CIDR.
+         * Cannot be an IPv6 prefix.
          * <p>
          * Example: {@code 0.0.0.0/0}
          *
@@ -69,7 +63,7 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
          * A destination IP address range in CIDR notation. Matching packets will
          * be routed to the indicated network entity (the target).
          * <p>
-         * Cannot be an IPv6 CIDR.
+         * Cannot be an IPv6 prefix.
          * <p>
          * Example: {@code 0.0.0.0/0}
          *
@@ -87,8 +81,8 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
          * <p>
          * Allowed values:
          * <p>
-         * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
-         *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the route rule's target
+         * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: {@code 192.168.1.0/24}
+         *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 prefix, the route rule's target
          *   can only be a DRG or internet gateway.
          *   IPv6 addressing is supported for all commercial and government regions.
          *   See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -107,8 +101,8 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
          * <p>
          * Allowed values:
          * <p>
-         * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
-         *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the route rule's target
+         * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: {@code 192.168.1.0/24}
+         *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 prefix, the route rule's target
          *   can only be a DRG or internet gateway.
          *   IPv6 addressing is supported for all commercial and government regions.
          *   See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -177,42 +171,6 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
             this.__explicitlySet__.add("networkEntityId");
             return this;
         }
-        /**
-         * An optional description of your choice for the rule.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("description")
-        private String description;
-
-        /**
-         * An optional description of your choice for the rule.
-         *
-         * @param description the value to set
-         * @return this builder
-         **/
-        public Builder description(String description) {
-            this.description = description;
-            this.__explicitlySet__.add("description");
-            return this;
-        }
-        /**
-         * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the route table.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("routeType")
-        private RouteType routeType;
-
-        /**
-         * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the route table.
-         *
-         * @param routeType the value to set
-         * @return this builder
-         **/
-        public Builder routeType(RouteType routeType) {
-            this.routeType = routeType;
-            this.__explicitlySet__.add("routeType");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -223,9 +181,7 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
                             this.cidrBlock,
                             this.destination,
                             this.destinationType,
-                            this.networkEntityId,
-                            this.description,
-                            this.routeType);
+                            this.networkEntityId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -245,12 +201,6 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
             }
             if (model.wasPropertyExplicitlySet("networkEntityId")) {
                 this.networkEntityId(model.getNetworkEntityId());
-            }
-            if (model.wasPropertyExplicitlySet("description")) {
-                this.description(model.getDescription());
-            }
-            if (model.wasPropertyExplicitlySet("routeType")) {
-                this.routeType(model.getRouteType());
             }
             return this;
         }
@@ -274,7 +224,7 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
      * A destination IP address range in CIDR notation. Matching packets will
      * be routed to the indicated network entity (the target).
      * <p>
-     * Cannot be an IPv6 CIDR.
+     * Cannot be an IPv6 prefix.
      * <p>
      * Example: {@code 0.0.0.0/0}
      *
@@ -289,7 +239,7 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
      * A destination IP address range in CIDR notation. Matching packets will
      * be routed to the indicated network entity (the target).
      * <p>
-     * Cannot be an IPv6 CIDR.
+     * Cannot be an IPv6 prefix.
      * <p>
      * Example: {@code 0.0.0.0/0}
      *
@@ -305,8 +255,8 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
      * <p>
      * Allowed values:
      * <p>
-     * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
-     *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the route rule's target
+     * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: {@code 192.168.1.0/24}
+     *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 prefix, the route rule's target
      *   can only be a DRG or internet gateway.
      *   IPv6 addressing is supported for all commercial and government regions.
      *   See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -325,8 +275,8 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
      * <p>
      * Allowed values:
      * <p>
-     * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
-     *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the route rule's target
+     * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: {@code 192.168.1.0/24}
+     *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 prefix, the route rule's target
      *   can only be a DRG or internet gateway.
      *   IPv6 addressing is supported for all commercial and government regions.
      *   See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -444,87 +394,6 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
         return networkEntityId;
     }
 
-    /**
-     * An optional description of your choice for the rule.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("description")
-    private final String description;
-
-    /**
-     * An optional description of your choice for the rule.
-     *
-     * @return the value
-     **/
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the route table.
-     *
-     **/
-    public enum RouteType {
-        Static("STATIC"),
-        Local("LOCAL"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(RouteType.class);
-
-        private final String value;
-        private static java.util.Map<String, RouteType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (RouteType v : RouteType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        RouteType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static RouteType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'RouteType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the route table.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("routeType")
-    private final RouteType routeType;
-
-    /**
-     * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the route table.
-     *
-     * @return the value
-     **/
-    public RouteType getRouteType() {
-        return routeType;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -543,8 +412,6 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
         sb.append(", destination=").append(String.valueOf(this.destination));
         sb.append(", destinationType=").append(String.valueOf(this.destinationType));
         sb.append(", networkEntityId=").append(String.valueOf(this.networkEntityId));
-        sb.append(", description=").append(String.valueOf(this.description));
-        sb.append(", routeType=").append(String.valueOf(this.routeType));
         sb.append(")");
         return sb.toString();
     }
@@ -563,8 +430,6 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
                 && java.util.Objects.equals(this.destination, other.destination)
                 && java.util.Objects.equals(this.destinationType, other.destinationType)
                 && java.util.Objects.equals(this.networkEntityId, other.networkEntityId)
-                && java.util.Objects.equals(this.description, other.description)
-                && java.util.Objects.equals(this.routeType, other.routeType)
                 && super.equals(other);
     }
 
@@ -580,8 +445,6 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
         result =
                 (result * PRIME)
                         + (this.networkEntityId == null ? 43 : this.networkEntityId.hashCode());
-        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
-        result = (result * PRIME) + (this.routeType == null ? 43 : this.routeType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

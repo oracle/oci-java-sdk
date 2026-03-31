@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -46,12 +46,16 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
         "additionalDetails",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "lifecycleDetails",
         "cpuCoreCount",
         "memorySizeInGBs",
         "dbNodeStorageSizeInGBs",
         "totalCpuCoreCount",
-        "dbServerId"
+        "dbServerId",
+        "computeModel",
+        "computeCount",
+        "isOsPatchRebootRequired"
     })
     public DbNodeSummary(
             String id,
@@ -75,12 +79,16 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
             String additionalDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String lifecycleDetails,
             Integer cpuCoreCount,
             Integer memorySizeInGBs,
             Integer dbNodeStorageSizeInGBs,
             Integer totalCpuCoreCount,
-            String dbServerId) {
+            String dbServerId,
+            ComputeModel computeModel,
+            Integer computeCount,
+            Boolean isOsPatchRebootRequired) {
         super();
         this.id = id;
         this.dbSystemId = dbSystemId;
@@ -103,12 +111,16 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
         this.additionalDetails = additionalDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.lifecycleDetails = lifecycleDetails;
         this.cpuCoreCount = cpuCoreCount;
         this.memorySizeInGBs = memorySizeInGBs;
         this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
         this.totalCpuCoreCount = totalCpuCoreCount;
         this.dbServerId = dbServerId;
+        this.computeModel = computeModel;
+        this.computeCount = computeCount;
+        this.isOsPatchRebootRequired = isOsPatchRebootRequired;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -513,6 +525,26 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * Information about the current lifecycle state.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
@@ -608,6 +640,58 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
             this.__explicitlySet__.add("dbServerId");
             return this;
         }
+        /**
+         * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+         * @param computeModel the value to set
+         * @return this builder
+         **/
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
+         * The number of compute servers for the DB system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Integer computeCount;
+
+        /**
+         * The number of compute servers for the DB system.
+         * @param computeCount the value to set
+         * @return this builder
+         **/
+        public Builder computeCount(Integer computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+        /**
+         * Indicates whether the database node must be rebooted after applying Operating System patches.
+         * This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isOsPatchRebootRequired")
+        private Boolean isOsPatchRebootRequired;
+
+        /**
+         * Indicates whether the database node must be rebooted after applying Operating System patches.
+         * This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+         *
+         * @param isOsPatchRebootRequired the value to set
+         * @return this builder
+         **/
+        public Builder isOsPatchRebootRequired(Boolean isOsPatchRebootRequired) {
+            this.isOsPatchRebootRequired = isOsPatchRebootRequired;
+            this.__explicitlySet__.add("isOsPatchRebootRequired");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -636,12 +720,16 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
                             this.additionalDetails,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.lifecycleDetails,
                             this.cpuCoreCount,
                             this.memorySizeInGBs,
                             this.dbNodeStorageSizeInGBs,
                             this.totalCpuCoreCount,
-                            this.dbServerId);
+                            this.dbServerId,
+                            this.computeModel,
+                            this.computeCount,
+                            this.isOsPatchRebootRequired);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -713,6 +801,9 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
@@ -730,6 +821,15 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("dbServerId")) {
                 this.dbServerId(model.getDbServerId());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
+            }
+            if (model.wasPropertyExplicitlySet("isOsPatchRebootRequired")) {
+                this.isOsPatchRebootRequired(model.getIsOsPatchRebootRequired());
             }
             return this;
         }
@@ -1206,6 +1306,24 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * Information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
@@ -1289,6 +1407,100 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
         return dbServerId;
     }
 
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     **/
+    public enum ComputeModel {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * @return the value
+     **/
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /**
+     * The number of compute servers for the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Integer computeCount;
+
+    /**
+     * The number of compute servers for the DB system.
+     * @return the value
+     **/
+    public Integer getComputeCount() {
+        return computeCount;
+    }
+
+    /**
+     * Indicates whether the database node must be rebooted after applying Operating System patches.
+     * This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isOsPatchRebootRequired")
+    private final Boolean isOsPatchRebootRequired;
+
+    /**
+     * Indicates whether the database node must be rebooted after applying Operating System patches.
+     * This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+     *
+     * @return the value
+     **/
+    public Boolean getIsOsPatchRebootRequired() {
+        return isOsPatchRebootRequired;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1327,12 +1539,17 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
         sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
         sb.append(", totalCpuCoreCount=").append(String.valueOf(this.totalCpuCoreCount));
         sb.append(", dbServerId=").append(String.valueOf(this.dbServerId));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
+        sb.append(", isOsPatchRebootRequired=")
+                .append(String.valueOf(this.isOsPatchRebootRequired));
         sb.append(")");
         return sb.toString();
     }
@@ -1371,6 +1588,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
@@ -1378,6 +1596,10 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
                         this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
                 && java.util.Objects.equals(this.totalCpuCoreCount, other.totalCpuCoreCount)
                 && java.util.Objects.equals(this.dbServerId, other.dbServerId)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
+                && java.util.Objects.equals(
+                        this.isOsPatchRebootRequired, other.isOsPatchRebootRequired)
                 && super.equals(other);
     }
 
@@ -1426,6 +1648,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
                         + (this.additionalDetails == null ? 43 : this.additionalDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
@@ -1442,6 +1665,13 @@ public final class DbNodeSummary extends com.oracle.bmc.http.internal.Explicitly
                 (result * PRIME)
                         + (this.totalCpuCoreCount == null ? 43 : this.totalCpuCoreCount.hashCode());
         result = (result * PRIME) + (this.dbServerId == null ? 43 : this.dbServerId.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOsPatchRebootRequired == null
+                                ? 43
+                                : this.isOsPatchRebootRequired.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

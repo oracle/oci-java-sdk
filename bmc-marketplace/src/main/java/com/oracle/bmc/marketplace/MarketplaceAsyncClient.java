@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplace;
@@ -7,6 +7,8 @@ package com.oracle.bmc.marketplace;
 import com.oracle.bmc.marketplace.internal.http.*;
 import com.oracle.bmc.marketplace.requests.*;
 import com.oracle.bmc.marketplace.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for Marketplace service. <br/>
@@ -28,7 +30,7 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MARKETPLACE")
+                    .serviceName(MarketplaceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://marketplace.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -400,12 +411,21 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -435,15 +455,7 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -556,6 +568,69 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateAcceptedAgreementRequest, CreateAcceptedAgreementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMarketplaceExternalAttestedMetadataResponse>
+            createMarketplaceExternalAttestedMetadata(
+                    CreateMarketplaceExternalAttestedMetadataRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateMarketplaceExternalAttestedMetadataRequest,
+                                    CreateMarketplaceExternalAttestedMetadataResponse>
+                            handler) {
+        LOG.trace("Called async createMarketplaceExternalAttestedMetadata");
+        final CreateMarketplaceExternalAttestedMetadataRequest interceptedRequest =
+                CreateMarketplaceExternalAttestedMetadataConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMarketplaceExternalAttestedMetadataConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Marketplace",
+                        "CreateMarketplaceExternalAttestedMetadata",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/CreateMarketplaceExternalAttestedMetadataDetails/CreateMarketplaceExternalAttestedMetadata");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        CreateMarketplaceExternalAttestedMetadataResponse>
+                transformer =
+                        CreateMarketplaceExternalAttestedMetadataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateMarketplaceExternalAttestedMetadataRequest,
+                        CreateMarketplaceExternalAttestedMetadataResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMarketplaceExternalAttestedMetadataRequest,
+                                CreateMarketplaceExternalAttestedMetadataResponse>,
+                        java.util.concurrent.Future<
+                                CreateMarketplaceExternalAttestedMetadataResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getCreateMarketplaceExternalAttestedMetadataDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMarketplaceExternalAttestedMetadataRequest,
+                    CreateMarketplaceExternalAttestedMetadataResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1247,6 +1322,59 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListListingsRequest, ListListingsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMarketplaceMetadataPublicKeysResponse>
+            listMarketplaceMetadataPublicKeys(
+                    ListMarketplaceMetadataPublicKeysRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMarketplaceMetadataPublicKeysRequest,
+                                    ListMarketplaceMetadataPublicKeysResponse>
+                            handler) {
+        LOG.trace("Called async listMarketplaceMetadataPublicKeys");
+        final ListMarketplaceMetadataPublicKeysRequest interceptedRequest =
+                ListMarketplaceMetadataPublicKeysConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMarketplaceMetadataPublicKeysConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Marketplace",
+                        "ListMarketplaceMetadataPublicKeys",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/MarketplaceMetadataPublicKeySummary/ListMarketplaceMetadataPublicKeys");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMarketplaceMetadataPublicKeysResponse>
+                transformer =
+                        ListMarketplaceMetadataPublicKeysConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMarketplaceMetadataPublicKeysRequest,
+                        ListMarketplaceMetadataPublicKeysResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMarketplaceMetadataPublicKeysRequest,
+                                ListMarketplaceMetadataPublicKeysResponse>,
+                        java.util.concurrent.Future<ListMarketplaceMetadataPublicKeysResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMarketplaceMetadataPublicKeysRequest,
+                    ListMarketplaceMetadataPublicKeysResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

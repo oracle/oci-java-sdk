@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MaintenanceWindowSummary.Builder.class
 )
@@ -30,13 +30,11 @@ public final class MaintenanceWindowSummary
         "description",
         "timeCreated",
         "timeUpdated",
-        "maintenanceWindowType",
         "isOutage",
         "timeScheduleStart",
         "duration",
         "isRecurring",
         "recurrences",
-        "taskInitiationCutoff",
         "lifecycleState",
         "lifecycleDetails",
         "freeformTags",
@@ -51,13 +49,11 @@ public final class MaintenanceWindowSummary
             String description,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            MaintenanceWindowType maintenanceWindowType,
             Boolean isOutage,
             java.util.Date timeScheduleStart,
             String duration,
             Boolean isRecurring,
             String recurrences,
-            Integer taskInitiationCutoff,
             MaintenanceWindow.LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
@@ -71,13 +67,11 @@ public final class MaintenanceWindowSummary
         this.description = description;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
-        this.maintenanceWindowType = maintenanceWindowType;
         this.isOutage = isOutage;
         this.timeScheduleStart = timeScheduleStart;
         this.duration = duration;
         this.isRecurring = isRecurring;
         this.recurrences = recurrences;
-        this.taskInitiationCutoff = taskInitiationCutoff;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
@@ -104,13 +98,13 @@ public final class MaintenanceWindowSummary
             return this;
         }
         /**
-         * Tenancy OCID
+         * Compartment OCID
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Tenancy OCID
+         * Compartment OCID
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -212,22 +206,6 @@ public final class MaintenanceWindowSummary
             return this;
         }
         /**
-         * Type of the MaintenanceWindow.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowType")
-        private MaintenanceWindowType maintenanceWindowType;
-
-        /**
-         * Type of the MaintenanceWindow.
-         * @param maintenanceWindowType the value to set
-         * @return this builder
-         **/
-        public Builder maintenanceWindowType(MaintenanceWindowType maintenanceWindowType) {
-            this.maintenanceWindowType = maintenanceWindowType;
-            this.__explicitlySet__.add("maintenanceWindowType");
-            return this;
-        }
-        /**
          * Does the maintenenace window cause outage?
          * An outage indicates whether a maintenance window can consider operations that require downtime.
          * It means a period when the application is not accessible.
@@ -319,22 +297,6 @@ public final class MaintenanceWindowSummary
         public Builder recurrences(String recurrences) {
             this.recurrences = recurrences;
             this.__explicitlySet__.add("recurrences");
-            return this;
-        }
-        /**
-         * Task initiation cutoff time for the maintenance window.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("taskInitiationCutoff")
-        private Integer taskInitiationCutoff;
-
-        /**
-         * Task initiation cutoff time for the maintenance window.
-         * @param taskInitiationCutoff the value to set
-         * @return this builder
-         **/
-        public Builder taskInitiationCutoff(Integer taskInitiationCutoff) {
-            this.taskInitiationCutoff = taskInitiationCutoff;
-            this.__explicitlySet__.add("taskInitiationCutoff");
             return this;
         }
         /**
@@ -444,13 +406,11 @@ public final class MaintenanceWindowSummary
                             this.description,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.maintenanceWindowType,
                             this.isOutage,
                             this.timeScheduleStart,
                             this.duration,
                             this.isRecurring,
                             this.recurrences,
-                            this.taskInitiationCutoff,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.freeformTags,
@@ -485,9 +445,6 @@ public final class MaintenanceWindowSummary
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
-            if (model.wasPropertyExplicitlySet("maintenanceWindowType")) {
-                this.maintenanceWindowType(model.getMaintenanceWindowType());
-            }
             if (model.wasPropertyExplicitlySet("isOutage")) {
                 this.isOutage(model.getIsOutage());
             }
@@ -502,9 +459,6 @@ public final class MaintenanceWindowSummary
             }
             if (model.wasPropertyExplicitlySet("recurrences")) {
                 this.recurrences(model.getRecurrences());
-            }
-            if (model.wasPropertyExplicitlySet("taskInitiationCutoff")) {
-                this.taskInitiationCutoff(model.getTaskInitiationCutoff());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -551,13 +505,13 @@ public final class MaintenanceWindowSummary
     }
 
     /**
-     * Tenancy OCID
+     * Compartment OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Tenancy OCID
+     * Compartment OCID
      * @return the value
      **/
     public String getCompartmentId() {
@@ -647,20 +601,6 @@ public final class MaintenanceWindowSummary
     }
 
     /**
-     * Type of the MaintenanceWindow.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowType")
-    private final MaintenanceWindowType maintenanceWindowType;
-
-    /**
-     * Type of the MaintenanceWindow.
-     * @return the value
-     **/
-    public MaintenanceWindowType getMaintenanceWindowType() {
-        return maintenanceWindowType;
-    }
-
-    /**
      * Does the maintenenace window cause outage?
      * An outage indicates whether a maintenance window can consider operations that require downtime.
      * It means a period when the application is not accessible.
@@ -742,20 +682,6 @@ public final class MaintenanceWindowSummary
      **/
     public String getRecurrences() {
         return recurrences;
-    }
-
-    /**
-     * Task initiation cutoff time for the maintenance window.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("taskInitiationCutoff")
-    private final Integer taskInitiationCutoff;
-
-    /**
-     * Task initiation cutoff time for the maintenance window.
-     * @return the value
-     **/
-    public Integer getTaskInitiationCutoff() {
-        return taskInitiationCutoff;
     }
 
     /**
@@ -861,13 +787,11 @@ public final class MaintenanceWindowSummary
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append(", maintenanceWindowType=").append(String.valueOf(this.maintenanceWindowType));
         sb.append(", isOutage=").append(String.valueOf(this.isOutage));
         sb.append(", timeScheduleStart=").append(String.valueOf(this.timeScheduleStart));
         sb.append(", duration=").append(String.valueOf(this.duration));
         sb.append(", isRecurring=").append(String.valueOf(this.isRecurring));
         sb.append(", recurrences=").append(String.valueOf(this.recurrences));
-        sb.append(", taskInitiationCutoff=").append(String.valueOf(this.taskInitiationCutoff));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -894,13 +818,11 @@ public final class MaintenanceWindowSummary
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.maintenanceWindowType, other.maintenanceWindowType)
                 && java.util.Objects.equals(this.isOutage, other.isOutage)
                 && java.util.Objects.equals(this.timeScheduleStart, other.timeScheduleStart)
                 && java.util.Objects.equals(this.duration, other.duration)
                 && java.util.Objects.equals(this.isRecurring, other.isRecurring)
                 && java.util.Objects.equals(this.recurrences, other.recurrences)
-                && java.util.Objects.equals(this.taskInitiationCutoff, other.taskInitiationCutoff)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -924,11 +846,6 @@ public final class MaintenanceWindowSummary
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.maintenanceWindowType == null
-                                ? 43
-                                : this.maintenanceWindowType.hashCode());
         result = (result * PRIME) + (this.isOutage == null ? 43 : this.isOutage.hashCode());
         result =
                 (result * PRIME)
@@ -936,11 +853,6 @@ public final class MaintenanceWindowSummary
         result = (result * PRIME) + (this.duration == null ? 43 : this.duration.hashCode());
         result = (result * PRIME) + (this.isRecurring == null ? 43 : this.isRecurring.hashCode());
         result = (result * PRIME) + (this.recurrences == null ? 43 : this.recurrences.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.taskInitiationCutoff == null
-                                ? 43
-                                : this.taskInitiationCutoff.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

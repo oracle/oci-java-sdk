@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -199,6 +199,34 @@ public final class ElasticsearchConnection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The Elasticsearch technology type.
          **/
@@ -319,6 +347,26 @@ public final class ElasticsearchConnection extends Connection {
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
+        /**
+         * Fingerprint required by TLS security protocol.
+         * Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
+        private String fingerprint;
+
+        /**
+         * Fingerprint required by TLS security protocol.
+         * Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+         *
+         * @param fingerprint the value to set
+         * @return this builder
+         **/
+        public Builder fingerprint(String fingerprint) {
+            this.fingerprint = fingerprint;
+            this.__explicitlySet__.add("fingerprint");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -345,12 +393,16 @@ public final class ElasticsearchConnection extends Connection {
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.servers,
                             this.securityProtocol,
                             this.authenticationType,
                             this.username,
-                            this.passwordSecretId);
+                            this.passwordSecretId,
+                            this.fingerprint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -416,6 +468,15 @@ public final class ElasticsearchConnection extends Connection {
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -433,6 +494,9 @@ public final class ElasticsearchConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("passwordSecretId")) {
                 this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("fingerprint")) {
+                this.fingerprint(model.getFingerprint());
             }
             return this;
         }
@@ -470,12 +534,16 @@ public final class ElasticsearchConnection extends Connection {
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             TechnologyType technologyType,
             String servers,
             SecurityProtocol securityProtocol,
             AuthenticationType authenticationType,
             String username,
-            String passwordSecretId) {
+            String passwordSecretId,
+            String fingerprint) {
         super(
                 id,
                 displayName,
@@ -495,13 +563,17 @@ public final class ElasticsearchConnection extends Connection {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.servers = servers;
         this.securityProtocol = securityProtocol;
         this.authenticationType = authenticationType;
         this.username = username;
         this.passwordSecretId = passwordSecretId;
+        this.fingerprint = fingerprint;
     }
 
     /**
@@ -755,6 +827,24 @@ public final class ElasticsearchConnection extends Connection {
         return passwordSecretId;
     }
 
+    /**
+     * Fingerprint required by TLS security protocol.
+     * Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
+    private final String fingerprint;
+
+    /**
+     * Fingerprint required by TLS security protocol.
+     * Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+     *
+     * @return the value
+     **/
+    public String getFingerprint() {
+        return fingerprint;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -775,6 +865,7 @@ public final class ElasticsearchConnection extends Connection {
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", fingerprint=").append(String.valueOf(this.fingerprint));
         sb.append(")");
         return sb.toString();
     }
@@ -795,6 +886,7 @@ public final class ElasticsearchConnection extends Connection {
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(this.fingerprint, other.fingerprint)
                 && super.equals(other);
     }
 
@@ -818,6 +910,7 @@ public final class ElasticsearchConnection extends Connection {
         result =
                 (result * PRIME)
                         + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result = (result * PRIME) + (this.fingerprint == null ? 43 : this.fingerprint.hashCode());
         return result;
     }
 }

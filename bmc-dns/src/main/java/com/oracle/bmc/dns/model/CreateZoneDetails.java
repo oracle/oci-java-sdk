@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns.model;
@@ -161,6 +161,24 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
             return this;
         }
         /**
+         * The resolution mode of a zone defines behavior related to how query responses can be handled.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("resolutionMode")
+        private ZoneResolutionMode resolutionMode;
+
+        /**
+         * The resolution mode of a zone defines behavior related to how query responses can be handled.
+         *
+         * @param resolutionMode the value to set
+         * @return this builder
+         **/
+        public Builder resolutionMode(ZoneResolutionMode resolutionMode) {
+            this.resolutionMode = resolutionMode;
+            this.__explicitlySet__.add("resolutionMode");
+            return this;
+        }
+        /**
          * The state of DNSSEC on the zone.
          * <p>
          * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
@@ -242,6 +260,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
                             this.scope,
                             this.externalMasters,
                             this.externalDownstreams,
+                            this.resolutionMode,
                             this.dnssecState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -278,6 +297,9 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
             if (model.wasPropertyExplicitlySet("externalDownstreams")) {
                 this.externalDownstreams(model.getExternalDownstreams());
             }
+            if (model.wasPropertyExplicitlySet("resolutionMode")) {
+                this.resolutionMode(model.getResolutionMode());
+            }
             if (model.wasPropertyExplicitlySet("dnssecState")) {
                 this.dnssecState(model.getDnssecState());
             }
@@ -307,6 +329,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
             Scope scope,
             java.util.List<ExternalMaster> externalMasters,
             java.util.List<ExternalDownstream> externalDownstreams,
+            ZoneResolutionMode resolutionMode,
             ZoneDnssecState dnssecState) {
         super(name, compartmentId, freeformTags, definedTags);
         this.zoneType = zoneType;
@@ -314,6 +337,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         this.scope = scope;
         this.externalMasters = externalMasters;
         this.externalDownstreams = externalDownstreams;
+        this.resolutionMode = resolutionMode;
         this.dnssecState = dnssecState;
     }
 
@@ -439,6 +463,22 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
     }
 
     /**
+     * The resolution mode of a zone defines behavior related to how query responses can be handled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resolutionMode")
+    private final ZoneResolutionMode resolutionMode;
+
+    /**
+     * The resolution mode of a zone defines behavior related to how query responses can be handled.
+     *
+     * @return the value
+     **/
+    public ZoneResolutionMode getResolutionMode() {
+        return resolutionMode;
+    }
+
+    /**
      * The state of DNSSEC on the zone.
      * <p>
      * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
@@ -521,6 +561,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", externalMasters=").append(String.valueOf(this.externalMasters));
         sb.append(", externalDownstreams=").append(String.valueOf(this.externalDownstreams));
+        sb.append(", resolutionMode=").append(String.valueOf(this.resolutionMode));
         sb.append(", dnssecState=").append(String.valueOf(this.dnssecState));
         sb.append(")");
         return sb.toString();
@@ -541,6 +582,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.externalMasters, other.externalMasters)
                 && java.util.Objects.equals(this.externalDownstreams, other.externalDownstreams)
+                && java.util.Objects.equals(this.resolutionMode, other.resolutionMode)
                 && java.util.Objects.equals(this.dnssecState, other.dnssecState)
                 && super.equals(other);
     }
@@ -560,6 +602,9 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
                         + (this.externalDownstreams == null
                                 ? 43
                                 : this.externalDownstreams.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resolutionMode == null ? 43 : this.resolutionMode.hashCode());
         result = (result * PRIME) + (this.dnssecState == null ? 43 : this.dnssecState.hashCode());
         return result;
     }

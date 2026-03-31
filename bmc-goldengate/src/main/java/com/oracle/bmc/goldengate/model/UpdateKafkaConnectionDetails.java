@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -118,6 +118,16 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
          *
@@ -134,6 +144,26 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
         public Builder streamPoolId(String streamPoolId) {
             this.streamPoolId = streamPoolId;
             this.__explicitlySet__.add("streamPoolId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster
+         * being referenced from OCI Streaming with Apache Kafka.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
+        private String clusterId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster
+         * being referenced from OCI Streaming with Apache Kafka.
+         *
+         * @param clusterId the value to set
+         * @return this builder
+         **/
+        public Builder clusterId(String clusterId) {
+            this.clusterId = clusterId;
+            this.__explicitlySet__.add("clusterId");
             return this;
         }
         /**
@@ -486,6 +516,32 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
             this.__explicitlySet__.add("producerProperties");
             return this;
         }
+        /**
+         * Specifies that the user intends to authenticate to the instance using a resource principal.
+         * Applicable only for OCI Streaming connections.
+         * Only available from 23.9.0.0.0 GoldenGate versions.
+         * Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided.
+         * Default: false
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
+        private Boolean shouldUseResourcePrincipal;
+
+        /**
+         * Specifies that the user intends to authenticate to the instance using a resource principal.
+         * Applicable only for OCI Streaming connections.
+         * Only available from 23.9.0.0.0 GoldenGate versions.
+         * Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided.
+         * Default: false
+         *
+         * @param shouldUseResourcePrincipal the value to set
+         * @return this builder
+         **/
+        public Builder shouldUseResourcePrincipal(Boolean shouldUseResourcePrincipal) {
+            this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
+            this.__explicitlySet__.add("shouldUseResourcePrincipal");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -503,7 +559,9 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.streamPoolId,
+                            this.clusterId,
                             this.bootstrapServers,
                             this.securityProtocol,
                             this.username,
@@ -520,7 +578,8 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
                             this.sslKeyPassword,
                             this.sslKeyPasswordSecretId,
                             this.consumerProperties,
-                            this.producerProperties);
+                            this.producerProperties,
+                            this.shouldUseResourcePrincipal);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -559,8 +618,14 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("streamPoolId")) {
                 this.streamPoolId(model.getStreamPoolId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterId")) {
+                this.clusterId(model.getClusterId());
             }
             if (model.wasPropertyExplicitlySet("bootstrapServers")) {
                 this.bootstrapServers(model.getBootstrapServers());
@@ -613,6 +678,9 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
             if (model.wasPropertyExplicitlySet("producerProperties")) {
                 this.producerProperties(model.getProducerProperties());
             }
+            if (model.wasPropertyExplicitlySet("shouldUseResourcePrincipal")) {
+                this.shouldUseResourcePrincipal(model.getShouldUseResourcePrincipal());
+            }
             return this;
         }
     }
@@ -640,7 +708,9 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String streamPoolId,
+            String clusterId,
             java.util.List<KafkaBootstrapServer> bootstrapServers,
             KafkaConnection.SecurityProtocol securityProtocol,
             String username,
@@ -657,7 +727,8 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
             String sslKeyPassword,
             String sslKeyPasswordSecretId,
             String consumerProperties,
-            String producerProperties) {
+            String producerProperties,
+            Boolean shouldUseResourcePrincipal) {
         super(
                 displayName,
                 description,
@@ -668,8 +739,10 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.streamPoolId = streamPoolId;
+        this.clusterId = clusterId;
         this.bootstrapServers = bootstrapServers;
         this.securityProtocol = securityProtocol;
         this.username = username;
@@ -687,6 +760,7 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
         this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
         this.consumerProperties = consumerProperties;
         this.producerProperties = producerProperties;
+        this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
     }
 
     /**
@@ -703,6 +777,24 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
      **/
     public String getStreamPoolId() {
         return streamPoolId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster
+     * being referenced from OCI Streaming with Apache Kafka.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
+    private final String clusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster
+     * being referenced from OCI Streaming with Apache Kafka.
+     *
+     * @return the value
+     **/
+    public String getClusterId() {
+        return clusterId;
     }
 
     /**
@@ -1021,6 +1113,30 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
         return producerProperties;
     }
 
+    /**
+     * Specifies that the user intends to authenticate to the instance using a resource principal.
+     * Applicable only for OCI Streaming connections.
+     * Only available from 23.9.0.0.0 GoldenGate versions.
+     * Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided.
+     * Default: false
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
+    private final Boolean shouldUseResourcePrincipal;
+
+    /**
+     * Specifies that the user intends to authenticate to the instance using a resource principal.
+     * Applicable only for OCI Streaming connections.
+     * Only available from 23.9.0.0.0 GoldenGate versions.
+     * Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided.
+     * Default: false
+     *
+     * @return the value
+     **/
+    public Boolean getShouldUseResourcePrincipal() {
+        return shouldUseResourcePrincipal;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1036,6 +1152,7 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
         sb.append("UpdateKafkaConnectionDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", streamPoolId=").append(String.valueOf(this.streamPoolId));
+        sb.append(", clusterId=").append(String.valueOf(this.clusterId));
         sb.append(", bootstrapServers=").append(String.valueOf(this.bootstrapServers));
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", username=").append(String.valueOf(this.username));
@@ -1055,6 +1172,8 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
         sb.append(", sslKeyPasswordSecretId=").append(String.valueOf(this.sslKeyPasswordSecretId));
         sb.append(", consumerProperties=").append(String.valueOf(this.consumerProperties));
         sb.append(", producerProperties=").append(String.valueOf(this.producerProperties));
+        sb.append(", shouldUseResourcePrincipal=")
+                .append(String.valueOf(this.shouldUseResourcePrincipal));
         sb.append(")");
         return sb.toString();
     }
@@ -1070,6 +1189,7 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
 
         UpdateKafkaConnectionDetails other = (UpdateKafkaConnectionDetails) o;
         return java.util.Objects.equals(this.streamPoolId, other.streamPoolId)
+                && java.util.Objects.equals(this.clusterId, other.clusterId)
                 && java.util.Objects.equals(this.bootstrapServers, other.bootstrapServers)
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.username, other.username)
@@ -1090,6 +1210,8 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
                         this.sslKeyPasswordSecretId, other.sslKeyPasswordSecretId)
                 && java.util.Objects.equals(this.consumerProperties, other.consumerProperties)
                 && java.util.Objects.equals(this.producerProperties, other.producerProperties)
+                && java.util.Objects.equals(
+                        this.shouldUseResourcePrincipal, other.shouldUseResourcePrincipal)
                 && super.equals(other);
     }
 
@@ -1098,6 +1220,7 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.streamPoolId == null ? 43 : this.streamPoolId.hashCode());
+        result = (result * PRIME) + (this.clusterId == null ? 43 : this.clusterId.hashCode());
         result =
                 (result * PRIME)
                         + (this.bootstrapServers == null ? 43 : this.bootstrapServers.hashCode());
@@ -1155,6 +1278,11 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
                         + (this.producerProperties == null
                                 ? 43
                                 : this.producerProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldUseResourcePrincipal == null
+                                ? 43
+                                : this.shouldUseResourcePrincipal.hashCode());
         return result;
     }
 }

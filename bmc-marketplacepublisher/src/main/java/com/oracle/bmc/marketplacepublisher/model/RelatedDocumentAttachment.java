@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplacepublisher.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.marketplacepublisher.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RelatedDocumentAttachment.Builder.class
 )
@@ -303,7 +303,8 @@ public final class RelatedDocumentAttachment extends ListingRevisionAttachment {
         PressRelease("PRESS_RELEASE"),
         ProductDocumentation("PRODUCT_DOCUMENTATION"),
         UserGuides("USER_GUIDES"),
-        Webinar("WEBINAR"),
+        Webinars("WEBINARS"),
+        Whitepapers("WHITEPAPERS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

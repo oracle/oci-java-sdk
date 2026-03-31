@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.limits.requests;
@@ -78,17 +78,30 @@ public class GetResourceAvailabilityRequest
         return opcRequestId;
     }
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      *
      */
     private String subscriptionId;
 
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      *
      */
     public String getSubscriptionId() {
         return subscriptionId;
+    }
+    /**
+     * External cloud provider location
+     *
+     */
+    private String externalLocation;
+
+    /**
+     * External cloud provider location
+     *
+     */
+    public String getExternalLocation() {
+        return externalLocation;
     }
 
     public static class Builder
@@ -184,19 +197,36 @@ public class GetResourceAvailabilityRequest
         }
 
         /**
-         * The OCID of the subscription assigned to tenant
+         * The subscription OCID assigned to the tenant.
          *
          */
         private String subscriptionId = null;
 
         /**
-         * The OCID of the subscription assigned to tenant
+         * The subscription OCID assigned to the tenant.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
          */
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
+         * External cloud provider location
+         *
+         */
+        private String externalLocation = null;
+
+        /**
+         * External cloud provider location
+         *
+         * @param externalLocation the value to set
+         * @return this builder instance
+         */
+        public Builder externalLocation(String externalLocation) {
+            this.externalLocation = externalLocation;
             return this;
         }
 
@@ -234,6 +264,7 @@ public class GetResourceAvailabilityRequest
             availabilityDomain(o.getAvailabilityDomain());
             opcRequestId(o.getOpcRequestId());
             subscriptionId(o.getSubscriptionId());
+            externalLocation(o.getExternalLocation());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -272,8 +303,9 @@ public class GetResourceAvailabilityRequest
             request.availabilityDomain = availabilityDomain;
             request.opcRequestId = opcRequestId;
             request.subscriptionId = subscriptionId;
+            request.externalLocation = externalLocation;
             return request;
-            // new GetResourceAvailabilityRequest(serviceName, limitName, compartmentId, availabilityDomain, opcRequestId, subscriptionId);
+            // new GetResourceAvailabilityRequest(serviceName, limitName, compartmentId, availabilityDomain, opcRequestId, subscriptionId, externalLocation);
         }
     }
 
@@ -288,7 +320,8 @@ public class GetResourceAvailabilityRequest
                 .compartmentId(compartmentId)
                 .availabilityDomain(availabilityDomain)
                 .opcRequestId(opcRequestId)
-                .subscriptionId(subscriptionId);
+                .subscriptionId(subscriptionId)
+                .externalLocation(externalLocation);
     }
 
     /**
@@ -310,6 +343,7 @@ public class GetResourceAvailabilityRequest
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(",externalLocation=").append(String.valueOf(this.externalLocation));
         sb.append(")");
         return sb.toString();
     }
@@ -330,7 +364,8 @@ public class GetResourceAvailabilityRequest
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId);
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.externalLocation, other.externalLocation);
     }
 
     @Override
@@ -351,6 +386,9 @@ public class GetResourceAvailabilityRequest
         result =
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalLocation == null ? 43 : this.externalLocation.hashCode());
         return result;
     }
 }

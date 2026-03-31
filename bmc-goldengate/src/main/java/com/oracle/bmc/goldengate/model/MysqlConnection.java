@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -197,6 +197,34 @@ public final class MysqlConnection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The MySQL technology type.
          **/
@@ -319,6 +347,72 @@ public final class MysqlConnection extends Connection {
         public Builder sslMode(SslMode sslMode) {
             this.sslMode = sslMode;
             this.__explicitlySet__.add("sslMode");
+            return this;
+        }
+        /**
+         * Database Certificate - The base64 encoded content of a .pem or .crt file
+         * containing the server public key (for 1 and 2-way SSL).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
+        private String sslCa;
+
+        /**
+         * Database Certificate - The base64 encoded content of a .pem or .crt file
+         * containing the server public key (for 1 and 2-way SSL).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         * @param sslCa the value to set
+         * @return this builder
+         **/
+        public Builder sslCa(String sslCa) {
+            this.sslCa = sslCa;
+            this.__explicitlySet__.add("sslCa");
+            return this;
+        }
+        /**
+         * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+         * Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
+        private String sslCrl;
+
+        /**
+         * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+         * Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         * @param sslCrl the value to set
+         * @return this builder
+         **/
+        public Builder sslCrl(String sslCrl) {
+            this.sslCrl = sslCrl;
+            this.__explicitlySet__.add("sslCrl");
+            return this;
+        }
+        /**
+         * Client Certificate - The base64 encoded content of a .pem or .crt file
+         * containing the client public key (for 2-way SSL).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
+        private String sslCert;
+
+        /**
+         * Client Certificate - The base64 encoded content of a .pem or .crt file
+         * containing the client public key (for 2-way SSL).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         * @param sslCert the value to set
+         * @return this builder
+         **/
+        public Builder sslCert(String sslCert) {
+            this.sslCert = sslCert;
+            this.__explicitlySet__.add("sslCert");
             return this;
         }
         /**
@@ -465,6 +559,9 @@ public final class MysqlConnection extends Connection {
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.username,
                             this.host,
@@ -472,6 +569,9 @@ public final class MysqlConnection extends Connection {
                             this.databaseName,
                             this.securityProtocol,
                             this.sslMode,
+                            this.sslCa,
+                            this.sslCrl,
+                            this.sslCert,
                             this.privateIp,
                             this.additionalAttributes,
                             this.dbSystemId,
@@ -542,6 +642,15 @@ public final class MysqlConnection extends Connection {
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -562,6 +671,15 @@ public final class MysqlConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("sslMode")) {
                 this.sslMode(model.getSslMode());
+            }
+            if (model.wasPropertyExplicitlySet("sslCa")) {
+                this.sslCa(model.getSslCa());
+            }
+            if (model.wasPropertyExplicitlySet("sslCrl")) {
+                this.sslCrl(model.getSslCrl());
+            }
+            if (model.wasPropertyExplicitlySet("sslCert")) {
+                this.sslCert(model.getSslCert());
             }
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
@@ -614,6 +732,9 @@ public final class MysqlConnection extends Connection {
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             TechnologyType technologyType,
             String username,
             String host,
@@ -621,6 +742,9 @@ public final class MysqlConnection extends Connection {
             String databaseName,
             SecurityProtocol securityProtocol,
             SslMode sslMode,
+            String sslCa,
+            String sslCrl,
+            String sslCert,
             String privateIp,
             java.util.List<NameValuePair> additionalAttributes,
             String dbSystemId,
@@ -645,7 +769,10 @@ public final class MysqlConnection extends Connection {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.username = username;
         this.host = host;
@@ -653,6 +780,9 @@ public final class MysqlConnection extends Connection {
         this.databaseName = databaseName;
         this.securityProtocol = securityProtocol;
         this.sslMode = sslMode;
+        this.sslCa = sslCa;
+        this.sslCrl = sslCrl;
+        this.sslCert = sslCert;
         this.privateIp = privateIp;
         this.additionalAttributes = additionalAttributes;
         this.dbSystemId = dbSystemId;
@@ -929,6 +1059,66 @@ public final class MysqlConnection extends Connection {
     }
 
     /**
+     * Database Certificate - The base64 encoded content of a .pem or .crt file
+     * containing the server public key (for 1 and 2-way SSL).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
+    private final String sslCa;
+
+    /**
+     * Database Certificate - The base64 encoded content of a .pem or .crt file
+     * containing the server public key (for 1 and 2-way SSL).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     * @return the value
+     **/
+    public String getSslCa() {
+        return sslCa;
+    }
+
+    /**
+     * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+     * Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
+    private final String sslCrl;
+
+    /**
+     * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+     * Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     * @return the value
+     **/
+    public String getSslCrl() {
+        return sslCrl;
+    }
+
+    /**
+     * Client Certificate - The base64 encoded content of a .pem or .crt file
+     * containing the client public key (for 2-way SSL).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
+    private final String sslCert;
+
+    /**
+     * Client Certificate - The base64 encoded content of a .pem or .crt file
+     * containing the client public key (for 2-way SSL).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     * @return the value
+     **/
+    public String getSslCert() {
+        return sslCert;
+    }
+
+    /**
      * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
      * field, or make sure the host name is resolvable in the target VCN.
      * <p>
@@ -1057,6 +1247,9 @@ public final class MysqlConnection extends Connection {
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", sslMode=").append(String.valueOf(this.sslMode));
+        sb.append(", sslCa=").append(String.valueOf(this.sslCa));
+        sb.append(", sslCrl=").append(String.valueOf(this.sslCrl));
+        sb.append(", sslCert=").append(String.valueOf(this.sslCert));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", additionalAttributes=").append(String.valueOf(this.additionalAttributes));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
@@ -1083,6 +1276,9 @@ public final class MysqlConnection extends Connection {
                 && java.util.Objects.equals(this.databaseName, other.databaseName)
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.sslMode, other.sslMode)
+                && java.util.Objects.equals(this.sslCa, other.sslCa)
+                && java.util.Objects.equals(this.sslCrl, other.sslCrl)
+                && java.util.Objects.equals(this.sslCert, other.sslCert)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.additionalAttributes, other.additionalAttributes)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
@@ -1106,6 +1302,9 @@ public final class MysqlConnection extends Connection {
                 (result * PRIME)
                         + (this.securityProtocol == null ? 43 : this.securityProtocol.hashCode());
         result = (result * PRIME) + (this.sslMode == null ? 43 : this.sslMode.hashCode());
+        result = (result * PRIME) + (this.sslCa == null ? 43 : this.sslCa.hashCode());
+        result = (result * PRIME) + (this.sslCrl == null ? 43 : this.sslCrl.hashCode());
+        result = (result * PRIME) + (this.sslCert == null ? 43 : this.sslCert.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         result =
                 (result * PRIME)

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent.model;
@@ -35,6 +35,7 @@ public final class UpdateAgentEndpointDetails
         "shouldEnableCitation",
         "shouldEnableMultiLanguage",
         "sessionConfig",
+        "provisionedCapacityConfig",
         "freeformTags",
         "definedTags"
     })
@@ -50,6 +51,7 @@ public final class UpdateAgentEndpointDetails
             Boolean shouldEnableCitation,
             Boolean shouldEnableMultiLanguage,
             SessionConfig sessionConfig,
+            ProvisionedCapacityConfig provisionedCapacityConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -64,6 +66,7 @@ public final class UpdateAgentEndpointDetails
         this.shouldEnableCitation = shouldEnableCitation;
         this.shouldEnableMultiLanguage = shouldEnableMultiLanguage;
         this.sessionConfig = sessionConfig;
+        this.provisionedCapacityConfig = provisionedCapacityConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -211,6 +214,16 @@ public final class UpdateAgentEndpointDetails
             this.__explicitlySet__.add("sessionConfig");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionedCapacityConfig")
+        private ProvisionedCapacityConfig provisionedCapacityConfig;
+
+        public Builder provisionedCapacityConfig(
+                ProvisionedCapacityConfig provisionedCapacityConfig) {
+            this.provisionedCapacityConfig = provisionedCapacityConfig;
+            this.__explicitlySet__.add("provisionedCapacityConfig");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -278,6 +291,7 @@ public final class UpdateAgentEndpointDetails
                             this.shouldEnableCitation,
                             this.shouldEnableMultiLanguage,
                             this.sessionConfig,
+                            this.provisionedCapacityConfig,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -320,6 +334,9 @@ public final class UpdateAgentEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("sessionConfig")) {
                 this.sessionConfig(model.getSessionConfig());
+            }
+            if (model.wasPropertyExplicitlySet("provisionedCapacityConfig")) {
+                this.provisionedCapacityConfig(model.getProvisionedCapacityConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -461,6 +478,13 @@ public final class UpdateAgentEndpointDetails
         return sessionConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionedCapacityConfig")
+    private final ProvisionedCapacityConfig provisionedCapacityConfig;
+
+    public ProvisionedCapacityConfig getProvisionedCapacityConfig() {
+        return provisionedCapacityConfig;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -532,6 +556,8 @@ public final class UpdateAgentEndpointDetails
         sb.append(", shouldEnableMultiLanguage=")
                 .append(String.valueOf(this.shouldEnableMultiLanguage));
         sb.append(", sessionConfig=").append(String.valueOf(this.sessionConfig));
+        sb.append(", provisionedCapacityConfig=")
+                .append(String.valueOf(this.provisionedCapacityConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -561,6 +587,8 @@ public final class UpdateAgentEndpointDetails
                 && java.util.Objects.equals(
                         this.shouldEnableMultiLanguage, other.shouldEnableMultiLanguage)
                 && java.util.Objects.equals(this.sessionConfig, other.sessionConfig)
+                && java.util.Objects.equals(
+                        this.provisionedCapacityConfig, other.provisionedCapacityConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -601,6 +629,11 @@ public final class UpdateAgentEndpointDetails
         result =
                 (result * PRIME)
                         + (this.sessionConfig == null ? 43 : this.sessionConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionedCapacityConfig == null
+                                ? 43
+                                : this.provisionedCapacityConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

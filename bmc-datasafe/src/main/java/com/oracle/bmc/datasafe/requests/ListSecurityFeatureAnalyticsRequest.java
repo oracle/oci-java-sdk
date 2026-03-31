@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -119,6 +119,17 @@ public class ListSecurityFeatureAnalyticsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    private String targetDatabaseGroupId;
+
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -215,6 +226,21 @@ public class ListSecurityFeatureAnalyticsRequest
         }
 
         /**
+         * A filter to return the target database group that matches the specified OCID.
+         */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -247,6 +273,7 @@ public class ListSecurityFeatureAnalyticsRequest
             accessLevel(o.getAccessLevel());
             targetId(o.getTargetId());
             opcRequestId(o.getOpcRequestId());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -284,8 +311,9 @@ public class ListSecurityFeatureAnalyticsRequest
             request.accessLevel = accessLevel;
             request.targetId = targetId;
             request.opcRequestId = opcRequestId;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             return request;
-            // new ListSecurityFeatureAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, targetId, opcRequestId);
+            // new ListSecurityFeatureAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, targetId, opcRequestId, targetDatabaseGroupId);
         }
     }
 
@@ -299,7 +327,8 @@ public class ListSecurityFeatureAnalyticsRequest
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .accessLevel(accessLevel)
                 .targetId(targetId)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .targetDatabaseGroupId(targetDatabaseGroupId);
     }
 
     /**
@@ -320,6 +349,7 @@ public class ListSecurityFeatureAnalyticsRequest
         sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -340,7 +370,9 @@ public class ListSecurityFeatureAnalyticsRequest
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.accessLevel, other.accessLevel)
                 && java.util.Objects.equals(this.targetId, other.targetId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.targetDatabaseGroupId, other.targetDatabaseGroupId);
     }
 
     @Override
@@ -358,6 +390,11 @@ public class ListSecurityFeatureAnalyticsRequest
         result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         return result;
     }
 }

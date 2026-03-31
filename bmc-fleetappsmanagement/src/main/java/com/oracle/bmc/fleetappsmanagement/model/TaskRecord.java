@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details of a task.
+ * Attributes of a task record.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaskRecord.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TaskRecord extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -149,13 +149,13 @@ public final class TaskRecord extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The current state of the TaskRecord.
+         * The current state of the task record.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the TaskRecord.
+         * The current state of the task record.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -222,13 +222,13 @@ public final class TaskRecord extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The version of the task
+         * The version of the task record.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * The version of the task
+         * The version of the task record.
          * @param version the value to set
          * @return this builder
          **/
@@ -536,7 +536,7 @@ public final class TaskRecord extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The current state of the TaskRecord.
+     * The current state of the task record.
      **/
     public enum LifecycleState {
         Active("ACTIVE"),
@@ -588,13 +588,13 @@ public final class TaskRecord extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     };
     /**
-     * The current state of the TaskRecord.
+     * The current state of the task record.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the TaskRecord.
+     * The current state of the task record.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -651,13 +651,13 @@ public final class TaskRecord extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The version of the task
+     * The version of the task record.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * The version of the task
+     * The version of the task record.
      * @return the value
      **/
     public String getVersion() {

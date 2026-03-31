@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -85,6 +85,19 @@ public interface Channels extends AutoCloseable {
     DeleteChannelResponse deleteChannel(DeleteChannelRequest request);
 
     /**
+     * Initiates an asynchronous request to collect the current status of the specified Channel.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GenerateChannelStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateChannelStatus API.
+     */
+    GenerateChannelStatusResponse generateChannelStatus(GenerateChannelStatusRequest request);
+
+    /**
      * Gets the full details of the specified Channel, including the user-specified
      * configuration parameters (passwords are omitted), as well as information about
      * the state of the Channel, its sources and targets.
@@ -98,6 +111,19 @@ public interface Channels extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetChannel API.
      */
     GetChannelResponse getChannel(GetChannelRequest request);
+
+    /**
+     * Returns the most up-to-date status of the specified Channel.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetChannelStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetChannelStatus API.
+     */
+    GetChannelStatusResponse getChannelStatus(GetChannelStatusRequest request);
 
     /**
      * Lists all the Channels that match the specified filters.

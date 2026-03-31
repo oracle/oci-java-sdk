@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.model;
@@ -33,6 +33,7 @@ public final class UpdateSddcDetails extends com.oracle.bmc.http.internal.Explic
         "vmwareSoftwareVersion",
         "esxiSoftwareVersion",
         "sshAuthorizedKeys",
+        "sddcByolAllocationDetails",
         "freeformTags",
         "definedTags"
     })
@@ -41,6 +42,7 @@ public final class UpdateSddcDetails extends com.oracle.bmc.http.internal.Explic
             String vmwareSoftwareVersion,
             String esxiSoftwareVersion,
             String sshAuthorizedKeys,
+            SddcByolAllocationDetails sddcByolAllocationDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -48,6 +50,7 @@ public final class UpdateSddcDetails extends com.oracle.bmc.http.internal.Explic
         this.vmwareSoftwareVersion = vmwareSoftwareVersion;
         this.esxiSoftwareVersion = esxiSoftwareVersion;
         this.sshAuthorizedKeys = sshAuthorizedKeys;
+        this.sddcByolAllocationDetails = sddcByolAllocationDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -150,6 +153,16 @@ public final class UpdateSddcDetails extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("sshAuthorizedKeys");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sddcByolAllocationDetails")
+        private SddcByolAllocationDetails sddcByolAllocationDetails;
+
+        public Builder sddcByolAllocationDetails(
+                SddcByolAllocationDetails sddcByolAllocationDetails) {
+            this.sddcByolAllocationDetails = sddcByolAllocationDetails;
+            this.__explicitlySet__.add("sddcByolAllocationDetails");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
          * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -210,6 +223,7 @@ public final class UpdateSddcDetails extends com.oracle.bmc.http.internal.Explic
                             this.vmwareSoftwareVersion,
                             this.esxiSoftwareVersion,
                             this.sshAuthorizedKeys,
+                            this.sddcByolAllocationDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -231,6 +245,9 @@ public final class UpdateSddcDetails extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("sshAuthorizedKeys")) {
                 this.sshAuthorizedKeys(model.getSshAuthorizedKeys());
+            }
+            if (model.wasPropertyExplicitlySet("sddcByolAllocationDetails")) {
+                this.sddcByolAllocationDetails(model.getSddcByolAllocationDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -341,6 +358,13 @@ public final class UpdateSddcDetails extends com.oracle.bmc.http.internal.Explic
         return sshAuthorizedKeys;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sddcByolAllocationDetails")
+    private final SddcByolAllocationDetails sddcByolAllocationDetails;
+
+    public SddcByolAllocationDetails getSddcByolAllocationDetails() {
+        return sddcByolAllocationDetails;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -403,6 +427,8 @@ public final class UpdateSddcDetails extends com.oracle.bmc.http.internal.Explic
         sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
         sb.append(", esxiSoftwareVersion=").append(String.valueOf(this.esxiSoftwareVersion));
         sb.append(", sshAuthorizedKeys=").append(String.valueOf(this.sshAuthorizedKeys));
+        sb.append(", sddcByolAllocationDetails=")
+                .append(String.valueOf(this.sddcByolAllocationDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -423,6 +449,8 @@ public final class UpdateSddcDetails extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.vmwareSoftwareVersion, other.vmwareSoftwareVersion)
                 && java.util.Objects.equals(this.esxiSoftwareVersion, other.esxiSoftwareVersion)
                 && java.util.Objects.equals(this.sshAuthorizedKeys, other.sshAuthorizedKeys)
+                && java.util.Objects.equals(
+                        this.sddcByolAllocationDetails, other.sddcByolAllocationDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -446,6 +474,11 @@ public final class UpdateSddcDetails extends com.oracle.bmc.http.internal.Explic
         result =
                 (result * PRIME)
                         + (this.sshAuthorizedKeys == null ? 43 : this.sshAuthorizedKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sddcByolAllocationDetails == null
+                                ? 43
+                                : this.sddcByolAllocationDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

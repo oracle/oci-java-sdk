@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -12,13 +12,13 @@ import com.oracle.bmc.loganalytics.model.*;
 public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     private String namespaceName;
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     public String getNamespaceName() {
@@ -255,6 +255,17 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return categories;
     }
     /**
+     * The compartment id
+     */
+    private String compartmentId;
+
+    /**
+     * The compartment id
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+    /**
      * A flag indicating whether or not to return OMC annotated or hidden lookups.
      *
      */
@@ -359,13 +370,13 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          */
         private String namespaceName = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          * @param namespaceName the value to set
          * @return this builder instance
@@ -472,6 +483,21 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          */
         public Builder categories(String categories) {
             this.categories = categories;
+            return this;
+        }
+
+        /**
+         * The compartment id
+         */
+        private String compartmentId = null;
+
+        /**
+         * The compartment id
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
 
@@ -589,6 +615,7 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             sortBy(o.getSortBy());
             status(o.getStatus());
             categories(o.getCategories());
+            compartmentId(o.getCompartmentId());
             isHideSpecial(o.getIsHideSpecial());
             limit(o.getLimit());
             page(o.getPage());
@@ -633,13 +660,14 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.sortBy = sortBy;
             request.status = status;
             request.categories = categories;
+            request.compartmentId = compartmentId;
             request.isHideSpecial = isHideSpecial;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListLookupsRequest(namespaceName, type, lookupDisplayText, isSystem, sortBy, status, categories, isHideSpecial, limit, page, sortOrder, opcRequestId);
+            // new ListLookupsRequest(namespaceName, type, lookupDisplayText, isSystem, sortBy, status, categories, compartmentId, isHideSpecial, limit, page, sortOrder, opcRequestId);
         }
     }
 
@@ -656,6 +684,7 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .sortBy(sortBy)
                 .status(status)
                 .categories(categories)
+                .compartmentId(compartmentId)
                 .isHideSpecial(isHideSpecial)
                 .limit(limit)
                 .page(page)
@@ -683,6 +712,7 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",status=").append(String.valueOf(this.status));
         sb.append(",categories=").append(String.valueOf(this.categories));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",isHideSpecial=").append(String.valueOf(this.isHideSpecial));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -710,6 +740,7 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.isHideSpecial, other.isHideSpecial)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -732,6 +763,9 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHideSpecial == null ? 43 : this.isHideSpecial.hashCode());

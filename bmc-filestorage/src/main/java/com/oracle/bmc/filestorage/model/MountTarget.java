@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -31,6 +31,7 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
         "lifecycleDetails",
         "lifecycleState",
         "privateIpIds",
+        "mountTargetIpv6Ids",
         "subnetId",
         "idmapType",
         "ldapIdmap",
@@ -44,7 +45,8 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
         "locks",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "securityAttributes"
     })
     public MountTarget(
             String availabilityDomain,
@@ -55,6 +57,7 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
             String lifecycleDetails,
             LifecycleState lifecycleState,
             java.util.List<String> privateIpIds,
+            java.util.List<String> mountTargetIpv6Ids,
             String subnetId,
             IdmapType idmapType,
             LdapIdmap ldapIdmap,
@@ -68,7 +71,8 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
             java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -78,6 +82,7 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
         this.lifecycleDetails = lifecycleDetails;
         this.lifecycleState = lifecycleState;
         this.privateIpIds = privateIpIds;
+        this.mountTargetIpv6Ids = mountTargetIpv6Ids;
         this.subnetId = subnetId;
         this.idmapType = idmapType;
         this.ldapIdmap = ldapIdmap;
@@ -92,6 +97,7 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.securityAttributes = securityAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -244,6 +250,22 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
         public Builder privateIpIds(java.util.List<String> privateIpIds) {
             this.privateIpIds = privateIpIds;
             this.__explicitlySet__.add("privateIpIds");
+            return this;
+        }
+        /**
+         * The OCIDs of the IPv6 addresses associated with this mount target.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("mountTargetIpv6Ids")
+        private java.util.List<String> mountTargetIpv6Ids;
+
+        /**
+         * The OCIDs of the IPv6 addresses associated with this mount target.
+         * @param mountTargetIpv6Ids the value to set
+         * @return this builder
+         **/
+        public Builder mountTargetIpv6Ids(java.util.List<String> mountTargetIpv6Ids) {
+            this.mountTargetIpv6Ids = mountTargetIpv6Ids;
+            this.__explicitlySet__.add("mountTargetIpv6Ids");
             return this;
         }
         /**
@@ -509,6 +531,33 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+         * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+         * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -524,6 +573,7 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.lifecycleDetails,
                             this.lifecycleState,
                             this.privateIpIds,
+                            this.mountTargetIpv6Ids,
                             this.subnetId,
                             this.idmapType,
                             this.ldapIdmap,
@@ -537,7 +587,8 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.locks,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.securityAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -569,6 +620,9 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("privateIpIds")) {
                 this.privateIpIds(model.getPrivateIpIds());
+            }
+            if (model.wasPropertyExplicitlySet("mountTargetIpv6Ids")) {
+                this.mountTargetIpv6Ids(model.getMountTargetIpv6Ids());
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
@@ -611,6 +665,9 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             return this;
         }
@@ -811,6 +868,20 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
      **/
     public java.util.List<String> getPrivateIpIds() {
         return privateIpIds;
+    }
+
+    /**
+     * The OCIDs of the IPv6 addresses associated with this mount target.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("mountTargetIpv6Ids")
+    private final java.util.List<String> mountTargetIpv6Ids;
+
+    /**
+     * The OCIDs of the IPv6 addresses associated with this mount target.
+     * @return the value
+     **/
+    public java.util.List<String> getMountTargetIpv6Ids() {
+        return mountTargetIpv6Ids;
     }
 
     /**
@@ -1095,6 +1166,30 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
         return systemTags;
     }
 
+    /**
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+     * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+     * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1117,6 +1212,7 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", privateIpIds=").append(String.valueOf(this.privateIpIds));
+        sb.append(", mountTargetIpv6Ids=").append(String.valueOf(this.mountTargetIpv6Ids));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", idmapType=").append(String.valueOf(this.idmapType));
         sb.append(", ldapIdmap=").append(String.valueOf(this.ldapIdmap));
@@ -1132,6 +1228,7 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -1154,6 +1251,7 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.privateIpIds, other.privateIpIds)
+                && java.util.Objects.equals(this.mountTargetIpv6Ids, other.mountTargetIpv6Ids)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.idmapType, other.idmapType)
                 && java.util.Objects.equals(this.ldapIdmap, other.ldapIdmap)
@@ -1169,6 +1267,7 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
 
@@ -1194,6 +1293,11 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.privateIpIds == null ? 43 : this.privateIpIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mountTargetIpv6Ids == null
+                                ? 43
+                                : this.mountTargetIpv6Ids.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.idmapType == null ? 43 : this.idmapType.hashCode());
         result = (result * PRIME) + (this.ldapIdmap == null ? 43 : this.ldapIdmap.hashCode());
@@ -1224,6 +1328,11 @@ public final class MountTarget extends com.oracle.bmc.http.internal.ExplicitlySe
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

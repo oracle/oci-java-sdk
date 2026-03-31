@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -21,14 +21,25 @@ package com.oracle.bmc.loganalytics.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MetricExtraction extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"compartmentId", "namespace", "metricName", "resourceGroup"})
+    @java.beans.ConstructorProperties({
+        "compartmentId",
+        "namespace",
+        "metricName",
+        "resourceGroup",
+        "metricCollections"
+    })
     public MetricExtraction(
-            String compartmentId, String namespace, String metricName, String resourceGroup) {
+            String compartmentId,
+            String namespace,
+            String metricName,
+            String resourceGroup,
+            java.util.List<MetricCollection> metricCollections) {
         super();
         this.compartmentId = compartmentId;
         this.namespace = namespace;
         this.metricName = metricName;
         this.resourceGroup = resourceGroup;
+        this.metricCollections = metricCollections;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -117,6 +128,22 @@ public final class MetricExtraction extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("resourceGroup");
             return this;
         }
+        /**
+         * Details for the metrics to be collected.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("metricCollections")
+        private java.util.List<MetricCollection> metricCollections;
+
+        /**
+         * Details for the metrics to be collected.
+         * @param metricCollections the value to set
+         * @return this builder
+         **/
+        public Builder metricCollections(java.util.List<MetricCollection> metricCollections) {
+            this.metricCollections = metricCollections;
+            this.__explicitlySet__.add("metricCollections");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -127,7 +154,8 @@ public final class MetricExtraction extends com.oracle.bmc.http.internal.Explici
                             this.compartmentId,
                             this.namespace,
                             this.metricName,
-                            this.resourceGroup);
+                            this.resourceGroup,
+                            this.metricCollections);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -147,6 +175,9 @@ public final class MetricExtraction extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("resourceGroup")) {
                 this.resourceGroup(model.getResourceGroup());
+            }
+            if (model.wasPropertyExplicitlySet("metricCollections")) {
+                this.metricCollections(model.getMetricCollections());
             }
             return this;
         }
@@ -239,6 +270,20 @@ public final class MetricExtraction extends com.oracle.bmc.http.internal.Explici
         return resourceGroup;
     }
 
+    /**
+     * Details for the metrics to be collected.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("metricCollections")
+    private final java.util.List<MetricCollection> metricCollections;
+
+    /**
+     * Details for the metrics to be collected.
+     * @return the value
+     **/
+    public java.util.List<MetricCollection> getMetricCollections() {
+        return metricCollections;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -257,6 +302,7 @@ public final class MetricExtraction extends com.oracle.bmc.http.internal.Explici
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", metricName=").append(String.valueOf(this.metricName));
         sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
+        sb.append(", metricCollections=").append(String.valueOf(this.metricCollections));
         sb.append(")");
         return sb.toString();
     }
@@ -275,6 +321,7 @@ public final class MetricExtraction extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.metricName, other.metricName)
                 && java.util.Objects.equals(this.resourceGroup, other.resourceGroup)
+                && java.util.Objects.equals(this.metricCollections, other.metricCollections)
                 && super.equals(other);
     }
 
@@ -290,6 +337,9 @@ public final class MetricExtraction extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.resourceGroup == null ? 43 : this.resourceGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metricCollections == null ? 43 : this.metricCollections.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

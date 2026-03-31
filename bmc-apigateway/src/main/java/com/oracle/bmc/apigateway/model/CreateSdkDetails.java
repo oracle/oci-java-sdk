@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway.model;
@@ -23,6 +23,7 @@ public final class CreateSdkDetails extends com.oracle.bmc.http.internal.Explici
         "displayName",
         "targetLanguage",
         "apiId",
+        "locks",
         "freeformTags",
         "definedTags",
         "parameters"
@@ -31,6 +32,7 @@ public final class CreateSdkDetails extends com.oracle.bmc.http.internal.Explici
             String displayName,
             String targetLanguage,
             String apiId,
+            java.util.List<AddResourceLockDetails> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> parameters) {
@@ -38,6 +40,7 @@ public final class CreateSdkDetails extends com.oracle.bmc.http.internal.Explici
         this.displayName = displayName;
         this.targetLanguage = targetLanguage;
         this.apiId = apiId;
+        this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.parameters = parameters;
@@ -103,6 +106,22 @@ public final class CreateSdkDetails extends com.oracle.bmc.http.internal.Explici
         public Builder apiId(String apiId) {
             this.apiId = apiId;
             this.__explicitlySet__.add("apiId");
+            return this;
+        }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<AddResourceLockDetails> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<AddResourceLockDetails> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
         /**
@@ -192,6 +211,7 @@ public final class CreateSdkDetails extends com.oracle.bmc.http.internal.Explici
                             this.displayName,
                             this.targetLanguage,
                             this.apiId,
+                            this.locks,
                             this.freeformTags,
                             this.definedTags,
                             this.parameters);
@@ -211,6 +231,9 @@ public final class CreateSdkDetails extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("apiId")) {
                 this.apiId(model.getApiId());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -288,6 +311,20 @@ public final class CreateSdkDetails extends com.oracle.bmc.http.internal.Explici
      **/
     public String getApiId() {
         return apiId;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<AddResourceLockDetails> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<AddResourceLockDetails> getLocks() {
+        return locks;
     }
 
     /**
@@ -377,6 +414,7 @@ public final class CreateSdkDetails extends com.oracle.bmc.http.internal.Explici
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", targetLanguage=").append(String.valueOf(this.targetLanguage));
         sb.append(", apiId=").append(String.valueOf(this.apiId));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
@@ -397,6 +435,7 @@ public final class CreateSdkDetails extends com.oracle.bmc.http.internal.Explici
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.targetLanguage, other.targetLanguage)
                 && java.util.Objects.equals(this.apiId, other.apiId)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.parameters, other.parameters)
@@ -412,6 +451,7 @@ public final class CreateSdkDetails extends com.oracle.bmc.http.internal.Explici
                 (result * PRIME)
                         + (this.targetLanguage == null ? 43 : this.targetLanguage.hashCode());
         result = (result * PRIME) + (this.apiId == null ? 43 : this.apiId.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());

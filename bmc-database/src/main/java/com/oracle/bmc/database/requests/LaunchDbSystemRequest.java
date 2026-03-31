@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -54,6 +54,21 @@ public class LaunchDbSystemRequest
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
+    }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
     }
 
     /**
@@ -125,6 +140,25 @@ public class LaunchDbSystemRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -154,6 +188,7 @@ public class LaunchDbSystemRequest
         public Builder copy(LaunchDbSystemRequest o) {
             launchDbSystemDetails(o.getLaunchDbSystemDetails());
             opcRetryToken(o.getOpcRetryToken());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -199,8 +234,9 @@ public class LaunchDbSystemRequest
             LaunchDbSystemRequest request = new LaunchDbSystemRequest();
             request.launchDbSystemDetails = launchDbSystemDetails;
             request.opcRetryToken = opcRetryToken;
+            request.opcDryRun = opcDryRun;
             return request;
-            // new LaunchDbSystemRequest(launchDbSystemDetails, opcRetryToken);
+            // new LaunchDbSystemRequest(launchDbSystemDetails, opcRetryToken, opcDryRun);
         }
     }
 
@@ -211,7 +247,8 @@ public class LaunchDbSystemRequest
     public Builder toBuilder() {
         return new Builder()
                 .launchDbSystemDetails(launchDbSystemDetails)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -229,6 +266,7 @@ public class LaunchDbSystemRequest
         sb.append("super=").append(super.toString());
         sb.append(",launchDbSystemDetails=").append(String.valueOf(this.launchDbSystemDetails));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -245,7 +283,8 @@ public class LaunchDbSystemRequest
         LaunchDbSystemRequest other = (LaunchDbSystemRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.launchDbSystemDetails, other.launchDbSystemDetails)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -260,6 +299,7 @@ public class LaunchDbSystemRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.redis.model;
@@ -23,6 +23,7 @@ public final class CreateRedisClusterDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "ociCacheConfigSetId",
         "clusterMode",
         "shardCount",
         "displayName",
@@ -32,10 +33,12 @@ public final class CreateRedisClusterDetails
         "nodeMemoryInGBs",
         "subnetId",
         "nsgIds",
+        "securityAttributes",
         "freeformTags",
         "definedTags"
     })
     public CreateRedisClusterDetails(
+            String ociCacheConfigSetId,
             RedisCluster.ClusterMode clusterMode,
             Integer shardCount,
             String displayName,
@@ -45,9 +48,11 @@ public final class CreateRedisClusterDetails
             Float nodeMemoryInGBs,
             String subnetId,
             java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.ociCacheConfigSetId = ociCacheConfigSetId;
         this.clusterMode = clusterMode;
         this.shardCount = shardCount;
         this.displayName = displayName;
@@ -57,12 +62,29 @@ public final class CreateRedisClusterDetails
         this.nodeMemoryInGBs = nodeMemoryInGBs;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The ID of the corresponding OCI Cache Config Set for the cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ociCacheConfigSetId")
+        private String ociCacheConfigSetId;
+
+        /**
+         * The ID of the corresponding OCI Cache Config Set for the cluster.
+         * @param ociCacheConfigSetId the value to set
+         * @return this builder
+         **/
+        public Builder ociCacheConfigSetId(String ociCacheConfigSetId) {
+            this.ociCacheConfigSetId = ociCacheConfigSetId;
+            this.__explicitlySet__.add("ociCacheConfigSetId");
+            return this;
+        }
         /**
          * Specifies whether the cluster is sharded or non-sharded.
          **/
@@ -214,6 +236,31 @@ public final class CreateRedisClusterDetails
             return this;
         }
         /**
+         * Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -261,6 +308,7 @@ public final class CreateRedisClusterDetails
         public CreateRedisClusterDetails build() {
             CreateRedisClusterDetails model =
                     new CreateRedisClusterDetails(
+                            this.ociCacheConfigSetId,
                             this.clusterMode,
                             this.shardCount,
                             this.displayName,
@@ -270,6 +318,7 @@ public final class CreateRedisClusterDetails
                             this.nodeMemoryInGBs,
                             this.subnetId,
                             this.nsgIds,
+                            this.securityAttributes,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -280,6 +329,9 @@ public final class CreateRedisClusterDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateRedisClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("ociCacheConfigSetId")) {
+                this.ociCacheConfigSetId(model.getOciCacheConfigSetId());
+            }
             if (model.wasPropertyExplicitlySet("clusterMode")) {
                 this.clusterMode(model.getClusterMode());
             }
@@ -307,6 +359,9 @@ public final class CreateRedisClusterDetails
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -326,6 +381,20 @@ public final class CreateRedisClusterDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The ID of the corresponding OCI Cache Config Set for the cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ociCacheConfigSetId")
+    private final String ociCacheConfigSetId;
+
+    /**
+     * The ID of the corresponding OCI Cache Config Set for the cluster.
+     * @return the value
+     **/
+    public String getOciCacheConfigSetId() {
+        return ociCacheConfigSetId;
     }
 
     /**
@@ -461,6 +530,28 @@ public final class CreateRedisClusterDetails
     }
 
     /**
+     * Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -510,7 +601,8 @@ public final class CreateRedisClusterDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateRedisClusterDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("clusterMode=").append(String.valueOf(this.clusterMode));
+        sb.append("ociCacheConfigSetId=").append(String.valueOf(this.ociCacheConfigSetId));
+        sb.append(", clusterMode=").append(String.valueOf(this.clusterMode));
         sb.append(", shardCount=").append(String.valueOf(this.shardCount));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -519,6 +611,7 @@ public final class CreateRedisClusterDetails
         sb.append(", nodeMemoryInGBs=").append(String.valueOf(this.nodeMemoryInGBs));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -535,7 +628,8 @@ public final class CreateRedisClusterDetails
         }
 
         CreateRedisClusterDetails other = (CreateRedisClusterDetails) o;
-        return java.util.Objects.equals(this.clusterMode, other.clusterMode)
+        return java.util.Objects.equals(this.ociCacheConfigSetId, other.ociCacheConfigSetId)
+                && java.util.Objects.equals(this.clusterMode, other.clusterMode)
                 && java.util.Objects.equals(this.shardCount, other.shardCount)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
@@ -544,6 +638,7 @@ public final class CreateRedisClusterDetails
                 && java.util.Objects.equals(this.nodeMemoryInGBs, other.nodeMemoryInGBs)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -553,6 +648,11 @@ public final class CreateRedisClusterDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.ociCacheConfigSetId == null
+                                ? 43
+                                : this.ociCacheConfigSetId.hashCode());
         result = (result * PRIME) + (this.clusterMode == null ? 43 : this.clusterMode.hashCode());
         result = (result * PRIME) + (this.shardCount == null ? 43 : this.shardCount.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
@@ -568,6 +668,11 @@ public final class CreateRedisClusterDetails
                         + (this.nodeMemoryInGBs == null ? 43 : this.nodeMemoryInGBs.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

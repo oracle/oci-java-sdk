@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.integration;
@@ -60,6 +60,20 @@ public interface IntegrationInstance extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Add LogGroup with specified ocid for Integration Instance to enable sending OIC Activity
+     * Stream to OCI Logging Analytics.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/AddLogAnalyticsLogGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddLogAnalyticsLogGroup API.
+     */
+    AddLogAnalyticsLogGroupResponse addLogAnalyticsLogGroup(AddLogAnalyticsLogGroupRequest request);
+
+    /**
      * Enable Oracle Managed Custom Endpoint for given integration instance.
      *
      * @param request The request object containing the details to send
@@ -118,6 +132,21 @@ public interface IntegrationInstance extends AutoCloseable {
             ChangePrivateEndpointOutboundConnectionRequest request);
 
     /**
+     * Integration instance identified by ID will be migrated to a new Disaster Recovery enabled integration instance.
+     * If a given Integration instance has certain features enabled which are not supported for conversion/migration
+     * it will not be accepted for conversion.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ConvertInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConvertInstance API.
+     */
+    ConvertInstanceResponse convertInstance(ConvertInstanceRequest request);
+
+    /**
      * Creates a new Integration Instance.
      *
      * @param request The request object containing the details to send
@@ -143,6 +172,20 @@ public interface IntegrationInstance extends AutoCloseable {
      */
     DeleteIntegrationInstanceResponse deleteIntegrationInstance(
             DeleteIntegrationInstanceRequest request);
+
+    /**
+     * Disable Process Automation for given Integration Instance
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/DisableProcessAutomationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableProcessAutomation API.
+     */
+    DisableProcessAutomationResponse disableProcessAutomation(
+            DisableProcessAutomationRequest request);
 
     /**
      * Allows failover for disaster recovery. Called in the context of integration instance in that region.
@@ -261,6 +304,21 @@ public interface IntegrationInstance extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Removes Log Analytics logGroup, if enabled for given integrationInstance. Since only single LogGroup can be enabled
+     * for integration instance, no additional details are required to be includes in the request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/RemoveLogAnalyticsLogGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveLogAnalyticsLogGroup API.
+     */
+    RemoveLogAnalyticsLogGroupResponse removeLogAnalyticsLogGroup(
+            RemoveLogAnalyticsLogGroupRequest request);
 
     /**
      * Remove Oracle Managed Custom Endpoint for given integration instance that was previously enabled.

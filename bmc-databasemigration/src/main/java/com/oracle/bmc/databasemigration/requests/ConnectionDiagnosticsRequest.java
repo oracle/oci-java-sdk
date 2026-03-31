@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.requests;
@@ -79,6 +79,17 @@ public class ConnectionDiagnosticsRequest
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
+    }
+    /**
+     * When true, run assessment validation checks (e.g., DMSROLE) and include database information (name/version/size) in the response.
+     */
+    private Boolean isAssessmentValidation;
+
+    /**
+     * When true, run assessment validation checks (e.g., DMSROLE) and include database information (name/version/size) in the response.
+     */
+    public Boolean getIsAssessmentValidation() {
+        return isAssessmentValidation;
     }
 
     public static class Builder
@@ -173,6 +184,21 @@ public class ConnectionDiagnosticsRequest
         }
 
         /**
+         * When true, run assessment validation checks (e.g., DMSROLE) and include database information (name/version/size) in the response.
+         */
+        private Boolean isAssessmentValidation = null;
+
+        /**
+         * When true, run assessment validation checks (e.g., DMSROLE) and include database information (name/version/size) in the response.
+         * @param isAssessmentValidation the value to set
+         * @return this builder instance
+         */
+        public Builder isAssessmentValidation(Boolean isAssessmentValidation) {
+            this.isAssessmentValidation = isAssessmentValidation;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -204,6 +230,7 @@ public class ConnectionDiagnosticsRequest
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            isAssessmentValidation(o.getIsAssessmentValidation());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -240,8 +267,9 @@ public class ConnectionDiagnosticsRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
+            request.isAssessmentValidation = isAssessmentValidation;
             return request;
-            // new ConnectionDiagnosticsRequest(connectionId, ifMatch, opcRequestId, opcRetryToken);
+            // new ConnectionDiagnosticsRequest(connectionId, ifMatch, opcRequestId, opcRetryToken, isAssessmentValidation);
         }
     }
 
@@ -254,7 +282,8 @@ public class ConnectionDiagnosticsRequest
                 .connectionId(connectionId)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .isAssessmentValidation(isAssessmentValidation);
     }
 
     /**
@@ -274,6 +303,7 @@ public class ConnectionDiagnosticsRequest
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",isAssessmentValidation=").append(String.valueOf(this.isAssessmentValidation));
         sb.append(")");
         return sb.toString();
     }
@@ -292,7 +322,9 @@ public class ConnectionDiagnosticsRequest
                 && java.util.Objects.equals(this.connectionId, other.connectionId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(
+                        this.isAssessmentValidation, other.isAssessmentValidation);
     }
 
     @Override
@@ -305,6 +337,11 @@ public class ConnectionDiagnosticsRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAssessmentValidation == null
+                                ? 43
+                                : this.isAssessmentValidation.hashCode());
         return result;
     }
 }

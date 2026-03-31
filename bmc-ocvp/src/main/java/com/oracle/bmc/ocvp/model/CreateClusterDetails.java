@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.model;
@@ -35,8 +35,11 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
         "isShieldedInstanceEnabled",
         "capacityReservationId",
         "datastores",
+        "datastoreClusterIds",
         "vmwareSoftwareVersion",
         "esxiSoftwareVersion",
+        "clusterByolAllocationDetails",
+        "initialVcfByolAllocationId",
         "freeformTags",
         "definedTags"
     })
@@ -54,8 +57,11 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
             Boolean isShieldedInstanceEnabled,
             String capacityReservationId,
             java.util.List<DatastoreInfo> datastores,
+            java.util.List<String> datastoreClusterIds,
             String vmwareSoftwareVersion,
             String esxiSoftwareVersion,
+            ClusterByolAllocationDetails clusterByolAllocationDetails,
+            String initialVcfByolAllocationId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -72,8 +78,11 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
         this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
         this.capacityReservationId = capacityReservationId;
         this.datastores = datastores;
+        this.datastoreClusterIds = datastoreClusterIds;
         this.vmwareSoftwareVersion = vmwareSoftwareVersion;
         this.esxiSoftwareVersion = esxiSoftwareVersion;
+        this.clusterByolAllocationDetails = clusterByolAllocationDetails;
+        this.initialVcfByolAllocationId = initialVcfByolAllocationId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -120,7 +129,7 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
         }
         /**
          * A descriptive name for the Cluster.
-         * Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+         * Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
          * Avoid entering confidential information.
          *
          **/
@@ -129,7 +138,7 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
 
         /**
          * A descriptive name for the Cluster.
-         * Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+         * Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
          * Avoid entering confidential information.
          *
          * @param displayName the value to set
@@ -340,6 +349,24 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
+         * A list of datastore clusters.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("datastoreClusterIds")
+        private java.util.List<String> datastoreClusterIds;
+
+        /**
+         * A list of datastore clusters.
+         *
+         * @param datastoreClusterIds the value to set
+         * @return this builder
+         **/
+        public Builder datastoreClusterIds(java.util.List<String> datastoreClusterIds) {
+            this.datastoreClusterIds = datastoreClusterIds;
+            this.__explicitlySet__.add("datastoreClusterIds");
+            return this;
+        }
+        /**
          * The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of the available versions, use
          * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}.
          *
@@ -381,6 +408,34 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
         public Builder esxiSoftwareVersion(String esxiSoftwareVersion) {
             this.esxiSoftwareVersion = esxiSoftwareVersion;
             this.__explicitlySet__.add("esxiSoftwareVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterByolAllocationDetails")
+        private ClusterByolAllocationDetails clusterByolAllocationDetails;
+
+        public Builder clusterByolAllocationDetails(
+                ClusterByolAllocationDetails clusterByolAllocationDetails) {
+            this.clusterByolAllocationDetails = clusterByolAllocationDetails;
+            this.__explicitlySet__.add("clusterByolAllocationDetails");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("initialVcfByolAllocationId")
+        private String initialVcfByolAllocationId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+         *
+         * @param initialVcfByolAllocationId the value to set
+         * @return this builder
+         **/
+        public Builder initialVcfByolAllocationId(String initialVcfByolAllocationId) {
+            this.initialVcfByolAllocationId = initialVcfByolAllocationId;
+            this.__explicitlySet__.add("initialVcfByolAllocationId");
             return this;
         }
         /**
@@ -452,8 +507,11 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
                             this.isShieldedInstanceEnabled,
                             this.capacityReservationId,
                             this.datastores,
+                            this.datastoreClusterIds,
                             this.vmwareSoftwareVersion,
                             this.esxiSoftwareVersion,
+                            this.clusterByolAllocationDetails,
+                            this.initialVcfByolAllocationId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -503,11 +561,20 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
             if (model.wasPropertyExplicitlySet("datastores")) {
                 this.datastores(model.getDatastores());
             }
+            if (model.wasPropertyExplicitlySet("datastoreClusterIds")) {
+                this.datastoreClusterIds(model.getDatastoreClusterIds());
+            }
             if (model.wasPropertyExplicitlySet("vmwareSoftwareVersion")) {
                 this.vmwareSoftwareVersion(model.getVmwareSoftwareVersion());
             }
             if (model.wasPropertyExplicitlySet("esxiSoftwareVersion")) {
                 this.esxiSoftwareVersion(model.getEsxiSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("clusterByolAllocationDetails")) {
+                this.clusterByolAllocationDetails(model.getClusterByolAllocationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("initialVcfByolAllocationId")) {
+                this.initialVcfByolAllocationId(model.getInitialVcfByolAllocationId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -566,7 +633,7 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * A descriptive name for the Cluster.
-     * Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+     * Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
      * Avoid entering confidential information.
      *
      **/
@@ -575,7 +642,7 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * A descriptive name for the Cluster.
-     * Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+     * Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
      * Avoid entering confidential information.
      *
      * @return the value
@@ -764,6 +831,22 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
+     * A list of datastore clusters.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("datastoreClusterIds")
+    private final java.util.List<String> datastoreClusterIds;
+
+    /**
+     * A list of datastore clusters.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getDatastoreClusterIds() {
+        return datastoreClusterIds;
+    }
+
+    /**
      * The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of the available versions, use
      * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}.
      *
@@ -801,6 +884,29 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
      **/
     public String getEsxiSoftwareVersion() {
         return esxiSoftwareVersion;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterByolAllocationDetails")
+    private final ClusterByolAllocationDetails clusterByolAllocationDetails;
+
+    public ClusterByolAllocationDetails getClusterByolAllocationDetails() {
+        return clusterByolAllocationDetails;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialVcfByolAllocationId")
+    private final String initialVcfByolAllocationId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     *
+     * @return the value
+     **/
+    public String getInitialVcfByolAllocationId() {
+        return initialVcfByolAllocationId;
     }
 
     /**
@@ -877,8 +983,13 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
                 .append(String.valueOf(this.isShieldedInstanceEnabled));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", datastores=").append(String.valueOf(this.datastores));
+        sb.append(", datastoreClusterIds=").append(String.valueOf(this.datastoreClusterIds));
         sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
         sb.append(", esxiSoftwareVersion=").append(String.valueOf(this.esxiSoftwareVersion));
+        sb.append(", clusterByolAllocationDetails=")
+                .append(String.valueOf(this.clusterByolAllocationDetails));
+        sb.append(", initialVcfByolAllocationId=")
+                .append(String.valueOf(this.initialVcfByolAllocationId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -911,8 +1022,13 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
                         this.isShieldedInstanceEnabled, other.isShieldedInstanceEnabled)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.datastores, other.datastores)
+                && java.util.Objects.equals(this.datastoreClusterIds, other.datastoreClusterIds)
                 && java.util.Objects.equals(this.vmwareSoftwareVersion, other.vmwareSoftwareVersion)
                 && java.util.Objects.equals(this.esxiSoftwareVersion, other.esxiSoftwareVersion)
+                && java.util.Objects.equals(
+                        this.clusterByolAllocationDetails, other.clusterByolAllocationDetails)
+                && java.util.Objects.equals(
+                        this.initialVcfByolAllocationId, other.initialVcfByolAllocationId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -973,6 +1089,11 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
         result = (result * PRIME) + (this.datastores == null ? 43 : this.datastores.hashCode());
         result =
                 (result * PRIME)
+                        + (this.datastoreClusterIds == null
+                                ? 43
+                                : this.datastoreClusterIds.hashCode());
+        result =
+                (result * PRIME)
                         + (this.vmwareSoftwareVersion == null
                                 ? 43
                                 : this.vmwareSoftwareVersion.hashCode());
@@ -981,6 +1102,16 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
                         + (this.esxiSoftwareVersion == null
                                 ? 43
                                 : this.esxiSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterByolAllocationDetails == null
+                                ? 43
+                                : this.clusterByolAllocationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialVcfByolAllocationId == null
+                                ? 43
+                                : this.initialVcfByolAllocationId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -116,6 +116,16 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
         public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
             this.doesUseSecretIds = doesUseSecretIds;
             this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -259,7 +269,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
             return this;
         }
         /**
-         * Connectin URL of the Java Message Service, specifying the protocol, host, and port.
+         * Connection URL of the Java Message Service, specifying the protocol, host, and port.
          * e.g.: 'mq://myjms.host.domain:7676'
          *
          **/
@@ -267,7 +277,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
         private String connectionUrl;
 
         /**
-         * Connectin URL of the Java Message Service, specifying the protocol, host, and port.
+         * Connection URL of the Java Message Service, specifying the protocol, host, and port.
          * e.g.: 'mq://myjms.host.domain:7676'
          *
          * @param connectionUrl the value to set
@@ -657,6 +667,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.shouldUseJndi,
                             this.jndiConnectionFactory,
                             this.jndiProviderUrl,
@@ -719,6 +730,9 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("shouldUseJndi")) {
                 this.shouldUseJndi(model.getShouldUseJndi());
@@ -822,6 +836,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             Boolean shouldUseJndi,
             String jndiConnectionFactory,
             String jndiProviderUrl,
@@ -857,7 +872,8 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.shouldUseJndi = shouldUseJndi;
         this.jndiConnectionFactory = jndiConnectionFactory;
         this.jndiProviderUrl = jndiProviderUrl;
@@ -1012,7 +1028,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
     }
 
     /**
-     * Connectin URL of the Java Message Service, specifying the protocol, host, and port.
+     * Connection URL of the Java Message Service, specifying the protocol, host, and port.
      * e.g.: 'mq://myjms.host.domain:7676'
      *
      **/
@@ -1020,7 +1036,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
     private final String connectionUrl;
 
     /**
-     * Connectin URL of the Java Message Service, specifying the protocol, host, and port.
+     * Connection URL of the Java Message Service, specifying the protocol, host, and port.
      * e.g.: 'mq://myjms.host.domain:7676'
      *
      * @return the value

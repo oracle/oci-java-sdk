@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -63,6 +63,25 @@ public final class CreateMacsManagedCloudExadataVmclusterDetails
             this.__explicitlySet__.add("memberDatabaseDetails");
             return this;
         }
+        /**
+         * The autonomous databases that belong to the Autonmous VM Cluster
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("memberAutonomousDetails")
+        private java.util.List<CreateMacsManagedAutonomousDatabaseInsightDetails>
+                memberAutonomousDetails;
+
+        /**
+         * The autonomous databases that belong to the Autonmous VM Cluster
+         * @param memberAutonomousDetails the value to set
+         * @return this builder
+         **/
+        public Builder memberAutonomousDetails(
+                java.util.List<CreateMacsManagedAutonomousDatabaseInsightDetails>
+                        memberAutonomousDetails) {
+            this.memberAutonomousDetails = memberAutonomousDetails;
+            this.__explicitlySet__.add("memberAutonomousDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -70,7 +89,10 @@ public final class CreateMacsManagedCloudExadataVmclusterDetails
         public CreateMacsManagedCloudExadataVmclusterDetails build() {
             CreateMacsManagedCloudExadataVmclusterDetails model =
                     new CreateMacsManagedCloudExadataVmclusterDetails(
-                            this.vmclusterId, this.compartmentId, this.memberDatabaseDetails);
+                            this.vmclusterId,
+                            this.compartmentId,
+                            this.memberDatabaseDetails,
+                            this.memberAutonomousDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -87,6 +109,9 @@ public final class CreateMacsManagedCloudExadataVmclusterDetails
             }
             if (model.wasPropertyExplicitlySet("memberDatabaseDetails")) {
                 this.memberDatabaseDetails(model.getMemberDatabaseDetails());
+            }
+            if (model.wasPropertyExplicitlySet("memberAutonomousDetails")) {
+                this.memberAutonomousDetails(model.getMemberAutonomousDetails());
             }
             return this;
         }
@@ -107,9 +132,12 @@ public final class CreateMacsManagedCloudExadataVmclusterDetails
     public CreateMacsManagedCloudExadataVmclusterDetails(
             String vmclusterId,
             String compartmentId,
-            java.util.List<CreateMacsManagedCloudDatabaseInsightDetails> memberDatabaseDetails) {
+            java.util.List<CreateMacsManagedCloudDatabaseInsightDetails> memberDatabaseDetails,
+            java.util.List<CreateMacsManagedAutonomousDatabaseInsightDetails>
+                    memberAutonomousDetails) {
         super(vmclusterId, compartmentId);
         this.memberDatabaseDetails = memberDatabaseDetails;
+        this.memberAutonomousDetails = memberAutonomousDetails;
     }
 
     /**
@@ -127,6 +155,22 @@ public final class CreateMacsManagedCloudExadataVmclusterDetails
         return memberDatabaseDetails;
     }
 
+    /**
+     * The autonomous databases that belong to the Autonmous VM Cluster
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memberAutonomousDetails")
+    private final java.util.List<CreateMacsManagedAutonomousDatabaseInsightDetails>
+            memberAutonomousDetails;
+
+    /**
+     * The autonomous databases that belong to the Autonmous VM Cluster
+     * @return the value
+     **/
+    public java.util.List<CreateMacsManagedAutonomousDatabaseInsightDetails>
+            getMemberAutonomousDetails() {
+        return memberAutonomousDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -142,6 +186,8 @@ public final class CreateMacsManagedCloudExadataVmclusterDetails
         sb.append("CreateMacsManagedCloudExadataVmclusterDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", memberDatabaseDetails=").append(String.valueOf(this.memberDatabaseDetails));
+        sb.append(", memberAutonomousDetails=")
+                .append(String.valueOf(this.memberAutonomousDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -158,6 +204,8 @@ public final class CreateMacsManagedCloudExadataVmclusterDetails
         CreateMacsManagedCloudExadataVmclusterDetails other =
                 (CreateMacsManagedCloudExadataVmclusterDetails) o;
         return java.util.Objects.equals(this.memberDatabaseDetails, other.memberDatabaseDetails)
+                && java.util.Objects.equals(
+                        this.memberAutonomousDetails, other.memberAutonomousDetails)
                 && super.equals(other);
     }
 
@@ -170,6 +218,11 @@ public final class CreateMacsManagedCloudExadataVmclusterDetails
                         + (this.memberDatabaseDetails == null
                                 ? 43
                                 : this.memberDatabaseDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memberAutonomousDetails == null
+                                ? 43
+                                : this.memberAutonomousDetails.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aispeech.model;
@@ -22,10 +22,12 @@ package com.oracle.bmc.aispeech.model;
 public final class TranscriptionSettings
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"diarization"})
-    public TranscriptionSettings(Diarization diarization) {
+    @java.beans.ConstructorProperties({"diarization", "additionalSettings"})
+    public TranscriptionSettings(
+            Diarization diarization, java.util.Map<String, String> additionalSettings) {
         super();
         this.diarization = diarization;
+        this.additionalSettings = additionalSettings;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -39,12 +41,29 @@ public final class TranscriptionSettings
             this.__explicitlySet__.add("diarization");
             return this;
         }
+        /**
+         * Simple key-value pair for setting model specific properties. For more details, refer the documentation.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalSettings")
+        private java.util.Map<String, String> additionalSettings;
+
+        /**
+         * Simple key-value pair for setting model specific properties. For more details, refer the documentation.
+         * @param additionalSettings the value to set
+         * @return this builder
+         **/
+        public Builder additionalSettings(java.util.Map<String, String> additionalSettings) {
+            this.additionalSettings = additionalSettings;
+            this.__explicitlySet__.add("additionalSettings");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TranscriptionSettings build() {
-            TranscriptionSettings model = new TranscriptionSettings(this.diarization);
+            TranscriptionSettings model =
+                    new TranscriptionSettings(this.diarization, this.additionalSettings);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -55,6 +74,9 @@ public final class TranscriptionSettings
         public Builder copy(TranscriptionSettings model) {
             if (model.wasPropertyExplicitlySet("diarization")) {
                 this.diarization(model.getDiarization());
+            }
+            if (model.wasPropertyExplicitlySet("additionalSettings")) {
+                this.additionalSettings(model.getAdditionalSettings());
             }
             return this;
         }
@@ -78,6 +100,20 @@ public final class TranscriptionSettings
         return diarization;
     }
 
+    /**
+     * Simple key-value pair for setting model specific properties. For more details, refer the documentation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalSettings")
+    private final java.util.Map<String, String> additionalSettings;
+
+    /**
+     * Simple key-value pair for setting model specific properties. For more details, refer the documentation.
+     * @return the value
+     **/
+    public java.util.Map<String, String> getAdditionalSettings() {
+        return additionalSettings;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -93,6 +129,7 @@ public final class TranscriptionSettings
         sb.append("TranscriptionSettings(");
         sb.append("super=").append(super.toString());
         sb.append("diarization=").append(String.valueOf(this.diarization));
+        sb.append(", additionalSettings=").append(String.valueOf(this.additionalSettings));
         sb.append(")");
         return sb.toString();
     }
@@ -107,7 +144,9 @@ public final class TranscriptionSettings
         }
 
         TranscriptionSettings other = (TranscriptionSettings) o;
-        return java.util.Objects.equals(this.diarization, other.diarization) && super.equals(other);
+        return java.util.Objects.equals(this.diarization, other.diarization)
+                && java.util.Objects.equals(this.additionalSettings, other.additionalSettings)
+                && super.equals(other);
     }
 
     @Override
@@ -115,6 +154,11 @@ public final class TranscriptionSettings
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.diarization == null ? 43 : this.diarization.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalSettings == null
+                                ? 43
+                                : this.additionalSettings.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

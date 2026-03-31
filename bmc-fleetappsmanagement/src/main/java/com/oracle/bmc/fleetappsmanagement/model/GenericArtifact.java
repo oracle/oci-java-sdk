@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -15,13 +15,13 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GenericArtifact.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GenericArtifact extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"content"})
-    public GenericArtifact(ContentDetails content) {
+    public GenericArtifact(PatchFileContentDetails content) {
         super();
         this.content = content;
     }
@@ -30,9 +30,9 @@ public final class GenericArtifact extends com.oracle.bmc.http.internal.Explicit
     public static class Builder {
 
         @com.fasterxml.jackson.annotation.JsonProperty("content")
-        private ContentDetails content;
+        private PatchFileContentDetails content;
 
-        public Builder content(ContentDetails content) {
+        public Builder content(PatchFileContentDetails content) {
             this.content = content;
             this.__explicitlySet__.add("content");
             return this;
@@ -70,9 +70,9 @@ public final class GenericArtifact extends com.oracle.bmc.http.internal.Explicit
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("content")
-    private final ContentDetails content;
+    private final PatchFileContentDetails content;
 
-    public ContentDetails getContent() {
+    public PatchFileContentDetails getContent() {
         return content;
     }
 

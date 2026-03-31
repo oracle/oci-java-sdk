@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.managementagent;
@@ -7,6 +7,8 @@ package com.oracle.bmc.managementagent;
 import com.oracle.bmc.managementagent.internal.http.*;
 import com.oracle.bmc.managementagent.requests.*;
 import com.oracle.bmc.managementagent.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for ManagementAgent service. <br/>
@@ -28,7 +30,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MANAGEMENTAGENT")
+                    .serviceName(ManagementAgentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://management-agent.{region}.oci.{secondLevelDomain}")
@@ -51,6 +53,10 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -262,6 +268,11 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -407,12 +418,21 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -442,15 +462,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -563,6 +575,59 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateManagementAgentInstallKeyRequest,
                     CreateManagementAgentInstallKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNamedCredentialResponse> createNamedCredential(
+            CreateNamedCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateNamedCredentialRequest, CreateNamedCredentialResponse>
+                    handler) {
+        LOG.trace("Called async createNamedCredential");
+        final CreateNamedCredentialRequest interceptedRequest =
+                CreateNamedCredentialConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateNamedCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "CreateNamedCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/NamedCredential/CreateNamedCredential");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateNamedCredentialResponse>
+                transformer =
+                        CreateNamedCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateNamedCredentialRequest, CreateNamedCredentialResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateNamedCredentialRequest, CreateNamedCredentialResponse>,
+                        java.util.concurrent.Future<CreateNamedCredentialResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateNamedCredentialDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateNamedCredentialRequest, CreateNamedCredentialResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -709,6 +774,53 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteManagementAgentInstallKeyRequest,
                     DeleteManagementAgentInstallKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNamedCredentialResponse> deleteNamedCredential(
+            DeleteNamedCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteNamedCredentialRequest, DeleteNamedCredentialResponse>
+                    handler) {
+        LOG.trace("Called async deleteNamedCredential");
+        final DeleteNamedCredentialRequest interceptedRequest =
+                DeleteNamedCredentialConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteNamedCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "DeleteNamedCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteNamedCredential");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteNamedCredentialResponse>
+                transformer =
+                        DeleteNamedCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteNamedCredentialRequest, DeleteNamedCredentialResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteNamedCredentialRequest, DeleteNamedCredentialResponse>,
+                        java.util.concurrent.Future<DeleteNamedCredentialResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteNamedCredentialRequest, DeleteNamedCredentialResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1062,6 +1174,104 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetNamedCredentialResponse> getNamedCredential(
+            GetNamedCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetNamedCredentialRequest, GetNamedCredentialResponse>
+                    handler) {
+        LOG.trace("Called async getNamedCredential");
+        final GetNamedCredentialRequest interceptedRequest =
+                GetNamedCredentialConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNamedCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "GetNamedCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetNamedCredential");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetNamedCredentialResponse>
+                transformer =
+                        GetNamedCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetNamedCredentialRequest, GetNamedCredentialResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetNamedCredentialRequest, GetNamedCredentialResponse>,
+                        java.util.concurrent.Future<GetNamedCredentialResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetNamedCredentialRequest, GetNamedCredentialResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNamedCredentialsMetadatumResponse>
+            getNamedCredentialsMetadatum(
+                    GetNamedCredentialsMetadatumRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetNamedCredentialsMetadatumRequest,
+                                    GetNamedCredentialsMetadatumResponse>
+                            handler) {
+        LOG.trace("Called async getNamedCredentialsMetadatum");
+        final GetNamedCredentialsMetadatumRequest interceptedRequest =
+                GetNamedCredentialsMetadatumConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNamedCredentialsMetadatumConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "GetNamedCredentialsMetadatum",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/NamedCredential/GetNamedCredentialsMetadatum");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetNamedCredentialsMetadatumResponse>
+                transformer =
+                        GetNamedCredentialsMetadatumConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetNamedCredentialsMetadatumRequest, GetNamedCredentialsMetadatumResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetNamedCredentialsMetadatumRequest,
+                                GetNamedCredentialsMetadatumResponse>,
+                        java.util.concurrent.Future<GetNamedCredentialsMetadatumResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetNamedCredentialsMetadatumRequest, GetNamedCredentialsMetadatumResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1389,6 +1599,53 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListManagementAgentsRequest, ListManagementAgentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNamedCredentialsResponse> listNamedCredentials(
+            ListNamedCredentialsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListNamedCredentialsRequest, ListNamedCredentialsResponse>
+                    handler) {
+        LOG.trace("Called async listNamedCredentials");
+        final ListNamedCredentialsRequest interceptedRequest =
+                ListNamedCredentialsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListNamedCredentialsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "ListNamedCredentials",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/NamedCredential/ListNamedCredentials");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListNamedCredentialsResponse>
+                transformer =
+                        ListNamedCredentialsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListNamedCredentialsRequest, ListNamedCredentialsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListNamedCredentialsRequest, ListNamedCredentialsResponse>,
+                        java.util.concurrent.Future<ListNamedCredentialsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListNamedCredentialsRequest, ListNamedCredentialsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1853,6 +2110,59 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateManagementAgentInstallKeyRequest,
                     UpdateManagementAgentInstallKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNamedCredentialResponse> updateNamedCredential(
+            UpdateNamedCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateNamedCredentialRequest, UpdateNamedCredentialResponse>
+                    handler) {
+        LOG.trace("Called async updateNamedCredential");
+        final UpdateNamedCredentialRequest interceptedRequest =
+                UpdateNamedCredentialConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateNamedCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "UpdateNamedCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateNamedCredential");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateNamedCredentialResponse>
+                transformer =
+                        UpdateNamedCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateNamedCredentialRequest, UpdateNamedCredentialResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateNamedCredentialRequest, UpdateNamedCredentialResponse>,
+                        java.util.concurrent.Future<UpdateNamedCredentialResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateNamedCredentialDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateNamedCredentialRequest, UpdateNamedCredentialResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

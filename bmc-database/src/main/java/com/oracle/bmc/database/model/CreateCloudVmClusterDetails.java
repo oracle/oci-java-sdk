@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -58,7 +58,10 @@ public final class CreateCloudVmClusterDetails
         "systemVersion",
         "fileSystemConfigurationDetails",
         "cloudAutomationUpdateDetails",
-        "vmClusterType"
+        "exascaleDbStorageVaultId",
+        "vmClusterType",
+        "vmFileSystemStorageType",
+        "vmBackupStorageType"
     })
     public CreateCloudVmClusterDetails(
             String compartmentId,
@@ -95,7 +98,10 @@ public final class CreateCloudVmClusterDetails
             String systemVersion,
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
             CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
-            VmClusterType vmClusterType) {
+            String exascaleDbStorageVaultId,
+            VmClusterType vmClusterType,
+            VmFileSystemStorageType vmFileSystemStorageType,
+            VmBackupStorageType vmBackupStorageType) {
         super();
         this.compartmentId = compartmentId;
         this.subscriptionId = subscriptionId;
@@ -131,7 +137,10 @@ public final class CreateCloudVmClusterDetails
         this.systemVersion = systemVersion;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
         this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+        this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
         this.vmClusterType = vmClusterType;
+        this.vmFileSystemStorageType = vmFileSystemStorageType;
+        this.vmBackupStorageType = vmBackupStorageType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -205,30 +214,52 @@ public final class CreateCloudVmClusterDetails
             return this;
         }
         /**
-         * The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+         * For fixed shapes, this is the total number of OCPUs to enable across the VM cluster.
          * <p>
          * - Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-         * - Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-         * - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-         * - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-         * - Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-         * - Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-         * - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+         *  - Exadata.Quarter3.100 - Specify a multiple of 2, from 0 to 100.
+         *  - Exadata.Half3.200 - Specify a multiple of 4, from 0 to 200.
+         *  - Exadata.Full3.400 - Specify a multiple of 8, from 0 to 400.
+         * <p>
+         * The API specification for fixed shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbSystemShapeSummary
+         * <p>
+         *
+         * For flexible shapes X8M and X9M, this is the total number of OCPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+         * <p>
+         * - Exadata.X8M - Specify a multiple of 2, from 2 to 50 per X8M database server.
+         *  - Exadata.X9M - Specify a multiple of 2, from 2 to 126 per X9M database server.
+         * <p>
+         * For flexible shapes X11M and higher, this is the total number of ECPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+         * <p>
+         * - Exadata.X11M - Specify a multiple of 8, from 8 to 760 per X11M database server.
+         * <p>
+         * The API specification for flexible shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/FlexComponentSummary
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
         /**
-         * The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+         * For fixed shapes, this is the total number of OCPUs to enable across the VM cluster.
          * <p>
          * - Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-         * - Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-         * - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-         * - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-         * - Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-         * - Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-         * - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+         *  - Exadata.Quarter3.100 - Specify a multiple of 2, from 0 to 100.
+         *  - Exadata.Half3.200 - Specify a multiple of 4, from 0 to 200.
+         *  - Exadata.Full3.400 - Specify a multiple of 8, from 0 to 400.
+         * <p>
+         * The API specification for fixed shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbSystemShapeSummary
+         * <p>
+         *
+         * For flexible shapes X8M and X9M, this is the total number of OCPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+         * <p>
+         * - Exadata.X8M - Specify a multiple of 2, from 2 to 50 per X8M database server.
+         *  - Exadata.X9M - Specify a multiple of 2, from 2 to 126 per X9M database server.
+         * <p>
+         * For flexible shapes X11M and higher, this is the total number of ECPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+         * <p>
+         * - Exadata.X11M - Specify a multiple of 8, from 8 to 760 per X11M database server.
+         * <p>
+         * The API specification for flexible shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/FlexComponentSummary
          *
          * @param cpuCoreCount the value to set
          * @return this builder
@@ -581,7 +612,7 @@ public final class CreateCloudVmClusterDetails
         /**
          * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -590,7 +621,7 @@ public final class CreateCloudVmClusterDetails
         /**
          * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -755,6 +786,22 @@ public final class CreateCloudVmClusterDetails
             return this;
         }
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+        private String exascaleDbStorageVaultId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         * @param exascaleDbStorageVaultId the value to set
+         * @return this builder
+         **/
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+            this.__explicitlySet__.add("exascaleDbStorageVaultId");
+            return this;
+        }
+        /**
          * The vmcluster type for the VM cluster/Cloud VM cluster.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
@@ -768,6 +815,38 @@ public final class CreateCloudVmClusterDetails
         public Builder vmClusterType(VmClusterType vmClusterType) {
             this.vmClusterType = vmClusterType;
             this.__explicitlySet__.add("vmClusterType");
+            return this;
+        }
+        /**
+         * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vmFileSystemStorageType")
+        private VmFileSystemStorageType vmFileSystemStorageType;
+
+        /**
+         * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+         * @param vmFileSystemStorageType the value to set
+         * @return this builder
+         **/
+        public Builder vmFileSystemStorageType(VmFileSystemStorageType vmFileSystemStorageType) {
+            this.vmFileSystemStorageType = vmFileSystemStorageType;
+            this.__explicitlySet__.add("vmFileSystemStorageType");
+            return this;
+        }
+        /**
+         * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vmBackupStorageType")
+        private VmBackupStorageType vmBackupStorageType;
+
+        /**
+         * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+         * @param vmBackupStorageType the value to set
+         * @return this builder
+         **/
+        public Builder vmBackupStorageType(VmBackupStorageType vmBackupStorageType) {
+            this.vmBackupStorageType = vmBackupStorageType;
+            this.__explicitlySet__.add("vmBackupStorageType");
             return this;
         }
 
@@ -811,7 +890,10 @@ public final class CreateCloudVmClusterDetails
                             this.systemVersion,
                             this.fileSystemConfigurationDetails,
                             this.cloudAutomationUpdateDetails,
-                            this.vmClusterType);
+                            this.exascaleDbStorageVaultId,
+                            this.vmClusterType,
+                            this.vmFileSystemStorageType,
+                            this.vmBackupStorageType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -922,8 +1004,17 @@ public final class CreateCloudVmClusterDetails
             if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
                 this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
             }
+            if (model.wasPropertyExplicitlySet("exascaleDbStorageVaultId")) {
+                this.exascaleDbStorageVaultId(model.getExascaleDbStorageVaultId());
+            }
             if (model.wasPropertyExplicitlySet("vmClusterType")) {
                 this.vmClusterType(model.getVmClusterType());
+            }
+            if (model.wasPropertyExplicitlySet("vmFileSystemStorageType")) {
+                this.vmFileSystemStorageType(model.getVmFileSystemStorageType());
+            }
+            if (model.wasPropertyExplicitlySet("vmBackupStorageType")) {
+                this.vmBackupStorageType(model.getVmBackupStorageType());
             }
             return this;
         }
@@ -1001,30 +1092,52 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+     * For fixed shapes, this is the total number of OCPUs to enable across the VM cluster.
      * <p>
      * - Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-     * - Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-     * - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-     * - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-     * - Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-     * - Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-     * - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+     *  - Exadata.Quarter3.100 - Specify a multiple of 2, from 0 to 100.
+     *  - Exadata.Half3.200 - Specify a multiple of 4, from 0 to 200.
+     *  - Exadata.Full3.400 - Specify a multiple of 8, from 0 to 400.
+     * <p>
+     * The API specification for fixed shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbSystemShapeSummary
+     * <p>
+     *
+     * For flexible shapes X8M and X9M, this is the total number of OCPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+     * <p>
+     * - Exadata.X8M - Specify a multiple of 2, from 2 to 50 per X8M database server.
+     *  - Exadata.X9M - Specify a multiple of 2, from 2 to 126 per X9M database server.
+     * <p>
+     * For flexible shapes X11M and higher, this is the total number of ECPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+     * <p>
+     * - Exadata.X11M - Specify a multiple of 8, from 8 to 760 per X11M database server.
+     * <p>
+     * The API specification for flexible shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/FlexComponentSummary
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
     /**
-     * The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+     * For fixed shapes, this is the total number of OCPUs to enable across the VM cluster.
      * <p>
      * - Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-     * - Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-     * - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-     * - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-     * - Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-     * - Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-     * - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+     *  - Exadata.Quarter3.100 - Specify a multiple of 2, from 0 to 100.
+     *  - Exadata.Half3.200 - Specify a multiple of 4, from 0 to 200.
+     *  - Exadata.Full3.400 - Specify a multiple of 8, from 0 to 400.
+     * <p>
+     * The API specification for fixed shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbSystemShapeSummary
+     * <p>
+     *
+     * For flexible shapes X8M and X9M, this is the total number of OCPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+     * <p>
+     * - Exadata.X8M - Specify a multiple of 2, from 2 to 50 per X8M database server.
+     *  - Exadata.X9M - Specify a multiple of 2, from 2 to 126 per X9M database server.
+     * <p>
+     * For flexible shapes X11M and higher, this is the total number of ECPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+     * <p>
+     * - Exadata.X11M - Specify a multiple of 8, from 8 to 760 per X11M database server.
+     * <p>
+     * The API specification for flexible shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/FlexComponentSummary
      *
      * @return the value
      **/
@@ -1373,7 +1486,7 @@ public final class CreateCloudVmClusterDetails
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -1382,7 +1495,7 @@ public final class CreateCloudVmClusterDetails
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
      **/
@@ -1523,6 +1636,20 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+    private final String exascaleDbStorageVaultId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * @return the value
+     **/
+    public String getExascaleDbStorageVaultId() {
+        return exascaleDbStorageVaultId;
+    }
+
+    /**
      * The vmcluster type for the VM cluster/Cloud VM cluster.
      **/
     public enum VmClusterType {
@@ -1569,6 +1696,104 @@ public final class CreateCloudVmClusterDetails
      **/
     public VmClusterType getVmClusterType() {
         return vmClusterType;
+    }
+
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     **/
+    public enum VmFileSystemStorageType {
+        Local("LOCAL"),
+        Exascale("EXASCALE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, VmFileSystemStorageType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VmFileSystemStorageType v : VmFileSystemStorageType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        VmFileSystemStorageType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VmFileSystemStorageType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid VmFileSystemStorageType: " + key);
+        }
+    };
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmFileSystemStorageType")
+    private final VmFileSystemStorageType vmFileSystemStorageType;
+
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * @return the value
+     **/
+    public VmFileSystemStorageType getVmFileSystemStorageType() {
+        return vmFileSystemStorageType;
+    }
+
+    /**
+     * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     **/
+    public enum VmBackupStorageType {
+        Local("LOCAL"),
+        Exascale("EXASCALE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, VmBackupStorageType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VmBackupStorageType v : VmBackupStorageType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        VmBackupStorageType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VmBackupStorageType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid VmBackupStorageType: " + key);
+        }
+    };
+    /**
+     * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmBackupStorageType")
+    private final VmBackupStorageType vmBackupStorageType;
+
+    /**
+     * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * @return the value
+     **/
+    public VmBackupStorageType getVmBackupStorageType() {
+        return vmBackupStorageType;
     }
 
     @Override
@@ -1623,7 +1848,12 @@ public final class CreateCloudVmClusterDetails
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
         sb.append(", cloudAutomationUpdateDetails=")
                 .append(String.valueOf(this.cloudAutomationUpdateDetails));
+        sb.append(", exascaleDbStorageVaultId=")
+                .append(String.valueOf(this.exascaleDbStorageVaultId));
         sb.append(", vmClusterType=").append(String.valueOf(this.vmClusterType));
+        sb.append(", vmFileSystemStorageType=")
+                .append(String.valueOf(this.vmFileSystemStorageType));
+        sb.append(", vmBackupStorageType=").append(String.valueOf(this.vmBackupStorageType));
         sb.append(")");
         return sb.toString();
     }
@@ -1678,7 +1908,12 @@ public final class CreateCloudVmClusterDetails
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
                 && java.util.Objects.equals(
                         this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
+                && java.util.Objects.equals(
+                        this.exascaleDbStorageVaultId, other.exascaleDbStorageVaultId)
                 && java.util.Objects.equals(this.vmClusterType, other.vmClusterType)
+                && java.util.Objects.equals(
+                        this.vmFileSystemStorageType, other.vmFileSystemStorageType)
+                && java.util.Objects.equals(this.vmBackupStorageType, other.vmBackupStorageType)
                 && super.equals(other);
     }
 
@@ -1788,7 +2023,22 @@ public final class CreateCloudVmClusterDetails
                                 : this.cloudAutomationUpdateDetails.hashCode());
         result =
                 (result * PRIME)
+                        + (this.exascaleDbStorageVaultId == null
+                                ? 43
+                                : this.exascaleDbStorageVaultId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmFileSystemStorageType == null
+                                ? 43
+                                : this.vmFileSystemStorageType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmBackupStorageType == null
+                                ? 43
+                                : this.vmBackupStorageType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.requests;
@@ -82,6 +82,44 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     public String getDisplayName() {
         return displayName;
+    }
+    /**
+     * Backup Soft Delete
+     */
+    private com.oracle.bmc.mysql.model.SoftDelete softDelete;
+
+    /**
+     * Backup Soft Delete
+     */
+    public com.oracle.bmc.mysql.model.SoftDelete getSoftDelete() {
+        return softDelete;
+    }
+    /**
+     * Indicates whether the backup has been prepared successfully.
+     *
+     */
+    private com.oracle.bmc.mysql.model.BackupValidationDetails.BackupPreparationStatus
+            backupPreparationStatus;
+
+    /**
+     * Indicates whether the backup has been prepared successfully.
+     *
+     */
+    public com.oracle.bmc.mysql.model.BackupValidationDetails.BackupPreparationStatus
+            getBackupPreparationStatus() {
+        return backupPreparationStatus;
+    }
+    /**
+     * Backup validation status
+     */
+    private com.oracle.bmc.mysql.model.BackupValidationDetails.ValidationStatus validationStatus;
+
+    /**
+     * Backup validation status
+     */
+    public com.oracle.bmc.mysql.model.BackupValidationDetails.ValidationStatus
+            getValidationStatus() {
+        return validationStatus;
     }
     /**
      * Backup creationType
@@ -330,6 +368,59 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
+         * Backup Soft Delete
+         */
+        private com.oracle.bmc.mysql.model.SoftDelete softDelete = null;
+
+        /**
+         * Backup Soft Delete
+         * @param softDelete the value to set
+         * @return this builder instance
+         */
+        public Builder softDelete(com.oracle.bmc.mysql.model.SoftDelete softDelete) {
+            this.softDelete = softDelete;
+            return this;
+        }
+
+        /**
+         * Indicates whether the backup has been prepared successfully.
+         *
+         */
+        private com.oracle.bmc.mysql.model.BackupValidationDetails.BackupPreparationStatus
+                backupPreparationStatus = null;
+
+        /**
+         * Indicates whether the backup has been prepared successfully.
+         *
+         * @param backupPreparationStatus the value to set
+         * @return this builder instance
+         */
+        public Builder backupPreparationStatus(
+                com.oracle.bmc.mysql.model.BackupValidationDetails.BackupPreparationStatus
+                        backupPreparationStatus) {
+            this.backupPreparationStatus = backupPreparationStatus;
+            return this;
+        }
+
+        /**
+         * Backup validation status
+         */
+        private com.oracle.bmc.mysql.model.BackupValidationDetails.ValidationStatus
+                validationStatus = null;
+
+        /**
+         * Backup validation status
+         * @param validationStatus the value to set
+         * @return this builder instance
+         */
+        public Builder validationStatus(
+                com.oracle.bmc.mysql.model.BackupValidationDetails.ValidationStatus
+                        validationStatus) {
+            this.validationStatus = validationStatus;
+            return this;
+        }
+
+        /**
          * Backup creationType
          */
         private com.oracle.bmc.mysql.model.Backup.CreationType creationType = null;
@@ -450,6 +541,9 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             lifecycleState(o.getLifecycleState());
             dbSystemId(o.getDbSystemId());
             displayName(o.getDisplayName());
+            softDelete(o.getSoftDelete());
+            backupPreparationStatus(o.getBackupPreparationStatus());
+            validationStatus(o.getValidationStatus());
             creationType(o.getCreationType());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
@@ -493,13 +587,16 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.lifecycleState = lifecycleState;
             request.dbSystemId = dbSystemId;
             request.displayName = displayName;
+            request.softDelete = softDelete;
+            request.backupPreparationStatus = backupPreparationStatus;
+            request.validationStatus = validationStatus;
             request.creationType = creationType;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListBackupsRequest(compartmentId, opcRequestId, backupId, lifecycleState, dbSystemId, displayName, creationType, sortBy, sortOrder, limit, page);
+            // new ListBackupsRequest(compartmentId, opcRequestId, backupId, lifecycleState, dbSystemId, displayName, softDelete, backupPreparationStatus, validationStatus, creationType, sortBy, sortOrder, limit, page);
         }
     }
 
@@ -515,6 +612,9 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .lifecycleState(lifecycleState)
                 .dbSystemId(dbSystemId)
                 .displayName(displayName)
+                .softDelete(softDelete)
+                .backupPreparationStatus(backupPreparationStatus)
+                .validationStatus(validationStatus)
                 .creationType(creationType)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
@@ -541,6 +641,9 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",softDelete=").append(String.valueOf(this.softDelete));
+        sb.append(",backupPreparationStatus=").append(String.valueOf(this.backupPreparationStatus));
+        sb.append(",validationStatus=").append(String.valueOf(this.validationStatus));
         sb.append(",creationType=").append(String.valueOf(this.creationType));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -567,6 +670,10 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.softDelete, other.softDelete)
+                && java.util.Objects.equals(
+                        this.backupPreparationStatus, other.backupPreparationStatus)
+                && java.util.Objects.equals(this.validationStatus, other.validationStatus)
                 && java.util.Objects.equals(this.creationType, other.creationType)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -588,6 +695,15 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupPreparationStatus == null
+                                ? 43
+                                : this.backupPreparationStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.validationStatus == null ? 43 : this.validationStatus.hashCode());
         result = (result * PRIME) + (this.creationType == null ? 43 : this.creationType.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

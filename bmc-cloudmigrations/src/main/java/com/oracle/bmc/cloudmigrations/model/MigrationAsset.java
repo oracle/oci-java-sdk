@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudmigrations.model;
@@ -40,7 +40,9 @@ public final class MigrationAsset extends com.oracle.bmc.http.internal.Explicitl
         "tenancyId",
         "snapShotBucketName",
         "dependedOnBy",
-        "dependsOn"
+        "dependsOn",
+        "replicationLocationDetail",
+        "destinationDisks"
     })
     public MigrationAsset(
             String id,
@@ -63,7 +65,9 @@ public final class MigrationAsset extends com.oracle.bmc.http.internal.Explicitl
             String tenancyId,
             String snapShotBucketName,
             java.util.List<String> dependedOnBy,
-            java.util.List<String> dependsOn) {
+            java.util.List<String> dependsOn,
+            ReplicationLocationDetail replicationLocationDetail,
+            java.util.Map<String, DestinationDisk> destinationDisks) {
         super();
         this.id = id;
         this.type = type;
@@ -86,6 +90,8 @@ public final class MigrationAsset extends com.oracle.bmc.http.internal.Explicitl
         this.snapShotBucketName = snapShotBucketName;
         this.dependedOnBy = dependedOnBy;
         this.dependsOn = dependsOn;
+        this.replicationLocationDetail = replicationLocationDetail;
+        this.destinationDisks = destinationDisks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -435,6 +441,32 @@ public final class MigrationAsset extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationLocationDetail")
+        private ReplicationLocationDetail replicationLocationDetail;
+
+        public Builder replicationLocationDetail(
+                ReplicationLocationDetail replicationLocationDetail) {
+            this.replicationLocationDetail = replicationLocationDetail;
+            this.__explicitlySet__.add("replicationLocationDetail");
+            return this;
+        }
+        /**
+         * Mapping of source disk id to destination disk details
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationDisks")
+        private java.util.Map<String, DestinationDisk> destinationDisks;
+
+        /**
+         * Mapping of source disk id to destination disk details
+         * @param destinationDisks the value to set
+         * @return this builder
+         **/
+        public Builder destinationDisks(java.util.Map<String, DestinationDisk> destinationDisks) {
+            this.destinationDisks = destinationDisks;
+            this.__explicitlySet__.add("destinationDisks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -461,7 +493,9 @@ public final class MigrationAsset extends com.oracle.bmc.http.internal.Explicitl
                             this.tenancyId,
                             this.snapShotBucketName,
                             this.dependedOnBy,
-                            this.dependsOn);
+                            this.dependsOn,
+                            this.replicationLocationDetail,
+                            this.destinationDisks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -532,6 +566,12 @@ public final class MigrationAsset extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("dependsOn")) {
                 this.dependsOn(model.getDependsOn());
+            }
+            if (model.wasPropertyExplicitlySet("replicationLocationDetail")) {
+                this.replicationLocationDetail(model.getReplicationLocationDetail());
+            }
+            if (model.wasPropertyExplicitlySet("destinationDisks")) {
+                this.destinationDisks(model.getDestinationDisks());
             }
             return this;
         }
@@ -950,6 +990,27 @@ public final class MigrationAsset extends com.oracle.bmc.http.internal.Explicitl
         return dependsOn;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationLocationDetail")
+    private final ReplicationLocationDetail replicationLocationDetail;
+
+    public ReplicationLocationDetail getReplicationLocationDetail() {
+        return replicationLocationDetail;
+    }
+
+    /**
+     * Mapping of source disk id to destination disk details
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationDisks")
+    private final java.util.Map<String, DestinationDisk> destinationDisks;
+
+    /**
+     * Mapping of source disk id to destination disk details
+     * @return the value
+     **/
+    public java.util.Map<String, DestinationDisk> getDestinationDisks() {
+        return destinationDisks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -986,6 +1047,9 @@ public final class MigrationAsset extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", snapShotBucketName=").append(String.valueOf(this.snapShotBucketName));
         sb.append(", dependedOnBy=").append(String.valueOf(this.dependedOnBy));
         sb.append(", dependsOn=").append(String.valueOf(this.dependsOn));
+        sb.append(", replicationLocationDetail=")
+                .append(String.valueOf(this.replicationLocationDetail));
+        sb.append(", destinationDisks=").append(String.valueOf(this.destinationDisks));
         sb.append(")");
         return sb.toString();
     }
@@ -1022,6 +1086,9 @@ public final class MigrationAsset extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.snapShotBucketName, other.snapShotBucketName)
                 && java.util.Objects.equals(this.dependedOnBy, other.dependedOnBy)
                 && java.util.Objects.equals(this.dependsOn, other.dependsOn)
+                && java.util.Objects.equals(
+                        this.replicationLocationDetail, other.replicationLocationDetail)
+                && java.util.Objects.equals(this.destinationDisks, other.destinationDisks)
                 && super.equals(other);
     }
 
@@ -1080,6 +1147,14 @@ public final class MigrationAsset extends com.oracle.bmc.http.internal.Explicitl
                                 : this.snapShotBucketName.hashCode());
         result = (result * PRIME) + (this.dependedOnBy == null ? 43 : this.dependedOnBy.hashCode());
         result = (result * PRIME) + (this.dependsOn == null ? 43 : this.dependsOn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationLocationDetail == null
+                                ? 43
+                                : this.replicationLocationDetail.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationDisks == null ? 43 : this.destinationDisks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

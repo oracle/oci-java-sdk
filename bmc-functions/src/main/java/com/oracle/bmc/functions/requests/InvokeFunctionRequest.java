@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.functions.requests;
@@ -157,6 +157,19 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+     *
+     */
+    private Boolean isDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+     *
+     */
+    public Boolean getIsDryRun() {
+        return isDryRun;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -267,6 +280,23 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+         *
+         */
+        private Boolean isDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+         *
+         * @param isDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder isDryRun(Boolean isDryRun) {
+            this.isDryRun = isDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -299,6 +329,7 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
             fnIntent(o.getFnIntent());
             fnInvokeType(o.getFnInvokeType());
             opcRequestId(o.getOpcRequestId());
+            isDryRun(o.getIsDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -347,8 +378,9 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.fnIntent = fnIntent;
             request.fnInvokeType = fnInvokeType;
             request.opcRequestId = opcRequestId;
+            request.isDryRun = isDryRun;
             return request;
-            // new InvokeFunctionRequest(functionId, invokeFunctionBody, fnIntent, fnInvokeType, opcRequestId);
+            // new InvokeFunctionRequest(functionId, invokeFunctionBody, fnIntent, fnInvokeType, opcRequestId, isDryRun);
         }
     }
 
@@ -362,7 +394,8 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .invokeFunctionBody(invokeFunctionBody)
                 .fnIntent(fnIntent)
                 .fnInvokeType(fnInvokeType)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isDryRun(isDryRun);
     }
 
     /**
@@ -383,6 +416,7 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",fnIntent=").append(String.valueOf(this.fnIntent));
         sb.append(",fnInvokeType=").append(String.valueOf(this.fnInvokeType));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isDryRun=").append(String.valueOf(this.isDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -402,7 +436,8 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 && java.util.Objects.equals(this.invokeFunctionBody, other.invokeFunctionBody)
                 && java.util.Objects.equals(this.fnIntent, other.fnIntent)
                 && java.util.Objects.equals(this.fnInvokeType, other.fnInvokeType)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isDryRun, other.isDryRun);
     }
 
     @Override
@@ -418,6 +453,7 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
         result = (result * PRIME) + (this.fnIntent == null ? 43 : this.fnIntent.hashCode());
         result = (result * PRIME) + (this.fnInvokeType == null ? 43 : this.fnInvokeType.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.isDryRun == null ? 43 : this.isDryRun.hashCode());
         return result;
     }
 }

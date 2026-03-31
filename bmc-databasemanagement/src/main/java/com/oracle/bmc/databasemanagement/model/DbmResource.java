@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -27,28 +27,64 @@ package com.oracle.bmc.databasemanagement.model;
         name = "STORAGE_CONNECTOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ExternalExadataStorageGridSummary.class,
-        name = "STORAGE_GRID_SUMMARY"
+        value = ExadataVmClusterSummary.class,
+        name = "VM_CLUSTER_SUMMARY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ExternalExadataStorageServer.class,
-        name = "STORAGE_SERVER"
+        value = CloudExadataStorageConnectorSummary.class,
+        name = "CLOUD_STORAGE_CONNECTOR_SUMMARY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ExternalExadataInfrastructure.class,
         name = "INFRASTRUCTURE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ExternalExadataStorageGrid.class,
-        name = "STORAGE_GRID"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ExternalExadataInfrastructureSummary.class,
         name = "INFRASTRUCTURE_SUMMARY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CloudExadataInfrastructure.class,
+        name = "CLOUD_INFRASTRUCTURE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CloudExadataStorageServerSummary.class,
+        name = "CLOUD_STORAGE_SERVER_SUMMARY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CloudExadataStorageGrid.class,
+        name = "CLOUD_STORAGE_GRID"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ExternalExadataStorageGridSummary.class,
+        name = "STORAGE_GRID_SUMMARY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CloudExadataStorageConnector.class,
+        name = "CLOUD_STORAGE_CONNECTOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CloudExadataInfrastructureSummary.class,
+        name = "CLOUD_INFRASTRUCTURE_SUMMARY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ExternalExadataStorageServer.class,
+        name = "STORAGE_SERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ExternalExadataStorageGrid.class,
+        name = "STORAGE_GRID"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CloudExadataStorageGridSummary.class,
+        name = "CLOUD_STORAGE_GRID_SUMMARY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ExternalExadataDatabaseSystemSummary.class,
         name = "DATABASE_SYSTEM_SUMMARY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CloudExadataStorageServer.class,
+        name = "CLOUD_STORAGE_SERVER"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ExternalExadataStorageConnectorSummary.class,
@@ -371,6 +407,16 @@ public class DbmResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         StorageConnector("STORAGE_CONNECTOR"),
         DatabaseSystemSummary("DATABASE_SYSTEM_SUMMARY"),
         DatabaseSummary("DATABASE_SUMMARY"),
+        VmClusterSummary("VM_CLUSTER_SUMMARY"),
+        CloudInfrastructureSummary("CLOUD_INFRASTRUCTURE_SUMMARY"),
+        CloudInfrastructure("CLOUD_INFRASTRUCTURE"),
+        CloudStorageServerSummary("CLOUD_STORAGE_SERVER_SUMMARY"),
+        CloudStorageServer("CLOUD_STORAGE_SERVER"),
+        CloudStorageGridSummary("CLOUD_STORAGE_GRID_SUMMARY"),
+        CloudStorageGrid("CLOUD_STORAGE_GRID"),
+        CloudStorageConnectorSummary("CLOUD_STORAGE_CONNECTOR_SUMMARY"),
+        CloudStorageConnector("CLOUD_STORAGE_CONNECTOR"),
+        ManagedDatabaseSummary("MANAGED_DATABASE_SUMMARY"),
         ;
 
         private final String value;

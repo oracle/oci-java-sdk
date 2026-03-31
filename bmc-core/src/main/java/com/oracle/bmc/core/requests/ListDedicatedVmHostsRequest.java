@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.requests;
@@ -316,6 +316,19 @@ public class ListDedicatedVmHostsRequest
     public Float getRemainingOcpusGreaterThanOrEqualTo() {
         return remainingOcpusGreaterThanOrEqualTo;
     }
+    /**
+     * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     *
+     */
+    private Boolean isMemoryEncryptionEnabled;
+
+    /**
+     * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     *
+     */
+    public Boolean getIsMemoryEncryptionEnabled() {
+        return isMemoryEncryptionEnabled;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -558,6 +571,23 @@ public class ListDedicatedVmHostsRequest
         }
 
         /**
+         * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+         *
+         */
+        private Boolean isMemoryEncryptionEnabled = null;
+
+        /**
+         * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+         *
+         * @param isMemoryEncryptionEnabled the value to set
+         * @return this builder instance
+         */
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -598,6 +628,7 @@ public class ListDedicatedVmHostsRequest
             remainingMemoryInGBsGreaterThanOrEqualTo(
                     o.getRemainingMemoryInGBsGreaterThanOrEqualTo());
             remainingOcpusGreaterThanOrEqualTo(o.getRemainingOcpusGreaterThanOrEqualTo());
+            isMemoryEncryptionEnabled(o.getIsMemoryEncryptionEnabled());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -643,8 +674,9 @@ public class ListDedicatedVmHostsRequest
             request.remainingMemoryInGBsGreaterThanOrEqualTo =
                     remainingMemoryInGBsGreaterThanOrEqualTo;
             request.remainingOcpusGreaterThanOrEqualTo = remainingOcpusGreaterThanOrEqualTo;
+            request.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             return request;
-            // new ListDedicatedVmHostsRequest(compartmentId, availabilityDomain, lifecycleState, displayName, instanceShapeName, limit, page, opcRequestId, sortBy, sortOrder, remainingMemoryInGBsGreaterThanOrEqualTo, remainingOcpusGreaterThanOrEqualTo);
+            // new ListDedicatedVmHostsRequest(compartmentId, availabilityDomain, lifecycleState, displayName, instanceShapeName, limit, page, opcRequestId, sortBy, sortOrder, remainingMemoryInGBsGreaterThanOrEqualTo, remainingOcpusGreaterThanOrEqualTo, isMemoryEncryptionEnabled);
         }
     }
 
@@ -665,7 +697,8 @@ public class ListDedicatedVmHostsRequest
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .remainingMemoryInGBsGreaterThanOrEqualTo(remainingMemoryInGBsGreaterThanOrEqualTo)
-                .remainingOcpusGreaterThanOrEqualTo(remainingOcpusGreaterThanOrEqualTo);
+                .remainingOcpusGreaterThanOrEqualTo(remainingOcpusGreaterThanOrEqualTo)
+                .isMemoryEncryptionEnabled(isMemoryEncryptionEnabled);
     }
 
     /**
@@ -695,6 +728,8 @@ public class ListDedicatedVmHostsRequest
                 .append(String.valueOf(this.remainingMemoryInGBsGreaterThanOrEqualTo));
         sb.append(",remainingOcpusGreaterThanOrEqualTo=")
                 .append(String.valueOf(this.remainingOcpusGreaterThanOrEqualTo));
+        sb.append(",isMemoryEncryptionEnabled=")
+                .append(String.valueOf(this.isMemoryEncryptionEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -725,7 +760,9 @@ public class ListDedicatedVmHostsRequest
                         other.remainingMemoryInGBsGreaterThanOrEqualTo)
                 && java.util.Objects.equals(
                         this.remainingOcpusGreaterThanOrEqualTo,
-                        other.remainingOcpusGreaterThanOrEqualTo);
+                        other.remainingOcpusGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled);
     }
 
     @Override
@@ -762,6 +799,11 @@ public class ListDedicatedVmHostsRequest
                         + (this.remainingOcpusGreaterThanOrEqualTo == null
                                 ? 43
                                 : this.remainingOcpusGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMemoryEncryptionEnabled == null
+                                ? 43
+                                : this.isMemoryEncryptionEnabled.hashCode());
         return result;
     }
 }

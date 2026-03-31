@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi.model;
 
 /**
- * Forecast configuration of usage/cost.
+ * Forecast configuration of usage or cost.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,13 +33,17 @@ public final class Forecast extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+         * BASIC uses the exponential smoothing (ETS) model to project future usage or costs based on history data.
+         * The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("forecastType")
         private ForecastType forecastType;
 
         /**
-         * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+         * BASIC uses the exponential smoothing (ETS) model to project future usage or costs based on history data.
+         * The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+         *
          * @param forecastType the value to set
          * @return this builder
          **/
@@ -50,12 +54,14 @@ public final class Forecast extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
         /**
          * The forecast start time. Defaults to UTC-1 if not specified.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeForecastStarted")
         private java.util.Date timeForecastStarted;
 
         /**
          * The forecast start time. Defaults to UTC-1 if not specified.
+         *
          * @param timeForecastStarted the value to set
          * @return this builder
          **/
@@ -121,7 +127,9 @@ public final class Forecast extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+     * BASIC uses the exponential smoothing (ETS) model to project future usage or costs based on history data.
+     * The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+     *
      **/
     public enum ForecastType {
         Basic("BASIC"),
@@ -168,13 +176,17 @@ public final class Forecast extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     };
     /**
-     * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+     * BASIC uses the exponential smoothing (ETS) model to project future usage or costs based on history data.
+     * The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("forecastType")
     private final ForecastType forecastType;
 
     /**
-     * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+     * BASIC uses the exponential smoothing (ETS) model to project future usage or costs based on history data.
+     * The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+     *
      * @return the value
      **/
     public ForecastType getForecastType() {
@@ -183,12 +195,14 @@ public final class Forecast extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * The forecast start time. Defaults to UTC-1 if not specified.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeForecastStarted")
     private final java.util.Date timeForecastStarted;
 
     /**
      * The forecast start time. Defaults to UTC-1 if not specified.
+     *
      * @return the value
      **/
     public java.util.Date getTimeForecastStarted() {

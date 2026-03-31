@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -87,8 +87,9 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
         /**
          * The type of current patch history.
          * DP - Data Plane patch(This history type is internal available only)
-         * ODH - Oracle Distribution of Hadoop patch
-         * OS - Operating System patch
+         * ODH - Oracle Distribution of Hadoop update
+         * OS - Operating System update
+         * BDS - Big Data Service update
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchType")
@@ -97,8 +98,9 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
         /**
          * The type of current patch history.
          * DP - Data Plane patch(This history type is internal available only)
-         * ODH - Oracle Distribution of Hadoop patch
-         * OS - Operating System patch
+         * ODH - Oracle Distribution of Hadoop update
+         * OS - Operating System update
+         * BDS - Big Data Service update
          *
          * @param patchType the value to set
          * @return this builder
@@ -245,13 +247,15 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
     /**
      * The type of current patch history.
      * DP - Data Plane patch(This history type is internal available only)
-     * ODH - Oracle Distribution of Hadoop patch
-     * OS - Operating System patch
+     * ODH - Oracle Distribution of Hadoop update
+     * OS - Operating System update
+     * BDS - Big Data Service update
      *
      **/
     public enum PatchType {
         Odh("ODH"),
         Os("OS"),
+        Bds("BDS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -297,8 +301,9 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
     /**
      * The type of current patch history.
      * DP - Data Plane patch(This history type is internal available only)
-     * ODH - Oracle Distribution of Hadoop patch
-     * OS - Operating System patch
+     * ODH - Oracle Distribution of Hadoop update
+     * OS - Operating System update
+     * BDS - Big Data Service update
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchType")
@@ -307,8 +312,9 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
     /**
      * The type of current patch history.
      * DP - Data Plane patch(This history type is internal available only)
-     * ODH - Oracle Distribution of Hadoop patch
-     * OS - Operating System patch
+     * ODH - Oracle Distribution of Hadoop update
+     * OS - Operating System update
+     * BDS - Big Data Service update
      *
      * @return the value
      **/

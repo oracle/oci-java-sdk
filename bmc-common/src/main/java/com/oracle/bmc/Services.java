@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc;
@@ -56,6 +56,22 @@ public class Services {
             final String serviceEndpointTemplate,
             final String endpointServiceName,
             final Map<String, String> serviceEndpointTemplatesForRealms) {
+        return create(
+                serviceName,
+                serviceEndpointPrefix,
+                serviceEndpointTemplate,
+                endpointServiceName,
+                serviceEndpointTemplatesForRealms,
+                false);
+    }
+
+    private static synchronized Service create(
+            final String serviceName,
+            final String serviceEndpointPrefix,
+            final String serviceEndpointTemplate,
+            final String endpointServiceName,
+            final Map<String, String> serviceEndpointTemplatesForRealms,
+            final boolean serviceUsesDualStackByDefault) {
         Validate.notBlank(serviceName, "serviceName must be set to a non-empty string");
 
         final Service newInstance =
@@ -64,7 +80,8 @@ public class Services {
                         serviceEndpointPrefix,
                         serviceEndpointTemplate,
                         endpointServiceName,
-                        serviceEndpointTemplatesForRealms);
+                        serviceEndpointTemplatesForRealms,
+                        serviceUsesDualStackByDefault);
         if (SERVICE_CACHE.containsKey(serviceName)) {
             Service existing = SERVICE_CACHE.get(serviceName);
             if (existing.equals(newInstance)) {
@@ -91,26 +108,30 @@ public class Services {
         private final String serviceEndpointPrefix;
         private final String serviceEndpointTemplate;
         private final String endpointServiceName;
-        private final Map<String, String> serviceEndpointTemplatesForRealms;
+        private final Map<String, String> serviceEndpointTemplatesForRealms = new HashMap<>();
+        private final boolean serviceUsesDualStackByDefault;
 
         @java.beans.ConstructorProperties({
             "serviceName",
             "serviceEndpointPrefix",
             "serviceEndpointTemplate",
             "endpointServiceName",
-            "serviceEndpointTemplatesForRealms"
+            "serviceEndpointTemplatesForRealms",
+            "serviceUsesDualStackByDefault"
         })
         public BasicService(
                 String serviceName,
                 String serviceEndpointPrefix,
                 String serviceEndpointTemplate,
                 String endpointServiceName,
-                Map<String, String> serviceEndpointTemplatesForRealms) {
+                Map<String, String> serviceEndpointTemplatesForRealms,
+                boolean serviceUsesDualStackByDefault) {
             this.serviceName = serviceName;
             this.serviceEndpointPrefix = serviceEndpointPrefix;
             this.serviceEndpointTemplate = serviceEndpointTemplate;
             this.endpointServiceName = endpointServiceName;
-            this.serviceEndpointTemplatesForRealms = serviceEndpointTemplatesForRealms;
+            this.serviceEndpointTemplatesForRealms.putAll(serviceEndpointTemplatesForRealms);
+            this.serviceUsesDualStackByDefault = serviceUsesDualStackByDefault;
         }
 
         public String getServiceName() {
@@ -131,6 +152,10 @@ public class Services {
 
         public String getEndpointServiceName() {
             return this.endpointServiceName;
+        }
+
+        public boolean serviceUsesDualStackByDefault() {
+            return serviceUsesDualStackByDefault;
         }
 
         public boolean equals(final Object o) {
@@ -166,6 +191,13 @@ public class Services {
                     ? other$serviceEndpointTemplatesForRealms != null
                     : !this$serviceEndpointTemplatesForRealms.equals(
                             other$serviceEndpointTemplatesForRealms)) return false;
+            final Object this$serviceUsesDualStackByDefault = this.serviceUsesDualStackByDefault();
+            final Object other$serviceUsesDualStackByDefault =
+                    other.serviceUsesDualStackByDefault();
+            if (this$serviceUsesDualStackByDefault == null
+                    ? other$serviceUsesDualStackByDefault != null
+                    : !this$serviceUsesDualStackByDefault.equals(
+                            other$serviceUsesDualStackByDefault)) return false;
             return true;
         }
 
@@ -197,6 +229,12 @@ public class Services {
                             + ($serviceEndpointTemplatesForRealms == null
                                     ? 43
                                     : $serviceEndpointTemplatesForRealms.hashCode());
+            final Object $serviceUsesDualStackByDefault = this.serviceUsesDualStackByDefault();
+            result =
+                    result * PRIME
+                            + ($serviceUsesDualStackByDefault == null
+                                    ? 43
+                                    : $serviceUsesDualStackByDefault.hashCode());
             return result;
         }
 
@@ -211,6 +249,8 @@ public class Services {
                     + this.getEndpointServiceName()
                     + ", serviceEndpointTemplatesForRealms="
                     + this.getServiceEndpointTemplateForRealmMap()
+                    + ", serviceUsesDualStackByDefault="
+                    + this.serviceUsesDualStackByDefault()
                     + ")";
         }
     }
@@ -221,6 +261,7 @@ public class Services {
         private String serviceEndpointTemplate;
         private String endpointServiceName;
         private Map<String, String> serviceEndpointTemplatesForRealms = new HashMap<>();
+        private boolean serviceUsesDualStackByDefault;
 
         ServiceBuilder() {}
 
@@ -252,13 +293,35 @@ public class Services {
             return this;
         }
 
+        public ServiceBuilder serviceUsesDualStackByDefault() {
+            this.serviceUsesDualStackByDefault = true;
+            return this;
+        }
+
         public Service build() {
+            return create(
+                    serviceName,
+                    serviceEndpointPrefix,
+                    serviceEndpointTemplate,
+                    endpointServiceName,
+                    serviceEndpointTemplatesForRealms,
+                    serviceUsesDualStackByDefault);
+        }
+
+        private static synchronized Service create(
+                final String serviceName,
+                final String serviceEndpointPrefix,
+                final String serviceEndpointTemplate,
+                final String endpointServiceName,
+                final Map<String, String> serviceEndpointTemplatesForRealms,
+                final boolean serviceUsesDualStackByDefault) {
             return Services.create(
                     serviceName,
                     serviceEndpointPrefix,
                     serviceEndpointTemplate,
                     endpointServiceName,
-                    serviceEndpointTemplatesForRealms);
+                    serviceEndpointTemplatesForRealms,
+                    serviceUsesDualStackByDefault);
         }
 
         public String toString() {
@@ -272,6 +335,8 @@ public class Services {
                     + this.endpointServiceName
                     + ", serviceEndpointTemplatesForRealms="
                     + this.serviceEndpointTemplatesForRealms
+                    + ", serviceUsesDualStackByDefault="
+                    + this.serviceUsesDualStackByDefault
                     + ")";
         }
     }

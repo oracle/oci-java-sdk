@@ -1,0 +1,271 @@
+/**
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.fleetsoftwareupdate.model;
+
+/**
+ * Details of a ExadbVmCluster on Exascale Infrastructure a target member of a Exadata Fleet Update Collection.
+ * Stored references of the resource documented in
+ *  https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/ExadbVmCluster/
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = ExadbVmClusterTargetSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entityType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExadbVmClusterTargetSummary extends TargetDetails {
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * OCID of the related Exadata Database Storage Vault.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+        private String exascaleDbStorageVaultId;
+
+        /**
+         * OCID of the related Exadata Database Storage Vault.
+         *
+         * @param exascaleDbStorageVaultId the value to set
+         * @return this builder
+         **/
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+            this.__explicitlySet__.add("exascaleDbStorageVaultId");
+            return this;
+        }
+        /**
+         * OCID of the Grid Infrastructure software image.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareImageId")
+        private String softwareImageId;
+
+        /**
+         * OCID of the Grid Infrastructure software image.
+         *
+         * @param softwareImageId the value to set
+         * @return this builder
+         **/
+        public Builder softwareImageId(String softwareImageId) {
+            this.softwareImageId = softwareImageId;
+            this.__explicitlySet__.add("softwareImageId");
+            return this;
+        }
+        /**
+         * Exadata Image (Guest OS) version.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+        private String systemVersion;
+
+        /**
+         * Exadata Image (Guest OS) version.
+         *
+         * @param systemVersion the value to set
+         * @return this builder
+         **/
+        public Builder systemVersion(String systemVersion) {
+            this.systemVersion = systemVersion;
+            this.__explicitlySet__.add("systemVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public ExadbVmClusterTargetSummary build() {
+            ExadbVmClusterTargetSummary model =
+                    new ExadbVmClusterTargetSummary(
+                            this.id,
+                            this.compartmentId,
+                            this.exascaleDbStorageVaultId,
+                            this.softwareImageId,
+                            this.systemVersion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(ExadbVmClusterTargetSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("exascaleDbStorageVaultId")) {
+                this.exascaleDbStorageVaultId(model.getExascaleDbStorageVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("softwareImageId")) {
+                this.softwareImageId(model.getSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("systemVersion")) {
+                this.systemVersion(model.getSystemVersion());
+            }
+            return this;
+        }
+    }
+
+    /**
+     * Create a new builder.
+     */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    @Deprecated
+    public ExadbVmClusterTargetSummary(
+            String id,
+            String compartmentId,
+            String exascaleDbStorageVaultId,
+            String softwareImageId,
+            String systemVersion) {
+        super(id, compartmentId);
+        this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+        this.softwareImageId = softwareImageId;
+        this.systemVersion = systemVersion;
+    }
+
+    /**
+     * OCID of the related Exadata Database Storage Vault.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+    private final String exascaleDbStorageVaultId;
+
+    /**
+     * OCID of the related Exadata Database Storage Vault.
+     *
+     * @return the value
+     **/
+    public String getExascaleDbStorageVaultId() {
+        return exascaleDbStorageVaultId;
+    }
+
+    /**
+     * OCID of the Grid Infrastructure software image.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareImageId")
+    private final String softwareImageId;
+
+    /**
+     * OCID of the Grid Infrastructure software image.
+     *
+     * @return the value
+     **/
+    public String getSoftwareImageId() {
+        return softwareImageId;
+    }
+
+    /**
+     * Exadata Image (Guest OS) version.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+    private final String systemVersion;
+
+    /**
+     * Exadata Image (Guest OS) version.
+     *
+     * @return the value
+     **/
+    public String getSystemVersion() {
+        return systemVersion;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExadbVmClusterTargetSummary(");
+        sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", exascaleDbStorageVaultId=")
+                .append(String.valueOf(this.exascaleDbStorageVaultId));
+        sb.append(", softwareImageId=").append(String.valueOf(this.softwareImageId));
+        sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExadbVmClusterTargetSummary)) {
+            return false;
+        }
+
+        ExadbVmClusterTargetSummary other = (ExadbVmClusterTargetSummary) o;
+        return java.util.Objects.equals(
+                        this.exascaleDbStorageVaultId, other.exascaleDbStorageVaultId)
+                && java.util.Objects.equals(this.softwareImageId, other.softwareImageId)
+                && java.util.Objects.equals(this.systemVersion, other.systemVersion)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.exascaleDbStorageVaultId == null
+                                ? 43
+                                : this.exascaleDbStorageVaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareImageId == null ? 43 : this.softwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVersion == null ? 43 : this.systemVersion.hashCode());
+        return result;
+    }
+}

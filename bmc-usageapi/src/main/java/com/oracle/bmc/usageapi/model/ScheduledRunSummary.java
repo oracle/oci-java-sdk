@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi.model;
@@ -48,13 +48,13 @@ public final class ScheduledRunSummary extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The ocid representing unique shedule run
+         * The OCID representing a unique shedule run.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The ocid representing unique shedule run
+         * The OCID representing a unique shedule run.
          * @param id the value to set
          * @return this builder
          **/
@@ -64,13 +64,13 @@ public final class ScheduledRunSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The ocid representing unique shedule
+         * The OCID representing a unique shedule.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleId")
         private String scheduleId;
 
         /**
-         * The ocid representing unique shedule
+         * The OCID representing a unique shedule.
          * @param scheduleId the value to set
          * @return this builder
          **/
@@ -80,13 +80,13 @@ public final class ScheduledRunSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The time when schedule started executing
+         * The time the schedule started executing.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time when schedule started executing
+         * The time the schedule started executing.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -96,13 +96,13 @@ public final class ScheduledRunSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The time when schedule finished executing
+         * The time the schedule finished executing.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The time when schedule finished executing
+         * The time the schedule finished executing.
          * @param timeFinished the value to set
          * @return this builder
          **/
@@ -112,13 +112,13 @@ public final class ScheduledRunSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Specifies if the schedule job was run successfully or not.
+         * Specifies whether or not the schedule job was successfully run.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ScheduledRun.LifecycleState lifecycleState;
 
         /**
-         * Specifies if the schedule job was run successfully or not.
+         * Specifies whether or not the schedule job was successfully run.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -128,13 +128,13 @@ public final class ScheduledRunSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Additional details about scheduled run failure
+         * Additional details about the scheduled run.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * Additional details about scheduled run failure
+         * Additional details about the scheduled run.
          * @param lifecycleDetails the value to set
          * @return this builder
          **/
@@ -198,13 +198,13 @@ public final class ScheduledRunSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The ocid representing unique shedule run
+     * The OCID representing a unique shedule run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The ocid representing unique shedule run
+     * The OCID representing a unique shedule run.
      * @return the value
      **/
     public String getId() {
@@ -212,13 +212,13 @@ public final class ScheduledRunSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The ocid representing unique shedule
+     * The OCID representing a unique shedule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleId")
     private final String scheduleId;
 
     /**
-     * The ocid representing unique shedule
+     * The OCID representing a unique shedule.
      * @return the value
      **/
     public String getScheduleId() {
@@ -226,13 +226,13 @@ public final class ScheduledRunSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The time when schedule started executing
+     * The time the schedule started executing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time when schedule started executing
+     * The time the schedule started executing.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -240,13 +240,13 @@ public final class ScheduledRunSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The time when schedule finished executing
+     * The time the schedule finished executing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The time when schedule finished executing
+     * The time the schedule finished executing.
      * @return the value
      **/
     public java.util.Date getTimeFinished() {
@@ -254,13 +254,13 @@ public final class ScheduledRunSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Specifies if the schedule job was run successfully or not.
+     * Specifies whether or not the schedule job was successfully run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ScheduledRun.LifecycleState lifecycleState;
 
     /**
-     * Specifies if the schedule job was run successfully or not.
+     * Specifies whether or not the schedule job was successfully run.
      * @return the value
      **/
     public ScheduledRun.LifecycleState getLifecycleState() {
@@ -268,13 +268,13 @@ public final class ScheduledRunSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Additional details about scheduled run failure
+     * Additional details about the scheduled run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * Additional details about scheduled run failure
+     * Additional details about the scheduled run.
      * @return the value
      **/
     public String getLifecycleDetails() {

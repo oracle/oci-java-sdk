@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -27,6 +27,8 @@ public final class CreateDbSystemDetails
         "displayName",
         "description",
         "compartmentId",
+        "rest",
+        "databaseConsole",
         "isHighlyAvailable",
         "availabilityDomain",
         "faultDomain",
@@ -34,6 +36,8 @@ public final class CreateDbSystemDetails
         "shapeName",
         "mysqlVersion",
         "subnetId",
+        "nsgIds",
+        "securityAttributes",
         "adminUsername",
         "adminPassword",
         "dataStorageSizeInGBs",
@@ -51,15 +55,19 @@ public final class CreateDbSystemDetails
         "crashRecovery",
         "databaseManagement",
         "secureConnections",
+        "encryptData",
         "databaseMode",
         "accessMode",
         "customerContacts",
-        "readEndpoint"
+        "readEndpoint",
+        "telemetryConfiguration"
     })
     public CreateDbSystemDetails(
             String displayName,
             String description,
             String compartmentId,
+            CreateRestDetails rest,
+            CreateDatabaseConsoleDetails databaseConsole,
             Boolean isHighlyAvailable,
             String availabilityDomain,
             String faultDomain,
@@ -67,6 +75,8 @@ public final class CreateDbSystemDetails
             String shapeName,
             String mysqlVersion,
             String subnetId,
+            java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String adminUsername,
             String adminPassword,
             Integer dataStorageSizeInGBs,
@@ -84,14 +94,18 @@ public final class CreateDbSystemDetails
             CrashRecoveryStatus crashRecovery,
             DatabaseManagementStatus databaseManagement,
             SecureConnectionDetails secureConnections,
+            EncryptDataDetails encryptData,
             DbSystem.DatabaseMode databaseMode,
             DbSystem.AccessMode accessMode,
             java.util.List<CustomerContact> customerContacts,
-            CreateReadEndpointDetails readEndpoint) {
+            CreateReadEndpointDetails readEndpoint,
+            CreateTelemetryConfigurationDetails telemetryConfiguration) {
         super();
         this.displayName = displayName;
         this.description = description;
         this.compartmentId = compartmentId;
+        this.rest = rest;
+        this.databaseConsole = databaseConsole;
         this.isHighlyAvailable = isHighlyAvailable;
         this.availabilityDomain = availabilityDomain;
         this.faultDomain = faultDomain;
@@ -99,6 +113,8 @@ public final class CreateDbSystemDetails
         this.shapeName = shapeName;
         this.mysqlVersion = mysqlVersion;
         this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
         this.adminUsername = adminUsername;
         this.adminPassword = adminPassword;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
@@ -116,10 +132,12 @@ public final class CreateDbSystemDetails
         this.crashRecovery = crashRecovery;
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
+        this.encryptData = encryptData;
         this.databaseMode = databaseMode;
         this.accessMode = accessMode;
         this.customerContacts = customerContacts;
         this.readEndpoint = readEndpoint;
+        this.telemetryConfiguration = telemetryConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -170,6 +188,24 @@ public final class CreateDbSystemDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rest")
+        private CreateRestDetails rest;
+
+        public Builder rest(CreateRestDetails rest) {
+            this.rest = rest;
+            this.__explicitlySet__.add("rest");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+        private CreateDatabaseConsoleDetails databaseConsole;
+
+        public Builder databaseConsole(CreateDatabaseConsoleDetails databaseConsole) {
+            this.databaseConsole = databaseConsole;
+            this.__explicitlySet__.add("databaseConsole");
             return this;
         }
         /**
@@ -334,6 +370,45 @@ public final class CreateDbSystemDetails
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -619,6 +694,15 @@ public final class CreateDbSystemDetails
             this.__explicitlySet__.add("secureConnections");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+        private EncryptDataDetails encryptData;
+
+        public Builder encryptData(EncryptDataDetails encryptData) {
+            this.encryptData = encryptData;
+            this.__explicitlySet__.add("encryptData");
+            return this;
+        }
         /**
          * The database mode indicating the types of statements that will be allowed to run in the DB system.
          * This mode will apply only to statements run by user connections. Replicated write statements will continue
@@ -703,6 +787,16 @@ public final class CreateDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("telemetryConfiguration")
+        private CreateTelemetryConfigurationDetails telemetryConfiguration;
+
+        public Builder telemetryConfiguration(
+                CreateTelemetryConfigurationDetails telemetryConfiguration) {
+            this.telemetryConfiguration = telemetryConfiguration;
+            this.__explicitlySet__.add("telemetryConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -712,6 +806,8 @@ public final class CreateDbSystemDetails
                             this.displayName,
                             this.description,
                             this.compartmentId,
+                            this.rest,
+                            this.databaseConsole,
                             this.isHighlyAvailable,
                             this.availabilityDomain,
                             this.faultDomain,
@@ -719,6 +815,8 @@ public final class CreateDbSystemDetails
                             this.shapeName,
                             this.mysqlVersion,
                             this.subnetId,
+                            this.nsgIds,
+                            this.securityAttributes,
                             this.adminUsername,
                             this.adminPassword,
                             this.dataStorageSizeInGBs,
@@ -736,10 +834,12 @@ public final class CreateDbSystemDetails
                             this.crashRecovery,
                             this.databaseManagement,
                             this.secureConnections,
+                            this.encryptData,
                             this.databaseMode,
                             this.accessMode,
                             this.customerContacts,
-                            this.readEndpoint);
+                            this.readEndpoint,
+                            this.telemetryConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -756,6 +856,12 @@ public final class CreateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("rest")) {
+                this.rest(model.getRest());
+            }
+            if (model.wasPropertyExplicitlySet("databaseConsole")) {
+                this.databaseConsole(model.getDatabaseConsole());
             }
             if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
                 this.isHighlyAvailable(model.getIsHighlyAvailable());
@@ -777,6 +883,12 @@ public final class CreateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("adminUsername")) {
                 this.adminUsername(model.getAdminUsername());
@@ -829,6 +941,9 @@ public final class CreateDbSystemDetails
             if (model.wasPropertyExplicitlySet("secureConnections")) {
                 this.secureConnections(model.getSecureConnections());
             }
+            if (model.wasPropertyExplicitlySet("encryptData")) {
+                this.encryptData(model.getEncryptData());
+            }
             if (model.wasPropertyExplicitlySet("databaseMode")) {
                 this.databaseMode(model.getDatabaseMode());
             }
@@ -840,6 +955,9 @@ public final class CreateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("readEndpoint")) {
                 this.readEndpoint(model.getReadEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("telemetryConfiguration")) {
+                this.telemetryConfiguration(model.getTelemetryConfiguration());
             }
             return this;
         }
@@ -896,6 +1014,20 @@ public final class CreateDbSystemDetails
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("rest")
+    private final CreateRestDetails rest;
+
+    public CreateRestDetails getRest() {
+        return rest;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+    private final CreateDatabaseConsoleDetails databaseConsole;
+
+    public CreateDatabaseConsoleDetails getDatabaseConsole() {
+        return databaseConsole;
     }
 
     /**
@@ -1046,6 +1178,40 @@ public final class CreateDbSystemDetails
      **/
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     * @return the value
+     **/
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -1296,6 +1462,13 @@ public final class CreateDbSystemDetails
         return secureConnections;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+    private final EncryptDataDetails encryptData;
+
+    public EncryptDataDetails getEncryptData() {
+        return encryptData;
+    }
+
     /**
      * The database mode indicating the types of statements that will be allowed to run in the DB system.
      * This mode will apply only to statements run by user connections. Replicated write statements will continue
@@ -1371,6 +1544,13 @@ public final class CreateDbSystemDetails
         return readEndpoint;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("telemetryConfiguration")
+    private final CreateTelemetryConfigurationDetails telemetryConfiguration;
+
+    public CreateTelemetryConfigurationDetails getTelemetryConfiguration() {
+        return telemetryConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1388,6 +1568,8 @@ public final class CreateDbSystemDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", rest=").append(String.valueOf(this.rest));
+        sb.append(", databaseConsole=").append(String.valueOf(this.databaseConsole));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
@@ -1395,6 +1577,8 @@ public final class CreateDbSystemDetails
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", mysqlVersion=").append(String.valueOf(this.mysqlVersion));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
         sb.append(", adminPassword=").append("<redacted>");
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
@@ -1412,10 +1596,12 @@ public final class CreateDbSystemDetails
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", encryptData=").append(String.valueOf(this.encryptData));
         sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
         sb.append(", accessMode=").append(String.valueOf(this.accessMode));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
+        sb.append(", telemetryConfiguration=").append(String.valueOf(this.telemetryConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -1433,6 +1619,8 @@ public final class CreateDbSystemDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.rest, other.rest)
+                && java.util.Objects.equals(this.databaseConsole, other.databaseConsole)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
@@ -1440,6 +1628,8 @@ public final class CreateDbSystemDetails
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.mysqlVersion, other.mysqlVersion)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.adminUsername, other.adminUsername)
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
@@ -1457,10 +1647,13 @@ public final class CreateDbSystemDetails
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.encryptData, other.encryptData)
                 && java.util.Objects.equals(this.databaseMode, other.databaseMode)
                 && java.util.Objects.equals(this.accessMode, other.accessMode)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
+                && java.util.Objects.equals(
+                        this.telemetryConfiguration, other.telemetryConfiguration)
                 && super.equals(other);
     }
 
@@ -1473,6 +1666,10 @@ public final class CreateDbSystemDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.rest == null ? 43 : this.rest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseConsole == null ? 43 : this.databaseConsole.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());
@@ -1488,6 +1685,12 @@ public final class CreateDbSystemDetails
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.mysqlVersion == null ? 43 : this.mysqlVersion.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.adminUsername == null ? 43 : this.adminUsername.hashCode());
@@ -1525,12 +1728,18 @@ public final class CreateDbSystemDetails
         result =
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.encryptData == null ? 43 : this.encryptData.hashCode());
         result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
         result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
         result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.telemetryConfiguration == null
+                                ? 43
+                                : this.telemetryConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

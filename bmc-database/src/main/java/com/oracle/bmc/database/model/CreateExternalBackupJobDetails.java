@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -243,16 +243,16 @@ public final class CreateExternalBackupJobDetails
             return this;
         }
         /**
-         * The Oracle Database edition to use for creating a database from this standalone backup.
-         * Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
+         * The Oracle Database Edition that applies to all the databases on the DB system.
+         * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private DatabaseEdition databaseEdition;
 
         /**
-         * The Oracle Database edition to use for creating a database from this standalone backup.
-         * Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
+         * The Oracle Database Edition that applies to all the databases on the DB system.
+         * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
          *
          * @param databaseEdition the value to set
          * @return this builder
@@ -530,8 +530,8 @@ public final class CreateExternalBackupJobDetails
     }
 
     /**
-     * The Oracle Database edition to use for creating a database from this standalone backup.
-     * Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
+     * The Oracle Database Edition that applies to all the databases on the DB system.
+     * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      *
      **/
     public enum DatabaseEdition {
@@ -539,6 +539,7 @@ public final class CreateExternalBackupJobDetails
         EnterpriseEdition("ENTERPRISE_EDITION"),
         EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
         EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
+        EnterpriseEditionDeveloper("ENTERPRISE_EDITION_DEVELOPER"),
         ;
 
         private final String value;
@@ -569,16 +570,16 @@ public final class CreateExternalBackupJobDetails
         }
     };
     /**
-     * The Oracle Database edition to use for creating a database from this standalone backup.
-     * Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
+     * The Oracle Database Edition that applies to all the databases on the DB system.
+     * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
     private final DatabaseEdition databaseEdition;
 
     /**
-     * The Oracle Database edition to use for creating a database from this standalone backup.
-     * Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
+     * The Oracle Database Edition that applies to all the databases on the DB system.
+     * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      *
      * @return the value
      **/

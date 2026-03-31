@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -22,28 +22,28 @@ package com.oracle.bmc.databasemanagement.model;
 public final class ExadataInfrastructureLifecycleStateValues
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"lifecycleState"})
-    public ExadataInfrastructureLifecycleStateValues(LifecycleState lifecycleState) {
+    @java.beans.ConstructorProperties({"state"})
+    public ExadataInfrastructureLifecycleStateValues(State state) {
         super();
-        this.lifecycleState = lifecycleState;
+        this.state = state;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The current lifecycle state of the database resource.
+         * The current lifecycle state of the Exadata infrastructure resource.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
+        @com.fasterxml.jackson.annotation.JsonProperty("state")
+        private State state;
 
         /**
-         * The current lifecycle state of the database resource.
-         * @param lifecycleState the value to set
+         * The current lifecycle state of the Exadata infrastructure resource.
+         * @param state the value to set
          * @return this builder
          **/
-        public Builder lifecycleState(LifecycleState lifecycleState) {
-            this.lifecycleState = lifecycleState;
-            this.__explicitlySet__.add("lifecycleState");
+        public Builder state(State state) {
+            this.state = state;
+            this.__explicitlySet__.add("state");
             return this;
         }
 
@@ -52,7 +52,7 @@ public final class ExadataInfrastructureLifecycleStateValues
 
         public ExadataInfrastructureLifecycleStateValues build() {
             ExadataInfrastructureLifecycleStateValues model =
-                    new ExadataInfrastructureLifecycleStateValues(this.lifecycleState);
+                    new ExadataInfrastructureLifecycleStateValues(this.state);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -61,8 +61,8 @@ public final class ExadataInfrastructureLifecycleStateValues
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ExadataInfrastructureLifecycleStateValues model) {
-            if (model.wasPropertyExplicitlySet("lifecycleState")) {
-                this.lifecycleState(model.getLifecycleState());
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
             }
             return this;
         }
@@ -80,9 +80,9 @@ public final class ExadataInfrastructureLifecycleStateValues
     }
 
     /**
-     * The current lifecycle state of the database resource.
+     * The current lifecycle state of the Exadata infrastructure resource.
      **/
-    public enum LifecycleState {
+    public enum State {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -90,19 +90,20 @@ public final class ExadataInfrastructureLifecycleStateValues
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Unknown("UNKNOWN"),
         ;
 
         private final String value;
-        private static java.util.Map<String, LifecycleState> map;
+        private static java.util.Map<String, State> map;
 
         static {
             map = new java.util.HashMap<>();
-            for (LifecycleState v : LifecycleState.values()) {
+            for (State v : State.values()) {
                 map.put(v.getValue(), v);
             }
         }
 
-        LifecycleState(String value) {
+        State(String value) {
             this.value = value;
         }
 
@@ -112,25 +113,25 @@ public final class ExadataInfrastructureLifecycleStateValues
         }
 
         @com.fasterxml.jackson.annotation.JsonCreator
-        public static LifecycleState create(String key) {
+        public static State create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
+            throw new IllegalArgumentException("Invalid State: " + key);
         }
     };
     /**
-     * The current lifecycle state of the database resource.
+     * The current lifecycle state of the Exadata infrastructure resource.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final LifecycleState lifecycleState;
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
+    private final State state;
 
     /**
-     * The current lifecycle state of the database resource.
+     * The current lifecycle state of the Exadata infrastructure resource.
      * @return the value
      **/
-    public LifecycleState getLifecycleState() {
-        return lifecycleState;
+    public State getState() {
+        return state;
     }
 
     @Override
@@ -147,7 +148,7 @@ public final class ExadataInfrastructureLifecycleStateValues
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExadataInfrastructureLifecycleStateValues(");
         sb.append("super=").append(super.toString());
-        sb.append("lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append("state=").append(String.valueOf(this.state));
         sb.append(")");
         return sb.toString();
     }
@@ -163,17 +164,14 @@ public final class ExadataInfrastructureLifecycleStateValues
 
         ExadataInfrastructureLifecycleStateValues other =
                 (ExadataInfrastructureLifecycleStateValues) o;
-        return java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && super.equals(other);
+        return java.util.Objects.equals(this.state, other.state) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result =
-                (result * PRIME)
-                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

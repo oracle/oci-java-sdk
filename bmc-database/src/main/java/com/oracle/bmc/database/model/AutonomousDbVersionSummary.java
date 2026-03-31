@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * The supported Autonomous Database version.
+ * The supported Autonomous AI Database version.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -29,6 +29,7 @@ public final class AutonomousDbVersionSummary
         "isDedicated",
         "details",
         "isFreeTierEnabled",
+        "isDevTierEnabled",
         "isPaidEnabled",
         "isDefaultForFree",
         "isDefaultForPaid"
@@ -39,6 +40,7 @@ public final class AutonomousDbVersionSummary
             Boolean isDedicated,
             String details,
             Boolean isFreeTierEnabled,
+            Boolean isDevTierEnabled,
             Boolean isPaidEnabled,
             Boolean isDefaultForFree,
             Boolean isDefaultForPaid) {
@@ -48,6 +50,7 @@ public final class AutonomousDbVersionSummary
         this.isDedicated = isDedicated;
         this.details = details;
         this.isFreeTierEnabled = isFreeTierEnabled;
+        this.isDevTierEnabled = isDevTierEnabled;
         this.isPaidEnabled = isPaidEnabled;
         this.isDefaultForFree = isDefaultForFree;
         this.isDefaultForPaid = isDefaultForPaid;
@@ -56,13 +59,25 @@ public final class AutonomousDbVersionSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A valid Oracle Database version for Autonomous Database.
+         * A valid Oracle AI Database version for Autonomous AI Database.
+         * When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+         * When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+         * For new databases, it is recommended to use either 19c or 26ai.
+         * <p>
+         **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * A valid Oracle Database version for Autonomous Database.
+         * A valid Oracle AI Database version for Autonomous AI Database.
+         * When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+         * When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+         * For new databases, it is recommended to use either 19c or 26ai.
+         * <p>
+         **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+         *
          * @param version the value to set
          * @return this builder
          **/
@@ -72,13 +87,16 @@ public final class AutonomousDbVersionSummary
             return this;
         }
         /**
-         * The Autonomous Database workload type. The following values are valid:
+         * The Autonomous AI Database workload type. The following values are valid:
+         * - OLTP - indicates an Autonomous AI Transaction Processing database
+         * - DW - indicates an Autonomous AI Lakehouse database
+         * - AJD - indicates an Autonomous AI JSON Database
+         * - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+         * - LH - indicates an Oracle Autonomous AI Lakehouse database
          * <p>
-         * - OLTP - indicates an Autonomous Transaction Processing database
-         * - DW - indicates an Autonomous Data Warehouse database
-         * - AJD - indicates an Autonomous JSON Database
-         * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
          * <p>
+         *
          * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
          **/
@@ -86,13 +104,16 @@ public final class AutonomousDbVersionSummary
         private DbWorkload dbWorkload;
 
         /**
-         * The Autonomous Database workload type. The following values are valid:
+         * The Autonomous AI Database workload type. The following values are valid:
+         * - OLTP - indicates an Autonomous AI Transaction Processing database
+         * - DW - indicates an Autonomous AI Lakehouse database
+         * - AJD - indicates an Autonomous AI JSON Database
+         * - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+         * - LH - indicates an Oracle Autonomous AI Lakehouse database
          * <p>
-         * - OLTP - indicates an Autonomous Transaction Processing database
-         * - DW - indicates an Autonomous Data Warehouse database
-         * - AJD - indicates an Autonomous JSON Database
-         * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
          * <p>
+         *
          * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
          * @param dbWorkload the value to set
@@ -122,13 +143,13 @@ public final class AutonomousDbVersionSummary
             return this;
         }
         /**
-         * A URL that points to a detailed description of the Autonomous Database version.
+         * A URL that points to a detailed description of the Autonomous AI Database version.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private String details;
 
         /**
-         * A URL that points to a detailed description of the Autonomous Database version.
+         * A URL that points to a detailed description of the Autonomous AI Database version.
          * @param details the value to set
          * @return this builder
          **/
@@ -138,13 +159,13 @@ public final class AutonomousDbVersionSummary
             return this;
         }
         /**
-         * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+         * True if this version of the Oracle AI Database software can be used for Always-Free Autonomous AI Databases.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFreeTierEnabled")
         private Boolean isFreeTierEnabled;
 
         /**
-         * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+         * True if this version of the Oracle AI Database software can be used for Always-Free Autonomous AI Databases.
          * @param isFreeTierEnabled the value to set
          * @return this builder
          **/
@@ -154,13 +175,29 @@ public final class AutonomousDbVersionSummary
             return this;
         }
         /**
-         * True if this version of the Oracle Database software has payments enabled.
+         * True if this Oracle AI Database software version can be used for Autonomous AI Databases for Developers.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDevTierEnabled")
+        private Boolean isDevTierEnabled;
+
+        /**
+         * True if this Oracle AI Database software version can be used for Autonomous AI Databases for Developers.
+         * @param isDevTierEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDevTierEnabled(Boolean isDevTierEnabled) {
+            this.isDevTierEnabled = isDevTierEnabled;
+            this.__explicitlySet__.add("isDevTierEnabled");
+            return this;
+        }
+        /**
+         * True if this version of the Oracle AI Database software has payments enabled.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPaidEnabled")
         private Boolean isPaidEnabled;
 
         /**
-         * True if this version of the Oracle Database software has payments enabled.
+         * True if this version of the Oracle AI Database software has payments enabled.
          * @param isPaidEnabled the value to set
          * @return this builder
          **/
@@ -170,13 +207,13 @@ public final class AutonomousDbVersionSummary
             return this;
         }
         /**
-         * True if this version of the Oracle Database software's default is free.
+         * True if this version of the Oracle AI Database software's default is free.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForFree")
         private Boolean isDefaultForFree;
 
         /**
-         * True if this version of the Oracle Database software's default is free.
+         * True if this version of the Oracle AI Database software's default is free.
          * @param isDefaultForFree the value to set
          * @return this builder
          **/
@@ -186,13 +223,13 @@ public final class AutonomousDbVersionSummary
             return this;
         }
         /**
-         * True if this version of the Oracle Database software's default is paid.
+         * True if this version of the Oracle AI Database software's default is paid.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForPaid")
         private Boolean isDefaultForPaid;
 
         /**
-         * True if this version of the Oracle Database software's default is paid.
+         * True if this version of the Oracle AI Database software's default is paid.
          * @param isDefaultForPaid the value to set
          * @return this builder
          **/
@@ -213,6 +250,7 @@ public final class AutonomousDbVersionSummary
                             this.isDedicated,
                             this.details,
                             this.isFreeTierEnabled,
+                            this.isDevTierEnabled,
                             this.isPaidEnabled,
                             this.isDefaultForFree,
                             this.isDefaultForPaid);
@@ -239,6 +277,9 @@ public final class AutonomousDbVersionSummary
             if (model.wasPropertyExplicitlySet("isFreeTierEnabled")) {
                 this.isFreeTierEnabled(model.getIsFreeTierEnabled());
             }
+            if (model.wasPropertyExplicitlySet("isDevTierEnabled")) {
+                this.isDevTierEnabled(model.getIsDevTierEnabled());
+            }
             if (model.wasPropertyExplicitlySet("isPaidEnabled")) {
                 this.isPaidEnabled(model.getIsPaidEnabled());
             }
@@ -264,13 +305,25 @@ public final class AutonomousDbVersionSummary
     }
 
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
+     * When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+     * When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+     * For new databases, it is recommended to use either 19c or 26ai.
+     * <p>
+     **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
+     * When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+     * When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+     * For new databases, it is recommended to use either 19c or 26ai.
+     * <p>
+     **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+     *
      * @return the value
      **/
     public String getVersion() {
@@ -278,13 +331,16 @@ public final class AutonomousDbVersionSummary
     }
 
     /**
-     * The Autonomous Database workload type. The following values are valid:
+     * The Autonomous AI Database workload type. The following values are valid:
+     * - OLTP - indicates an Autonomous AI Transaction Processing database
+     * - DW - indicates an Autonomous AI Lakehouse database
+     * - AJD - indicates an Autonomous AI JSON Database
+     * - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * - LH - indicates an Oracle Autonomous AI Lakehouse database
      * <p>
-     * - OLTP - indicates an Autonomous Transaction Processing database
-     * - DW - indicates an Autonomous Data Warehouse database
-     * - AJD - indicates an Autonomous JSON Database
-     * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
      * <p>
+     *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
      **/
@@ -293,6 +349,7 @@ public final class AutonomousDbVersionSummary
         Dw("DW"),
         Ajd("AJD"),
         Apex("APEX"),
+        Lh("LH"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -336,13 +393,16 @@ public final class AutonomousDbVersionSummary
         }
     };
     /**
-     * The Autonomous Database workload type. The following values are valid:
+     * The Autonomous AI Database workload type. The following values are valid:
+     * - OLTP - indicates an Autonomous AI Transaction Processing database
+     * - DW - indicates an Autonomous AI Lakehouse database
+     * - AJD - indicates an Autonomous AI JSON Database
+     * - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * - LH - indicates an Oracle Autonomous AI Lakehouse database
      * <p>
-     * - OLTP - indicates an Autonomous Transaction Processing database
-     * - DW - indicates an Autonomous Data Warehouse database
-     * - AJD - indicates an Autonomous JSON Database
-     * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
      * <p>
+     *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
      **/
@@ -350,13 +410,16 @@ public final class AutonomousDbVersionSummary
     private final DbWorkload dbWorkload;
 
     /**
-     * The Autonomous Database workload type. The following values are valid:
+     * The Autonomous AI Database workload type. The following values are valid:
+     * - OLTP - indicates an Autonomous AI Transaction Processing database
+     * - DW - indicates an Autonomous AI Lakehouse database
+     * - AJD - indicates an Autonomous AI JSON Database
+     * - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * - LH - indicates an Oracle Autonomous AI Lakehouse database
      * <p>
-     * - OLTP - indicates an Autonomous Transaction Processing database
-     * - DW - indicates an Autonomous Data Warehouse database
-     * - AJD - indicates an Autonomous JSON Database
-     * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
      * <p>
+     *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
      * @return the value
@@ -382,13 +445,13 @@ public final class AutonomousDbVersionSummary
     }
 
     /**
-     * A URL that points to a detailed description of the Autonomous Database version.
+     * A URL that points to a detailed description of the Autonomous AI Database version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final String details;
 
     /**
-     * A URL that points to a detailed description of the Autonomous Database version.
+     * A URL that points to a detailed description of the Autonomous AI Database version.
      * @return the value
      **/
     public String getDetails() {
@@ -396,13 +459,13 @@ public final class AutonomousDbVersionSummary
     }
 
     /**
-     * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+     * True if this version of the Oracle AI Database software can be used for Always-Free Autonomous AI Databases.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFreeTierEnabled")
     private final Boolean isFreeTierEnabled;
 
     /**
-     * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+     * True if this version of the Oracle AI Database software can be used for Always-Free Autonomous AI Databases.
      * @return the value
      **/
     public Boolean getIsFreeTierEnabled() {
@@ -410,13 +473,27 @@ public final class AutonomousDbVersionSummary
     }
 
     /**
-     * True if this version of the Oracle Database software has payments enabled.
+     * True if this Oracle AI Database software version can be used for Autonomous AI Databases for Developers.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDevTierEnabled")
+    private final Boolean isDevTierEnabled;
+
+    /**
+     * True if this Oracle AI Database software version can be used for Autonomous AI Databases for Developers.
+     * @return the value
+     **/
+    public Boolean getIsDevTierEnabled() {
+        return isDevTierEnabled;
+    }
+
+    /**
+     * True if this version of the Oracle AI Database software has payments enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidEnabled")
     private final Boolean isPaidEnabled;
 
     /**
-     * True if this version of the Oracle Database software has payments enabled.
+     * True if this version of the Oracle AI Database software has payments enabled.
      * @return the value
      **/
     public Boolean getIsPaidEnabled() {
@@ -424,13 +501,13 @@ public final class AutonomousDbVersionSummary
     }
 
     /**
-     * True if this version of the Oracle Database software's default is free.
+     * True if this version of the Oracle AI Database software's default is free.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForFree")
     private final Boolean isDefaultForFree;
 
     /**
-     * True if this version of the Oracle Database software's default is free.
+     * True if this version of the Oracle AI Database software's default is free.
      * @return the value
      **/
     public Boolean getIsDefaultForFree() {
@@ -438,13 +515,13 @@ public final class AutonomousDbVersionSummary
     }
 
     /**
-     * True if this version of the Oracle Database software's default is paid.
+     * True if this version of the Oracle AI Database software's default is paid.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForPaid")
     private final Boolean isDefaultForPaid;
 
     /**
-     * True if this version of the Oracle Database software's default is paid.
+     * True if this version of the Oracle AI Database software's default is paid.
      * @return the value
      **/
     public Boolean getIsDefaultForPaid() {
@@ -470,6 +547,7 @@ public final class AutonomousDbVersionSummary
         sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
         sb.append(", details=").append(String.valueOf(this.details));
         sb.append(", isFreeTierEnabled=").append(String.valueOf(this.isFreeTierEnabled));
+        sb.append(", isDevTierEnabled=").append(String.valueOf(this.isDevTierEnabled));
         sb.append(", isPaidEnabled=").append(String.valueOf(this.isPaidEnabled));
         sb.append(", isDefaultForFree=").append(String.valueOf(this.isDefaultForFree));
         sb.append(", isDefaultForPaid=").append(String.valueOf(this.isDefaultForPaid));
@@ -492,6 +570,7 @@ public final class AutonomousDbVersionSummary
                 && java.util.Objects.equals(this.isDedicated, other.isDedicated)
                 && java.util.Objects.equals(this.details, other.details)
                 && java.util.Objects.equals(this.isFreeTierEnabled, other.isFreeTierEnabled)
+                && java.util.Objects.equals(this.isDevTierEnabled, other.isDevTierEnabled)
                 && java.util.Objects.equals(this.isPaidEnabled, other.isPaidEnabled)
                 && java.util.Objects.equals(this.isDefaultForFree, other.isDefaultForFree)
                 && java.util.Objects.equals(this.isDefaultForPaid, other.isDefaultForPaid)
@@ -509,6 +588,9 @@ public final class AutonomousDbVersionSummary
         result =
                 (result * PRIME)
                         + (this.isFreeTierEnabled == null ? 43 : this.isFreeTierEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDevTierEnabled == null ? 43 : this.isDevTierEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.isPaidEnabled == null ? 43 : this.isPaidEnabled.hashCode());

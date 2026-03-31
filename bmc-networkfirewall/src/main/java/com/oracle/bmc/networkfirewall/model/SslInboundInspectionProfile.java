@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -42,6 +42,15 @@ public final class SslInboundInspectionProfile extends DecryptionProfile {
         public Builder parentResourceId(String parentResourceId) {
             this.parentResourceId = parentResourceId;
             this.__explicitlySet__.add("parentResourceId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
             return this;
         }
         /**
@@ -101,6 +110,7 @@ public final class SslInboundInspectionProfile extends DecryptionProfile {
                     new SslInboundInspectionProfile(
                             this.name,
                             this.parentResourceId,
+                            this.description,
                             this.isUnsupportedVersionBlocked,
                             this.isUnsupportedCipherBlocked,
                             this.isOutOfCapacityBlocked);
@@ -117,6 +127,9 @@ public final class SslInboundInspectionProfile extends DecryptionProfile {
             }
             if (model.wasPropertyExplicitlySet("parentResourceId")) {
                 this.parentResourceId(model.getParentResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("isUnsupportedVersionBlocked")) {
                 this.isUnsupportedVersionBlocked(model.getIsUnsupportedVersionBlocked());
@@ -146,10 +159,11 @@ public final class SslInboundInspectionProfile extends DecryptionProfile {
     public SslInboundInspectionProfile(
             String name,
             String parentResourceId,
+            String description,
             Boolean isUnsupportedVersionBlocked,
             Boolean isUnsupportedCipherBlocked,
             Boolean isOutOfCapacityBlocked) {
-        super(name, parentResourceId);
+        super(name, parentResourceId, description);
         this.isUnsupportedVersionBlocked = isUnsupportedVersionBlocked;
         this.isUnsupportedCipherBlocked = isUnsupportedCipherBlocked;
         this.isOutOfCapacityBlocked = isOutOfCapacityBlocked;

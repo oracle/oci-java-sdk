@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools.requests;
@@ -13,12 +13,12 @@ public class ListDatabaseToolsConnectionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -57,23 +57,34 @@ public class ListDatabaseToolsConnectionsRequest
         return type;
     }
     /**
-     * A filter to return only resources with one of the specified runtimeSupport values.
+     * A filter to return only resources with one of the specified type values.
      */
     private java.util.List<com.oracle.bmc.databasetools.model.RuntimeSupport> runtimeSupport;
 
     /**
-     * A filter to return only resources with one of the specified runtimeSupport values.
+     * A filter to return only resources with one of the specified type values.
      */
     public java.util.List<com.oracle.bmc.databasetools.model.RuntimeSupport> getRuntimeSupport() {
         return runtimeSupport;
     }
     /**
-     * A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+     * A filter to return only resources with one of the specified runtimeIdentity values.
+     */
+    private java.util.List<com.oracle.bmc.databasetools.model.RuntimeIdentity> runtimeIdentity;
+
+    /**
+     * A filter to return only resources with one of the specified runtimeIdentity values.
+     */
+    public java.util.List<com.oracle.bmc.databasetools.model.RuntimeIdentity> getRuntimeIdentity() {
+        return runtimeIdentity;
+    }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
      */
     private String relatedResourceIdentifier;
 
     /**
-     * A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
      */
     public String getRelatedResourceIdentifier() {
         return relatedResourceIdentifier;
@@ -181,12 +192,12 @@ public class ListDatabaseToolsConnectionsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -252,13 +263,13 @@ public class ListDatabaseToolsConnectionsRequest
         }
 
         /**
-         * A filter to return only resources with one of the specified runtimeSupport values.
+         * A filter to return only resources with one of the specified type values.
          */
         private java.util.List<com.oracle.bmc.databasetools.model.RuntimeSupport> runtimeSupport =
                 null;
 
         /**
-         * A filter to return only resources with one of the specified runtimeSupport values.
+         * A filter to return only resources with one of the specified type values.
          * @param runtimeSupport the value to set
          * @return this builder instance
          */
@@ -269,7 +280,7 @@ public class ListDatabaseToolsConnectionsRequest
         }
 
         /**
-         * Singular setter. A filter to return only resources with one of the specified runtimeSupport values.
+         * Singular setter. A filter to return only resources with one of the specified type values.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -278,12 +289,39 @@ public class ListDatabaseToolsConnectionsRequest
         }
 
         /**
-         * A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+         * A filter to return only resources with one of the specified runtimeIdentity values.
+         */
+        private java.util.List<com.oracle.bmc.databasetools.model.RuntimeIdentity> runtimeIdentity =
+                null;
+
+        /**
+         * A filter to return only resources with one of the specified runtimeIdentity values.
+         * @param runtimeIdentity the value to set
+         * @return this builder instance
+         */
+        public Builder runtimeIdentity(
+                java.util.List<com.oracle.bmc.databasetools.model.RuntimeIdentity>
+                        runtimeIdentity) {
+            this.runtimeIdentity = runtimeIdentity;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources with one of the specified runtimeIdentity values.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder runtimeIdentity(RuntimeIdentity singularValue) {
+            return this.runtimeIdentity(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
          */
         private String relatedResourceIdentifier = null;
 
         /**
-         * A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
          * @param relatedResourceIdentifier the value to set
          * @return this builder instance
          */
@@ -402,6 +440,7 @@ public class ListDatabaseToolsConnectionsRequest
             displayName(o.getDisplayName());
             type(o.getType());
             runtimeSupport(o.getRuntimeSupport());
+            runtimeIdentity(o.getRuntimeIdentity());
             relatedResourceIdentifier(o.getRelatedResourceIdentifier());
             limit(o.getLimit());
             page(o.getPage());
@@ -445,6 +484,7 @@ public class ListDatabaseToolsConnectionsRequest
             request.displayName = displayName;
             request.type = type;
             request.runtimeSupport = runtimeSupport;
+            request.runtimeIdentity = runtimeIdentity;
             request.relatedResourceIdentifier = relatedResourceIdentifier;
             request.limit = limit;
             request.page = page;
@@ -452,7 +492,7 @@ public class ListDatabaseToolsConnectionsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDatabaseToolsConnectionsRequest(compartmentId, lifecycleState, displayName, type, runtimeSupport, relatedResourceIdentifier, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListDatabaseToolsConnectionsRequest(compartmentId, lifecycleState, displayName, type, runtimeSupport, runtimeIdentity, relatedResourceIdentifier, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -467,6 +507,7 @@ public class ListDatabaseToolsConnectionsRequest
                 .displayName(displayName)
                 .type(type)
                 .runtimeSupport(runtimeSupport)
+                .runtimeIdentity(runtimeIdentity)
                 .relatedResourceIdentifier(relatedResourceIdentifier)
                 .limit(limit)
                 .page(page)
@@ -493,6 +534,7 @@ public class ListDatabaseToolsConnectionsRequest
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",type=").append(String.valueOf(this.type));
         sb.append(",runtimeSupport=").append(String.valueOf(this.runtimeSupport));
+        sb.append(",runtimeIdentity=").append(String.valueOf(this.runtimeIdentity));
         sb.append(",relatedResourceIdentifier=")
                 .append(String.valueOf(this.relatedResourceIdentifier));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -520,6 +562,7 @@ public class ListDatabaseToolsConnectionsRequest
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.runtimeSupport, other.runtimeSupport)
+                && java.util.Objects.equals(this.runtimeIdentity, other.runtimeIdentity)
                 && java.util.Objects.equals(
                         this.relatedResourceIdentifier, other.relatedResourceIdentifier)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -544,6 +587,9 @@ public class ListDatabaseToolsConnectionsRequest
         result =
                 (result * PRIME)
                         + (this.runtimeSupport == null ? 43 : this.runtimeSupport.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runtimeIdentity == null ? 43 : this.runtimeIdentity.hashCode());
         result =
                 (result * PRIME)
                         + (this.relatedResourceIdentifier == null

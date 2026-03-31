@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.signing.internal;
@@ -358,7 +358,7 @@ public class RequestSignerImpl implements RequestSigner {
         }
 
         if (isRequiredHeaderMissing(Constants.HOST, requiredHeaders, existingHeaders)) {
-            missingHeaders.put(Constants.HOST, uri.getHost());
+            missingHeaders.put(Constants.HOST, getHostNameForUri(uri));
         }
 
         boolean isPost = httpMethod.equals("post");
@@ -415,6 +415,20 @@ public class RequestSignerImpl implements RequestSigner {
         }
 
         return missingHeaders;
+    }
+
+    //Function for handling special characters passed in host
+    static String getHostNameForUri(URI uri) {
+        String hostName = uri.getHost();
+        if (StringUtils.isEmpty(hostName)) {
+            // If the host is null, it means the input string has special characters.
+            String hostPart = uri.getSchemeSpecificPart();
+            //getSchemeSpecificPart returns "//hostName", so skipping first 2 characters
+            if (hostPart.length() >= 2) {
+                hostName = hostPart.substring(2);
+            }
+        }
+        return hostName;
     }
 
     private static boolean isRequiredHeaderMissing(

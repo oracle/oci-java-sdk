@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -26,18 +26,21 @@ public final class PipelineInfrastructureConfigurationDetails
         "shapeName",
         "blockStorageSizeInGBs",
         "subnetId",
-        "shapeConfigDetails"
+        "shapeConfigDetails",
+        "blockStorageSizeInGBsParameterized"
     })
     public PipelineInfrastructureConfigurationDetails(
             String shapeName,
             Integer blockStorageSizeInGBs,
             String subnetId,
-            PipelineShapeConfigDetails shapeConfigDetails) {
+            PipelineShapeConfigDetails shapeConfigDetails,
+            String blockStorageSizeInGBsParameterized) {
         super();
         this.shapeName = shapeName;
         this.blockStorageSizeInGBs = blockStorageSizeInGBs;
         this.subnetId = subnetId;
         this.shapeConfigDetails = shapeConfigDetails;
+        this.blockStorageSizeInGBsParameterized = blockStorageSizeInGBsParameterized;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -103,6 +106,27 @@ public final class PipelineInfrastructureConfigurationDetails
             this.__explicitlySet__.add("shapeConfigDetails");
             return this;
         }
+        /**
+         * The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value.
+         * The request will fail if the parameters used are null or invalid.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBsParameterized")
+        private String blockStorageSizeInGBsParameterized;
+
+        /**
+         * The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value.
+         * The request will fail if the parameters used are null or invalid.
+         *
+         * @param blockStorageSizeInGBsParameterized the value to set
+         * @return this builder
+         **/
+        public Builder blockStorageSizeInGBsParameterized(
+                String blockStorageSizeInGBsParameterized) {
+            this.blockStorageSizeInGBsParameterized = blockStorageSizeInGBsParameterized;
+            this.__explicitlySet__.add("blockStorageSizeInGBsParameterized");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -113,7 +137,8 @@ public final class PipelineInfrastructureConfigurationDetails
                             this.shapeName,
                             this.blockStorageSizeInGBs,
                             this.subnetId,
-                            this.shapeConfigDetails);
+                            this.shapeConfigDetails,
+                            this.blockStorageSizeInGBsParameterized);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -133,6 +158,10 @@ public final class PipelineInfrastructureConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("shapeConfigDetails")) {
                 this.shapeConfigDetails(model.getShapeConfigDetails());
+            }
+            if (model.wasPropertyExplicitlySet("blockStorageSizeInGBsParameterized")) {
+                this.blockStorageSizeInGBsParameterized(
+                        model.getBlockStorageSizeInGBsParameterized());
             }
             return this;
         }
@@ -202,6 +231,24 @@ public final class PipelineInfrastructureConfigurationDetails
         return shapeConfigDetails;
     }
 
+    /**
+     * The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value.
+     * The request will fail if the parameters used are null or invalid.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBsParameterized")
+    private final String blockStorageSizeInGBsParameterized;
+
+    /**
+     * The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value.
+     * The request will fail if the parameters used are null or invalid.
+     *
+     * @return the value
+     **/
+    public String getBlockStorageSizeInGBsParameterized() {
+        return blockStorageSizeInGBsParameterized;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -220,6 +267,8 @@ public final class PipelineInfrastructureConfigurationDetails
         sb.append(", blockStorageSizeInGBs=").append(String.valueOf(this.blockStorageSizeInGBs));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", shapeConfigDetails=").append(String.valueOf(this.shapeConfigDetails));
+        sb.append(", blockStorageSizeInGBsParameterized=")
+                .append(String.valueOf(this.blockStorageSizeInGBsParameterized));
         sb.append(")");
         return sb.toString();
     }
@@ -239,6 +288,9 @@ public final class PipelineInfrastructureConfigurationDetails
                 && java.util.Objects.equals(this.blockStorageSizeInGBs, other.blockStorageSizeInGBs)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.shapeConfigDetails, other.shapeConfigDetails)
+                && java.util.Objects.equals(
+                        this.blockStorageSizeInGBsParameterized,
+                        other.blockStorageSizeInGBsParameterized)
                 && super.equals(other);
     }
 
@@ -258,6 +310,11 @@ public final class PipelineInfrastructureConfigurationDetails
                         + (this.shapeConfigDetails == null
                                 ? 43
                                 : this.shapeConfigDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockStorageSizeInGBsParameterized == null
+                                ? 43
+                                : this.blockStorageSizeInGBsParameterized.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

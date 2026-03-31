@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobActivity.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class JobActivity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -25,6 +25,7 @@ public final class JobActivity extends com.oracle.bmc.http.internal.ExplicitlySe
         "timeStarted",
         "timeEnded",
         "runbookId",
+        "runbookVersionName",
         "runbookName",
         "description",
         "resourceLevelExecutions"
@@ -35,6 +36,7 @@ public final class JobActivity extends com.oracle.bmc.http.internal.ExplicitlySe
             java.util.Date timeStarted,
             java.util.Date timeEnded,
             String runbookId,
+            String runbookVersionName,
             String runbookName,
             String description,
             java.util.List<EntityExecutionDetails> resourceLevelExecutions) {
@@ -44,6 +46,7 @@ public final class JobActivity extends com.oracle.bmc.http.internal.ExplicitlySe
         this.timeStarted = timeStarted;
         this.timeEnded = timeEnded;
         this.runbookId = runbookId;
+        this.runbookVersionName = runbookVersionName;
         this.runbookName = runbookName;
         this.description = description;
         this.resourceLevelExecutions = resourceLevelExecutions;
@@ -136,6 +139,22 @@ public final class JobActivity extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
+         * Name of the RunbookVersion associated with the Action Group.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("runbookVersionName")
+        private String runbookVersionName;
+
+        /**
+         * Name of the RunbookVersion associated with the Action Group.
+         * @param runbookVersionName the value to set
+         * @return this builder
+         **/
+        public Builder runbookVersionName(String runbookVersionName) {
+            this.runbookVersionName = runbookVersionName;
+            this.__explicitlySet__.add("runbookVersionName");
+            return this;
+        }
+        /**
          * Name of the runbook associated with the Action Group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("runbookName")
@@ -200,6 +219,7 @@ public final class JobActivity extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.timeStarted,
                             this.timeEnded,
                             this.runbookId,
+                            this.runbookVersionName,
                             this.runbookName,
                             this.description,
                             this.resourceLevelExecutions);
@@ -225,6 +245,9 @@ public final class JobActivity extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("runbookId")) {
                 this.runbookId(model.getRunbookId());
+            }
+            if (model.wasPropertyExplicitlySet("runbookVersionName")) {
+                this.runbookVersionName(model.getRunbookVersionName());
             }
             if (model.wasPropertyExplicitlySet("runbookName")) {
                 this.runbookName(model.getRunbookName());
@@ -325,6 +348,20 @@ public final class JobActivity extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
+     * Name of the RunbookVersion associated with the Action Group.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("runbookVersionName")
+    private final String runbookVersionName;
+
+    /**
+     * Name of the RunbookVersion associated with the Action Group.
+     * @return the value
+     **/
+    public String getRunbookVersionName() {
+        return runbookVersionName;
+    }
+
+    /**
      * Name of the runbook associated with the Action Group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("runbookName")
@@ -389,6 +426,7 @@ public final class JobActivity extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
         sb.append(", runbookId=").append(String.valueOf(this.runbookId));
+        sb.append(", runbookVersionName=").append(String.valueOf(this.runbookVersionName));
         sb.append(", runbookName=").append(String.valueOf(this.runbookName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", resourceLevelExecutions=")
@@ -412,6 +450,7 @@ public final class JobActivity extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
                 && java.util.Objects.equals(this.runbookId, other.runbookId)
+                && java.util.Objects.equals(this.runbookVersionName, other.runbookVersionName)
                 && java.util.Objects.equals(this.runbookName, other.runbookName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(
@@ -428,6 +467,11 @@ public final class JobActivity extends com.oracle.bmc.http.internal.ExplicitlySe
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
         result = (result * PRIME) + (this.runbookId == null ? 43 : this.runbookId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runbookVersionName == null
+                                ? 43
+                                : this.runbookVersionName.hashCode());
         result = (result * PRIME) + (this.runbookName == null ? 43 : this.runbookName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =

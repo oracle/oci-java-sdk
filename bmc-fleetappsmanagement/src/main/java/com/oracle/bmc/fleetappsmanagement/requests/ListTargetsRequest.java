@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,7 +8,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListTargetsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTargetsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -70,50 +70,13 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
      *
      */
-    private SortBy sortBy;
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
-     **/
-    public enum SortBy {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
+    private com.oracle.bmc.fleetappsmanagement.model.SortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
      *
      */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.SortBy getSortBy() {
         return sortBy;
     }
     /**
@@ -126,6 +89,19 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * If set to true, confirmed targets will be returned.
+     *
+     */
+    private Boolean isConfirmedTargets;
+
+    /**
+     * If set to true, confirmed targets will be returned.
+     *
+     */
+    public Boolean getIsConfirmedTargets() {
+        return isConfirmedTargets;
     }
 
     public static class Builder
@@ -214,7 +190,7 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
@@ -222,7 +198,7 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(com.oracle.bmc.fleetappsmanagement.model.SortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }
@@ -239,6 +215,23 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * If set to true, confirmed targets will be returned.
+         *
+         */
+        private Boolean isConfirmedTargets = null;
+
+        /**
+         * If set to true, confirmed targets will be returned.
+         *
+         * @param isConfirmedTargets the value to set
+         * @return this builder instance
+         */
+        public Builder isConfirmedTargets(Boolean isConfirmedTargets) {
+            this.isConfirmedTargets = isConfirmedTargets;
             return this;
         }
 
@@ -277,6 +270,7 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            isConfirmedTargets(o.getIsConfirmedTargets());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -316,8 +310,9 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.isConfirmedTargets = isConfirmedTargets;
             return request;
-            // new ListTargetsRequest(fleetId, displayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListTargetsRequest(fleetId, displayName, limit, page, sortOrder, sortBy, opcRequestId, isConfirmedTargets);
         }
     }
 
@@ -333,7 +328,8 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isConfirmedTargets(isConfirmedTargets);
     }
 
     /**
@@ -356,6 +352,7 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isConfirmedTargets=").append(String.valueOf(this.isConfirmedTargets));
         sb.append(")");
         return sb.toString();
     }
@@ -377,7 +374,8 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isConfirmedTargets, other.isConfirmedTargets);
     }
 
     @Override
@@ -391,6 +389,11 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isConfirmedTargets == null
+                                ? 43
+                                : this.isConfirmedTargets.hashCode());
         return result;
     }
 }

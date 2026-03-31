@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -32,7 +32,8 @@ public final class CreateComputeGpuMemoryClusterDetails
         "size",
         "definedTags",
         "freeformTags",
-        "displayName"
+        "displayName",
+        "gpuMemoryClusterScaleConfig"
     })
     public CreateComputeGpuMemoryClusterDetails(
             String availabilityDomain,
@@ -43,7 +44,8 @@ public final class CreateComputeGpuMemoryClusterDetails
             Long size,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
-            String displayName) {
+            String displayName,
+            CreateComputeGpuMemoryClusterScaleConfig gpuMemoryClusterScaleConfig) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -54,6 +56,7 @@ public final class CreateComputeGpuMemoryClusterDetails
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
         this.displayName = displayName;
+        this.gpuMemoryClusterScaleConfig = gpuMemoryClusterScaleConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -238,6 +241,16 @@ public final class CreateComputeGpuMemoryClusterDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("gpuMemoryClusterScaleConfig")
+        private CreateComputeGpuMemoryClusterScaleConfig gpuMemoryClusterScaleConfig;
+
+        public Builder gpuMemoryClusterScaleConfig(
+                CreateComputeGpuMemoryClusterScaleConfig gpuMemoryClusterScaleConfig) {
+            this.gpuMemoryClusterScaleConfig = gpuMemoryClusterScaleConfig;
+            this.__explicitlySet__.add("gpuMemoryClusterScaleConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -252,7 +265,8 @@ public final class CreateComputeGpuMemoryClusterDetails
                             this.size,
                             this.definedTags,
                             this.freeformTags,
-                            this.displayName);
+                            this.displayName,
+                            this.gpuMemoryClusterScaleConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -287,6 +301,9 @@ public final class CreateComputeGpuMemoryClusterDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("gpuMemoryClusterScaleConfig")) {
+                this.gpuMemoryClusterScaleConfig(model.getGpuMemoryClusterScaleConfig());
             }
             return this;
         }
@@ -463,6 +480,13 @@ public final class CreateComputeGpuMemoryClusterDetails
         return displayName;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("gpuMemoryClusterScaleConfig")
+    private final CreateComputeGpuMemoryClusterScaleConfig gpuMemoryClusterScaleConfig;
+
+    public CreateComputeGpuMemoryClusterScaleConfig getGpuMemoryClusterScaleConfig() {
+        return gpuMemoryClusterScaleConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -487,6 +511,8 @@ public final class CreateComputeGpuMemoryClusterDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", gpuMemoryClusterScaleConfig=")
+                .append(String.valueOf(this.gpuMemoryClusterScaleConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -511,6 +537,8 @@ public final class CreateComputeGpuMemoryClusterDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.gpuMemoryClusterScaleConfig, other.gpuMemoryClusterScaleConfig)
                 && super.equals(other);
     }
 
@@ -541,6 +569,11 @@ public final class CreateComputeGpuMemoryClusterDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.gpuMemoryClusterScaleConfig == null
+                                ? 43
+                                : this.gpuMemoryClusterScaleConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

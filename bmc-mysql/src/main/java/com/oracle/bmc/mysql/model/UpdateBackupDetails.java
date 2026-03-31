@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -25,6 +25,7 @@ public final class UpdateBackupDetails extends com.oracle.bmc.http.internal.Expl
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
+        "softDelete",
         "retentionInDays",
         "freeformTags",
         "definedTags"
@@ -32,12 +33,14 @@ public final class UpdateBackupDetails extends com.oracle.bmc.http.internal.Expl
     public UpdateBackupDetails(
             String displayName,
             String description,
+            SoftDelete softDelete,
             Integer retentionInDays,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
+        this.softDelete = softDelete;
         this.retentionInDays = retentionInDays;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -75,6 +78,26 @@ public final class UpdateBackupDetails extends com.oracle.bmc.http.internal.Expl
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+         * state for 7 days before permanently deleting it.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+        private SoftDelete softDelete;
+
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+         * state for 7 days before permanently deleting it.
+         *
+         * @param softDelete the value to set
+         * @return this builder
+         **/
+        public Builder softDelete(SoftDelete softDelete) {
+            this.softDelete = softDelete;
+            this.__explicitlySet__.add("softDelete");
             return this;
         }
         /**
@@ -145,6 +168,7 @@ public final class UpdateBackupDetails extends com.oracle.bmc.http.internal.Expl
                     new UpdateBackupDetails(
                             this.displayName,
                             this.description,
+                            this.softDelete,
                             this.retentionInDays,
                             this.freeformTags,
                             this.definedTags);
@@ -161,6 +185,9 @@ public final class UpdateBackupDetails extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("softDelete")) {
+                this.softDelete(model.getSoftDelete());
             }
             if (model.wasPropertyExplicitlySet("retentionInDays")) {
                 this.retentionInDays(model.getRetentionInDays());
@@ -212,6 +239,24 @@ public final class UpdateBackupDetails extends com.oracle.bmc.http.internal.Expl
      **/
     public String getDescription() {
         return description;
+    }
+
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+     * state for 7 days before permanently deleting it.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+    private final SoftDelete softDelete;
+
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+     * state for 7 days before permanently deleting it.
+     *
+     * @return the value
+     **/
+    public SoftDelete getSoftDelete() {
+        return softDelete;
     }
 
     /**
@@ -282,6 +327,7 @@ public final class UpdateBackupDetails extends com.oracle.bmc.http.internal.Expl
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", softDelete=").append(String.valueOf(this.softDelete));
         sb.append(", retentionInDays=").append(String.valueOf(this.retentionInDays));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -301,6 +347,7 @@ public final class UpdateBackupDetails extends com.oracle.bmc.http.internal.Expl
         UpdateBackupDetails other = (UpdateBackupDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.softDelete, other.softDelete)
                 && java.util.Objects.equals(this.retentionInDays, other.retentionInDays)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -313,6 +360,7 @@ public final class UpdateBackupDetails extends com.oracle.bmc.http.internal.Expl
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
         result =
                 (result * PRIME)
                         + (this.retentionInDays == null ? 43 : this.retentionInDays.hashCode());

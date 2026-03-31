@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -116,6 +116,16 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
         public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
             this.doesUseSecretIds = doesUseSecretIds;
             this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -316,6 +326,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.connectionUrl,
                             this.authenticationType,
                             this.username,
@@ -362,6 +373,9 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("connectionUrl")) {
                 this.connectionUrl(model.getConnectionUrl());
@@ -417,6 +431,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String connectionUrl,
             SnowflakeConnection.AuthenticationType authenticationType,
             String username,
@@ -436,7 +451,8 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.connectionUrl = connectionUrl;
         this.authenticationType = authenticationType;
         this.username = username;

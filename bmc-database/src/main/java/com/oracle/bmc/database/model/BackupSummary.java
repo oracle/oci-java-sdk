@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -270,14 +270,16 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * The Oracle Database edition of the DB system from which the database backup was taken.
+         * The Oracle Database Edition that applies to all the databases on the DB system.
+         * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private DatabaseEdition databaseEdition;
 
         /**
-         * The Oracle Database edition of the DB system from which the database backup was taken.
+         * The Oracle Database Edition that applies to all the databases on the DB system.
+         * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
          *
          * @param databaseEdition the value to set
          * @return this builder
@@ -354,14 +356,14 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -902,7 +904,8 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The Oracle Database edition of the DB system from which the database backup was taken.
+     * The Oracle Database Edition that applies to all the databases on the DB system.
+     * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      *
      **/
     public enum DatabaseEdition {
@@ -910,6 +913,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         EnterpriseEdition("ENTERPRISE_EDITION"),
         EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
         EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
+        EnterpriseEditionDeveloper("ENTERPRISE_EDITION_DEVELOPER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -953,14 +957,16 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         }
     };
     /**
-     * The Oracle Database edition of the DB system from which the database backup was taken.
+     * The Oracle Database Edition that applies to all the databases on the DB system.
+     * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
     private final DatabaseEdition databaseEdition;
 
     /**
-     * The Oracle Database edition of the DB system from which the database backup was taken.
+     * The Oracle Database Edition that applies to all the databases on the DB system.
+     * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      *
      * @return the value
      **/
@@ -1027,14 +1033,14 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      *
      * @return the value
      **/
@@ -1160,6 +1166,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
     public enum BackupDestinationType {
         ObjectStore("OBJECT_STORE"),
         Dbrs("DBRS"),
+        AwsS3("AWS_S3"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

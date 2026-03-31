@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmconfig;
@@ -7,6 +7,8 @@ package com.oracle.bmc.apmconfig;
 import com.oracle.bmc.apmconfig.internal.http.*;
 import com.oracle.bmc.apmconfig.requests.*;
 import com.oracle.bmc.apmconfig.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for Config service. <br/>
@@ -28,7 +30,7 @@ public class ConfigAsyncClient implements ConfigAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("CONFIG")
+                    .serviceName(ConfigClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://apm-config.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class ConfigAsyncClient implements ConfigAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class ConfigAsyncClient implements ConfigAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -400,12 +411,21 @@ public class ConfigAsyncClient implements ConfigAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -435,15 +455,7 @@ public class ConfigAsyncClient implements ConfigAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -455,6 +467,58 @@ public class ConfigAsyncClient implements ConfigAsync {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyConfigurationResponse> copyConfiguration(
+            CopyConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CopyConfigurationRequest, CopyConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async copyConfiguration");
+        final CopyConfigurationRequest interceptedRequest =
+                CopyConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CopyConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "CopyConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ExportConfigurationDetails/CopyConfiguration");
+        final java.util.function.Function<javax.ws.rs.core.Response, CopyConfigurationResponse>
+                transformer =
+                        CopyConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CopyConfigurationRequest, CopyConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CopyConfigurationRequest, CopyConfigurationResponse>,
+                        java.util.concurrent.Future<CopyConfigurationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCopyConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CopyConfigurationRequest, CopyConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 
     @Override
@@ -552,6 +616,59 @@ public class ConfigAsyncClient implements ConfigAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ExportConfigurationResponse> exportConfiguration(
+            ExportConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ExportConfigurationRequest, ExportConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async exportConfiguration");
+        final ExportConfigurationRequest interceptedRequest =
+                ExportConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExportConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "ExportConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ExportConfigurationDetails/ExportConfiguration");
+        final java.util.function.Function<javax.ws.rs.core.Response, ExportConfigurationResponse>
+                transformer =
+                        ExportConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ExportConfigurationRequest, ExportConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ExportConfigurationRequest, ExportConfigurationResponse>,
+                        java.util.concurrent.Future<ExportConfigurationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getExportConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ExportConfigurationRequest, ExportConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConfigResponse> getConfig(
             GetConfigRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetConfigRequest, GetConfigResponse>
@@ -581,6 +698,111 @@ public class ConfigAsyncClient implements ConfigAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetConfigRequest, GetConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMatchAgentsWithAttributeKeyResponse>
+            getMatchAgentsWithAttributeKey(
+                    GetMatchAgentsWithAttributeKeyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetMatchAgentsWithAttributeKeyRequest,
+                                    GetMatchAgentsWithAttributeKeyResponse>
+                            handler) {
+        LOG.trace("Called async getMatchAgentsWithAttributeKey");
+        final GetMatchAgentsWithAttributeKeyRequest interceptedRequest =
+                GetMatchAgentsWithAttributeKeyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMatchAgentsWithAttributeKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "GetMatchAgentsWithAttributeKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MatchAgentsWithAttributeKey/GetMatchAgentsWithAttributeKey");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetMatchAgentsWithAttributeKeyResponse>
+                transformer =
+                        GetMatchAgentsWithAttributeKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMatchAgentsWithAttributeKeyRequest,
+                        GetMatchAgentsWithAttributeKeyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMatchAgentsWithAttributeKeyRequest,
+                                GetMatchAgentsWithAttributeKeyResponse>,
+                        java.util.concurrent.Future<GetMatchAgentsWithAttributeKeyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMatchAgentsWithAttributeKeyRequest, GetMatchAgentsWithAttributeKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportConfigurationResponse> importConfiguration(
+            ImportConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ImportConfigurationRequest, ImportConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async importConfiguration");
+        final ImportConfigurationRequest interceptedRequest =
+                ImportConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "ImportConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ImportConfigurationDetails/ImportConfiguration");
+        final java.util.function.Function<javax.ws.rs.core.Response, ImportConfigurationResponse>
+                transformer =
+                        ImportConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ImportConfigurationRequest, ImportConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ImportConfigurationRequest, ImportConfigurationResponse>,
+                        java.util.concurrent.Future<ImportConfigurationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getImportConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ImportConfigurationRequest, ImportConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -817,6 +1039,64 @@ public class ConfigAsyncClient implements ConfigAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateConfigRequest, UpdateConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMatchAgentsWithAttributeKeyResponse>
+            updateMatchAgentsWithAttributeKey(
+                    UpdateMatchAgentsWithAttributeKeyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMatchAgentsWithAttributeKeyRequest,
+                                    UpdateMatchAgentsWithAttributeKeyResponse>
+                            handler) {
+        LOG.trace("Called async updateMatchAgentsWithAttributeKey");
+        final UpdateMatchAgentsWithAttributeKeyRequest interceptedRequest =
+                UpdateMatchAgentsWithAttributeKeyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMatchAgentsWithAttributeKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "UpdateMatchAgentsWithAttributeKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MatchAgentsWithAttributeKey/UpdateMatchAgentsWithAttributeKey");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateMatchAgentsWithAttributeKeyResponse>
+                transformer =
+                        UpdateMatchAgentsWithAttributeKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMatchAgentsWithAttributeKeyRequest,
+                        UpdateMatchAgentsWithAttributeKeyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMatchAgentsWithAttributeKeyRequest,
+                                UpdateMatchAgentsWithAttributeKeyResponse>,
+                        java.util.concurrent.Future<UpdateMatchAgentsWithAttributeKeyResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMatchAgentsWithAttributeKeyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMatchAgentsWithAttributeKeyRequest,
+                    UpdateMatchAgentsWithAttributeKeyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

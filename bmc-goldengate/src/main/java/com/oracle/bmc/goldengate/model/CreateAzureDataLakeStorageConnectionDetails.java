@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -134,6 +134,34 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
             this.doesUseSecretIds = doesUseSecretIds;
             this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -378,6 +406,32 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             this.__explicitlySet__.add("endpoint");
             return this;
         }
+        /**
+         * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory).
+         * Default value: https://login.microsoftonline.com
+         * When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+         * * Azure China: https://login.chinacloudapi.cn/
+         * * Azure US Government: https://login.microsoftonline.us/
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("azureAuthorityHost")
+        private String azureAuthorityHost;
+
+        /**
+         * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory).
+         * Default value: https://login.microsoftonline.com
+         * When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+         * * Azure China: https://login.chinacloudapi.cn/
+         * * Azure US Government: https://login.microsoftonline.us/
+         *
+         * @param azureAuthorityHost the value to set
+         * @return this builder
+         **/
+        public Builder azureAuthorityHost(String azureAuthorityHost) {
+            this.azureAuthorityHost = azureAuthorityHost;
+            this.__explicitlySet__.add("azureAuthorityHost");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -397,6 +451,9 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.authenticationType,
                             this.accountName,
@@ -408,7 +465,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
                             this.clientId,
                             this.clientSecret,
                             this.clientSecretSecretId,
-                            this.endpoint);
+                            this.endpoint,
+                            this.azureAuthorityHost);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -453,6 +511,15 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -489,6 +556,9 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             if (model.wasPropertyExplicitlySet("endpoint")) {
                 this.endpoint(model.getEndpoint());
             }
+            if (model.wasPropertyExplicitlySet("azureAuthorityHost")) {
+                this.azureAuthorityHost(model.getAzureAuthorityHost());
+            }
             return this;
         }
     }
@@ -518,6 +588,9 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             AzureDataLakeStorageConnection.TechnologyType technologyType,
             AzureDataLakeStorageConnection.AuthenticationType authenticationType,
             String accountName,
@@ -529,7 +602,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             String clientId,
             String clientSecret,
             String clientSecretSecretId,
-            String endpoint) {
+            String endpoint,
+            String azureAuthorityHost) {
         super(
                 displayName,
                 description,
@@ -542,7 +616,10 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.authenticationType = authenticationType;
         this.accountName = accountName;
@@ -555,6 +632,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         this.clientSecret = clientSecret;
         this.clientSecretSecretId = clientSecretSecretId;
         this.endpoint = endpoint;
+        this.azureAuthorityHost = azureAuthorityHost;
     }
 
     /**
@@ -773,6 +851,30 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         return endpoint;
     }
 
+    /**
+     * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory).
+     * Default value: https://login.microsoftonline.com
+     * When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+     * * Azure China: https://login.chinacloudapi.cn/
+     * * Azure US Government: https://login.microsoftonline.us/
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("azureAuthorityHost")
+    private final String azureAuthorityHost;
+
+    /**
+     * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory).
+     * Default value: https://login.microsoftonline.com
+     * When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+     * * Azure China: https://login.chinacloudapi.cn/
+     * * Azure US Government: https://login.microsoftonline.us/
+     *
+     * @return the value
+     **/
+    public String getAzureAuthorityHost() {
+        return azureAuthorityHost;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -799,6 +901,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         sb.append(", clientSecret=").append("<redacted>");
         sb.append(", clientSecretSecretId=").append(String.valueOf(this.clientSecretSecretId));
         sb.append(", endpoint=").append(String.valueOf(this.endpoint));
+        sb.append(", azureAuthorityHost=").append(String.valueOf(this.azureAuthorityHost));
         sb.append(")");
         return sb.toString();
     }
@@ -826,6 +929,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
                 && java.util.Objects.equals(this.clientSecret, other.clientSecret)
                 && java.util.Objects.equals(this.clientSecretSecretId, other.clientSecretSecretId)
                 && java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.azureAuthorityHost, other.azureAuthorityHost)
                 && super.equals(other);
     }
 
@@ -863,6 +967,11 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
                                 ? 43
                                 : this.clientSecretSecretId.hashCode());
         result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.azureAuthorityHost == null
+                                ? 43
+                                : this.azureAuthorityHost.hashCode());
         return result;
     }
 }

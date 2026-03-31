@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * The following are the details necessary to create a cross-tenancy disaster recovery (DR) association for an existing Autonomous Database. This may be in the same region, or in another.
+ * The following are the details necessary to create a cross-tenancy disaster recovery (DR) association for an existing Autonomous AI Database. This may be in the same region, or in another.
  * *IMPORTANT*
  * For creating a standby databases in a cross-tenancy local DR association:
  *   - To create the standby database in different tenancy, use the compartment OCID in the tenancy where the standby is located.
@@ -13,7 +13,7 @@ package com.oracle.bmc.database.model;
  *   - Creating a ADG DR in the same tenancy and region is not allowed. Use changeDisasterRecoveryConfiguration instead.
  * The following parameters are required for the cross-tenancy standby database
  *   - disasterRecoveryType
- * The following parameters are optional for the cross-tenancy standby database. If included in the request, these parameters must contain the same values as the source Autonomous Database:
+ * The following parameters are optional for the cross-tenancy standby database. If included in the request, these parameters must contain the same values as the source Autonomous AI Database:
  *   - dbName
  *   - dbVersion
  *   - ecpuCount
@@ -467,6 +467,16 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseMaintenanceWindow")
+        private AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow;
+
+        public Builder autonomousDatabaseMaintenanceWindow(
+                AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow) {
+            this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
+            this.__explicitlySet__.add("autonomousDatabaseMaintenanceWindow");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
         private java.util.List<ScheduledOperationDetails> scheduledOperations;
 
@@ -530,14 +540,24 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             this.__explicitlySet__.add("secretVersionNumber");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("transportableTablespace")
+        private ImportTransportableTablespaceDetails transportableTablespace;
+
+        public Builder transportableTablespace(
+                ImportTransportableTablespaceDetails transportableTablespace) {
+            this.transportableTablespace = transportableTablespace;
+            this.__explicitlySet__.add("transportableTablespace");
+            return this;
+        }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the DR association.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that will be used to create a new peer database for the DR association.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the DR association.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that will be used to create a new peer database for the DR association.
          * @param sourceId the value to set
          * @return this builder
          **/
@@ -547,7 +567,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             return this;
         }
         /**
-         * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
+         * Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance.
          * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
          * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          *
@@ -556,7 +576,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
         private DisasterRecoveryConfiguration.DisasterRecoveryType disasterRecoveryType;
 
         /**
-         * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
+         * Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance.
          * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
          * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          *
@@ -638,6 +658,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
                             this.resourcePoolLeaderId,
                             this.resourcePoolSummary,
                             this.autonomousMaintenanceScheduleType,
+                            this.autonomousDatabaseMaintenanceWindow,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.databaseEdition,
@@ -645,6 +666,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
                             this.isBackupRetentionLocked,
                             this.secretId,
                             this.secretVersionNumber,
+                            this.transportableTablespace,
                             this.sourceId,
                             this.disasterRecoveryType,
                             this.isReplicateAutomaticBackups);
@@ -796,6 +818,10 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
                 this.autonomousMaintenanceScheduleType(
                         model.getAutonomousMaintenanceScheduleType());
             }
+            if (model.wasPropertyExplicitlySet("autonomousDatabaseMaintenanceWindow")) {
+                this.autonomousDatabaseMaintenanceWindow(
+                        model.getAutonomousDatabaseMaintenanceWindow());
+            }
             if (model.wasPropertyExplicitlySet("scheduledOperations")) {
                 this.scheduledOperations(model.getScheduledOperations());
             }
@@ -816,6 +842,9 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             }
             if (model.wasPropertyExplicitlySet("secretVersionNumber")) {
                 this.secretVersionNumber(model.getSecretVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("transportableTablespace")) {
+                this.transportableTablespace(model.getTransportableTablespace());
             }
             if (model.wasPropertyExplicitlySet("sourceId")) {
                 this.sourceId(model.getSourceId());
@@ -889,6 +918,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             String resourcePoolLeaderId,
             ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
@@ -896,6 +926,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber,
+            ImportTransportableTablespaceDetails transportableTablespace,
             String sourceId,
             DisasterRecoveryConfiguration.DisasterRecoveryType disasterRecoveryType,
             Boolean isReplicateAutomaticBackups) {
@@ -946,26 +977,28 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
                 resourcePoolLeaderId,
                 resourcePoolSummary,
                 autonomousMaintenanceScheduleType,
+                autonomousDatabaseMaintenanceWindow,
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
                 databaseEdition,
                 dbToolsDetails,
                 isBackupRetentionLocked,
                 secretId,
-                secretVersionNumber);
+                secretVersionNumber,
+                transportableTablespace);
         this.sourceId = sourceId;
         this.disasterRecoveryType = disasterRecoveryType;
         this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the DR association.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that will be used to create a new peer database for the DR association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the DR association.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that will be used to create a new peer database for the DR association.
      * @return the value
      **/
     public String getSourceId() {
@@ -973,7 +1006,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
     }
 
     /**
-     * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
+     * Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
      * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      *
@@ -982,7 +1015,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
     private final DisasterRecoveryConfiguration.DisasterRecoveryType disasterRecoveryType;
 
     /**
-     * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
+     * Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
      * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      *

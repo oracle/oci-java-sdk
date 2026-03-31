@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -26,6 +26,7 @@ public final class UpdateAutoScalingConfigurationDetails
         "displayName",
         "isEnabled",
         "clusterAdminPassword",
+        "secretId",
         "policy",
         "policyDetails"
     })
@@ -33,12 +34,14 @@ public final class UpdateAutoScalingConfigurationDetails
             String displayName,
             Boolean isEnabled,
             String clusterAdminPassword,
+            String secretId,
             AutoScalePolicy policy,
             UpdateAutoScalePolicyDetails policyDetails) {
         super();
         this.displayName = displayName;
         this.isEnabled = isEnabled;
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
         this.policy = policy;
         this.policyDetails = policyDetails;
     }
@@ -93,6 +96,22 @@ public final class UpdateAutoScalingConfigurationDetails
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
+        /**
+         * The secretId for the clusterAdminPassword.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         * @param secretId the value to set
+         * @return this builder
+         **/
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private AutoScalePolicy policy;
@@ -121,6 +140,7 @@ public final class UpdateAutoScalingConfigurationDetails
                             this.displayName,
                             this.isEnabled,
                             this.clusterAdminPassword,
+                            this.secretId,
                             this.policy,
                             this.policyDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -139,6 +159,9 @@ public final class UpdateAutoScalingConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("policy")) {
                 this.policy(model.getPolicy());
@@ -203,6 +226,20 @@ public final class UpdateAutoScalingConfigurationDetails
         return clusterAdminPassword;
     }
 
+    /**
+     * The secretId for the clusterAdminPassword.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     * @return the value
+     **/
+    public String getSecretId() {
+        return secretId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final AutoScalePolicy policy;
 
@@ -234,6 +271,7 @@ public final class UpdateAutoScalingConfigurationDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", policy=").append(String.valueOf(this.policy));
         sb.append(", policyDetails=").append(String.valueOf(this.policyDetails));
         sb.append(")");
@@ -253,6 +291,7 @@ public final class UpdateAutoScalingConfigurationDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.policy, other.policy)
                 && java.util.Objects.equals(this.policyDetails, other.policyDetails)
                 && super.equals(other);
@@ -269,6 +308,7 @@ public final class UpdateAutoScalingConfigurationDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + (this.policy == null ? 43 : this.policy.hashCode());
         result =
                 (result * PRIME)

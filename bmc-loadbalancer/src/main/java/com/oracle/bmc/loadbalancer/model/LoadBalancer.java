@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -55,7 +55,8 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
         "securityAttributes",
         "systemTags",
         "ruleSets",
-        "routingPolicies"
+        "routingPolicies",
+        "ipMode"
     })
     public LoadBalancer(
             String id,
@@ -83,7 +84,8 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Map<String, RuleSet> ruleSets,
-            java.util.Map<String, RoutingPolicy> routingPolicies) {
+            java.util.Map<String, RoutingPolicy> routingPolicies,
+            IpMode ipMode) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -111,6 +113,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
         this.systemTags = systemTags;
         this.ruleSets = ruleSets;
         this.routingPolicies = routingPolicies;
+        this.ipMode = ipMode;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -634,6 +637,36 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
             this.__explicitlySet__.add("routingPolicies");
             return this;
         }
+        /**
+         * Whether the load balancer has an IPv4 or IPv6 IP address.
+         * <p>
+         * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+         * <p>
+         * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+         * <p>
+         * Example: "ipMode":"IPV6"
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+        private IpMode ipMode;
+
+        /**
+         * Whether the load balancer has an IPv4 or IPv6 IP address.
+         * <p>
+         * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+         * <p>
+         * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+         * <p>
+         * Example: "ipMode":"IPV6"
+         *
+         * @param ipMode the value to set
+         * @return this builder
+         **/
+        public Builder ipMode(IpMode ipMode) {
+            this.ipMode = ipMode;
+            this.__explicitlySet__.add("ipMode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -666,7 +699,8 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.securityAttributes,
                             this.systemTags,
                             this.ruleSets,
-                            this.routingPolicies);
+                            this.routingPolicies,
+                            this.ipMode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -752,6 +786,9 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("routingPolicies")) {
                 this.routingPolicies(model.getRoutingPolicies());
+            }
+            if (model.wasPropertyExplicitlySet("ipMode")) {
+                this.ipMode(model.getIpMode());
             }
             return this;
         }
@@ -1285,6 +1322,88 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
         return routingPolicies;
     }
 
+    /**
+     * Whether the load balancer has an IPv4 or IPv6 IP address.
+     * <p>
+     * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * <p>
+     * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * <p>
+     * Example: "ipMode":"IPV6"
+     *
+     **/
+    public enum IpMode {
+        Ipv4("IPV4"),
+        Ipv6("IPV6"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(IpMode.class);
+
+        private final String value;
+        private static java.util.Map<String, IpMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IpMode v : IpMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        IpMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IpMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IpMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Whether the load balancer has an IPv4 or IPv6 IP address.
+     * <p>
+     * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * <p>
+     * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * <p>
+     * Example: "ipMode":"IPV6"
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+    private final IpMode ipMode;
+
+    /**
+     * Whether the load balancer has an IPv4 or IPv6 IP address.
+     * <p>
+     * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * <p>
+     * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * <p>
+     * Example: "ipMode":"IPV6"
+     *
+     * @return the value
+     **/
+    public IpMode getIpMode() {
+        return ipMode;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1327,6 +1446,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", ruleSets=").append(String.valueOf(this.ruleSets));
         sb.append(", routingPolicies=").append(String.valueOf(this.routingPolicies));
+        sb.append(", ipMode=").append(String.valueOf(this.ipMode));
         sb.append(")");
         return sb.toString();
     }
@@ -1369,6 +1489,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.ruleSets, other.ruleSets)
                 && java.util.Objects.equals(this.routingPolicies, other.routingPolicies)
+                && java.util.Objects.equals(this.ipMode, other.ipMode)
                 && super.equals(other);
     }
 
@@ -1430,6 +1551,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
         result =
                 (result * PRIME)
                         + (this.routingPolicies == null ? 43 : this.routingPolicies.hashCode());
+        result = (result * PRIME) + (this.ipMode == null ? 43 : this.ipMode.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

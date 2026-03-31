@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -520,6 +520,12 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         Locked("LOCKED"),
         Expired("EXPIRED"),
         ExpiredAndLocked("EXPIRED_AND_LOCKED"),
+        OpenAndInRollover("OPEN_AND_IN_ROLLOVER"),
+        ExpiredAndInRollover("EXPIRED_AND_IN_ROLLOVER"),
+        LockedAndInRollover("LOCKED_AND_IN_ROLLOVER"),
+        ExpiredAndLockedAndInRollover("EXPIRED_AND_LOCKED_AND_IN_ROLLOVER"),
+        LockedTimedAndInRollover("LOCKED_TIMED_AND_IN_ROLLOVER"),
+        ExpiredAndLockedTimedAndInRol("EXPIRED_AND_LOCKED_TIMED_AND_IN_ROL"),
         None("NONE"),
 
         /**

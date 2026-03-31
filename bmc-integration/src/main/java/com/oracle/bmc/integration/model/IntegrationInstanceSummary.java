@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.integration.model;
@@ -44,11 +44,13 @@ public final class IntegrationInstanceSummary
         "networkEndpointDetails",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "systemTags",
         "shape",
         "privateEndpointOutboundConnection",
         "isDisasterRecoveryEnabled",
-        "dataRetentionPeriod"
+        "dataRetentionPeriod",
+        "logGroupId"
     })
     public IntegrationInstanceSummary(
             String id,
@@ -72,11 +74,13 @@ public final class IntegrationInstanceSummary
             NetworkEndpointDetails networkEndpointDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Shape shape,
             OutboundConnection privateEndpointOutboundConnection,
             Boolean isDisasterRecoveryEnabled,
-            DataRetentionPeriod dataRetentionPeriod) {
+            DataRetentionPeriod dataRetentionPeriod,
+            String logGroupId) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -99,11 +103,13 @@ public final class IntegrationInstanceSummary
         this.networkEndpointDetails = networkEndpointDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.systemTags = systemTags;
         this.shape = shape;
         this.privateEndpointOutboundConnection = privateEndpointOutboundConnection;
         this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
         this.dataRetentionPeriod = dataRetentionPeriod;
+        this.logGroupId = logGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -453,6 +459,31 @@ public final class IntegrationInstanceSummary
             return this;
         }
         /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces.
          * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
@@ -530,6 +561,22 @@ public final class IntegrationInstanceSummary
             this.__explicitlySet__.add("dataRetentionPeriod");
             return this;
         }
+        /**
+         * OCID of LogAnalytics LogGroup, enabled for given integration instance
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+        private String logGroupId;
+
+        /**
+         * OCID of LogAnalytics LogGroup, enabled for given integration instance
+         * @param logGroupId the value to set
+         * @return this builder
+         **/
+        public Builder logGroupId(String logGroupId) {
+            this.logGroupId = logGroupId;
+            this.__explicitlySet__.add("logGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -558,11 +605,13 @@ public final class IntegrationInstanceSummary
                             this.networkEndpointDetails,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.systemTags,
                             this.shape,
                             this.privateEndpointOutboundConnection,
                             this.isDisasterRecoveryEnabled,
-                            this.dataRetentionPeriod);
+                            this.dataRetentionPeriod,
+                            this.logGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -634,6 +683,9 @@ public final class IntegrationInstanceSummary
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
@@ -649,6 +701,9 @@ public final class IntegrationInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("dataRetentionPeriod")) {
                 this.dataRetentionPeriod(model.getDataRetentionPeriod());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupId")) {
+                this.logGroupId(model.getLogGroupId());
             }
             return this;
         }
@@ -1122,6 +1177,28 @@ public final class IntegrationInstanceSummary
     }
 
     /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
      * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
@@ -1284,6 +1361,20 @@ public final class IntegrationInstanceSummary
         return dataRetentionPeriod;
     }
 
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given integration instance
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+    private final String logGroupId;
+
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given integration instance
+     * @return the value
+     **/
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1321,6 +1412,7 @@ public final class IntegrationInstanceSummary
         sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", privateEndpointOutboundConnection=")
@@ -1328,6 +1420,7 @@ public final class IntegrationInstanceSummary
         sb.append(", isDisasterRecoveryEnabled=")
                 .append(String.valueOf(this.isDisasterRecoveryEnabled));
         sb.append(", dataRetentionPeriod=").append(String.valueOf(this.dataRetentionPeriod));
+        sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -1367,6 +1460,7 @@ public final class IntegrationInstanceSummary
                         this.networkEndpointDetails, other.networkEndpointDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(
@@ -1375,6 +1469,7 @@ public final class IntegrationInstanceSummary
                 && java.util.Objects.equals(
                         this.isDisasterRecoveryEnabled, other.isDisasterRecoveryEnabled)
                 && java.util.Objects.equals(this.dataRetentionPeriod, other.dataRetentionPeriod)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
                 && super.equals(other);
     }
 
@@ -1437,6 +1532,11 @@ public final class IntegrationInstanceSummary
                                 : this.networkEndpointDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result =
@@ -1454,6 +1554,7 @@ public final class IntegrationInstanceSummary
                         + (this.dataRetentionPeriod == null
                                 ? 43
                                 : this.dataRetentionPeriod.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

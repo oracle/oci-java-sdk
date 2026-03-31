@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -40,6 +40,24 @@ public final class CronSchedule extends Schedule {
         public Builder timeOfFirstExecution(java.util.Date timeOfFirstExecution) {
             this.timeOfFirstExecution = timeOfFirstExecution;
             this.__explicitlySet__.add("timeOfFirstExecution");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("queryOffsetSecs")
+        private Integer queryOffsetSecs;
+
+        public Builder queryOffsetSecs(Integer queryOffsetSecs) {
+            this.queryOffsetSecs = queryOffsetSecs;
+            this.__explicitlySet__.add("queryOffsetSecs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
+        private java.util.Date timeEnd;
+
+        public Builder timeEnd(java.util.Date timeEnd) {
+            this.timeEnd = timeEnd;
+            this.__explicitlySet__.add("timeEnd");
             return this;
         }
         /**
@@ -83,6 +101,8 @@ public final class CronSchedule extends Schedule {
                     new CronSchedule(
                             this.misfirePolicy,
                             this.timeOfFirstExecution,
+                            this.queryOffsetSecs,
+                            this.timeEnd,
                             this.expression,
                             this.timeZone);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -98,6 +118,12 @@ public final class CronSchedule extends Schedule {
             }
             if (model.wasPropertyExplicitlySet("timeOfFirstExecution")) {
                 this.timeOfFirstExecution(model.getTimeOfFirstExecution());
+            }
+            if (model.wasPropertyExplicitlySet("queryOffsetSecs")) {
+                this.queryOffsetSecs(model.getQueryOffsetSecs());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
             }
             if (model.wasPropertyExplicitlySet("expression")) {
                 this.expression(model.getExpression());
@@ -124,9 +150,11 @@ public final class CronSchedule extends Schedule {
     public CronSchedule(
             MisfirePolicy misfirePolicy,
             java.util.Date timeOfFirstExecution,
+            Integer queryOffsetSecs,
+            java.util.Date timeEnd,
             String expression,
             String timeZone) {
-        super(misfirePolicy, timeOfFirstExecution);
+        super(misfirePolicy, timeOfFirstExecution, queryOffsetSecs, timeEnd);
         this.expression = expression;
         this.timeZone = timeZone;
     }

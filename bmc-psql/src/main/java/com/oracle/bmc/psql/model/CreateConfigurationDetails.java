@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.psql.model;
@@ -31,6 +31,7 @@ public final class CreateConfigurationDetails
         "isFlexible",
         "instanceOcpuCount",
         "instanceMemorySizeInGBs",
+        "compatibleShapes",
         "dbConfigurationOverrides",
         "freeformTags",
         "definedTags",
@@ -45,6 +46,7 @@ public final class CreateConfigurationDetails
             Boolean isFlexible,
             Integer instanceOcpuCount,
             Integer instanceMemorySizeInGBs,
+            java.util.List<String> compatibleShapes,
             DbConfigurationOverrideCollection dbConfigurationOverrides,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -58,6 +60,7 @@ public final class CreateConfigurationDetails
         this.isFlexible = isFlexible;
         this.instanceOcpuCount = instanceOcpuCount;
         this.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
+        this.compatibleShapes = compatibleShapes;
         this.dbConfigurationOverrides = dbConfigurationOverrides;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -132,7 +135,8 @@ public final class CreateConfigurationDetails
         }
         /**
          * The name of the shape for the configuration.
-         * Example: {@code VM.Standard.E4.Flex}
+         * <p>
+         * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
@@ -140,7 +144,8 @@ public final class CreateConfigurationDetails
 
         /**
          * The name of the shape for the configuration.
-         * Example: {@code VM.Standard.E4.Flex}
+         * <p>
+         * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
          *
          * @param shape the value to set
          * @return this builder
@@ -208,6 +213,24 @@ public final class CreateConfigurationDetails
         public Builder instanceMemorySizeInGBs(Integer instanceMemorySizeInGBs) {
             this.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
             this.__explicitlySet__.add("instanceMemorySizeInGBs");
+            return this;
+        }
+        /**
+         * Indicates the collection of compatible shapes for this configuration.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
+        private java.util.List<String> compatibleShapes;
+
+        /**
+         * Indicates the collection of compatible shapes for this configuration.
+         *
+         * @param compatibleShapes the value to set
+         * @return this builder
+         **/
+        public Builder compatibleShapes(java.util.List<String> compatibleShapes) {
+            this.compatibleShapes = compatibleShapes;
+            this.__explicitlySet__.add("compatibleShapes");
             return this;
         }
 
@@ -296,6 +319,7 @@ public final class CreateConfigurationDetails
                             this.isFlexible,
                             this.instanceOcpuCount,
                             this.instanceMemorySizeInGBs,
+                            this.compatibleShapes,
                             this.dbConfigurationOverrides,
                             this.freeformTags,
                             this.definedTags,
@@ -331,6 +355,9 @@ public final class CreateConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("instanceMemorySizeInGBs")) {
                 this.instanceMemorySizeInGBs(model.getInstanceMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("compatibleShapes")) {
+                this.compatibleShapes(model.getCompatibleShapes());
             }
             if (model.wasPropertyExplicitlySet("dbConfigurationOverrides")) {
                 this.dbConfigurationOverrides(model.getDbConfigurationOverrides());
@@ -417,7 +444,8 @@ public final class CreateConfigurationDetails
 
     /**
      * The name of the shape for the configuration.
-     * Example: {@code VM.Standard.E4.Flex}
+     * <p>
+     * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
@@ -425,7 +453,8 @@ public final class CreateConfigurationDetails
 
     /**
      * The name of the shape for the configuration.
-     * Example: {@code VM.Standard.E4.Flex}
+     * <p>
+     * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      *
      * @return the value
      **/
@@ -485,6 +514,22 @@ public final class CreateConfigurationDetails
      **/
     public Integer getInstanceMemorySizeInGBs() {
         return instanceMemorySizeInGBs;
+    }
+
+    /**
+     * Indicates the collection of compatible shapes for this configuration.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
+    private final java.util.List<String> compatibleShapes;
+
+    /**
+     * Indicates the collection of compatible shapes for this configuration.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getCompatibleShapes() {
+        return compatibleShapes;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbConfigurationOverrides")
@@ -571,6 +616,7 @@ public final class CreateConfigurationDetails
         sb.append(", instanceOcpuCount=").append(String.valueOf(this.instanceOcpuCount));
         sb.append(", instanceMemorySizeInGBs=")
                 .append(String.valueOf(this.instanceMemorySizeInGBs));
+        sb.append(", compatibleShapes=").append(String.valueOf(this.compatibleShapes));
         sb.append(", dbConfigurationOverrides=")
                 .append(String.valueOf(this.dbConfigurationOverrides));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -599,6 +645,7 @@ public final class CreateConfigurationDetails
                 && java.util.Objects.equals(this.instanceOcpuCount, other.instanceOcpuCount)
                 && java.util.Objects.equals(
                         this.instanceMemorySizeInGBs, other.instanceMemorySizeInGBs)
+                && java.util.Objects.equals(this.compatibleShapes, other.compatibleShapes)
                 && java.util.Objects.equals(
                         this.dbConfigurationOverrides, other.dbConfigurationOverrides)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -627,6 +674,9 @@ public final class CreateConfigurationDetails
                         + (this.instanceMemorySizeInGBs == null
                                 ? 43
                                 : this.instanceMemorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compatibleShapes == null ? 43 : this.compatibleShapes.hashCode());
         result =
                 (result * PRIME)
                         + (this.dbConfigurationOverrides == null

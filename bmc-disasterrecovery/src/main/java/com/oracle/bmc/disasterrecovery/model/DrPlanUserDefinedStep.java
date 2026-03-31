@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -23,12 +23,20 @@ package com.oracle.bmc.disasterrecovery.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = InvokeFunctionUserDefinedCustomPrecheckStep.class,
+        name = "INVOKE_FUNCTION_USER_DEFINED_CUSTOM_PRECHECK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = InvokeFunctionStep.class,
         name = "INVOKE_FUNCTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = InvokeFunctionPrecheckStep.class,
         name = "INVOKE_FUNCTION_PRECHECK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RunObjectStoreScriptUserDefinedCustomPrecheckStep.class,
+        name = "RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = RunLocalScriptUserDefinedStep.class,
@@ -41,6 +49,10 @@ package com.oracle.bmc.disasterrecovery.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ObjectStoreScriptPrecheckStep.class,
         name = "RUN_OBJECTSTORE_SCRIPT_PRECHECK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RunLocalScriptUserDefinedCustomPrecheckStep.class,
+        name = "RUN_LOCAL_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = RunObjectStoreScriptUserDefinedStep.class,
@@ -97,13 +109,14 @@ public class DrPlanUserDefinedStep extends com.oracle.bmc.http.internal.Explicit
     /**
      * The type of the user-defined step.
      * <p>
-     **RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A step which performs a precheck on a script stored
-     *     in OCI object storage.
+     **RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A built-in step which performs a precheck on a script stored
+     *     in OCI object storage.  This step cannot be added, deleted, or customized by the user.
      * <p>
-     **RUN_LOCAL_SCRIPT_PRECHECK** - A step which performs a precheck on a script which resides
-     *     locally on a compute instance.
+     **RUN_LOCAL_SCRIPT_PRECHECK** - A built-in step which performs a precheck on a script which resides
+     *     locally on a compute instance.  This step cannot be added, deleted, or customized by the user.
      * <p>
-     **INVOKE_FUNCTION_PRECHECK** - A step which performs a precheck on an OCI function.
+     **INVOKE_FUNCTION_PRECHECK** - A built-in step which performs a precheck on an OCI function.  This
+     *     step cannot be added, deleted, or customized by the user.
      *     See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
      * <p>
      **RUN_OBJECTSTORE_SCRIPT** - A step which runs a script stored in OCI object storage.
@@ -111,6 +124,15 @@ public class DrPlanUserDefinedStep extends com.oracle.bmc.http.internal.Explicit
      **RUN_LOCAL_SCRIPT** - A step which runs a script that resides locally on a compute instance.
      * <p>
      **INVOKE_FUNCTION** - A step which invokes an OCI function.
+     *     See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
+     * <p>
+     **RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK** - A user-defined step which performs a precheck by executing a user-provided script stored
+     *     in OCI object storage.
+     * <p>
+     **RUN_LOCAL_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK** - A user-defined step which performs a precheck by executing a user-provided script which resides
+     *     locally on a compute instance.
+     * <p>
+     **INVOKE_FUNCTION_USER_DEFINED_CUSTOM_PRECHECK** - A user-defined step which performs a precheck by executing a user-provided OCI function.
      *     See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
      *
      **/
@@ -121,6 +143,10 @@ public class DrPlanUserDefinedStep extends com.oracle.bmc.http.internal.Explicit
         RunObjectstoreScript("RUN_OBJECTSTORE_SCRIPT"),
         RunLocalScript("RUN_LOCAL_SCRIPT"),
         InvokeFunction("INVOKE_FUNCTION"),
+        RunObjectstoreScriptUserDefinedCustomPrecheck(
+                "RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK"),
+        RunLocalScriptUserDefinedCustomPrecheck("RUN_LOCAL_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK"),
+        InvokeFunctionUserDefinedCustomPrecheck("INVOKE_FUNCTION_USER_DEFINED_CUSTOM_PRECHECK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm.model;
 
 /**
- * An application dependency resource creates a vulnerability audit.
+ * An ApplicationDependency resource is used within the applicationDependencies of a CreateVulnerabilityAuditDetails resource to create a vulnerability audit.
+ * Each ApplicationDependency resource must provide either Package URL (purl) identifier or a Group Artifact Version (GAV) to identify the application dependency.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -58,13 +60,13 @@ public final class ApplicationDependency
             return this;
         }
         /**
-         * Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+         * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("purl")
         private String purl;
 
         /**
-         * Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+         * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
          * @param purl the value to set
          * @return this builder
          **/
@@ -186,13 +188,13 @@ public final class ApplicationDependency
     }
 
     /**
-     * Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("purl")
     private final String purl;
 
     /**
-     * Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
      * @return the value
      **/
     public String getPurl() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -25,17 +25,20 @@ public final class CreateNetworkFirewallPolicyDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "compartmentId",
+        "description",
         "freeformTags",
         "definedTags"
     })
     public CreateNetworkFirewallPolicyDetails(
             String displayName,
             String compartmentId,
+            String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
+        this.description = description;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -72,6 +75,22 @@ public final class CreateNetworkFirewallPolicyDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The description of the network firewall policy. This field can be used to add additional info.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * The description of the network firewall policy. This field can be used to add additional info.
+         * @param description the value to set
+         * @return this builder
+         **/
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
             return this;
         }
         /**
@@ -128,6 +147,7 @@ public final class CreateNetworkFirewallPolicyDetails
                     new CreateNetworkFirewallPolicyDetails(
                             this.displayName,
                             this.compartmentId,
+                            this.description,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -143,6 +163,9 @@ public final class CreateNetworkFirewallPolicyDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -191,6 +214,20 @@ public final class CreateNetworkFirewallPolicyDetails
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The description of the network firewall policy. This field can be used to add additional info.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * The description of the network firewall policy. This field can be used to add additional info.
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
     }
 
     /**
@@ -249,6 +286,7 @@ public final class CreateNetworkFirewallPolicyDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -267,6 +305,7 @@ public final class CreateNetworkFirewallPolicyDetails
         CreateNetworkFirewallPolicyDetails other = (CreateNetworkFirewallPolicyDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -280,6 +319,7 @@ public final class CreateNetworkFirewallPolicyDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

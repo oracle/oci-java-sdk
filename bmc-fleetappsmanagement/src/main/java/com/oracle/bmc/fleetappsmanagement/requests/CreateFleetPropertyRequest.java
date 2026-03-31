@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,19 +8,19 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateFleetPropertyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateFleetPropertyRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class CreateFleetPropertyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.CreateFleetPropertyDetails> {
 
     /**
-     * Details for the new FleetProperty.
+     * Details for the new fleet property.
      */
     private com.oracle.bmc.fleetappsmanagement.model.CreateFleetPropertyDetails
             createFleetPropertyDetails;
 
     /**
-     * Details for the new FleetProperty.
+     * Details for the new fleet property.
      */
     public com.oracle.bmc.fleetappsmanagement.model.CreateFleetPropertyDetails
             getCreateFleetPropertyDetails() {
@@ -89,13 +89,13 @@ public class CreateFleetPropertyRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for the new FleetProperty.
+         * Details for the new fleet property.
          */
         private com.oracle.bmc.fleetappsmanagement.model.CreateFleetPropertyDetails
                 createFleetPropertyDetails = null;
 
         /**
-         * Details for the new FleetProperty.
+         * Details for the new fleet property.
          * @param createFleetPropertyDetails the value to set
          * @return this builder instance
          */

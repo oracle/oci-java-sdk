@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -44,6 +44,8 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
     @java.beans.ConstructorProperties({
         "id",
         "compartmentId",
+        "subscriptionId",
+        "clusterPlacementGroupId",
         "displayName",
         "availabilityDomain",
         "faultDomains",
@@ -90,14 +92,19 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         "nextMaintenanceRunId",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "securityAttributes",
         "sourceDbSystemId",
         "pointInTimeDataDiskCloneTimestamp",
-        "dataCollectionOptions"
+        "dataCollectionOptions",
+        "computeModel",
+        "computeCount"
     })
     public DbSystemSummary(
             String id,
             String compartmentId,
+            String subscriptionId,
+            String clusterPlacementGroupId,
             String displayName,
             String availabilityDomain,
             java.util.List<String> faultDomains,
@@ -144,13 +151,18 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             String nextMaintenanceRunId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String sourceDbSystemId,
             java.util.Date pointInTimeDataDiskCloneTimestamp,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            ComputeModel computeModel,
+            Integer computeCount) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
+        this.subscriptionId = subscriptionId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.displayName = displayName;
         this.availabilityDomain = availabilityDomain;
         this.faultDomains = faultDomains;
@@ -197,10 +209,13 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         this.nextMaintenanceRunId = nextMaintenanceRunId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.securityAttributes = securityAttributes;
         this.sourceDbSystemId = sourceDbSystemId;
         this.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.computeModel = computeModel;
+        this.computeCount = computeCount;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -235,6 +250,38 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
         /**
@@ -344,7 +391,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         /**
          * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -353,7 +400,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         /**
          * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
-         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -630,14 +677,16 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The Oracle Database edition that applies to all the databases on the DB system.
+         * The Oracle Database Edition that applies to all the databases on the DB system.
+         * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private DatabaseEdition databaseEdition;
 
         /**
-         * The Oracle Database edition that applies to all the databases on the DB system.
+         * The Oracle Database Edition that applies to all the databases on the DB system.
+         * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
          *
          * @param databaseEdition the value to set
          * @return this builder
@@ -1084,6 +1133,26 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
@@ -1148,6 +1217,38 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
+        /**
+         * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+         * @param computeModel the value to set
+         * @return this builder
+         **/
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
+         * The number of compute servers for the DB system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Integer computeCount;
+
+        /**
+         * The number of compute servers for the DB system.
+         * @param computeCount the value to set
+         * @return this builder
+         **/
+        public Builder computeCount(Integer computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1157,6 +1258,8 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
                     new DbSystemSummary(
                             this.id,
                             this.compartmentId,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
                             this.displayName,
                             this.availabilityDomain,
                             this.faultDomains,
@@ -1203,10 +1306,13 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
                             this.nextMaintenanceRunId,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.securityAttributes,
                             this.sourceDbSystemId,
                             this.pointInTimeDataDiskCloneTimestamp,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.computeModel,
+                            this.computeCount);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1220,6 +1326,12 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -1359,6 +1471,9 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
             }
@@ -1371,6 +1486,12 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
             }
             return this;
         }
@@ -1413,6 +1534,34 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
     }
 
     /**
@@ -1512,7 +1661,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -1521,7 +1670,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
-     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
      **/
@@ -1812,7 +1961,8 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The Oracle Database edition that applies to all the databases on the DB system.
+     * The Oracle Database Edition that applies to all the databases on the DB system.
+     * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      *
      **/
     public enum DatabaseEdition {
@@ -1820,6 +1970,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         EnterpriseEdition("ENTERPRISE_EDITION"),
         EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
         EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
+        EnterpriseEditionDeveloper("ENTERPRISE_EDITION_DEVELOPER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1863,14 +2014,16 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         }
     };
     /**
-     * The Oracle Database edition that applies to all the databases on the DB system.
+     * The Oracle Database Edition that applies to all the databases on the DB system.
+     * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
     private final DatabaseEdition databaseEdition;
 
     /**
-     * The Oracle Database edition that applies to all the databases on the DB system.
+     * The Oracle Database Edition that applies to all the databases on the DB system.
+     * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      *
      * @return the value
      **/
@@ -2424,6 +2577,24 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
@@ -2478,6 +2649,82 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         return dataCollectionOptions;
     }
 
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     **/
+    public enum ComputeModel {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model for Base Database Service. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * @return the value
+     **/
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /**
+     * The number of compute servers for the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Integer computeCount;
+
+    /**
+     * The number of compute servers for the DB system.
+     * @return the value
+     **/
+    public Integer getComputeCount() {
+        return computeCount;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2494,6 +2741,9 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomains=").append(String.valueOf(this.faultDomains));
@@ -2542,11 +2792,14 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", sourceDbSystemId=").append(String.valueOf(this.sourceDbSystemId));
         sb.append(", pointInTimeDataDiskCloneTimestamp=")
                 .append(String.valueOf(this.pointInTimeDataDiskCloneTimestamp));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(")");
         return sb.toString();
     }
@@ -2563,6 +2816,9 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         DbSystemSummary other = (DbSystemSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomains, other.faultDomains)
@@ -2611,12 +2867,15 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.sourceDbSystemId, other.sourceDbSystemId)
                 && java.util.Objects.equals(
                         this.pointInTimeDataDiskCloneTimestamp,
                         other.pointInTimeDataDiskCloneTimestamp)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && super.equals(other);
     }
 
@@ -2628,6 +2887,14 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
@@ -2734,6 +3001,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
                                 : this.nextMaintenanceRunId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.securityAttributes == null
@@ -2752,6 +3020,8 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

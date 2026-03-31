@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -36,7 +36,8 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         "freeformTags",
         "definedTags",
         "lastExecutionStatus",
-        "timeLastExecuted"
+        "timeLastExecuted",
+        "scheduleType"
     })
     public ScheduledTaskSummary(
             String id,
@@ -53,7 +54,8 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             LastExecutionStatus lastExecutionStatus,
-            java.util.Date timeLastExecuted) {
+            java.util.Date timeLastExecuted,
+            ScheduleType scheduleType) {
         super();
         this.id = id;
         this.taskType = taskType;
@@ -70,6 +72,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         this.definedTags = definedTags;
         this.lastExecutionStatus = lastExecutionStatus;
         this.timeLastExecuted = timeLastExecuted;
+        this.scheduleType = scheduleType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -337,6 +340,22 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("timeLastExecuted");
             return this;
         }
+        /**
+         * Type of the task schedule
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
+        private ScheduleType scheduleType;
+
+        /**
+         * Type of the task schedule
+         * @param scheduleType the value to set
+         * @return this builder
+         **/
+        public Builder scheduleType(ScheduleType scheduleType) {
+            this.scheduleType = scheduleType;
+            this.__explicitlySet__.add("scheduleType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -358,7 +377,8 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
                             this.freeformTags,
                             this.definedTags,
                             this.lastExecutionStatus,
-                            this.timeLastExecuted);
+                            this.timeLastExecuted,
+                            this.scheduleType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -411,6 +431,9 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("timeLastExecuted")) {
                 this.timeLastExecuted(model.getTimeLastExecuted());
+            }
+            if (model.wasPropertyExplicitlySet("scheduleType")) {
+                this.scheduleType(model.getScheduleType());
             }
             return this;
         }
@@ -757,6 +780,68 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         return timeLastExecuted;
     }
 
+    /**
+     * Type of the task schedule
+     **/
+    public enum ScheduleType {
+        FixedFrequency("FIXED_FREQUENCY"),
+        Cron("CRON"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ScheduleType.class);
+
+        private final String value;
+        private static java.util.Map<String, ScheduleType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ScheduleType v : ScheduleType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ScheduleType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ScheduleType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ScheduleType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Type of the task schedule
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
+    private final ScheduleType scheduleType;
+
+    /**
+     * Type of the task schedule
+     * @return the value
+     **/
+    public ScheduleType getScheduleType() {
+        return scheduleType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -786,6 +871,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", lastExecutionStatus=").append(String.valueOf(this.lastExecutionStatus));
         sb.append(", timeLastExecuted=").append(String.valueOf(this.timeLastExecuted));
+        sb.append(", scheduleType=").append(String.valueOf(this.scheduleType));
         sb.append(")");
         return sb.toString();
     }
@@ -815,6 +901,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.lastExecutionStatus, other.lastExecutionStatus)
                 && java.util.Objects.equals(this.timeLastExecuted, other.timeLastExecuted)
+                && java.util.Objects.equals(this.scheduleType, other.scheduleType)
                 && super.equals(other);
     }
 
@@ -851,6 +938,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         result =
                 (result * PRIME)
                         + (this.timeLastExecuted == null ? 43 : this.timeLastExecuted.hashCode());
+        result = (result * PRIME) + (this.scheduleType == null ? 43 : this.scheduleType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

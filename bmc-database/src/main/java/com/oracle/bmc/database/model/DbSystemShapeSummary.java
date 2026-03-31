@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
  * The shape of the DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+ * <p>
+ * For Exadata fixed and flexible shapes, detailed specifications can be found in https://docs.oracle.com/en/engineered-systems/exadata-cloud-service/ecscm/exa-service-desc.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator.
  * If you're an administrator who needs to write policies to give users access,
@@ -51,7 +53,8 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
         "areServerTypesSupported",
         "minimumNodeCount",
         "maximumNodeCount",
-        "availableCoreCountPerNode"
+        "availableCoreCountPerNode",
+        "shapeAttributes"
     })
     public DbSystemShapeSummary(
             String name,
@@ -78,7 +81,8 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
             Boolean areServerTypesSupported,
             Integer minimumNodeCount,
             Integer maximumNodeCount,
-            Integer availableCoreCountPerNode) {
+            Integer availableCoreCountPerNode,
+            java.util.List<String> shapeAttributes) {
         super();
         this.name = name;
         this.shapeFamily = shapeFamily;
@@ -105,6 +109,7 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
         this.minimumNodeCount = minimumNodeCount;
         this.maximumNodeCount = maximumNodeCount;
         this.availableCoreCountPerNode = availableCoreCountPerNode;
+        this.shapeAttributes = shapeAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -431,13 +436,13 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
          * @param computeModel the value to set
          * @return this builder
          **/
@@ -510,6 +515,24 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("availableCoreCountPerNode");
             return this;
         }
+        /**
+         * The shapeAttributes of the DB system shape.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeAttributes")
+        private java.util.List<String> shapeAttributes;
+
+        /**
+         * The shapeAttributes of the DB system shape.
+         *
+         * @param shapeAttributes the value to set
+         * @return this builder
+         **/
+        public Builder shapeAttributes(java.util.List<String> shapeAttributes) {
+            this.shapeAttributes = shapeAttributes;
+            this.__explicitlySet__.add("shapeAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -541,7 +564,8 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
                             this.areServerTypesSupported,
                             this.minimumNodeCount,
                             this.maximumNodeCount,
-                            this.availableCoreCountPerNode);
+                            this.availableCoreCountPerNode,
+                            this.shapeAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -626,6 +650,9 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
             if (model.wasPropertyExplicitlySet("availableCoreCountPerNode")) {
                 this.availableCoreCountPerNode(model.getAvailableCoreCountPerNode());
             }
+            if (model.wasPropertyExplicitlySet("shapeAttributes")) {
+                this.shapeAttributes(model.getShapeAttributes());
+            }
             return this;
         }
     }
@@ -677,6 +704,7 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
         Intel("INTEL"),
         IntelFlexX9("INTEL_FLEX_X9"),
         AmpereFlexA1("AMPERE_FLEX_A1"),
+        StandardX86("STANDARD_X86"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -972,7 +1000,7 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      **/
     public enum ComputeModel {
         Ecpu("ECPU"),
@@ -1020,13 +1048,13 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
         }
     };
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * @return the value
      **/
     public ComputeModel getComputeModel() {
@@ -1089,6 +1117,22 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
         return availableCoreCountPerNode;
     }
 
+    /**
+     * The shapeAttributes of the DB system shape.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeAttributes")
+    private final java.util.List<String> shapeAttributes;
+
+    /**
+     * The shapeAttributes of the DB system shape.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getShapeAttributes() {
+        return shapeAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1136,6 +1180,7 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
         sb.append(", maximumNodeCount=").append(String.valueOf(this.maximumNodeCount));
         sb.append(", availableCoreCountPerNode=")
                 .append(String.valueOf(this.availableCoreCountPerNode));
+        sb.append(", shapeAttributes=").append(String.valueOf(this.shapeAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -1184,6 +1229,7 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.maximumNodeCount, other.maximumNodeCount)
                 && java.util.Objects.equals(
                         this.availableCoreCountPerNode, other.availableCoreCountPerNode)
+                && java.util.Objects.equals(this.shapeAttributes, other.shapeAttributes)
                 && super.equals(other);
     }
 
@@ -1282,6 +1328,9 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
                         + (this.availableCoreCountPerNode == null
                                 ? 43
                                 : this.availableCoreCountPerNode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shapeAttributes == null ? 43 : this.shapeAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

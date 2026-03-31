@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.integration;
@@ -7,6 +7,8 @@ package com.oracle.bmc.integration;
 import com.oracle.bmc.integration.internal.http.*;
 import com.oracle.bmc.integration.requests.*;
 import com.oracle.bmc.integration.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for IntegrationInstance service. <br/>
@@ -28,7 +30,7 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("INTEGRATIONINSTANCE")
+                    .serviceName(IntegrationInstanceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://integration.{region}.ocp.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -401,12 +412,21 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -436,15 +456,7 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -456,6 +468,60 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddLogAnalyticsLogGroupResponse> addLogAnalyticsLogGroup(
+            AddLogAnalyticsLogGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddLogAnalyticsLogGroupRequest, AddLogAnalyticsLogGroupResponse>
+                    handler) {
+        LOG.trace("Called async addLogAnalyticsLogGroup");
+        final AddLogAnalyticsLogGroupRequest interceptedRequest =
+                AddLogAnalyticsLogGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddLogAnalyticsLogGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "AddLogAnalyticsLogGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/AddLogAnalyticsLogGroup");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddLogAnalyticsLogGroupResponse>
+                transformer =
+                        AddLogAnalyticsLogGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddLogAnalyticsLogGroupRequest, AddLogAnalyticsLogGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddLogAnalyticsLogGroupRequest, AddLogAnalyticsLogGroupResponse>,
+                        java.util.concurrent.Future<AddLogAnalyticsLogGroupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddLogAnalyticsLogGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddLogAnalyticsLogGroupRequest, AddLogAnalyticsLogGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 
     @Override
@@ -701,6 +767,58 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
     }
 
     @Override
+    public java.util.concurrent.Future<ConvertInstanceResponse> convertInstance(
+            ConvertInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ConvertInstanceRequest, ConvertInstanceResponse>
+                    handler) {
+        LOG.trace("Called async convertInstance");
+        final ConvertInstanceRequest interceptedRequest =
+                ConvertInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConvertInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "ConvertInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ConvertInstance");
+        final java.util.function.Function<javax.ws.rs.core.Response, ConvertInstanceResponse>
+                transformer =
+                        ConvertInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ConvertInstanceRequest, ConvertInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ConvertInstanceRequest, ConvertInstanceResponse>,
+                        java.util.concurrent.Future<ConvertInstanceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getConvertInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ConvertInstanceRequest, ConvertInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateIntegrationInstanceResponse> createIntegrationInstance(
             CreateIntegrationInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -792,6 +910,55 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteIntegrationInstanceRequest, DeleteIntegrationInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableProcessAutomationResponse> disableProcessAutomation(
+            DisableProcessAutomationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisableProcessAutomationRequest, DisableProcessAutomationResponse>
+                    handler) {
+        LOG.trace("Called async disableProcessAutomation");
+        final DisableProcessAutomationRequest interceptedRequest =
+                DisableProcessAutomationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableProcessAutomationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "DisableProcessAutomation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/DisableProcessAutomation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DisableProcessAutomationResponse>
+                transformer =
+                        DisableProcessAutomationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableProcessAutomationRequest, DisableProcessAutomationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableProcessAutomationRequest, DisableProcessAutomationResponse>,
+                        java.util.concurrent.Future<DisableProcessAutomationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableProcessAutomationRequest, DisableProcessAutomationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1223,6 +1390,58 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveLogAnalyticsLogGroupResponse>
+            removeLogAnalyticsLogGroup(
+                    RemoveLogAnalyticsLogGroupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveLogAnalyticsLogGroupRequest,
+                                    RemoveLogAnalyticsLogGroupResponse>
+                            handler) {
+        LOG.trace("Called async removeLogAnalyticsLogGroup");
+        final RemoveLogAnalyticsLogGroupRequest interceptedRequest =
+                RemoveLogAnalyticsLogGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveLogAnalyticsLogGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "RemoveLogAnalyticsLogGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/RemoveLogAnalyticsLogGroup");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveLogAnalyticsLogGroupResponse>
+                transformer =
+                        RemoveLogAnalyticsLogGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveLogAnalyticsLogGroupRequest, RemoveLogAnalyticsLogGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveLogAnalyticsLogGroupRequest,
+                                RemoveLogAnalyticsLogGroupResponse>,
+                        java.util.concurrent.Future<RemoveLogAnalyticsLogGroupResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveLogAnalyticsLogGroupRequest, RemoveLogAnalyticsLogGroupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

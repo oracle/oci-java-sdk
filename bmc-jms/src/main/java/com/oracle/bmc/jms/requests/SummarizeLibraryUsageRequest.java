@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.requests;
@@ -102,23 +102,23 @@ public class SummarizeLibraryUsageRequest
     /**
      * Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.
      */
-    private Integer cvssScoreGreaterThan;
+    private Float cvssScoreGreaterThan;
 
     /**
      * Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.
      */
-    public Integer getCvssScoreGreaterThan() {
+    public Float getCvssScoreGreaterThan() {
         return cvssScoreGreaterThan;
     }
     /**
      * Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.
      */
-    private Integer cvssScoreLessThan;
+    private Float cvssScoreLessThan;
 
     /**
      * Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.
      */
-    public Integer getCvssScoreLessThan() {
+    public Float getCvssScoreLessThan() {
         return cvssScoreLessThan;
     }
     /**
@@ -328,14 +328,14 @@ public class SummarizeLibraryUsageRequest
         /**
          * Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.
          */
-        private Integer cvssScoreGreaterThan = null;
+        private Float cvssScoreGreaterThan = null;
 
         /**
          * Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.
          * @param cvssScoreGreaterThan the value to set
          * @return this builder instance
          */
-        public Builder cvssScoreGreaterThan(Integer cvssScoreGreaterThan) {
+        public Builder cvssScoreGreaterThan(Float cvssScoreGreaterThan) {
             this.cvssScoreGreaterThan = cvssScoreGreaterThan;
             return this;
         }
@@ -343,14 +343,14 @@ public class SummarizeLibraryUsageRequest
         /**
          * Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.
          */
-        private Integer cvssScoreLessThan = null;
+        private Float cvssScoreLessThan = null;
 
         /**
          * Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.
          * @param cvssScoreLessThan the value to set
          * @return this builder instance
          */
-        public Builder cvssScoreLessThan(Integer cvssScoreLessThan) {
+        public Builder cvssScoreLessThan(Float cvssScoreLessThan) {
             this.cvssScoreLessThan = cvssScoreLessThan;
             return this;
         }

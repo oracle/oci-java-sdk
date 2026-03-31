@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 import com.oracle.bmc.ConfigFileReader;
@@ -20,21 +20,23 @@ import com.oracle.bmc.identity.responses.GetWorkRequestResponse;
 import com.oracle.bmc.identity.responses.ListWorkRequestsResponse;
 import com.oracle.bmc.model.BmcException;
 
-import net.jodah.failsafe.Failsafe;
-import net.jodah.failsafe.RetryPolicy;
-import net.jodah.failsafe.function.Predicate;
+import dev.failsafe.Failsafe;
+import dev.failsafe.RetryPolicy;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import shared.ExampleCompartmentHelper;
 
 public class DeleteCompartmentExample {
-    final static RetryPolicy RETRY_POLICY =
-            new RetryPolicy()
-                    .retryOn(new RetryPredicate())
-                    .withDelay(1, TimeUnit.SECONDS)
-                    .withMaxRetries(10);
+    static final RetryPolicy RETRY_POLICY =
+            RetryPolicy.builder()
+                    .handleIf(
+                            throwable ->
+                                    throwable instanceof BmcException
+                                            && ((BmcException) throwable).getStatusCode() == 404)
+                    .withDelay(Duration.ofSeconds(1))
+                    .withMaxRetries(10)
+                    .build();
 
     public static void main(String[] args) throws Exception {
         // TODO: Fill in this value
@@ -68,14 +70,12 @@ public class DeleteCompartmentExample {
         // If we create/update and then try to use compartments straight away, sometimes we can get a 404.
         // To try and avoid this, this example uses retries with a short delay.
         DeleteCompartmentResponse deleteCompartmentResponse =
-                Failsafe.with(RETRY_POLICY)
-                        .get(
-                                new Callable<DeleteCompartmentResponse>() {
-                                    public DeleteCompartmentResponse call() {
-                                        return identityClient.deleteCompartment(
-                                                deleteCompartmentRequest);
-                                    }
-                                });
+                (DeleteCompartmentResponse)
+                        Failsafe.with(RETRY_POLICY)
+                                .get(
+                                        () ->
+                                                identityClient.deleteCompartment(
+                                                        deleteCompartmentRequest));
         System.out.println("Deleted compartment with compartmentId:" + compartment.getId());
         System.out.println();
 
@@ -85,14 +85,9 @@ public class DeleteCompartmentExample {
                         .workRequestId(deleteCompartmentResponse.getOpcWorkRequestId())
                         .build();
         GetWorkRequestResponse getWorkRequestResponse =
-                Failsafe.with(RETRY_POLICY)
-                        .get(
-                                new Callable<GetWorkRequestResponse>() {
-                                    public GetWorkRequestResponse call() {
-                                        return identityClient.getWorkRequest(getWorkRequestRequest);
-                                    }
-                                });
-
+                (GetWorkRequestResponse)
+                        Failsafe.with(RETRY_POLICY)
+                                .get(() -> identityClient.getWorkRequest(getWorkRequestRequest));
         System.out.println(
                 "Queried work request with workRequestId:"
                         + getWorkRequestResponse.getWorkRequest().getId());
@@ -107,18 +102,17 @@ public class DeleteCompartmentExample {
             final String finalNextPageToken = nextPageToken;
 
             ListWorkRequestsResponse response =
-                    Failsafe.with(RETRY_POLICY)
-                            .get(
-                                    new Callable<ListWorkRequestsResponse>() {
-                                        public ListWorkRequestsResponse call() {
-                                            return identityClient.listWorkRequests(
-                                                    ListWorkRequestsRequest.builder()
-                                                            .limit(100)
-                                                            .compartmentId(compartment.getId())
-                                                            .page(finalNextPageToken)
-                                                            .build());
-                                        }
-                                    });
+                    (ListWorkRequestsResponse)
+                            Failsafe.with(RETRY_POLICY)
+                                    .get(
+                                            () ->
+                                                    identityClient.listWorkRequests(
+                                                            ListWorkRequestsRequest.builder()
+                                                                    .limit(100)
+                                                                    .compartmentId(
+                                                                            compartment.getId())
+                                                                    .page(finalNextPageToken)
+                                                                    .build()));
 
             for (WorkRequestSummary workRequestSummary : response.getItems()) {
                 System.out.println("workRequestId:" + workRequestSummary.getId());
@@ -152,17 +146,5 @@ public class DeleteCompartmentExample {
         }
         System.out.println("Compartment " + compartment.getName() + " created successfully");
         return compartment;
-    }
-
-    private static class RetryPredicate implements Predicate<Throwable> {
-        /**
-         * Checks if the exception can be retried or not.
-         *
-         * @param e Exception object.
-         * @return Returns true if the exception can be retried otherwise false.
-         */
-        public boolean test(Throwable e) {
-            return e instanceof BmcException && ((BmcException) e).getStatusCode() == 404;
-        }
     }
 }

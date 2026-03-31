@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.desktops.model;
@@ -47,7 +47,8 @@ public final class CreateDesktopPoolDetails
         "freeformTags",
         "definedTags",
         "nsgIds",
-        "privateAccessDetails"
+        "privateAccessDetails",
+        "bootVolumeSizeInGBs"
     })
     public CreateDesktopPoolDetails(
             String compartmentId,
@@ -74,7 +75,8 @@ public final class CreateDesktopPoolDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<String> nsgIds,
-            CreateDesktopPoolPrivateAccessDetails privateAccessDetails) {
+            CreateDesktopPoolPrivateAccessDetails privateAccessDetails,
+            Integer bootVolumeSizeInGBs) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -101,6 +103,7 @@ public final class CreateDesktopPoolDetails
         this.definedTags = definedTags;
         this.nsgIds = nsgIds;
         this.privateAccessDetails = privateAccessDetails;
+        this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -477,6 +480,22 @@ public final class CreateDesktopPoolDetails
             this.__explicitlySet__.add("privateAccessDetails");
             return this;
         }
+        /**
+         * The size in GBs of the boot volume for the desktop pool.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
+        private Integer bootVolumeSizeInGBs;
+
+        /**
+         * The size in GBs of the boot volume for the desktop pool.
+         * @param bootVolumeSizeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder bootVolumeSizeInGBs(Integer bootVolumeSizeInGBs) {
+            this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
+            this.__explicitlySet__.add("bootVolumeSizeInGBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -508,7 +527,8 @@ public final class CreateDesktopPoolDetails
                             this.freeformTags,
                             this.definedTags,
                             this.nsgIds,
-                            this.privateAccessDetails);
+                            this.privateAccessDetails,
+                            this.bootVolumeSizeInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -591,6 +611,9 @@ public final class CreateDesktopPoolDetails
             }
             if (model.wasPropertyExplicitlySet("privateAccessDetails")) {
                 this.privateAccessDetails(model.getPrivateAccessDetails());
+            }
+            if (model.wasPropertyExplicitlySet("bootVolumeSizeInGBs")) {
+                this.bootVolumeSizeInGBs(model.getBootVolumeSizeInGBs());
             }
             return this;
         }
@@ -962,6 +985,20 @@ public final class CreateDesktopPoolDetails
         return privateAccessDetails;
     }
 
+    /**
+     * The size in GBs of the boot volume for the desktop pool.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
+    private final Integer bootVolumeSizeInGBs;
+
+    /**
+     * The size in GBs of the boot volume for the desktop pool.
+     * @return the value
+     **/
+    public Integer getBootVolumeSizeInGBs() {
+        return bootVolumeSizeInGBs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1002,6 +1039,7 @@ public final class CreateDesktopPoolDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", privateAccessDetails=").append(String.valueOf(this.privateAccessDetails));
+        sb.append(", bootVolumeSizeInGBs=").append(String.valueOf(this.bootVolumeSizeInGBs));
         sb.append(")");
         return sb.toString();
     }
@@ -1042,6 +1080,7 @@ public final class CreateDesktopPoolDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.privateAccessDetails, other.privateAccessDetails)
+                && java.util.Objects.equals(this.bootVolumeSizeInGBs, other.bootVolumeSizeInGBs)
                 && super.equals(other);
     }
 
@@ -1120,6 +1159,11 @@ public final class CreateDesktopPoolDetails
                         + (this.privateAccessDetails == null
                                 ? 43
                                 : this.privateAccessDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bootVolumeSizeInGBs == null
+                                ? 43
+                                : this.bootVolumeSizeInGBs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -26,26 +26,26 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         return opcRequestId;
     }
     /**
-     * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
      *
      */
     private Boolean isShared;
 
     /**
-     * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
      *
      */
     public Boolean getIsShared() {
         return isShared;
     }
     /**
-     * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     * Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
      *
      */
     private Boolean isDedicated;
 
     /**
-     * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     * Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
      *
      */
     public Boolean getIsDedicated() {
@@ -127,13 +127,13 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         }
 
         /**
-         * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+         * Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
          *
          */
         private Boolean isShared = null;
 
         /**
-         * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+         * Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
          *
          * @param isShared the value to set
          * @return this builder instance
@@ -144,13 +144,13 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         }
 
         /**
-         * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+         * Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
          *
          */
         private Boolean isDedicated = null;
 
         /**
-         * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+         * Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
          *
          * @param isDedicated the value to set
          * @return this builder instance

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -669,6 +669,17 @@ public class ListSecurityFeaturesRequest
     public String getPage() {
         return page;
     }
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    private String targetDatabaseGroupId;
+
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -969,6 +980,21 @@ public class ListSecurityFeaturesRequest
         }
 
         /**
+         * A filter to return the target database group that matches the specified OCID.
+         */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -1014,6 +1040,7 @@ public class ListSecurityFeaturesRequest
             opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
             page(o.getPage());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -1064,8 +1091,9 @@ public class ListSecurityFeaturesRequest
             request.opcRequestId = opcRequestId;
             request.limit = limit;
             request.page = page;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             return request;
-            // new ListSecurityFeaturesRequest(compartmentId, compartmentIdInSubtree, accessLevel, targetId, targetsWithUnifiedAudit, targetsWithFineGrainedAudit, targetsWithTraditionalAudit, targetsWithDatabaseVault, targetsWithPrivilegeAnalysis, targetsWithTablespaceEncryption, targetsWithColumnEncryption, targetsWithNetworkEncryption, targetsWithPasswordAuthentication, targetsWithGlobalAuthentication, targetsWithExternalAuthentication, opcRequestId, limit, page);
+            // new ListSecurityFeaturesRequest(compartmentId, compartmentIdInSubtree, accessLevel, targetId, targetsWithUnifiedAudit, targetsWithFineGrainedAudit, targetsWithTraditionalAudit, targetsWithDatabaseVault, targetsWithPrivilegeAnalysis, targetsWithTablespaceEncryption, targetsWithColumnEncryption, targetsWithNetworkEncryption, targetsWithPasswordAuthentication, targetsWithGlobalAuthentication, targetsWithExternalAuthentication, opcRequestId, limit, page, targetDatabaseGroupId);
         }
     }
 
@@ -1092,7 +1120,8 @@ public class ListSecurityFeaturesRequest
                 .targetsWithExternalAuthentication(targetsWithExternalAuthentication)
                 .opcRequestId(opcRequestId)
                 .limit(limit)
-                .page(page);
+                .page(page)
+                .targetDatabaseGroupId(targetDatabaseGroupId);
     }
 
     /**
@@ -1136,6 +1165,7 @@ public class ListSecurityFeaturesRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -1182,7 +1212,9 @@ public class ListSecurityFeaturesRequest
                         other.targetsWithExternalAuthentication)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.limit, other.limit)
-                && java.util.Objects.equals(this.page, other.page);
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(
+                        this.targetDatabaseGroupId, other.targetDatabaseGroupId);
     }
 
     @Override
@@ -1257,6 +1289,11 @@ public class ListSecurityFeaturesRequest
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         return result;
     }
 }

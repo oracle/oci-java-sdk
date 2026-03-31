@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -23,6 +23,8 @@ public final class UpdateBdsInstanceDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "secretId",
+        "isSecretReused",
         "displayName",
         "bootstrapScriptUrl",
         "freeformTags",
@@ -31,6 +33,8 @@ public final class UpdateBdsInstanceDetails
         "networkConfig"
     })
     public UpdateBdsInstanceDetails(
+            String secretId,
+            Boolean isSecretReused,
             String displayName,
             String bootstrapScriptUrl,
             java.util.Map<String, String> freeformTags,
@@ -38,6 +42,8 @@ public final class UpdateBdsInstanceDetails
             String kmsKeyId,
             NetworkConfig networkConfig) {
         super();
+        this.secretId = secretId;
+        this.isSecretReused = isSecretReused;
         this.displayName = displayName;
         this.bootstrapScriptUrl = bootstrapScriptUrl;
         this.freeformTags = freeformTags;
@@ -48,6 +54,38 @@ public final class UpdateBdsInstanceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The secretId for the clusterAdminPassword.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         * @param secretId the value to set
+         * @return this builder
+         **/
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
+        /**
+         * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSecretReused")
+        private Boolean isSecretReused;
+
+        /**
+         * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+         * @param isSecretReused the value to set
+         * @return this builder
+         **/
+        public Builder isSecretReused(Boolean isSecretReused) {
+            this.isSecretReused = isSecretReused;
+            this.__explicitlySet__.add("isSecretReused");
+            return this;
+        }
         /**
          * Name of the cluster.
          **/
@@ -153,6 +191,8 @@ public final class UpdateBdsInstanceDetails
         public UpdateBdsInstanceDetails build() {
             UpdateBdsInstanceDetails model =
                     new UpdateBdsInstanceDetails(
+                            this.secretId,
+                            this.isSecretReused,
                             this.displayName,
                             this.bootstrapScriptUrl,
                             this.freeformTags,
@@ -167,6 +207,12 @@ public final class UpdateBdsInstanceDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateBdsInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("isSecretReused")) {
+                this.isSecretReused(model.getIsSecretReused());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
@@ -198,6 +244,34 @@ public final class UpdateBdsInstanceDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     * @return the value
+     **/
+    public String getSecretId() {
+        return secretId;
+    }
+
+    /**
+     * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSecretReused")
+    private final Boolean isSecretReused;
+
+    /**
+     * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     * @return the value
+     **/
+    public Boolean getIsSecretReused() {
+        return isSecretReused;
     }
 
     /**
@@ -299,7 +373,9 @@ public final class UpdateBdsInstanceDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateBdsInstanceDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append("secretId=").append(String.valueOf(this.secretId));
+        sb.append(", isSecretReused=").append(String.valueOf(this.isSecretReused));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", bootstrapScriptUrl=").append(String.valueOf(this.bootstrapScriptUrl));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -319,7 +395,9 @@ public final class UpdateBdsInstanceDetails
         }
 
         UpdateBdsInstanceDetails other = (UpdateBdsInstanceDetails) o;
-        return java.util.Objects.equals(this.displayName, other.displayName)
+        return java.util.Objects.equals(this.secretId, other.secretId)
+                && java.util.Objects.equals(this.isSecretReused, other.isSecretReused)
+                && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.bootstrapScriptUrl, other.bootstrapScriptUrl)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -332,6 +410,10 @@ public final class UpdateBdsInstanceDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSecretReused == null ? 43 : this.isSecretReused.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)

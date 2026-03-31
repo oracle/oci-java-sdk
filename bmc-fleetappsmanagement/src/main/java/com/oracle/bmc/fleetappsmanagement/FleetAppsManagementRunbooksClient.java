@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement;
@@ -7,17 +7,18 @@ package com.oracle.bmc.fleetappsmanagement;
 import com.oracle.bmc.fleetappsmanagement.internal.http.*;
 import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
-import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRunbooks {
     /**
      * Service instance for FleetAppsManagementRunbooks.
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FLEETAPPSMANAGEMENTRUNBOOKS")
+                    .serviceName(FleetAppsManagementRunbooksClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://fams.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -50,6 +51,10 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -303,6 +308,11 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -491,12 +501,21 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -526,15 +545,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -546,6 +557,93 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public ChangeRunbookCompartmentResponse changeRunbookCompartment(
+            ChangeRunbookCompartmentRequest request) {
+        LOG.trace("Called changeRunbookCompartment");
+        final ChangeRunbookCompartmentRequest interceptedRequest =
+                ChangeRunbookCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeRunbookCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ChangeRunbookCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/ChangeRunbookCompartment");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeRunbookCompartmentResponse>
+                transformer =
+                        ChangeRunbookCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeRunbookCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeTaskRecordCompartmentResponse changeTaskRecordCompartment(
+            ChangeTaskRecordCompartmentRequest request) {
+        LOG.trace("Called changeTaskRecordCompartment");
+        final ChangeTaskRecordCompartmentRequest interceptedRequest =
+                ChangeTaskRecordCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeTaskRecordCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ChangeTaskRecordCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TaskRecord/ChangeTaskRecordCompartment");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeTaskRecordCompartmentResponse>
+                transformer =
+                        ChangeTaskRecordCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeTaskRecordCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -566,7 +664,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "CreateRunbook",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/CreateRunbook");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/CreateRunbook");
         java.util.function.Function<javax.ws.rs.core.Response, CreateRunbookResponse> transformer =
                 CreateRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -582,6 +680,48 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateRunbookDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateRunbookVersionResponse createRunbookVersion(CreateRunbookVersionRequest request) {
+        LOG.trace("Called createRunbookVersion");
+        final CreateRunbookVersionRequest interceptedRequest =
+                CreateRunbookVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRunbookVersionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "CreateRunbookVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookVersion/CreateRunbookVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRunbookVersionResponse>
+                transformer =
+                        CreateRunbookVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateRunbookVersionDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -606,7 +746,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "CreateTaskRecord",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/CreateTaskRecord");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TaskRecord/CreateTaskRecord");
         java.util.function.Function<javax.ws.rs.core.Response, CreateTaskRecordResponse>
                 transformer =
                         CreateTaskRecordConverter.fromResponse(
@@ -647,9 +787,47 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "DeleteRunbook",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/DeleteRunbook");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/DeleteRunbook");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteRunbookResponse> transformer =
                 DeleteRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteRunbookVersionResponse deleteRunbookVersion(DeleteRunbookVersionRequest request) {
+        LOG.trace("Called deleteRunbookVersion");
+        final DeleteRunbookVersionRequest interceptedRequest =
+                DeleteRunbookVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRunbookVersionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "DeleteRunbookVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookVersion/DeleteRunbookVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRunbookVersionResponse>
+                transformer =
+                        DeleteRunbookVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -683,7 +861,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "DeleteTaskRecord",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/DeleteTaskRecord");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TaskRecord/DeleteTaskRecord");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteTaskRecordResponse>
                 transformer =
                         DeleteTaskRecordConverter.fromResponse(
@@ -705,6 +883,174 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
     }
 
     @Override
+    public ExportRunbookResponse exportRunbook(ExportRunbookRequest request) {
+        LOG.trace("Called exportRunbook");
+        final ExportRunbookRequest interceptedRequest =
+                ExportRunbookConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExportRunbookConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ExportRunbook",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/ExportRunbook");
+        java.util.function.Function<javax.ws.rs.core.Response, ExportRunbookResponse> transformer =
+                ExportRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getExportRunbookDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ExportRunbookVersionResponse exportRunbookVersion(ExportRunbookVersionRequest request) {
+        LOG.trace("Called exportRunbookVersion");
+        final ExportRunbookVersionRequest interceptedRequest =
+                ExportRunbookVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExportRunbookVersionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ExportRunbookVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/ExportRunbookVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, ExportRunbookVersionResponse>
+                transformer =
+                        ExportRunbookVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getExportRunbookVersionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public FindRunbookExportDependencyResponse findRunbookExportDependency(
+            FindRunbookExportDependencyRequest request) {
+        LOG.trace("Called findRunbookExportDependency");
+        final FindRunbookExportDependencyRequest interceptedRequest =
+                FindRunbookExportDependencyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FindRunbookExportDependencyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "FindRunbookExportDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookExportDependencyCollection/FindRunbookExportDependency");
+        java.util.function.Function<javax.ws.rs.core.Response, FindRunbookExportDependencyResponse>
+                transformer =
+                        FindRunbookExportDependencyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getFindRunbookExportDependencyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public FindRunbookImportDependencyResponse findRunbookImportDependency(
+            FindRunbookImportDependencyRequest request) {
+        LOG.trace("Called findRunbookImportDependency");
+        final FindRunbookImportDependencyRequest interceptedRequest =
+                FindRunbookImportDependencyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FindRunbookImportDependencyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "FindRunbookImportDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookImportDependencyCollection/FindRunbookImportDependency");
+        java.util.function.Function<javax.ws.rs.core.Response, FindRunbookImportDependencyResponse>
+                transformer =
+                        FindRunbookImportDependencyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getFindRunbookImportDependencyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetRunbookResponse getRunbook(GetRunbookRequest request) {
         LOG.trace("Called getRunbook");
         final GetRunbookRequest interceptedRequest = GetRunbookConverter.interceptRequest(request);
@@ -720,9 +1066,120 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "GetRunbook",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/GetRunbook");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/GetRunbook");
         java.util.function.Function<javax.ws.rs.core.Response, GetRunbookResponse> transformer =
                 GetRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetRunbookExportResponse getRunbookExport(GetRunbookExportRequest request) {
+        LOG.trace("Called getRunbookExport");
+        final GetRunbookExportRequest interceptedRequest =
+                GetRunbookExportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRunbookExportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "GetRunbookExport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookExport/GetRunbookExport");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRunbookExportResponse>
+                transformer =
+                        GetRunbookExportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetRunbookImportResponse getRunbookImport(GetRunbookImportRequest request) {
+        LOG.trace("Called getRunbookImport");
+        final GetRunbookImportRequest interceptedRequest =
+                GetRunbookImportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRunbookImportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "GetRunbookImport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookImport/GetRunbookImport");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRunbookImportResponse>
+                transformer =
+                        GetRunbookImportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetRunbookVersionResponse getRunbookVersion(GetRunbookVersionRequest request) {
+        LOG.trace("Called getRunbookVersion");
+        final GetRunbookVersionRequest interceptedRequest =
+                GetRunbookVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRunbookVersionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "GetRunbookVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookVersion/GetRunbookVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRunbookVersionResponse>
+                transformer =
+                        GetRunbookVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -755,9 +1212,247 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "GetTaskRecord",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/GetTaskRecord");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TaskRecord/GetTaskRecord");
         java.util.function.Function<javax.ws.rs.core.Response, GetTaskRecordResponse> transformer =
                 GetTaskRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ImportRunbookResponse importRunbook(ImportRunbookRequest request) {
+        LOG.trace("Called importRunbook");
+        final ImportRunbookRequest interceptedRequest =
+                ImportRunbookConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportRunbookConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ImportRunbook",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ImportRunbookDetails/ImportRunbook");
+        java.util.function.Function<javax.ws.rs.core.Response, ImportRunbookResponse> transformer =
+                ImportRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getImportRunbookDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ImportRunbookPrecheckResponse importRunbookPrecheck(
+            ImportRunbookPrecheckRequest request) {
+        LOG.trace("Called importRunbookPrecheck");
+        final ImportRunbookPrecheckRequest interceptedRequest =
+                ImportRunbookPrecheckConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportRunbookPrecheckConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ImportRunbookPrecheck",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ImportRunbookPrecheckDetails/ImportRunbookPrecheck");
+        java.util.function.Function<javax.ws.rs.core.Response, ImportRunbookPrecheckResponse>
+                transformer =
+                        ImportRunbookPrecheckConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getImportRunbookPrecheckDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ImportRunbookVersionResponse importRunbookVersion(ImportRunbookVersionRequest request) {
+        LOG.trace("Called importRunbookVersion");
+        final ImportRunbookVersionRequest interceptedRequest =
+                ImportRunbookVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportRunbookVersionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ImportRunbookVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ImportRunbookVersionDetails/ImportRunbookVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, ImportRunbookVersionResponse>
+                transformer =
+                        ImportRunbookVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getImportRunbookVersionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListRunbookExportStatusesResponse listRunbookExportStatuses(
+            ListRunbookExportStatusesRequest request) {
+        LOG.trace("Called listRunbookExportStatuses");
+        final ListRunbookExportStatusesRequest interceptedRequest =
+                ListRunbookExportStatusesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRunbookExportStatusesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ListRunbookExportStatuses",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookExportStatusCollection/ListRunbookExportStatuses");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRunbookExportStatusesResponse>
+                transformer =
+                        ListRunbookExportStatusesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListRunbookImportStatusesResponse listRunbookImportStatuses(
+            ListRunbookImportStatusesRequest request) {
+        LOG.trace("Called listRunbookImportStatuses");
+        final ListRunbookImportStatusesRequest interceptedRequest =
+                ListRunbookImportStatusesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRunbookImportStatusesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ListRunbookImportStatuses",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookImportStatusCollection/ListRunbookImportStatuses");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRunbookImportStatusesResponse>
+                transformer =
+                        ListRunbookImportStatusesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListRunbookVersionsResponse listRunbookVersions(ListRunbookVersionsRequest request) {
+        LOG.trace("Called listRunbookVersions");
+        final ListRunbookVersionsRequest interceptedRequest =
+                ListRunbookVersionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRunbookVersionsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ListRunbookVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookVersionCollection/ListRunbookVersions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRunbookVersionsResponse>
+                transformer =
+                        ListRunbookVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -790,7 +1485,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "ListRunbooks",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/RunbookCollection/ListRunbooks");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookCollection/ListRunbooks");
         java.util.function.Function<javax.ws.rs.core.Response, ListRunbooksResponse> transformer =
                 ListRunbooksConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -825,7 +1520,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "ListTaskRecords",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecordCollection/ListTaskRecords");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TaskRecordCollection/ListTaskRecords");
         java.util.function.Function<javax.ws.rs.core.Response, ListTaskRecordsResponse>
                 transformer =
                         ListTaskRecordsConverter.fromResponse(
@@ -863,7 +1558,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "PublishRunbook",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/PublishRunbook");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/PublishRunbook");
         java.util.function.Function<javax.ws.rs.core.Response, PublishRunbookResponse> transformer =
                 PublishRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -903,7 +1598,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "SetDefaultRunbook",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/SetDefaultRunbook");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/SetDefaultRunbook");
         java.util.function.Function<javax.ws.rs.core.Response, SetDefaultRunbookResponse>
                 transformer =
                         SetDefaultRunbookConverter.fromResponse(
@@ -944,7 +1639,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "UpdateRunbook",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/UpdateRunbook");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/UpdateRunbook");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateRunbookResponse> transformer =
                 UpdateRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -960,6 +1655,47 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateRunbookDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateRunbookVersionResponse updateRunbookVersion(UpdateRunbookVersionRequest request) {
+        LOG.trace("Called updateRunbookVersion");
+        final UpdateRunbookVersionRequest interceptedRequest =
+                UpdateRunbookVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRunbookVersionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "UpdateRunbookVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookVersion/UpdateRunbookVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRunbookVersionResponse>
+                transformer =
+                        UpdateRunbookVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateRunbookVersionDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -983,7 +1719,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "UpdateTaskRecord",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/UpdateTaskRecord");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TaskRecord/UpdateTaskRecord");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateTaskRecordResponse>
                 transformer =
                         UpdateTaskRecordConverter.fromResponse(

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -31,7 +31,8 @@ public final class JavaFamilySummary extends com.oracle.bmc.http.internal.Explic
         "docUrl",
         "latestReleaseVersion",
         "isSupportedVersion",
-        "releaseDate"
+        "releaseDate",
+        "licenseTypes"
     })
     public JavaFamilySummary(
             String familyVersion,
@@ -41,7 +42,8 @@ public final class JavaFamilySummary extends com.oracle.bmc.http.internal.Explic
             String docUrl,
             String latestReleaseVersion,
             Boolean isSupportedVersion,
-            java.util.Date releaseDate) {
+            java.util.Date releaseDate,
+            java.util.List<LicenseType> licenseTypes) {
         super();
         this.familyVersion = familyVersion;
         this.displayName = displayName;
@@ -51,6 +53,7 @@ public final class JavaFamilySummary extends com.oracle.bmc.http.internal.Explic
         this.latestReleaseVersion = latestReleaseVersion;
         this.isSupportedVersion = isSupportedVersion;
         this.releaseDate = releaseDate;
+        this.licenseTypes = licenseTypes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -191,6 +194,22 @@ public final class JavaFamilySummary extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("releaseDate");
             return this;
         }
+        /**
+         * The license type(s) associated with the Java family.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("licenseTypes")
+        private java.util.List<LicenseType> licenseTypes;
+
+        /**
+         * The license type(s) associated with the Java family.
+         * @param licenseTypes the value to set
+         * @return this builder
+         **/
+        public Builder licenseTypes(java.util.List<LicenseType> licenseTypes) {
+            this.licenseTypes = licenseTypes;
+            this.__explicitlySet__.add("licenseTypes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -205,7 +224,8 @@ public final class JavaFamilySummary extends com.oracle.bmc.http.internal.Explic
                             this.docUrl,
                             this.latestReleaseVersion,
                             this.isSupportedVersion,
-                            this.releaseDate);
+                            this.releaseDate,
+                            this.licenseTypes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -237,6 +257,9 @@ public final class JavaFamilySummary extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("releaseDate")) {
                 this.releaseDate(model.getReleaseDate());
+            }
+            if (model.wasPropertyExplicitlySet("licenseTypes")) {
+                this.licenseTypes(model.getLicenseTypes());
             }
             return this;
         }
@@ -373,6 +396,20 @@ public final class JavaFamilySummary extends com.oracle.bmc.http.internal.Explic
         return releaseDate;
     }
 
+    /**
+     * The license type(s) associated with the Java family.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("licenseTypes")
+    private final java.util.List<LicenseType> licenseTypes;
+
+    /**
+     * The license type(s) associated with the Java family.
+     * @return the value
+     **/
+    public java.util.List<LicenseType> getLicenseTypes() {
+        return licenseTypes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -395,6 +432,7 @@ public final class JavaFamilySummary extends com.oracle.bmc.http.internal.Explic
         sb.append(", latestReleaseVersion=").append(String.valueOf(this.latestReleaseVersion));
         sb.append(", isSupportedVersion=").append(String.valueOf(this.isSupportedVersion));
         sb.append(", releaseDate=").append(String.valueOf(this.releaseDate));
+        sb.append(", licenseTypes=").append(String.valueOf(this.licenseTypes));
         sb.append(")");
         return sb.toString();
     }
@@ -417,6 +455,7 @@ public final class JavaFamilySummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.latestReleaseVersion, other.latestReleaseVersion)
                 && java.util.Objects.equals(this.isSupportedVersion, other.isSupportedVersion)
                 && java.util.Objects.equals(this.releaseDate, other.releaseDate)
+                && java.util.Objects.equals(this.licenseTypes, other.licenseTypes)
                 && super.equals(other);
     }
 
@@ -446,6 +485,7 @@ public final class JavaFamilySummary extends com.oracle.bmc.http.internal.Explic
                                 ? 43
                                 : this.isSupportedVersion.hashCode());
         result = (result * PRIME) + (this.releaseDate == null ? 43 : this.releaseDate.hashCode());
+        result = (result * PRIME) + (this.licenseTypes == null ? 43 : this.licenseTypes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

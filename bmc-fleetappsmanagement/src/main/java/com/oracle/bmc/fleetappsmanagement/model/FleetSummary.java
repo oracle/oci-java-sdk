@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FleetSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -27,7 +27,7 @@ public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         "displayName",
         "timeCreated",
         "timeUpdated",
-        "fleetType",
+        "details",
         "environmentType",
         "lifecycleState",
         "lifecycleDetails",
@@ -42,7 +42,7 @@ public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             String displayName,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            Fleet.FleetType fleetType,
+            FleetDetails details,
             String environmentType,
             Fleet.LifecycleState lifecycleState,
             String lifecycleDetails,
@@ -56,7 +56,7 @@ public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         this.displayName = displayName;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
-        this.fleetType = fleetType;
+        this.details = details;
         this.environmentType = environmentType;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -84,13 +84,13 @@ public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Tenancy OCID
+         * compartment OCID
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Tenancy OCID
+         * compartment OCID
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -171,30 +171,13 @@ public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * Type of the Fleet.
-         * PRODUCT - A fleet of product-specific resources for a product type.
-         * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
-         * GROUP - A fleet of a fleet of either environment or product fleets.
-         * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
-        private Fleet.FleetType fleetType;
 
-        /**
-         * Type of the Fleet.
-         * PRODUCT - A fleet of product-specific resources for a product type.
-         * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
-         * GROUP - A fleet of a fleet of either environment or product fleets.
-         * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
-         *
-         * @param fleetType the value to set
-         * @return this builder
-         **/
-        public Builder fleetType(Fleet.FleetType fleetType) {
-            this.fleetType = fleetType;
-            this.__explicitlySet__.add("fleetType");
+        @com.fasterxml.jackson.annotation.JsonProperty("details")
+        private FleetDetails details;
+
+        public Builder details(FleetDetails details) {
+            this.details = details;
+            this.__explicitlySet__.add("details");
             return this;
         }
         /**
@@ -323,7 +306,7 @@ public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.displayName,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.fleetType,
+                            this.details,
                             this.environmentType,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -356,8 +339,8 @@ public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
-            if (model.wasPropertyExplicitlySet("fleetType")) {
-                this.fleetType(model.getFleetType());
+            if (model.wasPropertyExplicitlySet("details")) {
+                this.details(model.getDetails());
             }
             if (model.wasPropertyExplicitlySet("environmentType")) {
                 this.environmentType(model.getEnvironmentType());
@@ -407,13 +390,13 @@ public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Tenancy OCID
+     * compartment OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Tenancy OCID
+     * compartment OCID
      * @return the value
      **/
     public String getCompartmentId() {
@@ -484,28 +467,11 @@ public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         return timeUpdated;
     }
 
-    /**
-     * Type of the Fleet.
-     * PRODUCT - A fleet of product-specific resources for a product type.
-     * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
-     * GROUP - A fleet of a fleet of either environment or product fleets.
-     * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
-    private final Fleet.FleetType fleetType;
+    @com.fasterxml.jackson.annotation.JsonProperty("details")
+    private final FleetDetails details;
 
-    /**
-     * Type of the Fleet.
-     * PRODUCT - A fleet of product-specific resources for a product type.
-     * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
-     * GROUP - A fleet of a fleet of either environment or product fleets.
-     * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
-     *
-     * @return the value
-     **/
-    public Fleet.FleetType getFleetType() {
-        return fleetType;
+    public FleetDetails getDetails() {
+        return details;
     }
 
     /**
@@ -628,7 +594,7 @@ public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append(", fleetType=").append(String.valueOf(this.fleetType));
+        sb.append(", details=").append(String.valueOf(this.details));
         sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -655,7 +621,7 @@ public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.fleetType, other.fleetType)
+                && java.util.Objects.equals(this.details, other.details)
                 && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -679,7 +645,7 @@ public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
-        result = (result * PRIME) + (this.fleetType == null ? 43 : this.fleetType.hashCode());
+        result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
         result =
                 (result * PRIME)
                         + (this.environmentType == null ? 43 : this.environmentType.hashCode());

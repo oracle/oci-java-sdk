@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.certificatesmanagement.model;
@@ -30,6 +30,7 @@ public final class CreateCertificateAuthorityDetails
         "certificateAuthorityConfig",
         "certificateRevocationListDetails",
         "kmsKeyId",
+        "externalKeyDescription",
         "freeformTags",
         "definedTags"
     })
@@ -41,6 +42,7 @@ public final class CreateCertificateAuthorityDetails
             CreateCertificateAuthorityConfigDetails certificateAuthorityConfig,
             CertificateRevocationListDetails certificateRevocationListDetails,
             String kmsKeyId,
+            String externalKeyDescription,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -51,6 +53,7 @@ public final class CreateCertificateAuthorityDetails
         this.certificateAuthorityConfig = certificateAuthorityConfig;
         this.certificateRevocationListDetails = certificateRevocationListDetails;
         this.kmsKeyId = kmsKeyId;
+        this.externalKeyDescription = externalKeyDescription;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -159,6 +162,22 @@ public final class CreateCertificateAuthorityDetails
             return this;
         }
         /**
+         * For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyDescription")
+        private String externalKeyDescription;
+
+        /**
+         * For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+         * @param externalKeyDescription the value to set
+         * @return this builder
+         **/
+        public Builder externalKeyDescription(String externalKeyDescription) {
+            this.externalKeyDescription = externalKeyDescription;
+            this.__explicitlySet__.add("externalKeyDescription");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -213,6 +232,7 @@ public final class CreateCertificateAuthorityDetails
                             this.certificateAuthorityConfig,
                             this.certificateRevocationListDetails,
                             this.kmsKeyId,
+                            this.externalKeyDescription,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -243,6 +263,9 @@ public final class CreateCertificateAuthorityDetails
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("externalKeyDescription")) {
+                this.externalKeyDescription(model.getExternalKeyDescription());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -350,6 +373,20 @@ public final class CreateCertificateAuthorityDetails
     }
 
     /**
+     * For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyDescription")
+    private final String externalKeyDescription;
+
+    /**
+     * For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+     * @return the value
+     **/
+    public String getExternalKeyDescription() {
+        return externalKeyDescription;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -409,6 +446,7 @@ public final class CreateCertificateAuthorityDetails
         sb.append(", certificateRevocationListDetails=")
                 .append(String.valueOf(this.certificateRevocationListDetails));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", externalKeyDescription=").append(String.valueOf(this.externalKeyDescription));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -436,6 +474,8 @@ public final class CreateCertificateAuthorityDetails
                         this.certificateRevocationListDetails,
                         other.certificateRevocationListDetails)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(
+                        this.externalKeyDescription, other.externalKeyDescription)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -466,6 +506,11 @@ public final class CreateCertificateAuthorityDetails
                                 ? 43
                                 : this.certificateRevocationListDetails.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyDescription == null
+                                ? 43
+                                : this.externalKeyDescription.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

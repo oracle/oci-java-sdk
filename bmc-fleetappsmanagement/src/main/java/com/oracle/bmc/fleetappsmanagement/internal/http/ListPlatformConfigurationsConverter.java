@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.internal.http;
@@ -10,7 +10,7 @@ import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListPlatformConfigurationsConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -33,7 +33,7 @@ public class ListPlatformConfigurationsConverter {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20230831").path("platformConfigurations");
+                client.getBaseTarget().path("/20250228").path("platformConfigurations");
 
         if (request.getCompartmentId() != null) {
             target =
@@ -73,6 +73,22 @@ public class ListPlatformConfigurationsConverter {
                             "configCategory",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getConfigCategory().getValue()));
+        }
+
+        if (request.getCompartmentIdInSubtree() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentIdInSubtree",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentIdInSubtree()));
+        }
+
+        if (request.getType() != null) {
+            target =
+                    target.queryParam(
+                            "type",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getType().getValue()));
         }
 
         if (request.getLimit() != null) {

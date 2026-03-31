@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmtraces.model;
@@ -27,17 +27,20 @@ public final class BulkActivateAttributeDetail
     @java.beans.ConstructorProperties({
         "attributeName",
         "attributeType",
+        "attributeExpression",
         "unit",
         "attributeNameSpace"
     })
     public BulkActivateAttributeDetail(
             String attributeName,
             AttributeType attributeType,
+            String attributeExpression,
             Unit unit,
             AttributeNameSpace attributeNameSpace) {
         super();
         this.attributeName = attributeName;
         this.attributeType = attributeType;
+        this.attributeExpression = attributeExpression;
         this.unit = unit;
         this.attributeNameSpace = attributeNameSpace;
     }
@@ -81,14 +84,32 @@ public final class BulkActivateAttributeDetail
             return this;
         }
         /**
-         * Unit of the attribute to be updated.
+         * Attribute expression if this attribute is an alias
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("attributeExpression")
+        private String attributeExpression;
+
+        /**
+         * Attribute expression if this attribute is an alias
+         *
+         * @param attributeExpression the value to set
+         * @return this builder
+         **/
+        public Builder attributeExpression(String attributeExpression) {
+            this.attributeExpression = attributeExpression;
+            this.__explicitlySet__.add("attributeExpression");
+            return this;
+        }
+        /**
+         * Unit of the attribute to be updated.  If unit is not specified, it defaults to NONE.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
         /**
-         * Unit of the attribute to be updated.
+         * Unit of the attribute to be updated.  If unit is not specified, it defaults to NONE.
          *
          * @param unit the value to set
          * @return this builder
@@ -127,6 +148,7 @@ public final class BulkActivateAttributeDetail
                     new BulkActivateAttributeDetail(
                             this.attributeName,
                             this.attributeType,
+                            this.attributeExpression,
                             this.unit,
                             this.attributeNameSpace);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -142,6 +164,9 @@ public final class BulkActivateAttributeDetail
             }
             if (model.wasPropertyExplicitlySet("attributeType")) {
                 this.attributeType(model.getAttributeType());
+            }
+            if (model.wasPropertyExplicitlySet("attributeExpression")) {
+                this.attributeExpression(model.getAttributeExpression());
             }
             if (model.wasPropertyExplicitlySet("unit")) {
                 this.unit(model.getUnit());
@@ -187,6 +212,7 @@ public final class BulkActivateAttributeDetail
     public enum AttributeType {
         Numeric("NUMERIC"),
         String("STRING"),
+        None("NONE"),
         ;
 
         private final String value;
@@ -233,7 +259,23 @@ public final class BulkActivateAttributeDetail
     }
 
     /**
-     * Unit of the attribute to be updated.
+     * Attribute expression if this attribute is an alias
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("attributeExpression")
+    private final String attributeExpression;
+
+    /**
+     * Attribute expression if this attribute is an alias
+     *
+     * @return the value
+     **/
+    public String getAttributeExpression() {
+        return attributeExpression;
+    }
+
+    /**
+     * Unit of the attribute to be updated.  If unit is not specified, it defaults to NONE.
      *
      **/
     public enum Unit {
@@ -274,14 +316,14 @@ public final class BulkActivateAttributeDetail
         }
     };
     /**
-     * Unit of the attribute to be updated.
+     * Unit of the attribute to be updated.  If unit is not specified, it defaults to NONE.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
     /**
-     * Unit of the attribute to be updated.
+     * Unit of the attribute to be updated.  If unit is not specified, it defaults to NONE.
      *
      * @return the value
      **/
@@ -297,6 +339,7 @@ public final class BulkActivateAttributeDetail
     public enum AttributeNameSpace {
         Traces("TRACES"),
         Synthetic("SYNTHETIC"),
+        Logs("LOGS"),
         ;
 
         private final String value;
@@ -360,6 +403,7 @@ public final class BulkActivateAttributeDetail
         sb.append("super=").append(super.toString());
         sb.append("attributeName=").append(String.valueOf(this.attributeName));
         sb.append(", attributeType=").append(String.valueOf(this.attributeType));
+        sb.append(", attributeExpression=").append(String.valueOf(this.attributeExpression));
         sb.append(", unit=").append(String.valueOf(this.unit));
         sb.append(", attributeNameSpace=").append(String.valueOf(this.attributeNameSpace));
         sb.append(")");
@@ -378,6 +422,7 @@ public final class BulkActivateAttributeDetail
         BulkActivateAttributeDetail other = (BulkActivateAttributeDetail) o;
         return java.util.Objects.equals(this.attributeName, other.attributeName)
                 && java.util.Objects.equals(this.attributeType, other.attributeType)
+                && java.util.Objects.equals(this.attributeExpression, other.attributeExpression)
                 && java.util.Objects.equals(this.unit, other.unit)
                 && java.util.Objects.equals(this.attributeNameSpace, other.attributeNameSpace)
                 && super.equals(other);
@@ -393,6 +438,11 @@ public final class BulkActivateAttributeDetail
         result =
                 (result * PRIME)
                         + (this.attributeType == null ? 43 : this.attributeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attributeExpression == null
+                                ? 43
+                                : this.attributeExpression.hashCode());
         result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
         result =
                 (result * PRIME)

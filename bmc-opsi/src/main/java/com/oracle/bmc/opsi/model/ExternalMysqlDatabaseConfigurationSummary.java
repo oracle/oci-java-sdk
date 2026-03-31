@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -78,6 +78,15 @@ public final class ExternalMysqlDatabaseConfigurationSummary extends DatabaseCon
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = databaseVersion;
             this.__explicitlySet__.add("databaseVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
+        private Boolean isAdvancedFeaturesEnabled;
+
+        public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
+            this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            this.__explicitlySet__.add("isAdvancedFeaturesEnabled");
             return this;
         }
 
@@ -178,6 +187,7 @@ public final class ExternalMysqlDatabaseConfigurationSummary extends DatabaseCon
                             this.databaseDisplayName,
                             this.databaseType,
                             this.databaseVersion,
+                            this.isAdvancedFeaturesEnabled,
                             this.cdbName,
                             this.definedTags,
                             this.freeformTags,
@@ -210,6 +220,9 @@ public final class ExternalMysqlDatabaseConfigurationSummary extends DatabaseCon
             }
             if (model.wasPropertyExplicitlySet("databaseVersion")) {
                 this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isAdvancedFeaturesEnabled")) {
+                this.isAdvancedFeaturesEnabled(model.getIsAdvancedFeaturesEnabled());
             }
             if (model.wasPropertyExplicitlySet("cdbName")) {
                 this.cdbName(model.getCdbName());
@@ -255,6 +268,7 @@ public final class ExternalMysqlDatabaseConfigurationSummary extends DatabaseCon
             String databaseDisplayName,
             String databaseType,
             String databaseVersion,
+            Boolean isAdvancedFeaturesEnabled,
             String cdbName,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
@@ -269,6 +283,7 @@ public final class ExternalMysqlDatabaseConfigurationSummary extends DatabaseCon
                 databaseDisplayName,
                 databaseType,
                 databaseVersion,
+                isAdvancedFeaturesEnabled,
                 cdbName,
                 definedTags,
                 freeformTags,

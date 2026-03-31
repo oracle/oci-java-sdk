@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -26,23 +26,23 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
         "displayName",
         "freeformTags",
         "ipAddress",
-        "vnicId",
-        "ipv6SubnetCidr"
+        "isInternetAccessAllowed",
+        "vnicId"
     })
     public CreateIpv6Details(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
             String ipAddress,
-            String vnicId,
-            String ipv6SubnetCidr) {
+            Boolean isInternetAccessAllowed,
+            String vnicId) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.ipAddress = ipAddress;
+        this.isInternetAccessAllowed = isInternetAccessAllowed;
         this.vnicId = vnicId;
-        this.ipv6SubnetCidr = ipv6SubnetCidr;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -137,6 +137,38 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
+         * a public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code true}, the
+         * IPv6 uses its public IP address for internet communication.
+         * <p>
+         * If {@code isInternetAccessAllowed} is set to {@code false}, the resulting {@code publicIpAddress} attribute
+         * for the {@code Ipv6} is null.
+         * <p>
+         * Example: {@code true}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isInternetAccessAllowed")
+        private Boolean isInternetAccessAllowed;
+
+        /**
+         * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
+         * a public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code true}, the
+         * IPv6 uses its public IP address for internet communication.
+         * <p>
+         * If {@code isInternetAccessAllowed} is set to {@code false}, the resulting {@code publicIpAddress} attribute
+         * for the {@code Ipv6} is null.
+         * <p>
+         * Example: {@code true}
+         *
+         * @param isInternetAccessAllowed the value to set
+         * @return this builder
+         **/
+        public Builder isInternetAccessAllowed(Boolean isInternetAccessAllowed) {
+            this.isInternetAccessAllowed = isInternetAccessAllowed;
+            this.__explicitlySet__.add("isInternetAccessAllowed");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The
          * IPv6 will be in the VNIC's subnet.
          *
@@ -156,24 +188,6 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("vnicId");
             return this;
         }
-        /**
-         * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("ipv6SubnetCidr")
-        private String ipv6SubnetCidr;
-
-        /**
-         * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
-         *
-         * @param ipv6SubnetCidr the value to set
-         * @return this builder
-         **/
-        public Builder ipv6SubnetCidr(String ipv6SubnetCidr) {
-            this.ipv6SubnetCidr = ipv6SubnetCidr;
-            this.__explicitlySet__.add("ipv6SubnetCidr");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -185,8 +199,8 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
                             this.displayName,
                             this.freeformTags,
                             this.ipAddress,
-                            this.vnicId,
-                            this.ipv6SubnetCidr);
+                            this.isInternetAccessAllowed,
+                            this.vnicId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -207,11 +221,11 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
             }
+            if (model.wasPropertyExplicitlySet("isInternetAccessAllowed")) {
+                this.isInternetAccessAllowed(model.getIsInternetAccessAllowed());
+            }
             if (model.wasPropertyExplicitlySet("vnicId")) {
                 this.vnicId(model.getVnicId());
-            }
-            if (model.wasPropertyExplicitlySet("ipv6SubnetCidr")) {
-                this.ipv6SubnetCidr(model.getIpv6SubnetCidr());
             }
             return this;
         }
@@ -309,6 +323,36 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
+     * a public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code true}, the
+     * IPv6 uses its public IP address for internet communication.
+     * <p>
+     * If {@code isInternetAccessAllowed} is set to {@code false}, the resulting {@code publicIpAddress} attribute
+     * for the {@code Ipv6} is null.
+     * <p>
+     * Example: {@code true}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isInternetAccessAllowed")
+    private final Boolean isInternetAccessAllowed;
+
+    /**
+     * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
+     * a public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code true}, the
+     * IPv6 uses its public IP address for internet communication.
+     * <p>
+     * If {@code isInternetAccessAllowed} is set to {@code false}, the resulting {@code publicIpAddress} attribute
+     * for the {@code Ipv6} is null.
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
+    public Boolean getIsInternetAccessAllowed() {
+        return isInternetAccessAllowed;
+    }
+
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The
      * IPv6 will be in the VNIC's subnet.
      *
@@ -324,22 +368,6 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
      **/
     public String getVnicId() {
         return vnicId;
-    }
-
-    /**
-     * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("ipv6SubnetCidr")
-    private final String ipv6SubnetCidr;
-
-    /**
-     * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
-     *
-     * @return the value
-     **/
-    public String getIpv6SubnetCidr() {
-        return ipv6SubnetCidr;
     }
 
     @Override
@@ -360,8 +388,9 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", isInternetAccessAllowed=")
+                .append(String.valueOf(this.isInternetAccessAllowed));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
-        sb.append(", ipv6SubnetCidr=").append(String.valueOf(this.ipv6SubnetCidr));
         sb.append(")");
         return sb.toString();
     }
@@ -380,8 +409,9 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(
+                        this.isInternetAccessAllowed, other.isInternetAccessAllowed)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
-                && java.util.Objects.equals(this.ipv6SubnetCidr, other.ipv6SubnetCidr)
                 && super.equals(other);
     }
 
@@ -393,10 +423,12 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
-        result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.ipv6SubnetCidr == null ? 43 : this.ipv6SubnetCidr.hashCode());
+                        + (this.isInternetAccessAllowed == null
+                                ? 43
+                                : this.isInternetAccessAllowed.hashCode());
+        result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

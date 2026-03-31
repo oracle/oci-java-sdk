@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetsoftwareupdate;
@@ -190,6 +190,26 @@ public interface FleetSoftwareUpdateAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a Exadata Fleet Update Readiness Check resource from one compartment identifier to another.
+     * When provided, If-Match is checked against ETag values of the resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeFsuReadinessCheckCompartmentResponse>
+            changeFsuReadinessCheckCompartment(
+                    ChangeFsuReadinessCheckCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeFsuReadinessCheckCompartmentRequest,
+                                    ChangeFsuReadinessCheckCompartmentResponse>
+                            handler);
+
+    /**
      * Clones existing Exadata Fleet Update Cycle details into a new Exadata Fleet Update Cycle resource.
      *
      *
@@ -269,6 +289,23 @@ public interface FleetSoftwareUpdateAsync extends AutoCloseable {
             CreateFsuDiscoveryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateFsuDiscoveryRequest, CreateFsuDiscoveryResponse>
+                    handler);
+
+    /**
+     * Creates a new Exadata Fleet Update Readiness Check.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateFsuReadinessCheckResponse> createFsuReadinessCheck(
+            CreateFsuReadinessCheckRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateFsuReadinessCheckRequest, CreateFsuReadinessCheckResponse>
                     handler);
 
     /**
@@ -370,6 +407,23 @@ public interface FleetSoftwareUpdateAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteFsuJobResponse> deleteFsuJob(
             DeleteFsuJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteFsuJobRequest, DeleteFsuJobResponse>
+                    handler);
+
+    /**
+     * Deletes a Exadata Fleet Update Readiness Check resource by identifier.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteFsuReadinessCheckResponse> deleteFsuReadinessCheck(
+            DeleteFsuReadinessCheckRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteFsuReadinessCheckRequest, DeleteFsuReadinessCheckResponse>
                     handler);
 
     /**
@@ -500,6 +554,23 @@ public interface FleetSoftwareUpdateAsync extends AutoCloseable {
             GetFsuJobOutputContentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetFsuJobOutputContentRequest, GetFsuJobOutputContentResponse>
+                    handler);
+
+    /**
+     * Gets a Exadata Fleet Update Readiness Check by identifier.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetFsuReadinessCheckResponse> getFsuReadinessCheck(
+            GetFsuReadinessCheckRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetFsuReadinessCheckRequest, GetFsuReadinessCheckResponse>
                     handler);
 
     /**
@@ -649,6 +720,23 @@ public interface FleetSoftwareUpdateAsync extends AutoCloseable {
     java.util.concurrent.Future<ListFsuJobsResponse> listFsuJobs(
             ListFsuJobsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListFsuJobsRequest, ListFsuJobsResponse> handler);
+
+    /**
+     * Returns a list of Exadata Fleet Update Readiness Checks resources in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFsuReadinessChecksResponse> listFsuReadinessChecks(
+            ListFsuReadinessChecksRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListFsuReadinessChecksRequest, ListFsuReadinessChecksResponse>
+                    handler);
 
     /**
      * Returns a paginated list of errors for a specified Work Request..
@@ -831,5 +919,22 @@ public interface FleetSoftwareUpdateAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateFsuJobResponse> updateFsuJob(
             UpdateFsuJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateFsuJobRequest, UpdateFsuJobResponse>
+                    handler);
+
+    /**
+     * Updates the Exadata Fleet Update Readiness Check identified by the ID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateFsuReadinessCheckResponse> updateFsuReadinessCheck(
+            UpdateFsuReadinessCheckRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateFsuReadinessCheckRequest, UpdateFsuReadinessCheckResponse>
                     handler);
 }

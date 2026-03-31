@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway.model;
@@ -32,13 +32,18 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "timeUpdated",
         "lifecycleState",
         "lifecycleDetails",
+        "locks",
         "hostname",
         "certificateId",
         "ipAddresses",
         "responseCacheDetails",
         "freeformTags",
         "definedTags",
-        "caBundles"
+        "systemTags",
+        "caBundles",
+        "ipMode",
+        "ipv6AddressConfiguration",
+        "ipv4AddressConfiguration"
     })
     public Gateway(
             String id,
@@ -51,13 +56,18 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String lifecycleDetails,
+            java.util.List<ResourceLock> locks,
             String hostname,
             String certificateId,
             java.util.List<IpAddress> ipAddresses,
             ResponseCacheDetails responseCacheDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.List<CaBundle> caBundles) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<CaBundle> caBundles,
+            IpMode ipMode,
+            Ipv6AddressConfiguration ipv6AddressConfiguration,
+            Ipv4AddressConfiguration ipv4AddressConfiguration) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -69,13 +79,18 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.locks = locks;
         this.hostname = hostname;
         this.certificateId = certificateId;
         this.ipAddresses = ipAddresses;
         this.responseCacheDetails = responseCacheDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.caBundles = caBundles;
+        this.ipMode = ipMode;
+        this.ipv6AddressConfiguration = ipv6AddressConfiguration;
+        this.ipv4AddressConfiguration = ipv4AddressConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -275,6 +290,22 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+        /**
          * The hostname for APIs deployed on the gateway.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
@@ -387,6 +418,26 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * An array of CA bundles that should be used on the Gateway for TLS validation.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("caBundles")
@@ -400,6 +451,50 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         public Builder caBundles(java.util.List<CaBundle> caBundles) {
             this.caBundles = caBundles;
             this.__explicitlySet__.add("caBundles");
+            return this;
+        }
+        /**
+         * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+         * {@code IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code IPV6} means the gateway will
+         * only have an {@code IPv6} address assigned to it. {@code DUAL_STACK} means the gateway will have both an IPv4 and IPv6
+         * address assigned to it.
+         * Example: {@code IPV4} or {@code IPV6} or {@code DUAL_STACK}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+        private IpMode ipMode;
+
+        /**
+         * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+         * {@code IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code IPV6} means the gateway will
+         * only have an {@code IPv6} address assigned to it. {@code DUAL_STACK} means the gateway will have both an IPv4 and IPv6
+         * address assigned to it.
+         * Example: {@code IPV4} or {@code IPV6} or {@code DUAL_STACK}
+         *
+         * @param ipMode the value to set
+         * @return this builder
+         **/
+        public Builder ipMode(IpMode ipMode) {
+            this.ipMode = ipMode;
+            this.__explicitlySet__.add("ipMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6AddressConfiguration")
+        private Ipv6AddressConfiguration ipv6AddressConfiguration;
+
+        public Builder ipv6AddressConfiguration(Ipv6AddressConfiguration ipv6AddressConfiguration) {
+            this.ipv6AddressConfiguration = ipv6AddressConfiguration;
+            this.__explicitlySet__.add("ipv6AddressConfiguration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv4AddressConfiguration")
+        private Ipv4AddressConfiguration ipv4AddressConfiguration;
+
+        public Builder ipv4AddressConfiguration(Ipv4AddressConfiguration ipv4AddressConfiguration) {
+            this.ipv4AddressConfiguration = ipv4AddressConfiguration;
+            this.__explicitlySet__.add("ipv4AddressConfiguration");
             return this;
         }
 
@@ -419,13 +514,18 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.locks,
                             this.hostname,
                             this.certificateId,
                             this.ipAddresses,
                             this.responseCacheDetails,
                             this.freeformTags,
                             this.definedTags,
-                            this.caBundles);
+                            this.systemTags,
+                            this.caBundles,
+                            this.ipMode,
+                            this.ipv6AddressConfiguration,
+                            this.ipv4AddressConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -464,6 +564,9 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("hostname")) {
                 this.hostname(model.getHostname());
             }
@@ -482,8 +585,20 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("caBundles")) {
                 this.caBundles(model.getCaBundles());
+            }
+            if (model.wasPropertyExplicitlySet("ipMode")) {
+                this.ipMode(model.getIpMode());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6AddressConfiguration")) {
+                this.ipv6AddressConfiguration(model.getIpv6AddressConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("ipv4AddressConfiguration")) {
+                this.ipv4AddressConfiguration(model.getIpv4AddressConfiguration());
             }
             return this;
         }
@@ -779,6 +894,20 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
+    /**
      * The hostname for APIs deployed on the gateway.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
@@ -878,6 +1007,24 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * An array of CA bundles that should be used on the Gateway for TLS validation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("caBundles")
@@ -889,6 +1036,97 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
      **/
     public java.util.List<CaBundle> getCaBundles() {
         return caBundles;
+    }
+
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+     * {@code IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code IPV6} means the gateway will
+     * only have an {@code IPv6} address assigned to it. {@code DUAL_STACK} means the gateway will have both an IPv4 and IPv6
+     * address assigned to it.
+     * Example: {@code IPV4} or {@code IPV6} or {@code DUAL_STACK}
+     *
+     **/
+    public enum IpMode {
+        Ipv4("IPV4"),
+        Ipv6("IPV6"),
+        DualStack("DUAL_STACK"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(IpMode.class);
+
+        private final String value;
+        private static java.util.Map<String, IpMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IpMode v : IpMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        IpMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IpMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IpMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+     * {@code IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code IPV6} means the gateway will
+     * only have an {@code IPv6} address assigned to it. {@code DUAL_STACK} means the gateway will have both an IPv4 and IPv6
+     * address assigned to it.
+     * Example: {@code IPV4} or {@code IPV6} or {@code DUAL_STACK}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+    private final IpMode ipMode;
+
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+     * {@code IPV4} means the gateway will only have an IPv4 address assigned to it, and {@code IPV6} means the gateway will
+     * only have an {@code IPv6} address assigned to it. {@code DUAL_STACK} means the gateway will have both an IPv4 and IPv6
+     * address assigned to it.
+     * Example: {@code IPV4} or {@code IPV6} or {@code DUAL_STACK}
+     *
+     * @return the value
+     **/
+    public IpMode getIpMode() {
+        return ipMode;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6AddressConfiguration")
+    private final Ipv6AddressConfiguration ipv6AddressConfiguration;
+
+    public Ipv6AddressConfiguration getIpv6AddressConfiguration() {
+        return ipv6AddressConfiguration;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv4AddressConfiguration")
+    private final Ipv4AddressConfiguration ipv4AddressConfiguration;
+
+    public Ipv4AddressConfiguration getIpv4AddressConfiguration() {
+        return ipv4AddressConfiguration;
     }
 
     @Override
@@ -916,13 +1154,20 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(", certificateId=").append(String.valueOf(this.certificateId));
         sb.append(", ipAddresses=").append(String.valueOf(this.ipAddresses));
         sb.append(", responseCacheDetails=").append(String.valueOf(this.responseCacheDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", caBundles=").append(String.valueOf(this.caBundles));
+        sb.append(", ipMode=").append(String.valueOf(this.ipMode));
+        sb.append(", ipv6AddressConfiguration=")
+                .append(String.valueOf(this.ipv6AddressConfiguration));
+        sb.append(", ipv4AddressConfiguration=")
+                .append(String.valueOf(this.ipv4AddressConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -948,13 +1193,20 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.hostname, other.hostname)
                 && java.util.Objects.equals(this.certificateId, other.certificateId)
                 && java.util.Objects.equals(this.ipAddresses, other.ipAddresses)
                 && java.util.Objects.equals(this.responseCacheDetails, other.responseCacheDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.caBundles, other.caBundles)
+                && java.util.Objects.equals(this.ipMode, other.ipMode)
+                && java.util.Objects.equals(
+                        this.ipv6AddressConfiguration, other.ipv6AddressConfiguration)
+                && java.util.Objects.equals(
+                        this.ipv4AddressConfiguration, other.ipv4AddressConfiguration)
                 && super.equals(other);
     }
 
@@ -982,6 +1234,7 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
         result =
                 (result * PRIME)
@@ -994,7 +1247,19 @@ public final class Gateway extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                                 : this.responseCacheDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.caBundles == null ? 43 : this.caBundles.hashCode());
+        result = (result * PRIME) + (this.ipMode == null ? 43 : this.ipMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6AddressConfiguration == null
+                                ? 43
+                                : this.ipv6AddressConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv4AddressConfiguration == null
+                                ? 43
+                                : this.ipv4AddressConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataflow.model;
@@ -39,7 +39,11 @@ public final class CreateSqlEndpointDetails
         "freeformTags",
         "definedTags",
         "sparkAdvancedConfigurations",
-        "networkConfiguration"
+        "networkConfiguration",
+        "logGroupId",
+        "logCompartmentId",
+        "logDisplayName",
+        "logRetentionDuration"
     })
     public CreateSqlEndpointDetails(
             String compartmentId,
@@ -58,7 +62,11 @@ public final class CreateSqlEndpointDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> sparkAdvancedConfigurations,
-            SqlEndpointNetworkConfiguration networkConfiguration) {
+            SqlEndpointNetworkConfiguration networkConfiguration,
+            String logGroupId,
+            String logCompartmentId,
+            String logDisplayName,
+            Integer logRetentionDuration) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -77,6 +85,10 @@ public final class CreateSqlEndpointDetails
         this.definedTags = definedTags;
         this.sparkAdvancedConfigurations = sparkAdvancedConfigurations;
         this.networkConfiguration = networkConfiguration;
+        this.logGroupId = logGroupId;
+        this.logCompartmentId = logCompartmentId;
+        this.logDisplayName = logDisplayName;
+        this.logRetentionDuration = logRetentionDuration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -354,6 +366,70 @@ public final class CreateSqlEndpointDetails
             this.__explicitlySet__.add("networkConfiguration");
             return this;
         }
+        /**
+         * The identifier of the log group used with the SQL Endpoint.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+        private String logGroupId;
+
+        /**
+         * The identifier of the log group used with the SQL Endpoint.
+         * @param logGroupId the value to set
+         * @return this builder
+         **/
+        public Builder logGroupId(String logGroupId) {
+            this.logGroupId = logGroupId;
+            this.__explicitlySet__.add("logGroupId");
+            return this;
+        }
+        /**
+         * The identifier of the log group compartment used with the SQL Endpoint.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logCompartmentId")
+        private String logCompartmentId;
+
+        /**
+         * The identifier of the log group compartment used with the SQL Endpoint.
+         * @param logCompartmentId the value to set
+         * @return this builder
+         **/
+        public Builder logCompartmentId(String logCompartmentId) {
+            this.logCompartmentId = logCompartmentId;
+            this.__explicitlySet__.add("logCompartmentId");
+            return this;
+        }
+        /**
+         * The friendly name of the log object used with the SQL Endpoint.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logDisplayName")
+        private String logDisplayName;
+
+        /**
+         * The friendly name of the log object used with the SQL Endpoint.
+         * @param logDisplayName the value to set
+         * @return this builder
+         **/
+        public Builder logDisplayName(String logDisplayName) {
+            this.logDisplayName = logDisplayName;
+            this.__explicitlySet__.add("logDisplayName");
+            return this;
+        }
+        /**
+         * Log retention duration in days
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logRetentionDuration")
+        private Integer logRetentionDuration;
+
+        /**
+         * Log retention duration in days
+         * @param logRetentionDuration the value to set
+         * @return this builder
+         **/
+        public Builder logRetentionDuration(Integer logRetentionDuration) {
+            this.logRetentionDuration = logRetentionDuration;
+            this.__explicitlySet__.add("logRetentionDuration");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -377,7 +453,11 @@ public final class CreateSqlEndpointDetails
                             this.freeformTags,
                             this.definedTags,
                             this.sparkAdvancedConfigurations,
-                            this.networkConfiguration);
+                            this.networkConfiguration,
+                            this.logGroupId,
+                            this.logCompartmentId,
+                            this.logDisplayName,
+                            this.logRetentionDuration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -436,6 +516,18 @@ public final class CreateSqlEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("networkConfiguration")) {
                 this.networkConfiguration(model.getNetworkConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupId")) {
+                this.logGroupId(model.getLogGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("logCompartmentId")) {
+                this.logCompartmentId(model.getLogCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("logDisplayName")) {
+                this.logDisplayName(model.getLogDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("logRetentionDuration")) {
+                this.logRetentionDuration(model.getLogRetentionDuration());
             }
             return this;
         }
@@ -689,6 +781,62 @@ public final class CreateSqlEndpointDetails
         return networkConfiguration;
     }
 
+    /**
+     * The identifier of the log group used with the SQL Endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+    private final String logGroupId;
+
+    /**
+     * The identifier of the log group used with the SQL Endpoint.
+     * @return the value
+     **/
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
+    /**
+     * The identifier of the log group compartment used with the SQL Endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logCompartmentId")
+    private final String logCompartmentId;
+
+    /**
+     * The identifier of the log group compartment used with the SQL Endpoint.
+     * @return the value
+     **/
+    public String getLogCompartmentId() {
+        return logCompartmentId;
+    }
+
+    /**
+     * The friendly name of the log object used with the SQL Endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logDisplayName")
+    private final String logDisplayName;
+
+    /**
+     * The friendly name of the log object used with the SQL Endpoint.
+     * @return the value
+     **/
+    public String getLogDisplayName() {
+        return logDisplayName;
+    }
+
+    /**
+     * Log retention duration in days
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logRetentionDuration")
+    private final Integer logRetentionDuration;
+
+    /**
+     * Log retention duration in days
+     * @return the value
+     **/
+    public Integer getLogRetentionDuration() {
+        return logRetentionDuration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -721,6 +869,10 @@ public final class CreateSqlEndpointDetails
         sb.append(", sparkAdvancedConfigurations=")
                 .append(String.valueOf(this.sparkAdvancedConfigurations));
         sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
+        sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(", logCompartmentId=").append(String.valueOf(this.logCompartmentId));
+        sb.append(", logDisplayName=").append(String.valueOf(this.logDisplayName));
+        sb.append(", logRetentionDuration=").append(String.valueOf(this.logRetentionDuration));
         sb.append(")");
         return sb.toString();
     }
@@ -753,6 +905,10 @@ public final class CreateSqlEndpointDetails
                 && java.util.Objects.equals(
                         this.sparkAdvancedConfigurations, other.sparkAdvancedConfigurations)
                 && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(this.logCompartmentId, other.logCompartmentId)
+                && java.util.Objects.equals(this.logDisplayName, other.logDisplayName)
+                && java.util.Objects.equals(this.logRetentionDuration, other.logRetentionDuration)
                 && super.equals(other);
     }
 
@@ -807,6 +963,18 @@ public final class CreateSqlEndpointDetails
                         + (this.networkConfiguration == null
                                 ? 43
                                 : this.networkConfiguration.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logCompartmentId == null ? 43 : this.logCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logDisplayName == null ? 43 : this.logDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logRetentionDuration == null
+                                ? 43
+                                : this.logRetentionDuration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

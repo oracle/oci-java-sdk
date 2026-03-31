@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent.model;
@@ -29,6 +29,7 @@ public final class DataIngestionJob extends com.oracle.bmc.http.internal.Explici
         "compartmentId",
         "dataSourceId",
         "knowledgeBaseId",
+        "dataIngestionJobType",
         "dataIngestionJobStatistics",
         "timeCreated",
         "timeUpdated",
@@ -45,6 +46,7 @@ public final class DataIngestionJob extends com.oracle.bmc.http.internal.Explici
             String compartmentId,
             String dataSourceId,
             String knowledgeBaseId,
+            DataIngestionJobType dataIngestionJobType,
             DataIngestionJobStatistics dataIngestionJobStatistics,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -60,6 +62,7 @@ public final class DataIngestionJob extends com.oracle.bmc.http.internal.Explici
         this.compartmentId = compartmentId;
         this.dataSourceId = dataSourceId;
         this.knowledgeBaseId = knowledgeBaseId;
+        this.dataIngestionJobType = dataIngestionJobType;
         this.dataIngestionJobStatistics = dataIngestionJobStatistics;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -166,6 +169,15 @@ public final class DataIngestionJob extends com.oracle.bmc.http.internal.Explici
         public Builder knowledgeBaseId(String knowledgeBaseId) {
             this.knowledgeBaseId = knowledgeBaseId;
             this.__explicitlySet__.add("knowledgeBaseId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataIngestionJobType")
+        private DataIngestionJobType dataIngestionJobType;
+
+        public Builder dataIngestionJobType(DataIngestionJobType dataIngestionJobType) {
+            this.dataIngestionJobType = dataIngestionJobType;
+            this.__explicitlySet__.add("dataIngestionJobType");
             return this;
         }
 
@@ -342,6 +354,7 @@ public final class DataIngestionJob extends com.oracle.bmc.http.internal.Explici
                             this.compartmentId,
                             this.dataSourceId,
                             this.knowledgeBaseId,
+                            this.dataIngestionJobType,
                             this.dataIngestionJobStatistics,
                             this.timeCreated,
                             this.timeUpdated,
@@ -375,6 +388,9 @@ public final class DataIngestionJob extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("knowledgeBaseId")) {
                 this.knowledgeBaseId(model.getKnowledgeBaseId());
+            }
+            if (model.wasPropertyExplicitlySet("dataIngestionJobType")) {
+                this.dataIngestionJobType(model.getDataIngestionJobType());
             }
             if (model.wasPropertyExplicitlySet("dataIngestionJobStatistics")) {
                 this.dataIngestionJobStatistics(model.getDataIngestionJobStatistics());
@@ -497,6 +513,13 @@ public final class DataIngestionJob extends com.oracle.bmc.http.internal.Explici
      **/
     public String getKnowledgeBaseId() {
         return knowledgeBaseId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dataIngestionJobType")
+    private final DataIngestionJobType dataIngestionJobType;
+
+    public DataIngestionJobType getDataIngestionJobType() {
+        return dataIngestionJobType;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataIngestionJobStatistics")
@@ -715,6 +738,7 @@ public final class DataIngestionJob extends com.oracle.bmc.http.internal.Explici
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", dataSourceId=").append(String.valueOf(this.dataSourceId));
         sb.append(", knowledgeBaseId=").append(String.valueOf(this.knowledgeBaseId));
+        sb.append(", dataIngestionJobType=").append(String.valueOf(this.dataIngestionJobType));
         sb.append(", dataIngestionJobStatistics=")
                 .append(String.valueOf(this.dataIngestionJobStatistics));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -744,6 +768,7 @@ public final class DataIngestionJob extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.dataSourceId, other.dataSourceId)
                 && java.util.Objects.equals(this.knowledgeBaseId, other.knowledgeBaseId)
+                && java.util.Objects.equals(this.dataIngestionJobType, other.dataIngestionJobType)
                 && java.util.Objects.equals(
                         this.dataIngestionJobStatistics, other.dataIngestionJobStatistics)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -770,6 +795,11 @@ public final class DataIngestionJob extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.knowledgeBaseId == null ? 43 : this.knowledgeBaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataIngestionJobType == null
+                                ? 43
+                                : this.dataIngestionJobType.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataIngestionJobStatistics == null

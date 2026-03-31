@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -25,14 +25,20 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
         "nodeHostName",
         "nodeBackupId",
         "clusterAdminPassword",
+        "secretId",
         "shape"
     })
     public ReplaceNodeDetails(
-            String nodeHostName, String nodeBackupId, String clusterAdminPassword, String shape) {
+            String nodeHostName,
+            String nodeBackupId,
+            String clusterAdminPassword,
+            String secretId,
+            String shape) {
         super();
         this.nodeHostName = nodeHostName;
         this.nodeBackupId = nodeBackupId;
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
         this.shape = shape;
     }
 
@@ -87,6 +93,22 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * The secretId for the clusterAdminPassword.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         * @param secretId the value to set
+         * @return this builder
+         **/
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
+        /**
          * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
@@ -112,6 +134,7 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
                             this.nodeHostName,
                             this.nodeBackupId,
                             this.clusterAdminPassword,
+                            this.secretId,
                             this.shape);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -129,6 +152,9 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
@@ -191,6 +217,20 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * The secretId for the clusterAdminPassword.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     * @return the value
+     **/
+    public String getSecretId() {
+        return secretId;
+    }
+
+    /**
      * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
@@ -221,6 +261,7 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
         sb.append("nodeHostName=").append(String.valueOf(this.nodeHostName));
         sb.append(", nodeBackupId=").append(String.valueOf(this.nodeBackupId));
         sb.append(", clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(")");
         return sb.toString();
@@ -239,6 +280,7 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
         return java.util.Objects.equals(this.nodeHostName, other.nodeHostName)
                 && java.util.Objects.equals(this.nodeBackupId, other.nodeBackupId)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && super.equals(other);
     }
@@ -254,6 +296,7 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

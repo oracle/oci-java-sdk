@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -362,6 +362,17 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public com.oracle.bmc.datasafe.model.ReportType getType() {
         return type;
     }
+    /**
+     * Specifies the name of a resource that provides data for the report. For example  alerts, events.
+     */
+    private com.oracle.bmc.datasafe.model.ReportDefinitionDataSource dataSource;
+
+    /**
+     * Specifies the name of a resource that provides data for the report. For example  alerts, events.
+     */
+    public com.oracle.bmc.datasafe.model.ReportDefinitionDataSource getDataSource() {
+        return dataSource;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -634,6 +645,22 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
+         * Specifies the name of a resource that provides data for the report. For example  alerts, events.
+         */
+        private com.oracle.bmc.datasafe.model.ReportDefinitionDataSource dataSource = null;
+
+        /**
+         * Specifies the name of a resource that provides data for the report. For example  alerts, events.
+         * @param dataSource the value to set
+         * @return this builder instance
+         */
+        public Builder dataSource(
+                com.oracle.bmc.datasafe.model.ReportDefinitionDataSource dataSource) {
+            this.dataSource = dataSource;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -676,6 +703,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             opcRequestId(o.getOpcRequestId());
             lifecycleState(o.getLifecycleState());
             type(o.getType());
+            dataSource(o.getDataSource());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -723,8 +751,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.opcRequestId = opcRequestId;
             request.lifecycleState = lifecycleState;
             request.type = type;
+            request.dataSource = dataSource;
             return request;
-            // new ListReportsRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, limit, page, sortOrder, sortBy, mimeType, reportDefinitionId, timeGeneratedGreaterThanOrEqualTo, timeGeneratedLessThan, opcRequestId, lifecycleState, type);
+            // new ListReportsRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, limit, page, sortOrder, sortBy, mimeType, reportDefinitionId, timeGeneratedGreaterThanOrEqualTo, timeGeneratedLessThan, opcRequestId, lifecycleState, type, dataSource);
         }
     }
 
@@ -748,7 +777,8 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .timeGeneratedLessThan(timeGeneratedLessThan)
                 .opcRequestId(opcRequestId)
                 .lifecycleState(lifecycleState)
-                .type(type);
+                .type(type)
+                .dataSource(dataSource);
     }
 
     /**
@@ -780,6 +810,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",type=").append(String.valueOf(this.type));
+        sb.append(",dataSource=").append(String.valueOf(this.dataSource));
         sb.append(")");
         return sb.toString();
     }
@@ -812,7 +843,8 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.timeGeneratedLessThan, other.timeGeneratedLessThan)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.type, other.type);
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.dataSource, other.dataSource);
     }
 
     @Override
@@ -854,6 +886,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.dataSource == null ? 43 : this.dataSource.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.nosql;
@@ -93,7 +93,7 @@ public interface NosqlAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateIndexRequest, CreateIndexResponse> handler);
 
     /**
-     * Add a replica for this table
+     * Add a replica for this table. The table's schema must be frozen prior to this operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -192,6 +192,26 @@ public interface NosqlAsync extends AutoCloseable {
             DeleteWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteWorkRequestRequest, DeleteWorkRequestResponse>
+                    handler);
+
+    /**
+     * Retrieves the current service-level configuration.  The
+     * service may of the standard MULTI_TENANCY type, or of the
+     * HOSTED environment type.  In the latter case, information about the
+     * current state of the environment's global encryption key is
+     * included in the response.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConfigurationResponse> getConfiguration(
+            GetConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetConfigurationRequest, GetConfigurationResponse>
                     handler);
 
     /**
@@ -388,6 +408,42 @@ public interface NosqlAsync extends AutoCloseable {
             SummarizeStatementRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             SummarizeStatementRequest, SummarizeStatementResponse>
+                    handler);
+
+    /**
+     * Removes the global encryption key, if such exists, from a
+     * Hosted Environment, reverting to Oracle-managed encryption.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UnassignKmsKeyResponse> unassignKmsKey(
+            UnassignKmsKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UnassignKmsKeyRequest, UnassignKmsKeyResponse>
+                    handler);
+
+    /**
+     * Updates the service-level configuration.  The discriminator value
+     * `UpdateConfigurationDetails.environment` must match the service's
+     * environment type.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateConfigurationResponse> updateConfiguration(
+            UpdateConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateConfigurationRequest, UpdateConfigurationResponse>
                     handler);
 
     /**

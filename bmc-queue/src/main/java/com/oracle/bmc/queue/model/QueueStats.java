@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.model;
@@ -19,12 +19,13 @@ package com.oracle.bmc.queue.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class QueueStats extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"queue", "dlq", "channelId"})
-    public QueueStats(Stats queue, Stats dlq, String channelId) {
+    @java.beans.ConstructorProperties({"queue", "dlq", "channelId", "consumerGroupId"})
+    public QueueStats(Stats queue, Stats dlq, String channelId, String consumerGroupId) {
         super();
         this.queue = queue;
         this.dlq = dlq;
         this.channelId = channelId;
+        this.consumerGroupId = consumerGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -63,12 +64,29 @@ public final class QueueStats extends com.oracle.bmc.http.internal.ExplicitlySet
             this.__explicitlySet__.add("channelId");
             return this;
         }
+        /**
+         * If consumerGroupId is present in GetStats call, the consumer group id will be returned in the GetStats response.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("consumerGroupId")
+        private String consumerGroupId;
+
+        /**
+         * If consumerGroupId is present in GetStats call, the consumer group id will be returned in the GetStats response.
+         * @param consumerGroupId the value to set
+         * @return this builder
+         **/
+        public Builder consumerGroupId(String consumerGroupId) {
+            this.consumerGroupId = consumerGroupId;
+            this.__explicitlySet__.add("consumerGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueueStats build() {
-            QueueStats model = new QueueStats(this.queue, this.dlq, this.channelId);
+            QueueStats model =
+                    new QueueStats(this.queue, this.dlq, this.channelId, this.consumerGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -85,6 +103,9 @@ public final class QueueStats extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("channelId")) {
                 this.channelId(model.getChannelId());
+            }
+            if (model.wasPropertyExplicitlySet("consumerGroupId")) {
+                this.consumerGroupId(model.getConsumerGroupId());
             }
             return this;
         }
@@ -129,6 +150,20 @@ public final class QueueStats extends com.oracle.bmc.http.internal.ExplicitlySet
         return channelId;
     }
 
+    /**
+     * If consumerGroupId is present in GetStats call, the consumer group id will be returned in the GetStats response.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("consumerGroupId")
+    private final String consumerGroupId;
+
+    /**
+     * If consumerGroupId is present in GetStats call, the consumer group id will be returned in the GetStats response.
+     * @return the value
+     **/
+    public String getConsumerGroupId() {
+        return consumerGroupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -146,6 +181,7 @@ public final class QueueStats extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append("queue=").append(String.valueOf(this.queue));
         sb.append(", dlq=").append(String.valueOf(this.dlq));
         sb.append(", channelId=").append(String.valueOf(this.channelId));
+        sb.append(", consumerGroupId=").append(String.valueOf(this.consumerGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -163,6 +199,7 @@ public final class QueueStats extends com.oracle.bmc.http.internal.ExplicitlySet
         return java.util.Objects.equals(this.queue, other.queue)
                 && java.util.Objects.equals(this.dlq, other.dlq)
                 && java.util.Objects.equals(this.channelId, other.channelId)
+                && java.util.Objects.equals(this.consumerGroupId, other.consumerGroupId)
                 && super.equals(other);
     }
 
@@ -173,6 +210,9 @@ public final class QueueStats extends com.oracle.bmc.http.internal.ExplicitlySet
         result = (result * PRIME) + (this.queue == null ? 43 : this.queue.hashCode());
         result = (result * PRIME) + (this.dlq == null ? 43 : this.dlq.hashCode());
         result = (result * PRIME) + (this.channelId == null ? 43 : this.channelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consumerGroupId == null ? 43 : this.consumerGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

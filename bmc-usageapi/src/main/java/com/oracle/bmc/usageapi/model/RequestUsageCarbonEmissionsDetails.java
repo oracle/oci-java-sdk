@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi.model;
@@ -26,6 +26,9 @@ public final class RequestUsageCarbonEmissionsDetails
         "tenantId",
         "timeUsageStarted",
         "timeUsageEnded",
+        "emissionCalculationMethod",
+        "emissionType",
+        "granularity",
         "isAggregateByTime",
         "groupBy",
         "groupByTag",
@@ -36,6 +39,9 @@ public final class RequestUsageCarbonEmissionsDetails
             String tenantId,
             java.util.Date timeUsageStarted,
             java.util.Date timeUsageEnded,
+            EmissionCalculationMethod emissionCalculationMethod,
+            EmissionType emissionType,
+            Granularity granularity,
             Boolean isAggregateByTime,
             java.util.List<String> groupBy,
             java.util.List<Tag> groupByTag,
@@ -45,6 +51,9 @@ public final class RequestUsageCarbonEmissionsDetails
         this.tenantId = tenantId;
         this.timeUsageStarted = timeUsageStarted;
         this.timeUsageEnded = timeUsageEnded;
+        this.emissionCalculationMethod = emissionCalculationMethod;
+        this.emissionType = emissionType;
+        this.granularity = granularity;
         this.isAggregateByTime = isAggregateByTime;
         this.groupBy = groupBy;
         this.groupByTag = groupByTag;
@@ -103,13 +112,62 @@ public final class RequestUsageCarbonEmissionsDetails
             return this;
         }
         /**
-         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+         * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("emissionCalculationMethod")
+        private EmissionCalculationMethod emissionCalculationMethod;
+
+        /**
+         * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+         * @param emissionCalculationMethod the value to set
+         * @return this builder
+         **/
+        public Builder emissionCalculationMethod(
+                EmissionCalculationMethod emissionCalculationMethod) {
+            this.emissionCalculationMethod = emissionCalculationMethod;
+            this.__explicitlySet__.add("emissionCalculationMethod");
+            return this;
+        }
+        /**
+         * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("emissionType")
+        private EmissionType emissionType;
+
+        /**
+         * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+         * @param emissionType the value to set
+         * @return this builder
+         **/
+        public Builder emissionType(EmissionType emissionType) {
+            this.emissionType = emissionType;
+            this.__explicitlySet__.add("emissionType");
+            return this;
+        }
+        /**
+         * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("granularity")
+        private Granularity granularity;
+
+        /**
+         * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+         * @param granularity the value to set
+         * @return this builder
+         **/
+        public Builder granularity(Granularity granularity) {
+            this.granularity = granularity;
+            this.__explicitlySet__.add("granularity");
+            return this;
+        }
+        /**
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
         private Boolean isAggregateByTime;
 
         /**
-         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
          * @param isAggregateByTime the value to set
          * @return this builder
          **/
@@ -201,6 +259,9 @@ public final class RequestUsageCarbonEmissionsDetails
                             this.tenantId,
                             this.timeUsageStarted,
                             this.timeUsageEnded,
+                            this.emissionCalculationMethod,
+                            this.emissionType,
+                            this.granularity,
                             this.isAggregateByTime,
                             this.groupBy,
                             this.groupByTag,
@@ -222,6 +283,15 @@ public final class RequestUsageCarbonEmissionsDetails
             }
             if (model.wasPropertyExplicitlySet("timeUsageEnded")) {
                 this.timeUsageEnded(model.getTimeUsageEnded());
+            }
+            if (model.wasPropertyExplicitlySet("emissionCalculationMethod")) {
+                this.emissionCalculationMethod(model.getEmissionCalculationMethod());
+            }
+            if (model.wasPropertyExplicitlySet("emissionType")) {
+                this.emissionType(model.getEmissionType());
+            }
+            if (model.wasPropertyExplicitlySet("granularity")) {
+                this.granularity(model.getGranularity());
             }
             if (model.wasPropertyExplicitlySet("isAggregateByTime")) {
                 this.isAggregateByTime(model.getIsAggregateByTime());
@@ -296,13 +366,160 @@ public final class RequestUsageCarbonEmissionsDetails
     }
 
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+     * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     **/
+    public enum EmissionCalculationMethod {
+        SpendBased("SPEND_BASED"),
+        PowerBased("POWER_BASED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, EmissionCalculationMethod> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (EmissionCalculationMethod v : EmissionCalculationMethod.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        EmissionCalculationMethod(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static EmissionCalculationMethod create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid EmissionCalculationMethod: " + key);
+        }
+    };
+    /**
+     * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("emissionCalculationMethod")
+    private final EmissionCalculationMethod emissionCalculationMethod;
+
+    /**
+     * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     * @return the value
+     **/
+    public EmissionCalculationMethod getEmissionCalculationMethod() {
+        return emissionCalculationMethod;
+    }
+
+    /**
+     * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     **/
+    public enum EmissionType {
+        MarketBased("MARKET_BASED"),
+        LocationBased("LOCATION_BASED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, EmissionType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (EmissionType v : EmissionType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        EmissionType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static EmissionType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid EmissionType: " + key);
+        }
+    };
+    /**
+     * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("emissionType")
+    private final EmissionType emissionType;
+
+    /**
+     * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * @return the value
+     **/
+    public EmissionType getEmissionType() {
+        return emissionType;
+    }
+
+    /**
+     * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     **/
+    public enum Granularity {
+        Daily("DAILY"),
+        Monthly("MONTHLY"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Granularity> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Granularity v : Granularity.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Granularity(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Granularity create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Granularity: " + key);
+        }
+    };
+    /**
+     * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("granularity")
+    private final Granularity granularity;
+
+    /**
+     * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     * @return the value
+     **/
+    public Granularity getGranularity() {
+        return granularity;
+    }
+
+    /**
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
     private final Boolean isAggregateByTime;
 
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
      * @return the value
      **/
     public Boolean getIsAggregateByTime() {
@@ -391,6 +608,10 @@ public final class RequestUsageCarbonEmissionsDetails
         sb.append("tenantId=").append(String.valueOf(this.tenantId));
         sb.append(", timeUsageStarted=").append(String.valueOf(this.timeUsageStarted));
         sb.append(", timeUsageEnded=").append(String.valueOf(this.timeUsageEnded));
+        sb.append(", emissionCalculationMethod=")
+                .append(String.valueOf(this.emissionCalculationMethod));
+        sb.append(", emissionType=").append(String.valueOf(this.emissionType));
+        sb.append(", granularity=").append(String.valueOf(this.granularity));
         sb.append(", isAggregateByTime=").append(String.valueOf(this.isAggregateByTime));
         sb.append(", groupBy=").append(String.valueOf(this.groupBy));
         sb.append(", groupByTag=").append(String.valueOf(this.groupByTag));
@@ -413,6 +634,10 @@ public final class RequestUsageCarbonEmissionsDetails
         return java.util.Objects.equals(this.tenantId, other.tenantId)
                 && java.util.Objects.equals(this.timeUsageStarted, other.timeUsageStarted)
                 && java.util.Objects.equals(this.timeUsageEnded, other.timeUsageEnded)
+                && java.util.Objects.equals(
+                        this.emissionCalculationMethod, other.emissionCalculationMethod)
+                && java.util.Objects.equals(this.emissionType, other.emissionType)
+                && java.util.Objects.equals(this.granularity, other.granularity)
                 && java.util.Objects.equals(this.isAggregateByTime, other.isAggregateByTime)
                 && java.util.Objects.equals(this.groupBy, other.groupBy)
                 && java.util.Objects.equals(this.groupByTag, other.groupByTag)
@@ -432,6 +657,13 @@ public final class RequestUsageCarbonEmissionsDetails
         result =
                 (result * PRIME)
                         + (this.timeUsageEnded == null ? 43 : this.timeUsageEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.emissionCalculationMethod == null
+                                ? 43
+                                : this.emissionCalculationMethod.hashCode());
+        result = (result * PRIME) + (this.emissionType == null ? 43 : this.emissionType.hashCode());
+        result = (result * PRIME) + (this.granularity == null ? 43 : this.granularity.hashCode());
         result =
                 (result * PRIME)
                         + (this.isAggregateByTime == null ? 43 : this.isAggregateByTime.hashCode());

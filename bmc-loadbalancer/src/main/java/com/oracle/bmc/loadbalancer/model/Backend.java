@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -151,8 +151,8 @@ public final class Backend extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         }
         /**
          * The maximum number of simultaneous connections the load balancer can make to the backend.
-         * If this is not set then the maximum number of simultaneous connections the load balancer
-         * can make to the backend is unlimited.
+         * If this is not set or set to 0 then the maximum number of simultaneous connections the
+         * load balancer can make to the backend is unlimited.
          * <p>
          * Example: {@code 300}
          *
@@ -162,8 +162,8 @@ public final class Backend extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
         /**
          * The maximum number of simultaneous connections the load balancer can make to the backend.
-         * If this is not set then the maximum number of simultaneous connections the load balancer
-         * can make to the backend is unlimited.
+         * If this is not set or set to 0 then the maximum number of simultaneous connections the
+         * load balancer can make to the backend is unlimited.
          * <p>
          * Example: {@code 300}
          *
@@ -403,8 +403,8 @@ public final class Backend extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     /**
      * The maximum number of simultaneous connections the load balancer can make to the backend.
-     * If this is not set then the maximum number of simultaneous connections the load balancer
-     * can make to the backend is unlimited.
+     * If this is not set or set to 0 then the maximum number of simultaneous connections the
+     * load balancer can make to the backend is unlimited.
      * <p>
      * Example: {@code 300}
      *
@@ -414,8 +414,8 @@ public final class Backend extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     /**
      * The maximum number of simultaneous connections the load balancer can make to the backend.
-     * If this is not set then the maximum number of simultaneous connections the load balancer
-     * can make to the backend is unlimited.
+     * If this is not set or set to 0 then the maximum number of simultaneous connections the
+     * load balancer can make to the backend is unlimited.
      * <p>
      * Example: {@code 300}
      *

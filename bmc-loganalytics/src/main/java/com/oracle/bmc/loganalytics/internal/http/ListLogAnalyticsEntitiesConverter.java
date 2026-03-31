@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.internal.http;
@@ -185,6 +185,50 @@ public class ListLogAnalyticsEntitiesConverter {
                             "metadataEquals",
                             request.getMetadataEquals(),
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getDefinedTagEquals() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "definedTagEquals",
+                            request.getDefinedTagEquals(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getFreeformTagEquals() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "freeformTagEquals",
+                            request.getFreeformTagEquals(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getDefinedTagExists() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "definedTagExists",
+                            request.getDefinedTagExists(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getFreeformTagExists() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "freeformTagExists",
+                            request.getFreeformTagExists(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getIsShowAssociatedSourcesCount() != null) {
+            target =
+                    target.queryParam(
+                            "isShowAssociatedSourcesCount",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsShowAssociatedSourcesCount()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

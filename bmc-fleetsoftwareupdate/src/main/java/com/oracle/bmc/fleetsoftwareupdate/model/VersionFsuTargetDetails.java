@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Exadata Fleet Update Cycle Target version string details.
+ * Exadata Fleet Update Cycle goal version string details.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -46,14 +46,16 @@ public final class VersionFsuTargetDetails extends FsuGoalVersionDetails {
             return this;
         }
         /**
-         * Target DB or GI version string for the Exadata Fleet Update Cycle.
+         * Goal version string for the Exadata Fleet Update Cycle.
+         * Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * Target DB or GI version string for the Exadata Fleet Update Cycle.
+         * Goal version string for the Exadata Fleet Update Cycle.
+         * Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
          *
          * @param version the value to set
          * @return this builder
@@ -109,14 +111,16 @@ public final class VersionFsuTargetDetails extends FsuGoalVersionDetails {
     }
 
     /**
-     * Target DB or GI version string for the Exadata Fleet Update Cycle.
+     * Goal version string for the Exadata Fleet Update Cycle.
+     * Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * Target DB or GI version string for the Exadata Fleet Update Cycle.
+     * Goal version string for the Exadata Fleet Update Cycle.
+     * Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
      *
      * @return the value
      **/

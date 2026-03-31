@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aivision.model;
@@ -22,10 +22,11 @@ package com.oracle.bmc.aivision.model;
 public final class VideoTrackedObjectProperties
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"axleCount"})
-    public VideoTrackedObjectProperties(Integer axleCount) {
+    @java.beans.ConstructorProperties({"axleCount", "trailerIds"})
+    public VideoTrackedObjectProperties(Integer axleCount, java.util.List<Integer> trailerIds) {
         super();
         this.axleCount = axleCount;
+        this.trailerIds = trailerIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,12 +47,29 @@ public final class VideoTrackedObjectProperties
             this.__explicitlySet__.add("axleCount");
             return this;
         }
+        /**
+         * Object IDs of the trailers associated with the tracked vehicle.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("trailerIds")
+        private java.util.List<Integer> trailerIds;
+
+        /**
+         * Object IDs of the trailers associated with the tracked vehicle.
+         * @param trailerIds the value to set
+         * @return this builder
+         **/
+        public Builder trailerIds(java.util.List<Integer> trailerIds) {
+            this.trailerIds = trailerIds;
+            this.__explicitlySet__.add("trailerIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VideoTrackedObjectProperties build() {
-            VideoTrackedObjectProperties model = new VideoTrackedObjectProperties(this.axleCount);
+            VideoTrackedObjectProperties model =
+                    new VideoTrackedObjectProperties(this.axleCount, this.trailerIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +80,9 @@ public final class VideoTrackedObjectProperties
         public Builder copy(VideoTrackedObjectProperties model) {
             if (model.wasPropertyExplicitlySet("axleCount")) {
                 this.axleCount(model.getAxleCount());
+            }
+            if (model.wasPropertyExplicitlySet("trailerIds")) {
+                this.trailerIds(model.getTrailerIds());
             }
             return this;
         }
@@ -92,6 +113,20 @@ public final class VideoTrackedObjectProperties
         return axleCount;
     }
 
+    /**
+     * Object IDs of the trailers associated with the tracked vehicle.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("trailerIds")
+    private final java.util.List<Integer> trailerIds;
+
+    /**
+     * Object IDs of the trailers associated with the tracked vehicle.
+     * @return the value
+     **/
+    public java.util.List<Integer> getTrailerIds() {
+        return trailerIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -107,6 +142,7 @@ public final class VideoTrackedObjectProperties
         sb.append("VideoTrackedObjectProperties(");
         sb.append("super=").append(super.toString());
         sb.append("axleCount=").append(String.valueOf(this.axleCount));
+        sb.append(", trailerIds=").append(String.valueOf(this.trailerIds));
         sb.append(")");
         return sb.toString();
     }
@@ -121,7 +157,9 @@ public final class VideoTrackedObjectProperties
         }
 
         VideoTrackedObjectProperties other = (VideoTrackedObjectProperties) o;
-        return java.util.Objects.equals(this.axleCount, other.axleCount) && super.equals(other);
+        return java.util.Objects.equals(this.axleCount, other.axleCount)
+                && java.util.Objects.equals(this.trailerIds, other.trailerIds)
+                && super.equals(other);
     }
 
     @Override
@@ -129,6 +167,7 @@ public final class VideoTrackedObjectProperties
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.axleCount == null ? 43 : this.axleCount.hashCode());
+        result = (result * PRIME) + (this.trailerIds == null ? 43 : this.trailerIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

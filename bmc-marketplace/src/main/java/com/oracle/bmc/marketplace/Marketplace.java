@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplace;
@@ -85,6 +85,19 @@ public interface Marketplace extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/CreateAcceptedAgreementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAcceptedAgreement API.
      */
     CreateAcceptedAgreementResponse createAcceptedAgreement(CreateAcceptedAgreementRequest request);
+
+    /**
+     * Generates attested marketplace metadata
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/CreateMarketplaceExternalAttestedMetadataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMarketplaceExternalAttestedMetadata API.
+     */
+    CreateMarketplaceExternalAttestedMetadataResponse createMarketplaceExternalAttestedMetadata(
+            CreateMarketplaceExternalAttestedMetadataRequest request);
 
     /**
      * Creates a publication of the specified listing type with an optional default package.
@@ -320,6 +333,19 @@ public interface Marketplace extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListListingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListings API.
      */
     ListListingsResponse listListings(ListListingsRequest request);
+
+    /**
+     * Get public certificates used in JWT signing, in JSON Web Key Sets format
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListMarketplaceMetadataPublicKeysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMarketplaceMetadataPublicKeys API.
+     */
+    ListMarketplaceMetadataPublicKeysResponse listMarketplaceMetadataPublicKeys(
+            ListMarketplaceMetadataPublicKeysRequest request);
 
     /**
      * Gets the list of packages for a listing.

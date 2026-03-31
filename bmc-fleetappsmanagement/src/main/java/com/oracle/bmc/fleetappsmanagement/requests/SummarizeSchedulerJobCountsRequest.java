@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,20 +8,39 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SummarizeSchedulerJobCountsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeSchedulerJobCountsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class SummarizeSchedulerJobCountsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The ID of the compartment in which to list resources.
+     * Empty only if the resource OCID query param is not specified.
+     *
      */
     private String compartmentId;
 
     /**
      * The ID of the compartment in which to list resources.
+     * Empty only if the resource OCID query param is not specified.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all compartments which
+     * descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     *
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all compartments which
+     * descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     *
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
     }
     /**
      * The client request ID for tracing.
@@ -77,16 +96,39 @@ public class SummarizeSchedulerJobCountsRequest
 
         /**
          * The ID of the compartment in which to list resources.
+         * Empty only if the resource OCID query param is not specified.
+         *
          */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * Empty only if the resource OCID query param is not specified.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * If set to true, resources will be returned for not only the provided compartment, but all compartments which
+         * descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+         *
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * If set to true, resources will be returned for not only the provided compartment, but all compartments which
+         * descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
 
@@ -179,6 +221,7 @@ public class SummarizeSchedulerJobCountsRequest
          */
         public Builder copy(SummarizeSchedulerJobCountsRequest o) {
             compartmentId(o.getCompartmentId());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
             page(o.getPage());
@@ -216,12 +259,13 @@ public class SummarizeSchedulerJobCountsRequest
         public SummarizeSchedulerJobCountsRequest buildWithoutInvocationCallback() {
             SummarizeSchedulerJobCountsRequest request = new SummarizeSchedulerJobCountsRequest();
             request.compartmentId = compartmentId;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.opcRequestId = opcRequestId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             return request;
-            // new SummarizeSchedulerJobCountsRequest(compartmentId, opcRequestId, limit, page, sortOrder);
+            // new SummarizeSchedulerJobCountsRequest(compartmentId, compartmentIdInSubtree, opcRequestId, limit, page, sortOrder);
         }
     }
 
@@ -232,6 +276,7 @@ public class SummarizeSchedulerJobCountsRequest
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .opcRequestId(opcRequestId)
                 .limit(limit)
                 .page(page)
@@ -252,6 +297,7 @@ public class SummarizeSchedulerJobCountsRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -272,6 +318,8 @@ public class SummarizeSchedulerJobCountsRequest
         SummarizeSchedulerJobCountsRequest other = (SummarizeSchedulerJobCountsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -285,6 +333,11 @@ public class SummarizeSchedulerJobCountsRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

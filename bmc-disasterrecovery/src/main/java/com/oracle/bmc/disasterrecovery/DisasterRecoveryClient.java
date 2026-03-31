@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery;
@@ -7,8 +7,9 @@ package com.oracle.bmc.disasterrecovery;
 import com.oracle.bmc.disasterrecovery.internal.http.*;
 import com.oracle.bmc.disasterrecovery.requests.*;
 import com.oracle.bmc.disasterrecovery.responses.*;
-import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class DisasterRecoveryClient implements DisasterRecovery {
@@ -17,7 +18,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DISASTERRECOVERY")
+                    .serviceName(DisasterRecoveryClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://disaster-recovery.{region}.oci.{secondLevelDomain}")
@@ -51,6 +52,10 @@ public class DisasterRecoveryClient implements DisasterRecovery {
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -304,6 +309,11 @@ public class DisasterRecoveryClient implements DisasterRecovery {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -491,12 +501,21 @@ public class DisasterRecoveryClient implements DisasterRecovery {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -526,15 +545,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -719,6 +730,51 @@ public class DisasterRecoveryClient implements DisasterRecovery {
     }
 
     @Override
+    public CreateAutomaticDrConfigurationResponse createAutomaticDrConfiguration(
+            CreateAutomaticDrConfigurationRequest request) {
+        LOG.trace("Called createAutomaticDrConfiguration");
+        final CreateAutomaticDrConfigurationRequest interceptedRequest =
+                CreateAutomaticDrConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAutomaticDrConfigurationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "CreateAutomaticDrConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/CreateAutomaticDrConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateAutomaticDrConfigurationResponse>
+                transformer =
+                        CreateAutomaticDrConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateAutomaticDrConfigurationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateDrPlanResponse createDrPlan(CreateDrPlanRequest request) {
         LOG.trace("Called createDrPlan");
         final CreateDrPlanRequest interceptedRequest =
@@ -839,6 +895,46 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                                                 ib,
                                                 retriedRequest.getCreateDrProtectionGroupDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteAutomaticDrConfigurationResponse deleteAutomaticDrConfiguration(
+            DeleteAutomaticDrConfigurationRequest request) {
+        LOG.trace("Called deleteAutomaticDrConfiguration");
+        final DeleteAutomaticDrConfigurationRequest interceptedRequest =
+                DeleteAutomaticDrConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAutomaticDrConfigurationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "DeleteAutomaticDrConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/DeleteAutomaticDrConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteAutomaticDrConfigurationResponse>
+                transformer =
+                        DeleteAutomaticDrConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -998,6 +1094,44 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                                                 retriedRequest
                                                         .getDisassociateDrProtectionGroupDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetAutomaticDrConfigurationResponse getAutomaticDrConfiguration(
+            GetAutomaticDrConfigurationRequest request) {
+        LOG.trace("Called getAutomaticDrConfiguration");
+        final GetAutomaticDrConfigurationRequest interceptedRequest =
+                GetAutomaticDrConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutomaticDrConfigurationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "GetAutomaticDrConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/GetAutomaticDrConfiguration");
+        java.util.function.Function<javax.ws.rs.core.Response, GetAutomaticDrConfigurationResponse>
+                transformer =
+                        GetAutomaticDrConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1184,6 +1318,45 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                                                 ib,
                                                 retriedRequest.getIgnoreDrPlanExecutionDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListAutomaticDrConfigurationsResponse listAutomaticDrConfigurations(
+            ListAutomaticDrConfigurationsRequest request) {
+        LOG.trace("Called listAutomaticDrConfigurations");
+        final ListAutomaticDrConfigurationsRequest interceptedRequest =
+                ListAutomaticDrConfigurationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutomaticDrConfigurationsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "ListAutomaticDrConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/ListAutomaticDrConfigurations");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAutomaticDrConfigurationsResponse>
+                transformer =
+                        ListAutomaticDrConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1572,6 +1745,50 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getRetryDrPlanExecutionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateAutomaticDrConfigurationResponse updateAutomaticDrConfiguration(
+            UpdateAutomaticDrConfigurationRequest request) {
+        LOG.trace("Called updateAutomaticDrConfiguration");
+        final UpdateAutomaticDrConfigurationRequest interceptedRequest =
+                UpdateAutomaticDrConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAutomaticDrConfigurationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "UpdateAutomaticDrConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/UpdateAutomaticDrConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateAutomaticDrConfigurationResponse>
+                transformer =
+                        UpdateAutomaticDrConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateAutomaticDrConfigurationDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.requests;
@@ -56,6 +56,21 @@ public class LaunchInstanceConfigurationRequest
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
+    }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     *
+     */
+    private String opcComputeClusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     *
+     */
+    public String getOpcComputeClusterId() {
+        return opcComputeClusterId;
     }
 
     /**
@@ -135,6 +150,25 @@ public class LaunchInstanceConfigurationRequest
         }
 
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         *
+         */
+        private String opcComputeClusterId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         *
+         * @param opcComputeClusterId the value to set
+         * @return this builder instance
+         */
+        public Builder opcComputeClusterId(String opcComputeClusterId) {
+            this.opcComputeClusterId = opcComputeClusterId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -165,6 +199,7 @@ public class LaunchInstanceConfigurationRequest
             instanceConfigurationId(o.getInstanceConfigurationId());
             instanceConfiguration(o.getInstanceConfiguration());
             opcRetryToken(o.getOpcRetryToken());
+            opcComputeClusterId(o.getOpcComputeClusterId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -211,8 +246,9 @@ public class LaunchInstanceConfigurationRequest
             request.instanceConfigurationId = instanceConfigurationId;
             request.instanceConfiguration = instanceConfiguration;
             request.opcRetryToken = opcRetryToken;
+            request.opcComputeClusterId = opcComputeClusterId;
             return request;
-            // new LaunchInstanceConfigurationRequest(instanceConfigurationId, instanceConfiguration, opcRetryToken);
+            // new LaunchInstanceConfigurationRequest(instanceConfigurationId, instanceConfiguration, opcRetryToken, opcComputeClusterId);
         }
     }
 
@@ -224,7 +260,8 @@ public class LaunchInstanceConfigurationRequest
         return new Builder()
                 .instanceConfigurationId(instanceConfigurationId)
                 .instanceConfiguration(instanceConfiguration)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .opcComputeClusterId(opcComputeClusterId);
     }
 
     /**
@@ -243,6 +280,7 @@ public class LaunchInstanceConfigurationRequest
         sb.append(",instanceConfigurationId=").append(String.valueOf(this.instanceConfigurationId));
         sb.append(",instanceConfiguration=").append(String.valueOf(this.instanceConfiguration));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcComputeClusterId=").append(String.valueOf(this.opcComputeClusterId));
         sb.append(")");
         return sb.toString();
     }
@@ -261,7 +299,8 @@ public class LaunchInstanceConfigurationRequest
                 && java.util.Objects.equals(
                         this.instanceConfigurationId, other.instanceConfigurationId)
                 && java.util.Objects.equals(this.instanceConfiguration, other.instanceConfiguration)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcComputeClusterId, other.opcComputeClusterId);
     }
 
     @Override
@@ -281,6 +320,11 @@ public class LaunchInstanceConfigurationRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcComputeClusterId == null
+                                ? 43
+                                : this.opcComputeClusterId.hashCode());
         return result;
     }
 }

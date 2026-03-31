@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -230,6 +230,28 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
             return this;
         }
         /**
+         * The volume's iSCSI IPv6 address.
+         * <p>
+         * Example: {@code 2001:db8::1/64}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6")
+        private String ipv6;
+
+        /**
+         * The volume's iSCSI IPv6 address.
+         * <p>
+         * Example: {@code 2001:db8::1/64}
+         *
+         * @param ipv6 the value to set
+         * @return this builder
+         **/
+        public Builder ipv6(String ipv6) {
+            this.ipv6 = ipv6;
+            this.__explicitlySet__.add("ipv6");
+            return this;
+        }
+        /**
          * The target volume's iSCSI Qualified Name in the format defined
          * by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).
          * <p>
@@ -354,6 +376,7 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
                             this.chapSecret,
                             this.chapUsername,
                             this.ipv4,
+                            this.ipv6,
                             this.iqn,
                             this.port,
                             this.multipathDevices,
@@ -421,6 +444,9 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
             if (model.wasPropertyExplicitlySet("ipv4")) {
                 this.ipv4(model.getIpv4());
             }
+            if (model.wasPropertyExplicitlySet("ipv6")) {
+                this.ipv6(model.getIpv6());
+            }
             if (model.wasPropertyExplicitlySet("iqn")) {
                 this.iqn(model.getIqn());
             }
@@ -471,6 +497,7 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
             String chapSecret,
             String chapUsername,
             String ipv4,
+            String ipv6,
             String iqn,
             Integer port,
             java.util.List<MultipathDevice> multipathDevices,
@@ -495,6 +522,7 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
         this.chapSecret = chapSecret;
         this.chapUsername = chapUsername;
         this.ipv4 = ipv4;
+        this.ipv6 = ipv6;
         this.iqn = iqn;
         this.port = port;
         this.multipathDevices = multipathDevices;
@@ -562,6 +590,26 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
      **/
     public String getIpv4() {
         return ipv4;
+    }
+
+    /**
+     * The volume's iSCSI IPv6 address.
+     * <p>
+     * Example: {@code 2001:db8::1/64}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6")
+    private final String ipv6;
+
+    /**
+     * The volume's iSCSI IPv6 address.
+     * <p>
+     * Example: {@code 2001:db8::1/64}
+     *
+     * @return the value
+     **/
+    public String getIpv6() {
+        return ipv6;
     }
 
     /**
@@ -671,6 +719,7 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
         sb.append(", chapSecret=").append(String.valueOf(this.chapSecret));
         sb.append(", chapUsername=").append(String.valueOf(this.chapUsername));
         sb.append(", ipv4=").append(String.valueOf(this.ipv4));
+        sb.append(", ipv6=").append(String.valueOf(this.ipv6));
         sb.append(", iqn=").append(String.valueOf(this.iqn));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", multipathDevices=").append(String.valueOf(this.multipathDevices));
@@ -695,6 +744,7 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
         return java.util.Objects.equals(this.chapSecret, other.chapSecret)
                 && java.util.Objects.equals(this.chapUsername, other.chapUsername)
                 && java.util.Objects.equals(this.ipv4, other.ipv4)
+                && java.util.Objects.equals(this.ipv6, other.ipv6)
                 && java.util.Objects.equals(this.iqn, other.iqn)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.multipathDevices, other.multipathDevices)
@@ -712,6 +762,7 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
         result = (result * PRIME) + (this.chapSecret == null ? 43 : this.chapSecret.hashCode());
         result = (result * PRIME) + (this.chapUsername == null ? 43 : this.chapUsername.hashCode());
         result = (result * PRIME) + (this.ipv4 == null ? 43 : this.ipv4.hashCode());
+        result = (result * PRIME) + (this.ipv6 == null ? 43 : this.ipv6.hashCode());
         result = (result * PRIME) + (this.iqn == null ? 43 : this.iqn.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result =

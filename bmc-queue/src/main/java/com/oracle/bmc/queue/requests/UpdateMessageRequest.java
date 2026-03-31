@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.requests;
@@ -56,6 +56,17 @@ public class UpdateMessageRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * Optional parameter to specify a consumer group.
+     */
+    private String consumerGroupId;
+
+    /**
+     * Optional parameter to specify a consumer group.
+     */
+    public String getConsumerGroupId() {
+        return consumerGroupId;
     }
 
     /**
@@ -137,6 +148,21 @@ public class UpdateMessageRequest
         }
 
         /**
+         * Optional parameter to specify a consumer group.
+         */
+        private String consumerGroupId = null;
+
+        /**
+         * Optional parameter to specify a consumer group.
+         * @param consumerGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder consumerGroupId(String consumerGroupId) {
+            this.consumerGroupId = consumerGroupId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -168,6 +194,7 @@ public class UpdateMessageRequest
             messageReceipt(o.getMessageReceipt());
             updateMessageDetails(o.getUpdateMessageDetails());
             opcRequestId(o.getOpcRequestId());
+            consumerGroupId(o.getConsumerGroupId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -215,8 +242,9 @@ public class UpdateMessageRequest
             request.messageReceipt = messageReceipt;
             request.updateMessageDetails = updateMessageDetails;
             request.opcRequestId = opcRequestId;
+            request.consumerGroupId = consumerGroupId;
             return request;
-            // new UpdateMessageRequest(queueId, messageReceipt, updateMessageDetails, opcRequestId);
+            // new UpdateMessageRequest(queueId, messageReceipt, updateMessageDetails, opcRequestId, consumerGroupId);
         }
     }
 
@@ -229,7 +257,8 @@ public class UpdateMessageRequest
                 .queueId(queueId)
                 .messageReceipt(messageReceipt)
                 .updateMessageDetails(updateMessageDetails)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .consumerGroupId(consumerGroupId);
     }
 
     /**
@@ -249,6 +278,7 @@ public class UpdateMessageRequest
         sb.append(",messageReceipt=").append(String.valueOf(this.messageReceipt));
         sb.append(",updateMessageDetails=").append(String.valueOf(this.updateMessageDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",consumerGroupId=").append(String.valueOf(this.consumerGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -267,7 +297,8 @@ public class UpdateMessageRequest
                 && java.util.Objects.equals(this.queueId, other.queueId)
                 && java.util.Objects.equals(this.messageReceipt, other.messageReceipt)
                 && java.util.Objects.equals(this.updateMessageDetails, other.updateMessageDetails)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.consumerGroupId, other.consumerGroupId);
     }
 
     @Override
@@ -284,6 +315,9 @@ public class UpdateMessageRequest
                                 ? 43
                                 : this.updateMessageDetails.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consumerGroupId == null ? 43 : this.consumerGroupId.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -27,8 +27,12 @@ public final class UpdateDbSystemDetails
         "displayName",
         "description",
         "subnetId",
+        "nsgIds",
+        "securityAttributes",
         "databaseMode",
         "accessMode",
+        "rest",
+        "databaseConsole",
         "isHighlyAvailable",
         "availabilityDomain",
         "faultDomain",
@@ -51,15 +55,21 @@ public final class UpdateDbSystemDetails
         "crashRecovery",
         "databaseManagement",
         "secureConnections",
+        "encryptData",
         "customerContacts",
-        "readEndpoint"
+        "readEndpoint",
+        "telemetryConfiguration"
     })
     public UpdateDbSystemDetails(
             String displayName,
             String description,
             String subnetId,
+            java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             DbSystem.DatabaseMode databaseMode,
             DbSystem.AccessMode accessMode,
+            UpdateRestDetails rest,
+            UpdateDatabaseConsoleDetails databaseConsole,
             Boolean isHighlyAvailable,
             String availabilityDomain,
             String faultDomain,
@@ -82,14 +92,20 @@ public final class UpdateDbSystemDetails
             CrashRecoveryStatus crashRecovery,
             DatabaseManagementStatus databaseManagement,
             SecureConnectionDetails secureConnections,
+            EncryptDataDetails encryptData,
             java.util.List<CustomerContact> customerContacts,
-            UpdateReadEndpointDetails readEndpoint) {
+            UpdateReadEndpointDetails readEndpoint,
+            UpdateTelemetryConfigurationDetails telemetryConfiguration) {
         super();
         this.displayName = displayName;
         this.description = description;
         this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
         this.databaseMode = databaseMode;
         this.accessMode = accessMode;
+        this.rest = rest;
+        this.databaseConsole = databaseConsole;
         this.isHighlyAvailable = isHighlyAvailable;
         this.availabilityDomain = availabilityDomain;
         this.faultDomain = faultDomain;
@@ -112,8 +128,10 @@ public final class UpdateDbSystemDetails
         this.crashRecovery = crashRecovery;
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
+        this.encryptData = encryptData;
         this.customerContacts = customerContacts;
         this.readEndpoint = readEndpoint;
+        this.telemetryConfiguration = telemetryConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -169,6 +187,45 @@ public final class UpdateDbSystemDetails
             return this;
         }
         /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * Network Security Group OCIDs used for the VNIC attachment.
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * The database mode indicating the types of statements that will be allowed to run in the DB system.
          * This mode will apply only to statements run by user connections. Replicated write statements will continue
          * to be allowed regardless of the DatabaseMode.
@@ -218,6 +275,24 @@ public final class UpdateDbSystemDetails
         public Builder accessMode(DbSystem.AccessMode accessMode) {
             this.accessMode = accessMode;
             this.__explicitlySet__.add("accessMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rest")
+        private UpdateRestDetails rest;
+
+        public Builder rest(UpdateRestDetails rest) {
+            this.rest = rest;
+            this.__explicitlySet__.add("rest");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+        private UpdateDatabaseConsoleDetails databaseConsole;
+
+        public Builder databaseConsole(UpdateDatabaseConsoleDetails databaseConsole) {
+            this.databaseConsole = databaseConsole;
+            this.__explicitlySet__.add("databaseConsole");
             return this;
         }
         /**
@@ -654,6 +729,15 @@ public final class UpdateDbSystemDetails
             this.__explicitlySet__.add("secureConnections");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+        private EncryptDataDetails encryptData;
+
+        public Builder encryptData(EncryptDataDetails encryptData) {
+            this.encryptData = encryptData;
+            this.__explicitlySet__.add("encryptData");
+            return this;
+        }
         /**
          * The list of customer email addresses that receive information from Oracle about the specified OCI DB System resource.
          * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
@@ -686,6 +770,16 @@ public final class UpdateDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("telemetryConfiguration")
+        private UpdateTelemetryConfigurationDetails telemetryConfiguration;
+
+        public Builder telemetryConfiguration(
+                UpdateTelemetryConfigurationDetails telemetryConfiguration) {
+            this.telemetryConfiguration = telemetryConfiguration;
+            this.__explicitlySet__.add("telemetryConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -695,8 +789,12 @@ public final class UpdateDbSystemDetails
                             this.displayName,
                             this.description,
                             this.subnetId,
+                            this.nsgIds,
+                            this.securityAttributes,
                             this.databaseMode,
                             this.accessMode,
+                            this.rest,
+                            this.databaseConsole,
                             this.isHighlyAvailable,
                             this.availabilityDomain,
                             this.faultDomain,
@@ -719,8 +817,10 @@ public final class UpdateDbSystemDetails
                             this.crashRecovery,
                             this.databaseManagement,
                             this.secureConnections,
+                            this.encryptData,
                             this.customerContacts,
-                            this.readEndpoint);
+                            this.readEndpoint,
+                            this.telemetryConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -738,11 +838,23 @@ public final class UpdateDbSystemDetails
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("databaseMode")) {
                 this.databaseMode(model.getDatabaseMode());
             }
             if (model.wasPropertyExplicitlySet("accessMode")) {
                 this.accessMode(model.getAccessMode());
+            }
+            if (model.wasPropertyExplicitlySet("rest")) {
+                this.rest(model.getRest());
+            }
+            if (model.wasPropertyExplicitlySet("databaseConsole")) {
+                this.databaseConsole(model.getDatabaseConsole());
             }
             if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
                 this.isHighlyAvailable(model.getIsHighlyAvailable());
@@ -810,11 +922,17 @@ public final class UpdateDbSystemDetails
             if (model.wasPropertyExplicitlySet("secureConnections")) {
                 this.secureConnections(model.getSecureConnections());
             }
+            if (model.wasPropertyExplicitlySet("encryptData")) {
+                this.encryptData(model.getEncryptData());
+            }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
             }
             if (model.wasPropertyExplicitlySet("readEndpoint")) {
                 this.readEndpoint(model.getReadEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("telemetryConfiguration")) {
+                this.telemetryConfiguration(model.getTelemetryConfiguration());
             }
             return this;
         }
@@ -876,6 +994,40 @@ public final class UpdateDbSystemDetails
     }
 
     /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     * @return the value
+     **/
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * The database mode indicating the types of statements that will be allowed to run in the DB system.
      * This mode will apply only to statements run by user connections. Replicated write statements will continue
      * to be allowed regardless of the DatabaseMode.
@@ -921,6 +1073,20 @@ public final class UpdateDbSystemDetails
      **/
     public DbSystem.AccessMode getAccessMode() {
         return accessMode;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("rest")
+    private final UpdateRestDetails rest;
+
+    public UpdateRestDetails getRest() {
+        return rest;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseConsole")
+    private final UpdateDatabaseConsoleDetails databaseConsole;
+
+    public UpdateDatabaseConsoleDetails getDatabaseConsole() {
+        return databaseConsole;
     }
 
     /**
@@ -1312,6 +1478,13 @@ public final class UpdateDbSystemDetails
         return secureConnections;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+    private final EncryptDataDetails encryptData;
+
+    public EncryptDataDetails getEncryptData() {
+        return encryptData;
+    }
+
     /**
      * The list of customer email addresses that receive information from Oracle about the specified OCI DB System resource.
      * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
@@ -1339,6 +1512,13 @@ public final class UpdateDbSystemDetails
         return readEndpoint;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("telemetryConfiguration")
+    private final UpdateTelemetryConfigurationDetails telemetryConfiguration;
+
+    public UpdateTelemetryConfigurationDetails getTelemetryConfiguration() {
+        return telemetryConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1356,8 +1536,12 @@ public final class UpdateDbSystemDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
         sb.append(", accessMode=").append(String.valueOf(this.accessMode));
+        sb.append(", rest=").append(String.valueOf(this.rest));
+        sb.append(", databaseConsole=").append(String.valueOf(this.databaseConsole));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
@@ -1380,8 +1564,10 @@ public final class UpdateDbSystemDetails
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", encryptData=").append(String.valueOf(this.encryptData));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
+        sb.append(", telemetryConfiguration=").append(String.valueOf(this.telemetryConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -1399,8 +1585,12 @@ public final class UpdateDbSystemDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.databaseMode, other.databaseMode)
                 && java.util.Objects.equals(this.accessMode, other.accessMode)
+                && java.util.Objects.equals(this.rest, other.rest)
+                && java.util.Objects.equals(this.databaseConsole, other.databaseConsole)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
@@ -1423,8 +1613,11 @@ public final class UpdateDbSystemDetails
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.encryptData, other.encryptData)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
+                && java.util.Objects.equals(
+                        this.telemetryConfiguration, other.telemetryConfiguration)
                 && super.equals(other);
     }
 
@@ -1435,8 +1628,18 @@ public final class UpdateDbSystemDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
         result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
+        result = (result * PRIME) + (this.rest == null ? 43 : this.rest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseConsole == null ? 43 : this.databaseConsole.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());
@@ -1487,10 +1690,16 @@ public final class UpdateDbSystemDetails
         result =
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.encryptData == null ? 43 : this.encryptData.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
         result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.telemetryConfiguration == null
+                                ? 43
+                                : this.telemetryConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

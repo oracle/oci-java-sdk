@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -14,13 +14,13 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
                 com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails> {
 
     /**
-     * Request to update the properties of Autonomous Database regional wallet.
+     * Request to update the properties of Autonomous AI Database regional wallet.
      */
     private com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
             updateAutonomousDatabaseWalletDetails;
 
     /**
-     * Request to update the properties of Autonomous Database regional wallet.
+     * Request to update the properties of Autonomous AI Database regional wallet.
      */
     public com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
             getUpdateAutonomousDatabaseWalletDetails() {
@@ -38,6 +38,21 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
     }
 
     /**
@@ -59,13 +74,13 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Request to update the properties of Autonomous Database regional wallet.
+         * Request to update the properties of Autonomous AI Database regional wallet.
          */
         private com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
                 updateAutonomousDatabaseWalletDetails = null;
 
         /**
-         * Request to update the properties of Autonomous Database regional wallet.
+         * Request to update the properties of Autonomous AI Database regional wallet.
          * @param updateAutonomousDatabaseWalletDetails the value to set
          * @return this builder instance
          */
@@ -90,6 +105,25 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
             return this;
         }
 
@@ -123,6 +157,7 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
         public Builder copy(UpdateAutonomousDatabaseRegionalWalletRequest o) {
             updateAutonomousDatabaseWalletDetails(o.getUpdateAutonomousDatabaseWalletDetails());
             opcRequestId(o.getOpcRequestId());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -171,8 +206,9 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
                     new UpdateAutonomousDatabaseRegionalWalletRequest();
             request.updateAutonomousDatabaseWalletDetails = updateAutonomousDatabaseWalletDetails;
             request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
             return request;
-            // new UpdateAutonomousDatabaseRegionalWalletRequest(updateAutonomousDatabaseWalletDetails, opcRequestId);
+            // new UpdateAutonomousDatabaseRegionalWalletRequest(updateAutonomousDatabaseWalletDetails, opcRequestId, opcDryRun);
         }
     }
 
@@ -183,7 +219,8 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
     public Builder toBuilder() {
         return new Builder()
                 .updateAutonomousDatabaseWalletDetails(updateAutonomousDatabaseWalletDetails)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -202,6 +239,7 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
         sb.append(",updateAutonomousDatabaseWalletDetails=")
                 .append(String.valueOf(this.updateAutonomousDatabaseWalletDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -221,7 +259,8 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
                 && java.util.Objects.equals(
                         this.updateAutonomousDatabaseWalletDetails,
                         other.updateAutonomousDatabaseWalletDetails)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -234,6 +273,7 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
                                 ? 43
                                 : this.updateAutonomousDatabaseWalletDetails.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

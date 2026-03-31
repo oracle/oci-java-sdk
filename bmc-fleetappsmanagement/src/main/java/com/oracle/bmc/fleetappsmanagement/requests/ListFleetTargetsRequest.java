@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,7 +8,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetTargetsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFleetTargetsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -103,51 +103,13 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
      * The field to sort by. Only one sort order may be provided. Default order for displayName,product and resourceDisplayName is ascending.
      *
      */
-    private SortBy sortBy;
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for displayName,product and resourceDisplayName is ascending.
-     *
-     **/
-    public enum SortBy {
-        DisplayName("displayName"),
-        Product("product"),
-        ResourceDisplayName("resourceDisplayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
+    private com.oracle.bmc.fleetappsmanagement.model.TargetSortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for displayName,product and resourceDisplayName is ascending.
      *
      */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.TargetSortBy getSortBy() {
         return sortBy;
     }
     /**
@@ -160,6 +122,17 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * A filter to return fleets whose lifecycleState matches the given lifecycleState.
+     */
+    private com.oracle.bmc.fleetappsmanagement.model.FleetTarget.LifecycleState lifecycleState;
+
+    /**
+     * A filter to return fleets whose lifecycleState matches the given lifecycleState.
+     */
+    public com.oracle.bmc.fleetappsmanagement.model.FleetTarget.LifecycleState getLifecycleState() {
+        return lifecycleState;
     }
 
     public static class Builder
@@ -293,7 +266,7 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
          * The field to sort by. Only one sort order may be provided. Default order for displayName,product and resourceDisplayName is ascending.
          *
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.TargetSortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for displayName,product and resourceDisplayName is ascending.
@@ -301,7 +274,7 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(com.oracle.bmc.fleetappsmanagement.model.TargetSortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }
@@ -318,6 +291,24 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * A filter to return fleets whose lifecycleState matches the given lifecycleState.
+         */
+        private com.oracle.bmc.fleetappsmanagement.model.FleetTarget.LifecycleState lifecycleState =
+                null;
+
+        /**
+         * A filter to return fleets whose lifecycleState matches the given lifecycleState.
+         * @param lifecycleState the value to set
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.fleetappsmanagement.model.FleetTarget.LifecycleState
+                        lifecycleState) {
+            this.lifecycleState = lifecycleState;
             return this;
         }
 
@@ -359,6 +350,7 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            lifecycleState(o.getLifecycleState());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -401,8 +393,9 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.lifecycleState = lifecycleState;
             return request;
-            // new ListFleetTargetsRequest(fleetId, displayName, product, resourceId, resourceDisplayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListFleetTargetsRequest(fleetId, displayName, product, resourceId, resourceDisplayName, limit, page, sortOrder, sortBy, opcRequestId, lifecycleState);
         }
     }
 
@@ -421,7 +414,8 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .lifecycleState(lifecycleState);
     }
 
     /**
@@ -447,6 +441,7 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
     }
@@ -471,7 +466,8 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
     }
 
     @Override
@@ -492,6 +488,9 @@ public class ListFleetTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         return result;
     }
 }

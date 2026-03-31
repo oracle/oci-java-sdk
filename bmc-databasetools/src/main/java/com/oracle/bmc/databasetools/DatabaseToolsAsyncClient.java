@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools;
@@ -7,6 +7,8 @@ package com.oracle.bmc.databasetools;
 import com.oracle.bmc.databasetools.internal.http.*;
 import com.oracle.bmc.databasetools.requests.*;
 import com.oracle.bmc.databasetools.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for DatabaseTools service. <br/>
@@ -28,7 +30,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DATABASETOOLS")
+                    .serviceName(DatabaseToolsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dbtools.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -400,12 +411,21 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -435,15 +455,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -502,6 +514,62 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     AddDatabaseToolsConnectionLockRequest, AddDatabaseToolsConnectionLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddDatabaseToolsIdentityLockResponse>
+            addDatabaseToolsIdentityLock(
+                    AddDatabaseToolsIdentityLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddDatabaseToolsIdentityLockRequest,
+                                    AddDatabaseToolsIdentityLockResponse>
+                            handler) {
+        LOG.trace("Called async addDatabaseToolsIdentityLock");
+        final AddDatabaseToolsIdentityLockRequest interceptedRequest =
+                AddDatabaseToolsIdentityLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddDatabaseToolsIdentityLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsIdentityLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/AddDatabaseToolsIdentityLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddDatabaseToolsIdentityLockResponse>
+                transformer =
+                        AddDatabaseToolsIdentityLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddDatabaseToolsIdentityLockRequest, AddDatabaseToolsIdentityLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddDatabaseToolsIdentityLockRequest,
+                                AddDatabaseToolsIdentityLockResponse>,
+                        java.util.concurrent.Future<AddDatabaseToolsIdentityLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddDatabaseToolsIdentityLockRequest, AddDatabaseToolsIdentityLockResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -635,6 +703,66 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeDatabaseToolsIdentityCompartmentResponse>
+            changeDatabaseToolsIdentityCompartment(
+                    ChangeDatabaseToolsIdentityCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDatabaseToolsIdentityCompartmentRequest,
+                                    ChangeDatabaseToolsIdentityCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeDatabaseToolsIdentityCompartment");
+        final ChangeDatabaseToolsIdentityCompartmentRequest interceptedRequest =
+                ChangeDatabaseToolsIdentityCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDatabaseToolsIdentityCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "ChangeDatabaseToolsIdentityCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ChangeDatabaseToolsIdentityCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDatabaseToolsIdentityCompartmentResponse>
+                transformer =
+                        ChangeDatabaseToolsIdentityCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeDatabaseToolsIdentityCompartmentRequest,
+                        ChangeDatabaseToolsIdentityCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeDatabaseToolsIdentityCompartmentRequest,
+                                ChangeDatabaseToolsIdentityCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeDatabaseToolsIdentityCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeDatabaseToolsIdentityCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeDatabaseToolsIdentityCompartmentRequest,
+                    ChangeDatabaseToolsIdentityCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDatabaseToolsPrivateEndpointCompartmentResponse>
             changeDatabaseToolsPrivateEndpointCompartment(
                     ChangeDatabaseToolsPrivateEndpointCompartmentRequest request,
@@ -754,6 +882,63 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDatabaseToolsIdentityResponse>
+            createDatabaseToolsIdentity(
+                    CreateDatabaseToolsIdentityRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateDatabaseToolsIdentityRequest,
+                                    CreateDatabaseToolsIdentityResponse>
+                            handler) {
+        LOG.trace("Called async createDatabaseToolsIdentity");
+        final CreateDatabaseToolsIdentityRequest interceptedRequest =
+                CreateDatabaseToolsIdentityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDatabaseToolsIdentityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "CreateDatabaseToolsIdentity",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateDatabaseToolsIdentityResponse>
+                transformer =
+                        CreateDatabaseToolsIdentityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateDatabaseToolsIdentityRequest, CreateDatabaseToolsIdentityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDatabaseToolsIdentityRequest,
+                                CreateDatabaseToolsIdentityResponse>,
+                        java.util.concurrent.Future<CreateDatabaseToolsIdentityResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDatabaseToolsIdentityDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDatabaseToolsIdentityRequest, CreateDatabaseToolsIdentityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDatabaseToolsPrivateEndpointResponse>
             createDatabaseToolsPrivateEndpoint(
                     CreateDatabaseToolsPrivateEndpointRequest request,
@@ -851,6 +1036,57 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteDatabaseToolsConnectionRequest, DeleteDatabaseToolsConnectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDatabaseToolsIdentityResponse>
+            deleteDatabaseToolsIdentity(
+                    DeleteDatabaseToolsIdentityRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteDatabaseToolsIdentityRequest,
+                                    DeleteDatabaseToolsIdentityResponse>
+                            handler) {
+        LOG.trace("Called async deleteDatabaseToolsIdentity");
+        final DeleteDatabaseToolsIdentityRequest interceptedRequest =
+                DeleteDatabaseToolsIdentityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDatabaseToolsIdentityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "DeleteDatabaseToolsIdentity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/DeleteDatabaseToolsIdentity");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteDatabaseToolsIdentityResponse>
+                transformer =
+                        DeleteDatabaseToolsIdentityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteDatabaseToolsIdentityRequest, DeleteDatabaseToolsIdentityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDatabaseToolsIdentityRequest,
+                                DeleteDatabaseToolsIdentityResponse>,
+                        java.util.concurrent.Future<DeleteDatabaseToolsIdentityResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDatabaseToolsIdentityRequest, DeleteDatabaseToolsIdentityResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1008,6 +1244,54 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetDatabaseToolsEndpointServiceRequest,
                     GetDatabaseToolsEndpointServiceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDatabaseToolsIdentityResponse> getDatabaseToolsIdentity(
+            GetDatabaseToolsIdentityRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseToolsIdentityRequest, GetDatabaseToolsIdentityResponse>
+                    handler) {
+        LOG.trace("Called async getDatabaseToolsIdentity");
+        final GetDatabaseToolsIdentityRequest interceptedRequest =
+                GetDatabaseToolsIdentityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseToolsIdentityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsIdentity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/GetDatabaseToolsIdentity");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDatabaseToolsIdentityResponse>
+                transformer =
+                        GetDatabaseToolsIdentityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDatabaseToolsIdentityRequest, GetDatabaseToolsIdentityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDatabaseToolsIdentityRequest, GetDatabaseToolsIdentityResponse>,
+                        java.util.concurrent.Future<GetDatabaseToolsIdentityResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDatabaseToolsIdentityRequest, GetDatabaseToolsIdentityResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1223,6 +1507,57 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListDatabaseToolsIdentitiesResponse>
+            listDatabaseToolsIdentities(
+                    ListDatabaseToolsIdentitiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseToolsIdentitiesRequest,
+                                    ListDatabaseToolsIdentitiesResponse>
+                            handler) {
+        LOG.trace("Called async listDatabaseToolsIdentities");
+        final ListDatabaseToolsIdentitiesRequest interceptedRequest =
+                ListDatabaseToolsIdentitiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseToolsIdentitiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsIdentities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ListDatabaseToolsIdentities");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDatabaseToolsIdentitiesResponse>
+                transformer =
+                        ListDatabaseToolsIdentitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDatabaseToolsIdentitiesRequest, ListDatabaseToolsIdentitiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDatabaseToolsIdentitiesRequest,
+                                ListDatabaseToolsIdentitiesResponse>,
+                        java.util.concurrent.Future<ListDatabaseToolsIdentitiesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDatabaseToolsIdentitiesRequest, ListDatabaseToolsIdentitiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDatabaseToolsPrivateEndpointsResponse>
             listDatabaseToolsPrivateEndpoints(
                     ListDatabaseToolsPrivateEndpointsRequest request,
@@ -1416,6 +1751,66 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RefreshDatabaseToolsIdentityCredentialResponse>
+            refreshDatabaseToolsIdentityCredential(
+                    RefreshDatabaseToolsIdentityCredentialRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshDatabaseToolsIdentityCredentialRequest,
+                                    RefreshDatabaseToolsIdentityCredentialResponse>
+                            handler) {
+        LOG.trace("Called async refreshDatabaseToolsIdentityCredential");
+        final RefreshDatabaseToolsIdentityCredentialRequest interceptedRequest =
+                RefreshDatabaseToolsIdentityCredentialConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshDatabaseToolsIdentityCredentialConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "RefreshDatabaseToolsIdentityCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/RefreshDatabaseToolsIdentityCredential");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RefreshDatabaseToolsIdentityCredentialResponse>
+                transformer =
+                        RefreshDatabaseToolsIdentityCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RefreshDatabaseToolsIdentityCredentialRequest,
+                        RefreshDatabaseToolsIdentityCredentialResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshDatabaseToolsIdentityCredentialRequest,
+                                RefreshDatabaseToolsIdentityCredentialResponse>,
+                        java.util.concurrent.Future<RefreshDatabaseToolsIdentityCredentialResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getRefreshDatabaseToolsIdentityCredentialDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshDatabaseToolsIdentityCredentialRequest,
+                    RefreshDatabaseToolsIdentityCredentialResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveDatabaseToolsConnectionLockResponse>
             removeDatabaseToolsConnectionLock(
                     RemoveDatabaseToolsConnectionLockRequest request,
@@ -1461,6 +1856,64 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RemoveDatabaseToolsConnectionLockRequest,
                     RemoveDatabaseToolsConnectionLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveDatabaseToolsIdentityLockResponse>
+            removeDatabaseToolsIdentityLock(
+                    RemoveDatabaseToolsIdentityLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDatabaseToolsIdentityLockRequest,
+                                    RemoveDatabaseToolsIdentityLockResponse>
+                            handler) {
+        LOG.trace("Called async removeDatabaseToolsIdentityLock");
+        final RemoveDatabaseToolsIdentityLockRequest interceptedRequest =
+                RemoveDatabaseToolsIdentityLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveDatabaseToolsIdentityLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsIdentityLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/RemoveDatabaseToolsIdentityLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveDatabaseToolsIdentityLockResponse>
+                transformer =
+                        RemoveDatabaseToolsIdentityLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveDatabaseToolsIdentityLockRequest,
+                        RemoveDatabaseToolsIdentityLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveDatabaseToolsIdentityLockRequest,
+                                RemoveDatabaseToolsIdentityLockResponse>,
+                        java.util.concurrent.Future<RemoveDatabaseToolsIdentityLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveDatabaseToolsIdentityLockRequest,
+                    RemoveDatabaseToolsIdentityLockResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1589,6 +2042,62 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateDatabaseToolsIdentityResponse>
+            updateDatabaseToolsIdentity(
+                    UpdateDatabaseToolsIdentityRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDatabaseToolsIdentityRequest,
+                                    UpdateDatabaseToolsIdentityResponse>
+                            handler) {
+        LOG.trace("Called async updateDatabaseToolsIdentity");
+        final UpdateDatabaseToolsIdentityRequest interceptedRequest =
+                UpdateDatabaseToolsIdentityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDatabaseToolsIdentityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "UpdateDatabaseToolsIdentity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/UpdateDatabaseToolsIdentity");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateDatabaseToolsIdentityResponse>
+                transformer =
+                        UpdateDatabaseToolsIdentityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateDatabaseToolsIdentityRequest, UpdateDatabaseToolsIdentityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDatabaseToolsIdentityRequest,
+                                UpdateDatabaseToolsIdentityResponse>,
+                        java.util.concurrent.Future<UpdateDatabaseToolsIdentityResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDatabaseToolsIdentityDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDatabaseToolsIdentityRequest, UpdateDatabaseToolsIdentityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDatabaseToolsPrivateEndpointResponse>
             updateDatabaseToolsPrivateEndpoint(
                     UpdateDatabaseToolsPrivateEndpointRequest request,
@@ -1692,6 +2201,67 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ValidateDatabaseToolsConnectionRequest,
                     ValidateDatabaseToolsConnectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateDatabaseToolsIdentityCredentialResponse>
+            validateDatabaseToolsIdentityCredential(
+                    ValidateDatabaseToolsIdentityCredentialRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ValidateDatabaseToolsIdentityCredentialRequest,
+                                    ValidateDatabaseToolsIdentityCredentialResponse>
+                            handler) {
+        LOG.trace("Called async validateDatabaseToolsIdentityCredential");
+        final ValidateDatabaseToolsIdentityCredentialRequest interceptedRequest =
+                ValidateDatabaseToolsIdentityCredentialConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateDatabaseToolsIdentityCredentialConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "ValidateDatabaseToolsIdentityCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ValidateDatabaseToolsIdentityCredential");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ValidateDatabaseToolsIdentityCredentialResponse>
+                transformer =
+                        ValidateDatabaseToolsIdentityCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ValidateDatabaseToolsIdentityCredentialRequest,
+                        ValidateDatabaseToolsIdentityCredentialResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ValidateDatabaseToolsIdentityCredentialRequest,
+                                ValidateDatabaseToolsIdentityCredentialResponse>,
+                        java.util.concurrent.Future<
+                                ValidateDatabaseToolsIdentityCredentialResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getValidateDatabaseToolsIdentityCredentialDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ValidateDatabaseToolsIdentityCredentialRequest,
+                    ValidateDatabaseToolsIdentityCredentialResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

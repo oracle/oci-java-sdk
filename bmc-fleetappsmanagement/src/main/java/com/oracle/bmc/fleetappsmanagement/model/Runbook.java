@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -7,6 +7,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
 /**
  * Runbook definition.
  * Runbooks allow you to capture procedural tasks for handling a workflow.
+ * Only active versions of runbook will be available for executions.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -16,7 +17,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Runbook.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -26,17 +27,19 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "displayName",
         "description",
         "type",
-        "runbookRelevance",
         "operation",
         "osType",
         "platform",
         "isDefault",
+        "isSudoAccessNeeded",
         "estimatedTime",
+        "latestVersion",
+        "hasDraftVersion",
         "lifecycleState",
         "lifecycleDetails",
         "timeCreated",
         "timeUpdated",
-        "associations",
+        "runbookVersion",
         "compartmentId",
         "resourceRegion",
         "freeformTags",
@@ -48,17 +51,19 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             String displayName,
             String description,
             Type type,
-            RunbookRelevance runbookRelevance,
             String operation,
             OsType osType,
             String platform,
             Boolean isDefault,
+            Boolean isSudoAccessNeeded,
             String estimatedTime,
+            String latestVersion,
+            Boolean hasDraftVersion,
             LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            Associations associations,
+            Version runbookVersion,
             String compartmentId,
             String resourceRegion,
             java.util.Map<String, String> freeformTags,
@@ -69,17 +74,19 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.displayName = displayName;
         this.description = description;
         this.type = type;
-        this.runbookRelevance = runbookRelevance;
         this.operation = operation;
         this.osType = osType;
         this.platform = platform;
         this.isDefault = isDefault;
+        this.isSudoAccessNeeded = isSudoAccessNeeded;
         this.estimatedTime = estimatedTime;
+        this.latestVersion = latestVersion;
+        this.hasDraftVersion = hasDraftVersion;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
-        this.associations = associations;
+        this.runbookVersion = runbookVersion;
         this.compartmentId = compartmentId;
         this.resourceRegion = resourceRegion;
         this.freeformTags = freeformTags;
@@ -166,24 +173,6 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Relevance of the runbook.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("runbookRelevance")
-        private RunbookRelevance runbookRelevance;
-
-        /**
-         * Relevance of the runbook.
-         *
-         * @param runbookRelevance the value to set
-         * @return this builder
-         **/
-        public Builder runbookRelevance(RunbookRelevance runbookRelevance) {
-            this.runbookRelevance = runbookRelevance;
-            this.__explicitlySet__.add("runbookRelevance");
-            return this;
-        }
-        /**
          * The lifecycle operation performed by the runbook.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
@@ -252,6 +241,22 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
+         * Does this runbook need SUDO access to execute?
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSudoAccessNeeded")
+        private Boolean isSudoAccessNeeded;
+
+        /**
+         * Does this runbook need SUDO access to execute?
+         * @param isSudoAccessNeeded the value to set
+         * @return this builder
+         **/
+        public Builder isSudoAccessNeeded(Boolean isSudoAccessNeeded) {
+            this.isSudoAccessNeeded = isSudoAccessNeeded;
+            this.__explicitlySet__.add("isSudoAccessNeeded");
+            return this;
+        }
+        /**
          * Estimated time to successfully complete the runbook execution.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedTime")
@@ -268,13 +273,45 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * The current state of the Runbook.
+         * Latest runbook version.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("latestVersion")
+        private String latestVersion;
+
+        /**
+         * Latest runbook version.
+         * @param latestVersion the value to set
+         * @return this builder
+         **/
+        public Builder latestVersion(String latestVersion) {
+            this.latestVersion = latestVersion;
+            this.__explicitlySet__.add("latestVersion");
+            return this;
+        }
+        /**
+         * Does this runbook has draft versions?
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("hasDraftVersion")
+        private Boolean hasDraftVersion;
+
+        /**
+         * Does this runbook has draft versions?
+         * @param hasDraftVersion the value to set
+         * @return this builder
+         **/
+        public Builder hasDraftVersion(Boolean hasDraftVersion) {
+            this.hasDraftVersion = hasDraftVersion;
+            this.__explicitlySet__.add("hasDraftVersion");
+            return this;
+        }
+        /**
+         * The current state of the runbook.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Runbook.
+         * The current state of the runbook.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -332,12 +369,12 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("associations")
-        private Associations associations;
+        @com.fasterxml.jackson.annotation.JsonProperty("runbookVersion")
+        private Version runbookVersion;
 
-        public Builder associations(Associations associations) {
-            this.associations = associations;
-            this.__explicitlySet__.add("associations");
+        public Builder runbookVersion(Version runbookVersion) {
+            this.runbookVersion = runbookVersion;
+            this.__explicitlySet__.add("runbookVersion");
             return this;
         }
         /**
@@ -444,17 +481,19 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.displayName,
                             this.description,
                             this.type,
-                            this.runbookRelevance,
                             this.operation,
                             this.osType,
                             this.platform,
                             this.isDefault,
+                            this.isSudoAccessNeeded,
                             this.estimatedTime,
+                            this.latestVersion,
+                            this.hasDraftVersion,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.associations,
+                            this.runbookVersion,
                             this.compartmentId,
                             this.resourceRegion,
                             this.freeformTags,
@@ -480,9 +519,6 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
             }
-            if (model.wasPropertyExplicitlySet("runbookRelevance")) {
-                this.runbookRelevance(model.getRunbookRelevance());
-            }
             if (model.wasPropertyExplicitlySet("operation")) {
                 this.operation(model.getOperation());
             }
@@ -495,8 +531,17 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             if (model.wasPropertyExplicitlySet("isDefault")) {
                 this.isDefault(model.getIsDefault());
             }
+            if (model.wasPropertyExplicitlySet("isSudoAccessNeeded")) {
+                this.isSudoAccessNeeded(model.getIsSudoAccessNeeded());
+            }
             if (model.wasPropertyExplicitlySet("estimatedTime")) {
                 this.estimatedTime(model.getEstimatedTime());
+            }
+            if (model.wasPropertyExplicitlySet("latestVersion")) {
+                this.latestVersion(model.getLatestVersion());
+            }
+            if (model.wasPropertyExplicitlySet("hasDraftVersion")) {
+                this.hasDraftVersion(model.getHasDraftVersion());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -510,8 +555,8 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
-            if (model.wasPropertyExplicitlySet("associations")) {
-                this.associations(model.getAssociations());
+            if (model.wasPropertyExplicitlySet("runbookVersion")) {
+                this.runbookVersion(model.getRunbookVersion());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -659,71 +704,6 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Relevance of the runbook.
-     *
-     **/
-    public enum RunbookRelevance {
-        ProductGroup("PRODUCT_GROUP"),
-        Product("PRODUCT"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(RunbookRelevance.class);
-
-        private final String value;
-        private static java.util.Map<String, RunbookRelevance> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (RunbookRelevance v : RunbookRelevance.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        RunbookRelevance(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static RunbookRelevance create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'RunbookRelevance', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * Relevance of the runbook.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("runbookRelevance")
-    private final RunbookRelevance runbookRelevance;
-
-    /**
-     * Relevance of the runbook.
-     *
-     * @return the value
-     **/
-    public RunbookRelevance getRunbookRelevance() {
-        return runbookRelevance;
-    }
-
-    /**
      * The lifecycle operation performed by the runbook.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
@@ -784,6 +764,20 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
+     * Does this runbook need SUDO access to execute?
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSudoAccessNeeded")
+    private final Boolean isSudoAccessNeeded;
+
+    /**
+     * Does this runbook need SUDO access to execute?
+     * @return the value
+     **/
+    public Boolean getIsSudoAccessNeeded() {
+        return isSudoAccessNeeded;
+    }
+
+    /**
      * Estimated time to successfully complete the runbook execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedTime")
@@ -798,7 +792,35 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * The current state of the Runbook.
+     * Latest runbook version.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("latestVersion")
+    private final String latestVersion;
+
+    /**
+     * Latest runbook version.
+     * @return the value
+     **/
+    public String getLatestVersion() {
+        return latestVersion;
+    }
+
+    /**
+     * Does this runbook has draft versions?
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hasDraftVersion")
+    private final Boolean hasDraftVersion;
+
+    /**
+     * Does this runbook has draft versions?
+     * @return the value
+     **/
+    public Boolean getHasDraftVersion() {
+        return hasDraftVersion;
+    }
+
+    /**
+     * The current state of the runbook.
      **/
     public enum LifecycleState {
         Active("ACTIVE"),
@@ -851,13 +873,13 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         }
     };
     /**
-     * The current state of the Runbook.
+     * The current state of the runbook.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Runbook.
+     * The current state of the runbook.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -906,11 +928,11 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return timeUpdated;
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("associations")
-    private final Associations associations;
+    @com.fasterxml.jackson.annotation.JsonProperty("runbookVersion")
+    private final Version runbookVersion;
 
-    public Associations getAssociations() {
-        return associations;
+    public Version getRunbookVersion() {
+        return runbookVersion;
     }
 
     /**
@@ -1013,17 +1035,19 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", type=").append(String.valueOf(this.type));
-        sb.append(", runbookRelevance=").append(String.valueOf(this.runbookRelevance));
         sb.append(", operation=").append(String.valueOf(this.operation));
         sb.append(", osType=").append(String.valueOf(this.osType));
         sb.append(", platform=").append(String.valueOf(this.platform));
         sb.append(", isDefault=").append(String.valueOf(this.isDefault));
+        sb.append(", isSudoAccessNeeded=").append(String.valueOf(this.isSudoAccessNeeded));
         sb.append(", estimatedTime=").append(String.valueOf(this.estimatedTime));
+        sb.append(", latestVersion=").append(String.valueOf(this.latestVersion));
+        sb.append(", hasDraftVersion=").append(String.valueOf(this.hasDraftVersion));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append(", associations=").append(String.valueOf(this.associations));
+        sb.append(", runbookVersion=").append(String.valueOf(this.runbookVersion));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", resourceRegion=").append(String.valueOf(this.resourceRegion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -1047,17 +1071,19 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.type, other.type)
-                && java.util.Objects.equals(this.runbookRelevance, other.runbookRelevance)
                 && java.util.Objects.equals(this.operation, other.operation)
                 && java.util.Objects.equals(this.osType, other.osType)
                 && java.util.Objects.equals(this.platform, other.platform)
                 && java.util.Objects.equals(this.isDefault, other.isDefault)
+                && java.util.Objects.equals(this.isSudoAccessNeeded, other.isSudoAccessNeeded)
                 && java.util.Objects.equals(this.estimatedTime, other.estimatedTime)
+                && java.util.Objects.equals(this.latestVersion, other.latestVersion)
+                && java.util.Objects.equals(this.hasDraftVersion, other.hasDraftVersion)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.associations, other.associations)
+                && java.util.Objects.equals(this.runbookVersion, other.runbookVersion)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.resourceRegion, other.resourceRegion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -1074,16 +1100,24 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.runbookRelevance == null ? 43 : this.runbookRelevance.hashCode());
         result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
         result = (result * PRIME) + (this.osType == null ? 43 : this.osType.hashCode());
         result = (result * PRIME) + (this.platform == null ? 43 : this.platform.hashCode());
         result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
         result =
                 (result * PRIME)
+                        + (this.isSudoAccessNeeded == null
+                                ? 43
+                                : this.isSudoAccessNeeded.hashCode());
+        result =
+                (result * PRIME)
                         + (this.estimatedTime == null ? 43 : this.estimatedTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.latestVersion == null ? 43 : this.latestVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hasDraftVersion == null ? 43 : this.hasDraftVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
@@ -1092,7 +1126,9 @@ public final class Runbook extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
-        result = (result * PRIME) + (this.associations == null ? 43 : this.associations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runbookVersion == null ? 43 : this.runbookVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

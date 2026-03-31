@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -23,18 +23,24 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
         "vmclusterName",
         "memoryAllocatedInGBs",
         "cpuAllocated",
-        "dbNodesCount"
+        "dbNodesCount",
+        "storageAllocatedInGBs",
+        "vmClusterId"
     })
     public VmClusterSummary(
             String vmclusterName,
             Integer memoryAllocatedInGBs,
             Integer cpuAllocated,
-            Integer dbNodesCount) {
+            Integer dbNodesCount,
+            Integer storageAllocatedInGBs,
+            String vmClusterId) {
         super();
         this.vmclusterName = vmclusterName;
         this.memoryAllocatedInGBs = memoryAllocatedInGBs;
         this.cpuAllocated = cpuAllocated;
         this.dbNodesCount = dbNodesCount;
+        this.storageAllocatedInGBs = storageAllocatedInGBs;
+        this.vmClusterId = vmClusterId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -103,6 +109,38 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("dbNodesCount");
             return this;
         }
+        /**
+         * The storage allocated on a VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("storageAllocatedInGBs")
+        private Integer storageAllocatedInGBs;
+
+        /**
+         * The storage allocated on a VM Cluster.
+         * @param storageAllocatedInGBs the value to set
+         * @return this builder
+         **/
+        public Builder storageAllocatedInGBs(Integer storageAllocatedInGBs) {
+            this.storageAllocatedInGBs = storageAllocatedInGBs;
+            this.__explicitlySet__.add("storageAllocatedInGBs");
+            return this;
+        }
+        /**
+         * The OCID of the VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
+        private String vmClusterId;
+
+        /**
+         * The OCID of the VM Cluster.
+         * @param vmClusterId the value to set
+         * @return this builder
+         **/
+        public Builder vmClusterId(String vmClusterId) {
+            this.vmClusterId = vmClusterId;
+            this.__explicitlySet__.add("vmClusterId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -113,7 +151,9 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
                             this.vmclusterName,
                             this.memoryAllocatedInGBs,
                             this.cpuAllocated,
-                            this.dbNodesCount);
+                            this.dbNodesCount,
+                            this.storageAllocatedInGBs,
+                            this.vmClusterId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -133,6 +173,12 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("dbNodesCount")) {
                 this.dbNodesCount(model.getDbNodesCount());
+            }
+            if (model.wasPropertyExplicitlySet("storageAllocatedInGBs")) {
+                this.storageAllocatedInGBs(model.getStorageAllocatedInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterId")) {
+                this.vmClusterId(model.getVmClusterId());
             }
             return this;
         }
@@ -205,6 +251,34 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
         return dbNodesCount;
     }
 
+    /**
+     * The storage allocated on a VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageAllocatedInGBs")
+    private final Integer storageAllocatedInGBs;
+
+    /**
+     * The storage allocated on a VM Cluster.
+     * @return the value
+     **/
+    public Integer getStorageAllocatedInGBs() {
+        return storageAllocatedInGBs;
+    }
+
+    /**
+     * The OCID of the VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
+    private final String vmClusterId;
+
+    /**
+     * The OCID of the VM Cluster.
+     * @return the value
+     **/
+    public String getVmClusterId() {
+        return vmClusterId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -223,6 +297,8 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
         sb.append(", memoryAllocatedInGBs=").append(String.valueOf(this.memoryAllocatedInGBs));
         sb.append(", cpuAllocated=").append(String.valueOf(this.cpuAllocated));
         sb.append(", dbNodesCount=").append(String.valueOf(this.dbNodesCount));
+        sb.append(", storageAllocatedInGBs=").append(String.valueOf(this.storageAllocatedInGBs));
+        sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
         sb.append(")");
         return sb.toString();
     }
@@ -241,6 +317,8 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.memoryAllocatedInGBs, other.memoryAllocatedInGBs)
                 && java.util.Objects.equals(this.cpuAllocated, other.cpuAllocated)
                 && java.util.Objects.equals(this.dbNodesCount, other.dbNodesCount)
+                && java.util.Objects.equals(this.storageAllocatedInGBs, other.storageAllocatedInGBs)
+                && java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
                 && super.equals(other);
     }
 
@@ -258,6 +336,12 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
                                 : this.memoryAllocatedInGBs.hashCode());
         result = (result * PRIME) + (this.cpuAllocated == null ? 43 : this.cpuAllocated.hashCode());
         result = (result * PRIME) + (this.dbNodesCount == null ? 43 : this.dbNodesCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageAllocatedInGBs == null
+                                ? 43
+                                : this.storageAllocatedInGBs.hashCode());
+        result = (result * PRIME) + (this.vmClusterId == null ? 43 : this.vmClusterId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

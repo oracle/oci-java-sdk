@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -24,6 +24,10 @@ package com.oracle.bmc.opsi.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CredentialByNamedCredentials.class,
+        name = "CREDENTIALS_BY_NAMED_CREDS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CredentialsBySource.class,
         name = "CREDENTIALS_BY_SOURCE"
     ),
@@ -46,13 +50,13 @@ public class CredentialDetails extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+     * Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialSourceName")
     private final String credentialSourceName;
 
     /**
-     * Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+     * Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
      * @return the value
      **/
     public String getCredentialSourceName() {
@@ -113,6 +117,7 @@ public class CredentialDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         CredentialsBySource("CREDENTIALS_BY_SOURCE"),
         CredentialsByVault("CREDENTIALS_BY_VAULT"),
         CredentialsByIam("CREDENTIALS_BY_IAM"),
+        CredentialsByNamedCreds("CREDENTIALS_BY_NAMED_CREDS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

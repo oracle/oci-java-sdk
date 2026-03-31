@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -35,7 +35,8 @@ public final class DeploymentTypeSummary
         "targetTechnologies",
         "oggVersion",
         "supportedTechnologiesUrl",
-        "defaultUsername"
+        "defaultUsername",
+        "supportedCapabilities"
     })
     public DeploymentTypeSummary(
             DeploymentCategory category,
@@ -46,7 +47,8 @@ public final class DeploymentTypeSummary
             java.util.List<String> targetTechnologies,
             String oggVersion,
             String supportedTechnologiesUrl,
-            String defaultUsername) {
+            String defaultUsername,
+            java.util.List<SupportedCapabilities> supportedCapabilities) {
         super();
         this.category = category;
         this.displayName = displayName;
@@ -57,6 +59,7 @@ public final class DeploymentTypeSummary
         this.oggVersion = oggVersion;
         this.supportedTechnologiesUrl = supportedTechnologiesUrl;
         this.defaultUsername = defaultUsername;
+        this.supportedCapabilities = supportedCapabilities;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -237,6 +240,25 @@ public final class DeploymentTypeSummary
             this.__explicitlySet__.add("defaultUsername");
             return this;
         }
+        /**
+         * Specifies supported capabilities or features by a deployment type .
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedCapabilities")
+        private java.util.List<SupportedCapabilities> supportedCapabilities;
+
+        /**
+         * Specifies supported capabilities or features by a deployment type .
+         *
+         * @param supportedCapabilities the value to set
+         * @return this builder
+         **/
+        public Builder supportedCapabilities(
+                java.util.List<SupportedCapabilities> supportedCapabilities) {
+            this.supportedCapabilities = supportedCapabilities;
+            this.__explicitlySet__.add("supportedCapabilities");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -252,7 +274,8 @@ public final class DeploymentTypeSummary
                             this.targetTechnologies,
                             this.oggVersion,
                             this.supportedTechnologiesUrl,
-                            this.defaultUsername);
+                            this.defaultUsername,
+                            this.supportedCapabilities);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -287,6 +310,9 @@ public final class DeploymentTypeSummary
             }
             if (model.wasPropertyExplicitlySet("defaultUsername")) {
                 this.defaultUsername(model.getDefaultUsername());
+            }
+            if (model.wasPropertyExplicitlySet("supportedCapabilities")) {
+                this.supportedCapabilities(model.getSupportedCapabilities());
             }
             return this;
         }
@@ -461,6 +487,22 @@ public final class DeploymentTypeSummary
         return defaultUsername;
     }
 
+    /**
+     * Specifies supported capabilities or features by a deployment type .
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedCapabilities")
+    private final java.util.List<SupportedCapabilities> supportedCapabilities;
+
+    /**
+     * Specifies supported capabilities or features by a deployment type .
+     *
+     * @return the value
+     **/
+    public java.util.List<SupportedCapabilities> getSupportedCapabilities() {
+        return supportedCapabilities;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -485,6 +527,7 @@ public final class DeploymentTypeSummary
         sb.append(", supportedTechnologiesUrl=")
                 .append(String.valueOf(this.supportedTechnologiesUrl));
         sb.append(", defaultUsername=").append(String.valueOf(this.defaultUsername));
+        sb.append(", supportedCapabilities=").append(String.valueOf(this.supportedCapabilities));
         sb.append(")");
         return sb.toString();
     }
@@ -509,6 +552,7 @@ public final class DeploymentTypeSummary
                 && java.util.Objects.equals(
                         this.supportedTechnologiesUrl, other.supportedTechnologiesUrl)
                 && java.util.Objects.equals(this.defaultUsername, other.defaultUsername)
+                && java.util.Objects.equals(this.supportedCapabilities, other.supportedCapabilities)
                 && super.equals(other);
     }
 
@@ -543,6 +587,11 @@ public final class DeploymentTypeSummary
         result =
                 (result * PRIME)
                         + (this.defaultUsername == null ? 43 : this.defaultUsername.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedCapabilities == null
+                                ? 43
+                                : this.supportedCapabilities.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

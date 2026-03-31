@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -108,6 +108,24 @@ public final class ExadataExaccConfigurationSummary extends ExadataConfiguration
             this.__explicitlySet__.add("vmclusterDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataShape")
+        private String exadataShape;
+
+        public Builder exadataShape(String exadataShape) {
+            this.exadataShape = exadataShape;
+            this.__explicitlySet__.add("exadataShape");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("chargebackPlanDetails")
+        private ChargebackPlanDetails chargebackPlanDetails;
+
+        public Builder chargebackPlanDetails(ChargebackPlanDetails chargebackPlanDetails) {
+            this.chargebackPlanDetails = chargebackPlanDetails;
+            this.__explicitlySet__.add("chargebackPlanDetails");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
          **/
@@ -156,6 +174,8 @@ public final class ExadataExaccConfigurationSummary extends ExadataConfiguration
                             this.definedTags,
                             this.freeformTags,
                             this.vmclusterDetails,
+                            this.exadataShape,
+                            this.chargebackPlanDetails,
                             this.managementAgentId,
                             this.parentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -193,6 +213,12 @@ public final class ExadataExaccConfigurationSummary extends ExadataConfiguration
             if (model.wasPropertyExplicitlySet("vmclusterDetails")) {
                 this.vmclusterDetails(model.getVmclusterDetails());
             }
+            if (model.wasPropertyExplicitlySet("exadataShape")) {
+                this.exadataShape(model.getExadataShape());
+            }
+            if (model.wasPropertyExplicitlySet("chargebackPlanDetails")) {
+                this.chargebackPlanDetails(model.getChargebackPlanDetails());
+            }
             if (model.wasPropertyExplicitlySet("managementAgentId")) {
                 this.managementAgentId(model.getManagementAgentId());
             }
@@ -225,6 +251,8 @@ public final class ExadataExaccConfigurationSummary extends ExadataConfiguration
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
             java.util.List<VmClusterSummary> vmclusterDetails,
+            String exadataShape,
+            ChargebackPlanDetails chargebackPlanDetails,
             String managementAgentId,
             String parentId) {
         super(
@@ -236,7 +264,9 @@ public final class ExadataExaccConfigurationSummary extends ExadataConfiguration
                 exadataRackType,
                 definedTags,
                 freeformTags,
-                vmclusterDetails);
+                vmclusterDetails,
+                exadataShape,
+                chargebackPlanDetails);
         this.managementAgentId = managementAgentId;
         this.parentId = parentId;
     }

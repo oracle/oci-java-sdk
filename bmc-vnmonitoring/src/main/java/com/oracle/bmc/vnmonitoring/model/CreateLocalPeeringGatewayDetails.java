@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -27,7 +27,6 @@ public final class CreateLocalPeeringGatewayDetails
         "definedTags",
         "displayName",
         "freeformTags",
-        "routeTableId",
         "vcnId"
     })
     public CreateLocalPeeringGatewayDetails(
@@ -35,14 +34,12 @@ public final class CreateLocalPeeringGatewayDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
-            String routeTableId,
             String vcnId) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
-        this.routeTableId = routeTableId;
         this.vcnId = vcnId;
     }
 
@@ -128,38 +125,6 @@ public final class CreateLocalPeeringGatewayDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
-         * <p>
-         * If you don't specify a route table here, the LPG is created without an associated route
-         * table. The Networking service does NOT automatically associate the attached VCN's default route table
-         * with the LPG.
-         * <p>
-         * For information about why you would associate a route table with an LPG, see
-         * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-        private String routeTableId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
-         * <p>
-         * If you don't specify a route table here, the LPG is created without an associated route
-         * table. The Networking service does NOT automatically associate the attached VCN's default route table
-         * with the LPG.
-         * <p>
-         * For information about why you would associate a route table with an LPG, see
-         * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-         *
-         * @param routeTableId the value to set
-         * @return this builder
-         **/
-        public Builder routeTableId(String routeTableId) {
-            this.routeTableId = routeTableId;
-            this.__explicitlySet__.add("routeTableId");
-            return this;
-        }
-        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the LPG belongs to.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
@@ -186,7 +151,6 @@ public final class CreateLocalPeeringGatewayDetails
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
-                            this.routeTableId,
                             this.vcnId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -207,9 +171,6 @@ public final class CreateLocalPeeringGatewayDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
-            }
-            if (model.wasPropertyExplicitlySet("routeTableId")) {
-                this.routeTableId(model.getRouteTableId());
             }
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
@@ -300,36 +261,6 @@ public final class CreateLocalPeeringGatewayDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
-     * <p>
-     * If you don't specify a route table here, the LPG is created without an associated route
-     * table. The Networking service does NOT automatically associate the attached VCN's default route table
-     * with the LPG.
-     * <p>
-     * For information about why you would associate a route table with an LPG, see
-     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    private final String routeTableId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
-     * <p>
-     * If you don't specify a route table here, the LPG is created without an associated route
-     * table. The Networking service does NOT automatically associate the attached VCN's default route table
-     * with the LPG.
-     * <p>
-     * For information about why you would associate a route table with an LPG, see
-     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-     *
-     * @return the value
-     **/
-    public String getRouteTableId() {
-        return routeTableId;
-    }
-
-    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the LPG belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
@@ -361,7 +292,6 @@ public final class CreateLocalPeeringGatewayDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
-        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(")");
         return sb.toString();
@@ -381,7 +311,6 @@ public final class CreateLocalPeeringGatewayDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && super.equals(other);
     }
@@ -396,7 +325,6 @@ public final class CreateLocalPeeringGatewayDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
-        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

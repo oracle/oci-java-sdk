@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -27,16 +27,20 @@ package com.oracle.bmc.disasterrecovery.model;
         name = "COMPUTE_INSTANCE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateDrProtectionGroupMemberMySqlDbSystemDetails.class,
+        name = "MYSQL_DB_SYSTEM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails.class,
         name = "NETWORK_LOAD_BALANCER"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateDrProtectionGroupMemberOkeClusterDetails.class,
-        name = "OKE_CLUSTER"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDrProtectionGroupMemberAutonomousDatabaseDetails.class,
         name = "AUTONOMOUS_DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateDrProtectionGroupMemberIntegrationInstanceDetails.class,
+        name = "INTEGRATION_INSTANCE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDrProtectionGroupMemberFileSystemDetails.class,
@@ -47,6 +51,18 @@ package com.oracle.bmc.disasterrecovery.model;
         name = "VOLUME_GROUP"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateDrProtectionGroupMemberLoadBalancerDetails.class,
+        name = "LOAD_BALANCER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateDrProtectionGroupMemberDatabaseDetails.class,
+        name = "DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateDrProtectionGroupMemberOkeClusterDetails.class,
+        name = "OKE_CLUSTER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails.class,
         name = "COMPUTE_INSTANCE_NON_MOVABLE"
     ),
@@ -55,20 +71,12 @@ package com.oracle.bmc.disasterrecovery.model;
         name = "AUTONOMOUS_CONTAINER_DATABASE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateDrProtectionGroupMemberLoadBalancerDetails.class,
-        name = "LOAD_BALANCER"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDrProtectionGroupMemberObjectStorageBucketDetails.class,
         name = "OBJECT_STORAGE_BUCKET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDrProtectionGroupMemberComputeInstanceMovableDetails.class,
         name = "COMPUTE_INSTANCE_MOVABLE"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateDrProtectionGroupMemberDatabaseDetails.class,
-        name = "DATABASE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

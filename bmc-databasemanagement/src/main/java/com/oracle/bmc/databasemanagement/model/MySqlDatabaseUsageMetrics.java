@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -31,6 +31,7 @@ public final class MySqlDatabaseUsageMetrics
         "databaseVersion",
         "dbId",
         "databaseStatus",
+        "heatWaveManagementType",
         "isHeatWaveEnabled",
         "heatWaveClusterDisplayName",
         "heatWaveNodeCount",
@@ -45,6 +46,7 @@ public final class MySqlDatabaseUsageMetrics
             String databaseVersion,
             String dbId,
             MySqlDatabaseStatus databaseStatus,
+            ManagedMySqlDatabase.HeatWaveManagementType heatWaveManagementType,
             Boolean isHeatWaveEnabled,
             String heatWaveClusterDisplayName,
             Integer heatWaveNodeCount,
@@ -58,6 +60,7 @@ public final class MySqlDatabaseUsageMetrics
         this.databaseVersion = databaseVersion;
         this.dbId = dbId;
         this.databaseStatus = databaseStatus;
+        this.heatWaveManagementType = heatWaveManagementType;
         this.isHeatWaveEnabled = isHeatWaveEnabled;
         this.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
         this.heatWaveNodeCount = heatWaveNodeCount;
@@ -199,6 +202,23 @@ public final class MySqlDatabaseUsageMetrics
             return this;
         }
         /**
+         * The customer's selected type for HeatWave management.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveManagementType")
+        private ManagedMySqlDatabase.HeatWaveManagementType heatWaveManagementType;
+
+        /**
+         * The customer's selected type for HeatWave management.
+         * @param heatWaveManagementType the value to set
+         * @return this builder
+         **/
+        public Builder heatWaveManagementType(
+                ManagedMySqlDatabase.HeatWaveManagementType heatWaveManagementType) {
+            this.heatWaveManagementType = heatWaveManagementType;
+            this.__explicitlySet__.add("heatWaveManagementType");
+            return this;
+        }
+        /**
          * Indicates whether HeatWave is enabled for the MySQL Database System or not.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
@@ -277,6 +297,7 @@ public final class MySqlDatabaseUsageMetrics
                             this.databaseVersion,
                             this.dbId,
                             this.databaseStatus,
+                            this.heatWaveManagementType,
                             this.isHeatWaveEnabled,
                             this.heatWaveClusterDisplayName,
                             this.heatWaveNodeCount,
@@ -312,6 +333,9 @@ public final class MySqlDatabaseUsageMetrics
             }
             if (model.wasPropertyExplicitlySet("databaseStatus")) {
                 this.databaseStatus(model.getDatabaseStatus());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveManagementType")) {
+                this.heatWaveManagementType(model.getHeatWaveManagementType());
             }
             if (model.wasPropertyExplicitlySet("isHeatWaveEnabled")) {
                 this.isHeatWaveEnabled(model.getIsHeatWaveEnabled());
@@ -457,6 +481,20 @@ public final class MySqlDatabaseUsageMetrics
     }
 
     /**
+     * The customer's selected type for HeatWave management.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveManagementType")
+    private final ManagedMySqlDatabase.HeatWaveManagementType heatWaveManagementType;
+
+    /**
+     * The customer's selected type for HeatWave management.
+     * @return the value
+     **/
+    public ManagedMySqlDatabase.HeatWaveManagementType getHeatWaveManagementType() {
+        return heatWaveManagementType;
+    }
+
+    /**
      * Indicates whether HeatWave is enabled for the MySQL Database System or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
@@ -534,6 +572,7 @@ public final class MySqlDatabaseUsageMetrics
         sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
         sb.append(", dbId=").append(String.valueOf(this.dbId));
         sb.append(", databaseStatus=").append(String.valueOf(this.databaseStatus));
+        sb.append(", heatWaveManagementType=").append(String.valueOf(this.heatWaveManagementType));
         sb.append(", isHeatWaveEnabled=").append(String.valueOf(this.isHeatWaveEnabled));
         sb.append(", heatWaveClusterDisplayName=")
                 .append(String.valueOf(this.heatWaveClusterDisplayName));
@@ -561,6 +600,8 @@ public final class MySqlDatabaseUsageMetrics
                 && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
                 && java.util.Objects.equals(this.dbId, other.dbId)
                 && java.util.Objects.equals(this.databaseStatus, other.databaseStatus)
+                && java.util.Objects.equals(
+                        this.heatWaveManagementType, other.heatWaveManagementType)
                 && java.util.Objects.equals(this.isHeatWaveEnabled, other.isHeatWaveEnabled)
                 && java.util.Objects.equals(
                         this.heatWaveClusterDisplayName, other.heatWaveClusterDisplayName)
@@ -591,6 +632,11 @@ public final class MySqlDatabaseUsageMetrics
         result =
                 (result * PRIME)
                         + (this.databaseStatus == null ? 43 : this.databaseStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveManagementType == null
+                                ? 43
+                                : this.heatWaveManagementType.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHeatWaveEnabled == null ? 43 : this.isHeatWaveEnabled.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -26,7 +26,8 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
         "distribution",
         "version",
         "architecture",
-        "managedInstanceCount"
+        "managedInstanceCount",
+        "containerCount"
     })
     public OperatingSystem(
             OsFamily family,
@@ -34,7 +35,8 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
             String distribution,
             String version,
             String architecture,
-            Integer managedInstanceCount) {
+            Integer managedInstanceCount,
+            Integer containerCount) {
         super();
         this.family = family;
         this.name = name;
@@ -42,6 +44,7 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
         this.version = version;
         this.architecture = architecture;
         this.managedInstanceCount = managedInstanceCount;
+        this.containerCount = containerCount;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -142,6 +145,22 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("managedInstanceCount");
             return this;
         }
+        /**
+         * Number of containers running the operating system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("containerCount")
+        private Integer containerCount;
+
+        /**
+         * Number of containers running the operating system.
+         * @param containerCount the value to set
+         * @return this builder
+         **/
+        public Builder containerCount(Integer containerCount) {
+            this.containerCount = containerCount;
+            this.__explicitlySet__.add("containerCount");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -154,7 +173,8 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
                             this.distribution,
                             this.version,
                             this.architecture,
-                            this.managedInstanceCount);
+                            this.managedInstanceCount,
+                            this.containerCount);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -180,6 +200,9 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("managedInstanceCount")) {
                 this.managedInstanceCount(model.getManagedInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("containerCount")) {
+                this.containerCount(model.getContainerCount());
             }
             return this;
         }
@@ -280,6 +303,20 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
         return managedInstanceCount;
     }
 
+    /**
+     * Number of containers running the operating system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("containerCount")
+    private final Integer containerCount;
+
+    /**
+     * Number of containers running the operating system.
+     * @return the value
+     **/
+    public Integer getContainerCount() {
+        return containerCount;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -300,6 +337,7 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", architecture=").append(String.valueOf(this.architecture));
         sb.append(", managedInstanceCount=").append(String.valueOf(this.managedInstanceCount));
+        sb.append(", containerCount=").append(String.valueOf(this.containerCount));
         sb.append(")");
         return sb.toString();
     }
@@ -320,6 +358,7 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.architecture, other.architecture)
                 && java.util.Objects.equals(this.managedInstanceCount, other.managedInstanceCount)
+                && java.util.Objects.equals(this.containerCount, other.containerCount)
                 && super.equals(other);
     }
 
@@ -337,6 +376,9 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
                         + (this.managedInstanceCount == null
                                 ? 43
                                 : this.managedInstanceCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.containerCount == null ? 43 : this.containerCount.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

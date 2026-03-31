@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -24,6 +24,7 @@ public final class CreateInstancePoolPlacementConfigurationDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
+        "computeClusterId",
         "faultDomains",
         "primarySubnetId",
         "primaryVnicSubnets",
@@ -31,12 +32,14 @@ public final class CreateInstancePoolPlacementConfigurationDetails
     })
     public CreateInstancePoolPlacementConfigurationDetails(
             String availabilityDomain,
+            String computeClusterId,
             java.util.List<String> faultDomains,
             String primarySubnetId,
             InstancePoolPlacementPrimarySubnet primaryVnicSubnets,
             java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets) {
         super();
         this.availabilityDomain = availabilityDomain;
+        this.computeClusterId = computeClusterId;
         this.faultDomains = faultDomains;
         this.primarySubnetId = primarySubnetId;
         this.primaryVnicSubnets = primaryVnicSubnets;
@@ -65,6 +68,32 @@ public final class CreateInstancePoolPlacementConfigurationDetails
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         * <p>
+         * Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400.
+         * Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
+        private String computeClusterId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         * <p>
+         * Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400.
+         * Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
+         *
+         * @param computeClusterId the value to set
+         * @return this builder
+         **/
+        public Builder computeClusterId(String computeClusterId) {
+            this.computeClusterId = computeClusterId;
+            this.__explicitlySet__.add("computeClusterId");
             return this;
         }
         /**
@@ -165,6 +194,7 @@ public final class CreateInstancePoolPlacementConfigurationDetails
             CreateInstancePoolPlacementConfigurationDetails model =
                     new CreateInstancePoolPlacementConfigurationDetails(
                             this.availabilityDomain,
+                            this.computeClusterId,
                             this.faultDomains,
                             this.primarySubnetId,
                             this.primaryVnicSubnets,
@@ -179,6 +209,9 @@ public final class CreateInstancePoolPlacementConfigurationDetails
         public Builder copy(CreateInstancePoolPlacementConfigurationDetails model) {
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("computeClusterId")) {
+                this.computeClusterId(model.getComputeClusterId());
             }
             if (model.wasPropertyExplicitlySet("faultDomains")) {
                 this.faultDomains(model.getFaultDomains());
@@ -225,6 +258,30 @@ public final class CreateInstancePoolPlacementConfigurationDetails
      **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * <p>
+     * Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400.
+     * Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
+    private final String computeClusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * <p>
+     * Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400.
+     * Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
+     *
+     * @return the value
+     **/
+    public String getComputeClusterId() {
+        return computeClusterId;
     }
 
     /**
@@ -323,6 +380,7 @@ public final class CreateInstancePoolPlacementConfigurationDetails
         sb.append("CreateInstancePoolPlacementConfigurationDetails(");
         sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", computeClusterId=").append(String.valueOf(this.computeClusterId));
         sb.append(", faultDomains=").append(String.valueOf(this.faultDomains));
         sb.append(", primarySubnetId=").append(String.valueOf(this.primarySubnetId));
         sb.append(", primaryVnicSubnets=").append(String.valueOf(this.primaryVnicSubnets));
@@ -343,6 +401,7 @@ public final class CreateInstancePoolPlacementConfigurationDetails
         CreateInstancePoolPlacementConfigurationDetails other =
                 (CreateInstancePoolPlacementConfigurationDetails) o;
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
                 && java.util.Objects.equals(this.faultDomains, other.faultDomains)
                 && java.util.Objects.equals(this.primarySubnetId, other.primarySubnetId)
                 && java.util.Objects.equals(this.primaryVnicSubnets, other.primaryVnicSubnets)
@@ -359,6 +418,9 @@ public final class CreateInstancePoolPlacementConfigurationDetails
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeClusterId == null ? 43 : this.computeClusterId.hashCode());
         result = (result * PRIME) + (this.faultDomains == null ? 43 : this.faultDomains.hashCode());
         result =
                 (result * PRIME)

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall;
@@ -316,6 +316,46 @@ public interface NetworkFirewall extends AutoCloseable {
     BulkUploadMappedSecretsResponse bulkUploadMappedSecrets(BulkUploadMappedSecretsRequest request);
 
     /**
+     * Creates a new [NAT rule](https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) at bulk for the Network Firewall policy.
+     *
+     *
+     * Note: This operation consumes a stream.
+     *
+     * If the stream supports {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, when a retry is
+     * necessary, the stream is reset so it starts at the beginning (or whatever the stream's position was at the time this
+     * operation is called}.
+     *
+     * Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before, then the mark
+     * will not be the same anymore after this operation, and a subsequent call to {@link java.io.InputStream#reset()} by
+     * the caller will reset the stream not to the caller's mark, but to the position the stream was in when this operation
+     * was called.
+     *
+     * If the stream is a {@link java.io.FileInputStream}, and the stream's {@link java.nio.channels.FileChannel} position
+     * can be changed (like for a regular file), the stream will be wrapped in such a way that it does provide
+     * support for {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same procedure as
+     * above is followed. If the stream's {@link java.nio.channels.FileChannel} position cannot be changed (like for a
+     * named pipe), then the stream's contents will be buffered in memory, as described below.
+     *
+     * If the stream does not support {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, then
+     * the stream is wrapped in a {@link java.io.BufferedInputStream}, which means the entire contents may
+     * be buffered in memory. Then the same procedure as above is followed.
+     *
+     * The contents of the stream, except when the stream is a {@link java.io.FileInputStream} whose
+     * {@link java.nio.channels.FileChannel} position can be changed, should be less than 2 GiB in size if retries are used.
+     * This is because streams 2 GiB in size or larger do no guarantee that mark-and-reset can be performed. If the stream
+     * is larger, do not use built-in retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/BulkUploadNatRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkUploadNatRules API.
+     */
+    BulkUploadNatRulesResponse bulkUploadNatRules(BulkUploadNatRulesRequest request);
+
+    /**
      * Creates a new Security Rule at bulk for the Network Firewall Policy.
      *
      *
@@ -555,7 +595,7 @@ public interface NetworkFirewall extends AutoCloseable {
             ChangeNetworkFirewallPolicyCompartmentRequest request);
 
     /**
-     * Moves a NetworkFirewallPolicy resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+     * Clones a NetworkFirewallPolicy resource from an existing Network Firewall Policy. When provided, If-Match is checked against ETag values of the resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -644,6 +684,19 @@ public interface NetworkFirewall extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/CreateMappedSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMappedSecret API.
      */
     CreateMappedSecretResponse createMappedSecret(CreateMappedSecretRequest request);
+
+    /**
+     * Creates a new [NAT rule](https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/CreateNatRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNatRule API.
+     */
+    CreateNatRuleResponse createNatRule(CreateNatRuleRequest request);
 
     /**
      * Creates a new NetworkFirewall.
@@ -811,6 +864,18 @@ public interface NetworkFirewall extends AutoCloseable {
     DeleteMappedSecretResponse deleteMappedSecret(DeleteMappedSecretRequest request);
 
     /**
+     * Deletes a [NAT rule](https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) resource with the given identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/DeleteNatRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNatRule API.
+     */
+    DeleteNatRuleResponse deleteNatRule(DeleteNatRuleRequest request);
+
+    /**
      * Deletes a NetworkFirewall resource by identifier
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -967,6 +1032,18 @@ public interface NetworkFirewall extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/GetMappedSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMappedSecret API.
      */
     GetMappedSecretResponse getMappedSecret(GetMappedSecretRequest request);
+
+    /**
+     * Get a [NAT rule](https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/GetNatRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNatRule API.
+     */
+    GetNatRuleResponse getNatRule(GetNatRuleRequest request);
 
     /**
      * Gets a NetworkFirewall by identifier
@@ -1142,6 +1219,19 @@ public interface NetworkFirewall extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/ListMappedSecretsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMappedSecrets API.
      */
     ListMappedSecretsResponse listMappedSecrets(ListMappedSecretsRequest request);
+
+    /**
+     * Returns a list of [NAT rules](https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/ListNatRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNatRules API.
+     */
+    ListNatRulesResponse listNatRules(ListNatRulesRequest request);
 
     /**
      * Returns a list of Network Firewall Policies.
@@ -1359,6 +1449,18 @@ public interface NetworkFirewall extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/UpdateMappedSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMappedSecret API.
      */
     UpdateMappedSecretResponse updateMappedSecret(UpdateMappedSecretRequest request);
+
+    /**
+     * Updates the [NAT rule](https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) with the given name in the Network Firewall policy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/UpdateNatRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNatRule API.
+     */
+    UpdateNatRuleResponse updateNatRule(UpdateNatRuleRequest request);
 
     /**
      * Updates the NetworkFirewall

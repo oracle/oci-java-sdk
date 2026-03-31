@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.internal;
@@ -172,7 +172,8 @@ public class EndpointBuilderTest {
                 "http://testservice.us-phoenix-1.oraclecloud.com",
                 EndpointBuilder.getEndpointWithPopulatedServiceParams(
                         testService.getServiceEndpointTemplateForRealmMap().get("oc1"),
-                        requiredParametersMap));
+                        requiredParametersMap,
+                        null));
     }
 
     @Test
@@ -195,6 +196,67 @@ public class EndpointBuilderTest {
                 "http://testservice.sp1sp2.us-phoenix-1.oraclecloud.com",
                 EndpointBuilder.getEndpointWithPopulatedServiceParams(
                         testService.getServiceEndpointTemplateForRealmMap().get("oc1"),
-                        requiredParametersMap));
+                        requiredParametersMap,
+                        null));
+    }
+
+    @Test
+    public void testUpdateEndpointTemplateForOptionsWhenEndpointHasInvalidOption() {
+        Service testService =
+                Services.serviceBuilder()
+                        .serviceEndpointPrefix("foobar")
+                        .serviceName("EndpointBuilderTest10")
+                        .serviceEndpointTemplate(
+                                "http://testservice.{singleStack?ss.:}us-phoenix-1.oraclecloud.com")
+                        .build();
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+        Map<String, Boolean> optionsMap = new HashMap<>();
+        optionsMap.put("dualStack", true);
+        assertEquals(
+                "http://testservice.us-phoenix-1.oraclecloud.com",
+                EndpointBuilder.getEndpointWithPopulatedServiceParams(
+                        testService.getServiceEndpointTemplate(),
+                        requiredParametersMap,
+                        optionsMap));
+    }
+
+    @Test
+    public void testUpdateEndpointTemplateForOptionsWhenEndpointHasValidOption() {
+        Service testService =
+                Services.serviceBuilder()
+                        .serviceEndpointPrefix("foobar")
+                        .serviceName("EndpointBuilderTest11")
+                        .serviceEndpointTemplate(
+                                "http://testservice.{dualStack?ds.:}us-phoenix-1.{dualStack?oci.:}oraclecloud.com")
+                        .build();
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+        Map<String, Boolean> optionsMap = new HashMap<>();
+        optionsMap.put("dualStack", true);
+        assertEquals(
+                "http://testservice.ds.us-phoenix-1.oci.oraclecloud.com",
+                EndpointBuilder.getEndpointWithPopulatedServiceParams(
+                        testService.getServiceEndpointTemplate(),
+                        requiredParametersMap,
+                        optionsMap));
+    }
+
+    @Test
+    public void testUpdateEndpointTemplateForOptionsWhenEndpointHasValidOptionWithMultipleValues() {
+        Service testService =
+                Services.serviceBuilder()
+                        .serviceEndpointPrefix("foobar")
+                        .serviceName("EndpointBuilderTest12")
+                        .serviceEndpointTemplate(
+                                "http://testservice.{dualStack?ds.oci.:}us-phoenix-1.oraclecloud.com")
+                        .build();
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+        Map<String, Boolean> optionsMap = new HashMap<>();
+        optionsMap.put("dualStack", true);
+        assertEquals(
+                "http://testservice.ds.oci.us-phoenix-1.oraclecloud.com",
+                EndpointBuilder.getEndpointWithPopulatedServiceParams(
+                        testService.getServiceEndpointTemplate(),
+                        requiredParametersMap,
+                        optionsMap));
     }
 }

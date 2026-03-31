@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -122,6 +122,22 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
             this.__explicitlySet__.add("isThinClone");
             return this;
         }
+        /**
+         * The OCID of the Source Pluggable Database Snapshot id.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourcePluggableDatabaseSnapshotId")
+        private String sourcePluggableDatabaseSnapshotId;
+
+        /**
+         * The OCID of the Source Pluggable Database Snapshot id.
+         * @param sourcePluggableDatabaseSnapshotId the value to set
+         * @return this builder
+         **/
+        public Builder sourcePluggableDatabaseSnapshotId(String sourcePluggableDatabaseSnapshotId) {
+            this.sourcePluggableDatabaseSnapshotId = sourcePluggableDatabaseSnapshotId;
+            this.__explicitlySet__.add("sourcePluggableDatabaseSnapshotId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -134,7 +150,8 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
                             this.sourcePluggableDatabaseId,
                             this.sourceContainerDatabaseAdminPassword,
                             this.refreshableCloneDetails,
-                            this.isThinClone);
+                            this.isThinClone,
+                            this.sourcePluggableDatabaseSnapshotId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -162,6 +179,10 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
             if (model.wasPropertyExplicitlySet("isThinClone")) {
                 this.isThinClone(model.getIsThinClone());
             }
+            if (model.wasPropertyExplicitlySet("sourcePluggableDatabaseSnapshotId")) {
+                this.sourcePluggableDatabaseSnapshotId(
+                        model.getSourcePluggableDatabaseSnapshotId());
+            }
             return this;
         }
     }
@@ -184,7 +205,8 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
             String sourcePluggableDatabaseId,
             String sourceContainerDatabaseAdminPassword,
             CreatePluggableDatabaseRefreshableCloneDetails refreshableCloneDetails,
-            Boolean isThinClone) {
+            Boolean isThinClone,
+            String sourcePluggableDatabaseSnapshotId) {
         super();
         this.dblinkUsername = dblinkUsername;
         this.dblinkUserPassword = dblinkUserPassword;
@@ -192,6 +214,7 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
         this.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
         this.refreshableCloneDetails = refreshableCloneDetails;
         this.isThinClone = isThinClone;
+        this.sourcePluggableDatabaseSnapshotId = sourcePluggableDatabaseSnapshotId;
     }
 
     /**
@@ -271,6 +294,20 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
         return isThinClone;
     }
 
+    /**
+     * The OCID of the Source Pluggable Database Snapshot id.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourcePluggableDatabaseSnapshotId")
+    private final String sourcePluggableDatabaseSnapshotId;
+
+    /**
+     * The OCID of the Source Pluggable Database Snapshot id.
+     * @return the value
+     **/
+    public String getSourcePluggableDatabaseSnapshotId() {
+        return sourcePluggableDatabaseSnapshotId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -293,6 +330,8 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
         sb.append(", refreshableCloneDetails=")
                 .append(String.valueOf(this.refreshableCloneDetails));
         sb.append(", isThinClone=").append(String.valueOf(this.isThinClone));
+        sb.append(", sourcePluggableDatabaseSnapshotId=")
+                .append(String.valueOf(this.sourcePluggableDatabaseSnapshotId));
         sb.append(")");
         return sb.toString();
     }
@@ -318,6 +357,9 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
                 && java.util.Objects.equals(
                         this.refreshableCloneDetails, other.refreshableCloneDetails)
                 && java.util.Objects.equals(this.isThinClone, other.isThinClone)
+                && java.util.Objects.equals(
+                        this.sourcePluggableDatabaseSnapshotId,
+                        other.sourcePluggableDatabaseSnapshotId)
                 && super.equals(other);
     }
 
@@ -349,6 +391,11 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
                                 ? 43
                                 : this.refreshableCloneDetails.hashCode());
         result = (result * PRIME) + (this.isThinClone == null ? 43 : this.isThinClone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourcePluggableDatabaseSnapshotId == null
+                                ? 43
+                                : this.sourcePluggableDatabaseSnapshotId.hashCode());
         return result;
     }
 }

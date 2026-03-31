@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -199,6 +199,34 @@ public final class OracleNosqlConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The Oracle NoSQL technology type.
          **/
@@ -318,14 +346,36 @@ public final class OracleNosqlConnectionSummary extends ConnectionSummary {
             return this;
         }
         /**
-         * Indicates that the user intents to connect to the instance through resource principal.
+         * The fingerprint of the API Key of the user specified by the userId.
+         * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("publicKeyFingerprint")
+        private String publicKeyFingerprint;
+
+        /**
+         * The fingerprint of the API Key of the user specified by the userId.
+         * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         *
+         * @param publicKeyFingerprint the value to set
+         * @return this builder
+         **/
+        public Builder publicKeyFingerprint(String publicKeyFingerprint) {
+            this.publicKeyFingerprint = publicKeyFingerprint;
+            this.__explicitlySet__.add("publicKeyFingerprint");
+            return this;
+        }
+        /**
+         * Specifies that the user intends to authenticate to the instance using a resource principal.
+         * Default: false
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
         private Boolean shouldUseResourcePrincipal;
 
         /**
-         * Indicates that the user intents to connect to the instance through resource principal.
+         * Specifies that the user intends to authenticate to the instance using a resource principal.
+         * Default: false
          *
          * @param shouldUseResourcePrincipal the value to set
          * @return this builder
@@ -361,12 +411,16 @@ public final class OracleNosqlConnectionSummary extends ConnectionSummary {
                             this.routingMethod,
                             this.locks,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.tenancyId,
                             this.region,
                             this.userId,
                             this.privateKeyFileSecretId,
                             this.privateKeyPassphraseSecretId,
+                            this.publicKeyFingerprint,
                             this.shouldUseResourcePrincipal);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -433,6 +487,15 @@ public final class OracleNosqlConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -450,6 +513,9 @@ public final class OracleNosqlConnectionSummary extends ConnectionSummary {
             }
             if (model.wasPropertyExplicitlySet("privateKeyPassphraseSecretId")) {
                 this.privateKeyPassphraseSecretId(model.getPrivateKeyPassphraseSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("publicKeyFingerprint")) {
+                this.publicKeyFingerprint(model.getPublicKeyFingerprint());
             }
             if (model.wasPropertyExplicitlySet("shouldUseResourcePrincipal")) {
                 this.shouldUseResourcePrincipal(model.getShouldUseResourcePrincipal());
@@ -490,12 +556,16 @@ public final class OracleNosqlConnectionSummary extends ConnectionSummary {
             RoutingMethod routingMethod,
             java.util.List<ResourceLock> locks,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             OracleNosqlConnection.TechnologyType technologyType,
             String tenancyId,
             String region,
             String userId,
             String privateKeyFileSecretId,
             String privateKeyPassphraseSecretId,
+            String publicKeyFingerprint,
             Boolean shouldUseResourcePrincipal) {
         super(
                 id,
@@ -516,13 +586,17 @@ public final class OracleNosqlConnectionSummary extends ConnectionSummary {
                 subnetId,
                 routingMethod,
                 locks,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.tenancyId = tenancyId;
         this.region = region;
         this.userId = userId;
         this.privateKeyFileSecretId = privateKeyFileSecretId;
         this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+        this.publicKeyFingerprint = publicKeyFingerprint;
         this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
     }
 
@@ -633,14 +707,34 @@ public final class OracleNosqlConnectionSummary extends ConnectionSummary {
     }
 
     /**
-     * Indicates that the user intents to connect to the instance through resource principal.
+     * The fingerprint of the API Key of the user specified by the userId.
+     * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("publicKeyFingerprint")
+    private final String publicKeyFingerprint;
+
+    /**
+     * The fingerprint of the API Key of the user specified by the userId.
+     * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     *
+     * @return the value
+     **/
+    public String getPublicKeyFingerprint() {
+        return publicKeyFingerprint;
+    }
+
+    /**
+     * Specifies that the user intends to authenticate to the instance using a resource principal.
+     * Default: false
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
     private final Boolean shouldUseResourcePrincipal;
 
     /**
-     * Indicates that the user intents to connect to the instance through resource principal.
+     * Specifies that the user intends to authenticate to the instance using a resource principal.
+     * Default: false
      *
      * @return the value
      **/
@@ -669,6 +763,7 @@ public final class OracleNosqlConnectionSummary extends ConnectionSummary {
         sb.append(", privateKeyFileSecretId=").append(String.valueOf(this.privateKeyFileSecretId));
         sb.append(", privateKeyPassphraseSecretId=")
                 .append(String.valueOf(this.privateKeyPassphraseSecretId));
+        sb.append(", publicKeyFingerprint=").append(String.valueOf(this.publicKeyFingerprint));
         sb.append(", shouldUseResourcePrincipal=")
                 .append(String.valueOf(this.shouldUseResourcePrincipal));
         sb.append(")");
@@ -693,6 +788,7 @@ public final class OracleNosqlConnectionSummary extends ConnectionSummary {
                         this.privateKeyFileSecretId, other.privateKeyFileSecretId)
                 && java.util.Objects.equals(
                         this.privateKeyPassphraseSecretId, other.privateKeyPassphraseSecretId)
+                && java.util.Objects.equals(this.publicKeyFingerprint, other.publicKeyFingerprint)
                 && java.util.Objects.equals(
                         this.shouldUseResourcePrincipal, other.shouldUseResourcePrincipal)
                 && super.equals(other);
@@ -718,6 +814,11 @@ public final class OracleNosqlConnectionSummary extends ConnectionSummary {
                         + (this.privateKeyPassphraseSecretId == null
                                 ? 43
                                 : this.privateKeyPassphraseSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicKeyFingerprint == null
+                                ? 43
+                                : this.publicKeyFingerprint.hashCode());
         result =
                 (result * PRIME)
                         + (this.shouldUseResourcePrincipal == null

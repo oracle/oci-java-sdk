@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExecutionSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExecutionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -32,6 +32,7 @@ public final class ExecutionSummary extends com.oracle.bmc.http.internal.Explici
         "isRollbackTask",
         "description",
         "resourceId",
+        "isRetryExceeded",
         "systemTags"
     })
     public ExecutionSummary(
@@ -47,6 +48,7 @@ public final class ExecutionSummary extends com.oracle.bmc.http.internal.Explici
             Boolean isRollbackTask,
             String description,
             String resourceId,
+            Boolean isRetryExceeded,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
@@ -61,6 +63,7 @@ public final class ExecutionSummary extends com.oracle.bmc.http.internal.Explici
         this.isRollbackTask = isRollbackTask;
         this.description = description;
         this.resourceId = resourceId;
+        this.isRetryExceeded = isRetryExceeded;
         this.systemTags = systemTags;
     }
 
@@ -267,6 +270,22 @@ public final class ExecutionSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
+         * An attribute which tells if further retries are allowed for the task on failure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRetryExceeded")
+        private Boolean isRetryExceeded;
+
+        /**
+         * An attribute which tells if further retries are allowed for the task on failure.
+         * @param isRetryExceeded the value to set
+         * @return this builder
+         **/
+        public Builder isRetryExceeded(Boolean isRetryExceeded) {
+            this.isRetryExceeded = isRetryExceeded;
+            this.__explicitlySet__.add("isRetryExceeded");
+            return this;
+        }
+        /**
          * System tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
@@ -305,6 +324,7 @@ public final class ExecutionSummary extends com.oracle.bmc.http.internal.Explici
                             this.isRollbackTask,
                             this.description,
                             this.resourceId,
+                            this.isRetryExceeded,
                             this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -349,6 +369,9 @@ public final class ExecutionSummary extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("resourceId")) {
                 this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("isRetryExceeded")) {
+                this.isRetryExceeded(model.getIsRetryExceeded());
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
@@ -545,6 +568,20 @@ public final class ExecutionSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
+     * An attribute which tells if further retries are allowed for the task on failure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRetryExceeded")
+    private final Boolean isRetryExceeded;
+
+    /**
+     * An attribute which tells if further retries are allowed for the task on failure.
+     * @return the value
+     **/
+    public Boolean getIsRetryExceeded() {
+        return isRetryExceeded;
+    }
+
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
      * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
@@ -588,6 +625,7 @@ public final class ExecutionSummary extends com.oracle.bmc.http.internal.Explici
         sb.append(", isRollbackTask=").append(String.valueOf(this.isRollbackTask));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", isRetryExceeded=").append(String.valueOf(this.isRetryExceeded));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
@@ -615,6 +653,7 @@ public final class ExecutionSummary extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.isRollbackTask, other.isRollbackTask)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.isRetryExceeded, other.isRetryExceeded)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
@@ -641,6 +680,9 @@ public final class ExecutionSummary extends com.oracle.bmc.http.internal.Explici
                         + (this.isRollbackTask == null ? 43 : this.isRollbackTask.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRetryExceeded == null ? 43 : this.isRetryExceeded.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

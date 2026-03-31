@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -29,13 +29,18 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         "displayName",
         "faultDomain",
         "freeformTags",
+        "placementConstraintDetails",
         "id",
+        "capacityConfig",
+        "isMemoryEncryptionEnabled",
         "lifecycleState",
         "timeCreated",
         "totalOcpus",
         "remainingOcpus",
         "totalMemoryInGBs",
-        "remainingMemoryInGBs"
+        "remainingMemoryInGBs",
+        "capacityBins",
+        "computeBareMetalHostId"
     })
     public DedicatedVmHost(
             String availabilityDomain,
@@ -45,13 +50,18 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
             String displayName,
             String faultDomain,
             java.util.Map<String, String> freeformTags,
+            PlacementConstraintDetails placementConstraintDetails,
             String id,
+            String capacityConfig,
+            Boolean isMemoryEncryptionEnabled,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             Float totalOcpus,
             Float remainingOcpus,
             Float totalMemoryInGBs,
-            Float remainingMemoryInGBs) {
+            Float remainingMemoryInGBs,
+            java.util.List<CapacityBin> capacityBins,
+            String computeBareMetalHostId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -60,13 +70,18 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         this.displayName = displayName;
         this.faultDomain = faultDomain;
         this.freeformTags = freeformTags;
+        this.placementConstraintDetails = placementConstraintDetails;
         this.id = id;
+        this.capacityConfig = capacityConfig;
+        this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.totalOcpus = totalOcpus;
         this.remainingOcpus = remainingOcpus;
         this.totalMemoryInGBs = totalMemoryInGBs;
         this.remainingMemoryInGBs = remainingMemoryInGBs;
+        this.capacityBins = capacityBins;
+        this.computeBareMetalHostId = computeBareMetalHostId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -232,6 +247,16 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+        private PlacementConstraintDetails placementConstraintDetails;
+
+        public Builder placementConstraintDetails(
+                PlacementConstraintDetails placementConstraintDetails) {
+            this.placementConstraintDetails = placementConstraintDetails;
+            this.__explicitlySet__.add("placementConstraintDetails");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
          **/
@@ -246,6 +271,44 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
+            return this;
+        }
+        /**
+         * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+         * Run {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest) listDedicatedVmHostShapes} API to see details of this capacity configuration.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityConfig")
+        private String capacityConfig;
+
+        /**
+         * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+         * Run {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest) listDedicatedVmHostShapes} API to see details of this capacity configuration.
+         *
+         * @param capacityConfig the value to set
+         * @return this builder
+         **/
+        public Builder capacityConfig(String capacityConfig) {
+            this.capacityConfig = capacityConfig;
+            this.__explicitlySet__.add("capacityConfig");
+            return this;
+        }
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code false}, Confidential VMs cannot be launched.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+        private Boolean isMemoryEncryptionEnabled;
+
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code false}, Confidential VMs cannot be launched.
+         *
+         * @param isMemoryEncryptionEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            this.__explicitlySet__.add("isMemoryEncryptionEnabled");
             return this;
         }
         /**
@@ -360,6 +423,42 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("remainingMemoryInGBs");
             return this;
         }
+        /**
+         * A list of total and remaining CPU and memory per capacity bucket.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityBins")
+        private java.util.List<CapacityBin> capacityBins;
+
+        /**
+         * A list of total and remaining CPU and memory per capacity bucket.
+         *
+         * @param capacityBins the value to set
+         * @return this builder
+         **/
+        public Builder capacityBins(java.util.List<CapacityBin> capacityBins) {
+            this.capacityBins = capacityBins;
+            this.__explicitlySet__.add("capacityBins");
+            return this;
+        }
+        /**
+         * The compute bare metal host OCID of the dedicated virtual machine host.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeBareMetalHostId")
+        private String computeBareMetalHostId;
+
+        /**
+         * The compute bare metal host OCID of the dedicated virtual machine host.
+         *
+         * @param computeBareMetalHostId the value to set
+         * @return this builder
+         **/
+        public Builder computeBareMetalHostId(String computeBareMetalHostId) {
+            this.computeBareMetalHostId = computeBareMetalHostId;
+            this.__explicitlySet__.add("computeBareMetalHostId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -374,13 +473,18 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
                             this.displayName,
                             this.faultDomain,
                             this.freeformTags,
+                            this.placementConstraintDetails,
                             this.id,
+                            this.capacityConfig,
+                            this.isMemoryEncryptionEnabled,
                             this.lifecycleState,
                             this.timeCreated,
                             this.totalOcpus,
                             this.remainingOcpus,
                             this.totalMemoryInGBs,
-                            this.remainingMemoryInGBs);
+                            this.remainingMemoryInGBs,
+                            this.capacityBins,
+                            this.computeBareMetalHostId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -410,8 +514,17 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
+            if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
+                this.placementConstraintDetails(model.getPlacementConstraintDetails());
+            }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("capacityConfig")) {
+                this.capacityConfig(model.getCapacityConfig());
+            }
+            if (model.wasPropertyExplicitlySet("isMemoryEncryptionEnabled")) {
+                this.isMemoryEncryptionEnabled(model.getIsMemoryEncryptionEnabled());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -430,6 +543,12 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("remainingMemoryInGBs")) {
                 this.remainingMemoryInGBs(model.getRemainingMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("capacityBins")) {
+                this.capacityBins(model.getCapacityBins());
+            }
+            if (model.wasPropertyExplicitlySet("computeBareMetalHostId")) {
+                this.computeBareMetalHostId(model.getComputeBareMetalHostId());
             }
             return this;
         }
@@ -592,6 +711,13 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         return freeformTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+    private final PlacementConstraintDetails placementConstraintDetails;
+
+    public PlacementConstraintDetails getPlacementConstraintDetails() {
+        return placementConstraintDetails;
+    }
+
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
      **/
@@ -604,6 +730,40 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
      **/
     public String getId() {
         return id;
+    }
+
+    /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+     * Run {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest) listDedicatedVmHostShapes} API to see details of this capacity configuration.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityConfig")
+    private final String capacityConfig;
+
+    /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+     * Run {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest) listDedicatedVmHostShapes} API to see details of this capacity configuration.
+     *
+     * @return the value
+     **/
+    public String getCapacityConfig() {
+        return capacityConfig;
+    }
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code false}, Confidential VMs cannot be launched.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+    private final Boolean isMemoryEncryptionEnabled;
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If {@code true}, only Confidential VMs can be launched. If {@code false}, Confidential VMs cannot be launched.
+     *
+     * @return the value
+     **/
+    public Boolean getIsMemoryEncryptionEnabled() {
+        return isMemoryEncryptionEnabled;
     }
 
     /**
@@ -759,6 +919,38 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         return remainingMemoryInGBs;
     }
 
+    /**
+     * A list of total and remaining CPU and memory per capacity bucket.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityBins")
+    private final java.util.List<CapacityBin> capacityBins;
+
+    /**
+     * A list of total and remaining CPU and memory per capacity bucket.
+     *
+     * @return the value
+     **/
+    public java.util.List<CapacityBin> getCapacityBins() {
+        return capacityBins;
+    }
+
+    /**
+     * The compute bare metal host OCID of the dedicated virtual machine host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeBareMetalHostId")
+    private final String computeBareMetalHostId;
+
+    /**
+     * The compute bare metal host OCID of the dedicated virtual machine host.
+     *
+     * @return the value
+     **/
+    public String getComputeBareMetalHostId() {
+        return computeBareMetalHostId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -780,13 +972,20 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", placementConstraintDetails=")
+                .append(String.valueOf(this.placementConstraintDetails));
         sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", capacityConfig=").append(String.valueOf(this.capacityConfig));
+        sb.append(", isMemoryEncryptionEnabled=")
+                .append(String.valueOf(this.isMemoryEncryptionEnabled));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", totalOcpus=").append(String.valueOf(this.totalOcpus));
         sb.append(", remainingOcpus=").append(String.valueOf(this.remainingOcpus));
         sb.append(", totalMemoryInGBs=").append(String.valueOf(this.totalMemoryInGBs));
         sb.append(", remainingMemoryInGBs=").append(String.valueOf(this.remainingMemoryInGBs));
+        sb.append(", capacityBins=").append(String.valueOf(this.capacityBins));
+        sb.append(", computeBareMetalHostId=").append(String.valueOf(this.computeBareMetalHostId));
         sb.append(")");
         return sb.toString();
     }
@@ -808,13 +1007,21 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(
+                        this.placementConstraintDetails, other.placementConstraintDetails)
                 && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.capacityConfig, other.capacityConfig)
+                && java.util.Objects.equals(
+                        this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.totalOcpus, other.totalOcpus)
                 && java.util.Objects.equals(this.remainingOcpus, other.remainingOcpus)
                 && java.util.Objects.equals(this.totalMemoryInGBs, other.totalMemoryInGBs)
                 && java.util.Objects.equals(this.remainingMemoryInGBs, other.remainingMemoryInGBs)
+                && java.util.Objects.equals(this.capacityBins, other.capacityBins)
+                && java.util.Objects.equals(
+                        this.computeBareMetalHostId, other.computeBareMetalHostId)
                 && super.equals(other);
     }
 
@@ -839,7 +1046,20 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraintDetails == null
+                                ? 43
+                                : this.placementConstraintDetails.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityConfig == null ? 43 : this.capacityConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMemoryEncryptionEnabled == null
+                                ? 43
+                                : this.isMemoryEncryptionEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
@@ -856,6 +1076,12 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
                         + (this.remainingMemoryInGBs == null
                                 ? 43
                                 : this.remainingMemoryInGBs.hashCode());
+        result = (result * PRIME) + (this.capacityBins == null ? 43 : this.capacityBins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeBareMetalHostId == null
+                                ? 43
+                                : this.computeBareMetalHostId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

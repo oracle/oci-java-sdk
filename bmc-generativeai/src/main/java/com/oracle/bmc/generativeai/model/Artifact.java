@@ -1,0 +1,249 @@
+/**
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.generativeai.model;
+
+/**
+ * Container/artifact configuration for the deployment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "artifactType",
+    defaultImpl = Artifact.class
+)
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = SingleDockerArtifact.class,
+        name = "SIMPLE_DOCKER_ARTIFACT"
+    )
+})
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class Artifact extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+    @Deprecated
+    @java.beans.ConstructorProperties({"id", "timeCreated", "hostedDeploymentId", "status"})
+    protected Artifact(
+            String id, java.util.Date timeCreated, String hostedDeploymentId, Status status) {
+        super();
+        this.id = id;
+        this.timeCreated = timeCreated;
+        this.hostedDeploymentId = hostedDeploymentId;
+        this.status = status;
+    }
+
+    /**
+     * if put artifact to a table, the id is needed
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    private final String id;
+
+    /**
+     * if put artifact to a table, the id is needed
+     * @return the value
+     **/
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * The date and time the artifact was created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    private final java.util.Date timeCreated;
+
+    /**
+     * The date and time the artifact was created.
+     * @return the value
+     **/
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostedDeploymentId")
+    private final String hostedDeploymentId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+     * @return the value
+     **/
+    public String getHostedDeploymentId() {
+        return hostedDeploymentId;
+    }
+
+    /**
+     * The current status of the artifact.
+     **/
+    public enum Status {
+        Active("ACTIVE"),
+        Inactive("INACTIVE"),
+        Updating("UPDATING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
+
+        private final String value;
+        private static java.util.Map<String, Status> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Status v : Status.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Status(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Status create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Status', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The current status of the artifact.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
+    private final Status status;
+
+    /**
+     * The current status of the artifact.
+     * @return the value
+     **/
+    public Status getStatus() {
+        return status;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("Artifact(");
+        sb.append("super=").append(super.toString());
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", hostedDeploymentId=").append(String.valueOf(this.hostedDeploymentId));
+        sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Artifact)) {
+            return false;
+        }
+
+        Artifact other = (Artifact) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.hostedDeploymentId, other.hostedDeploymentId)
+                && java.util.Objects.equals(this.status, other.status)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostedDeploymentId == null
+                                ? 43
+                                : this.hostedDeploymentId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + super.hashCode();
+        return result;
+    }
+
+    /**
+     * The type of the artifact.
+     **/
+    public enum ArtifactType {
+        SimpleDockerArtifact("SIMPLE_DOCKER_ARTIFACT"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ArtifactType.class);
+
+        private final String value;
+        private static java.util.Map<String, ArtifactType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ArtifactType v : ArtifactType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ArtifactType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ArtifactType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ArtifactType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+}
