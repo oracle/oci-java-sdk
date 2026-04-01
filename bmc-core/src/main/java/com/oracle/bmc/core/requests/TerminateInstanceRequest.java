@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.requests;
@@ -70,6 +70,61 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
      */
     public Boolean getPreserveDataVolumesCreatedAtLaunch() {
         return preserveDataVolumesCreatedAtLaunch;
+    }
+    /**
+     * This optional parameter overrides recycle level for hosts. The parameter can be used when hosts are associated
+     * with a Capacity Reservation.
+     * * {@code FULL_RECYCLE} - Does not skip host wipe. This is the default behavior.
+     *
+     */
+    private RecycleLevel recycleLevel;
+
+    /**
+     * This optional parameter overrides recycle level for hosts. The parameter can be used when hosts are associated
+     * with a Capacity Reservation.
+     * * {@code FULL_RECYCLE} - Does not skip host wipe. This is the default behavior.
+     *
+     **/
+    public enum RecycleLevel {
+        FullRecycle("FULL_RECYCLE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, RecycleLevel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RecycleLevel v : RecycleLevel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        RecycleLevel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RecycleLevel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid RecycleLevel: " + key);
+        }
+    };
+
+    /**
+     * This optional parameter overrides recycle level for hosts. The parameter can be used when hosts are associated
+     * with a Capacity Reservation.
+     * * {@code FULL_RECYCLE} - Does not skip host wipe. This is the default behavior.
+     *
+     */
+    public RecycleLevel getRecycleLevel() {
+        return recycleLevel;
     }
 
     public static class Builder
@@ -157,6 +212,27 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
+         * This optional parameter overrides recycle level for hosts. The parameter can be used when hosts are associated
+         * with a Capacity Reservation.
+         * * {@code FULL_RECYCLE} - Does not skip host wipe. This is the default behavior.
+         *
+         */
+        private RecycleLevel recycleLevel = null;
+
+        /**
+         * This optional parameter overrides recycle level for hosts. The parameter can be used when hosts are associated
+         * with a Capacity Reservation.
+         * * {@code FULL_RECYCLE} - Does not skip host wipe. This is the default behavior.
+         *
+         * @param recycleLevel the value to set
+         * @return this builder instance
+         */
+        public Builder recycleLevel(RecycleLevel recycleLevel) {
+            this.recycleLevel = recycleLevel;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -188,6 +264,7 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
             ifMatch(o.getIfMatch());
             preserveBootVolume(o.getPreserveBootVolume());
             preserveDataVolumesCreatedAtLaunch(o.getPreserveDataVolumesCreatedAtLaunch());
+            recycleLevel(o.getRecycleLevel());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -224,8 +301,9 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
             request.ifMatch = ifMatch;
             request.preserveBootVolume = preserveBootVolume;
             request.preserveDataVolumesCreatedAtLaunch = preserveDataVolumesCreatedAtLaunch;
+            request.recycleLevel = recycleLevel;
             return request;
-            // new TerminateInstanceRequest(instanceId, ifMatch, preserveBootVolume, preserveDataVolumesCreatedAtLaunch);
+            // new TerminateInstanceRequest(instanceId, ifMatch, preserveBootVolume, preserveDataVolumesCreatedAtLaunch, recycleLevel);
         }
     }
 
@@ -238,7 +316,8 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
                 .instanceId(instanceId)
                 .ifMatch(ifMatch)
                 .preserveBootVolume(preserveBootVolume)
-                .preserveDataVolumesCreatedAtLaunch(preserveDataVolumesCreatedAtLaunch);
+                .preserveDataVolumesCreatedAtLaunch(preserveDataVolumesCreatedAtLaunch)
+                .recycleLevel(recycleLevel);
     }
 
     /**
@@ -259,6 +338,7 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",preserveBootVolume=").append(String.valueOf(this.preserveBootVolume));
         sb.append(",preserveDataVolumesCreatedAtLaunch=")
                 .append(String.valueOf(this.preserveDataVolumesCreatedAtLaunch));
+        sb.append(",recycleLevel=").append(String.valueOf(this.recycleLevel));
         sb.append(")");
         return sb.toString();
     }
@@ -279,7 +359,8 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(this.preserveBootVolume, other.preserveBootVolume)
                 && java.util.Objects.equals(
                         this.preserveDataVolumesCreatedAtLaunch,
-                        other.preserveDataVolumesCreatedAtLaunch);
+                        other.preserveDataVolumesCreatedAtLaunch)
+                && java.util.Objects.equals(this.recycleLevel, other.recycleLevel);
     }
 
     @Override
@@ -298,6 +379,7 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
                         + (this.preserveDataVolumesCreatedAtLaunch == null
                                 ? 43
                                 : this.preserveDataVolumesCreatedAtLaunch.hashCode());
+        result = (result * PRIME) + (this.recycleLevel == null ? 43 : this.recycleLevel.hashCode());
         return result;
     }
 }

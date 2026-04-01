@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.computeinstanceagent;
@@ -62,7 +62,7 @@ public interface Plugin extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * The API to get information for a plugin.
+     * Gets information about a specific Oracle Cloud Agent plugin on a compute instance.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -74,7 +74,9 @@ public interface Plugin extends AutoCloseable {
     GetInstanceAgentPluginResponse getInstanceAgentPlugin(GetInstanceAgentPluginRequest request);
 
     /**
-     * The API to get one or more plugin information.
+     * Gets information about the Oracle Cloud Agent plugins that are available on a specific
+     * compute instance.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

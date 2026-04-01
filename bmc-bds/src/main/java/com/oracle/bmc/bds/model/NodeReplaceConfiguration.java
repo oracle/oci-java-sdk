@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -26,6 +26,7 @@ public final class NodeReplaceConfiguration
         "id",
         "bdsInstanceId",
         "displayName",
+        "secretId",
         "levelTypeDetails",
         "lifecycleState",
         "timeCreated",
@@ -37,6 +38,7 @@ public final class NodeReplaceConfiguration
             String id,
             String bdsInstanceId,
             String displayName,
+            String secretId,
             LevelTypeDetails levelTypeDetails,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
@@ -47,6 +49,7 @@ public final class NodeReplaceConfiguration
         this.id = id;
         this.bdsInstanceId = bdsInstanceId;
         this.displayName = displayName;
+        this.secretId = secretId;
         this.levelTypeDetails = levelTypeDetails;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
@@ -103,6 +106,22 @@ public final class NodeReplaceConfiguration
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * The secretId for the clusterAdminPassword.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         * @param secretId the value to set
+         * @return this builder
+         **/
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
             return this;
         }
 
@@ -206,6 +225,7 @@ public final class NodeReplaceConfiguration
                             this.id,
                             this.bdsInstanceId,
                             this.displayName,
+                            this.secretId,
                             this.levelTypeDetails,
                             this.lifecycleState,
                             this.timeCreated,
@@ -228,6 +248,9 @@ public final class NodeReplaceConfiguration
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("levelTypeDetails")) {
                 this.levelTypeDetails(model.getLevelTypeDetails());
@@ -302,6 +325,20 @@ public final class NodeReplaceConfiguration
      **/
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     * @return the value
+     **/
+    public String getSecretId() {
+        return secretId;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("levelTypeDetails")
@@ -500,6 +537,7 @@ public final class NodeReplaceConfiguration
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", bdsInstanceId=").append(String.valueOf(this.bdsInstanceId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", levelTypeDetails=").append(String.valueOf(this.levelTypeDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -523,6 +561,7 @@ public final class NodeReplaceConfiguration
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.bdsInstanceId, other.bdsInstanceId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.levelTypeDetails, other.levelTypeDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -541,6 +580,7 @@ public final class NodeReplaceConfiguration
                 (result * PRIME)
                         + (this.bdsInstanceId == null ? 43 : this.bdsInstanceId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.levelTypeDetails == null ? 43 : this.levelTypeDetails.hashCode());

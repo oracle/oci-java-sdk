@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CompliancePolicySummary.Builder.class
 )
@@ -27,6 +27,7 @@ public final class CompliancePolicySummary
         "displayName",
         "productId",
         "compartmentId",
+        "type",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -40,6 +41,7 @@ public final class CompliancePolicySummary
             String displayName,
             String productId,
             String compartmentId,
+            CompliancePolicy.Type type,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             CompliancePolicy.LifecycleState lifecycleState,
@@ -52,6 +54,7 @@ public final class CompliancePolicySummary
         this.displayName = displayName;
         this.productId = productId;
         this.compartmentId = compartmentId;
+        this.type = type;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -125,6 +128,22 @@ public final class CompliancePolicySummary
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The type of the Compliance Policy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private CompliancePolicy.Type type;
+
+        /**
+         * The type of the Compliance Policy.
+         * @param type the value to set
+         * @return this builder
+         **/
+        public Builder type(CompliancePolicy.Type type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
             return this;
         }
         /**
@@ -279,6 +298,7 @@ public final class CompliancePolicySummary
                             this.displayName,
                             this.productId,
                             this.compartmentId,
+                            this.type,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -305,6 +325,9 @@ public final class CompliancePolicySummary
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -396,6 +419,20 @@ public final class CompliancePolicySummary
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The type of the Compliance Policy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final CompliancePolicy.Type type;
+
+    /**
+     * The type of the Compliance Policy.
+     * @return the value
+     **/
+    public CompliancePolicy.Type getType() {
+        return type;
     }
 
     /**
@@ -542,6 +579,7 @@ public final class CompliancePolicySummary
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", productId=").append(String.valueOf(this.productId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -567,6 +605,7 @@ public final class CompliancePolicySummary
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.productId, other.productId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -587,6 +626,7 @@ public final class CompliancePolicySummary
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

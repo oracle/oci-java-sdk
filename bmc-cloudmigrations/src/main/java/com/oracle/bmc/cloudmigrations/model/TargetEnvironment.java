@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudmigrations.model;
@@ -22,6 +22,10 @@ package com.oracle.bmc.cloudmigrations.model;
     defaultImpl = TargetEnvironment.class
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OlvmTargetEnvironment.class,
+        name = "OLVM_TARGET_ENV"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = VmTargetEnvironment.class,
         name = "VM_TARGET_ENV"
@@ -101,6 +105,7 @@ public class TargetEnvironment extends com.oracle.bmc.http.internal.ExplicitlySe
      **/
     public enum TargetEnvironmentType {
         VmTargetEnv("VM_TARGET_ENV"),
+        OlvmTargetEnv("OLVM_TARGET_ENV"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,7 +8,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetProductsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFleetProductsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListFleetProductsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -24,11 +24,15 @@ public class ListFleetProductsRequest extends com.oracle.bmc.requests.BmcRequest
     }
     /**
      * The ID of the compartment in which to list resources.
+     * Empty only if the resource OCID query param is not specified.
+     *
      */
     private String compartmentId;
 
     /**
      * The ID of the compartment in which to list resources.
+     * Empty only if the resource OCID query param is not specified.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -103,50 +107,13 @@ public class ListFleetProductsRequest extends com.oracle.bmc.requests.BmcRequest
      * The field to sort by. Only one sort order may be provided. Default order for displayName and resourceDisplayName is ascending.
      *
      */
-    private SortBy sortBy;
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for displayName and resourceDisplayName is ascending.
-     *
-     **/
-    public enum SortBy {
-        DisplayName("displayName"),
-        ResourceDisplayName("resourceDisplayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
+    private com.oracle.bmc.fleetappsmanagement.model.ProductSortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for displayName and resourceDisplayName is ascending.
      *
      */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.ProductSortBy getSortBy() {
         return sortBy;
     }
     /**
@@ -185,11 +152,15 @@ public class ListFleetProductsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * The ID of the compartment in which to list resources.
+         * Empty only if the resource OCID query param is not specified.
+         *
          */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * Empty only if the resource OCID query param is not specified.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -292,7 +263,7 @@ public class ListFleetProductsRequest extends com.oracle.bmc.requests.BmcRequest
          * The field to sort by. Only one sort order may be provided. Default order for displayName and resourceDisplayName is ascending.
          *
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.ProductSortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for displayName and resourceDisplayName is ascending.
@@ -300,7 +271,7 @@ public class ListFleetProductsRequest extends com.oracle.bmc.requests.BmcRequest
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(com.oracle.bmc.fleetappsmanagement.model.ProductSortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }

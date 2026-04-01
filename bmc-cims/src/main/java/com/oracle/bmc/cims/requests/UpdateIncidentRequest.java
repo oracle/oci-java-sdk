@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.requests;
@@ -13,23 +13,23 @@ public class UpdateIncidentRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.cims.model.UpdateIncident> {
 
     /**
-     * Unique identifier for the support ticket.
+     * Unique identifier for the support request.
      */
     private String incidentKey;
 
     /**
-     * Unique identifier for the support ticket.
+     * Unique identifier for the support request.
      */
     public String getIncidentKey() {
         return incidentKey;
     }
     /**
-     * Details about the support ticket being updated.
+     * Details about the support request being updated.
      */
     private com.oracle.bmc.cims.model.UpdateIncident updateIncidentDetails;
 
     /**
-     * Details about the support ticket being updated.
+     * Details about the support request being updated.
      */
     public com.oracle.bmc.cims.model.UpdateIncident getUpdateIncidentDetails() {
         return updateIncidentDetails;
@@ -175,12 +175,12 @@ public class UpdateIncidentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Unique identifier for the support ticket.
+         * Unique identifier for the support request.
          */
         private String incidentKey = null;
 
         /**
-         * Unique identifier for the support ticket.
+         * Unique identifier for the support request.
          * @param incidentKey the value to set
          * @return this builder instance
          */
@@ -190,12 +190,12 @@ public class UpdateIncidentRequest
         }
 
         /**
-         * Details about the support ticket being updated.
+         * Details about the support request being updated.
          */
         private com.oracle.bmc.cims.model.UpdateIncident updateIncidentDetails = null;
 
         /**
-         * Details about the support ticket being updated.
+         * Details about the support request being updated.
          * @param updateIncidentDetails the value to set
          * @return this builder instance
          */

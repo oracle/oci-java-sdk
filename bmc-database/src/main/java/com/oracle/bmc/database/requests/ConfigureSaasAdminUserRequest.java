@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -25,13 +25,13 @@ public class ConfigureSaasAdminUserRequest
         return autonomousDatabaseId;
     }
     /**
-     * Request to update SaaS administrative user configuration of the Autonomous Database.
+     * Request to update SaaS administrative user configuration of the Autonomous AI Database.
      */
     private com.oracle.bmc.database.model.ConfigureSaasAdminUserDetails
             configureSaasAdminUserDetails;
 
     /**
-     * Request to update SaaS administrative user configuration of the Autonomous Database.
+     * Request to update SaaS administrative user configuration of the Autonomous AI Database.
      */
     public com.oracle.bmc.database.model.ConfigureSaasAdminUserDetails
             getConfigureSaasAdminUserDetails() {
@@ -66,6 +66,21 @@ public class ConfigureSaasAdminUserRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
     }
 
     /**
@@ -102,13 +117,13 @@ public class ConfigureSaasAdminUserRequest
         }
 
         /**
-         * Request to update SaaS administrative user configuration of the Autonomous Database.
+         * Request to update SaaS administrative user configuration of the Autonomous AI Database.
          */
         private com.oracle.bmc.database.model.ConfigureSaasAdminUserDetails
                 configureSaasAdminUserDetails = null;
 
         /**
-         * Request to update SaaS administrative user configuration of the Autonomous Database.
+         * Request to update SaaS administrative user configuration of the Autonomous AI Database.
          * @param configureSaasAdminUserDetails the value to set
          * @return this builder instance
          */
@@ -158,6 +173,25 @@ public class ConfigureSaasAdminUserRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -189,6 +223,7 @@ public class ConfigureSaasAdminUserRequest
             configureSaasAdminUserDetails(o.getConfigureSaasAdminUserDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -236,8 +271,9 @@ public class ConfigureSaasAdminUserRequest
             request.configureSaasAdminUserDetails = configureSaasAdminUserDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
             return request;
-            // new ConfigureSaasAdminUserRequest(autonomousDatabaseId, configureSaasAdminUserDetails, ifMatch, opcRequestId);
+            // new ConfigureSaasAdminUserRequest(autonomousDatabaseId, configureSaasAdminUserDetails, ifMatch, opcRequestId, opcDryRun);
         }
     }
 
@@ -250,7 +286,8 @@ public class ConfigureSaasAdminUserRequest
                 .autonomousDatabaseId(autonomousDatabaseId)
                 .configureSaasAdminUserDetails(configureSaasAdminUserDetails)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -271,6 +308,7 @@ public class ConfigureSaasAdminUserRequest
                 .append(String.valueOf(this.configureSaasAdminUserDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -290,7 +328,8 @@ public class ConfigureSaasAdminUserRequest
                 && java.util.Objects.equals(
                         this.configureSaasAdminUserDetails, other.configureSaasAdminUserDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -309,6 +348,7 @@ public class ConfigureSaasAdminUserRequest
                                 : this.configureSaasAdminUserDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

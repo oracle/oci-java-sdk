@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -23,11 +23,19 @@ package com.oracle.bmc.core.model;
 public final class DedicatedVmHostShapeSummary
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"availabilityDomain", "dedicatedVmHostShape"})
-    public DedicatedVmHostShapeSummary(String availabilityDomain, String dedicatedVmHostShape) {
+    @java.beans.ConstructorProperties({
+        "availabilityDomain",
+        "dedicatedVmHostShape",
+        "capacityConfigs"
+    })
+    public DedicatedVmHostShapeSummary(
+            String availabilityDomain,
+            String dedicatedVmHostShape,
+            java.util.List<CapacityConfig> capacityConfigs) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.dedicatedVmHostShape = dedicatedVmHostShape;
+        this.capacityConfigs = capacityConfigs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -52,7 +60,7 @@ public final class DedicatedVmHostShapeSummary
         }
         /**
          * The name of the dedicated VM host shape. You can enumerate all available shapes by calling
-         * {@link DedicatedVmHostShapes}.
+         * {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest) listDedicatedVmHostShapes}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostShape")
@@ -60,7 +68,7 @@ public final class DedicatedVmHostShapeSummary
 
         /**
          * The name of the dedicated VM host shape. You can enumerate all available shapes by calling
-         * {@link DedicatedVmHostShapes}.
+         * {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest) listDedicatedVmHostShapes}.
          *
          * @param dedicatedVmHostShape the value to set
          * @return this builder
@@ -70,6 +78,24 @@ public final class DedicatedVmHostShapeSummary
             this.__explicitlySet__.add("dedicatedVmHostShape");
             return this;
         }
+        /**
+         * A list of capacity configs that are supported by this dedicated VM host shape.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityConfigs")
+        private java.util.List<CapacityConfig> capacityConfigs;
+
+        /**
+         * A list of capacity configs that are supported by this dedicated VM host shape.
+         *
+         * @param capacityConfigs the value to set
+         * @return this builder
+         **/
+        public Builder capacityConfigs(java.util.List<CapacityConfig> capacityConfigs) {
+            this.capacityConfigs = capacityConfigs;
+            this.__explicitlySet__.add("capacityConfigs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -77,7 +103,9 @@ public final class DedicatedVmHostShapeSummary
         public DedicatedVmHostShapeSummary build() {
             DedicatedVmHostShapeSummary model =
                     new DedicatedVmHostShapeSummary(
-                            this.availabilityDomain, this.dedicatedVmHostShape);
+                            this.availabilityDomain,
+                            this.dedicatedVmHostShape,
+                            this.capacityConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -91,6 +119,9 @@ public final class DedicatedVmHostShapeSummary
             }
             if (model.wasPropertyExplicitlySet("dedicatedVmHostShape")) {
                 this.dedicatedVmHostShape(model.getDedicatedVmHostShape());
+            }
+            if (model.wasPropertyExplicitlySet("capacityConfigs")) {
+                this.capacityConfigs(model.getCapacityConfigs());
             }
             return this;
         }
@@ -125,7 +156,7 @@ public final class DedicatedVmHostShapeSummary
 
     /**
      * The name of the dedicated VM host shape. You can enumerate all available shapes by calling
-     * {@link DedicatedVmHostShapes}.
+     * {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest) listDedicatedVmHostShapes}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostShape")
@@ -133,12 +164,28 @@ public final class DedicatedVmHostShapeSummary
 
     /**
      * The name of the dedicated VM host shape. You can enumerate all available shapes by calling
-     * {@link DedicatedVmHostShapes}.
+     * {@link #listDedicatedVmHostShapes(ListDedicatedVmHostShapesRequest) listDedicatedVmHostShapes}.
      *
      * @return the value
      **/
     public String getDedicatedVmHostShape() {
         return dedicatedVmHostShape;
+    }
+
+    /**
+     * A list of capacity configs that are supported by this dedicated VM host shape.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityConfigs")
+    private final java.util.List<CapacityConfig> capacityConfigs;
+
+    /**
+     * A list of capacity configs that are supported by this dedicated VM host shape.
+     *
+     * @return the value
+     **/
+    public java.util.List<CapacityConfig> getCapacityConfigs() {
+        return capacityConfigs;
     }
 
     @Override
@@ -157,6 +204,7 @@ public final class DedicatedVmHostShapeSummary
         sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", dedicatedVmHostShape=").append(String.valueOf(this.dedicatedVmHostShape));
+        sb.append(", capacityConfigs=").append(String.valueOf(this.capacityConfigs));
         sb.append(")");
         return sb.toString();
     }
@@ -173,6 +221,7 @@ public final class DedicatedVmHostShapeSummary
         DedicatedVmHostShapeSummary other = (DedicatedVmHostShapeSummary) o;
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.dedicatedVmHostShape, other.dedicatedVmHostShape)
+                && java.util.Objects.equals(this.capacityConfigs, other.capacityConfigs)
                 && super.equals(other);
     }
 
@@ -190,6 +239,9 @@ public final class DedicatedVmHostShapeSummary
                         + (this.dedicatedVmHostShape == null
                                 ? 43
                                 : this.dedicatedVmHostShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityConfigs == null ? 43 : this.capacityConfigs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

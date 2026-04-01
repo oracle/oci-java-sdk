@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http;
@@ -11,6 +11,11 @@ import java.util.concurrent.TimeUnit;
 /** The configurable parameters for a client's connection pool */
 public class ApacheConnectionPoolConfig {
     /**
+     * Default idle timeout applied when none is provided by the caller (milliseconds).
+     */
+    private static final long DEFAULT_IDLE_CONNECTION_TIMEOUT_MILLIS = 5_000L;
+
+    /**
      * Creates a new default {@code ApacheConnectionPoolConfig}.
      *
      * @return a new default connection pool configuration
@@ -19,6 +24,7 @@ public class ApacheConnectionPoolConfig {
         return ApacheConnectionPoolConfig.builder()
                 .defaultMaxConnectionsPerRoute(50)
                 .totalOpenConnections(50)
+                .idleConnectionTimeoutInMillis(DEFAULT_IDLE_CONNECTION_TIMEOUT_MILLIS)
                 .build();
     }
 
@@ -31,12 +37,18 @@ public class ApacheConnectionPoolConfig {
     private final int totalOpenConnections;
     /** The default max number of connections per route. */
     private final int defaultMaxConnectionsPerRoute;
+    /** Closing an idle-connection after X milliseconds **/
+    private final long idleConnectionTimeoutInMillis;
     /** The time to live per connection. */
     private final Map.Entry<Integer, TimeUnit> ttl;
 
     private ApacheConnectionPoolConfig(final Builder builder) {
         totalOpenConnections = builder.totalOpenConnections;
         defaultMaxConnectionsPerRoute = builder.defaultMaxConnectionsPerRoute;
+        idleConnectionTimeoutInMillis =
+                builder.idleConnectionTimeoutInMillis != null
+                        ? builder.idleConnectionTimeoutInMillis
+                        : DEFAULT_IDLE_CONNECTION_TIMEOUT_MILLIS;
         ttl = builder.ttl;
     }
 
@@ -46,6 +58,10 @@ public class ApacheConnectionPoolConfig {
 
     public int getDefaultMaxConnectionsPerRoute() {
         return this.defaultMaxConnectionsPerRoute;
+    }
+
+    public Long getIdleConnectionTimeoutInMillis() {
+        return this.idleConnectionTimeoutInMillis;
     }
 
     public Map.Entry<Integer, TimeUnit> getTtl() {
@@ -58,6 +74,8 @@ public class ApacheConnectionPoolConfig {
         final ApacheConnectionPoolConfig other = (ApacheConnectionPoolConfig) o;
         if (!other.canEqual((Object) this)) return false;
         if (this.getTotalOpenConnections() != other.getTotalOpenConnections()) return false;
+        if (this.getIdleConnectionTimeoutInMillis() != other.getIdleConnectionTimeoutInMillis())
+            return false;
         if (this.getDefaultMaxConnectionsPerRoute() != other.getDefaultMaxConnectionsPerRoute())
             return false;
         final Object this$ttl = this.getTtl();
@@ -77,6 +95,8 @@ public class ApacheConnectionPoolConfig {
         result = result * PRIME + this.getDefaultMaxConnectionsPerRoute();
         final Object $ttl = this.getTtl();
         result = result * PRIME + ($ttl == null ? 43 : $ttl.hashCode());
+        final long $idleConnectionTimeoutInMillis = this.getIdleConnectionTimeoutInMillis();
+        result = result * PRIME + Long.hashCode($idleConnectionTimeoutInMillis);
         return result;
     }
 
@@ -93,6 +113,7 @@ public class ApacheConnectionPoolConfig {
     public final static class Builder {
         private int totalOpenConnections;
         private int defaultMaxConnectionsPerRoute;
+        private Long idleConnectionTimeoutInMillis;
         private Map.Entry<Integer, TimeUnit> ttl;
 
         public Builder() {}
@@ -104,6 +125,11 @@ public class ApacheConnectionPoolConfig {
 
         public Builder defaultMaxConnectionsPerRoute(final int defaultMaxConnectionsPerRoute) {
             this.defaultMaxConnectionsPerRoute = defaultMaxConnectionsPerRoute;
+            return this;
+        }
+
+        public Builder idleConnectionTimeoutInMillis(final Long idleConnectionTimeoutInMillis) {
+            this.idleConnectionTimeoutInMillis = idleConnectionTimeoutInMillis;
             return this;
         }
 

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
- * Details gathered during the creation of the support ticket.
+ * Details gathered during the creation of the support request.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -75,7 +75,7 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The Customer Support Identifier (CSI) number associated with the support account.
+         * Deprecated. The Customer Support Identifier (CSI) number associated with the support account.
          * The CSI is optional for all support request types.
          *
          **/
@@ -83,7 +83,7 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
         private String csi;
 
         /**
-         * The Customer Support Identifier (CSI) number associated with the support account.
+         * Deprecated. The Customer Support Identifier (CSI) number associated with the support account.
          * The CSI is optional for all support request types.
          *
          * @param csi the value to set
@@ -95,14 +95,22 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: Identifier of the user group to assign the new support request to.
+         * To find identifiers of user groups that you have access to, run the
+         * {@link #validateUser(ValidateUserRequest) validateUser} operation.
+         * Note: The Customer User Administrator (CUA) can manage user groups by name using
+         * [My Oracle Cloud Support portal](https://support.oracle.com).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
         private String userGroupId;
 
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: Identifier of the user group to assign the new support request to.
+         * To find identifiers of user groups that you have access to, run the
+         * {@link #validateUser(ValidateUserRequest) validateUser} operation.
+         * Note: The Customer User Administrator (CUA) can manage user groups by name using
+         * [My Oracle Cloud Support portal](https://support.oracle.com).
          *
          * @param userGroupId the value to set
          * @return this builder
@@ -113,12 +121,12 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The kind of support ticket (type of support request).
-         * For information about {@code ACCOUNT} support tickets, see
+         * The kind of support request (type of support request).
+         * For information about {@code ACCOUNT} support requests, see
          * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-         * For information about {@code LIMIT} support tickets, see
+         * For information about {@code LIMIT} support requests, see
          * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
-         * For information about {@code TECH} support tickets, see
+         * For information about {@code TECH} support requests, see
          * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          *
          **/
@@ -126,12 +134,12 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
         private ProblemType problemType;
 
         /**
-         * The kind of support ticket (type of support request).
-         * For information about {@code ACCOUNT} support tickets, see
+         * The kind of support request (type of support request).
+         * For information about {@code ACCOUNT} support requests, see
          * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-         * For information about {@code LIMIT} support tickets, see
+         * For information about {@code LIMIT} support requests, see
          * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
-         * For information about {@code TECH} support tickets, see
+         * For information about {@code TECH} support requests, see
          * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          *
          * @param problemType the value to set
@@ -159,13 +167,13 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+         * The incident referrer. This value is often the URL that the customer used when creating the support request.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("referrer")
         private String referrer;
 
         /**
-         * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+         * The incident referrer. This value is often the URL that the customer used when creating the support request.
          * @param referrer the value to set
          * @return this builder
          **/
@@ -254,7 +262,7 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The Customer Support Identifier (CSI) number associated with the support account.
+     * Deprecated. The Customer Support Identifier (CSI) number associated with the support account.
      * The CSI is optional for all support request types.
      *
      **/
@@ -262,7 +270,7 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
     private final String csi;
 
     /**
-     * The Customer Support Identifier (CSI) number associated with the support account.
+     * Deprecated. The Customer Support Identifier (CSI) number associated with the support account.
      * The CSI is optional for all support request types.
      *
      * @return the value
@@ -272,14 +280,22 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: Identifier of the user group to assign the new support request to.
+     * To find identifiers of user groups that you have access to, run the
+     * {@link #validateUser(ValidateUserRequest) validateUser} operation.
+     * Note: The Customer User Administrator (CUA) can manage user groups by name using
+     * [My Oracle Cloud Support portal](https://support.oracle.com).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
     private final String userGroupId;
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: Identifier of the user group to assign the new support request to.
+     * To find identifiers of user groups that you have access to, run the
+     * {@link #validateUser(ValidateUserRequest) validateUser} operation.
+     * Note: The Customer User Administrator (CUA) can manage user groups by name using
+     * [My Oracle Cloud Support portal](https://support.oracle.com).
      *
      * @return the value
      **/
@@ -288,12 +304,12 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The kind of support ticket (type of support request).
-     * For information about {@code ACCOUNT} support tickets, see
+     * The kind of support request (type of support request).
+     * For information about {@code ACCOUNT} support requests, see
      * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-     * For information about {@code LIMIT} support tickets, see
+     * For information about {@code LIMIT} support requests, see
      * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
-     * For information about {@code TECH} support tickets, see
+     * For information about {@code TECH} support requests, see
      * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      *
      **/
@@ -301,12 +317,12 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
     private final ProblemType problemType;
 
     /**
-     * The kind of support ticket (type of support request).
-     * For information about {@code ACCOUNT} support tickets, see
+     * The kind of support request (type of support request).
+     * For information about {@code ACCOUNT} support requests, see
      * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-     * For information about {@code LIMIT} support tickets, see
+     * For information about {@code LIMIT} support requests, see
      * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
-     * For information about {@code TECH} support tickets, see
+     * For information about {@code TECH} support requests, see
      * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      *
      * @return the value
@@ -330,13 +346,13 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+     * The incident referrer. This value is often the URL that the customer used when creating the support request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referrer")
     private final String referrer;
 
     /**
-     * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+     * The incident referrer. This value is often the URL that the customer used when creating the support request.
      * @return the value
      **/
     public String getReferrer() {

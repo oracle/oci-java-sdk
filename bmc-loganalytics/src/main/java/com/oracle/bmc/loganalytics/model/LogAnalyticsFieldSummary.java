@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -43,7 +43,9 @@ public final class LogAnalyticsFieldSummary
         "isMetricValueEligible",
         "rangeFacetEligible",
         "isTableEligible",
-        "unitType"
+        "unitType",
+        "timeUpdated",
+        "isKeepDuplicates"
     })
     public LogAnalyticsFieldSummary(
             String ceeAlias,
@@ -66,7 +68,9 @@ public final class LogAnalyticsFieldSummary
             Boolean isMetricValueEligible,
             Long rangeFacetEligible,
             Boolean isTableEligible,
-            String unitType) {
+            String unitType,
+            java.util.Date timeUpdated,
+            Boolean isKeepDuplicates) {
         super();
         this.ceeAlias = ceeAlias;
         this.dataType = dataType;
@@ -89,6 +93,8 @@ public final class LogAnalyticsFieldSummary
         this.rangeFacetEligible = rangeFacetEligible;
         this.isTableEligible = isTableEligible;
         this.unitType = unitType;
+        this.timeUpdated = timeUpdated;
+        this.isKeepDuplicates = isKeepDuplicates;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -226,14 +232,14 @@ public final class LogAnalyticsFieldSummary
             return this;
         }
         /**
-         * A flag inidcating whether or not the facet is elibigle for use.
+         * A flag indicating whether or not the facet is eligible for use.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFacetEligible")
         private Boolean isFacetEligible;
 
         /**
-         * A flag inidcating whether or not the facet is elibigle for use.
+         * A flag indicating whether or not the facet is eligible for use.
          *
          * @param isFacetEligible the value to set
          * @return this builder
@@ -244,14 +250,14 @@ public final class LogAnalyticsFieldSummary
             return this;
         }
         /**
-         * A flag inidcating whether or not the cardinality of the field is high.
+         * A flag indicating whether or not the cardinality of the field is high.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHighCardinality")
         private Boolean isHighCardinality;
 
         /**
-         * A flag inidcating whether or not the cardinality of the field is high.
+         * A flag indicating whether or not the cardinality of the field is high.
          *
          * @param isHighCardinality the value to set
          * @return this builder
@@ -262,14 +268,14 @@ public final class LogAnalyticsFieldSummary
             return this;
         }
         /**
-         * A flag inidcating whether or not the field is a large data field.
+         * A flag indicating whether or not the field is a large data field.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLargeData")
         private Boolean isLargeData;
 
         /**
-         * A flag inidcating whether or not the field is a large data field.
+         * A flag indicating whether or not the field is a large data field.
          *
          * @param isLargeData the value to set
          * @return this builder
@@ -298,14 +304,14 @@ public final class LogAnalyticsFieldSummary
             return this;
         }
         /**
-         * A flag inidcating whether or not this is a primary field.
+         * A flag indicating whether or not this is a primary field.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
         /**
-         * A flag inidcating whether or not this is a primary field.
+         * A flag indicating whether or not this is a primary field.
          *
          * @param isPrimary the value to set
          * @return this builder
@@ -336,14 +342,14 @@ public final class LogAnalyticsFieldSummary
             return this;
         }
         /**
-         * A flag inidcating whether or not the field can be summarized.
+         * A flag indicating whether or not the field can be summarized.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSummarizable")
         private Boolean isSummarizable;
 
         /**
-         * A flag inidcating whether or not the field can be summarized.
+         * A flag indicating whether or not the field can be summarized.
          *
          * @param isSummarizable the value to set
          * @return this builder
@@ -370,14 +376,14 @@ public final class LogAnalyticsFieldSummary
             return this;
         }
         /**
-         * A flag inidcating whether or not the field is metric key eligible.
+         * A flag indicating whether or not the field is metric key eligible.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMetricKeyEligible")
         private Boolean isMetricKeyEligible;
 
         /**
-         * A flag inidcating whether or not the field is metric key eligible.
+         * A flag indicating whether or not the field is metric key eligible.
          *
          * @param isMetricKeyEligible the value to set
          * @return this builder
@@ -388,14 +394,14 @@ public final class LogAnalyticsFieldSummary
             return this;
         }
         /**
-         * A flag inidcating whether or not the field is metric value eligible.
+         * A flag indicating whether or not the field is metric value eligible.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMetricValueEligible")
         private Boolean isMetricValueEligible;
 
         /**
-         * A flag inidcating whether or not the field is metric value eligible.
+         * A flag indicating whether or not the field is metric value eligible.
          *
          * @param isMetricValueEligible the value to set
          * @return this builder
@@ -406,14 +412,14 @@ public final class LogAnalyticsFieldSummary
             return this;
         }
         /**
-         * A flag inidcating whether or not the field is range facet eligible.
+         * A flag indicating whether or not the field is range facet eligible.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("rangeFacetEligible")
         private Long rangeFacetEligible;
 
         /**
-         * A flag inidcating whether or not the field is range facet eligible.
+         * A flag indicating whether or not the field is range facet eligible.
          *
          * @param rangeFacetEligible the value to set
          * @return this builder
@@ -424,14 +430,14 @@ public final class LogAnalyticsFieldSummary
             return this;
         }
         /**
-         * A flag inidcating whether or not the field is table eligible.
+         * A flag indicating whether or not the field is table eligible.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTableEligible")
         private Boolean isTableEligible;
 
         /**
-         * A flag inidcating whether or not the field is table eligible.
+         * A flag indicating whether or not the field is table eligible.
          *
          * @param isTableEligible the value to set
          * @return this builder
@@ -455,6 +461,40 @@ public final class LogAnalyticsFieldSummary
         public Builder unitType(String unitType) {
             this.unitType = unitType;
             this.__explicitlySet__.add("unitType");
+            return this;
+        }
+        /**
+         * The last updated date and time.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The last updated date and time.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+        /**
+         * A flag indicating whether or not duplicates would be retained.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isKeepDuplicates")
+        private Boolean isKeepDuplicates;
+
+        /**
+         * A flag indicating whether or not duplicates would be retained.
+         *
+         * @param isKeepDuplicates the value to set
+         * @return this builder
+         **/
+        public Builder isKeepDuplicates(Boolean isKeepDuplicates) {
+            this.isKeepDuplicates = isKeepDuplicates;
+            this.__explicitlySet__.add("isKeepDuplicates");
             return this;
         }
 
@@ -484,7 +524,9 @@ public final class LogAnalyticsFieldSummary
                             this.isMetricValueEligible,
                             this.rangeFacetEligible,
                             this.isTableEligible,
-                            this.unitType);
+                            this.unitType,
+                            this.timeUpdated,
+                            this.isKeepDuplicates);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -555,6 +597,12 @@ public final class LogAnalyticsFieldSummary
             }
             if (model.wasPropertyExplicitlySet("unitType")) {
                 this.unitType(model.getUnitType());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("isKeepDuplicates")) {
+                this.isKeepDuplicates(model.getIsKeepDuplicates());
             }
             return this;
         }
@@ -688,14 +736,14 @@ public final class LogAnalyticsFieldSummary
     }
 
     /**
-     * A flag inidcating whether or not the facet is elibigle for use.
+     * A flag indicating whether or not the facet is eligible for use.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFacetEligible")
     private final Boolean isFacetEligible;
 
     /**
-     * A flag inidcating whether or not the facet is elibigle for use.
+     * A flag indicating whether or not the facet is eligible for use.
      *
      * @return the value
      **/
@@ -704,14 +752,14 @@ public final class LogAnalyticsFieldSummary
     }
 
     /**
-     * A flag inidcating whether or not the cardinality of the field is high.
+     * A flag indicating whether or not the cardinality of the field is high.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHighCardinality")
     private final Boolean isHighCardinality;
 
     /**
-     * A flag inidcating whether or not the cardinality of the field is high.
+     * A flag indicating whether or not the cardinality of the field is high.
      *
      * @return the value
      **/
@@ -720,14 +768,14 @@ public final class LogAnalyticsFieldSummary
     }
 
     /**
-     * A flag inidcating whether or not the field is a large data field.
+     * A flag indicating whether or not the field is a large data field.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLargeData")
     private final Boolean isLargeData;
 
     /**
-     * A flag inidcating whether or not the field is a large data field.
+     * A flag indicating whether or not the field is a large data field.
      *
      * @return the value
      **/
@@ -752,14 +800,14 @@ public final class LogAnalyticsFieldSummary
     }
 
     /**
-     * A flag inidcating whether or not this is a primary field.
+     * A flag indicating whether or not this is a primary field.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
     /**
-     * A flag inidcating whether or not this is a primary field.
+     * A flag indicating whether or not this is a primary field.
      *
      * @return the value
      **/
@@ -786,14 +834,14 @@ public final class LogAnalyticsFieldSummary
     }
 
     /**
-     * A flag inidcating whether or not the field can be summarized.
+     * A flag indicating whether or not the field can be summarized.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSummarizable")
     private final Boolean isSummarizable;
 
     /**
-     * A flag inidcating whether or not the field can be summarized.
+     * A flag indicating whether or not the field can be summarized.
      *
      * @return the value
      **/
@@ -816,14 +864,14 @@ public final class LogAnalyticsFieldSummary
     }
 
     /**
-     * A flag inidcating whether or not the field is metric key eligible.
+     * A flag indicating whether or not the field is metric key eligible.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMetricKeyEligible")
     private final Boolean isMetricKeyEligible;
 
     /**
-     * A flag inidcating whether or not the field is metric key eligible.
+     * A flag indicating whether or not the field is metric key eligible.
      *
      * @return the value
      **/
@@ -832,14 +880,14 @@ public final class LogAnalyticsFieldSummary
     }
 
     /**
-     * A flag inidcating whether or not the field is metric value eligible.
+     * A flag indicating whether or not the field is metric value eligible.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMetricValueEligible")
     private final Boolean isMetricValueEligible;
 
     /**
-     * A flag inidcating whether or not the field is metric value eligible.
+     * A flag indicating whether or not the field is metric value eligible.
      *
      * @return the value
      **/
@@ -848,14 +896,14 @@ public final class LogAnalyticsFieldSummary
     }
 
     /**
-     * A flag inidcating whether or not the field is range facet eligible.
+     * A flag indicating whether or not the field is range facet eligible.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rangeFacetEligible")
     private final Long rangeFacetEligible;
 
     /**
-     * A flag inidcating whether or not the field is range facet eligible.
+     * A flag indicating whether or not the field is range facet eligible.
      *
      * @return the value
      **/
@@ -864,14 +912,14 @@ public final class LogAnalyticsFieldSummary
     }
 
     /**
-     * A flag inidcating whether or not the field is table eligible.
+     * A flag indicating whether or not the field is table eligible.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTableEligible")
     private final Boolean isTableEligible;
 
     /**
-     * A flag inidcating whether or not the field is table eligible.
+     * A flag indicating whether or not the field is table eligible.
      *
      * @return the value
      **/
@@ -891,6 +939,36 @@ public final class LogAnalyticsFieldSummary
      **/
     public String getUnitType() {
         return unitType;
+    }
+
+    /**
+     * The last updated date and time.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The last updated date and time.
+     * @return the value
+     **/
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    /**
+     * A flag indicating whether or not duplicates would be retained.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isKeepDuplicates")
+    private final Boolean isKeepDuplicates;
+
+    /**
+     * A flag indicating whether or not duplicates would be retained.
+     *
+     * @return the value
+     **/
+    public Boolean getIsKeepDuplicates() {
+        return isKeepDuplicates;
     }
 
     @Override
@@ -928,6 +1006,8 @@ public final class LogAnalyticsFieldSummary
         sb.append(", rangeFacetEligible=").append(String.valueOf(this.rangeFacetEligible));
         sb.append(", isTableEligible=").append(String.valueOf(this.isTableEligible));
         sb.append(", unitType=").append(String.valueOf(this.unitType));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", isKeepDuplicates=").append(String.valueOf(this.isKeepDuplicates));
         sb.append(")");
         return sb.toString();
     }
@@ -963,6 +1043,8 @@ public final class LogAnalyticsFieldSummary
                 && java.util.Objects.equals(this.rangeFacetEligible, other.rangeFacetEligible)
                 && java.util.Objects.equals(this.isTableEligible, other.isTableEligible)
                 && java.util.Objects.equals(this.unitType, other.unitType)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.isKeepDuplicates, other.isKeepDuplicates)
                 && super.equals(other);
     }
 
@@ -1017,6 +1099,10 @@ public final class LogAnalyticsFieldSummary
                 (result * PRIME)
                         + (this.isTableEligible == null ? 43 : this.isTableEligible.hashCode());
         result = (result * PRIME) + (this.unitType == null ? 43 : this.unitType.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isKeepDuplicates == null ? 43 : this.isKeepDuplicates.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

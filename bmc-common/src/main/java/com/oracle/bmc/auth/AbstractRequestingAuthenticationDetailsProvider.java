@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth;
@@ -16,6 +16,7 @@ import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -23,14 +24,29 @@ import java.util.Set;
  */
 @InternalSdk
 public class AbstractRequestingAuthenticationDetailsProvider
-        implements BasicAuthenticationDetailsProvider {
+        implements BasicAuthenticationDetailsProvider, RequestSignerCacheConfigurationProvider {
     protected final FederationClient federationClient;
     protected final CachingSessionKeySupplier sessionKeySupplier;
+    private final RequestSignerCacheConfiguration requestSignerCacheConfiguration;
 
     public AbstractRequestingAuthenticationDetailsProvider(
             FederationClient federationClient, SessionKeySupplier sessionKeySupplier) {
+        this(
+                federationClient,
+                sessionKeySupplier,
+                RequestSignerCacheConfiguration.builder().build());
+    }
+
+    public AbstractRequestingAuthenticationDetailsProvider(
+            FederationClient federationClient,
+            SessionKeySupplier sessionKeySupplier,
+            RequestSignerCacheConfiguration requestSignerCacheConfiguration) {
         this.federationClient = federationClient;
         this.sessionKeySupplier = new CachingSessionKeySupplier(sessionKeySupplier);
+        this.requestSignerCacheConfiguration =
+                requestSignerCacheConfiguration != null
+                        ? requestSignerCacheConfiguration
+                        : RequestSignerCacheConfiguration.builder().build();
     }
 
     /**
@@ -44,6 +60,8 @@ public class AbstractRequestingAuthenticationDetailsProvider
         protected FederationClient federationClient;
         protected List<ClientConfigurator> additionalFederationClientConfigurators =
                 new ArrayList<>();
+        protected RequestSignerCacheConfiguration requestSignerCacheConfiguration =
+                RequestSignerCacheConfiguration.builder().build();
 
         /**
          * Configures the custom SessionKeySupplier to use.
@@ -85,6 +103,28 @@ public class AbstractRequestingAuthenticationDetailsProvider
             this.additionalFederationClientConfigurators.add(additionalClientConfigurator);
             return (B) this;
         }
+
+        /**
+         * Configures the request signer cache behaviour for providers built by this builder.
+         *
+         * <p>By default the temporary cache is disabled. Use this method to enable caching and set
+         * optional TTLs via {@link RequestSignerCacheConfiguration}.
+         *
+         * @param requestSignerCacheConfiguration The cache configuration to apply.
+         * @return this builder.
+         */
+        public B requestSignerCacheConfiguration(
+                RequestSignerCacheConfiguration requestSignerCacheConfiguration) {
+            if (requestSignerCacheConfiguration == null) {
+                throw new NullPointerException("requestSignerCacheConfiguration cannot be null");
+            }
+            this.requestSignerCacheConfiguration = requestSignerCacheConfiguration;
+            return (B) this;
+        }
+
+        protected RequestSignerCacheConfiguration getRequestSignerCacheConfiguration() {
+            return requestSignerCacheConfiguration;
+        }
     }
 
     @Override
@@ -112,6 +152,11 @@ public class AbstractRequestingAuthenticationDetailsProvider
         return null;
     }
 
+    @Override
+    public RequestSignerCacheConfiguration getRequestSignerCacheConfiguration() {
+        return requestSignerCacheConfiguration;
+    }
+
     /**
      * Helper class to cache the private key as bytes so we don't have to parse it every time.
      * The key only changes during calls to refresh.
@@ -125,7 +170,10 @@ public class AbstractRequestingAuthenticationDetailsProvider
 
         protected CachingSessionKeySupplier(final SessionKeySupplier delegate) {
             this.delegate = delegate;
-            this.setPrivateKeyBytes((RSAPrivateKey) delegate.getKeyPair().getPrivate());
+            Optional.ofNullable(delegate.getKeyPair())
+                    .ifPresent(
+                            keyPair ->
+                                    this.setPrivateKeyBytes((RSAPrivateKey) keyPair.getPrivate()));
         }
 
         @Override

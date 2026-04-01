@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -78,13 +78,72 @@ public final class UpdateDrProtectionGroupMemberFileSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationEncryptionKey")
+        private UpdateVaultAndEncryptionKeyDetails destinationEncryptionKey;
+
+        public Builder destinationEncryptionKey(
+                UpdateVaultAndEncryptionKeyDetails destinationEncryptionKey) {
+            this.destinationEncryptionKey = destinationEncryptionKey;
+            this.__explicitlySet__.add("destinationEncryptionKey");
+            return this;
+        }
+        /**
+         * The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.
+         * <p>
+         * Example: {@code ocid1.filesystemsnapshotpolicy.oc1..uniqueID}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationSnapshotPolicyId")
+        private String destinationSnapshotPolicyId;
+
+        /**
+         * The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.
+         * <p>
+         * Example: {@code ocid1.filesystemsnapshotpolicy.oc1..uniqueID}
+         *
+         * @param destinationSnapshotPolicyId the value to set
+         * @return this builder
+         **/
+        public Builder destinationSnapshotPolicyId(String destinationSnapshotPolicyId) {
+            this.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
+            this.__explicitlySet__.add("destinationSnapshotPolicyId");
+            return this;
+        }
+        /**
+         * The OCID of a compartment in the destination region in which the file system should be launched.
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
+        private String destinationCompartmentId;
+
+        /**
+         * The OCID of a compartment in the destination region in which the file system should be launched.
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
+         *
+         * @param destinationCompartmentId the value to set
+         * @return this builder
+         **/
+        public Builder destinationCompartmentId(String destinationCompartmentId) {
+            this.destinationCompartmentId = destinationCompartmentId;
+            this.__explicitlySet__.add("destinationCompartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDrProtectionGroupMemberFileSystemDetails build() {
             UpdateDrProtectionGroupMemberFileSystemDetails model =
                     new UpdateDrProtectionGroupMemberFileSystemDetails(
-                            this.memberId, this.destinationAvailabilityDomain, this.exportMappings);
+                            this.memberId,
+                            this.destinationAvailabilityDomain,
+                            this.exportMappings,
+                            this.destinationEncryptionKey,
+                            this.destinationSnapshotPolicyId,
+                            this.destinationCompartmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -101,6 +160,15 @@ public final class UpdateDrProtectionGroupMemberFileSystemDetails
             }
             if (model.wasPropertyExplicitlySet("exportMappings")) {
                 this.exportMappings(model.getExportMappings());
+            }
+            if (model.wasPropertyExplicitlySet("destinationEncryptionKey")) {
+                this.destinationEncryptionKey(model.getDestinationEncryptionKey());
+            }
+            if (model.wasPropertyExplicitlySet("destinationSnapshotPolicyId")) {
+                this.destinationSnapshotPolicyId(model.getDestinationSnapshotPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("destinationCompartmentId")) {
+                this.destinationCompartmentId(model.getDestinationCompartmentId());
             }
             return this;
         }
@@ -121,10 +189,16 @@ public final class UpdateDrProtectionGroupMemberFileSystemDetails
     public UpdateDrProtectionGroupMemberFileSystemDetails(
             String memberId,
             String destinationAvailabilityDomain,
-            java.util.List<FileSystemExportMappingDetails> exportMappings) {
+            java.util.List<FileSystemExportMappingDetails> exportMappings,
+            UpdateVaultAndEncryptionKeyDetails destinationEncryptionKey,
+            String destinationSnapshotPolicyId,
+            String destinationCompartmentId) {
         super(memberId);
         this.destinationAvailabilityDomain = destinationAvailabilityDomain;
         this.exportMappings = exportMappings;
+        this.destinationEncryptionKey = destinationEncryptionKey;
+        this.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
+        this.destinationCompartmentId = destinationCompartmentId;
     }
 
     /**
@@ -163,6 +237,53 @@ public final class UpdateDrProtectionGroupMemberFileSystemDetails
         return exportMappings;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationEncryptionKey")
+    private final UpdateVaultAndEncryptionKeyDetails destinationEncryptionKey;
+
+    public UpdateVaultAndEncryptionKeyDetails getDestinationEncryptionKey() {
+        return destinationEncryptionKey;
+    }
+
+    /**
+     * The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.
+     * <p>
+     * Example: {@code ocid1.filesystemsnapshotpolicy.oc1..uniqueID}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationSnapshotPolicyId")
+    private final String destinationSnapshotPolicyId;
+
+    /**
+     * The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.
+     * <p>
+     * Example: {@code ocid1.filesystemsnapshotpolicy.oc1..uniqueID}
+     *
+     * @return the value
+     **/
+    public String getDestinationSnapshotPolicyId() {
+        return destinationSnapshotPolicyId;
+    }
+
+    /**
+     * The OCID of a compartment in the destination region in which the file system should be launched.
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
+    private final String destinationCompartmentId;
+
+    /**
+     * The OCID of a compartment in the destination region in which the file system should be launched.
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
+     *
+     * @return the value
+     **/
+    public String getDestinationCompartmentId() {
+        return destinationCompartmentId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -180,6 +301,12 @@ public final class UpdateDrProtectionGroupMemberFileSystemDetails
         sb.append(", destinationAvailabilityDomain=")
                 .append(String.valueOf(this.destinationAvailabilityDomain));
         sb.append(", exportMappings=").append(String.valueOf(this.exportMappings));
+        sb.append(", destinationEncryptionKey=")
+                .append(String.valueOf(this.destinationEncryptionKey));
+        sb.append(", destinationSnapshotPolicyId=")
+                .append(String.valueOf(this.destinationSnapshotPolicyId));
+        sb.append(", destinationCompartmentId=")
+                .append(String.valueOf(this.destinationCompartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -198,6 +325,12 @@ public final class UpdateDrProtectionGroupMemberFileSystemDetails
         return java.util.Objects.equals(
                         this.destinationAvailabilityDomain, other.destinationAvailabilityDomain)
                 && java.util.Objects.equals(this.exportMappings, other.exportMappings)
+                && java.util.Objects.equals(
+                        this.destinationEncryptionKey, other.destinationEncryptionKey)
+                && java.util.Objects.equals(
+                        this.destinationSnapshotPolicyId, other.destinationSnapshotPolicyId)
+                && java.util.Objects.equals(
+                        this.destinationCompartmentId, other.destinationCompartmentId)
                 && super.equals(other);
     }
 
@@ -213,6 +346,21 @@ public final class UpdateDrProtectionGroupMemberFileSystemDetails
         result =
                 (result * PRIME)
                         + (this.exportMappings == null ? 43 : this.exportMappings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationEncryptionKey == null
+                                ? 43
+                                : this.destinationEncryptionKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationSnapshotPolicyId == null
+                                ? 43
+                                : this.destinationSnapshotPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationCompartmentId == null
+                                ? 43
+                                : this.destinationCompartmentId.hashCode());
         return result;
     }
 }

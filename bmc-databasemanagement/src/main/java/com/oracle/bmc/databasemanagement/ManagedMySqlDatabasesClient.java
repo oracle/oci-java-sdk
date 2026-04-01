@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -7,8 +7,9 @@ package com.oracle.bmc.databasemanagement;
 import com.oracle.bmc.databasemanagement.internal.http.*;
 import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
-import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
@@ -17,7 +18,7 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("MANAGEDMYSQLDATABASES")
+                    .serviceName(ManagedMySqlDatabasesClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dbmgmt.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -50,6 +51,10 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -303,6 +308,11 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -491,12 +501,21 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -526,15 +545,7 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -549,14 +560,13 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
     }
 
     @Override
-    public DisableExternalMysqlAssociatedServiceResponse disableExternalMysqlAssociatedService(
-            DisableExternalMysqlAssociatedServiceRequest request) {
-        LOG.trace("Called disableExternalMysqlAssociatedService");
-        final DisableExternalMysqlAssociatedServiceRequest interceptedRequest =
-                DisableExternalMysqlAssociatedServiceConverter.interceptRequest(request);
+    public ChangeMysqlDatabaseManagementTypeResponse changeMysqlDatabaseManagementType(
+            ChangeMysqlDatabaseManagementTypeRequest request) {
+        LOG.trace("Called changeMysqlDatabaseManagementType");
+        final ChangeMysqlDatabaseManagementTypeRequest interceptedRequest =
+                ChangeMysqlDatabaseManagementTypeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DisableExternalMysqlAssociatedServiceConverter.fromRequest(
-                        client, interceptedRequest);
+                ChangeMysqlDatabaseManagementTypeConverter.fromRequest(client, interceptedRequest);
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -566,13 +576,13 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "ManagedMySqlDatabases",
-                        "DisableExternalMysqlAssociatedService",
+                        "ChangeMysqlDatabaseManagementType",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DisableExternalMysqlAssociatedService");
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ChangeMysqlDatabaseManagementType");
         java.util.function.Function<
-                        javax.ws.rs.core.Response, DisableExternalMysqlAssociatedServiceResponse>
+                        javax.ws.rs.core.Response, ChangeMysqlDatabaseManagementTypeResponse>
                 transformer =
-                        DisableExternalMysqlAssociatedServiceConverter.fromResponse(
+                        ChangeMysqlDatabaseManagementTypeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -587,7 +597,7 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
                                         client.post(
                                                 ib,
                                                 retriedRequest
-                                                        .getDisableExternalMysqlAssociatedServiceDetails(),
+                                                        .getChangeMysqlDatabaseManagementTypeDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -595,30 +605,27 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
     }
 
     @Override
-    public EnableExternalMysqlAssociatedServiceResponse enableExternalMysqlAssociatedService(
-            EnableExternalMysqlAssociatedServiceRequest request) {
-        LOG.trace("Called enableExternalMysqlAssociatedService");
-        final EnableExternalMysqlAssociatedServiceRequest interceptedRequest =
-                EnableExternalMysqlAssociatedServiceConverter.interceptRequest(request);
+    public GetBinaryLogInformationResponse getBinaryLogInformation(
+            GetBinaryLogInformationRequest request) {
+        LOG.trace("Called getBinaryLogInformation");
+        final GetBinaryLogInformationRequest interceptedRequest =
+                GetBinaryLogInformationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                EnableExternalMysqlAssociatedServiceConverter.fromRequest(
-                        client, interceptedRequest);
+                GetBinaryLogInformationConverter.fromRequest(client, interceptedRequest);
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "ManagedMySqlDatabases",
-                        "EnableExternalMysqlAssociatedService",
+                        "GetBinaryLogInformation",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/EnableExternalMysqlAssociatedService");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, EnableExternalMysqlAssociatedServiceResponse>
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/GetBinaryLogInformation");
+        java.util.function.Function<javax.ws.rs.core.Response, GetBinaryLogInformationResponse>
                 transformer =
-                        EnableExternalMysqlAssociatedServiceConverter.fromResponse(
+                        GetBinaryLogInformationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -629,12 +636,46 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
                     return tokenRefreshRetrier.execute(
                             retryRequest,
                             retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getEnableExternalMysqlAssociatedServiceDetails(),
-                                                retriedRequest);
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetGeneralReplicationInformationResponse getGeneralReplicationInformation(
+            GetGeneralReplicationInformationRequest request) {
+        LOG.trace("Called getGeneralReplicationInformation");
+        final GetGeneralReplicationInformationRequest interceptedRequest =
+                GetGeneralReplicationInformationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetGeneralReplicationInformationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "GetGeneralReplicationInformation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/GetGeneralReplicationInformation");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetGeneralReplicationInformationResponse>
+                transformer =
+                        GetGeneralReplicationInformationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -754,6 +795,119 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
     }
 
     @Override
+    public GetMySqlQueryDetailsResponse getMySqlQueryDetails(GetMySqlQueryDetailsRequest request) {
+        LOG.trace("Called getMySqlQueryDetails");
+        final GetMySqlQueryDetailsRequest interceptedRequest =
+                GetMySqlQueryDetailsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMySqlQueryDetailsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "GetMySqlQueryDetails",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/GetMySqlQueryDetails");
+        java.util.function.Function<javax.ws.rs.core.Response, GetMySqlQueryDetailsResponse>
+                transformer =
+                        GetMySqlQueryDetailsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListHighAvailabilityMembersResponse listHighAvailabilityMembers(
+            ListHighAvailabilityMembersRequest request) {
+        LOG.trace("Called listHighAvailabilityMembers");
+        final ListHighAvailabilityMembersRequest interceptedRequest =
+                ListHighAvailabilityMembersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListHighAvailabilityMembersConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "ListHighAvailabilityMembers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ListHighAvailabilityMembers");
+        java.util.function.Function<javax.ws.rs.core.Response, ListHighAvailabilityMembersResponse>
+                transformer =
+                        ListHighAvailabilityMembersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListInboundReplicationsResponse listInboundReplications(
+            ListInboundReplicationsRequest request) {
+        LOG.trace("Called listInboundReplications");
+        final ListInboundReplicationsRequest interceptedRequest =
+                ListInboundReplicationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInboundReplicationsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "ListInboundReplications",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ListInboundReplications");
+        java.util.function.Function<javax.ws.rs.core.Response, ListInboundReplicationsResponse>
+                transformer =
+                        ListInboundReplicationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListManagedMySqlDatabaseConfigurationDataResponse
             listManagedMySqlDatabaseConfigurationData(
                     ListManagedMySqlDatabaseConfigurationDataRequest request) {
@@ -856,6 +1010,82 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
         java.util.function.Function<javax.ws.rs.core.Response, ListManagedMySqlDatabasesResponse>
                 transformer =
                         ListManagedMySqlDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListMySqlDigestErrorsResponse listMySqlDigestErrors(
+            ListMySqlDigestErrorsRequest request) {
+        LOG.trace("Called listMySqlDigestErrors");
+        final ListMySqlDigestErrorsRequest interceptedRequest =
+                ListMySqlDigestErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMySqlDigestErrorsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "ListMySqlDigestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ListMySqlDigestErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListMySqlDigestErrorsResponse>
+                transformer =
+                        ListMySqlDigestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListOutboundReplicationsResponse listOutboundReplications(
+            ListOutboundReplicationsRequest request) {
+        LOG.trace("Called listOutboundReplications");
+        final ListOutboundReplicationsRequest interceptedRequest =
+                ListOutboundReplicationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOutboundReplicationsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "ListOutboundReplications",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ListOutboundReplications");
+        java.util.function.Function<javax.ws.rs.core.Response, ListOutboundReplicationsResponse>
+                transformer =
+                        ListOutboundReplicationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

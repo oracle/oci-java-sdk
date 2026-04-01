@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -93,7 +93,7 @@ public class GenerateReportRequest
      * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
      * (Numeric and boolean values should not be quoted.)
      * <p>
-     **Example:** query=(dateGenerated ge '2021-12-18T01-00-26') and (ilmTarget eq 'dscs-target')
+     **Example:** query=(auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON")
      *
      */
     private String scimQuery;
@@ -105,7 +105,7 @@ public class GenerateReportRequest
      * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
      * (Numeric and boolean values should not be quoted.)
      * <p>
-     **Example:** query=(dateGenerated ge '2021-12-18T01-00-26') and (ilmTarget eq 'dscs-target')
+     **Example:** query=(auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON")
      *
      */
     public String getScimQuery() {
@@ -230,7 +230,7 @@ public class GenerateReportRequest
          * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
          * (Numeric and boolean values should not be quoted.)
          * <p>
-         **Example:** query=(dateGenerated ge '2021-12-18T01-00-26') and (ilmTarget eq 'dscs-target')
+         **Example:** query=(auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON")
          *
          */
         private String scimQuery = null;
@@ -242,7 +242,7 @@ public class GenerateReportRequest
          * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
          * (Numeric and boolean values should not be quoted.)
          * <p>
-         **Example:** query=(dateGenerated ge '2021-12-18T01-00-26') and (ilmTarget eq 'dscs-target')
+         **Example:** query=(auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON")
          *
          * @param scimQuery the value to set
          * @return this builder instance

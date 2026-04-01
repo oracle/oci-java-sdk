@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.paginator.internal;
@@ -47,9 +47,9 @@ public abstract class AbstractResponseIterator<REQUESTBUILDER, REQUEST, RESPONSE
      */
     protected RESPONSE currentResponse;
 
-    /**
-     * The page token to use on the next request to the list operation
-     */
+    private RESPONSE firstResponse;
+
+    /** The page token to use on the next request to the list operation */
     protected String nextPageToken;
 
     /**
@@ -108,7 +108,16 @@ public abstract class AbstractResponseIterator<REQUESTBUILDER, REQUEST, RESPONSE
      * Updates the state of this class with the next page of results
      */
     protected void fetchNextPage() {
-        currentResponse = pageRetrievalFunction.apply(getNextRequest());
+        if (firstResponse != null) {
+            currentResponse = firstResponse;
+            firstResponse = null;
+        } else {
+            currentResponse = pageRetrievalFunction.apply(getNextRequest());
+        }
         nextPageToken = nextPageTokenRetrievalFunction.apply(currentResponse);
+    }
+
+    protected void fetchFirstPage() {
+        firstResponse = pageRetrievalFunction.apply(getNextRequest());
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -7,10 +7,10 @@ package com.oracle.bmc.vnmonitoring.model;
 /**
  * Represents a router that lets your VCN privately access specific Oracle services such as Object
  * Storage without exposing the VCN to the public internet. Traffic leaving the VCN and destined
- * for a supported Oracle service (see {@link #listServices(ListServicesRequest) listServices}) is
- * routed through the service gateway and does not traverse the internet. The instances in the VCN
- * do not need to have public IP addresses nor be in a public subnet. The VCN does not need an internet gateway
- * for this traffic. For more information, see
+ * for a supported Oracle service (use the {@link #listServices(ListServicesRequest) listServices} operation to
+ * find available service CIDR labels) is routed through the service gateway and does not traverse the internet.
+ * The instances in the VCN do not need to have public IP addresses nor be in a public subnet. The VCN does not
+ * need an internet gateway for this traffic. For more information, see
  * [Access to Oracle Services: Service Gateway](https://docs.oracle.com/iaas/Content/Network/Tasks/servicegateway.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
@@ -38,7 +38,6 @@ public final class ServiceGateway extends com.oracle.bmc.http.internal.Explicitl
         "freeformTags",
         "id",
         "lifecycleState",
-        "routeTableId",
         "services",
         "timeCreated",
         "vcnId"
@@ -51,7 +50,6 @@ public final class ServiceGateway extends com.oracle.bmc.http.internal.Explicitl
             java.util.Map<String, String> freeformTags,
             String id,
             LifecycleState lifecycleState,
-            String routeTableId,
             java.util.List<ServiceIdResponseDetails> services,
             java.util.Date timeCreated,
             String vcnId) {
@@ -63,7 +61,6 @@ public final class ServiceGateway extends com.oracle.bmc.http.internal.Explicitl
         this.freeformTags = freeformTags;
         this.id = id;
         this.lifecycleState = lifecycleState;
-        this.routeTableId = routeTableId;
         this.services = services;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
@@ -211,28 +208,6 @@ public final class ServiceGateway extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway is using.
-         * For information about why you would associate a route table with a service gateway, see
-         * [Transit Routing: Private Access to Oracle Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-        private String routeTableId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway is using.
-         * For information about why you would associate a route table with a service gateway, see
-         * [Transit Routing: Private Access to Oracle Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
-         *
-         * @param routeTableId the value to set
-         * @return this builder
-         **/
-        public Builder routeTableId(String routeTableId) {
-            this.routeTableId = routeTableId;
-            this.__explicitlySet__.add("routeTableId");
-            return this;
-        }
-        /**
          * List of the {@link Service} objects enabled for this service gateway.
          * The list can be empty. You can enable a particular {@code Service} by using
          * {@link #attachServiceId(AttachServiceIdRequest) attachServiceId} or
@@ -312,7 +287,6 @@ public final class ServiceGateway extends com.oracle.bmc.http.internal.Explicitl
                             this.freeformTags,
                             this.id,
                             this.lifecycleState,
-                            this.routeTableId,
                             this.services,
                             this.timeCreated,
                             this.vcnId);
@@ -344,9 +318,6 @@ public final class ServiceGateway extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
-            }
-            if (model.wasPropertyExplicitlySet("routeTableId")) {
-                this.routeTableId(model.getRouteTableId());
             }
             if (model.wasPropertyExplicitlySet("services")) {
                 this.services(model.getServices());
@@ -534,26 +505,6 @@ public final class ServiceGateway extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway is using.
-     * For information about why you would associate a route table with a service gateway, see
-     * [Transit Routing: Private Access to Oracle Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    private final String routeTableId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway is using.
-     * For information about why you would associate a route table with a service gateway, see
-     * [Transit Routing: Private Access to Oracle Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
-     *
-     * @return the value
-     **/
-    public String getRouteTableId() {
-        return routeTableId;
-    }
-
-    /**
      * List of the {@link Service} objects enabled for this service gateway.
      * The list can be empty. You can enable a particular {@code Service} by using
      * {@link #attachServiceId(AttachServiceIdRequest) attachServiceId} or
@@ -634,7 +585,6 @@ public final class ServiceGateway extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", services=").append(String.valueOf(this.services));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
@@ -659,7 +609,6 @@ public final class ServiceGateway extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.services, other.services)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
@@ -681,7 +630,6 @@ public final class ServiceGateway extends com.oracle.bmc.http.internal.Explicitl
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + (this.services == null ? 43 : this.services.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());

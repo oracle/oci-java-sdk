@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
@@ -218,6 +218,15 @@ public final class CohereChatResponse extends BaseChatResponse {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("usage")
+        private Usage usage;
+
+        public Builder usage(Usage usage) {
+            this.usage = usage;
+            this.__explicitlySet__.add("usage");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -233,7 +242,8 @@ public final class CohereChatResponse extends BaseChatResponse {
                             this.searchQueries,
                             this.documents,
                             this.toolCalls,
-                            this.prompt);
+                            this.prompt,
+                            this.usage);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -272,6 +282,9 @@ public final class CohereChatResponse extends BaseChatResponse {
             if (model.wasPropertyExplicitlySet("prompt")) {
                 this.prompt(model.getPrompt());
             }
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
+            }
             return this;
         }
     }
@@ -298,7 +311,8 @@ public final class CohereChatResponse extends BaseChatResponse {
             java.util.List<SearchQuery> searchQueries,
             java.util.List<Object> documents,
             java.util.List<CohereToolCall> toolCalls,
-            String prompt) {
+            String prompt,
+            Usage usage) {
         super();
         this.text = text;
         this.chatHistory = chatHistory;
@@ -310,6 +324,7 @@ public final class CohereChatResponse extends BaseChatResponse {
         this.documents = documents;
         this.toolCalls = toolCalls;
         this.prompt = prompt;
+        this.usage = usage;
     }
 
     /**
@@ -534,6 +549,13 @@ public final class CohereChatResponse extends BaseChatResponse {
         return prompt;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("usage")
+    private final Usage usage;
+
+    public Usage getUsage() {
+        return usage;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -558,6 +580,7 @@ public final class CohereChatResponse extends BaseChatResponse {
         sb.append(", documents=").append(String.valueOf(this.documents));
         sb.append(", toolCalls=").append(String.valueOf(this.toolCalls));
         sb.append(", prompt=").append(String.valueOf(this.prompt));
+        sb.append(", usage=").append(String.valueOf(this.usage));
         sb.append(")");
         return sb.toString();
     }
@@ -582,6 +605,7 @@ public final class CohereChatResponse extends BaseChatResponse {
                 && java.util.Objects.equals(this.documents, other.documents)
                 && java.util.Objects.equals(this.toolCalls, other.toolCalls)
                 && java.util.Objects.equals(this.prompt, other.prompt)
+                && java.util.Objects.equals(this.usage, other.usage)
                 && super.equals(other);
     }
 
@@ -603,6 +627,7 @@ public final class CohereChatResponse extends BaseChatResponse {
         result = (result * PRIME) + (this.documents == null ? 43 : this.documents.hashCode());
         result = (result * PRIME) + (this.toolCalls == null ? 43 : this.toolCalls.hashCode());
         result = (result * PRIME) + (this.prompt == null ? 43 : this.prompt.hashCode());
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -35,6 +35,21 @@ public class DisableAutonomousDatabaseOperationsInsightsRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
     }
 
     public static class Builder
@@ -77,6 +92,25 @@ public class DisableAutonomousDatabaseOperationsInsightsRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -106,6 +140,7 @@ public class DisableAutonomousDatabaseOperationsInsightsRequest
         public Builder copy(DisableAutonomousDatabaseOperationsInsightsRequest o) {
             autonomousDatabaseId(o.getAutonomousDatabaseId());
             opcRequestId(o.getOpcRequestId());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -142,8 +177,9 @@ public class DisableAutonomousDatabaseOperationsInsightsRequest
                     new DisableAutonomousDatabaseOperationsInsightsRequest();
             request.autonomousDatabaseId = autonomousDatabaseId;
             request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
             return request;
-            // new DisableAutonomousDatabaseOperationsInsightsRequest(autonomousDatabaseId, opcRequestId);
+            // new DisableAutonomousDatabaseOperationsInsightsRequest(autonomousDatabaseId, opcRequestId, opcDryRun);
         }
     }
 
@@ -152,7 +188,10 @@ public class DisableAutonomousDatabaseOperationsInsightsRequest
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().autonomousDatabaseId(autonomousDatabaseId).opcRequestId(opcRequestId);
+        return new Builder()
+                .autonomousDatabaseId(autonomousDatabaseId)
+                .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -170,6 +209,7 @@ public class DisableAutonomousDatabaseOperationsInsightsRequest
         sb.append("super=").append(super.toString());
         sb.append(",autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -187,7 +227,8 @@ public class DisableAutonomousDatabaseOperationsInsightsRequest
                 (DisableAutonomousDatabaseOperationsInsightsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -200,6 +241,7 @@ public class DisableAutonomousDatabaseOperationsInsightsRequest
                                 ? 43
                                 : this.autonomousDatabaseId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

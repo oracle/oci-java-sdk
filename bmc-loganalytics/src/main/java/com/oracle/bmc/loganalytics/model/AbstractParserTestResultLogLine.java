@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -22,11 +22,34 @@ package com.oracle.bmc.loganalytics.model;
 public final class AbstractParserTestResultLogLine
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"originalLogLine", "preProcessedLogLine"})
-    public AbstractParserTestResultLogLine(String originalLogLine, String preProcessedLogLine) {
+    @java.beans.ConstructorProperties({
+        "originalLogLine",
+        "preProcessedLogLine",
+        "findStartIndex",
+        "findEndIndex",
+        "replaceString",
+        "replaceStartIndex",
+        "replaceEndIndex",
+        "grpNameValueMap"
+    })
+    public AbstractParserTestResultLogLine(
+            String originalLogLine,
+            String preProcessedLogLine,
+            Integer findStartIndex,
+            Integer findEndIndex,
+            String replaceString,
+            Integer replaceStartIndex,
+            Integer replaceEndIndex,
+            java.util.Map<String, NamedCaptureValue> grpNameValueMap) {
         super();
         this.originalLogLine = originalLogLine;
         this.preProcessedLogLine = preProcessedLogLine;
+        this.findStartIndex = findStartIndex;
+        this.findEndIndex = findEndIndex;
+        this.replaceString = replaceString;
+        this.replaceStartIndex = replaceStartIndex;
+        this.replaceEndIndex = replaceEndIndex;
+        this.grpNameValueMap = grpNameValueMap;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -63,6 +86,102 @@ public final class AbstractParserTestResultLogLine
             this.__explicitlySet__.add("preProcessedLogLine");
             return this;
         }
+        /**
+         * The find start index.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("findStartIndex")
+        private Integer findStartIndex;
+
+        /**
+         * The find start index.
+         * @param findStartIndex the value to set
+         * @return this builder
+         **/
+        public Builder findStartIndex(Integer findStartIndex) {
+            this.findStartIndex = findStartIndex;
+            this.__explicitlySet__.add("findStartIndex");
+            return this;
+        }
+        /**
+         * The find end index.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("findEndIndex")
+        private Integer findEndIndex;
+
+        /**
+         * The find end index.
+         * @param findEndIndex the value to set
+         * @return this builder
+         **/
+        public Builder findEndIndex(Integer findEndIndex) {
+            this.findEndIndex = findEndIndex;
+            this.__explicitlySet__.add("findEndIndex");
+            return this;
+        }
+        /**
+         * The replacement string.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replaceString")
+        private String replaceString;
+
+        /**
+         * The replacement string.
+         * @param replaceString the value to set
+         * @return this builder
+         **/
+        public Builder replaceString(String replaceString) {
+            this.replaceString = replaceString;
+            this.__explicitlySet__.add("replaceString");
+            return this;
+        }
+        /**
+         * The replace start index.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replaceStartIndex")
+        private Integer replaceStartIndex;
+
+        /**
+         * The replace start index.
+         * @param replaceStartIndex the value to set
+         * @return this builder
+         **/
+        public Builder replaceStartIndex(Integer replaceStartIndex) {
+            this.replaceStartIndex = replaceStartIndex;
+            this.__explicitlySet__.add("replaceStartIndex");
+            return this;
+        }
+        /**
+         * The replace end index.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replaceEndIndex")
+        private Integer replaceEndIndex;
+
+        /**
+         * The replace end index.
+         * @param replaceEndIndex the value to set
+         * @return this builder
+         **/
+        public Builder replaceEndIndex(Integer replaceEndIndex) {
+            this.replaceEndIndex = replaceEndIndex;
+            this.__explicitlySet__.add("replaceEndIndex");
+            return this;
+        }
+        /**
+         * The group name value map.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("grpNameValueMap")
+        private java.util.Map<String, NamedCaptureValue> grpNameValueMap;
+
+        /**
+         * The group name value map.
+         * @param grpNameValueMap the value to set
+         * @return this builder
+         **/
+        public Builder grpNameValueMap(java.util.Map<String, NamedCaptureValue> grpNameValueMap) {
+            this.grpNameValueMap = grpNameValueMap;
+            this.__explicitlySet__.add("grpNameValueMap");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -70,7 +189,14 @@ public final class AbstractParserTestResultLogLine
         public AbstractParserTestResultLogLine build() {
             AbstractParserTestResultLogLine model =
                     new AbstractParserTestResultLogLine(
-                            this.originalLogLine, this.preProcessedLogLine);
+                            this.originalLogLine,
+                            this.preProcessedLogLine,
+                            this.findStartIndex,
+                            this.findEndIndex,
+                            this.replaceString,
+                            this.replaceStartIndex,
+                            this.replaceEndIndex,
+                            this.grpNameValueMap);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -84,6 +210,24 @@ public final class AbstractParserTestResultLogLine
             }
             if (model.wasPropertyExplicitlySet("preProcessedLogLine")) {
                 this.preProcessedLogLine(model.getPreProcessedLogLine());
+            }
+            if (model.wasPropertyExplicitlySet("findStartIndex")) {
+                this.findStartIndex(model.getFindStartIndex());
+            }
+            if (model.wasPropertyExplicitlySet("findEndIndex")) {
+                this.findEndIndex(model.getFindEndIndex());
+            }
+            if (model.wasPropertyExplicitlySet("replaceString")) {
+                this.replaceString(model.getReplaceString());
+            }
+            if (model.wasPropertyExplicitlySet("replaceStartIndex")) {
+                this.replaceStartIndex(model.getReplaceStartIndex());
+            }
+            if (model.wasPropertyExplicitlySet("replaceEndIndex")) {
+                this.replaceEndIndex(model.getReplaceEndIndex());
+            }
+            if (model.wasPropertyExplicitlySet("grpNameValueMap")) {
+                this.grpNameValueMap(model.getGrpNameValueMap());
             }
             return this;
         }
@@ -128,6 +272,90 @@ public final class AbstractParserTestResultLogLine
         return preProcessedLogLine;
     }
 
+    /**
+     * The find start index.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("findStartIndex")
+    private final Integer findStartIndex;
+
+    /**
+     * The find start index.
+     * @return the value
+     **/
+    public Integer getFindStartIndex() {
+        return findStartIndex;
+    }
+
+    /**
+     * The find end index.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("findEndIndex")
+    private final Integer findEndIndex;
+
+    /**
+     * The find end index.
+     * @return the value
+     **/
+    public Integer getFindEndIndex() {
+        return findEndIndex;
+    }
+
+    /**
+     * The replacement string.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replaceString")
+    private final String replaceString;
+
+    /**
+     * The replacement string.
+     * @return the value
+     **/
+    public String getReplaceString() {
+        return replaceString;
+    }
+
+    /**
+     * The replace start index.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replaceStartIndex")
+    private final Integer replaceStartIndex;
+
+    /**
+     * The replace start index.
+     * @return the value
+     **/
+    public Integer getReplaceStartIndex() {
+        return replaceStartIndex;
+    }
+
+    /**
+     * The replace end index.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replaceEndIndex")
+    private final Integer replaceEndIndex;
+
+    /**
+     * The replace end index.
+     * @return the value
+     **/
+    public Integer getReplaceEndIndex() {
+        return replaceEndIndex;
+    }
+
+    /**
+     * The group name value map.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("grpNameValueMap")
+    private final java.util.Map<String, NamedCaptureValue> grpNameValueMap;
+
+    /**
+     * The group name value map.
+     * @return the value
+     **/
+    public java.util.Map<String, NamedCaptureValue> getGrpNameValueMap() {
+        return grpNameValueMap;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -144,6 +372,12 @@ public final class AbstractParserTestResultLogLine
         sb.append("super=").append(super.toString());
         sb.append("originalLogLine=").append(String.valueOf(this.originalLogLine));
         sb.append(", preProcessedLogLine=").append(String.valueOf(this.preProcessedLogLine));
+        sb.append(", findStartIndex=").append(String.valueOf(this.findStartIndex));
+        sb.append(", findEndIndex=").append(String.valueOf(this.findEndIndex));
+        sb.append(", replaceString=").append(String.valueOf(this.replaceString));
+        sb.append(", replaceStartIndex=").append(String.valueOf(this.replaceStartIndex));
+        sb.append(", replaceEndIndex=").append(String.valueOf(this.replaceEndIndex));
+        sb.append(", grpNameValueMap=").append(String.valueOf(this.grpNameValueMap));
         sb.append(")");
         return sb.toString();
     }
@@ -160,6 +394,12 @@ public final class AbstractParserTestResultLogLine
         AbstractParserTestResultLogLine other = (AbstractParserTestResultLogLine) o;
         return java.util.Objects.equals(this.originalLogLine, other.originalLogLine)
                 && java.util.Objects.equals(this.preProcessedLogLine, other.preProcessedLogLine)
+                && java.util.Objects.equals(this.findStartIndex, other.findStartIndex)
+                && java.util.Objects.equals(this.findEndIndex, other.findEndIndex)
+                && java.util.Objects.equals(this.replaceString, other.replaceString)
+                && java.util.Objects.equals(this.replaceStartIndex, other.replaceStartIndex)
+                && java.util.Objects.equals(this.replaceEndIndex, other.replaceEndIndex)
+                && java.util.Objects.equals(this.grpNameValueMap, other.grpNameValueMap)
                 && super.equals(other);
     }
 
@@ -175,6 +415,22 @@ public final class AbstractParserTestResultLogLine
                         + (this.preProcessedLogLine == null
                                 ? 43
                                 : this.preProcessedLogLine.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.findStartIndex == null ? 43 : this.findStartIndex.hashCode());
+        result = (result * PRIME) + (this.findEndIndex == null ? 43 : this.findEndIndex.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replaceString == null ? 43 : this.replaceString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replaceStartIndex == null ? 43 : this.replaceStartIndex.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replaceEndIndex == null ? 43 : this.replaceEndIndex.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.grpNameValueMap == null ? 43 : this.grpNameValueMap.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

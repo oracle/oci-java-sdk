@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -31,7 +31,7 @@ public final class EnableAutoAssociationDetail
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique identifier of the log group to use when auto-associting the log source to
+         * The unique identifier of the log group to use when auto-associating the log source to
          * eligible entities.
          *
          **/
@@ -39,7 +39,7 @@ public final class EnableAutoAssociationDetail
         private String logGroupId;
 
         /**
-         * The unique identifier of the log group to use when auto-associting the log source to
+         * The unique identifier of the log group to use when auto-associating the log source to
          * eligible entities.
          *
          * @param logGroupId the value to set
@@ -83,7 +83,7 @@ public final class EnableAutoAssociationDetail
     }
 
     /**
-     * The unique identifier of the log group to use when auto-associting the log source to
+     * The unique identifier of the log group to use when auto-associating the log source to
      * eligible entities.
      *
      **/
@@ -91,7 +91,7 @@ public final class EnableAutoAssociationDetail
     private final String logGroupId;
 
     /**
-     * The unique identifier of the log group to use when auto-associting the log source to
+     * The unique identifier of the log group to use when auto-associating the log source to
      * eligible entities.
      *
      * @return the value

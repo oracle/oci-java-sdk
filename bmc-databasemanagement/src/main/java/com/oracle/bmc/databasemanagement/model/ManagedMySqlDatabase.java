@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -28,6 +28,7 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
         "dbVersion",
         "timeCreated",
         "name",
+        "heatWaveManagementType",
         "heatWaveClusterDisplayName",
         "isHeatWaveEnabled",
         "isLakehouseEnabled",
@@ -48,6 +49,7 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
             String dbVersion,
             java.util.Date timeCreated,
             String name,
+            HeatWaveManagementType heatWaveManagementType,
             String heatWaveClusterDisplayName,
             Boolean isHeatWaveEnabled,
             Boolean isLakehouseEnabled,
@@ -67,6 +69,7 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
         this.dbVersion = dbVersion;
         this.timeCreated = timeCreated;
         this.name = name;
+        this.heatWaveManagementType = heatWaveManagementType;
         this.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
         this.isHeatWaveEnabled = isHeatWaveEnabled;
         this.isLakehouseEnabled = isLakehouseEnabled;
@@ -177,6 +180,22 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
+            return this;
+        }
+        /**
+         * The customer's selected type for HeatWave management.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveManagementType")
+        private HeatWaveManagementType heatWaveManagementType;
+
+        /**
+         * The customer's selected type for HeatWave management.
+         * @param heatWaveManagementType the value to set
+         * @return this builder
+         **/
+        public Builder heatWaveManagementType(HeatWaveManagementType heatWaveManagementType) {
+            this.heatWaveManagementType = heatWaveManagementType;
+            this.__explicitlySet__.add("heatWaveManagementType");
             return this;
         }
         /**
@@ -388,6 +407,7 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
                             this.dbVersion,
                             this.timeCreated,
                             this.name,
+                            this.heatWaveManagementType,
                             this.heatWaveClusterDisplayName,
                             this.isHeatWaveEnabled,
                             this.isLakehouseEnabled,
@@ -425,6 +445,9 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveManagementType")) {
+                this.heatWaveManagementType(model.getHeatWaveManagementType());
             }
             if (model.wasPropertyExplicitlySet("heatWaveClusterDisplayName")) {
                 this.heatWaveClusterDisplayName(model.getHeatWaveClusterDisplayName());
@@ -559,6 +582,68 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
      **/
     public String getName() {
         return name;
+    }
+
+    /**
+     * The customer's selected type for HeatWave management.
+     **/
+    public enum HeatWaveManagementType {
+        Basic("BASIC"),
+        Full("FULL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(HeatWaveManagementType.class);
+
+        private final String value;
+        private static java.util.Map<String, HeatWaveManagementType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (HeatWaveManagementType v : HeatWaveManagementType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        HeatWaveManagementType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static HeatWaveManagementType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'HeatWaveManagementType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The customer's selected type for HeatWave management.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveManagementType")
+    private final HeatWaveManagementType heatWaveManagementType;
+
+    /**
+     * The customer's selected type for HeatWave management.
+     * @return the value
+     **/
+    public HeatWaveManagementType getHeatWaveManagementType() {
+        return heatWaveManagementType;
     }
 
     /**
@@ -753,6 +838,7 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", heatWaveManagementType=").append(String.valueOf(this.heatWaveManagementType));
         sb.append(", heatWaveClusterDisplayName=")
                 .append(String.valueOf(this.heatWaveClusterDisplayName));
         sb.append(", isHeatWaveEnabled=").append(String.valueOf(this.isHeatWaveEnabled));
@@ -787,6 +873,8 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(
+                        this.heatWaveManagementType, other.heatWaveManagementType)
+                && java.util.Objects.equals(
                         this.heatWaveClusterDisplayName, other.heatWaveClusterDisplayName)
                 && java.util.Objects.equals(this.isHeatWaveEnabled, other.isHeatWaveEnabled)
                 && java.util.Objects.equals(this.isLakehouseEnabled, other.isLakehouseEnabled)
@@ -814,6 +902,11 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveManagementType == null
+                                ? 43
+                                : this.heatWaveManagementType.hashCode());
         result =
                 (result * PRIME)
                         + (this.heatWaveClusterDisplayName == null

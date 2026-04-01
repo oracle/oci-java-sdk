@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -27,13 +27,15 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         "tablespace",
         "isIgnoreErrorsEnabled",
         "seed",
+        "userDefinedFunctionSeed",
         "isMoveInterimTablesEnabled",
         "isExecuteSavedScriptEnabled",
         "isDropTempTablesEnabled",
         "isRedoLoggingEnabled",
         "isRefreshStatsEnabled",
         "parallelDegree",
-        "recompile"
+        "recompile",
+        "targetCredentials"
     })
     public MaskDataDetails(
             String targetId,
@@ -43,13 +45,15 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
             String tablespace,
             Boolean isIgnoreErrorsEnabled,
             String seed,
+            String userDefinedFunctionSeed,
             Boolean isMoveInterimTablesEnabled,
             Boolean isExecuteSavedScriptEnabled,
             Boolean isDropTempTablesEnabled,
             Boolean isRedoLoggingEnabled,
             Boolean isRefreshStatsEnabled,
             String parallelDegree,
-            String recompile) {
+            String recompile,
+            Credentials targetCredentials) {
         super();
         this.targetId = targetId;
         this.isDecrypt = isDecrypt;
@@ -58,6 +62,7 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         this.tablespace = tablespace;
         this.isIgnoreErrorsEnabled = isIgnoreErrorsEnabled;
         this.seed = seed;
+        this.userDefinedFunctionSeed = userDefinedFunctionSeed;
         this.isMoveInterimTablesEnabled = isMoveInterimTablesEnabled;
         this.isExecuteSavedScriptEnabled = isExecuteSavedScriptEnabled;
         this.isDropTempTablesEnabled = isDropTempTablesEnabled;
@@ -65,6 +70,7 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         this.isRefreshStatsEnabled = isRefreshStatsEnabled;
         this.parallelDegree = parallelDegree;
         this.recompile = recompile;
+        this.targetCredentials = targetCredentials;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -217,6 +223,22 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         public Builder seed(String seed) {
             this.seed = seed;
             this.__explicitlySet__.add("seed");
+            return this;
+        }
+        /**
+         * The seed value to be used in case of User Defined Function masking format. This is an optional parameter and needs to be passed only if any User Defined Function uses seed.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("userDefinedFunctionSeed")
+        private String userDefinedFunctionSeed;
+
+        /**
+         * The seed value to be used in case of User Defined Function masking format. This is an optional parameter and needs to be passed only if any User Defined Function uses seed.
+         * @param userDefinedFunctionSeed the value to set
+         * @return this builder
+         **/
+        public Builder userDefinedFunctionSeed(String userDefinedFunctionSeed) {
+            this.userDefinedFunctionSeed = userDefinedFunctionSeed;
+            this.__explicitlySet__.add("userDefinedFunctionSeed");
             return this;
         }
         /**
@@ -390,6 +412,15 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("targetCredentials")
+        private Credentials targetCredentials;
+
+        public Builder targetCredentials(Credentials targetCredentials) {
+            this.targetCredentials = targetCredentials;
+            this.__explicitlySet__.add("targetCredentials");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -403,13 +434,15 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
                             this.tablespace,
                             this.isIgnoreErrorsEnabled,
                             this.seed,
+                            this.userDefinedFunctionSeed,
                             this.isMoveInterimTablesEnabled,
                             this.isExecuteSavedScriptEnabled,
                             this.isDropTempTablesEnabled,
                             this.isRedoLoggingEnabled,
                             this.isRefreshStatsEnabled,
                             this.parallelDegree,
-                            this.recompile);
+                            this.recompile,
+                            this.targetCredentials);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -439,6 +472,9 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("seed")) {
                 this.seed(model.getSeed());
             }
+            if (model.wasPropertyExplicitlySet("userDefinedFunctionSeed")) {
+                this.userDefinedFunctionSeed(model.getUserDefinedFunctionSeed());
+            }
             if (model.wasPropertyExplicitlySet("isMoveInterimTablesEnabled")) {
                 this.isMoveInterimTablesEnabled(model.getIsMoveInterimTablesEnabled());
             }
@@ -459,6 +495,9 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("recompile")) {
                 this.recompile(model.getRecompile());
+            }
+            if (model.wasPropertyExplicitlySet("targetCredentials")) {
+                this.targetCredentials(model.getTargetCredentials());
             }
             return this;
         }
@@ -651,6 +690,20 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * The seed value to be used in case of User Defined Function masking format. This is an optional parameter and needs to be passed only if any User Defined Function uses seed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("userDefinedFunctionSeed")
+    private final String userDefinedFunctionSeed;
+
+    /**
+     * The seed value to be used in case of User Defined Function masking format. This is an optional parameter and needs to be passed only if any User Defined Function uses seed.
+     * @return the value
+     **/
+    public String getUserDefinedFunctionSeed() {
+        return userDefinedFunctionSeed;
+    }
+
+    /**
      * Indicates if the interim DMASK tables should be moved to the user-specified tablespace. As interim tables can be large in size,
      * set it to false if moving them causes performance overhead during masking.
      *
@@ -806,6 +859,13 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         return recompile;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("targetCredentials")
+    private final Credentials targetCredentials;
+
+    public Credentials getTargetCredentials() {
+        return targetCredentials;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -827,6 +887,7 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         sb.append(", tablespace=").append(String.valueOf(this.tablespace));
         sb.append(", isIgnoreErrorsEnabled=").append(String.valueOf(this.isIgnoreErrorsEnabled));
         sb.append(", seed=").append("<redacted>");
+        sb.append(", userDefinedFunctionSeed=").append("<redacted>");
         sb.append(", isMoveInterimTablesEnabled=")
                 .append(String.valueOf(this.isMoveInterimTablesEnabled));
         sb.append(", isExecuteSavedScriptEnabled=")
@@ -837,6 +898,7 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         sb.append(", isRefreshStatsEnabled=").append(String.valueOf(this.isRefreshStatsEnabled));
         sb.append(", parallelDegree=").append(String.valueOf(this.parallelDegree));
         sb.append(", recompile=").append(String.valueOf(this.recompile));
+        sb.append(", targetCredentials=").append(String.valueOf(this.targetCredentials));
         sb.append(")");
         return sb.toString();
     }
@@ -859,6 +921,8 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.isIgnoreErrorsEnabled, other.isIgnoreErrorsEnabled)
                 && java.util.Objects.equals(this.seed, other.seed)
                 && java.util.Objects.equals(
+                        this.userDefinedFunctionSeed, other.userDefinedFunctionSeed)
+                && java.util.Objects.equals(
                         this.isMoveInterimTablesEnabled, other.isMoveInterimTablesEnabled)
                 && java.util.Objects.equals(
                         this.isExecuteSavedScriptEnabled, other.isExecuteSavedScriptEnabled)
@@ -868,6 +932,7 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.isRefreshStatsEnabled, other.isRefreshStatsEnabled)
                 && java.util.Objects.equals(this.parallelDegree, other.parallelDegree)
                 && java.util.Objects.equals(this.recompile, other.recompile)
+                && java.util.Objects.equals(this.targetCredentials, other.targetCredentials)
                 && super.equals(other);
     }
 
@@ -888,6 +953,11 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
                                 ? 43
                                 : this.isIgnoreErrorsEnabled.hashCode());
         result = (result * PRIME) + (this.seed == null ? 43 : this.seed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.userDefinedFunctionSeed == null
+                                ? 43
+                                : this.userDefinedFunctionSeed.hashCode());
         result =
                 (result * PRIME)
                         + (this.isMoveInterimTablesEnabled == null
@@ -917,6 +987,9 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
                 (result * PRIME)
                         + (this.parallelDegree == null ? 43 : this.parallelDegree.hashCode());
         result = (result * PRIME) + (this.recompile == null ? 43 : this.recompile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetCredentials == null ? 43 : this.targetCredentials.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeai.model;
@@ -41,6 +41,8 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "modelMetrics",
         "isLongTermSupported",
         "timeDeprecated",
+        "timeOnDemandRetired",
+        "timeDedicatedRetired",
         "previousState",
         "freeformTags",
         "definedTags",
@@ -64,6 +66,8 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             ModelMetrics modelMetrics,
             Boolean isLongTermSupported,
             java.util.Date timeDeprecated,
+            java.util.Date timeOnDemandRetired,
+            java.util.Date timeDedicatedRetired,
             Model previousState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -86,6 +90,8 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.modelMetrics = modelMetrics;
         this.isLongTermSupported = isLongTermSupported;
         this.timeDeprecated = timeDeprecated;
+        this.timeOnDemandRetired = timeOnDemandRetired;
+        this.timeDedicatedRetired = timeDedicatedRetired;
         this.previousState = previousState;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -352,6 +358,38 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             this.__explicitlySet__.add("timeDeprecated");
             return this;
         }
+        /**
+         * The timestamp indicating when the base model will no longer be available for on-demand usage.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOnDemandRetired")
+        private java.util.Date timeOnDemandRetired;
+
+        /**
+         * The timestamp indicating when the base model will no longer be available for on-demand usage.
+         * @param timeOnDemandRetired the value to set
+         * @return this builder
+         **/
+        public Builder timeOnDemandRetired(java.util.Date timeOnDemandRetired) {
+            this.timeOnDemandRetired = timeOnDemandRetired;
+            this.__explicitlySet__.add("timeOnDemandRetired");
+            return this;
+        }
+        /**
+         * The timestamp indicating when the custom model and its associated foundation model will be fully retired.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDedicatedRetired")
+        private java.util.Date timeDedicatedRetired;
+
+        /**
+         * The timestamp indicating when the custom model and its associated foundation model will be fully retired.
+         * @param timeDedicatedRetired the value to set
+         * @return this builder
+         **/
+        public Builder timeDedicatedRetired(java.util.Date timeDedicatedRetired) {
+            this.timeDedicatedRetired = timeDedicatedRetired;
+            this.__explicitlySet__.add("timeDedicatedRetired");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("previousState")
         private Model previousState;
@@ -456,6 +494,8 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                             this.modelMetrics,
                             this.isLongTermSupported,
                             this.timeDeprecated,
+                            this.timeOnDemandRetired,
+                            this.timeDedicatedRetired,
                             this.previousState,
                             this.freeformTags,
                             this.definedTags,
@@ -518,6 +558,12 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             }
             if (model.wasPropertyExplicitlySet("timeDeprecated")) {
                 this.timeDeprecated(model.getTimeDeprecated());
+            }
+            if (model.wasPropertyExplicitlySet("timeOnDemandRetired")) {
+                this.timeOnDemandRetired(model.getTimeOnDemandRetired());
+            }
+            if (model.wasPropertyExplicitlySet("timeDedicatedRetired")) {
+                this.timeDedicatedRetired(model.getTimeDedicatedRetired());
             }
             if (model.wasPropertyExplicitlySet("previousState")) {
                 this.previousState(model.getPreviousState());
@@ -867,6 +913,34 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return timeDeprecated;
     }
 
+    /**
+     * The timestamp indicating when the base model will no longer be available for on-demand usage.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOnDemandRetired")
+    private final java.util.Date timeOnDemandRetired;
+
+    /**
+     * The timestamp indicating when the base model will no longer be available for on-demand usage.
+     * @return the value
+     **/
+    public java.util.Date getTimeOnDemandRetired() {
+        return timeOnDemandRetired;
+    }
+
+    /**
+     * The timestamp indicating when the custom model and its associated foundation model will be fully retired.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDedicatedRetired")
+    private final java.util.Date timeDedicatedRetired;
+
+    /**
+     * The timestamp indicating when the custom model and its associated foundation model will be fully retired.
+     * @return the value
+     **/
+    public java.util.Date getTimeDedicatedRetired() {
+        return timeDedicatedRetired;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("previousState")
     private final Model previousState;
 
@@ -969,6 +1043,8 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         sb.append(", modelMetrics=").append(String.valueOf(this.modelMetrics));
         sb.append(", isLongTermSupported=").append(String.valueOf(this.isLongTermSupported));
         sb.append(", timeDeprecated=").append(String.valueOf(this.timeDeprecated));
+        sb.append(", timeOnDemandRetired=").append(String.valueOf(this.timeOnDemandRetired));
+        sb.append(", timeDedicatedRetired=").append(String.valueOf(this.timeDedicatedRetired));
         sb.append(", previousState=").append(String.valueOf(this.previousState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1004,6 +1080,8 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 && java.util.Objects.equals(this.modelMetrics, other.modelMetrics)
                 && java.util.Objects.equals(this.isLongTermSupported, other.isLongTermSupported)
                 && java.util.Objects.equals(this.timeDeprecated, other.timeDeprecated)
+                && java.util.Objects.equals(this.timeOnDemandRetired, other.timeOnDemandRetired)
+                && java.util.Objects.equals(this.timeDedicatedRetired, other.timeDedicatedRetired)
                 && java.util.Objects.equals(this.previousState, other.previousState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1046,6 +1124,16 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         result =
                 (result * PRIME)
                         + (this.timeDeprecated == null ? 43 : this.timeDeprecated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOnDemandRetired == null
+                                ? 43
+                                : this.timeOnDemandRetired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDedicatedRetired == null
+                                ? 43
+                                : this.timeDedicatedRetired.hashCode());
         result =
                 (result * PRIME)
                         + (this.previousState == null ? 43 : this.previousState.hashCode());

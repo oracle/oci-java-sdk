@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * The information about new Exadata Fleet Update Collection.
+ * Details to create a new Exadata Fleet Update Collection.
+ * Targets belonging to another Exadata Fleet Update Collection of the same type will be rejected.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -30,6 +31,14 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateGiFsuCollectionDetails.class,
         name = "GI"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateGuestOsFsuCollectionDetails.class,
+        name = "GUEST_OS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateExadbStackFsuCollectionDetails.class,
+        name = "EXADB_STACK"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -57,14 +66,14 @@ public class CreateFsuCollectionDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Exadata Fleet Update Collection Identifier.
+     * The user-friendly name for the Exadata Fleet Update Collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Exadata Fleet Update Collection Identifier.
+     * The user-friendly name for the Exadata Fleet Update Collection.
      *
      * @return the value
      **/
@@ -89,13 +98,13 @@ public class CreateFsuCollectionDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Compartment Identifier
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * @return the value
      **/
     public String getCompartmentId() {

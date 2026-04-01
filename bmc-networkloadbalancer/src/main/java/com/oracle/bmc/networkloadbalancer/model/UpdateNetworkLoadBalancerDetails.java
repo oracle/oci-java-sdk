@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -32,6 +32,7 @@ public final class UpdateNetworkLoadBalancerDetails
         "nlbIpVersion",
         "subnetIpv6Cidr",
         "assignedIpv6",
+        "reservedIpv6Id",
         "freeformTags",
         "definedTags",
         "securityAttributes"
@@ -43,6 +44,7 @@ public final class UpdateNetworkLoadBalancerDetails
             NlbIpVersion nlbIpVersion,
             String subnetIpv6Cidr,
             String assignedIpv6,
+            String reservedIpv6Id,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
@@ -53,6 +55,7 @@ public final class UpdateNetworkLoadBalancerDetails
         this.nlbIpVersion = nlbIpVersion;
         this.subnetIpv6Cidr = subnetIpv6Cidr;
         this.assignedIpv6 = assignedIpv6;
+        this.reservedIpv6Id = reservedIpv6Id;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.securityAttributes = securityAttributes;
@@ -179,6 +182,26 @@ public final class UpdateNetworkLoadBalancerDetails
             return this;
         }
         /**
+         * The reservedIpv6Id field is used to specify the OCID of a reserved IPv6 address to be used only when updating NLB from single-stack IPv4 to dual-stack.
+         * This field should not be used for any other scenario
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("reservedIpv6Id")
+        private String reservedIpv6Id;
+
+        /**
+         * The reservedIpv6Id field is used to specify the OCID of a reserved IPv6 address to be used only when updating NLB from single-stack IPv4 to dual-stack.
+         * This field should not be used for any other scenario
+         *
+         * @param reservedIpv6Id the value to set
+         * @return this builder
+         **/
+        public Builder reservedIpv6Id(String reservedIpv6Id) {
+            this.reservedIpv6Id = reservedIpv6Id;
+            this.__explicitlySet__.add("reservedIpv6Id");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -265,6 +288,7 @@ public final class UpdateNetworkLoadBalancerDetails
                             this.nlbIpVersion,
                             this.subnetIpv6Cidr,
                             this.assignedIpv6,
+                            this.reservedIpv6Id,
                             this.freeformTags,
                             this.definedTags,
                             this.securityAttributes);
@@ -293,6 +317,9 @@ public final class UpdateNetworkLoadBalancerDetails
             }
             if (model.wasPropertyExplicitlySet("assignedIpv6")) {
                 this.assignedIpv6(model.getAssignedIpv6());
+            }
+            if (model.wasPropertyExplicitlySet("reservedIpv6Id")) {
+                this.reservedIpv6Id(model.getReservedIpv6Id());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -425,6 +452,24 @@ public final class UpdateNetworkLoadBalancerDetails
     }
 
     /**
+     * The reservedIpv6Id field is used to specify the OCID of a reserved IPv6 address to be used only when updating NLB from single-stack IPv4 to dual-stack.
+     * This field should not be used for any other scenario
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reservedIpv6Id")
+    private final String reservedIpv6Id;
+
+    /**
+     * The reservedIpv6Id field is used to specify the OCID of a reserved IPv6 address to be used only when updating NLB from single-stack IPv4 to dual-stack.
+     * This field should not be used for any other scenario
+     *
+     * @return the value
+     **/
+    public String getReservedIpv6Id() {
+        return reservedIpv6Id;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -511,6 +556,7 @@ public final class UpdateNetworkLoadBalancerDetails
         sb.append(", nlbIpVersion=").append(String.valueOf(this.nlbIpVersion));
         sb.append(", subnetIpv6Cidr=").append(String.valueOf(this.subnetIpv6Cidr));
         sb.append(", assignedIpv6=").append(String.valueOf(this.assignedIpv6));
+        sb.append(", reservedIpv6Id=").append(String.valueOf(this.reservedIpv6Id));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
@@ -536,6 +582,7 @@ public final class UpdateNetworkLoadBalancerDetails
                 && java.util.Objects.equals(this.nlbIpVersion, other.nlbIpVersion)
                 && java.util.Objects.equals(this.subnetIpv6Cidr, other.subnetIpv6Cidr)
                 && java.util.Objects.equals(this.assignedIpv6, other.assignedIpv6)
+                && java.util.Objects.equals(this.reservedIpv6Id, other.reservedIpv6Id)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
@@ -562,6 +609,9 @@ public final class UpdateNetworkLoadBalancerDetails
                 (result * PRIME)
                         + (this.subnetIpv6Cidr == null ? 43 : this.subnetIpv6Cidr.hashCode());
         result = (result * PRIME) + (this.assignedIpv6 == null ? 43 : this.assignedIpv6.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reservedIpv6Id == null ? 43 : this.reservedIpv6Id.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

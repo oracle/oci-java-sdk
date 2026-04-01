@@ -1,21 +1,39 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.signing.pki;
 
+import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.channels.Channels;
+import java.nio.channels.ClosedByInterruptException;
 import java.nio.channels.ReadableByteChannel;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /** Unit tests for {@link Utf8} */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Utf8Test {
+    @Before
+    public void setUp() {
+        Utf8Utils.setExecutor(Utf8Utils.buildDefaultExecutorService());
+    }
 
     @Test
     public void testTrim() {
@@ -54,5 +72,124 @@ public class Utf8Test {
                 Channels.newChannel(new ByteArrayInputStream("Hello world!".getBytes()));
         Utf8 utf8 = Utf8.of(channel);
         assertEquals("Hello world!", Text.of(utf8));
+    }
+
+    /**
+     * Test converting data from a stream (in this test, an infinite stream, to make sure there
+     * always is enough data) to UTF8, and interrupting the thread. Make sure that
+     * ClosedByInterruptException is not thrown.
+     *
+     * <p>Some customers have code that alarms if ClosedByInterruptException is thrown, and before
+     * removing BouncyCastle, no ClosedByInterruptException was thrown, so we want to maintain that
+     * behavior.
+     *
+     * @throws InterruptedException
+     */
+    @Test(timeout = 5_000)
+    public void testWithChannel_Interrupted() throws InterruptedException {
+        AtomicBoolean shouldStop = new AtomicBoolean(false);
+
+        InputStream infiniteStream =
+                new InputStream() {
+                    @Override
+                    public int read() throws IOException {
+                        if (shouldStop.get()) {
+                            return -1;
+                        }
+                        return 'A';
+                    }
+                };
+
+        final AtomicBoolean threwClosedByInterruptException = new AtomicBoolean(false);
+
+        Thread t =
+                new Thread(
+                        () -> {
+                            ReadableByteChannel channel = Channels.newChannel(infiniteStream);
+                            try {
+                                Utf8 utf8 = Utf8.of(channel);
+                            } catch (ClosedByInterruptException cbie) {
+                                threwClosedByInterruptException.set(true);
+                                throw new RuntimeException(cbie);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
+        t.start();
+
+        Thread.sleep(500);
+        t.interrupt();
+
+        Thread.sleep(500);
+
+        shouldStop.set(true);
+
+        Thread.sleep(500);
+
+        assertFalse(threwClosedByInterruptException.get());
+    }
+
+    /**
+     * "zzz" to have this run last. It can otherwise mess up the other tests.
+     *
+     * <p>In an earlier implementation, the Utf8 conversion used the common fork-join pool ({@link
+     * ForkJoinPool#commonPool()}. This could lead to a deadlock if the code requiring the Utf8
+     * conversion was also running in the common pool.
+     *
+     * <p>This test simulates that scenario and makes sure no deadlock happens:
+     *
+     * <p>1. Launch up a certain number of tasks, equal to one more than the size of the common
+     * pool. This saturates the common pool. 2. Make sure that only one of them can make progress at
+     * a time by acquiring a lock (as was the case because of a lock in
+     * FileBasedResourcePrincipalFederationClient). 3. Perform Utf8 conversion, which will also
+     * create a task.
+     *
+     * <p>If step 3 puts the task in the common pool, it cannot execute, since all threads in the
+     * pool are currently executing. Hence, the task holding the lock cannot progress, since it is
+     * waiting for the Utf8 conversion task to execute. No other thread in the common pool can
+     * progress either, because they are not holding the lock.
+     */
+    @Test(timeout = 15_000)
+    public void zzz_testWithChannel_Blocked() {
+        int size = Math.max(1, Runtime.getRuntime().availableProcessors() - 1) + 1;
+
+        final Object lock = new Object();
+        final AtomicInteger tasksLaunched = new AtomicInteger(0);
+
+        List<Integer> taskNumbers = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            taskNumbers.add(i);
+        }
+
+        taskNumbers
+                .parallelStream()
+                .forEach(
+                        taskNumber -> {
+                            tasksLaunched.incrementAndGet();
+                            synchronized (lock) {
+                                while (tasksLaunched.get() < size) {
+                                    try {
+                                        // not all tasks launched, waiting for more...
+                                        Thread.sleep(500);
+                                    } catch (InterruptedException e) {
+                                        throw new RuntimeException(e);
+                                    }
+                                }
+
+                                // All tasks launched, but only one thread can have the lock; now all the other threads are waiting for
+                                // the lock, this one is running, but it's about to enqueue another task in the Utf8.of() call.
+                                // If Utf8.of() enqueues that task in the same pool, then it will wait forever and deadlock.
+                                try {
+                                    ReadableByteChannel channel =
+                                            Channels.newChannel(
+                                                    new ByteArrayInputStream(
+                                                            "Hello world!".getBytes()));
+                                    Utf8 utf8 = Utf8.of(channel);
+                                    assertEquals("Hello world!", Text.of(utf8));
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+                        });
     }
 }

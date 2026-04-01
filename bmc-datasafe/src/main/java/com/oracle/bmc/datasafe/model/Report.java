@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -27,8 +27,11 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         "compartmentId",
         "mimeType",
         "timeGenerated",
+        "timeCreated",
+        "timeUpdated",
         "lifecycleState",
         "type",
+        "dataSource",
         "lifecycleDetails",
         "freeformTags",
         "definedTags",
@@ -42,8 +45,11 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             String compartmentId,
             MimeType mimeType,
             java.util.Date timeGenerated,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
             ReportLifecycleState lifecycleState,
             ReportType type,
+            ReportDefinitionDataSource dataSource,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -56,8 +62,11 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         this.compartmentId = compartmentId;
         this.mimeType = mimeType;
         this.timeGenerated = timeGenerated;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.type = type;
+        this.dataSource = dataSource;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -179,6 +188,38 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
+         * Specifies the time at which the report was created.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
+
+        /**
+         * Specifies the time at which the report was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+        /**
+         * The date and time of the report update in Data Safe.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The date and time of the report update in Data Safe.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+        /**
          * The current state of the audit report.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -208,6 +249,22 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         public Builder type(ReportType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
+            return this;
+        }
+        /**
+         * Specifies the name of a resource that provides data for the report. For example alerts, events.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSource")
+        private ReportDefinitionDataSource dataSource;
+
+        /**
+         * Specifies the name of a resource that provides data for the report. For example alerts, events.
+         * @param dataSource the value to set
+         * @return this builder
+         **/
+        public Builder dataSource(ReportDefinitionDataSource dataSource) {
+            this.dataSource = dataSource;
+            this.__explicitlySet__.add("dataSource");
             return this;
         }
         /**
@@ -303,8 +360,11 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                             this.compartmentId,
                             this.mimeType,
                             this.timeGenerated,
+                            this.timeCreated,
+                            this.timeUpdated,
                             this.lifecycleState,
                             this.type,
+                            this.dataSource,
                             this.lifecycleDetails,
                             this.freeformTags,
                             this.definedTags,
@@ -338,11 +398,20 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             if (model.wasPropertyExplicitlySet("timeGenerated")) {
                 this.timeGenerated(model.getTimeGenerated());
             }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("dataSource")) {
+                this.dataSource(model.getDataSource());
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
@@ -519,6 +588,34 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
+     * Specifies the time at which the report was created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    private final java.util.Date timeCreated;
+
+    /**
+     * Specifies the time at which the report was created.
+     * @return the value
+     **/
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    /**
+     * The date and time of the report update in Data Safe.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The date and time of the report update in Data Safe.
+     * @return the value
+     **/
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    /**
      * The current state of the audit report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -544,6 +641,20 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      **/
     public ReportType getType() {
         return type;
+    }
+
+    /**
+     * Specifies the name of a resource that provides data for the report. For example alerts, events.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSource")
+    private final ReportDefinitionDataSource dataSource;
+
+    /**
+     * Specifies the name of a resource that provides data for the report. For example alerts, events.
+     * @return the value
+     **/
+    public ReportDefinitionDataSource getDataSource() {
+        return dataSource;
     }
 
     /**
@@ -637,8 +748,11 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", mimeType=").append(String.valueOf(this.mimeType));
         sb.append(", timeGenerated=").append(String.valueOf(this.timeGenerated));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", dataSource=").append(String.valueOf(this.dataSource));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -664,8 +778,11 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.mimeType, other.mimeType)
                 && java.util.Objects.equals(this.timeGenerated, other.timeGenerated)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.dataSource, other.dataSource)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -692,10 +809,13 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         result =
                 (result * PRIME)
                         + (this.timeGenerated == null ? 43 : this.timeGenerated.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.dataSource == null ? 43 : this.dataSource.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());

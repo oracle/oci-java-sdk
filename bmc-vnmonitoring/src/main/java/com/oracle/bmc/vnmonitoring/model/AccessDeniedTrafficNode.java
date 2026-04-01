@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -63,6 +63,24 @@ public final class AccessDeniedTrafficNode extends TrafficNode {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("zprEgressSecurityAction")
+        private SecurityAction zprEgressSecurityAction;
+
+        public Builder zprEgressSecurityAction(SecurityAction zprEgressSecurityAction) {
+            this.zprEgressSecurityAction = zprEgressSecurityAction;
+            this.__explicitlySet__.add("zprEgressSecurityAction");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("zprIngressSecurityAction")
+        private SecurityAction zprIngressSecurityAction;
+
+        public Builder zprIngressSecurityAction(SecurityAction zprIngressSecurityAction) {
+            this.zprIngressSecurityAction = zprIngressSecurityAction;
+            this.__explicitlySet__.add("zprIngressSecurityAction");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -72,7 +90,9 @@ public final class AccessDeniedTrafficNode extends TrafficNode {
                             this.egressTraffic,
                             this.nextHopRoutingAction,
                             this.egressSecurityAction,
-                            this.ingressSecurityAction);
+                            this.ingressSecurityAction,
+                            this.zprEgressSecurityAction,
+                            this.zprIngressSecurityAction);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -92,6 +112,12 @@ public final class AccessDeniedTrafficNode extends TrafficNode {
             }
             if (model.wasPropertyExplicitlySet("ingressSecurityAction")) {
                 this.ingressSecurityAction(model.getIngressSecurityAction());
+            }
+            if (model.wasPropertyExplicitlySet("zprEgressSecurityAction")) {
+                this.zprEgressSecurityAction(model.getZprEgressSecurityAction());
+            }
+            if (model.wasPropertyExplicitlySet("zprIngressSecurityAction")) {
+                this.zprIngressSecurityAction(model.getZprIngressSecurityAction());
             }
             return this;
         }
@@ -113,8 +139,16 @@ public final class AccessDeniedTrafficNode extends TrafficNode {
             EgressTrafficSpec egressTraffic,
             RoutingAction nextHopRoutingAction,
             SecurityAction egressSecurityAction,
-            SecurityAction ingressSecurityAction) {
-        super(egressTraffic, nextHopRoutingAction, egressSecurityAction, ingressSecurityAction);
+            SecurityAction ingressSecurityAction,
+            SecurityAction zprEgressSecurityAction,
+            SecurityAction zprIngressSecurityAction) {
+        super(
+                egressTraffic,
+                nextHopRoutingAction,
+                egressSecurityAction,
+                ingressSecurityAction,
+                zprEgressSecurityAction,
+                zprIngressSecurityAction);
     }
 
     @Override

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -34,6 +34,7 @@ public class ScheduledTask extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     @java.beans.ConstructorProperties({
         "id",
         "displayName",
+        "description",
         "taskType",
         "schedules",
         "action",
@@ -52,6 +53,7 @@ public class ScheduledTask extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     protected ScheduledTask(
             String id,
             String displayName,
+            String description,
             TaskType taskType,
             java.util.List<Schedule> schedules,
             Action action,
@@ -69,6 +71,7 @@ public class ScheduledTask extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         super();
         this.id = id;
         this.displayName = displayName;
+        this.description = description;
         this.taskType = taskType;
         this.schedules = schedules;
         this.action = action;
@@ -121,6 +124,22 @@ public class ScheduledTask extends com.oracle.bmc.http.internal.ExplicitlySetBmc
      **/
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * Description for this resource.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * Description for this resource.
+     *
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
     }
 
     /**
@@ -233,6 +252,7 @@ public class ScheduledTask extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         UserAction("USER_ACTION"),
         TenancyLifecycle("TENANCY_LIFECYCLE"),
         PurgeResourceNotFound("PURGE_RESOURCE_NOT_FOUND"),
+        LimitExceeded("LIMIT_EXCEEDED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -495,6 +515,7 @@ public class ScheduledTask extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", taskType=").append(String.valueOf(this.taskType));
         sb.append(", schedules=").append(String.valueOf(this.schedules));
         sb.append(", action=").append(String.valueOf(this.action));
@@ -525,6 +546,7 @@ public class ScheduledTask extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         ScheduledTask other = (ScheduledTask) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.taskType, other.taskType)
                 && java.util.Objects.equals(this.schedules, other.schedules)
                 && java.util.Objects.equals(this.action, other.action)
@@ -548,6 +570,7 @@ public class ScheduledTask extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.taskType == null ? 43 : this.taskType.hashCode());
         result = (result * PRIME) + (this.schedules == null ? 43 : this.schedules.hashCode());
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());

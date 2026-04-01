@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -54,6 +54,8 @@ public final class LaunchInstanceDetails
         "launchVolumeAttachments",
         "isPvEncryptionInTransitEnabled",
         "platformConfig",
+        "placementConstraintDetails",
+        "isAIEnterpriseEnabled",
         "instanceConfigurationId",
         "licensingConfigs"
     })
@@ -87,6 +89,8 @@ public final class LaunchInstanceDetails
             java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments,
             Boolean isPvEncryptionInTransitEnabled,
             LaunchInstancePlatformConfig platformConfig,
+            PlacementConstraintDetails placementConstraintDetails,
+            Boolean isAIEnterpriseEnabled,
             String instanceConfigurationId,
             java.util.List<LaunchInstanceLicensingConfig> licensingConfigs) {
         super();
@@ -119,6 +123,8 @@ public final class LaunchInstanceDetails
         this.launchVolumeAttachments = launchVolumeAttachments;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
         this.platformConfig = platformConfig;
+        this.placementConstraintDetails = placementConstraintDetails;
+        this.isAIEnterpriseEnabled = isAIEnterpriseEnabled;
         this.instanceConfigurationId = instanceConfigurationId;
         this.licensingConfigs = licensingConfigs;
     }
@@ -803,6 +809,34 @@ public final class LaunchInstanceDetails
             this.__explicitlySet__.add("platformConfig");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+        private PlacementConstraintDetails placementConstraintDetails;
+
+        public Builder placementConstraintDetails(
+                PlacementConstraintDetails placementConstraintDetails) {
+            this.placementConstraintDetails = placementConstraintDetails;
+            this.__explicitlySet__.add("placementConstraintDetails");
+            return this;
+        }
+        /**
+         * Whether to enable AI enterprise on the instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAIEnterpriseEnabled")
+        private Boolean isAIEnterpriseEnabled;
+
+        /**
+         * Whether to enable AI enterprise on the instance.
+         *
+         * @param isAIEnterpriseEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isAIEnterpriseEnabled(Boolean isAIEnterpriseEnabled) {
+            this.isAIEnterpriseEnabled = isAIEnterpriseEnabled;
+            this.__explicitlySet__.add("isAIEnterpriseEnabled");
+            return this;
+        }
         /**
          * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
          **/
@@ -872,6 +906,8 @@ public final class LaunchInstanceDetails
                             this.launchVolumeAttachments,
                             this.isPvEncryptionInTransitEnabled,
                             this.platformConfig,
+                            this.placementConstraintDetails,
+                            this.isAIEnterpriseEnabled,
                             this.instanceConfigurationId,
                             this.licensingConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -968,6 +1004,12 @@ public final class LaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("platformConfig")) {
                 this.platformConfig(model.getPlatformConfig());
+            }
+            if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
+                this.placementConstraintDetails(model.getPlacementConstraintDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isAIEnterpriseEnabled")) {
+                this.isAIEnterpriseEnabled(model.getIsAIEnterpriseEnabled());
             }
             if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
                 this.instanceConfigurationId(model.getInstanceConfigurationId());
@@ -1605,6 +1647,29 @@ public final class LaunchInstanceDetails
         return platformConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+    private final PlacementConstraintDetails placementConstraintDetails;
+
+    public PlacementConstraintDetails getPlacementConstraintDetails() {
+        return placementConstraintDetails;
+    }
+
+    /**
+     * Whether to enable AI enterprise on the instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAIEnterpriseEnabled")
+    private final Boolean isAIEnterpriseEnabled;
+
+    /**
+     * Whether to enable AI enterprise on the instance.
+     *
+     * @return the value
+     **/
+    public Boolean getIsAIEnterpriseEnabled() {
+        return isAIEnterpriseEnabled;
+    }
+
     /**
      * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
      **/
@@ -1680,6 +1745,9 @@ public final class LaunchInstanceDetails
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
         sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
+        sb.append(", placementConstraintDetails=")
+                .append(String.valueOf(this.placementConstraintDetails));
+        sb.append(", isAIEnterpriseEnabled=").append(String.valueOf(this.isAIEnterpriseEnabled));
         sb.append(", instanceConfigurationId=")
                 .append(String.valueOf(this.instanceConfigurationId));
         sb.append(", licensingConfigs=").append(String.valueOf(this.licensingConfigs));
@@ -1730,6 +1798,9 @@ public final class LaunchInstanceDetails
                 && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
                 && java.util.Objects.equals(this.platformConfig, other.platformConfig)
+                && java.util.Objects.equals(
+                        this.placementConstraintDetails, other.placementConstraintDetails)
+                && java.util.Objects.equals(this.isAIEnterpriseEnabled, other.isAIEnterpriseEnabled)
                 && java.util.Objects.equals(
                         this.instanceConfigurationId, other.instanceConfigurationId)
                 && java.util.Objects.equals(this.licensingConfigs, other.licensingConfigs)
@@ -1821,6 +1892,16 @@ public final class LaunchInstanceDetails
         result =
                 (result * PRIME)
                         + (this.platformConfig == null ? 43 : this.platformConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraintDetails == null
+                                ? 43
+                                : this.placementConstraintDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAIEnterpriseEnabled == null
+                                ? 43
+                                : this.isAIEnterpriseEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.instanceConfigurationId == null

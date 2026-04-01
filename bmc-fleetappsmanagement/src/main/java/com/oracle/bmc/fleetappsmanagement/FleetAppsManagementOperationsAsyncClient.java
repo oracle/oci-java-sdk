@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement;
@@ -7,6 +7,8 @@ package com.oracle.bmc.fleetappsmanagement;
 import com.oracle.bmc.fleetappsmanagement.internal.http.*;
 import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for FleetAppsManagementOperations service. <br/>
@@ -21,7 +23,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementOperationsAsyncClient
         implements FleetAppsManagementOperationsAsync {
     /**
@@ -29,7 +31,7 @@ public class FleetAppsManagementOperationsAsyncClient
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("FLEETAPPSMANAGEMENTOPERATIONS")
+                    .serviceName(FleetAppsManagementOperationsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://fams.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -51,6 +53,10 @@ public class FleetAppsManagementOperationsAsyncClient
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -262,6 +268,11 @@ public class FleetAppsManagementOperationsAsyncClient
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -407,12 +418,21 @@ public class FleetAppsManagementOperationsAsyncClient
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -442,15 +462,7 @@ public class FleetAppsManagementOperationsAsyncClient
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -462,6 +474,59 @@ public class FleetAppsManagementOperationsAsyncClient
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangePatchCompartmentResponse> changePatchCompartment(
+            ChangePatchCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangePatchCompartmentRequest, ChangePatchCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changePatchCompartment");
+        final ChangePatchCompartmentRequest interceptedRequest =
+                ChangePatchCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePatchCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementOperations",
+                        "ChangePatchCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Patch/ChangePatchCompartment");
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangePatchCompartmentResponse>
+                transformer =
+                        ChangePatchCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangePatchCompartmentRequest, ChangePatchCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangePatchCompartmentRequest, ChangePatchCompartmentResponse>,
+                        java.util.concurrent.Future<ChangePatchCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangePatchCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangePatchCompartmentRequest, ChangePatchCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 
     @Override
@@ -480,7 +545,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "CreatePatch",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Patch/CreatePatch");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Patch/CreatePatch");
         final java.util.function.Function<javax.ws.rs.core.Response, CreatePatchResponse>
                 transformer =
                         CreatePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -531,7 +596,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "CreateSchedulerDefinition",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/CreateSchedulerDefinition");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerDefinition/CreateSchedulerDefinition");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateSchedulerDefinitionResponse>
                 transformer =
@@ -584,7 +649,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "DeletePatch",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Patch/DeletePatch");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Patch/DeletePatch");
         final java.util.function.Function<javax.ws.rs.core.Response, DeletePatchResponse>
                 transformer =
                         DeletePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -629,7 +694,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "DeleteSchedulerDefinition",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/DeleteSchedulerDefinition");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerDefinition/DeleteSchedulerDefinition");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteSchedulerDefinitionResponse>
                 transformer =
@@ -678,7 +743,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "DeleteSchedulerJob",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/DeleteSchedulerJob");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerJob/DeleteSchedulerJob");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteSchedulerJobResponse>
                 transformer =
                         DeleteSchedulerJobConverter.fromResponse(
@@ -725,7 +790,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "ExportComplianceReport",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceRecord/ExportComplianceReport");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ComplianceRecord/ExportComplianceReport");
         final java.util.function.Function<javax.ws.rs.core.Response, ExportComplianceReportResponse>
                 transformer =
                         ExportComplianceReportConverter.fromResponse(
@@ -776,7 +841,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "GetExecution",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Execution/GetExecution");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Execution/GetExecution");
         final java.util.function.Function<javax.ws.rs.core.Response, GetExecutionResponse>
                 transformer =
                         GetExecutionConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -821,7 +886,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "GetJobActivity",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/JobActivity/GetJobActivity");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/JobActivity/GetJobActivity");
         final java.util.function.Function<javax.ws.rs.core.Response, GetJobActivityResponse>
                 transformer =
                         GetJobActivityConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -864,7 +929,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "GetPatch",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Patch/GetPatch");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Patch/GetPatch");
         final java.util.function.Function<javax.ws.rs.core.Response, GetPatchResponse> transformer =
                 GetPatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetPatchRequest, GetPatchResponse> handlerToUse =
@@ -907,7 +972,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "GetSchedulerDefinition",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/GetSchedulerDefinition");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerDefinition/GetSchedulerDefinition");
         final java.util.function.Function<javax.ws.rs.core.Response, GetSchedulerDefinitionResponse>
                 transformer =
                         GetSchedulerDefinitionConverter.fromResponse(
@@ -954,7 +1019,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "GetSchedulerJob",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/GetSchedulerJob");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerJob/GetSchedulerJob");
         final java.util.function.Function<javax.ws.rs.core.Response, GetSchedulerJobResponse>
                 transformer =
                         GetSchedulerJobConverter.fromResponse(
@@ -1000,7 +1065,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "ListComplianceRecords",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceRecordCollection/ListComplianceRecords");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ComplianceRecordCollection/ListComplianceRecords");
         final java.util.function.Function<javax.ws.rs.core.Response, ListComplianceRecordsResponse>
                 transformer =
                         ListComplianceRecordsConverter.fromResponse(
@@ -1047,7 +1112,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "ListExecutions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ExecutionCollection/ListExecutions");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ExecutionCollection/ListExecutions");
         final java.util.function.Function<javax.ws.rs.core.Response, ListExecutionsResponse>
                 transformer =
                         ListExecutionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1077,6 +1142,100 @@ public class FleetAppsManagementOperationsAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ListInstalledPatchesResponse> listInstalledPatches(
+            ListInstalledPatchesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListInstalledPatchesRequest, ListInstalledPatchesResponse>
+                    handler) {
+        LOG.trace("Called async listInstalledPatches");
+        final ListInstalledPatchesRequest interceptedRequest =
+                ListInstalledPatchesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInstalledPatchesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListInstalledPatches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/InstalledPatchCollection/ListInstalledPatches");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListInstalledPatchesResponse>
+                transformer =
+                        ListInstalledPatchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListInstalledPatchesRequest, ListInstalledPatchesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListInstalledPatchesRequest, ListInstalledPatchesResponse>,
+                        java.util.concurrent.Future<ListInstalledPatchesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListInstalledPatchesRequest, ListInstalledPatchesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInventoryRecordsResponse> listInventoryRecords(
+            ListInventoryRecordsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListInventoryRecordsRequest, ListInventoryRecordsResponse>
+                    handler) {
+        LOG.trace("Called async listInventoryRecords");
+        final ListInventoryRecordsRequest interceptedRequest =
+                ListInventoryRecordsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInventoryRecordsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListInventoryRecords",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/InventoryRecordCollection/ListInventoryRecords");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListInventoryRecordsResponse>
+                transformer =
+                        ListInventoryRecordsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListInventoryRecordsRequest, ListInventoryRecordsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListInventoryRecordsRequest, ListInventoryRecordsResponse>,
+                        java.util.concurrent.Future<ListInventoryRecordsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListInventoryRecordsRequest, ListInventoryRecordsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPatchesResponse> listPatches(
             ListPatchesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse>
@@ -1091,7 +1250,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "ListPatches",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PatchCollection/ListPatches");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/PatchCollection/ListPatches");
         final java.util.function.Function<javax.ws.rs.core.Response, ListPatchesResponse>
                 transformer =
                         ListPatchesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1121,6 +1280,99 @@ public class FleetAppsManagementOperationsAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ListRecommendedPatchesResponse> listRecommendedPatches(
+            ListRecommendedPatchesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListRecommendedPatchesRequest, ListRecommendedPatchesResponse>
+                    handler) {
+        LOG.trace("Called async listRecommendedPatches");
+        final ListRecommendedPatchesRequest interceptedRequest =
+                ListRecommendedPatchesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRecommendedPatchesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListRecommendedPatches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RecommendedPatchCollection/ListRecommendedPatches");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRecommendedPatchesResponse>
+                transformer =
+                        ListRecommendedPatchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListRecommendedPatchesRequest, ListRecommendedPatchesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListRecommendedPatchesRequest, ListRecommendedPatchesResponse>,
+                        java.util.concurrent.Future<ListRecommendedPatchesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListRecommendedPatchesRequest, ListRecommendedPatchesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReportMetadataResponse> listReportMetadata(
+            ListReportMetadataRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListReportMetadataRequest, ListReportMetadataResponse>
+                    handler) {
+        LOG.trace("Called async listReportMetadata");
+        final ListReportMetadataRequest interceptedRequest =
+                ListReportMetadataConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListReportMetadataConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListReportMetadata",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ReportMetadataCollection/ListReportMetadata");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListReportMetadataResponse>
+                transformer =
+                        ListReportMetadataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListReportMetadataRequest, ListReportMetadataResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListReportMetadataRequest, ListReportMetadataResponse>,
+                        java.util.concurrent.Future<ListReportMetadataResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListReportMetadataRequest, ListReportMetadataResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResourcesResponse> listResources(
             ListResourcesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListResourcesRequest, ListResourcesResponse>
@@ -1135,7 +1387,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "ListResources",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ResourceCollection/ListResources");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ResourceCollection/ListResources");
         final java.util.function.Function<javax.ws.rs.core.Response, ListResourcesResponse>
                 transformer =
                         ListResourcesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1180,7 +1432,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "ListScheduledFleets",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ScheduledFleetCollection/ListScheduledFleets");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ScheduledFleetCollection/ListScheduledFleets");
         final java.util.function.Function<javax.ws.rs.core.Response, ListScheduledFleetsResponse>
                 transformer =
                         ListScheduledFleetsConverter.fromResponse(
@@ -1227,7 +1479,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "ListSchedulerDefinitions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinitionCollection/ListSchedulerDefinitions");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerDefinitionCollection/ListSchedulerDefinitions");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSchedulerDefinitionsResponse>
                 transformer =
@@ -1260,6 +1512,54 @@ public class FleetAppsManagementOperationsAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ListSchedulerExecutionsResponse> listSchedulerExecutions(
+            ListSchedulerExecutionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSchedulerExecutionsRequest, ListSchedulerExecutionsResponse>
+                    handler) {
+        LOG.trace("Called async listSchedulerExecutions");
+        final ListSchedulerExecutionsRequest interceptedRequest =
+                ListSchedulerExecutionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSchedulerExecutionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListSchedulerExecutions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerExecutionCollection/ListSchedulerExecutions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSchedulerExecutionsResponse>
+                transformer =
+                        ListSchedulerExecutionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSchedulerExecutionsRequest, ListSchedulerExecutionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSchedulerExecutionsRequest, ListSchedulerExecutionsResponse>,
+                        java.util.concurrent.Future<ListSchedulerExecutionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSchedulerExecutionsRequest, ListSchedulerExecutionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSchedulerJobsResponse> listSchedulerJobs(
             ListSchedulerJobsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1275,7 +1575,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "ListSchedulerJobs",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJobCollection/ListSchedulerJobs");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerJobCollection/ListSchedulerJobs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListSchedulerJobsResponse>
                 transformer =
                         ListSchedulerJobsConverter.fromResponse(
@@ -1319,7 +1619,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "ListSteps",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/StepCollection/ListSteps");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/StepCollection/ListSteps");
         final java.util.function.Function<javax.ws.rs.core.Response, ListStepsResponse>
                 transformer =
                         ListStepsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1335,6 +1635,100 @@ public class FleetAppsManagementOperationsAsyncClient
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListStepsRequest, ListStepsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTargetComponentsResponse> listTargetComponents(
+            ListTargetComponentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTargetComponentsRequest, ListTargetComponentsResponse>
+                    handler) {
+        LOG.trace("Called async listTargetComponents");
+        final ListTargetComponentsRequest interceptedRequest =
+                ListTargetComponentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTargetComponentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListTargetComponents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TargetComponentCollection/ListTargetComponents");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTargetComponentsResponse>
+                transformer =
+                        ListTargetComponentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListTargetComponentsRequest, ListTargetComponentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTargetComponentsRequest, ListTargetComponentsResponse>,
+                        java.util.concurrent.Future<ListTargetComponentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTargetComponentsRequest, ListTargetComponentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTargetPropertiesResponse> listTargetProperties(
+            ListTargetPropertiesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTargetPropertiesRequest, ListTargetPropertiesResponse>
+                    handler) {
+        LOG.trace("Called async listTargetProperties");
+        final ListTargetPropertiesRequest interceptedRequest =
+                ListTargetPropertiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTargetPropertiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListTargetProperties",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TargetPropertyCollection/ListTargetProperties");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTargetPropertiesResponse>
+                transformer =
+                        ListTargetPropertiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListTargetPropertiesRequest, ListTargetPropertiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTargetPropertiesRequest, ListTargetPropertiesResponse>,
+                        java.util.concurrent.Future<ListTargetPropertiesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTargetPropertiesRequest, ListTargetPropertiesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1364,7 +1758,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "ManageJobExecution",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/ManageJobExecution");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerJob/ManageJobExecution");
         final java.util.function.Function<javax.ws.rs.core.Response, ManageJobExecutionResponse>
                 transformer =
                         ManageJobExecutionConverter.fromResponse(
@@ -1400,6 +1794,51 @@ public class FleetAppsManagementOperationsAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ReportResponse> report(
+            ReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ReportRequest, ReportResponse> handler) {
+        LOG.trace("Called async report");
+        final ReportRequest interceptedRequest = ReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementOperations",
+                        "Report",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ReportCollection/Report");
+        final java.util.function.Function<javax.ws.rs.core.Response, ReportResponse> transformer =
+                ReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ReportRequest, ReportResponse> handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ReportRequest, ReportResponse>,
+                        java.util.concurrent.Future<ReportResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ReportRequest, ReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeComplianceRecordCountsResponse>
             summarizeComplianceRecordCounts(
                     SummarizeComplianceRecordCountsRequest request,
@@ -1417,7 +1856,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "SummarizeComplianceRecordCounts",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceRecordAggregationCollection/SummarizeComplianceRecordCounts");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ComplianceRecordAggregationCollection/SummarizeComplianceRecordCounts");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeComplianceRecordCountsResponse>
                 transformer =
@@ -1470,7 +1909,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "SummarizeManagedEntityCounts",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ManagedEntityAggregationCollection/SummarizeManagedEntityCounts");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/ManagedEntityAggregationCollection/SummarizeManagedEntityCounts");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeManagedEntityCountsResponse>
                 transformer =
@@ -1521,7 +1960,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "SummarizeSchedulerJobCounts",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJobAggregationCollection/SummarizeSchedulerJobCounts");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerJobAggregationCollection/SummarizeSchedulerJobCounts");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeSchedulerJobCountsResponse>
                 transformer =
@@ -1569,7 +2008,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "UpdatePatch",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Patch/UpdatePatch");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Patch/UpdatePatch");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdatePatchResponse>
                 transformer =
                         UpdatePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1619,7 +2058,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "UpdateSchedulerDefinition",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/UpdateSchedulerDefinition");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerDefinition/UpdateSchedulerDefinition");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateSchedulerDefinitionResponse>
                 transformer =
@@ -1673,7 +2112,7 @@ public class FleetAppsManagementOperationsAsyncClient
                         "FleetAppsManagementOperations",
                         "UpdateSchedulerJob",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/UpdateSchedulerJob");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/SchedulerJob/UpdateSchedulerJob");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateSchedulerJobResponse>
                 transformer =
                         UpdateSchedulerJobConverter.fromResponse(

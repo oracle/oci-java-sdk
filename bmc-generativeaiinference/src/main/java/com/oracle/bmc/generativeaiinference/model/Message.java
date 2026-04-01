@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
@@ -31,7 +31,11 @@ package com.oracle.bmc.generativeaiinference.model;
         name = "ASSISTANT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UserMessage.class, name = "USER"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ToolMessage.class, name = "TOOL")
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ToolMessage.class, name = "TOOL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DeveloperMessage.class,
+        name = "DEVELOPER"
+    )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Message extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -102,9 +106,10 @@ public class Message extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
      **/
     public enum Role {
         System("SYSTEM"),
-        User("USER"),
         Assistant("ASSISTANT"),
+        User("USER"),
         Tool("TOOL"),
+        Developer("DEVELOPER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

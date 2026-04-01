@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -36,20 +36,23 @@ public class UpdatePipelineDetails extends com.oracle.bmc.http.internal.Explicit
         "description",
         "licenseModel",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "subnetId"
     })
     protected UpdatePipelineDetails(
             String displayName,
             String description,
             LicenseModel licenseModel,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String subnetId) {
         super();
         this.displayName = displayName;
         this.description = description;
         this.licenseModel = licenseModel;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.subnetId = subnetId;
     }
 
     /**
@@ -142,6 +145,24 @@ public class UpdatePipelineDetails extends com.oracle.bmc.http.internal.Explicit
         return definedTags;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint.
+     * The subnet must be a private subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint.
+     * The subnet must be a private subnet.
+     *
+     * @return the value
+     **/
+    public String getSubnetId() {
+        return subnetId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -161,6 +182,7 @@ public class UpdatePipelineDetails extends com.oracle.bmc.http.internal.Explicit
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(")");
         return sb.toString();
     }
@@ -180,6 +202,7 @@ public class UpdatePipelineDetails extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && super.equals(other);
     }
 
@@ -192,6 +215,7 @@ public class UpdatePipelineDetails extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

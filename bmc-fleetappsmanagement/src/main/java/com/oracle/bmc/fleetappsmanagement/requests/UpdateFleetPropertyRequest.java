@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,18 +8,18 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateFleetPropertyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateFleetPropertyRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class UpdateFleetPropertyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.UpdateFleetPropertyDetails> {
 
     /**
-     * unique FleetProperty identifier.
+     * Unique fleetProperty identifier.
      */
     private String fleetPropertyId;
 
     /**
-     * unique FleetProperty identifier.
+     * Unique fleetProperty identifier.
      */
     public String getFleetPropertyId() {
         return fleetPropertyId;
@@ -36,13 +36,13 @@ public class UpdateFleetPropertyRequest
         return fleetId;
     }
     /**
-     * The information to be updated.
+     * Attributes to update a fleet property.
      */
     private com.oracle.bmc.fleetappsmanagement.model.UpdateFleetPropertyDetails
             updateFleetPropertyDetails;
 
     /**
-     * The information to be updated.
+     * Attributes to update a fleet property.
      */
     public com.oracle.bmc.fleetappsmanagement.model.UpdateFleetPropertyDetails
             getUpdateFleetPropertyDetails() {
@@ -100,12 +100,12 @@ public class UpdateFleetPropertyRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * unique FleetProperty identifier.
+         * Unique fleetProperty identifier.
          */
         private String fleetPropertyId = null;
 
         /**
-         * unique FleetProperty identifier.
+         * Unique fleetProperty identifier.
          * @param fleetPropertyId the value to set
          * @return this builder instance
          */
@@ -130,13 +130,13 @@ public class UpdateFleetPropertyRequest
         }
 
         /**
-         * The information to be updated.
+         * Attributes to update a fleet property.
          */
         private com.oracle.bmc.fleetappsmanagement.model.UpdateFleetPropertyDetails
                 updateFleetPropertyDetails = null;
 
         /**
-         * The information to be updated.
+         * Attributes to update a fleet property.
          * @param updateFleetPropertyDetails the value to set
          * @return this builder instance
          */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -27,8 +27,16 @@ package com.oracle.bmc.vnmonitoring.model;
         name = "STATEFUL_EGRESS_SECURITY_LIST"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = StatefulZprConfiguration.class,
+        name = "STATEFUL_ZPR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = NsgConfiguration.class,
         name = "NSG"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ZprConfiguration.class,
+        name = "ZPR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = IngressSecurityListConfiguration.class,
@@ -105,6 +113,8 @@ public class AllowedSecurityConfiguration
         StatefulIngressSecurityList("STATEFUL_INGRESS_SECURITY_LIST"),
         EgressSecurityList("EGRESS_SECURITY_LIST"),
         StatefulEgressSecurityList("STATEFUL_EGRESS_SECURITY_LIST"),
+        Zpr("ZPR"),
+        StatefulZpr("STATEFUL_ZPR"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent;
@@ -7,8 +7,9 @@ package com.oracle.bmc.generativeaiagent;
 import com.oracle.bmc.generativeaiagent.internal.http.*;
 import com.oracle.bmc.generativeaiagent.requests.*;
 import com.oracle.bmc.generativeaiagent.responses.*;
-import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 public class GenerativeAiAgentClient implements GenerativeAiAgent {
@@ -17,7 +18,7 @@ public class GenerativeAiAgentClient implements GenerativeAiAgent {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("GENERATIVEAIAGENT")
+                    .serviceName(GenerativeAiAgentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://agent.generativeai.{region}.oci.{secondLevelDomain}")
@@ -51,6 +52,10 @@ public class GenerativeAiAgentClient implements GenerativeAiAgent {
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -304,6 +309,11 @@ public class GenerativeAiAgentClient implements GenerativeAiAgent {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -496,12 +506,21 @@ public class GenerativeAiAgentClient implements GenerativeAiAgent {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -531,15 +550,7 @@ public class GenerativeAiAgentClient implements GenerativeAiAgent {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -718,6 +729,52 @@ public class GenerativeAiAgentClient implements GenerativeAiAgent {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeKnowledgeBaseCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeProvisionedCapacityCompartmentResponse changeProvisionedCapacityCompartment(
+            ChangeProvisionedCapacityCompartmentRequest request) {
+        LOG.trace("Called changeProvisionedCapacityCompartment");
+        final ChangeProvisionedCapacityCompartmentRequest interceptedRequest =
+                ChangeProvisionedCapacityCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeProvisionedCapacityCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiAgent",
+                        "ChangeProvisionedCapacityCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/ProvisionedCapacity/ChangeProvisionedCapacityCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeProvisionedCapacityCompartmentResponse>
+                transformer =
+                        ChangeProvisionedCapacityCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeProvisionedCapacityCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -927,6 +984,50 @@ public class GenerativeAiAgentClient implements GenerativeAiAgent {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateKnowledgeBaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateProvisionedCapacityResponse createProvisionedCapacity(
+            CreateProvisionedCapacityRequest request) {
+        LOG.trace("Called createProvisionedCapacity");
+        final CreateProvisionedCapacityRequest interceptedRequest =
+                CreateProvisionedCapacityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateProvisionedCapacityConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiAgent",
+                        "CreateProvisionedCapacity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/ProvisionedCapacity/CreateProvisionedCapacity");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateProvisionedCapacityResponse>
+                transformer =
+                        CreateProvisionedCapacityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateProvisionedCapacityDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1144,6 +1245,45 @@ public class GenerativeAiAgentClient implements GenerativeAiAgent {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteKnowledgeBaseResponse>
                 transformer =
                         DeleteKnowledgeBaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteProvisionedCapacityResponse deleteProvisionedCapacity(
+            DeleteProvisionedCapacityRequest request) {
+        LOG.trace("Called deleteProvisionedCapacity");
+        final DeleteProvisionedCapacityRequest interceptedRequest =
+                DeleteProvisionedCapacityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteProvisionedCapacityConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiAgent",
+                        "DeleteProvisionedCapacity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/ProvisionedCapacity/DeleteProvisionedCapacity");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteProvisionedCapacityResponse>
+                transformer =
+                        DeleteProvisionedCapacityConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1416,6 +1556,44 @@ public class GenerativeAiAgentClient implements GenerativeAiAgent {
     }
 
     @Override
+    public GetProvisionedCapacityResponse getProvisionedCapacity(
+            GetProvisionedCapacityRequest request) {
+        LOG.trace("Called getProvisionedCapacity");
+        final GetProvisionedCapacityRequest interceptedRequest =
+                GetProvisionedCapacityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetProvisionedCapacityConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiAgent",
+                        "GetProvisionedCapacity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/ProvisionedCapacity/GetProvisionedCapacity");
+        java.util.function.Function<javax.ws.rs.core.Response, GetProvisionedCapacityResponse>
+                transformer =
+                        GetProvisionedCapacityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetToolResponse getTool(GetToolRequest request) {
         LOG.trace("Called getTool");
         final GetToolRequest interceptedRequest = GetToolConverter.interceptRequest(request);
@@ -1651,6 +1829,44 @@ public class GenerativeAiAgentClient implements GenerativeAiAgent {
         java.util.function.Function<javax.ws.rs.core.Response, ListKnowledgeBasesResponse>
                 transformer =
                         ListKnowledgeBasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListProvisionedCapacitiesResponse listProvisionedCapacities(
+            ListProvisionedCapacitiesRequest request) {
+        LOG.trace("Called listProvisionedCapacities");
+        final ListProvisionedCapacitiesRequest interceptedRequest =
+                ListProvisionedCapacitiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProvisionedCapacitiesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiAgent",
+                        "ListProvisionedCapacities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/ProvisionedCapacity/ListProvisionedCapacities");
+        java.util.function.Function<javax.ws.rs.core.Response, ListProvisionedCapacitiesResponse>
+                transformer =
+                        ListProvisionedCapacitiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1969,6 +2185,49 @@ public class GenerativeAiAgentClient implements GenerativeAiAgent {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateKnowledgeBaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateProvisionedCapacityResponse updateProvisionedCapacity(
+            UpdateProvisionedCapacityRequest request) {
+        LOG.trace("Called updateProvisionedCapacity");
+        final UpdateProvisionedCapacityRequest interceptedRequest =
+                UpdateProvisionedCapacityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateProvisionedCapacityConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiAgent",
+                        "UpdateProvisionedCapacity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/ProvisionedCapacity/UpdateProvisionedCapacity");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateProvisionedCapacityResponse>
+                transformer =
+                        UpdateProvisionedCapacityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateProvisionedCapacityDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains;
@@ -228,6 +228,32 @@ public interface IdentityDomains extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/CreateGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateGroup API.
      */
     CreateGroupResponse createGroup(CreateGroupRequest request);
+
+    /**
+     * Create an IdentityProofingProvider.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/CreateIdentityProofingProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIdentityProofingProvider API.
+     */
+    CreateIdentityProofingProviderResponse createIdentityProofingProvider(
+            CreateIdentityProofingProviderRequest request);
+
+    /**
+     * Create an Identity Proofing Provider Configuration template.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/CreateIdentityProofingProviderTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIdentityProofingProviderTemplate API.
+     */
+    CreateIdentityProofingProviderTemplateResponse createIdentityProofingProviderTemplate(
+            CreateIdentityProofingProviderTemplateRequest request);
 
     /**
      * Register a new Identity Propagation Trust configuration.
@@ -579,6 +605,18 @@ public interface IdentityDomains extends AutoCloseable {
     CreateUserDbCredentialResponse createUserDbCredential(CreateUserDbCredentialRequest request);
 
     /**
+     * Create Verification Claims of IdentityProofingProvider.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/CreateVerificationClaimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVerificationClaim API.
+     */
+    CreateVerificationClaimResponse createVerificationClaim(CreateVerificationClaimRequest request);
+
+    /**
      * Delete a user's API key.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -760,6 +798,32 @@ public interface IdentityDomains extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/DeleteGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGroup API.
      */
     DeleteGroupResponse deleteGroup(DeleteGroupRequest request);
+
+    /**
+     * Delete an IdentityProofingProvider.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/DeleteIdentityProofingProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIdentityProofingProvider API.
+     */
+    DeleteIdentityProofingProviderResponse deleteIdentityProofingProvider(
+            DeleteIdentityProofingProviderRequest request);
+
+    /**
+     * Delete an IdentityProofingProvider.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/DeleteIdentityProofingProviderTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIdentityProofingProviderTemplate API.
+     */
+    DeleteIdentityProofingProviderTemplateResponse deleteIdentityProofingProviderTemplate(
+            DeleteIdentityProofingProviderTemplateRequest request);
 
     /**
      * Delete an existing Identity Propagation Trust configuration.
@@ -1291,6 +1355,32 @@ public interface IdentityDomains extends AutoCloseable {
     GetGroupResponse getGroup(GetGroupRequest request);
 
     /**
+     * Get an IdentityProofingProvider.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetIdentityProofingProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIdentityProofingProvider API.
+     */
+    GetIdentityProofingProviderResponse getIdentityProofingProvider(
+            GetIdentityProofingProviderRequest request);
+
+    /**
+     * Get Identity Proofing Provider Configuration template.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetIdentityProofingProviderTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIdentityProofingProviderTemplate API.
+     */
+    GetIdentityProofingProviderTemplateResponse getIdentityProofingProviderTemplate(
+            GetIdentityProofingProviderTemplateRequest request);
+
+    /**
      * Get an existing Identity Propagation Trust configuration.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1338,6 +1428,18 @@ public interface IdentityDomains extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetKmsiSettingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetKmsiSetting API.
      */
     GetKmsiSettingResponse getKmsiSetting(GetKmsiSettingRequest request);
+
+    /**
+     * Get Attribute Mappings for a Mapped Attribute
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetMappedAttributeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMappedAttribute API.
+     */
+    GetMappedAttributeResponse getMappedAttribute(GetMappedAttributeRequest request);
 
     /**
      * Get a user's own information.
@@ -1966,6 +2068,32 @@ public interface IdentityDomains extends AutoCloseable {
     ListGroupsResponse listGroups(ListGroupsRequest request);
 
     /**
+     * Search Identity Proofing Provider Configuration templates..
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListIdentityProofingProviderTemplatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIdentityProofingProviderTemplates API.
+     */
+    ListIdentityProofingProviderTemplatesResponse listIdentityProofingProviderTemplates(
+            ListIdentityProofingProviderTemplatesRequest request);
+
+    /**
+     * Search IdentityProofingProvider.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListIdentityProofingProvidersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIdentityProofingProviders API.
+     */
+    ListIdentityProofingProvidersResponse listIdentityProofingProviders(
+            ListIdentityProofingProvidersRequest request);
+
+    /**
      * List the Identity Propagation Trust configurations.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2013,6 +2141,18 @@ public interface IdentityDomains extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListKmsiSettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListKmsiSettings API.
      */
     ListKmsiSettingsResponse listKmsiSettings(ListKmsiSettingsRequest request);
+
+    /**
+     * Search Mapped Attributes
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListMappedAttributesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMappedAttributes API.
+     */
+    ListMappedAttributesResponse listMappedAttributes(ListMappedAttributesRequest request);
 
     /**
      * Search for a user's own API key.
@@ -2631,6 +2771,32 @@ public interface IdentityDomains extends AutoCloseable {
     PatchGroupResponse patchGroup(PatchGroupRequest request);
 
     /**
+     * Update an IdentityProofingProvider.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchIdentityProofingProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchIdentityProofingProvider API.
+     */
+    PatchIdentityProofingProviderResponse patchIdentityProofingProvider(
+            PatchIdentityProofingProviderRequest request);
+
+    /**
+     * Update an Identity Proofing Provider Configuration template.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchIdentityProofingProviderTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchIdentityProofingProviderTemplate API.
+     */
+    PatchIdentityProofingProviderTemplateResponse patchIdentityProofingProviderTemplate(
+            PatchIdentityProofingProviderTemplateRequest request);
+
+    /**
      * Update an existing Identity Propagation Trust configuration.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2678,6 +2844,18 @@ public interface IdentityDomains extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchKmsiSettingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchKmsiSetting API.
      */
     PatchKmsiSettingResponse patchKmsiSetting(PatchKmsiSettingRequest request);
+
+    /**
+     * Update a Mapped Attribute
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchMappedAttributeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchMappedAttribute API.
+     */
+    PatchMappedAttributeResponse patchMappedAttribute(PatchMappedAttributeRequest request);
 
     /**
      * Update a user's own information.
@@ -3097,6 +3275,32 @@ public interface IdentityDomains extends AutoCloseable {
     PutGroupResponse putGroup(PutGroupRequest request);
 
     /**
+     * Replace an IdentityProofingProvider.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutIdentityProofingProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutIdentityProofingProvider API.
+     */
+    PutIdentityProofingProviderResponse putIdentityProofingProvider(
+            PutIdentityProofingProviderRequest request);
+
+    /**
+     * Replace an Identity Proofing Provider Configuration template.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutIdentityProofingProviderTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutIdentityProofingProviderTemplate API.
+     */
+    PutIdentityProofingProviderTemplateResponse putIdentityProofingProviderTemplate(
+            PutIdentityProofingProviderTemplateRequest request);
+
+    /**
      * Replace an existing Identity Propagation Trust configuration.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3144,6 +3348,18 @@ public interface IdentityDomains extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutKmsiSettingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutKmsiSetting API.
      */
     PutKmsiSettingResponse putKmsiSetting(PutKmsiSettingRequest request);
+
+    /**
+     * Replace a Mapped Attribute
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutMappedAttributeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutMappedAttribute API.
+     */
+    PutMappedAttributeResponse putMappedAttribute(PutMappedAttributeRequest request);
 
     /**
      * Replace a user's own information.
@@ -3525,6 +3741,19 @@ public interface IdentityDomains extends AutoCloseable {
     SearchGroupsResponse searchGroups(SearchGroupsRequest request);
 
     /**
+     * Search IdentityProofingProvider Using POST.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchIdentityProofingProvidersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchIdentityProofingProviders API.
+     */
+    SearchIdentityProofingProvidersResponse searchIdentityProofingProviders(
+            SearchIdentityProofingProvidersRequest request);
+
+    /**
      * Search Identity Providers Using POST
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3559,6 +3788,18 @@ public interface IdentityDomains extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchKmsiSettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchKmsiSettings API.
      */
     SearchKmsiSettingsResponse searchKmsiSettings(SearchKmsiSettingsRequest request);
+
+    /**
+     * Search Mapped Attributes Using POST
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchMappedAttributesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchMappedAttributes API.
+     */
+    SearchMappedAttributesResponse searchMappedAttributes(SearchMappedAttributesRequest request);
 
     /**
      * Search My Apps Using POST

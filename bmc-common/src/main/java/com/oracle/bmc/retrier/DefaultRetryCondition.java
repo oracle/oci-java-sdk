@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.retrier;
@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import com.oracle.bmc.Options;
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.model.BmcException;
 import javax.annotation.Nonnull;
@@ -32,6 +33,20 @@ public class DefaultRetryCondition implements RetryCondition {
     private static final String PROCESSING_EXCEPTION_MSG =
             "[.|\\s\\S]*processing(\\s)+exception[.|\\s\\S]*";
 
+    /**
+     * Check if the operation should be retried based on the given {@link BmcException}.
+     * The operation will be retried if:
+     * <ul>
+     *     <li>The exception is client-side and not caused by a {@link CallNotAllowedException}.</li>
+     *     <li>The exception is a timeout.</li>
+     *     <li>The HTTP status code is 429, 500, 502, 503, or 504.</li>
+     *     <li>The HTTP status code and service code are in the {@link #RETRYABLE_SERVICE_ERRORS} map.</li>
+     *     <li>The exception is a "processing exception" and token refresh retry is enabled.</li>
+     * </ul>
+     *
+     * @param exception The exception from the previous unsuccessful operation.
+     * @return {@code true} if the operation should be retried, else {@code false}.
+     */
     @Override
     public boolean shouldBeRetried(@Nonnull final BmcException exception) {
         if (exception == null) {
@@ -50,7 +65,7 @@ public class DefaultRetryCondition implements RetryCondition {
                         && RETRYABLE_SERVICE_ERRORS
                                 .get(exception.getStatusCode())
                                 .contains(exception.getServiceCode()))
-                || isProcessingException(exception);
+                || (Options.isTokenRefreshRetrierEnabled() && isProcessingException(exception));
     }
 
     public static boolean isProcessingException(final BmcException exception) {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -27,6 +27,10 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
         "libraryVersion",
         "cveId",
         "cvssScore",
+        "isDynamicallyDetected",
+        "highestVulnerabilityScore",
+        "vulnerabilities",
+        "confidenceLevel",
         "approximateApplicationCount",
         "approximateJavaServerInstanceCount",
         "approximateDeployedApplicationCount",
@@ -44,6 +48,10 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
             String libraryVersion,
             String cveId,
             Float cvssScore,
+            Boolean isDynamicallyDetected,
+            Float highestVulnerabilityScore,
+            java.util.List<LibraryVulnerability> vulnerabilities,
+            ConfidenceLevel confidenceLevel,
             Integer approximateApplicationCount,
             Integer approximateJavaServerInstanceCount,
             Integer approximateDeployedApplicationCount,
@@ -60,6 +68,10 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
         this.libraryVersion = libraryVersion;
         this.cveId = cveId;
         this.cvssScore = cvssScore;
+        this.isDynamicallyDetected = isDynamicallyDetected;
+        this.highestVulnerabilityScore = highestVulnerabilityScore;
+        this.vulnerabilities = vulnerabilities;
+        this.confidenceLevel = confidenceLevel;
         this.approximateApplicationCount = approximateApplicationCount;
         this.approximateJavaServerInstanceCount = approximateJavaServerInstanceCount;
         this.approximateDeployedApplicationCount = approximateDeployedApplicationCount;
@@ -146,6 +158,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
+         * Deprecated, use {@code vulnerabilities} instead.
          * The Common Vulnerabilities and Exposures (CVE) ID.
          *
          **/
@@ -153,6 +166,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
         private String cveId;
 
         /**
+         * Deprecated, use {@code vulnerabilities} instead.
          * The Common Vulnerabilities and Exposures (CVE) ID.
          *
          * @param cveId the value to set
@@ -164,14 +178,16 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The Common Vulnerability Scoring System (CVSS) score.
+         * Deprecated, use {@code highestVulnerabilityScore} instead.
+         * The Common Vulnerability Scoring System (CVSS) score. If {@code cvssScore} is not available, it will be set to -1.0. It is set to 0.0 when {@code cveId} is null.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cvssScore")
         private Float cvssScore;
 
         /**
-         * The Common Vulnerability Scoring System (CVSS) score.
+         * Deprecated, use {@code highestVulnerabilityScore} instead.
+         * The Common Vulnerability Scoring System (CVSS) score. If {@code cvssScore} is not available, it will be set to -1.0. It is set to 0.0 when {@code cveId} is null.
          *
          * @param cvssScore the value to set
          * @return this builder
@@ -179,6 +195,74 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
         public Builder cvssScore(Float cvssScore) {
             this.cvssScore = cvssScore;
             this.__explicitlySet__.add("cvssScore");
+            return this;
+        }
+        /**
+         * Indicates whether the library was dynamically detected.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDynamicallyDetected")
+        private Boolean isDynamicallyDetected;
+
+        /**
+         * Indicates whether the library was dynamically detected.
+         *
+         * @param isDynamicallyDetected the value to set
+         * @return this builder
+         **/
+        public Builder isDynamicallyDetected(Boolean isDynamicallyDetected) {
+            this.isDynamicallyDetected = isDynamicallyDetected;
+            this.__explicitlySet__.add("isDynamicallyDetected");
+            return this;
+        }
+        /**
+         * Highest CVSS score among the all vulnerabilities. If highest CVSS score is not available, it will be set to -1.0. It is set to 0.0 when there is no associated vulnerabilities.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("highestVulnerabilityScore")
+        private Float highestVulnerabilityScore;
+
+        /**
+         * Highest CVSS score among the all vulnerabilities. If highest CVSS score is not available, it will be set to -1.0. It is set to 0.0 when there is no associated vulnerabilities.
+         *
+         * @param highestVulnerabilityScore the value to set
+         * @return this builder
+         **/
+        public Builder highestVulnerabilityScore(Float highestVulnerabilityScore) {
+            this.highestVulnerabilityScore = highestVulnerabilityScore;
+            this.__explicitlySet__.add("highestVulnerabilityScore");
+            return this;
+        }
+        /**
+         * The list of library vulnerabilities.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vulnerabilities")
+        private java.util.List<LibraryVulnerability> vulnerabilities;
+
+        /**
+         * The list of library vulnerabilities.
+         * @param vulnerabilities the value to set
+         * @return this builder
+         **/
+        public Builder vulnerabilities(java.util.List<LibraryVulnerability> vulnerabilities) {
+            this.vulnerabilities = vulnerabilities;
+            this.__explicitlySet__.add("vulnerabilities");
+            return this;
+        }
+        /**
+         * Confidence level of the assessed library's vulnerabilities.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("confidenceLevel")
+        private ConfidenceLevel confidenceLevel;
+
+        /**
+         * Confidence level of the assessed library's vulnerabilities.
+         * @param confidenceLevel the value to set
+         * @return this builder
+         **/
+        public Builder confidenceLevel(ConfidenceLevel confidenceLevel) {
+            this.confidenceLevel = confidenceLevel;
+            this.__explicitlySet__.add("confidenceLevel");
             return this;
         }
         /**
@@ -336,6 +420,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
+         * Deprecated.
          * The date and time of the last CVEs refresh was completed.
          *
          **/
@@ -343,6 +428,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
         private java.util.Date timeLastCveRefreshed;
 
         /**
+         * Deprecated.
          * The date and time of the last CVEs refresh was completed.
          *
          * @param timeLastCveRefreshed the value to set
@@ -366,6 +452,10 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.libraryVersion,
                             this.cveId,
                             this.cvssScore,
+                            this.isDynamicallyDetected,
+                            this.highestVulnerabilityScore,
+                            this.vulnerabilities,
+                            this.confidenceLevel,
                             this.approximateApplicationCount,
                             this.approximateJavaServerInstanceCount,
                             this.approximateDeployedApplicationCount,
@@ -400,6 +490,18 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("cvssScore")) {
                 this.cvssScore(model.getCvssScore());
+            }
+            if (model.wasPropertyExplicitlySet("isDynamicallyDetected")) {
+                this.isDynamicallyDetected(model.getIsDynamicallyDetected());
+            }
+            if (model.wasPropertyExplicitlySet("highestVulnerabilityScore")) {
+                this.highestVulnerabilityScore(model.getHighestVulnerabilityScore());
+            }
+            if (model.wasPropertyExplicitlySet("vulnerabilities")) {
+                this.vulnerabilities(model.getVulnerabilities());
+            }
+            if (model.wasPropertyExplicitlySet("confidenceLevel")) {
+                this.confidenceLevel(model.getConfidenceLevel());
             }
             if (model.wasPropertyExplicitlySet("approximateApplicationCount")) {
                 this.approximateApplicationCount(model.getApproximateApplicationCount());
@@ -510,6 +612,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
+     * Deprecated, use {@code vulnerabilities} instead.
      * The Common Vulnerabilities and Exposures (CVE) ID.
      *
      **/
@@ -517,6 +620,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
     private final String cveId;
 
     /**
+     * Deprecated, use {@code vulnerabilities} instead.
      * The Common Vulnerabilities and Exposures (CVE) ID.
      *
      * @return the value
@@ -526,19 +630,81 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The Common Vulnerability Scoring System (CVSS) score.
+     * Deprecated, use {@code highestVulnerabilityScore} instead.
+     * The Common Vulnerability Scoring System (CVSS) score. If {@code cvssScore} is not available, it will be set to -1.0. It is set to 0.0 when {@code cveId} is null.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cvssScore")
     private final Float cvssScore;
 
     /**
-     * The Common Vulnerability Scoring System (CVSS) score.
+     * Deprecated, use {@code highestVulnerabilityScore} instead.
+     * The Common Vulnerability Scoring System (CVSS) score. If {@code cvssScore} is not available, it will be set to -1.0. It is set to 0.0 when {@code cveId} is null.
      *
      * @return the value
      **/
     public Float getCvssScore() {
         return cvssScore;
+    }
+
+    /**
+     * Indicates whether the library was dynamically detected.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDynamicallyDetected")
+    private final Boolean isDynamicallyDetected;
+
+    /**
+     * Indicates whether the library was dynamically detected.
+     *
+     * @return the value
+     **/
+    public Boolean getIsDynamicallyDetected() {
+        return isDynamicallyDetected;
+    }
+
+    /**
+     * Highest CVSS score among the all vulnerabilities. If highest CVSS score is not available, it will be set to -1.0. It is set to 0.0 when there is no associated vulnerabilities.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("highestVulnerabilityScore")
+    private final Float highestVulnerabilityScore;
+
+    /**
+     * Highest CVSS score among the all vulnerabilities. If highest CVSS score is not available, it will be set to -1.0. It is set to 0.0 when there is no associated vulnerabilities.
+     *
+     * @return the value
+     **/
+    public Float getHighestVulnerabilityScore() {
+        return highestVulnerabilityScore;
+    }
+
+    /**
+     * The list of library vulnerabilities.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vulnerabilities")
+    private final java.util.List<LibraryVulnerability> vulnerabilities;
+
+    /**
+     * The list of library vulnerabilities.
+     * @return the value
+     **/
+    public java.util.List<LibraryVulnerability> getVulnerabilities() {
+        return vulnerabilities;
+    }
+
+    /**
+     * Confidence level of the assessed library's vulnerabilities.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("confidenceLevel")
+    private final ConfidenceLevel confidenceLevel;
+
+    /**
+     * Confidence level of the assessed library's vulnerabilities.
+     * @return the value
+     **/
+    public ConfidenceLevel getConfidenceLevel() {
+        return confidenceLevel;
     }
 
     /**
@@ -678,6 +844,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
+     * Deprecated.
      * The date and time of the last CVEs refresh was completed.
      *
      **/
@@ -685,6 +852,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
     private final java.util.Date timeLastCveRefreshed;
 
     /**
+     * Deprecated.
      * The date and time of the last CVEs refresh was completed.
      *
      * @return the value
@@ -713,6 +881,11 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", libraryVersion=").append(String.valueOf(this.libraryVersion));
         sb.append(", cveId=").append(String.valueOf(this.cveId));
         sb.append(", cvssScore=").append(String.valueOf(this.cvssScore));
+        sb.append(", isDynamicallyDetected=").append(String.valueOf(this.isDynamicallyDetected));
+        sb.append(", highestVulnerabilityScore=")
+                .append(String.valueOf(this.highestVulnerabilityScore));
+        sb.append(", vulnerabilities=").append(String.valueOf(this.vulnerabilities));
+        sb.append(", confidenceLevel=").append(String.valueOf(this.confidenceLevel));
         sb.append(", approximateApplicationCount=")
                 .append(String.valueOf(this.approximateApplicationCount));
         sb.append(", approximateJavaServerInstanceCount=")
@@ -746,6 +919,11 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.libraryVersion, other.libraryVersion)
                 && java.util.Objects.equals(this.cveId, other.cveId)
                 && java.util.Objects.equals(this.cvssScore, other.cvssScore)
+                && java.util.Objects.equals(this.isDynamicallyDetected, other.isDynamicallyDetected)
+                && java.util.Objects.equals(
+                        this.highestVulnerabilityScore, other.highestVulnerabilityScore)
+                && java.util.Objects.equals(this.vulnerabilities, other.vulnerabilities)
+                && java.util.Objects.equals(this.confidenceLevel, other.confidenceLevel)
                 && java.util.Objects.equals(
                         this.approximateApplicationCount, other.approximateApplicationCount)
                 && java.util.Objects.equals(
@@ -776,6 +954,22 @@ public final class LibraryUsage extends com.oracle.bmc.http.internal.ExplicitlyS
                         + (this.libraryVersion == null ? 43 : this.libraryVersion.hashCode());
         result = (result * PRIME) + (this.cveId == null ? 43 : this.cveId.hashCode());
         result = (result * PRIME) + (this.cvssScore == null ? 43 : this.cvssScore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDynamicallyDetected == null
+                                ? 43
+                                : this.isDynamicallyDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.highestVulnerabilityScore == null
+                                ? 43
+                                : this.highestVulnerabilityScore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vulnerabilities == null ? 43 : this.vulnerabilities.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.confidenceLevel == null ? 43 : this.confidenceLevel.hashCode());
         result =
                 (result * PRIME)
                         + (this.approximateApplicationCount == null

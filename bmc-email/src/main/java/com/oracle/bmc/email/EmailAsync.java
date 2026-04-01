@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email;
@@ -64,6 +64,85 @@ public interface EmailAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddEmailDomainLockResponse> addEmailDomainLock(
+            AddEmailDomainLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddEmailDomainLockRequest, AddEmailDomainLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddEmailIpPoolLockResponse> addEmailIpPoolLock(
+            AddEmailIpPoolLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddEmailIpPoolLockRequest, AddEmailIpPoolLockResponse>
+                    handler);
+
+    /**
+     * Add OutboundIps to EmailIpPool.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddEmailOutboundIpResponse> addEmailOutboundIp(
+            AddEmailOutboundIpRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddEmailOutboundIpRequest, AddEmailOutboundIpResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddReturnPathLockResponse> addReturnPathLock(
+            AddReturnPathLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddReturnPathLockRequest, AddReturnPathLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddSenderLockResponse> addSenderLock(
+            AddSenderLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddSenderLockRequest, AddSenderLockResponse>
+                    handler);
+
+    /**
      * Moves an email domain into a different compartment.
      * When provided, If-Match is checked against ETag value of the resource.
      * For information about moving resources between compartments, see
@@ -84,6 +163,23 @@ public interface EmailAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeEmailDomainCompartmentRequest,
                             ChangeEmailDomainCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves a resource into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeEmailIpPoolCompartmentResponse> changeEmailIpPoolCompartment(
+            ChangeEmailIpPoolCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeEmailIpPoolCompartmentRequest,
+                            ChangeEmailIpPoolCompartmentResponse>
                     handler);
 
     /**
@@ -135,6 +231,22 @@ public interface EmailAsync extends AutoCloseable {
             CreateEmailDomainRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateEmailDomainRequest, CreateEmailDomainResponse>
+                    handler);
+
+    /**
+     * Creates a new EmailIpPool.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateEmailIpPoolResponse> createEmailIpPool(
+            CreateEmailIpPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateEmailIpPoolRequest, CreateEmailIpPoolResponse>
                     handler);
 
     /**
@@ -222,6 +334,22 @@ public interface EmailAsync extends AutoCloseable {
             DeleteEmailDomainRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteEmailDomainRequest, DeleteEmailDomainResponse>
+                    handler);
+
+    /**
+     * Deletes an EmailIpPool resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteEmailIpPoolResponse> deleteEmailIpPool(
+            DeleteEmailIpPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteEmailIpPoolRequest, DeleteEmailIpPoolResponse>
                     handler);
 
     /**
@@ -322,6 +450,21 @@ public interface EmailAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves the specified IpPool by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetEmailIpPoolResponse> getEmailIpPool(
+            GetEmailIpPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetEmailIpPoolRequest, GetEmailIpPoolResponse>
+                    handler);
+
+    /**
      * Retrieves the specified email return path.
      *
      * @param request The request object containing the details to send
@@ -410,6 +553,37 @@ public interface EmailAsync extends AutoCloseable {
     java.util.concurrent.Future<ListEmailDomainsResponse> listEmailDomains(
             ListEmailDomainsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListEmailDomainsRequest, ListEmailDomainsResponse>
+                    handler);
+
+    /**
+     * Returns a list of EmailIpPools.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListEmailIpPoolsResponse> listEmailIpPools(
+            ListEmailIpPoolsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListEmailIpPoolsRequest, ListEmailIpPoolsResponse>
+                    handler);
+
+    /**
+     * Returns a list of all Outbound Public IPs assigned for a given tenant.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListEmailOutboundIpsResponse> listEmailOutboundIps(
+            ListEmailOutboundIpsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListEmailOutboundIpsRequest, ListEmailOutboundIpsResponse>
                     handler);
 
     /**
@@ -512,6 +686,85 @@ public interface EmailAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Remove a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveEmailDomainLockResponse> removeEmailDomainLock(
+            RemoveEmailDomainLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveEmailDomainLockRequest, RemoveEmailDomainLockResponse>
+                    handler);
+
+    /**
+     * Remove a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveEmailIpPoolLockResponse> removeEmailIpPoolLock(
+            RemoveEmailIpPoolLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveEmailIpPoolLockRequest, RemoveEmailIpPoolLockResponse>
+                    handler);
+
+    /**
+     * Remove OutboundIps from EmailIpPool.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveEmailOutboundIpResponse> removeEmailOutboundIp(
+            RemoveEmailOutboundIpRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveEmailOutboundIpRequest, RemoveEmailOutboundIpResponse>
+                    handler);
+
+    /**
+     * Remove a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveReturnPathLockResponse> removeReturnPathLock(
+            RemoveReturnPathLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveReturnPathLockRequest, RemoveReturnPathLockResponse>
+                    handler);
+
+    /**
+     * Remove a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveSenderLockResponse> removeSenderLock(
+            RemoveSenderLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RemoveSenderLockRequest, RemoveSenderLockResponse>
+                    handler);
+
+    /**
      * Modifies a DKIM.
      *
      * @param request The request object containing the details to send
@@ -539,6 +792,22 @@ public interface EmailAsync extends AutoCloseable {
             UpdateEmailDomainRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateEmailDomainRequest, UpdateEmailDomainResponse>
+                    handler);
+
+    /**
+     * Updates the EmailIpPool
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateEmailIpPoolResponse> updateEmailIpPool(
+            UpdateEmailIpPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateEmailIpPoolRequest, UpdateEmailIpPoolResponse>
                     handler);
 
     /**

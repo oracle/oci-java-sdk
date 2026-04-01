@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fusionapps.model;
@@ -27,6 +27,7 @@ public final class UpdateFusionEnvironmentDetails
         "kmsKeyId",
         "maintenancePolicy",
         "additionalLanguagePacks",
+        "isIPv6DualStackEnabled",
         "rules",
         "freeformTags",
         "definedTags"
@@ -36,6 +37,7 @@ public final class UpdateFusionEnvironmentDetails
             String kmsKeyId,
             MaintenancePolicy maintenancePolicy,
             java.util.List<String> additionalLanguagePacks,
+            Boolean isIPv6DualStackEnabled,
             java.util.List<Rule> rules,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -44,6 +46,7 @@ public final class UpdateFusionEnvironmentDetails
         this.kmsKeyId = kmsKeyId;
         this.maintenancePolicy = maintenancePolicy;
         this.additionalLanguagePacks = additionalLanguagePacks;
+        this.isIPv6DualStackEnabled = isIPv6DualStackEnabled;
         this.rules = rules;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -106,6 +109,22 @@ public final class UpdateFusionEnvironmentDetails
         public Builder additionalLanguagePacks(java.util.List<String> additionalLanguagePacks) {
             this.additionalLanguagePacks = additionalLanguagePacks;
             this.__explicitlySet__.add("additionalLanguagePacks");
+            return this;
+        }
+        /**
+         * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
+        private Boolean isIPv6DualStackEnabled;
+
+        /**
+         * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         * @param isIPv6DualStackEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isIPv6DualStackEnabled(Boolean isIPv6DualStackEnabled) {
+            this.isIPv6DualStackEnabled = isIPv6DualStackEnabled;
+            this.__explicitlySet__.add("isIPv6DualStackEnabled");
             return this;
         }
         /**
@@ -176,6 +195,7 @@ public final class UpdateFusionEnvironmentDetails
                             this.kmsKeyId,
                             this.maintenancePolicy,
                             this.additionalLanguagePacks,
+                            this.isIPv6DualStackEnabled,
                             this.rules,
                             this.freeformTags,
                             this.definedTags);
@@ -198,6 +218,9 @@ public final class UpdateFusionEnvironmentDetails
             }
             if (model.wasPropertyExplicitlySet("additionalLanguagePacks")) {
                 this.additionalLanguagePacks(model.getAdditionalLanguagePacks());
+            }
+            if (model.wasPropertyExplicitlySet("isIPv6DualStackEnabled")) {
+                this.isIPv6DualStackEnabled(model.getIsIPv6DualStackEnabled());
             }
             if (model.wasPropertyExplicitlySet("rules")) {
                 this.rules(model.getRules());
@@ -273,6 +296,20 @@ public final class UpdateFusionEnvironmentDetails
     }
 
     /**
+     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
+    private final Boolean isIPv6DualStackEnabled;
+
+    /**
+     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * @return the value
+     **/
+    public Boolean getIsIPv6DualStackEnabled() {
+        return isIPv6DualStackEnabled;
+    }
+
+    /**
      * Network access control rules to limit internet traffic that can access the environment. For more information, see {@link #allowRule(AllowRuleRequest) allowRule}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
@@ -341,6 +378,7 @@ public final class UpdateFusionEnvironmentDetails
         sb.append(", maintenancePolicy=").append(String.valueOf(this.maintenancePolicy));
         sb.append(", additionalLanguagePacks=")
                 .append(String.valueOf(this.additionalLanguagePacks));
+        sb.append(", isIPv6DualStackEnabled=").append(String.valueOf(this.isIPv6DualStackEnabled));
         sb.append(", rules=").append(String.valueOf(this.rules));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -363,6 +401,8 @@ public final class UpdateFusionEnvironmentDetails
                 && java.util.Objects.equals(this.maintenancePolicy, other.maintenancePolicy)
                 && java.util.Objects.equals(
                         this.additionalLanguagePacks, other.additionalLanguagePacks)
+                && java.util.Objects.equals(
+                        this.isIPv6DualStackEnabled, other.isIPv6DualStackEnabled)
                 && java.util.Objects.equals(this.rules, other.rules)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -383,6 +423,11 @@ public final class UpdateFusionEnvironmentDetails
                         + (this.additionalLanguagePacks == null
                                 ? 43
                                 : this.additionalLanguagePacks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIPv6DualStackEnabled == null
+                                ? 43
+                                : this.isIPv6DualStackEnabled.hashCode());
         result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

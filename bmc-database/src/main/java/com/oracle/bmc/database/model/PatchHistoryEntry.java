@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -29,7 +29,8 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
         "lifecycleDetails",
         "timeStarted",
         "timeEnded",
-        "patchType"
+        "patchType",
+        "patchOptions"
     })
     public PatchHistoryEntry(
             String id,
@@ -39,7 +40,8 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
             String lifecycleDetails,
             java.util.Date timeStarted,
             java.util.Date timeEnded,
-            PatchType patchType) {
+            PatchType patchType,
+            PatchOptions patchOptions) {
         super();
         this.id = id;
         this.patchId = patchId;
@@ -49,6 +51,7 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
         this.timeStarted = timeStarted;
         this.timeEnded = timeEnded;
         this.patchType = patchType;
+        this.patchOptions = patchOptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -186,6 +189,15 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("patchOptions")
+        private PatchOptions patchOptions;
+
+        public Builder patchOptions(PatchOptions patchOptions) {
+            this.patchOptions = patchOptions;
+            this.__explicitlySet__.add("patchOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -199,7 +211,8 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
                             this.lifecycleDetails,
                             this.timeStarted,
                             this.timeEnded,
-                            this.patchType);
+                            this.patchType,
+                            this.patchOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -231,6 +244,9 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("patchType")) {
                 this.patchType(model.getPatchType());
+            }
+            if (model.wasPropertyExplicitlySet("patchOptions")) {
+                this.patchOptions(model.getPatchOptions());
             }
             return this;
         }
@@ -508,6 +524,13 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
         return patchType;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("patchOptions")
+    private final PatchOptions patchOptions;
+
+    public PatchOptions getPatchOptions() {
+        return patchOptions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -530,6 +553,7 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
         sb.append(", patchType=").append(String.valueOf(this.patchType));
+        sb.append(", patchOptions=").append(String.valueOf(this.patchOptions));
         sb.append(")");
         return sb.toString();
     }
@@ -552,6 +576,7 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
                 && java.util.Objects.equals(this.patchType, other.patchType)
+                && java.util.Objects.equals(this.patchOptions, other.patchOptions)
                 && super.equals(other);
     }
 
@@ -571,6 +596,7 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
         result = (result * PRIME) + (this.patchType == null ? 43 : this.patchType.hashCode());
+        result = (result * PRIME) + (this.patchOptions == null ? 43 : this.patchOptions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -24,6 +24,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
     @java.beans.ConstructorProperties({
         "availabilityDomain",
         "cidrBlock",
+        "ipv4CidrBlocks",
         "compartmentId",
         "definedTags",
         "dhcpOptionsId",
@@ -41,6 +42,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
     public CreateSubnetDetails(
             String availabilityDomain,
             String cidrBlock,
+            java.util.List<String> ipv4CidrBlocks,
             String compartmentId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dhcpOptionsId,
@@ -57,6 +59,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         super();
         this.availabilityDomain = availabilityDomain;
         this.cidrBlock = cidrBlock;
+        this.ipv4CidrBlocks = ipv4CidrBlocks;
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
         this.dhcpOptionsId = dhcpOptionsId;
@@ -142,6 +145,30 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
+            return this;
+        }
+        /**
+         * The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+         * - Ipv4 CIDR blocks must be valid.
+         * - Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+         * - The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv4CidrBlocks")
+        private java.util.List<String> ipv4CidrBlocks;
+
+        /**
+         * The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+         * - Ipv4 CIDR blocks must be valid.
+         * - Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+         * - The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+         *
+         * @param ipv4CidrBlocks the value to set
+         * @return this builder
+         **/
+        public Builder ipv4CidrBlocks(java.util.List<String> ipv4CidrBlocks) {
+            this.ipv4CidrBlocks = ipv4CidrBlocks;
+            this.__explicitlySet__.add("ipv4CidrBlocks");
             return this;
         }
         /**
@@ -492,6 +519,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
                     new CreateSubnetDetails(
                             this.availabilityDomain,
                             this.cidrBlock,
+                            this.ipv4CidrBlocks,
                             this.compartmentId,
                             this.definedTags,
                             this.dhcpOptionsId,
@@ -518,6 +546,9 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("cidrBlock")) {
                 this.cidrBlock(model.getCidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("ipv4CidrBlocks")) {
+                this.ipv4CidrBlocks(model.getIpv4CidrBlocks());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -637,6 +668,28 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
      **/
     public String getCidrBlock() {
         return cidrBlock;
+    }
+
+    /**
+     * The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+     * - Ipv4 CIDR blocks must be valid.
+     * - Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+     * - The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv4CidrBlocks")
+    private final java.util.List<String> ipv4CidrBlocks;
+
+    /**
+     * The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+     * - Ipv4 CIDR blocks must be valid.
+     * - Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+     * - The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getIpv4CidrBlocks() {
+        return ipv4CidrBlocks;
     }
 
     /**
@@ -967,6 +1020,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", cidrBlock=").append(String.valueOf(this.cidrBlock));
+        sb.append(", ipv4CidrBlocks=").append(String.valueOf(this.ipv4CidrBlocks));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dhcpOptionsId=").append(String.valueOf(this.dhcpOptionsId));
@@ -997,6 +1051,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         CreateSubnetDetails other = (CreateSubnetDetails) o;
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.cidrBlock, other.cidrBlock)
+                && java.util.Objects.equals(this.ipv4CidrBlocks, other.ipv4CidrBlocks)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dhcpOptionsId, other.dhcpOptionsId)
@@ -1025,6 +1080,9 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
                                 ? 43
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.cidrBlock == null ? 43 : this.cidrBlock.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv4CidrBlocks == null ? 43 : this.ipv4CidrBlocks.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

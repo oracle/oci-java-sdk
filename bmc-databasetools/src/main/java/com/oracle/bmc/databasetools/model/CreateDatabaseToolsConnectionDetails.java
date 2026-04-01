@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools.model;
@@ -49,7 +49,8 @@ public class CreateDatabaseToolsConnectionDetails
         "definedTags",
         "freeformTags",
         "locks",
-        "runtimeSupport"
+        "runtimeSupport",
+        "runtimeIdentity"
     })
     protected CreateDatabaseToolsConnectionDetails(
             String displayName,
@@ -57,7 +58,8 @@ public class CreateDatabaseToolsConnectionDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
             java.util.List<ResourceLock> locks,
-            RuntimeSupport runtimeSupport) {
+            RuntimeSupport runtimeSupport,
+            RuntimeIdentity runtimeIdentity) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
@@ -65,6 +67,7 @@ public class CreateDatabaseToolsConnectionDetails
         this.freeformTags = freeformTags;
         this.locks = locks;
         this.runtimeSupport = runtimeSupport;
+        this.runtimeIdentity = runtimeIdentity;
     }
 
     /**
@@ -159,6 +162,20 @@ public class CreateDatabaseToolsConnectionDetails
         return runtimeSupport;
     }
 
+    /**
+     * Specifies the identity used by the Database Tools service to issue requests to other OCI services (e.g., Secrets in Vault).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("runtimeIdentity")
+    private final RuntimeIdentity runtimeIdentity;
+
+    /**
+     * Specifies the identity used by the Database Tools service to issue requests to other OCI services (e.g., Secrets in Vault).
+     * @return the value
+     **/
+    public RuntimeIdentity getRuntimeIdentity() {
+        return runtimeIdentity;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -179,6 +196,7 @@ public class CreateDatabaseToolsConnectionDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", runtimeSupport=").append(String.valueOf(this.runtimeSupport));
+        sb.append(", runtimeIdentity=").append(String.valueOf(this.runtimeIdentity));
         sb.append(")");
         return sb.toString();
     }
@@ -199,6 +217,7 @@ public class CreateDatabaseToolsConnectionDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.runtimeSupport, other.runtimeSupport)
+                && java.util.Objects.equals(this.runtimeIdentity, other.runtimeIdentity)
                 && super.equals(other);
     }
 
@@ -216,6 +235,9 @@ public class CreateDatabaseToolsConnectionDetails
         result =
                 (result * PRIME)
                         + (this.runtimeSupport == null ? 43 : this.runtimeSupport.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runtimeIdentity == null ? 43 : this.runtimeIdentity.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

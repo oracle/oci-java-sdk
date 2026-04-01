@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Description of an asset source.
+ * VMware asset source creation request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -108,6 +108,15 @@ public final class CreateVmWareAssetSourceDetails extends CreateAssetSourceDetai
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private EnvironmentType environmentType;
+
+        public Builder environmentType(EnvironmentType environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
+            return this;
+        }
         /**
          * Endpoint for VMware asset discovery and replication in the form of {@code https://<host>:<port>/sdk}
          **/
@@ -190,6 +199,7 @@ public final class CreateVmWareAssetSourceDetails extends CreateAssetSourceDetai
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.environmentType,
                             this.vcenterEndpoint,
                             this.discoveryCredentials,
                             this.replicationCredentials,
@@ -229,6 +239,9 @@ public final class CreateVmWareAssetSourceDetails extends CreateAssetSourceDetai
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
             }
             if (model.wasPropertyExplicitlySet("vcenterEndpoint")) {
                 this.vcenterEndpoint(model.getVcenterEndpoint());
@@ -271,6 +284,7 @@ public final class CreateVmWareAssetSourceDetails extends CreateAssetSourceDetai
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            EnvironmentType environmentType,
             String vcenterEndpoint,
             AssetSourceCredentials discoveryCredentials,
             AssetSourceCredentials replicationCredentials,
@@ -285,7 +299,8 @@ public final class CreateVmWareAssetSourceDetails extends CreateAssetSourceDetai
                 discoveryScheduleId,
                 freeformTags,
                 definedTags,
-                systemTags);
+                systemTags,
+                environmentType);
         this.vcenterEndpoint = vcenterEndpoint;
         this.discoveryCredentials = discoveryCredentials;
         this.replicationCredentials = replicationCredentials;

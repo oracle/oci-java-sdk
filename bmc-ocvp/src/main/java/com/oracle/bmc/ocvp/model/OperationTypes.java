@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.model;
@@ -35,6 +35,21 @@ public enum OperationTypes {
     DeleteDatastoreCluster("DELETE_DATASTORE_CLUSTER"),
     AddDatastoreToDatastoreCluster("ADD_DATASTORE_TO_DATASTORE_CLUSTER"),
     RemoveDatastoreFromDatastoreCluster("REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER"),
+    CreateManagementAppliance("CREATE_MANAGEMENT_APPLIANCE"),
+    UpdateManagementAppliance("UPDATE_MANAGEMENT_APPLIANCE"),
+    DeleteManagementAppliance("DELETE_MANAGEMENT_APPLIANCE"),
+    AbandonManagementApplianceJobs("ABANDON_MANAGEMENT_APPLIANCE_JOBS"),
+    BatchDeleteManagementApplianceJobs("BATCH_DELETE_MANAGEMENT_APPLIANCE_JOBS"),
+    ManagementApplianceEsxiHostProvisioning("MANAGEMENT_APPLIANCE_ESXI_HOST_PROVISIONING"),
+    ManagementApplianceEsxiHostDeletion("MANAGEMENT_APPLIANCE_ESXI_HOST_DELETION"),
+    ManagementApplianceDatastoreProvisioning("MANAGEMENT_APPLIANCE_DATASTORE_PROVISIONING"),
+    ManagementApplianceDatastoreDelete("MANAGEMENT_APPLIANCE_DATASTORE_DELETE"),
+    CreateByol("CREATE_BYOL"),
+    UpdateByol("UPDATE_BYOL"),
+    DeleteByol("DELETE_BYOL"),
+    CreateByolAllocation("CREATE_BYOL_ALLOCATION"),
+    UpdateByolAllocation("UPDATE_BYOL_ALLOCATION"),
+    DeleteByolAllocation("DELETE_BYOL_ALLOCATION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

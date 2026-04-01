@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -118,8 +118,19 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("coreSiteXml")
@@ -127,6 +138,7 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
 
         /**
          * The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
          *
          * @param coreSiteXml the value to set
          * @return this builder
@@ -153,6 +165,7 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.securityAttributes,
                             this.coreSiteXml);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -192,6 +205,9 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("coreSiteXml")) {
                 this.coreSiteXml(model.getCoreSiteXml());
             }
@@ -222,6 +238,7 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String coreSiteXml) {
         super(
                 displayName,
@@ -233,12 +250,14 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                securityAttributes);
         this.coreSiteXml = coreSiteXml;
     }
 
     /**
      * The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coreSiteXml")
@@ -246,6 +265,7 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
 
     /**
      * The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
      *
      * @return the value
      **/

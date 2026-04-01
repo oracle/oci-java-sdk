@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -39,11 +39,8 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
         "isCrossTenancyPeering",
         "lifecycleState",
         "peerAdvertisedCidr",
-        "peerAdvertisedCidrDetails",
         "peeringStatus",
         "peeringStatusDetails",
-        "peerId",
-        "routeTableId",
         "timeCreated",
         "vcnId"
     })
@@ -56,11 +53,8 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
             Boolean isCrossTenancyPeering,
             LifecycleState lifecycleState,
             String peerAdvertisedCidr,
-            java.util.List<String> peerAdvertisedCidrDetails,
             PeeringStatus peeringStatus,
             String peeringStatusDetails,
-            String peerId,
-            String routeTableId,
             java.util.Date timeCreated,
             String vcnId) {
         super();
@@ -72,11 +66,8 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
         this.isCrossTenancyPeering = isCrossTenancyPeering;
         this.lifecycleState = lifecycleState;
         this.peerAdvertisedCidr = peerAdvertisedCidr;
-        this.peerAdvertisedCidrDetails = peerAdvertisedCidrDetails;
         this.peeringStatus = peeringStatus;
         this.peeringStatusDetails = peeringStatusDetails;
-        this.peerId = peerId;
-        this.routeTableId = routeTableId;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
     }
@@ -215,22 +206,24 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN
-         * at the other end of the peering from this LPG. See {@code peerAdvertisedCidrDetails} for
-         * the individual CIDRs. The value is {@code null} if the LPG is not peered.
+         * The range of IP addresses available on the VCN at the other
+         * end of the peering from this LPG. The value is {@code null} if the LPG is not peered.
+         * You can use this as the destination CIDR for a route rule to route a subnet's
+         * traffic to this LPG.
          * <p>
-         * Example: {@code 192.168.0.0/16}, or if aggregated with {@code 172.16.0.0/24} then {@code 128.0.0.0/1}
+         * Example: {@code 192.168.0.0/16}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerAdvertisedCidr")
         private String peerAdvertisedCidr;
 
         /**
-         * The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN
-         * at the other end of the peering from this LPG. See {@code peerAdvertisedCidrDetails} for
-         * the individual CIDRs. The value is {@code null} if the LPG is not peered.
+         * The range of IP addresses available on the VCN at the other
+         * end of the peering from this LPG. The value is {@code null} if the LPG is not peered.
+         * You can use this as the destination CIDR for a route rule to route a subnet's
+         * traffic to this LPG.
          * <p>
-         * Example: {@code 192.168.0.0/16}, or if aggregated with {@code 172.16.0.0/24} then {@code 128.0.0.0/1}
+         * Example: {@code 192.168.0.0/16}
          *
          * @param peerAdvertisedCidr the value to set
          * @return this builder
@@ -238,34 +231,6 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
         public Builder peerAdvertisedCidr(String peerAdvertisedCidr) {
             this.peerAdvertisedCidr = peerAdvertisedCidr;
             this.__explicitlySet__.add("peerAdvertisedCidr");
-            return this;
-        }
-        /**
-         * The specific ranges of IP addresses available on or via the VCN at the other
-         * end of the peering from this LPG. The value is {@code null} if the LPG is not peered.
-         * You can use these as destination CIDRs for route rules to route a subnet's
-         * traffic to this LPG.
-         * <p>
-         * Example: [{@code 192.168.0.0/16}, {@code 172.16.0.0/24}]
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("peerAdvertisedCidrDetails")
-        private java.util.List<String> peerAdvertisedCidrDetails;
-
-        /**
-         * The specific ranges of IP addresses available on or via the VCN at the other
-         * end of the peering from this LPG. The value is {@code null} if the LPG is not peered.
-         * You can use these as destination CIDRs for route rules to route a subnet's
-         * traffic to this LPG.
-         * <p>
-         * Example: [{@code 192.168.0.0/16}, {@code 172.16.0.0/24}]
-         *
-         * @param peerAdvertisedCidrDetails the value to set
-         * @return this builder
-         **/
-        public Builder peerAdvertisedCidrDetails(java.util.List<String> peerAdvertisedCidrDetails) {
-            this.peerAdvertisedCidrDetails = peerAdvertisedCidrDetails;
-            this.__explicitlySet__.add("peerAdvertisedCidrDetails");
             return this;
         }
         /**
@@ -304,46 +269,6 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
         public Builder peeringStatusDetails(String peeringStatusDetails) {
             this.peeringStatusDetails = peeringStatusDetails;
             this.__explicitlySet__.add("peeringStatusDetails");
-            return this;
-        }
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peered LPG.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("peerId")
-        private String peerId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peered LPG.
-         * @param peerId the value to set
-         * @return this builder
-         **/
-        public Builder peerId(String peerId) {
-            this.peerId = peerId;
-            this.__explicitlySet__.add("peerId");
-            return this;
-        }
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG is using.
-         * <p>
-         * For information about why you would associate a route table with an LPG, see
-         * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-        private String routeTableId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG is using.
-         * <p>
-         * For information about why you would associate a route table with an LPG, see
-         * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-         *
-         * @param routeTableId the value to set
-         * @return this builder
-         **/
-        public Builder routeTableId(String routeTableId) {
-            this.routeTableId = routeTableId;
-            this.__explicitlySet__.add("routeTableId");
             return this;
         }
         /**
@@ -399,11 +324,8 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
                             this.isCrossTenancyPeering,
                             this.lifecycleState,
                             this.peerAdvertisedCidr,
-                            this.peerAdvertisedCidrDetails,
                             this.peeringStatus,
                             this.peeringStatusDetails,
-                            this.peerId,
-                            this.routeTableId,
                             this.timeCreated,
                             this.vcnId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -438,20 +360,11 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("peerAdvertisedCidr")) {
                 this.peerAdvertisedCidr(model.getPeerAdvertisedCidr());
             }
-            if (model.wasPropertyExplicitlySet("peerAdvertisedCidrDetails")) {
-                this.peerAdvertisedCidrDetails(model.getPeerAdvertisedCidrDetails());
-            }
             if (model.wasPropertyExplicitlySet("peeringStatus")) {
                 this.peeringStatus(model.getPeeringStatus());
             }
             if (model.wasPropertyExplicitlySet("peeringStatusDetails")) {
                 this.peeringStatusDetails(model.getPeeringStatusDetails());
-            }
-            if (model.wasPropertyExplicitlySet("peerId")) {
-                this.peerId(model.getPeerId());
-            }
-            if (model.wasPropertyExplicitlySet("routeTableId")) {
-                this.routeTableId(model.getRouteTableId());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -628,53 +541,29 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN
-     * at the other end of the peering from this LPG. See {@code peerAdvertisedCidrDetails} for
-     * the individual CIDRs. The value is {@code null} if the LPG is not peered.
+     * The range of IP addresses available on the VCN at the other
+     * end of the peering from this LPG. The value is {@code null} if the LPG is not peered.
+     * You can use this as the destination CIDR for a route rule to route a subnet's
+     * traffic to this LPG.
      * <p>
-     * Example: {@code 192.168.0.0/16}, or if aggregated with {@code 172.16.0.0/24} then {@code 128.0.0.0/1}
+     * Example: {@code 192.168.0.0/16}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAdvertisedCidr")
     private final String peerAdvertisedCidr;
 
     /**
-     * The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN
-     * at the other end of the peering from this LPG. See {@code peerAdvertisedCidrDetails} for
-     * the individual CIDRs. The value is {@code null} if the LPG is not peered.
+     * The range of IP addresses available on the VCN at the other
+     * end of the peering from this LPG. The value is {@code null} if the LPG is not peered.
+     * You can use this as the destination CIDR for a route rule to route a subnet's
+     * traffic to this LPG.
      * <p>
-     * Example: {@code 192.168.0.0/16}, or if aggregated with {@code 172.16.0.0/24} then {@code 128.0.0.0/1}
+     * Example: {@code 192.168.0.0/16}
      *
      * @return the value
      **/
     public String getPeerAdvertisedCidr() {
         return peerAdvertisedCidr;
-    }
-
-    /**
-     * The specific ranges of IP addresses available on or via the VCN at the other
-     * end of the peering from this LPG. The value is {@code null} if the LPG is not peered.
-     * You can use these as destination CIDRs for route rules to route a subnet's
-     * traffic to this LPG.
-     * <p>
-     * Example: [{@code 192.168.0.0/16}, {@code 172.16.0.0/24}]
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("peerAdvertisedCidrDetails")
-    private final java.util.List<String> peerAdvertisedCidrDetails;
-
-    /**
-     * The specific ranges of IP addresses available on or via the VCN at the other
-     * end of the peering from this LPG. The value is {@code null} if the LPG is not peered.
-     * You can use these as destination CIDRs for route rules to route a subnet's
-     * traffic to this LPG.
-     * <p>
-     * Example: [{@code 192.168.0.0/16}, {@code 172.16.0.0/24}]
-     *
-     * @return the value
-     **/
-    public java.util.List<String> getPeerAdvertisedCidrDetails() {
-        return peerAdvertisedCidrDetails;
     }
 
     /**
@@ -753,42 +642,6 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peered LPG.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("peerId")
-    private final String peerId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peered LPG.
-     * @return the value
-     **/
-    public String getPeerId() {
-        return peerId;
-    }
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG is using.
-     * <p>
-     * For information about why you would associate a route table with an LPG, see
-     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    private final String routeTableId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG is using.
-     * <p>
-     * For information about why you would associate a route table with an LPG, see
-     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-     *
-     * @return the value
-     **/
-    public String getRouteTableId() {
-        return routeTableId;
-    }
-
-    /**
      * The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
@@ -844,12 +697,8 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
         sb.append(", isCrossTenancyPeering=").append(String.valueOf(this.isCrossTenancyPeering));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", peerAdvertisedCidr=").append(String.valueOf(this.peerAdvertisedCidr));
-        sb.append(", peerAdvertisedCidrDetails=")
-                .append(String.valueOf(this.peerAdvertisedCidrDetails));
         sb.append(", peeringStatus=").append(String.valueOf(this.peeringStatus));
         sb.append(", peeringStatusDetails=").append(String.valueOf(this.peeringStatusDetails));
-        sb.append(", peerId=").append(String.valueOf(this.peerId));
-        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(")");
@@ -874,12 +723,8 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.isCrossTenancyPeering, other.isCrossTenancyPeering)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.peerAdvertisedCidr, other.peerAdvertisedCidr)
-                && java.util.Objects.equals(
-                        this.peerAdvertisedCidrDetails, other.peerAdvertisedCidrDetails)
                 && java.util.Objects.equals(this.peeringStatus, other.peeringStatus)
                 && java.util.Objects.equals(this.peeringStatusDetails, other.peeringStatusDetails)
-                && java.util.Objects.equals(this.peerId, other.peerId)
-                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && super.equals(other);
@@ -911,19 +756,12 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
                                 : this.peerAdvertisedCidr.hashCode());
         result =
                 (result * PRIME)
-                        + (this.peerAdvertisedCidrDetails == null
-                                ? 43
-                                : this.peerAdvertisedCidrDetails.hashCode());
-        result =
-                (result * PRIME)
                         + (this.peeringStatus == null ? 43 : this.peeringStatus.hashCode());
         result =
                 (result * PRIME)
                         + (this.peeringStatusDetails == null
                                 ? 43
                                 : this.peeringStatusDetails.hashCode());
-        result = (result * PRIME) + (this.peerId == null ? 43 : this.peerId.hashCode());
-        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + super.hashCode();

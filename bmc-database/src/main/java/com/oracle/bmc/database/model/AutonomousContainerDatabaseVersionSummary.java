@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * The supported Autonomous Database version.
+ * The supported Autonomous AI Database version.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -35,13 +35,13 @@ public final class AutonomousContainerDatabaseVersionSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A valid Oracle Database version for provisioning an Autonomous Container Database.
+         * A valid Oracle AI Database version for provisioning an Autonomous Container Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * A valid Oracle Database version for provisioning an Autonomous Container Database.
+         * A valid Oracle AI Database version for provisioning an Autonomous Container Database.
          * @param version the value to set
          * @return this builder
          **/
@@ -123,13 +123,13 @@ public final class AutonomousContainerDatabaseVersionSummary
     }
 
     /**
-     * A valid Oracle Database version for provisioning an Autonomous Container Database.
+     * A valid Oracle AI Database version for provisioning an Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * A valid Oracle Database version for provisioning an Autonomous Container Database.
+     * A valid Oracle AI Database version for provisioning an Autonomous Container Database.
      * @return the value
      **/
     public String getVersion() {

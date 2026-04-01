@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -33,13 +33,13 @@ public final class SaasAdminUserStatus extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates if the SaaS administrative user is enabled for the Autonomous Database.
+         * Indicates if the SaaS administrative user is enabled for the Autonomous AI Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Indicates if the SaaS administrative user is enabled for the Autonomous Database.
+         * Indicates if the SaaS administrative user is enabled for the Autonomous AI Database.
          * @param isEnabled the value to set
          * @return this builder
          **/
@@ -65,13 +65,13 @@ public final class SaasAdminUserStatus extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+         * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSaasAdminUserEnabled")
         private java.util.Date timeSaasAdminUserEnabled;
 
         /**
-         * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+         * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
          * @param timeSaasAdminUserEnabled the value to set
          * @return this builder
          **/
@@ -121,13 +121,13 @@ public final class SaasAdminUserStatus extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Indicates if the SaaS administrative user is enabled for the Autonomous Database.
+     * Indicates if the SaaS administrative user is enabled for the Autonomous AI Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Indicates if the SaaS administrative user is enabled for the Autonomous Database.
+     * Indicates if the SaaS administrative user is enabled for the Autonomous AI Database.
      * @return the value
      **/
     public Boolean getIsEnabled() {
@@ -198,13 +198,13 @@ public final class SaasAdminUserStatus extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSaasAdminUserEnabled")
     private final java.util.Date timeSaasAdminUserEnabled;
 
     /**
-     * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      * @return the value
      **/
     public java.util.Date getTimeSaasAdminUserEnabled() {

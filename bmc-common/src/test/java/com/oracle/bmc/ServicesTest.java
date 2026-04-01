@@ -1,9 +1,10 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc;
 
+import com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -94,5 +95,50 @@ public class ServicesTest {
         assertEquals(null, testService3.getServiceEndpointTemplateForRealmMap().get("oc1"));
         assertEquals(null, testService3.getServiceEndpointTemplateForRealmMap().get("oc3"));
         assertEquals(null, testService3.getServiceEndpointTemplateForRealmMap().get("oc6"));
+    }
+
+    @Test
+    public void multipleServicesWithRealmSpecificEndpoints() {
+        Boolean useOfRealmSpecificEndpointTemplateEnabledProgrammatically =
+                RealmSpecificEndpointTemplateUtils
+                        .getUseOfRealmSpecificEndpointTemplateEnabledProgrammatically();
+        try {
+            RealmSpecificEndpointTemplateUtils
+                    .setUseOfRealmSpecificEndpointTemplateEnabledProgrammatically(true);
+
+            Service s1 =
+                    Services.serviceBuilder()
+                            .serviceName("REALM_SPECIFIC1")
+                            .serviceEndpointPrefix("realm-specific1")
+                            .serviceEndpointTemplate("{region}.realm-specific1.oci.oraclecloud.com")
+                            .addServiceEndpointTemplateForRealm(
+                                    "oc1", "realm-specific1.{region}.oci.customer-oci.com")
+                            .build();
+
+            com.google.common /*Guava will be removed soon*/.base.Optional<String> endpoint1 =
+                    Region.US_PHOENIX_1.getEndpoint(s1);
+            assertEquals("realm-specific1.us-phoenix-1.oci.customer-oci.com", endpoint1.get());
+
+            Service s2 =
+                    Services.serviceBuilder()
+                            .serviceName("REALM_SPECIFIC2")
+                            .serviceEndpointPrefix("realm-specific2")
+                            .serviceEndpointTemplate("{region}.realm-specific2.oci.oraclecloud.com")
+                            .addServiceEndpointTemplateForRealm(
+                                    "oc1", "realm-specific2.{region}.oci.customer-oci.com")
+                            .build();
+
+            com.google.common /*Guava will be removed soon*/.base.Optional<String> endpoint2 =
+                    Region.US_PHOENIX_1.getEndpoint(s2);
+            assertEquals("realm-specific2.us-phoenix-1.oci.customer-oci.com", endpoint2.get());
+
+            com.google.common /*Guava will be removed soon*/.base.Optional<String> endpoint3 =
+                    Region.US_ASHBURN_1.getEndpoint(s1);
+            assertEquals("realm-specific1.us-ashburn-1.oci.customer-oci.com", endpoint3.get());
+        } finally {
+            RealmSpecificEndpointTemplateUtils
+                    .setUseOfRealmSpecificEndpointTemplateEnabledProgrammatically(
+                            useOfRealmSpecificEndpointTemplateEnabledProgrammatically);
+        }
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -39,6 +39,132 @@ public class ComputeWaiters {
         this.executorService = executorService;
         this.client = client;
         this.workRequestClient = workRequestClient;
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ApplyHostConfigurationRequest, ApplyHostConfigurationResponse>
+            forApplyHostConfiguration(ApplyHostConfigurationRequest request) {
+        return forApplyHostConfiguration(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ApplyHostConfigurationRequest, ApplyHostConfigurationResponse>
+            forApplyHostConfiguration(
+                    ApplyHostConfigurationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<ApplyHostConfigurationResponse>() {
+                    @Override
+                    public ApplyHostConfigurationResponse call() throws Exception {
+                        final ApplyHostConfigurationResponse response =
+                                client.applyHostConfiguration(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    AttachComputeHostGroupHostRequest, AttachComputeHostGroupHostResponse>
+            forAttachComputeHostGroupHost(AttachComputeHostGroupHostRequest request) {
+        return forAttachComputeHostGroupHost(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    AttachComputeHostGroupHostRequest, AttachComputeHostGroupHostResponse>
+            forAttachComputeHostGroupHost(
+                    AttachComputeHostGroupHostRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<AttachComputeHostGroupHostResponse>() {
+                    @Override
+                    public AttachComputeHostGroupHostResponse call() throws Exception {
+                        final AttachComputeHostGroupHostResponse response =
+                                client.attachComputeHostGroupHost(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
     }
 
     /**
@@ -218,6 +344,71 @@ public class ComputeWaiters {
                     public ChangeComputeHostCompartmentResponse call() throws Exception {
                         final ChangeComputeHostCompartmentResponse response =
                                 client.changeComputeHostCompartment(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ChangeComputeHostGroupCompartmentRequest,
+                    ChangeComputeHostGroupCompartmentResponse>
+            forChangeComputeHostGroupCompartment(ChangeComputeHostGroupCompartmentRequest request) {
+        return forChangeComputeHostGroupCompartment(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ChangeComputeHostGroupCompartmentRequest,
+                    ChangeComputeHostGroupCompartmentResponse>
+            forChangeComputeHostGroupCompartment(
+                    ChangeComputeHostGroupCompartmentRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<ChangeComputeHostGroupCompartmentResponse>() {
+                    @Override
+                    public ChangeComputeHostGroupCompartmentResponse call() throws Exception {
+                        final ChangeComputeHostGroupCompartmentResponse response =
+                                client.changeComputeHostGroupCompartment(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
@@ -537,6 +728,69 @@ public class ComputeWaiters {
                     public CreateComputeGpuMemoryClusterResponse call() throws Exception {
                         final CreateComputeGpuMemoryClusterResponse response =
                                 client.createComputeGpuMemoryCluster(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    CreateComputeHostGroupRequest, CreateComputeHostGroupResponse>
+            forCreateComputeHostGroup(CreateComputeHostGroupRequest request) {
+        return forCreateComputeHostGroup(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    CreateComputeHostGroupRequest, CreateComputeHostGroupResponse>
+            forCreateComputeHostGroup(
+                    CreateComputeHostGroupRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<CreateComputeHostGroupResponse>() {
+                    @Override
+                    public CreateComputeHostGroupResponse call() throws Exception {
+                        final CreateComputeHostGroupResponse response =
+                                client.createComputeHostGroup(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
@@ -909,6 +1163,69 @@ public class ComputeWaiters {
                     public DeleteDedicatedVmHostResponse call() throws Exception {
                         final DeleteDedicatedVmHostResponse response =
                                 client.deleteDedicatedVmHost(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DetachComputeHostGroupHostRequest, DetachComputeHostGroupHostResponse>
+            forDetachComputeHostGroupHost(DetachComputeHostGroupHostRequest request) {
+        return forDetachComputeHostGroupHost(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DetachComputeHostGroupHostRequest, DetachComputeHostGroupHostResponse>
+            forDetachComputeHostGroupHost(
+                    DetachComputeHostGroupHostRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<DetachComputeHostGroupHostResponse>() {
+                    @Override
+                    public DetachComputeHostGroupHostResponse call() throws Exception {
+                        final DetachComputeHostGroupHostResponse response =
+                                client.detachComputeHostGroupHost(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
@@ -1654,16 +1971,16 @@ public class ComputeWaiters {
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
-    public com.oracle.bmc.waiter.Waiter<GetComputeHostRequest, GetComputeHostResponse>
-            forComputeHost(
-                    GetComputeHostRequest request,
-                    com.oracle.bmc.core.model.ComputeHost.LifecycleState... targetStates) {
+    public com.oracle.bmc.waiter.Waiter<GetComputeHostGroupRequest, GetComputeHostGroupResponse>
+            forComputeHostGroup(
+                    GetComputeHostGroupRequest request,
+                    com.oracle.bmc.core.model.ComputeHostGroup.LifecycleState... targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
         com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
-        return forComputeHost(
+        return forComputeHostGroup(
                 com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
     }
 
@@ -1676,16 +1993,16 @@ public class ComputeWaiters {
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
-    public com.oracle.bmc.waiter.Waiter<GetComputeHostRequest, GetComputeHostResponse>
-            forComputeHost(
-                    GetComputeHostRequest request,
-                    com.oracle.bmc.core.model.ComputeHost.LifecycleState targetState,
+    public com.oracle.bmc.waiter.Waiter<GetComputeHostGroupRequest, GetComputeHostGroupResponse>
+            forComputeHostGroup(
+                    GetComputeHostGroupRequest request,
+                    com.oracle.bmc.core.model.ComputeHostGroup.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         com.oracle.bmc.util.internal.Validate.notNull(
                 targetState, "The targetState cannot be null");
 
-        return forComputeHost(
+        return forComputeHostGroup(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
                 request,
                 targetState);
@@ -1700,51 +2017,169 @@ public class ComputeWaiters {
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
-    public com.oracle.bmc.waiter.Waiter<GetComputeHostRequest, GetComputeHostResponse>
-            forComputeHost(
-                    GetComputeHostRequest request,
+    public com.oracle.bmc.waiter.Waiter<GetComputeHostGroupRequest, GetComputeHostGroupResponse>
+            forComputeHostGroup(
+                    GetComputeHostGroupRequest request,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
-                    com.oracle.bmc.core.model.ComputeHost.LifecycleState... targetStates) {
+                    com.oracle.bmc.core.model.ComputeHostGroup.LifecycleState... targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
         com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
-        return forComputeHost(
+        return forComputeHostGroup(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
                 request,
                 targetStates);
     }
 
-    // Helper method to create a new Waiter for ComputeHost.
-    private com.oracle.bmc.waiter.Waiter<GetComputeHostRequest, GetComputeHostResponse>
-            forComputeHost(
+    // Helper method to create a new Waiter for ComputeHostGroup.
+    private com.oracle.bmc.waiter.Waiter<GetComputeHostGroupRequest, GetComputeHostGroupResponse>
+            forComputeHostGroup(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
-                    final GetComputeHostRequest request,
-                    final com.oracle.bmc.core.model.ComputeHost.LifecycleState... targetStates) {
-        final java.util.Set<com.oracle.bmc.core.model.ComputeHost.LifecycleState> targetStatesSet =
-                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+                    final GetComputeHostGroupRequest request,
+                    final com.oracle.bmc.core.model.ComputeHostGroup.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.core.model.ComputeHostGroup.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
 
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
                         () -> request,
                         new java.util.function.Function<
-                                GetComputeHostRequest, GetComputeHostResponse>() {
+                                GetComputeHostGroupRequest, GetComputeHostGroupResponse>() {
                             @Override
-                            public GetComputeHostResponse apply(GetComputeHostRequest request) {
-                                return client.getComputeHost(request);
+                            public GetComputeHostGroupResponse apply(
+                                    GetComputeHostGroupRequest request) {
+                                return client.getComputeHostGroup(request);
                             }
                         },
-                        new java.util.function.Predicate<GetComputeHostResponse>() {
+                        new java.util.function.Predicate<GetComputeHostGroupResponse>() {
                             @Override
-                            public boolean test(GetComputeHostResponse response) {
+                            public boolean test(GetComputeHostGroupResponse response) {
                                 return targetStatesSet.contains(
-                                        response.getComputeHost().getLifecycleState());
+                                        response.getComputeHostGroup().getLifecycleState());
                             }
                         },
-                        false),
+                        targetStatesSet.contains(
+                                com.oracle.bmc.core.model.ComputeHostGroup.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetComputeImageCapabilitySchemaRequest, GetComputeImageCapabilitySchemaResponse>
+            forComputeImageCapabilitySchema(
+                    GetComputeImageCapabilitySchemaRequest request,
+                    com.oracle.bmc.core.model.ComputeImageCapabilitySchema.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forComputeImageCapabilitySchema(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetComputeImageCapabilitySchemaRequest, GetComputeImageCapabilitySchemaResponse>
+            forComputeImageCapabilitySchema(
+                    GetComputeImageCapabilitySchemaRequest request,
+                    com.oracle.bmc.core.model.ComputeImageCapabilitySchema.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forComputeImageCapabilitySchema(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetComputeImageCapabilitySchemaRequest, GetComputeImageCapabilitySchemaResponse>
+            forComputeImageCapabilitySchema(
+                    GetComputeImageCapabilitySchemaRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.core.model.ComputeImageCapabilitySchema.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forComputeImageCapabilitySchema(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for ComputeImageCapabilitySchema.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetComputeImageCapabilitySchemaRequest, GetComputeImageCapabilitySchemaResponse>
+            forComputeImageCapabilitySchema(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetComputeImageCapabilitySchemaRequest request,
+                    final com.oracle.bmc.core.model.ComputeImageCapabilitySchema.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.core.model.ComputeImageCapabilitySchema.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetComputeImageCapabilitySchemaRequest,
+                                GetComputeImageCapabilitySchemaResponse>() {
+                            @Override
+                            public GetComputeImageCapabilitySchemaResponse apply(
+                                    GetComputeImageCapabilitySchemaRequest request) {
+                                return client.getComputeImageCapabilitySchema(request);
+                            }
+                        },
+                        new java.util.function.Predicate<
+                                GetComputeImageCapabilitySchemaResponse>() {
+                            @Override
+                            public boolean test(GetComputeImageCapabilitySchemaResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getComputeImageCapabilitySchema()
+                                                .getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.core.model.ComputeImageCapabilitySchema
+                                        .LifecycleState.Deleted)),
                 request);
     }
 
@@ -1951,6 +2386,108 @@ public class ComputeWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.core.model.DedicatedVmHost.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetFirmwareBundleRequest, GetFirmwareBundleResponse>
+            forFirmwareBundle(
+                    GetFirmwareBundleRequest request,
+                    com.oracle.bmc.core.model.FirmwareBundle.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forFirmwareBundle(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetFirmwareBundleRequest, GetFirmwareBundleResponse>
+            forFirmwareBundle(
+                    GetFirmwareBundleRequest request,
+                    com.oracle.bmc.core.model.FirmwareBundle.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forFirmwareBundle(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetFirmwareBundleRequest, GetFirmwareBundleResponse>
+            forFirmwareBundle(
+                    GetFirmwareBundleRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.core.model.FirmwareBundle.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forFirmwareBundle(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for FirmwareBundle.
+    private com.oracle.bmc.waiter.Waiter<GetFirmwareBundleRequest, GetFirmwareBundleResponse>
+            forFirmwareBundle(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetFirmwareBundleRequest request,
+                    final com.oracle.bmc.core.model.FirmwareBundle.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.core.model.FirmwareBundle.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetFirmwareBundleRequest, GetFirmwareBundleResponse>() {
+                            @Override
+                            public GetFirmwareBundleResponse apply(
+                                    GetFirmwareBundleRequest request) {
+                                return client.getFirmwareBundle(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetFirmwareBundleResponse>() {
+                            @Override
+                            public boolean test(GetFirmwareBundleResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getFirmwareBundle().getLifecycleState());
+                            }
+                        },
+                        false),
                 request);
     }
 
@@ -2833,9 +3370,10 @@ public class ComputeWaiters {
      * @param request the request to send
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
-    public com.oracle.bmc.waiter.Waiter<UpdateComputeHostRequest, UpdateComputeHostResponse>
-            forUpdateComputeHost(UpdateComputeHostRequest request) {
-        return forUpdateComputeHost(
+    public com.oracle.bmc.waiter.Waiter<
+                    UpdateComputeHostGroupRequest, UpdateComputeHostGroupResponse>
+            forUpdateComputeHostGroup(UpdateComputeHostGroupRequest request) {
+        return forUpdateComputeHostGroup(
                 request,
                 com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
                 com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
@@ -2849,9 +3387,10 @@ public class ComputeWaiters {
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
-    public com.oracle.bmc.waiter.Waiter<UpdateComputeHostRequest, UpdateComputeHostResponse>
-            forUpdateComputeHost(
-                    UpdateComputeHostRequest request,
+    public com.oracle.bmc.waiter.Waiter<
+                    UpdateComputeHostGroupRequest, UpdateComputeHostGroupResponse>
+            forUpdateComputeHostGroup(
+                    UpdateComputeHostGroupRequest request,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         if (workRequestClient == null) {
@@ -2861,11 +3400,72 @@ public class ComputeWaiters {
 
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
-                new java.util.concurrent.Callable<UpdateComputeHostResponse>() {
+                new java.util.concurrent.Callable<UpdateComputeHostGroupResponse>() {
                     @Override
-                    public UpdateComputeHostResponse call() throws Exception {
-                        final UpdateComputeHostResponse response =
-                                client.updateComputeHost(request);
+                    public UpdateComputeHostGroupResponse call() throws Exception {
+                        final UpdateComputeHostGroupResponse response =
+                                client.updateComputeHostGroup(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<UpdateComputeHostsRequest, UpdateComputeHostsResponse>
+            forUpdateComputeHosts(UpdateComputeHostsRequest request) {
+        return forUpdateComputeHosts(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<UpdateComputeHostsRequest, UpdateComputeHostsResponse>
+            forUpdateComputeHosts(
+                    UpdateComputeHostsRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<UpdateComputeHostsResponse>() {
+                    @Override
+                    public UpdateComputeHostsResponse call() throws Exception {
+                        final UpdateComputeHostsResponse response =
+                                client.updateComputeHosts(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest

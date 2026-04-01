@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -11,18 +11,18 @@ import com.oracle.bmc.database.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateAutonomousContainerDatabaseRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails> {
+                com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase> {
 
     /**
      * Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.
      */
-    private com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails
+    private com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase
             createAutonomousContainerDatabaseDetails;
 
     /**
      * Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.
      */
-    public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails
+    public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase
             getCreateAutonomousContainerDatabaseDetails() {
         return createAutonomousContainerDatabaseDetails;
     }
@@ -54,14 +54,14 @@ public class CreateAutonomousContainerDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase getBody$() {
         return createAutonomousContainerDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateAutonomousContainerDatabaseRequest,
-                    com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails> {
+                    com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -69,7 +69,7 @@ public class CreateAutonomousContainerDatabaseRequest
         /**
          * Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.
          */
-        private com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails
+        private com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase
                 createAutonomousContainerDatabaseDetails = null;
 
         /**
@@ -78,7 +78,7 @@ public class CreateAutonomousContainerDatabaseRequest
          * @return this builder instance
          */
         public Builder createAutonomousContainerDatabaseDetails(
-                com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails
+                com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase
                         createAutonomousContainerDatabaseDetails) {
             this.createAutonomousContainerDatabaseDetails =
                     createAutonomousContainerDatabaseDetails;
@@ -170,7 +170,7 @@ public class CreateAutonomousContainerDatabaseRequest
          */
         @com.oracle.bmc.InternalSdk
         public Builder body$(
-                com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails body) {
+                com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseBase body) {
             createAutonomousContainerDatabaseDetails(body);
             return this;
         }

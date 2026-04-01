@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -26,18 +26,21 @@ public final class UpdateBdsMetastoreConfigurationDetails
         "displayName",
         "bdsApiKeyId",
         "bdsApiKeyPassphrase",
-        "clusterAdminPassword"
+        "clusterAdminPassword",
+        "secretId"
     })
     public UpdateBdsMetastoreConfigurationDetails(
             String displayName,
             String bdsApiKeyId,
             String bdsApiKeyPassphrase,
-            String clusterAdminPassword) {
+            String clusterAdminPassword,
+            String secretId) {
         super();
         this.displayName = displayName;
         this.bdsApiKeyId = bdsApiKeyId;
         this.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -106,6 +109,22 @@ public final class UpdateBdsMetastoreConfigurationDetails
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
+        /**
+         * The secretId for the clusterAdminPassword.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         * @param secretId the value to set
+         * @return this builder
+         **/
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -116,7 +135,8 @@ public final class UpdateBdsMetastoreConfigurationDetails
                             this.displayName,
                             this.bdsApiKeyId,
                             this.bdsApiKeyPassphrase,
-                            this.clusterAdminPassword);
+                            this.clusterAdminPassword,
+                            this.secretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -136,6 +156,9 @@ public final class UpdateBdsMetastoreConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             return this;
         }
@@ -208,6 +231,20 @@ public final class UpdateBdsMetastoreConfigurationDetails
         return clusterAdminPassword;
     }
 
+    /**
+     * The secretId for the clusterAdminPassword.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     * @return the value
+     **/
+    public String getSecretId() {
+        return secretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -226,6 +263,7 @@ public final class UpdateBdsMetastoreConfigurationDetails
         sb.append(", bdsApiKeyId=").append(String.valueOf(this.bdsApiKeyId));
         sb.append(", bdsApiKeyPassphrase=").append("<redacted>");
         sb.append(", clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(")");
         return sb.toString();
     }
@@ -244,6 +282,7 @@ public final class UpdateBdsMetastoreConfigurationDetails
                 && java.util.Objects.equals(this.bdsApiKeyId, other.bdsApiKeyId)
                 && java.util.Objects.equals(this.bdsApiKeyPassphrase, other.bdsApiKeyPassphrase)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && super.equals(other);
     }
 
@@ -263,6 +302,7 @@ public final class UpdateBdsMetastoreConfigurationDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

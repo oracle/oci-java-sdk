@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -199,6 +199,34 @@ public final class MicrosoftSqlserverConnection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The Microsoft SQL Server technology type.
          **/
@@ -326,7 +354,7 @@ public final class MicrosoftSqlserverConnection extends Connection {
             return this;
         }
         /**
-         * Database Certificate - The base64 encoded content of a .pem or .crt file.
+         * Database Certificate - The base64 encoded content of a .pem or .crt file
          * containing the server public key (for 1-way SSL).
          *
          **/
@@ -334,7 +362,7 @@ public final class MicrosoftSqlserverConnection extends Connection {
         private String sslCa;
 
         /**
-         * Database Certificate - The base64 encoded content of a .pem or .crt file.
+         * Database Certificate - The base64 encoded content of a .pem or .crt file
          * containing the server public key (for 1-way SSL).
          *
          * @param sslCa the value to set
@@ -441,6 +469,9 @@ public final class MicrosoftSqlserverConnection extends Connection {
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.username,
                             this.host,
@@ -517,6 +548,15 @@ public final class MicrosoftSqlserverConnection extends Connection {
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -586,6 +626,9 @@ public final class MicrosoftSqlserverConnection extends Connection {
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             TechnologyType technologyType,
             String username,
             String host,
@@ -616,7 +659,10 @@ public final class MicrosoftSqlserverConnection extends Connection {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.username = username;
         this.host = host;
@@ -842,7 +888,7 @@ public final class MicrosoftSqlserverConnection extends Connection {
     }
 
     /**
-     * Database Certificate - The base64 encoded content of a .pem or .crt file.
+     * Database Certificate - The base64 encoded content of a .pem or .crt file
      * containing the server public key (for 1-way SSL).
      *
      **/
@@ -850,7 +896,7 @@ public final class MicrosoftSqlserverConnection extends Connection {
     private final String sslCa;
 
     /**
-     * Database Certificate - The base64 encoded content of a .pem or .crt file.
+     * Database Certificate - The base64 encoded content of a .pem or .crt file
      * containing the server public key (for 1-way SSL).
      *
      * @return the value

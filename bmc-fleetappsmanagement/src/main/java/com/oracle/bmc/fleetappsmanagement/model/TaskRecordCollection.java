@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Results of a taskRecord search. Contains boh TaskRecordSummary items and other information, such as metadata.
+ * Results of a task record search. Contains boh TaskRecordSummary items and other information, such as metadata.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TaskRecordCollection.Builder.class
 )
@@ -30,13 +30,13 @@ public final class TaskRecordCollection extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of taskRecords.
+         * List of task records.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TaskRecordSummary> items;
 
         /**
-         * List of taskRecords.
+         * List of task records.
          * @param items the value to set
          * @return this builder
          **/
@@ -78,13 +78,13 @@ public final class TaskRecordCollection extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * List of taskRecords.
+     * List of task records.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TaskRecordSummary> items;
 
     /**
-     * List of taskRecords.
+     * List of task records.
      * @return the value
      **/
     public java.util.List<TaskRecordSummary> getItems() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -121,6 +121,76 @@ public class ListSensitiveColumnsRequest
     public com.oracle.bmc.datasafe.model.SensitiveColumnLifecycleState
             getSensitiveColumnLifecycleState() {
         return sensitiveColumnLifecycleState;
+    }
+    /**
+     * Filters the sensitive columns with respect to the estimated row count.
+     *
+     */
+    private ColumnDataCountFilter columnDataCountFilter;
+
+    /**
+     * Filters the sensitive columns with respect to the estimated row count.
+     *
+     **/
+    public enum ColumnDataCountFilter {
+        ShowAllColumns("SHOW_ALL_COLUMNS"),
+        ShowColumnsWithData("SHOW_COLUMNS_WITH_DATA"),
+        ShowColumnsWithoutData("SHOW_COLUMNS_WITHOUT_DATA"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ColumnDataCountFilter> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ColumnDataCountFilter v : ColumnDataCountFilter.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ColumnDataCountFilter(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ColumnDataCountFilter create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ColumnDataCountFilter: " + key);
+        }
+    };
+
+    /**
+     * Filters the sensitive columns with respect to the estimated row count.
+     *
+     */
+    public ColumnDataCountFilter getColumnDataCountFilter() {
+        return columnDataCountFilter;
+    }
+    /**
+     * A filter to return the sensitive columns with the specified confidence level.
+     * Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW.
+     * While the confidence level of sensitive column associated with a user defined sensitive will be NONE.
+     * For sensitive columns added manually the confidence level will also be NONE.
+     *
+     */
+    private java.util.List<com.oracle.bmc.datasafe.model.ConfidenceLevelEnum> confidenceLevel;
+
+    /**
+     * A filter to return the sensitive columns with the specified confidence level.
+     * Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW.
+     * While the confidence level of sensitive column associated with a user defined sensitive will be NONE.
+     * For sensitive columns added manually the confidence level will also be NONE.
+     *
+     */
+    public java.util.List<com.oracle.bmc.datasafe.model.ConfidenceLevelEnum> getConfidenceLevel() {
+        return confidenceLevel;
     }
     /**
      * A filter to return only items related to specific schema name.
@@ -444,6 +514,7 @@ public class ListSensitiveColumnsRequest
         ObjectName("objectName"),
         ColumnName("columnName"),
         DataType("dataType"),
+        ConfidenceLevel("confidenceLevel"),
         ;
 
         private final String value;
@@ -651,6 +722,61 @@ public class ListSensitiveColumnsRequest
                         sensitiveColumnLifecycleState) {
             this.sensitiveColumnLifecycleState = sensitiveColumnLifecycleState;
             return this;
+        }
+
+        /**
+         * Filters the sensitive columns with respect to the estimated row count.
+         *
+         */
+        private ColumnDataCountFilter columnDataCountFilter = null;
+
+        /**
+         * Filters the sensitive columns with respect to the estimated row count.
+         *
+         * @param columnDataCountFilter the value to set
+         * @return this builder instance
+         */
+        public Builder columnDataCountFilter(ColumnDataCountFilter columnDataCountFilter) {
+            this.columnDataCountFilter = columnDataCountFilter;
+            return this;
+        }
+
+        /**
+         * A filter to return the sensitive columns with the specified confidence level.
+         * Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW.
+         * While the confidence level of sensitive column associated with a user defined sensitive will be NONE.
+         * For sensitive columns added manually the confidence level will also be NONE.
+         *
+         */
+        private java.util.List<com.oracle.bmc.datasafe.model.ConfidenceLevelEnum> confidenceLevel =
+                null;
+
+        /**
+         * A filter to return the sensitive columns with the specified confidence level.
+         * Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW.
+         * While the confidence level of sensitive column associated with a user defined sensitive will be NONE.
+         * For sensitive columns added manually the confidence level will also be NONE.
+         *
+         * @param confidenceLevel the value to set
+         * @return this builder instance
+         */
+        public Builder confidenceLevel(
+                java.util.List<com.oracle.bmc.datasafe.model.ConfidenceLevelEnum> confidenceLevel) {
+            this.confidenceLevel = confidenceLevel;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return the sensitive columns with the specified confidence level.
+         * Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW.
+         * While the confidence level of sensitive column associated with a user defined sensitive will be NONE.
+         * For sensitive columns added manually the confidence level will also be NONE.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder confidenceLevel(ConfidenceLevelEnum singularValue) {
+            return this.confidenceLevel(java.util.Arrays.asList(singularValue));
         }
 
         /**
@@ -1031,6 +1157,8 @@ public class ListSensitiveColumnsRequest
             timeUpdatedGreaterThanOrEqualTo(o.getTimeUpdatedGreaterThanOrEqualTo());
             timeUpdatedLessThan(o.getTimeUpdatedLessThan());
             sensitiveColumnLifecycleState(o.getSensitiveColumnLifecycleState());
+            columnDataCountFilter(o.getColumnDataCountFilter());
+            confidenceLevel(o.getConfidenceLevel());
             schemaName(o.getSchemaName());
             objectName(o.getObjectName());
             columnName(o.getColumnName());
@@ -1085,6 +1213,8 @@ public class ListSensitiveColumnsRequest
             request.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
             request.timeUpdatedLessThan = timeUpdatedLessThan;
             request.sensitiveColumnLifecycleState = sensitiveColumnLifecycleState;
+            request.columnDataCountFilter = columnDataCountFilter;
+            request.confidenceLevel = confidenceLevel;
             request.schemaName = schemaName;
             request.objectName = objectName;
             request.columnName = columnName;
@@ -1102,7 +1232,7 @@ public class ListSensitiveColumnsRequest
             request.opcRequestId = opcRequestId;
             request.isCaseInSensitive = isCaseInSensitive;
             return request;
-            // new ListSensitiveColumnsRequest(sensitiveDataModelId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, timeUpdatedGreaterThanOrEqualTo, timeUpdatedLessThan, sensitiveColumnLifecycleState, schemaName, objectName, columnName, objectType, dataType, status, sensitiveTypeId, parentColumnKey, relationType, columnGroup, limit, page, sortOrder, sortBy, opcRequestId, isCaseInSensitive);
+            // new ListSensitiveColumnsRequest(sensitiveDataModelId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, timeUpdatedGreaterThanOrEqualTo, timeUpdatedLessThan, sensitiveColumnLifecycleState, columnDataCountFilter, confidenceLevel, schemaName, objectName, columnName, objectType, dataType, status, sensitiveTypeId, parentColumnKey, relationType, columnGroup, limit, page, sortOrder, sortBy, opcRequestId, isCaseInSensitive);
         }
     }
 
@@ -1118,6 +1248,8 @@ public class ListSensitiveColumnsRequest
                 .timeUpdatedGreaterThanOrEqualTo(timeUpdatedGreaterThanOrEqualTo)
                 .timeUpdatedLessThan(timeUpdatedLessThan)
                 .sensitiveColumnLifecycleState(sensitiveColumnLifecycleState)
+                .columnDataCountFilter(columnDataCountFilter)
+                .confidenceLevel(confidenceLevel)
                 .schemaName(schemaName)
                 .objectName(objectName)
                 .columnName(columnName)
@@ -1158,6 +1290,8 @@ public class ListSensitiveColumnsRequest
         sb.append(",timeUpdatedLessThan=").append(String.valueOf(this.timeUpdatedLessThan));
         sb.append(",sensitiveColumnLifecycleState=")
                 .append(String.valueOf(this.sensitiveColumnLifecycleState));
+        sb.append(",columnDataCountFilter=").append(String.valueOf(this.columnDataCountFilter));
+        sb.append(",confidenceLevel=").append(String.valueOf(this.confidenceLevel));
         sb.append(",schemaName=").append(String.valueOf(this.schemaName));
         sb.append(",objectName=").append(String.valueOf(this.objectName));
         sb.append(",columnName=").append(String.valueOf(this.columnName));
@@ -1198,6 +1332,8 @@ public class ListSensitiveColumnsRequest
                 && java.util.Objects.equals(this.timeUpdatedLessThan, other.timeUpdatedLessThan)
                 && java.util.Objects.equals(
                         this.sensitiveColumnLifecycleState, other.sensitiveColumnLifecycleState)
+                && java.util.Objects.equals(this.columnDataCountFilter, other.columnDataCountFilter)
+                && java.util.Objects.equals(this.confidenceLevel, other.confidenceLevel)
                 && java.util.Objects.equals(this.schemaName, other.schemaName)
                 && java.util.Objects.equals(this.objectName, other.objectName)
                 && java.util.Objects.equals(this.columnName, other.columnName)
@@ -1250,6 +1386,14 @@ public class ListSensitiveColumnsRequest
                         + (this.sensitiveColumnLifecycleState == null
                                 ? 43
                                 : this.sensitiveColumnLifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.columnDataCountFilter == null
+                                ? 43
+                                : this.columnDataCountFilter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.confidenceLevel == null ? 43 : this.confidenceLevel.hashCode());
         result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
         result = (result * PRIME) + (this.columnName == null ? 43 : this.columnName.hashCode());

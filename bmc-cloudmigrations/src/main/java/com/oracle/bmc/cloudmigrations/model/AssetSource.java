@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudmigrations.model;
@@ -25,7 +25,12 @@ package com.oracle.bmc.cloudmigrations.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = VmWareAssetSource.class,
         name = "VMWARE"
-    )
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OlvmAssetSource.class,
+        name = "OLVM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AwsAssetSource.class, name = "AWS")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AssetSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -44,7 +49,8 @@ public class AssetSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "timeUpdated",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "environmentType"
     })
     protected AssetSource(
             String id,
@@ -60,7 +66,8 @@ public class AssetSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            EnvironmentType environmentType) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -76,6 +83,7 @@ public class AssetSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.environmentType = environmentType;
     }
 
     /**
@@ -290,6 +298,20 @@ public class AssetSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return systemTags;
     }
 
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+    private final EnvironmentType environmentType;
+
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * @return the value
+     **/
+    public EnvironmentType getEnvironmentType() {
+        return environmentType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -318,6 +340,7 @@ public class AssetSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(")");
         return sb.toString();
     }
@@ -346,6 +369,7 @@ public class AssetSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && super.equals(other);
     }
 
@@ -383,6 +407,9 @@ public class AssetSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentType == null ? 43 : this.environmentType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

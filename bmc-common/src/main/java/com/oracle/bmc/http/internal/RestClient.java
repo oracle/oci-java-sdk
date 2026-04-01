@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
@@ -45,9 +45,11 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
@@ -80,6 +82,8 @@ public class RestClient implements AutoCloseable {
 
     private String requestUri;
     private final AtomicBoolean closedClient;
+    private String encodedEndpoint = null;
+    private Map<String, Boolean> optionsMap = new HashMap<>();
 
     /**
      * Create a new client that uses a provided client to make all its requests.
@@ -154,6 +158,33 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("endpoint is marked non-null but is null");
         }
         this.baseTarget = new WrappedWebTarget(client.target(endpoint));
+        try {
+            encodedEndpoint = URLEncoder.encode(endpoint, StandardCharsets.UTF_8.name());
+        } catch (UnsupportedEncodingException e) {
+            LOG.debug("Cannot encode the endpoint.");
+        }
+    }
+
+    /**
+     * Gets the endpoint that this client should talk to.
+     *
+     * @return endpoint
+     */
+    public String getEndpoint() {
+        String endpoint = null;
+        if (encodedEndpoint != null) {
+            try {
+                endpoint = URLDecoder.decode(encodedEndpoint, StandardCharsets.UTF_8.name());
+            } catch (UnsupportedEncodingException e) {
+                LOG.debug("Cannot decode the endpoint ", e);
+            }
+        } else {
+            java.net.URI uri = this.baseTarget.getUri();
+            if (uri != null) {
+                endpoint = uri.toString();
+            }
+        }
+        return endpoint;
     }
 
     public Client getClient() {
@@ -1525,6 +1556,14 @@ public class RestClient implements AutoCloseable {
         }
 
         return new InvocationInformation(requestId, ib.getHeaders());
+    }
+
+    public Map<String, Boolean> getOptionsMap() {
+        return optionsMap;
+    }
+
+    public void setOptionsMap(Map<String, Boolean> optionsMap) {
+        this.optionsMap = optionsMap;
     }
 
     public static String generateRequestId() {

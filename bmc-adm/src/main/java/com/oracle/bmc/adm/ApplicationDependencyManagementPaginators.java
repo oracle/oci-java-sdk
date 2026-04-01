@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm;
@@ -746,6 +746,119 @@ public class ApplicationDependencyManagementPaginators {
                     public java.util.List<com.oracle.bmc.adm.model.RemediationRunStageSummary>
                             apply(ListStagesResponse response) {
                         return response.getRemediationRunStageCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listVulnerabilities operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListVulnerabilitiesResponse> listVulnerabilitiesResponseIterator(
+            final ListVulnerabilitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVulnerabilitiesRequest.Builder, ListVulnerabilitiesRequest,
+                ListVulnerabilitiesResponse>(
+                new java.util.function.Supplier<ListVulnerabilitiesRequest.Builder>() {
+                    @Override
+                    public ListVulnerabilitiesRequest.Builder get() {
+                        return ListVulnerabilitiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVulnerabilitiesResponse, String>() {
+                    @Override
+                    public String apply(ListVulnerabilitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVulnerabilitiesRequest.Builder>,
+                        ListVulnerabilitiesRequest>() {
+                    @Override
+                    public ListVulnerabilitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVulnerabilitiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVulnerabilitiesRequest, ListVulnerabilitiesResponse>() {
+                    @Override
+                    public ListVulnerabilitiesResponse apply(ListVulnerabilitiesRequest request) {
+                        return client.listVulnerabilities(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.adm.model.VulnerabilityDetails} objects
+     * contained in responses from the listVulnerabilities operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.adm.model.VulnerabilityDetails} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.adm.model.VulnerabilityDetails>
+            listVulnerabilitiesRecordIterator(final ListVulnerabilitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVulnerabilitiesRequest.Builder, ListVulnerabilitiesRequest,
+                ListVulnerabilitiesResponse, com.oracle.bmc.adm.model.VulnerabilityDetails>(
+                new java.util.function.Supplier<ListVulnerabilitiesRequest.Builder>() {
+                    @Override
+                    public ListVulnerabilitiesRequest.Builder get() {
+                        return ListVulnerabilitiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVulnerabilitiesResponse, String>() {
+                    @Override
+                    public String apply(ListVulnerabilitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVulnerabilitiesRequest.Builder>,
+                        ListVulnerabilitiesRequest>() {
+                    @Override
+                    public ListVulnerabilitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVulnerabilitiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVulnerabilitiesRequest, ListVulnerabilitiesResponse>() {
+                    @Override
+                    public ListVulnerabilitiesResponse apply(ListVulnerabilitiesRequest request) {
+                        return client.listVulnerabilities(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVulnerabilitiesResponse,
+                        java.util.List<com.oracle.bmc.adm.model.VulnerabilityDetails>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.adm.model.VulnerabilityDetails> apply(
+                            ListVulnerabilitiesResponse response) {
+                        return response.getVulnerabilityDetailsCollection().getItems();
                     }
                 });
     }

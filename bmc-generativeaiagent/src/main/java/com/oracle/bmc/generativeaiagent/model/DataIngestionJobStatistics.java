@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent.model;
@@ -26,13 +26,18 @@ public final class DataIngestionJobStatistics
     @java.beans.ConstructorProperties({
         "numberOfFailedFiles",
         "numberOfIngestedFiles",
+        "numberOfIgnoredFiles",
         "durationInSeconds"
     })
     public DataIngestionJobStatistics(
-            Integer numberOfFailedFiles, Integer numberOfIngestedFiles, Integer durationInSeconds) {
+            Integer numberOfFailedFiles,
+            Integer numberOfIngestedFiles,
+            Integer numberOfIgnoredFiles,
+            Integer durationInSeconds) {
         super();
         this.numberOfFailedFiles = numberOfFailedFiles;
         this.numberOfIngestedFiles = numberOfIngestedFiles;
+        this.numberOfIgnoredFiles = numberOfIgnoredFiles;
         this.durationInSeconds = durationInSeconds;
     }
 
@@ -71,6 +76,22 @@ public final class DataIngestionJobStatistics
             return this;
         }
         /**
+         * The number of files that have been ignored during the ingestion.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("numberOfIgnoredFiles")
+        private Integer numberOfIgnoredFiles;
+
+        /**
+         * The number of files that have been ignored during the ingestion.
+         * @param numberOfIgnoredFiles the value to set
+         * @return this builder
+         **/
+        public Builder numberOfIgnoredFiles(Integer numberOfIgnoredFiles) {
+            this.numberOfIgnoredFiles = numberOfIgnoredFiles;
+            this.__explicitlySet__.add("numberOfIgnoredFiles");
+            return this;
+        }
+        /**
          * The duration of this ingestion job.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("durationInSeconds")
@@ -95,6 +116,7 @@ public final class DataIngestionJobStatistics
                     new DataIngestionJobStatistics(
                             this.numberOfFailedFiles,
                             this.numberOfIngestedFiles,
+                            this.numberOfIgnoredFiles,
                             this.durationInSeconds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -109,6 +131,9 @@ public final class DataIngestionJobStatistics
             }
             if (model.wasPropertyExplicitlySet("numberOfIngestedFiles")) {
                 this.numberOfIngestedFiles(model.getNumberOfIngestedFiles());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfIgnoredFiles")) {
+                this.numberOfIgnoredFiles(model.getNumberOfIgnoredFiles());
             }
             if (model.wasPropertyExplicitlySet("durationInSeconds")) {
                 this.durationInSeconds(model.getDurationInSeconds());
@@ -157,6 +182,20 @@ public final class DataIngestionJobStatistics
     }
 
     /**
+     * The number of files that have been ignored during the ingestion.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("numberOfIgnoredFiles")
+    private final Integer numberOfIgnoredFiles;
+
+    /**
+     * The number of files that have been ignored during the ingestion.
+     * @return the value
+     **/
+    public Integer getNumberOfIgnoredFiles() {
+        return numberOfIgnoredFiles;
+    }
+
+    /**
      * The duration of this ingestion job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("durationInSeconds")
@@ -186,6 +225,7 @@ public final class DataIngestionJobStatistics
         sb.append("super=").append(super.toString());
         sb.append("numberOfFailedFiles=").append(String.valueOf(this.numberOfFailedFiles));
         sb.append(", numberOfIngestedFiles=").append(String.valueOf(this.numberOfIngestedFiles));
+        sb.append(", numberOfIgnoredFiles=").append(String.valueOf(this.numberOfIgnoredFiles));
         sb.append(", durationInSeconds=").append(String.valueOf(this.durationInSeconds));
         sb.append(")");
         return sb.toString();
@@ -203,6 +243,7 @@ public final class DataIngestionJobStatistics
         DataIngestionJobStatistics other = (DataIngestionJobStatistics) o;
         return java.util.Objects.equals(this.numberOfFailedFiles, other.numberOfFailedFiles)
                 && java.util.Objects.equals(this.numberOfIngestedFiles, other.numberOfIngestedFiles)
+                && java.util.Objects.equals(this.numberOfIgnoredFiles, other.numberOfIgnoredFiles)
                 && java.util.Objects.equals(this.durationInSeconds, other.durationInSeconds)
                 && super.equals(other);
     }
@@ -221,6 +262,11 @@ public final class DataIngestionJobStatistics
                         + (this.numberOfIngestedFiles == null
                                 ? 43
                                 : this.numberOfIngestedFiles.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfIgnoredFiles == null
+                                ? 43
+                                : this.numberOfIgnoredFiles.hashCode());
         result =
                 (result * PRIME)
                         + (this.durationInSeconds == null ? 43 : this.durationInSeconds.hashCode());

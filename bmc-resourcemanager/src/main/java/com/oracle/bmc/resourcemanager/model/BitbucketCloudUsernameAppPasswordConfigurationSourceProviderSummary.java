@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager.model;
@@ -112,6 +112,15 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProviderS
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /**
          * The Bitbucket cloud service endpoint.
          * Example: {@code https://bitbucket.org/}
@@ -148,6 +157,7 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProviderS
                             this.privateServerConfigDetails,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.apiEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -185,6 +195,9 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProviderS
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("apiEndpoint")) {
                 this.apiEndpoint(model.getApiEndpoint());
             }
@@ -214,6 +227,7 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProviderS
             PrivateServerConfigDetails privateServerConfigDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String apiEndpoint) {
         super(
                 id,
@@ -224,7 +238,8 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProviderS
                 lifecycleState,
                 privateServerConfigDetails,
                 freeformTags,
-                definedTags);
+                definedTags,
+                systemTags);
         this.apiEndpoint = apiEndpoint;
     }
 

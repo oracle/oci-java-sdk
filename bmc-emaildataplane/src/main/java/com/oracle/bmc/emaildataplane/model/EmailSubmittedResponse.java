@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.emaildataplane.model;
@@ -36,7 +36,7 @@ public final class EmailSubmittedResponse
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique ID for the email's Message-ID header used for service log correlation. The submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This will be generated if not provided.
+         * The unique ID for the email's Message-ID header used for service log correlation.
          * Example: sdiofu234qwermls24fd@mail.example.com
          *
          **/
@@ -44,7 +44,7 @@ public final class EmailSubmittedResponse
         private String messageId;
 
         /**
-         * The unique ID for the email's Message-ID header used for service log correlation. The submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This will be generated if not provided.
+         * The unique ID for the email's Message-ID header used for service log correlation.
          * Example: sdiofu234qwermls24fd@mail.example.com
          *
          * @param messageId the value to set
@@ -128,7 +128,7 @@ public final class EmailSubmittedResponse
     }
 
     /**
-     * The unique ID for the email's Message-ID header used for service log correlation. The submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This will be generated if not provided.
+     * The unique ID for the email's Message-ID header used for service log correlation.
      * Example: sdiofu234qwermls24fd@mail.example.com
      *
      **/
@@ -136,7 +136,7 @@ public final class EmailSubmittedResponse
     private final String messageId;
 
     /**
-     * The unique ID for the email's Message-ID header used for service log correlation. The submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This will be generated if not provided.
+     * The unique ID for the email's Message-ID header used for service log correlation.
      * Example: sdiofu234qwermls24fd@mail.example.com
      *
      * @return the value

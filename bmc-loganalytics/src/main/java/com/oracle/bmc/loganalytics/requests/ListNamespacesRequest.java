@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -32,6 +32,19 @@ public class ListNamespacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * if true, the request is from compartment delete service.
+     *
+     */
+    private Boolean isCompartmentDelete;
+
+    /**
+     * if true, the request is from compartment delete service.
+     *
+     */
+    public Boolean getIsCompartmentDelete() {
+        return isCompartmentDelete;
     }
 
     public static class Builder
@@ -72,6 +85,23 @@ public class ListNamespacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
+         * if true, the request is from compartment delete service.
+         *
+         */
+        private Boolean isCompartmentDelete = null;
+
+        /**
+         * if true, the request is from compartment delete service.
+         *
+         * @param isCompartmentDelete the value to set
+         * @return this builder instance
+         */
+        public Builder isCompartmentDelete(Boolean isCompartmentDelete) {
+            this.isCompartmentDelete = isCompartmentDelete;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -101,6 +131,7 @@ public class ListNamespacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         public Builder copy(ListNamespacesRequest o) {
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
+            isCompartmentDelete(o.getIsCompartmentDelete());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -135,8 +166,9 @@ public class ListNamespacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             ListNamespacesRequest request = new ListNamespacesRequest();
             request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
+            request.isCompartmentDelete = isCompartmentDelete;
             return request;
-            // new ListNamespacesRequest(compartmentId, opcRequestId);
+            // new ListNamespacesRequest(compartmentId, opcRequestId, isCompartmentDelete);
         }
     }
 
@@ -145,7 +177,10 @@ public class ListNamespacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().compartmentId(compartmentId).opcRequestId(opcRequestId);
+        return new Builder()
+                .compartmentId(compartmentId)
+                .opcRequestId(opcRequestId)
+                .isCompartmentDelete(isCompartmentDelete);
     }
 
     /**
@@ -163,6 +198,7 @@ public class ListNamespacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isCompartmentDelete=").append(String.valueOf(this.isCompartmentDelete));
         sb.append(")");
         return sb.toString();
     }
@@ -179,7 +215,8 @@ public class ListNamespacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         ListNamespacesRequest other = (ListNamespacesRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isCompartmentDelete, other.isCompartmentDelete);
     }
 
     @Override
@@ -190,6 +227,11 @@ public class ListNamespacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCompartmentDelete == null
+                                ? 43
+                                : this.isCompartmentDelete.hashCode());
         return result;
     }
 }

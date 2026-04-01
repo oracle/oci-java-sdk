@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent.model;
@@ -20,14 +20,48 @@ package com.oracle.bmc.generativeaiagent.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LlmCustomization extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"instruction"})
-    public LlmCustomization(String instruction) {
+    @java.beans.ConstructorProperties({"llmSelection", "llmHyperParameters", "instruction"})
+    public LlmCustomization(
+            LlmSelection llmSelection,
+            java.util.Map<String, Object> llmHyperParameters,
+            String instruction) {
         super();
+        this.llmSelection = llmSelection;
+        this.llmHyperParameters = llmHyperParameters;
         this.instruction = instruction;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("llmSelection")
+        private LlmSelection llmSelection;
+
+        public Builder llmSelection(LlmSelection llmSelection) {
+            this.llmSelection = llmSelection;
+            this.__explicitlySet__.add("llmSelection");
+            return this;
+        }
+        /**
+         * Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.
+         * Refer to the guide for examples and the JSON Schema documentation for details on the format.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("llmHyperParameters")
+        private java.util.Map<String, Object> llmHyperParameters;
+
+        /**
+         * Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.
+         * Refer to the guide for examples and the JSON Schema documentation for details on the format.
+         *
+         * @param llmHyperParameters the value to set
+         * @return this builder
+         **/
+        public Builder llmHyperParameters(java.util.Map<String, Object> llmHyperParameters) {
+            this.llmHyperParameters = llmHyperParameters;
+            this.__explicitlySet__.add("llmHyperParameters");
+            return this;
+        }
         /**
          * If specified, the default instruction is replaced with provided instruction.
          **/
@@ -49,7 +83,9 @@ public final class LlmCustomization extends com.oracle.bmc.http.internal.Explici
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LlmCustomization build() {
-            LlmCustomization model = new LlmCustomization(this.instruction);
+            LlmCustomization model =
+                    new LlmCustomization(
+                            this.llmSelection, this.llmHyperParameters, this.instruction);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -58,6 +94,12 @@ public final class LlmCustomization extends com.oracle.bmc.http.internal.Explici
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LlmCustomization model) {
+            if (model.wasPropertyExplicitlySet("llmSelection")) {
+                this.llmSelection(model.getLlmSelection());
+            }
+            if (model.wasPropertyExplicitlySet("llmHyperParameters")) {
+                this.llmHyperParameters(model.getLlmHyperParameters());
+            }
             if (model.wasPropertyExplicitlySet("instruction")) {
                 this.instruction(model.getInstruction());
             }
@@ -74,6 +116,31 @@ public final class LlmCustomization extends com.oracle.bmc.http.internal.Explici
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("llmSelection")
+    private final LlmSelection llmSelection;
+
+    public LlmSelection getLlmSelection() {
+        return llmSelection;
+    }
+
+    /**
+     * Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.
+     * Refer to the guide for examples and the JSON Schema documentation for details on the format.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("llmHyperParameters")
+    private final java.util.Map<String, Object> llmHyperParameters;
+
+    /**
+     * Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.
+     * Refer to the guide for examples and the JSON Schema documentation for details on the format.
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, Object> getLlmHyperParameters() {
+        return llmHyperParameters;
     }
 
     /**
@@ -104,7 +171,9 @@ public final class LlmCustomization extends com.oracle.bmc.http.internal.Explici
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LlmCustomization(");
         sb.append("super=").append(super.toString());
-        sb.append("instruction=").append(String.valueOf(this.instruction));
+        sb.append("llmSelection=").append(String.valueOf(this.llmSelection));
+        sb.append(", llmHyperParameters=").append(String.valueOf(this.llmHyperParameters));
+        sb.append(", instruction=").append(String.valueOf(this.instruction));
         sb.append(")");
         return sb.toString();
     }
@@ -119,13 +188,22 @@ public final class LlmCustomization extends com.oracle.bmc.http.internal.Explici
         }
 
         LlmCustomization other = (LlmCustomization) o;
-        return java.util.Objects.equals(this.instruction, other.instruction) && super.equals(other);
+        return java.util.Objects.equals(this.llmSelection, other.llmSelection)
+                && java.util.Objects.equals(this.llmHyperParameters, other.llmHyperParameters)
+                && java.util.Objects.equals(this.instruction, other.instruction)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.llmSelection == null ? 43 : this.llmSelection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.llmHyperParameters == null
+                                ? 43
+                                : this.llmHyperParameters.hashCode());
         result = (result * PRIME) + (this.instruction == null ? 43 : this.instruction.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

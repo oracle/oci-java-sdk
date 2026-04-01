@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -140,6 +140,17 @@ public class ListSqlCollectionAnalyticsRequest
      */
     public String getTargetId() {
         return targetId;
+    }
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    private String targetDatabaseGroupId;
+
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
     }
     /**
      * Unique identifier for the request.
@@ -356,6 +367,21 @@ public class ListSqlCollectionAnalyticsRequest
         }
 
         /**
+         * A filter to return the target database group that matches the specified OCID.
+         */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
          * Unique identifier for the request.
          */
         private String opcRequestId = null;
@@ -467,6 +493,7 @@ public class ListSqlCollectionAnalyticsRequest
             page(o.getPage());
             lifecycleState(o.getLifecycleState());
             targetId(o.getTargetId());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             opcRequestId(o.getOpcRequestId());
             groupBy(o.getGroupBy());
             timeStarted(o.getTimeStarted());
@@ -510,12 +537,13 @@ public class ListSqlCollectionAnalyticsRequest
             request.page = page;
             request.lifecycleState = lifecycleState;
             request.targetId = targetId;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             request.opcRequestId = opcRequestId;
             request.groupBy = groupBy;
             request.timeStarted = timeStarted;
             request.timeEnded = timeEnded;
             return request;
-            // new ListSqlCollectionAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, limit, page, lifecycleState, targetId, opcRequestId, groupBy, timeStarted, timeEnded);
+            // new ListSqlCollectionAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, limit, page, lifecycleState, targetId, targetDatabaseGroupId, opcRequestId, groupBy, timeStarted, timeEnded);
         }
     }
 
@@ -532,6 +560,7 @@ public class ListSqlCollectionAnalyticsRequest
                 .page(page)
                 .lifecycleState(lifecycleState)
                 .targetId(targetId)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
                 .opcRequestId(opcRequestId)
                 .groupBy(groupBy)
                 .timeStarted(timeStarted)
@@ -558,6 +587,7 @@ public class ListSqlCollectionAnalyticsRequest
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",groupBy=").append(String.valueOf(this.groupBy));
         sb.append(",timeStarted=").append(String.valueOf(this.timeStarted));
@@ -585,6 +615,7 @@ public class ListSqlCollectionAnalyticsRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.groupBy, other.groupBy)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
@@ -610,6 +641,11 @@ public class ListSqlCollectionAnalyticsRequest
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.groupBy == null ? 43 : this.groupBy.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());

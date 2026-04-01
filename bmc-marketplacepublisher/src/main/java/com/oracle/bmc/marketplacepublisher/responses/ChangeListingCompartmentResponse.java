@@ -1,13 +1,28 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplacepublisher.responses;
 
 import com.oracle.bmc.marketplacepublisher.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 public class ChangeListingCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -25,12 +40,19 @@ public class ChangeListingCompartmentResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcWorkRequestId",
+        "opcRequestId"
+    })
     private ChangeListingCompartmentResponse(
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcWorkRequestId,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
+        this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
     }
 
@@ -46,6 +68,23 @@ public class ChangeListingCompartmentResponse extends com.oracle.bmc.responses.B
 
         public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
+            return this;
+        }
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
+         *
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -75,6 +114,7 @@ public class ChangeListingCompartmentResponse extends com.oracle.bmc.responses.B
         public Builder copy(ChangeListingCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 
             return this;
@@ -85,7 +125,8 @@ public class ChangeListingCompartmentResponse extends com.oracle.bmc.responses.B
          * @return the response object
          */
         public ChangeListingCompartmentResponse build() {
-            return new ChangeListingCompartmentResponse(__httpStatusCode__, headers, opcRequestId);
+            return new ChangeListingCompartmentResponse(
+                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
         }
     }
 
@@ -102,6 +143,7 @@ public class ChangeListingCompartmentResponse extends com.oracle.bmc.responses.B
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -117,13 +159,18 @@ public class ChangeListingCompartmentResponse extends com.oracle.bmc.responses.B
         }
 
         ChangeListingCompartmentResponse other = (ChangeListingCompartmentResponse) o;
-        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

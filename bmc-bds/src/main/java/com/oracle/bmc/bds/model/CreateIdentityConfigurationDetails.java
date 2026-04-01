@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -24,6 +24,7 @@ public final class CreateIdentityConfigurationDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "clusterAdminPassword",
+        "secretId",
         "displayName",
         "identityDomainId",
         "confidentialApplicationId",
@@ -32,6 +33,7 @@ public final class CreateIdentityConfigurationDetails
     })
     public CreateIdentityConfigurationDetails(
             String clusterAdminPassword,
+            String secretId,
             String displayName,
             String identityDomainId,
             String confidentialApplicationId,
@@ -39,6 +41,7 @@ public final class CreateIdentityConfigurationDetails
             IamUserSyncConfigurationDetails iamUserSyncConfigurationDetails) {
         super();
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
         this.displayName = displayName;
         this.identityDomainId = identityDomainId;
         this.confidentialApplicationId = confidentialApplicationId;
@@ -62,6 +65,22 @@ public final class CreateIdentityConfigurationDetails
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+        /**
+         * The secretId for the clusterAdminPassword.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         * @param secretId the value to set
+         * @return this builder
+         **/
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
             return this;
         }
         /**
@@ -139,6 +158,7 @@ public final class CreateIdentityConfigurationDetails
             CreateIdentityConfigurationDetails model =
                     new CreateIdentityConfigurationDetails(
                             this.clusterAdminPassword,
+                            this.secretId,
                             this.displayName,
                             this.identityDomainId,
                             this.confidentialApplicationId,
@@ -154,6 +174,9 @@ public final class CreateIdentityConfigurationDetails
         public Builder copy(CreateIdentityConfigurationDetails model) {
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -197,6 +220,20 @@ public final class CreateIdentityConfigurationDetails
      **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
+    }
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     * @return the value
+     **/
+    public String getSecretId() {
+        return secretId;
     }
 
     /**
@@ -270,6 +307,7 @@ public final class CreateIdentityConfigurationDetails
         sb.append("CreateIdentityConfigurationDetails(");
         sb.append("super=").append(super.toString());
         sb.append("clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", identityDomainId=").append(String.valueOf(this.identityDomainId));
         sb.append(", confidentialApplicationId=")
@@ -293,6 +331,7 @@ public final class CreateIdentityConfigurationDetails
 
         CreateIdentityConfigurationDetails other = (CreateIdentityConfigurationDetails) o;
         return java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.identityDomainId, other.identityDomainId)
                 && java.util.Objects.equals(
@@ -313,6 +352,7 @@ public final class CreateIdentityConfigurationDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -73,6 +73,20 @@ public interface DbSystem extends AutoCloseable {
     AddHeatWaveClusterResponse addHeatWaveCluster(AddHeatWaveClusterRequest request);
 
     /**
+     * Update the chosen subset of MySQL instances based on their role.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ControlledUpdateDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ControlledUpdateDbSystem API.
+     */
+    ControlledUpdateDbSystemResponse controlledUpdateDbSystem(
+            ControlledUpdateDbSystemRequest request);
+
+    /**
      * Creates and launches a DB System.
      *
      * @param request The request object containing the details to send
@@ -114,6 +128,20 @@ public interface DbSystem extends AutoCloseable {
     DeleteHeatWaveClusterResponse deleteHeatWaveCluster(DeleteHeatWaveClusterRequest request);
 
     /**
+     * Initiates an asynchronous request to collect the current status of the specified DB System,
+     * including the status of any attached Channels (if requested).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GenerateDbSystemStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateDbSystemStatus API.
+     */
+    GenerateDbSystemStatusResponse generateDbSystemStatus(GenerateDbSystemStatusRequest request);
+
+    /**
      * Sends a request to estimate the memory footprints of user tables when loaded to HeatWave cluster memory.
      *
      * @param request The request object containing the details to send
@@ -138,6 +166,20 @@ public interface DbSystem extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystem API.
      */
     GetDbSystemResponse getDbSystem(GetDbSystemRequest request);
+
+    /**
+     * Returns the most up-to-date status of the specified DB System,
+     * including the status of any requested Channels.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetDbSystemStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystemStatus API.
+     */
+    GetDbSystemStatusResponse getDbSystemStatus(GetDbSystemStatusRequest request);
 
     /**
      * Gets information about the HeatWave cluster.
@@ -179,6 +221,18 @@ public interface DbSystem extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListDbSystemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystems API.
      */
     ListDbSystemsResponse listDbSystems(ListDbSystemsRequest request);
+
+    /**
+     * List all the maintenance events.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListMaintenanceEventsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMaintenanceEvents API.
+     */
+    ListMaintenanceEventsResponse listMaintenanceEvents(ListMaintenanceEventsRequest request);
 
     /**
      * Restarts the specified DB System.

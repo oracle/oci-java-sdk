@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,16 +8,20 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListPropertiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPropertiesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The ID of the compartment in which to list resources.
+     * Empty only if the resource OCID query param is not specified.
+     *
      */
     private String compartmentId;
 
     /**
      * The ID of the compartment in which to list resources.
+     * Empty only if the resource OCID query param is not specified.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -45,15 +49,32 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return displayName;
     }
     /**
-     * A filter to return only resources whose Property identifier matches the given identifier.
+     * Unique identifier or OCID for listing a single Property by id.
+     * Either compartmentId or id must be provided.
+     *
+     *
      */
     private String id;
 
     /**
-     * A filter to return only resources whose Property identifier matches the given identifier.
+     * Unique identifier or OCID for listing a single Property by id.
+     * Either compartmentId or id must be provided.
+     *
+     *
      */
     public String getId() {
         return id;
+    }
+    /**
+     * A filter to return properties whose type matches the given type.
+     */
+    private com.oracle.bmc.fleetappsmanagement.model.Property.Type type;
+
+    /**
+     * A filter to return properties whose type matches the given type.
+     */
+    public com.oracle.bmc.fleetappsmanagement.model.Property.Type getType() {
+        return type;
     }
     /**
      * A filter to return only resources their scope matches the given scope.
@@ -103,50 +124,13 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
      *
      */
-    private SortBy sortBy;
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
-     **/
-    public enum SortBy {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
+    private com.oracle.bmc.fleetappsmanagement.model.PropertySortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
      *
      */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.PropertySortBy getSortBy() {
         return sortBy;
     }
     /**
@@ -170,11 +154,15 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * The ID of the compartment in which to list resources.
+         * Empty only if the resource OCID query param is not specified.
+         *
          */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * Empty only if the resource OCID query param is not specified.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -216,17 +204,38 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * A filter to return only resources whose Property identifier matches the given identifier.
+         * Unique identifier or OCID for listing a single Property by id.
+         * Either compartmentId or id must be provided.
+         *
+         *
          */
         private String id = null;
 
         /**
-         * A filter to return only resources whose Property identifier matches the given identifier.
+         * Unique identifier or OCID for listing a single Property by id.
+         * Either compartmentId or id must be provided.
+         *
+         *
          * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
             this.id = id;
+            return this;
+        }
+
+        /**
+         * A filter to return properties whose type matches the given type.
+         */
+        private com.oracle.bmc.fleetappsmanagement.model.Property.Type type = null;
+
+        /**
+         * A filter to return properties whose type matches the given type.
+         * @param type the value to set
+         * @return this builder instance
+         */
+        public Builder type(com.oracle.bmc.fleetappsmanagement.model.Property.Type type) {
+            this.type = type;
             return this;
         }
 
@@ -294,7 +303,7 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.PropertySortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
@@ -302,7 +311,7 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(com.oracle.bmc.fleetappsmanagement.model.PropertySortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }
@@ -354,6 +363,7 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
             id(o.getId());
+            type(o.getType());
             scope(o.getScope());
             limit(o.getLimit());
             page(o.getPage());
@@ -396,6 +406,7 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
             request.id = id;
+            request.type = type;
             request.scope = scope;
             request.limit = limit;
             request.page = page;
@@ -403,7 +414,7 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListPropertiesRequest(compartmentId, lifecycleState, displayName, id, scope, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListPropertiesRequest(compartmentId, lifecycleState, displayName, id, type, scope, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -417,6 +428,7 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .lifecycleState(lifecycleState)
                 .displayName(displayName)
                 .id(id)
+                .type(type)
                 .scope(scope)
                 .limit(limit)
                 .page(page)
@@ -442,6 +454,7 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",type=").append(String.valueOf(this.type));
         sb.append(",scope=").append(String.valueOf(this.scope));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -467,6 +480,7 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -487,6 +501,7 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

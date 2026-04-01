@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -30,9 +30,24 @@ package com.oracle.bmc.datascience.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ModelDeploymentSystemData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected ModelDeploymentSystemData() {
+    @java.beans.ConstructorProperties({"modelType"})
+    protected ModelDeploymentSystemData(ModelDeploymentModelType modelType) {
         super();
+        this.modelType = modelType;
+    }
+
+    /**
+     * The type of the deployed model.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("modelType")
+    private final ModelDeploymentModelType modelType;
+
+    /**
+     * The type of the deployed model.
+     * @return the value
+     **/
+    public ModelDeploymentModelType getModelType() {
+        return modelType;
     }
 
     @Override
@@ -49,6 +64,7 @@ public class ModelDeploymentSystemData extends com.oracle.bmc.http.internal.Expl
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModelDeploymentSystemData(");
         sb.append("super=").append(super.toString());
+        sb.append("modelType=").append(String.valueOf(this.modelType));
         sb.append(")");
         return sb.toString();
     }
@@ -63,13 +79,14 @@ public class ModelDeploymentSystemData extends com.oracle.bmc.http.internal.Expl
         }
 
         ModelDeploymentSystemData other = (ModelDeploymentSystemData) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.modelType, other.modelType) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

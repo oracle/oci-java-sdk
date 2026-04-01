@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -28,11 +28,15 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
         "id",
         "faultDomain",
         "hpcIslandId",
+        "hostCorrelationId",
+        "computeHostGroupId",
+        "recycleDetails",
         "networkBlockId",
         "localBlockId",
         "gpuMemoryFabricId",
         "instanceId",
         "shape",
+        "platform",
         "health",
         "lifecycleState",
         "capacityReservationId",
@@ -49,11 +53,15 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
             String id,
             String faultDomain,
             String hpcIslandId,
+            String hostCorrelationId,
+            String computeHostGroupId,
+            RecycleDetails recycleDetails,
             String networkBlockId,
             String localBlockId,
             String gpuMemoryFabricId,
             String instanceId,
             String shape,
+            String platform,
             ComputeHost.Health health,
             ComputeHost.LifecycleState lifecycleState,
             String capacityReservationId,
@@ -69,11 +77,15 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
         this.id = id;
         this.faultDomain = faultDomain;
         this.hpcIslandId = hpcIslandId;
+        this.hostCorrelationId = hostCorrelationId;
+        this.computeHostGroupId = computeHostGroupId;
+        this.recycleDetails = recycleDetails;
         this.networkBlockId = networkBlockId;
         this.localBlockId = localBlockId;
         this.gpuMemoryFabricId = gpuMemoryFabricId;
         this.instanceId = instanceId;
         this.shape = shape;
+        this.platform = platform;
         this.health = health;
         this.lifecycleState = lifecycleState;
         this.capacityReservationId = capacityReservationId;
@@ -196,6 +208,51 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("hostCorrelationId")
+        private String hostCorrelationId;
+
+        /**
+         * The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+         *
+         * @param hostCorrelationId the value to set
+         * @return this builder
+         **/
+        public Builder hostCorrelationId(String hostCorrelationId) {
+            this.hostCorrelationId = hostCorrelationId;
+            this.__explicitlySet__.add("hostCorrelationId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host group
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
+        private String computeHostGroupId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host group
+         *
+         * @param computeHostGroupId the value to set
+         * @return this builder
+         **/
+        public Builder computeHostGroupId(String computeHostGroupId) {
+            this.computeHostGroupId = computeHostGroupId;
+            this.__explicitlySet__.add("computeHostGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("recycleDetails")
+        private RecycleDetails recycleDetails;
+
+        public Builder recycleDetails(RecycleDetails recycleDetails) {
+            this.recycleDetails = recycleDetails;
+            this.__explicitlySet__.add("recycleDetails");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
          *
          **/
@@ -283,6 +340,24 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
+            return this;
+        }
+        /**
+         * The platform of the host
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("platform")
+        private String platform;
+
+        /**
+         * The platform of the host
+         *
+         * @param platform the value to set
+         * @return this builder
+         **/
+        public Builder platform(String platform) {
+            this.platform = platform;
+            this.__explicitlySet__.add("platform");
             return this;
         }
         /**
@@ -486,11 +561,15 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
                             this.id,
                             this.faultDomain,
                             this.hpcIslandId,
+                            this.hostCorrelationId,
+                            this.computeHostGroupId,
+                            this.recycleDetails,
                             this.networkBlockId,
                             this.localBlockId,
                             this.gpuMemoryFabricId,
                             this.instanceId,
                             this.shape,
+                            this.platform,
                             this.health,
                             this.lifecycleState,
                             this.capacityReservationId,
@@ -523,6 +602,15 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
             if (model.wasPropertyExplicitlySet("hpcIslandId")) {
                 this.hpcIslandId(model.getHpcIslandId());
             }
+            if (model.wasPropertyExplicitlySet("hostCorrelationId")) {
+                this.hostCorrelationId(model.getHostCorrelationId());
+            }
+            if (model.wasPropertyExplicitlySet("computeHostGroupId")) {
+                this.computeHostGroupId(model.getComputeHostGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("recycleDetails")) {
+                this.recycleDetails(model.getRecycleDetails());
+            }
             if (model.wasPropertyExplicitlySet("networkBlockId")) {
                 this.networkBlockId(model.getNetworkBlockId());
             }
@@ -537,6 +625,9 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("platform")) {
+                this.platform(model.getPlatform());
             }
             if (model.wasPropertyExplicitlySet("health")) {
                 this.health(model.getHealth());
@@ -679,6 +770,45 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostCorrelationId")
+    private final String hostCorrelationId;
+
+    /**
+     * The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+     *
+     * @return the value
+     **/
+    public String getHostCorrelationId() {
+        return hostCorrelationId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host group
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
+    private final String computeHostGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host group
+     *
+     * @return the value
+     **/
+    public String getComputeHostGroupId() {
+        return computeHostGroupId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("recycleDetails")
+    private final RecycleDetails recycleDetails;
+
+    public RecycleDetails getRecycleDetails() {
+        return recycleDetails;
+    }
+
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
      *
      **/
@@ -756,6 +886,22 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
      **/
     public String getShape() {
         return shape;
+    }
+
+    /**
+     * The platform of the host
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("platform")
+    private final String platform;
+
+    /**
+     * The platform of the host
+     *
+     * @return the value
+     **/
+    public String getPlatform() {
+        return platform;
     }
 
     /**
@@ -947,11 +1093,15 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", hpcIslandId=").append(String.valueOf(this.hpcIslandId));
+        sb.append(", hostCorrelationId=").append(String.valueOf(this.hostCorrelationId));
+        sb.append(", computeHostGroupId=").append(String.valueOf(this.computeHostGroupId));
+        sb.append(", recycleDetails=").append(String.valueOf(this.recycleDetails));
         sb.append(", networkBlockId=").append(String.valueOf(this.networkBlockId));
         sb.append(", localBlockId=").append(String.valueOf(this.localBlockId));
         sb.append(", gpuMemoryFabricId=").append(String.valueOf(this.gpuMemoryFabricId));
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", platform=").append(String.valueOf(this.platform));
         sb.append(", health=").append(String.valueOf(this.health));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
@@ -980,11 +1130,15 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.hpcIslandId, other.hpcIslandId)
+                && java.util.Objects.equals(this.hostCorrelationId, other.hostCorrelationId)
+                && java.util.Objects.equals(this.computeHostGroupId, other.computeHostGroupId)
+                && java.util.Objects.equals(this.recycleDetails, other.recycleDetails)
                 && java.util.Objects.equals(this.networkBlockId, other.networkBlockId)
                 && java.util.Objects.equals(this.localBlockId, other.localBlockId)
                 && java.util.Objects.equals(this.gpuMemoryFabricId, other.gpuMemoryFabricId)
                 && java.util.Objects.equals(this.instanceId, other.instanceId)
                 && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.platform, other.platform)
                 && java.util.Objects.equals(this.health, other.health)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
@@ -1014,6 +1168,17 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
         result = (result * PRIME) + (this.hpcIslandId == null ? 43 : this.hpcIslandId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.hostCorrelationId == null ? 43 : this.hostCorrelationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeHostGroupId == null
+                                ? 43
+                                : this.computeHostGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recycleDetails == null ? 43 : this.recycleDetails.hashCode());
+        result =
+                (result * PRIME)
                         + (this.networkBlockId == null ? 43 : this.networkBlockId.hashCode());
         result = (result * PRIME) + (this.localBlockId == null ? 43 : this.localBlockId.hashCode());
         result =
@@ -1021,6 +1186,7 @@ public final class ComputeHostSummary extends com.oracle.bmc.http.internal.Expli
                         + (this.gpuMemoryFabricId == null ? 43 : this.gpuMemoryFabricId.hashCode());
         result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.platform == null ? 43 : this.platform.hashCode());
         result = (result * PRIME) + (this.health == null ? 43 : this.health.hashCode());
         result =
                 (result * PRIME)

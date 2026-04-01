@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PublishRunbookDetails.Builder.class
 )
@@ -22,10 +22,11 @@ package com.oracle.bmc.fleetappsmanagement.model;
 public final class PublishRunbookDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"runbookId"})
-    public PublishRunbookDetails(String runbookId) {
+    @java.beans.ConstructorProperties({"runbookId", "runbookVersionId"})
+    public PublishRunbookDetails(String runbookId, String runbookVersionId) {
         super();
         this.runbookId = runbookId;
+        this.runbookVersionId = runbookVersionId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,12 +47,29 @@ public final class PublishRunbookDetails
             this.__explicitlySet__.add("runbookId");
             return this;
         }
+        /**
+         * The OCID of the resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("runbookVersionId")
+        private String runbookVersionId;
+
+        /**
+         * The OCID of the resource.
+         * @param runbookVersionId the value to set
+         * @return this builder
+         **/
+        public Builder runbookVersionId(String runbookVersionId) {
+            this.runbookVersionId = runbookVersionId;
+            this.__explicitlySet__.add("runbookVersionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PublishRunbookDetails build() {
-            PublishRunbookDetails model = new PublishRunbookDetails(this.runbookId);
+            PublishRunbookDetails model =
+                    new PublishRunbookDetails(this.runbookId, this.runbookVersionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +80,9 @@ public final class PublishRunbookDetails
         public Builder copy(PublishRunbookDetails model) {
             if (model.wasPropertyExplicitlySet("runbookId")) {
                 this.runbookId(model.getRunbookId());
+            }
+            if (model.wasPropertyExplicitlySet("runbookVersionId")) {
+                this.runbookVersionId(model.getRunbookVersionId());
             }
             return this;
         }
@@ -92,6 +113,20 @@ public final class PublishRunbookDetails
         return runbookId;
     }
 
+    /**
+     * The OCID of the resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("runbookVersionId")
+    private final String runbookVersionId;
+
+    /**
+     * The OCID of the resource.
+     * @return the value
+     **/
+    public String getRunbookVersionId() {
+        return runbookVersionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -107,6 +142,7 @@ public final class PublishRunbookDetails
         sb.append("PublishRunbookDetails(");
         sb.append("super=").append(super.toString());
         sb.append("runbookId=").append(String.valueOf(this.runbookId));
+        sb.append(", runbookVersionId=").append(String.valueOf(this.runbookVersionId));
         sb.append(")");
         return sb.toString();
     }
@@ -121,7 +157,9 @@ public final class PublishRunbookDetails
         }
 
         PublishRunbookDetails other = (PublishRunbookDetails) o;
-        return java.util.Objects.equals(this.runbookId, other.runbookId) && super.equals(other);
+        return java.util.Objects.equals(this.runbookId, other.runbookId)
+                && java.util.Objects.equals(this.runbookVersionId, other.runbookVersionId)
+                && super.equals(other);
     }
 
     @Override
@@ -129,6 +167,9 @@ public final class PublishRunbookDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.runbookId == null ? 43 : this.runbookId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runbookVersionId == null ? 43 : this.runbookVersionId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

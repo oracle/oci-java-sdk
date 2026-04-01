@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
- * Details for updating the support ticket activity.
+ * Details for updating the support request activity.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -46,12 +46,26 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
         }
         /**
          * The type of activity occurring.
+         * {@code NOTES} is the activity associated to attachments.
+         * {@code PROBLEM_DESCRIPTION} is the activity associated to customer problem description.
+         * {@code UPDATE} is the activity associated to adding comments.
+         * {@code CLOSE} is the activity associated to closing the support request.
+         * {@code REOPEN} is the activity associated to reopening the support request.
+         * {@code ADD_CONTACT} is the activity associated to adding additional contact to the support request.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("activityType")
         private ActivityType activityType;
 
         /**
          * The type of activity occurring.
+         * {@code NOTES} is the activity associated to attachments.
+         * {@code PROBLEM_DESCRIPTION} is the activity associated to customer problem description.
+         * {@code UPDATE} is the activity associated to adding comments.
+         * {@code CLOSE} is the activity associated to closing the support request.
+         * {@code REOPEN} is the activity associated to reopening the support request.
+         * {@code ADD_CONTACT} is the activity associated to adding additional contact to the support request.
+         *
          * @param activityType the value to set
          * @return this builder
          **/
@@ -119,6 +133,13 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
 
     /**
      * The type of activity occurring.
+     * {@code NOTES} is the activity associated to attachments.
+     * {@code PROBLEM_DESCRIPTION} is the activity associated to customer problem description.
+     * {@code UPDATE} is the activity associated to adding comments.
+     * {@code CLOSE} is the activity associated to closing the support request.
+     * {@code REOPEN} is the activity associated to reopening the support request.
+     * {@code ADD_CONTACT} is the activity associated to adding additional contact to the support request.
+     *
      **/
     public enum ActivityType {
         Notes("NOTES"),
@@ -126,6 +147,7 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
         Update("UPDATE"),
         Close("CLOSE"),
         Reopen("REOPEN"),
+        AddContact("ADD_CONTACT"),
         ;
 
         private final String value;
@@ -157,12 +179,26 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
     };
     /**
      * The type of activity occurring.
+     * {@code NOTES} is the activity associated to attachments.
+     * {@code PROBLEM_DESCRIPTION} is the activity associated to customer problem description.
+     * {@code UPDATE} is the activity associated to adding comments.
+     * {@code CLOSE} is the activity associated to closing the support request.
+     * {@code REOPEN} is the activity associated to reopening the support request.
+     * {@code ADD_CONTACT} is the activity associated to adding additional contact to the support request.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activityType")
     private final ActivityType activityType;
 
     /**
      * The type of activity occurring.
+     * {@code NOTES} is the activity associated to attachments.
+     * {@code PROBLEM_DESCRIPTION} is the activity associated to customer problem description.
+     * {@code UPDATE} is the activity associated to adding comments.
+     * {@code CLOSE} is the activity associated to closing the support request.
+     * {@code REOPEN} is the activity associated to reopening the support request.
+     * {@code ADD_CONTACT} is the activity associated to adding additional contact to the support request.
+     *
      * @return the value
      **/
     public ActivityType getActivityType() {

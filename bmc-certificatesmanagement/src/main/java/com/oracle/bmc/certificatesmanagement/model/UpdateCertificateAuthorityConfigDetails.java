@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.certificatesmanagement.model;
@@ -23,12 +23,20 @@ package com.oracle.bmc.certificatesmanagement.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateRootCaManagedExternallyConfigDetails.class,
+        name = "ROOT_CA_MANAGED_EXTERNALLY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateSubordinateCaIssuedByInternalCaConfigDetails.class,
         name = "SUBORDINATE_CA_ISSUED_BY_INTERNAL_CA"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateRootCaByGeneratingInternallyConfigDetails.class,
         name = "ROOT_CA_GENERATED_INTERNALLY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateSubordinateCaManagedInternallyIssuedByExternalCaConfigDetails.class,
+        name = "SUBORDINATE_CA_MANAGED_INTERNALLY_ISSUED_BY_EXTERNAL_CA"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

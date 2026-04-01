@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -42,7 +42,8 @@ public class CreateMigrationDetails extends com.oracle.bmc.http.internal.Explici
         "sourceDatabaseConnectionId",
         "targetDatabaseConnectionId",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "assessmentId"
     })
     protected CreateMigrationDetails(
             String description,
@@ -52,7 +53,8 @@ public class CreateMigrationDetails extends com.oracle.bmc.http.internal.Explici
             String sourceDatabaseConnectionId,
             String targetDatabaseConnectionId,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String assessmentId) {
         super();
         this.description = description;
         this.compartmentId = compartmentId;
@@ -62,6 +64,7 @@ public class CreateMigrationDetails extends com.oracle.bmc.http.internal.Explici
         this.targetDatabaseConnectionId = targetDatabaseConnectionId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.assessmentId = assessmentId;
     }
 
     /**
@@ -196,6 +199,20 @@ public class CreateMigrationDetails extends com.oracle.bmc.http.internal.Explici
         return definedTags;
     }
 
+    /**
+     * The OCID of the resource being referenced.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assessmentId")
+    private final String assessmentId;
+
+    /**
+     * The OCID of the resource being referenced.
+     * @return the value
+     **/
+    public String getAssessmentId() {
+        return assessmentId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -220,6 +237,7 @@ public class CreateMigrationDetails extends com.oracle.bmc.http.internal.Explici
                 .append(String.valueOf(this.targetDatabaseConnectionId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", assessmentId=").append(String.valueOf(this.assessmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -244,6 +262,7 @@ public class CreateMigrationDetails extends com.oracle.bmc.http.internal.Explici
                         this.targetDatabaseConnectionId, other.targetDatabaseConnectionId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.assessmentId, other.assessmentId)
                 && super.equals(other);
     }
 
@@ -269,6 +288,7 @@ public class CreateMigrationDetails extends com.oracle.bmc.http.internal.Explici
                                 : this.targetDatabaseConnectionId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.assessmentId == null ? 43 : this.assessmentId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

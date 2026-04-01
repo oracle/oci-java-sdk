@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,19 +8,19 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SetDefaultRunbookExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SetDefaultRunbookRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class SetDefaultRunbookRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.SetDefaultRunbookDetails> {
 
     /**
-     * Details for setting the Runbook as default.
+     * Details for setting the runbook as default for a platform and operation.
      */
     private com.oracle.bmc.fleetappsmanagement.model.SetDefaultRunbookDetails
             setDefaultRunbookDetails;
 
     /**
-     * Details for setting the Runbook as default.
+     * Details for setting the runbook as default for a platform and operation.
      */
     public com.oracle.bmc.fleetappsmanagement.model.SetDefaultRunbookDetails
             getSetDefaultRunbookDetails() {
@@ -99,13 +99,13 @@ public class SetDefaultRunbookRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for setting the Runbook as default.
+         * Details for setting the runbook as default for a platform and operation.
          */
         private com.oracle.bmc.fleetappsmanagement.model.SetDefaultRunbookDetails
                 setDefaultRunbookDetails = null;
 
         /**
-         * Details for setting the Runbook as default.
+         * Details for setting the runbook as default for a platform and operation.
          * @param setDefaultRunbookDetails the value to set
          * @return this builder instance
          */

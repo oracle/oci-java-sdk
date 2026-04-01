@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -32,7 +32,8 @@ public final class ExportSetting extends com.oracle.bmc.http.internal.Explicitly
         "exportFrequency",
         "isEnabled",
         "timeCreated",
-        "timeLastModified"
+        "timeLastModified",
+        "exportDataFilters"
     })
     public ExportSetting(
             String exportSettingKey,
@@ -46,7 +47,8 @@ public final class ExportSetting extends com.oracle.bmc.http.internal.Explicitly
             ExportFrequency exportFrequency,
             Boolean isEnabled,
             java.util.Date timeCreated,
-            java.util.Date timeLastModified) {
+            java.util.Date timeLastModified,
+            ExportDataFilters exportDataFilters) {
         super();
         this.exportSettingKey = exportSettingKey;
         this.fleetId = fleetId;
@@ -60,6 +62,7 @@ public final class ExportSetting extends com.oracle.bmc.http.internal.Explicitly
         this.isEnabled = isEnabled;
         this.timeCreated = timeCreated;
         this.timeLastModified = timeLastModified;
+        this.exportDataFilters = exportDataFilters;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -279,6 +282,15 @@ public final class ExportSetting extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exportDataFilters")
+        private ExportDataFilters exportDataFilters;
+
+        public Builder exportDataFilters(ExportDataFilters exportDataFilters) {
+            this.exportDataFilters = exportDataFilters;
+            this.__explicitlySet__.add("exportDataFilters");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -296,7 +308,8 @@ public final class ExportSetting extends com.oracle.bmc.http.internal.Explicitly
                             this.exportFrequency,
                             this.isEnabled,
                             this.timeCreated,
-                            this.timeLastModified);
+                            this.timeLastModified,
+                            this.exportDataFilters);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -340,6 +353,9 @@ public final class ExportSetting extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("timeLastModified")) {
                 this.timeLastModified(model.getTimeLastModified());
+            }
+            if (model.wasPropertyExplicitlySet("exportDataFilters")) {
+                this.exportDataFilters(model.getExportDataFilters());
             }
             return this;
         }
@@ -546,6 +562,13 @@ public final class ExportSetting extends com.oracle.bmc.http.internal.Explicitly
         return timeLastModified;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("exportDataFilters")
+    private final ExportDataFilters exportDataFilters;
+
+    public ExportDataFilters getExportDataFilters() {
+        return exportDataFilters;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -573,6 +596,7 @@ public final class ExportSetting extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeLastModified=").append(String.valueOf(this.timeLastModified));
+        sb.append(", exportDataFilters=").append(String.valueOf(this.exportDataFilters));
         sb.append(")");
         return sb.toString();
     }
@@ -600,6 +624,7 @@ public final class ExportSetting extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeLastModified, other.timeLastModified)
+                && java.util.Objects.equals(this.exportDataFilters, other.exportDataFilters)
                 && super.equals(other);
     }
 
@@ -643,6 +668,9 @@ public final class ExportSetting extends com.oracle.bmc.http.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.timeLastModified == null ? 43 : this.timeLastModified.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exportDataFilters == null ? 43 : this.exportDataFilters.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

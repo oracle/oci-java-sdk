@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aispeech.model;
@@ -97,6 +97,7 @@ public final class TranscriptionModelDetails
          * - it-IT: Italian - Italy
          * <p>
          * Whisper supported language codes are (Whisper models are locale agnostic).
+         * - auto: Auto-detect language
          * - af: Afrikaans
          * - ar: Arabic
          * - az: Azerbaijani
@@ -174,6 +175,7 @@ public final class TranscriptionModelDetails
          * - it-IT: Italian - Italy
          * <p>
          * Whisper supported language codes are (Whisper models are locale agnostic).
+         * - auto: Auto-detect language
          * - af: Afrikaans
          * - ar: Arabic
          * - az: Azerbaijani
@@ -392,6 +394,7 @@ public final class TranscriptionModelDetails
      * - it-IT: Italian - Italy
      * <p>
      * Whisper supported language codes are (Whisper models are locale agnostic).
+     * - auto: Auto-detect language
      * - af: Afrikaans
      * - ar: Arabic
      * - az: Azerbaijani
@@ -462,6 +465,7 @@ public final class TranscriptionModelDetails
         FrFr("fr-FR"),
         DeDe("de-DE"),
         ItIt("it-IT"),
+        Auto("auto"),
         Af("af"),
         Ar("ar"),
         Az("az"),
@@ -576,6 +580,7 @@ public final class TranscriptionModelDetails
      * - it-IT: Italian - Italy
      * <p>
      * Whisper supported language codes are (Whisper models are locale agnostic).
+     * - auto: Auto-detect language
      * - af: Afrikaans
      * - ar: Arabic
      * - az: Azerbaijani
@@ -653,6 +658,7 @@ public final class TranscriptionModelDetails
      * - it-IT: Italian - Italy
      * <p>
      * Whisper supported language codes are (Whisper models are locale agnostic).
+     * - auto: Auto-detect language
      * - af: Afrikaans
      * - ar: Arabic
      * - az: Azerbaijani

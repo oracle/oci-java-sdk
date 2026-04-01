@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagentruntime.model;
@@ -32,17 +32,73 @@ package com.oracle.bmc.generativeaiagentruntime.model;
         name = "RETRIEVAL_TRACE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ExecutionTrace.class,
+        name = "EXECUTION_TRACE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GenerationTrace.class,
         name = "GENERATION_TRACE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ToolInvocationTrace.class,
+        name = "TOOL_INVOCATION_TRACE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PlanningTrace.class,
+        name = "PLANNING_TRACE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"timeCreated"})
-    protected Trace(java.util.Date timeCreated) {
+    @java.beans.ConstructorProperties({"key", "parentKey", "source", "timeCreated", "timeFinished"})
+    protected Trace(
+            String key,
+            String parentKey,
+            SourceDetails source,
+            java.util.Date timeCreated,
+            java.util.Date timeFinished) {
         super();
+        this.key = key;
+        this.parentKey = parentKey;
+        this.source = source;
         this.timeCreated = timeCreated;
+        this.timeFinished = timeFinished;
+    }
+
+    /**
+     * Unique identifier for the event (UUID).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("key")
+    private final String key;
+
+    /**
+     * Unique identifier for the event (UUID).
+     * @return the value
+     **/
+    public String getKey() {
+        return key;
+    }
+
+    /**
+     * Identifier of the parent event, if applicable (UUID).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
+    private final String parentKey;
+
+    /**
+     * Identifier of the parent event, if applicable (UUID).
+     * @return the value
+     **/
+    public String getParentKey() {
+        return parentKey;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("source")
+    private final SourceDetails source;
+
+    public SourceDetails getSource() {
+        return source;
     }
 
     /**
@@ -59,6 +115,20 @@ public class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
         return timeCreated;
     }
 
+    /**
+     * Timestamp for when the event ended (In RFC 3339).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
+    private final java.util.Date timeFinished;
+
+    /**
+     * Timestamp for when the event ended (In RFC 3339).
+     * @return the value
+     **/
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -73,7 +143,11 @@ public class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Trace(");
         sb.append("super=").append(super.toString());
-        sb.append("timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append("key=").append(String.valueOf(this.key));
+        sb.append(", parentKey=").append(String.valueOf(this.parentKey));
+        sb.append(", source=").append(String.valueOf(this.source));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
         sb.append(")");
         return sb.toString();
     }
@@ -88,14 +162,23 @@ public class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
         }
 
         Trace other = (Trace) o;
-        return java.util.Objects.equals(this.timeCreated, other.timeCreated) && super.equals(other);
+        return java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.parentKey, other.parentKey)
+                && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.parentKey == null ? 43 : this.parentKey.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
@@ -107,6 +190,9 @@ public class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
         ErrorTrace("ERROR_TRACE"),
         RetrievalTrace("RETRIEVAL_TRACE"),
         GenerationTrace("GENERATION_TRACE"),
+        ToolInvocationTrace("TOOL_INVOCATION_TRACE"),
+        PlanningTrace("PLANNING_TRACE"),
+        ExecutionTrace("EXECUTION_TRACE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

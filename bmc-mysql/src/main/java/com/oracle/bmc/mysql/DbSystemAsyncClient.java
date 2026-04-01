@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -7,6 +7,8 @@ package com.oracle.bmc.mysql;
 import com.oracle.bmc.mysql.internal.http.*;
 import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for DbSystem service. <br/>
@@ -28,7 +30,7 @@ public class DbSystemAsyncClient implements DbSystemAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DBSYSTEM")
+                    .serviceName(DbSystemClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://mysql.{region}.ocp.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class DbSystemAsyncClient implements DbSystemAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -400,12 +411,21 @@ public class DbSystemAsyncClient implements DbSystemAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -435,15 +455,7 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -497,6 +509,60 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ControlledUpdateDbSystemResponse> controlledUpdateDbSystem(
+            ControlledUpdateDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ControlledUpdateDbSystemRequest, ControlledUpdateDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async controlledUpdateDbSystem");
+        final ControlledUpdateDbSystemRequest interceptedRequest =
+                ControlledUpdateDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ControlledUpdateDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "ControlledUpdateDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/ControlledUpdateDbSystem");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ControlledUpdateDbSystemResponse>
+                transformer =
+                        ControlledUpdateDbSystemConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ControlledUpdateDbSystemRequest, ControlledUpdateDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ControlledUpdateDbSystemRequest, ControlledUpdateDbSystemResponse>,
+                        java.util.concurrent.Future<ControlledUpdateDbSystemResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getControlledUpdateDbSystemDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ControlledUpdateDbSystemRequest, ControlledUpdateDbSystemResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -650,6 +716,59 @@ public class DbSystemAsyncClient implements DbSystemAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateDbSystemStatusResponse> generateDbSystemStatus(
+            GenerateDbSystemStatusRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GenerateDbSystemStatusRequest, GenerateDbSystemStatusResponse>
+                    handler) {
+        LOG.trace("Called async generateDbSystemStatus");
+        final GenerateDbSystemStatusRequest interceptedRequest =
+                GenerateDbSystemStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateDbSystemStatusConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "GenerateDbSystemStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystemStatus/GenerateDbSystemStatus");
+        final java.util.function.Function<javax.ws.rs.core.Response, GenerateDbSystemStatusResponse>
+                transformer =
+                        GenerateDbSystemStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateDbSystemStatusRequest, GenerateDbSystemStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateDbSystemStatusRequest, GenerateDbSystemStatusResponse>,
+                        java.util.concurrent.Future<GenerateDbSystemStatusResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateDbSystemStatusDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateDbSystemStatusRequest, GenerateDbSystemStatusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GenerateHeatWaveClusterMemoryEstimateResponse>
             generateHeatWaveClusterMemoryEstimate(
                     GenerateHeatWaveClusterMemoryEstimateRequest request,
@@ -736,6 +855,52 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetDbSystemRequest, GetDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDbSystemStatusResponse> getDbSystemStatus(
+            GetDbSystemStatusRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDbSystemStatusRequest, GetDbSystemStatusResponse>
+                    handler) {
+        LOG.trace("Called async getDbSystemStatus");
+        final GetDbSystemStatusRequest interceptedRequest =
+                GetDbSystemStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDbSystemStatusConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "GetDbSystemStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystemStatus/GetDbSystemStatus");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDbSystemStatusResponse>
+                transformer =
+                        GetDbSystemStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetDbSystemStatusRequest, GetDbSystemStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDbSystemStatusRequest, GetDbSystemStatusResponse>,
+                        java.util.concurrent.Future<GetDbSystemStatusResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDbSystemStatusRequest, GetDbSystemStatusResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -879,6 +1044,53 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListDbSystemsRequest, ListDbSystemsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMaintenanceEventsResponse> listMaintenanceEvents(
+            ListMaintenanceEventsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMaintenanceEventsRequest, ListMaintenanceEventsResponse>
+                    handler) {
+        LOG.trace("Called async listMaintenanceEvents");
+        final ListMaintenanceEventsRequest interceptedRequest =
+                ListMaintenanceEventsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMaintenanceEventsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "ListMaintenanceEvents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/MaintenanceEvent/ListMaintenanceEvents");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMaintenanceEventsResponse>
+                transformer =
+                        ListMaintenanceEventsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMaintenanceEventsRequest, ListMaintenanceEventsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMaintenanceEventsRequest, ListMaintenanceEventsResponse>,
+                        java.util.concurrent.Future<ListMaintenanceEventsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMaintenanceEventsRequest, ListMaintenanceEventsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

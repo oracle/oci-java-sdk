@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -25,6 +25,7 @@ public final class GenerateReportDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "targetIds",
+        "targetGroupIds",
         "description",
         "compartmentId",
         "mimeType",
@@ -35,6 +36,7 @@ public final class GenerateReportDetails
     public GenerateReportDetails(
             String displayName,
             java.util.List<String> targetIds,
+            java.util.List<String> targetGroupIds,
             String description,
             String compartmentId,
             MimeType mimeType,
@@ -44,6 +46,7 @@ public final class GenerateReportDetails
         super();
         this.displayName = displayName;
         this.targetIds = targetIds;
+        this.targetGroupIds = targetGroupIds;
         this.description = description;
         this.compartmentId = compartmentId;
         this.mimeType = mimeType;
@@ -84,6 +87,22 @@ public final class GenerateReportDetails
         public Builder targetIds(java.util.List<String> targetIds) {
             this.targetIds = targetIds;
             this.__explicitlySet__.add("targetIds");
+            return this;
+        }
+        /**
+         * Array of target group OCIDs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetGroupIds")
+        private java.util.List<String> targetGroupIds;
+
+        /**
+         * Array of target group OCIDs.
+         * @param targetGroupIds the value to set
+         * @return this builder
+         **/
+        public Builder targetGroupIds(java.util.List<String> targetGroupIds) {
+            this.targetGroupIds = targetGroupIds;
+            this.__explicitlySet__.add("targetGroupIds");
             return this;
         }
         /**
@@ -195,6 +214,7 @@ public final class GenerateReportDetails
                     new GenerateReportDetails(
                             this.displayName,
                             this.targetIds,
+                            this.targetGroupIds,
                             this.description,
                             this.compartmentId,
                             this.mimeType,
@@ -214,6 +234,9 @@ public final class GenerateReportDetails
             }
             if (model.wasPropertyExplicitlySet("targetIds")) {
                 this.targetIds(model.getTargetIds());
+            }
+            if (model.wasPropertyExplicitlySet("targetGroupIds")) {
+                this.targetGroupIds(model.getTargetGroupIds());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -274,6 +297,20 @@ public final class GenerateReportDetails
      **/
     public java.util.List<String> getTargetIds() {
         return targetIds;
+    }
+
+    /**
+     * Array of target group OCIDs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetGroupIds")
+    private final java.util.List<String> targetGroupIds;
+
+    /**
+     * Array of target group OCIDs.
+     * @return the value
+     **/
+    public java.util.List<String> getTargetGroupIds() {
+        return targetGroupIds;
     }
 
     /**
@@ -416,6 +453,7 @@ public final class GenerateReportDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", targetIds=").append(String.valueOf(this.targetIds));
+        sb.append(", targetGroupIds=").append(String.valueOf(this.targetGroupIds));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", mimeType=").append(String.valueOf(this.mimeType));
@@ -438,6 +476,7 @@ public final class GenerateReportDetails
         GenerateReportDetails other = (GenerateReportDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.targetIds, other.targetIds)
+                && java.util.Objects.equals(this.targetGroupIds, other.targetGroupIds)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.mimeType, other.mimeType)
@@ -453,6 +492,9 @@ public final class GenerateReportDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.targetIds == null ? 43 : this.targetIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetGroupIds == null ? 43 : this.targetGroupIds.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =
                 (result * PRIME)

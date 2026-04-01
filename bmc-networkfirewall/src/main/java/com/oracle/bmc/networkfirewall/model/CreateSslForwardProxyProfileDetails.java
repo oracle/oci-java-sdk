@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -33,6 +33,15 @@ public final class CreateSslForwardProxyProfileDetails extends CreateDecryptionP
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
             return this;
         }
         /**
@@ -192,6 +201,7 @@ public final class CreateSslForwardProxyProfileDetails extends CreateDecryptionP
             CreateSslForwardProxyProfileDetails model =
                     new CreateSslForwardProxyProfileDetails(
                             this.name,
+                            this.description,
                             this.isExpiredCertificateBlocked,
                             this.isUntrustedIssuerBlocked,
                             this.isRevocationStatusTimeoutBlocked,
@@ -211,6 +221,9 @@ public final class CreateSslForwardProxyProfileDetails extends CreateDecryptionP
         public Builder copy(CreateSslForwardProxyProfileDetails model) {
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("isExpiredCertificateBlocked")) {
                 this.isExpiredCertificateBlocked(model.getIsExpiredCertificateBlocked());
@@ -258,6 +271,7 @@ public final class CreateSslForwardProxyProfileDetails extends CreateDecryptionP
     @Deprecated
     public CreateSslForwardProxyProfileDetails(
             String name,
+            String description,
             Boolean isExpiredCertificateBlocked,
             Boolean isUntrustedIssuerBlocked,
             Boolean isRevocationStatusTimeoutBlocked,
@@ -267,7 +281,7 @@ public final class CreateSslForwardProxyProfileDetails extends CreateDecryptionP
             Boolean areCertificateExtensionsRestricted,
             Boolean isAutoIncludeAltName,
             Boolean isOutOfCapacityBlocked) {
-        super(name);
+        super(name, description);
         this.isExpiredCertificateBlocked = isExpiredCertificateBlocked;
         this.isUntrustedIssuerBlocked = isUntrustedIssuerBlocked;
         this.isRevocationStatusTimeoutBlocked = isRevocationStatusTimeoutBlocked;

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -92,6 +92,10 @@ package com.oracle.bmc.goldengate.model;
         name = "MONGODB"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateOracleAiDataPlatformConnectionDetails.class,
+        name = "ORACLE_AI_DATA_PLATFORM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateAmazonS3ConnectionDetails.class,
         name = "AMAZON_S3"
     ),
@@ -110,6 +114,10 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateAzureSynapseConnectionDetails.class,
         name = "AZURE_SYNAPSE_ANALYTICS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateIcebergConnectionDetails.class,
+        name = "ICEBERG"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateMysqlConnectionDetails.class,
@@ -147,7 +155,10 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         "nsgIds",
         "subnetId",
         "routingMethod",
-        "doesUseSecretIds"
+        "doesUseSecretIds",
+        "subscriptionId",
+        "clusterPlacementGroupId",
+        "securityAttributes"
     })
     protected CreateConnectionDetails(
             String displayName,
@@ -161,7 +172,10 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
-            Boolean doesUseSecretIds) {
+            Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -175,6 +189,9 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         this.subnetId = subnetId;
         this.routingMethod = routingMethod;
         this.doesUseSecretIds = doesUseSecretIds;
+        this.subscriptionId = subscriptionId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.securityAttributes = securityAttributes;
     }
 
     /**
@@ -389,6 +406,62 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         return doesUseSecretIds;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    /**
+     * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+     * Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+     * subscription id is provided. Otherwise the cluster placement group must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+     * Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+     * subscription id is provided. Otherwise the cluster placement group must not be provided.
+     *
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -415,6 +488,10 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", routingMethod=").append(String.valueOf(this.routingMethod));
         sb.append(", doesUseSecretIds=").append(String.valueOf(this.doesUseSecretIds));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -441,6 +518,10 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.routingMethod, other.routingMethod)
                 && java.util.Objects.equals(this.doesUseSecretIds, other.doesUseSecretIds)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
 
@@ -466,6 +547,19 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         result =
                 (result * PRIME)
                         + (this.doesUseSecretIds == null ? 43 : this.doesUseSecretIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

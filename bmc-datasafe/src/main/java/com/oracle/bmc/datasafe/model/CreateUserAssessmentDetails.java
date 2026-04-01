@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -29,6 +29,7 @@ public final class CreateUserAssessmentDetails
         "isAssessmentScheduled",
         "schedule",
         "targetId",
+        "targetType",
         "freeformTags",
         "definedTags"
     })
@@ -39,6 +40,7 @@ public final class CreateUserAssessmentDetails
             Boolean isAssessmentScheduled,
             String schedule,
             String targetId,
+            UserAssessmentTargetType targetType,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -48,6 +50,7 @@ public final class CreateUserAssessmentDetails
         this.isAssessmentScheduled = isAssessmentScheduled;
         this.schedule = schedule;
         this.targetId = targetId;
+        this.targetType = targetType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -167,19 +170,35 @@ public final class CreateUserAssessmentDetails
             return this;
         }
         /**
-         * The OCID of the target database on which the user assessment is to be run.
+         * The OCID of the target database or target database group on which user assessment is to be run.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The OCID of the target database on which the user assessment is to be run.
+         * The OCID of the target database or target database group on which user assessment is to be run.
          * @param targetId the value to set
          * @return this builder
          **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
+            return this;
+        }
+        /**
+         * The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+        private UserAssessmentTargetType targetType;
+
+        /**
+         * The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+         * @param targetType the value to set
+         * @return this builder
+         **/
+        public Builder targetType(UserAssessmentTargetType targetType) {
+            this.targetType = targetType;
+            this.__explicitlySet__.add("targetType");
             return this;
         }
         /**
@@ -238,6 +257,7 @@ public final class CreateUserAssessmentDetails
                             this.isAssessmentScheduled,
                             this.schedule,
                             this.targetId,
+                            this.targetType,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -265,6 +285,9 @@ public final class CreateUserAssessmentDetails
             }
             if (model.wasPropertyExplicitlySet("targetId")) {
                 this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("targetType")) {
+                this.targetType(model.getTargetType());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -390,17 +413,31 @@ public final class CreateUserAssessmentDetails
     }
 
     /**
-     * The OCID of the target database on which the user assessment is to be run.
+     * The OCID of the target database or target database group on which user assessment is to be run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The OCID of the target database on which the user assessment is to be run.
+     * The OCID of the target database or target database group on which user assessment is to be run.
      * @return the value
      **/
     public String getTargetId() {
         return targetId;
+    }
+
+    /**
+     * The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+    private final UserAssessmentTargetType targetType;
+
+    /**
+     * The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     * @return the value
+     **/
+    public UserAssessmentTargetType getTargetType() {
+        return targetType;
     }
 
     /**
@@ -461,6 +498,7 @@ public final class CreateUserAssessmentDetails
         sb.append(", isAssessmentScheduled=").append(String.valueOf(this.isAssessmentScheduled));
         sb.append(", schedule=").append(String.valueOf(this.schedule));
         sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", targetType=").append(String.valueOf(this.targetType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -483,6 +521,7 @@ public final class CreateUserAssessmentDetails
                 && java.util.Objects.equals(this.isAssessmentScheduled, other.isAssessmentScheduled)
                 && java.util.Objects.equals(this.schedule, other.schedule)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -504,6 +543,7 @@ public final class CreateUserAssessmentDetails
                                 : this.isAssessmentScheduled.hashCode());
         result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

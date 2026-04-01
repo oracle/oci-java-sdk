@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplacepublisher.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.marketplacepublisher.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SubmitListingRevisionForReviewDetails.Builder.class
 )
@@ -22,12 +22,19 @@ package com.oracle.bmc.marketplacepublisher.model;
 public final class SubmitListingRevisionForReviewDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"noteDetails", "areInternalTenancyLaunchAllowed"})
+    @java.beans.ConstructorProperties({
+        "noteDetails",
+        "areInternalTenancyLaunchAllowed",
+        "shouldAutoPublishOnApproval"
+    })
     public SubmitListingRevisionForReviewDetails(
-            String noteDetails, Boolean areInternalTenancyLaunchAllowed) {
+            String noteDetails,
+            Boolean areInternalTenancyLaunchAllowed,
+            Boolean shouldAutoPublishOnApproval) {
         super();
         this.noteDetails = noteDetails;
         this.areInternalTenancyLaunchAllowed = areInternalTenancyLaunchAllowed;
+        this.shouldAutoPublishOnApproval = shouldAutoPublishOnApproval;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -64,6 +71,22 @@ public final class SubmitListingRevisionForReviewDetails
             this.__explicitlySet__.add("areInternalTenancyLaunchAllowed");
             return this;
         }
+        /**
+         * Identifies whether publisher intends to publish the listing automatically upon approval.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldAutoPublishOnApproval")
+        private Boolean shouldAutoPublishOnApproval;
+
+        /**
+         * Identifies whether publisher intends to publish the listing automatically upon approval.
+         * @param shouldAutoPublishOnApproval the value to set
+         * @return this builder
+         **/
+        public Builder shouldAutoPublishOnApproval(Boolean shouldAutoPublishOnApproval) {
+            this.shouldAutoPublishOnApproval = shouldAutoPublishOnApproval;
+            this.__explicitlySet__.add("shouldAutoPublishOnApproval");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -71,7 +94,9 @@ public final class SubmitListingRevisionForReviewDetails
         public SubmitListingRevisionForReviewDetails build() {
             SubmitListingRevisionForReviewDetails model =
                     new SubmitListingRevisionForReviewDetails(
-                            this.noteDetails, this.areInternalTenancyLaunchAllowed);
+                            this.noteDetails,
+                            this.areInternalTenancyLaunchAllowed,
+                            this.shouldAutoPublishOnApproval);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -85,6 +110,9 @@ public final class SubmitListingRevisionForReviewDetails
             }
             if (model.wasPropertyExplicitlySet("areInternalTenancyLaunchAllowed")) {
                 this.areInternalTenancyLaunchAllowed(model.getAreInternalTenancyLaunchAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("shouldAutoPublishOnApproval")) {
+                this.shouldAutoPublishOnApproval(model.getShouldAutoPublishOnApproval());
             }
             return this;
         }
@@ -129,6 +157,20 @@ public final class SubmitListingRevisionForReviewDetails
         return areInternalTenancyLaunchAllowed;
     }
 
+    /**
+     * Identifies whether publisher intends to publish the listing automatically upon approval.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldAutoPublishOnApproval")
+    private final Boolean shouldAutoPublishOnApproval;
+
+    /**
+     * Identifies whether publisher intends to publish the listing automatically upon approval.
+     * @return the value
+     **/
+    public Boolean getShouldAutoPublishOnApproval() {
+        return shouldAutoPublishOnApproval;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -146,6 +188,8 @@ public final class SubmitListingRevisionForReviewDetails
         sb.append("noteDetails=").append(String.valueOf(this.noteDetails));
         sb.append(", areInternalTenancyLaunchAllowed=")
                 .append(String.valueOf(this.areInternalTenancyLaunchAllowed));
+        sb.append(", shouldAutoPublishOnApproval=")
+                .append(String.valueOf(this.shouldAutoPublishOnApproval));
         sb.append(")");
         return sb.toString();
     }
@@ -163,6 +207,8 @@ public final class SubmitListingRevisionForReviewDetails
         return java.util.Objects.equals(this.noteDetails, other.noteDetails)
                 && java.util.Objects.equals(
                         this.areInternalTenancyLaunchAllowed, other.areInternalTenancyLaunchAllowed)
+                && java.util.Objects.equals(
+                        this.shouldAutoPublishOnApproval, other.shouldAutoPublishOnApproval)
                 && super.equals(other);
     }
 
@@ -176,6 +222,11 @@ public final class SubmitListingRevisionForReviewDetails
                         + (this.areInternalTenancyLaunchAllowed == null
                                 ? 43
                                 : this.areInternalTenancyLaunchAllowed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldAutoPublishOnApproval == null
+                                ? 43
+                                : this.shouldAutoPublishOnApproval.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

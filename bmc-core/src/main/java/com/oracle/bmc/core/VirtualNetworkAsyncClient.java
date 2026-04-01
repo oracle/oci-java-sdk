@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -7,6 +7,8 @@ package com.oracle.bmc.core;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for VirtualNetwork service. <br/>
@@ -28,7 +30,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("VIRTUALNETWORK")
+                    .serviceName(VirtualNetworkClient.class.getName())
                     .serviceEndpointPrefix("iaas")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -407,12 +418,21 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -442,15 +462,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -562,6 +574,58 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     AddDrgRouteRulesRequest, AddDrgRouteRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddIpv4SubnetCidrResponse> addIpv4SubnetCidr(
+            AddIpv4SubnetCidrRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddIpv4SubnetCidrRequest, AddIpv4SubnetCidrResponse>
+                    handler) {
+        LOG.trace("Called async addIpv4SubnetCidr");
+        final AddIpv4SubnetCidrRequest interceptedRequest =
+                AddIpv4SubnetCidrConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddIpv4SubnetCidrConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "AddIpv4SubnetCidr",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/AddIpv4SubnetCidr");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddIpv4SubnetCidrResponse>
+                transformer =
+                        AddIpv4SubnetCidrConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddIpv4SubnetCidrRequest, AddIpv4SubnetCidrResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddIpv4SubnetCidrRequest, AddIpv4SubnetCidrResponse>,
+                        java.util.concurrent.Future<AddIpv4SubnetCidrResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddIpv4SubnetCidrDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddIpv4SubnetCidrRequest, AddIpv4SubnetCidrResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -997,6 +1061,216 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<BulkCreateIpv6sResponse> bulkCreateIpv6s(
+            BulkCreateIpv6sRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkCreateIpv6sRequest, BulkCreateIpv6sResponse>
+                    handler) {
+        LOG.trace("Called async bulkCreateIpv6s");
+        final BulkCreateIpv6sRequest interceptedRequest =
+                BulkCreateIpv6sConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkCreateIpv6sConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "BulkCreateIpv6s",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/BulkCreateIpv6s");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkCreateIpv6sResponse>
+                transformer =
+                        BulkCreateIpv6sConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<BulkCreateIpv6sRequest, BulkCreateIpv6sResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkCreateIpv6sRequest, BulkCreateIpv6sResponse>,
+                        java.util.concurrent.Future<BulkCreateIpv6sResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkCreateIpv6sDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkCreateIpv6sRequest, BulkCreateIpv6sResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkCreatePrivateIpsResponse> bulkCreatePrivateIps(
+            BulkCreatePrivateIpsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkCreatePrivateIpsRequest, BulkCreatePrivateIpsResponse>
+                    handler) {
+        LOG.trace("Called async bulkCreatePrivateIps");
+        final BulkCreatePrivateIpsRequest interceptedRequest =
+                BulkCreatePrivateIpsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkCreatePrivateIpsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "BulkCreatePrivateIps",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/BulkCreatePrivateIps");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkCreatePrivateIpsResponse>
+                transformer =
+                        BulkCreatePrivateIpsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkCreatePrivateIpsRequest, BulkCreatePrivateIpsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkCreatePrivateIpsRequest, BulkCreatePrivateIpsResponse>,
+                        java.util.concurrent.Future<BulkCreatePrivateIpsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkCreatePrivateIpsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkCreatePrivateIpsRequest, BulkCreatePrivateIpsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkDeleteIpv6sResponse> bulkDeleteIpv6s(
+            BulkDeleteIpv6sRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkDeleteIpv6sRequest, BulkDeleteIpv6sResponse>
+                    handler) {
+        LOG.trace("Called async bulkDeleteIpv6s");
+        final BulkDeleteIpv6sRequest interceptedRequest =
+                BulkDeleteIpv6sConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkDeleteIpv6sConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "BulkDeleteIpv6s",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/BulkDeleteIpv6s");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkDeleteIpv6sResponse>
+                transformer =
+                        BulkDeleteIpv6sConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<BulkDeleteIpv6sRequest, BulkDeleteIpv6sResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkDeleteIpv6sRequest, BulkDeleteIpv6sResponse>,
+                        java.util.concurrent.Future<BulkDeleteIpv6sResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkDeleteIpv6sDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkDeleteIpv6sRequest, BulkDeleteIpv6sResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkDeletePrivateIpsResponse> bulkDeletePrivateIps(
+            BulkDeletePrivateIpsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkDeletePrivateIpsRequest, BulkDeletePrivateIpsResponse>
+                    handler) {
+        LOG.trace("Called async bulkDeletePrivateIps");
+        final BulkDeletePrivateIpsRequest interceptedRequest =
+                BulkDeletePrivateIpsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkDeletePrivateIpsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "BulkDeletePrivateIps",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/BulkDeletePrivateIps");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkDeletePrivateIpsResponse>
+                transformer =
+                        BulkDeletePrivateIpsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkDeletePrivateIpsRequest, BulkDeletePrivateIpsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkDeletePrivateIpsRequest, BulkDeletePrivateIpsResponse>,
+                        java.util.concurrent.Future<BulkDeletePrivateIpsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkDeletePrivateIpsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkDeletePrivateIpsRequest, BulkDeletePrivateIpsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<BulkDeleteVirtualCircuitPublicPrefixesResponse>
             bulkDeleteVirtualCircuitPublicPrefixes(
                     BulkDeleteVirtualCircuitPublicPrefixesRequest request,
@@ -1044,6 +1318,216 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     BulkDeleteVirtualCircuitPublicPrefixesRequest,
                     BulkDeleteVirtualCircuitPublicPrefixesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkDetachIpv6sResponse> bulkDetachIpv6s(
+            BulkDetachIpv6sRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkDetachIpv6sRequest, BulkDetachIpv6sResponse>
+                    handler) {
+        LOG.trace("Called async bulkDetachIpv6s");
+        final BulkDetachIpv6sRequest interceptedRequest =
+                BulkDetachIpv6sConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkDetachIpv6sConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "BulkDetachIpv6s",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/BulkDetachIpv6s");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkDetachIpv6sResponse>
+                transformer =
+                        BulkDetachIpv6sConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<BulkDetachIpv6sRequest, BulkDetachIpv6sResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkDetachIpv6sRequest, BulkDetachIpv6sResponse>,
+                        java.util.concurrent.Future<BulkDetachIpv6sResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkDetachIpv6sDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkDetachIpv6sRequest, BulkDetachIpv6sResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkDetachPrivateIpsResponse> bulkDetachPrivateIps(
+            BulkDetachPrivateIpsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkDetachPrivateIpsRequest, BulkDetachPrivateIpsResponse>
+                    handler) {
+        LOG.trace("Called async bulkDetachPrivateIps");
+        final BulkDetachPrivateIpsRequest interceptedRequest =
+                BulkDetachPrivateIpsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkDetachPrivateIpsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "BulkDetachPrivateIps",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/BulkDetachPrivateIps");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkDetachPrivateIpsResponse>
+                transformer =
+                        BulkDetachPrivateIpsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkDetachPrivateIpsRequest, BulkDetachPrivateIpsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkDetachPrivateIpsRequest, BulkDetachPrivateIpsResponse>,
+                        java.util.concurrent.Future<BulkDetachPrivateIpsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkDetachPrivateIpsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkDetachPrivateIpsRequest, BulkDetachPrivateIpsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUpdateIpv6sResponse> bulkUpdateIpv6s(
+            BulkUpdateIpv6sRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUpdateIpv6sRequest, BulkUpdateIpv6sResponse>
+                    handler) {
+        LOG.trace("Called async bulkUpdateIpv6s");
+        final BulkUpdateIpv6sRequest interceptedRequest =
+                BulkUpdateIpv6sConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUpdateIpv6sConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "BulkUpdateIpv6s",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/BulkUpdateIpv6s");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkUpdateIpv6sResponse>
+                transformer =
+                        BulkUpdateIpv6sConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<BulkUpdateIpv6sRequest, BulkUpdateIpv6sResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUpdateIpv6sRequest, BulkUpdateIpv6sResponse>,
+                        java.util.concurrent.Future<BulkUpdateIpv6sResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUpdateIpv6sDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUpdateIpv6sRequest, BulkUpdateIpv6sResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUpdatePrivateIpsResponse> bulkUpdatePrivateIps(
+            BulkUpdatePrivateIpsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUpdatePrivateIpsRequest, BulkUpdatePrivateIpsResponse>
+                    handler) {
+        LOG.trace("Called async bulkUpdatePrivateIps");
+        final BulkUpdatePrivateIpsRequest interceptedRequest =
+                BulkUpdatePrivateIpsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUpdatePrivateIpsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "BulkUpdatePrivateIps",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/BulkUpdatePrivateIps");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkUpdatePrivateIpsResponse>
+                transformer =
+                        BulkUpdatePrivateIpsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkUpdatePrivateIpsRequest, BulkUpdatePrivateIpsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUpdatePrivateIpsRequest, BulkUpdatePrivateIpsResponse>,
+                        java.util.concurrent.Future<BulkUpdatePrivateIpsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUpdatePrivateIpsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUpdatePrivateIpsRequest, BulkUpdatePrivateIpsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -10538,6 +11022,59 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyIpv4SubnetCidrResponse> modifyIpv4SubnetCidr(
+            ModifyIpv4SubnetCidrRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ModifyIpv4SubnetCidrRequest, ModifyIpv4SubnetCidrResponse>
+                    handler) {
+        LOG.trace("Called async modifyIpv4SubnetCidr");
+        final ModifyIpv4SubnetCidrRequest interceptedRequest =
+                ModifyIpv4SubnetCidrConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ModifyIpv4SubnetCidrConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "ModifyIpv4SubnetCidr",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ModifyIpv4SubnetCidr");
+        final java.util.function.Function<javax.ws.rs.core.Response, ModifyIpv4SubnetCidrResponse>
+                transformer =
+                        ModifyIpv4SubnetCidrConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ModifyIpv4SubnetCidrRequest, ModifyIpv4SubnetCidrResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ModifyIpv4SubnetCidrRequest, ModifyIpv4SubnetCidrResponse>,
+                        java.util.concurrent.Future<ModifyIpv4SubnetCidrResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getModifyIpv4SubnetCidrDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ModifyIpv4SubnetCidrRequest, ModifyIpv4SubnetCidrResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyVcnCidrResponse> modifyVcnCidr(
             ModifyVcnCidrRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ModifyVcnCidrRequest, ModifyVcnCidrResponse>
@@ -10840,6 +11377,59 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RemoveImportDrgRouteDistributionRequest,
                     RemoveImportDrgRouteDistributionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveIpv4SubnetCidrResponse> removeIpv4SubnetCidr(
+            RemoveIpv4SubnetCidrRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveIpv4SubnetCidrRequest, RemoveIpv4SubnetCidrResponse>
+                    handler) {
+        LOG.trace("Called async removeIpv4SubnetCidr");
+        final RemoveIpv4SubnetCidrRequest interceptedRequest =
+                RemoveIpv4SubnetCidrConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveIpv4SubnetCidrConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "RemoveIpv4SubnetCidr",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/RemoveIpv4SubnetCidr");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveIpv4SubnetCidrResponse>
+                transformer =
+                        RemoveIpv4SubnetCidrConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveIpv4SubnetCidrRequest, RemoveIpv4SubnetCidrResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveIpv4SubnetCidrRequest, RemoveIpv4SubnetCidrResponse>,
+                        java.util.concurrent.Future<RemoveIpv4SubnetCidrResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveIpv4SubnetCidrDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveIpv4SubnetCidrRequest, RemoveIpv4SubnetCidrResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

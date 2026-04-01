@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -34,11 +34,13 @@ package com.oracle.bmc.networkfirewall.model;
 public class UpdateTunnelInspectionRuleDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"action", "position"})
-    protected UpdateTunnelInspectionRuleDetails(InspectActionType action, RulePosition position) {
+    @java.beans.ConstructorProperties({"action", "position", "description"})
+    protected UpdateTunnelInspectionRuleDetails(
+            InspectActionType action, RulePosition position, String description) {
         super();
         this.action = action;
         this.position = position;
+        this.description = description;
     }
 
     /**
@@ -70,6 +72,20 @@ public class UpdateTunnelInspectionRuleDetails
         return position;
     }
 
+    /**
+     * The description of the tunnel inspect rule. This field can be used to add additional info.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * The description of the tunnel inspect rule. This field can be used to add additional info.
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -86,6 +102,7 @@ public class UpdateTunnelInspectionRuleDetails
         sb.append("super=").append(super.toString());
         sb.append("action=").append(String.valueOf(this.action));
         sb.append(", position=").append(String.valueOf(this.position));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
     }
@@ -102,6 +119,7 @@ public class UpdateTunnelInspectionRuleDetails
         UpdateTunnelInspectionRuleDetails other = (UpdateTunnelInspectionRuleDetails) o;
         return java.util.Objects.equals(this.action, other.action)
                 && java.util.Objects.equals(this.position, other.position)
+                && java.util.Objects.equals(this.description, other.description)
                 && super.equals(other);
     }
 
@@ -111,6 +129,7 @@ public class UpdateTunnelInspectionRuleDetails
         int result = 1;
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
         result = (result * PRIME) + (this.position == null ? 43 : this.position.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -45,6 +45,8 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "availabilityDomain",
         "capacityReservationId",
         "compartmentId",
+        "placementConstraintDetails",
+        "isAIEnterpriseEnabled",
         "clusterPlacementGroupId",
         "dedicatedVmHostId",
         "definedTags",
@@ -81,6 +83,8 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
             String availabilityDomain,
             String capacityReservationId,
             String compartmentId,
+            PlacementConstraintDetails placementConstraintDetails,
+            Boolean isAIEnterpriseEnabled,
             String clusterPlacementGroupId,
             String dedicatedVmHostId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -116,6 +120,8 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
         this.compartmentId = compartmentId;
+        this.placementConstraintDetails = placementConstraintDetails;
+        this.isAIEnterpriseEnabled = isAIEnterpriseEnabled;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.dedicatedVmHostId = dedicatedVmHostId;
         this.definedTags = definedTags;
@@ -209,6 +215,34 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+        private PlacementConstraintDetails placementConstraintDetails;
+
+        public Builder placementConstraintDetails(
+                PlacementConstraintDetails placementConstraintDetails) {
+            this.placementConstraintDetails = placementConstraintDetails;
+            this.__explicitlySet__.add("placementConstraintDetails");
+            return this;
+        }
+        /**
+         * Whether AI enterprise is enabled on the instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAIEnterpriseEnabled")
+        private Boolean isAIEnterpriseEnabled;
+
+        /**
+         * Whether AI enterprise is enabled on the instance.
+         *
+         * @param isAIEnterpriseEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isAIEnterpriseEnabled(Boolean isAIEnterpriseEnabled) {
+            this.isAIEnterpriseEnabled = isAIEnterpriseEnabled;
+            this.__explicitlySet__.add("isAIEnterpriseEnabled");
             return this;
         }
         /**
@@ -834,6 +868,8 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.availabilityDomain,
                             this.capacityReservationId,
                             this.compartmentId,
+                            this.placementConstraintDetails,
+                            this.isAIEnterpriseEnabled,
                             this.clusterPlacementGroupId,
                             this.dedicatedVmHostId,
                             this.definedTags,
@@ -881,6 +917,12 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
+                this.placementConstraintDetails(model.getPlacementConstraintDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isAIEnterpriseEnabled")) {
+                this.isAIEnterpriseEnabled(model.getIsAIEnterpriseEnabled());
             }
             if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
                 this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
@@ -1042,6 +1084,29 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+    private final PlacementConstraintDetails placementConstraintDetails;
+
+    public PlacementConstraintDetails getPlacementConstraintDetails() {
+        return placementConstraintDetails;
+    }
+
+    /**
+     * Whether AI enterprise is enabled on the instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAIEnterpriseEnabled")
+    private final Boolean isAIEnterpriseEnabled;
+
+    /**
+     * Whether AI enterprise is enabled on the instance.
+     *
+     * @return the value
+     **/
+    public Boolean getIsAIEnterpriseEnabled() {
+        return isAIEnterpriseEnabled;
     }
 
     /**
@@ -1767,6 +1832,9 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", placementConstraintDetails=")
+                .append(String.valueOf(this.placementConstraintDetails));
+        sb.append(", isAIEnterpriseEnabled=").append(String.valueOf(this.isAIEnterpriseEnabled));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
@@ -1820,6 +1888,9 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.placementConstraintDetails, other.placementConstraintDetails)
+                && java.util.Objects.equals(this.isAIEnterpriseEnabled, other.isAIEnterpriseEnabled)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
@@ -1876,6 +1947,16 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraintDetails == null
+                                ? 43
+                                : this.placementConstraintDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAIEnterpriseEnabled == null
+                                ? 43
+                                : this.isAIEnterpriseEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.clusterPlacementGroupId == null

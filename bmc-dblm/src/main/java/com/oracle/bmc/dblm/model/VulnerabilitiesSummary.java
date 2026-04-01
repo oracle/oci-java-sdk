@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dblm.model;
@@ -58,13 +58,13 @@ public final class VulnerabilitiesSummary
             return this;
         }
         /**
-         * Cummulative number of resources that have critical level vulnerabilities.
+         * Cumulative number of resources that have critical level vulnerabilities.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("critical")
         private Integer critical;
 
         /**
-         * Cummulative number of resources that have critical level vulnerabilities.
+         * Cumulative number of resources that have critical level vulnerabilities.
          * @param critical the value to set
          * @return this builder
          **/
@@ -74,13 +74,13 @@ public final class VulnerabilitiesSummary
             return this;
         }
         /**
-         * Cummulative number of resources that have high level vulnerabilities.
+         * Cumulative number of resources that have high level vulnerabilities.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private Integer high;
 
         /**
-         * Cummulative number of resources that have high level vulnerabilities.
+         * Cumulative number of resources that have high level vulnerabilities.
          * @param high the value to set
          * @return this builder
          **/
@@ -90,13 +90,13 @@ public final class VulnerabilitiesSummary
             return this;
         }
         /**
-         * Cummulative number of resources that have medium level vulnerabilities.
+         * Cumulative number of resources that have medium level vulnerabilities.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("medium")
         private Integer medium;
 
         /**
-         * Cummulative number of resources that have medium level vulnerabilities.
+         * Cumulative number of resources that have medium level vulnerabilities.
          * @param medium the value to set
          * @return this builder
          **/
@@ -106,13 +106,13 @@ public final class VulnerabilitiesSummary
             return this;
         }
         /**
-         * Cummulative number of resources that have info level vulnerabilities.
+         * Cumulative number of resources that have info level vulnerabilities.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("info")
         private Integer info;
 
         /**
-         * Cummulative number of resources that have info level vulnerabilities.
+         * Cumulative number of resources that have info level vulnerabilities.
          * @param info the value to set
          * @return this builder
          **/
@@ -122,13 +122,13 @@ public final class VulnerabilitiesSummary
             return this;
         }
         /**
-         * Cummulative number of resources that have low level vulnerabilities.
+         * Cumulative number of resources that have low level vulnerabilities.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("low")
         private Integer low;
 
         /**
-         * Cummulative number of resources that have low level vulnerabilities.
+         * Cumulative number of resources that have low level vulnerabilities.
          * @param low the value to set
          * @return this builder
          **/
@@ -201,13 +201,13 @@ public final class VulnerabilitiesSummary
     }
 
     /**
-     * Cummulative number of resources that have critical level vulnerabilities.
+     * Cumulative number of resources that have critical level vulnerabilities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("critical")
     private final Integer critical;
 
     /**
-     * Cummulative number of resources that have critical level vulnerabilities.
+     * Cumulative number of resources that have critical level vulnerabilities.
      * @return the value
      **/
     public Integer getCritical() {
@@ -215,13 +215,13 @@ public final class VulnerabilitiesSummary
     }
 
     /**
-     * Cummulative number of resources that have high level vulnerabilities.
+     * Cumulative number of resources that have high level vulnerabilities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("high")
     private final Integer high;
 
     /**
-     * Cummulative number of resources that have high level vulnerabilities.
+     * Cumulative number of resources that have high level vulnerabilities.
      * @return the value
      **/
     public Integer getHigh() {
@@ -229,13 +229,13 @@ public final class VulnerabilitiesSummary
     }
 
     /**
-     * Cummulative number of resources that have medium level vulnerabilities.
+     * Cumulative number of resources that have medium level vulnerabilities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("medium")
     private final Integer medium;
 
     /**
-     * Cummulative number of resources that have medium level vulnerabilities.
+     * Cumulative number of resources that have medium level vulnerabilities.
      * @return the value
      **/
     public Integer getMedium() {
@@ -243,13 +243,13 @@ public final class VulnerabilitiesSummary
     }
 
     /**
-     * Cummulative number of resources that have info level vulnerabilities.
+     * Cumulative number of resources that have info level vulnerabilities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("info")
     private final Integer info;
 
     /**
-     * Cummulative number of resources that have info level vulnerabilities.
+     * Cumulative number of resources that have info level vulnerabilities.
      * @return the value
      **/
     public Integer getInfo() {
@@ -257,13 +257,13 @@ public final class VulnerabilitiesSummary
     }
 
     /**
-     * Cummulative number of resources that have low level vulnerabilities.
+     * Cumulative number of resources that have low level vulnerabilities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("low")
     private final Integer low;
 
     /**
-     * Cummulative number of resources that have low level vulnerabilities.
+     * Cumulative number of resources that have low level vulnerabilities.
      * @return the value
      **/
     public Integer getLow() {

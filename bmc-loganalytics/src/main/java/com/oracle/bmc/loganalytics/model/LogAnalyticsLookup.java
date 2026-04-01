@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -37,7 +37,11 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
         "referringSources",
         "statusSummary",
         "timeUpdated",
-        "categories"
+        "categories",
+        "id",
+        "compartmentId",
+        "freeformTags",
+        "definedTags"
     })
     public LogAnalyticsLookup(
             Long activeEditVersion,
@@ -55,7 +59,11 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
             AutoLookups referringSources,
             StatusSummary statusSummary,
             java.util.Date timeUpdated,
-            java.util.List<LogAnalyticsCategory> categories) {
+            java.util.List<LogAnalyticsCategory> categories,
+            String id,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.activeEditVersion = activeEditVersion;
         this.canonicalLink = canonicalLink;
@@ -73,6 +81,10 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
         this.statusSummary = statusSummary;
         this.timeUpdated = timeUpdated;
         this.categories = categories;
+        this.id = id;
+        this.compartmentId = compartmentId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -331,6 +343,83 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("categories");
             return this;
         }
+        /**
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        /**
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+        /**
+         * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -353,7 +442,11 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
                             this.referringSources,
                             this.statusSummary,
                             this.timeUpdated,
-                            this.categories);
+                            this.categories,
+                            this.id,
+                            this.compartmentId,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -409,6 +502,18 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("categories")) {
                 this.categories(model.getCategories());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
             }
             return this;
         }
@@ -694,6 +799,74 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
         return categories;
     }
 
+    /**
+     * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+     * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    private final String id;
+
+    /**
+     * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+     * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+     *
+     * @return the value
+     **/
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -724,6 +897,10 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
         sb.append(", statusSummary=").append(String.valueOf(this.statusSummary));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", categories=").append(String.valueOf(this.categories));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -754,6 +931,10 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.statusSummary, other.statusSummary)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -793,6 +974,12 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
                         + (this.statusSummary == null ? 43 : this.statusSummary.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

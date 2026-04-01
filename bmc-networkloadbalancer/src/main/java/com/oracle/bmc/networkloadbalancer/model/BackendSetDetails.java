@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -160,14 +160,16 @@ public final class BackendSetDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+         * This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.
+         * If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInstantFailoverTcpResetEnabled")
         private Boolean isInstantFailoverTcpResetEnabled;
 
         /**
-         * If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+         * This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.
+         * If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
          *
          * @param isInstantFailoverTcpResetEnabled the value to set
          * @return this builder
@@ -178,14 +180,16 @@ public final class BackendSetDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+         * If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.
+         * The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("areOperationallyActiveBackendsPreferred")
         private Boolean areOperationallyActiveBackendsPreferred;
 
         /**
-         * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+         * If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.
+         * The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
          *
          * @param areOperationallyActiveBackendsPreferred the value to set
          * @return this builder
@@ -379,14 +383,16 @@ public final class BackendSetDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     * This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.
+     * If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInstantFailoverTcpResetEnabled")
     private final Boolean isInstantFailoverTcpResetEnabled;
 
     /**
-     * If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     * This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.
+     * If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
      *
      * @return the value
      **/
@@ -395,14 +401,16 @@ public final class BackendSetDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     * If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.
+     * The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("areOperationallyActiveBackendsPreferred")
     private final Boolean areOperationallyActiveBackendsPreferred;
 
     /**
-     * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     * If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.
+     * The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
      *
      * @return the value
      **/

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument.model;
@@ -43,13 +43,46 @@ public final class DocumentTextExtractionFeature extends DocumentFeature {
             this.__explicitlySet__.add("generateSearchablePdf");
             return this;
         }
+        /**
+         * Unique identifier custom model OCID that should be used for inference.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+        private String modelId;
+
+        /**
+         * Unique identifier custom model OCID that should be used for inference.
+         * @param modelId the value to set
+         * @return this builder
+         **/
+        public Builder modelId(String modelId) {
+            this.modelId = modelId;
+            this.__explicitlySet__.add("modelId");
+            return this;
+        }
+        /**
+         * Whether checkbox detection feature is enabled or disabled.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("selectionMarkDetection")
+        private Boolean selectionMarkDetection;
+
+        /**
+         * Whether checkbox detection feature is enabled or disabled.
+         * @param selectionMarkDetection the value to set
+         * @return this builder
+         **/
+        public Builder selectionMarkDetection(Boolean selectionMarkDetection) {
+            this.selectionMarkDetection = selectionMarkDetection;
+            this.__explicitlySet__.add("selectionMarkDetection");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DocumentTextExtractionFeature build() {
             DocumentTextExtractionFeature model =
-                    new DocumentTextExtractionFeature(this.generateSearchablePdf);
+                    new DocumentTextExtractionFeature(
+                            this.generateSearchablePdf, this.modelId, this.selectionMarkDetection);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -60,6 +93,12 @@ public final class DocumentTextExtractionFeature extends DocumentFeature {
         public Builder copy(DocumentTextExtractionFeature model) {
             if (model.wasPropertyExplicitlySet("generateSearchablePdf")) {
                 this.generateSearchablePdf(model.getGenerateSearchablePdf());
+            }
+            if (model.wasPropertyExplicitlySet("modelId")) {
+                this.modelId(model.getModelId());
+            }
+            if (model.wasPropertyExplicitlySet("selectionMarkDetection")) {
+                this.selectionMarkDetection(model.getSelectionMarkDetection());
             }
             return this;
         }
@@ -77,9 +116,12 @@ public final class DocumentTextExtractionFeature extends DocumentFeature {
     }
 
     @Deprecated
-    public DocumentTextExtractionFeature(Boolean generateSearchablePdf) {
+    public DocumentTextExtractionFeature(
+            Boolean generateSearchablePdf, String modelId, Boolean selectionMarkDetection) {
         super();
         this.generateSearchablePdf = generateSearchablePdf;
+        this.modelId = modelId;
+        this.selectionMarkDetection = selectionMarkDetection;
     }
 
     /**
@@ -94,6 +136,34 @@ public final class DocumentTextExtractionFeature extends DocumentFeature {
      **/
     public Boolean getGenerateSearchablePdf() {
         return generateSearchablePdf;
+    }
+
+    /**
+     * Unique identifier custom model OCID that should be used for inference.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+    private final String modelId;
+
+    /**
+     * Unique identifier custom model OCID that should be used for inference.
+     * @return the value
+     **/
+    public String getModelId() {
+        return modelId;
+    }
+
+    /**
+     * Whether checkbox detection feature is enabled or disabled.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("selectionMarkDetection")
+    private final Boolean selectionMarkDetection;
+
+    /**
+     * Whether checkbox detection feature is enabled or disabled.
+     * @return the value
+     **/
+    public Boolean getSelectionMarkDetection() {
+        return selectionMarkDetection;
     }
 
     @Override
@@ -111,6 +181,8 @@ public final class DocumentTextExtractionFeature extends DocumentFeature {
         sb.append("DocumentTextExtractionFeature(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", generateSearchablePdf=").append(String.valueOf(this.generateSearchablePdf));
+        sb.append(", modelId=").append(String.valueOf(this.modelId));
+        sb.append(", selectionMarkDetection=").append(String.valueOf(this.selectionMarkDetection));
         sb.append(")");
         return sb.toString();
     }
@@ -126,6 +198,9 @@ public final class DocumentTextExtractionFeature extends DocumentFeature {
 
         DocumentTextExtractionFeature other = (DocumentTextExtractionFeature) o;
         return java.util.Objects.equals(this.generateSearchablePdf, other.generateSearchablePdf)
+                && java.util.Objects.equals(this.modelId, other.modelId)
+                && java.util.Objects.equals(
+                        this.selectionMarkDetection, other.selectionMarkDetection)
                 && super.equals(other);
     }
 
@@ -138,6 +213,12 @@ public final class DocumentTextExtractionFeature extends DocumentFeature {
                         + (this.generateSearchablePdf == null
                                 ? 43
                                 : this.generateSearchablePdf.hashCode());
+        result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.selectionMarkDetection == null
+                                ? 43
+                                : this.selectionMarkDetection.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm.model;
@@ -67,13 +67,13 @@ public final class ApplicationDependencyRecommendationSummary
             return this;
         }
         /**
-         * Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+         * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("purl")
         private String purl;
 
         /**
-         * Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+         * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
          * @param purl the value to set
          * @return this builder
          **/
@@ -132,13 +132,13 @@ public final class ApplicationDependencyRecommendationSummary
             return this;
         }
         /**
-         * Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+         * Recommended application dependency in purl format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendedPurl")
         private String recommendedPurl;
 
         /**
-         * Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+         * Recommended application dependency in purl format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
          * @param recommendedPurl the value to set
          * @return this builder
          **/
@@ -216,13 +216,13 @@ public final class ApplicationDependencyRecommendationSummary
     }
 
     /**
-     * Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("purl")
     private final String purl;
 
     /**
-     * Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
      * @return the value
      **/
     public String getPurl() {
@@ -272,13 +272,13 @@ public final class ApplicationDependencyRecommendationSummary
     }
 
     /**
-     * Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+     * Recommended application dependency in purl format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendedPurl")
     private final String recommendedPurl;
 
     /**
-     * Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+     * Recommended application dependency in purl format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
      * @return the value
      **/
     public String getRecommendedPurl() {

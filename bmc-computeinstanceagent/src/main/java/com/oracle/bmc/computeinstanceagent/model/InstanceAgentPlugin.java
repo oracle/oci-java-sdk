@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * The agent plugin
+ * An Oracle Cloud Agent plugin.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -34,13 +34,13 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The plugin name
+         * The plugin name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The plugin name
+         * The plugin name.
          * @param name the value to set
          * @return this builder
          **/
@@ -50,13 +50,39 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
+         * The plugin status.
+         * <p>
+         * These are the available statuses:
+         * * {@code RUNNING} - The plugin is running.
+         * * {@code STOPPED} - The plugin is stopped.
+         * * {@code NOT_SUPPORTED} - The plugin is not supported on this platform.
+         * * {@code INVALID} - The plugin status is not recognizable by the service.
+         * <p>
+         * To determine whether the plugin is enabled, use the
+         * {@link #getInstance(GetInstanceRequest) getInstance} operation in the Core
+         * Services API. To enable or disable the plugin, use the
+         * {@link #updateInstance(UpdateInstanceRequest) updateInstance} operation
+         * in the Core Services API.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
+         * The plugin status.
+         * <p>
+         * These are the available statuses:
+         * * {@code RUNNING} - The plugin is running.
+         * * {@code STOPPED} - The plugin is stopped.
+         * * {@code NOT_SUPPORTED} - The plugin is not supported on this platform.
+         * * {@code INVALID} - The plugin status is not recognizable by the service.
+         * <p>
+         * To determine whether the plugin is enabled, use the
+         * {@link #getInstance(GetInstanceRequest) getInstance} operation in the Core
+         * Services API. To enable or disable the plugin, use the
+         * {@link #updateInstance(UpdateInstanceRequest) updateInstance} operation
+         * in the Core Services API.
+         *
          * @param status the value to set
          * @return this builder
          **/
@@ -66,13 +92,13 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The last update time of the plugin in UTC
+         * The last updated time of the plugin, in UTC.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdatedUtc")
         private java.util.Date timeLastUpdatedUtc;
 
         /**
-         * The last update time of the plugin in UTC
+         * The last updated time of the plugin, in UTC.
          * @param timeLastUpdatedUtc the value to set
          * @return this builder
          **/
@@ -82,13 +108,13 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The optional message from the agent plugin
+         * An optional message from the plugin.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * The optional message from the agent plugin
+         * An optional message from the plugin.
          * @param message the value to set
          * @return this builder
          **/
@@ -141,13 +167,13 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The plugin name
+     * The plugin name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The plugin name
+     * The plugin name.
      * @return the value
      **/
     public String getName() {
@@ -155,7 +181,20 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
+     * The plugin status.
+     * <p>
+     * These are the available statuses:
+     * * {@code RUNNING} - The plugin is running.
+     * * {@code STOPPED} - The plugin is stopped.
+     * * {@code NOT_SUPPORTED} - The plugin is not supported on this platform.
+     * * {@code INVALID} - The plugin status is not recognizable by the service.
+     * <p>
+     * To determine whether the plugin is enabled, use the
+     * {@link #getInstance(GetInstanceRequest) getInstance} operation in the Core
+     * Services API. To enable or disable the plugin, use the
+     * {@link #updateInstance(UpdateInstanceRequest) updateInstance} operation
+     * in the Core Services API.
+     *
      **/
     public enum Status {
         Running("RUNNING"),
@@ -204,13 +243,39 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
+     * The plugin status.
+     * <p>
+     * These are the available statuses:
+     * * {@code RUNNING} - The plugin is running.
+     * * {@code STOPPED} - The plugin is stopped.
+     * * {@code NOT_SUPPORTED} - The plugin is not supported on this platform.
+     * * {@code INVALID} - The plugin status is not recognizable by the service.
+     * <p>
+     * To determine whether the plugin is enabled, use the
+     * {@link #getInstance(GetInstanceRequest) getInstance} operation in the Core
+     * Services API. To enable or disable the plugin, use the
+     * {@link #updateInstance(UpdateInstanceRequest) updateInstance} operation
+     * in the Core Services API.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
+     * The plugin status.
+     * <p>
+     * These are the available statuses:
+     * * {@code RUNNING} - The plugin is running.
+     * * {@code STOPPED} - The plugin is stopped.
+     * * {@code NOT_SUPPORTED} - The plugin is not supported on this platform.
+     * * {@code INVALID} - The plugin status is not recognizable by the service.
+     * <p>
+     * To determine whether the plugin is enabled, use the
+     * {@link #getInstance(GetInstanceRequest) getInstance} operation in the Core
+     * Services API. To enable or disable the plugin, use the
+     * {@link #updateInstance(UpdateInstanceRequest) updateInstance} operation
+     * in the Core Services API.
+     *
      * @return the value
      **/
     public Status getStatus() {
@@ -218,13 +283,13 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The last update time of the plugin in UTC
+     * The last updated time of the plugin, in UTC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdatedUtc")
     private final java.util.Date timeLastUpdatedUtc;
 
     /**
-     * The last update time of the plugin in UTC
+     * The last updated time of the plugin, in UTC.
      * @return the value
      **/
     public java.util.Date getTimeLastUpdatedUtc() {
@@ -232,13 +297,13 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The optional message from the agent plugin
+     * An optional message from the plugin.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * The optional message from the agent plugin
+     * An optional message from the plugin.
      * @return the value
      **/
     public String getMessage() {

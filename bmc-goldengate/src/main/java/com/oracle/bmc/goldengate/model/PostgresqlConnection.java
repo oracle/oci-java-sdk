@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -197,6 +197,34 @@ public final class PostgresqlConnection extends Connection {
         public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
             this.doesUseSecretIds = doesUseSecretIds;
             this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -439,6 +467,68 @@ public final class PostgresqlConnection extends Connection {
             this.__explicitlySet__.add("sslKeySecretId");
             return this;
         }
+        /**
+         * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+         * The supported file formats are .pem and .crt.
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
+        private String sslCa;
+
+        /**
+         * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+         * The supported file formats are .pem and .crt.
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         * @param sslCa the value to set
+         * @return this builder
+         **/
+        public Builder sslCa(String sslCa) {
+            this.sslCa = sslCa;
+            this.__explicitlySet__.add("sslCa");
+            return this;
+        }
+        /**
+         * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
+        private String sslCrl;
+
+        /**
+         * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         * @param sslCrl the value to set
+         * @return this builder
+         **/
+        public Builder sslCrl(String sslCrl) {
+            this.sslCrl = sslCrl;
+            this.__explicitlySet__.add("sslCrl");
+            return this;
+        }
+        /**
+         * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
+        private String sslCert;
+
+        /**
+         * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         * @param sslCert the value to set
+         * @return this builder
+         **/
+        public Builder sslCert(String sslCert) {
+            this.sslCert = sslCert;
+            this.__explicitlySet__.add("sslCert");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -465,6 +555,9 @@ public final class PostgresqlConnection extends Connection {
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.databaseName,
                             this.host,
@@ -476,7 +569,10 @@ public final class PostgresqlConnection extends Connection {
                             this.privateIp,
                             this.dbSystemId,
                             this.passwordSecretId,
-                            this.sslKeySecretId);
+                            this.sslKeySecretId,
+                            this.sslCa,
+                            this.sslCrl,
+                            this.sslCert);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -542,6 +638,15 @@ public final class PostgresqlConnection extends Connection {
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -577,6 +682,15 @@ public final class PostgresqlConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("sslKeySecretId")) {
                 this.sslKeySecretId(model.getSslKeySecretId());
+            }
+            if (model.wasPropertyExplicitlySet("sslCa")) {
+                this.sslCa(model.getSslCa());
+            }
+            if (model.wasPropertyExplicitlySet("sslCrl")) {
+                this.sslCrl(model.getSslCrl());
+            }
+            if (model.wasPropertyExplicitlySet("sslCert")) {
+                this.sslCert(model.getSslCert());
             }
             return this;
         }
@@ -614,6 +728,9 @@ public final class PostgresqlConnection extends Connection {
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             TechnologyType technologyType,
             String databaseName,
             String host,
@@ -625,7 +742,10 @@ public final class PostgresqlConnection extends Connection {
             String privateIp,
             String dbSystemId,
             String passwordSecretId,
-            String sslKeySecretId) {
+            String sslKeySecretId,
+            String sslCa,
+            String sslCrl,
+            String sslCert) {
         super(
                 id,
                 displayName,
@@ -645,7 +765,10 @@ public final class PostgresqlConnection extends Connection {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.databaseName = databaseName;
         this.host = host;
@@ -658,6 +781,9 @@ public final class PostgresqlConnection extends Connection {
         this.dbSystemId = dbSystemId;
         this.passwordSecretId = passwordSecretId;
         this.sslKeySecretId = sslKeySecretId;
+        this.sslCa = sslCa;
+        this.sslCrl = sslCrl;
+        this.sslCert = sslCert;
     }
 
     /**
@@ -1029,6 +1155,62 @@ public final class PostgresqlConnection extends Connection {
         return sslKeySecretId;
     }
 
+    /**
+     * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+     * The supported file formats are .pem and .crt.
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
+    private final String sslCa;
+
+    /**
+     * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+     * The supported file formats are .pem and .crt.
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     * @return the value
+     **/
+    public String getSslCa() {
+        return sslCa;
+    }
+
+    /**
+     * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
+    private final String sslCrl;
+
+    /**
+     * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     * @return the value
+     **/
+    public String getSslCrl() {
+        return sslCrl;
+    }
+
+    /**
+     * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
+    private final String sslCert;
+
+    /**
+     * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     * @return the value
+     **/
+    public String getSslCert() {
+        return sslCert;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1055,6 +1237,9 @@ public final class PostgresqlConnection extends Connection {
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", sslKeySecretId=").append(String.valueOf(this.sslKeySecretId));
+        sb.append(", sslCa=").append(String.valueOf(this.sslCa));
+        sb.append(", sslCrl=").append(String.valueOf(this.sslCrl));
+        sb.append(", sslCert=").append(String.valueOf(this.sslCert));
         sb.append(")");
         return sb.toString();
     }
@@ -1081,6 +1266,9 @@ public final class PostgresqlConnection extends Connection {
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.sslKeySecretId, other.sslKeySecretId)
+                && java.util.Objects.equals(this.sslCa, other.sslCa)
+                && java.util.Objects.equals(this.sslCrl, other.sslCrl)
+                && java.util.Objects.equals(this.sslCert, other.sslCert)
                 && super.equals(other);
     }
 
@@ -1112,6 +1300,9 @@ public final class PostgresqlConnection extends Connection {
         result =
                 (result * PRIME)
                         + (this.sslKeySecretId == null ? 43 : this.sslKeySecretId.hashCode());
+        result = (result * PRIME) + (this.sslCa == null ? 43 : this.sslCa.hashCode());
+        result = (result * PRIME) + (this.sslCrl == null ? 43 : this.sslCrl.hashCode());
+        result = (result * PRIME) + (this.sslCert == null ? 43 : this.sslCert.hashCode());
         return result;
     }
 }

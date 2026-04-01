@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email;
@@ -7,6 +7,8 @@ package com.oracle.bmc.email;
 import com.oracle.bmc.email.internal.http.*;
 import com.oracle.bmc.email.requests.*;
 import com.oracle.bmc.email.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for Email service. <br/>
@@ -28,7 +30,7 @@ public class EmailAsyncClient implements EmailAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("EMAIL")
+                    .serviceName(EmailClient.class.getName())
                     .serviceEndpointPrefix("email")
                     .serviceEndpointTemplate("https://ctrl.email.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class EmailAsyncClient implements EmailAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class EmailAsyncClient implements EmailAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -400,12 +411,21 @@ public class EmailAsyncClient implements EmailAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -435,15 +455,7 @@ public class EmailAsyncClient implements EmailAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -455,6 +467,260 @@ public class EmailAsyncClient implements EmailAsync {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddEmailDomainLockResponse> addEmailDomainLock(
+            AddEmailDomainLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddEmailDomainLockRequest, AddEmailDomainLockResponse>
+                    handler) {
+        LOG.trace("Called async addEmailDomainLock");
+        final AddEmailDomainLockRequest interceptedRequest =
+                AddEmailDomainLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddEmailDomainLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "AddEmailDomainLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/AddEmailDomainLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddEmailDomainLockResponse>
+                transformer =
+                        AddEmailDomainLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddEmailDomainLockRequest, AddEmailDomainLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddEmailDomainLockRequest, AddEmailDomainLockResponse>,
+                        java.util.concurrent.Future<AddEmailDomainLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddEmailDomainLockRequest, AddEmailDomainLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddEmailIpPoolLockResponse> addEmailIpPoolLock(
+            AddEmailIpPoolLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddEmailIpPoolLockRequest, AddEmailIpPoolLockResponse>
+                    handler) {
+        LOG.trace("Called async addEmailIpPoolLock");
+        final AddEmailIpPoolLockRequest interceptedRequest =
+                AddEmailIpPoolLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddEmailIpPoolLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "AddEmailIpPoolLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/AddEmailIpPoolLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddEmailIpPoolLockResponse>
+                transformer =
+                        AddEmailIpPoolLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddEmailIpPoolLockRequest, AddEmailIpPoolLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddEmailIpPoolLockRequest, AddEmailIpPoolLockResponse>,
+                        java.util.concurrent.Future<AddEmailIpPoolLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddEmailIpPoolLockRequest, AddEmailIpPoolLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddEmailOutboundIpResponse> addEmailOutboundIp(
+            AddEmailOutboundIpRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddEmailOutboundIpRequest, AddEmailOutboundIpResponse>
+                    handler) {
+        LOG.trace("Called async addEmailOutboundIp");
+        final AddEmailOutboundIpRequest interceptedRequest =
+                AddEmailOutboundIpConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddEmailOutboundIpConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "AddEmailOutboundIp",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/AddEmailOutboundIp");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddEmailOutboundIpResponse>
+                transformer =
+                        AddEmailOutboundIpConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddEmailOutboundIpRequest, AddEmailOutboundIpResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddEmailOutboundIpRequest, AddEmailOutboundIpResponse>,
+                        java.util.concurrent.Future<AddEmailOutboundIpResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddEmailOutboundIpDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddEmailOutboundIpRequest, AddEmailOutboundIpResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddReturnPathLockResponse> addReturnPathLock(
+            AddReturnPathLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddReturnPathLockRequest, AddReturnPathLockResponse>
+                    handler) {
+        LOG.trace("Called async addReturnPathLock");
+        final AddReturnPathLockRequest interceptedRequest =
+                AddReturnPathLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddReturnPathLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "AddReturnPathLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/AddReturnPathLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddReturnPathLockResponse>
+                transformer =
+                        AddReturnPathLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddReturnPathLockRequest, AddReturnPathLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddReturnPathLockRequest, AddReturnPathLockResponse>,
+                        java.util.concurrent.Future<AddReturnPathLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddReturnPathLockRequest, AddReturnPathLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddSenderLockResponse> addSenderLock(
+            AddSenderLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<AddSenderLockRequest, AddSenderLockResponse>
+                    handler) {
+        LOG.trace("Called async addSenderLock");
+        final AddSenderLockRequest interceptedRequest =
+                AddSenderLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddSenderLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "AddSenderLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/AddSenderLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddSenderLockResponse>
+                transformer =
+                        AddSenderLockConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddSenderLockRequest, AddSenderLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddSenderLockRequest, AddSenderLockResponse>,
+                        java.util.concurrent.Future<AddSenderLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddSenderLockRequest, AddSenderLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 
     @Override
@@ -502,6 +768,63 @@ public class EmailAsyncClient implements EmailAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeEmailDomainCompartmentRequest, ChangeEmailDomainCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeEmailIpPoolCompartmentResponse>
+            changeEmailIpPoolCompartment(
+                    ChangeEmailIpPoolCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeEmailIpPoolCompartmentRequest,
+                                    ChangeEmailIpPoolCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeEmailIpPoolCompartment");
+        final ChangeEmailIpPoolCompartmentRequest interceptedRequest =
+                ChangeEmailIpPoolCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeEmailIpPoolCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "ChangeEmailIpPoolCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/ChangeEmailIpPoolCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeEmailIpPoolCompartmentResponse>
+                transformer =
+                        ChangeEmailIpPoolCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeEmailIpPoolCompartmentRequest, ChangeEmailIpPoolCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeEmailIpPoolCompartmentRequest,
+                                ChangeEmailIpPoolCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeEmailIpPoolCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeEmailIpPoolCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeEmailIpPoolCompartmentRequest, ChangeEmailIpPoolCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -656,6 +979,58 @@ public class EmailAsyncClient implements EmailAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateEmailDomainRequest, CreateEmailDomainResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEmailIpPoolResponse> createEmailIpPool(
+            CreateEmailIpPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateEmailIpPoolRequest, CreateEmailIpPoolResponse>
+                    handler) {
+        LOG.trace("Called async createEmailIpPool");
+        final CreateEmailIpPoolRequest interceptedRequest =
+                CreateEmailIpPoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateEmailIpPoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "CreateEmailIpPool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/CreateEmailIpPool");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateEmailIpPoolResponse>
+                transformer =
+                        CreateEmailIpPoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateEmailIpPoolRequest, CreateEmailIpPoolResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateEmailIpPoolRequest, CreateEmailIpPoolResponse>,
+                        java.util.concurrent.Future<CreateEmailIpPoolResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateEmailIpPoolDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateEmailIpPoolRequest, CreateEmailIpPoolResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -898,6 +1273,52 @@ public class EmailAsyncClient implements EmailAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteEmailDomainRequest, DeleteEmailDomainResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEmailIpPoolResponse> deleteEmailIpPool(
+            DeleteEmailIpPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteEmailIpPoolRequest, DeleteEmailIpPoolResponse>
+                    handler) {
+        LOG.trace("Called async deleteEmailIpPool");
+        final DeleteEmailIpPoolRequest interceptedRequest =
+                DeleteEmailIpPoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteEmailIpPoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "DeleteEmailIpPool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/DeleteEmailIpPool");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteEmailIpPoolResponse>
+                transformer =
+                        DeleteEmailIpPoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteEmailIpPoolRequest, DeleteEmailIpPoolResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteEmailIpPoolRequest, DeleteEmailIpPoolResponse>,
+                        java.util.concurrent.Future<DeleteEmailIpPoolResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteEmailIpPoolRequest, DeleteEmailIpPoolResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1180,6 +1601,51 @@ public class EmailAsyncClient implements EmailAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetEmailIpPoolResponse> getEmailIpPool(
+            GetEmailIpPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailIpPoolRequest, GetEmailIpPoolResponse>
+                    handler) {
+        LOG.trace("Called async getEmailIpPool");
+        final GetEmailIpPoolRequest interceptedRequest =
+                GetEmailIpPoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetEmailIpPoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "GetEmailIpPool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/GetEmailIpPool");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEmailIpPoolResponse>
+                transformer =
+                        GetEmailIpPoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetEmailIpPoolRequest, GetEmailIpPoolResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetEmailIpPoolRequest, GetEmailIpPoolResponse>,
+                        java.util.concurrent.Future<GetEmailIpPoolResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetEmailIpPoolRequest, GetEmailIpPoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEmailReturnPathResponse> getEmailReturnPath(
             GetEmailReturnPathRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1433,6 +1899,99 @@ public class EmailAsyncClient implements EmailAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListEmailDomainsRequest, ListEmailDomainsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEmailIpPoolsResponse> listEmailIpPools(
+            ListEmailIpPoolsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListEmailIpPoolsRequest, ListEmailIpPoolsResponse>
+                    handler) {
+        LOG.trace("Called async listEmailIpPools");
+        final ListEmailIpPoolsRequest interceptedRequest =
+                ListEmailIpPoolsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEmailIpPoolsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "ListEmailIpPools",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPoolCollection/ListEmailIpPools");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEmailIpPoolsResponse>
+                transformer =
+                        ListEmailIpPoolsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListEmailIpPoolsRequest, ListEmailIpPoolsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListEmailIpPoolsRequest, ListEmailIpPoolsResponse>,
+                        java.util.concurrent.Future<ListEmailIpPoolsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListEmailIpPoolsRequest, ListEmailIpPoolsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEmailOutboundIpsResponse> listEmailOutboundIps(
+            ListEmailOutboundIpsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListEmailOutboundIpsRequest, ListEmailOutboundIpsResponse>
+                    handler) {
+        LOG.trace("Called async listEmailOutboundIps");
+        final ListEmailOutboundIpsRequest interceptedRequest =
+                ListEmailOutboundIpsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEmailOutboundIpsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "ListEmailOutboundIps",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailOutboundIpCollection/ListEmailOutboundIps");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEmailOutboundIpsResponse>
+                transformer =
+                        ListEmailOutboundIpsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListEmailOutboundIpsRequest, ListEmailOutboundIpsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListEmailOutboundIpsRequest, ListEmailOutboundIpsResponse>,
+                        java.util.concurrent.Future<ListEmailOutboundIpsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListEmailOutboundIpsRequest, ListEmailOutboundIpsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1723,6 +2282,266 @@ public class EmailAsyncClient implements EmailAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveEmailDomainLockResponse> removeEmailDomainLock(
+            RemoveEmailDomainLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveEmailDomainLockRequest, RemoveEmailDomainLockResponse>
+                    handler) {
+        LOG.trace("Called async removeEmailDomainLock");
+        final RemoveEmailDomainLockRequest interceptedRequest =
+                RemoveEmailDomainLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveEmailDomainLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "RemoveEmailDomainLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/RemoveEmailDomainLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveEmailDomainLockResponse>
+                transformer =
+                        RemoveEmailDomainLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveEmailDomainLockRequest, RemoveEmailDomainLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveEmailDomainLockRequest, RemoveEmailDomainLockResponse>,
+                        java.util.concurrent.Future<RemoveEmailDomainLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveEmailDomainLockRequest, RemoveEmailDomainLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveEmailIpPoolLockResponse> removeEmailIpPoolLock(
+            RemoveEmailIpPoolLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveEmailIpPoolLockRequest, RemoveEmailIpPoolLockResponse>
+                    handler) {
+        LOG.trace("Called async removeEmailIpPoolLock");
+        final RemoveEmailIpPoolLockRequest interceptedRequest =
+                RemoveEmailIpPoolLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveEmailIpPoolLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "RemoveEmailIpPoolLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/RemoveEmailIpPoolLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveEmailIpPoolLockResponse>
+                transformer =
+                        RemoveEmailIpPoolLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveEmailIpPoolLockRequest, RemoveEmailIpPoolLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveEmailIpPoolLockRequest, RemoveEmailIpPoolLockResponse>,
+                        java.util.concurrent.Future<RemoveEmailIpPoolLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveEmailIpPoolLockRequest, RemoveEmailIpPoolLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveEmailOutboundIpResponse> removeEmailOutboundIp(
+            RemoveEmailOutboundIpRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveEmailOutboundIpRequest, RemoveEmailOutboundIpResponse>
+                    handler) {
+        LOG.trace("Called async removeEmailOutboundIp");
+        final RemoveEmailOutboundIpRequest interceptedRequest =
+                RemoveEmailOutboundIpConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveEmailOutboundIpConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "RemoveEmailOutboundIp",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/RemoveEmailOutboundIp");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveEmailOutboundIpResponse>
+                transformer =
+                        RemoveEmailOutboundIpConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveEmailOutboundIpRequest, RemoveEmailOutboundIpResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveEmailOutboundIpRequest, RemoveEmailOutboundIpResponse>,
+                        java.util.concurrent.Future<RemoveEmailOutboundIpResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveEmailOutboundIpDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveEmailOutboundIpRequest, RemoveEmailOutboundIpResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveReturnPathLockResponse> removeReturnPathLock(
+            RemoveReturnPathLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveReturnPathLockRequest, RemoveReturnPathLockResponse>
+                    handler) {
+        LOG.trace("Called async removeReturnPathLock");
+        final RemoveReturnPathLockRequest interceptedRequest =
+                RemoveReturnPathLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveReturnPathLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "RemoveReturnPathLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/RemoveReturnPathLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveReturnPathLockResponse>
+                transformer =
+                        RemoveReturnPathLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveReturnPathLockRequest, RemoveReturnPathLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveReturnPathLockRequest, RemoveReturnPathLockResponse>,
+                        java.util.concurrent.Future<RemoveReturnPathLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveReturnPathLockRequest, RemoveReturnPathLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveSenderLockResponse> removeSenderLock(
+            RemoveSenderLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveSenderLockRequest, RemoveSenderLockResponse>
+                    handler) {
+        LOG.trace("Called async removeSenderLock");
+        final RemoveSenderLockRequest interceptedRequest =
+                RemoveSenderLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveSenderLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "RemoveSenderLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/RemoveSenderLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveSenderLockResponse>
+                transformer =
+                        RemoveSenderLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RemoveSenderLockRequest, RemoveSenderLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveSenderLockRequest, RemoveSenderLockResponse>,
+                        java.util.concurrent.Future<RemoveSenderLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveSenderLockRequest, RemoveSenderLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDkimResponse> updateDkim(
             UpdateDkimRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateDkimRequest, UpdateDkimResponse>
@@ -1809,6 +2628,57 @@ public class EmailAsyncClient implements EmailAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateEmailDomainRequest, UpdateEmailDomainResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEmailIpPoolResponse> updateEmailIpPool(
+            UpdateEmailIpPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateEmailIpPoolRequest, UpdateEmailIpPoolResponse>
+                    handler) {
+        LOG.trace("Called async updateEmailIpPool");
+        final UpdateEmailIpPoolRequest interceptedRequest =
+                UpdateEmailIpPoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateEmailIpPoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "UpdateEmailIpPool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailIpPool/UpdateEmailIpPool");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateEmailIpPoolResponse>
+                transformer =
+                        UpdateEmailIpPoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateEmailIpPoolRequest, UpdateEmailIpPoolResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateEmailIpPoolRequest, UpdateEmailIpPoolResponse>,
+                        java.util.concurrent.Future<UpdateEmailIpPoolResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateEmailIpPoolDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateEmailIpPoolRequest, UpdateEmailIpPoolResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

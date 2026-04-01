@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The usage carbon emission store result.
+ * The carbon emission usage store result.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -40,6 +40,7 @@ public final class UsageCarbonEmissionSummary
         "timeUsageEnded",
         "computedCarbonEmission",
         "emissionCalculationMethod",
+        "emissionType",
         "subscriptionId",
         "tags"
     })
@@ -61,6 +62,7 @@ public final class UsageCarbonEmissionSummary
             java.util.Date timeUsageEnded,
             Double computedCarbonEmission,
             String emissionCalculationMethod,
+            RequestUsageCarbonEmissionsDetails.EmissionType emissionType,
             String subscriptionId,
             java.util.List<Tag> tags) {
         super();
@@ -81,6 +83,7 @@ public final class UsageCarbonEmissionSummary
         this.timeUsageEnded = timeUsageEnded;
         this.computedCarbonEmission = computedCarbonEmission;
         this.emissionCalculationMethod = emissionCalculationMethod;
+        this.emissionType = emissionType;
         this.subscriptionId = subscriptionId;
         this.tags = tags;
     }
@@ -328,13 +331,13 @@ public final class UsageCarbonEmissionSummary
             return this;
         }
         /**
-         * The carbon emission in MTCO2 unit.
+         * The carbon emission usage in MTCO2 units.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computedCarbonEmission")
         private Double computedCarbonEmission;
 
         /**
-         * The carbon emission in MTCO2 unit.
+         * The carbon emission usage in MTCO2 units.
          * @param computedCarbonEmission the value to set
          * @return this builder
          **/
@@ -344,19 +347,35 @@ public final class UsageCarbonEmissionSummary
             return this;
         }
         /**
-         * The method used to calculate carbon emission.
+         * Specifies the approach for calculating carbon emissions, supports both SPEND_BASED (based on expenditure data) and POWER_BASED (based on power consumption, newly introduced in the metering pipeline)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("emissionCalculationMethod")
         private String emissionCalculationMethod;
 
         /**
-         * The method used to calculate carbon emission.
+         * Specifies the approach for calculating carbon emissions, supports both SPEND_BASED (based on expenditure data) and POWER_BASED (based on power consumption, newly introduced in the metering pipeline)
          * @param emissionCalculationMethod the value to set
          * @return this builder
          **/
         public Builder emissionCalculationMethod(String emissionCalculationMethod) {
             this.emissionCalculationMethod = emissionCalculationMethod;
             this.__explicitlySet__.add("emissionCalculationMethod");
+            return this;
+        }
+        /**
+         * The emission type, such as MARKET_BASED or LOCATION_BASED.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("emissionType")
+        private RequestUsageCarbonEmissionsDetails.EmissionType emissionType;
+
+        /**
+         * The emission type, such as MARKET_BASED or LOCATION_BASED.
+         * @param emissionType the value to set
+         * @return this builder
+         **/
+        public Builder emissionType(RequestUsageCarbonEmissionsDetails.EmissionType emissionType) {
+            this.emissionType = emissionType;
+            this.__explicitlySet__.add("emissionType");
             return this;
         }
         /**
@@ -415,6 +434,7 @@ public final class UsageCarbonEmissionSummary
                             this.timeUsageEnded,
                             this.computedCarbonEmission,
                             this.emissionCalculationMethod,
+                            this.emissionType,
                             this.subscriptionId,
                             this.tags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -475,6 +495,9 @@ public final class UsageCarbonEmissionSummary
             }
             if (model.wasPropertyExplicitlySet("emissionCalculationMethod")) {
                 this.emissionCalculationMethod(model.getEmissionCalculationMethod());
+            }
+            if (model.wasPropertyExplicitlySet("emissionType")) {
+                this.emissionType(model.getEmissionType());
             }
             if (model.wasPropertyExplicitlySet("subscriptionId")) {
                 this.subscriptionId(model.getSubscriptionId());
@@ -708,13 +731,13 @@ public final class UsageCarbonEmissionSummary
     }
 
     /**
-     * The carbon emission in MTCO2 unit.
+     * The carbon emission usage in MTCO2 units.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computedCarbonEmission")
     private final Double computedCarbonEmission;
 
     /**
-     * The carbon emission in MTCO2 unit.
+     * The carbon emission usage in MTCO2 units.
      * @return the value
      **/
     public Double getComputedCarbonEmission() {
@@ -722,17 +745,31 @@ public final class UsageCarbonEmissionSummary
     }
 
     /**
-     * The method used to calculate carbon emission.
+     * Specifies the approach for calculating carbon emissions, supports both SPEND_BASED (based on expenditure data) and POWER_BASED (based on power consumption, newly introduced in the metering pipeline)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emissionCalculationMethod")
     private final String emissionCalculationMethod;
 
     /**
-     * The method used to calculate carbon emission.
+     * Specifies the approach for calculating carbon emissions, supports both SPEND_BASED (based on expenditure data) and POWER_BASED (based on power consumption, newly introduced in the metering pipeline)
      * @return the value
      **/
     public String getEmissionCalculationMethod() {
         return emissionCalculationMethod;
+    }
+
+    /**
+     * The emission type, such as MARKET_BASED or LOCATION_BASED.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("emissionType")
+    private final RequestUsageCarbonEmissionsDetails.EmissionType emissionType;
+
+    /**
+     * The emission type, such as MARKET_BASED or LOCATION_BASED.
+     * @return the value
+     **/
+    public RequestUsageCarbonEmissionsDetails.EmissionType getEmissionType() {
+        return emissionType;
     }
 
     /**
@@ -795,6 +832,7 @@ public final class UsageCarbonEmissionSummary
         sb.append(", computedCarbonEmission=").append(String.valueOf(this.computedCarbonEmission));
         sb.append(", emissionCalculationMethod=")
                 .append(String.valueOf(this.emissionCalculationMethod));
+        sb.append(", emissionType=").append(String.valueOf(this.emissionType));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", tags=").append(String.valueOf(this.tags));
         sb.append(")");
@@ -830,6 +868,7 @@ public final class UsageCarbonEmissionSummary
                         this.computedCarbonEmission, other.computedCarbonEmission)
                 && java.util.Objects.equals(
                         this.emissionCalculationMethod, other.emissionCalculationMethod)
+                && java.util.Objects.equals(this.emissionType, other.emissionType)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.tags, other.tags)
                 && super.equals(other);
@@ -876,6 +915,7 @@ public final class UsageCarbonEmissionSummary
                         + (this.emissionCalculationMethod == null
                                 ? 43
                                 : this.emissionCalculationMethod.hashCode());
+        result = (result * PRIME) + (this.emissionType == null ? 43 : this.emissionType.hashCode());
         result =
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());

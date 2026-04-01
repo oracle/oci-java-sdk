@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -61,6 +61,7 @@ public final class CloudExadataInfrastructure
         "monthlyDbServerVersion",
         "definedFileSystemConfigurations",
         "isSchedulingPolicyAssociated",
+        "exascaleConfig",
         "databaseServerType",
         "storageServerType",
         "computeModel"
@@ -103,6 +104,7 @@ public final class CloudExadataInfrastructure
             String monthlyDbServerVersion,
             java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations,
             Boolean isSchedulingPolicyAssociated,
+            ExascaleConfigDetails exascaleConfig,
             String databaseServerType,
             String storageServerType,
             ComputeModel computeModel) {
@@ -144,6 +146,7 @@ public final class CloudExadataInfrastructure
         this.monthlyDbServerVersion = monthlyDbServerVersion;
         this.definedFileSystemConfigurations = definedFileSystemConfigurations;
         this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
+        this.exascaleConfig = exascaleConfig;
         this.databaseServerType = databaseServerType;
         this.storageServerType = storageServerType;
         this.computeModel = computeModel;
@@ -184,13 +187,13 @@ public final class CloudExadataInfrastructure
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
         private String clusterPlacementGroupId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
          * @param clusterPlacementGroupId the value to set
          * @return this builder
          **/
@@ -780,6 +783,15 @@ public final class CloudExadataInfrastructure
             this.__explicitlySet__.add("isSchedulingPolicyAssociated");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("exascaleConfig")
+        private ExascaleConfigDetails exascaleConfig;
+
+        public Builder exascaleConfig(ExascaleConfigDetails exascaleConfig) {
+            this.exascaleConfig = exascaleConfig;
+            this.__explicitlySet__.add("exascaleConfig");
+            return this;
+        }
         /**
          * The database server type of the Exadata infrastructure.
          **/
@@ -813,13 +825,13 @@ public final class CloudExadataInfrastructure
             return this;
         }
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
          * @param computeModel the value to set
          * @return this builder
          **/
@@ -872,6 +884,7 @@ public final class CloudExadataInfrastructure
                             this.monthlyDbServerVersion,
                             this.definedFileSystemConfigurations,
                             this.isSchedulingPolicyAssociated,
+                            this.exascaleConfig,
                             this.databaseServerType,
                             this.storageServerType,
                             this.computeModel);
@@ -994,6 +1007,9 @@ public final class CloudExadataInfrastructure
             if (model.wasPropertyExplicitlySet("isSchedulingPolicyAssociated")) {
                 this.isSchedulingPolicyAssociated(model.getIsSchedulingPolicyAssociated());
             }
+            if (model.wasPropertyExplicitlySet("exascaleConfig")) {
+                this.exascaleConfig(model.getExascaleConfig());
+            }
             if (model.wasPropertyExplicitlySet("databaseServerType")) {
                 this.databaseServerType(model.getDatabaseServerType());
             }
@@ -1047,13 +1063,13 @@ public final class CloudExadataInfrastructure
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
     private final String clusterPlacementGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * @return the value
      **/
     public String getClusterPlacementGroupId() {
@@ -1624,6 +1640,13 @@ public final class CloudExadataInfrastructure
         return isSchedulingPolicyAssociated;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("exascaleConfig")
+    private final ExascaleConfigDetails exascaleConfig;
+
+    public ExascaleConfigDetails getExascaleConfig() {
+        return exascaleConfig;
+    }
+
     /**
      * The database server type of the Exadata infrastructure.
      **/
@@ -1653,7 +1676,7 @@ public final class CloudExadataInfrastructure
     }
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      **/
     public enum ComputeModel {
         Ecpu("ECPU"),
@@ -1701,13 +1724,13 @@ public final class CloudExadataInfrastructure
         }
     };
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * The compute model of the Autonomous AI Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * @return the value
      **/
     public ComputeModel getComputeModel() {
@@ -1770,6 +1793,7 @@ public final class CloudExadataInfrastructure
                 .append(String.valueOf(this.definedFileSystemConfigurations));
         sb.append(", isSchedulingPolicyAssociated=")
                 .append(String.valueOf(this.isSchedulingPolicyAssociated));
+        sb.append(", exascaleConfig=").append(String.valueOf(this.exascaleConfig));
         sb.append(", databaseServerType=").append(String.valueOf(this.databaseServerType));
         sb.append(", storageServerType=").append(String.valueOf(this.storageServerType));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
@@ -1832,6 +1856,7 @@ public final class CloudExadataInfrastructure
                         this.definedFileSystemConfigurations, other.definedFileSystemConfigurations)
                 && java.util.Objects.equals(
                         this.isSchedulingPolicyAssociated, other.isSchedulingPolicyAssociated)
+                && java.util.Objects.equals(this.exascaleConfig, other.exascaleConfig)
                 && java.util.Objects.equals(this.databaseServerType, other.databaseServerType)
                 && java.util.Objects.equals(this.storageServerType, other.storageServerType)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
@@ -1965,6 +1990,9 @@ public final class CloudExadataInfrastructure
                         + (this.isSchedulingPolicyAssociated == null
                                 ? 43
                                 : this.isSchedulingPolicyAssociated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exascaleConfig == null ? 43 : this.exascaleConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseServerType == null

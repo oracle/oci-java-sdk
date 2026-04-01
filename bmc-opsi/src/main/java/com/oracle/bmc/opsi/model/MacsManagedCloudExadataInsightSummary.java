@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -118,6 +118,15 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("chargebackPlanDetails")
+        private ChargebackPlanDetails chargebackPlanDetails;
+
+        public Builder chargebackPlanDetails(ChargebackPlanDetails chargebackPlanDetails) {
+            this.chargebackPlanDetails = chargebackPlanDetails;
+            this.__explicitlySet__.add("chargebackPlanDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -151,6 +160,15 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
+        private String statusDetails;
+
+        public Builder statusDetails(String statusDetails) {
+            this.statusDetails = statusDetails;
+            this.__explicitlySet__.add("statusDetails");
             return this;
         }
         /**
@@ -218,10 +236,12 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
                             this.definedTags,
                             this.systemTags,
                             this.status,
+                            this.chargebackPlanDetails,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.statusDetails,
                             this.exadataInfraId,
                             this.exadataInfraResourceType,
                             this.exadataShape);
@@ -263,6 +283,9 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
             }
+            if (model.wasPropertyExplicitlySet("chargebackPlanDetails")) {
+                this.chargebackPlanDetails(model.getChargebackPlanDetails());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
@@ -274,6 +297,9 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("statusDetails")) {
+                this.statusDetails(model.getStatusDetails());
             }
             if (model.wasPropertyExplicitlySet("exadataInfraId")) {
                 this.exadataInfraId(model.getExadataInfraId());
@@ -311,10 +337,12 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             ResourceStatus status,
+            ChargebackPlanDetails chargebackPlanDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             ExadataInsightLifecycleState lifecycleState,
             String lifecycleDetails,
+            String statusDetails,
             String exadataInfraId,
             ExadataResourceType exadataInfraResourceType,
             String exadataShape) {
@@ -329,10 +357,12 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
                 definedTags,
                 systemTags,
                 status,
+                chargebackPlanDetails,
                 timeCreated,
                 timeUpdated,
                 lifecycleState,
-                lifecycleDetails);
+                lifecycleDetails,
+                statusDetails);
         this.exadataInfraId = exadataInfraId;
         this.exadataInfraResourceType = exadataInfraResourceType;
         this.exadataShape = exadataShape;

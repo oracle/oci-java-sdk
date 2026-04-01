@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -28,6 +28,14 @@ package com.oracle.bmc.networkfirewall.model;
 public final class UpdateIcmp6ApplicationDetails extends UpdateApplicationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
         /**
          * The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
          **/
@@ -66,7 +74,8 @@ public final class UpdateIcmp6ApplicationDetails extends UpdateApplicationDetail
 
         public UpdateIcmp6ApplicationDetails build() {
             UpdateIcmp6ApplicationDetails model =
-                    new UpdateIcmp6ApplicationDetails(this.icmpType, this.icmpCode);
+                    new UpdateIcmp6ApplicationDetails(
+                            this.description, this.icmpType, this.icmpCode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -75,6 +84,9 @@ public final class UpdateIcmp6ApplicationDetails extends UpdateApplicationDetail
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateIcmp6ApplicationDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
             if (model.wasPropertyExplicitlySet("icmpType")) {
                 this.icmpType(model.getIcmpType());
             }
@@ -97,8 +109,8 @@ public final class UpdateIcmp6ApplicationDetails extends UpdateApplicationDetail
     }
 
     @Deprecated
-    public UpdateIcmp6ApplicationDetails(Integer icmpType, Integer icmpCode) {
-        super();
+    public UpdateIcmp6ApplicationDetails(String description, Integer icmpType, Integer icmpCode) {
+        super(description);
         this.icmpType = icmpType;
         this.icmpCode = icmpCode;
     }

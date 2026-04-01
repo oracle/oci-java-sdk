@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudmigrations.model;
@@ -29,6 +29,8 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
         "lifecycleDetails",
         "isCompleted",
         "replicationScheduleId",
+        "migrationType",
+        "migrationConfig",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -43,6 +45,8 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
             String lifecycleDetails,
             Boolean isCompleted,
             String replicationScheduleId,
+            Migration.MigrationType migrationType,
+            MigrationConfig migrationConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -56,6 +60,8 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
         this.lifecycleDetails = lifecycleDetails;
         this.isCompleted = isCompleted;
         this.replicationScheduleId = replicationScheduleId;
+        this.migrationType = migrationType;
+        this.migrationConfig = migrationConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -208,6 +214,31 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
+         * Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationType")
+        private Migration.MigrationType migrationType;
+
+        /**
+         * Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+         * @param migrationType the value to set
+         * @return this builder
+         **/
+        public Builder migrationType(Migration.MigrationType migrationType) {
+            this.migrationType = migrationType;
+            this.__explicitlySet__.add("migrationType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationConfig")
+        private MigrationConfig migrationConfig;
+
+        public Builder migrationConfig(MigrationConfig migrationConfig) {
+            this.migrationConfig = migrationConfig;
+            this.__explicitlySet__.add("migrationConfig");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -284,6 +315,8 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
                             this.lifecycleDetails,
                             this.isCompleted,
                             this.replicationScheduleId,
+                            this.migrationType,
+                            this.migrationConfig,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -321,6 +354,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("replicationScheduleId")) {
                 this.replicationScheduleId(model.getReplicationScheduleId());
+            }
+            if (model.wasPropertyExplicitlySet("migrationType")) {
+                this.migrationType(model.getMigrationType());
+            }
+            if (model.wasPropertyExplicitlySet("migrationConfig")) {
+                this.migrationConfig(model.getMigrationConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -473,6 +512,27 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
+     * Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationType")
+    private final Migration.MigrationType migrationType;
+
+    /**
+     * Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     * @return the value
+     **/
+    public Migration.MigrationType getMigrationType() {
+        return migrationType;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationConfig")
+    private final MigrationConfig migrationConfig;
+
+    public MigrationConfig getMigrationConfig() {
+        return migrationConfig;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -549,6 +609,8 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", isCompleted=").append(String.valueOf(this.isCompleted));
         sb.append(", replicationScheduleId=").append(String.valueOf(this.replicationScheduleId));
+        sb.append(", migrationType=").append(String.valueOf(this.migrationType));
+        sb.append(", migrationConfig=").append(String.valueOf(this.migrationConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -575,6 +637,8 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.isCompleted, other.isCompleted)
                 && java.util.Objects.equals(this.replicationScheduleId, other.replicationScheduleId)
+                && java.util.Objects.equals(this.migrationType, other.migrationType)
+                && java.util.Objects.equals(this.migrationConfig, other.migrationConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -604,6 +668,12 @@ public final class MigrationSummary extends com.oracle.bmc.http.internal.Explici
                         + (this.replicationScheduleId == null
                                 ? 43
                                 : this.replicationScheduleId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.migrationType == null ? 43 : this.migrationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.migrationConfig == null ? 43 : this.migrationConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

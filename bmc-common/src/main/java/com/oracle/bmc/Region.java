@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc;
@@ -127,6 +127,12 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region SA_VALPARAISO_1 = register("sa-valparaiso-1", Realm.OC1, "vap");
     public static final Region AP_SINGAPORE_2 = register("ap-singapore-2", Realm.OC1, "xsp");
     public static final Region ME_RIYADH_1 = register("me-riyadh-1", Realm.OC1, "ruh");
+    public static final Region AP_DELHI_1 = register("ap-delhi-1", Realm.OC1, "onm");
+    public static final Region AP_BATAM_1 = register("ap-batam-1", Realm.OC1, "hsg");
+    public static final Region EU_MADRID_3 = register("eu-madrid-3", Realm.OC1, "orf");
+    public static final Region EU_TURIN_1 = register("eu-turin-1", Realm.OC1, "nrq");
+    public static final Region AP_KULAI_2 = register("ap-kulai-2", Realm.OC1, "jbp");
+    public static final Region AF_CASABLANCA_1 = register("af-casablanca-1", Realm.OC1, "lej");
 
     // OC2
     public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2, "lfi");
@@ -147,6 +153,7 @@ public final class Region implements Serializable, Comparable<Region> {
 
     // OC9
     public static final Region ME_DCC_MUSCAT_1 = register("me-dcc-muscat-1", Realm.OC9, "mct");
+    public static final Region ME_IBRI_1 = register("me-ibri-1", Realm.OC9, "ibr");
 
     // OC10
     public static final Region AP_DCC_CANBERRA_1 = register("ap-dcc-canberra-1", Realm.OC10, "wga");
@@ -192,6 +199,16 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region AP_SEOUL_2 = register("ap-seoul-2", Realm.OC35, "dtz");
     public static final Region AP_SUWON_1 = register("ap-suwon-1", Realm.OC35, "dln");
     public static final Region AP_CHUNCHEON_2 = register("ap-chuncheon-2", Realm.OC35, "bno");
+
+    // OC42
+    public static final Region US_ASHBURN_2 = register("us-ashburn-2", Realm.OC42, "yxj");
+    public static final Region US_NEWARK_1 = register("us-newark-1", Realm.OC42, "pgc");
+
+    // OC51
+    public static final Region EU_BUDAPEST_1 = register("eu-budapest-1", Realm.OC51, "jsk");
+
+    // OC52
+    public static final Region SA_RIODEJANEIRO_1 = register("sa-riodejaneiro-1", Realm.OC52, "hnw");
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();

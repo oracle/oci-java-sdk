@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -28,8 +28,7 @@ public final class CreateInternetGatewayDetails
         "displayName",
         "freeformTags",
         "isEnabled",
-        "vcnId",
-        "routeTableId"
+        "vcnId"
     })
     public CreateInternetGatewayDetails(
             String compartmentId,
@@ -37,8 +36,7 @@ public final class CreateInternetGatewayDetails
             String displayName,
             java.util.Map<String, String> freeformTags,
             Boolean isEnabled,
-            String vcnId,
-            String routeTableId) {
+            String vcnId) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -46,7 +44,6 @@ public final class CreateInternetGatewayDetails
         this.freeformTags = freeformTags;
         this.isEnabled = isEnabled;
         this.vcnId = vcnId;
-        this.routeTableId = routeTableId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -160,22 +157,6 @@ public final class CreateInternetGatewayDetails
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-        private String routeTableId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
-         * @param routeTableId the value to set
-         * @return this builder
-         **/
-        public Builder routeTableId(String routeTableId) {
-            this.routeTableId = routeTableId;
-            this.__explicitlySet__.add("routeTableId");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -188,8 +169,7 @@ public final class CreateInternetGatewayDetails
                             this.displayName,
                             this.freeformTags,
                             this.isEnabled,
-                            this.vcnId,
-                            this.routeTableId);
+                            this.vcnId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -215,9 +195,6 @@ public final class CreateInternetGatewayDetails
             }
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
-            }
-            if (model.wasPropertyExplicitlySet("routeTableId")) {
-                this.routeTableId(model.getRouteTableId());
             }
             return this;
         }
@@ -330,20 +307,6 @@ public final class CreateInternetGatewayDetails
         return vcnId;
     }
 
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    private final String routeTableId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
-     * @return the value
-     **/
-    public String getRouteTableId() {
-        return routeTableId;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -364,7 +327,6 @@ public final class CreateInternetGatewayDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
-        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(")");
         return sb.toString();
     }
@@ -385,7 +347,6 @@ public final class CreateInternetGatewayDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
-                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && super.equals(other);
     }
 
@@ -401,7 +362,6 @@ public final class CreateInternetGatewayDetails
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
-        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

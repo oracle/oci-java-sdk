@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -24,6 +24,7 @@ public final class AddUtilityNodesDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "clusterAdminPassword",
+        "secretId",
         "numberOfUtilityNodes",
         "shape",
         "blockVolumeSizeInGBs",
@@ -31,12 +32,14 @@ public final class AddUtilityNodesDetails
     })
     public AddUtilityNodesDetails(
             String clusterAdminPassword,
+            String secretId,
             Integer numberOfUtilityNodes,
             String shape,
             Long blockVolumeSizeInGBs,
             ShapeConfigDetails shapeConfig) {
         super();
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
         this.numberOfUtilityNodes = numberOfUtilityNodes;
         this.shape = shape;
         this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
@@ -59,6 +62,22 @@ public final class AddUtilityNodesDetails
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+        /**
+         * The secretId for the clusterAdminPassword.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         * @param secretId the value to set
+         * @return this builder
+         **/
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
             return this;
         }
         /**
@@ -128,6 +147,7 @@ public final class AddUtilityNodesDetails
             AddUtilityNodesDetails model =
                     new AddUtilityNodesDetails(
                             this.clusterAdminPassword,
+                            this.secretId,
                             this.numberOfUtilityNodes,
                             this.shape,
                             this.blockVolumeSizeInGBs,
@@ -142,6 +162,9 @@ public final class AddUtilityNodesDetails
         public Builder copy(AddUtilityNodesDetails model) {
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("numberOfUtilityNodes")) {
                 this.numberOfUtilityNodes(model.getNumberOfUtilityNodes());
@@ -182,6 +205,20 @@ public final class AddUtilityNodesDetails
      **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
+    }
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     * @return the value
+     **/
+    public String getSecretId() {
+        return secretId;
     }
 
     /**
@@ -250,6 +287,7 @@ public final class AddUtilityNodesDetails
         sb.append("AddUtilityNodesDetails(");
         sb.append("super=").append(super.toString());
         sb.append("clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", numberOfUtilityNodes=").append(String.valueOf(this.numberOfUtilityNodes));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", blockVolumeSizeInGBs=").append(String.valueOf(this.blockVolumeSizeInGBs));
@@ -269,6 +307,7 @@ public final class AddUtilityNodesDetails
 
         AddUtilityNodesDetails other = (AddUtilityNodesDetails) o;
         return java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.numberOfUtilityNodes, other.numberOfUtilityNodes)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.blockVolumeSizeInGBs, other.blockVolumeSizeInGBs)
@@ -285,6 +324,7 @@ public final class AddUtilityNodesDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.numberOfUtilityNodes == null

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -25,6 +25,18 @@ package com.oracle.bmc.database.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ExternalHsmEncryptionDetails.class,
         name = "EXTERNAL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GoogleCloudProviderEncryptionKeyDetails.class,
+        name = "GCP"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AzureEncryptionKeyDetails.class,
+        name = "AZURE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AwsEncryptionKeyDetails.class,
+        name = "AWS"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -76,10 +88,17 @@ public class EncryptionKeyLocationDetails
     }
 
     /**
-     * Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+     * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM.
+     * Use 'AZURE' for creating a new database or migrating a database key to Azure.
+     * Use 'GCP' for creating a new database or migrating a database key to Google Cloud Provider.
+     * Use 'AWS' for creating a new database or migrating a database key to Aws.
+     *
      **/
     public enum ProviderType {
         External("EXTERNAL"),
+        Azure("AZURE"),
+        Gcp("GCP"),
+        Aws("AWS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

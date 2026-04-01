@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * **Deprecated.** For information about connection strings to connect to an Oracle Autonomous Data Warehouse, see {@link #autonomousDatabaseConnectionStrings(AutonomousDatabaseConnectionStringsRequest) autonomousDatabaseConnectionStrings}.
+ * **Deprecated.** For information about connection strings to connect to an Oracle Autonomous AI Lakehouse, see {@link #autonomousDatabaseConnectionStrings(AutonomousDatabaseConnectionStringsRequest) autonomousDatabaseConnectionStrings}.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -87,16 +87,16 @@ public final class AutonomousDataWarehouseConnectionStrings
             return this;
         }
         /**
-         * Returns all connection strings that can be used to connect to the Autonomous Data Warehouse.
-         * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+         * Returns all connection strings that can be used to connect to the Autonomous AI Lakehouse.
+         * For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
         private java.util.Map<String, String> allConnectionStrings;
 
         /**
-         * Returns all connection strings that can be used to connect to the Autonomous Data Warehouse.
-         * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+         * Returns all connection strings that can be used to connect to the Autonomous AI Lakehouse.
+         * For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
          *
          * @param allConnectionStrings the value to set
          * @return this builder
@@ -192,16 +192,16 @@ public final class AutonomousDataWarehouseConnectionStrings
     }
 
     /**
-     * Returns all connection strings that can be used to connect to the Autonomous Data Warehouse.
-     * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+     * Returns all connection strings that can be used to connect to the Autonomous AI Lakehouse.
+     * For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
     private final java.util.Map<String, String> allConnectionStrings;
 
     /**
-     * Returns all connection strings that can be used to connect to the Autonomous Data Warehouse.
-     * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+     * Returns all connection strings that can be used to connect to the Autonomous AI Lakehouse.
+     * For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      *
      * @return the value
      **/

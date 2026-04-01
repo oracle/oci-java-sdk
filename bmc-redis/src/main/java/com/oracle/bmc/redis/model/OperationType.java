@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.redis.model;
@@ -18,6 +18,20 @@ public enum OperationType {
     UpdateRedisConfigSet("UPDATE_REDIS_CONFIG_SET"),
     DeleteRedisConfigSet("DELETE_REDIS_CONFIG_SET"),
     MoveRedisConfigSet("MOVE_REDIS_CONFIG_SET"),
+    MigrateCluster("MIGRATE_CLUSTER"),
+    ClusterRollback("CLUSTER_ROLLBACK"),
+    AttachOciCacheUsers("ATTACH_OCI_CACHE_USERS"),
+    DetachOciCacheUsers("DETACH_OCI_CACHE_USERS"),
+    CreateOciCacheUser("CREATE_OCI_CACHE_USER"),
+    UpdateOciCacheUser("UPDATE_OCI_CACHE_USER"),
+    DeleteOciCacheUser("DELETE_OCI_CACHE_USER"),
+    CreateOciCacheConfigSet("CREATE_OCI_CACHE_CONFIG_SET"),
+    UpdateOciCacheConfigSet("UPDATE_OCI_CACHE_CONFIG_SET"),
+    DeleteOciCacheConfigSet("DELETE_OCI_CACHE_CONFIG_SET"),
+    ChangeOciCacheConfigSetCompartment("CHANGE_OCI_CACHE_CONFIG_SET_COMPARTMENT"),
+    ChangeOciCacheUserCompartment("CHANGE_OCI_CACHE_USER_COMPARTMENT"),
+    PatchOciCacheCluster("PATCH_OCI_CACHE_CLUSTER"),
+    ReplaceOciCacheNode("REPLACE_OCI_CACHE_NODE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

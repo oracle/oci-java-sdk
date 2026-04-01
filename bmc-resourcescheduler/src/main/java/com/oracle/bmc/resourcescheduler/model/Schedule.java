@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcescheduler.model;
@@ -41,6 +41,7 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "timeUpdated",
         "timeLastRun",
         "timeNextRun",
+        "lastRunStatus",
         "lifecycleState",
         "freeformTags",
         "definedTags",
@@ -62,6 +63,7 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             java.util.Date timeUpdated,
             java.util.Date timeLastRun,
             java.util.Date timeNextRun,
+            OperationStatus lastRunStatus,
             LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -82,6 +84,7 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.timeUpdated = timeUpdated;
         this.timeLastRun = timeLastRun;
         this.timeNextRun = timeNextRun;
+        this.lastRunStatus = lastRunStatus;
         this.lifecycleState = lifecycleState;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -371,6 +374,22 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
+         * This is the status of the last work request.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lastRunStatus")
+        private OperationStatus lastRunStatus;
+
+        /**
+         * This is the status of the last work request.
+         * @param lastRunStatus the value to set
+         * @return this builder
+         **/
+        public Builder lastRunStatus(OperationStatus lastRunStatus) {
+            this.lastRunStatus = lastRunStatus;
+            this.__explicitlySet__.add("lastRunStatus");
+            return this;
+        }
+        /**
          * This is the current state of a schedule.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -479,6 +498,7 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.timeUpdated,
                             this.timeLastRun,
                             this.timeNextRun,
+                            this.lastRunStatus,
                             this.lifecycleState,
                             this.freeformTags,
                             this.definedTags,
@@ -535,6 +555,9 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("timeNextRun")) {
                 this.timeNextRun(model.getTimeNextRun());
+            }
+            if (model.wasPropertyExplicitlySet("lastRunStatus")) {
+                this.lastRunStatus(model.getLastRunStatus());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -909,6 +932,20 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
+     * This is the status of the last work request.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastRunStatus")
+    private final OperationStatus lastRunStatus;
+
+    /**
+     * This is the status of the last work request.
+     * @return the value
+     **/
+    public OperationStatus getLastRunStatus() {
+        return lastRunStatus;
+    }
+
+    /**
      * This is the current state of a schedule.
      **/
     public enum LifecycleState {
@@ -1068,6 +1105,7 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeLastRun=").append(String.valueOf(this.timeLastRun));
         sb.append(", timeNextRun=").append(String.valueOf(this.timeNextRun));
+        sb.append(", lastRunStatus=").append(String.valueOf(this.lastRunStatus));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1101,6 +1139,7 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeLastRun, other.timeLastRun)
                 && java.util.Objects.equals(this.timeNextRun, other.timeNextRun)
+                && java.util.Objects.equals(this.lastRunStatus, other.lastRunStatus)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1135,6 +1174,9 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.timeLastRun == null ? 43 : this.timeLastRun.hashCode());
         result = (result * PRIME) + (this.timeNextRun == null ? 43 : this.timeNextRun.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastRunStatus == null ? 43 : this.lastRunStatus.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

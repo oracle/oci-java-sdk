@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.circuitbreaker.internal;
 
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerEventListener;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerState;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
@@ -34,6 +35,9 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
     private static final String INCORRECT_STATE_RESPONSE_STATUS = "IncorrectState";
 
     private final int numberOfRecordedHisotry;
+
+    private final CircuitBreakerEventListener circuitBreakerEventListener;
+
     private Deque<String> historyQueue;
     /**
      * Creates a {@link JaxRsCircuitBreakerImpl}
@@ -54,7 +58,7 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
         custom.minimumNumberOfCalls(configuration.getMinimumNumberOfCalls());
         custom.writableStackTraceEnabled(configuration.isWritableStackTraceEnabled());
         custom.waitDurationInOpenState(configuration.getWaitDurationInOpenState());
-
+        custom.maxWaitDurationInHalfOpenState(configuration.getMaxWaitDurationInHalfOpenState());
         // Exceptions to consider as failure by circuit breaker
         // Please let me know if you know a better way to do this :(
         @SuppressWarnings("rawtypes")
@@ -70,6 +74,25 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
         this.recordHttpStatuses = configuration.getRecordHttpStatuses();
         this.historyQueue = new ArrayDeque<>();
         this.numberOfRecordedHisotry = configuration.getNumberOfRecordedHistoryRepsonse();
+
+        this.circuitBreakerEventListener = configuration.getCircuitBreakerEventListener();
+        if (circuitBreakerEventListener != null) {
+            this.circuitBreaker
+                    .getEventPublisher()
+                    .onError(event -> circuitBreakerEventListener.onError(event.getThrowable()))
+                    .onSuccess(
+                            event ->
+                                    circuitBreakerEventListener.onSuccess(
+                                            event.getElapsedDuration()))
+                    .onStateTransition(
+                            event ->
+                                    circuitBreakerEventListener.onStateTransition(
+                                            event.getStateTransition()))
+                    .onCallNotPermitted(event -> circuitBreakerEventListener.onCallNotPermitted())
+                    .onReset(event -> circuitBreakerEventListener.onReset())
+                    .onFailureRateExceeded(
+                            event -> circuitBreakerEventListener.onFailureRateExceeded());
+        }
     }
 
     private boolean isResponseStatusIncorrectState(Response response) {

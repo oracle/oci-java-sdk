@@ -1,10 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
 
 import java.io.InputStream;
+import java.util.Objects;
 
 import javax.annotation.Nullable;
 import javax.ws.rs.client.Entity;
@@ -13,9 +14,6 @@ import javax.ws.rs.core.Variant;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import com.oracle.bmc.io.DuplicatableInputStream;
-import com.oracle.bmc.io.internal.DuplicatableLengthLimitedInputStream;
-import com.oracle.bmc.io.internal.LengthLimitedInputStream;
 import com.oracle.bmc.util.internal.ReflectionUtils;
 
 /**
@@ -124,8 +122,15 @@ public class EntityFactory {
 
         private static String getValue(Object request, String methodName, String defaultValue) {
             Object response = ReflectionUtils.invokeGetter(request, methodName);
-            if (response != null && response instanceof String) {
-                return (String) response;
+            if (response != null) {
+                if (response instanceof String) {
+                    return (String) response;
+                } else if (response.getClass().isEnum()) {
+                    Object value = ReflectionUtils.invokeGetter(response, "getValue");
+                    if (value != null) {
+                        return value.toString();
+                    }
+                }
             }
             return defaultValue;
         }

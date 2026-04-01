@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
@@ -22,15 +22,17 @@ package com.oracle.bmc.cloudguard.model;
 public final class ManagedListTypeSummary
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "description", "lifecycleState", "locks"})
+    @java.beans.ConstructorProperties({"id", "description", "group", "lifecycleState", "locks"})
     public ManagedListTypeSummary(
             String id,
             String description,
+            String group,
             LifecycleState lifecycleState,
             java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.description = description;
+        this.group = group;
         this.lifecycleState = lifecycleState;
         this.locks = locks;
     }
@@ -67,6 +69,22 @@ public final class ManagedListTypeSummary
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * Managed list type group
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("group")
+        private String group;
+
+        /**
+         * Managed list type group
+         * @param group the value to set
+         * @return this builder
+         **/
+        public Builder group(String group) {
+            this.group = group;
+            this.__explicitlySet__.add("group");
             return this;
         }
         /**
@@ -108,7 +126,7 @@ public final class ManagedListTypeSummary
         public ManagedListTypeSummary build() {
             ManagedListTypeSummary model =
                     new ManagedListTypeSummary(
-                            this.id, this.description, this.lifecycleState, this.locks);
+                            this.id, this.description, this.group, this.lifecycleState, this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -122,6 +140,9 @@ public final class ManagedListTypeSummary
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("group")) {
+                this.group(model.getGroup());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -173,6 +194,20 @@ public final class ManagedListTypeSummary
     }
 
     /**
+     * Managed list type group
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("group")
+    private final String group;
+
+    /**
+     * Managed list type group
+     * @return the value
+     **/
+    public String getGroup() {
+        return group;
+    }
+
+    /**
      * The current lifecycle state of the resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -216,6 +251,7 @@ public final class ManagedListTypeSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", group=").append(String.valueOf(this.group));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
@@ -234,6 +270,7 @@ public final class ManagedListTypeSummary
         ManagedListTypeSummary other = (ManagedListTypeSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.group, other.group)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
@@ -245,6 +282,7 @@ public final class ManagedListTypeSummary
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.group == null ? 43 : this.group.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

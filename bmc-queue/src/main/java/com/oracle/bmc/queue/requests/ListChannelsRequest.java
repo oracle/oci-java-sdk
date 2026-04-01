@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.requests;
@@ -21,6 +21,17 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     public String getQueueId() {
         return queueId;
+    }
+    /**
+     * Optional parameter to specify a consumer group.
+     */
+    private String consumerGroupId;
+
+    /**
+     * Optional parameter to specify a consumer group.
+     */
+    public String getConsumerGroupId() {
+        return consumerGroupId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -86,6 +97,21 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
          */
         public Builder queueId(String queueId) {
             this.queueId = queueId;
+            return this;
+        }
+
+        /**
+         * Optional parameter to specify a consumer group.
+         */
+        private String consumerGroupId = null;
+
+        /**
+         * Optional parameter to specify a consumer group.
+         * @param consumerGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder consumerGroupId(String consumerGroupId) {
+            this.consumerGroupId = consumerGroupId;
             return this;
         }
 
@@ -178,6 +204,7 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
          */
         public Builder copy(ListChannelsRequest o) {
             queueId(o.getQueueId());
+            consumerGroupId(o.getConsumerGroupId());
             opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
             page(o.getPage());
@@ -215,12 +242,13 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
         public ListChannelsRequest buildWithoutInvocationCallback() {
             ListChannelsRequest request = new ListChannelsRequest();
             request.queueId = queueId;
+            request.consumerGroupId = consumerGroupId;
             request.opcRequestId = opcRequestId;
             request.limit = limit;
             request.page = page;
             request.channelFilter = channelFilter;
             return request;
-            // new ListChannelsRequest(queueId, opcRequestId, limit, page, channelFilter);
+            // new ListChannelsRequest(queueId, consumerGroupId, opcRequestId, limit, page, channelFilter);
         }
     }
 
@@ -231,6 +259,7 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public Builder toBuilder() {
         return new Builder()
                 .queueId(queueId)
+                .consumerGroupId(consumerGroupId)
                 .opcRequestId(opcRequestId)
                 .limit(limit)
                 .page(page)
@@ -251,6 +280,7 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",queueId=").append(String.valueOf(this.queueId));
+        sb.append(",consumerGroupId=").append(String.valueOf(this.consumerGroupId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -271,6 +301,7 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
         ListChannelsRequest other = (ListChannelsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.queueId, other.queueId)
+                && java.util.Objects.equals(this.consumerGroupId, other.consumerGroupId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -282,6 +313,9 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.queueId == null ? 43 : this.queueId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.consumerGroupId == null ? 43 : this.consumerGroupId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

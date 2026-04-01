@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -14,13 +14,13 @@ public class CreateAutonomousDatabaseRequest
                 com.oracle.bmc.database.model.CreateAutonomousDatabaseBase> {
 
     /**
-     * Request to create a new Autonomous Database.
+     * Request to create a new Autonomous AI Database.
      */
     private com.oracle.bmc.database.model.CreateAutonomousDatabaseBase
             createAutonomousDatabaseDetails;
 
     /**
-     * Request to create a new Autonomous Database.
+     * Request to create a new Autonomous AI Database.
      */
     public com.oracle.bmc.database.model.CreateAutonomousDatabaseBase
             getCreateAutonomousDatabaseDetails() {
@@ -60,6 +60,21 @@ public class CreateAutonomousDatabaseRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -80,13 +95,13 @@ public class CreateAutonomousDatabaseRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Request to create a new Autonomous Database.
+         * Request to create a new Autonomous AI Database.
          */
         private com.oracle.bmc.database.model.CreateAutonomousDatabaseBase
                 createAutonomousDatabaseDetails = null;
 
         /**
-         * Request to create a new Autonomous Database.
+         * Request to create a new Autonomous AI Database.
          * @param createAutonomousDatabaseDetails the value to set
          * @return this builder instance
          */
@@ -140,6 +155,25 @@ public class CreateAutonomousDatabaseRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -170,6 +204,7 @@ public class CreateAutonomousDatabaseRequest
             createAutonomousDatabaseDetails(o.getCreateAutonomousDatabaseDetails());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -216,8 +251,9 @@ public class CreateAutonomousDatabaseRequest
             request.createAutonomousDatabaseDetails = createAutonomousDatabaseDetails;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
             return request;
-            // new CreateAutonomousDatabaseRequest(createAutonomousDatabaseDetails, opcRetryToken, opcRequestId);
+            // new CreateAutonomousDatabaseRequest(createAutonomousDatabaseDetails, opcRetryToken, opcRequestId, opcDryRun);
         }
     }
 
@@ -229,7 +265,8 @@ public class CreateAutonomousDatabaseRequest
         return new Builder()
                 .createAutonomousDatabaseDetails(createAutonomousDatabaseDetails)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -249,6 +286,7 @@ public class CreateAutonomousDatabaseRequest
                 .append(String.valueOf(this.createAutonomousDatabaseDetails));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -267,7 +305,8 @@ public class CreateAutonomousDatabaseRequest
                 && java.util.Objects.equals(
                         this.createAutonomousDatabaseDetails, other.createAutonomousDatabaseDetails)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -283,6 +322,7 @@ public class CreateAutonomousDatabaseRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

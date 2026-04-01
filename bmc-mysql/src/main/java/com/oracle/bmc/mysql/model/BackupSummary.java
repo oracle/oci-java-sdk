@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -29,8 +29,12 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         "id",
         "displayName",
         "description",
+        "softDelete",
+        "backupPreparationStatus",
+        "validationStatus",
         "timeCreated",
         "lifecycleState",
+        "lifecycleDetails",
         "backupType",
         "creationType",
         "dbSystemId",
@@ -46,14 +50,19 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         "immediateSourceBackupId",
         "originalSourceBackupId",
         "timeCopyCreated",
-        "dbSystemSnapshotSummary"
+        "dbSystemSnapshotSummary",
+        "encryptData"
     })
     public BackupSummary(
             String id,
             String displayName,
             String description,
+            SoftDelete softDelete,
+            BackupValidationDetails.BackupPreparationStatus backupPreparationStatus,
+            BackupValidationDetails.ValidationStatus validationStatus,
             java.util.Date timeCreated,
             Backup.LifecycleState lifecycleState,
+            String lifecycleDetails,
             Backup.BackupType backupType,
             Backup.CreationType creationType,
             String dbSystemId,
@@ -69,13 +78,18 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             String immediateSourceBackupId,
             String originalSourceBackupId,
             java.util.Date timeCopyCreated,
-            DbSystemSnapshotSummary dbSystemSnapshotSummary) {
+            DbSystemSnapshotSummary dbSystemSnapshotSummary,
+            EncryptDataDetails encryptData) {
         super();
         this.id = id;
         this.displayName = displayName;
         this.description = description;
+        this.softDelete = softDelete;
+        this.backupPreparationStatus = backupPreparationStatus;
+        this.validationStatus = validationStatus;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.backupType = backupType;
         this.creationType = creationType;
         this.dbSystemId = dbSystemId;
@@ -92,6 +106,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         this.originalSourceBackupId = originalSourceBackupId;
         this.timeCopyCreated = timeCopyCreated;
         this.dbSystemSnapshotSummary = dbSystemSnapshotSummary;
+        this.encryptData = encryptData;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -145,6 +160,61 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+         * state for 7 days before permanently deleting it.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+        private SoftDelete softDelete;
+
+        /**
+         * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+         * state for 7 days before permanently deleting it.
+         *
+         * @param softDelete the value to set
+         * @return this builder
+         **/
+        public Builder softDelete(SoftDelete softDelete) {
+            this.softDelete = softDelete;
+            this.__explicitlySet__.add("softDelete");
+            return this;
+        }
+        /**
+         * Indicates whether the backup has been prepared successfully.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("backupPreparationStatus")
+        private BackupValidationDetails.BackupPreparationStatus backupPreparationStatus;
+
+        /**
+         * Indicates whether the backup has been prepared successfully.
+         *
+         * @param backupPreparationStatus the value to set
+         * @return this builder
+         **/
+        public Builder backupPreparationStatus(
+                BackupValidationDetails.BackupPreparationStatus backupPreparationStatus) {
+            this.backupPreparationStatus = backupPreparationStatus;
+            this.__explicitlySet__.add("backupPreparationStatus");
+            return this;
+        }
+        /**
+         * Status of the backup validation.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("validationStatus")
+        private BackupValidationDetails.ValidationStatus validationStatus;
+
+        /**
+         * Status of the backup validation.
+         * @param validationStatus the value to set
+         * @return this builder
+         **/
+        public Builder validationStatus(BackupValidationDetails.ValidationStatus validationStatus) {
+            this.validationStatus = validationStatus;
+            this.__explicitlySet__.add("validationStatus");
+            return this;
+        }
+        /**
          * The time the backup was created.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -174,6 +244,22 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         public Builder lifecycleState(Backup.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * Additional information about the current lifecycleState.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Additional information about the current lifecycleState.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
@@ -445,6 +531,15 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+        private EncryptDataDetails encryptData;
+
+        public Builder encryptData(EncryptDataDetails encryptData) {
+            this.encryptData = encryptData;
+            this.__explicitlySet__.add("encryptData");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -454,8 +549,12 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
                             this.id,
                             this.displayName,
                             this.description,
+                            this.softDelete,
+                            this.backupPreparationStatus,
+                            this.validationStatus,
                             this.timeCreated,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.backupType,
                             this.creationType,
                             this.dbSystemId,
@@ -471,7 +570,8 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
                             this.immediateSourceBackupId,
                             this.originalSourceBackupId,
                             this.timeCopyCreated,
-                            this.dbSystemSnapshotSummary);
+                            this.dbSystemSnapshotSummary,
+                            this.encryptData);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -489,11 +589,23 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
+            if (model.wasPropertyExplicitlySet("softDelete")) {
+                this.softDelete(model.getSoftDelete());
+            }
+            if (model.wasPropertyExplicitlySet("backupPreparationStatus")) {
+                this.backupPreparationStatus(model.getBackupPreparationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("validationStatus")) {
+                this.validationStatus(model.getValidationStatus());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("backupType")) {
                 this.backupType(model.getBackupType());
@@ -542,6 +654,9 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("dbSystemSnapshotSummary")) {
                 this.dbSystemSnapshotSummary(model.getDbSystemSnapshotSummary());
+            }
+            if (model.wasPropertyExplicitlySet("encryptData")) {
+                this.encryptData(model.getEncryptData());
             }
             return this;
         }
@@ -601,6 +716,54 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+     * state for 7 days before permanently deleting it.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("softDelete")
+    private final SoftDelete softDelete;
+
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+     * state for 7 days before permanently deleting it.
+     *
+     * @return the value
+     **/
+    public SoftDelete getSoftDelete() {
+        return softDelete;
+    }
+
+    /**
+     * Indicates whether the backup has been prepared successfully.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupPreparationStatus")
+    private final BackupValidationDetails.BackupPreparationStatus backupPreparationStatus;
+
+    /**
+     * Indicates whether the backup has been prepared successfully.
+     *
+     * @return the value
+     **/
+    public BackupValidationDetails.BackupPreparationStatus getBackupPreparationStatus() {
+        return backupPreparationStatus;
+    }
+
+    /**
+     * Status of the backup validation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("validationStatus")
+    private final BackupValidationDetails.ValidationStatus validationStatus;
+
+    /**
+     * Status of the backup validation.
+     * @return the value
+     **/
+    public BackupValidationDetails.ValidationStatus getValidationStatus() {
+        return validationStatus;
+    }
+
+    /**
      * The time the backup was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -626,6 +789,20 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
      **/
     public Backup.LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * Additional information about the current lifecycleState.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Additional information about the current lifecycleState.
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /**
@@ -863,6 +1040,13 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         return dbSystemSnapshotSummary;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptData")
+    private final EncryptDataDetails encryptData;
+
+    public EncryptDataDetails getEncryptData() {
+        return encryptData;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -880,8 +1064,13 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", softDelete=").append(String.valueOf(this.softDelete));
+        sb.append(", backupPreparationStatus=")
+                .append(String.valueOf(this.backupPreparationStatus));
+        sb.append(", validationStatus=").append(String.valueOf(this.validationStatus));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", backupType=").append(String.valueOf(this.backupType));
         sb.append(", creationType=").append(String.valueOf(this.creationType));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
@@ -900,6 +1089,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", timeCopyCreated=").append(String.valueOf(this.timeCopyCreated));
         sb.append(", dbSystemSnapshotSummary=")
                 .append(String.valueOf(this.dbSystemSnapshotSummary));
+        sb.append(", encryptData=").append(String.valueOf(this.encryptData));
         sb.append(")");
         return sb.toString();
     }
@@ -917,8 +1107,13 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.softDelete, other.softDelete)
+                && java.util.Objects.equals(
+                        this.backupPreparationStatus, other.backupPreparationStatus)
+                && java.util.Objects.equals(this.validationStatus, other.validationStatus)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.backupType, other.backupType)
                 && java.util.Objects.equals(this.creationType, other.creationType)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
@@ -938,6 +1133,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.timeCopyCreated, other.timeCopyCreated)
                 && java.util.Objects.equals(
                         this.dbSystemSnapshotSummary, other.dbSystemSnapshotSummary)
+                && java.util.Objects.equals(this.encryptData, other.encryptData)
                 && super.equals(other);
     }
 
@@ -948,10 +1144,22 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.softDelete == null ? 43 : this.softDelete.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupPreparationStatus == null
+                                ? 43
+                                : this.backupPreparationStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.validationStatus == null ? 43 : this.validationStatus.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.backupType == null ? 43 : this.backupType.hashCode());
         result = (result * PRIME) + (this.creationType == null ? 43 : this.creationType.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
@@ -992,6 +1200,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
                         + (this.dbSystemSnapshotSummary == null
                                 ? 43
                                 : this.dbSystemSnapshotSummary.hashCode());
+        result = (result * PRIME) + (this.encryptData == null ? 43 : this.encryptData.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi.model;
@@ -32,13 +32,13 @@ public final class EmailRecipient extends com.oracle.bmc.http.internal.Explicitl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * the first name of the recipient.
+         * The recipient first name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("firstName")
         private String firstName;
 
         /**
-         * the first name of the recipient.
+         * The recipient first name.
          * @param firstName the value to set
          * @return this builder
          **/
@@ -48,13 +48,13 @@ public final class EmailRecipient extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * the last name of the recipient.
+         * The recipient last name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastName")
         private String lastName;
 
         /**
-         * the last name of the recipient.
+         * The recipient last name.
          * @param lastName the value to set
          * @return this builder
          **/
@@ -64,13 +64,13 @@ public final class EmailRecipient extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * the email of the recipient.
+         * The recipient email address.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailId")
         private String emailId;
 
         /**
-         * the email of the recipient.
+         * The recipient email address.
          * @param emailId the value to set
          * @return this builder
          **/
@@ -139,13 +139,13 @@ public final class EmailRecipient extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * the first name of the recipient.
+     * The recipient first name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
     private final String firstName;
 
     /**
-     * the first name of the recipient.
+     * The recipient first name.
      * @return the value
      **/
     public String getFirstName() {
@@ -153,13 +153,13 @@ public final class EmailRecipient extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * the last name of the recipient.
+     * The recipient last name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
     private final String lastName;
 
     /**
-     * the last name of the recipient.
+     * The recipient last name.
      * @return the value
      **/
     public String getLastName() {
@@ -167,13 +167,13 @@ public final class EmailRecipient extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * the email of the recipient.
+     * The recipient email address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailId")
     private final String emailId;
 
     /**
-     * the email of the recipient.
+     * The recipient email address.
      * @return the value
      **/
     public String getEmailId() {

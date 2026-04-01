@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth.internal;
@@ -13,6 +13,10 @@ import java.util.HashSet;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.function.Function;
 
 import javax.annotation.concurrent.Immutable;
@@ -101,6 +105,9 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
     // needs to be volatile to make double-checked locking work
     // see https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html
     private volatile SecurityTokenAdapter securityTokenAdapter = null;
+    // Single-flight pattern: when non-null, indicates a refresh is in progress.
+    // Follower threads wait on this future instead of contending for locks.
+    private volatile CompletableFuture<String> inFlightRefresh = null;
 
     /**
      * Same as {@link #X509FederationClient(String, String, X509CertificateSupplier, SessionKeySupplier, Set, ClientConfigurator, List, String)}
@@ -200,63 +207,106 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
         return refreshAndGetSecurityTokenInner(false, Optional.empty(), true);
     }
 
+    /**
+     * Uses single-flight pattern to avoid lock convoy: when multiple threads need to refresh concurrently, only one (the "leader")
+     * makes the HTTP call while others ("followers") wait on the same CompletableFuture for the result, eliminating lock contention.
+     */
     private String refreshAndGetSecurityTokenInner(
             final boolean doFinalTokenValidityCheck, Optional<Duration> time, boolean refreshKeys) {
-        // Since this client will be used in a multi-threaded environment (from within a service API),
-        // this needs to be synchronized to make sure multiple calls are not updating the security token at the same time.
-        // This should not be a blocking/dead-locked call. The worst I can see at this point is that the auth service does
-        // not respond and this call times out, throwing exception
+        final CompletableFuture<String> future;
+        boolean iAmTheLeader = false;
+
         synchronized (this) {
             // Check again to see if the JWT is still invalid, unless we want to skip that check
             if (!doFinalTokenValidityCheck
                     || (time.isPresent()
                             ? (!securityTokenAdapter.isValid(time))
                             : (!securityTokenAdapter.isValid()))) {
-                if (refreshKeys) {
-                    LOG.info("Refreshing session keys.");
-                    sessionKeySupplier.refreshKeys();
+                if (inFlightRefresh != null) {
+                    // someone else is already refreshing, just wait for their result
+                    future = inFlightRefresh;
+                } else {
+                    // no refresh in progress, start one as leader.
+                    future = new CompletableFuture<>();
+                    inFlightRefresh = future;
+                    iAmTheLeader = true;
                 }
-                if (leafCertificateSupplier instanceof Refreshable) {
-                    try {
-                        ((Refreshable) leafCertificateSupplier).refresh();
-                    } catch (RefreshFailedException ex) {
-                        throw new BmcException(
-                                false, "Can't refresh the leaf certification!", ex, null);
-                    }
-                    // When using default purpose (ex, instance principals), the token request should always be signed with the same tenant id as the certificate.
-                    // For other purposes, the tenant id can be different.
-                    if (this.purpose.equals(DEFAULT_PURPOSE)) {
-                        String newTenancyId =
-                                AuthUtils.getTenantIdFromCertificate(
-                                        leafCertificateSupplier
-                                                .getCertificateAndKeyPair()
-                                                .getCertificate());
-
-                        if (!this.tenancyId.equals(newTenancyId)) {
-                            throw new IllegalArgumentException(
-                                    "The tenancy id should never be changed in cert file!");
-                        }
-                    }
-                }
-
-                for (X509CertificateSupplier supplier : intermediateCertificateSuppliers) {
-                    if (supplier instanceof Refreshable) {
-                        try {
-                            ((Refreshable) supplier).refresh();
-                        } catch (RefreshFailedException ex) {
-                            throw new BmcException(
-                                    false,
-                                    "Can't refresh the intermediate certification!",
-                                    ex,
-                                    null);
-                        }
-                    }
-                }
-                securityTokenAdapter = getSecurityTokenFromServer();
+            } else {
                 return securityTokenAdapter.getSecurityToken();
             }
+        }
 
-            return securityTokenAdapter.getSecurityToken();
+        if (iAmTheLeader) {
+            LOG.info("[Leader] About to refresh security token.");
+
+            if (refreshKeys) {
+                LOG.info("Refreshing session keys.");
+                sessionKeySupplier.refreshKeys();
+            }
+            if (leafCertificateSupplier instanceof Refreshable) {
+                try {
+                    ((Refreshable) leafCertificateSupplier).refresh();
+                } catch (RefreshFailedException ex) {
+                    throw new BmcException(
+                            false, "Can't refresh the leaf certification!", ex, null);
+                }
+                // When using default purpose (ex, instance principals), the token request should always be signed with the same tenant id as the certificate.
+                // For other purposes, the tenant id can be different.
+                if (this.purpose.equals(DEFAULT_PURPOSE)) {
+                    String newTenancyId =
+                            AuthUtils.getTenantIdFromCertificate(
+                                    leafCertificateSupplier
+                                            .getCertificateAndKeyPair()
+                                            .getCertificate());
+
+                    if (!this.tenancyId.equals(newTenancyId)) {
+                        throw new IllegalArgumentException(
+                                "The tenancy id should never be changed in cert file!");
+                    }
+                }
+            }
+
+            for (X509CertificateSupplier supplier : intermediateCertificateSuppliers) {
+                if (supplier instanceof Refreshable) {
+                    try {
+                        ((Refreshable) supplier).refresh();
+                    } catch (RefreshFailedException ex) {
+                        throw new BmcException(
+                                false, "Can't refresh the intermediate certification!", ex, null);
+                    }
+                }
+            }
+
+            try {
+                securityTokenAdapter = getSecurityTokenFromServer();
+                String token = securityTokenAdapter.getSecurityToken();
+                future.complete(token);
+                return token;
+            } catch (Exception e) {
+                LOG.error("Error refreshing security token", e);
+                future.completeExceptionally(e);
+                throw new BmcException(false, "Error refreshing security token.", e, null);
+            } finally {
+                inFlightRefresh = null;
+            }
+        } else {
+            try {
+                LOG.info("[Follower] Waiting on leader's result.");
+                return future.get(1, TimeUnit.MINUTES);
+            } catch (ExecutionException e) {
+                Throwable cause = e.getCause();
+                if (cause instanceof BmcException) {
+                    throw (BmcException) cause;
+                }
+                throw new BmcException(false, "Error refreshing security token.", cause, null);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                throw new BmcException(
+                        false, "Interrupted waiting for security token refresh.", e, null);
+            } catch (TimeoutException e) {
+                throw new BmcException(
+                        false, "Timed out waiting for security token refresh.", e, null);
+            }
         }
     }
 

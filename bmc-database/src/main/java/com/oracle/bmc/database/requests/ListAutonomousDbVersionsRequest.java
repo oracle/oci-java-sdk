@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -59,12 +59,12 @@ public class ListAutonomousDbVersionsRequest
         return opcRequestId;
     }
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload type.
      */
     private com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload dbWorkload;
 
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload type.
      */
     public com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload getDbWorkload() {
         return dbWorkload;
@@ -187,13 +187,13 @@ public class ListAutonomousDbVersionsRequest
         }
 
         /**
-         * A filter to return only autonomous database resources that match the specified workload type.
+         * A filter to return only Autonomous AI Database resources that match the specified workload type.
          */
         private com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload dbWorkload =
                 null;
 
         /**
-         * A filter to return only autonomous database resources that match the specified workload type.
+         * A filter to return only Autonomous AI Database resources that match the specified workload type.
          * @param dbWorkload the value to set
          * @return this builder instance
          */

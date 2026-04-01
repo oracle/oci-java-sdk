@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.managementdashboard.requests;
@@ -128,6 +128,17 @@ public class ListManagementSavedSearchesRequest
     public SortBy getSortBy() {
         return sortBy;
     }
+    /**
+     * This parameter applies only when compartmentId is root compartment. When set to true, all accessible resources will be returned. Default is false.
+     */
+    private String compartmentIdInSubtree;
+
+    /**
+     * This parameter applies only when compartmentId is root compartment. When set to true, all accessible resources will be returned. Default is false.
+     */
+    public String getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -244,6 +255,21 @@ public class ListManagementSavedSearchesRequest
         }
 
         /**
+         * This parameter applies only when compartmentId is root compartment. When set to true, all accessible resources will be returned. Default is false.
+         */
+        private String compartmentIdInSubtree = null;
+
+        /**
+         * This parameter applies only when compartmentId is root compartment. When set to true, all accessible resources will be returned. Default is false.
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(String compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -278,6 +304,7 @@ public class ListManagementSavedSearchesRequest
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -317,8 +344,9 @@ public class ListManagementSavedSearchesRequest
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             return request;
-            // new ListManagementSavedSearchesRequest(compartmentId, displayName, opcRequestId, limit, page, sortOrder, sortBy);
+            // new ListManagementSavedSearchesRequest(compartmentId, displayName, opcRequestId, limit, page, sortOrder, sortBy, compartmentIdInSubtree);
         }
     }
 
@@ -334,7 +362,8 @@ public class ListManagementSavedSearchesRequest
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
-                .sortBy(sortBy);
+                .sortBy(sortBy)
+                .compartmentIdInSubtree(compartmentIdInSubtree);
     }
 
     /**
@@ -357,6 +386,7 @@ public class ListManagementSavedSearchesRequest
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(")");
         return sb.toString();
     }
@@ -378,7 +408,9 @@ public class ListManagementSavedSearchesRequest
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.sortBy, other.sortBy);
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree);
     }
 
     @Override
@@ -394,6 +426,11 @@ public class ListManagementSavedSearchesRequest
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         return result;
     }
 }

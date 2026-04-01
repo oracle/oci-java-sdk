@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -164,7 +164,7 @@ public class ListAuditEventAnalyticsRequest
      * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
      * (Numeric and boolean values should not be quoted.)
      * <p>
-     **Example:** (operationTime ge "2021-06-04T01-00-26") and (eventName eq "LOGON")
+     **Example:** (auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON")
      * The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary.
      * adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1.
      * These define admin user activity, common user activity, sensitive data activity and data safe activity
@@ -180,7 +180,7 @@ public class ListAuditEventAnalyticsRequest
      * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
      * (Numeric and boolean values should not be quoted.)
      * <p>
-     **Example:** (operationTime ge "2021-06-04T01-00-26") and (eventName eq "LOGON")
+     **Example:** (auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON")
      * The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary.
      * adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1.
      * These define admin user activity, common user activity, sensitive data activity and data safe activity
@@ -231,6 +231,13 @@ public class ListAuditEventAnalyticsRequest
         Drops("drops"),
         Grants("grants"),
         Revokes("revokes"),
+        ObjectOwner("objectOwner"),
+        AuditPolicies("auditPolicies"),
+        ObjectName("objectName"),
+        OsUserName("osUserName"),
+        ErrorCode("errorCode"),
+        ClientIp("clientIp"),
+        ExternalUserId("externalUserId"),
         ;
 
         private final String value;
@@ -334,6 +341,13 @@ public class ListAuditEventAnalyticsRequest
         ClientId("clientId"),
         AuditType("auditType"),
         EventName("eventName"),
+        ObjectOwner("objectOwner"),
+        AuditPolicies("auditPolicies"),
+        ObjectName("objectName"),
+        OsUserName("osUserName"),
+        ErrorCode("errorCode"),
+        ClientIp("clientIp"),
+        ExternalUserId("externalUserId"),
         ;
 
         private final String value;
@@ -458,6 +472,13 @@ public class ListAuditEventAnalyticsRequest
         ClientProgram("clientProgram"),
         ClientId("clientId"),
         AuditType("auditType"),
+        ObjectOwner("objectOwner"),
+        AuditPolicies("auditPolicies"),
+        ObjectName("objectName"),
+        OsUserName("osUserName"),
+        ErrorCode("errorCode"),
+        ClientIp("clientIp"),
+        ExternalUserId("externalUserId"),
         ;
 
         private final String value;
@@ -642,7 +663,7 @@ public class ListAuditEventAnalyticsRequest
          * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
          * (Numeric and boolean values should not be quoted.)
          * <p>
-         **Example:** (operationTime ge "2021-06-04T01-00-26") and (eventName eq "LOGON")
+         **Example:** (auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON")
          * The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary.
          * adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1.
          * These define admin user activity, common user activity, sensitive data activity and data safe activity
@@ -658,7 +679,7 @@ public class ListAuditEventAnalyticsRequest
          * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
          * (Numeric and boolean values should not be quoted.)
          * <p>
-         **Example:** (operationTime ge "2021-06-04T01-00-26") and (eventName eq "LOGON")
+         **Example:** (auditEventTime ge "2021-06-04T01:00:26.000Z") and (eventName eq "LOGON")
          * The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary.
          * adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1.
          * These define admin user activity, common user activity, sensitive data activity and data safe activity

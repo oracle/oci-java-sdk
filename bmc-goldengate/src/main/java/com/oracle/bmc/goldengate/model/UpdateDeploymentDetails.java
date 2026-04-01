@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -26,6 +26,8 @@ public final class UpdateDeploymentDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "licenseModel",
+        "isByolCpuCoreCountLimitEnabled",
+        "byolCpuCoreCountLimit",
         "environmentType",
         "description",
         "freeformTags",
@@ -37,6 +39,8 @@ public final class UpdateDeploymentDetails
         "fqdn",
         "cpuCoreCount",
         "isAutoScalingEnabled",
+        "placements",
+        "securityAttributes",
         "oggData",
         "maintenanceWindow",
         "maintenanceConfiguration",
@@ -45,6 +49,8 @@ public final class UpdateDeploymentDetails
     public UpdateDeploymentDetails(
             String displayName,
             LicenseModel licenseModel,
+            Boolean isByolCpuCoreCountLimitEnabled,
+            Integer byolCpuCoreCountLimit,
             EnvironmentType environmentType,
             String description,
             java.util.Map<String, String> freeformTags,
@@ -56,6 +62,8 @@ public final class UpdateDeploymentDetails
             String fqdn,
             Integer cpuCoreCount,
             Boolean isAutoScalingEnabled,
+            java.util.List<DeploymentPlacementDetails> placements,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             UpdateOggDeploymentDetails oggData,
             UpdateMaintenanceWindowDetails maintenanceWindow,
             UpdateMaintenanceConfigurationDetails maintenanceConfiguration,
@@ -63,6 +71,8 @@ public final class UpdateDeploymentDetails
         super();
         this.displayName = displayName;
         this.licenseModel = licenseModel;
+        this.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
+        this.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
         this.environmentType = environmentType;
         this.description = description;
         this.freeformTags = freeformTags;
@@ -74,6 +84,8 @@ public final class UpdateDeploymentDetails
         this.fqdn = fqdn;
         this.cpuCoreCount = cpuCoreCount;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
+        this.placements = placements;
+        this.securityAttributes = securityAttributes;
         this.oggData = oggData;
         this.maintenanceWindow = maintenanceWindow;
         this.maintenanceConfiguration = maintenanceConfiguration;
@@ -116,6 +128,46 @@ public final class UpdateDeploymentDetails
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+        /**
+         * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+         * If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isByolCpuCoreCountLimitEnabled")
+        private Boolean isByolCpuCoreCountLimitEnabled;
+
+        /**
+         * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+         * If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+         *
+         * @param isByolCpuCoreCountLimitEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isByolCpuCoreCountLimitEnabled(Boolean isByolCpuCoreCountLimitEnabled) {
+            this.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
+            this.__explicitlySet__.add("isByolCpuCoreCountLimitEnabled");
+            return this;
+        }
+        /**
+         * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+         * Any CPU usage above this limit is considered as License Included and billed.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("byolCpuCoreCountLimit")
+        private Integer byolCpuCoreCountLimit;
+
+        /**
+         * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+         * Any CPU usage above this limit is considered as License Included and billed.
+         *
+         * @param byolCpuCoreCountLimit the value to set
+         * @return this builder
+         **/
+        public Builder byolCpuCoreCountLimit(Integer byolCpuCoreCountLimit) {
+            this.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
+            this.__explicitlySet__.add("byolCpuCoreCountLimit");
             return this;
         }
         /**
@@ -335,6 +387,49 @@ public final class UpdateDeploymentDetails
             this.__explicitlySet__.add("isAutoScalingEnabled");
             return this;
         }
+        /**
+         * An array of local peers of deployment
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("placements")
+        private java.util.List<DeploymentPlacementDetails> placements;
+
+        /**
+         * An array of local peers of deployment
+         *
+         * @param placements the value to set
+         * @return this builder
+         **/
+        public Builder placements(java.util.List<DeploymentPlacementDetails> placements) {
+            this.placements = placements;
+            this.__explicitlySet__.add("placements");
+            return this;
+        }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("oggData")
         private UpdateOggDeploymentDetails oggData;
@@ -381,6 +476,8 @@ public final class UpdateDeploymentDetails
                     new UpdateDeploymentDetails(
                             this.displayName,
                             this.licenseModel,
+                            this.isByolCpuCoreCountLimitEnabled,
+                            this.byolCpuCoreCountLimit,
                             this.environmentType,
                             this.description,
                             this.freeformTags,
@@ -392,6 +489,8 @@ public final class UpdateDeploymentDetails
                             this.fqdn,
                             this.cpuCoreCount,
                             this.isAutoScalingEnabled,
+                            this.placements,
+                            this.securityAttributes,
                             this.oggData,
                             this.maintenanceWindow,
                             this.maintenanceConfiguration,
@@ -409,6 +508,12 @@ public final class UpdateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("isByolCpuCoreCountLimitEnabled")) {
+                this.isByolCpuCoreCountLimitEnabled(model.getIsByolCpuCoreCountLimitEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("byolCpuCoreCountLimit")) {
+                this.byolCpuCoreCountLimit(model.getByolCpuCoreCountLimit());
             }
             if (model.wasPropertyExplicitlySet("environmentType")) {
                 this.environmentType(model.getEnvironmentType());
@@ -442,6 +547,12 @@ public final class UpdateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
                 this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("placements")) {
+                this.placements(model.getPlacements());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("oggData")) {
                 this.oggData(model.getOggData());
@@ -500,6 +611,42 @@ public final class UpdateDeploymentDetails
      **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
+    }
+
+    /**
+     * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+     * If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isByolCpuCoreCountLimitEnabled")
+    private final Boolean isByolCpuCoreCountLimitEnabled;
+
+    /**
+     * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+     * If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     *
+     * @return the value
+     **/
+    public Boolean getIsByolCpuCoreCountLimitEnabled() {
+        return isByolCpuCoreCountLimitEnabled;
+    }
+
+    /**
+     * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+     * Any CPU usage above this limit is considered as License Included and billed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("byolCpuCoreCountLimit")
+    private final Integer byolCpuCoreCountLimit;
+
+    /**
+     * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+     * Any CPU usage above this limit is considered as License Included and billed.
+     *
+     * @return the value
+     **/
+    public Integer getByolCpuCoreCountLimit() {
+        return byolCpuCoreCountLimit;
     }
 
     /**
@@ -696,6 +843,44 @@ public final class UpdateDeploymentDetails
         return isAutoScalingEnabled;
     }
 
+    /**
+     * An array of local peers of deployment
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("placements")
+    private final java.util.List<DeploymentPlacementDetails> placements;
+
+    /**
+     * An array of local peers of deployment
+     *
+     * @return the value
+     **/
+    public java.util.List<DeploymentPlacementDetails> getPlacements() {
+        return placements;
+    }
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("oggData")
     private final UpdateOggDeploymentDetails oggData;
 
@@ -740,6 +925,9 @@ public final class UpdateDeploymentDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", isByolCpuCoreCountLimitEnabled=")
+                .append(String.valueOf(this.isByolCpuCoreCountLimitEnabled));
+        sb.append(", byolCpuCoreCountLimit=").append(String.valueOf(this.byolCpuCoreCountLimit));
         sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -751,6 +939,8 @@ public final class UpdateDeploymentDetails
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
+        sb.append(", placements=").append(String.valueOf(this.placements));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", oggData=").append(String.valueOf(this.oggData));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", maintenanceConfiguration=")
@@ -772,6 +962,9 @@ public final class UpdateDeploymentDetails
         UpdateDeploymentDetails other = (UpdateDeploymentDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(
+                        this.isByolCpuCoreCountLimitEnabled, other.isByolCpuCoreCountLimitEnabled)
+                && java.util.Objects.equals(this.byolCpuCoreCountLimit, other.byolCpuCoreCountLimit)
                 && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -783,6 +976,8 @@ public final class UpdateDeploymentDetails
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
+                && java.util.Objects.equals(this.placements, other.placements)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.oggData, other.oggData)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(
@@ -797,6 +992,16 @@ public final class UpdateDeploymentDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isByolCpuCoreCountLimitEnabled == null
+                                ? 43
+                                : this.isByolCpuCoreCountLimitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.byolCpuCoreCountLimit == null
+                                ? 43
+                                : this.byolCpuCoreCountLimit.hashCode());
         result =
                 (result * PRIME)
                         + (this.environmentType == null ? 43 : this.environmentType.hashCode());
@@ -818,6 +1023,12 @@ public final class UpdateDeploymentDetails
                         + (this.isAutoScalingEnabled == null
                                 ? 43
                                 : this.isAutoScalingEnabled.hashCode());
+        result = (result * PRIME) + (this.placements == null ? 43 : this.placements.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.oggData == null ? 43 : this.oggData.hashCode());
         result =
                 (result * PRIME)

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.internal.http;
@@ -46,6 +46,38 @@ public class GetNodePoolOptionsConverter {
                             "compartmentId",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getCompartmentId()));
+        }
+
+        if (request.getShouldListAllPatchVersions() != null) {
+            target =
+                    target.queryParam(
+                            "shouldListAllPatchVersions",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getShouldListAllPatchVersions()));
+        }
+
+        if (request.getNodePoolOsType() != null) {
+            target =
+                    target.queryParam(
+                            "nodePoolOsType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getNodePoolOsType().getValue()));
+        }
+
+        if (request.getNodePoolOsArch() != null) {
+            target =
+                    target.queryParam(
+                            "nodePoolOsArch",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getNodePoolOsArch().getValue()));
+        }
+
+        if (request.getNodePoolK8sVersion() != null) {
+            target =
+                    target.queryParam(
+                            "nodePoolK8sVersion",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getNodePoolK8sVersion()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

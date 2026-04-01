@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.util;
@@ -13,11 +13,23 @@ import org.slf4j.Logger;
 
 import java.util.Locale;
 
+/**
+ * Utility class for working with realm-specific endpoint templates.
+ * <p>
+ * This class provides methods for determining whether realm-specific endpoints are enabled for a client
+ * and for manipulating the endpoint templates that are specific to a particular realm.
+ */
 public class RealmSpecificEndpointTemplateUtils {
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(RealmSpecificEndpointTemplateUtils.class);
     private static final String OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED_ENV_VAR =
             "OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED";
+
+    /**
+     * Whether the use of realm-specific endpoints was enabled programmatically, using Java code.
+     */
+    private static volatile Boolean
+            USE_OF_REALM_SPECIFIC_ENDPOINT_TEMPLATE_ENABLED_PROGRAMMATICALLY = null;
 
     /**
      * Returns the boolean indicating if the SDK should use realm-specific endpoint templates or
@@ -26,6 +38,9 @@ public class RealmSpecificEndpointTemplateUtils {
      * @return true if the client should use realm-specific endpoint template
      */
     public static boolean getUseOfRealmSpecificEndpointTemplateByDefault() {
+        if (USE_OF_REALM_SPECIFIC_ENDPOINT_TEMPLATE_ENABLED_PROGRAMMATICALLY != null) {
+            return USE_OF_REALM_SPECIFIC_ENDPOINT_TEMPLATE_ENABLED_PROGRAMMATICALLY;
+        }
         final String useOfRealmSpecificEndpointTemplateEnabledEnvVar =
                 System.getenv(OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED_ENV_VAR);
         return useOfRealmSpecificEndpointTemplateEnabledEnvVar != null
@@ -73,5 +88,27 @@ public class RealmSpecificEndpointTemplateUtils {
                     defaultEndpointTemplate);
             return defaultEndpointTemplate;
         }
+    }
+
+    /**
+     * Get the programmatic flag for whether realm-specific endpoints are enabled. <code>null</code>
+     * means use the environment variable instead.
+     *
+     * @return status of the programmatic flag for whether realm-specific endpoints are enabled
+     */
+    public static Boolean getUseOfRealmSpecificEndpointTemplateEnabledProgrammatically() {
+        return USE_OF_REALM_SPECIFIC_ENDPOINT_TEMPLATE_ENABLED_PROGRAMMATICALLY;
+    }
+
+    /**
+     * Set the programmatic flag for whether realm-specific endpoints are enabled. <code>null</code>
+     * means use environment variable instead.
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabledProgrammatically programmatic flag
+     */
+    public static void setUseOfRealmSpecificEndpointTemplateEnabledProgrammatically(
+            Boolean useOfRealmSpecificEndpointTemplateEnabledProgrammatically) {
+        USE_OF_REALM_SPECIFIC_ENDPOINT_TEMPLATE_ENABLED_PROGRAMMATICALLY =
+                useOfRealmSpecificEndpointTemplateEnabledProgrammatically;
     }
 }

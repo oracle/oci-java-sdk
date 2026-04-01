@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database;
@@ -79,9 +79,27 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create Standby Autonomous Container Database.
-     * For more information about changing Autonomous Container Databases Add Standby, see
-     * [Create Standby Autonomous Container Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     * Add a database node snapshots to the Exadb VM cluster..
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDbnodeSnapshotsForExadbVmClusterResponse>
+            addDbnodeSnapshotsForExadbVmCluster(
+                    AddDbnodeSnapshotsForExadbVmClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddDbnodeSnapshotsForExadbVmClusterRequest,
+                                    AddDbnodeSnapshotsForExadbVmClusterResponse>
+                            handler);
+
+    /**
+     * Add a standby Autonomous Container Database. For more information about Autonomous Data Guard,see
+     * [Protect Critical Databases from Failures and Disasters Using Autonomous Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
      *
      *
      * @param request The request object containing the details to send
@@ -100,7 +118,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Makes the storage capacity from additional storage servers available for Cloud VM Cluster consumption. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Makes the storage capacity from additional storage servers available for Cloud VM Cluster consumption. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      *
      *
      * @param request The request object containing the details to send
@@ -175,7 +193,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Initiates a data refresh for an Autonomous Database refreshable clone. Data is refreshed from the source database to the point of a specified timestamp.
+     * Initiates a data refresh for an Autonomous AI Database refreshable clone. Data is refreshed from the source database to the point of a specified timestamp.
      *
      *
      * @param request The request object containing the details to send
@@ -247,7 +265,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Move the Autonomous Container Database and its dependent resources to the specified compartment.
      * For more information about moving Autonomous Container Databases, see
-     * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/raqyy/#articletitle.html).
      *
      *
      * @param request The request object containing the details to send
@@ -266,8 +284,8 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Move the Autonomous Database and its dependent resources to the specified compartment.
-     * For more information about moving Autonomous Databases, see
+     * Move the Autonomous AI Database and its dependent resources to the specified compartment.
+     * For more information about moving Autonomous AI Databases, see
      * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      *
@@ -287,7 +305,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Move the Autonomous Database Software Image and its dependent resources to the specified compartment.
+     * Move the Autonomous AI Database Software Image and its dependent resources to the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -306,7 +324,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Associate an Autonomous Database with a different subscription.
+     * Associate an Autonomous AI Database with a different subscription.
      *
      *
      * @param request The request object containing the details to send
@@ -405,7 +423,45 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.For more information about moving resources to a different compartment, see [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Associate a Cloud Autonomous VM cluster with a different subscription.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCloudAutonomousVmClusterSubscriptionResponse>
+            changeCloudAutonomousVmClusterSubscription(
+                    ChangeCloudAutonomousVmClusterSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudAutonomousVmClusterSubscriptionRequest,
+                                    ChangeCloudAutonomousVmClusterSubscriptionResponse>
+                            handler);
+
+    /**
+     * Associate a cloud DB system with a different subscription.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCloudDbSystemSubscriptionResponse>
+            changeCloudDbSystemSubscription(
+                    ChangeCloudDbSystemSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudDbSystemSubscriptionRequest,
+                                    ChangeCloudDbSystemSubscriptionResponse>
+                            handler);
+
+    /**
+     * Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.For more information about moving resources to a different compartment, see [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -502,8 +558,8 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Switch the Autonomous Container Database role between Standby and Snapshot Standby.
-     * For more information about changing Autonomous Container Databases Dataguard Role, see
+     * **Deprecated.** Use the {@link #convertStandbyAutonomousContainerDatabase(ConvertStandbyAutonomousContainerDatabaseRequest, Consumer, Consumer) convertStandbyAutonomousContainerDatabase} operation to switch the Autonomous Container Database (ACD) role between Standby and Snapshot Standby.
+     * For more information about changing ACD Role, see
      * [Convert Physical Standby to Snapshot Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
      *
      *
@@ -540,7 +596,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * This operation updates the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database, and must be run on the standby side.
+     * This operation updates the cross-region disaster recovery (DR) details of the standby Autonomous AI Database Serverless database, and must be run on the standby side.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -883,7 +939,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Configures the Autonomous Database Vault service [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * Configures the Autonomous AI Database Vault service [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      *
      *
      * @param request The request object containing the details to send
@@ -899,6 +955,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ConfigureAutonomousDatabaseVaultKeyRequest,
                                     ConfigureAutonomousDatabaseVaultKeyResponse>
+                            handler);
+
+    /**
+     * Configures Exascale on Cloud exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ConfigureExascaleCloudExadataInfrastructureResponse>
+            configureExascaleCloudExadataInfrastructure(
+                    ConfigureExascaleCloudExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConfigureExascaleCloudExadataInfrastructureRequest,
+                                    ConfigureExascaleCloudExadataInfrastructureResponse>
                             handler);
 
     /**
@@ -921,7 +996,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * This operation updates SaaS administrative user configuration of the Autonomous Database.
+     * This operation updates SaaS administrative user configuration of the Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -957,9 +1032,8 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Convert between and SnapshotStandby Standby Autonomous Container Database .
-     * For more information about changing Autonomous Container Databases Add Standby, see
-     * [Convert Standby Autonomous Container Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     * Convert the standby Autonomous Container Database (ACD) between physical standby and snapshot standby ACD. For more information about converting standby ACDs, see
+     * [Convert Physical Standby to Snapshot Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
      *
      *
      * @param request The request object containing the details to send
@@ -976,6 +1050,26 @@ public interface DatabaseAsync extends AutoCloseable {
                                     ConvertStandbyAutonomousContainerDatabaseRequest,
                                     ConvertStandbyAutonomousContainerDatabaseResponse>
                             handler);
+
+    /**
+     * Performs transition from standby database into a snapshot standby and vice versa.
+     * The transition performed based on the current role of the database, if the current role is standby then this operation will convert it to snapshot standby and if the current role is snapshot standby then this operation will convert it to standby.
+     * <p>
+     * This operation should be performed on respective standby/snapshot standby database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ConvertStandbyDatabaseTypeResponse> convertStandbyDatabaseType(
+            ConvertStandbyDatabaseTypeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ConvertStandbyDatabaseTypeRequest, ConvertStandbyDatabaseTypeResponse>
+                    handler);
 
     /**
      * Converts a non-container database to a pluggable database.
@@ -1035,6 +1129,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates an advanced cluster file system resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAdvancedClusterFileSystemResponse>
+            createAdvancedClusterFileSystem(
+                    CreateAdvancedClusterFileSystemRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateAdvancedClusterFileSystemRequest,
+                                    CreateAdvancedClusterFileSystemResponse>
+                            handler);
+
+    /**
      * Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on the request parameters you provide.
      *
      *
@@ -1071,14 +1184,8 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
-     * specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
-     * <p>
-     * All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
-     * called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
-     * You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
-     * resource in the Console. For more information, see
-     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * **Deprecated.** Use the {@link #addStandbyAutonomousContainerDatabase(AddStandbyAutonomousContainerDatabaseRequest, Consumer, Consumer) addStandbyAutonomousContainerDatabase} operation to create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
+     * specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/#articletitle.html).
      *
      *
      * @param request The request object containing the details to send
@@ -1097,7 +1204,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new Autonomous Database.
+     * Creates a new Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -1114,7 +1221,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
+     * Creates a new Autonomous AI Database backup for the specified database based on the provided request parameters.
      *
      *
      * @param request The request object containing the details to send
@@ -1133,7 +1240,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * create Autonomous Database Software Image in the specified compartment.
+     * create Autonomous AI Database Software Image in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -1221,7 +1328,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a cloud Exadata infrastructure resource. This resource is used to create either an [Exadata Cloud Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance or an Autonomous Database on dedicated Exadata infrastructure.
+     * Creates a cloud Exadata infrastructure resource. This resource is used to create either an [Exadata Cloud Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance or an Autonomous AI Database on dedicated Exadata infrastructure.
      *
      *
      * @param request The request object containing the details to send
@@ -1619,6 +1726,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a Pluggable Database Snapshot
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePluggableDatabaseSnapshotResponse>
+            createPluggableDatabaseSnapshot(
+                    CreatePluggableDatabaseSnapshotRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreatePluggableDatabaseSnapshotRequest,
+                                    CreatePluggableDatabaseSnapshotResponse>
+                            handler);
+
+    /**
      * Creates a Scheduled Action resource.
      *
      *
@@ -1723,7 +1849,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Performs one of the following power actions on the specified DB node:
      * - start - power on
-     * - stop - power off
+     * - stop - power off gracefully
      * - softreset - ACPI shutdown and power on
      * - reset - power off and power on
      * <p>
@@ -1749,6 +1875,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the advanced cluster file system.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAdvancedClusterFileSystemResponse>
+            deleteAdvancedClusterFileSystem(
+                    DeleteAdvancedClusterFileSystemRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteAdvancedClusterFileSystemRequest,
+                                    DeleteAdvancedClusterFileSystemResponse>
+                            handler);
+
+    /**
      * Deletes and deregisters the specified application virtual IP (VIP) address.
      *
      *
@@ -1766,7 +1911,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified Autonomous Database.
+     * Deletes the specified Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -1801,7 +1946,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Delete an Autonomous Database Software Image
+     * Delete an Autonomous AI Database Software Image
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1887,7 +2032,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Deletes the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      *
      *
      * @param request The request object containing the details to send
@@ -2005,6 +2150,23 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteDbHomeResponse> deleteDbHome(
             DeleteDbHomeRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteDbHomeRequest, DeleteDbHomeResponse>
+                    handler);
+
+    /**
+     * Deletes the specified Exadata Database Node Snapshot.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDbnodeSnapshotResponse> deleteDbnodeSnapshot(
+            DeleteDbnodeSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDbnodeSnapshotRequest, DeleteDbnodeSnapshotResponse>
                     handler);
 
     /**
@@ -2224,6 +2386,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified Exadata Pluggable Database Snapshot.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePluggableDatabaseSnapshotResponse>
+            deletePluggableDatabaseSnapshot(
+                    DeletePluggableDatabaseSnapshotRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeletePluggableDatabaseSnapshotRequest,
+                                    DeletePluggableDatabaseSnapshotResponse>
+                            handler);
+
+    /**
      * Deletes the scheduled action.
      *
      *
@@ -2326,7 +2507,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Asynchronously deregisters this Autonomous Database with Data Safe.
+     * Asynchronously deregisters this Autonomous AI Database with Data Safe.
      *
      *
      * @param request The request object containing the details to send
@@ -2345,7 +2526,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Disables Database Management for the Autonomous Database resource.
+     * Disables Database Management for the Autonomous AI Database resource.
      *
      *
      * @param request The request object containing the details to send
@@ -2364,7 +2545,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Disables Operations Insights for the Autonomous Database resource.
+     * Disables Operations Insights for the Autonomous AI Database resource.
      *
      *
      * @param request The request object containing the details to send
@@ -2575,6 +2756,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Downloads the specified database connection bundle content.
+     * The bundle is returned as a binary file containing the connection details.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DownloadDbConnectionBundleResponse> downloadDbConnectionBundle(
+            DownloadDbConnectionBundleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DownloadDbConnectionBundleRequest, DownloadDbConnectionBundleResponse>
+                    handler);
+
+    /**
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      *
      *
@@ -2647,9 +2846,8 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Edit Autonomous Container Database Dataguard.
-     * For more information about changing Autonomous Container Databases Add Standby, see
-     * [Update Autonomous Container Database Dataguard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     * Modify Autonomous Container Database Data Guard settings such as protection mode, automatic failover, and fast start failover lag limit. For more information, see
+     * [Update Autonomous Container Database Dataguard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-3A936EC7-7A49-4FD2-9F39-8DB6B22011CE).
      *
      *
      * @param request The request object containing the details to send
@@ -2668,7 +2866,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enables Database Management for Autonomous Database.
+     * Enables Database Management for Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -2687,7 +2885,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enables the specified Autonomous Database with Operations Insights.
+     * Enables the specified Autonomous AI Database with Operations Insights.
      *
      *
      * @param request The request object containing the details to send
@@ -2898,7 +3096,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Initiates a failover of the specified Autonomous Database to the associated peer database. Applicable only to databases with Disaster Recovery enabled.
+     * Execute an operating system (OS) patch action on a DB system. Returns 202 and a work request. Some updates may require a reboot.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ExecuteDbSystemOsPatchResponse> executeDbSystemOsPatch(
+            ExecuteDbSystemOsPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ExecuteDbSystemOsPatchRequest, ExecuteDbSystemOsPatchResponse>
+                    handler);
+
+    /**
+     * Initiates a failover of the specified Autonomous AI Database to the associated peer database. Applicable only to databases with Disaster Recovery enabled.
      * This API should be called in the remote region where the peer database resides.
      * Below parameter is optional:
      *   - `peerDbId`
@@ -2920,7 +3135,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Failover Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     * Performs failover to a standby Autonomous Container Database (ACD) identified by the autonomousContainerDatabaseId parameter. This standby ACD will become the new primary ACD when the failover completes successfully. For more information, see
+     * [Fail Over to the Standby in an Autonomous Data Guard Configuration](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-C8FFA343-223C-4F41-9656-AEC356AD90A0).
      *
      *
      * @param request The request object containing the details to send
@@ -2939,7 +3155,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Fails over the standby Autonomous Container Database identified by the autonomousContainerDatabaseId parameter to the primary Autonomous Container Database after the existing primary Autonomous Container Database fails or becomes unreachable.
+     * **Deprecated.** Use the {@link #failoverAutonomousContainerDatabaseDataguard(FailoverAutonomousContainerDatabaseDataguardRequest, Consumer, Consumer) failoverAutonomousContainerDatabaseDataguard} operation to fail over the standby Autonomous Container Database (ACD) to the primary ACD after the existing primary ACD fails or becomes unreachable.
      * <p>
      * A failover can result in data loss, depending on the protection mode in effect at the time the primary Autonomous Container Database fails.
      *
@@ -3005,7 +3221,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates and downloads a wallet for the specified Autonomous Database.
+     * Creates and downloads a wallet for the specified Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -3043,6 +3259,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets information about the specified advanced cluster file systems.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAdvancedClusterFileSystemResponse> getAdvancedClusterFileSystem(
+            GetAdvancedClusterFileSystemRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAdvancedClusterFileSystemRequest,
+                            GetAdvancedClusterFileSystemResponse>
+                    handler);
+
+    /**
      * Gets information about a specified application virtual IP (VIP) address.
      *
      * @param request The request object containing the details to send
@@ -3077,7 +3311,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+     * **Deprecated.** Use the {@link #getAutonomousContainerDatabase(GetAutonomousContainerDatabaseRequest, Consumer, Consumer) getAutonomousContainerDatabase} operation to get the details of an Autonomous Container Database (ACD) enabled with Autonomous Data Guard associated with the specified ACD.
      *
      *
      * @param request The request object containing the details to send
@@ -3115,7 +3349,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the details of the specified Autonomous Database.
+     * Gets the details of the specified Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -3132,7 +3366,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified Autonomous Database backup.
+     * Gets information about the specified Autonomous AI Database backup.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3148,7 +3382,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets an Autonomous Data Guard-enabled database associated with the specified Autonomous Database.
+     * *Deprecated.* Use the {@link #getAutonomousContainerDatabase(GetAutonomousContainerDatabaseRequest, Consumer, Consumer) getAutonomousContainerDatabase} operation to gets an Autonomous Data Guard-enabled database associated with the specified Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -3167,7 +3401,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the Autonomous Database regional wallet details.
+     * Gets the Autonomous AI Database regional wallet details.
      *
      *
      * @param request The request object containing the details to send
@@ -3186,7 +3420,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets information about the specified Autonomous Database Software Image.
+     * Gets information about the specified Autonomous AI Database Software Image.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3204,7 +3438,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the wallet details for the specified Autonomous Database.
+     * Gets the wallet details for the specified Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -3376,7 +3610,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      *
      *
      * @param request The request object containing the details to send
@@ -3601,6 +3835,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets information about the specified database connection bundle.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDbConnectionBundleResponse> getDbConnectionBundle(
+            GetDbConnectionBundleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDbConnectionBundleRequest, GetDbConnectionBundleResponse>
+                    handler);
+
+    /**
      * Gets information about the specified Database Home.
      *
      * @param request The request object containing the details to send
@@ -3696,6 +3946,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetDbSystemRequest, GetDbSystemResponse> handler);
 
     /**
+     * Gets the details of the specified OS patch action for the specified DB system.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDbSystemOsPatchHistoryEntryResponse>
+            getDbSystemOsPatchHistoryEntry(
+                    GetDbSystemOsPatchHistoryEntryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetDbSystemOsPatchHistoryEntryRequest,
+                                    GetDbSystemOsPatchHistoryEntryResponse>
+                            handler);
+
+    /**
      * Gets information the specified patch.
      *
      *
@@ -3747,6 +4016,23 @@ public interface DatabaseAsync extends AutoCloseable {
                                     GetDbSystemUpgradeHistoryEntryRequest,
                                     GetDbSystemUpgradeHistoryEntryResponse>
                             handler);
+
+    /**
+     * Gets information about the specified Exadata Database Node Snapshot in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDbnodeSnapshotResponse> getDbnodeSnapshot(
+            GetDbnodeSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDbnodeSnapshotRequest, GetDbnodeSnapshotResponse>
+                    handler);
 
     /**
      * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
@@ -4141,6 +4427,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified Exadata Pluggable Database Snapshot in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPluggableDatabaseSnapshotResponse> getPluggableDatabaseSnapshot(
+            GetPluggableDatabaseSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPluggableDatabaseSnapshotRequest,
+                            GetPluggableDatabaseSnapshotResponse>
+                    handler);
+
+    /**
      * Gets information about the specified Scheduled Action.
      *
      *
@@ -4315,7 +4619,26 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * **Deprecated** To create a new Autonomous Database system on dedicated Exadata Infrastructure, use the {@link #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest, Consumer, Consumer) createCloudExadataInfrastructure} and {@link #createCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest, Consumer, Consumer) createCloudAutonomousVmCluster} operations instead. Note that to create an Autonomous VM cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
+     * Imports transportable tablespace for the specified Autonomous AI Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ImportTransportableTablespaceResponse>
+            importTransportableTablespace(
+                    ImportTransportableTablespaceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ImportTransportableTablespaceRequest,
+                                    ImportTransportableTablespaceResponse>
+                            handler);
+
+    /**
+     * **Deprecated** To create a new Autonomous AI Database system on dedicated Exadata Infrastructure, use the {@link #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest, Consumer, Consumer) createCloudExadataInfrastructure} and {@link #createCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest, Consumer, Consumer) createCloudAutonomousVmCluster} operations instead. Note that to create an Autonomous VM cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
      *
      *
      * @param request The request object containing the details to send
@@ -4360,6 +4683,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the advanced cluster file system resources in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAdvancedClusterFileSystemsResponse>
+            listAdvancedClusterFileSystems(
+                    ListAdvancedClusterFileSystemsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAdvancedClusterFileSystemsRequest,
+                                    ListAdvancedClusterFileSystemsResponse>
+                            handler);
+
+    /**
      * Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
      *
      *
@@ -4377,7 +4719,26 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
+     * Gets a list of Autonomous Container Database backups by using either the 'autonomousDatabaseId' or 'compartmentId' as your query parameter.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutonomousContainerDatabaseBackupsResponse>
+            listAutonomousContainerDatabaseBackups(
+                    ListAutonomousContainerDatabaseBackupsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousContainerDatabaseBackupsRequest,
+                                    ListAutonomousContainerDatabaseBackupsResponse>
+                            handler);
+
+    /**
+     * **Deprecated.** Use the {@link #listAutonomousContainerDatabases(ListAutonomousContainerDatabasesRequest, Consumer, Consumer) listAutonomousContainerDatabases} operation to get a list of the Autonomous Container Databases (ACDs)with Autonomous Data Guard-enabled associated with the specified ACD.
      *
      *
      * @param request The request object containing the details to send
@@ -4433,7 +4794,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+     * Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      *
      *
      * @param request The request object containing the details to send
@@ -4470,7 +4831,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the Autonomous Database clones for the specified Autonomous Database.
+     * Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -4488,7 +4849,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     * *Deprecated.* Use the {@link #getAutonomousContainerDatabase(GetAutonomousContainerDatabaseRequest, Consumer, Consumer) getAutonomousContainerDatabase} operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -4507,7 +4868,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     * Lists the Autonomous AI Database peers for the specified Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -4524,7 +4885,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     * Lists the OCIDs of the Autonomous AI Database local and connected remote refreshable clones with the region where they exist for the specified source database.
      *
      *
      * @param request The request object containing the details to send
@@ -4543,7 +4904,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     * Gets a list of the Autonomous AI Database Software Images in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -4562,7 +4923,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of Autonomous Databases based on the query parameters specified.
+     * Gets a list of Autonomous AI Databases based on the query parameters specified.
      *
      *
      * @param request The request object containing the details to send
@@ -4579,8 +4940,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+     * Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for
+     * Autonomous AI Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      *
      *
      * @param request The request object containing the details to send
@@ -4599,7 +4960,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of supported Autonomous Database versions.
+     * Gets a list of supported Autonomous AI Database versions.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4779,7 +5140,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      *
      *
      * @param request The request object containing the details to send
@@ -4972,6 +5333,23 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists all database connection bundles that match the query parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDbConnectionBundlesResponse> listDbConnectionBundles(
+            ListDbConnectionBundlesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDbConnectionBundlesRequest, ListDbConnectionBundlesResponse>
+                    handler);
+
+    /**
      * Lists the history of patch operations on the specified Database Home.
      *
      *
@@ -5023,7 +5401,7 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListDbHomesRequest, ListDbHomesResponse> handler);
 
     /**
-     * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
+     * Lists the database nodes in the specified DB system and compartment. In addition to the other required parameters, either '--db-system-id' or '--vm-cluster-id' also must be provided, depending on the service being accessed.
      *
      *
      * @param request The request object containing the details to send
@@ -5070,6 +5448,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ListDbSystemComputePerformancesRequest,
                                     ListDbSystemComputePerformancesResponse>
+                            handler);
+
+    /**
+     * Gets the history of the OS patch actions performed on the specified DB system.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDbSystemOsPatchHistoryEntriesResponse>
+            listDbSystemOsPatchHistoryEntries(
+                    ListDbSystemOsPatchHistoryEntriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDbSystemOsPatchHistoryEntriesRequest,
+                                    ListDbSystemOsPatchHistoryEntriesResponse>
                             handler);
 
     /**
@@ -5163,6 +5560,23 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists the applicable upgrade components for a DB systems.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDbSystemUpgradesResponse> listDbSystemUpgrades(
+            ListDbSystemUpgradesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDbSystemUpgradesRequest, ListDbSystemUpgradesResponse>
+                    handler);
+
+    /**
      * Lists the DB systems in the specified compartment. You can specify a `backupId` to list only the DB systems that support creating a database using this backup in this compartment.
      * <p>
      **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
@@ -5195,6 +5609,39 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<ListDbVersionsResponse> listDbVersions(
             ListDbVersionsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListDbVersionsRequest, ListDbVersionsResponse>
+                    handler);
+
+    /**
+     * Gets a list of the Exadata Database Node Snapshots in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDbnodeSnapshotsResponse> listDbnodeSnapshots(
+            ListDbnodeSnapshotsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDbnodeSnapshotsRequest, ListDbnodeSnapshotsResponse>
+                    handler);
+
+    /**
+     * Gets the estimate cost savings of the Autonomous AI Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListEstimateCostSavingsResponse> listEstimateCostSavings(
+            ListEstimateCostSavingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListEstimateCostSavingsRequest, ListEstimateCostSavingsResponse>
                     handler);
 
     /**
@@ -5547,6 +5994,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets a list of the Exadata Pluggable Database Snapshots in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPluggableDatabaseSnapshotsResponse>
+            listPluggableDatabaseSnapshots(
+                    ListPluggableDatabaseSnapshotsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListPluggableDatabaseSnapshotsRequest,
+                                    ListPluggableDatabaseSnapshotsResponse>
+                            handler);
+
+    /**
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      *
      *
@@ -5581,6 +6047,23 @@ public interface DatabaseAsync extends AutoCloseable {
                                     ListRecommendedScheduledActionsRequest,
                                     ListRecommendedScheduledActionsResponse>
                             handler);
+
+    /**
+     * Lists the OCIDs of the Autonomous AI Database resource pool members for the specified Autonomous AI Database leader.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourcePoolMembersResponse> listResourcePoolMembers(
+            ListResourcePoolMembersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListResourcePoolMembersRequest, ListResourcePoolMembersResponse>
+                    handler);
 
     /**
      * Lists the Scheduled Action resources in the specified compartment.
@@ -5649,6 +6132,24 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListSchedulingWindowsRequest, ListSchedulingWindowsResponse>
                     handler);
+
+    /**
+     * Retrieves a list of supported minor versions for the specified Exadata System Software major version. You must provide either a `shape` or `resourceId` value.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSystemVersionMinorVersionsResponse>
+            listSystemVersionMinorVersions(
+                    ListSystemVersionMinorVersionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListSystemVersionMinorVersionsRequest,
+                                    ListSystemVersionMinorVersionsResponse>
+                            handler);
 
     /**
      * Gets a list of supported Exadata system versions for a given shape and GI version.
@@ -5900,6 +6401,42 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Mounts the advanced cluster file system to all the virtual machines within a vmcluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<MountAdvancedClusterFileSystemResponse>
+            mountAdvancedClusterFileSystem(
+                    MountAdvancedClusterFileSystemRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    MountAdvancedClusterFileSystemRequest,
+                                    MountAdvancedClusterFileSystemResponse>
+                            handler);
+
+    /**
+     * Mounts the snapshot for the provided dbNode.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<MountDbnodeSnapshotResponse> mountDbnodeSnapshot(
+            MountDbnodeSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            MountDbnodeSnapshotRequest, MountDbnodeSnapshotResponse>
+                    handler);
+
+    /**
      * Moves an execution action member to this execution action resource from another.
      *
      *
@@ -5914,6 +6451,24 @@ public interface DatabaseAsync extends AutoCloseable {
             MoveExecutionActionMemberRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             MoveExecutionActionMemberRequest, MoveExecutionActionMemberResponse>
+                    handler);
+
+    /**
+     * Refreshes the Data Guard health status for the specified database. This operation is supported on both primary and standby databases.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RefreshDataGuardHealthStatusResponse> refreshDataGuardHealthStatus(
+            RefreshDataGuardHealthStatusRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RefreshDataGuardHealthStatusRequest,
+                            RefreshDataGuardHealthStatusResponse>
                     handler);
 
     /**
@@ -5934,7 +6489,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Asynchronously registers this Autonomous Database with Data Safe.
+     * Asynchronously registers this Autonomous AI Database with Data Safe.
      *
      *
      * @param request The request object containing the details to send
@@ -5953,7 +6508,44 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Reinstates a disabled standby Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     * Install the PKCS11 driver for given keystore type
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RegisterCloudAutonomousVmClusterPkcsResponse>
+            registerCloudAutonomousVmClusterPkcs(
+                    RegisterCloudAutonomousVmClusterPkcsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RegisterCloudAutonomousVmClusterPkcsRequest,
+                                    RegisterCloudAutonomousVmClusterPkcsResponse>
+                            handler);
+
+    /**
+     * Install the PKCS11 driver for given keystore type
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RegisterCloudVmClusterPkcsResponse> registerCloudVmClusterPkcs(
+            RegisterCloudVmClusterPkcsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RegisterCloudVmClusterPkcsRequest, RegisterCloudVmClusterPkcsResponse>
+                    handler);
+
+    /**
+     * Reinstates a disabled standby Autonomous Container Database (ACD), identified by the autonomousContainerDatabaseId parameter to an active standby ACD. For more information, see
+     * [Reinstate the Disabled Standby in an Autonomous Data Guard Configuration](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-B5C6A90D-72E3-4F32-988D-8AECC0A2D947).
      *
      *
      * @param request The request object containing the details to send
@@ -5972,7 +6564,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Reinstates a disabled standby Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     * **Deprecated.** Use the {@link #reinstateAutonomousContainerDatabaseDataguard(ReinstateAutonomousContainerDatabaseDataguardRequest, Consumer, Consumer) reinstateAutonomousContainerDatabaseDataguard} operation to reinstate a disabled standby Autonomous Container Database (ACD), identified by the autonomousContainerDatabaseId parameter, to an active standby ACD.
      *
      *
      * @param request The request object containing the details to send
@@ -6193,7 +6785,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Restarts the specified Autonomous Database.
+     * Restarts the specified Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -6210,7 +6802,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Restores an Autonomous Database based on the provided request parameters.
+     * Restores an Autonomous AI Database based on the provided request parameters.
      *
      *
      * @param request The request object containing the details to send
@@ -6420,7 +7012,23 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * This operation gets SaaS administrative user status of the Autonomous Database.
+     * Run datapatch on the specified Oracle Database and optionally on the specified Pluggable databases.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RunDataPatchResponse> runDataPatch(
+            RunDataPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RunDataPatchRequest, RunDataPatchResponse>
+                    handler);
+
+    /**
+     * This operation gets SaaS administrative user status of the Autonomous AI Database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -6503,7 +7111,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Starts the specified Autonomous Database.
+     * Starts the specified Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -6536,7 +7144,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Stops the specified Autonomous Database.
+     * Stops the specified Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -6591,7 +7199,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Switchover Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     * Switchover an Autonomous Container Database (ACD), identified by the autonomousContainerDatabaseId parameter, to an active standby ACD. This standby ACD will become the new primary ACD when the switchover completes successfully. For more information, see
+     * [Switch Roles in an Autonomous Data Guard Configuration](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-A2AB31F6-D52D-493C-9BA7-D87A0F17078F).
      *
      *
      * @param request The request object containing the details to send
@@ -6610,7 +7219,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer association to standby role. The standby Autonomous Container Database associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container Database role.
+     * **Deprecated.** Use the {@link #switchoverAutonomousContainerDatabaseDataguard(SwitchoverAutonomousContainerDatabaseDataguardRequest, Consumer, Consumer) switchoverAutonomousContainerDatabaseDataguard} operation to switches over the primary Autonomous Container Database (ACD) of an Autonomous Data Guard peer association to standby role. The standby ACD associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary ACD role.
      * <p>
      * A switchover incurs no data loss.
      *
@@ -6631,7 +7240,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Initiates a switchover of the specified Autonomous Database to the associated peer database. Applicable only to databases with Disaster Recovery enabled.
+     * Initiates a switchover of the specified Autonomous AI Database to the associated peer database. Applicable only to databases with Disaster Recovery enabled.
      * This API should be called in the remote region where the peer database resides.
      * Below parameter is optional:
      *   - `peerDbId`
@@ -6734,6 +7343,98 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Unmounts the advanced cluster file system from all the virtual machines within a vmcluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UnmountAdvancedClusterFileSystemResponse>
+            unmountAdvancedClusterFileSystem(
+                    UnmountAdvancedClusterFileSystemRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UnmountAdvancedClusterFileSystemRequest,
+                                    UnmountAdvancedClusterFileSystemResponse>
+                            handler);
+
+    /**
+     * Unmounts the snapshot for the provided dbNode.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UnmountDbnodeSnapshotResponse> unmountDbnodeSnapshot(
+            UnmountDbnodeSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UnmountDbnodeSnapshotRequest, UnmountDbnodeSnapshotResponse>
+                    handler);
+
+    /**
+     * Uninstall the PKCS11 driver for given keystore type
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UnregisterCloudAutonomousVmClusterPkcsResponse>
+            unregisterCloudAutonomousVmClusterPkcs(
+                    UnregisterCloudAutonomousVmClusterPkcsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UnregisterCloudAutonomousVmClusterPkcsRequest,
+                                    UnregisterCloudAutonomousVmClusterPkcsResponse>
+                            handler);
+
+    /**
+     * Uninstall the PKCS11 driver for given keystore type
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UnregisterCloudVmClusterPkcsResponse> unregisterCloudVmClusterPkcs(
+            UnregisterCloudVmClusterPkcsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UnregisterCloudVmClusterPkcsRequest,
+                            UnregisterCloudVmClusterPkcsResponse>
+                    handler);
+
+    /**
+     * Updates the advanced cluster file system resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAdvancedClusterFileSystemResponse>
+            updateAdvancedClusterFileSystem(
+                    UpdateAdvancedClusterFileSystemRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAdvancedClusterFileSystemRequest,
+                                    UpdateAdvancedClusterFileSystemResponse>
+                            handler);
+
+    /**
      * Updates the properties of an Autonomous Container Database, such as display name, maintenance preference, backup retention, and tags.
      *
      * @param request The request object containing the details to send
@@ -6752,7 +7453,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Update Autonomous Data Guard association.
+     * **Deprecated.** Use the {@link #editAutonomousContainerDatabaseDataguard(EditAutonomousContainerDatabaseDataguardRequest, Consumer, Consumer) editAutonomousContainerDatabaseDataguard} operation to update an Autonomous Data Guard association.
      *
      *
      * @param request The request object containing the details to send
@@ -6771,7 +7472,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates one or more attributes of the specified Autonomous Database. See the UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
+     * Updates one or more attributes of the specified Autonomous AI Database. See the UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
      *
      *
      * @param request The request object containing the details to send
@@ -6788,7 +7489,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Autonomous Database backup of the specified database based on the request parameters.
+     * Updates the Autonomous AI Database backup of the specified database based on the request parameters.
      *
      *
      * @param request The request object containing the details to send
@@ -6807,7 +7508,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the Autonomous Database regional wallet.
+     * Updates the Autonomous AI Database regional wallet.
      *
      *
      * @param request The request object containing the details to send
@@ -6826,7 +7527,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the properties of an Autonomous Database Software Image, like add tags
+     * Updates the properties of an Autonomous AI Database Software Image, like add tags
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -6844,7 +7545,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the wallet for the specified Autonomous Database.
+     * Updates the wallet for the specified Autonomous AI Database.
      *
      *
      * @param request The request object containing the details to send
@@ -6952,7 +7653,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the Cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Updates the Cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      *
      *
      * @param request The request object containing the details to send

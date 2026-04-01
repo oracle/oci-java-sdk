@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SchedulerDefinition.Builder.class
 )
@@ -30,13 +30,10 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
         "timeCreated",
         "timeUpdated",
         "timeOfNextRun",
-        "activityInitiationCutOff",
         "schedule",
         "countOfAffectedActionGroups",
         "countOfAffectedResources",
         "countOfAffectedTargets",
-        "actionGroupTypes",
-        "applicationTypes",
         "products",
         "lifecycleOperations",
         "actionGroups",
@@ -56,13 +53,10 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeOfNextRun,
-            Integer activityInitiationCutOff,
             Schedule schedule,
             Integer countOfAffectedActionGroups,
             Integer countOfAffectedResources,
             Integer countOfAffectedTargets,
-            java.util.List<LifeCycleActionGroupType> actionGroupTypes,
-            java.util.List<String> applicationTypes,
             java.util.List<String> products,
             java.util.List<String> lifecycleOperations,
             java.util.List<ActionGroup> actionGroups,
@@ -81,13 +75,10 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeOfNextRun = timeOfNextRun;
-        this.activityInitiationCutOff = activityInitiationCutOff;
         this.schedule = schedule;
         this.countOfAffectedActionGroups = countOfAffectedActionGroups;
         this.countOfAffectedResources = countOfAffectedResources;
         this.countOfAffectedTargets = countOfAffectedTargets;
-        this.actionGroupTypes = actionGroupTypes;
-        this.applicationTypes = applicationTypes;
         this.products = products;
         this.lifecycleOperations = lifecycleOperations;
         this.actionGroups = actionGroups;
@@ -162,13 +153,13 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Tenancy OCID
+         * Compartment OCID
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Tenancy OCID
+         * Compartment OCID
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -241,22 +232,6 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("timeOfNextRun");
             return this;
         }
-        /**
-         * Activity Initiation Cut Off.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("activityInitiationCutOff")
-        private Integer activityInitiationCutOff;
-
-        /**
-         * Activity Initiation Cut Off.
-         * @param activityInitiationCutOff the value to set
-         * @return this builder
-         **/
-        public Builder activityInitiationCutOff(Integer activityInitiationCutOff) {
-            this.activityInitiationCutOff = activityInitiationCutOff;
-            this.__explicitlySet__.add("activityInitiationCutOff");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("schedule")
         private Schedule schedule;
@@ -312,40 +287,6 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
         public Builder countOfAffectedTargets(Integer countOfAffectedTargets) {
             this.countOfAffectedTargets = countOfAffectedTargets;
             this.__explicitlySet__.add("countOfAffectedTargets");
-            return this;
-        }
-        /**
-         * All ActionGroup Types that are part of the schedule.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("actionGroupTypes")
-        private java.util.List<LifeCycleActionGroupType> actionGroupTypes;
-
-        /**
-         * All ActionGroup Types that are part of the schedule.
-         * @param actionGroupTypes the value to set
-         * @return this builder
-         **/
-        public Builder actionGroupTypes(java.util.List<LifeCycleActionGroupType> actionGroupTypes) {
-            this.actionGroupTypes = actionGroupTypes;
-            this.__explicitlySet__.add("actionGroupTypes");
-            return this;
-        }
-        /**
-         * All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("applicationTypes")
-        private java.util.List<String> applicationTypes;
-
-        /**
-         * All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
-         *
-         * @param applicationTypes the value to set
-         * @return this builder
-         **/
-        public Builder applicationTypes(java.util.List<String> applicationTypes) {
-            this.applicationTypes = applicationTypes;
-            this.__explicitlySet__.add("applicationTypes");
             return this;
         }
         /**
@@ -520,13 +461,10 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
                             this.timeCreated,
                             this.timeUpdated,
                             this.timeOfNextRun,
-                            this.activityInitiationCutOff,
                             this.schedule,
                             this.countOfAffectedActionGroups,
                             this.countOfAffectedResources,
                             this.countOfAffectedTargets,
-                            this.actionGroupTypes,
-                            this.applicationTypes,
                             this.products,
                             this.lifecycleOperations,
                             this.actionGroups,
@@ -568,9 +506,6 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("timeOfNextRun")) {
                 this.timeOfNextRun(model.getTimeOfNextRun());
             }
-            if (model.wasPropertyExplicitlySet("activityInitiationCutOff")) {
-                this.activityInitiationCutOff(model.getActivityInitiationCutOff());
-            }
             if (model.wasPropertyExplicitlySet("schedule")) {
                 this.schedule(model.getSchedule());
             }
@@ -582,12 +517,6 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("countOfAffectedTargets")) {
                 this.countOfAffectedTargets(model.getCountOfAffectedTargets());
-            }
-            if (model.wasPropertyExplicitlySet("actionGroupTypes")) {
-                this.actionGroupTypes(model.getActionGroupTypes());
-            }
-            if (model.wasPropertyExplicitlySet("applicationTypes")) {
-                this.applicationTypes(model.getApplicationTypes());
             }
             if (model.wasPropertyExplicitlySet("products")) {
                 this.products(model.getProducts());
@@ -686,13 +615,13 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Tenancy OCID
+     * Compartment OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Tenancy OCID
+     * Compartment OCID
      * @return the value
      **/
     public String getCompartmentId() {
@@ -755,20 +684,6 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
         return timeOfNextRun;
     }
 
-    /**
-     * Activity Initiation Cut Off.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("activityInitiationCutOff")
-    private final Integer activityInitiationCutOff;
-
-    /**
-     * Activity Initiation Cut Off.
-     * @return the value
-     **/
-    public Integer getActivityInitiationCutOff() {
-        return activityInitiationCutOff;
-    }
-
     @com.fasterxml.jackson.annotation.JsonProperty("schedule")
     private final Schedule schedule;
 
@@ -816,36 +731,6 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
      **/
     public Integer getCountOfAffectedTargets() {
         return countOfAffectedTargets;
-    }
-
-    /**
-     * All ActionGroup Types that are part of the schedule.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("actionGroupTypes")
-    private final java.util.List<LifeCycleActionGroupType> actionGroupTypes;
-
-    /**
-     * All ActionGroup Types that are part of the schedule.
-     * @return the value
-     **/
-    public java.util.List<LifeCycleActionGroupType> getActionGroupTypes() {
-        return actionGroupTypes;
-    }
-
-    /**
-     * All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("applicationTypes")
-    private final java.util.List<String> applicationTypes;
-
-    /**
-     * All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
-     *
-     * @return the value
-     **/
-    public java.util.List<String> getApplicationTypes() {
-        return applicationTypes;
     }
 
     /**
@@ -1061,16 +946,12 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeOfNextRun=").append(String.valueOf(this.timeOfNextRun));
-        sb.append(", activityInitiationCutOff=")
-                .append(String.valueOf(this.activityInitiationCutOff));
         sb.append(", schedule=").append(String.valueOf(this.schedule));
         sb.append(", countOfAffectedActionGroups=")
                 .append(String.valueOf(this.countOfAffectedActionGroups));
         sb.append(", countOfAffectedResources=")
                 .append(String.valueOf(this.countOfAffectedResources));
         sb.append(", countOfAffectedTargets=").append(String.valueOf(this.countOfAffectedTargets));
-        sb.append(", actionGroupTypes=").append(String.valueOf(this.actionGroupTypes));
-        sb.append(", applicationTypes=").append(String.valueOf(this.applicationTypes));
         sb.append(", products=").append(String.valueOf(this.products));
         sb.append(", lifecycleOperations=").append(String.valueOf(this.lifecycleOperations));
         sb.append(", actionGroups=").append(String.valueOf(this.actionGroups));
@@ -1102,8 +983,6 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeOfNextRun, other.timeOfNextRun)
-                && java.util.Objects.equals(
-                        this.activityInitiationCutOff, other.activityInitiationCutOff)
                 && java.util.Objects.equals(this.schedule, other.schedule)
                 && java.util.Objects.equals(
                         this.countOfAffectedActionGroups, other.countOfAffectedActionGroups)
@@ -1111,8 +990,6 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
                         this.countOfAffectedResources, other.countOfAffectedResources)
                 && java.util.Objects.equals(
                         this.countOfAffectedTargets, other.countOfAffectedTargets)
-                && java.util.Objects.equals(this.actionGroupTypes, other.actionGroupTypes)
-                && java.util.Objects.equals(this.applicationTypes, other.applicationTypes)
                 && java.util.Objects.equals(this.products, other.products)
                 && java.util.Objects.equals(this.lifecycleOperations, other.lifecycleOperations)
                 && java.util.Objects.equals(this.actionGroups, other.actionGroups)
@@ -1143,11 +1020,6 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
         result =
                 (result * PRIME)
                         + (this.timeOfNextRun == null ? 43 : this.timeOfNextRun.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.activityInitiationCutOff == null
-                                ? 43
-                                : this.activityInitiationCutOff.hashCode());
         result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
         result =
                 (result * PRIME)
@@ -1164,12 +1036,6 @@ public final class SchedulerDefinition extends com.oracle.bmc.http.internal.Expl
                         + (this.countOfAffectedTargets == null
                                 ? 43
                                 : this.countOfAffectedTargets.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.actionGroupTypes == null ? 43 : this.actionGroupTypes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.applicationTypes == null ? 43 : this.applicationTypes.hashCode());
         result = (result * PRIME) + (this.products == null ? 43 : this.products.hashCode());
         result =
                 (result * PRIME)

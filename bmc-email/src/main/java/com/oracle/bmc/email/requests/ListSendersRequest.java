@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.requests;
@@ -65,6 +65,17 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     public String getEmailAddress() {
         return emailAddress;
+    }
+    /**
+     * A filter to only return resources that match the given IpPool resource exactly.
+     */
+    private String emailIpPoolId;
+
+    /**
+     * A filter to only return resources that match the given IpPool resource exactly.
+     */
+    public String getEmailIpPoolId() {
+        return emailIpPoolId;
     }
     /**
      * For list pagination. The value of the opc-next-page response header from the previous "List" call.
@@ -257,6 +268,21 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
+         * A filter to only return resources that match the given IpPool resource exactly.
+         */
+        private String emailIpPoolId = null;
+
+        /**
+         * A filter to only return resources that match the given IpPool resource exactly.
+         * @param emailIpPoolId the value to set
+         * @return this builder instance
+         */
+        public Builder emailIpPoolId(String emailIpPoolId) {
+            this.emailIpPoolId = emailIpPoolId;
+            return this;
+        }
+
+        /**
          * For list pagination. The value of the opc-next-page response header from the previous "List" call.
          * For important details about how pagination works,
          * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -371,6 +397,7 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             lifecycleState(o.getLifecycleState());
             domain(o.getDomain());
             emailAddress(o.getEmailAddress());
+            emailIpPoolId(o.getEmailIpPoolId());
             page(o.getPage());
             limit(o.getLimit());
             sortBy(o.getSortBy());
@@ -412,12 +439,13 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.lifecycleState = lifecycleState;
             request.domain = domain;
             request.emailAddress = emailAddress;
+            request.emailIpPoolId = emailIpPoolId;
             request.page = page;
             request.limit = limit;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListSendersRequest(compartmentId, opcRequestId, lifecycleState, domain, emailAddress, page, limit, sortBy, sortOrder);
+            // new ListSendersRequest(compartmentId, opcRequestId, lifecycleState, domain, emailAddress, emailIpPoolId, page, limit, sortBy, sortOrder);
         }
     }
 
@@ -432,6 +460,7 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .lifecycleState(lifecycleState)
                 .domain(domain)
                 .emailAddress(emailAddress)
+                .emailIpPoolId(emailIpPoolId)
                 .page(page)
                 .limit(limit)
                 .sortBy(sortBy)
@@ -456,6 +485,7 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",domain=").append(String.valueOf(this.domain));
         sb.append(",emailAddress=").append(String.valueOf(this.emailAddress));
+        sb.append(",emailIpPoolId=").append(String.valueOf(this.emailIpPoolId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
@@ -480,6 +510,7 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.domain, other.domain)
                 && java.util.Objects.equals(this.emailAddress, other.emailAddress)
+                && java.util.Objects.equals(this.emailIpPoolId, other.emailIpPoolId)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
@@ -499,6 +530,9 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
         result = (result * PRIME) + (this.emailAddress == null ? 43 : this.emailAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.emailIpPoolId == null ? 43 : this.emailIpPoolId.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());

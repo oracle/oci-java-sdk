@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -150,6 +150,38 @@ public final class CreateLdapBindAccountDetails extends CreateOutboundConnectorD
             this.__explicitlySet__.add("passwordSecretVersion");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("trustedCertificateSecretId")
+        private String trustedCertificateSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+         * @param trustedCertificateSecretId the value to set
+         * @return this builder
+         **/
+        public Builder trustedCertificateSecretId(String trustedCertificateSecretId) {
+            this.trustedCertificateSecretId = trustedCertificateSecretId;
+            this.__explicitlySet__.add("trustedCertificateSecretId");
+            return this;
+        }
+        /**
+         * Version of the trusted certificate secret in the Vault to use.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("trustedCertificateSecretVersion")
+        private Integer trustedCertificateSecretVersion;
+
+        /**
+         * Version of the trusted certificate secret in the Vault to use.
+         * @param trustedCertificateSecretVersion the value to set
+         * @return this builder
+         **/
+        public Builder trustedCertificateSecretVersion(Integer trustedCertificateSecretVersion) {
+            this.trustedCertificateSecretVersion = trustedCertificateSecretVersion;
+            this.__explicitlySet__.add("trustedCertificateSecretVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -166,7 +198,9 @@ public final class CreateLdapBindAccountDetails extends CreateOutboundConnectorD
                             this.endpoints,
                             this.bindDistinguishedName,
                             this.passwordSecretId,
-                            this.passwordSecretVersion);
+                            this.passwordSecretVersion,
+                            this.trustedCertificateSecretId,
+                            this.trustedCertificateSecretVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -205,6 +239,12 @@ public final class CreateLdapBindAccountDetails extends CreateOutboundConnectorD
             if (model.wasPropertyExplicitlySet("passwordSecretVersion")) {
                 this.passwordSecretVersion(model.getPasswordSecretVersion());
             }
+            if (model.wasPropertyExplicitlySet("trustedCertificateSecretId")) {
+                this.trustedCertificateSecretId(model.getTrustedCertificateSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("trustedCertificateSecretVersion")) {
+                this.trustedCertificateSecretVersion(model.getTrustedCertificateSecretVersion());
+            }
             return this;
         }
     }
@@ -231,12 +271,16 @@ public final class CreateLdapBindAccountDetails extends CreateOutboundConnectorD
             java.util.List<Endpoint> endpoints,
             String bindDistinguishedName,
             String passwordSecretId,
-            Integer passwordSecretVersion) {
+            Integer passwordSecretVersion,
+            String trustedCertificateSecretId,
+            Integer trustedCertificateSecretVersion) {
         super(availabilityDomain, compartmentId, displayName, freeformTags, definedTags, locks);
         this.endpoints = endpoints;
         this.bindDistinguishedName = bindDistinguishedName;
         this.passwordSecretId = passwordSecretId;
         this.passwordSecretVersion = passwordSecretVersion;
+        this.trustedCertificateSecretId = trustedCertificateSecretId;
+        this.trustedCertificateSecretVersion = trustedCertificateSecretVersion;
     }
 
     /**
@@ -299,6 +343,34 @@ public final class CreateLdapBindAccountDetails extends CreateOutboundConnectorD
         return passwordSecretVersion;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("trustedCertificateSecretId")
+    private final String trustedCertificateSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+     * @return the value
+     **/
+    public String getTrustedCertificateSecretId() {
+        return trustedCertificateSecretId;
+    }
+
+    /**
+     * Version of the trusted certificate secret in the Vault to use.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("trustedCertificateSecretVersion")
+    private final Integer trustedCertificateSecretVersion;
+
+    /**
+     * Version of the trusted certificate secret in the Vault to use.
+     * @return the value
+     **/
+    public Integer getTrustedCertificateSecretVersion() {
+        return trustedCertificateSecretVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -317,6 +389,10 @@ public final class CreateLdapBindAccountDetails extends CreateOutboundConnectorD
         sb.append(", bindDistinguishedName=").append(String.valueOf(this.bindDistinguishedName));
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", passwordSecretVersion=").append(String.valueOf(this.passwordSecretVersion));
+        sb.append(", trustedCertificateSecretId=")
+                .append(String.valueOf(this.trustedCertificateSecretId));
+        sb.append(", trustedCertificateSecretVersion=")
+                .append(String.valueOf(this.trustedCertificateSecretVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -335,6 +411,10 @@ public final class CreateLdapBindAccountDetails extends CreateOutboundConnectorD
                 && java.util.Objects.equals(this.bindDistinguishedName, other.bindDistinguishedName)
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.passwordSecretVersion, other.passwordSecretVersion)
+                && java.util.Objects.equals(
+                        this.trustedCertificateSecretId, other.trustedCertificateSecretId)
+                && java.util.Objects.equals(
+                        this.trustedCertificateSecretVersion, other.trustedCertificateSecretVersion)
                 && super.equals(other);
     }
 
@@ -356,6 +436,16 @@ public final class CreateLdapBindAccountDetails extends CreateOutboundConnectorD
                         + (this.passwordSecretVersion == null
                                 ? 43
                                 : this.passwordSecretVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trustedCertificateSecretId == null
+                                ? 43
+                                : this.trustedCertificateSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trustedCertificateSecretVersion == null
+                                ? 43
+                                : this.trustedCertificateSecretVersion.hashCode());
         return result;
     }
 }

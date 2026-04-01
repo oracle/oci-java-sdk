@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -16,7 +16,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ProductConfigCategoryDetails.Builder.class
 )
@@ -30,14 +30,14 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Versions associated with the PRODUCT .
+         * Versions associated with the PRODUCT. Mandatory if product is not softlink product.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("versions")
         private java.util.List<String> versions;
 
         /**
-         * Versions associated with the PRODUCT .
+         * Versions associated with the PRODUCT. Mandatory if product is not softlink product.
          *
          * @param versions the value to set
          * @return this builder
@@ -50,6 +50,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
         /**
          * OCID for the Credential name to be associated with the Product.
          * These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+         * This property is not applicable if isSoftlink is set to true.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentials")
@@ -58,6 +59,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
         /**
          * OCID for the Credential name to be associated with the Product.
          * These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+         * This property is not applicable if isSoftlink is set to true.
          *
          * @param credentials the value to set
          * @return this builder
@@ -71,6 +73,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
          * Various components of the Product.
          * For example:The administration server or node manager can be the components of the Oracle WebLogic Application server.
          * Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+         * This property is not applicable if isSoftlink is set to true.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("components")
@@ -80,6 +83,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
          * Various components of the Product.
          * For example:The administration server or node manager can be the components of the Oracle WebLogic Application server.
          * Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+         * This property is not applicable if isSoftlink is set to true.
          *
          * @param components the value to set
          * @return this builder
@@ -91,7 +95,8 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
         }
         /**
          * Products compatible with this Product.
-         * Provide products from the list of other products you have created that are compatible with the present one
+         * Provide products from the list of other products you have created that are compatible with the present one.
+         * This property is not applicable if isSoftlink is set to true.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compatibleProducts")
@@ -99,7 +104,8 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
 
         /**
          * Products compatible with this Product.
-         * Provide products from the list of other products you have created that are compatible with the present one
+         * Provide products from the list of other products you have created that are compatible with the present one.
+         * This property is not applicable if isSoftlink is set to true.
          *
          * @param compatibleProducts the value to set
          * @return this builder
@@ -112,6 +118,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
         }
         /**
          * Patch Types associated with this Product.
+         * This property is not applicable if isSoftlink is set to true.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchTypes")
@@ -119,6 +126,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
 
         /**
          * Patch Types associated with this Product.
+         * This property is not applicable if isSoftlink is set to true.
          *
          * @param patchTypes the value to set
          * @return this builder
@@ -126,6 +134,65 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
         public Builder patchTypes(java.util.List<ConfigAssociationDetails> patchTypes) {
             this.patchTypes = patchTypes;
             this.__explicitlySet__.add("patchTypes");
+            return this;
+        }
+        /**
+         * Specify if the product is softlink product or not
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSoftlink")
+        private Boolean isSoftlink;
+
+        /**
+         * Specify if the product is softlink product or not
+         *
+         * @param isSoftlink the value to set
+         * @return this builder
+         **/
+        public Builder isSoftlink(Boolean isSoftlink) {
+            this.isSoftlink = isSoftlink;
+            this.__explicitlySet__.add("isSoftlink");
+            return this;
+        }
+        /**
+         * The OCID of the product that would be the target for the softlink.
+         * This property is applicable only if isSoftlink is set to true
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("linkProductId")
+        private String linkProductId;
+
+        /**
+         * The OCID of the product that would be the target for the softlink.
+         * This property is applicable only if isSoftlink is set to true
+         *
+         * @param linkProductId the value to set
+         * @return this builder
+         **/
+        public Builder linkProductId(String linkProductId) {
+            this.linkProductId = linkProductId;
+            this.__explicitlySet__.add("linkProductId");
+            return this;
+        }
+        /**
+         * If set true ,compliance policies will be created for softlink product. This property is
+         * applicable only if isSoftlink is set to true
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isCompliancePolicyRequiredForSoftlink")
+        private Boolean isCompliancePolicyRequiredForSoftlink;
+
+        /**
+         * If set true ,compliance policies will be created for softlink product. This property is
+         * applicable only if isSoftlink is set to true
+         *
+         * @param isCompliancePolicyRequiredForSoftlink the value to set
+         * @return this builder
+         **/
+        public Builder isCompliancePolicyRequiredForSoftlink(
+                Boolean isCompliancePolicyRequiredForSoftlink) {
+            this.isCompliancePolicyRequiredForSoftlink = isCompliancePolicyRequiredForSoftlink;
+            this.__explicitlySet__.add("isCompliancePolicyRequiredForSoftlink");
             return this;
         }
 
@@ -139,7 +206,10 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
                             this.credentials,
                             this.components,
                             this.compatibleProducts,
-                            this.patchTypes);
+                            this.patchTypes,
+                            this.isSoftlink,
+                            this.linkProductId,
+                            this.isCompliancePolicyRequiredForSoftlink);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -163,6 +233,16 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
             if (model.wasPropertyExplicitlySet("patchTypes")) {
                 this.patchTypes(model.getPatchTypes());
             }
+            if (model.wasPropertyExplicitlySet("isSoftlink")) {
+                this.isSoftlink(model.getIsSoftlink());
+            }
+            if (model.wasPropertyExplicitlySet("linkProductId")) {
+                this.linkProductId(model.getLinkProductId());
+            }
+            if (model.wasPropertyExplicitlySet("isCompliancePolicyRequiredForSoftlink")) {
+                this.isCompliancePolicyRequiredForSoftlink(
+                        model.getIsCompliancePolicyRequiredForSoftlink());
+            }
             return this;
         }
     }
@@ -184,24 +264,30 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
             java.util.List<ConfigAssociationDetails> credentials,
             java.util.List<String> components,
             java.util.List<ConfigAssociationDetails> compatibleProducts,
-            java.util.List<ConfigAssociationDetails> patchTypes) {
+            java.util.List<ConfigAssociationDetails> patchTypes,
+            Boolean isSoftlink,
+            String linkProductId,
+            Boolean isCompliancePolicyRequiredForSoftlink) {
         super();
         this.versions = versions;
         this.credentials = credentials;
         this.components = components;
         this.compatibleProducts = compatibleProducts;
         this.patchTypes = patchTypes;
+        this.isSoftlink = isSoftlink;
+        this.linkProductId = linkProductId;
+        this.isCompliancePolicyRequiredForSoftlink = isCompliancePolicyRequiredForSoftlink;
     }
 
     /**
-     * Versions associated with the PRODUCT .
+     * Versions associated with the PRODUCT. Mandatory if product is not softlink product.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versions")
     private final java.util.List<String> versions;
 
     /**
-     * Versions associated with the PRODUCT .
+     * Versions associated with the PRODUCT. Mandatory if product is not softlink product.
      *
      * @return the value
      **/
@@ -212,6 +298,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
     /**
      * OCID for the Credential name to be associated with the Product.
      * These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+     * This property is not applicable if isSoftlink is set to true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentials")
@@ -220,6 +307,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
     /**
      * OCID for the Credential name to be associated with the Product.
      * These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+     * This property is not applicable if isSoftlink is set to true.
      *
      * @return the value
      **/
@@ -231,6 +319,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
      * Various components of the Product.
      * For example:The administration server or node manager can be the components of the Oracle WebLogic Application server.
      * Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+     * This property is not applicable if isSoftlink is set to true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("components")
@@ -240,6 +329,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
      * Various components of the Product.
      * For example:The administration server or node manager can be the components of the Oracle WebLogic Application server.
      * Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+     * This property is not applicable if isSoftlink is set to true.
      *
      * @return the value
      **/
@@ -249,7 +339,8 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
 
     /**
      * Products compatible with this Product.
-     * Provide products from the list of other products you have created that are compatible with the present one
+     * Provide products from the list of other products you have created that are compatible with the present one.
+     * This property is not applicable if isSoftlink is set to true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compatibleProducts")
@@ -257,7 +348,8 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
 
     /**
      * Products compatible with this Product.
-     * Provide products from the list of other products you have created that are compatible with the present one
+     * Provide products from the list of other products you have created that are compatible with the present one.
+     * This property is not applicable if isSoftlink is set to true.
      *
      * @return the value
      **/
@@ -267,6 +359,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
 
     /**
      * Patch Types associated with this Product.
+     * This property is not applicable if isSoftlink is set to true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchTypes")
@@ -274,11 +367,64 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
 
     /**
      * Patch Types associated with this Product.
+     * This property is not applicable if isSoftlink is set to true.
      *
      * @return the value
      **/
     public java.util.List<ConfigAssociationDetails> getPatchTypes() {
         return patchTypes;
+    }
+
+    /**
+     * Specify if the product is softlink product or not
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSoftlink")
+    private final Boolean isSoftlink;
+
+    /**
+     * Specify if the product is softlink product or not
+     *
+     * @return the value
+     **/
+    public Boolean getIsSoftlink() {
+        return isSoftlink;
+    }
+
+    /**
+     * The OCID of the product that would be the target for the softlink.
+     * This property is applicable only if isSoftlink is set to true
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("linkProductId")
+    private final String linkProductId;
+
+    /**
+     * The OCID of the product that would be the target for the softlink.
+     * This property is applicable only if isSoftlink is set to true
+     *
+     * @return the value
+     **/
+    public String getLinkProductId() {
+        return linkProductId;
+    }
+
+    /**
+     * If set true ,compliance policies will be created for softlink product. This property is
+     * applicable only if isSoftlink is set to true
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCompliancePolicyRequiredForSoftlink")
+    private final Boolean isCompliancePolicyRequiredForSoftlink;
+
+    /**
+     * If set true ,compliance policies will be created for softlink product. This property is
+     * applicable only if isSoftlink is set to true
+     *
+     * @return the value
+     **/
+    public Boolean getIsCompliancePolicyRequiredForSoftlink() {
+        return isCompliancePolicyRequiredForSoftlink;
     }
 
     @Override
@@ -300,6 +446,10 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
         sb.append(", components=").append(String.valueOf(this.components));
         sb.append(", compatibleProducts=").append(String.valueOf(this.compatibleProducts));
         sb.append(", patchTypes=").append(String.valueOf(this.patchTypes));
+        sb.append(", isSoftlink=").append(String.valueOf(this.isSoftlink));
+        sb.append(", linkProductId=").append(String.valueOf(this.linkProductId));
+        sb.append(", isCompliancePolicyRequiredForSoftlink=")
+                .append(String.valueOf(this.isCompliancePolicyRequiredForSoftlink));
         sb.append(")");
         return sb.toString();
     }
@@ -319,6 +469,11 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
                 && java.util.Objects.equals(this.components, other.components)
                 && java.util.Objects.equals(this.compatibleProducts, other.compatibleProducts)
                 && java.util.Objects.equals(this.patchTypes, other.patchTypes)
+                && java.util.Objects.equals(this.isSoftlink, other.isSoftlink)
+                && java.util.Objects.equals(this.linkProductId, other.linkProductId)
+                && java.util.Objects.equals(
+                        this.isCompliancePolicyRequiredForSoftlink,
+                        other.isCompliancePolicyRequiredForSoftlink)
                 && super.equals(other);
     }
 
@@ -335,6 +490,15 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
                                 ? 43
                                 : this.compatibleProducts.hashCode());
         result = (result * PRIME) + (this.patchTypes == null ? 43 : this.patchTypes.hashCode());
+        result = (result * PRIME) + (this.isSoftlink == null ? 43 : this.isSoftlink.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.linkProductId == null ? 43 : this.linkProductId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCompliancePolicyRequiredForSoftlink == null
+                                ? 43
+                                : this.isCompliancePolicyRequiredForSoftlink.hashCode());
         return result;
     }
 }

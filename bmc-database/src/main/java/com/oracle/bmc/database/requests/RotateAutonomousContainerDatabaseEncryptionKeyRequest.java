@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -77,13 +77,13 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
         return opcRequestId;
     }
     /**
-     * Key details provided by the user for rotate key operation for Autonomous Database.
+     * Key details provided by the user for rotate key operation for Autonomous AI Database.
      */
     private com.oracle.bmc.database.model.RotateAutonomousContainerDatabaseEncryptionKeyDetails
             rotateAutonomousContainerDatabaseEncryptionKeyDetails;
 
     /**
-     * Key details provided by the user for rotate key operation for Autonomous Database.
+     * Key details provided by the user for rotate key operation for Autonomous AI Database.
      */
     public com.oracle.bmc.database.model.RotateAutonomousContainerDatabaseEncryptionKeyDetails
             getRotateAutonomousContainerDatabaseEncryptionKeyDetails() {
@@ -189,13 +189,13 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
         }
 
         /**
-         * Key details provided by the user for rotate key operation for Autonomous Database.
+         * Key details provided by the user for rotate key operation for Autonomous AI Database.
          */
         private com.oracle.bmc.database.model.RotateAutonomousContainerDatabaseEncryptionKeyDetails
                 rotateAutonomousContainerDatabaseEncryptionKeyDetails = null;
 
         /**
-         * Key details provided by the user for rotate key operation for Autonomous Database.
+         * Key details provided by the user for rotate key operation for Autonomous AI Database.
          * @param rotateAutonomousContainerDatabaseEncryptionKeyDetails the value to set
          * @return this builder instance
          */

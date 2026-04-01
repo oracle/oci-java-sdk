@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc;
@@ -36,6 +36,9 @@ public final class Realm implements Serializable, Comparable<Realm> {
     public static final Realm OC29 = new Realm("oc29", "oraclecloud29.com");
     public static final Realm OC23 = new Realm("oc23", "oraclecloud23.com");
     public static final Realm OC35 = new Realm("oc35", "oraclecloud35.com");
+    public static final Realm OC42 = new Realm("oc42", "oraclecloud42.com");
+    public static final Realm OC51 = new Realm("oc51", "oraclecloud51.com");
+    public static final Realm OC52 = new Realm("oc52", "oraclecloud52.com");
     private static final long serialVersionUID = -905344971L;
     /**
      * The id of the realm.

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager.requests;
@@ -57,13 +57,6 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * lifecycle state. The state value is case-insensitive.
      * For more information about stack lifecycle states, see
      * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
-     * <p>
-     * Allowable values:
-     * - CREATING
-     * - ACTIVE
-     * - DELETING
-     * - DELETED
-     * - FAILED
      *
      */
     private com.oracle.bmc.resourcemanager.model.Stack.LifecycleState lifecycleState;
@@ -73,13 +66,6 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * lifecycle state. The state value is case-insensitive.
      * For more information about stack lifecycle states, see
      * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
-     * <p>
-     * Allowable values:
-     * - CREATING
-     * - ACTIVE
-     * - DELETING
-     * - DELETED
-     * - FAILED
      *
      */
     public com.oracle.bmc.resourcemanager.model.Stack.LifecycleState getLifecycleState() {
@@ -306,13 +292,6 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * lifecycle state. The state value is case-insensitive.
          * For more information about stack lifecycle states, see
          * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
-         * <p>
-         * Allowable values:
-         * - CREATING
-         * - ACTIVE
-         * - DELETING
-         * - DELETED
-         * - FAILED
          *
          */
         private com.oracle.bmc.resourcemanager.model.Stack.LifecycleState lifecycleState = null;
@@ -322,13 +301,6 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * lifecycle state. The state value is case-insensitive.
          * For more information about stack lifecycle states, see
          * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
-         * <p>
-         * Allowable values:
-         * - CREATING
-         * - ACTIVE
-         * - DELETING
-         * - DELETED
-         * - FAILED
          *
          * @param lifecycleState the value to set
          * @return this builder instance

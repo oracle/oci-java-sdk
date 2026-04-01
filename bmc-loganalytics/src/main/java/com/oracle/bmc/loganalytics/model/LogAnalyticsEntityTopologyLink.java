@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -23,11 +23,22 @@ package com.oracle.bmc.loganalytics.model;
 public final class LogAnalyticsEntityTopologyLink
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"sourceEntityId", "destinationEntityId"})
-    public LogAnalyticsEntityTopologyLink(String sourceEntityId, String destinationEntityId) {
+    @java.beans.ConstructorProperties({
+        "sourceEntityId",
+        "destinationEntityId",
+        "contexts",
+        "timeLastDiscovered"
+    })
+    public LogAnalyticsEntityTopologyLink(
+            String sourceEntityId,
+            String destinationEntityId,
+            java.util.List<String> contexts,
+            java.util.Date timeLastDiscovered) {
         super();
         this.sourceEntityId = sourceEntityId;
         this.destinationEntityId = destinationEntityId;
+        this.contexts = contexts;
+        this.timeLastDiscovered = timeLastDiscovered;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -72,6 +83,40 @@ public final class LogAnalyticsEntityTopologyLink
             this.__explicitlySet__.add("destinationEntityId");
             return this;
         }
+        /**
+         * Array of log analytics entity relationship context.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("contexts")
+        private java.util.List<String> contexts;
+
+        /**
+         * Array of log analytics entity relationship context.
+         * @param contexts the value to set
+         * @return this builder
+         **/
+        public Builder contexts(java.util.List<String> contexts) {
+            this.contexts = contexts;
+            this.__explicitlySet__.add("contexts");
+            return this;
+        }
+        /**
+         * The date and time the resource was last discovered, in the format defined by RFC3339.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastDiscovered")
+        private java.util.Date timeLastDiscovered;
+
+        /**
+         * The date and time the resource was last discovered, in the format defined by RFC3339.
+         *
+         * @param timeLastDiscovered the value to set
+         * @return this builder
+         **/
+        public Builder timeLastDiscovered(java.util.Date timeLastDiscovered) {
+            this.timeLastDiscovered = timeLastDiscovered;
+            this.__explicitlySet__.add("timeLastDiscovered");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -79,7 +124,10 @@ public final class LogAnalyticsEntityTopologyLink
         public LogAnalyticsEntityTopologyLink build() {
             LogAnalyticsEntityTopologyLink model =
                     new LogAnalyticsEntityTopologyLink(
-                            this.sourceEntityId, this.destinationEntityId);
+                            this.sourceEntityId,
+                            this.destinationEntityId,
+                            this.contexts,
+                            this.timeLastDiscovered);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -93,6 +141,12 @@ public final class LogAnalyticsEntityTopologyLink
             }
             if (model.wasPropertyExplicitlySet("destinationEntityId")) {
                 this.destinationEntityId(model.getDestinationEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("contexts")) {
+                this.contexts(model.getContexts());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastDiscovered")) {
+                this.timeLastDiscovered(model.getTimeLastDiscovered());
             }
             return this;
         }
@@ -145,6 +199,36 @@ public final class LogAnalyticsEntityTopologyLink
         return destinationEntityId;
     }
 
+    /**
+     * Array of log analytics entity relationship context.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("contexts")
+    private final java.util.List<String> contexts;
+
+    /**
+     * Array of log analytics entity relationship context.
+     * @return the value
+     **/
+    public java.util.List<String> getContexts() {
+        return contexts;
+    }
+
+    /**
+     * The date and time the resource was last discovered, in the format defined by RFC3339.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastDiscovered")
+    private final java.util.Date timeLastDiscovered;
+
+    /**
+     * The date and time the resource was last discovered, in the format defined by RFC3339.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeLastDiscovered() {
+        return timeLastDiscovered;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -161,6 +245,8 @@ public final class LogAnalyticsEntityTopologyLink
         sb.append("super=").append(super.toString());
         sb.append("sourceEntityId=").append(String.valueOf(this.sourceEntityId));
         sb.append(", destinationEntityId=").append(String.valueOf(this.destinationEntityId));
+        sb.append(", contexts=").append(String.valueOf(this.contexts));
+        sb.append(", timeLastDiscovered=").append(String.valueOf(this.timeLastDiscovered));
         sb.append(")");
         return sb.toString();
     }
@@ -177,6 +263,8 @@ public final class LogAnalyticsEntityTopologyLink
         LogAnalyticsEntityTopologyLink other = (LogAnalyticsEntityTopologyLink) o;
         return java.util.Objects.equals(this.sourceEntityId, other.sourceEntityId)
                 && java.util.Objects.equals(this.destinationEntityId, other.destinationEntityId)
+                && java.util.Objects.equals(this.contexts, other.contexts)
+                && java.util.Objects.equals(this.timeLastDiscovered, other.timeLastDiscovered)
                 && super.equals(other);
     }
 
@@ -192,6 +280,12 @@ public final class LogAnalyticsEntityTopologyLink
                         + (this.destinationEntityId == null
                                 ? 43
                                 : this.destinationEntityId.hashCode());
+        result = (result * PRIME) + (this.contexts == null ? 43 : this.contexts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastDiscovered == null
+                                ? 43
+                                : this.timeLastDiscovered.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

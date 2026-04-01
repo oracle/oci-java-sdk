@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -27,6 +27,8 @@ public final class CreatePeComanagedExadataVmclusterDetails
         "opsiPrivateEndpointId",
         "dbmPrivateEndpointId",
         "memberDatabaseDetails",
+        "vmClusterType",
+        "memberAutonomousDetails",
         "compartmentId"
     })
     public CreatePeComanagedExadataVmclusterDetails(
@@ -34,12 +36,16 @@ public final class CreatePeComanagedExadataVmclusterDetails
             String opsiPrivateEndpointId,
             String dbmPrivateEndpointId,
             java.util.List<CreatePeComanagedDatabaseInsightDetails> memberDatabaseDetails,
+            ExadataVmClusterType vmClusterType,
+            java.util.List<CreateAutonomousDatabaseInsightDetails> memberAutonomousDetails,
             String compartmentId) {
         super();
         this.vmclusterId = vmclusterId;
         this.opsiPrivateEndpointId = opsiPrivateEndpointId;
         this.dbmPrivateEndpointId = dbmPrivateEndpointId;
         this.memberDatabaseDetails = memberDatabaseDetails;
+        this.vmClusterType = vmClusterType;
+        this.memberAutonomousDetails = memberAutonomousDetails;
         this.compartmentId = compartmentId;
     }
 
@@ -111,6 +117,39 @@ public final class CreatePeComanagedExadataVmclusterDetails
             return this;
         }
         /**
+         * Exadata VMCluster type
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+        private ExadataVmClusterType vmClusterType;
+
+        /**
+         * Exadata VMCluster type
+         * @param vmClusterType the value to set
+         * @return this builder
+         **/
+        public Builder vmClusterType(ExadataVmClusterType vmClusterType) {
+            this.vmClusterType = vmClusterType;
+            this.__explicitlySet__.add("vmClusterType");
+            return this;
+        }
+        /**
+         * The autonomous databases that belong to the Autonomous VM Cluster
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("memberAutonomousDetails")
+        private java.util.List<CreateAutonomousDatabaseInsightDetails> memberAutonomousDetails;
+
+        /**
+         * The autonomous databases that belong to the Autonomous VM Cluster
+         * @param memberAutonomousDetails the value to set
+         * @return this builder
+         **/
+        public Builder memberAutonomousDetails(
+                java.util.List<CreateAutonomousDatabaseInsightDetails> memberAutonomousDetails) {
+            this.memberAutonomousDetails = memberAutonomousDetails;
+            this.__explicitlySet__.add("memberAutonomousDetails");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -137,6 +176,8 @@ public final class CreatePeComanagedExadataVmclusterDetails
                             this.opsiPrivateEndpointId,
                             this.dbmPrivateEndpointId,
                             this.memberDatabaseDetails,
+                            this.vmClusterType,
+                            this.memberAutonomousDetails,
                             this.compartmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -157,6 +198,12 @@ public final class CreatePeComanagedExadataVmclusterDetails
             }
             if (model.wasPropertyExplicitlySet("memberDatabaseDetails")) {
                 this.memberDatabaseDetails(model.getMemberDatabaseDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterType")) {
+                this.vmClusterType(model.getVmClusterType());
+            }
+            if (model.wasPropertyExplicitlySet("memberAutonomousDetails")) {
+                this.memberAutonomousDetails(model.getMemberAutonomousDetails());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -233,6 +280,34 @@ public final class CreatePeComanagedExadataVmclusterDetails
     }
 
     /**
+     * Exadata VMCluster type
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+    private final ExadataVmClusterType vmClusterType;
+
+    /**
+     * Exadata VMCluster type
+     * @return the value
+     **/
+    public ExadataVmClusterType getVmClusterType() {
+        return vmClusterType;
+    }
+
+    /**
+     * The autonomous databases that belong to the Autonomous VM Cluster
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memberAutonomousDetails")
+    private final java.util.List<CreateAutonomousDatabaseInsightDetails> memberAutonomousDetails;
+
+    /**
+     * The autonomous databases that belong to the Autonomous VM Cluster
+     * @return the value
+     **/
+    public java.util.List<CreateAutonomousDatabaseInsightDetails> getMemberAutonomousDetails() {
+        return memberAutonomousDetails;
+    }
+
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -264,6 +339,9 @@ public final class CreatePeComanagedExadataVmclusterDetails
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
         sb.append(", dbmPrivateEndpointId=").append(String.valueOf(this.dbmPrivateEndpointId));
         sb.append(", memberDatabaseDetails=").append(String.valueOf(this.memberDatabaseDetails));
+        sb.append(", vmClusterType=").append(String.valueOf(this.vmClusterType));
+        sb.append(", memberAutonomousDetails=")
+                .append(String.valueOf(this.memberAutonomousDetails));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
         return sb.toString();
@@ -284,6 +362,9 @@ public final class CreatePeComanagedExadataVmclusterDetails
                 && java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
                 && java.util.Objects.equals(this.dbmPrivateEndpointId, other.dbmPrivateEndpointId)
                 && java.util.Objects.equals(this.memberDatabaseDetails, other.memberDatabaseDetails)
+                && java.util.Objects.equals(this.vmClusterType, other.vmClusterType)
+                && java.util.Objects.equals(
+                        this.memberAutonomousDetails, other.memberAutonomousDetails)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && super.equals(other);
     }
@@ -308,6 +389,14 @@ public final class CreatePeComanagedExadataVmclusterDetails
                         + (this.memberDatabaseDetails == null
                                 ? 43
                                 : this.memberDatabaseDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memberAutonomousDetails == null
+                                ? 43
+                                : this.memberAutonomousDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

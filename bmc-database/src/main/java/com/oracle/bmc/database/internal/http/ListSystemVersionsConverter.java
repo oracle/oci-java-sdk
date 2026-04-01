@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.internal.http;
@@ -30,7 +30,6 @@ public class ListSystemVersionsConverter {
             com.oracle.bmc.database.requests.ListSystemVersionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
-        Validate.notNull(request.getShape(), "shape is required");
         Validate.notNull(request.getGiVersion(), "giVersion is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -66,11 +65,29 @@ public class ListSystemVersionsConverter {
                                     request.getSortOrder().getValue()));
         }
 
-        target =
-                target.queryParam(
-                        "shape",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getShape()));
+        if (request.getShape() != null) {
+            target =
+                    target.queryParam(
+                            "shape",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getShape()));
+        }
+
+        if (request.getIsLatest() != null) {
+            target =
+                    target.queryParam(
+                            "isLatest",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsLatest()));
+        }
+
+        if (request.getResourceId() != null) {
+            target =
+                    target.queryParam(
+                            "resourceId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getResourceId()));
+        }
 
         target =
                 target.queryParam(

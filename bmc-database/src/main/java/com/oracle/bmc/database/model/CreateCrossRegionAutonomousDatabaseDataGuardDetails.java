@@ -1,16 +1,16 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create an Autonomous Data Guard association for an existing Autonomous Database where the standby is in a different (remote) region from the source primary database.
+ * Details to create an Autonomous Data Guard association for an existing Autonomous AI Database where the standby is in a different (remote) region from the source primary database.
  * *IMPORTANT*
  * Note the following for creating standby databases in cross-region Autonomous Data Guard associations:
  *   - To create your standby database in a region different from the region of the primary, use the API endpoint of the region in which the standby will be located. For example, if the primary database is in the IAD region, and you want to create the standby in the PHX region, make the API call using the PHX endpoint (https://database.us-phoenix-1.oraclecloud.com). See [API Endpoints](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#REST_APIs) for the list of Database Service API endpoints.
  *   - In the request to create the standby database, the {@code sourceId} value should be the OCID of the primary database.
- * The following parameters are optional for the cross-region standby database. If included in the request, these parameters contain the same values as the source Autonomous Database:
+ * The following parameters are optional for the cross-region standby database. If included in the request, these parameters contain the same values as the source Autonomous AI Database:
  *   - customerContacts
  *   - scheduledOperations
  *   - isAutoScalingForStorageEnabled
@@ -466,6 +466,16 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseMaintenanceWindow")
+        private AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow;
+
+        public Builder autonomousDatabaseMaintenanceWindow(
+                AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow) {
+            this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
+            this.__explicitlySet__.add("autonomousDatabaseMaintenanceWindow");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
         private java.util.List<ScheduledOperationDetails> scheduledOperations;
 
@@ -529,14 +539,24 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             this.__explicitlySet__.add("secretVersionNumber");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("transportableTablespace")
+        private ImportTransportableTablespaceDetails transportableTablespace;
+
+        public Builder transportableTablespace(
+                ImportTransportableTablespaceDetails transportableTablespace) {
+            this.transportableTablespace = transportableTablespace;
+            this.__explicitlySet__.add("transportableTablespace");
+            return this;
+        }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the Data Guard association.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that will be used to create a new peer database for the Data Guard association.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the Data Guard association.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that will be used to create a new peer database for the Data Guard association.
          * @param sourceId the value to set
          * @return this builder
          **/
@@ -598,6 +618,7 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             this.resourcePoolLeaderId,
                             this.resourcePoolSummary,
                             this.autonomousMaintenanceScheduleType,
+                            this.autonomousDatabaseMaintenanceWindow,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.databaseEdition,
@@ -605,6 +626,7 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             this.isBackupRetentionLocked,
                             this.secretId,
                             this.secretVersionNumber,
+                            this.transportableTablespace,
                             this.sourceId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -754,6 +776,10 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                 this.autonomousMaintenanceScheduleType(
                         model.getAutonomousMaintenanceScheduleType());
             }
+            if (model.wasPropertyExplicitlySet("autonomousDatabaseMaintenanceWindow")) {
+                this.autonomousDatabaseMaintenanceWindow(
+                        model.getAutonomousDatabaseMaintenanceWindow());
+            }
             if (model.wasPropertyExplicitlySet("scheduledOperations")) {
                 this.scheduledOperations(model.getScheduledOperations());
             }
@@ -774,6 +800,9 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             }
             if (model.wasPropertyExplicitlySet("secretVersionNumber")) {
                 this.secretVersionNumber(model.getSecretVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("transportableTablespace")) {
+                this.transportableTablespace(model.getTransportableTablespace());
             }
             if (model.wasPropertyExplicitlySet("sourceId")) {
                 this.sourceId(model.getSourceId());
@@ -841,6 +870,7 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             String resourcePoolLeaderId,
             ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
@@ -848,6 +878,7 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber,
+            ImportTransportableTablespaceDetails transportableTablespace,
             String sourceId) {
         super(
                 subscriptionId,
@@ -896,24 +927,26 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                 resourcePoolLeaderId,
                 resourcePoolSummary,
                 autonomousMaintenanceScheduleType,
+                autonomousDatabaseMaintenanceWindow,
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
                 databaseEdition,
                 dbToolsDetails,
                 isBackupRetentionLocked,
                 secretId,
-                secretVersionNumber);
+                secretVersionNumber,
+                transportableTablespace);
         this.sourceId = sourceId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the Data Guard association.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that will be used to create a new peer database for the Data Guard association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the Data Guard association.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that will be used to create a new peer database for the Data Guard association.
      * @return the value
      **/
     public String getSourceId() {

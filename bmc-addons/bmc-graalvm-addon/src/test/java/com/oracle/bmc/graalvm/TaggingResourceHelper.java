@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.graalvm;
@@ -28,16 +28,16 @@ import com.oracle.bmc.identity.responses.CreateTagResponse;
 import com.oracle.bmc.identity.responses.ListTagsResponse;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.util.internal.StringUtils;
-import net.jodah.failsafe.Failsafe;
-import net.jodah.failsafe.RetryPolicy;
+import dev.failsafe.Failsafe;
+import dev.failsafe.RetryPolicy;
 
+import java.time.Duration;
 import java.util.AbstractMap;
 import javax.annotation.Nonnull;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -62,10 +62,11 @@ public class TaggingResourceHelper {
     private Map<String, String> freeformTags;
     private Map<String, Map<String, Object>> definedTags;
     private static final RetryPolicy RETRY_POLICY =
-            new RetryPolicy()
-                    .retryOn(BmcException.class)
-                    .withDelay(5, TimeUnit.SECONDS)
-                    .withMaxRetries(3);
+            RetryPolicy.builder()
+                    .handle(BmcException.class)
+                    .withDelay(Duration.ofSeconds(5))
+                    .withMaxRetries(3)
+                    .build();
 
     public TaggingResourceHelper(
             @Nonnull BasicAuthenticationDetailsProvider authProvider,

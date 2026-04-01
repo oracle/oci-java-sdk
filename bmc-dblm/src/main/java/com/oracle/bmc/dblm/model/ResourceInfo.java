@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dblm.model;
@@ -30,7 +30,8 @@ public final class ResourceInfo extends com.oracle.bmc.http.internal.ExplicitlyS
         "hostInfo",
         "dbVersion",
         "dbPlatformType",
-        "licenseType"
+        "licenseType",
+        "agentId"
     })
     public ResourceInfo(
             String resourceCompartmentId,
@@ -43,7 +44,8 @@ public final class ResourceInfo extends com.oracle.bmc.http.internal.ExplicitlyS
             java.util.List<HostInfo> hostInfo,
             String dbVersion,
             String dbPlatformType,
-            String licenseType) {
+            String licenseType,
+            String agentId) {
         super();
         this.resourceCompartmentId = resourceCompartmentId;
         this.resourceName = resourceName;
@@ -56,6 +58,7 @@ public final class ResourceInfo extends com.oracle.bmc.http.internal.ExplicitlyS
         this.dbVersion = dbVersion;
         this.dbPlatformType = dbPlatformType;
         this.licenseType = licenseType;
+        this.agentId = agentId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -236,6 +239,22 @@ public final class ResourceInfo extends com.oracle.bmc.http.internal.ExplicitlyS
             this.__explicitlySet__.add("licenseType");
             return this;
         }
+        /**
+         * The agent Id of the agent managing the resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("agentId")
+        private String agentId;
+
+        /**
+         * The agent Id of the agent managing the resource.
+         * @param agentId the value to set
+         * @return this builder
+         **/
+        public Builder agentId(String agentId) {
+            this.agentId = agentId;
+            this.__explicitlySet__.add("agentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -253,7 +272,8 @@ public final class ResourceInfo extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.hostInfo,
                             this.dbVersion,
                             this.dbPlatformType,
-                            this.licenseType);
+                            this.licenseType,
+                            this.agentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -294,6 +314,9 @@ public final class ResourceInfo extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("licenseType")) {
                 this.licenseType(model.getLicenseType());
+            }
+            if (model.wasPropertyExplicitlySet("agentId")) {
+                this.agentId(model.getAgentId());
             }
             return this;
         }
@@ -464,6 +487,20 @@ public final class ResourceInfo extends com.oracle.bmc.http.internal.ExplicitlyS
         return licenseType;
     }
 
+    /**
+     * The agent Id of the agent managing the resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("agentId")
+    private final String agentId;
+
+    /**
+     * The agent Id of the agent managing the resource.
+     * @return the value
+     **/
+    public String getAgentId() {
+        return agentId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -489,6 +526,7 @@ public final class ResourceInfo extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", dbPlatformType=").append(String.valueOf(this.dbPlatformType));
         sb.append(", licenseType=").append(String.valueOf(this.licenseType));
+        sb.append(", agentId=").append(String.valueOf(this.agentId));
         sb.append(")");
         return sb.toString();
     }
@@ -514,6 +552,7 @@ public final class ResourceInfo extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.dbPlatformType, other.dbPlatformType)
                 && java.util.Objects.equals(this.licenseType, other.licenseType)
+                && java.util.Objects.equals(this.agentId, other.agentId)
                 && super.equals(other);
     }
 
@@ -540,6 +579,7 @@ public final class ResourceInfo extends com.oracle.bmc.http.internal.ExplicitlyS
                 (result * PRIME)
                         + (this.dbPlatformType == null ? 43 : this.dbPlatformType.hashCode());
         result = (result * PRIME) + (this.licenseType == null ? 43 : this.licenseType.hashCode());
+        result = (result * PRIME) + (this.agentId == null ? 43 : this.agentId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

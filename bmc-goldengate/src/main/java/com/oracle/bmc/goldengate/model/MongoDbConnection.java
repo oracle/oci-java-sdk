@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -199,6 +199,34 @@ public final class MongoDbConnection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The MongoDB technology type.
          **/
@@ -352,6 +380,26 @@ public final class MongoDbConnection extends Connection {
             this.__explicitlySet__.add("tlsCertificateKeyFilePasswordSecretId");
             return this;
         }
+        /**
+         * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("tlsCaFile")
+        private String tlsCaFile;
+
+        /**
+         * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+         *
+         * @param tlsCaFile the value to set
+         * @return this builder
+         **/
+        public Builder tlsCaFile(String tlsCaFile) {
+            this.tlsCaFile = tlsCaFile;
+            this.__explicitlySet__.add("tlsCaFile");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -378,6 +426,9 @@ public final class MongoDbConnection extends Connection {
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.connectionString,
                             this.username,
@@ -385,7 +436,8 @@ public final class MongoDbConnection extends Connection {
                             this.securityProtocol,
                             this.passwordSecretId,
                             this.tlsCertificateKeyFileSecretId,
-                            this.tlsCertificateKeyFilePasswordSecretId);
+                            this.tlsCertificateKeyFilePasswordSecretId,
+                            this.tlsCaFile);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -451,6 +503,15 @@ public final class MongoDbConnection extends Connection {
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -475,6 +536,9 @@ public final class MongoDbConnection extends Connection {
             if (model.wasPropertyExplicitlySet("tlsCertificateKeyFilePasswordSecretId")) {
                 this.tlsCertificateKeyFilePasswordSecretId(
                         model.getTlsCertificateKeyFilePasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("tlsCaFile")) {
+                this.tlsCaFile(model.getTlsCaFile());
             }
             return this;
         }
@@ -512,6 +576,9 @@ public final class MongoDbConnection extends Connection {
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             TechnologyType technologyType,
             String connectionString,
             String username,
@@ -519,7 +586,8 @@ public final class MongoDbConnection extends Connection {
             SecurityProtocol securityProtocol,
             String passwordSecretId,
             String tlsCertificateKeyFileSecretId,
-            String tlsCertificateKeyFilePasswordSecretId) {
+            String tlsCertificateKeyFilePasswordSecretId,
+            String tlsCaFile) {
         super(
                 id,
                 displayName,
@@ -539,7 +607,10 @@ public final class MongoDbConnection extends Connection {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.connectionString = connectionString;
         this.username = username;
@@ -548,6 +619,7 @@ public final class MongoDbConnection extends Connection {
         this.passwordSecretId = passwordSecretId;
         this.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
         this.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
+        this.tlsCaFile = tlsCaFile;
     }
 
     /**
@@ -559,6 +631,7 @@ public final class MongoDbConnection extends Connection {
         AzureCosmosDbForMongodb("AZURE_COSMOS_DB_FOR_MONGODB"),
         AmazonDocumentDb("AMAZON_DOCUMENT_DB"),
         OracleJsonCollection("ORACLE_JSON_COLLECTION"),
+        OracleRestDataServices("ORACLE_REST_DATA_SERVICES"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -786,6 +859,24 @@ public final class MongoDbConnection extends Connection {
         return tlsCertificateKeyFilePasswordSecretId;
     }
 
+    /**
+     * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsCaFile")
+    private final String tlsCaFile;
+
+    /**
+     * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
+     *
+     * @return the value
+     **/
+    public String getTlsCaFile() {
+        return tlsCaFile;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -810,6 +901,7 @@ public final class MongoDbConnection extends Connection {
                 .append(String.valueOf(this.tlsCertificateKeyFileSecretId));
         sb.append(", tlsCertificateKeyFilePasswordSecretId=")
                 .append(String.valueOf(this.tlsCertificateKeyFilePasswordSecretId));
+        sb.append(", tlsCaFile=").append(String.valueOf(this.tlsCaFile));
         sb.append(")");
         return sb.toString();
     }
@@ -835,6 +927,7 @@ public final class MongoDbConnection extends Connection {
                 && java.util.Objects.equals(
                         this.tlsCertificateKeyFilePasswordSecretId,
                         other.tlsCertificateKeyFilePasswordSecretId)
+                && java.util.Objects.equals(this.tlsCaFile, other.tlsCaFile)
                 && super.equals(other);
     }
 
@@ -866,6 +959,7 @@ public final class MongoDbConnection extends Connection {
                         + (this.tlsCertificateKeyFilePasswordSecretId == null
                                 ? 43
                                 : this.tlsCertificateKeyFilePasswordSecretId.hashCode());
+        result = (result * PRIME) + (this.tlsCaFile == null ? 43 : this.tlsCaFile.hashCode());
         return result;
     }
 }

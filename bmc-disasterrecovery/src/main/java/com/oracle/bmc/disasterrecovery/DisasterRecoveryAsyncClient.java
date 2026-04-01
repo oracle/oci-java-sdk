@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery;
@@ -7,6 +7,8 @@ package com.oracle.bmc.disasterrecovery;
 import com.oracle.bmc.disasterrecovery.internal.http.*;
 import com.oracle.bmc.disasterrecovery.requests.*;
 import com.oracle.bmc.disasterrecovery.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for DisasterRecovery service. <br/>
@@ -28,7 +30,7 @@ public class DisasterRecoveryAsyncClient implements DisasterRecoveryAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DISASTERRECOVERY")
+                    .serviceName(DisasterRecoveryClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://disaster-recovery.{region}.oci.{secondLevelDomain}")
@@ -51,6 +53,10 @@ public class DisasterRecoveryAsyncClient implements DisasterRecoveryAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -262,6 +268,11 @@ public class DisasterRecoveryAsyncClient implements DisasterRecoveryAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -402,12 +413,21 @@ public class DisasterRecoveryAsyncClient implements DisasterRecoveryAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -437,15 +457,7 @@ public class DisasterRecoveryAsyncClient implements DisasterRecoveryAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -675,6 +687,64 @@ public class DisasterRecoveryAsyncClient implements DisasterRecoveryAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAutomaticDrConfigurationResponse>
+            createAutomaticDrConfiguration(
+                    CreateAutomaticDrConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateAutomaticDrConfigurationRequest,
+                                    CreateAutomaticDrConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async createAutomaticDrConfiguration");
+        final CreateAutomaticDrConfigurationRequest interceptedRequest =
+                CreateAutomaticDrConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAutomaticDrConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "CreateAutomaticDrConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/CreateAutomaticDrConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateAutomaticDrConfigurationResponse>
+                transformer =
+                        CreateAutomaticDrConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateAutomaticDrConfigurationRequest,
+                        CreateAutomaticDrConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateAutomaticDrConfigurationRequest,
+                                CreateAutomaticDrConfigurationResponse>,
+                        java.util.concurrent.Future<CreateAutomaticDrConfigurationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAutomaticDrConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateAutomaticDrConfigurationRequest, CreateAutomaticDrConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDrPlanResponse> createDrPlan(
             CreateDrPlanRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateDrPlanRequest, CreateDrPlanResponse>
@@ -819,6 +889,58 @@ public class DisasterRecoveryAsyncClient implements DisasterRecoveryAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateDrProtectionGroupRequest, CreateDrProtectionGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAutomaticDrConfigurationResponse>
+            deleteAutomaticDrConfiguration(
+                    DeleteAutomaticDrConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteAutomaticDrConfigurationRequest,
+                                    DeleteAutomaticDrConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async deleteAutomaticDrConfiguration");
+        final DeleteAutomaticDrConfigurationRequest interceptedRequest =
+                DeleteAutomaticDrConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAutomaticDrConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "DeleteAutomaticDrConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/DeleteAutomaticDrConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteAutomaticDrConfigurationResponse>
+                transformer =
+                        DeleteAutomaticDrConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteAutomaticDrConfigurationRequest,
+                        DeleteAutomaticDrConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteAutomaticDrConfigurationRequest,
+                                DeleteAutomaticDrConfigurationResponse>,
+                        java.util.concurrent.Future<DeleteAutomaticDrConfigurationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteAutomaticDrConfigurationRequest, DeleteAutomaticDrConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1015,6 +1137,57 @@ public class DisasterRecoveryAsyncClient implements DisasterRecoveryAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DisassociateDrProtectionGroupRequest, DisassociateDrProtectionGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAutomaticDrConfigurationResponse>
+            getAutomaticDrConfiguration(
+                    GetAutomaticDrConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutomaticDrConfigurationRequest,
+                                    GetAutomaticDrConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async getAutomaticDrConfiguration");
+        final GetAutomaticDrConfigurationRequest interceptedRequest =
+                GetAutomaticDrConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutomaticDrConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "GetAutomaticDrConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/GetAutomaticDrConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetAutomaticDrConfigurationResponse>
+                transformer =
+                        GetAutomaticDrConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAutomaticDrConfigurationRequest, GetAutomaticDrConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAutomaticDrConfigurationRequest,
+                                GetAutomaticDrConfigurationResponse>,
+                        java.util.concurrent.Future<GetAutomaticDrConfigurationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAutomaticDrConfigurationRequest, GetAutomaticDrConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1248,6 +1421,57 @@ public class DisasterRecoveryAsyncClient implements DisasterRecoveryAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     IgnoreDrPlanExecutionRequest, IgnoreDrPlanExecutionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAutomaticDrConfigurationsResponse>
+            listAutomaticDrConfigurations(
+                    ListAutomaticDrConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutomaticDrConfigurationsRequest,
+                                    ListAutomaticDrConfigurationsResponse>
+                            handler) {
+        LOG.trace("Called async listAutomaticDrConfigurations");
+        final ListAutomaticDrConfigurationsRequest interceptedRequest =
+                ListAutomaticDrConfigurationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutomaticDrConfigurationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "ListAutomaticDrConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/ListAutomaticDrConfigurations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAutomaticDrConfigurationsResponse>
+                transformer =
+                        ListAutomaticDrConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAutomaticDrConfigurationsRequest, ListAutomaticDrConfigurationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAutomaticDrConfigurationsRequest,
+                                ListAutomaticDrConfigurationsResponse>,
+                        java.util.concurrent.Future<ListAutomaticDrConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAutomaticDrConfigurationsRequest, ListAutomaticDrConfigurationsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1735,6 +1959,63 @@ public class DisasterRecoveryAsyncClient implements DisasterRecoveryAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RetryDrPlanExecutionRequest, RetryDrPlanExecutionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAutomaticDrConfigurationResponse>
+            updateAutomaticDrConfiguration(
+                    UpdateAutomaticDrConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutomaticDrConfigurationRequest,
+                                    UpdateAutomaticDrConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async updateAutomaticDrConfiguration");
+        final UpdateAutomaticDrConfigurationRequest interceptedRequest =
+                UpdateAutomaticDrConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAutomaticDrConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "UpdateAutomaticDrConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/AutomaticDrConfiguration/UpdateAutomaticDrConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateAutomaticDrConfigurationResponse>
+                transformer =
+                        UpdateAutomaticDrConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateAutomaticDrConfigurationRequest,
+                        UpdateAutomaticDrConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAutomaticDrConfigurationRequest,
+                                UpdateAutomaticDrConfigurationResponse>,
+                        java.util.concurrent.Future<UpdateAutomaticDrConfigurationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAutomaticDrConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAutomaticDrConfigurationRequest, UpdateAutomaticDrConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

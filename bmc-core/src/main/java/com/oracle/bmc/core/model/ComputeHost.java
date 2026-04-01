@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -26,6 +26,14 @@ public final class ComputeHost extends com.oracle.bmc.http.internal.ExplicitlySe
         "id",
         "faultDomain",
         "hpcIslandId",
+        "hostCorrelationId",
+        "computeHostGroupId",
+        "configurationState",
+        "timeConfigurationCheck",
+        "configurationData",
+        "recycleDetails",
+        "firmwareBundleId",
+        "platform",
         "networkBlockId",
         "localBlockId",
         "gpuMemoryFabricId",
@@ -49,6 +57,14 @@ public final class ComputeHost extends com.oracle.bmc.http.internal.ExplicitlySe
             String id,
             String faultDomain,
             String hpcIslandId,
+            String hostCorrelationId,
+            String computeHostGroupId,
+            ConfigurationState configurationState,
+            java.util.Date timeConfigurationCheck,
+            ComputeHostConfigurationData configurationData,
+            RecycleDetails recycleDetails,
+            String firmwareBundleId,
+            String platform,
             String networkBlockId,
             String localBlockId,
             String gpuMemoryFabricId,
@@ -71,6 +87,14 @@ public final class ComputeHost extends com.oracle.bmc.http.internal.ExplicitlySe
         this.id = id;
         this.faultDomain = faultDomain;
         this.hpcIslandId = hpcIslandId;
+        this.hostCorrelationId = hostCorrelationId;
+        this.computeHostGroupId = computeHostGroupId;
+        this.configurationState = configurationState;
+        this.timeConfigurationCheck = timeConfigurationCheck;
+        this.configurationData = configurationData;
+        this.recycleDetails = recycleDetails;
+        this.firmwareBundleId = firmwareBundleId;
+        this.platform = platform;
         this.networkBlockId = networkBlockId;
         this.localBlockId = localBlockId;
         this.gpuMemoryFabricId = gpuMemoryFabricId;
@@ -197,6 +221,136 @@ public final class ComputeHost extends com.oracle.bmc.http.internal.ExplicitlySe
         public Builder hpcIslandId(String hpcIslandId) {
             this.hpcIslandId = hpcIslandId;
             this.__explicitlySet__.add("hpcIslandId");
+            return this;
+        }
+        /**
+         * The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("hostCorrelationId")
+        private String hostCorrelationId;
+
+        /**
+         * The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+         *
+         * @param hostCorrelationId the value to set
+         * @return this builder
+         **/
+        public Builder hostCorrelationId(String hostCorrelationId) {
+            this.hostCorrelationId = hostCorrelationId;
+            this.__explicitlySet__.add("hostCorrelationId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host group associated with the Compute Bare Metal Host.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
+        private String computeHostGroupId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host group associated with the Compute Bare Metal Host.
+         *
+         * @param computeHostGroupId the value to set
+         * @return this builder
+         **/
+        public Builder computeHostGroupId(String computeHostGroupId) {
+            this.computeHostGroupId = computeHostGroupId;
+            this.__explicitlySet__.add("computeHostGroupId");
+            return this;
+        }
+        /**
+         * Configuration state of the Compute Bare Metal Host.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("configurationState")
+        private ConfigurationState configurationState;
+
+        /**
+         * Configuration state of the Compute Bare Metal Host.
+         *
+         * @param configurationState the value to set
+         * @return this builder
+         **/
+        public Builder configurationState(ConfigurationState configurationState) {
+            this.configurationState = configurationState;
+            this.__explicitlySet__.add("configurationState");
+            return this;
+        }
+        /**
+         * The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeConfigurationCheck")
+        private java.util.Date timeConfigurationCheck;
+
+        /**
+         * The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeConfigurationCheck the value to set
+         * @return this builder
+         **/
+        public Builder timeConfigurationCheck(java.util.Date timeConfigurationCheck) {
+            this.timeConfigurationCheck = timeConfigurationCheck;
+            this.__explicitlySet__.add("timeConfigurationCheck");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("configurationData")
+        private ComputeHostConfigurationData configurationData;
+
+        public Builder configurationData(ComputeHostConfigurationData configurationData) {
+            this.configurationData = configurationData;
+            this.__explicitlySet__.add("configurationData");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("recycleDetails")
+        private RecycleDetails recycleDetails;
+
+        public Builder recycleDetails(RecycleDetails recycleDetails) {
+            this.recycleDetails = recycleDetails;
+            this.__explicitlySet__.add("recycleDetails");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("firmwareBundleId")
+        private String firmwareBundleId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+         *
+         * @param firmwareBundleId the value to set
+         * @return this builder
+         **/
+        public Builder firmwareBundleId(String firmwareBundleId) {
+            this.firmwareBundleId = firmwareBundleId;
+            this.__explicitlySet__.add("firmwareBundleId");
+            return this;
+        }
+        /**
+         * The platform of the host
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("platform")
+        private String platform;
+
+        /**
+         * The platform of the host
+         *
+         * @param platform the value to set
+         * @return this builder
+         **/
+        public Builder platform(String platform) {
+            this.platform = platform;
+            this.__explicitlySet__.add("platform");
             return this;
         }
         /**
@@ -527,6 +681,14 @@ public final class ComputeHost extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.id,
                             this.faultDomain,
                             this.hpcIslandId,
+                            this.hostCorrelationId,
+                            this.computeHostGroupId,
+                            this.configurationState,
+                            this.timeConfigurationCheck,
+                            this.configurationData,
+                            this.recycleDetails,
+                            this.firmwareBundleId,
+                            this.platform,
                             this.networkBlockId,
                             this.localBlockId,
                             this.gpuMemoryFabricId,
@@ -565,6 +727,30 @@ public final class ComputeHost extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("hpcIslandId")) {
                 this.hpcIslandId(model.getHpcIslandId());
+            }
+            if (model.wasPropertyExplicitlySet("hostCorrelationId")) {
+                this.hostCorrelationId(model.getHostCorrelationId());
+            }
+            if (model.wasPropertyExplicitlySet("computeHostGroupId")) {
+                this.computeHostGroupId(model.getComputeHostGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("configurationState")) {
+                this.configurationState(model.getConfigurationState());
+            }
+            if (model.wasPropertyExplicitlySet("timeConfigurationCheck")) {
+                this.timeConfigurationCheck(model.getTimeConfigurationCheck());
+            }
+            if (model.wasPropertyExplicitlySet("configurationData")) {
+                this.configurationData(model.getConfigurationData());
+            }
+            if (model.wasPropertyExplicitlySet("recycleDetails")) {
+                this.recycleDetails(model.getRecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("firmwareBundleId")) {
+                this.firmwareBundleId(model.getFirmwareBundleId());
+            }
+            if (model.wasPropertyExplicitlySet("platform")) {
+                this.platform(model.getPlatform());
             }
             if (model.wasPropertyExplicitlySet("networkBlockId")) {
                 this.networkBlockId(model.getNetworkBlockId());
@@ -725,6 +911,120 @@ public final class ComputeHost extends com.oracle.bmc.http.internal.ExplicitlySe
      **/
     public String getHpcIslandId() {
         return hpcIslandId;
+    }
+
+    /**
+     * The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostCorrelationId")
+    private final String hostCorrelationId;
+
+    /**
+     * The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+     *
+     * @return the value
+     **/
+    public String getHostCorrelationId() {
+        return hostCorrelationId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host group associated with the Compute Bare Metal Host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeHostGroupId")
+    private final String computeHostGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host group associated with the Compute Bare Metal Host.
+     *
+     * @return the value
+     **/
+    public String getComputeHostGroupId() {
+        return computeHostGroupId;
+    }
+
+    /**
+     * Configuration state of the Compute Bare Metal Host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("configurationState")
+    private final ConfigurationState configurationState;
+
+    /**
+     * Configuration state of the Compute Bare Metal Host.
+     *
+     * @return the value
+     **/
+    public ConfigurationState getConfigurationState() {
+        return configurationState;
+    }
+
+    /**
+     * The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeConfigurationCheck")
+    private final java.util.Date timeConfigurationCheck;
+
+    /**
+     * The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeConfigurationCheck() {
+        return timeConfigurationCheck;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("configurationData")
+    private final ComputeHostConfigurationData configurationData;
+
+    public ComputeHostConfigurationData getConfigurationData() {
+        return configurationData;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("recycleDetails")
+    private final RecycleDetails recycleDetails;
+
+    public RecycleDetails getRecycleDetails() {
+        return recycleDetails;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("firmwareBundleId")
+    private final String firmwareBundleId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+     *
+     * @return the value
+     **/
+    public String getFirmwareBundleId() {
+        return firmwareBundleId;
+    }
+
+    /**
+     * The platform of the host
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("platform")
+    private final String platform;
+
+    /**
+     * The platform of the host
+     *
+     * @return the value
+     **/
+    public String getPlatform() {
+        return platform;
     }
 
     /**
@@ -1128,6 +1428,14 @@ public final class ComputeHost extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", hpcIslandId=").append(String.valueOf(this.hpcIslandId));
+        sb.append(", hostCorrelationId=").append(String.valueOf(this.hostCorrelationId));
+        sb.append(", computeHostGroupId=").append(String.valueOf(this.computeHostGroupId));
+        sb.append(", configurationState=").append(String.valueOf(this.configurationState));
+        sb.append(", timeConfigurationCheck=").append(String.valueOf(this.timeConfigurationCheck));
+        sb.append(", configurationData=").append(String.valueOf(this.configurationData));
+        sb.append(", recycleDetails=").append(String.valueOf(this.recycleDetails));
+        sb.append(", firmwareBundleId=").append(String.valueOf(this.firmwareBundleId));
+        sb.append(", platform=").append(String.valueOf(this.platform));
         sb.append(", networkBlockId=").append(String.valueOf(this.networkBlockId));
         sb.append(", localBlockId=").append(String.valueOf(this.localBlockId));
         sb.append(", gpuMemoryFabricId=").append(String.valueOf(this.gpuMemoryFabricId));
@@ -1164,6 +1472,15 @@ public final class ComputeHost extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.hpcIslandId, other.hpcIslandId)
+                && java.util.Objects.equals(this.hostCorrelationId, other.hostCorrelationId)
+                && java.util.Objects.equals(this.computeHostGroupId, other.computeHostGroupId)
+                && java.util.Objects.equals(this.configurationState, other.configurationState)
+                && java.util.Objects.equals(
+                        this.timeConfigurationCheck, other.timeConfigurationCheck)
+                && java.util.Objects.equals(this.configurationData, other.configurationData)
+                && java.util.Objects.equals(this.recycleDetails, other.recycleDetails)
+                && java.util.Objects.equals(this.firmwareBundleId, other.firmwareBundleId)
+                && java.util.Objects.equals(this.platform, other.platform)
                 && java.util.Objects.equals(this.networkBlockId, other.networkBlockId)
                 && java.util.Objects.equals(this.localBlockId, other.localBlockId)
                 && java.util.Objects.equals(this.gpuMemoryFabricId, other.gpuMemoryFabricId)
@@ -1199,6 +1516,34 @@ public final class ComputeHost extends com.oracle.bmc.http.internal.ExplicitlySe
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.hpcIslandId == null ? 43 : this.hpcIslandId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostCorrelationId == null ? 43 : this.hostCorrelationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeHostGroupId == null
+                                ? 43
+                                : this.computeHostGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configurationState == null
+                                ? 43
+                                : this.configurationState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeConfigurationCheck == null
+                                ? 43
+                                : this.timeConfigurationCheck.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configurationData == null ? 43 : this.configurationData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recycleDetails == null ? 43 : this.recycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.firmwareBundleId == null ? 43 : this.firmwareBundleId.hashCode());
+        result = (result * PRIME) + (this.platform == null ? 43 : this.platform.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkBlockId == null ? 43 : this.networkBlockId.hashCode());

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * Describes where the plugin is supported
+ * Information about where a plugin is supported.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -35,13 +35,13 @@ public final class AvailablePluginSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The plugin name
+         * The plugin name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The plugin name
+         * The plugin name.
          * @param name the value to set
          * @return this builder
          **/
@@ -51,13 +51,13 @@ public final class AvailablePluginSummary
             return this;
         }
         /**
-         * A brief description of the plugin functionality
+         * A brief description of the plugin's functionality.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
         /**
-         * A brief description of the plugin functionality
+         * A brief description of the plugin's functionality.
          * @param summary the value to set
          * @return this builder
          **/
@@ -67,13 +67,13 @@ public final class AvailablePluginSummary
             return this;
         }
         /**
-         * Is the plugin supported or not
+         * Whether the plugin is supported.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSupported")
         private Boolean isSupported;
 
         /**
-         * Is the plugin supported or not
+         * Whether the plugin is supported.
          * @param isSupported the value to set
          * @return this builder
          **/
@@ -83,13 +83,13 @@ public final class AvailablePluginSummary
             return this;
         }
         /**
-         * Is the plugin enabled or disabled by default
+         * Whether the plugin is enabled or disabled by default.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabledByDefault")
         private Boolean isEnabledByDefault;
 
         /**
-         * Is the plugin enabled or disabled by default
+         * Whether the plugin is enabled or disabled by default.
          * @param isEnabledByDefault the value to set
          * @return this builder
          **/
@@ -142,13 +142,13 @@ public final class AvailablePluginSummary
     }
 
     /**
-     * The plugin name
+     * The plugin name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The plugin name
+     * The plugin name.
      * @return the value
      **/
     public String getName() {
@@ -156,13 +156,13 @@ public final class AvailablePluginSummary
     }
 
     /**
-     * A brief description of the plugin functionality
+     * A brief description of the plugin's functionality.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
     /**
-     * A brief description of the plugin functionality
+     * A brief description of the plugin's functionality.
      * @return the value
      **/
     public String getSummary() {
@@ -170,13 +170,13 @@ public final class AvailablePluginSummary
     }
 
     /**
-     * Is the plugin supported or not
+     * Whether the plugin is supported.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSupported")
     private final Boolean isSupported;
 
     /**
-     * Is the plugin supported or not
+     * Whether the plugin is supported.
      * @return the value
      **/
     public Boolean getIsSupported() {
@@ -184,13 +184,13 @@ public final class AvailablePluginSummary
     }
 
     /**
-     * Is the plugin enabled or disabled by default
+     * Whether the plugin is enabled or disabled by default.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabledByDefault")
     private final Boolean isEnabledByDefault;
 
     /**
-     * Is the plugin enabled or disabled by default
+     * Whether the plugin is enabled or disabled by default.
      * @return the value
      **/
     public Boolean getIsEnabledByDefault() {

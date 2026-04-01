@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -44,7 +44,8 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "isRebootRequired",
         "odhVersion",
         "timeReplaced",
-        "nodeBackupId"
+        "nodeBackupId",
+        "certificateConfigurationId"
     })
     public Node(
             String instanceId,
@@ -71,7 +72,8 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             Boolean isRebootRequired,
             String odhVersion,
             java.util.Date timeReplaced,
-            String nodeBackupId) {
+            String nodeBackupId,
+            String certificateConfigurationId) {
         super();
         this.instanceId = instanceId;
         this.displayName = displayName;
@@ -98,6 +100,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.odhVersion = odhVersion;
         this.timeReplaced = timeReplaced;
         this.nodeBackupId = nodeBackupId;
+        this.certificateConfigurationId = certificateConfigurationId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -503,6 +506,22 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             this.__explicitlySet__.add("nodeBackupId");
             return this;
         }
+        /**
+         * ID of the certificate configuration which is used to generate the certificate for the node.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("certificateConfigurationId")
+        private String certificateConfigurationId;
+
+        /**
+         * ID of the certificate configuration which is used to generate the certificate for the node.
+         * @param certificateConfigurationId the value to set
+         * @return this builder
+         **/
+        public Builder certificateConfigurationId(String certificateConfigurationId) {
+            this.certificateConfigurationId = certificateConfigurationId;
+            this.__explicitlySet__.add("certificateConfigurationId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -534,7 +553,8 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.isRebootRequired,
                             this.odhVersion,
                             this.timeReplaced,
-                            this.nodeBackupId);
+                            this.nodeBackupId,
+                            this.certificateConfigurationId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -617,6 +637,9 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("nodeBackupId")) {
                 this.nodeBackupId(model.getNodeBackupId());
+            }
+            if (model.wasPropertyExplicitlySet("certificateConfigurationId")) {
+                this.certificateConfigurationId(model.getCertificateConfigurationId());
             }
             return this;
         }
@@ -1093,6 +1116,20 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return nodeBackupId;
     }
 
+    /**
+     * ID of the certificate configuration which is used to generate the certificate for the node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("certificateConfigurationId")
+    private final String certificateConfigurationId;
+
+    /**
+     * ID of the certificate configuration which is used to generate the certificate for the node.
+     * @return the value
+     **/
+    public String getCertificateConfigurationId() {
+        return certificateConfigurationId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1134,6 +1171,8 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", odhVersion=").append(String.valueOf(this.odhVersion));
         sb.append(", timeReplaced=").append(String.valueOf(this.timeReplaced));
         sb.append(", nodeBackupId=").append(String.valueOf(this.nodeBackupId));
+        sb.append(", certificateConfigurationId=")
+                .append(String.valueOf(this.certificateConfigurationId));
         sb.append(")");
         return sb.toString();
     }
@@ -1175,6 +1214,8 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.odhVersion, other.odhVersion)
                 && java.util.Objects.equals(this.timeReplaced, other.timeReplaced)
                 && java.util.Objects.equals(this.nodeBackupId, other.nodeBackupId)
+                && java.util.Objects.equals(
+                        this.certificateConfigurationId, other.certificateConfigurationId)
                 && super.equals(other);
     }
 
@@ -1229,6 +1270,11 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result = (result * PRIME) + (this.odhVersion == null ? 43 : this.odhVersion.hashCode());
         result = (result * PRIME) + (this.timeReplaced == null ? 43 : this.timeReplaced.hashCode());
         result = (result * PRIME) + (this.nodeBackupId == null ? 43 : this.nodeBackupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateConfigurationId == null
+                                ? 43
+                                : this.certificateConfigurationId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

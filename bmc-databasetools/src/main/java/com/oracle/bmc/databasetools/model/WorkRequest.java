@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools.model;
@@ -28,7 +28,8 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         "percentComplete",
         "timeAccepted",
         "timeStarted",
-        "timeFinished"
+        "timeFinished",
+        "timeUpdated"
     })
     public WorkRequest(
             OperationType operationType,
@@ -39,7 +40,8 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             Float percentComplete,
             java.util.Date timeAccepted,
             java.util.Date timeStarted,
-            java.util.Date timeFinished) {
+            java.util.Date timeFinished,
+            java.util.Date timeUpdated) {
         super();
         this.operationType = operationType;
         this.status = status;
@@ -50,6 +52,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         this.timeAccepted = timeAccepted;
         this.timeStarted = timeStarted;
         this.timeFinished = timeFinished;
+        this.timeUpdated = timeUpdated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -206,6 +209,26 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
+        /**
+         * The date and time the work request was last updated,
+         * in the format defined by RFC3339.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The date and time the work request was last updated,
+         * in the format defined by RFC3339.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -221,7 +244,8 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.percentComplete,
                             this.timeAccepted,
                             this.timeStarted,
-                            this.timeFinished);
+                            this.timeFinished,
+                            this.timeUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -256,6 +280,9 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("timeFinished")) {
                 this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
             }
             return this;
         }
@@ -406,6 +433,24 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         return timeFinished;
     }
 
+    /**
+     * The date and time the work request was last updated,
+     * in the format defined by RFC3339.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The date and time the work request was last updated,
+     * in the format defined by RFC3339.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -429,6 +474,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(")");
         return sb.toString();
     }
@@ -452,6 +498,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && super.equals(other);
     }
 
@@ -474,6 +521,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

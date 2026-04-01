@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.psql.model;
@@ -32,7 +32,8 @@ public final class DefaultConfigurationSummary
         "shape",
         "isFlexible",
         "instanceOcpuCount",
-        "instanceMemorySizeInGBs"
+        "instanceMemorySizeInGBs",
+        "compatibleShapes"
     })
     public DefaultConfigurationSummary(
             String id,
@@ -44,7 +45,8 @@ public final class DefaultConfigurationSummary
             String shape,
             Boolean isFlexible,
             Integer instanceOcpuCount,
-            Integer instanceMemorySizeInGBs) {
+            Integer instanceMemorySizeInGBs,
+            java.util.List<String> compatibleShapes) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -56,6 +58,7 @@ public final class DefaultConfigurationSummary
         this.isFlexible = isFlexible;
         this.instanceOcpuCount = instanceOcpuCount;
         this.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
+        this.compatibleShapes = compatibleShapes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -166,7 +169,8 @@ public final class DefaultConfigurationSummary
         }
         /**
          * The name of the shape for the configuration.
-         * Example: {@code VM.Standard.E4.Flex}
+         * <p>
+         * For multi-shape enabled configurations, it is set to PostgreSQL. Please use compatibleShapes property to get list of supported shapes for such configurations.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
@@ -174,7 +178,8 @@ public final class DefaultConfigurationSummary
 
         /**
          * The name of the shape for the configuration.
-         * Example: {@code VM.Standard.E4.Flex}
+         * <p>
+         * For multi-shape enabled configurations, it is set to PostgreSQL. Please use compatibleShapes property to get list of supported shapes for such configurations.
          *
          * @param shape the value to set
          * @return this builder
@@ -244,6 +249,24 @@ public final class DefaultConfigurationSummary
             this.__explicitlySet__.add("instanceMemorySizeInGBs");
             return this;
         }
+        /**
+         * Indicates the collection of compatible shapes for this configuration.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
+        private java.util.List<String> compatibleShapes;
+
+        /**
+         * Indicates the collection of compatible shapes for this configuration.
+         *
+         * @param compatibleShapes the value to set
+         * @return this builder
+         **/
+        public Builder compatibleShapes(java.util.List<String> compatibleShapes) {
+            this.compatibleShapes = compatibleShapes;
+            this.__explicitlySet__.add("compatibleShapes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -260,7 +283,8 @@ public final class DefaultConfigurationSummary
                             this.shape,
                             this.isFlexible,
                             this.instanceOcpuCount,
-                            this.instanceMemorySizeInGBs);
+                            this.instanceMemorySizeInGBs,
+                            this.compatibleShapes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -298,6 +322,9 @@ public final class DefaultConfigurationSummary
             }
             if (model.wasPropertyExplicitlySet("instanceMemorySizeInGBs")) {
                 this.instanceMemorySizeInGBs(model.getInstanceMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("compatibleShapes")) {
+                this.compatibleShapes(model.getCompatibleShapes());
             }
             return this;
         }
@@ -408,7 +435,8 @@ public final class DefaultConfigurationSummary
 
     /**
      * The name of the shape for the configuration.
-     * Example: {@code VM.Standard.E4.Flex}
+     * <p>
+     * For multi-shape enabled configurations, it is set to PostgreSQL. Please use compatibleShapes property to get list of supported shapes for such configurations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
@@ -416,7 +444,8 @@ public final class DefaultConfigurationSummary
 
     /**
      * The name of the shape for the configuration.
-     * Example: {@code VM.Standard.E4.Flex}
+     * <p>
+     * For multi-shape enabled configurations, it is set to PostgreSQL. Please use compatibleShapes property to get list of supported shapes for such configurations.
      *
      * @return the value
      **/
@@ -478,6 +507,22 @@ public final class DefaultConfigurationSummary
         return instanceMemorySizeInGBs;
     }
 
+    /**
+     * Indicates the collection of compatible shapes for this configuration.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compatibleShapes")
+    private final java.util.List<String> compatibleShapes;
+
+    /**
+     * Indicates the collection of compatible shapes for this configuration.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getCompatibleShapes() {
+        return compatibleShapes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -503,6 +548,7 @@ public final class DefaultConfigurationSummary
         sb.append(", instanceOcpuCount=").append(String.valueOf(this.instanceOcpuCount));
         sb.append(", instanceMemorySizeInGBs=")
                 .append(String.valueOf(this.instanceMemorySizeInGBs));
+        sb.append(", compatibleShapes=").append(String.valueOf(this.compatibleShapes));
         sb.append(")");
         return sb.toString();
     }
@@ -528,6 +574,7 @@ public final class DefaultConfigurationSummary
                 && java.util.Objects.equals(this.instanceOcpuCount, other.instanceOcpuCount)
                 && java.util.Objects.equals(
                         this.instanceMemorySizeInGBs, other.instanceMemorySizeInGBs)
+                && java.util.Objects.equals(this.compatibleShapes, other.compatibleShapes)
                 && super.equals(other);
     }
 
@@ -555,6 +602,9 @@ public final class DefaultConfigurationSummary
                         + (this.instanceMemorySizeInGBs == null
                                 ? 43
                                 : this.instanceMemorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compatibleShapes == null ? 43 : this.compatibleShapes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

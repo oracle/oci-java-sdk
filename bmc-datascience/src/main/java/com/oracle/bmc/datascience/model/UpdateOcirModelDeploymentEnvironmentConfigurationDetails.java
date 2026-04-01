@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -70,6 +70,22 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
         public Builder imageDigest(String imageDigest) {
             this.imageDigest = imageDigest;
             this.__explicitlySet__.add("imageDigest");
+            return this;
+        }
+        /**
+         * OCID of the container image signature
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("imageSignatureId")
+        private String imageSignatureId;
+
+        /**
+         * OCID of the container image signature
+         * @param imageSignatureId the value to set
+         * @return this builder
+         **/
+        public Builder imageSignatureId(String imageSignatureId) {
+            this.imageSignatureId = imageSignatureId;
+            this.__explicitlySet__.add("imageSignatureId");
             return this;
         }
         /**
@@ -203,6 +219,7 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
                     new UpdateOcirModelDeploymentEnvironmentConfigurationDetails(
                             this.image,
                             this.imageDigest,
+                            this.imageSignatureId,
                             this.cmd,
                             this.entrypoint,
                             this.serverPort,
@@ -221,6 +238,9 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("imageDigest")) {
                 this.imageDigest(model.getImageDigest());
+            }
+            if (model.wasPropertyExplicitlySet("imageSignatureId")) {
+                this.imageSignatureId(model.getImageSignatureId());
             }
             if (model.wasPropertyExplicitlySet("cmd")) {
                 this.cmd(model.getCmd());
@@ -256,6 +276,7 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
     public UpdateOcirModelDeploymentEnvironmentConfigurationDetails(
             String image,
             String imageDigest,
+            String imageSignatureId,
             java.util.List<String> cmd,
             java.util.List<String> entrypoint,
             Integer serverPort,
@@ -264,6 +285,7 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
         super();
         this.image = image;
         this.imageDigest = imageDigest;
+        this.imageSignatureId = imageSignatureId;
         this.cmd = cmd;
         this.entrypoint = entrypoint;
         this.serverPort = serverPort;
@@ -309,6 +331,20 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
      **/
     public String getImageDigest() {
         return imageDigest;
+    }
+
+    /**
+     * OCID of the container image signature
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("imageSignatureId")
+    private final String imageSignatureId;
+
+    /**
+     * OCID of the container image signature
+     * @return the value
+     **/
+    public String getImageSignatureId() {
+        return imageSignatureId;
     }
 
     /**
@@ -439,6 +475,7 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", image=").append(String.valueOf(this.image));
         sb.append(", imageDigest=").append(String.valueOf(this.imageDigest));
+        sb.append(", imageSignatureId=").append(String.valueOf(this.imageSignatureId));
         sb.append(", cmd=").append(String.valueOf(this.cmd));
         sb.append(", entrypoint=").append(String.valueOf(this.entrypoint));
         sb.append(", serverPort=").append(String.valueOf(this.serverPort));
@@ -461,6 +498,7 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
                 (UpdateOcirModelDeploymentEnvironmentConfigurationDetails) o;
         return java.util.Objects.equals(this.image, other.image)
                 && java.util.Objects.equals(this.imageDigest, other.imageDigest)
+                && java.util.Objects.equals(this.imageSignatureId, other.imageSignatureId)
                 && java.util.Objects.equals(this.cmd, other.cmd)
                 && java.util.Objects.equals(this.entrypoint, other.entrypoint)
                 && java.util.Objects.equals(this.serverPort, other.serverPort)
@@ -475,6 +513,9 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
         int result = super.hashCode();
         result = (result * PRIME) + (this.image == null ? 43 : this.image.hashCode());
         result = (result * PRIME) + (this.imageDigest == null ? 43 : this.imageDigest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.imageSignatureId == null ? 43 : this.imageSignatureId.hashCode());
         result = (result * PRIME) + (this.cmd == null ? 43 : this.cmd.hashCode());
         result = (result * PRIME) + (this.entrypoint == null ? 43 : this.entrypoint.hashCode());
         result = (result * PRIME) + (this.serverPort == null ? 43 : this.serverPort.hashCode());

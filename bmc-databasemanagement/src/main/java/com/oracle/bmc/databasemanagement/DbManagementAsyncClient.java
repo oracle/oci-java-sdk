@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -7,6 +7,8 @@ package com.oracle.bmc.databasemanagement;
 import com.oracle.bmc.databasemanagement.internal.http.*;
 import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for DbManagement service. <br/>
@@ -28,7 +30,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("DBMANAGEMENT")
+                    .serviceName(DbManagementClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dbmgmt.{region}.oci.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class DbManagementAsyncClient implements DbManagementAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -400,12 +411,21 @@ public class DbManagementAsyncClient implements DbManagementAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -435,15 +455,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -599,6 +611,69 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     AddmTasksRequest, AddmTasksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCloudExadataInfrastructureCompartmentResponse>
+            changeCloudExadataInfrastructureCompartment(
+                    ChangeCloudExadataInfrastructureCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudExadataInfrastructureCompartmentRequest,
+                                    ChangeCloudExadataInfrastructureCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeCloudExadataInfrastructureCompartment");
+        final ChangeCloudExadataInfrastructureCompartmentRequest interceptedRequest =
+                ChangeCloudExadataInfrastructureCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCloudExadataInfrastructureCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ChangeCloudExadataInfrastructureCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataInfrastructure/ChangeCloudExadataInfrastructureCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeCloudExadataInfrastructureCompartmentResponse>
+                transformer =
+                        ChangeCloudExadataInfrastructureCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeCloudExadataInfrastructureCompartmentRequest,
+                        ChangeCloudExadataInfrastructureCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeCloudExadataInfrastructureCompartmentRequest,
+                                ChangeCloudExadataInfrastructureCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeCloudExadataInfrastructureCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeCloudExadataInfrastructureCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeCloudExadataInfrastructureCompartmentRequest,
+                    ChangeCloudExadataInfrastructureCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1185,6 +1260,117 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CheckCloudDbSystemConnectorConnectionStatusResponse>
+            checkCloudDbSystemConnectorConnectionStatus(
+                    CheckCloudDbSystemConnectorConnectionStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CheckCloudDbSystemConnectorConnectionStatusRequest,
+                                    CheckCloudDbSystemConnectorConnectionStatusResponse>
+                            handler) {
+        LOG.trace("Called async checkCloudDbSystemConnectorConnectionStatus");
+        final CheckCloudDbSystemConnectorConnectionStatusRequest interceptedRequest =
+                CheckCloudDbSystemConnectorConnectionStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CheckCloudDbSystemConnectorConnectionStatusConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CheckCloudDbSystemConnectorConnectionStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemConnector/CheckCloudDbSystemConnectorConnectionStatus");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        CheckCloudDbSystemConnectorConnectionStatusResponse>
+                transformer =
+                        CheckCloudDbSystemConnectorConnectionStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CheckCloudDbSystemConnectorConnectionStatusRequest,
+                        CheckCloudDbSystemConnectorConnectionStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CheckCloudDbSystemConnectorConnectionStatusRequest,
+                                CheckCloudDbSystemConnectorConnectionStatusResponse>,
+                        java.util.concurrent.Future<
+                                CheckCloudDbSystemConnectorConnectionStatusResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CheckCloudDbSystemConnectorConnectionStatusRequest,
+                    CheckCloudDbSystemConnectorConnectionStatusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckCloudExadataStorageConnectorResponse>
+            checkCloudExadataStorageConnector(
+                    CheckCloudExadataStorageConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CheckCloudExadataStorageConnectorRequest,
+                                    CheckCloudExadataStorageConnectorResponse>
+                            handler) {
+        LOG.trace("Called async checkCloudExadataStorageConnector");
+        final CheckCloudExadataStorageConnectorRequest interceptedRequest =
+                CheckCloudExadataStorageConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CheckCloudExadataStorageConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CheckCloudExadataStorageConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageConnector/CheckCloudExadataStorageConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CheckCloudExadataStorageConnectorResponse>
+                transformer =
+                        CheckCloudExadataStorageConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CheckCloudExadataStorageConnectorRequest,
+                        CheckCloudExadataStorageConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CheckCloudExadataStorageConnectorRequest,
+                                CheckCloudExadataStorageConnectorResponse>,
+                        java.util.concurrent.Future<CheckCloudExadataStorageConnectorResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CheckCloudExadataStorageConnectorRequest,
+                    CheckCloudExadataStorageConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CheckExternalDbSystemConnectorConnectionStatusResponse>
             checkExternalDbSystemConnectorConnectionStatus(
                     CheckExternalDbSystemConnectorConnectionStatusRequest request,
@@ -1460,6 +1646,291 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ConfigureAutomaticSpmEvolveAdvisorTaskRequest,
                     ConfigureAutomaticSpmEvolveAdvisorTaskResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudDbSystemResponse> createCloudDbSystem(
+            CreateCloudDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateCloudDbSystemRequest, CreateCloudDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async createCloudDbSystem");
+        final CreateCloudDbSystemRequest interceptedRequest =
+                CreateCloudDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCloudDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CreateCloudDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/CreateCloudDbSystem");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCloudDbSystemResponse>
+                transformer =
+                        CreateCloudDbSystemConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateCloudDbSystemRequest, CreateCloudDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCloudDbSystemRequest, CreateCloudDbSystemResponse>,
+                        java.util.concurrent.Future<CreateCloudDbSystemResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCloudDbSystemDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCloudDbSystemRequest, CreateCloudDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudDbSystemConnectorResponse>
+            createCloudDbSystemConnector(
+                    CreateCloudDbSystemConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateCloudDbSystemConnectorRequest,
+                                    CreateCloudDbSystemConnectorResponse>
+                            handler) {
+        LOG.trace("Called async createCloudDbSystemConnector");
+        final CreateCloudDbSystemConnectorRequest interceptedRequest =
+                CreateCloudDbSystemConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCloudDbSystemConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CreateCloudDbSystemConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemConnector/CreateCloudDbSystemConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateCloudDbSystemConnectorResponse>
+                transformer =
+                        CreateCloudDbSystemConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateCloudDbSystemConnectorRequest, CreateCloudDbSystemConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCloudDbSystemConnectorRequest,
+                                CreateCloudDbSystemConnectorResponse>,
+                        java.util.concurrent.Future<CreateCloudDbSystemConnectorResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCloudDbSystemConnectorDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCloudDbSystemConnectorRequest, CreateCloudDbSystemConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudDbSystemDiscoveryResponse>
+            createCloudDbSystemDiscovery(
+                    CreateCloudDbSystemDiscoveryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateCloudDbSystemDiscoveryRequest,
+                                    CreateCloudDbSystemDiscoveryResponse>
+                            handler) {
+        LOG.trace("Called async createCloudDbSystemDiscovery");
+        final CreateCloudDbSystemDiscoveryRequest interceptedRequest =
+                CreateCloudDbSystemDiscoveryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCloudDbSystemDiscoveryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CreateCloudDbSystemDiscovery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemDiscovery/CreateCloudDbSystemDiscovery");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateCloudDbSystemDiscoveryResponse>
+                transformer =
+                        CreateCloudDbSystemDiscoveryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateCloudDbSystemDiscoveryRequest, CreateCloudDbSystemDiscoveryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCloudDbSystemDiscoveryRequest,
+                                CreateCloudDbSystemDiscoveryResponse>,
+                        java.util.concurrent.Future<CreateCloudDbSystemDiscoveryResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCloudDbSystemDiscoveryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCloudDbSystemDiscoveryRequest, CreateCloudDbSystemDiscoveryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudExadataInfrastructureResponse>
+            createCloudExadataInfrastructure(
+                    CreateCloudExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateCloudExadataInfrastructureRequest,
+                                    CreateCloudExadataInfrastructureResponse>
+                            handler) {
+        LOG.trace("Called async createCloudExadataInfrastructure");
+        final CreateCloudExadataInfrastructureRequest interceptedRequest =
+                CreateCloudExadataInfrastructureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CreateCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataInfrastructure/CreateCloudExadataInfrastructure");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateCloudExadataInfrastructureResponse>
+                transformer =
+                        CreateCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateCloudExadataInfrastructureRequest,
+                        CreateCloudExadataInfrastructureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCloudExadataInfrastructureRequest,
+                                CreateCloudExadataInfrastructureResponse>,
+                        java.util.concurrent.Future<CreateCloudExadataInfrastructureResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCloudExadataInfrastructureDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCloudExadataInfrastructureRequest,
+                    CreateCloudExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudExadataStorageConnectorResponse>
+            createCloudExadataStorageConnector(
+                    CreateCloudExadataStorageConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateCloudExadataStorageConnectorRequest,
+                                    CreateCloudExadataStorageConnectorResponse>
+                            handler) {
+        LOG.trace("Called async createCloudExadataStorageConnector");
+        final CreateCloudExadataStorageConnectorRequest interceptedRequest =
+                CreateCloudExadataStorageConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCloudExadataStorageConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CreateCloudExadataStorageConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageConnector/CreateCloudExadataStorageConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateCloudExadataStorageConnectorResponse>
+                transformer =
+                        CreateCloudExadataStorageConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateCloudExadataStorageConnectorRequest,
+                        CreateCloudExadataStorageConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCloudExadataStorageConnectorRequest,
+                                CreateCloudExadataStorageConnectorResponse>,
+                        java.util.concurrent.Future<CreateCloudExadataStorageConnectorResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCloudExadataStorageConnectorDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCloudExadataStorageConnectorRequest,
+                    CreateCloudExadataStorageConnectorResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2138,6 +2609,261 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateTablespaceRequest, CreateTablespaceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudDbSystemResponse> deleteCloudDbSystem(
+            DeleteCloudDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCloudDbSystemRequest, DeleteCloudDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async deleteCloudDbSystem");
+        final DeleteCloudDbSystemRequest interceptedRequest =
+                DeleteCloudDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCloudDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DeleteCloudDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/DeleteCloudDbSystem");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCloudDbSystemResponse>
+                transformer =
+                        DeleteCloudDbSystemConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteCloudDbSystemRequest, DeleteCloudDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCloudDbSystemRequest, DeleteCloudDbSystemResponse>,
+                        java.util.concurrent.Future<DeleteCloudDbSystemResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCloudDbSystemRequest, DeleteCloudDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudDbSystemConnectorResponse>
+            deleteCloudDbSystemConnector(
+                    DeleteCloudDbSystemConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteCloudDbSystemConnectorRequest,
+                                    DeleteCloudDbSystemConnectorResponse>
+                            handler) {
+        LOG.trace("Called async deleteCloudDbSystemConnector");
+        final DeleteCloudDbSystemConnectorRequest interceptedRequest =
+                DeleteCloudDbSystemConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCloudDbSystemConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DeleteCloudDbSystemConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemConnector/DeleteCloudDbSystemConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteCloudDbSystemConnectorResponse>
+                transformer =
+                        DeleteCloudDbSystemConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteCloudDbSystemConnectorRequest, DeleteCloudDbSystemConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCloudDbSystemConnectorRequest,
+                                DeleteCloudDbSystemConnectorResponse>,
+                        java.util.concurrent.Future<DeleteCloudDbSystemConnectorResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCloudDbSystemConnectorRequest, DeleteCloudDbSystemConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudDbSystemDiscoveryResponse>
+            deleteCloudDbSystemDiscovery(
+                    DeleteCloudDbSystemDiscoveryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteCloudDbSystemDiscoveryRequest,
+                                    DeleteCloudDbSystemDiscoveryResponse>
+                            handler) {
+        LOG.trace("Called async deleteCloudDbSystemDiscovery");
+        final DeleteCloudDbSystemDiscoveryRequest interceptedRequest =
+                DeleteCloudDbSystemDiscoveryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCloudDbSystemDiscoveryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DeleteCloudDbSystemDiscovery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemDiscovery/DeleteCloudDbSystemDiscovery");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteCloudDbSystemDiscoveryResponse>
+                transformer =
+                        DeleteCloudDbSystemDiscoveryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteCloudDbSystemDiscoveryRequest, DeleteCloudDbSystemDiscoveryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCloudDbSystemDiscoveryRequest,
+                                DeleteCloudDbSystemDiscoveryResponse>,
+                        java.util.concurrent.Future<DeleteCloudDbSystemDiscoveryResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCloudDbSystemDiscoveryRequest, DeleteCloudDbSystemDiscoveryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudExadataInfrastructureResponse>
+            deleteCloudExadataInfrastructure(
+                    DeleteCloudExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteCloudExadataInfrastructureRequest,
+                                    DeleteCloudExadataInfrastructureResponse>
+                            handler) {
+        LOG.trace("Called async deleteCloudExadataInfrastructure");
+        final DeleteCloudExadataInfrastructureRequest interceptedRequest =
+                DeleteCloudExadataInfrastructureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DeleteCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataInfrastructure/DeleteCloudExadataInfrastructure");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteCloudExadataInfrastructureResponse>
+                transformer =
+                        DeleteCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteCloudExadataInfrastructureRequest,
+                        DeleteCloudExadataInfrastructureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCloudExadataInfrastructureRequest,
+                                DeleteCloudExadataInfrastructureResponse>,
+                        java.util.concurrent.Future<DeleteCloudExadataInfrastructureResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCloudExadataInfrastructureRequest,
+                    DeleteCloudExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudExadataStorageConnectorResponse>
+            deleteCloudExadataStorageConnector(
+                    DeleteCloudExadataStorageConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteCloudExadataStorageConnectorRequest,
+                                    DeleteCloudExadataStorageConnectorResponse>
+                            handler) {
+        LOG.trace("Called async deleteCloudExadataStorageConnector");
+        final DeleteCloudExadataStorageConnectorRequest interceptedRequest =
+                DeleteCloudExadataStorageConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCloudExadataStorageConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DeleteCloudExadataStorageConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageConnector/DeleteCloudExadataStorageConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteCloudExadataStorageConnectorResponse>
+                transformer =
+                        DeleteCloudExadataStorageConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteCloudExadataStorageConnectorRequest,
+                        DeleteCloudExadataStorageConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCloudExadataStorageConnectorRequest,
+                                DeleteCloudExadataStorageConnectorResponse>,
+                        java.util.concurrent.Future<DeleteCloudExadataStorageConnectorResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCloudExadataStorageConnectorRequest,
+                    DeleteCloudExadataStorageConnectorResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2939,6 +3665,173 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableCloudDbSystemDatabaseManagementResponse>
+            disableCloudDbSystemDatabaseManagement(
+                    DisableCloudDbSystemDatabaseManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableCloudDbSystemDatabaseManagementRequest,
+                                    DisableCloudDbSystemDatabaseManagementResponse>
+                            handler) {
+        LOG.trace("Called async disableCloudDbSystemDatabaseManagement");
+        final DisableCloudDbSystemDatabaseManagementRequest interceptedRequest =
+                DisableCloudDbSystemDatabaseManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableCloudDbSystemDatabaseManagementConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DisableCloudDbSystemDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/DisableCloudDbSystemDatabaseManagement");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DisableCloudDbSystemDatabaseManagementResponse>
+                transformer =
+                        DisableCloudDbSystemDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableCloudDbSystemDatabaseManagementRequest,
+                        DisableCloudDbSystemDatabaseManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableCloudDbSystemDatabaseManagementRequest,
+                                DisableCloudDbSystemDatabaseManagementResponse>,
+                        java.util.concurrent.Future<DisableCloudDbSystemDatabaseManagementResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableCloudDbSystemDatabaseManagementRequest,
+                    DisableCloudDbSystemDatabaseManagementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableCloudDbSystemStackMonitoringResponse>
+            disableCloudDbSystemStackMonitoring(
+                    DisableCloudDbSystemStackMonitoringRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableCloudDbSystemStackMonitoringRequest,
+                                    DisableCloudDbSystemStackMonitoringResponse>
+                            handler) {
+        LOG.trace("Called async disableCloudDbSystemStackMonitoring");
+        final DisableCloudDbSystemStackMonitoringRequest interceptedRequest =
+                DisableCloudDbSystemStackMonitoringConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableCloudDbSystemStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DisableCloudDbSystemStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/DisableCloudDbSystemStackMonitoring");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DisableCloudDbSystemStackMonitoringResponse>
+                transformer =
+                        DisableCloudDbSystemStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableCloudDbSystemStackMonitoringRequest,
+                        DisableCloudDbSystemStackMonitoringResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableCloudDbSystemStackMonitoringRequest,
+                                DisableCloudDbSystemStackMonitoringResponse>,
+                        java.util.concurrent.Future<DisableCloudDbSystemStackMonitoringResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableCloudDbSystemStackMonitoringRequest,
+                    DisableCloudDbSystemStackMonitoringResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableCloudExadataInfrastructureManagementResponse>
+            disableCloudExadataInfrastructureManagement(
+                    DisableCloudExadataInfrastructureManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableCloudExadataInfrastructureManagementRequest,
+                                    DisableCloudExadataInfrastructureManagementResponse>
+                            handler) {
+        LOG.trace("Called async disableCloudExadataInfrastructureManagement");
+        final DisableCloudExadataInfrastructureManagementRequest interceptedRequest =
+                DisableCloudExadataInfrastructureManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableCloudExadataInfrastructureManagementConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DisableCloudExadataInfrastructureManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataInfrastructure/DisableCloudExadataInfrastructureManagement");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DisableCloudExadataInfrastructureManagementResponse>
+                transformer =
+                        DisableCloudExadataInfrastructureManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableCloudExadataInfrastructureManagementRequest,
+                        DisableCloudExadataInfrastructureManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableCloudExadataInfrastructureManagementRequest,
+                                DisableCloudExadataInfrastructureManagementResponse>,
+                        java.util.concurrent.Future<
+                                DisableCloudExadataInfrastructureManagementResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableCloudExadataInfrastructureManagementRequest,
+                    DisableCloudExadataInfrastructureManagementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableDatabaseManagementFeatureResponse>
             disableDatabaseManagementFeature(
                     DisableDatabaseManagementFeatureRequest request,
@@ -3596,6 +4489,65 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DiscoverCloudExadataInfrastructureResponse>
+            discoverCloudExadataInfrastructure(
+                    DiscoverCloudExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DiscoverCloudExadataInfrastructureRequest,
+                                    DiscoverCloudExadataInfrastructureResponse>
+                            handler) {
+        LOG.trace("Called async discoverCloudExadataInfrastructure");
+        final DiscoverCloudExadataInfrastructureRequest interceptedRequest =
+                DiscoverCloudExadataInfrastructureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DiscoverCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DiscoverCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataInfrastructure/DiscoverCloudExadataInfrastructure");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DiscoverCloudExadataInfrastructureResponse>
+                transformer =
+                        DiscoverCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DiscoverCloudExadataInfrastructureRequest,
+                        DiscoverCloudExadataInfrastructureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DiscoverCloudExadataInfrastructureRequest,
+                                DiscoverCloudExadataInfrastructureResponse>,
+                        java.util.concurrent.Future<DiscoverCloudExadataInfrastructureResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDiscoverCloudExadataInfrastructureDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DiscoverCloudExadataInfrastructureRequest,
+                    DiscoverCloudExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DiscoverExternalExadataInfrastructureResponse>
             discoverExternalExadataInfrastructure(
                     DiscoverExternalExadataInfrastructureRequest request,
@@ -3927,6 +4879,189 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     EnableAutonomousDatabaseManagementFeatureRequest,
                     EnableAutonomousDatabaseManagementFeatureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableCloudDbSystemDatabaseManagementResponse>
+            enableCloudDbSystemDatabaseManagement(
+                    EnableCloudDbSystemDatabaseManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableCloudDbSystemDatabaseManagementRequest,
+                                    EnableCloudDbSystemDatabaseManagementResponse>
+                            handler) {
+        LOG.trace("Called async enableCloudDbSystemDatabaseManagement");
+        final EnableCloudDbSystemDatabaseManagementRequest interceptedRequest =
+                EnableCloudDbSystemDatabaseManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableCloudDbSystemDatabaseManagementConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "EnableCloudDbSystemDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/EnableCloudDbSystemDatabaseManagement");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, EnableCloudDbSystemDatabaseManagementResponse>
+                transformer =
+                        EnableCloudDbSystemDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableCloudDbSystemDatabaseManagementRequest,
+                        EnableCloudDbSystemDatabaseManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableCloudDbSystemDatabaseManagementRequest,
+                                EnableCloudDbSystemDatabaseManagementResponse>,
+                        java.util.concurrent.Future<EnableCloudDbSystemDatabaseManagementResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getEnableCloudDbSystemDatabaseManagementDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableCloudDbSystemDatabaseManagementRequest,
+                    EnableCloudDbSystemDatabaseManagementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableCloudDbSystemStackMonitoringResponse>
+            enableCloudDbSystemStackMonitoring(
+                    EnableCloudDbSystemStackMonitoringRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableCloudDbSystemStackMonitoringRequest,
+                                    EnableCloudDbSystemStackMonitoringResponse>
+                            handler) {
+        LOG.trace("Called async enableCloudDbSystemStackMonitoring");
+        final EnableCloudDbSystemStackMonitoringRequest interceptedRequest =
+                EnableCloudDbSystemStackMonitoringConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableCloudDbSystemStackMonitoringConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "EnableCloudDbSystemStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/EnableCloudDbSystemStackMonitoring");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, EnableCloudDbSystemStackMonitoringResponse>
+                transformer =
+                        EnableCloudDbSystemStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableCloudDbSystemStackMonitoringRequest,
+                        EnableCloudDbSystemStackMonitoringResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableCloudDbSystemStackMonitoringRequest,
+                                EnableCloudDbSystemStackMonitoringResponse>,
+                        java.util.concurrent.Future<EnableCloudDbSystemStackMonitoringResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnableCloudDbSystemStackMonitoringDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableCloudDbSystemStackMonitoringRequest,
+                    EnableCloudDbSystemStackMonitoringResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableCloudExadataInfrastructureManagementResponse>
+            enableCloudExadataInfrastructureManagement(
+                    EnableCloudExadataInfrastructureManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableCloudExadataInfrastructureManagementRequest,
+                                    EnableCloudExadataInfrastructureManagementResponse>
+                            handler) {
+        LOG.trace("Called async enableCloudExadataInfrastructureManagement");
+        final EnableCloudExadataInfrastructureManagementRequest interceptedRequest =
+                EnableCloudExadataInfrastructureManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableCloudExadataInfrastructureManagementConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "EnableCloudExadataInfrastructureManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataInfrastructure/EnableCloudExadataInfrastructureManagement");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        EnableCloudExadataInfrastructureManagementResponse>
+                transformer =
+                        EnableCloudExadataInfrastructureManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableCloudExadataInfrastructureManagementRequest,
+                        EnableCloudExadataInfrastructureManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableCloudExadataInfrastructureManagementRequest,
+                                EnableCloudExadataInfrastructureManagementResponse>,
+                        java.util.concurrent.Future<
+                                EnableCloudExadataInfrastructureManagementResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getEnableCloudExadataInfrastructureManagementDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableCloudExadataInfrastructureManagementRequest,
+                    EnableCloudExadataInfrastructureManagementResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4756,6 +5891,819 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetCloudAsmResponse> getCloudAsm(
+            GetCloudAsmRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetCloudAsmRequest, GetCloudAsmResponse>
+                    handler) {
+        LOG.trace("Called async getCloudAsm");
+        final GetCloudAsmRequest interceptedRequest =
+                GetCloudAsmConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudAsmConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudAsm",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/GetCloudAsm");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCloudAsmResponse>
+                transformer =
+                        GetCloudAsmConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCloudAsmRequest, GetCloudAsmResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudAsmRequest, GetCloudAsmResponse>,
+                        java.util.concurrent.Future<GetCloudAsmResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudAsmRequest, GetCloudAsmResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudAsmConfigurationResponse> getCloudAsmConfiguration(
+            GetCloudAsmConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudAsmConfigurationRequest, GetCloudAsmConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async getCloudAsmConfiguration");
+        final GetCloudAsmConfigurationRequest interceptedRequest =
+                GetCloudAsmConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudAsmConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudAsmConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/GetCloudAsmConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCloudAsmConfigurationResponse>
+                transformer =
+                        GetCloudAsmConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCloudAsmConfigurationRequest, GetCloudAsmConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudAsmConfigurationRequest, GetCloudAsmConfigurationResponse>,
+                        java.util.concurrent.Future<GetCloudAsmConfigurationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudAsmConfigurationRequest, GetCloudAsmConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudAsmInstanceResponse> getCloudAsmInstance(
+            GetCloudAsmInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudAsmInstanceRequest, GetCloudAsmInstanceResponse>
+                    handler) {
+        LOG.trace("Called async getCloudAsmInstance");
+        final GetCloudAsmInstanceRequest interceptedRequest =
+                GetCloudAsmInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudAsmInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudAsmInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsmInstance/GetCloudAsmInstance");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCloudAsmInstanceResponse>
+                transformer =
+                        GetCloudAsmInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCloudAsmInstanceRequest, GetCloudAsmInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudAsmInstanceRequest, GetCloudAsmInstanceResponse>,
+                        java.util.concurrent.Future<GetCloudAsmInstanceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudAsmInstanceRequest, GetCloudAsmInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudClusterResponse> getCloudCluster(
+            GetCloudClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudClusterRequest, GetCloudClusterResponse>
+                    handler) {
+        LOG.trace("Called async getCloudCluster");
+        final GetCloudClusterRequest interceptedRequest =
+                GetCloudClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudCluster/GetCloudCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCloudClusterResponse>
+                transformer =
+                        GetCloudClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCloudClusterRequest, GetCloudClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudClusterRequest, GetCloudClusterResponse>,
+                        java.util.concurrent.Future<GetCloudClusterResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudClusterRequest, GetCloudClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudClusterInstanceResponse> getCloudClusterInstance(
+            GetCloudClusterInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudClusterInstanceRequest, GetCloudClusterInstanceResponse>
+                    handler) {
+        LOG.trace("Called async getCloudClusterInstance");
+        final GetCloudClusterInstanceRequest interceptedRequest =
+                GetCloudClusterInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudClusterInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudClusterInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudClusterInstance/GetCloudClusterInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCloudClusterInstanceResponse>
+                transformer =
+                        GetCloudClusterInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCloudClusterInstanceRequest, GetCloudClusterInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudClusterInstanceRequest, GetCloudClusterInstanceResponse>,
+                        java.util.concurrent.Future<GetCloudClusterInstanceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudClusterInstanceRequest, GetCloudClusterInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudDbHomeResponse> getCloudDbHome(
+            GetCloudDbHomeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudDbHomeRequest, GetCloudDbHomeResponse>
+                    handler) {
+        LOG.trace("Called async getCloudDbHome");
+        final GetCloudDbHomeRequest interceptedRequest =
+                GetCloudDbHomeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudDbHomeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudDbHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbHome/GetCloudDbHome");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCloudDbHomeResponse>
+                transformer =
+                        GetCloudDbHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCloudDbHomeRequest, GetCloudDbHomeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudDbHomeRequest, GetCloudDbHomeResponse>,
+                        java.util.concurrent.Future<GetCloudDbHomeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudDbHomeRequest, GetCloudDbHomeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudDbNodeResponse> getCloudDbNode(
+            GetCloudDbNodeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudDbNodeRequest, GetCloudDbNodeResponse>
+                    handler) {
+        LOG.trace("Called async getCloudDbNode");
+        final GetCloudDbNodeRequest interceptedRequest =
+                GetCloudDbNodeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudDbNodeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudDbNode",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbNode/GetCloudDbNode");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCloudDbNodeResponse>
+                transformer =
+                        GetCloudDbNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCloudDbNodeRequest, GetCloudDbNodeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudDbNodeRequest, GetCloudDbNodeResponse>,
+                        java.util.concurrent.Future<GetCloudDbNodeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudDbNodeRequest, GetCloudDbNodeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudDbSystemResponse> getCloudDbSystem(
+            GetCloudDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudDbSystemRequest, GetCloudDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async getCloudDbSystem");
+        final GetCloudDbSystemRequest interceptedRequest =
+                GetCloudDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/GetCloudDbSystem");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCloudDbSystemResponse>
+                transformer =
+                        GetCloudDbSystemConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCloudDbSystemRequest, GetCloudDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudDbSystemRequest, GetCloudDbSystemResponse>,
+                        java.util.concurrent.Future<GetCloudDbSystemResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudDbSystemRequest, GetCloudDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudDbSystemConnectorResponse> getCloudDbSystemConnector(
+            GetCloudDbSystemConnectorRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudDbSystemConnectorRequest, GetCloudDbSystemConnectorResponse>
+                    handler) {
+        LOG.trace("Called async getCloudDbSystemConnector");
+        final GetCloudDbSystemConnectorRequest interceptedRequest =
+                GetCloudDbSystemConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudDbSystemConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudDbSystemConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemConnector/GetCloudDbSystemConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCloudDbSystemConnectorResponse>
+                transformer =
+                        GetCloudDbSystemConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCloudDbSystemConnectorRequest, GetCloudDbSystemConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudDbSystemConnectorRequest,
+                                GetCloudDbSystemConnectorResponse>,
+                        java.util.concurrent.Future<GetCloudDbSystemConnectorResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudDbSystemConnectorRequest, GetCloudDbSystemConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudDbSystemDiscoveryResponse> getCloudDbSystemDiscovery(
+            GetCloudDbSystemDiscoveryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudDbSystemDiscoveryRequest, GetCloudDbSystemDiscoveryResponse>
+                    handler) {
+        LOG.trace("Called async getCloudDbSystemDiscovery");
+        final GetCloudDbSystemDiscoveryRequest interceptedRequest =
+                GetCloudDbSystemDiscoveryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudDbSystemDiscoveryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudDbSystemDiscovery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemDiscovery/GetCloudDbSystemDiscovery");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCloudDbSystemDiscoveryResponse>
+                transformer =
+                        GetCloudDbSystemDiscoveryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCloudDbSystemDiscoveryRequest, GetCloudDbSystemDiscoveryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudDbSystemDiscoveryRequest,
+                                GetCloudDbSystemDiscoveryResponse>,
+                        java.util.concurrent.Future<GetCloudDbSystemDiscoveryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudDbSystemDiscoveryRequest, GetCloudDbSystemDiscoveryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudExadataInfrastructureResponse>
+            getCloudExadataInfrastructure(
+                    GetCloudExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCloudExadataInfrastructureRequest,
+                                    GetCloudExadataInfrastructureResponse>
+                            handler) {
+        LOG.trace("Called async getCloudExadataInfrastructure");
+        final GetCloudExadataInfrastructureRequest interceptedRequest =
+                GetCloudExadataInfrastructureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataInfrastructure/GetCloudExadataInfrastructure");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCloudExadataInfrastructureResponse>
+                transformer =
+                        GetCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCloudExadataInfrastructureRequest, GetCloudExadataInfrastructureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudExadataInfrastructureRequest,
+                                GetCloudExadataInfrastructureResponse>,
+                        java.util.concurrent.Future<GetCloudExadataInfrastructureResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudExadataInfrastructureRequest, GetCloudExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudExadataStorageConnectorResponse>
+            getCloudExadataStorageConnector(
+                    GetCloudExadataStorageConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCloudExadataStorageConnectorRequest,
+                                    GetCloudExadataStorageConnectorResponse>
+                            handler) {
+        LOG.trace("Called async getCloudExadataStorageConnector");
+        final GetCloudExadataStorageConnectorRequest interceptedRequest =
+                GetCloudExadataStorageConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudExadataStorageConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudExadataStorageConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageConnector/GetCloudExadataStorageConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCloudExadataStorageConnectorResponse>
+                transformer =
+                        GetCloudExadataStorageConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCloudExadataStorageConnectorRequest,
+                        GetCloudExadataStorageConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudExadataStorageConnectorRequest,
+                                GetCloudExadataStorageConnectorResponse>,
+                        java.util.concurrent.Future<GetCloudExadataStorageConnectorResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudExadataStorageConnectorRequest,
+                    GetCloudExadataStorageConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudExadataStorageGridResponse>
+            getCloudExadataStorageGrid(
+                    GetCloudExadataStorageGridRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCloudExadataStorageGridRequest,
+                                    GetCloudExadataStorageGridResponse>
+                            handler) {
+        LOG.trace("Called async getCloudExadataStorageGrid");
+        final GetCloudExadataStorageGridRequest interceptedRequest =
+                GetCloudExadataStorageGridConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudExadataStorageGridConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudExadataStorageGrid",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageGrid/GetCloudExadataStorageGrid");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCloudExadataStorageGridResponse>
+                transformer =
+                        GetCloudExadataStorageGridConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCloudExadataStorageGridRequest, GetCloudExadataStorageGridResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudExadataStorageGridRequest,
+                                GetCloudExadataStorageGridResponse>,
+                        java.util.concurrent.Future<GetCloudExadataStorageGridResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudExadataStorageGridRequest, GetCloudExadataStorageGridResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudExadataStorageServerResponse>
+            getCloudExadataStorageServer(
+                    GetCloudExadataStorageServerRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCloudExadataStorageServerRequest,
+                                    GetCloudExadataStorageServerResponse>
+                            handler) {
+        LOG.trace("Called async getCloudExadataStorageServer");
+        final GetCloudExadataStorageServerRequest interceptedRequest =
+                GetCloudExadataStorageServerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudExadataStorageServerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudExadataStorageServer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageServer/GetCloudExadataStorageServer");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCloudExadataStorageServerResponse>
+                transformer =
+                        GetCloudExadataStorageServerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCloudExadataStorageServerRequest, GetCloudExadataStorageServerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudExadataStorageServerRequest,
+                                GetCloudExadataStorageServerResponse>,
+                        java.util.concurrent.Future<GetCloudExadataStorageServerResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudExadataStorageServerRequest, GetCloudExadataStorageServerResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudIormPlanResponse> getCloudIormPlan(
+            GetCloudIormPlanRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudIormPlanRequest, GetCloudIormPlanResponse>
+                    handler) {
+        LOG.trace("Called async getCloudIormPlan");
+        final GetCloudIormPlanRequest interceptedRequest =
+                GetCloudIormPlanConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudIormPlanConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudIormPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageServer/GetCloudIormPlan");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCloudIormPlanResponse>
+                transformer =
+                        GetCloudIormPlanConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCloudIormPlanRequest, GetCloudIormPlanResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudIormPlanRequest, GetCloudIormPlanResponse>,
+                        java.util.concurrent.Future<GetCloudIormPlanResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudIormPlanRequest, GetCloudIormPlanResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudListenerResponse> getCloudListener(
+            GetCloudListenerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudListenerRequest, GetCloudListenerResponse>
+                    handler) {
+        LOG.trace("Called async getCloudListener");
+        final GetCloudListenerRequest interceptedRequest =
+                GetCloudListenerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudListenerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudListener",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudListener/GetCloudListener");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCloudListenerResponse>
+                transformer =
+                        GetCloudListenerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCloudListenerRequest, GetCloudListenerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudListenerRequest, GetCloudListenerResponse>,
+                        java.util.concurrent.Future<GetCloudListenerResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudListenerRequest, GetCloudListenerResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudOpenAlertHistoryResponse> getCloudOpenAlertHistory(
+            GetCloudOpenAlertHistoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudOpenAlertHistoryRequest, GetCloudOpenAlertHistoryResponse>
+                    handler) {
+        LOG.trace("Called async getCloudOpenAlertHistory");
+        final GetCloudOpenAlertHistoryRequest interceptedRequest =
+                GetCloudOpenAlertHistoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudOpenAlertHistoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetCloudOpenAlertHistory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageServer/GetCloudOpenAlertHistory");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCloudOpenAlertHistoryResponse>
+                transformer =
+                        GetCloudOpenAlertHistoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCloudOpenAlertHistoryRequest, GetCloudOpenAlertHistoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudOpenAlertHistoryRequest, GetCloudOpenAlertHistoryResponse>,
+                        java.util.concurrent.Future<GetCloudOpenAlertHistoryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudOpenAlertHistoryRequest, GetCloudOpenAlertHistoryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetClusterCacheMetricResponse> getClusterCacheMetric(
             GetClusterCacheMetricRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5200,6 +7148,62 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetDbManagementPrivateEndpointRequest, GetDbManagementPrivateEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExadataInfrastructureFleetHealthMetricsResponse>
+            getExadataInfrastructureFleetHealthMetrics(
+                    GetExadataInfrastructureFleetHealthMetricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetExadataInfrastructureFleetHealthMetricsRequest,
+                                    GetExadataInfrastructureFleetHealthMetricsResponse>
+                            handler) {
+        LOG.trace("Called async getExadataInfrastructureFleetHealthMetrics");
+        final GetExadataInfrastructureFleetHealthMetricsRequest interceptedRequest =
+                GetExadataInfrastructureFleetHealthMetricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExadataInfrastructureFleetHealthMetricsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetExadataInfrastructureFleetHealthMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExadataInfrastructureFleetHealthMetrics/GetExadataInfrastructureFleetHealthMetrics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        GetExadataInfrastructureFleetHealthMetricsResponse>
+                transformer =
+                        GetExadataInfrastructureFleetHealthMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetExadataInfrastructureFleetHealthMetricsRequest,
+                        GetExadataInfrastructureFleetHealthMetricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetExadataInfrastructureFleetHealthMetricsRequest,
+                                GetExadataInfrastructureFleetHealthMetricsResponse>,
+                        java.util.concurrent.Future<
+                                GetExadataInfrastructureFleetHealthMetricsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetExadataInfrastructureFleetHealthMetricsRequest,
+                    GetExadataInfrastructureFleetHealthMetricsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7224,6 +9228,824 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListAwrDbsRequest, ListAwrDbsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudAsmDiskGroupsResponse> listCloudAsmDiskGroups(
+            ListCloudAsmDiskGroupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudAsmDiskGroupsRequest, ListCloudAsmDiskGroupsResponse>
+                    handler) {
+        LOG.trace("Called async listCloudAsmDiskGroups");
+        final ListCloudAsmDiskGroupsRequest interceptedRequest =
+                ListCloudAsmDiskGroupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudAsmDiskGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudAsmDiskGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/ListCloudAsmDiskGroups");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCloudAsmDiskGroupsResponse>
+                transformer =
+                        ListCloudAsmDiskGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCloudAsmDiskGroupsRequest, ListCloudAsmDiskGroupsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudAsmDiskGroupsRequest, ListCloudAsmDiskGroupsResponse>,
+                        java.util.concurrent.Future<ListCloudAsmDiskGroupsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudAsmDiskGroupsRequest, ListCloudAsmDiskGroupsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudAsmInstancesResponse> listCloudAsmInstances(
+            ListCloudAsmInstancesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudAsmInstancesRequest, ListCloudAsmInstancesResponse>
+                    handler) {
+        LOG.trace("Called async listCloudAsmInstances");
+        final ListCloudAsmInstancesRequest interceptedRequest =
+                ListCloudAsmInstancesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudAsmInstancesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudAsmInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsmInstance/ListCloudAsmInstances");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCloudAsmInstancesResponse>
+                transformer =
+                        ListCloudAsmInstancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCloudAsmInstancesRequest, ListCloudAsmInstancesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudAsmInstancesRequest, ListCloudAsmInstancesResponse>,
+                        java.util.concurrent.Future<ListCloudAsmInstancesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudAsmInstancesRequest, ListCloudAsmInstancesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudAsmUsersResponse> listCloudAsmUsers(
+            ListCloudAsmUsersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudAsmUsersRequest, ListCloudAsmUsersResponse>
+                    handler) {
+        LOG.trace("Called async listCloudAsmUsers");
+        final ListCloudAsmUsersRequest interceptedRequest =
+                ListCloudAsmUsersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudAsmUsersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudAsmUsers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/ListCloudAsmUsers");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCloudAsmUsersResponse>
+                transformer =
+                        ListCloudAsmUsersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCloudAsmUsersRequest, ListCloudAsmUsersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudAsmUsersRequest, ListCloudAsmUsersResponse>,
+                        java.util.concurrent.Future<ListCloudAsmUsersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudAsmUsersRequest, ListCloudAsmUsersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudAsmsResponse> listCloudAsms(
+            ListCloudAsmsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListCloudAsmsRequest, ListCloudAsmsResponse>
+                    handler) {
+        LOG.trace("Called async listCloudAsms");
+        final ListCloudAsmsRequest interceptedRequest =
+                ListCloudAsmsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudAsmsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudAsms",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/ListCloudAsms");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCloudAsmsResponse>
+                transformer =
+                        ListCloudAsmsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCloudAsmsRequest, ListCloudAsmsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudAsmsRequest, ListCloudAsmsResponse>,
+                        java.util.concurrent.Future<ListCloudAsmsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudAsmsRequest, ListCloudAsmsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudClusterInstancesResponse> listCloudClusterInstances(
+            ListCloudClusterInstancesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudClusterInstancesRequest, ListCloudClusterInstancesResponse>
+                    handler) {
+        LOG.trace("Called async listCloudClusterInstances");
+        final ListCloudClusterInstancesRequest interceptedRequest =
+                ListCloudClusterInstancesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudClusterInstancesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudClusterInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudClusterInstance/ListCloudClusterInstances");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCloudClusterInstancesResponse>
+                transformer =
+                        ListCloudClusterInstancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCloudClusterInstancesRequest, ListCloudClusterInstancesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudClusterInstancesRequest,
+                                ListCloudClusterInstancesResponse>,
+                        java.util.concurrent.Future<ListCloudClusterInstancesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudClusterInstancesRequest, ListCloudClusterInstancesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudClustersResponse> listCloudClusters(
+            ListCloudClustersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudClustersRequest, ListCloudClustersResponse>
+                    handler) {
+        LOG.trace("Called async listCloudClusters");
+        final ListCloudClustersRequest interceptedRequest =
+                ListCloudClustersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudClustersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudCluster/ListCloudClusters");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCloudClustersResponse>
+                transformer =
+                        ListCloudClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCloudClustersRequest, ListCloudClustersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudClustersRequest, ListCloudClustersResponse>,
+                        java.util.concurrent.Future<ListCloudClustersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudClustersRequest, ListCloudClustersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudDatabasesResponse> listCloudDatabases(
+            ListCloudDatabasesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudDatabasesRequest, ListCloudDatabasesResponse>
+                    handler) {
+        LOG.trace("Called async listCloudDatabases");
+        final ListCloudDatabasesRequest interceptedRequest =
+                ListCloudDatabasesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudDatabasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDatabaseCollection/ListCloudDatabases");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCloudDatabasesResponse>
+                transformer =
+                        ListCloudDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCloudDatabasesRequest, ListCloudDatabasesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudDatabasesRequest, ListCloudDatabasesResponse>,
+                        java.util.concurrent.Future<ListCloudDatabasesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudDatabasesRequest, ListCloudDatabasesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudDbHomesResponse> listCloudDbHomes(
+            ListCloudDbHomesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudDbHomesRequest, ListCloudDbHomesResponse>
+                    handler) {
+        LOG.trace("Called async listCloudDbHomes");
+        final ListCloudDbHomesRequest interceptedRequest =
+                ListCloudDbHomesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudDbHomesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudDbHomes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbHome/ListCloudDbHomes");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCloudDbHomesResponse>
+                transformer =
+                        ListCloudDbHomesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCloudDbHomesRequest, ListCloudDbHomesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudDbHomesRequest, ListCloudDbHomesResponse>,
+                        java.util.concurrent.Future<ListCloudDbHomesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudDbHomesRequest, ListCloudDbHomesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudDbNodesResponse> listCloudDbNodes(
+            ListCloudDbNodesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudDbNodesRequest, ListCloudDbNodesResponse>
+                    handler) {
+        LOG.trace("Called async listCloudDbNodes");
+        final ListCloudDbNodesRequest interceptedRequest =
+                ListCloudDbNodesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudDbNodesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudDbNodes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbNode/ListCloudDbNodes");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCloudDbNodesResponse>
+                transformer =
+                        ListCloudDbNodesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCloudDbNodesRequest, ListCloudDbNodesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudDbNodesRequest, ListCloudDbNodesResponse>,
+                        java.util.concurrent.Future<ListCloudDbNodesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudDbNodesRequest, ListCloudDbNodesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudDbSystemConnectorsResponse>
+            listCloudDbSystemConnectors(
+                    ListCloudDbSystemConnectorsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCloudDbSystemConnectorsRequest,
+                                    ListCloudDbSystemConnectorsResponse>
+                            handler) {
+        LOG.trace("Called async listCloudDbSystemConnectors");
+        final ListCloudDbSystemConnectorsRequest interceptedRequest =
+                ListCloudDbSystemConnectorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudDbSystemConnectorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudDbSystemConnectors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemConnector/ListCloudDbSystemConnectors");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCloudDbSystemConnectorsResponse>
+                transformer =
+                        ListCloudDbSystemConnectorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCloudDbSystemConnectorsRequest, ListCloudDbSystemConnectorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudDbSystemConnectorsRequest,
+                                ListCloudDbSystemConnectorsResponse>,
+                        java.util.concurrent.Future<ListCloudDbSystemConnectorsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudDbSystemConnectorsRequest, ListCloudDbSystemConnectorsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudDbSystemDiscoveriesResponse>
+            listCloudDbSystemDiscoveries(
+                    ListCloudDbSystemDiscoveriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCloudDbSystemDiscoveriesRequest,
+                                    ListCloudDbSystemDiscoveriesResponse>
+                            handler) {
+        LOG.trace("Called async listCloudDbSystemDiscoveries");
+        final ListCloudDbSystemDiscoveriesRequest interceptedRequest =
+                ListCloudDbSystemDiscoveriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudDbSystemDiscoveriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudDbSystemDiscoveries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemDiscovery/ListCloudDbSystemDiscoveries");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCloudDbSystemDiscoveriesResponse>
+                transformer =
+                        ListCloudDbSystemDiscoveriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCloudDbSystemDiscoveriesRequest, ListCloudDbSystemDiscoveriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudDbSystemDiscoveriesRequest,
+                                ListCloudDbSystemDiscoveriesResponse>,
+                        java.util.concurrent.Future<ListCloudDbSystemDiscoveriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudDbSystemDiscoveriesRequest, ListCloudDbSystemDiscoveriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudDbSystemsResponse> listCloudDbSystems(
+            ListCloudDbSystemsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudDbSystemsRequest, ListCloudDbSystemsResponse>
+                    handler) {
+        LOG.trace("Called async listCloudDbSystems");
+        final ListCloudDbSystemsRequest interceptedRequest =
+                ListCloudDbSystemsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudDbSystemsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudDbSystems",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/ListCloudDbSystems");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCloudDbSystemsResponse>
+                transformer =
+                        ListCloudDbSystemsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCloudDbSystemsRequest, ListCloudDbSystemsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudDbSystemsRequest, ListCloudDbSystemsResponse>,
+                        java.util.concurrent.Future<ListCloudDbSystemsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudDbSystemsRequest, ListCloudDbSystemsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudExadataInfrastructuresResponse>
+            listCloudExadataInfrastructures(
+                    ListCloudExadataInfrastructuresRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCloudExadataInfrastructuresRequest,
+                                    ListCloudExadataInfrastructuresResponse>
+                            handler) {
+        LOG.trace("Called async listCloudExadataInfrastructures");
+        final ListCloudExadataInfrastructuresRequest interceptedRequest =
+                ListCloudExadataInfrastructuresConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudExadataInfrastructuresConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudExadataInfrastructures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataInfrastructure/ListCloudExadataInfrastructures");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCloudExadataInfrastructuresResponse>
+                transformer =
+                        ListCloudExadataInfrastructuresConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCloudExadataInfrastructuresRequest,
+                        ListCloudExadataInfrastructuresResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudExadataInfrastructuresRequest,
+                                ListCloudExadataInfrastructuresResponse>,
+                        java.util.concurrent.Future<ListCloudExadataInfrastructuresResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudExadataInfrastructuresRequest,
+                    ListCloudExadataInfrastructuresResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudExadataStorageConnectorsResponse>
+            listCloudExadataStorageConnectors(
+                    ListCloudExadataStorageConnectorsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCloudExadataStorageConnectorsRequest,
+                                    ListCloudExadataStorageConnectorsResponse>
+                            handler) {
+        LOG.trace("Called async listCloudExadataStorageConnectors");
+        final ListCloudExadataStorageConnectorsRequest interceptedRequest =
+                ListCloudExadataStorageConnectorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudExadataStorageConnectorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudExadataStorageConnectors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageConnector/ListCloudExadataStorageConnectors");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCloudExadataStorageConnectorsResponse>
+                transformer =
+                        ListCloudExadataStorageConnectorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCloudExadataStorageConnectorsRequest,
+                        ListCloudExadataStorageConnectorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudExadataStorageConnectorsRequest,
+                                ListCloudExadataStorageConnectorsResponse>,
+                        java.util.concurrent.Future<ListCloudExadataStorageConnectorsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudExadataStorageConnectorsRequest,
+                    ListCloudExadataStorageConnectorsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudExadataStorageServersResponse>
+            listCloudExadataStorageServers(
+                    ListCloudExadataStorageServersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCloudExadataStorageServersRequest,
+                                    ListCloudExadataStorageServersResponse>
+                            handler) {
+        LOG.trace("Called async listCloudExadataStorageServers");
+        final ListCloudExadataStorageServersRequest interceptedRequest =
+                ListCloudExadataStorageServersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudExadataStorageServersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudExadataStorageServers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageServer/ListCloudExadataStorageServers");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCloudExadataStorageServersResponse>
+                transformer =
+                        ListCloudExadataStorageServersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCloudExadataStorageServersRequest,
+                        ListCloudExadataStorageServersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudExadataStorageServersRequest,
+                                ListCloudExadataStorageServersResponse>,
+                        java.util.concurrent.Future<ListCloudExadataStorageServersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudExadataStorageServersRequest, ListCloudExadataStorageServersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudListenerServicesResponse> listCloudListenerServices(
+            ListCloudListenerServicesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudListenerServicesRequest, ListCloudListenerServicesResponse>
+                    handler) {
+        LOG.trace("Called async listCloudListenerServices");
+        final ListCloudListenerServicesRequest interceptedRequest =
+                ListCloudListenerServicesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudListenerServicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudListenerServices",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudListener/ListCloudListenerServices");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCloudListenerServicesResponse>
+                transformer =
+                        ListCloudListenerServicesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCloudListenerServicesRequest, ListCloudListenerServicesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudListenerServicesRequest,
+                                ListCloudListenerServicesResponse>,
+                        java.util.concurrent.Future<ListCloudListenerServicesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudListenerServicesRequest, ListCloudListenerServicesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudListenersResponse> listCloudListeners(
+            ListCloudListenersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudListenersRequest, ListCloudListenersResponse>
+                    handler) {
+        LOG.trace("Called async listCloudListeners");
+        final ListCloudListenersRequest interceptedRequest =
+                ListCloudListenersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudListenersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCloudListeners",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudListener/ListCloudListeners");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCloudListenersResponse>
+                transformer =
+                        ListCloudListenersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCloudListenersRequest, ListCloudListenersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudListenersRequest, ListCloudListenersResponse>,
+                        java.util.concurrent.Future<ListCloudListenersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudListenersRequest, ListCloudListenersResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -9750,6 +12572,69 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyExternalContainerDatabaseManagementFeatureResponse>
+            modifyExternalContainerDatabaseManagementFeature(
+                    ModifyExternalContainerDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ModifyExternalContainerDatabaseManagementFeatureRequest,
+                                    ModifyExternalContainerDatabaseManagementFeatureResponse>
+                            handler) {
+        LOG.trace("Called async modifyExternalContainerDatabaseManagementFeature");
+        final ModifyExternalContainerDatabaseManagementFeatureRequest interceptedRequest =
+                ModifyExternalContainerDatabaseManagementFeatureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ModifyExternalContainerDatabaseManagementFeatureConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ModifyExternalContainerDatabaseManagementFeature",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ModifyExternalContainerDatabaseManagementFeature");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ModifyExternalContainerDatabaseManagementFeatureResponse>
+                transformer =
+                        ModifyExternalContainerDatabaseManagementFeatureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ModifyExternalContainerDatabaseManagementFeatureRequest,
+                        ModifyExternalContainerDatabaseManagementFeatureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ModifyExternalContainerDatabaseManagementFeatureRequest,
+                                ModifyExternalContainerDatabaseManagementFeatureResponse>,
+                        java.util.concurrent.Future<
+                                ModifyExternalContainerDatabaseManagementFeatureResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getEnableExternalContainerDatabaseManagementFeatureDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ModifyExternalContainerDatabaseManagementFeatureRequest,
+                    ModifyExternalContainerDatabaseManagementFeatureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyPluggableDatabaseManagementFeatureResponse>
             modifyPluggableDatabaseManagementFeature(
                     ModifyPluggableDatabaseManagementFeatureRequest request,
@@ -9799,6 +12684,62 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ModifyPluggableDatabaseManagementFeatureRequest,
                     ModifyPluggableDatabaseManagementFeatureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchCloudDbSystemDiscoveryResponse>
+            patchCloudDbSystemDiscovery(
+                    PatchCloudDbSystemDiscoveryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PatchCloudDbSystemDiscoveryRequest,
+                                    PatchCloudDbSystemDiscoveryResponse>
+                            handler) {
+        LOG.trace("Called async patchCloudDbSystemDiscovery");
+        final PatchCloudDbSystemDiscoveryRequest interceptedRequest =
+                PatchCloudDbSystemDiscoveryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchCloudDbSystemDiscoveryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "PatchCloudDbSystemDiscovery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemDiscovery/PatchCloudDbSystemDiscovery");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PatchCloudDbSystemDiscoveryResponse>
+                transformer =
+                        PatchCloudDbSystemDiscoveryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PatchCloudDbSystemDiscoveryRequest, PatchCloudDbSystemDiscoveryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PatchCloudDbSystemDiscoveryRequest,
+                                PatchCloudDbSystemDiscoveryResponse>,
+                        java.util.concurrent.Future<PatchCloudDbSystemDiscoveryResponse>>
+                futureSupplier =
+                        client.patchFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPatchCloudDbSystemDiscoveryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PatchCloudDbSystemDiscoveryRequest, PatchCloudDbSystemDiscoveryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -10593,6 +13534,263 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SummarizeCloudAsmMetricsResponse> summarizeCloudAsmMetrics(
+            SummarizeCloudAsmMetricsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeCloudAsmMetricsRequest, SummarizeCloudAsmMetricsResponse>
+                    handler) {
+        LOG.trace("Called async summarizeCloudAsmMetrics");
+        final SummarizeCloudAsmMetricsRequest interceptedRequest =
+                SummarizeCloudAsmMetricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeCloudAsmMetricsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "SummarizeCloudAsmMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/SummarizeCloudAsmMetrics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeCloudAsmMetricsResponse>
+                transformer =
+                        SummarizeCloudAsmMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeCloudAsmMetricsRequest, SummarizeCloudAsmMetricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeCloudAsmMetricsRequest, SummarizeCloudAsmMetricsResponse>,
+                        java.util.concurrent.Future<SummarizeCloudAsmMetricsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeCloudAsmMetricsRequest, SummarizeCloudAsmMetricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeCloudClusterMetricsResponse>
+            summarizeCloudClusterMetrics(
+                    SummarizeCloudClusterMetricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeCloudClusterMetricsRequest,
+                                    SummarizeCloudClusterMetricsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeCloudClusterMetrics");
+        final SummarizeCloudClusterMetricsRequest interceptedRequest =
+                SummarizeCloudClusterMetricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeCloudClusterMetricsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "SummarizeCloudClusterMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudCluster/SummarizeCloudClusterMetrics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeCloudClusterMetricsResponse>
+                transformer =
+                        SummarizeCloudClusterMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeCloudClusterMetricsRequest, SummarizeCloudClusterMetricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeCloudClusterMetricsRequest,
+                                SummarizeCloudClusterMetricsResponse>,
+                        java.util.concurrent.Future<SummarizeCloudClusterMetricsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeCloudClusterMetricsRequest, SummarizeCloudClusterMetricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeCloudDbNodeMetricsResponse>
+            summarizeCloudDbNodeMetrics(
+                    SummarizeCloudDbNodeMetricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeCloudDbNodeMetricsRequest,
+                                    SummarizeCloudDbNodeMetricsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeCloudDbNodeMetrics");
+        final SummarizeCloudDbNodeMetricsRequest interceptedRequest =
+                SummarizeCloudDbNodeMetricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeCloudDbNodeMetricsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "SummarizeCloudDbNodeMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbNode/SummarizeCloudDbNodeMetrics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeCloudDbNodeMetricsResponse>
+                transformer =
+                        SummarizeCloudDbNodeMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeCloudDbNodeMetricsRequest, SummarizeCloudDbNodeMetricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeCloudDbNodeMetricsRequest,
+                                SummarizeCloudDbNodeMetricsResponse>,
+                        java.util.concurrent.Future<SummarizeCloudDbNodeMetricsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeCloudDbNodeMetricsRequest, SummarizeCloudDbNodeMetricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeCloudDbSystemAvailabilityMetricsResponse>
+            summarizeCloudDbSystemAvailabilityMetrics(
+                    SummarizeCloudDbSystemAvailabilityMetricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeCloudDbSystemAvailabilityMetricsRequest,
+                                    SummarizeCloudDbSystemAvailabilityMetricsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeCloudDbSystemAvailabilityMetrics");
+        final SummarizeCloudDbSystemAvailabilityMetricsRequest interceptedRequest =
+                SummarizeCloudDbSystemAvailabilityMetricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeCloudDbSystemAvailabilityMetricsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "SummarizeCloudDbSystemAvailabilityMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/SummarizeCloudDbSystemAvailabilityMetrics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeCloudDbSystemAvailabilityMetricsResponse>
+                transformer =
+                        SummarizeCloudDbSystemAvailabilityMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeCloudDbSystemAvailabilityMetricsRequest,
+                        SummarizeCloudDbSystemAvailabilityMetricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeCloudDbSystemAvailabilityMetricsRequest,
+                                SummarizeCloudDbSystemAvailabilityMetricsResponse>,
+                        java.util.concurrent.Future<
+                                SummarizeCloudDbSystemAvailabilityMetricsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeCloudDbSystemAvailabilityMetricsRequest,
+                    SummarizeCloudDbSystemAvailabilityMetricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeCloudListenerMetricsResponse>
+            summarizeCloudListenerMetrics(
+                    SummarizeCloudListenerMetricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeCloudListenerMetricsRequest,
+                                    SummarizeCloudListenerMetricsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeCloudListenerMetrics");
+        final SummarizeCloudListenerMetricsRequest interceptedRequest =
+                SummarizeCloudListenerMetricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeCloudListenerMetricsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "SummarizeCloudListenerMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudListener/SummarizeCloudListenerMetrics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeCloudListenerMetricsResponse>
+                transformer =
+                        SummarizeCloudListenerMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeCloudListenerMetricsRequest, SummarizeCloudListenerMetricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeCloudListenerMetricsRequest,
+                                SummarizeCloudListenerMetricsResponse>,
+                        java.util.concurrent.Future<SummarizeCloudListenerMetricsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeCloudListenerMetricsRequest, SummarizeCloudListenerMetricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeExternalAsmMetricsResponse>
             summarizeExternalAsmMetrics(
                     SummarizeExternalAsmMetricsRequest request,
@@ -11162,6 +14360,764 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     TestPreferredCredentialRequest, TestPreferredCredentialResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudAsmResponse> updateCloudAsm(
+            UpdateCloudAsmRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCloudAsmRequest, UpdateCloudAsmResponse>
+                    handler) {
+        LOG.trace("Called async updateCloudAsm");
+        final UpdateCloudAsmRequest interceptedRequest =
+                UpdateCloudAsmConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudAsmConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudAsm",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsm/UpdateCloudAsm");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCloudAsmResponse>
+                transformer =
+                        UpdateCloudAsmConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateCloudAsmRequest, UpdateCloudAsmResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudAsmRequest, UpdateCloudAsmResponse>,
+                        java.util.concurrent.Future<UpdateCloudAsmResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudAsmDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudAsmRequest, UpdateCloudAsmResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudAsmInstanceResponse> updateCloudAsmInstance(
+            UpdateCloudAsmInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCloudAsmInstanceRequest, UpdateCloudAsmInstanceResponse>
+                    handler) {
+        LOG.trace("Called async updateCloudAsmInstance");
+        final UpdateCloudAsmInstanceRequest interceptedRequest =
+                UpdateCloudAsmInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudAsmInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudAsmInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudAsmInstance/UpdateCloudAsmInstance");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCloudAsmInstanceResponse>
+                transformer =
+                        UpdateCloudAsmInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCloudAsmInstanceRequest, UpdateCloudAsmInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudAsmInstanceRequest, UpdateCloudAsmInstanceResponse>,
+                        java.util.concurrent.Future<UpdateCloudAsmInstanceResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudAsmInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudAsmInstanceRequest, UpdateCloudAsmInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudClusterResponse> updateCloudCluster(
+            UpdateCloudClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCloudClusterRequest, UpdateCloudClusterResponse>
+                    handler) {
+        LOG.trace("Called async updateCloudCluster");
+        final UpdateCloudClusterRequest interceptedRequest =
+                UpdateCloudClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudCluster/UpdateCloudCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCloudClusterResponse>
+                transformer =
+                        UpdateCloudClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateCloudClusterRequest, UpdateCloudClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudClusterRequest, UpdateCloudClusterResponse>,
+                        java.util.concurrent.Future<UpdateCloudClusterResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudClusterRequest, UpdateCloudClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudClusterInstanceResponse>
+            updateCloudClusterInstance(
+                    UpdateCloudClusterInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCloudClusterInstanceRequest,
+                                    UpdateCloudClusterInstanceResponse>
+                            handler) {
+        LOG.trace("Called async updateCloudClusterInstance");
+        final UpdateCloudClusterInstanceRequest interceptedRequest =
+                UpdateCloudClusterInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudClusterInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudClusterInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudClusterInstance/UpdateCloudClusterInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateCloudClusterInstanceResponse>
+                transformer =
+                        UpdateCloudClusterInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCloudClusterInstanceRequest, UpdateCloudClusterInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudClusterInstanceRequest,
+                                UpdateCloudClusterInstanceResponse>,
+                        java.util.concurrent.Future<UpdateCloudClusterInstanceResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudClusterInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudClusterInstanceRequest, UpdateCloudClusterInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudDbHomeResponse> updateCloudDbHome(
+            UpdateCloudDbHomeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCloudDbHomeRequest, UpdateCloudDbHomeResponse>
+                    handler) {
+        LOG.trace("Called async updateCloudDbHome");
+        final UpdateCloudDbHomeRequest interceptedRequest =
+                UpdateCloudDbHomeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudDbHomeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudDbHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbHome/UpdateCloudDbHome");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCloudDbHomeResponse>
+                transformer =
+                        UpdateCloudDbHomeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateCloudDbHomeRequest, UpdateCloudDbHomeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudDbHomeRequest, UpdateCloudDbHomeResponse>,
+                        java.util.concurrent.Future<UpdateCloudDbHomeResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudDbHomeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudDbHomeRequest, UpdateCloudDbHomeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudDbNodeResponse> updateCloudDbNode(
+            UpdateCloudDbNodeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCloudDbNodeRequest, UpdateCloudDbNodeResponse>
+                    handler) {
+        LOG.trace("Called async updateCloudDbNode");
+        final UpdateCloudDbNodeRequest interceptedRequest =
+                UpdateCloudDbNodeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudDbNodeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudDbNode",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbNode/UpdateCloudDbNode");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCloudDbNodeResponse>
+                transformer =
+                        UpdateCloudDbNodeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateCloudDbNodeRequest, UpdateCloudDbNodeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudDbNodeRequest, UpdateCloudDbNodeResponse>,
+                        java.util.concurrent.Future<UpdateCloudDbNodeResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudDbNodeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudDbNodeRequest, UpdateCloudDbNodeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudDbSystemResponse> updateCloudDbSystem(
+            UpdateCloudDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCloudDbSystemRequest, UpdateCloudDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async updateCloudDbSystem");
+        final UpdateCloudDbSystemRequest interceptedRequest =
+                UpdateCloudDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystem/UpdateCloudDbSystem");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCloudDbSystemResponse>
+                transformer =
+                        UpdateCloudDbSystemConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCloudDbSystemRequest, UpdateCloudDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudDbSystemRequest, UpdateCloudDbSystemResponse>,
+                        java.util.concurrent.Future<UpdateCloudDbSystemResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudDbSystemDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudDbSystemRequest, UpdateCloudDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudDbSystemConnectorResponse>
+            updateCloudDbSystemConnector(
+                    UpdateCloudDbSystemConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCloudDbSystemConnectorRequest,
+                                    UpdateCloudDbSystemConnectorResponse>
+                            handler) {
+        LOG.trace("Called async updateCloudDbSystemConnector");
+        final UpdateCloudDbSystemConnectorRequest interceptedRequest =
+                UpdateCloudDbSystemConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudDbSystemConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudDbSystemConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemConnector/UpdateCloudDbSystemConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateCloudDbSystemConnectorResponse>
+                transformer =
+                        UpdateCloudDbSystemConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCloudDbSystemConnectorRequest, UpdateCloudDbSystemConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudDbSystemConnectorRequest,
+                                UpdateCloudDbSystemConnectorResponse>,
+                        java.util.concurrent.Future<UpdateCloudDbSystemConnectorResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudDbSystemConnectorDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudDbSystemConnectorRequest, UpdateCloudDbSystemConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudDbSystemDiscoveryResponse>
+            updateCloudDbSystemDiscovery(
+                    UpdateCloudDbSystemDiscoveryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCloudDbSystemDiscoveryRequest,
+                                    UpdateCloudDbSystemDiscoveryResponse>
+                            handler) {
+        LOG.trace("Called async updateCloudDbSystemDiscovery");
+        final UpdateCloudDbSystemDiscoveryRequest interceptedRequest =
+                UpdateCloudDbSystemDiscoveryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudDbSystemDiscoveryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudDbSystemDiscovery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudDbSystemDiscovery/UpdateCloudDbSystemDiscovery");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateCloudDbSystemDiscoveryResponse>
+                transformer =
+                        UpdateCloudDbSystemDiscoveryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCloudDbSystemDiscoveryRequest, UpdateCloudDbSystemDiscoveryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudDbSystemDiscoveryRequest,
+                                UpdateCloudDbSystemDiscoveryResponse>,
+                        java.util.concurrent.Future<UpdateCloudDbSystemDiscoveryResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudDbSystemDiscoveryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudDbSystemDiscoveryRequest, UpdateCloudDbSystemDiscoveryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudExadataInfrastructureResponse>
+            updateCloudExadataInfrastructure(
+                    UpdateCloudExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCloudExadataInfrastructureRequest,
+                                    UpdateCloudExadataInfrastructureResponse>
+                            handler) {
+        LOG.trace("Called async updateCloudExadataInfrastructure");
+        final UpdateCloudExadataInfrastructureRequest interceptedRequest =
+                UpdateCloudExadataInfrastructureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataInfrastructure/UpdateCloudExadataInfrastructure");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateCloudExadataInfrastructureResponse>
+                transformer =
+                        UpdateCloudExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCloudExadataInfrastructureRequest,
+                        UpdateCloudExadataInfrastructureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudExadataInfrastructureRequest,
+                                UpdateCloudExadataInfrastructureResponse>,
+                        java.util.concurrent.Future<UpdateCloudExadataInfrastructureResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudExadataInfrastructureDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudExadataInfrastructureRequest,
+                    UpdateCloudExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudExadataStorageConnectorResponse>
+            updateCloudExadataStorageConnector(
+                    UpdateCloudExadataStorageConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCloudExadataStorageConnectorRequest,
+                                    UpdateCloudExadataStorageConnectorResponse>
+                            handler) {
+        LOG.trace("Called async updateCloudExadataStorageConnector");
+        final UpdateCloudExadataStorageConnectorRequest interceptedRequest =
+                UpdateCloudExadataStorageConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudExadataStorageConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudExadataStorageConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageConnector/UpdateCloudExadataStorageConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateCloudExadataStorageConnectorResponse>
+                transformer =
+                        UpdateCloudExadataStorageConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCloudExadataStorageConnectorRequest,
+                        UpdateCloudExadataStorageConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudExadataStorageConnectorRequest,
+                                UpdateCloudExadataStorageConnectorResponse>,
+                        java.util.concurrent.Future<UpdateCloudExadataStorageConnectorResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudExadataStorageConnectorDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudExadataStorageConnectorRequest,
+                    UpdateCloudExadataStorageConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudExadataStorageGridResponse>
+            updateCloudExadataStorageGrid(
+                    UpdateCloudExadataStorageGridRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCloudExadataStorageGridRequest,
+                                    UpdateCloudExadataStorageGridResponse>
+                            handler) {
+        LOG.trace("Called async updateCloudExadataStorageGrid");
+        final UpdateCloudExadataStorageGridRequest interceptedRequest =
+                UpdateCloudExadataStorageGridConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudExadataStorageGridConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudExadataStorageGrid",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageGrid/UpdateCloudExadataStorageGrid");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateCloudExadataStorageGridResponse>
+                transformer =
+                        UpdateCloudExadataStorageGridConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCloudExadataStorageGridRequest, UpdateCloudExadataStorageGridResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudExadataStorageGridRequest,
+                                UpdateCloudExadataStorageGridResponse>,
+                        java.util.concurrent.Future<UpdateCloudExadataStorageGridResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudExadataStorageGridDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudExadataStorageGridRequest, UpdateCloudExadataStorageGridResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudExadataStorageServerResponse>
+            updateCloudExadataStorageServer(
+                    UpdateCloudExadataStorageServerRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCloudExadataStorageServerRequest,
+                                    UpdateCloudExadataStorageServerResponse>
+                            handler) {
+        LOG.trace("Called async updateCloudExadataStorageServer");
+        final UpdateCloudExadataStorageServerRequest interceptedRequest =
+                UpdateCloudExadataStorageServerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudExadataStorageServerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudExadataStorageServer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudExadataStorageServer/UpdateCloudExadataStorageServer");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateCloudExadataStorageServerResponse>
+                transformer =
+                        UpdateCloudExadataStorageServerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCloudExadataStorageServerRequest,
+                        UpdateCloudExadataStorageServerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudExadataStorageServerRequest,
+                                UpdateCloudExadataStorageServerResponse>,
+                        java.util.concurrent.Future<UpdateCloudExadataStorageServerResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudExadataStorageServerDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudExadataStorageServerRequest,
+                    UpdateCloudExadataStorageServerResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudListenerResponse> updateCloudListener(
+            UpdateCloudListenerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCloudListenerRequest, UpdateCloudListenerResponse>
+                    handler) {
+        LOG.trace("Called async updateCloudListener");
+        final UpdateCloudListenerRequest interceptedRequest =
+                UpdateCloudListenerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudListenerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateCloudListener",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/CloudListener/UpdateCloudListener");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCloudListenerResponse>
+                transformer =
+                        UpdateCloudListenerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCloudListenerRequest, UpdateCloudListenerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudListenerRequest, UpdateCloudListenerResponse>,
+                        java.util.concurrent.Future<UpdateCloudListenerResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudListenerDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudListenerRequest, UpdateCloudListenerResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

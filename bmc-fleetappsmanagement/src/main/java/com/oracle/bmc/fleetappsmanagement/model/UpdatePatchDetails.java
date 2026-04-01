@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdatePatchDetails.Builder.class
 )
@@ -29,7 +29,6 @@ public final class UpdatePatchDetails extends com.oracle.bmc.http.internal.Expli
         "artifactDetails",
         "product",
         "dependentPatches",
-        "compartmentId",
         "freeformTags",
         "definedTags"
     })
@@ -41,7 +40,6 @@ public final class UpdatePatchDetails extends com.oracle.bmc.http.internal.Expli
             ArtifactDetails artifactDetails,
             PatchProduct product,
             java.util.List<DependentPatchDetails> dependentPatches,
-            String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -52,7 +50,6 @@ public final class UpdatePatchDetails extends com.oracle.bmc.http.internal.Expli
         this.artifactDetails = artifactDetails;
         this.product = product;
         this.dependentPatches = dependentPatches;
-        this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -157,22 +154,6 @@ public final class UpdatePatchDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * OCID of the compartment to which the resource belongs to.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-        private String compartmentId;
-
-        /**
-         * OCID of the compartment to which the resource belongs to.
-         * @param compartmentId the value to set
-         * @return this builder
-         **/
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            this.__explicitlySet__.add("compartmentId");
-            return this;
-        }
-        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -227,7 +208,6 @@ public final class UpdatePatchDetails extends com.oracle.bmc.http.internal.Expli
                             this.artifactDetails,
                             this.product,
                             this.dependentPatches,
-                            this.compartmentId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -258,9 +238,6 @@ public final class UpdatePatchDetails extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("dependentPatches")) {
                 this.dependentPatches(model.getDependentPatches());
-            }
-            if (model.wasPropertyExplicitlySet("compartmentId")) {
-                this.compartmentId(model.getCompartmentId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -367,20 +344,6 @@ public final class UpdatePatchDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * OCID of the compartment to which the resource belongs to.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    private final String compartmentId;
-
-    /**
-     * OCID of the compartment to which the resource belongs to.
-     * @return the value
-     **/
-    public String getCompartmentId() {
-        return compartmentId;
-    }
-
-    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -437,7 +400,6 @@ public final class UpdatePatchDetails extends com.oracle.bmc.http.internal.Expli
         sb.append(", artifactDetails=").append(String.valueOf(this.artifactDetails));
         sb.append(", product=").append(String.valueOf(this.product));
         sb.append(", dependentPatches=").append(String.valueOf(this.dependentPatches));
-        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -461,7 +423,6 @@ public final class UpdatePatchDetails extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.artifactDetails, other.artifactDetails)
                 && java.util.Objects.equals(this.product, other.product)
                 && java.util.Objects.equals(this.dependentPatches, other.dependentPatches)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -482,9 +443,6 @@ public final class UpdatePatchDetails extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.dependentPatches == null ? 43 : this.dependentPatches.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

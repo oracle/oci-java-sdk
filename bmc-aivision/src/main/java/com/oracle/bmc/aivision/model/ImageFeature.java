@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aivision.model;
@@ -29,6 +29,10 @@ package com.oracle.bmc.aivision.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = FaceDetectionFeature.class,
         name = "FACE_DETECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = FaceEmbeddingFeature.class,
+        name = "FACE_EMBEDDING"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ImageObjectDetectionFeature.class,
@@ -93,6 +97,7 @@ public class ImageFeature extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      * - {@code OBJECT_DETECTION}: Identify objects in the image with bounding boxes.
      * - {@code TEXT_DETECTION}: Recognize text at the word and line level.
      * - {@code FACE_DETECTION}: Identify faces in the image with bounding boxes and face landmarks.
+     * - {@code FACE_EMBEDDING}: Extract facial features in image as vectors with information on bounding boxes and face landmarks.
      *
      **/
     public enum FeatureType {
@@ -100,6 +105,7 @@ public class ImageFeature extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         ObjectDetection("OBJECT_DETECTION"),
         TextDetection("TEXT_DETECTION"),
         FaceDetection("FACE_DETECTION"),
+        FaceEmbedding("FACE_EMBEDDING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

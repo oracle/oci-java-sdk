@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aispeech.model;
@@ -37,7 +37,7 @@ public final class VoiceSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             String description,
             Gender gender,
             java.util.List<String> supportedModels,
-            LanguageCode languageCode,
+            String languageCode,
             String languageDescription,
             Integer sampleRateInHertz,
             Integer wordsPerMinute,
@@ -141,14 +141,14 @@ public final class VoiceSummary extends com.oracle.bmc.http.internal.ExplicitlyS
          * An abbreviated notation of region to which the language and accent of the speaker belongs to.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
-        private LanguageCode languageCode;
+        private String languageCode;
 
         /**
          * An abbreviated notation of region to which the language and accent of the speaker belongs to.
          * @param languageCode the value to set
          * @return this builder
          **/
-        public Builder languageCode(LanguageCode languageCode) {
+        public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
             return this;
@@ -407,61 +407,14 @@ public final class VoiceSummary extends com.oracle.bmc.http.internal.ExplicitlyS
     /**
      * An abbreviated notation of region to which the language and accent of the speaker belongs to.
      **/
-    public enum LanguageCode {
-        EnUs("en-US"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(LanguageCode.class);
-
-        private final String value;
-        private static java.util.Map<String, LanguageCode> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (LanguageCode v : LanguageCode.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        LanguageCode(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static LanguageCode create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LanguageCode', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * An abbreviated notation of region to which the language and accent of the speaker belongs to.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
-    private final LanguageCode languageCode;
+    private final String languageCode;
 
     /**
      * An abbreviated notation of region to which the language and accent of the speaker belongs to.
      * @return the value
      **/
-    public LanguageCode getLanguageCode() {
+    public String getLanguageCode() {
         return languageCode;
     }
 

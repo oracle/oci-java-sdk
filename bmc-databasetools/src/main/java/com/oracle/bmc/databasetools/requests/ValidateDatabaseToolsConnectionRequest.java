@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools.requests;
@@ -25,13 +25,13 @@ public class ValidateDatabaseToolsConnectionRequest
         return databaseToolsConnectionId;
     }
     /**
-     * Request to validate a DatabaseToolsConnection.
+     * Request to validate a Database Tools connection.
      */
     private com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionDetails
             validateDatabaseToolsConnectionDetails;
 
     /**
-     * Request to validate a DatabaseToolsConnection.
+     * Request to validate a Database Tools connection.
      */
     public com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionDetails
             getValidateDatabaseToolsConnectionDetails() {
@@ -104,13 +104,13 @@ public class ValidateDatabaseToolsConnectionRequest
         }
 
         /**
-         * Request to validate a DatabaseToolsConnection.
+         * Request to validate a Database Tools connection.
          */
         private com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionDetails
                 validateDatabaseToolsConnectionDetails = null;
 
         /**
-         * Request to validate a DatabaseToolsConnection.
+         * Request to validate a Database Tools connection.
          * @param validateDatabaseToolsConnectionDetails the value to set
          * @return this builder instance
          */

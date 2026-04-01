@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -207,6 +207,17 @@ public class ListSqlCollectionsRequest extends com.oracle.bmc.requests.BmcReques
      */
     public String getTargetId() {
         return targetId;
+    }
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    private String targetDatabaseGroupId;
+
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    public String getTargetDatabaseGroupId() {
+        return targetDatabaseGroupId;
     }
     /**
      * A filter to return only items that match the specified user name.
@@ -543,6 +554,21 @@ public class ListSqlCollectionsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
+         * A filter to return the target database group that matches the specified OCID.
+         */
+        private String targetDatabaseGroupId = null;
+
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         * @param targetDatabaseGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
          * A filter to return only items that match the specified user name.
          */
         private String dbUserName = null;
@@ -645,6 +671,7 @@ public class ListSqlCollectionsRequest extends com.oracle.bmc.requests.BmcReques
             timeCreatedGreaterThanOrEqualTo(o.getTimeCreatedGreaterThanOrEqualTo());
             timeCreatedLessThan(o.getTimeCreatedLessThan());
             targetId(o.getTargetId());
+            targetDatabaseGroupId(o.getTargetDatabaseGroupId());
             dbUserName(o.getDbUserName());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
@@ -692,12 +719,13 @@ public class ListSqlCollectionsRequest extends com.oracle.bmc.requests.BmcReques
             request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             request.timeCreatedLessThan = timeCreatedLessThan;
             request.targetId = targetId;
+            request.targetDatabaseGroupId = targetDatabaseGroupId;
             request.dbUserName = dbUserName;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSqlCollectionsRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, limit, page, lifecycleState, sqlCollectionId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, targetId, dbUserName, sortOrder, sortBy, opcRequestId);
+            // new ListSqlCollectionsRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, limit, page, lifecycleState, sqlCollectionId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, targetId, targetDatabaseGroupId, dbUserName, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -718,6 +746,7 @@ public class ListSqlCollectionsRequest extends com.oracle.bmc.requests.BmcReques
                 .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo)
                 .timeCreatedLessThan(timeCreatedLessThan)
                 .targetId(targetId)
+                .targetDatabaseGroupId(targetDatabaseGroupId)
                 .dbUserName(dbUserName)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
@@ -749,6 +778,7 @@ public class ListSqlCollectionsRequest extends com.oracle.bmc.requests.BmcReques
                 .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
         sb.append(",timeCreatedLessThan=").append(String.valueOf(this.timeCreatedLessThan));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
+        sb.append(",targetDatabaseGroupId=").append(String.valueOf(this.targetDatabaseGroupId));
         sb.append(",dbUserName=").append(String.valueOf(this.dbUserName));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
@@ -781,6 +811,7 @@ public class ListSqlCollectionsRequest extends com.oracle.bmc.requests.BmcReques
                         this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
                 && java.util.Objects.equals(this.timeCreatedLessThan, other.timeCreatedLessThan)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.targetDatabaseGroupId, other.targetDatabaseGroupId)
                 && java.util.Objects.equals(this.dbUserName, other.dbUserName)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
@@ -820,6 +851,11 @@ public class ListSqlCollectionsRequest extends com.oracle.bmc.requests.BmcReques
                                 ? 43
                                 : this.timeCreatedLessThan.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDatabaseGroupId == null
+                                ? 43
+                                : this.targetDatabaseGroupId.hashCode());
         result = (result * PRIME) + (this.dbUserName == null ? 43 : this.dbUserName.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());

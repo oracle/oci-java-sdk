@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,7 +8,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetJobActivityExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetJobActivityRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -32,6 +32,19 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     public String getJobActivityId() {
         return jobActivityId;
+    }
+    /**
+     * If set to true, inventory details will be returned.
+     *
+     */
+    private Boolean isDetailsRequired;
+
+    /**
+     * If set to true, inventory details will be returned.
+     *
+     */
+    public Boolean getIsDetailsRequired() {
+        return isDetailsRequired;
     }
     /**
      * The client request ID for tracing.
@@ -83,6 +96,23 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
+         * If set to true, inventory details will be returned.
+         *
+         */
+        private Boolean isDetailsRequired = null;
+
+        /**
+         * If set to true, inventory details will be returned.
+         *
+         * @param isDetailsRequired the value to set
+         * @return this builder instance
+         */
+        public Builder isDetailsRequired(Boolean isDetailsRequired) {
+            this.isDetailsRequired = isDetailsRequired;
+            return this;
+        }
+
+        /**
          * The client request ID for tracing.
          */
         private String opcRequestId = null;
@@ -127,6 +157,7 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         public Builder copy(GetJobActivityRequest o) {
             schedulerJobId(o.getSchedulerJobId());
             jobActivityId(o.getJobActivityId());
+            isDetailsRequired(o.getIsDetailsRequired());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -162,9 +193,10 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
             GetJobActivityRequest request = new GetJobActivityRequest();
             request.schedulerJobId = schedulerJobId;
             request.jobActivityId = jobActivityId;
+            request.isDetailsRequired = isDetailsRequired;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetJobActivityRequest(schedulerJobId, jobActivityId, opcRequestId);
+            // new GetJobActivityRequest(schedulerJobId, jobActivityId, isDetailsRequired, opcRequestId);
         }
     }
 
@@ -176,6 +208,7 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return new Builder()
                 .schedulerJobId(schedulerJobId)
                 .jobActivityId(jobActivityId)
+                .isDetailsRequired(isDetailsRequired)
                 .opcRequestId(opcRequestId);
     }
 
@@ -194,6 +227,7 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append("super=").append(super.toString());
         sb.append(",schedulerJobId=").append(String.valueOf(this.schedulerJobId));
         sb.append(",jobActivityId=").append(String.valueOf(this.jobActivityId));
+        sb.append(",isDetailsRequired=").append(String.valueOf(this.isDetailsRequired));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -212,6 +246,7 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return super.equals(o)
                 && java.util.Objects.equals(this.schedulerJobId, other.schedulerJobId)
                 && java.util.Objects.equals(this.jobActivityId, other.jobActivityId)
+                && java.util.Objects.equals(this.isDetailsRequired, other.isDetailsRequired)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -225,6 +260,9 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         result =
                 (result * PRIME)
                         + (this.jobActivityId == null ? 43 : this.jobActivityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDetailsRequired == null ? 43 : this.isDetailsRequired.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

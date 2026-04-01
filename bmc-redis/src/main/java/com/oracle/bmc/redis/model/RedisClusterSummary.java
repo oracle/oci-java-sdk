@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.redis.model;
@@ -34,13 +34,17 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
         "primaryEndpointIpAddress",
         "replicasFqdn",
         "replicasEndpointIpAddress",
+        "discoveryFqdn",
+        "discoveryEndpointIpAddress",
         "softwareVersion",
         "subnetId",
         "timeCreated",
         "timeUpdated",
+        "ociCacheConfigSetId",
         "clusterMode",
         "shardCount",
         "nsgIds",
+        "securityAttributes",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -57,13 +61,17 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
             String primaryEndpointIpAddress,
             String replicasFqdn,
             String replicasEndpointIpAddress,
+            String discoveryFqdn,
+            String discoveryEndpointIpAddress,
             RedisCluster.SoftwareVersion softwareVersion,
             String subnetId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String ociCacheConfigSetId,
             RedisCluster.ClusterMode clusterMode,
             Integer shardCount,
             java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -79,13 +87,17 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
         this.primaryEndpointIpAddress = primaryEndpointIpAddress;
         this.replicasFqdn = replicasFqdn;
         this.replicasEndpointIpAddress = replicasEndpointIpAddress;
+        this.discoveryFqdn = discoveryFqdn;
+        this.discoveryEndpointIpAddress = discoveryEndpointIpAddress;
         this.softwareVersion = softwareVersion;
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.ociCacheConfigSetId = ociCacheConfigSetId;
         this.clusterMode = clusterMode;
         this.shardCount = shardCount;
         this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -270,6 +282,38 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
+         * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("discoveryFqdn")
+        private String discoveryFqdn;
+
+        /**
+         * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+         * @param discoveryFqdn the value to set
+         * @return this builder
+         **/
+        public Builder discoveryFqdn(String discoveryFqdn) {
+            this.discoveryFqdn = discoveryFqdn;
+            this.__explicitlySet__.add("discoveryFqdn");
+            return this;
+        }
+        /**
+         * The private IP address of the API endpoint for shareded cluster discovery.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("discoveryEndpointIpAddress")
+        private String discoveryEndpointIpAddress;
+
+        /**
+         * The private IP address of the API endpoint for shareded cluster discovery.
+         * @param discoveryEndpointIpAddress the value to set
+         * @return this builder
+         **/
+        public Builder discoveryEndpointIpAddress(String discoveryEndpointIpAddress) {
+            this.discoveryEndpointIpAddress = discoveryEndpointIpAddress;
+            this.__explicitlySet__.add("discoveryEndpointIpAddress");
+            return this;
+        }
+        /**
          * The OCI Cache engine version that the cluster is running.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
@@ -334,6 +378,22 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
+         * The ID of the corresponding OCI Cache Config Set for the cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ociCacheConfigSetId")
+        private String ociCacheConfigSetId;
+
+        /**
+         * The ID of the corresponding OCI Cache Config Set for the cluster.
+         * @param ociCacheConfigSetId the value to set
+         * @return this builder
+         **/
+        public Builder ociCacheConfigSetId(String ociCacheConfigSetId) {
+            this.ociCacheConfigSetId = ociCacheConfigSetId;
+            this.__explicitlySet__.add("ociCacheConfigSetId");
+            return this;
+        }
+        /**
          * Specifies whether the cluster is sharded or non-sharded.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
@@ -385,6 +445,31 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+        /**
+         * Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -466,13 +551,17 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
                             this.primaryEndpointIpAddress,
                             this.replicasFqdn,
                             this.replicasEndpointIpAddress,
+                            this.discoveryFqdn,
+                            this.discoveryEndpointIpAddress,
                             this.softwareVersion,
                             this.subnetId,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.ociCacheConfigSetId,
                             this.clusterMode,
                             this.shardCount,
                             this.nsgIds,
+                            this.securityAttributes,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -517,6 +606,12 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("replicasEndpointIpAddress")) {
                 this.replicasEndpointIpAddress(model.getReplicasEndpointIpAddress());
             }
+            if (model.wasPropertyExplicitlySet("discoveryFqdn")) {
+                this.discoveryFqdn(model.getDiscoveryFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("discoveryEndpointIpAddress")) {
+                this.discoveryEndpointIpAddress(model.getDiscoveryEndpointIpAddress());
+            }
             if (model.wasPropertyExplicitlySet("softwareVersion")) {
                 this.softwareVersion(model.getSoftwareVersion());
             }
@@ -529,6 +624,9 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("ociCacheConfigSetId")) {
+                this.ociCacheConfigSetId(model.getOciCacheConfigSetId());
+            }
             if (model.wasPropertyExplicitlySet("clusterMode")) {
                 this.clusterMode(model.getClusterMode());
             }
@@ -537,6 +635,9 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -717,6 +818,34 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
+     * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("discoveryFqdn")
+    private final String discoveryFqdn;
+
+    /**
+     * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+     * @return the value
+     **/
+    public String getDiscoveryFqdn() {
+        return discoveryFqdn;
+    }
+
+    /**
+     * The private IP address of the API endpoint for shareded cluster discovery.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("discoveryEndpointIpAddress")
+    private final String discoveryEndpointIpAddress;
+
+    /**
+     * The private IP address of the API endpoint for shareded cluster discovery.
+     * @return the value
+     **/
+    public String getDiscoveryEndpointIpAddress() {
+        return discoveryEndpointIpAddress;
+    }
+
+    /**
      * The OCI Cache engine version that the cluster is running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
@@ -773,6 +902,20 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
+     * The ID of the corresponding OCI Cache Config Set for the cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ociCacheConfigSetId")
+    private final String ociCacheConfigSetId;
+
+    /**
+     * The ID of the corresponding OCI Cache Config Set for the cluster.
+     * @return the value
+     **/
+    public String getOciCacheConfigSetId() {
+        return ociCacheConfigSetId;
+    }
+
+    /**
      * Specifies whether the cluster is sharded or non-sharded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
@@ -818,6 +961,28 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
      **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
+    }
+
+    /**
+     * Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -901,13 +1066,18 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
         sb.append(", replicasFqdn=").append(String.valueOf(this.replicasFqdn));
         sb.append(", replicasEndpointIpAddress=")
                 .append(String.valueOf(this.replicasEndpointIpAddress));
+        sb.append(", discoveryFqdn=").append(String.valueOf(this.discoveryFqdn));
+        sb.append(", discoveryEndpointIpAddress=")
+                .append(String.valueOf(this.discoveryEndpointIpAddress));
         sb.append(", softwareVersion=").append(String.valueOf(this.softwareVersion));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", ociCacheConfigSetId=").append(String.valueOf(this.ociCacheConfigSetId));
         sb.append(", clusterMode=").append(String.valueOf(this.clusterMode));
         sb.append(", shardCount=").append(String.valueOf(this.shardCount));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -938,13 +1108,18 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.replicasFqdn, other.replicasFqdn)
                 && java.util.Objects.equals(
                         this.replicasEndpointIpAddress, other.replicasEndpointIpAddress)
+                && java.util.Objects.equals(this.discoveryFqdn, other.discoveryFqdn)
+                && java.util.Objects.equals(
+                        this.discoveryEndpointIpAddress, other.discoveryEndpointIpAddress)
                 && java.util.Objects.equals(this.softwareVersion, other.softwareVersion)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.ociCacheConfigSetId, other.ociCacheConfigSetId)
                 && java.util.Objects.equals(this.clusterMode, other.clusterMode)
                 && java.util.Objects.equals(this.shardCount, other.shardCount)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -984,13 +1159,31 @@ public final class RedisClusterSummary extends com.oracle.bmc.http.internal.Expl
                                 : this.replicasEndpointIpAddress.hashCode());
         result =
                 (result * PRIME)
+                        + (this.discoveryFqdn == null ? 43 : this.discoveryFqdn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.discoveryEndpointIpAddress == null
+                                ? 43
+                                : this.discoveryEndpointIpAddress.hashCode());
+        result =
+                (result * PRIME)
                         + (this.softwareVersion == null ? 43 : this.softwareVersion.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ociCacheConfigSetId == null
+                                ? 43
+                                : this.ociCacheConfigSetId.hashCode());
         result = (result * PRIME) + (this.clusterMode == null ? 43 : this.clusterMode.hashCode());
         result = (result * PRIME) + (this.shardCount == null ? 43 : this.shardCount.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

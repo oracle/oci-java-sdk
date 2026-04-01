@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -27,6 +27,9 @@ public final class UpdateLoadBalancerDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
+        "ipMode",
+        "ipv6SubnetCidr",
+        "reservedIps",
         "isDeleteProtectionEnabled",
         "isRequestIdEnabled",
         "requestIdHeader",
@@ -36,6 +39,9 @@ public final class UpdateLoadBalancerDetails
     })
     public UpdateLoadBalancerDetails(
             String displayName,
+            IpMode ipMode,
+            String ipv6SubnetCidr,
+            java.util.List<ReservedIP> reservedIps,
             Boolean isDeleteProtectionEnabled,
             Boolean isRequestIdEnabled,
             String requestIdHeader,
@@ -44,6 +50,9 @@ public final class UpdateLoadBalancerDetails
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.displayName = displayName;
+        this.ipMode = ipMode;
+        this.ipv6SubnetCidr = ipv6SubnetCidr;
+        this.reservedIps = reservedIps;
         this.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
         this.isRequestIdEnabled = isRequestIdEnabled;
         this.requestIdHeader = requestIdHeader;
@@ -76,6 +85,76 @@ public final class UpdateLoadBalancerDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * Whether the load balancer has an IPv4 or IPv6 IP address.
+         * <p>
+         * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+         * <p>
+         * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+         * <p>
+         * Example: "ipMode":"IPV6"
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+        private IpMode ipMode;
+
+        /**
+         * Whether the load balancer has an IPv4 or IPv6 IP address.
+         * <p>
+         * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+         * <p>
+         * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+         * <p>
+         * Example: "ipMode":"IPV6"
+         *
+         * @param ipMode the value to set
+         * @return this builder
+         **/
+        public Builder ipMode(IpMode ipMode) {
+            this.ipMode = ipMode;
+            this.__explicitlySet__.add("ipMode");
+            return this;
+        }
+        /**
+         * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+         * <p>
+         * Example: "2002::1234:abcd:ffff:c0a8:101/64"
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6SubnetCidr")
+        private String ipv6SubnetCidr;
+
+        /**
+         * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+         * <p>
+         * Example: "2002::1234:abcd:ffff:c0a8:101/64"
+         *
+         * @param ipv6SubnetCidr the value to set
+         * @return this builder
+         **/
+        public Builder ipv6SubnetCidr(String ipv6SubnetCidr) {
+            this.ipv6SubnetCidr = ipv6SubnetCidr;
+            this.__explicitlySet__.add("ipv6SubnetCidr");
+            return this;
+        }
+        /**
+         * An array of reserved Ips.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("reservedIps")
+        private java.util.List<ReservedIP> reservedIps;
+
+        /**
+         * An array of reserved Ips.
+         *
+         * @param reservedIps the value to set
+         * @return this builder
+         **/
+        public Builder reservedIps(java.util.List<ReservedIP> reservedIps) {
+            this.reservedIps = reservedIps;
+            this.__explicitlySet__.add("reservedIps");
             return this;
         }
         /**
@@ -278,6 +357,9 @@ public final class UpdateLoadBalancerDetails
             UpdateLoadBalancerDetails model =
                     new UpdateLoadBalancerDetails(
                             this.displayName,
+                            this.ipMode,
+                            this.ipv6SubnetCidr,
+                            this.reservedIps,
                             this.isDeleteProtectionEnabled,
                             this.isRequestIdEnabled,
                             this.requestIdHeader,
@@ -294,6 +376,15 @@ public final class UpdateLoadBalancerDetails
         public Builder copy(UpdateLoadBalancerDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("ipMode")) {
+                this.ipMode(model.getIpMode());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6SubnetCidr")) {
+                this.ipv6SubnetCidr(model.getIpv6SubnetCidr());
+            }
+            if (model.wasPropertyExplicitlySet("reservedIps")) {
+                this.reservedIps(model.getReservedIps());
             }
             if (model.wasPropertyExplicitlySet("isDeleteProtectionEnabled")) {
                 this.isDeleteProtectionEnabled(model.getIsDeleteProtectionEnabled());
@@ -348,6 +439,112 @@ public final class UpdateLoadBalancerDetails
      **/
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * Whether the load balancer has an IPv4 or IPv6 IP address.
+     * <p>
+     * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * <p>
+     * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * <p>
+     * Example: "ipMode":"IPV6"
+     *
+     **/
+    public enum IpMode {
+        Ipv4("IPV4"),
+        Ipv6("IPV6"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, IpMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IpMode v : IpMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        IpMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IpMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid IpMode: " + key);
+        }
+    };
+    /**
+     * Whether the load balancer has an IPv4 or IPv6 IP address.
+     * <p>
+     * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * <p>
+     * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * <p>
+     * Example: "ipMode":"IPV6"
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+    private final IpMode ipMode;
+
+    /**
+     * Whether the load balancer has an IPv4 or IPv6 IP address.
+     * <p>
+     * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * <p>
+     * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * <p>
+     * Example: "ipMode":"IPV6"
+     *
+     * @return the value
+     **/
+    public IpMode getIpMode() {
+        return ipMode;
+    }
+
+    /**
+     * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+     * <p>
+     * Example: "2002::1234:abcd:ffff:c0a8:101/64"
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6SubnetCidr")
+    private final String ipv6SubnetCidr;
+
+    /**
+     * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+     * <p>
+     * Example: "2002::1234:abcd:ffff:c0a8:101/64"
+     *
+     * @return the value
+     **/
+    public String getIpv6SubnetCidr() {
+        return ipv6SubnetCidr;
+    }
+
+    /**
+     * An array of reserved Ips.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reservedIps")
+    private final java.util.List<ReservedIP> reservedIps;
+
+    /**
+     * An array of reserved Ips.
+     *
+     * @return the value
+     **/
+    public java.util.List<ReservedIP> getReservedIps() {
+        return reservedIps;
     }
 
     /**
@@ -543,6 +740,9 @@ public final class UpdateLoadBalancerDetails
         sb.append("UpdateLoadBalancerDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", ipMode=").append(String.valueOf(this.ipMode));
+        sb.append(", ipv6SubnetCidr=").append(String.valueOf(this.ipv6SubnetCidr));
+        sb.append(", reservedIps=").append(String.valueOf(this.reservedIps));
         sb.append(", isDeleteProtectionEnabled=")
                 .append(String.valueOf(this.isDeleteProtectionEnabled));
         sb.append(", isRequestIdEnabled=").append(String.valueOf(this.isRequestIdEnabled));
@@ -565,6 +765,9 @@ public final class UpdateLoadBalancerDetails
 
         UpdateLoadBalancerDetails other = (UpdateLoadBalancerDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.ipMode, other.ipMode)
+                && java.util.Objects.equals(this.ipv6SubnetCidr, other.ipv6SubnetCidr)
+                && java.util.Objects.equals(this.reservedIps, other.reservedIps)
                 && java.util.Objects.equals(
                         this.isDeleteProtectionEnabled, other.isDeleteProtectionEnabled)
                 && java.util.Objects.equals(this.isRequestIdEnabled, other.isRequestIdEnabled)
@@ -580,6 +783,11 @@ public final class UpdateLoadBalancerDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.ipMode == null ? 43 : this.ipMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6SubnetCidr == null ? 43 : this.ipv6SubnetCidr.hashCode());
+        result = (result * PRIME) + (this.reservedIps == null ? 43 : this.reservedIps.hashCode());
         result =
                 (result * PRIME)
                         + (this.isDeleteProtectionEnabled == null

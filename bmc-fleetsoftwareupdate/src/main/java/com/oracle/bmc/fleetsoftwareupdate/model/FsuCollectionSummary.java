@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
@@ -28,8 +28,16 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
         name = "GI"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ExadbStackFsuCollectionSummary.class,
+        name = "EXADB_STACK"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DbFsuCollectionSummary.class,
         name = "DB"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GuestOsFsuCollectionSummary.class,
+        name = "GUEST_OS"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -84,14 +92,14 @@ public class FsuCollectionSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * OCID identifier for the Exadata Fleet Update Collection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * OCID identifier for the Exadata Fleet Update Collection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      *
      * @return the value
      **/
@@ -100,14 +108,14 @@ public class FsuCollectionSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Exadata Fleet Update Collection resource display name.
+     * The user-friendly name for the Exadata Fleet Update Collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Exadata Fleet Update Collection resource display name.
+     * The user-friendly name for the Exadata Fleet Update Collection.
      *
      * @return the value
      **/
@@ -132,14 +140,14 @@ public class FsuCollectionSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Compartment Identifier
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      *
      * @return the value
      **/

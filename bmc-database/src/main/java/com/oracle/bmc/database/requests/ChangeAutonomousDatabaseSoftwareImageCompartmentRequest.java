@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -15,25 +15,25 @@ public class ChangeAutonomousDatabaseSoftwareImageCompartmentRequest
                         .ChangeAutonomousDatabaseSoftwareImageCompartmentDetails> {
 
     /**
-     * Request to move Autonomous Database Software Image to a different compartment
+     * Request to move Autonomous AI Database Software Image to a different compartment
      */
     private com.oracle.bmc.database.model.ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
             changeAutonomousDatabaseSoftwareImageCompartmentDetails;
 
     /**
-     * Request to move Autonomous Database Software Image to a different compartment
+     * Request to move Autonomous AI Database Software Image to a different compartment
      */
     public com.oracle.bmc.database.model.ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
             getChangeAutonomousDatabaseSoftwareImageCompartmentDetails() {
         return changeAutonomousDatabaseSoftwareImageCompartmentDetails;
     }
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous AI Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousDatabaseSoftwareImageId;
 
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous AI Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getAutonomousDatabaseSoftwareImageId() {
         return autonomousDatabaseSoftwareImageId;
@@ -111,14 +111,14 @@ public class ChangeAutonomousDatabaseSoftwareImageCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Request to move Autonomous Database Software Image to a different compartment
+         * Request to move Autonomous AI Database Software Image to a different compartment
          */
         private com.oracle.bmc.database.model
                         .ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
                 changeAutonomousDatabaseSoftwareImageCompartmentDetails = null;
 
         /**
-         * Request to move Autonomous Database Software Image to a different compartment
+         * Request to move Autonomous AI Database Software Image to a different compartment
          * @param changeAutonomousDatabaseSoftwareImageCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -132,12 +132,12 @@ public class ChangeAutonomousDatabaseSoftwareImageCompartmentRequest
         }
 
         /**
-         * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The Autonomous AI Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousDatabaseSoftwareImageId = null;
 
         /**
-         * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The Autonomous AI Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param autonomousDatabaseSoftwareImageId the value to set
          * @return this builder instance
          */

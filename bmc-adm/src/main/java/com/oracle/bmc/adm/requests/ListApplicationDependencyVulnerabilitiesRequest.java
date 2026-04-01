@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm.requests;
@@ -219,12 +219,12 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         return gav;
     }
     /**
-     * A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     * A filter to return only resources that match the entire purl given.
      */
     private String purl;
 
     /**
-     * A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     * A filter to return only resources that match the entire purl given.
      */
     public String getPurl() {
         return purl;
@@ -458,12 +458,12 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         }
 
         /**
-         * A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+         * A filter to return only resources that match the entire purl given.
          */
         private String purl = null;
 
         /**
-         * A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+         * A filter to return only resources that match the entire purl given.
          * @param purl the value to set
          * @return this builder instance
          */

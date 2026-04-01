@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,16 +8,20 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListRunbooksExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRunbooksRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The ID of the compartment in which to list resources.
+     * Empty only if the resource OCID query param is not specified.
+     *
      */
     private String compartmentId;
 
     /**
      * The ID of the compartment in which to list resources.
+     * Empty only if the resource OCID query param is not specified.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -45,12 +49,16 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
         return displayName;
     }
     /**
-     * A filter to return runbooks whose identifier matches the given identifier.
+     * Unique identifier or OCID for listing a single Runbook by id.
+     * Either compartmentId or id must be provided.
+     *
      */
     private String id;
 
     /**
-     * A filter to return runbooks whose identifier matches the given identifier.
+     * Unique identifier or OCID for listing a single Runbook by id.
+     * Either compartmentId or id must be provided.
+     *
      */
     public String getId() {
         return id;
@@ -65,17 +73,6 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     public com.oracle.bmc.fleetappsmanagement.model.Runbook.Type getType() {
         return type;
-    }
-    /**
-     * A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
-     */
-    private com.oracle.bmc.fleetappsmanagement.model.Runbook.RunbookRelevance runbookRelevance;
-
-    /**
-     * A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
-     */
-    public com.oracle.bmc.fleetappsmanagement.model.Runbook.RunbookRelevance getRunbookRelevance() {
-        return runbookRelevance;
     }
     /**
      * A filter to return runbooks whose platform matches the given platform.
@@ -136,50 +133,13 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
      *
      */
-    private SortBy sortBy;
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
-     **/
-    public enum SortBy {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
+    private com.oracle.bmc.fleetappsmanagement.model.RunbookSortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
      *
      */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.RunbookSortBy getSortBy() {
         return sortBy;
     }
     /**
@@ -203,11 +163,15 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * The ID of the compartment in which to list resources.
+         * Empty only if the resource OCID query param is not specified.
+         *
          */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * Empty only if the resource OCID query param is not specified.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -249,12 +213,16 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * A filter to return runbooks whose identifier matches the given identifier.
+         * Unique identifier or OCID for listing a single Runbook by id.
+         * Either compartmentId or id must be provided.
+         *
          */
         private String id = null;
 
         /**
-         * A filter to return runbooks whose identifier matches the given identifier.
+         * Unique identifier or OCID for listing a single Runbook by id.
+         * Either compartmentId or id must be provided.
+         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -275,24 +243,6 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
          */
         public Builder type(com.oracle.bmc.fleetappsmanagement.model.Runbook.Type type) {
             this.type = type;
-            return this;
-        }
-
-        /**
-         * A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
-         */
-        private com.oracle.bmc.fleetappsmanagement.model.Runbook.RunbookRelevance runbookRelevance =
-                null;
-
-        /**
-         * A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
-         * @param runbookRelevance the value to set
-         * @return this builder instance
-         */
-        public Builder runbookRelevance(
-                com.oracle.bmc.fleetappsmanagement.model.Runbook.RunbookRelevance
-                        runbookRelevance) {
-            this.runbookRelevance = runbookRelevance;
             return this;
         }
 
@@ -375,7 +325,7 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.RunbookSortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
@@ -383,7 +333,7 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(com.oracle.bmc.fleetappsmanagement.model.RunbookSortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }
@@ -436,7 +386,6 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
             displayName(o.getDisplayName());
             id(o.getId());
             type(o.getType());
-            runbookRelevance(o.getRunbookRelevance());
             platform(o.getPlatform());
             operation(o.getOperation());
             limit(o.getLimit());
@@ -481,7 +430,6 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.displayName = displayName;
             request.id = id;
             request.type = type;
-            request.runbookRelevance = runbookRelevance;
             request.platform = platform;
             request.operation = operation;
             request.limit = limit;
@@ -490,7 +438,7 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListRunbooksRequest(compartmentId, lifecycleState, displayName, id, type, runbookRelevance, platform, operation, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListRunbooksRequest(compartmentId, lifecycleState, displayName, id, type, platform, operation, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -505,7 +453,6 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .displayName(displayName)
                 .id(id)
                 .type(type)
-                .runbookRelevance(runbookRelevance)
                 .platform(platform)
                 .operation(operation)
                 .limit(limit)
@@ -533,7 +480,6 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",type=").append(String.valueOf(this.type));
-        sb.append(",runbookRelevance=").append(String.valueOf(this.runbookRelevance));
         sb.append(",platform=").append(String.valueOf(this.platform));
         sb.append(",operation=").append(String.valueOf(this.operation));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -561,7 +507,6 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.type, other.type)
-                && java.util.Objects.equals(this.runbookRelevance, other.runbookRelevance)
                 && java.util.Objects.equals(this.platform, other.platform)
                 && java.util.Objects.equals(this.operation, other.operation)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -584,9 +529,6 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.runbookRelevance == null ? 43 : this.runbookRelevance.hashCode());
         result = (result * PRIME) + (this.platform == null ? 43 : this.platform.hashCode());
         result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

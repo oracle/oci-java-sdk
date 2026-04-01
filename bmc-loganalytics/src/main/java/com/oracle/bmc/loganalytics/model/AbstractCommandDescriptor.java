@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -46,6 +46,10 @@ package com.oracle.bmc.loganalytics.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OutlierCommandDescriptor.class,
         name = "OUTLIER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateTableCommandDescriptor.class,
+        name = "UPDATETABLE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DemoModeCommandDescriptor.class,
@@ -474,6 +478,7 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
         Delete("DELETE"),
         Createtable("CREATETABLE"),
         Sequence("SEQUENCE"),
+        Updatetable("UPDATETABLE"),
         Delta("DELTA"),
         Distinct("DISTINCT"),
         SearchLookup("SEARCH_LOOKUP"),

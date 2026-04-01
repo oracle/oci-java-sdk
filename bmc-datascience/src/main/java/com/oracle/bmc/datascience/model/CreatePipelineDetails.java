@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -31,6 +31,7 @@ public final class CreatePipelineDetails
         "logConfigurationDetails",
         "infrastructureConfigurationDetails",
         "storageMountConfigurationDetailsList",
+        "parameters",
         "stepDetails",
         "freeformTags",
         "definedTags"
@@ -44,6 +45,7 @@ public final class CreatePipelineDetails
             PipelineLogConfigurationDetails logConfigurationDetails,
             PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails,
             java.util.List<StorageMountConfigurationDetails> storageMountConfigurationDetailsList,
+            java.util.Map<String, String> parameters,
             java.util.List<PipelineStepDetails> stepDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -56,6 +58,7 @@ public final class CreatePipelineDetails
         this.logConfigurationDetails = logConfigurationDetails;
         this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
         this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
+        this.parameters = parameters;
         this.stepDetails = stepDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -176,6 +179,22 @@ public final class CreatePipelineDetails
             return this;
         }
         /**
+         * Parameters used in the pipeline.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parameters")
+        private java.util.Map<String, String> parameters;
+
+        /**
+         * Parameters used in the pipeline.
+         * @param parameters the value to set
+         * @return this builder
+         **/
+        public Builder parameters(java.util.Map<String, String> parameters) {
+            this.parameters = parameters;
+            this.__explicitlySet__.add("parameters");
+            return this;
+        }
+        /**
          * Array of step details for each step.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
@@ -247,6 +266,7 @@ public final class CreatePipelineDetails
                             this.logConfigurationDetails,
                             this.infrastructureConfigurationDetails,
                             this.storageMountConfigurationDetailsList,
+                            this.parameters,
                             this.stepDetails,
                             this.freeformTags,
                             this.definedTags);
@@ -283,6 +303,9 @@ public final class CreatePipelineDetails
             if (model.wasPropertyExplicitlySet("storageMountConfigurationDetailsList")) {
                 this.storageMountConfigurationDetailsList(
                         model.getStorageMountConfigurationDetailsList());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
             }
             if (model.wasPropertyExplicitlySet("stepDetails")) {
                 this.stepDetails(model.getStepDetails());
@@ -402,6 +425,20 @@ public final class CreatePipelineDetails
     }
 
     /**
+     * Parameters used in the pipeline.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parameters")
+    private final java.util.Map<String, String> parameters;
+
+    /**
+     * Parameters used in the pipeline.
+     * @return the value
+     **/
+    public java.util.Map<String, String> getParameters() {
+        return parameters;
+    }
+
+    /**
      * Array of step details for each step.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
@@ -476,6 +513,7 @@ public final class CreatePipelineDetails
                 .append(String.valueOf(this.infrastructureConfigurationDetails));
         sb.append(", storageMountConfigurationDetailsList=")
                 .append(String.valueOf(this.storageMountConfigurationDetailsList));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(", stepDetails=").append(String.valueOf(this.stepDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -506,6 +544,7 @@ public final class CreatePipelineDetails
                 && java.util.Objects.equals(
                         this.storageMountConfigurationDetailsList,
                         other.storageMountConfigurationDetailsList)
+                && java.util.Objects.equals(this.parameters, other.parameters)
                 && java.util.Objects.equals(this.stepDetails, other.stepDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -542,6 +581,7 @@ public final class CreatePipelineDetails
                         + (this.storageMountConfigurationDetailsList == null
                                 ? 43
                                 : this.storageMountConfigurationDetailsList.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
         result = (result * PRIME) + (this.stepDetails == null ? 43 : this.stepDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

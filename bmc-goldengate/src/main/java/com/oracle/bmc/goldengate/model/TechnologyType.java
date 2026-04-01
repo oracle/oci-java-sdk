@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -19,6 +19,7 @@ public enum TechnologyType {
     OciObjectStorage("OCI_OBJECT_STORAGE"),
     OciPostgresql("OCI_POSTGRESQL"),
     OciStreaming("OCI_STREAMING"),
+    OciStreamingWithApacheKafka("OCI_STREAMING_WITH_APACHE_KAFKA"),
     OracleDatabase("ORACLE_DATABASE"),
     OracleExadata("ORACLE_EXADATA"),
     OracleExadataDatabaseAtAzure("ORACLE_EXADATA_DATABASE_AT_AZURE"),
@@ -28,7 +29,9 @@ public enum TechnologyType {
     OracleAutonomousDatabaseAtGoogleCloud("ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD"),
     OracleExadataDatabaseAtAws("ORACLE_EXADATA_DATABASE_AT_AWS"),
     OracleAutonomousDatabaseAtAws("ORACLE_AUTONOMOUS_DATABASE_AT_AWS"),
+    OracleAiDataPlatform("ORACLE_AI_DATA_PLATFORM"),
     OracleNosql("ORACLE_NOSQL"),
+    OracleRestDataServices("ORACLE_REST_DATA_SERVICES"),
     OracleWeblogicJms("ORACLE_WEBLOGIC_JMS"),
     AmazonRdsOracle("AMAZON_RDS_ORACLE"),
     AmazonRdsSqlserver("AMAZON_RDS_SQLSERVER"),
@@ -41,6 +44,7 @@ public enum TechnologyType {
     AmazonRdsMariadb("AMAZON_RDS_MARIADB"),
     AmazonRdsMysql("AMAZON_RDS_MYSQL"),
     AmazonRdsPostgresql("AMAZON_RDS_POSTGRESQL"),
+    ApacheIceberg("APACHE_ICEBERG"),
     ApacheKafka("APACHE_KAFKA"),
     AzureCosmosDbForMongodb("AZURE_COSMOS_DB_FOR_MONGODB"),
     AzureCosmosDbForPostgresql("AZURE_COSMOS_DB_FOR_POSTGRESQL"),
@@ -54,6 +58,7 @@ public enum TechnologyType {
     ConfluentKafka("CONFLUENT_KAFKA"),
     ConfluentSchemaRegistry("CONFLUENT_SCHEMA_REGISTRY"),
     Databricks("DATABRICKS"),
+    Db2I("DB2_I"),
     Db2Zos("DB2_ZOS"),
     Elasticsearch("ELASTICSEARCH"),
     GoogleAlloyDbForPostgresql("GOOGLE_ALLOY_DB_FOR_POSTGRESQL"),

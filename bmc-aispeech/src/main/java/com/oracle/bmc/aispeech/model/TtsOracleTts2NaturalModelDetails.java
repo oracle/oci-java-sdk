@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aispeech.model;
@@ -47,13 +47,49 @@ public final class TtsOracleTts2NaturalModelDetails extends TtsOracleModelDetail
             this.__explicitlySet__.add("voiceId");
             return this;
         }
+        /**
+         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. Default en-US
+         * - en-US: English - United States
+         * - en-GB: English - Great Britain
+         * - es-ES: Spanish - Spain
+         * - pt-BR: Portuguese - Brazil
+         * - hi-IN: Hindi - India
+         * - fr-FR: French - France
+         * - it-IT: Italian - Italy
+         * - ja-JP: Japanese - Japan
+         * - cmn-CN: Mandarin - China
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
+        private String languageCode;
+
+        /**
+         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. Default en-US
+         * - en-US: English - United States
+         * - en-GB: English - Great Britain
+         * - es-ES: Spanish - Spain
+         * - pt-BR: Portuguese - Brazil
+         * - hi-IN: Hindi - India
+         * - fr-FR: French - France
+         * - it-IT: Italian - Italy
+         * - ja-JP: Japanese - Japan
+         * - cmn-CN: Mandarin - China
+         *
+         * @param languageCode the value to set
+         * @return this builder
+         **/
+        public Builder languageCode(String languageCode) {
+            this.languageCode = languageCode;
+            this.__explicitlySet__.add("languageCode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TtsOracleTts2NaturalModelDetails build() {
             TtsOracleTts2NaturalModelDetails model =
-                    new TtsOracleTts2NaturalModelDetails(this.voiceId);
+                    new TtsOracleTts2NaturalModelDetails(this.voiceId, this.languageCode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -64,6 +100,9 @@ public final class TtsOracleTts2NaturalModelDetails extends TtsOracleModelDetail
         public Builder copy(TtsOracleTts2NaturalModelDetails model) {
             if (model.wasPropertyExplicitlySet("voiceId")) {
                 this.voiceId(model.getVoiceId());
+            }
+            if (model.wasPropertyExplicitlySet("languageCode")) {
+                this.languageCode(model.getLanguageCode());
             }
             return this;
         }
@@ -81,9 +120,10 @@ public final class TtsOracleTts2NaturalModelDetails extends TtsOracleModelDetail
     }
 
     @Deprecated
-    public TtsOracleTts2NaturalModelDetails(String voiceId) {
+    public TtsOracleTts2NaturalModelDetails(String voiceId, String languageCode) {
         super();
         this.voiceId = voiceId;
+        this.languageCode = languageCode;
     }
 
     /**
@@ -104,6 +144,40 @@ public final class TtsOracleTts2NaturalModelDetails extends TtsOracleModelDetail
         return voiceId;
     }
 
+    /**
+     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. Default en-US
+     * - en-US: English - United States
+     * - en-GB: English - Great Britain
+     * - es-ES: Spanish - Spain
+     * - pt-BR: Portuguese - Brazil
+     * - hi-IN: Hindi - India
+     * - fr-FR: French - France
+     * - it-IT: Italian - Italy
+     * - ja-JP: Japanese - Japan
+     * - cmn-CN: Mandarin - China
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
+    private final String languageCode;
+
+    /**
+     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. Default en-US
+     * - en-US: English - United States
+     * - en-GB: English - Great Britain
+     * - es-ES: Spanish - Spain
+     * - pt-BR: Portuguese - Brazil
+     * - hi-IN: Hindi - India
+     * - fr-FR: French - France
+     * - it-IT: Italian - Italy
+     * - ja-JP: Japanese - Japan
+     * - cmn-CN: Mandarin - China
+     *
+     * @return the value
+     **/
+    public String getLanguageCode() {
+        return languageCode;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -119,6 +193,7 @@ public final class TtsOracleTts2NaturalModelDetails extends TtsOracleModelDetail
         sb.append("TtsOracleTts2NaturalModelDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", voiceId=").append(String.valueOf(this.voiceId));
+        sb.append(", languageCode=").append(String.valueOf(this.languageCode));
         sb.append(")");
         return sb.toString();
     }
@@ -133,7 +208,9 @@ public final class TtsOracleTts2NaturalModelDetails extends TtsOracleModelDetail
         }
 
         TtsOracleTts2NaturalModelDetails other = (TtsOracleTts2NaturalModelDetails) o;
-        return java.util.Objects.equals(this.voiceId, other.voiceId) && super.equals(other);
+        return java.util.Objects.equals(this.voiceId, other.voiceId)
+                && java.util.Objects.equals(this.languageCode, other.languageCode)
+                && super.equals(other);
     }
 
     @Override
@@ -141,6 +218,7 @@ public final class TtsOracleTts2NaturalModelDetails extends TtsOracleModelDetail
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.voiceId == null ? 43 : this.voiceId.hashCode());
+        result = (result * PRIME) + (this.languageCode == null ? 43 : this.languageCode.hashCode());
         return result;
     }
 }

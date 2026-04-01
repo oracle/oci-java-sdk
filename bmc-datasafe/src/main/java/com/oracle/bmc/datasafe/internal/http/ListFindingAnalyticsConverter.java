@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.internal.http;
@@ -113,6 +113,57 @@ public class ListFindingAnalyticsConverter {
                             "page",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getPage()));
+        }
+
+        if (request.getTargetDatabaseGroupId() != null) {
+            target =
+                    target.queryParam(
+                            "targetDatabaseGroupId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTargetDatabaseGroupId()));
+        }
+
+        if (request.getContainsReferences() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "containsReferences",
+                            request.getContainsReferences(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getTargetIds() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "targetIds",
+                            request.getTargetIds(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getCategory() != null) {
+            target =
+                    target.queryParam(
+                            "category",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCategory()));
+        }
+
+        if (request.getContainsSeverity() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "containsSeverity",
+                            request.getContainsSeverity(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getScimQuery() != null) {
+            target =
+                    target.queryParam(
+                            "scimQuery",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getScimQuery()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

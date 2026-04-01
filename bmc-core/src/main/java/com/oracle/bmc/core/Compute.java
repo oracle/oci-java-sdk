@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -93,6 +93,18 @@ public interface Compute extends AutoCloseable {
             AddImageShapeCompatibilityEntryRequest request);
 
     /**
+     * Triggers the asynchronous process that applies the host's target configuration
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ApplyHostConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ApplyHostConfiguration API.
+     */
+    ApplyHostConfigurationResponse applyHostConfiguration(ApplyHostConfigurationRequest request);
+
+    /**
      * Attaches the specified boot volume to the specified instance.
      *
      * @param request The request object containing the details to send
@@ -104,6 +116,19 @@ public interface Compute extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachBootVolume API.
      */
     AttachBootVolumeResponse attachBootVolume(AttachBootVolumeRequest request);
+
+    /**
+     * Attaches the Compute BM Host to a Host group
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachComputeHostGroupHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachComputeHostGroupHost API.
+     */
+    AttachComputeHostGroupHostResponse attachComputeHostGroupHost(
+            AttachComputeHostGroupHostRequest request);
 
     /**
      * Creates a secondary VNIC and attaches it to the specified instance.
@@ -257,6 +282,21 @@ public interface Compute extends AutoCloseable {
             ChangeComputeHostCompartmentRequest request);
 
     /**
+     * Moves a compute host group into a different compartment. For information about moving resources between
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeHostGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeHostGroupCompartment API.
+     */
+    ChangeComputeHostGroupCompartmentResponse changeComputeHostGroupCompartment(
+            ChangeComputeHostGroupCompartmentRequest request);
+
+    /**
      * Moves a compute image capability schema into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
      *         [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -319,6 +359,18 @@ public interface Compute extends AutoCloseable {
      */
     ChangeInstanceCompartmentResponse changeInstanceCompartment(
             ChangeInstanceCompartmentRequest request);
+
+    /**
+     * Marks the host to be checked for conformance to its target configuration
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CheckHostConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CheckHostConfiguration API.
+     */
+    CheckHostConfigurationResponse checkHostConfiguration(CheckHostConfigurationRequest request);
 
     /**
      * Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
@@ -427,6 +479,18 @@ public interface Compute extends AutoCloseable {
      */
     CreateComputeGpuMemoryClusterResponse createComputeGpuMemoryCluster(
             CreateComputeGpuMemoryClusterRequest request);
+
+    /**
+     * Creates a new compute host group in the specified compartment and availability domain.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeHostGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeHostGroup API.
+     */
+    CreateComputeHostGroupResponse createComputeHostGroup(CreateComputeHostGroupRequest request);
 
     /**
      * Creates compute image capability schema.
@@ -581,6 +645,18 @@ public interface Compute extends AutoCloseable {
             DeleteComputeGpuMemoryClusterRequest request);
 
     /**
+     * Deletes the specified compute host group
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeHostGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeHostGroup API.
+     */
+    DeleteComputeHostGroupResponse deleteComputeHostGroup(DeleteComputeHostGroupRequest request);
+
+    /**
      * Deletes the specified Compute Image Capability Schema
      *
      * @param request The request object containing the details to send
@@ -663,6 +739,19 @@ public interface Compute extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachBootVolume API.
      */
     DetachBootVolumeResponse detachBootVolume(DetachBootVolumeRequest request);
+
+    /**
+     * Detaches the specified bare metal host from the compute host group
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachComputeHostGroupHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachComputeHostGroupHost API.
+     */
+    DetachComputeHostGroupHostResponse detachComputeHostGroupHost(
+            DetachComputeHostGroupHostRequest request);
 
     /**
      * Detaches and deletes the specified secondary VNIC.
@@ -870,6 +959,18 @@ public interface Compute extends AutoCloseable {
             GetComputeGpuMemoryFabricRequest request);
 
     /**
+     * Gets information about the specified compute host group
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeHostGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeHostGroup API.
+     */
+    GetComputeHostGroupResponse getComputeHostGroup(GetComputeHostGroupRequest request);
+
+    /**
      * Gets information about the specified compute host
      *
      * @param request The request object containing the details to send
@@ -878,9 +979,9 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeHost API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeHostsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeHosts API.
      */
-    GetComputeHostResponse getComputeHost(GetComputeHostRequest request);
+    GetComputeHostsResponse getComputeHosts(GetComputeHostsRequest request);
 
     /**
      * Gets the specified Compute Image Capability Schema
@@ -938,6 +1039,19 @@ public interface Compute extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDedicatedVmHost API.
      */
     GetDedicatedVmHostResponse getDedicatedVmHost(GetDedicatedVmHostRequest request);
+
+    /**
+     * Returns the Firmware Bundle matching the provided firmwareBundleId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetFirmwareBundleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFirmwareBundle API.
+     */
+    GetFirmwareBundleResponse getFirmwareBundle(GetFirmwareBundleRequest request);
 
     /**
      * Gets the specified image.
@@ -1429,6 +1543,18 @@ public interface Compute extends AutoCloseable {
             ListComputeGpuMemoryFabricsRequest request);
 
     /**
+     * Lists the compute host groups that match the specified criteria and compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeHostGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeHostGroups API.
+     */
+    ListComputeHostGroupsResponse listComputeHostGroups(ListComputeHostGroupsRequest request);
+
+    /**
      * Generates a list of summary host details
      *
      * @param request The request object containing the details to send
@@ -1528,6 +1654,20 @@ public interface Compute extends AutoCloseable {
     ListDedicatedVmHostsResponse listDedicatedVmHosts(ListDedicatedVmHostsRequest request);
 
     /**
+     * Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter results to include
+     * only the default (recommended) Firmware Bundle for the given platform.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListFirmwareBundlesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFirmwareBundles API.
+     */
+    ListFirmwareBundlesResponse listFirmwareBundles(ListFirmwareBundlesRequest request);
+
+    /**
      * Lists the compatible shapes for the specified image.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1592,7 +1732,7 @@ public interface Compute extends AutoCloseable {
     ListInstanceDevicesResponse listInstanceDevices(ListInstanceDevicesRequest request);
 
     /**
-     * Gets a list of all the maintenance events for the given instance.
+     * Gets a list of all the maintenance events for the given compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1771,7 +1911,8 @@ public interface Compute extends AutoCloseable {
             UpdateComputeGpuMemoryClusterRequest request);
 
     /**
-     * Customer can update displayName and tags for compute GPU memory fabric record
+     * Customer can update displayName, tags and  desired firmware bundle, recycle level for
+     * compute GPU memory fabric record
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1785,6 +1926,18 @@ public interface Compute extends AutoCloseable {
             UpdateComputeGpuMemoryFabricRequest request);
 
     /**
+     * Updates the specified compute host group details.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeHostGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeHostGroup API.
+     */
+    UpdateComputeHostGroupResponse updateComputeHostGroup(UpdateComputeHostGroupRequest request);
+
+    /**
      * Customer can update the some fields for ComputeHost record
      *
      * @param request The request object containing the details to send
@@ -1793,9 +1946,9 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeHost API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeHostsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeHosts API.
      */
-    UpdateComputeHostResponse updateComputeHost(UpdateComputeHostRequest request);
+    UpdateComputeHostsResponse updateComputeHosts(UpdateComputeHostsRequest request);
 
     /**
      * Updates the specified Compute Image Capability Schema

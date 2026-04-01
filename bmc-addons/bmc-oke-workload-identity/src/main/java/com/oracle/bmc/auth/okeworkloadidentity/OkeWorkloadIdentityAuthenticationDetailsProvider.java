@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth.okeworkloadidentity;
@@ -12,12 +12,14 @@ import com.oracle.bmc.auth.DefaultServiceAccountTokenProvider;
 import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
 import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.auth.RegionProvider;
+import com.oracle.bmc.auth.RequestSignerCacheConfiguration;
 import com.oracle.bmc.auth.ServiceAccountTokenSupplier;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.SuppliedServiceAccountTokenProvider;
 import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.okeworkloadidentity.internal.OkeTenancyOnlyAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.okeworkloadidentity.internal.OkeWorkloadIdentityResourcePrincipalsFederationClient;
+import com.oracle.bmc.auth.okeworkloadidentity.internal.SettableSessionKeySupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ApacheConfigurator;
 import com.oracle.bmc.http.ApacheConnectorProperties;
@@ -83,7 +85,19 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
             FederationClient federationClient,
             SessionKeySupplier sessionKeySupplier,
             Region region) {
-        super(federationClient, sessionKeySupplier);
+        this(
+                federationClient,
+                sessionKeySupplier,
+                region,
+                RequestSignerCacheConfiguration.builder().build());
+    }
+
+    private OkeWorkloadIdentityAuthenticationDetailsProvider(
+            FederationClient federationClient,
+            SessionKeySupplier sessionKeySupplier,
+            Region region,
+            RequestSignerCacheConfiguration requestSignerCacheConfiguration) {
+        super(federationClient, sessionKeySupplier, requestSignerCacheConfiguration);
         this.region = region;
     }
 
@@ -146,6 +160,9 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
 
         private ServiceAccountTokenSupplier serviceAccountTokenSupplier;
 
+        /** Flag to enable new Service Account level token caching */
+        private boolean isTokenCachingEnabled = false;
+
         public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder() {
             this.serviceAccountTokenSupplier = new DefaultServiceAccountTokenProvider();
         }
@@ -188,6 +205,13 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
             return this;
         }
 
+        /** Sets value for the isTokenCachingEnabled flag */
+        public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder isTokenCachingEnabled(
+                boolean isTokenCachingEnabled) {
+            this.isTokenCachingEnabled = isTokenCachingEnabled;
+            return this;
+        }
+
         /**
          * Build a new OkeWorkloadIdentityAuthenticationDetailsProvider.
          *
@@ -196,6 +220,11 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
         public OkeWorkloadIdentityAuthenticationDetailsProvider build() {
             // autodetect region
             autoDetectEndpointUsingMetadataUrl();
+            // if customer has enabled new SA level token caching then use custom implementation of
+            // SessionKeySupplier else it will fall back to non-caching SDK behaviour.
+            if (this.isTokenCachingEnabled) {
+                this.sessionKeySupplier = new SettableSessionKeySupplier();
+            }
 
             return super.build();
         }
@@ -286,7 +315,10 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
         protected OkeWorkloadIdentityAuthenticationDetailsProvider buildProvider(
                 SessionKeySupplier sessionKeySupplierToUse) {
             return new OkeWorkloadIdentityAuthenticationDetailsProvider(
-                    federationClient, sessionKeySupplierToUse, region);
+                    federationClient,
+                    sessionKeySupplierToUse,
+                    region,
+                    requestSignerCacheConfiguration);
         }
     }
 }

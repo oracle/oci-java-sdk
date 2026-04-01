@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -21,12 +21,21 @@ package com.oracle.bmc.bds.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstallPatchDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"version", "clusterAdminPassword", "patchingConfig"})
+    @java.beans.ConstructorProperties({
+        "version",
+        "clusterAdminPassword",
+        "secretId",
+        "patchingConfig"
+    })
     public InstallPatchDetails(
-            String version, String clusterAdminPassword, OdhPatchingConfig patchingConfig) {
+            String version,
+            String clusterAdminPassword,
+            String secretId,
+            OdhPatchingConfig patchingConfig) {
         super();
         this.version = version;
         this.clusterAdminPassword = clusterAdminPassword;
+        this.secretId = secretId;
         this.patchingConfig = patchingConfig;
     }
 
@@ -64,6 +73,22 @@ public final class InstallPatchDetails extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
+        /**
+         * The secretId for the clusterAdminPassword.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The secretId for the clusterAdminPassword.
+         * @param secretId the value to set
+         * @return this builder
+         **/
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("patchingConfig")
         private OdhPatchingConfig patchingConfig;
@@ -80,7 +105,10 @@ public final class InstallPatchDetails extends com.oracle.bmc.http.internal.Expl
         public InstallPatchDetails build() {
             InstallPatchDetails model =
                     new InstallPatchDetails(
-                            this.version, this.clusterAdminPassword, this.patchingConfig);
+                            this.version,
+                            this.clusterAdminPassword,
+                            this.secretId,
+                            this.patchingConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -94,6 +122,9 @@ public final class InstallPatchDetails extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("patchingConfig")) {
                 this.patchingConfig(model.getPatchingConfig());
@@ -141,6 +172,20 @@ public final class InstallPatchDetails extends com.oracle.bmc.http.internal.Expl
         return clusterAdminPassword;
     }
 
+    /**
+     * The secretId for the clusterAdminPassword.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     * @return the value
+     **/
+    public String getSecretId() {
+        return secretId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("patchingConfig")
     private final OdhPatchingConfig patchingConfig;
 
@@ -164,6 +209,7 @@ public final class InstallPatchDetails extends com.oracle.bmc.http.internal.Expl
         sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(", clusterAdminPassword=").append("<redacted>");
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", patchingConfig=").append(String.valueOf(this.patchingConfig));
         sb.append(")");
         return sb.toString();
@@ -181,6 +227,7 @@ public final class InstallPatchDetails extends com.oracle.bmc.http.internal.Expl
         InstallPatchDetails other = (InstallPatchDetails) o;
         return java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.patchingConfig, other.patchingConfig)
                 && super.equals(other);
     }
@@ -195,6 +242,7 @@ public final class InstallPatchDetails extends com.oracle.bmc.http.internal.Expl
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.patchingConfig == null ? 43 : this.patchingConfig.hashCode());

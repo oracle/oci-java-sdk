@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.requests;
@@ -8,9 +8,20 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListAnnouncementsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAnnouncementsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
+    private String compartmentId;
+
+    /**
+     * The ID of the compartment in which to list resources.
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * Filter the list of announcements that contains the given summary value.
      *
@@ -101,6 +112,21 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
 
         /**
          * Filter the list of announcements that contains the given summary value.
@@ -241,6 +267,7 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
          * @return this builder instance
          */
         public Builder copy(ListAnnouncementsRequest o) {
+            compartmentId(o.getCompartmentId());
             summaryContains(o.getSummaryContains());
             displayName(o.getDisplayName());
             limit(o.getLimit());
@@ -280,6 +307,7 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public ListAnnouncementsRequest buildWithoutInvocationCallback() {
             ListAnnouncementsRequest request = new ListAnnouncementsRequest();
+            request.compartmentId = compartmentId;
             request.summaryContains = summaryContains;
             request.displayName = displayName;
             request.limit = limit;
@@ -288,7 +316,7 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAnnouncementsRequest(summaryContains, displayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListAnnouncementsRequest(compartmentId, summaryContains, displayName, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -298,6 +326,7 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     public Builder toBuilder() {
         return new Builder()
+                .compartmentId(compartmentId)
                 .summaryContains(summaryContains)
                 .displayName(displayName)
                 .limit(limit)
@@ -320,6 +349,7 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",summaryContains=").append(String.valueOf(this.summaryContains));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -342,6 +372,7 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
 
         ListAnnouncementsRequest other = (ListAnnouncementsRequest) o;
         return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.summaryContains, other.summaryContains)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -355,6 +386,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
                         + (this.summaryContains == null ? 43 : this.summaryContains.hashCode());

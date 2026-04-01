@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -12,13 +12,13 @@ import com.oracle.bmc.loganalytics.model.*;
 public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     private String namespaceName;
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      */
     public String getNamespaceName() {
@@ -121,6 +121,60 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     public IsSystem getIsSystem() {
         return isSystem;
+    }
+    /**
+     * The source lifecycle state used for filtering. Currently supported
+     * values are ACTIVE and DELETED.
+     *
+     */
+    private LifecycleState lifecycleState;
+
+    /**
+     * The source lifecycle state used for filtering. Currently supported
+     * values are ACTIVE and DELETED.
+     *
+     **/
+    public enum LifecycleState {
+        Active("ACTIVE"),
+        Deleted("DELETED"),
+        All("ALL"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
+        }
+    };
+
+    /**
+     * The source lifecycle state used for filtering. Currently supported
+     * values are ACTIVE and DELETED.
+     *
+     */
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
     }
     /**
      * An auto-associate flag used for filtering.  Only sources which are marked for automatic
@@ -296,6 +350,21 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return categories;
     }
     /**
+     * The pattern text filter. Only sources with a pattern |
+     * which contains text with the specified string will be returned.
+     *
+     */
+    private String patternText;
+
+    /**
+     * The pattern text filter. Only sources with a pattern |
+     * which contains text with the specified string will be returned.
+     *
+     */
+    public String getPatternText() {
+        return patternText;
+    }
+    /**
      * A flag specifying whether or not to return all source information, or a subset of the
      * information about each source.  A value of true will return only the source unique
      * identifier and the source name.  A value of false will return all source information
@@ -334,13 +403,13 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          */
         private String namespaceName = null;
 
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
          *
          * @param namespaceName the value to set
          * @return this builder instance
@@ -421,6 +490,25 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
          */
         public Builder isSystem(IsSystem isSystem) {
             this.isSystem = isSystem;
+            return this;
+        }
+
+        /**
+         * The source lifecycle state used for filtering. Currently supported
+         * values are ACTIVE and DELETED.
+         *
+         */
+        private LifecycleState lifecycleState = null;
+
+        /**
+         * The source lifecycle state used for filtering. Currently supported
+         * values are ACTIVE and DELETED.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder instance
+         */
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
             return this;
         }
 
@@ -555,6 +643,25 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
+         * The pattern text filter. Only sources with a pattern |
+         * which contains text with the specified string will be returned.
+         *
+         */
+        private String patternText = null;
+
+        /**
+         * The pattern text filter. Only sources with a pattern |
+         * which contains text with the specified string will be returned.
+         *
+         * @param patternText the value to set
+         * @return this builder instance
+         */
+        public Builder patternText(String patternText) {
+            this.patternText = patternText;
+            return this;
+        }
+
+        /**
          * A flag specifying whether or not to return all source information, or a subset of the
          * information about each source.  A value of true will return only the source unique
          * identifier and the source name.  A value of false will return all source information
@@ -625,6 +732,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             entityType(o.getEntityType());
             sourceDisplayText(o.getSourceDisplayText());
             isSystem(o.getIsSystem());
+            lifecycleState(o.getLifecycleState());
             isAutoAssociated(o.getIsAutoAssociated());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
@@ -633,6 +741,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             name(o.getName());
             sourceType(o.getSourceType());
             categories(o.getCategories());
+            patternText(o.getPatternText());
             isSimplified(o.getIsSimplified());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -672,6 +781,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.entityType = entityType;
             request.sourceDisplayText = sourceDisplayText;
             request.isSystem = isSystem;
+            request.lifecycleState = lifecycleState;
             request.isAutoAssociated = isAutoAssociated;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
@@ -680,10 +790,11 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.name = name;
             request.sourceType = sourceType;
             request.categories = categories;
+            request.patternText = patternText;
             request.isSimplified = isSimplified;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSourcesRequest(namespaceName, compartmentId, entityType, sourceDisplayText, isSystem, isAutoAssociated, sortOrder, sortBy, limit, page, name, sourceType, categories, isSimplified, opcRequestId);
+            // new ListSourcesRequest(namespaceName, compartmentId, entityType, sourceDisplayText, isSystem, lifecycleState, isAutoAssociated, sortOrder, sortBy, limit, page, name, sourceType, categories, patternText, isSimplified, opcRequestId);
         }
     }
 
@@ -698,6 +809,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .entityType(entityType)
                 .sourceDisplayText(sourceDisplayText)
                 .isSystem(isSystem)
+                .lifecycleState(lifecycleState)
                 .isAutoAssociated(isAutoAssociated)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
@@ -706,6 +818,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .name(name)
                 .sourceType(sourceType)
                 .categories(categories)
+                .patternText(patternText)
                 .isSimplified(isSimplified)
                 .opcRequestId(opcRequestId);
     }
@@ -728,6 +841,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",entityType=").append(String.valueOf(this.entityType));
         sb.append(",sourceDisplayText=").append(String.valueOf(this.sourceDisplayText));
         sb.append(",isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",isAutoAssociated=").append(String.valueOf(this.isAutoAssociated));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
@@ -736,6 +850,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",sourceType=").append(String.valueOf(this.sourceType));
         sb.append(",categories=").append(String.valueOf(this.categories));
+        sb.append(",patternText=").append(String.valueOf(this.patternText));
         sb.append(",isSimplified=").append(String.valueOf(this.isSimplified));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -758,6 +873,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.entityType, other.entityType)
                 && java.util.Objects.equals(this.sourceDisplayText, other.sourceDisplayText)
                 && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.isAutoAssociated, other.isAutoAssociated)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
@@ -766,6 +882,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.patternText, other.patternText)
                 && java.util.Objects.equals(this.isSimplified, other.isSimplified)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -787,6 +904,9 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
         result =
                 (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
                         + (this.isAutoAssociated == null ? 43 : this.isAutoAssociated.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
@@ -795,6 +915,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result = (result * PRIME) + (this.patternText == null ? 43 : this.patternText.hashCode());
         result = (result * PRIME) + (this.isSimplified == null ? 43 : this.isSimplified.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

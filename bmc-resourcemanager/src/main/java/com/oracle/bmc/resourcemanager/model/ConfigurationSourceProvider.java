@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager.model;
@@ -57,7 +57,8 @@ public class ConfigurationSourceProvider
         "username",
         "secretId",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     protected ConfigurationSourceProvider(
             String id,
@@ -70,7 +71,8 @@ public class ConfigurationSourceProvider
             String username,
             String secretId,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -83,6 +85,7 @@ public class ConfigurationSourceProvider
         this.secretId = secretId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     /**
@@ -114,13 +117,15 @@ public class ConfigurationSourceProvider
     }
 
     /**
-     * Human-readable display name for the configuration source provider.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Human-readable display name for the configuration source provider.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     *
      * @return the value
      **/
     public String getDisplayName() {
@@ -267,7 +272,7 @@ public class ConfigurationSourceProvider
     }
 
     /**
-     * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+     * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
@@ -276,7 +281,7 @@ public class ConfigurationSourceProvider
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+     * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
@@ -306,6 +311,26 @@ public class ConfigurationSourceProvider
         return definedTags;
     }
 
+    /**
+     * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -332,6 +357,7 @@ public class ConfigurationSourceProvider
         sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -358,6 +384,7 @@ public class ConfigurationSourceProvider
                 && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -384,6 +411,7 @@ public class ConfigurationSourceProvider
         result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

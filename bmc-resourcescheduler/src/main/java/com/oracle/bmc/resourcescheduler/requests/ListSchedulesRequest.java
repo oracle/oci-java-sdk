@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcescheduler.requests;
@@ -178,6 +178,17 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+     */
+    private String resourceId;
+
+    /**
+     * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -352,6 +363,21 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
+         * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+         */
+        private String resourceId = null;
+
+        /**
+         * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+         * @param resourceId the value to set
+         * @return this builder instance
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -388,6 +414,7 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             opcRequestId(o.getOpcRequestId());
+            resourceId(o.getResourceId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -429,8 +456,9 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
+            request.resourceId = resourceId;
             return request;
-            // new ListSchedulesRequest(compartmentId, lifecycleState, displayName, scheduleId, limit, page, sortBy, sortOrder, opcRequestId);
+            // new ListSchedulesRequest(compartmentId, lifecycleState, displayName, scheduleId, limit, page, sortBy, sortOrder, opcRequestId, resourceId);
         }
     }
 
@@ -448,7 +476,8 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .page(page)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .resourceId(resourceId);
     }
 
     /**
@@ -473,6 +502,7 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",resourceId=").append(String.valueOf(this.resourceId));
         sb.append(")");
         return sb.toString();
     }
@@ -496,7 +526,8 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.resourceId, other.resourceId);
     }
 
     @Override
@@ -516,6 +547,7 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns.requests;
@@ -50,6 +50,29 @@ public class CreateZoneFromZoneFileRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated before
+     * then due to conflicting operations (for example, if a resource has been
+     * deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated before
+     * then due to conflicting operations (for example, if a resource has been
+     * deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
     }
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
@@ -146,6 +169,33 @@ public class CreateZoneFromZoneFileRequest
         }
 
         /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated before
+         * then due to conflicting operations (for example, if a resource has been
+         * deleted and purged from the system, then a retry of the original creation
+         * request may be rejected).
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated before
+         * then due to conflicting operations (for example, if a resource has been
+         * deleted and purged from the system, then a retry of the original creation
+         * request may be rejected).
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
          */
@@ -208,6 +258,7 @@ public class CreateZoneFromZoneFileRequest
             compartmentId(o.getCompartmentId());
             createZoneFromZoneFileDetails(o.getCreateZoneFromZoneFileDetails());
             opcRequestId(o.getOpcRequestId());
+            opcRetryToken(o.getOpcRetryToken());
             scope(o.getScope());
             viewId(o.getViewId());
             invocationCallback(o.getInvocationCallback());
@@ -256,10 +307,11 @@ public class CreateZoneFromZoneFileRequest
             request.compartmentId = compartmentId;
             request.createZoneFromZoneFileDetails = createZoneFromZoneFileDetails;
             request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
             request.scope = scope;
             request.viewId = viewId;
             return request;
-            // new CreateZoneFromZoneFileRequest(compartmentId, createZoneFromZoneFileDetails, opcRequestId, scope, viewId);
+            // new CreateZoneFromZoneFileRequest(compartmentId, createZoneFromZoneFileDetails, opcRequestId, opcRetryToken, scope, viewId);
         }
     }
 
@@ -272,6 +324,7 @@ public class CreateZoneFromZoneFileRequest
                 .compartmentId(compartmentId)
                 .createZoneFromZoneFileDetails(createZoneFromZoneFileDetails)
                 .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken)
                 .scope(scope)
                 .viewId(viewId);
     }
@@ -293,6 +346,7 @@ public class CreateZoneFromZoneFileRequest
         sb.append(",createZoneFromZoneFileDetails=")
                 .append(String.valueOf(this.createZoneFromZoneFileDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",scope=").append(String.valueOf(this.scope));
         sb.append(",viewId=").append(String.valueOf(this.viewId));
         sb.append(")");
@@ -314,6 +368,7 @@ public class CreateZoneFromZoneFileRequest
                 && java.util.Objects.equals(
                         this.createZoneFromZoneFileDetails, other.createZoneFromZoneFileDetails)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.viewId, other.viewId);
     }
@@ -331,6 +386,9 @@ public class CreateZoneFromZoneFileRequest
                                 ? 43
                                 : this.createZoneFromZoneFileDetails.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.viewId == null ? 43 : this.viewId.hashCode());
         return result;

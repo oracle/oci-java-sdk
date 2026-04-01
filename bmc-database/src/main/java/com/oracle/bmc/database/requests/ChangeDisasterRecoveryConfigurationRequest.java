@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -25,13 +25,13 @@ public class ChangeDisasterRecoveryConfigurationRequest
         return autonomousDatabaseId;
     }
     /**
-     * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
+     * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous AI Database Serverless database.
      */
     private com.oracle.bmc.database.model.ChangeDisasterRecoveryConfigurationDetails
             changeDisasterRecoveryConfigurationDetails;
 
     /**
-     * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
+     * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous AI Database Serverless database.
      */
     public com.oracle.bmc.database.model.ChangeDisasterRecoveryConfigurationDetails
             getChangeDisasterRecoveryConfigurationDetails() {
@@ -66,6 +66,21 @@ public class ChangeDisasterRecoveryConfigurationRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+     * creating or updating a resource and is used only to perform validation on the submitted data.
+     *
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
     }
 
     /**
@@ -102,13 +117,13 @@ public class ChangeDisasterRecoveryConfigurationRequest
         }
 
         /**
-         * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
+         * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous AI Database Serverless database.
          */
         private com.oracle.bmc.database.model.ChangeDisasterRecoveryConfigurationDetails
                 changeDisasterRecoveryConfigurationDetails = null;
 
         /**
-         * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
+         * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous AI Database Serverless database.
          * @param changeDisasterRecoveryConfigurationDetails the value to set
          * @return this builder instance
          */
@@ -159,6 +174,25 @@ public class ChangeDisasterRecoveryConfigurationRequest
         }
 
         /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
+         * creating or updating a resource and is used only to perform validation on the submitted data.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -191,6 +225,7 @@ public class ChangeDisasterRecoveryConfigurationRequest
                     o.getChangeDisasterRecoveryConfigurationDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -241,8 +276,9 @@ public class ChangeDisasterRecoveryConfigurationRequest
                     changeDisasterRecoveryConfigurationDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
             return request;
-            // new ChangeDisasterRecoveryConfigurationRequest(autonomousDatabaseId, changeDisasterRecoveryConfigurationDetails, ifMatch, opcRequestId);
+            // new ChangeDisasterRecoveryConfigurationRequest(autonomousDatabaseId, changeDisasterRecoveryConfigurationDetails, ifMatch, opcRequestId, opcDryRun);
         }
     }
 
@@ -256,7 +292,8 @@ public class ChangeDisasterRecoveryConfigurationRequest
                 .changeDisasterRecoveryConfigurationDetails(
                         changeDisasterRecoveryConfigurationDetails)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -277,6 +314,7 @@ public class ChangeDisasterRecoveryConfigurationRequest
                 .append(String.valueOf(this.changeDisasterRecoveryConfigurationDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -298,7 +336,8 @@ public class ChangeDisasterRecoveryConfigurationRequest
                         this.changeDisasterRecoveryConfigurationDetails,
                         other.changeDisasterRecoveryConfigurationDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -317,6 +356,7 @@ public class ChangeDisasterRecoveryConfigurationRequest
                                 : this.changeDisasterRecoveryConfigurationDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

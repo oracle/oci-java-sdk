@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -7,6 +7,8 @@ package com.oracle.bmc.core;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Async client implementation for Compute service. <br/>
@@ -28,7 +30,7 @@ public class ComputeAsyncClient implements ComputeAsync {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("COMPUTE")
+                    .serviceName(ComputeClient.class.getName())
                     .serviceEndpointPrefix("iaas")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
@@ -50,6 +52,10 @@ public class ComputeAsyncClient implements ComputeAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+
+    // This pattern matches substrings that are enclosed within curly braces {}
+    private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
+            Pattern.compile("\\{([^}]+)\\}");
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -261,6 +267,11 @@ public class ComputeAsyncClient implements ComputeAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.internal.SpiClientConfigurator>
+                additionalSpiClientConfigurators =
+                        com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
+                                .getEnabledSpiClientConfigurators();
+        allConfigurators.addAll(additionalSpiClientConfigurators);
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
@@ -400,12 +411,21 @@ public class ComputeAsyncClient implements ComputeAsync {
 
     @Override
     public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
+        String value = client.getEndpoint();
+        if (value.contains("{")) {
+            Matcher matcher = PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES.matcher(value);
+            java.lang.StringBuilder params = new java.lang.StringBuilder();
+            while (matcher.find()) {
+                if (params.length() > 0) {
+                    params.append(", ");
+                }
+                params.append("{").append(matcher.group(1)).append("}");
+            }
+            LOG.warn(
+                    "Parameters like {} get replaced with appropriate values at request time.",
+                    params.toString());
         }
-        return endpoint;
+        return client.getEndpoint();
     }
 
     @Override
@@ -435,15 +455,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         }
     }
 
-    /**
-     * This method should be used to enable or disable the use of realm-specific endpoint template.
-     * The default value is null. To enable the use of endpoint template defined for the realm in
-     * use, set the flag to true To disable the use of endpoint template defined for the realm in
-     * use, set the flag to false
-     *
-     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
-     * enable or disable the use of realm-specific endpoint template respectively
-     */
+    @Override
     public synchronized void useRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled) {
         setEndpoint(
@@ -568,6 +580,54 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ApplyHostConfigurationResponse> applyHostConfiguration(
+            ApplyHostConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ApplyHostConfigurationRequest, ApplyHostConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async applyHostConfiguration");
+        final ApplyHostConfigurationRequest interceptedRequest =
+                ApplyHostConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ApplyHostConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ApplyHostConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/ApplyHostConfiguration");
+        final java.util.function.Function<javax.ws.rs.core.Response, ApplyHostConfigurationResponse>
+                transformer =
+                        ApplyHostConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ApplyHostConfigurationRequest, ApplyHostConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ApplyHostConfigurationRequest, ApplyHostConfigurationResponse>,
+                        java.util.concurrent.Future<ApplyHostConfigurationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ApplyHostConfigurationRequest, ApplyHostConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachBootVolumeResponse> attachBootVolume(
             AttachBootVolumeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -607,6 +667,63 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     AttachBootVolumeRequest, AttachBootVolumeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachComputeHostGroupHostResponse>
+            attachComputeHostGroupHost(
+                    AttachComputeHostGroupHostRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AttachComputeHostGroupHostRequest,
+                                    AttachComputeHostGroupHostResponse>
+                            handler) {
+        LOG.trace("Called async attachComputeHostGroupHost");
+        final AttachComputeHostGroupHostRequest interceptedRequest =
+                AttachComputeHostGroupHostConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachComputeHostGroupHostConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "AttachComputeHostGroupHost",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/AttachComputeHostGroupHost");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AttachComputeHostGroupHostResponse>
+                transformer =
+                        AttachComputeHostGroupHostConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AttachComputeHostGroupHostRequest, AttachComputeHostGroupHostResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AttachComputeHostGroupHostRequest,
+                                AttachComputeHostGroupHostResponse>,
+                        java.util.concurrent.Future<AttachComputeHostGroupHostResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachComputeHostGroupHostDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AttachComputeHostGroupHostRequest, AttachComputeHostGroupHostResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1137,6 +1254,65 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeComputeHostGroupCompartmentResponse>
+            changeComputeHostGroupCompartment(
+                    ChangeComputeHostGroupCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeHostGroupCompartmentRequest,
+                                    ChangeComputeHostGroupCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeComputeHostGroupCompartment");
+        final ChangeComputeHostGroupCompartmentRequest interceptedRequest =
+                ChangeComputeHostGroupCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeComputeHostGroupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ChangeComputeHostGroupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/ChangeComputeHostGroupCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeComputeHostGroupCompartmentResponse>
+                transformer =
+                        ChangeComputeHostGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeComputeHostGroupCompartmentRequest,
+                        ChangeComputeHostGroupCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeComputeHostGroupCompartmentRequest,
+                                ChangeComputeHostGroupCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeComputeHostGroupCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeComputeHostGroupCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeComputeHostGroupCompartmentRequest,
+                    ChangeComputeHostGroupCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeComputeImageCapabilitySchemaCompartmentResponse>
             changeComputeImageCapabilitySchemaCompartment(
                     ChangeComputeImageCapabilitySchemaCompartmentRequest request,
@@ -1354,6 +1530,54 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeInstanceCompartmentRequest, ChangeInstanceCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckHostConfigurationResponse> checkHostConfiguration(
+            CheckHostConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CheckHostConfigurationRequest, CheckHostConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async checkHostConfiguration");
+        final CheckHostConfigurationRequest interceptedRequest =
+                CheckHostConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CheckHostConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "CheckHostConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/CheckHostConfiguration");
+        final java.util.function.Function<javax.ws.rs.core.Response, CheckHostConfigurationResponse>
+                transformer =
+                        CheckHostConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CheckHostConfigurationRequest, CheckHostConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CheckHostConfigurationRequest, CheckHostConfigurationResponse>,
+                        java.util.concurrent.Future<CheckHostConfigurationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CheckHostConfigurationRequest, CheckHostConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1694,6 +1918,59 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateComputeGpuMemoryClusterRequest, CreateComputeGpuMemoryClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateComputeHostGroupResponse> createComputeHostGroup(
+            CreateComputeHostGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateComputeHostGroupRequest, CreateComputeHostGroupResponse>
+                    handler) {
+        LOG.trace("Called async createComputeHostGroup");
+        final CreateComputeHostGroupRequest interceptedRequest =
+                CreateComputeHostGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateComputeHostGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "CreateComputeHostGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/CreateComputeHostGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateComputeHostGroupResponse>
+                transformer =
+                        CreateComputeHostGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateComputeHostGroupRequest, CreateComputeHostGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateComputeHostGroupRequest, CreateComputeHostGroupResponse>,
+                        java.util.concurrent.Future<CreateComputeHostGroupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateComputeHostGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateComputeHostGroupRequest, CreateComputeHostGroupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2181,6 +2458,53 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteComputeHostGroupResponse> deleteComputeHostGroup(
+            DeleteComputeHostGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteComputeHostGroupRequest, DeleteComputeHostGroupResponse>
+                    handler) {
+        LOG.trace("Called async deleteComputeHostGroup");
+        final DeleteComputeHostGroupRequest interceptedRequest =
+                DeleteComputeHostGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteComputeHostGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "DeleteComputeHostGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/DeleteComputeHostGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteComputeHostGroupResponse>
+                transformer =
+                        DeleteComputeHostGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteComputeHostGroupRequest, DeleteComputeHostGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteComputeHostGroupRequest, DeleteComputeHostGroupResponse>,
+                        java.util.concurrent.Future<DeleteComputeHostGroupResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteComputeHostGroupRequest, DeleteComputeHostGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteComputeImageCapabilitySchemaResponse>
             deleteComputeImageCapabilitySchema(
                     DeleteComputeImageCapabilitySchemaRequest request,
@@ -2452,6 +2776,63 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DetachBootVolumeRequest, DetachBootVolumeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachComputeHostGroupHostResponse>
+            detachComputeHostGroupHost(
+                    DetachComputeHostGroupHostRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DetachComputeHostGroupHostRequest,
+                                    DetachComputeHostGroupHostResponse>
+                            handler) {
+        LOG.trace("Called async detachComputeHostGroupHost");
+        final DetachComputeHostGroupHostRequest interceptedRequest =
+                DetachComputeHostGroupHostConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachComputeHostGroupHostConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "DetachComputeHostGroupHost",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/DetachComputeHostGroupHost");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DetachComputeHostGroupHostResponse>
+                transformer =
+                        DetachComputeHostGroupHostConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DetachComputeHostGroupHostRequest, DetachComputeHostGroupHostResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DetachComputeHostGroupHostRequest,
+                                DetachComputeHostGroupHostResponse>,
+                        java.util.concurrent.Future<DetachComputeHostGroupHostResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetachComputeHostGroupHostDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DetachComputeHostGroupHostRequest, DetachComputeHostGroupHostResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3161,38 +3542,86 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<GetComputeHostResponse> getComputeHost(
-            GetComputeHostRequest request,
+    public java.util.concurrent.Future<GetComputeHostGroupResponse> getComputeHostGroup(
+            GetComputeHostGroupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
-                            GetComputeHostRequest, GetComputeHostResponse>
+                            GetComputeHostGroupRequest, GetComputeHostGroupResponse>
                     handler) {
-        LOG.trace("Called async getComputeHost");
-        final GetComputeHostRequest interceptedRequest =
-                GetComputeHostConverter.interceptRequest(request);
+        LOG.trace("Called async getComputeHostGroup");
+        final GetComputeHostGroupRequest interceptedRequest =
+                GetComputeHostGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetComputeHostConverter.fromRequest(client, interceptedRequest);
+                GetComputeHostGroupConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Compute",
-                        "GetComputeHost",
+                        "GetComputeHostGroup",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/GetComputeHost");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetComputeHostResponse>
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/GetComputeHostGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetComputeHostGroupResponse>
                 transformer =
-                        GetComputeHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetComputeHostRequest, GetComputeHostResponse>
+                        GetComputeHostGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetComputeHostGroupRequest, GetComputeHostGroupResponse>
                 handlerToUse = handler;
 
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<
-                                GetComputeHostRequest, GetComputeHostResponse>,
-                        java.util.concurrent.Future<GetComputeHostResponse>>
+                                GetComputeHostGroupRequest, GetComputeHostGroupResponse>,
+                        java.util.concurrent.Future<GetComputeHostGroupResponse>>
                 futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetComputeHostRequest, GetComputeHostResponse>(
+                    GetComputeHostGroupRequest, GetComputeHostGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeHostsResponse> getComputeHosts(
+            GetComputeHostsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeHostsRequest, GetComputeHostsResponse>
+                    handler) {
+        LOG.trace("Called async getComputeHosts");
+        final GetComputeHostsRequest interceptedRequest =
+                GetComputeHostsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeHostsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "GetComputeHosts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/GetComputeHosts");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetComputeHostsResponse>
+                transformer =
+                        GetComputeHostsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetComputeHostsRequest, GetComputeHostsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetComputeHostsRequest, GetComputeHostsResponse>,
+                        java.util.concurrent.Future<GetComputeHostsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetComputeHostsRequest, GetComputeHostsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3386,6 +3815,52 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetDedicatedVmHostRequest, GetDedicatedVmHostResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFirmwareBundleResponse> getFirmwareBundle(
+            GetFirmwareBundleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetFirmwareBundleRequest, GetFirmwareBundleResponse>
+                    handler) {
+        LOG.trace("Called async getFirmwareBundle");
+        final GetFirmwareBundleRequest interceptedRequest =
+                GetFirmwareBundleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFirmwareBundleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "GetFirmwareBundle",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FirmwareBundle/GetFirmwareBundle");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetFirmwareBundleResponse>
+                transformer =
+                        GetFirmwareBundleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetFirmwareBundleRequest, GetFirmwareBundleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetFirmwareBundleRequest, GetFirmwareBundleResponse>,
+                        java.util.concurrent.Future<GetFirmwareBundleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetFirmwareBundleRequest, GetFirmwareBundleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4799,7 +5274,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         "Compute",
                         "ListComputeGpuMemoryClusters",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryClusterCollection/ListComputeGpuMemoryClusters");
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/ListComputeGpuMemoryClusters");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListComputeGpuMemoryClustersResponse>
                 transformer =
@@ -4871,6 +5346,53 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListComputeGpuMemoryFabricsRequest, ListComputeGpuMemoryFabricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeHostGroupsResponse> listComputeHostGroups(
+            ListComputeHostGroupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeHostGroupsRequest, ListComputeHostGroupsResponse>
+                    handler) {
+        LOG.trace("Called async listComputeHostGroups");
+        final ListComputeHostGroupsRequest interceptedRequest =
+                ListComputeHostGroupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeHostGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListComputeHostGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/ListComputeHostGroups");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListComputeHostGroupsResponse>
+                transformer =
+                        ListComputeHostGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeHostGroupsRequest, ListComputeHostGroupsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeHostGroupsRequest, ListComputeHostGroupsResponse>,
+                        java.util.concurrent.Future<ListComputeHostGroupsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeHostGroupsRequest, ListComputeHostGroupsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5217,6 +5739,53 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListDedicatedVmHostsRequest, ListDedicatedVmHostsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFirmwareBundlesResponse> listFirmwareBundles(
+            ListFirmwareBundlesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListFirmwareBundlesRequest, ListFirmwareBundlesResponse>
+                    handler) {
+        LOG.trace("Called async listFirmwareBundles");
+        final ListFirmwareBundlesRequest interceptedRequest =
+                ListFirmwareBundlesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFirmwareBundlesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListFirmwareBundles",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FirmwareBundlesCollection/ListFirmwareBundles");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListFirmwareBundlesResponse>
+                transformer =
+                        ListFirmwareBundlesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListFirmwareBundlesRequest, ListFirmwareBundlesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListFirmwareBundlesRequest, ListFirmwareBundlesResponse>,
+                        java.util.concurrent.Future<ListFirmwareBundlesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListFirmwareBundlesRequest, ListFirmwareBundlesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -6034,44 +6603,98 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateComputeHostResponse> updateComputeHost(
-            UpdateComputeHostRequest request,
+    public java.util.concurrent.Future<UpdateComputeHostGroupResponse> updateComputeHostGroup(
+            UpdateComputeHostGroupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateComputeHostRequest, UpdateComputeHostResponse>
+                            UpdateComputeHostGroupRequest, UpdateComputeHostGroupResponse>
                     handler) {
-        LOG.trace("Called async updateComputeHost");
-        final UpdateComputeHostRequest interceptedRequest =
-                UpdateComputeHostConverter.interceptRequest(request);
+        LOG.trace("Called async updateComputeHostGroup");
+        final UpdateComputeHostGroupRequest interceptedRequest =
+                UpdateComputeHostGroupConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateComputeHostConverter.fromRequest(client, interceptedRequest);
+                UpdateComputeHostGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Compute",
-                        "UpdateComputeHost",
+                        "UpdateComputeHostGroup",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/UpdateComputeHost");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateComputeHostResponse>
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/UpdateComputeHostGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateComputeHostGroupResponse>
                 transformer =
-                        UpdateComputeHostConverter.fromResponse(
+                        UpdateComputeHostGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateComputeHostRequest, UpdateComputeHostResponse>
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateComputeHostGroupRequest, UpdateComputeHostGroupResponse>
                 handlerToUse = handler;
 
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<
-                                UpdateComputeHostRequest, UpdateComputeHostResponse>,
-                        java.util.concurrent.Future<UpdateComputeHostResponse>>
+                                UpdateComputeHostGroupRequest, UpdateComputeHostGroupResponse>,
+                        java.util.concurrent.Future<UpdateComputeHostGroupResponse>>
                 futureSupplier =
                         client.putFutureSupplier(
                                 interceptedRequest,
-                                interceptedRequest.getUpdateComputeHostDetails(),
+                                interceptedRequest.getUpdateComputeHostGroupDetails(),
                                 ib,
                                 transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateComputeHostRequest, UpdateComputeHostResponse>(
+                    UpdateComputeHostGroupRequest, UpdateComputeHostGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeHostsResponse> updateComputeHosts(
+            UpdateComputeHostsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeHostsRequest, UpdateComputeHostsResponse>
+                    handler) {
+        LOG.trace("Called async updateComputeHosts");
+        final UpdateComputeHostsRequest interceptedRequest =
+                UpdateComputeHostsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateComputeHostsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "UpdateComputeHosts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/UpdateComputeHosts");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateComputeHostsResponse>
+                transformer =
+                        UpdateComputeHostsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateComputeHostsRequest, UpdateComputeHostsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateComputeHostsRequest, UpdateComputeHostsResponse>,
+                        java.util.concurrent.Future<UpdateComputeHostsResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateComputeHostsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateComputeHostsRequest, UpdateComputeHostsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

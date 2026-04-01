@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateSchedulerDefinitionDetails.Builder.class
 )
@@ -25,7 +25,6 @@ public final class UpdateSchedulerDefinitionDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
-        "activityInitiationCutOff",
         "schedule",
         "actionGroups",
         "runBooks",
@@ -35,7 +34,6 @@ public final class UpdateSchedulerDefinitionDetails
     public UpdateSchedulerDefinitionDetails(
             String displayName,
             String description,
-            Integer activityInitiationCutOff,
             Schedule schedule,
             java.util.List<ActionGroup> actionGroups,
             java.util.List<OperationRunbook> runBooks,
@@ -44,7 +42,6 @@ public final class UpdateSchedulerDefinitionDetails
         super();
         this.displayName = displayName;
         this.description = description;
-        this.activityInitiationCutOff = activityInitiationCutOff;
         this.schedule = schedule;
         this.actionGroups = actionGroups;
         this.runBooks = runBooks;
@@ -96,22 +93,6 @@ public final class UpdateSchedulerDefinitionDetails
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
-            return this;
-        }
-        /**
-         * Activity Initiation Cut Off
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("activityInitiationCutOff")
-        private Integer activityInitiationCutOff;
-
-        /**
-         * Activity Initiation Cut Off
-         * @param activityInitiationCutOff the value to set
-         * @return this builder
-         **/
-        public Builder activityInitiationCutOff(Integer activityInitiationCutOff) {
-            this.activityInitiationCutOff = activityInitiationCutOff;
-            this.__explicitlySet__.add("activityInitiationCutOff");
             return this;
         }
 
@@ -205,7 +186,6 @@ public final class UpdateSchedulerDefinitionDetails
                     new UpdateSchedulerDefinitionDetails(
                             this.displayName,
                             this.description,
-                            this.activityInitiationCutOff,
                             this.schedule,
                             this.actionGroups,
                             this.runBooks,
@@ -224,9 +204,6 @@ public final class UpdateSchedulerDefinitionDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
-            }
-            if (model.wasPropertyExplicitlySet("activityInitiationCutOff")) {
-                this.activityInitiationCutOff(model.getActivityInitiationCutOff());
             }
             if (model.wasPropertyExplicitlySet("schedule")) {
                 this.schedule(model.getSchedule());
@@ -296,20 +273,6 @@ public final class UpdateSchedulerDefinitionDetails
      **/
     public String getDescription() {
         return description;
-    }
-
-    /**
-     * Activity Initiation Cut Off
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("activityInitiationCutOff")
-    private final Integer activityInitiationCutOff;
-
-    /**
-     * Activity Initiation Cut Off
-     * @return the value
-     **/
-    public Integer getActivityInitiationCutOff() {
-        return activityInitiationCutOff;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("schedule")
@@ -399,8 +362,6 @@ public final class UpdateSchedulerDefinitionDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
-        sb.append(", activityInitiationCutOff=")
-                .append(String.valueOf(this.activityInitiationCutOff));
         sb.append(", schedule=").append(String.valueOf(this.schedule));
         sb.append(", actionGroups=").append(String.valueOf(this.actionGroups));
         sb.append(", runBooks=").append(String.valueOf(this.runBooks));
@@ -422,8 +383,6 @@ public final class UpdateSchedulerDefinitionDetails
         UpdateSchedulerDefinitionDetails other = (UpdateSchedulerDefinitionDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
-                && java.util.Objects.equals(
-                        this.activityInitiationCutOff, other.activityInitiationCutOff)
                 && java.util.Objects.equals(this.schedule, other.schedule)
                 && java.util.Objects.equals(this.actionGroups, other.actionGroups)
                 && java.util.Objects.equals(this.runBooks, other.runBooks)
@@ -438,11 +397,6 @@ public final class UpdateSchedulerDefinitionDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.activityInitiationCutOff == null
-                                ? 43
-                                : this.activityInitiationCutOff.hashCode());
         result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
         result = (result * PRIME) + (this.actionGroups == null ? 43 : this.actionGroups.hashCode());
         result = (result * PRIME) + (this.runBooks == null ? 43 : this.runBooks.hashCode());

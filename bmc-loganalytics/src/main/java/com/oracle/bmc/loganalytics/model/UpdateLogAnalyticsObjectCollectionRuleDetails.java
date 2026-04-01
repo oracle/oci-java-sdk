@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -36,6 +36,9 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
         "logSetExtRegex",
         "overrides",
         "objectNameFilters",
+        "streamId",
+        "streamCursorType",
+        "streamCursorTime",
         "definedTags",
         "freeformTags"
     })
@@ -52,6 +55,9 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
             String logSetExtRegex,
             java.util.Map<String, java.util.List<PropertyOverride>> overrides,
             java.util.List<String> objectNameFilters,
+            String streamId,
+            StreamCursorTypes streamCursorType,
+            java.util.Date streamCursorTime,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags) {
         super();
@@ -67,6 +73,9 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
         this.logSetExtRegex = logSetExtRegex;
         this.overrides = overrides;
         this.objectNameFilters = objectNameFilters;
+        this.streamId = streamId;
+        this.streamCursorType = streamCursorType;
+        this.streamCursorTime = streamCursorTime;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
     }
@@ -94,13 +103,13 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
             return this;
         }
         /**
-         * Logging Analytics Log group OCID to associate the processed logs with.
+         * Log Analytics Log group OCID to associate the processed logs with.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
         /**
-         * Logging Analytics Log group OCID to associate the processed logs with.
+         * Log Analytics Log group OCID to associate the processed logs with.
          * @param logGroupId the value to set
          * @return this builder
          **/
@@ -110,13 +119,13 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
             return this;
         }
         /**
-         * Name of the Logging Analytics Source to use for the processing.
+         * Name of the Log Analytics Source to use for the processing.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("logSourceName")
         private String logSourceName;
 
         /**
-         * Name of the Logging Analytics Source to use for the processing.
+         * Name of the Log Analytics Source to use for the processing.
          * @param logSourceName the value to set
          * @return this builder
          **/
@@ -126,13 +135,13 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
             return this;
         }
         /**
-         * Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+         * Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
         /**
-         * Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+         * Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
          * @param entityId the value to set
          * @return this builder
          **/
@@ -311,6 +320,72 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
             return this;
         }
         /**
+         * A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("streamId")
+        private String streamId;
+
+        /**
+         * A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+         *
+         * @param streamId the value to set
+         * @return this builder
+         **/
+        public Builder streamId(String streamId) {
+            this.streamId = streamId;
+            this.__explicitlySet__.add("streamId");
+            return this;
+        }
+        /**
+         * Cursor type used to fetch messages from stream.
+         * When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.
+         * Otherwise, the behaviour is to consume from the oldest available message in the stream.
+         * When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.
+         * When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.
+         * When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.
+         * For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("streamCursorType")
+        private StreamCursorTypes streamCursorType;
+
+        /**
+         * Cursor type used to fetch messages from stream.
+         * When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.
+         * Otherwise, the behaviour is to consume from the oldest available message in the stream.
+         * When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.
+         * When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.
+         * When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.
+         * For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+         *
+         * @param streamCursorType the value to set
+         * @return this builder
+         **/
+        public Builder streamCursorType(StreamCursorTypes streamCursorType) {
+            this.streamCursorType = streamCursorType;
+            this.__explicitlySet__.add("streamCursorType");
+            return this;
+        }
+        /**
+         * The time from which to consume the objects, if streamCursorType is AT_TIME.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("streamCursorTime")
+        private java.util.Date streamCursorTime;
+
+        /**
+         * The time from which to consume the objects, if streamCursorType is AT_TIME.
+         *
+         * @param streamCursorTime the value to set
+         * @return this builder
+         **/
+        public Builder streamCursorTime(java.util.Date streamCursorTime) {
+            this.streamCursorTime = streamCursorTime;
+            this.__explicitlySet__.add("streamCursorTime");
+            return this;
+        }
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
@@ -370,6 +445,9 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
                             this.logSetExtRegex,
                             this.overrides,
                             this.objectNameFilters,
+                            this.streamId,
+                            this.streamCursorType,
+                            this.streamCursorTime,
                             this.definedTags,
                             this.freeformTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -416,6 +494,15 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
             if (model.wasPropertyExplicitlySet("objectNameFilters")) {
                 this.objectNameFilters(model.getObjectNameFilters());
             }
+            if (model.wasPropertyExplicitlySet("streamId")) {
+                this.streamId(model.getStreamId());
+            }
+            if (model.wasPropertyExplicitlySet("streamCursorType")) {
+                this.streamCursorType(model.getStreamCursorType());
+            }
+            if (model.wasPropertyExplicitlySet("streamCursorTime")) {
+                this.streamCursorTime(model.getStreamCursorTime());
+            }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
@@ -456,13 +543,13 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
     }
 
     /**
-     * Logging Analytics Log group OCID to associate the processed logs with.
+     * Log Analytics Log group OCID to associate the processed logs with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
     /**
-     * Logging Analytics Log group OCID to associate the processed logs with.
+     * Log Analytics Log group OCID to associate the processed logs with.
      * @return the value
      **/
     public String getLogGroupId() {
@@ -470,13 +557,13 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
     }
 
     /**
-     * Name of the Logging Analytics Source to use for the processing.
+     * Name of the Log Analytics Source to use for the processing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logSourceName")
     private final String logSourceName;
 
     /**
-     * Name of the Logging Analytics Source to use for the processing.
+     * Name of the Log Analytics Source to use for the processing.
      * @return the value
      **/
     public String getLogSourceName() {
@@ -484,13 +571,13 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
     }
 
     /**
-     * Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+     * Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
     /**
-     * Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+     * Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
      * @return the value
      **/
     public String getEntityId() {
@@ -650,6 +737,66 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
     }
 
     /**
+     * A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("streamId")
+    private final String streamId;
+
+    /**
+     * A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     *
+     * @return the value
+     **/
+    public String getStreamId() {
+        return streamId;
+    }
+
+    /**
+     * Cursor type used to fetch messages from stream.
+     * When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.
+     * Otherwise, the behaviour is to consume from the oldest available message in the stream.
+     * When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.
+     * When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.
+     * When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.
+     * For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("streamCursorType")
+    private final StreamCursorTypes streamCursorType;
+
+    /**
+     * Cursor type used to fetch messages from stream.
+     * When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.
+     * Otherwise, the behaviour is to consume from the oldest available message in the stream.
+     * When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.
+     * When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.
+     * When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.
+     * For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+     *
+     * @return the value
+     **/
+    public StreamCursorTypes getStreamCursorType() {
+        return streamCursorType;
+    }
+
+    /**
+     * The time from which to consume the objects, if streamCursorType is AT_TIME.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("streamCursorTime")
+    private final java.util.Date streamCursorTime;
+
+    /**
+     * The time from which to consume the objects, if streamCursorType is AT_TIME.
+     *
+     * @return the value
+     **/
+    public java.util.Date getStreamCursorTime() {
+        return streamCursorTime;
+    }
+
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
@@ -711,6 +858,9 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
         sb.append(", logSetExtRegex=").append(String.valueOf(this.logSetExtRegex));
         sb.append(", overrides=").append(String.valueOf(this.overrides));
         sb.append(", objectNameFilters=").append(String.valueOf(this.objectNameFilters));
+        sb.append(", streamId=").append(String.valueOf(this.streamId));
+        sb.append(", streamCursorType=").append(String.valueOf(this.streamCursorType));
+        sb.append(", streamCursorTime=").append(String.valueOf(this.streamCursorTime));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(")");
@@ -740,6 +890,9 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
                 && java.util.Objects.equals(this.logSetExtRegex, other.logSetExtRegex)
                 && java.util.Objects.equals(this.overrides, other.overrides)
                 && java.util.Objects.equals(this.objectNameFilters, other.objectNameFilters)
+                && java.util.Objects.equals(this.streamId, other.streamId)
+                && java.util.Objects.equals(this.streamCursorType, other.streamCursorType)
+                && java.util.Objects.equals(this.streamCursorTime, other.streamCursorTime)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && super.equals(other);
@@ -767,6 +920,13 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails
         result =
                 (result * PRIME)
                         + (this.objectNameFilters == null ? 43 : this.objectNameFilters.hashCode());
+        result = (result * PRIME) + (this.streamId == null ? 43 : this.streamId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.streamCursorType == null ? 43 : this.streamCursorType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.streamCursorTime == null ? 43 : this.streamCursorTime.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + super.hashCode();

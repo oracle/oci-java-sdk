@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools;
@@ -77,6 +77,23 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Adds a lock to a DatabaseToolsIdentity resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDatabaseToolsIdentityLockResponse> addDatabaseToolsIdentityLock(
+            AddDatabaseToolsIdentityLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddDatabaseToolsIdentityLockRequest,
+                            AddDatabaseToolsIdentityLockResponse>
+                    handler);
+
+    /**
      * Adds a lock to a DatabaseToolsPrivateEndpoint resource.
      *
      * @param request The request object containing the details to send
@@ -113,6 +130,27 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeDatabaseToolsConnectionCompartmentRequest,
                                     ChangeDatabaseToolsConnectionCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves the specified Database Tools identity to a different compartment in the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDatabaseToolsIdentityCompartmentResponse>
+            changeDatabaseToolsIdentityCompartment(
+                    ChangeDatabaseToolsIdentityCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDatabaseToolsIdentityCompartmentRequest,
+                                    ChangeDatabaseToolsIdentityCompartmentResponse>
                             handler);
 
     /**
@@ -156,6 +194,23 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a new Database Tools identity.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDatabaseToolsIdentityResponse> createDatabaseToolsIdentity(
+            CreateDatabaseToolsIdentityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDatabaseToolsIdentityRequest, CreateDatabaseToolsIdentityResponse>
+                    handler);
+
+    /**
      * Creates a new Database Tools private endpoint.
      *
      *
@@ -191,6 +246,22 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                                     DeleteDatabaseToolsConnectionRequest,
                                     DeleteDatabaseToolsConnectionResponse>
                             handler);
+
+    /**
+     * Deletes the specified Database Tools identity resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDatabaseToolsIdentityResponse> deleteDatabaseToolsIdentity(
+            DeleteDatabaseToolsIdentityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDatabaseToolsIdentityRequest, DeleteDatabaseToolsIdentityResponse>
+                    handler);
 
     /**
      * Deletes the specified Database Tools private endpoint.
@@ -243,6 +314,22 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                                     GetDatabaseToolsEndpointServiceRequest,
                                     GetDatabaseToolsEndpointServiceResponse>
                             handler);
+
+    /**
+     * Gets details of the specified Database Tools identity.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseToolsIdentityResponse> getDatabaseToolsIdentity(
+            GetDatabaseToolsIdentityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseToolsIdentityRequest, GetDatabaseToolsIdentityResponse>
+                    handler);
 
     /**
      * Gets details of a specified Database Tools private endpoint.
@@ -315,6 +402,22 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Returns a list of Database Tools identities.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDatabaseToolsIdentitiesResponse> listDatabaseToolsIdentities(
+            ListDatabaseToolsIdentitiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDatabaseToolsIdentitiesRequest, ListDatabaseToolsIdentitiesResponse>
+                    handler);
+
+    /**
      * Returns a list of Database Tools private endpoints.
      *
      *
@@ -384,6 +487,25 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Refresh Database Tools identity credential.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RefreshDatabaseToolsIdentityCredentialResponse>
+            refreshDatabaseToolsIdentityCredential(
+                    RefreshDatabaseToolsIdentityCredentialRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshDatabaseToolsIdentityCredentialRequest,
+                                    RefreshDatabaseToolsIdentityCredentialResponse>
+                            handler);
+
+    /**
      * Removes a lock from a DatabaseToolsConnection resource.
      *
      * @param request The request object containing the details to send
@@ -399,6 +521,24 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     RemoveDatabaseToolsConnectionLockRequest,
                                     RemoveDatabaseToolsConnectionLockResponse>
+                            handler);
+
+    /**
+     * Removes a lock from a DatabaseToolsIdentity resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDatabaseToolsIdentityLockResponse>
+            removeDatabaseToolsIdentityLock(
+                    RemoveDatabaseToolsIdentityLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDatabaseToolsIdentityLockRequest,
+                                    RemoveDatabaseToolsIdentityLockResponse>
                             handler);
 
     /**
@@ -438,6 +578,22 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Updates the specified Database Tools identity.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDatabaseToolsIdentityResponse> updateDatabaseToolsIdentity(
+            UpdateDatabaseToolsIdentityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDatabaseToolsIdentityRequest, UpdateDatabaseToolsIdentityResponse>
+                    handler);
+
+    /**
      * Updates the specified Database Tools private endpoint.
      *
      * @param request The request object containing the details to send
@@ -472,5 +628,25 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ValidateDatabaseToolsConnectionRequest,
                                     ValidateDatabaseToolsConnectionResponse>
+                            handler);
+
+    /**
+     * Validates the Database Tools identity credentials by establishing a connection to the customer database
+     * and executing the dbms_cloud.send_request to validate the credential.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ValidateDatabaseToolsIdentityCredentialResponse>
+            validateDatabaseToolsIdentityCredential(
+                    ValidateDatabaseToolsIdentityCredentialRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ValidateDatabaseToolsIdentityCredentialRequest,
+                                    ValidateDatabaseToolsIdentityCredentialResponse>
                             handler);
 }

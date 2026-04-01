@@ -1,10 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
+ * Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this.
  * The details for creating a block volume attachment.
  *
  * <br/>
@@ -32,8 +33,8 @@ public final class CreateBlockVolumeAttachmentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the reference compute instance from which to obtain the attachment details for the volume.
-         * This reference compute instance is from the peer DR protection group.
+         * The OCID of the reference compute instance needed to obtain the volume attachment details.
+         * This reference compute instance belongs to the peer DR protection group.
          * <p>
          * Example: {@code ocid1.instance.oc1..uniqueID}
          *
@@ -42,8 +43,8 @@ public final class CreateBlockVolumeAttachmentDetails
         private String volumeAttachmentReferenceInstanceId;
 
         /**
-         * The OCID of the reference compute instance from which to obtain the attachment details for the volume.
-         * This reference compute instance is from the peer DR protection group.
+         * The OCID of the reference compute instance needed to obtain the volume attachment details.
+         * This reference compute instance belongs to the peer DR protection group.
          * <p>
          * Example: {@code ocid1.instance.oc1..uniqueID}
          *
@@ -92,8 +93,8 @@ public final class CreateBlockVolumeAttachmentDetails
     }
 
     /**
-     * The OCID of the reference compute instance from which to obtain the attachment details for the volume.
-     * This reference compute instance is from the peer DR protection group.
+     * The OCID of the reference compute instance needed to obtain the volume attachment details.
+     * This reference compute instance belongs to the peer DR protection group.
      * <p>
      * Example: {@code ocid1.instance.oc1..uniqueID}
      *
@@ -102,8 +103,8 @@ public final class CreateBlockVolumeAttachmentDetails
     private final String volumeAttachmentReferenceInstanceId;
 
     /**
-     * The OCID of the reference compute instance from which to obtain the attachment details for the volume.
-     * This reference compute instance is from the peer DR protection group.
+     * The OCID of the reference compute instance needed to obtain the volume attachment details.
+     * This reference compute instance belongs to the peer DR protection group.
      * <p>
      * Example: {@code ocid1.instance.oc1..uniqueID}
      *

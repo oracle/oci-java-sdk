@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
  * Update Patch Exadata Fleet Update Cycle resource details.
+ * If automated maintenance is enabled for the associated Exadata Fleet Update Collection, updating Exadata Fleet Update Cycle will not affect the Exadata Fleet Update Collection.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -83,14 +84,16 @@ public final class UpdatePatchFsuCycle extends UpdateFsuCycleDetails {
             return this;
         }
         /**
-         * Ignore all patches between the source and target homes during patching.
+         * Ignore patch conflicts or missing patches between the source and goal homes.
+         * This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIgnorePatches")
         private Boolean isIgnorePatches;
 
         /**
-         * Ignore all patches between the source and target homes during patching.
+         * Ignore patch conflicts or missing patches between the source and goal homes.
+         * This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
          *
          * @param isIgnorePatches the value to set
          * @return this builder
@@ -101,16 +104,18 @@ public final class UpdatePatchFsuCycle extends UpdateFsuCycleDetails {
             return this;
         }
         /**
-         * List of patch IDs to ignore.
-         * An empty array removes the previously stored patch IDs in the Maintenance Cycle properties.
+         * List of identifiers of patches to ignore.
+         * Specify an empty array to unset the field.
+         * This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIgnoreMissingPatches")
         private java.util.List<String> isIgnoreMissingPatches;
 
         /**
-         * List of patch IDs to ignore.
-         * An empty array removes the previously stored patch IDs in the Maintenance Cycle properties.
+         * List of identifiers of patches to ignore.
+         * Specify an empty array to unset the field.
+         * This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
          *
          * @param isIgnoreMissingPatches the value to set
          * @return this builder
@@ -121,14 +126,14 @@ public final class UpdatePatchFsuCycle extends UpdateFsuCycleDetails {
             return this;
         }
         /**
-         * Service drain timeout specified in seconds.
+         * Timeout for session draining for database services specified in seconds.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxDrainTimeoutInSeconds")
         private Integer maxDrainTimeoutInSeconds;
 
         /**
-         * Service drain timeout specified in seconds.
+         * Timeout for session draining for database services specified in seconds.
          *
          * @param maxDrainTimeoutInSeconds the value to set
          * @return this builder
@@ -139,16 +144,14 @@ public final class UpdatePatchFsuCycle extends UpdateFsuCycleDetails {
             return this;
         }
         /**
-         * Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same
-         * instances before and after the move operation.
+         * Ensure that database services are online on the same VMs before and after the maintenance update.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isKeepPlacement")
         private Boolean isKeepPlacement;
 
         /**
-         * Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same
-         * instances before and after the move operation.
+         * Ensure that database services are online on the same VMs before and after the maintenance update.
          *
          * @param isKeepPlacement the value to set
          * @return this builder
@@ -254,14 +257,16 @@ public final class UpdatePatchFsuCycle extends UpdateFsuCycleDetails {
     }
 
     /**
-     * Ignore all patches between the source and target homes during patching.
+     * Ignore patch conflicts or missing patches between the source and goal homes.
+     * This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIgnorePatches")
     private final Boolean isIgnorePatches;
 
     /**
-     * Ignore all patches between the source and target homes during patching.
+     * Ignore patch conflicts or missing patches between the source and goal homes.
+     * This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      *
      * @return the value
      **/
@@ -270,16 +275,18 @@ public final class UpdatePatchFsuCycle extends UpdateFsuCycleDetails {
     }
 
     /**
-     * List of patch IDs to ignore.
-     * An empty array removes the previously stored patch IDs in the Maintenance Cycle properties.
+     * List of identifiers of patches to ignore.
+     * Specify an empty array to unset the field.
+     * This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIgnoreMissingPatches")
     private final java.util.List<String> isIgnoreMissingPatches;
 
     /**
-     * List of patch IDs to ignore.
-     * An empty array removes the previously stored patch IDs in the Maintenance Cycle properties.
+     * List of identifiers of patches to ignore.
+     * Specify an empty array to unset the field.
+     * This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      *
      * @return the value
      **/
@@ -288,14 +295,14 @@ public final class UpdatePatchFsuCycle extends UpdateFsuCycleDetails {
     }
 
     /**
-     * Service drain timeout specified in seconds.
+     * Timeout for session draining for database services specified in seconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxDrainTimeoutInSeconds")
     private final Integer maxDrainTimeoutInSeconds;
 
     /**
-     * Service drain timeout specified in seconds.
+     * Timeout for session draining for database services specified in seconds.
      *
      * @return the value
      **/
@@ -304,16 +311,14 @@ public final class UpdatePatchFsuCycle extends UpdateFsuCycleDetails {
     }
 
     /**
-     * Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same
-     * instances before and after the move operation.
+     * Ensure that database services are online on the same VMs before and after the maintenance update.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isKeepPlacement")
     private final Boolean isKeepPlacement;
 
     /**
-     * Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same
-     * instances before and after the move operation.
+     * Ensure that database services are online on the same VMs before and after the maintenance update.
      *
      * @return the value
      **/

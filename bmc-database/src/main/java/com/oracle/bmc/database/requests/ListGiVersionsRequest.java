@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -113,6 +113,28 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
+    /**
+     * If provided, filters the results for the specified resource Id.
+     */
+    private String resourceId;
+
+    /**
+     * If provided, filters the results for the specified resource Id.
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+    /**
+     * If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+     */
+    private String shapeAttribute;
+
+    /**
+     * If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+     */
+    public String getShapeAttribute() {
+        return shapeAttribute;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -212,6 +234,36 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
+         * If provided, filters the results for the specified resource Id.
+         */
+        private String resourceId = null;
+
+        /**
+         * If provided, filters the results for the specified resource Id.
+         * @param resourceId the value to set
+         * @return this builder instance
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            return this;
+        }
+
+        /**
+         * If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+         */
+        private String shapeAttribute = null;
+
+        /**
+         * If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+         * @param shapeAttribute the value to set
+         * @return this builder instance
+         */
+        public Builder shapeAttribute(String shapeAttribute) {
+            this.shapeAttribute = shapeAttribute;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -245,6 +297,8 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             sortOrder(o.getSortOrder());
             shape(o.getShape());
             availabilityDomain(o.getAvailabilityDomain());
+            resourceId(o.getResourceId());
+            shapeAttribute(o.getShapeAttribute());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -283,8 +337,10 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.sortOrder = sortOrder;
             request.shape = shape;
             request.availabilityDomain = availabilityDomain;
+            request.resourceId = resourceId;
+            request.shapeAttribute = shapeAttribute;
             return request;
-            // new ListGiVersionsRequest(compartmentId, limit, page, sortOrder, shape, availabilityDomain);
+            // new ListGiVersionsRequest(compartmentId, limit, page, sortOrder, shape, availabilityDomain, resourceId, shapeAttribute);
         }
     }
 
@@ -299,7 +355,9 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .page(page)
                 .sortOrder(sortOrder)
                 .shape(shape)
-                .availabilityDomain(availabilityDomain);
+                .availabilityDomain(availabilityDomain)
+                .resourceId(resourceId)
+                .shapeAttribute(shapeAttribute);
     }
 
     /**
@@ -321,6 +379,8 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",shape=").append(String.valueOf(this.shape));
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(",resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(",shapeAttribute=").append(String.valueOf(this.shapeAttribute));
         sb.append(")");
         return sb.toString();
     }
@@ -341,7 +401,9 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.shape, other.shape)
-                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain);
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.shapeAttribute, other.shapeAttribute);
     }
 
     @Override
@@ -360,6 +422,10 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shapeAttribute == null ? 43 : this.shapeAttribute.hashCode());
         return result;
     }
 }

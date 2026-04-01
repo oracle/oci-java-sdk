@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools.model;
 
 /**
- * Description of the Database Tools connection.
+ * Provides connectivity details required to establish a connection to a database.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -54,7 +54,9 @@ public class DatabaseToolsConnection extends com.oracle.bmc.http.internal.Explic
         "freeformTags",
         "systemTags",
         "locks",
-        "runtimeSupport"
+        "runtimeSupport",
+        "runtimeEndpoint",
+        "runtimeIdentity"
     })
     protected DatabaseToolsConnection(
             String id,
@@ -68,7 +70,9 @@ public class DatabaseToolsConnection extends com.oracle.bmc.http.internal.Explic
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<ResourceLock> locks,
-            RuntimeSupport runtimeSupport) {
+            RuntimeSupport runtimeSupport,
+            String runtimeEndpoint,
+            RuntimeIdentity runtimeIdentity) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -82,6 +86,8 @@ public class DatabaseToolsConnection extends com.oracle.bmc.http.internal.Explic
         this.systemTags = systemTags;
         this.locks = locks;
         this.runtimeSupport = runtimeSupport;
+        this.runtimeEndpoint = runtimeEndpoint;
+        this.runtimeIdentity = runtimeIdentity;
     }
 
     /**
@@ -169,13 +175,13 @@ public class DatabaseToolsConnection extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -264,6 +270,34 @@ public class DatabaseToolsConnection extends com.oracle.bmc.http.internal.Explic
         return runtimeSupport;
     }
 
+    /**
+     * Specifies the Database Tools Runtime endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("runtimeEndpoint")
+    private final String runtimeEndpoint;
+
+    /**
+     * Specifies the Database Tools Runtime endpoint.
+     * @return the value
+     **/
+    public String getRuntimeEndpoint() {
+        return runtimeEndpoint;
+    }
+
+    /**
+     * Specifies the identity used by the Database Tools service to issue requests to other OCI services (e.g., Secrets in Vault).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("runtimeIdentity")
+    private final RuntimeIdentity runtimeIdentity;
+
+    /**
+     * Specifies the identity used by the Database Tools service to issue requests to other OCI services (e.g., Secrets in Vault).
+     * @return the value
+     **/
+    public RuntimeIdentity getRuntimeIdentity() {
+        return runtimeIdentity;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -290,6 +324,8 @@ public class DatabaseToolsConnection extends com.oracle.bmc.http.internal.Explic
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", runtimeSupport=").append(String.valueOf(this.runtimeSupport));
+        sb.append(", runtimeEndpoint=").append(String.valueOf(this.runtimeEndpoint));
+        sb.append(", runtimeIdentity=").append(String.valueOf(this.runtimeIdentity));
         sb.append(")");
         return sb.toString();
     }
@@ -316,6 +352,8 @@ public class DatabaseToolsConnection extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.runtimeSupport, other.runtimeSupport)
+                && java.util.Objects.equals(this.runtimeEndpoint, other.runtimeEndpoint)
+                && java.util.Objects.equals(this.runtimeIdentity, other.runtimeIdentity)
                 && super.equals(other);
     }
 
@@ -343,6 +381,12 @@ public class DatabaseToolsConnection extends com.oracle.bmc.http.internal.Explic
         result =
                 (result * PRIME)
                         + (this.runtimeSupport == null ? 43 : this.runtimeSupport.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runtimeEndpoint == null ? 43 : this.runtimeEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runtimeIdentity == null ? 43 : this.runtimeIdentity.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

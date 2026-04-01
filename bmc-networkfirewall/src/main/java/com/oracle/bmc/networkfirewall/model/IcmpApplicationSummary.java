@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -44,6 +44,15 @@ public final class IcmpApplicationSummary extends ApplicationSummary {
             this.__explicitlySet__.add("parentResourceId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
         /**
          * The value of the ICMP message Type field as defined by [RFC 792](https://www.rfc-editor.org/rfc/rfc792.html).
          **/
@@ -83,7 +92,11 @@ public final class IcmpApplicationSummary extends ApplicationSummary {
         public IcmpApplicationSummary build() {
             IcmpApplicationSummary model =
                     new IcmpApplicationSummary(
-                            this.name, this.parentResourceId, this.icmpType, this.icmpCode);
+                            this.name,
+                            this.parentResourceId,
+                            this.description,
+                            this.icmpType,
+                            this.icmpCode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -97,6 +110,9 @@ public final class IcmpApplicationSummary extends ApplicationSummary {
             }
             if (model.wasPropertyExplicitlySet("parentResourceId")) {
                 this.parentResourceId(model.getParentResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("icmpType")) {
                 this.icmpType(model.getIcmpType());
@@ -121,8 +137,12 @@ public final class IcmpApplicationSummary extends ApplicationSummary {
 
     @Deprecated
     public IcmpApplicationSummary(
-            String name, String parentResourceId, Integer icmpType, Integer icmpCode) {
-        super(name, parentResourceId);
+            String name,
+            String parentResourceId,
+            String description,
+            Integer icmpType,
+            Integer icmpCode) {
+        super(name, parentResourceId, description);
         this.icmpType = icmpType;
         this.icmpCode = icmpCode;
     }

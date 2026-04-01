@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmconfig.model;
@@ -33,8 +33,16 @@ package com.oracle.bmc.apmconfig.model;
         name = "METRIC_GROUP"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateAgentConfigDetails.class,
+        name = "AGENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateOptionsDetails.class,
         name = "OPTIONS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateMacsApmExtensionDetails.class,
+        name = "MACS_APM_EXTENSION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateApdexRulesDetails.class,

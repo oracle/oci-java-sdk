@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -67,6 +67,30 @@ public class ListSecurityPolicyEntryStatesRequest
      */
     public String getSecurityPolicyEntryId() {
         return securityPolicyEntryId;
+    }
+    /**
+     * The type of the security policy deployment.
+     */
+    private com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateSummary.EntryType
+            securityPolicyEntryType;
+
+    /**
+     * The type of the security policy deployment.
+     */
+    public com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateSummary.EntryType
+            getSecurityPolicyEntryType() {
+        return securityPolicyEntryType;
+    }
+    /**
+     * An optional filter to return only resources that match the specified target id.
+     */
+    private String targetId;
+
+    /**
+     * An optional filter to return only resources that match the specified target id.
+     */
+    public String getTargetId() {
+        return targetId;
     }
     /**
      * Unique identifier for the request.
@@ -166,6 +190,39 @@ public class ListSecurityPolicyEntryStatesRequest
         }
 
         /**
+         * The type of the security policy deployment.
+         */
+        private com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateSummary.EntryType
+                securityPolicyEntryType = null;
+
+        /**
+         * The type of the security policy deployment.
+         * @param securityPolicyEntryType the value to set
+         * @return this builder instance
+         */
+        public Builder securityPolicyEntryType(
+                com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateSummary.EntryType
+                        securityPolicyEntryType) {
+            this.securityPolicyEntryType = securityPolicyEntryType;
+            return this;
+        }
+
+        /**
+         * An optional filter to return only resources that match the specified target id.
+         */
+        private String targetId = null;
+
+        /**
+         * An optional filter to return only resources that match the specified target id.
+         * @param targetId the value to set
+         * @return this builder instance
+         */
+        public Builder targetId(String targetId) {
+            this.targetId = targetId;
+            return this;
+        }
+
+        /**
          * Unique identifier for the request.
          */
         private String opcRequestId = null;
@@ -213,6 +270,8 @@ public class ListSecurityPolicyEntryStatesRequest
             page(o.getPage());
             deploymentStatus(o.getDeploymentStatus());
             securityPolicyEntryId(o.getSecurityPolicyEntryId());
+            securityPolicyEntryType(o.getSecurityPolicyEntryType());
+            targetId(o.getTargetId());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -252,9 +311,11 @@ public class ListSecurityPolicyEntryStatesRequest
             request.page = page;
             request.deploymentStatus = deploymentStatus;
             request.securityPolicyEntryId = securityPolicyEntryId;
+            request.securityPolicyEntryType = securityPolicyEntryType;
+            request.targetId = targetId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSecurityPolicyEntryStatesRequest(securityPolicyDeploymentId, limit, page, deploymentStatus, securityPolicyEntryId, opcRequestId);
+            // new ListSecurityPolicyEntryStatesRequest(securityPolicyDeploymentId, limit, page, deploymentStatus, securityPolicyEntryId, securityPolicyEntryType, targetId, opcRequestId);
         }
     }
 
@@ -269,6 +330,8 @@ public class ListSecurityPolicyEntryStatesRequest
                 .page(page)
                 .deploymentStatus(deploymentStatus)
                 .securityPolicyEntryId(securityPolicyEntryId)
+                .securityPolicyEntryType(securityPolicyEntryType)
+                .targetId(targetId)
                 .opcRequestId(opcRequestId);
     }
 
@@ -291,6 +354,8 @@ public class ListSecurityPolicyEntryStatesRequest
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",deploymentStatus=").append(String.valueOf(this.deploymentStatus));
         sb.append(",securityPolicyEntryId=").append(String.valueOf(this.securityPolicyEntryId));
+        sb.append(",securityPolicyEntryType=").append(String.valueOf(this.securityPolicyEntryType));
+        sb.append(",targetId=").append(String.valueOf(this.targetId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -313,6 +378,9 @@ public class ListSecurityPolicyEntryStatesRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.deploymentStatus, other.deploymentStatus)
                 && java.util.Objects.equals(this.securityPolicyEntryId, other.securityPolicyEntryId)
+                && java.util.Objects.equals(
+                        this.securityPolicyEntryType, other.securityPolicyEntryType)
+                && java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -335,6 +403,12 @@ public class ListSecurityPolicyEntryStatesRequest
                         + (this.securityPolicyEntryId == null
                                 ? 43
                                 : this.securityPolicyEntryId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityPolicyEntryType == null
+                                ? 43
+                                : this.securityPolicyEntryType.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -32,7 +32,8 @@ public final class RecallArchivedDataDetails
         "query",
         "purpose",
         "isRecallNewDataOnly",
-        "isUseRecommendedDataSet"
+        "isUseRecommendedDataSet",
+        "collectionId"
     })
     public RecallArchivedDataDetails(
             String compartmentId,
@@ -43,7 +44,8 @@ public final class RecallArchivedDataDetails
             String query,
             String purpose,
             Boolean isRecallNewDataOnly,
-            Boolean isUseRecommendedDataSet) {
+            Boolean isUseRecommendedDataSet,
+            Long collectionId) {
         super();
         this.compartmentId = compartmentId;
         this.timeDataEnded = timeDataEnded;
@@ -54,6 +56,7 @@ public final class RecallArchivedDataDetails
         this.purpose = purpose;
         this.isRecallNewDataOnly = isRecallNewDataOnly;
         this.isUseRecommendedDataSet = isUseRecommendedDataSet;
+        this.collectionId = collectionId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -202,6 +205,26 @@ public final class RecallArchivedDataDetails
             this.__explicitlySet__.add("isUseRecommendedDataSet");
             return this;
         }
+        /**
+         * This is the id for the recalled data collection to be used only for recall new data.
+         * If specified, only this collection will be eligible for IsRecallNewDataOnly
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("collectionId")
+        private Long collectionId;
+
+        /**
+         * This is the id for the recalled data collection to be used only for recall new data.
+         * If specified, only this collection will be eligible for IsRecallNewDataOnly
+         *
+         * @param collectionId the value to set
+         * @return this builder
+         **/
+        public Builder collectionId(Long collectionId) {
+            this.collectionId = collectionId;
+            this.__explicitlySet__.add("collectionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -217,7 +240,8 @@ public final class RecallArchivedDataDetails
                             this.query,
                             this.purpose,
                             this.isRecallNewDataOnly,
-                            this.isUseRecommendedDataSet);
+                            this.isUseRecommendedDataSet,
+                            this.collectionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -252,6 +276,9 @@ public final class RecallArchivedDataDetails
             }
             if (model.wasPropertyExplicitlySet("isUseRecommendedDataSet")) {
                 this.isUseRecommendedDataSet(model.getIsUseRecommendedDataSet());
+            }
+            if (model.wasPropertyExplicitlySet("collectionId")) {
+                this.collectionId(model.getCollectionId());
             }
             return this;
         }
@@ -394,6 +421,24 @@ public final class RecallArchivedDataDetails
         return isUseRecommendedDataSet;
     }
 
+    /**
+     * This is the id for the recalled data collection to be used only for recall new data.
+     * If specified, only this collection will be eligible for IsRecallNewDataOnly
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("collectionId")
+    private final Long collectionId;
+
+    /**
+     * This is the id for the recalled data collection to be used only for recall new data.
+     * If specified, only this collection will be eligible for IsRecallNewDataOnly
+     *
+     * @return the value
+     **/
+    public Long getCollectionId() {
+        return collectionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -418,6 +463,7 @@ public final class RecallArchivedDataDetails
         sb.append(", isRecallNewDataOnly=").append(String.valueOf(this.isRecallNewDataOnly));
         sb.append(", isUseRecommendedDataSet=")
                 .append(String.valueOf(this.isUseRecommendedDataSet));
+        sb.append(", collectionId=").append(String.valueOf(this.collectionId));
         sb.append(")");
         return sb.toString();
     }
@@ -442,6 +488,7 @@ public final class RecallArchivedDataDetails
                 && java.util.Objects.equals(this.isRecallNewDataOnly, other.isRecallNewDataOnly)
                 && java.util.Objects.equals(
                         this.isUseRecommendedDataSet, other.isUseRecommendedDataSet)
+                && java.util.Objects.equals(this.collectionId, other.collectionId)
                 && super.equals(other);
     }
 
@@ -472,6 +519,7 @@ public final class RecallArchivedDataDetails
                         + (this.isUseRecommendedDataSet == null
                                 ? 43
                                 : this.isUseRecommendedDataSet.hashCode());
+        result = (result * PRIME) + (this.collectionId == null ? 43 : this.collectionId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

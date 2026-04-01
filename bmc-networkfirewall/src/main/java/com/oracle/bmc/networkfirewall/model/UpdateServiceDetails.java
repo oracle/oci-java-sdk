@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -35,9 +35,24 @@ package com.oracle.bmc.networkfirewall.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdateServiceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected UpdateServiceDetails() {
+    @java.beans.ConstructorProperties({"description"})
+    protected UpdateServiceDetails(String description) {
         super();
+        this.description = description;
+    }
+
+    /**
+     * The description of the service. This field can be used to add additional info.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * The description of the service. This field can be used to add additional info.
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
     }
 
     @Override
@@ -54,6 +69,7 @@ public class UpdateServiceDetails extends com.oracle.bmc.http.internal.Explicitl
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateServiceDetails(");
         sb.append("super=").append(super.toString());
+        sb.append("description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
     }
@@ -68,13 +84,14 @@ public class UpdateServiceDetails extends com.oracle.bmc.http.internal.Explicitl
         }
 
         UpdateServiceDetails other = (UpdateServiceDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.description, other.description) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

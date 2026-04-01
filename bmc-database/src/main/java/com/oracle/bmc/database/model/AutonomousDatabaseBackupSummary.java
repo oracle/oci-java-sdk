@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * An Autonomous Database backup.
+ * An Autonomous AI Database backup.
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -48,7 +48,10 @@ public final class AutonomousDatabaseBackupSummary
         "timeAvailableTill",
         "dbVersion",
         "sizeInTBs",
-        "backupDestinationDetails"
+        "backupDestinationDetails",
+        "infrastructureType",
+        "region",
+        "sourceDatabaseDetails"
     })
     public AutonomousDatabaseBackupSummary(
             String id,
@@ -72,7 +75,10 @@ public final class AutonomousDatabaseBackupSummary
             java.util.Date timeAvailableTill,
             String dbVersion,
             Double sizeInTBs,
-            BackupDestinationDetails backupDestinationDetails) {
+            BackupDestinationDetails backupDestinationDetails,
+            InfrastructureType infrastructureType,
+            String region,
+            SourceDatabaseDetails sourceDatabaseDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -96,18 +102,21 @@ public final class AutonomousDatabaseBackupSummary
         this.dbVersion = dbVersion;
         this.sizeInTBs = sizeInTBs;
         this.backupDestinationDetails = backupDestinationDetails;
+        this.infrastructureType = infrastructureType;
+        this.region = region;
+        this.sourceDatabaseDetails = sourceDatabaseDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
          * @param id the value to set
          * @return this builder
          **/
@@ -133,13 +142,13 @@ public final class AutonomousDatabaseBackupSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
          * @param autonomousDatabaseId the value to set
          * @return this builder
          **/
@@ -279,13 +288,13 @@ public final class AutonomousDatabaseBackupSummary
             return this;
         }
         /**
-         * Indicates whether the backup can be used to restore the associated Autonomous Database.
+         * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRestorable")
         private Boolean isRestorable;
 
         /**
-         * Indicates whether the backup can be used to restore the associated Autonomous Database.
+         * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
          * @param isRestorable the value to set
          * @return this builder
          **/
@@ -359,14 +368,14 @@ public final class AutonomousDatabaseBackupSummary
             return this;
         }
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -409,13 +418,25 @@ public final class AutonomousDatabaseBackupSummary
             return this;
         }
         /**
-         * A valid Oracle Database version for Autonomous Database.
+         * A valid Oracle AI Database version for Autonomous AI Database.
+         * When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+         * When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+         * For new databases, it is recommended to use either 19c or 26ai.
+         * <p>
+         **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * A valid Oracle Database version for Autonomous Database.
+         * A valid Oracle AI Database version for Autonomous AI Database.
+         * When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+         * When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+         * For new databases, it is recommended to use either 19c or 26ai.
+         * <p>
+         **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+         *
          * @param dbVersion the value to set
          * @return this builder
          **/
@@ -449,6 +470,47 @@ public final class AutonomousDatabaseBackupSummary
             this.__explicitlySet__.add("backupDestinationDetails");
             return this;
         }
+        /**
+         * The infrastructure type this resource belongs to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
+        private InfrastructureType infrastructureType;
+
+        /**
+         * The infrastructure type this resource belongs to.
+         * @param infrastructureType the value to set
+         * @return this builder
+         **/
+        public Builder infrastructureType(InfrastructureType infrastructureType) {
+            this.infrastructureType = infrastructureType;
+            this.__explicitlySet__.add("infrastructureType");
+            return this;
+        }
+        /**
+         * Name of the region in which backup is taken in.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("region")
+        private String region;
+
+        /**
+         * Name of the region in which backup is taken in.
+         * @param region the value to set
+         * @return this builder
+         **/
+        public Builder region(String region) {
+            this.region = region;
+            this.__explicitlySet__.add("region");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseDetails")
+        private SourceDatabaseDetails sourceDatabaseDetails;
+
+        public Builder sourceDatabaseDetails(SourceDatabaseDetails sourceDatabaseDetails) {
+            this.sourceDatabaseDetails = sourceDatabaseDetails;
+            this.__explicitlySet__.add("sourceDatabaseDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -477,7 +539,10 @@ public final class AutonomousDatabaseBackupSummary
                             this.timeAvailableTill,
                             this.dbVersion,
                             this.sizeInTBs,
-                            this.backupDestinationDetails);
+                            this.backupDestinationDetails,
+                            this.infrastructureType,
+                            this.region,
+                            this.sourceDatabaseDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -552,6 +617,15 @@ public final class AutonomousDatabaseBackupSummary
             if (model.wasPropertyExplicitlySet("backupDestinationDetails")) {
                 this.backupDestinationDetails(model.getBackupDestinationDetails());
             }
+            if (model.wasPropertyExplicitlySet("infrastructureType")) {
+                this.infrastructureType(model.getInfrastructureType());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDatabaseDetails")) {
+                this.sourceDatabaseDetails(model.getSourceDatabaseDetails());
+            }
             return this;
         }
     }
@@ -568,13 +642,13 @@ public final class AutonomousDatabaseBackupSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      * @return the value
      **/
     public String getId() {
@@ -596,13 +670,13 @@ public final class AutonomousDatabaseBackupSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     private final String autonomousDatabaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
      * @return the value
      **/
     public String getAutonomousDatabaseId() {
@@ -826,13 +900,13 @@ public final class AutonomousDatabaseBackupSummary
     }
 
     /**
-     * Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRestorable")
     private final Boolean isRestorable;
 
     /**
-     * Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      * @return the value
      **/
     public Boolean getIsRestorable() {
@@ -896,14 +970,14 @@ public final class AutonomousDatabaseBackupSummary
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      *
      * @return the value
      **/
@@ -940,13 +1014,25 @@ public final class AutonomousDatabaseBackupSummary
     }
 
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
+     * When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+     * When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+     * For new databases, it is recommended to use either 19c or 26ai.
+     * <p>
+     **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
+     * When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+     * When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+     * For new databases, it is recommended to use either 19c or 26ai.
+     * <p>
+     **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+     *
      * @return the value
      **/
     public String getDbVersion() {
@@ -972,6 +1058,89 @@ public final class AutonomousDatabaseBackupSummary
 
     public BackupDestinationDetails getBackupDestinationDetails() {
         return backupDestinationDetails;
+    }
+
+    /**
+     * The infrastructure type this resource belongs to.
+     **/
+    public enum InfrastructureType {
+        Cloud("CLOUD"),
+        CloudAtCustomer("CLOUD_AT_CUSTOMER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(InfrastructureType.class);
+
+        private final String value;
+        private static java.util.Map<String, InfrastructureType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (InfrastructureType v : InfrastructureType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        InfrastructureType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static InfrastructureType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'InfrastructureType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The infrastructure type this resource belongs to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
+    private final InfrastructureType infrastructureType;
+
+    /**
+     * The infrastructure type this resource belongs to.
+     * @return the value
+     **/
+    public InfrastructureType getInfrastructureType() {
+        return infrastructureType;
+    }
+
+    /**
+     * Name of the region in which backup is taken in.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("region")
+    private final String region;
+
+    /**
+     * Name of the region in which backup is taken in.
+     * @return the value
+     **/
+    public String getRegion() {
+        return region;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseDetails")
+    private final SourceDatabaseDetails sourceDatabaseDetails;
+
+    public SourceDatabaseDetails getSourceDatabaseDetails() {
+        return sourceDatabaseDetails;
     }
 
     @Override
@@ -1011,6 +1180,9 @@ public final class AutonomousDatabaseBackupSummary
         sb.append(", sizeInTBs=").append(String.valueOf(this.sizeInTBs));
         sb.append(", backupDestinationDetails=")
                 .append(String.valueOf(this.backupDestinationDetails));
+        sb.append(", infrastructureType=").append(String.valueOf(this.infrastructureType));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", sourceDatabaseDetails=").append(String.valueOf(this.sourceDatabaseDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1048,6 +1220,9 @@ public final class AutonomousDatabaseBackupSummary
                 && java.util.Objects.equals(this.sizeInTBs, other.sizeInTBs)
                 && java.util.Objects.equals(
                         this.backupDestinationDetails, other.backupDestinationDetails)
+                && java.util.Objects.equals(this.infrastructureType, other.infrastructureType)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.sourceDatabaseDetails, other.sourceDatabaseDetails)
                 && super.equals(other);
     }
 
@@ -1105,6 +1280,17 @@ public final class AutonomousDatabaseBackupSummary
                         + (this.backupDestinationDetails == null
                                 ? 43
                                 : this.backupDestinationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.infrastructureType == null
+                                ? 43
+                                : this.infrastructureType.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDatabaseDetails == null
+                                ? 43
+                                : this.sourceDatabaseDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

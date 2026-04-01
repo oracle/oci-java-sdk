@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The recipients group to receive usage statement email.
+ * The recipients group to receive usage statement emails.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -69,13 +69,13 @@ public final class EmailRecipientsGroup extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The list of recipient will receive the usage statement email.
+         * The list of recipients that will receive usage statement emails.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("recipientsList")
         private java.util.List<EmailRecipient> recipientsList;
 
         /**
-         * The list of recipient will receive the usage statement email.
+         * The list of recipients that will receive usage statement emails.
          * @param recipientsList the value to set
          * @return this builder
          **/
@@ -85,13 +85,13 @@ public final class EmailRecipientsGroup extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The email recipient group lifecycle state.
+         * The email recipients group lifecycle state.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The email recipient group lifecycle state.
+         * The email recipients group lifecycle state.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -172,13 +172,13 @@ public final class EmailRecipientsGroup extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The list of recipient will receive the usage statement email.
+     * The list of recipients that will receive usage statement emails.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recipientsList")
     private final java.util.List<EmailRecipient> recipientsList;
 
     /**
-     * The list of recipient will receive the usage statement email.
+     * The list of recipients that will receive usage statement emails.
      * @return the value
      **/
     public java.util.List<EmailRecipient> getRecipientsList() {
@@ -186,7 +186,7 @@ public final class EmailRecipientsGroup extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The email recipient group lifecycle state.
+     * The email recipients group lifecycle state.
      **/
     public enum LifecycleState {
         Active("ACTIVE"),
@@ -234,13 +234,13 @@ public final class EmailRecipientsGroup extends com.oracle.bmc.http.internal.Exp
         }
     };
     /**
-     * The email recipient group lifecycle state.
+     * The email recipients group lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The email recipient group lifecycle state.
+     * The email recipients group lifecycle state.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {

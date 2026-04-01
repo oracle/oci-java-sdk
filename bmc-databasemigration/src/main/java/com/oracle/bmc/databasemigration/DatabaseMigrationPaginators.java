@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration;
@@ -31,6 +31,706 @@ public class DatabaseMigrationPaginators {
 
     public DatabaseMigrationPaginators(DatabaseMigration client) {
         this.client = client;
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAdvisorReportCheckObjects operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAdvisorReportCheckObjectsResponse>
+            listAdvisorReportCheckObjectsResponseIterator(
+                    final ListAdvisorReportCheckObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAdvisorReportCheckObjectsRequest.Builder, ListAdvisorReportCheckObjectsRequest,
+                ListAdvisorReportCheckObjectsResponse>(
+                new java.util.function.Supplier<ListAdvisorReportCheckObjectsRequest.Builder>() {
+                    @Override
+                    public ListAdvisorReportCheckObjectsRequest.Builder get() {
+                        return ListAdvisorReportCheckObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAdvisorReportCheckObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListAdvisorReportCheckObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAdvisorReportCheckObjectsRequest.Builder>,
+                        ListAdvisorReportCheckObjectsRequest>() {
+                    @Override
+                    public ListAdvisorReportCheckObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAdvisorReportCheckObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAdvisorReportCheckObjectsRequest,
+                        ListAdvisorReportCheckObjectsResponse>() {
+                    @Override
+                    public ListAdvisorReportCheckObjectsResponse apply(
+                            ListAdvisorReportCheckObjectsRequest request) {
+                        return client.listAdvisorReportCheckObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.AdvisorReportCheckObjectSummary} objects
+     * contained in responses from the listAdvisorReportCheckObjects operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.AdvisorReportCheckObjectSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.AdvisorReportCheckObjectSummary>
+            listAdvisorReportCheckObjectsRecordIterator(
+                    final ListAdvisorReportCheckObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAdvisorReportCheckObjectsRequest.Builder, ListAdvisorReportCheckObjectsRequest,
+                ListAdvisorReportCheckObjectsResponse,
+                com.oracle.bmc.databasemigration.model.AdvisorReportCheckObjectSummary>(
+                new java.util.function.Supplier<ListAdvisorReportCheckObjectsRequest.Builder>() {
+                    @Override
+                    public ListAdvisorReportCheckObjectsRequest.Builder get() {
+                        return ListAdvisorReportCheckObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAdvisorReportCheckObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListAdvisorReportCheckObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAdvisorReportCheckObjectsRequest.Builder>,
+                        ListAdvisorReportCheckObjectsRequest>() {
+                    @Override
+                    public ListAdvisorReportCheckObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAdvisorReportCheckObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAdvisorReportCheckObjectsRequest,
+                        ListAdvisorReportCheckObjectsResponse>() {
+                    @Override
+                    public ListAdvisorReportCheckObjectsResponse apply(
+                            ListAdvisorReportCheckObjectsRequest request) {
+                        return client.listAdvisorReportCheckObjects(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAdvisorReportCheckObjectsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model
+                                        .AdvisorReportCheckObjectSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemigration.model
+                                            .AdvisorReportCheckObjectSummary>
+                            apply(ListAdvisorReportCheckObjectsResponse response) {
+                        return response.getAdvisorReportCheckObjectsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAffectedObjects operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAffectedObjectsResponse> listAffectedObjectsResponseIterator(
+            final ListAffectedObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAffectedObjectsRequest.Builder, ListAffectedObjectsRequest,
+                ListAffectedObjectsResponse>(
+                new java.util.function.Supplier<ListAffectedObjectsRequest.Builder>() {
+                    @Override
+                    public ListAffectedObjectsRequest.Builder get() {
+                        return ListAffectedObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAffectedObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListAffectedObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAffectedObjectsRequest.Builder>,
+                        ListAffectedObjectsRequest>() {
+                    @Override
+                    public ListAffectedObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAffectedObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAffectedObjectsRequest, ListAffectedObjectsResponse>() {
+                    @Override
+                    public ListAffectedObjectsResponse apply(ListAffectedObjectsRequest request) {
+                        return client.listAffectedObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.AdvisorReportCheckObjectSummary} objects
+     * contained in responses from the listAffectedObjects operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.AdvisorReportCheckObjectSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.AdvisorReportCheckObjectSummary>
+            listAffectedObjectsRecordIterator(final ListAffectedObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAffectedObjectsRequest.Builder, ListAffectedObjectsRequest,
+                ListAffectedObjectsResponse,
+                com.oracle.bmc.databasemigration.model.AdvisorReportCheckObjectSummary>(
+                new java.util.function.Supplier<ListAffectedObjectsRequest.Builder>() {
+                    @Override
+                    public ListAffectedObjectsRequest.Builder get() {
+                        return ListAffectedObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAffectedObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListAffectedObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAffectedObjectsRequest.Builder>,
+                        ListAffectedObjectsRequest>() {
+                    @Override
+                    public ListAffectedObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAffectedObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAffectedObjectsRequest, ListAffectedObjectsResponse>() {
+                    @Override
+                    public ListAffectedObjectsResponse apply(ListAffectedObjectsRequest request) {
+                        return client.listAffectedObjects(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAffectedObjectsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model
+                                        .AdvisorReportCheckObjectSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemigration.model
+                                            .AdvisorReportCheckObjectSummary>
+                            apply(ListAffectedObjectsResponse response) {
+                        return response.getAffectedObjectsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAssessmentObjectTypes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAssessmentObjectTypesResponse> listAssessmentObjectTypesResponseIterator(
+            final ListAssessmentObjectTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAssessmentObjectTypesRequest.Builder, ListAssessmentObjectTypesRequest,
+                ListAssessmentObjectTypesResponse>(
+                new java.util.function.Supplier<ListAssessmentObjectTypesRequest.Builder>() {
+                    @Override
+                    public ListAssessmentObjectTypesRequest.Builder get() {
+                        return ListAssessmentObjectTypesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAssessmentObjectTypesResponse, String>() {
+                    @Override
+                    public String apply(ListAssessmentObjectTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssessmentObjectTypesRequest.Builder>,
+                        ListAssessmentObjectTypesRequest>() {
+                    @Override
+                    public ListAssessmentObjectTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssessmentObjectTypesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssessmentObjectTypesRequest, ListAssessmentObjectTypesResponse>() {
+                    @Override
+                    public ListAssessmentObjectTypesResponse apply(
+                            ListAssessmentObjectTypesRequest request) {
+                        return client.listAssessmentObjectTypes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.AssessmentObjectTypeSummary} objects
+     * contained in responses from the listAssessmentObjectTypes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.AssessmentObjectTypeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.AssessmentObjectTypeSummary>
+            listAssessmentObjectTypesRecordIterator(
+                    final ListAssessmentObjectTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAssessmentObjectTypesRequest.Builder, ListAssessmentObjectTypesRequest,
+                ListAssessmentObjectTypesResponse,
+                com.oracle.bmc.databasemigration.model.AssessmentObjectTypeSummary>(
+                new java.util.function.Supplier<ListAssessmentObjectTypesRequest.Builder>() {
+                    @Override
+                    public ListAssessmentObjectTypesRequest.Builder get() {
+                        return ListAssessmentObjectTypesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAssessmentObjectTypesResponse, String>() {
+                    @Override
+                    public String apply(ListAssessmentObjectTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssessmentObjectTypesRequest.Builder>,
+                        ListAssessmentObjectTypesRequest>() {
+                    @Override
+                    public ListAssessmentObjectTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssessmentObjectTypesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssessmentObjectTypesRequest, ListAssessmentObjectTypesResponse>() {
+                    @Override
+                    public ListAssessmentObjectTypesResponse apply(
+                            ListAssessmentObjectTypesRequest request) {
+                        return client.listAssessmentObjectTypes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssessmentObjectTypesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model
+                                        .AssessmentObjectTypeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemigration.model
+                                            .AssessmentObjectTypeSummary>
+                            apply(ListAssessmentObjectTypesResponse response) {
+                        return response.getAssessmentObjectTypeSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAssessments operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAssessmentsResponse> listAssessmentsResponseIterator(
+            final ListAssessmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAssessmentsRequest.Builder, ListAssessmentsRequest, ListAssessmentsResponse>(
+                new java.util.function.Supplier<ListAssessmentsRequest.Builder>() {
+                    @Override
+                    public ListAssessmentsRequest.Builder get() {
+                        return ListAssessmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAssessmentsResponse, String>() {
+                    @Override
+                    public String apply(ListAssessmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssessmentsRequest.Builder>,
+                        ListAssessmentsRequest>() {
+                    @Override
+                    public ListAssessmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssessmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListAssessmentsRequest, ListAssessmentsResponse>() {
+                    @Override
+                    public ListAssessmentsResponse apply(ListAssessmentsRequest request) {
+                        return client.listAssessments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.AssessmentSummary} objects
+     * contained in responses from the listAssessments operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.AssessmentSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.AssessmentSummary>
+            listAssessmentsRecordIterator(final ListAssessmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAssessmentsRequest.Builder, ListAssessmentsRequest, ListAssessmentsResponse,
+                com.oracle.bmc.databasemigration.model.AssessmentSummary>(
+                new java.util.function.Supplier<ListAssessmentsRequest.Builder>() {
+                    @Override
+                    public ListAssessmentsRequest.Builder get() {
+                        return ListAssessmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAssessmentsResponse, String>() {
+                    @Override
+                    public String apply(ListAssessmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssessmentsRequest.Builder>,
+                        ListAssessmentsRequest>() {
+                    @Override
+                    public ListAssessmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssessmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListAssessmentsRequest, ListAssessmentsResponse>() {
+                    @Override
+                    public ListAssessmentsResponse apply(ListAssessmentsRequest request) {
+                        return client.listAssessments(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssessmentsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model.AssessmentSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.databasemigration.model.AssessmentSummary>
+                            apply(ListAssessmentsResponse response) {
+                        return response.getAssessmentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAssessorChecks operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAssessorChecksResponse> listAssessorChecksResponseIterator(
+            final ListAssessorChecksRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAssessorChecksRequest.Builder, ListAssessorChecksRequest,
+                ListAssessorChecksResponse>(
+                new java.util.function.Supplier<ListAssessorChecksRequest.Builder>() {
+                    @Override
+                    public ListAssessorChecksRequest.Builder get() {
+                        return ListAssessorChecksRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAssessorChecksResponse, String>() {
+                    @Override
+                    public String apply(ListAssessorChecksResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssessorChecksRequest.Builder>,
+                        ListAssessorChecksRequest>() {
+                    @Override
+                    public ListAssessorChecksRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssessorChecksRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssessorChecksRequest, ListAssessorChecksResponse>() {
+                    @Override
+                    public ListAssessorChecksResponse apply(ListAssessorChecksRequest request) {
+                        return client.listAssessorChecks(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.AssessorCheckSummary} objects
+     * contained in responses from the listAssessorChecks operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.AssessorCheckSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.AssessorCheckSummary>
+            listAssessorChecksRecordIterator(final ListAssessorChecksRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAssessorChecksRequest.Builder, ListAssessorChecksRequest,
+                ListAssessorChecksResponse,
+                com.oracle.bmc.databasemigration.model.AssessorCheckSummary>(
+                new java.util.function.Supplier<ListAssessorChecksRequest.Builder>() {
+                    @Override
+                    public ListAssessorChecksRequest.Builder get() {
+                        return ListAssessorChecksRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAssessorChecksResponse, String>() {
+                    @Override
+                    public String apply(ListAssessorChecksResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssessorChecksRequest.Builder>,
+                        ListAssessorChecksRequest>() {
+                    @Override
+                    public ListAssessorChecksRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssessorChecksRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssessorChecksRequest, ListAssessorChecksResponse>() {
+                    @Override
+                    public ListAssessorChecksResponse apply(ListAssessorChecksRequest request) {
+                        return client.listAssessorChecks(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssessorChecksResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model.AssessorCheckSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemigration.model.AssessorCheckSummary>
+                            apply(ListAssessorChecksResponse response) {
+                        return response.getAssessorCheckSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAssessors operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAssessorsResponse> listAssessorsResponseIterator(
+            final ListAssessorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAssessorsRequest.Builder, ListAssessorsRequest, ListAssessorsResponse>(
+                new java.util.function.Supplier<ListAssessorsRequest.Builder>() {
+                    @Override
+                    public ListAssessorsRequest.Builder get() {
+                        return ListAssessorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAssessorsResponse, String>() {
+                    @Override
+                    public String apply(ListAssessorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssessorsRequest.Builder>,
+                        ListAssessorsRequest>() {
+                    @Override
+                    public ListAssessorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssessorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListAssessorsRequest, ListAssessorsResponse>() {
+                    @Override
+                    public ListAssessorsResponse apply(ListAssessorsRequest request) {
+                        return client.listAssessors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.AssessorSummary} objects
+     * contained in responses from the listAssessors operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.AssessorSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.AssessorSummary>
+            listAssessorsRecordIterator(final ListAssessorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAssessorsRequest.Builder, ListAssessorsRequest, ListAssessorsResponse,
+                com.oracle.bmc.databasemigration.model.AssessorSummary>(
+                new java.util.function.Supplier<ListAssessorsRequest.Builder>() {
+                    @Override
+                    public ListAssessorsRequest.Builder get() {
+                        return ListAssessorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAssessorsResponse, String>() {
+                    @Override
+                    public String apply(ListAssessorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssessorsRequest.Builder>,
+                        ListAssessorsRequest>() {
+                    @Override
+                    public ListAssessorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssessorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListAssessorsRequest, ListAssessorsResponse>() {
+                    @Override
+                    public ListAssessorsResponse apply(ListAssessorsRequest request) {
+                        return client.listAssessors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssessorsResponse,
+                        java.util.List<com.oracle.bmc.databasemigration.model.AssessorSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.databasemigration.model.AssessorSummary>
+                            apply(ListAssessorsResponse response) {
+                        return response.getAssessorSummaryCollection().getItems();
+                    }
+                });
     }
 
     /**
@@ -140,6 +840,127 @@ public class DatabaseMigrationPaginators {
                     public java.util.List<com.oracle.bmc.databasemigration.model.ConnectionSummary>
                             apply(ListConnectionsResponse response) {
                         return response.getConnectionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDatabaseConnectionType operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDatabaseConnectionTypeResponse> listDatabaseConnectionTypeResponseIterator(
+            final ListDatabaseConnectionTypeRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDatabaseConnectionTypeRequest.Builder, ListDatabaseConnectionTypeRequest,
+                ListDatabaseConnectionTypeResponse>(
+                new java.util.function.Supplier<ListDatabaseConnectionTypeRequest.Builder>() {
+                    @Override
+                    public ListDatabaseConnectionTypeRequest.Builder get() {
+                        return ListDatabaseConnectionTypeRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDatabaseConnectionTypeResponse, String>() {
+                    @Override
+                    public String apply(ListDatabaseConnectionTypeResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDatabaseConnectionTypeRequest.Builder>,
+                        ListDatabaseConnectionTypeRequest>() {
+                    @Override
+                    public ListDatabaseConnectionTypeRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDatabaseConnectionTypeRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDatabaseConnectionTypeRequest, ListDatabaseConnectionTypeResponse>() {
+                    @Override
+                    public ListDatabaseConnectionTypeResponse apply(
+                            ListDatabaseConnectionTypeRequest request) {
+                        return client.listDatabaseConnectionType(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.DatabaseConnectionTypeSummary} objects
+     * contained in responses from the listDatabaseConnectionType operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.DatabaseConnectionTypeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.DatabaseConnectionTypeSummary>
+            listDatabaseConnectionTypeRecordIterator(
+                    final ListDatabaseConnectionTypeRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDatabaseConnectionTypeRequest.Builder, ListDatabaseConnectionTypeRequest,
+                ListDatabaseConnectionTypeResponse,
+                com.oracle.bmc.databasemigration.model.DatabaseConnectionTypeSummary>(
+                new java.util.function.Supplier<ListDatabaseConnectionTypeRequest.Builder>() {
+                    @Override
+                    public ListDatabaseConnectionTypeRequest.Builder get() {
+                        return ListDatabaseConnectionTypeRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDatabaseConnectionTypeResponse, String>() {
+                    @Override
+                    public String apply(ListDatabaseConnectionTypeResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDatabaseConnectionTypeRequest.Builder>,
+                        ListDatabaseConnectionTypeRequest>() {
+                    @Override
+                    public ListDatabaseConnectionTypeRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDatabaseConnectionTypeRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDatabaseConnectionTypeRequest, ListDatabaseConnectionTypeResponse>() {
+                    @Override
+                    public ListDatabaseConnectionTypeResponse apply(
+                            ListDatabaseConnectionTypeRequest request) {
+                        return client.listDatabaseConnectionType(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDatabaseConnectionTypeResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model
+                                        .DatabaseConnectionTypeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemigration.model
+                                            .DatabaseConnectionTypeSummary>
+                            apply(ListDatabaseConnectionTypeResponse response) {
+                        return response.getDatabaseConnectionTypeCollection().getItems();
                     }
                 });
     }

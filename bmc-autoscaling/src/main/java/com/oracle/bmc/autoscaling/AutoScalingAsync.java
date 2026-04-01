@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.autoscaling;
@@ -8,12 +8,9 @@ import com.oracle.bmc.autoscaling.requests.*;
 import com.oracle.bmc.autoscaling.responses.*;
 
 /**
- * APIs for dynamically scaling Compute resources to meet application requirements. For more information about
+ * Use the Autoscaling API to dynamically scale compute resources to meet application requirements. For more information about
  * autoscaling, see [Autoscaling](https://docs.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm). For information about the
- * Compute service, see [Overview of the Compute Service](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
- *
- **Note:** Autoscaling is not available in US Government Cloud tenancies. For more information, see
- * [Oracle Cloud Infrastructure US Government Cloud](https://docs.oracle.com/iaas/Content/General/Concepts/govoverview.htm).
+ * Compute service, see [Compute](https://docs.oracle.com/iaas/Content/Compute/home.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")

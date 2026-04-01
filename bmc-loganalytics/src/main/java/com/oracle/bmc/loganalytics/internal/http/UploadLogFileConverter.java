@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.internal.http;
@@ -30,7 +30,6 @@ public class UploadLogFileConverter {
             com.oracle.bmc.loganalytics.requests.UploadLogFileRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
-        Validate.notNull(request.getUploadName(), "uploadName is required");
         Validate.notNull(request.getLogSourceName(), "logSourceName is required");
         Validate.notNull(request.getFilename(), "filename is required");
         Validate.notNull(request.getOpcMetaLoggrpid(), "opcMetaLoggrpid is required");
@@ -46,11 +45,13 @@ public class UploadLogFileConverter {
                         .path("actions")
                         .path("uploadLogFile");
 
-        target =
-                target.queryParam(
-                        "uploadName",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getUploadName()));
+        if (request.getUploadName() != null) {
+            target =
+                    target.queryParam(
+                            "uploadName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getUploadName()));
+        }
 
         target =
                 target.queryParam(

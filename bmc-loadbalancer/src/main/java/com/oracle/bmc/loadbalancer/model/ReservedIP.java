@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -38,6 +38,8 @@ public final class ReservedIP extends com.oracle.bmc.http.internal.ExplicitlySet
          * Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
          * <p>
          * Example: "ocid1.publicip.oc1.phx.unique_ID"
+         * <p>
+         * IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -54,6 +56,8 @@ public final class ReservedIP extends com.oracle.bmc.http.internal.ExplicitlySet
          * Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
          * <p>
          * Example: "ocid1.publicip.oc1.phx.unique_ID"
+         * <p>
+         * IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
          *
          * @param id the value to set
          * @return this builder
@@ -106,6 +110,8 @@ public final class ReservedIP extends com.oracle.bmc.http.internal.ExplicitlySet
      * Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
      * <p>
      * Example: "ocid1.publicip.oc1.phx.unique_ID"
+     * <p>
+     * IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -122,6 +128,8 @@ public final class ReservedIP extends com.oracle.bmc.http.internal.ExplicitlySet
      * Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
      * <p>
      * Example: "ocid1.publicip.oc1.phx.unique_ID"
+     * <p>
+     * IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
      *
      * @return the value
      **/

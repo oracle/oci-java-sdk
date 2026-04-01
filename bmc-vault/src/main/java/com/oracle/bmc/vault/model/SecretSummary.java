@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vault.model;
@@ -29,6 +29,9 @@ public final class SecretSummary extends com.oracle.bmc.http.internal.Explicitly
         "id",
         "lifecycleDetails",
         "lifecycleState",
+        "replicationConfig",
+        "isReplica",
+        "sourceRegionInformation",
         "rotationConfig",
         "rotationStatus",
         "lastRotationTime",
@@ -51,6 +54,9 @@ public final class SecretSummary extends com.oracle.bmc.http.internal.Explicitly
             String id,
             String lifecycleDetails,
             LifecycleState lifecycleState,
+            ReplicationConfig replicationConfig,
+            Boolean isReplica,
+            SourceRegionInformation sourceRegionInformation,
             RotationConfig rotationConfig,
             Secret.RotationStatus rotationStatus,
             java.util.Date lastRotationTime,
@@ -72,6 +78,9 @@ public final class SecretSummary extends com.oracle.bmc.http.internal.Explicitly
         this.id = id;
         this.lifecycleDetails = lifecycleDetails;
         this.lifecycleState = lifecycleState;
+        this.replicationConfig = replicationConfig;
+        this.isReplica = isReplica;
+        this.sourceRegionInformation = sourceRegionInformation;
         this.rotationConfig = rotationConfig;
         this.rotationStatus = rotationStatus;
         this.lastRotationTime = lastRotationTime;
@@ -250,6 +259,40 @@ public final class SecretSummary extends com.oracle.bmc.http.internal.Explicitly
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+        private ReplicationConfig replicationConfig;
+
+        public Builder replicationConfig(ReplicationConfig replicationConfig) {
+            this.replicationConfig = replicationConfig;
+            this.__explicitlySet__.add("replicationConfig");
+            return this;
+        }
+        /**
+         * A Boolean value that indicates whether the secret is a source or replica secret.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isReplica")
+        private Boolean isReplica;
+
+        /**
+         * A Boolean value that indicates whether the secret is a source or replica secret.
+         * @param isReplica the value to set
+         * @return this builder
+         **/
+        public Builder isReplica(Boolean isReplica) {
+            this.isReplica = isReplica;
+            this.__explicitlySet__.add("isReplica");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceRegionInformation")
+        private SourceRegionInformation sourceRegionInformation;
+
+        public Builder sourceRegionInformation(SourceRegionInformation sourceRegionInformation) {
+            this.sourceRegionInformation = sourceRegionInformation;
+            this.__explicitlySet__.add("sourceRegionInformation");
             return this;
         }
 
@@ -452,6 +495,9 @@ public final class SecretSummary extends com.oracle.bmc.http.internal.Explicitly
                             this.id,
                             this.lifecycleDetails,
                             this.lifecycleState,
+                            this.replicationConfig,
+                            this.isReplica,
+                            this.sourceRegionInformation,
                             this.rotationConfig,
                             this.rotationStatus,
                             this.lastRotationTime,
@@ -497,6 +543,15 @@ public final class SecretSummary extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("replicationConfig")) {
+                this.replicationConfig(model.getReplicationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("isReplica")) {
+                this.isReplica(model.getIsReplica());
+            }
+            if (model.wasPropertyExplicitlySet("sourceRegionInformation")) {
+                this.sourceRegionInformation(model.getSourceRegionInformation());
             }
             if (model.wasPropertyExplicitlySet("rotationConfig")) {
                 this.rotationConfig(model.getRotationConfig());
@@ -747,6 +802,34 @@ public final class SecretSummary extends com.oracle.bmc.http.internal.Explicitly
         return lifecycleState;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+    private final ReplicationConfig replicationConfig;
+
+    public ReplicationConfig getReplicationConfig() {
+        return replicationConfig;
+    }
+
+    /**
+     * A Boolean value that indicates whether the secret is a source or replica secret.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isReplica")
+    private final Boolean isReplica;
+
+    /**
+     * A Boolean value that indicates whether the secret is a source or replica secret.
+     * @return the value
+     **/
+    public Boolean getIsReplica() {
+        return isReplica;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceRegionInformation")
+    private final SourceRegionInformation sourceRegionInformation;
+
+    public SourceRegionInformation getSourceRegionInformation() {
+        return sourceRegionInformation;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
     private final RotationConfig rotationConfig;
 
@@ -932,6 +1015,10 @@ public final class SecretSummary extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", replicationConfig=").append(String.valueOf(this.replicationConfig));
+        sb.append(", isReplica=").append(String.valueOf(this.isReplica));
+        sb.append(", sourceRegionInformation=")
+                .append(String.valueOf(this.sourceRegionInformation));
         sb.append(", rotationConfig=").append(String.valueOf(this.rotationConfig));
         sb.append(", rotationStatus=").append(String.valueOf(this.rotationStatus));
         sb.append(", lastRotationTime=").append(String.valueOf(this.lastRotationTime));
@@ -969,6 +1056,10 @@ public final class SecretSummary extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.replicationConfig, other.replicationConfig)
+                && java.util.Objects.equals(this.isReplica, other.isReplica)
+                && java.util.Objects.equals(
+                        this.sourceRegionInformation, other.sourceRegionInformation)
                 && java.util.Objects.equals(this.rotationConfig, other.rotationConfig)
                 && java.util.Objects.equals(this.rotationStatus, other.rotationStatus)
                 && java.util.Objects.equals(this.lastRotationTime, other.lastRotationTime)
@@ -1005,6 +1096,15 @@ public final class SecretSummary extends com.oracle.bmc.http.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationConfig == null ? 43 : this.replicationConfig.hashCode());
+        result = (result * PRIME) + (this.isReplica == null ? 43 : this.isReplica.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceRegionInformation == null
+                                ? 43
+                                : this.sourceRegionInformation.hashCode());
         result =
                 (result * PRIME)
                         + (this.rotationConfig == null ? 43 : this.rotationConfig.hashCode());

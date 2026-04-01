@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -80,13 +80,13 @@ public final class AcdAvmResourceStats extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * CPUs/cores assigned to Autonomous Databases for the ACD instance in given Autonomus VM.
+         * CPUs/cores assigned to Autonomous AI Databases for the ACD instance in given Autonomus VM.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
         private Float provisionedCpus;
 
         /**
-         * CPUs/cores assigned to Autonomous Databases for the ACD instance in given Autonomus VM.
+         * CPUs/cores assigned to Autonomous AI Databases for the ACD instance in given Autonomus VM.
          * @param provisionedCpus the value to set
          * @return this builder
          **/
@@ -138,7 +138,7 @@ public final class AcdAvmResourceStats extends com.oracle.bmc.http.internal.Expl
         /**
          * CPUs/cores that continue to be included in the count of OCPUs available to the
          * Autonomous Container Database in given Autonomous VM, even after one of its
-         * Autonomous Database is terminated or scaled down. You can release them to the available
+         * Autonomous AI Database is terminated or scaled down. You can release them to the available
          * OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
          *
          **/
@@ -148,7 +148,7 @@ public final class AcdAvmResourceStats extends com.oracle.bmc.http.internal.Expl
         /**
          * CPUs/cores that continue to be included in the count of OCPUs available to the
          * Autonomous Container Database in given Autonomous VM, even after one of its
-         * Autonomous Database is terminated or scaled down. You can release them to the available
+         * Autonomous AI Database is terminated or scaled down. You can release them to the available
          * OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
          *
          * @param reclaimableCpus the value to set
@@ -242,13 +242,13 @@ public final class AcdAvmResourceStats extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * CPUs/cores assigned to Autonomous Databases for the ACD instance in given Autonomus VM.
+     * CPUs/cores assigned to Autonomous AI Databases for the ACD instance in given Autonomus VM.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
     private final Float provisionedCpus;
 
     /**
-     * CPUs/cores assigned to Autonomous Databases for the ACD instance in given Autonomus VM.
+     * CPUs/cores assigned to Autonomous AI Databases for the ACD instance in given Autonomus VM.
      * @return the value
      **/
     public Float getProvisionedCpus() {
@@ -294,7 +294,7 @@ public final class AcdAvmResourceStats extends com.oracle.bmc.http.internal.Expl
     /**
      * CPUs/cores that continue to be included in the count of OCPUs available to the
      * Autonomous Container Database in given Autonomous VM, even after one of its
-     * Autonomous Database is terminated or scaled down. You can release them to the available
+     * Autonomous AI Database is terminated or scaled down. You can release them to the available
      * OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      *
      **/
@@ -304,7 +304,7 @@ public final class AcdAvmResourceStats extends com.oracle.bmc.http.internal.Expl
     /**
      * CPUs/cores that continue to be included in the count of OCPUs available to the
      * Autonomous Container Database in given Autonomous VM, even after one of its
-     * Autonomous Database is terminated or scaled down. You can release them to the available
+     * Autonomous AI Database is terminated or scaled down. You can release them to the available
      * OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      *
      * @return the value

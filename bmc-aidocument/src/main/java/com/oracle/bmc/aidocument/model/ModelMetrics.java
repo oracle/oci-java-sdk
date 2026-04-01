@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument.model;
@@ -23,12 +23,32 @@ package com.oracle.bmc.aidocument.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedDocumentElementsExtractionModelDetails.class,
+        name = "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DocumentClassificationModelMetrics.class,
         name = "DOCUMENT_CLASSIFICATION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PretrainedDocumentClassificationModelDetails.class,
+        name = "PRE_TRAINED_DOCUMENT_CLASSIFICATION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PretrainedTableExtractionModelDetails.class,
+        name = "PRE_TRAINED_TABLE_EXTRACTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = KeyValueDetectionModelMetrics.class,
         name = "KEY_VALUE_EXTRACTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PretrainedKeyValueExtractionModelDetails.class,
+        name = "PRE_TRAINED_KEY_VALUE_EXTRACTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PretrainedTextExtractionModelDetails.class,
+        name = "PRE_TRAINED_TEXT_EXTRACTION"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -97,6 +117,11 @@ public class ModelMetrics extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     public enum ModelType {
         KeyValueExtraction("KEY_VALUE_EXTRACTION"),
         DocumentClassification("DOCUMENT_CLASSIFICATION"),
+        PreTrainedTextExtraction("PRE_TRAINED_TEXT_EXTRACTION"),
+        PreTrainedTableExtraction("PRE_TRAINED_TABLE_EXTRACTION"),
+        PreTrainedKeyValueExtraction("PRE_TRAINED_KEY_VALUE_EXTRACTION"),
+        PreTrainedDocumentClassification("PRE_TRAINED_DOCUMENT_CLASSIFICATION"),
+        PreTrainedDocumentElementsExtraction("PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

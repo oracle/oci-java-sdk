@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -136,6 +136,34 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /**
          * The MongoDB technology type.
          **/
@@ -268,6 +296,7 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
         }
         /**
          * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCaFile")
@@ -275,6 +304,7 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
         /**
          * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+         * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
          *
          * @param tlsCaFile the value to set
          * @return this builder
@@ -386,6 +416,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
                             this.subnetId,
                             this.routingMethod,
                             this.doesUseSecretIds,
+                            this.subscriptionId,
+                            this.clusterPlacementGroupId,
+                            this.securityAttributes,
                             this.technologyType,
                             this.connectionString,
                             this.username,
@@ -441,6 +474,15 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             }
             if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
                 this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -508,6 +550,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             String subnetId,
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             MongoDbConnection.TechnologyType technologyType,
             String connectionString,
             String username,
@@ -532,7 +577,10 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
                 nsgIds,
                 subnetId,
                 routingMethod,
-                doesUseSecretIds);
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
         this.technologyType = technologyType;
         this.connectionString = connectionString;
         this.username = username;
@@ -665,6 +713,7 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
     /**
      * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCaFile")
@@ -672,6 +721,7 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
     /**
      * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+     * It is not included in GET responses if the {@code view=COMPACT} query parameter is specified.
      *
      * @return the value
      **/

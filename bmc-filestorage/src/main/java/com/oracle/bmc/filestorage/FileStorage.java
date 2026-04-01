@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage;
@@ -60,6 +60,13 @@ public interface FileStorage extends AutoCloseable {
      * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
+     * Determines whether dual stack endpoint should be used or not.
+     * Set dualStackEndpointTemplateEnabled to "true" if the user wants to enable use of dual stack endpoint template. Default value is "false"
+     * @param dualStackEndpointTemplateEnabled flag to enable the use of dual stack endpoint template
+     */
+    void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled);
 
     /**
      * Adds a lock to a resource.
