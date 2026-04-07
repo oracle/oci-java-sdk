@@ -92,6 +92,21 @@ public final class CreateVendorSoftwareSourceDetails extends CreateSoftwareSourc
             this.__explicitlySet__.add("originSoftwareSourceId");
             return this;
         }
+        /** The display name of the software source to be replicated */
+        @com.fasterxml.jackson.annotation.JsonProperty("originDisplayName")
+        private String originDisplayName;
+
+        /**
+         * The display name of the software source to be replicated
+         *
+         * @param originDisplayName the value to set
+         * @return this builder
+         */
+        public Builder originDisplayName(String originDisplayName) {
+            this.originDisplayName = originDisplayName;
+            this.__explicitlySet__.add("originDisplayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -104,7 +119,8 @@ public final class CreateVendorSoftwareSourceDetails extends CreateSoftwareSourc
                             this.description,
                             this.freeformTags,
                             this.definedTags,
-                            this.originSoftwareSourceId);
+                            this.originSoftwareSourceId,
+                            this.originDisplayName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -131,6 +147,9 @@ public final class CreateVendorSoftwareSourceDetails extends CreateSoftwareSourc
             if (model.wasPropertyExplicitlySet("originSoftwareSourceId")) {
                 this.originSoftwareSourceId(model.getOriginSoftwareSourceId());
             }
+            if (model.wasPropertyExplicitlySet("originDisplayName")) {
+                this.originDisplayName(model.getOriginDisplayName());
+            }
             return this;
         }
     }
@@ -151,9 +170,11 @@ public final class CreateVendorSoftwareSourceDetails extends CreateSoftwareSourc
             String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String originSoftwareSourceId) {
+            String originSoftwareSourceId,
+            String originDisplayName) {
         super(compartmentId, displayName, description, freeformTags, definedTags);
         this.originSoftwareSourceId = originSoftwareSourceId;
+        this.originDisplayName = originDisplayName;
     }
 
     /**
@@ -173,6 +194,19 @@ public final class CreateVendorSoftwareSourceDetails extends CreateSoftwareSourc
         return originSoftwareSourceId;
     }
 
+    /** The display name of the software source to be replicated */
+    @com.fasterxml.jackson.annotation.JsonProperty("originDisplayName")
+    private final String originDisplayName;
+
+    /**
+     * The display name of the software source to be replicated
+     *
+     * @return the value
+     */
+    public String getOriginDisplayName() {
+        return originDisplayName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -189,6 +223,7 @@ public final class CreateVendorSoftwareSourceDetails extends CreateSoftwareSourc
         sb.append("CreateVendorSoftwareSourceDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", originSoftwareSourceId=").append(String.valueOf(this.originSoftwareSourceId));
+        sb.append(", originDisplayName=").append(String.valueOf(this.originDisplayName));
         sb.append(")");
         return sb.toString();
     }
@@ -204,6 +239,7 @@ public final class CreateVendorSoftwareSourceDetails extends CreateSoftwareSourc
 
         CreateVendorSoftwareSourceDetails other = (CreateVendorSoftwareSourceDetails) o;
         return java.util.Objects.equals(this.originSoftwareSourceId, other.originSoftwareSourceId)
+                && java.util.Objects.equals(this.originDisplayName, other.originDisplayName)
                 && super.equals(other);
     }
 
@@ -216,6 +252,9 @@ public final class CreateVendorSoftwareSourceDetails extends CreateSoftwareSourc
                         + (this.originSoftwareSourceId == null
                                 ? 43
                                 : this.originSoftwareSourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originDisplayName == null ? 43 : this.originDisplayName.hashCode());
         return result;
     }
 }

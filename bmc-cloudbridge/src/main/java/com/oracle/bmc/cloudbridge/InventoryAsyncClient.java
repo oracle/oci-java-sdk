@@ -131,6 +131,8 @@ public class InventoryAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                         request.getGroupBy(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("inventoryId", request.getInventoryId())
+                .appendQueryParam("assetClassName", request.getAssetClassName())
+                .appendQueryParam("assetClassVersion", request.getAssetClassVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -459,6 +461,8 @@ public class InventoryAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("inventoryId", request.getInventoryId())
+                .appendQueryParam("assetClassName", request.getAssetClassName())
+                .appendQueryParam("assetClassVersion", request.getAssetClassVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

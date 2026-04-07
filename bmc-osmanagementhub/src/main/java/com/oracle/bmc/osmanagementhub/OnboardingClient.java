@@ -346,6 +346,40 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public DetachManagementStationFromProfileResponse detachManagementStationFromProfile(
+            DetachManagementStationFromProfileRequest request) {
+
+        Validate.notBlank(request.getProfileId(), "profileId must not be blank");
+        Objects.requireNonNull(
+                request.getDetachManagementStationFromProfileDetails(),
+                "detachManagementStationFromProfileDetails is required");
+
+        return clientCall(request, DetachManagementStationFromProfileResponse::builder)
+                .logger(LOG, "detachManagementStationFromProfile")
+                .serviceDetails(
+                        "Onboarding",
+                        "DetachManagementStationFromProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/DetachManagementStationFromProfile")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachManagementStationFromProfileRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileId())
+                .appendPathParam("actions")
+                .appendPathParam("detachManagementStation")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DetachManagementStationFromProfileResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DetachSoftwareSourcesFromProfileResponse detachSoftwareSourcesFromProfile(
             DetachSoftwareSourcesFromProfileRequest request) {
 

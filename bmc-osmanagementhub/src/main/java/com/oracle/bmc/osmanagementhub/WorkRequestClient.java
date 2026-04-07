@@ -264,6 +264,7 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         request.getTimeCreatedGreaterThanOrEqualTo())
                 .appendQueryParam(
                         "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()

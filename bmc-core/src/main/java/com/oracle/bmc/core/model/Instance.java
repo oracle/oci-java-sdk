@@ -550,8 +550,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
          * devices. The default value for platform images. * {@code EMULATED} - VM instances launch
          * with emulated devices, such as the E1000 network driver and emulated SCSI disk
          * controller. * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices
-         * using VirtIO drivers. * {@code CUSTOM} - VM instances launch with custom configuration
-         * settings specified in the {@code LaunchOptions} parameter.
+         * using VirtIO drivers. * {@code ACCELERATEDPV} - VM instances launch with accelerated
+         * paravirtualized networking type. * {@code CUSTOM} - VM instances launch with custom
+         * configuration settings specified in the {@code LaunchOptions} parameter.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("launchMode")
         private LaunchMode launchMode;
@@ -562,8 +563,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
          * devices. The default value for platform images. * {@code EMULATED} - VM instances launch
          * with emulated devices, such as the E1000 network driver and emulated SCSI disk
          * controller. * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices
-         * using VirtIO drivers. * {@code CUSTOM} - VM instances launch with custom configuration
-         * settings specified in the {@code LaunchOptions} parameter.
+         * using VirtIO drivers. * {@code ACCELERATEDPV} - VM instances launch with accelerated
+         * paravirtualized networking type. * {@code CUSTOM} - VM instances launch with custom
+         * configuration settings specified in the {@code LaunchOptions} parameter.
          *
          * @param launchMode the value to set
          * @return this builder
@@ -1415,13 +1417,15 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
      * devices. The default value for platform images. * {@code EMULATED} - VM instances launch with
      * emulated devices, such as the E1000 network driver and emulated SCSI disk controller. *
      * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO
-     * drivers. * {@code CUSTOM} - VM instances launch with custom configuration settings specified
-     * in the {@code LaunchOptions} parameter.
+     * drivers. * {@code ACCELERATEDPV} - VM instances launch with accelerated paravirtualized
+     * networking type. * {@code CUSTOM} - VM instances launch with custom configuration settings
+     * specified in the {@code LaunchOptions} parameter.
      */
     public enum LaunchMode implements com.oracle.bmc.http.internal.BmcEnum {
         Native("NATIVE"),
         Emulated("EMULATED"),
         Paravirtualized("PARAVIRTUALIZED"),
+        Acceleratedpv("ACCELERATEDPV"),
         Custom("CUSTOM"),
 
         /**
@@ -1471,8 +1475,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
      * devices. The default value for platform images. * {@code EMULATED} - VM instances launch with
      * emulated devices, such as the E1000 network driver and emulated SCSI disk controller. *
      * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO
-     * drivers. * {@code CUSTOM} - VM instances launch with custom configuration settings specified
-     * in the {@code LaunchOptions} parameter.
+     * drivers. * {@code ACCELERATEDPV} - VM instances launch with accelerated paravirtualized
+     * networking type. * {@code CUSTOM} - VM instances launch with custom configuration settings
+     * specified in the {@code LaunchOptions} parameter.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("launchMode")
     private final LaunchMode launchMode;
@@ -1483,8 +1488,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
      * devices. The default value for platform images. * {@code EMULATED} - VM instances launch with
      * emulated devices, such as the E1000 network driver and emulated SCSI disk controller. *
      * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO
-     * drivers. * {@code CUSTOM} - VM instances launch with custom configuration settings specified
-     * in the {@code LaunchOptions} parameter.
+     * drivers. * {@code ACCELERATEDPV} - VM instances launch with accelerated paravirtualized
+     * networking type. * {@code CUSTOM} - VM instances launch with custom configuration settings
+     * specified in the {@code LaunchOptions} parameter.
      *
      * @return the value
      */

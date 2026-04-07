@@ -545,6 +545,43 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public InstallSnapsOnManagedInstanceResponse installSnapsOnManagedInstance(
+            InstallSnapsOnManagedInstanceRequest request) {
+
+        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getInstallSnapsOnManagedInstanceDetails(),
+                "installSnapsOnManagedInstanceDetails is required");
+
+        return clientCall(request, InstallSnapsOnManagedInstanceResponse::builder)
+                .logger(LOG, "installSnapsOnManagedInstance")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "InstallSnapsOnManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallSnapsOnManagedInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InstallSnapsOnManagedInstanceRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam(request.getManagedInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("installSnaps")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        InstallSnapsOnManagedInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        InstallSnapsOnManagedInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public InstallWindowsUpdatesOnManagedInstanceResponse installWindowsUpdatesOnManagedInstance(
             InstallWindowsUpdatesOnManagedInstanceRequest request) {
 
@@ -903,6 +940,47 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public ListManagedInstanceSnapsResponse listManagedInstanceSnaps(
+            ListManagedInstanceSnapsRequest request) {
+
+        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+
+        return clientCall(request, ListManagedInstanceSnapsResponse::builder)
+                .logger(LOG, "listManagedInstanceSnaps")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceSnaps",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceSnaps")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListManagedInstanceSnapsRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam(request.getManagedInstanceId())
+                .appendPathParam("snaps")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.osmanagementhub.model.SnapCollection.class,
+                        ListManagedInstanceSnapsResponse.Builder::snapCollection)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ListManagedInstanceSnapsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListManagedInstanceSnapsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListManagedInstanceSnapsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListManagedInstanceUpdatablePackagesResponse listManagedInstanceUpdatablePackages(
             ListManagedInstanceUpdatablePackagesRequest request) {
 
@@ -932,6 +1010,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendListQueryParam(
                         "advisoryName",
                         request.getAdvisoryName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "advisorySeverity",
+                        request.getAdvisorySeverity(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("limit", request.getLimit())
@@ -1275,6 +1357,43 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public RemoveSnapsFromManagedInstanceResponse removeSnapsFromManagedInstance(
+            RemoveSnapsFromManagedInstanceRequest request) {
+
+        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveSnapsFromManagedInstanceDetails(),
+                "removeSnapsFromManagedInstanceDetails is required");
+
+        return clientCall(request, RemoveSnapsFromManagedInstanceResponse::builder)
+                .logger(LOG, "removeSnapsFromManagedInstance")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "RemoveSnapsFromManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RemoveSnapsFromManagedInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveSnapsFromManagedInstanceRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam(request.getManagedInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("removeSnaps")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveSnapsFromManagedInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveSnapsFromManagedInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public SwitchModuleStreamOnManagedInstanceResponse switchModuleStreamOnManagedInstance(
             SwitchModuleStreamOnManagedInstanceRequest request) {
 
@@ -1308,6 +1427,43 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         SwitchModuleStreamOnManagedInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public SwitchSnapChannelOnManagedInstanceResponse switchSnapChannelOnManagedInstance(
+            SwitchSnapChannelOnManagedInstanceRequest request) {
+
+        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getSwitchSnapChannelOnManagedInstanceDetails(),
+                "switchSnapChannelOnManagedInstanceDetails is required");
+
+        return clientCall(request, SwitchSnapChannelOnManagedInstanceResponse::builder)
+                .logger(LOG, "switchSnapChannelOnManagedInstance")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "SwitchSnapChannelOnManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/SwitchSnapChannelOnManagedInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SwitchSnapChannelOnManagedInstanceRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam(request.getManagedInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("switchSnapChannel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        SwitchSnapChannelOnManagedInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SwitchSnapChannelOnManagedInstanceResponse.Builder::opcRequestId)
                 .callSync();
     }
 

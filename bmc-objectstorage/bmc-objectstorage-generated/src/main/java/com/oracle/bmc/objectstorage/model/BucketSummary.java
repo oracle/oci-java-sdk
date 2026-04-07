@@ -32,7 +32,8 @@ public final class BucketSummary extends com.oracle.bmc.http.client.internal.Exp
         "timeCreated",
         "etag",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "bucketScope"
     })
     public BucketSummary(
             String namespace,
@@ -42,7 +43,8 @@ public final class BucketSummary extends com.oracle.bmc.http.client.internal.Exp
             java.util.Date timeCreated,
             String etag,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Bucket.BucketScope bucketScope) {
         super();
         this.namespace = namespace;
         this.name = name;
@@ -52,6 +54,7 @@ public final class BucketSummary extends com.oracle.bmc.http.client.internal.Exp
         this.etag = etag;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.bucketScope = bucketScope;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -203,6 +206,31 @@ public final class BucketSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as
+         * NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+         * tenancies can have a bucket with same name in their namespace. Bucket scope as REGION
+         * means that the bucket is regionally unique. No other tenancy can have a bucket with same
+         * name and scope REGION.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("bucketScope")
+        private Bucket.BucketScope bucketScope;
+
+        /**
+         * Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as
+         * NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+         * tenancies can have a bucket with same name in their namespace. Bucket scope as REGION
+         * means that the bucket is regionally unique. No other tenancy can have a bucket with same
+         * name and scope REGION.
+         *
+         * @param bucketScope the value to set
+         * @return this builder
+         */
+        public Builder bucketScope(Bucket.BucketScope bucketScope) {
+            this.bucketScope = bucketScope;
+            this.__explicitlySet__.add("bucketScope");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -217,7 +245,8 @@ public final class BucketSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.timeCreated,
                             this.etag,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.bucketScope);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -249,6 +278,9 @@ public final class BucketSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("bucketScope")) {
+                this.bucketScope(model.getBucketScope());
             }
             return this;
         }
@@ -391,6 +423,27 @@ public final class BucketSummary extends com.oracle.bmc.http.client.internal.Exp
         return definedTags;
     }
 
+    /**
+     * Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE
+     * means that the bucket is unique only in the owning namespace/tenancy. Other tenancies can
+     * have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket
+     * is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("bucketScope")
+    private final Bucket.BucketScope bucketScope;
+
+    /**
+     * Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE
+     * means that the bucket is unique only in the owning namespace/tenancy. Other tenancies can
+     * have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket
+     * is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     *
+     * @return the value
+     */
+    public Bucket.BucketScope getBucketScope() {
+        return bucketScope;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -414,6 +467,7 @@ public final class BucketSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", etag=").append(String.valueOf(this.etag));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", bucketScope=").append(String.valueOf(this.bucketScope));
         sb.append(")");
         return sb.toString();
     }
@@ -436,6 +490,7 @@ public final class BucketSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.bucketScope, other.bucketScope)
                 && super.equals(other);
     }
 
@@ -453,6 +508,7 @@ public final class BucketSummary extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.bucketScope == null ? 43 : this.bucketScope.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

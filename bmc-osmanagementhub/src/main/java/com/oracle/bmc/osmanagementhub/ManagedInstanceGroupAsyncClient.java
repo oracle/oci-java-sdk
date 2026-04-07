@@ -816,6 +816,57 @@ public class ManagedInstanceGroupAsyncClient extends com.oracle.bmc.http.interna
     }
 
     @Override
+    public java.util.concurrent.Future<ListManagedInstanceGroupManagedInstancesResponse>
+            listManagedInstanceGroupManagedInstances(
+                    ListManagedInstanceGroupManagedInstancesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListManagedInstanceGroupManagedInstancesRequest,
+                                    ListManagedInstanceGroupManagedInstancesResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
+
+        return clientCall(request, ListManagedInstanceGroupManagedInstancesResponse::builder)
+                .logger(LOG, "listManagedInstanceGroupManagedInstances")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "ListManagedInstanceGroupManagedInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupManagedInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListManagedInstanceGroupManagedInstancesRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstanceGroups")
+                .appendPathParam(request.getManagedInstanceGroupId())
+                .appendPathParam("managedInstances")
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "displayName",
+                        request.getDisplayName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.osmanagementhub.model.ManagedInstanceCollection.class,
+                        ListManagedInstanceGroupManagedInstancesResponse.Builder
+                                ::managedInstanceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListManagedInstanceGroupManagedInstancesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListManagedInstanceGroupManagedInstancesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListManagedInstanceGroupModulesResponse>
             listManagedInstanceGroupModules(
                     ListManagedInstanceGroupModulesRequest request,
@@ -1000,6 +1051,44 @@ public class ManagedInstanceGroupAsyncClient extends com.oracle.bmc.http.interna
                         RebootManagedInstanceGroupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RebootManagedInstanceGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshSoftwareOnManagedInstanceGroupResponse>
+            refreshSoftwareOnManagedInstanceGroup(
+                    RefreshSoftwareOnManagedInstanceGroupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshSoftwareOnManagedInstanceGroupRequest,
+                                    RefreshSoftwareOnManagedInstanceGroupResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
+
+        return clientCall(request, RefreshSoftwareOnManagedInstanceGroupResponse::builder)
+                .logger(LOG, "refreshSoftwareOnManagedInstanceGroup")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "RefreshSoftwareOnManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RefreshSoftwareOnManagedInstanceGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshSoftwareOnManagedInstanceGroupRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstanceGroups")
+                .appendPathParam(request.getManagedInstanceGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("refreshSoftware")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshSoftwareOnManagedInstanceGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RefreshSoftwareOnManagedInstanceGroupResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

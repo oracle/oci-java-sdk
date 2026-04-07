@@ -273,6 +273,7 @@ public class ScheduledJobAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam(
                         "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
+                .appendQueryParam("dynamicSetId", request.getDynamicSetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

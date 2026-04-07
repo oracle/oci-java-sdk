@@ -101,6 +101,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.objectstorage.model.Bucket$BucketScope",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.objectstorage.model.BucketSummary",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

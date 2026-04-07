@@ -310,6 +310,19 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
     public Boolean getIsManagedByAutonomousLinux() {
         return isManagedByAutonomousLinux;
     }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dynamic set. This filter returns resources associated with this dynamic set.
+     */
+    private String dynamicSetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dynamic set. This filter returns resources associated with this dynamic set.
+     */
+    public String getDynamicSetId() {
+        return dynamicSetId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -746,6 +759,24 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dynamic set. This filter returns resources associated with this dynamic set.
+         */
+        private String dynamicSetId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dynamic set. This filter returns resources associated with this dynamic set.
+         *
+         * @param dynamicSetId the value to set
+         * @return this builder instance
+         */
+        public Builder dynamicSetId(String dynamicSetId) {
+            this.dynamicSetId = dynamicSetId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -798,6 +829,7 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             location(o.getLocation());
             locationNotEqualTo(o.getLocationNotEqualTo());
             isManagedByAutonomousLinux(o.getIsManagedByAutonomousLinux());
+            dynamicSetId(o.getDynamicSetId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -855,12 +887,13 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             request.location = location;
             request.locationNotEqualTo = locationNotEqualTo;
             request.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            request.dynamicSetId = dynamicSetId;
             return request;
             // new ListScheduledJobsRequest(compartmentId, displayName, displayNameContains,
             // lifecycleState, managedInstanceId, managedInstanceGroupId, managedCompartmentId,
             // lifecycleStageId, operationType, scheduleType, timeStart, timeEnd, limit, page,
             // sortOrder, sortBy, opcRequestId, isRestricted, id, compartmentIdInSubtree, location,
-            // locationNotEqualTo, isManagedByAutonomousLinux);
+            // locationNotEqualTo, isManagedByAutonomousLinux, dynamicSetId);
         }
     }
 
@@ -893,7 +926,8 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .location(location)
                 .locationNotEqualTo(locationNotEqualTo)
-                .isManagedByAutonomousLinux(isManagedByAutonomousLinux);
+                .isManagedByAutonomousLinux(isManagedByAutonomousLinux)
+                .dynamicSetId(dynamicSetId);
     }
 
     /**
@@ -934,6 +968,7 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",locationNotEqualTo=").append(String.valueOf(this.locationNotEqualTo));
         sb.append(",isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
+        sb.append(",dynamicSetId=").append(String.valueOf(this.dynamicSetId));
         sb.append(")");
         return sb.toString();
     }
@@ -974,7 +1009,8 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(this.location, other.location)
                 && java.util.Objects.equals(this.locationNotEqualTo, other.locationNotEqualTo)
                 && java.util.Objects.equals(
-                        this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux);
+                        this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
+                && java.util.Objects.equals(this.dynamicSetId, other.dynamicSetId);
     }
 
     @Override
@@ -1038,6 +1074,7 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
                         + (this.isManagedByAutonomousLinux == null
                                 ? 43
                                 : this.isManagedByAutonomousLinux.hashCode());
+        result = (result * PRIME) + (this.dynamicSetId == null ? 43 : this.dynamicSetId.hashCode());
         return result;
     }
 }

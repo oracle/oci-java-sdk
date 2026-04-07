@@ -248,6 +248,7 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         request.getTimeCreatedGreaterThanOrEqualTo())
                 .appendQueryParam(
                         "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

@@ -30,6 +30,7 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CloudAwsDiscovery("CLOUD_AWS_DISCOVERY"),
     CollectAwsRealtimeMetrics("COLLECT_AWS_REALTIME_METRICS"),
     CollectAwsHistoricalMetrics("COLLECT_AWS_HISTORICAL_METRICS"),
+    OlvmDiscovery("OLVM_DISCOVERY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

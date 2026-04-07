@@ -287,6 +287,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public Boolean getIsManagedByAutonomousLinux() {
         return isManagedByAutonomousLinux;
     }
+    /** Indicates whether to include subcompartments in the returned results. Default is false. */
+    private Boolean compartmentIdInSubtree;
+
+    /** Indicates whether to include subcompartments in the returned results. Default is false. */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -671,6 +678,22 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * Indicates whether to include subcompartments in the returned results. Default is false.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * Indicates whether to include subcompartments in the returned results. Default is false.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -719,6 +742,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             timeCreatedLessThan(o.getTimeCreatedLessThan());
             timeCreatedGreaterThanOrEqualTo(o.getTimeCreatedGreaterThanOrEqualTo());
             isManagedByAutonomousLinux(o.getIsManagedByAutonomousLinux());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -772,11 +796,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.timeCreatedLessThan = timeCreatedLessThan;
             request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             request.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             return request;
             // new ListWorkRequestsRequest(compartmentId, workRequestId, status, resourceId,
             // opcRequestId, page, limit, sortOrder, sortBy, initiatorId, parentId,
             // parentResourcesNotEqualTo, operationType, displayNameContains, retryOfId, rerunOfId,
-            // timeCreatedLessThan, timeCreatedGreaterThanOrEqualTo, isManagedByAutonomousLinux);
+            // timeCreatedLessThan, timeCreatedGreaterThanOrEqualTo, isManagedByAutonomousLinux,
+            // compartmentIdInSubtree);
         }
     }
 
@@ -805,7 +831,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .rerunOfId(rerunOfId)
                 .timeCreatedLessThan(timeCreatedLessThan)
                 .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo)
-                .isManagedByAutonomousLinux(isManagedByAutonomousLinux);
+                .isManagedByAutonomousLinux(isManagedByAutonomousLinux)
+                .compartmentIdInSubtree(compartmentIdInSubtree);
     }
 
     /**
@@ -844,6 +871,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
         sb.append(",isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(")");
         return sb.toString();
     }
@@ -880,7 +908,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(
                         this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
                 && java.util.Objects.equals(
-                        this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux);
+                        this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree);
     }
 
     @Override
@@ -932,6 +962,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                         + (this.isManagedByAutonomousLinux == null
                                 ? 43
                                 : this.isManagedByAutonomousLinux.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         return result;
     }
 }

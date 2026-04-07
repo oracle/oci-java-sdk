@@ -284,6 +284,7 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam(
                         "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
+                .appendQueryParam("dynamicSetId", request.getDynamicSetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()

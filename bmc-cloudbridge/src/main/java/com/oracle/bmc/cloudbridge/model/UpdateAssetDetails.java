@@ -29,6 +29,9 @@ package com.oracle.bmc.cloudbridge.model;
             value = UpdateAwsEbsAssetDetails.class,
             name = "AWS_EBS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateInventoryAssetDetails.class,
+            name = "INVENTORY_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateVmwareVmAssetDetails.class,
             name = "VMWARE_VM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

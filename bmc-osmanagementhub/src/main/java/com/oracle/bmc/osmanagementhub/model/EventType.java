@@ -17,6 +17,7 @@ public enum EventType implements com.oracle.bmc.http.internal.BmcEnum {
     ManagementStation("MANAGEMENT_STATION"),
     Sysadmin("SYSADMIN"),
     Reboot("REBOOT"),
+    SnapUpdate("SNAP_UPDATE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this
