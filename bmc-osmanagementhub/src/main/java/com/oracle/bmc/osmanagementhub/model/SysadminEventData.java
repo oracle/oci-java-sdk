@@ -24,6 +24,7 @@ public final class SysadminEventData
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "errorSummary",
         "errorCause",
         "errorLog",
         "attemptedResolutions",
@@ -32,6 +33,7 @@ public final class SysadminEventData
         "additionalDetails"
     })
     public SysadminEventData(
+            String errorSummary,
             String errorCause,
             String errorLog,
             java.util.List<String> attemptedResolutions,
@@ -39,6 +41,7 @@ public final class SysadminEventData
             String resolutionLog,
             WorkRequestEventDataAdditionalDetails additionalDetails) {
         super();
+        this.errorSummary = errorSummary;
         this.errorCause = errorCause;
         this.errorLog = errorLog;
         this.attemptedResolutions = attemptedResolutions;
@@ -49,6 +52,21 @@ public final class SysadminEventData
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /** Brief description on how this error is categorized. */
+        @com.fasterxml.jackson.annotation.JsonProperty("errorSummary")
+        private String errorSummary;
+
+        /**
+         * Brief description on how this error is categorized.
+         *
+         * @param errorSummary the value to set
+         * @return this builder
+         */
+        public Builder errorSummary(String errorSummary) {
+            this.errorSummary = errorSummary;
+            this.__explicitlySet__.add("errorSummary");
+            return this;
+        }
         /** The commands executed by the agent that caused the error. */
         @com.fasterxml.jackson.annotation.JsonProperty("errorCause")
         private String errorCause;
@@ -140,6 +158,7 @@ public final class SysadminEventData
         public SysadminEventData build() {
             SysadminEventData model =
                     new SysadminEventData(
+                            this.errorSummary,
                             this.errorCause,
                             this.errorLog,
                             this.attemptedResolutions,
@@ -154,6 +173,9 @@ public final class SysadminEventData
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SysadminEventData model) {
+            if (model.wasPropertyExplicitlySet("errorSummary")) {
+                this.errorSummary(model.getErrorSummary());
+            }
             if (model.wasPropertyExplicitlySet("errorCause")) {
                 this.errorCause(model.getErrorCause());
             }
@@ -183,6 +205,19 @@ public final class SysadminEventData
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /** Brief description on how this error is categorized. */
+    @com.fasterxml.jackson.annotation.JsonProperty("errorSummary")
+    private final String errorSummary;
+
+    /**
+     * Brief description on how this error is categorized.
+     *
+     * @return the value
+     */
+    public String getErrorSummary() {
+        return errorSummary;
     }
 
     /** The commands executed by the agent that caused the error. */
@@ -272,7 +307,8 @@ public final class SysadminEventData
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SysadminEventData(");
         sb.append("super=").append(super.toString());
-        sb.append("errorCause=").append(String.valueOf(this.errorCause));
+        sb.append("errorSummary=").append(String.valueOf(this.errorSummary));
+        sb.append(", errorCause=").append(String.valueOf(this.errorCause));
         sb.append(", errorLog=").append(String.valueOf(this.errorLog));
         sb.append(", attemptedResolutions=").append(String.valueOf(this.attemptedResolutions));
         sb.append(", resolutionStatus=").append(String.valueOf(this.resolutionStatus));
@@ -292,7 +328,8 @@ public final class SysadminEventData
         }
 
         SysadminEventData other = (SysadminEventData) o;
-        return java.util.Objects.equals(this.errorCause, other.errorCause)
+        return java.util.Objects.equals(this.errorSummary, other.errorSummary)
+                && java.util.Objects.equals(this.errorCause, other.errorCause)
                 && java.util.Objects.equals(this.errorLog, other.errorLog)
                 && java.util.Objects.equals(this.attemptedResolutions, other.attemptedResolutions)
                 && java.util.Objects.equals(this.resolutionStatus, other.resolutionStatus)
@@ -305,6 +342,7 @@ public final class SysadminEventData
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.errorSummary == null ? 43 : this.errorSummary.hashCode());
         result = (result * PRIME) + (this.errorCause == null ? 43 : this.errorCause.hashCode());
         result = (result * PRIME) + (this.errorLog == null ? 43 : this.errorLog.hashCode());
         result =

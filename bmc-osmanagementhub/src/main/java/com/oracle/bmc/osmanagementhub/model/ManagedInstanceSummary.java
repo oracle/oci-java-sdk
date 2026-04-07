@@ -42,7 +42,8 @@ public final class ManagedInstanceSummary
         "notificationTopicId",
         "autonomousSettings",
         "isManagedByAutonomousLinux",
-        "agentVersion"
+        "agentVersion",
+        "timeLastBoot"
     })
     public ManagedInstanceSummary(
             String id,
@@ -63,7 +64,8 @@ public final class ManagedInstanceSummary
             String notificationTopicId,
             AutonomousSettings autonomousSettings,
             Boolean isManagedByAutonomousLinux,
-            String agentVersion) {
+            String agentVersion,
+            java.util.Date timeLastBoot) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -84,6 +86,7 @@ public final class ManagedInstanceSummary
         this.autonomousSettings = autonomousSettings;
         this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
         this.agentVersion = agentVersion;
+        this.timeLastBoot = timeLastBoot;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -367,6 +370,25 @@ public final class ManagedInstanceSummary
             this.__explicitlySet__.add("agentVersion");
             return this;
         }
+        /**
+         * Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+         * format).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastBoot")
+        private java.util.Date timeLastBoot;
+
+        /**
+         * Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+         * format).
+         *
+         * @param timeLastBoot the value to set
+         * @return this builder
+         */
+        public Builder timeLastBoot(java.util.Date timeLastBoot) {
+            this.timeLastBoot = timeLastBoot;
+            this.__explicitlySet__.add("timeLastBoot");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -392,7 +414,8 @@ public final class ManagedInstanceSummary
                             this.notificationTopicId,
                             this.autonomousSettings,
                             this.isManagedByAutonomousLinux,
-                            this.agentVersion);
+                            this.agentVersion,
+                            this.timeLastBoot);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -457,6 +480,9 @@ public final class ManagedInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("agentVersion")) {
                 this.agentVersion(model.getAgentVersion());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastBoot")) {
+                this.timeLastBoot(model.getTimeLastBoot());
             }
             return this;
         }
@@ -712,6 +738,23 @@ public final class ManagedInstanceSummary
         return agentVersion;
     }
 
+    /**
+     * Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * format).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastBoot")
+    private final java.util.Date timeLastBoot;
+
+    /**
+     * Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * format).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastBoot() {
+        return timeLastBoot;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -747,6 +790,7 @@ public final class ManagedInstanceSummary
         sb.append(", isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
         sb.append(", agentVersion=").append(String.valueOf(this.agentVersion));
+        sb.append(", timeLastBoot=").append(String.valueOf(this.timeLastBoot));
         sb.append(")");
         return sb.toString();
     }
@@ -781,6 +825,7 @@ public final class ManagedInstanceSummary
                 && java.util.Objects.equals(
                         this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
                 && java.util.Objects.equals(this.agentVersion, other.agentVersion)
+                && java.util.Objects.equals(this.timeLastBoot, other.timeLastBoot)
                 && super.equals(other);
     }
 
@@ -839,6 +884,7 @@ public final class ManagedInstanceSummary
                                 ? 43
                                 : this.isManagedByAutonomousLinux.hashCode());
         result = (result * PRIME) + (this.agentVersion == null ? 43 : this.agentVersion.hashCode());
+        result = (result * PRIME) + (this.timeLastBoot == null ? 43 : this.timeLastBoot.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

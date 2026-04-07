@@ -33,7 +33,8 @@ public final class InstancePoolSummary
         "size",
         "timeCreated",
         "definedTags",
-        "freeformTags"
+        "freeformTags",
+        "currentSize"
     })
     public InstancePoolSummary(
             String id,
@@ -45,7 +46,8 @@ public final class InstancePoolSummary
             Integer size,
             java.util.Date timeCreated,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            Integer currentSize) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -57,6 +59,7 @@ public final class InstancePoolSummary
         this.timeCreated = timeCreated;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.currentSize = currentSize;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -240,6 +243,21 @@ public final class InstancePoolSummary
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+        /** Count of instance in running state associated to the Instance Pool. */
+        @com.fasterxml.jackson.annotation.JsonProperty("currentSize")
+        private Integer currentSize;
+
+        /**
+         * Count of instance in running state associated to the Instance Pool.
+         *
+         * @param currentSize the value to set
+         * @return this builder
+         */
+        public Builder currentSize(Integer currentSize) {
+            this.currentSize = currentSize;
+            this.__explicitlySet__.add("currentSize");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -256,7 +274,8 @@ public final class InstancePoolSummary
                             this.size,
                             this.timeCreated,
                             this.definedTags,
-                            this.freeformTags);
+                            this.freeformTags,
+                            this.currentSize);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -294,6 +313,9 @@ public final class InstancePoolSummary
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("currentSize")) {
+                this.currentSize(model.getCurrentSize());
             }
             return this;
         }
@@ -518,6 +540,19 @@ public final class InstancePoolSummary
         return freeformTags;
     }
 
+    /** Count of instance in running state associated to the Instance Pool. */
+    @com.fasterxml.jackson.annotation.JsonProperty("currentSize")
+    private final Integer currentSize;
+
+    /**
+     * Count of instance in running state associated to the Instance Pool.
+     *
+     * @return the value
+     */
+    public Integer getCurrentSize() {
+        return currentSize;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -544,6 +579,7 @@ public final class InstancePoolSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", currentSize=").append(String.valueOf(this.currentSize));
         sb.append(")");
         return sb.toString();
     }
@@ -569,6 +605,7 @@ public final class InstancePoolSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.currentSize, other.currentSize)
                 && super.equals(other);
     }
 
@@ -598,6 +635,7 @@ public final class InstancePoolSummary
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.currentSize == null ? 43 : this.currentSize.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -9,6 +9,7 @@ package com.oracle.bmc.cloudbridge.model;
 public enum AssetType implements com.oracle.bmc.http.internal.BmcEnum {
     VmwareVm("VMWARE_VM"),
     Vm("VM"),
+    InventoryAsset("INVENTORY_ASSET"),
     AwsEc2("AWS_EC2"),
     AwsEbs("AWS_EBS"),
 

@@ -45,6 +45,11 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     RemoveContent("REMOVE_CONTENT"),
     UnregisterManagedInstance("UNREGISTER_MANAGED_INSTANCE"),
     Reboot("REBOOT"),
+    RegisterManagedInstance("REGISTER_MANAGED_INSTANCE"),
+    ListSnaps("LIST_SNAPS"),
+    InstallSnaps("INSTALL_SNAPS"),
+    RemoveSnaps("REMOVE_SNAPS"),
+    SwitchSnapChannel("SWITCH_SNAP_CHANNEL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

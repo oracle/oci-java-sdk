@@ -661,6 +661,59 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
     }
 
     @Override
+    public ListAvailableSoftwareSourcesToAddResponse listAvailableSoftwareSourcesToAdd(
+            ListAvailableSoftwareSourcesToAddRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAvailableSoftwareSourcesToAddResponse::builder)
+                .logger(LOG, "listAvailableSoftwareSourcesToAdd")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ListAvailableSoftwareSourcesToAdd",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListAvailableSoftwareSourcesToAdd")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ListAvailableSoftwareSourcesToAddRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("softwareSources")
+                .appendPathParam("actions")
+                .appendPathParam("availableSoftwareSources")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "osFamily",
+                        request.getOsFamily(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "archType",
+                        request.getArchType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.osmanagementhub.model.SoftwareSourceRepoCollection.class,
+                        ListAvailableSoftwareSourcesToAddResponse.Builder
+                                ::softwareSourceRepoCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAvailableSoftwareSourcesToAddResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAvailableSoftwareSourcesToAddResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        ListAvailableSoftwareSourcesToAddResponse.Builder::opcTotalItems)
+                .callSync();
+    }
+
+    @Override
     public ListEntitlementsResponse listEntitlements(ListEntitlementsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 

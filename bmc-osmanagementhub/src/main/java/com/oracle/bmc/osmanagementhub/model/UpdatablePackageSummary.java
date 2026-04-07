@@ -141,6 +141,23 @@ public final class UpdatablePackageSummary extends PackageSummary {
             this.__explicitlySet__.add("relatedCves");
             return this;
         }
+        /**
+         * The severity level of the security update. Only applicable when updateType is SECURITY.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("advisorySeverity")
+        private AdvisorySeverity advisorySeverity;
+
+        /**
+         * The severity level of the security update. Only applicable when updateType is SECURITY.
+         *
+         * @param advisorySeverity the value to set
+         * @return this builder
+         */
+        public Builder advisorySeverity(AdvisorySeverity advisorySeverity) {
+            this.advisorySeverity = advisorySeverity;
+            this.__explicitlySet__.add("advisorySeverity");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -157,7 +174,8 @@ public final class UpdatablePackageSummary extends PackageSummary {
                             this.installedVersion,
                             this.updateType,
                             this.errata,
-                            this.relatedCves);
+                            this.relatedCves,
+                            this.advisorySeverity);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -196,6 +214,9 @@ public final class UpdatablePackageSummary extends PackageSummary {
             if (model.wasPropertyExplicitlySet("relatedCves")) {
                 this.relatedCves(model.getRelatedCves());
             }
+            if (model.wasPropertyExplicitlySet("advisorySeverity")) {
+                this.advisorySeverity(model.getAdvisorySeverity());
+            }
             return this;
         }
     }
@@ -220,12 +241,14 @@ public final class UpdatablePackageSummary extends PackageSummary {
             String installedVersion,
             ClassificationTypes updateType,
             java.util.List<String> errata,
-            java.util.List<String> relatedCves) {
+            java.util.List<String> relatedCves,
+            AdvisorySeverity advisorySeverity) {
         super(displayName, name, type, version, architecture, softwareSources);
         this.installedVersion = installedVersion;
         this.updateType = updateType;
         this.errata = errata;
         this.relatedCves = relatedCves;
+        this.advisorySeverity = advisorySeverity;
     }
 
     /** The version of the package that is currently installed on the instance. */
@@ -280,6 +303,19 @@ public final class UpdatablePackageSummary extends PackageSummary {
         return relatedCves;
     }
 
+    /** The severity level of the security update. Only applicable when updateType is SECURITY. */
+    @com.fasterxml.jackson.annotation.JsonProperty("advisorySeverity")
+    private final AdvisorySeverity advisorySeverity;
+
+    /**
+     * The severity level of the security update. Only applicable when updateType is SECURITY.
+     *
+     * @return the value
+     */
+    public AdvisorySeverity getAdvisorySeverity() {
+        return advisorySeverity;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -299,6 +335,7 @@ public final class UpdatablePackageSummary extends PackageSummary {
         sb.append(", updateType=").append(String.valueOf(this.updateType));
         sb.append(", errata=").append(String.valueOf(this.errata));
         sb.append(", relatedCves=").append(String.valueOf(this.relatedCves));
+        sb.append(", advisorySeverity=").append(String.valueOf(this.advisorySeverity));
         sb.append(")");
         return sb.toString();
     }
@@ -317,6 +354,7 @@ public final class UpdatablePackageSummary extends PackageSummary {
                 && java.util.Objects.equals(this.updateType, other.updateType)
                 && java.util.Objects.equals(this.errata, other.errata)
                 && java.util.Objects.equals(this.relatedCves, other.relatedCves)
+                && java.util.Objects.equals(this.advisorySeverity, other.advisorySeverity)
                 && super.equals(other);
     }
 
@@ -330,6 +368,9 @@ public final class UpdatablePackageSummary extends PackageSummary {
         result = (result * PRIME) + (this.updateType == null ? 43 : this.updateType.hashCode());
         result = (result * PRIME) + (this.errata == null ? 43 : this.errata.hashCode());
         result = (result * PRIME) + (this.relatedCves == null ? 43 : this.relatedCves.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.advisorySeverity == null ? 43 : this.advisorySeverity.hashCode());
         return result;
     }
 }

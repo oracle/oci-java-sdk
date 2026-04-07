@@ -295,6 +295,138 @@ public class SoftwareSourcePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listAvailableSoftwareSourcesToAdd operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAvailableSoftwareSourcesToAddResponse>
+            listAvailableSoftwareSourcesToAddResponseIterator(
+                    final ListAvailableSoftwareSourcesToAddRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAvailableSoftwareSourcesToAddRequest.Builder,
+                ListAvailableSoftwareSourcesToAddRequest,
+                ListAvailableSoftwareSourcesToAddResponse>(
+                new java.util.function.Supplier<
+                        ListAvailableSoftwareSourcesToAddRequest.Builder>() {
+                    @Override
+                    public ListAvailableSoftwareSourcesToAddRequest.Builder get() {
+                        return ListAvailableSoftwareSourcesToAddRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableSoftwareSourcesToAddResponse, String>() {
+                    @Override
+                    public String apply(ListAvailableSoftwareSourcesToAddResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAvailableSoftwareSourcesToAddRequest.Builder>,
+                        ListAvailableSoftwareSourcesToAddRequest>() {
+                    @Override
+                    public ListAvailableSoftwareSourcesToAddRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAvailableSoftwareSourcesToAddRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableSoftwareSourcesToAddRequest,
+                        ListAvailableSoftwareSourcesToAddResponse>() {
+                    @Override
+                    public ListAvailableSoftwareSourcesToAddResponse apply(
+                            ListAvailableSoftwareSourcesToAddRequest request) {
+                        return client.listAvailableSoftwareSourcesToAdd(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagementhub.model.SoftwareSourceRepoSummary} objects contained in
+     * responses from the listAvailableSoftwareSourcesToAdd operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagementhub.model.SoftwareSourceRepoSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagementhub.model.SoftwareSourceRepoSummary>
+            listAvailableSoftwareSourcesToAddRecordIterator(
+                    final ListAvailableSoftwareSourcesToAddRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAvailableSoftwareSourcesToAddRequest.Builder,
+                ListAvailableSoftwareSourcesToAddRequest,
+                ListAvailableSoftwareSourcesToAddResponse,
+                com.oracle.bmc.osmanagementhub.model.SoftwareSourceRepoSummary>(
+                new java.util.function.Supplier<
+                        ListAvailableSoftwareSourcesToAddRequest.Builder>() {
+                    @Override
+                    public ListAvailableSoftwareSourcesToAddRequest.Builder get() {
+                        return ListAvailableSoftwareSourcesToAddRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableSoftwareSourcesToAddResponse, String>() {
+                    @Override
+                    public String apply(ListAvailableSoftwareSourcesToAddResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAvailableSoftwareSourcesToAddRequest.Builder>,
+                        ListAvailableSoftwareSourcesToAddRequest>() {
+                    @Override
+                    public ListAvailableSoftwareSourcesToAddRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAvailableSoftwareSourcesToAddRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableSoftwareSourcesToAddRequest,
+                        ListAvailableSoftwareSourcesToAddResponse>() {
+                    @Override
+                    public ListAvailableSoftwareSourcesToAddResponse apply(
+                            ListAvailableSoftwareSourcesToAddRequest request) {
+                        return client.listAvailableSoftwareSourcesToAdd(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableSoftwareSourcesToAddResponse,
+                        java.util.List<
+                                com.oracle.bmc.osmanagementhub.model.SoftwareSourceRepoSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.osmanagementhub.model.SoftwareSourceRepoSummary>
+                            apply(ListAvailableSoftwareSourcesToAddResponse response) {
+                        return response.getSoftwareSourceRepoCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listEntitlements operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

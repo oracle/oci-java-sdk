@@ -13,6 +13,9 @@ public enum ArchType implements com.oracle.bmc.http.internal.BmcEnum {
     Noarch("NOARCH"),
     Src("SRC"),
     I386("I386"),
+    Amd64("AMD64"),
+    Arm64("ARM64"),
+    All("ALL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

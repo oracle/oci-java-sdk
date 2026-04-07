@@ -37,7 +37,8 @@ public final class CreateBucketDetails
         "definedTags",
         "kmsKeyId",
         "versioning",
-        "autoTiering"
+        "autoTiering",
+        "bucketScope"
     })
     public CreateBucketDetails(
             String name,
@@ -50,7 +51,8 @@ public final class CreateBucketDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String kmsKeyId,
             Versioning versioning,
-            Bucket.AutoTiering autoTiering) {
+            Bucket.AutoTiering autoTiering,
+            Bucket.BucketScope bucketScope) {
         super();
         this.name = name;
         this.compartmentId = compartmentId;
@@ -63,6 +65,7 @@ public final class CreateBucketDetails
         this.kmsKeyId = kmsKeyId;
         this.versioning = versioning;
         this.autoTiering = autoTiering;
+        this.bucketScope = bucketScope;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -309,6 +312,31 @@ public final class CreateBucketDetails
             this.__explicitlySet__.add("autoTiering");
             return this;
         }
+        /**
+         * Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as
+         * NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+         * tenancies can have a bucket with same name in their namespace. Bucket scope as REGION
+         * means that the bucket is regionally unique. No other tenancy can have a bucket with same
+         * name and scope REGION.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("bucketScope")
+        private Bucket.BucketScope bucketScope;
+
+        /**
+         * Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as
+         * NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+         * tenancies can have a bucket with same name in their namespace. Bucket scope as REGION
+         * means that the bucket is regionally unique. No other tenancy can have a bucket with same
+         * name and scope REGION.
+         *
+         * @param bucketScope the value to set
+         * @return this builder
+         */
+        public Builder bucketScope(Bucket.BucketScope bucketScope) {
+            this.bucketScope = bucketScope;
+            this.__explicitlySet__.add("bucketScope");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -326,7 +354,8 @@ public final class CreateBucketDetails
                             this.definedTags,
                             this.kmsKeyId,
                             this.versioning,
-                            this.autoTiering);
+                            this.autoTiering,
+                            this.bucketScope);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -367,6 +396,9 @@ public final class CreateBucketDetails
             }
             if (model.wasPropertyExplicitlySet("autoTiering")) {
                 this.autoTiering(model.getAutoTiering());
+            }
+            if (model.wasPropertyExplicitlySet("bucketScope")) {
+                this.bucketScope(model.getBucketScope());
             }
             return this;
         }
@@ -715,6 +747,27 @@ public final class CreateBucketDetails
         return autoTiering;
     }
 
+    /**
+     * Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE
+     * means that the bucket is unique only in the owning namespace/tenancy. Other tenancies can
+     * have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket
+     * is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("bucketScope")
+    private final Bucket.BucketScope bucketScope;
+
+    /**
+     * Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE
+     * means that the bucket is unique only in the owning namespace/tenancy. Other tenancies can
+     * have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket
+     * is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     *
+     * @return the value
+     */
+    public Bucket.BucketScope getBucketScope() {
+        return bucketScope;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -741,6 +794,7 @@ public final class CreateBucketDetails
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", versioning=").append(String.valueOf(this.versioning));
         sb.append(", autoTiering=").append(String.valueOf(this.autoTiering));
+        sb.append(", bucketScope=").append(String.valueOf(this.bucketScope));
         sb.append(")");
         return sb.toString();
     }
@@ -766,6 +820,7 @@ public final class CreateBucketDetails
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.versioning, other.versioning)
                 && java.util.Objects.equals(this.autoTiering, other.autoTiering)
+                && java.util.Objects.equals(this.bucketScope, other.bucketScope)
                 && super.equals(other);
     }
 
@@ -792,6 +847,7 @@ public final class CreateBucketDetails
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + (this.versioning == null ? 43 : this.versioning.hashCode());
         result = (result * PRIME) + (this.autoTiering == null ? 43 : this.autoTiering.hashCode());
+        result = (result * PRIME) + (this.bucketScope == null ? 43 : this.bucketScope.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

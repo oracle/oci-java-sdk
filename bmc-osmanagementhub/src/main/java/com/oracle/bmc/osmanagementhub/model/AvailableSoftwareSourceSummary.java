@@ -25,12 +25,25 @@ package com.oracle.bmc.osmanagementhub.model;
 public final class AvailableSoftwareSourceSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "compartmentId", "displayName"})
-    public AvailableSoftwareSourceSummary(String id, String compartmentId, String displayName) {
+    @java.beans.ConstructorProperties({
+        "id",
+        "compartmentId",
+        "displayName",
+        "softwareSourceType",
+        "description"
+    })
+    public AvailableSoftwareSourceSummary(
+            String id,
+            String compartmentId,
+            String displayName,
+            SoftwareSourceType softwareSourceType,
+            String description) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
+        this.softwareSourceType = softwareSourceType;
+        this.description = description;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -88,6 +101,36 @@ public final class AvailableSoftwareSourceSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
+        /** Type of the software source. */
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceType")
+        private SoftwareSourceType softwareSourceType;
+
+        /**
+         * Type of the software source.
+         *
+         * @param softwareSourceType the value to set
+         * @return this builder
+         */
+        public Builder softwareSourceType(SoftwareSourceType softwareSourceType) {
+            this.softwareSourceType = softwareSourceType;
+            this.__explicitlySet__.add("softwareSourceType");
+            return this;
+        }
+        /** Software source description. */
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * Software source description.
+         *
+         * @param description the value to set
+         * @return this builder
+         */
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -95,7 +138,11 @@ public final class AvailableSoftwareSourceSummary
         public AvailableSoftwareSourceSummary build() {
             AvailableSoftwareSourceSummary model =
                     new AvailableSoftwareSourceSummary(
-                            this.id, this.compartmentId, this.displayName);
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.softwareSourceType,
+                            this.description);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -112,6 +159,12 @@ public final class AvailableSoftwareSourceSummary
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSourceType")) {
+                this.softwareSourceType(model.getSoftwareSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             return this;
         }
@@ -173,6 +226,32 @@ public final class AvailableSoftwareSourceSummary
         return displayName;
     }
 
+    /** Type of the software source. */
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceType")
+    private final SoftwareSourceType softwareSourceType;
+
+    /**
+     * Type of the software source.
+     *
+     * @return the value
+     */
+    public SoftwareSourceType getSoftwareSourceType() {
+        return softwareSourceType;
+    }
+
+    /** Software source description. */
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * Software source description.
+     *
+     * @return the value
+     */
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -191,6 +270,8 @@ public final class AvailableSoftwareSourceSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", softwareSourceType=").append(String.valueOf(this.softwareSourceType));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
     }
@@ -208,6 +289,8 @@ public final class AvailableSoftwareSourceSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.softwareSourceType, other.softwareSourceType)
+                && java.util.Objects.equals(this.description, other.description)
                 && super.equals(other);
     }
 
@@ -220,6 +303,12 @@ public final class AvailableSoftwareSourceSummary
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceType == null
+                                ? 43
+                                : this.softwareSourceType.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

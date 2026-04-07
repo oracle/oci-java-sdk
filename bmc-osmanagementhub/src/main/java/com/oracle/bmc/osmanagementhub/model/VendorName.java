@@ -9,6 +9,7 @@ package com.oracle.bmc.osmanagementhub.model;
 public enum VendorName implements com.oracle.bmc.http.internal.BmcEnum {
     Oracle("ORACLE"),
     Microsoft("MICROSOFT"),
+    Canonical("CANONICAL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

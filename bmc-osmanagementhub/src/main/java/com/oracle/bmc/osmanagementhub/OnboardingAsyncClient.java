@@ -340,6 +340,44 @@ public class OnboardingAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<DetachManagementStationFromProfileResponse>
+            detachManagementStationFromProfile(
+                    DetachManagementStationFromProfileRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DetachManagementStationFromProfileRequest,
+                                    DetachManagementStationFromProfileResponse>
+                            handler) {
+
+        Validate.notBlank(request.getProfileId(), "profileId must not be blank");
+        Objects.requireNonNull(
+                request.getDetachManagementStationFromProfileDetails(),
+                "detachManagementStationFromProfileDetails is required");
+
+        return clientCall(request, DetachManagementStationFromProfileResponse::builder)
+                .logger(LOG, "detachManagementStationFromProfile")
+                .serviceDetails(
+                        "Onboarding",
+                        "DetachManagementStationFromProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/DetachManagementStationFromProfile")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachManagementStationFromProfileRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileId())
+                .appendPathParam("actions")
+                .appendPathParam("detachManagementStation")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DetachManagementStationFromProfileResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachSoftwareSourcesFromProfileResponse>
             detachSoftwareSourcesFromProfile(
                     DetachSoftwareSourcesFromProfileRequest request,

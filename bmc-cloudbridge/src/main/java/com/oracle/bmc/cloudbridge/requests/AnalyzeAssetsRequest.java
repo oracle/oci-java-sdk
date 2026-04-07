@@ -103,6 +103,20 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getInventoryId() {
         return inventoryId;
     }
+    /** The name of the asset class. */
+    private String assetClassName;
+
+    /** The name of the asset class. */
+    public String getAssetClassName() {
+        return assetClassName;
+    }
+    /** The version of the asset class. */
+    private String assetClassVersion;
+
+    /** The version of the asset class. */
+    public String getAssetClassVersion() {
+        return assetClassVersion;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -303,6 +317,34 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /** The name of the asset class. */
+        private String assetClassName = null;
+
+        /**
+         * The name of the asset class.
+         *
+         * @param assetClassName the value to set
+         * @return this builder instance
+         */
+        public Builder assetClassName(String assetClassName) {
+            this.assetClassName = assetClassName;
+            return this;
+        }
+
+        /** The version of the asset class. */
+        private String assetClassVersion = null;
+
+        /**
+         * The version of the asset class.
+         *
+         * @param assetClassVersion the value to set
+         * @return this builder instance
+         */
+        public Builder assetClassVersion(String assetClassVersion) {
+            this.assetClassVersion = assetClassVersion;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -345,6 +387,8 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             opcRequestId(o.getOpcRequestId());
             groupBy(o.getGroupBy());
             inventoryId(o.getInventoryId());
+            assetClassName(o.getAssetClassName());
+            assetClassVersion(o.getAssetClassVersion());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -391,10 +435,12 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.opcRequestId = opcRequestId;
             request.groupBy = groupBy;
             request.inventoryId = inventoryId;
+            request.assetClassName = assetClassName;
+            request.assetClassVersion = assetClassVersion;
             return request;
             // new AnalyzeAssetsRequest(compartmentId, aggregationProperties, limit, page,
             // lifecycleState, sourceKey, externalAssetKey, assetType, sortOrder, opcRequestId,
-            // groupBy, inventoryId);
+            // groupBy, inventoryId, assetClassName, assetClassVersion);
         }
     }
 
@@ -416,7 +462,9 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .sortOrder(sortOrder)
                 .opcRequestId(opcRequestId)
                 .groupBy(groupBy)
-                .inventoryId(inventoryId);
+                .inventoryId(inventoryId)
+                .assetClassName(assetClassName)
+                .assetClassVersion(assetClassVersion);
     }
 
     /**
@@ -445,6 +493,8 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",groupBy=").append(String.valueOf(this.groupBy));
         sb.append(",inventoryId=").append(String.valueOf(this.inventoryId));
+        sb.append(",assetClassName=").append(String.valueOf(this.assetClassName));
+        sb.append(",assetClassVersion=").append(String.valueOf(this.assetClassVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -471,7 +521,9 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.groupBy, other.groupBy)
-                && java.util.Objects.equals(this.inventoryId, other.inventoryId);
+                && java.util.Objects.equals(this.inventoryId, other.inventoryId)
+                && java.util.Objects.equals(this.assetClassName, other.assetClassName)
+                && java.util.Objects.equals(this.assetClassVersion, other.assetClassVersion);
     }
 
     @Override
@@ -500,6 +552,12 @@ public class AnalyzeAssetsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.groupBy == null ? 43 : this.groupBy.hashCode());
         result = (result * PRIME) + (this.inventoryId == null ? 43 : this.inventoryId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assetClassName == null ? 43 : this.assetClassName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assetClassVersion == null ? 43 : this.assetClassVersion.hashCode());
         return result;
     }
 }

@@ -126,12 +126,20 @@ public final class UpdateScheduledJobDetails
             this.__explicitlySet__.add("timeNextExecution");
             return this;
         }
-        /** The frequency schedule for a recurring scheduled job. */
+        /**
+         * The frequency schedule for a recurring scheduled job in the
+         * [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only
+         * FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are
+         * supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("recurringRule")
         private String recurringRule;
 
         /**
-         * The frequency schedule for a recurring scheduled job.
+         * The frequency schedule for a recurring scheduled job in the
+         * [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only
+         * FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are
+         * supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
          *
          * @param recurringRule the value to set
          * @return this builder
@@ -358,12 +366,20 @@ public final class UpdateScheduledJobDetails
         return timeNextExecution;
     }
 
-    /** The frequency schedule for a recurring scheduled job. */
+    /**
+     * The frequency schedule for a recurring scheduled job in the
+     * [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only
+     * FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+     * In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("recurringRule")
     private final String recurringRule;
 
     /**
-     * The frequency schedule for a recurring scheduled job.
+     * The frequency schedule for a recurring scheduled job in the
+     * [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only
+     * FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+     * In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
      *
      * @return the value
      */

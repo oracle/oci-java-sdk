@@ -21,7 +21,8 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                     .serviceName(ManagementAgentClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://management-agent.{region}.oci.{secondLevelDomain}")
+                            "https://management-agent.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .endpointServiceName("management-agent")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -156,12 +157,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
         Objects.requireNonNull(
                 request.getCreateDataSourceDetails(), "createDataSourceDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+
         return clientCall(request, CreateDataSourceResponse::builder)
                 .logger(LOG, "createDataSource")
                 .serviceDetails(
                         "ManagementAgent",
                         "CreateDataSource",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/CreateDataSource")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDataSourceRequest::builder)
                 .basePath("/20200202")
@@ -187,12 +192,15 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 request.getCreateManagementAgentInstallKeyDetails(),
                 "createManagementAgentInstallKeyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateManagementAgentInstallKeyResponse::builder)
                 .logger(LOG, "createManagementAgentInstallKey")
                 .serviceDetails(
                         "ManagementAgent",
                         "CreateManagementAgentInstallKey",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/CreateManagementAgentInstallKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateManagementAgentInstallKeyRequest::builder)
                 .basePath("/20200202")
@@ -219,12 +227,15 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 request.getCreateNamedCredentialDetails(),
                 "createNamedCredentialDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateNamedCredentialResponse::builder)
                 .logger(LOG, "createNamedCredential")
                 .serviceDetails(
                         "ManagementAgent",
                         "CreateNamedCredential",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/NamedCredential/CreateNamedCredential")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateNamedCredentialRequest::builder)
                 .basePath("/20200202")
@@ -253,12 +264,17 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Validate.notBlank(request.getDataSourceKey(), "dataSourceKey must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+        requiredParametersMap.put("dataSourceKey", request.getDataSourceKey());
+
         return clientCall(request, DeleteDataSourceResponse::builder)
                 .logger(LOG, "deleteDataSource")
                 .serviceDetails(
                         "ManagementAgent",
                         "DeleteDataSource",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteDataSource")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDataSourceRequest::builder)
                 .basePath("/20200202")
@@ -282,12 +298,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+
         return clientCall(request, DeleteManagementAgentResponse::builder)
                 .logger(LOG, "deleteManagementAgent")
                 .serviceDetails(
                         "ManagementAgent",
                         "DeleteManagementAgent",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteManagementAgent")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteManagementAgentRequest::builder)
                 .basePath("/20200202")
@@ -309,12 +329,17 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 request.getManagementAgentInstallKeyId(),
                 "managementAgentInstallKeyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "managementAgentInstallKeyId", request.getManagementAgentInstallKeyId());
+
         return clientCall(request, DeleteManagementAgentInstallKeyResponse::builder)
                 .logger(LOG, "deleteManagementAgentInstallKey")
                 .serviceDetails(
                         "ManagementAgent",
                         "DeleteManagementAgentInstallKey",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/DeleteManagementAgentInstallKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteManagementAgentInstallKeyRequest::builder)
                 .basePath("/20200202")
@@ -335,12 +360,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namedCredentialId", request.getNamedCredentialId());
+
         return clientCall(request, DeleteNamedCredentialResponse::builder)
                 .logger(LOG, "deleteNamedCredential")
                 .serviceDetails(
                         "ManagementAgent",
                         "DeleteNamedCredential",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteNamedCredential")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteNamedCredentialRequest::builder)
                 .basePath("/20200202")
@@ -362,12 +391,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, DeleteWorkRequestResponse::builder)
                 .logger(LOG, "deleteWorkRequest")
                 .serviceDetails(
                         "ManagementAgent",
                         "DeleteWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/DeleteWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteWorkRequestRequest::builder)
                 .basePath("/20200202")
@@ -386,12 +419,15 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
         Objects.requireNonNull(
                 request.getDeployPluginsDetails(), "deployPluginsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, DeployPluginsResponse::builder)
                 .logger(LOG, "deployPlugins")
                 .serviceDetails(
                         "ManagementAgent",
                         "DeployPlugins",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeployPlugins")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DeployPluginsRequest::builder)
                 .basePath("/20200202")
@@ -414,12 +450,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
             GetAutoUpgradableConfigRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, GetAutoUpgradableConfigResponse::builder)
                 .logger(LOG, "getAutoUpgradableConfig")
                 .serviceDetails(
                         "ManagementAgent",
                         "GetAutoUpgradableConfig",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetAutoUpgradableConfig")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAutoUpgradableConfigRequest::builder)
                 .basePath("/20200202")
@@ -444,12 +484,17 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Validate.notBlank(request.getDataSourceKey(), "dataSourceKey must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+        requiredParametersMap.put("dataSourceKey", request.getDataSourceKey());
+
         return clientCall(request, GetDataSourceResponse::builder)
                 .logger(LOG, "getDataSource")
                 .serviceDetails(
                         "ManagementAgent",
                         "GetDataSource",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetDataSource")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDataSourceRequest::builder)
                 .basePath("/20200202")
@@ -474,12 +519,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+
         return clientCall(request, GetManagementAgentResponse::builder)
                 .logger(LOG, "getManagementAgent")
                 .serviceDetails(
                         "ManagementAgent",
                         "GetManagementAgent",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetManagementAgent")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetManagementAgentRequest::builder)
                 .basePath("/20200202")
@@ -504,12 +553,17 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 request.getManagementAgentInstallKeyId(),
                 "managementAgentInstallKeyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "managementAgentInstallKeyId", request.getManagementAgentInstallKeyId());
+
         return clientCall(request, GetManagementAgentInstallKeyResponse::builder)
                 .logger(LOG, "getManagementAgentInstallKey")
                 .serviceDetails(
                         "ManagementAgent",
                         "GetManagementAgentInstallKey",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/GetManagementAgentInstallKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetManagementAgentInstallKeyRequest::builder)
                 .basePath("/20200202")
@@ -536,12 +590,17 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 request.getManagementAgentInstallKeyId(),
                 "managementAgentInstallKeyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "managementAgentInstallKeyId", request.getManagementAgentInstallKeyId());
+
         return clientCall(request, GetManagementAgentInstallKeyContentResponse::builder)
                 .logger(LOG, "getManagementAgentInstallKeyContent")
                 .serviceDetails(
                         "ManagementAgent",
                         "GetManagementAgentInstallKeyContent",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/GetManagementAgentInstallKeyContent")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetManagementAgentInstallKeyContentRequest::builder)
                 .basePath("/20200202")
@@ -574,12 +633,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namedCredentialId", request.getNamedCredentialId());
+
         return clientCall(request, GetNamedCredentialResponse::builder)
                 .logger(LOG, "getNamedCredential")
                 .serviceDetails(
                         "ManagementAgent",
                         "GetNamedCredential",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetNamedCredential")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNamedCredentialRequest::builder)
                 .basePath("/20200202")
@@ -602,12 +665,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
             GetNamedCredentialsMetadatumRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, GetNamedCredentialsMetadatumResponse::builder)
                 .logger(LOG, "getNamedCredentialsMetadatum")
                 .serviceDetails(
                         "ManagementAgent",
                         "GetNamedCredentialsMetadatum",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/NamedCredential/GetNamedCredentialsMetadatum")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNamedCredentialsMetadatumRequest::builder)
                 .basePath("/20200202")
@@ -633,12 +700,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
                 .serviceDetails(
                         "ManagementAgent",
                         "GetWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/GetWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20200202")
@@ -663,12 +734,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+
         return clientCall(request, ListAvailabilityHistoriesResponse::builder)
                 .logger(LOG, "listAvailabilityHistories")
                 .serviceDetails(
                         "ManagementAgent",
                         "ListAvailabilityHistories",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListAvailabilityHistories")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAvailabilityHistoriesRequest::builder)
                 .basePath("/20200202")
@@ -702,12 +777,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+
         return clientCall(request, ListDataSourcesResponse::builder)
                 .logger(LOG, "listDataSources")
                 .serviceDetails(
                         "ManagementAgent",
                         "ListDataSources",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListDataSources")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDataSourcesRequest::builder)
                 .basePath("/20200202")
@@ -739,12 +818,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
             ListManagementAgentImagesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListManagementAgentImagesResponse::builder)
                 .logger(LOG, "listManagementAgentImages")
                 .serviceDetails(
                         "ManagementAgent",
                         "ListManagementAgentImages",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentImage/ListManagementAgentImages")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagementAgentImagesRequest::builder)
                 .basePath("/20200202")
@@ -775,12 +858,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
             ListManagementAgentInstallKeysRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListManagementAgentInstallKeysResponse::builder)
                 .logger(LOG, "listManagementAgentInstallKeys")
                 .serviceDetails(
                         "ManagementAgent",
                         "ListManagementAgentInstallKeys",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/ListManagementAgentInstallKeys")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagementAgentInstallKeysRequest::builder)
                 .basePath("/20200202")
@@ -812,12 +899,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
             ListManagementAgentPluginsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListManagementAgentPluginsResponse::builder)
                 .logger(LOG, "listManagementAgentPlugins")
                 .serviceDetails(
                         "ManagementAgent",
                         "ListManagementAgentPlugins",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentPlugin/ListManagementAgentPlugins")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagementAgentPluginsRequest::builder)
                 .basePath("/20200202")
@@ -850,12 +941,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
     public ListManagementAgentsResponse listManagementAgents(ListManagementAgentsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListManagementAgentsResponse::builder)
                 .logger(LOG, "listManagementAgents")
                 .serviceDetails(
                         "ManagementAgent",
                         "ListManagementAgents",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListManagementAgents")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagementAgentsRequest::builder)
                 .basePath("/20200202")
@@ -910,12 +1005,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
     public ListNamedCredentialsResponse listNamedCredentials(ListNamedCredentialsRequest request) {
         Objects.requireNonNull(request.getManagementAgentId(), "managementAgentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+
         return clientCall(request, ListNamedCredentialsResponse::builder)
                 .logger(LOG, "listNamedCredentials")
                 .serviceDetails(
                         "ManagementAgent",
                         "ListNamedCredentials",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/NamedCredential/ListNamedCredentials")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListNamedCredentialsRequest::builder)
                 .basePath("/20200202")
@@ -959,12 +1058,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
                 .serviceDetails(
                         "ManagementAgent",
                         "ListWorkRequestErrors",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequestError/ListWorkRequestErrors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20200202")
@@ -992,12 +1095,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
                 .serviceDetails(
                         "ManagementAgent",
                         "ListWorkRequestLogs",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequestLogEntry/ListWorkRequestLogs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20200202")
@@ -1024,12 +1131,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
                 .serviceDetails(
                         "ManagementAgent",
                         "ListWorkRequests",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/ListWorkRequests")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20200202")
@@ -1067,12 +1178,15 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 request.getSetAutoUpgradableConfigDetails(),
                 "setAutoUpgradableConfigDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, SetAutoUpgradableConfigResponse::builder)
                 .logger(LOG, "setAutoUpgradableConfig")
                 .serviceDetails(
                         "ManagementAgent",
                         "SetAutoUpgradableConfig",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SetAutoUpgradableConfig")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SetAutoUpgradableConfigRequest::builder)
                 .basePath("/20200202")
@@ -1098,12 +1212,17 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Objects.requireNonNull(request.getGroupBy(), "groupBy is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("groupBy", request.getGroupBy());
+
         return clientCall(request, SummarizeManagementAgentCountsResponse::builder)
                 .logger(LOG, "summarizeManagementAgentCounts")
                 .serviceDetails(
                         "ManagementAgent",
                         "SummarizeManagementAgentCounts",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SummarizeManagementAgentCounts")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeManagementAgentCountsRequest::builder)
                 .basePath("/20200202")
@@ -1140,12 +1259,17 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
         Objects.requireNonNull(request.getGroupBy(), "groupBy is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("groupBy", request.getGroupBy());
+
         return clientCall(request, SummarizeManagementAgentPluginCountsResponse::builder)
                 .logger(LOG, "summarizeManagementAgentPluginCounts")
                 .serviceDetails(
                         "ManagementAgent",
                         "SummarizeManagementAgentPluginCounts",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SummarizeManagementAgentPluginCounts")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeManagementAgentPluginCountsRequest::builder)
                 .basePath("/20200202")
@@ -1179,12 +1303,17 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
         Objects.requireNonNull(
                 request.getUpdateDataSourceDetails(), "updateDataSourceDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+        requiredParametersMap.put("dataSourceKey", request.getDataSourceKey());
+
         return clientCall(request, UpdateDataSourceResponse::builder)
                 .logger(LOG, "updateDataSource")
                 .serviceDetails(
                         "ManagementAgent",
                         "UpdateDataSource",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateDataSource")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDataSourceRequest::builder)
                 .basePath("/20200202")
@@ -1213,12 +1342,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 request.getUpdateManagementAgentDetails(),
                 "updateManagementAgentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+
         return clientCall(request, UpdateManagementAgentResponse::builder)
                 .logger(LOG, "updateManagementAgent")
                 .serviceDetails(
                         "ManagementAgent",
                         "UpdateManagementAgent",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateManagementAgent")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateManagementAgentRequest::builder)
                 .basePath("/20200202")
@@ -1249,12 +1382,17 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 request.getUpdateManagementAgentInstallKeyDetails(),
                 "updateManagementAgentInstallKeyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "managementAgentInstallKeyId", request.getManagementAgentInstallKeyId());
+
         return clientCall(request, UpdateManagementAgentInstallKeyResponse::builder)
                 .logger(LOG, "updateManagementAgentInstallKey")
                 .serviceDetails(
                         "ManagementAgent",
                         "UpdateManagementAgentInstallKey",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/UpdateManagementAgentInstallKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateManagementAgentInstallKeyRequest::builder)
                 .basePath("/20200202")
@@ -1285,12 +1423,16 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 request.getUpdateNamedCredentialDetails(),
                 "updateNamedCredentialDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namedCredentialId", request.getNamedCredentialId());
+
         return clientCall(request, UpdateNamedCredentialResponse::builder)
                 .logger(LOG, "updateNamedCredential")
                 .serviceDetails(
                         "ManagementAgent",
                         "UpdateNamedCredential",
                         "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateNamedCredential")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateNamedCredentialRequest::builder)
                 .basePath("/20200202")

@@ -204,6 +204,13 @@ public class ListManagementStationsRequest
     public String getId() {
         return id;
     }
+    /** A filter that returns information for management stations in the specified health state. */
+    private com.oracle.bmc.osmanagementhub.model.HealthState healthState;
+
+    /** A filter that returns information for management stations in the specified health state. */
+    public com.oracle.bmc.osmanagementhub.model.HealthState getHealthState() {
+        return healthState;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -469,6 +476,22 @@ public class ListManagementStationsRequest
         }
 
         /**
+         * A filter that returns information for management stations in the specified health state.
+         */
+        private com.oracle.bmc.osmanagementhub.model.HealthState healthState = null;
+
+        /**
+         * A filter that returns information for management stations in the specified health state.
+         *
+         * @param healthState the value to set
+         * @return this builder instance
+         */
+        public Builder healthState(com.oracle.bmc.osmanagementhub.model.HealthState healthState) {
+            this.healthState = healthState;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -511,6 +534,7 @@ public class ListManagementStationsRequest
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             id(o.getId());
+            healthState(o.getHealthState());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -558,10 +582,11 @@ public class ListManagementStationsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             request.id = id;
+            request.healthState = healthState;
             return request;
             // new ListManagementStationsRequest(compartmentId, displayName, displayNameContains,
             // lifecycleState, managedInstanceId, limit, page, location, locationNotEqualTo,
-            // sortOrder, sortBy, opcRequestId, id);
+            // sortOrder, sortBy, opcRequestId, id, healthState);
         }
     }
 
@@ -584,7 +609,8 @@ public class ListManagementStationsRequest
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
-                .id(id);
+                .id(id)
+                .healthState(healthState);
     }
 
     /**
@@ -614,6 +640,7 @@ public class ListManagementStationsRequest
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",healthState=").append(String.valueOf(this.healthState));
         sb.append(")");
         return sb.toString();
     }
@@ -641,7 +668,8 @@ public class ListManagementStationsRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.id, other.id);
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.healthState, other.healthState);
     }
 
     @Override
@@ -675,6 +703,7 @@ public class ListManagementStationsRequest
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.healthState == null ? 43 : this.healthState.hashCode());
         return result;
     }
 }

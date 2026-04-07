@@ -82,6 +82,15 @@ public final class UpdateAwsAssetSourceDetails extends UpdateAssetSourceDetails 
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private EnvironmentType environmentType;
+
+        public Builder environmentType(EnvironmentType environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryCredentials")
         private AssetSourceCredentials discoveryCredentials;
 
@@ -169,6 +178,7 @@ public final class UpdateAwsAssetSourceDetails extends UpdateAssetSourceDetails 
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.environmentType,
                             this.discoveryCredentials,
                             this.replicationCredentials,
                             this.areHistoricalMetricsCollected,
@@ -199,6 +209,9 @@ public final class UpdateAwsAssetSourceDetails extends UpdateAssetSourceDetails 
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
             }
             if (model.wasPropertyExplicitlySet("discoveryCredentials")) {
                 this.discoveryCredentials(model.getDiscoveryCredentials());
@@ -236,6 +249,7 @@ public final class UpdateAwsAssetSourceDetails extends UpdateAssetSourceDetails 
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            EnvironmentType environmentType,
             AssetSourceCredentials discoveryCredentials,
             AssetSourceCredentials replicationCredentials,
             Boolean areHistoricalMetricsCollected,
@@ -247,7 +261,8 @@ public final class UpdateAwsAssetSourceDetails extends UpdateAssetSourceDetails 
                 discoveryScheduleId,
                 freeformTags,
                 definedTags,
-                systemTags);
+                systemTags,
+                environmentType);
         this.discoveryCredentials = discoveryCredentials;
         this.replicationCredentials = replicationCredentials;
         this.areHistoricalMetricsCollected = areHistoricalMetricsCollected;

@@ -306,6 +306,24 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Installs specified snaps on a managed instance.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<InstallSnapsOnManagedInstanceResponse>
+            installSnapsOnManagedInstance(
+                    InstallSnapsOnManagedInstanceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    InstallSnapsOnManagedInstanceRequest,
+                                    InstallSnapsOnManagedInstanceResponse>
+                            handler);
+
+    /**
      * Installs Windows updates on the specified managed instance.
      *
      * @param request The request object containing the details to send
@@ -445,6 +463,23 @@ public interface ManagedInstanceAsync extends AutoCloseable {
             ListManagedInstanceModulesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListManagedInstanceModulesRequest, ListManagedInstanceModulesResponse>
+                    handler);
+
+    /**
+     * Retrieves a list of snaps for a managed instance. Filters may be applied to select a subset
+     * of snaps based on the filter criteria.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListManagedInstanceSnapsResponse> listManagedInstanceSnaps(
+            ListManagedInstanceSnapsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListManagedInstanceSnapsRequest, ListManagedInstanceSnapsResponse>
                     handler);
 
     /**
@@ -601,6 +636,24 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Removes specified snaps from a managed instance.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveSnapsFromManagedInstanceResponse>
+            removeSnapsFromManagedInstance(
+                    RemoveSnapsFromManagedInstanceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveSnapsFromManagedInstanceRequest,
+                                    RemoveSnapsFromManagedInstanceResponse>
+                            handler);
+
+    /**
      * Enables a new stream for a module that already has a stream enabled. If any profiles or
      * packages from the original module are installed, switching to a new stream will remove the
      * existing packages and install their counterparts in the new stream.
@@ -618,6 +671,24 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     SwitchModuleStreamOnManagedInstanceRequest,
                                     SwitchModuleStreamOnManagedInstanceResponse>
+                            handler);
+
+    /**
+     * Switches the snap channel on a managed instance.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SwitchSnapChannelOnManagedInstanceResponse>
+            switchSnapChannelOnManagedInstance(
+                    SwitchSnapChannelOnManagedInstanceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SwitchSnapChannelOnManagedInstanceRequest,
+                                    SwitchSnapChannelOnManagedInstanceResponse>
                             handler);
 
     /**

@@ -145,7 +145,9 @@ public class ReportingManagedInstanceAsyncClient
                 .appendPathParam("managedInstanceAnalytics")
                 .appendPathParam("content")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("managedInstanceGroupId", request.getManagedInstanceGroupId())
+                .appendQueryParam("dynamicSetId", request.getDynamicSetId())
                 .appendQueryParam("lifecycleEnvironmentId", request.getLifecycleEnvironmentId())
                 .appendQueryParam("lifecycleStageId", request.getLifecycleStageId())
                 .appendListQueryParam(
@@ -163,11 +165,16 @@ public class ReportingManagedInstanceAsyncClient
                 .appendQueryParam(
                         "bugUpdatesAvailableEqualsTo", request.getBugUpdatesAvailableEqualsTo())
                 .appendQueryParam(
+                        "otherUpdatesAvailableEqualsTo", request.getOtherUpdatesAvailableEqualsTo())
+                .appendQueryParam(
                         "securityUpdatesAvailableGreaterThan",
                         request.getSecurityUpdatesAvailableGreaterThan())
                 .appendQueryParam(
                         "bugUpdatesAvailableGreaterThan",
                         request.getBugUpdatesAvailableGreaterThan())
+                .appendQueryParam(
+                        "otherUpdatesAvailableGreaterThan",
+                        request.getOtherUpdatesAvailableGreaterThan())
                 .appendListQueryParam(
                         "location",
                         request.getLocation(),
@@ -275,7 +282,9 @@ public class ReportingManagedInstanceAsyncClient
                         request.getMetricNames(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("managedInstanceGroupId", request.getManagedInstanceGroupId())
+                .appendQueryParam("dynamicSetId", request.getDynamicSetId())
                 .appendQueryParam("lifecycleEnvironmentId", request.getLifecycleEnvironmentId())
                 .appendQueryParam("lifecycleStageId", request.getLifecycleStageId())
                 .appendListQueryParam(

@@ -29,6 +29,8 @@ public final class CreateManagementStationDetails
         "description",
         "hostname",
         "isAutoConfigEnabled",
+        "osFamily",
+        "archType",
         "proxy",
         "mirror",
         "freeformTags",
@@ -40,6 +42,8 @@ public final class CreateManagementStationDetails
             String description,
             String hostname,
             Boolean isAutoConfigEnabled,
+            OsFamily osFamily,
+            ArchType archType,
             CreateProxyConfigurationDetails proxy,
             CreateMirrorConfigurationDetails mirror,
             java.util.Map<String, String> freeformTags,
@@ -50,6 +54,8 @@ public final class CreateManagementStationDetails
         this.description = description;
         this.hostname = hostname;
         this.isAutoConfigEnabled = isAutoConfigEnabled;
+        this.osFamily = osFamily;
+        this.archType = archType;
         this.proxy = proxy;
         this.mirror = mirror;
         this.freeformTags = freeformTags;
@@ -149,6 +155,36 @@ public final class CreateManagementStationDetails
             this.__explicitlySet__.add("isAutoConfigEnabled");
             return this;
         }
+        /** The operating system family. */
+        @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+        private OsFamily osFamily;
+
+        /**
+         * The operating system family.
+         *
+         * @param osFamily the value to set
+         * @return this builder
+         */
+        public Builder osFamily(OsFamily osFamily) {
+            this.osFamily = osFamily;
+            this.__explicitlySet__.add("osFamily");
+            return this;
+        }
+        /** The architecture type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("archType")
+        private ArchType archType;
+
+        /**
+         * The architecture type.
+         *
+         * @param archType the value to set
+         * @return this builder
+         */
+        public Builder archType(ArchType archType) {
+            this.archType = archType;
+            this.__explicitlySet__.add("archType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("proxy")
         private CreateProxyConfigurationDetails proxy;
@@ -226,6 +262,8 @@ public final class CreateManagementStationDetails
                             this.description,
                             this.hostname,
                             this.isAutoConfigEnabled,
+                            this.osFamily,
+                            this.archType,
                             this.proxy,
                             this.mirror,
                             this.freeformTags,
@@ -252,6 +290,12 @@ public final class CreateManagementStationDetails
             }
             if (model.wasPropertyExplicitlySet("isAutoConfigEnabled")) {
                 this.isAutoConfigEnabled(model.getIsAutoConfigEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("osFamily")) {
+                this.osFamily(model.getOsFamily());
+            }
+            if (model.wasPropertyExplicitlySet("archType")) {
+                this.archType(model.getArchType());
             }
             if (model.wasPropertyExplicitlySet("proxy")) {
                 this.proxy(model.getProxy());
@@ -359,6 +403,32 @@ public final class CreateManagementStationDetails
         return isAutoConfigEnabled;
     }
 
+    /** The operating system family. */
+    @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+    private final OsFamily osFamily;
+
+    /**
+     * The operating system family.
+     *
+     * @return the value
+     */
+    public OsFamily getOsFamily() {
+        return osFamily;
+    }
+
+    /** The architecture type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("archType")
+    private final ArchType archType;
+
+    /**
+     * The architecture type.
+     *
+     * @return the value
+     */
+    public ArchType getArchType() {
+        return archType;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("proxy")
     private final CreateProxyConfigurationDetails proxy;
 
@@ -435,6 +505,8 @@ public final class CreateManagementStationDetails
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(", isAutoConfigEnabled=").append(String.valueOf(this.isAutoConfigEnabled));
+        sb.append(", osFamily=").append(String.valueOf(this.osFamily));
+        sb.append(", archType=").append(String.valueOf(this.archType));
         sb.append(", proxy=").append(String.valueOf(this.proxy));
         sb.append(", mirror=").append(String.valueOf(this.mirror));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -458,6 +530,8 @@ public final class CreateManagementStationDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.hostname, other.hostname)
                 && java.util.Objects.equals(this.isAutoConfigEnabled, other.isAutoConfigEnabled)
+                && java.util.Objects.equals(this.osFamily, other.osFamily)
+                && java.util.Objects.equals(this.archType, other.archType)
                 && java.util.Objects.equals(this.proxy, other.proxy)
                 && java.util.Objects.equals(this.mirror, other.mirror)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -480,6 +554,8 @@ public final class CreateManagementStationDetails
                         + (this.isAutoConfigEnabled == null
                                 ? 43
                                 : this.isAutoConfigEnabled.hashCode());
+        result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
+        result = (result * PRIME) + (this.archType == null ? 43 : this.archType.hashCode());
         result = (result * PRIME) + (this.proxy == null ? 43 : this.proxy.hashCode());
         result = (result * PRIME) + (this.mirror == null ? 43 : this.mirror.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

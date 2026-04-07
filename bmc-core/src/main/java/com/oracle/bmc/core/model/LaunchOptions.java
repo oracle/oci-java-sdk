@@ -103,7 +103,8 @@ public final class LaunchOptions extends com.oracle.bmc.http.client.internal.Exp
          * Gigabit ethernet controller. Compatible with Linux e1000 network driver. * {@code VFIO} -
          * Direct attached Virtual Function network controller. This is the networking type when you
          * launch an instance using hardware-assisted (SR-IOV) networking. * {@code PARAVIRTUALIZED}
-         * - VM instances launch with paravirtualized devices using VirtIO drivers.
+         * - VM instances launch with paravirtualized devices using VirtIO drivers. * {@code
+         * ACCELERATEDPV} - VM instances launch with accelerated paravirtualized networking type.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("networkType")
         private NetworkType networkType;
@@ -113,7 +114,8 @@ public final class LaunchOptions extends com.oracle.bmc.http.client.internal.Exp
          * Gigabit ethernet controller. Compatible with Linux e1000 network driver. * {@code VFIO} -
          * Direct attached Virtual Function network controller. This is the networking type when you
          * launch an instance using hardware-assisted (SR-IOV) networking. * {@code PARAVIRTUALIZED}
-         * - VM instances launch with paravirtualized devices using VirtIO drivers.
+         * - VM instances launch with paravirtualized devices using VirtIO drivers. * {@code
+         * ACCELERATEDPV} - VM instances launch with accelerated paravirtualized networking type.
          *
          * @param networkType the value to set
          * @return this builder
@@ -392,12 +394,14 @@ public final class LaunchOptions extends com.oracle.bmc.http.client.internal.Exp
      * Gigabit ethernet controller. Compatible with Linux e1000 network driver. * {@code VFIO} -
      * Direct attached Virtual Function network controller. This is the networking type when you
      * launch an instance using hardware-assisted (SR-IOV) networking. * {@code PARAVIRTUALIZED} -
-     * VM instances launch with paravirtualized devices using VirtIO drivers.
+     * VM instances launch with paravirtualized devices using VirtIO drivers. * {@code
+     * ACCELERATEDPV} - VM instances launch with accelerated paravirtualized networking type.
      */
     public enum NetworkType implements com.oracle.bmc.http.internal.BmcEnum {
         E1000("E1000"),
         Vfio("VFIO"),
         Paravirtualized("PARAVIRTUALIZED"),
+        Acceleratedpv("ACCELERATEDPV"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -445,7 +449,8 @@ public final class LaunchOptions extends com.oracle.bmc.http.client.internal.Exp
      * Gigabit ethernet controller. Compatible with Linux e1000 network driver. * {@code VFIO} -
      * Direct attached Virtual Function network controller. This is the networking type when you
      * launch an instance using hardware-assisted (SR-IOV) networking. * {@code PARAVIRTUALIZED} -
-     * VM instances launch with paravirtualized devices using VirtIO drivers.
+     * VM instances launch with paravirtualized devices using VirtIO drivers. * {@code
+     * ACCELERATEDPV} - VM instances launch with accelerated paravirtualized networking type.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("networkType")
     private final NetworkType networkType;
@@ -455,7 +460,8 @@ public final class LaunchOptions extends com.oracle.bmc.http.client.internal.Exp
      * Gigabit ethernet controller. Compatible with Linux e1000 network driver. * {@code VFIO} -
      * Direct attached Virtual Function network controller. This is the networking type when you
      * launch an instance using hardware-assisted (SR-IOV) networking. * {@code PARAVIRTUALIZED} -
-     * VM instances launch with paravirtualized devices using VirtIO drivers.
+     * VM instances launch with paravirtualized devices using VirtIO drivers. * {@code
+     * ACCELERATEDPV} - VM instances launch with accelerated paravirtualized networking type.
      *
      * @return the value
      */

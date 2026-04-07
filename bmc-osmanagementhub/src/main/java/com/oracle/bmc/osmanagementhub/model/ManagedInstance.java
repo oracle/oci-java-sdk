@@ -62,7 +62,9 @@ public final class ManagedInstance
         "notificationTopicId",
         "autonomousSettings",
         "isManagedByAutonomousLinux",
-        "agentVersion"
+        "agentVersion",
+        "areSourcesManaged",
+        "timeLastSoftwareRefresh"
     })
     public ManagedInstance(
             String id,
@@ -104,7 +106,9 @@ public final class ManagedInstance
             String notificationTopicId,
             AutonomousSettings autonomousSettings,
             Boolean isManagedByAutonomousLinux,
-            String agentVersion) {
+            String agentVersion,
+            Boolean areSourcesManaged,
+            java.util.Date timeLastSoftwareRefresh) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -146,6 +150,8 @@ public final class ManagedInstance
         this.autonomousSettings = autonomousSettings;
         this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
         this.agentVersion = agentVersion;
+        this.areSourcesManaged = areSourcesManaged;
+        this.timeLastSoftwareRefresh = timeLastSoftwareRefresh;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -770,6 +776,44 @@ public final class ManagedInstance
             this.__explicitlySet__.add("agentVersion");
             return this;
         }
+        /**
+         * Controls whether OSMH manages software sources for this instance. This defaults to false
+         * for Ubuntu and Windows instances.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("areSourcesManaged")
+        private Boolean areSourcesManaged;
+
+        /**
+         * Controls whether OSMH manages software sources for this instance. This defaults to false
+         * for Ubuntu and Windows instances.
+         *
+         * @param areSourcesManaged the value to set
+         * @return this builder
+         */
+        public Builder areSourcesManaged(Boolean areSourcesManaged) {
+            this.areSourcesManaged = areSourcesManaged;
+            this.__explicitlySet__.add("areSourcesManaged");
+            return this;
+        }
+        /**
+         * The date and time the instance's software information was last refreshed (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastSoftwareRefresh")
+        private java.util.Date timeLastSoftwareRefresh;
+
+        /**
+         * The date and time the instance's software information was last refreshed (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         * @param timeLastSoftwareRefresh the value to set
+         * @return this builder
+         */
+        public Builder timeLastSoftwareRefresh(java.util.Date timeLastSoftwareRefresh) {
+            this.timeLastSoftwareRefresh = timeLastSoftwareRefresh;
+            this.__explicitlySet__.add("timeLastSoftwareRefresh");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -816,7 +860,9 @@ public final class ManagedInstance
                             this.notificationTopicId,
                             this.autonomousSettings,
                             this.isManagedByAutonomousLinux,
-                            this.agentVersion);
+                            this.agentVersion,
+                            this.areSourcesManaged,
+                            this.timeLastSoftwareRefresh);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -944,6 +990,12 @@ public final class ManagedInstance
             }
             if (model.wasPropertyExplicitlySet("agentVersion")) {
                 this.agentVersion(model.getAgentVersion());
+            }
+            if (model.wasPropertyExplicitlySet("areSourcesManaged")) {
+                this.areSourcesManaged(model.getAreSourcesManaged());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSoftwareRefresh")) {
+                this.timeLastSoftwareRefresh(model.getTimeLastSoftwareRefresh());
             }
             return this;
         }
@@ -1496,6 +1548,40 @@ public final class ManagedInstance
         return agentVersion;
     }
 
+    /**
+     * Controls whether OSMH manages software sources for this instance. This defaults to false for
+     * Ubuntu and Windows instances.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("areSourcesManaged")
+    private final Boolean areSourcesManaged;
+
+    /**
+     * Controls whether OSMH manages software sources for this instance. This defaults to false for
+     * Ubuntu and Windows instances.
+     *
+     * @return the value
+     */
+    public Boolean getAreSourcesManaged() {
+        return areSourcesManaged;
+    }
+
+    /**
+     * The date and time the instance's software information was last refreshed (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastSoftwareRefresh")
+    private final java.util.Date timeLastSoftwareRefresh;
+
+    /**
+     * The date and time the instance's software information was last refreshed (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastSoftwareRefresh() {
+        return timeLastSoftwareRefresh;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1558,6 +1644,9 @@ public final class ManagedInstance
         sb.append(", isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
         sb.append(", agentVersion=").append(String.valueOf(this.agentVersion));
+        sb.append(", areSourcesManaged=").append(String.valueOf(this.areSourcesManaged));
+        sb.append(", timeLastSoftwareRefresh=")
+                .append(String.valueOf(this.timeLastSoftwareRefresh));
         sb.append(")");
         return sb.toString();
     }
@@ -1619,6 +1708,9 @@ public final class ManagedInstance
                 && java.util.Objects.equals(
                         this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
                 && java.util.Objects.equals(this.agentVersion, other.agentVersion)
+                && java.util.Objects.equals(this.areSourcesManaged, other.areSourcesManaged)
+                && java.util.Objects.equals(
+                        this.timeLastSoftwareRefresh, other.timeLastSoftwareRefresh)
                 && super.equals(other);
     }
 
@@ -1744,6 +1836,14 @@ public final class ManagedInstance
                                 ? 43
                                 : this.isManagedByAutonomousLinux.hashCode());
         result = (result * PRIME) + (this.agentVersion == null ? 43 : this.agentVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areSourcesManaged == null ? 43 : this.areSourcesManaged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastSoftwareRefresh == null
+                                ? 43
+                                : this.timeLastSoftwareRefresh.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -280,6 +280,7 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("healthState", request.getHealthState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()

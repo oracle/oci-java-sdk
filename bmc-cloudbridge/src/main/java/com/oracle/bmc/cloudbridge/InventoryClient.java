@@ -156,6 +156,8 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         request.getGroupBy(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("inventoryId", request.getInventoryId())
+                .appendQueryParam("assetClassName", request.getAssetClassName())
+                .appendQueryParam("assetClassVersion", request.getAssetClassVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -460,6 +462,8 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("inventoryId", request.getInventoryId())
+                .appendQueryParam("assetClassName", request.getAssetClassName())
+                .appendQueryParam("assetClassVersion", request.getAssetClassVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()

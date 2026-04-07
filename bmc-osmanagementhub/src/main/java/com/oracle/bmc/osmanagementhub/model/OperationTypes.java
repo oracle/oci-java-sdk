@@ -31,6 +31,9 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     InstallOtherWindowsUpdates("INSTALL_OTHER_WINDOWS_UPDATES"),
     Reboot("REBOOT"),
     RerunWorkRequest("RERUN_WORK_REQUEST"),
+    InstallSnaps("INSTALL_SNAPS"),
+    RemoveSnaps("REMOVE_SNAPS"),
+    SwitchSnapChannel("SWITCH_SNAP_CHANNEL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

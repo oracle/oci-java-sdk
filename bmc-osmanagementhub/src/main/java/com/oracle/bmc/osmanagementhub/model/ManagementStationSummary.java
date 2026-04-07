@@ -39,6 +39,8 @@ public final class ManagementStationSummary
         "mirrorCapacity",
         "lifecycleState",
         "location",
+        "osFamily",
+        "archType",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -59,6 +61,8 @@ public final class ManagementStationSummary
             Integer mirrorCapacity,
             ManagementStation.LifecycleState lifecycleState,
             ManagedInstanceLocation location,
+            OsFamily osFamily,
+            ArchType archType,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -78,6 +82,8 @@ public final class ManagementStationSummary
         this.mirrorCapacity = mirrorCapacity;
         this.lifecycleState = lifecycleState;
         this.location = location;
+        this.osFamily = osFamily;
+        this.archType = archType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -334,6 +340,36 @@ public final class ManagementStationSummary
             this.__explicitlySet__.add("location");
             return this;
         }
+        /** The operating system family. */
+        @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+        private OsFamily osFamily;
+
+        /**
+         * The operating system family.
+         *
+         * @param osFamily the value to set
+         * @return this builder
+         */
+        public Builder osFamily(OsFamily osFamily) {
+            this.osFamily = osFamily;
+            this.__explicitlySet__.add("osFamily");
+            return this;
+        }
+        /** The architecture type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("archType")
+        private ArchType archType;
+
+        /**
+         * The architecture type.
+         *
+         * @param archType the value to set
+         * @return this builder
+         */
+        public Builder archType(ArchType archType) {
+            this.archType = archType;
+            this.__explicitlySet__.add("archType");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -422,6 +458,8 @@ public final class ManagementStationSummary
                             this.mirrorCapacity,
                             this.lifecycleState,
                             this.location,
+                            this.osFamily,
+                            this.archType,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -477,6 +515,12 @@ public final class ManagementStationSummary
             }
             if (model.wasPropertyExplicitlySet("location")) {
                 this.location(model.getLocation());
+            }
+            if (model.wasPropertyExplicitlySet("osFamily")) {
+                this.osFamily(model.getOsFamily());
+            }
+            if (model.wasPropertyExplicitlySet("archType")) {
+                this.archType(model.getArchType());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -719,6 +763,32 @@ public final class ManagementStationSummary
         return location;
     }
 
+    /** The operating system family. */
+    @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+    private final OsFamily osFamily;
+
+    /**
+     * The operating system family.
+     *
+     * @return the value
+     */
+    public OsFamily getOsFamily() {
+        return osFamily;
+    }
+
+    /** The architecture type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("archType")
+    private final ArchType archType;
+
+    /**
+     * The architecture type.
+     *
+     * @return the value
+     */
+    public ArchType getArchType() {
+        return archType;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -808,6 +878,8 @@ public final class ManagementStationSummary
         sb.append(", mirrorCapacity=").append(String.valueOf(this.mirrorCapacity));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", location=").append(String.valueOf(this.location));
+        sb.append(", osFamily=").append(String.valueOf(this.osFamily));
+        sb.append(", archType=").append(String.valueOf(this.archType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -840,6 +912,8 @@ public final class ManagementStationSummary
                 && java.util.Objects.equals(this.mirrorCapacity, other.mirrorCapacity)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(this.osFamily, other.osFamily)
+                && java.util.Objects.equals(this.archType, other.archType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -879,6 +953,8 @@ public final class ManagementStationSummary
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
+        result = (result * PRIME) + (this.archType == null ? 43 : this.archType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

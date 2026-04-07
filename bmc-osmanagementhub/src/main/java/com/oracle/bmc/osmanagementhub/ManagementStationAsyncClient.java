@@ -266,6 +266,7 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("healthState", request.getHealthState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
