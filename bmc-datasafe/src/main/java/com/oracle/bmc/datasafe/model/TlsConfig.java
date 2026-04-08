@@ -21,6 +21,22 @@ package com.oracle.bmc.datasafe.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class TlsConfig extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public TlsConfig(
+            Status status,
+            CertificateStoreType certificateStoreType,
+            String storePassword,
+            String trustStoreContent,
+            String keyStoreContent) {
+        super();
+        this.status = status;
+        this.certificateStoreType = certificateStoreType;
+        this.storePassword = storePassword != null ? storePassword.toCharArray() : null;
+        this.trustStoreContent = trustStoreContent;
+        this.keyStoreContent = keyStoreContent;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "status",
         "certificateStoreType",
@@ -31,7 +47,7 @@ public final class TlsConfig extends com.oracle.bmc.http.client.internal.Explici
     public TlsConfig(
             Status status,
             CertificateStoreType certificateStoreType,
-            String storePassword,
+            char[] storePassword,
             String trustStoreContent,
             String keyStoreContent) {
         super();
@@ -78,7 +94,7 @@ public final class TlsConfig extends com.oracle.bmc.http.client.internal.Explici
          * The password to read the trust store and key store files, if they are password protected.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("storePassword")
-        private String storePassword;
+        private char[] storePassword;
 
         /**
          * The password to read the trust store and key store files, if they are password protected.
@@ -86,8 +102,14 @@ public final class TlsConfig extends com.oracle.bmc.http.client.internal.Explici
          * @param storePassword the value to set
          * @return this builder
          */
-        public Builder storePassword(String storePassword) {
+        public Builder storePassword(char[] storePassword) {
             this.storePassword = storePassword;
+            this.__explicitlySet__.add("storePassword");
+            return this;
+        }
+
+        public Builder storePassword(String storePassword) {
+            this.storePassword = storePassword != null ? storePassword.toCharArray() : null;
             this.__explicitlySet__.add("storePassword");
             return this;
         }
@@ -287,14 +309,27 @@ public final class TlsConfig extends com.oracle.bmc.http.client.internal.Explici
 
     /** The password to read the trust store and key store files, if they are password protected. */
     @com.fasterxml.jackson.annotation.JsonProperty("storePassword")
-    private final String storePassword;
+    private final char[] storePassword;
+
+    /**
+     * The password to read the trust store and key store files, if they are password protected.
+     *
+     * @return the value
+     * @deprecated Use getStorePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getStorePassword() {
+        return storePassword != null ? new String(storePassword) : null;
+    }
 
     /**
      * The password to read the trust store and key store files, if they are password protected.
      *
      * @return the value
      */
-    public String getStorePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("storePassword")
+    public char[] getStorePassword__AsCharArray() {
         return storePassword;
     }
 

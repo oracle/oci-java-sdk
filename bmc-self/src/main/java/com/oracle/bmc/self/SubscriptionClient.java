@@ -129,7 +129,10 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("Subscription", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "Subscription",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20260129")
@@ -155,7 +158,10 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ChangeSubscriptionCompartmentResponse::builder)
                 .logger(LOG, "changeSubscriptionCompartment")
-                .serviceDetails("Subscription", "ChangeSubscriptionCompartment", "")
+                .serviceDetails(
+                        "Subscription",
+                        "ChangeSubscriptionCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/ChangeSubscriptionCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeSubscriptionCompartmentRequest::builder)
                 .basePath("/20260129")
@@ -185,7 +191,10 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateSubscriptionResponse::builder)
                 .logger(LOG, "createSubscription")
-                .serviceDetails("Subscription", "CreateSubscription", "")
+                .serviceDetails(
+                        "Subscription",
+                        "CreateSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/CreateSubscription")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSubscriptionRequest::builder)
                 .basePath("/20260129")
@@ -217,7 +226,10 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteSubscriptionResponse::builder)
                 .logger(LOG, "deleteSubscription")
-                .serviceDetails("Subscription", "DeleteSubscription", "")
+                .serviceDetails(
+                        "Subscription",
+                        "DeleteSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/DeleteSubscription")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSubscriptionRequest::builder)
                 .basePath("/20260129")
@@ -241,7 +253,10 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetSubscriptionResponse::builder)
                 .logger(LOG, "getSubscription")
-                .serviceDetails("Subscription", "GetSubscription", "")
+                .serviceDetails(
+                        "Subscription",
+                        "GetSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/GetSubscription")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSubscriptionRequest::builder)
                 .basePath("/20260129")
@@ -266,7 +281,10 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetSubscriptionTokenResponse::builder)
                 .logger(LOG, "getSubscriptionToken")
-                .serviceDetails("Subscription", "GetSubscriptionToken", "")
+                .serviceDetails(
+                        "Subscription",
+                        "GetSubscriptionToken",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/SubscriptionToken/GetSubscriptionToken")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSubscriptionTokenRequest::builder)
                 .basePath("/20260129")
@@ -293,7 +311,10 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("Subscription", "GetWorkRequest", "")
+                .serviceDetails(
+                        "Subscription",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20260129")
@@ -318,7 +339,10 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListSubscriptionsResponse::builder)
                 .logger(LOG, "listSubscriptions")
-                .serviceDetails("Subscription", "ListSubscriptions", "")
+                .serviceDetails(
+                        "Subscription",
+                        "ListSubscriptions",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/SubscriptionCollection/ListSubscriptions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSubscriptionsRequest::builder)
                 .basePath("/20260129")
@@ -352,7 +376,10 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("Subscription", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "Subscription",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20260129")
@@ -383,7 +410,10 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("Subscription", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "Subscription",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20260129")
@@ -412,7 +442,10 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("Subscription", "ListWorkRequests", "")
+                .serviceDetails(
+                        "Subscription",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20260129")
@@ -447,7 +480,10 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateSubscriptionResponse::builder)
                 .logger(LOG, "updateSubscription")
-                .serviceDetails("Subscription", "UpdateSubscription", "")
+                .serviceDetails(
+                        "Subscription",
+                        "UpdateSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/UpdateSubscription")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSubscriptionRequest::builder)
                 .basePath("/20260129")

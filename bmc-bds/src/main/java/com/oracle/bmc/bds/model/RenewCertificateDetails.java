@@ -23,6 +23,25 @@ package com.oracle.bmc.bds.model;
 public final class RenewCertificateDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public RenewCertificateDetails(
+            String clusterAdminPassword,
+            String secretId,
+            java.util.List<Service> services,
+            String rootCertificate,
+            java.util.List<HostCertDetails> hostCertDetails,
+            String serverKeyPassword) {
+        super();
+        this.clusterAdminPassword =
+                clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
+        this.secretId = secretId;
+        this.services = services;
+        this.rootCertificate = rootCertificate;
+        this.hostCertDetails = hostCertDetails;
+        this.serverKeyPassword = serverKeyPassword != null ? serverKeyPassword.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "clusterAdminPassword",
         "secretId",
@@ -32,12 +51,12 @@ public final class RenewCertificateDetails
         "serverKeyPassword"
     })
     public RenewCertificateDetails(
-            String clusterAdminPassword,
+            char[] clusterAdminPassword,
             String secretId,
             java.util.List<Service> services,
             String rootCertificate,
             java.util.List<HostCertDetails> hostCertDetails,
-            String serverKeyPassword) {
+            char[] serverKeyPassword) {
         super();
         this.clusterAdminPassword = clusterAdminPassword;
         this.secretId = secretId;
@@ -51,7 +70,7 @@ public final class RenewCertificateDetails
     public static class Builder {
         /** Base-64 encoded password for the cluster admin user. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-        private String clusterAdminPassword;
+        private char[] clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster admin user.
@@ -59,8 +78,15 @@ public final class RenewCertificateDetails
          * @param clusterAdminPassword the value to set
          * @return this builder
          */
-        public Builder clusterAdminPassword(String clusterAdminPassword) {
+        public Builder clusterAdminPassword(char[] clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
+            this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+
+        public Builder clusterAdminPassword(String clusterAdminPassword) {
+            this.clusterAdminPassword =
+                    clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
@@ -140,7 +166,7 @@ public final class RenewCertificateDetails
         }
         /** Base-64 encoded password for CA certificate's private key. This value can be empty. */
         @com.fasterxml.jackson.annotation.JsonProperty("serverKeyPassword")
-        private String serverKeyPassword;
+        private char[] serverKeyPassword;
 
         /**
          * Base-64 encoded password for CA certificate's private key. This value can be empty.
@@ -148,8 +174,15 @@ public final class RenewCertificateDetails
          * @param serverKeyPassword the value to set
          * @return this builder
          */
-        public Builder serverKeyPassword(String serverKeyPassword) {
+        public Builder serverKeyPassword(char[] serverKeyPassword) {
             this.serverKeyPassword = serverKeyPassword;
+            this.__explicitlySet__.add("serverKeyPassword");
+            return this;
+        }
+
+        public Builder serverKeyPassword(String serverKeyPassword) {
+            this.serverKeyPassword =
+                    serverKeyPassword != null ? serverKeyPassword.toCharArray() : null;
             this.__explicitlySet__.add("serverKeyPassword");
             return this;
         }
@@ -207,14 +240,27 @@ public final class RenewCertificateDetails
 
     /** Base-64 encoded password for the cluster admin user. */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-    private final String clusterAdminPassword;
+    private final char[] clusterAdminPassword;
+
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     *
+     * @return the value
+     * @deprecated Use getClusterAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClusterAdminPassword() {
+        return clusterAdminPassword != null ? new String(clusterAdminPassword) : null;
+    }
 
     /**
      * Base-64 encoded password for the cluster admin user.
      *
      * @return the value
      */
-    public String getClusterAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
+    public char[] getClusterAdminPassword__AsCharArray() {
         return clusterAdminPassword;
     }
 
@@ -286,14 +332,27 @@ public final class RenewCertificateDetails
 
     /** Base-64 encoded password for CA certificate's private key. This value can be empty. */
     @com.fasterxml.jackson.annotation.JsonProperty("serverKeyPassword")
-    private final String serverKeyPassword;
+    private final char[] serverKeyPassword;
+
+    /**
+     * Base-64 encoded password for CA certificate&#39;s private key. This value can be empty.
+     *
+     * @return the value
+     * @deprecated Use getServerKeyPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getServerKeyPassword() {
+        return serverKeyPassword != null ? new String(serverKeyPassword) : null;
+    }
 
     /**
      * Base-64 encoded password for CA certificate's private key. This value can be empty.
      *
      * @return the value
      */
-    public String getServerKeyPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("serverKeyPassword")
+    public char[] getServerKeyPassword__AsCharArray() {
         return serverKeyPassword;
     }
 

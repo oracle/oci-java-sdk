@@ -23,6 +23,49 @@ package com.oracle.bmc.bds.model;
 public final class CreateBdsInstanceDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public CreateBdsInstanceDetails(
+            String compartmentId,
+            String displayName,
+            BdsInstance.ClusterVersion clusterVersion,
+            String clusterPublicKey,
+            String clusterAdminPassword,
+            String secretId,
+            Boolean isSecretReused,
+            Boolean isHighAvailability,
+            Boolean isSecure,
+            NetworkConfig networkConfig,
+            String bootstrapScriptUrl,
+            java.util.List<CreateNodeDetails> nodes,
+            String kerberosRealmName,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String kmsKeyId,
+            BdsInstance.ClusterProfile clusterProfile,
+            BdsClusterVersionSummary bdsClusterVersionSummary) {
+        super();
+        this.compartmentId = compartmentId;
+        this.displayName = displayName;
+        this.clusterVersion = clusterVersion;
+        this.clusterPublicKey = clusterPublicKey;
+        this.clusterAdminPassword =
+                clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
+        this.secretId = secretId;
+        this.isSecretReused = isSecretReused;
+        this.isHighAvailability = isHighAvailability;
+        this.isSecure = isSecure;
+        this.networkConfig = networkConfig;
+        this.bootstrapScriptUrl = bootstrapScriptUrl;
+        this.nodes = nodes;
+        this.kerberosRealmName = kerberosRealmName;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.kmsKeyId = kmsKeyId;
+        this.clusterProfile = clusterProfile;
+        this.bdsClusterVersionSummary = bdsClusterVersionSummary;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
         "displayName",
@@ -48,7 +91,7 @@ public final class CreateBdsInstanceDetails
             String displayName,
             BdsInstance.ClusterVersion clusterVersion,
             String clusterPublicKey,
-            String clusterAdminPassword,
+            char[] clusterAdminPassword,
             String secretId,
             Boolean isSecretReused,
             Boolean isHighAvailability,
@@ -150,7 +193,7 @@ public final class CreateBdsInstanceDetails
          * if the secretId is specified.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-        private String clusterAdminPassword;
+        private char[] clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required
@@ -159,8 +202,15 @@ public final class CreateBdsInstanceDetails
          * @param clusterAdminPassword the value to set
          * @return this builder
          */
-        public Builder clusterAdminPassword(String clusterAdminPassword) {
+        public Builder clusterAdminPassword(char[] clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
+            this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+
+        public Builder clusterAdminPassword(String clusterAdminPassword) {
+            this.clusterAdminPassword =
+                    clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
@@ -517,7 +567,20 @@ public final class CreateBdsInstanceDetails
      * the secretId is specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-    private final String clusterAdminPassword;
+    private final char[] clusterAdminPassword;
+
+    /**
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if
+     * the secretId is specified.
+     *
+     * @return the value
+     * @deprecated Use getClusterAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClusterAdminPassword() {
+        return clusterAdminPassword != null ? new String(clusterAdminPassword) : null;
+    }
 
     /**
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if
@@ -525,7 +588,8 @@ public final class CreateBdsInstanceDetails
      *
      * @return the value
      */
-    public String getClusterAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
+    public char[] getClusterAdminPassword__AsCharArray() {
         return clusterAdminPassword;
     }
 

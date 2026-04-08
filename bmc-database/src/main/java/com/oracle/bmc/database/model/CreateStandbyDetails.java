@@ -23,6 +23,38 @@ package com.oracle.bmc.database.model;
 public final class CreateStandbyDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public CreateStandbyDetails(
+            String sourceDatabaseId,
+            String databaseAdminPassword,
+            String sourceTdeWalletPassword,
+            EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
+            Boolean isActiveDataGuardEnabled,
+            String dbUniqueName,
+            String sidPrefix,
+            ProtectionMode protectionMode,
+            TransportType transportType,
+            DatabaseStorageSizeDetails storageSizeDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.sourceDatabaseId = sourceDatabaseId;
+        this.databaseAdminPassword =
+                databaseAdminPassword != null ? databaseAdminPassword.toCharArray() : null;
+        this.sourceTdeWalletPassword =
+                sourceTdeWalletPassword != null ? sourceTdeWalletPassword.toCharArray() : null;
+        this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+        this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+        this.dbUniqueName = dbUniqueName;
+        this.sidPrefix = sidPrefix;
+        this.protectionMode = protectionMode;
+        this.transportType = transportType;
+        this.storageSizeDetails = storageSizeDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "sourceDatabaseId",
         "databaseAdminPassword",
@@ -39,8 +71,8 @@ public final class CreateStandbyDetails
     })
     public CreateStandbyDetails(
             String sourceDatabaseId,
-            String databaseAdminPassword,
-            String sourceTdeWalletPassword,
+            char[] databaseAdminPassword,
+            char[] sourceTdeWalletPassword,
             EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             Boolean isActiveDataGuardEnabled,
             String dbUniqueName,
@@ -92,7 +124,7 @@ public final class CreateStandbyDetails
          * <p>*The password MUST be the same as the primary admin password.**
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
-        private String databaseAdminPassword;
+        private char[] databaseAdminPassword;
 
         /**
          * The administrator password of the primary database in this Data Guard association.
@@ -102,14 +134,21 @@ public final class CreateStandbyDetails
          * @param databaseAdminPassword the value to set
          * @return this builder
          */
-        public Builder databaseAdminPassword(String databaseAdminPassword) {
+        public Builder databaseAdminPassword(char[] databaseAdminPassword) {
             this.databaseAdminPassword = databaseAdminPassword;
+            this.__explicitlySet__.add("databaseAdminPassword");
+            return this;
+        }
+
+        public Builder databaseAdminPassword(String databaseAdminPassword) {
+            this.databaseAdminPassword =
+                    databaseAdminPassword != null ? databaseAdminPassword.toCharArray() : null;
             this.__explicitlySet__.add("databaseAdminPassword");
             return this;
         }
         /** The TDE wallet password of the source database specified by 'sourceDatabaseId'. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceTdeWalletPassword")
-        private String sourceTdeWalletPassword;
+        private char[] sourceTdeWalletPassword;
 
         /**
          * The TDE wallet password of the source database specified by 'sourceDatabaseId'.
@@ -117,8 +156,15 @@ public final class CreateStandbyDetails
          * @param sourceTdeWalletPassword the value to set
          * @return this builder
          */
-        public Builder sourceTdeWalletPassword(String sourceTdeWalletPassword) {
+        public Builder sourceTdeWalletPassword(char[] sourceTdeWalletPassword) {
             this.sourceTdeWalletPassword = sourceTdeWalletPassword;
+            this.__explicitlySet__.add("sourceTdeWalletPassword");
+            return this;
+        }
+
+        public Builder sourceTdeWalletPassword(String sourceTdeWalletPassword) {
+            this.sourceTdeWalletPassword =
+                    sourceTdeWalletPassword != null ? sourceTdeWalletPassword.toCharArray() : null;
             this.__explicitlySet__.add("sourceTdeWalletPassword");
             return this;
         }
@@ -395,7 +441,20 @@ public final class CreateStandbyDetails
      * <p>*The password MUST be the same as the primary admin password.**
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
-    private final String databaseAdminPassword;
+    private final char[] databaseAdminPassword;
+
+    /**
+     * The administrator password of the primary database in this Data Guard association. &lt;p&gt;
+     * *The password MUST be the same as the primary admin password.**
+     *
+     * @return the value
+     * @deprecated Use getDatabaseAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getDatabaseAdminPassword() {
+        return databaseAdminPassword != null ? new String(databaseAdminPassword) : null;
+    }
 
     /**
      * The administrator password of the primary database in this Data Guard association.
@@ -404,20 +463,34 @@ public final class CreateStandbyDetails
      *
      * @return the value
      */
-    public String getDatabaseAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
+    public char[] getDatabaseAdminPassword__AsCharArray() {
         return databaseAdminPassword;
     }
 
     /** The TDE wallet password of the source database specified by 'sourceDatabaseId'. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceTdeWalletPassword")
-    private final String sourceTdeWalletPassword;
+    private final char[] sourceTdeWalletPassword;
+
+    /**
+     * The TDE wallet password of the source database specified by &#39;sourceDatabaseId&#39;.
+     *
+     * @return the value
+     * @deprecated Use getSourceTdeWalletPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSourceTdeWalletPassword() {
+        return sourceTdeWalletPassword != null ? new String(sourceTdeWalletPassword) : null;
+    }
 
     /**
      * The TDE wallet password of the source database specified by 'sourceDatabaseId'.
      *
      * @return the value
      */
-    public String getSourceTdeWalletPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceTdeWalletPassword")
+    public char[] getSourceTdeWalletPassword__AsCharArray() {
         return sourceTdeWalletPassword;
     }
 

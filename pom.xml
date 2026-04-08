@@ -63,7 +63,7 @@
     <exec.skip>true</exec.skip>
     <exec.mainClass>com.acme.Undefined</exec.mainClass>
     <com.nimbus.version>10.5</com.nimbus.version>
-    <oci.codegen.version>2.147</oci.codegen.version>
+    <oci.codegen.version>2.163</oci.codegen.version>
   </properties>
   <profiles>
     <profile>

@@ -24,6 +24,31 @@ package com.oracle.bmc.opsi.model;
 public final class CreateOperationsInsightsWarehouseUserDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public CreateOperationsInsightsWarehouseUserDetails(
+            String operationsInsightsWarehouseId,
+            String compartmentId,
+            String name,
+            String connectionPassword,
+            Boolean isAwrDataAccess,
+            Boolean isEmDataAccess,
+            Boolean isOpsiDataAccess,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+        this.compartmentId = compartmentId;
+        this.name = name;
+        this.connectionPassword =
+                connectionPassword != null ? connectionPassword.toCharArray() : null;
+        this.isAwrDataAccess = isAwrDataAccess;
+        this.isEmDataAccess = isEmDataAccess;
+        this.isOpsiDataAccess = isOpsiDataAccess;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "operationsInsightsWarehouseId",
         "compartmentId",
@@ -39,7 +64,7 @@ public final class CreateOperationsInsightsWarehouseUserDetails
             String operationsInsightsWarehouseId,
             String compartmentId,
             String name,
-            String connectionPassword,
+            char[] connectionPassword,
             Boolean isAwrDataAccess,
             Boolean isEmDataAccess,
             Boolean isOpsiDataAccess,
@@ -117,7 +142,7 @@ public final class CreateOperationsInsightsWarehouseUserDetails
          * Insights OPSI Hub.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionPassword")
-        private String connectionPassword;
+        private char[] connectionPassword;
 
         /**
          * User provided connection password for the AWR Data, Enterprise Manager Data and Ops
@@ -126,8 +151,15 @@ public final class CreateOperationsInsightsWarehouseUserDetails
          * @param connectionPassword the value to set
          * @return this builder
          */
-        public Builder connectionPassword(String connectionPassword) {
+        public Builder connectionPassword(char[] connectionPassword) {
             this.connectionPassword = connectionPassword;
+            this.__explicitlySet__.add("connectionPassword");
+            return this;
+        }
+
+        public Builder connectionPassword(String connectionPassword) {
+            this.connectionPassword =
+                    connectionPassword != null ? connectionPassword.toCharArray() : null;
             this.__explicitlySet__.add("connectionPassword");
             return this;
         }
@@ -331,7 +363,20 @@ public final class CreateOperationsInsightsWarehouseUserDetails
      * OPSI Hub.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionPassword")
-    private final String connectionPassword;
+    private final char[] connectionPassword;
+
+    /**
+     * User provided connection password for the AWR Data, Enterprise Manager Data and Ops Insights
+     * OPSI Hub.
+     *
+     * @return the value
+     * @deprecated Use getConnectionPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getConnectionPassword() {
+        return connectionPassword != null ? new String(connectionPassword) : null;
+    }
 
     /**
      * User provided connection password for the AWR Data, Enterprise Manager Data and Ops Insights
@@ -339,7 +384,8 @@ public final class CreateOperationsInsightsWarehouseUserDetails
      *
      * @return the value
      */
-    public String getConnectionPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionPassword")
+    public char[] getConnectionPassword__AsCharArray() {
         return connectionPassword;
     }
 

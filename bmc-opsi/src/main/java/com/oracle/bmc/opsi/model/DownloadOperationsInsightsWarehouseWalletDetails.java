@@ -23,9 +23,20 @@ package com.oracle.bmc.opsi.model;
 public final class DownloadOperationsInsightsWarehouseWalletDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"operationsInsightsWarehouseWalletPassword"})
     public DownloadOperationsInsightsWarehouseWalletDetails(
             String operationsInsightsWarehouseWalletPassword) {
+        super();
+        this.operationsInsightsWarehouseWalletPassword =
+                operationsInsightsWarehouseWalletPassword != null
+                        ? operationsInsightsWarehouseWalletPassword.toCharArray()
+                        : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    @java.beans.ConstructorProperties({"operationsInsightsWarehouseWalletPassword"})
+    public DownloadOperationsInsightsWarehouseWalletDetails(
+            char[] operationsInsightsWarehouseWalletPassword) {
         super();
         this.operationsInsightsWarehouseWalletPassword = operationsInsightsWarehouseWalletPassword;
     }
@@ -34,7 +45,7 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails
     public static class Builder {
         /** User provided ADW wallet password for the Ops Insights Warehouse. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseWalletPassword")
-        private String operationsInsightsWarehouseWalletPassword;
+        private char[] operationsInsightsWarehouseWalletPassword;
 
         /**
          * User provided ADW wallet password for the Ops Insights Warehouse.
@@ -43,9 +54,19 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails
          * @return this builder
          */
         public Builder operationsInsightsWarehouseWalletPassword(
-                String operationsInsightsWarehouseWalletPassword) {
+                char[] operationsInsightsWarehouseWalletPassword) {
             this.operationsInsightsWarehouseWalletPassword =
                     operationsInsightsWarehouseWalletPassword;
+            this.__explicitlySet__.add("operationsInsightsWarehouseWalletPassword");
+            return this;
+        }
+
+        public Builder operationsInsightsWarehouseWalletPassword(
+                String operationsInsightsWarehouseWalletPassword) {
+            this.operationsInsightsWarehouseWalletPassword =
+                    operationsInsightsWarehouseWalletPassword != null
+                            ? operationsInsightsWarehouseWalletPassword.toCharArray()
+                            : null;
             this.__explicitlySet__.add("operationsInsightsWarehouseWalletPassword");
             return this;
         }
@@ -84,14 +105,29 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails
 
     /** User provided ADW wallet password for the Ops Insights Warehouse. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseWalletPassword")
-    private final String operationsInsightsWarehouseWalletPassword;
+    private final char[] operationsInsightsWarehouseWalletPassword;
+
+    /**
+     * User provided ADW wallet password for the Ops Insights Warehouse.
+     *
+     * @return the value
+     * @deprecated Use getOperationsInsightsWarehouseWalletPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getOperationsInsightsWarehouseWalletPassword() {
+        return operationsInsightsWarehouseWalletPassword != null
+                ? new String(operationsInsightsWarehouseWalletPassword)
+                : null;
+    }
 
     /**
      * User provided ADW wallet password for the Ops Insights Warehouse.
      *
      * @return the value
      */
-    public String getOperationsInsightsWarehouseWalletPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseWalletPassword")
+    public char[] getOperationsInsightsWarehouseWalletPassword__AsCharArray() {
         return operationsInsightsWarehouseWalletPassword;
     }
 

@@ -92,7 +92,7 @@ public final class CreateCortanaChannelDetails extends CreateChannelDetails {
         }
         /** The client secret that you obtained from your bot registration. */
         @com.fasterxml.jackson.annotation.JsonProperty("msaAppPassword")
-        private String msaAppPassword;
+        private char[] msaAppPassword;
 
         /**
          * The client secret that you obtained from your bot registration.
@@ -100,8 +100,14 @@ public final class CreateCortanaChannelDetails extends CreateChannelDetails {
          * @param msaAppPassword the value to set
          * @return this builder
          */
-        public Builder msaAppPassword(String msaAppPassword) {
+        public Builder msaAppPassword(char[] msaAppPassword) {
             this.msaAppPassword = msaAppPassword;
+            this.__explicitlySet__.add("msaAppPassword");
+            return this;
+        }
+
+        public Builder msaAppPassword(String msaAppPassword) {
+            this.msaAppPassword = msaAppPassword != null ? msaAppPassword.toCharArray() : null;
             this.__explicitlySet__.add("msaAppPassword");
             return this;
         }
@@ -193,6 +199,26 @@ public final class CreateCortanaChannelDetails extends CreateChannelDetails {
             String botId) {
         super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
         this.msaAppId = msaAppId;
+        this.msaAppPassword = msaAppPassword != null ? msaAppPassword.toCharArray() : null;
+        this.botId = botId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateCortanaChannelDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("name") String name,
+            @com.fasterxml.jackson.annotation.JsonProperty("description") String description,
+            @com.fasterxml.jackson.annotation.JsonProperty("sessionExpiryDurationInMilliseconds")
+                    Long sessionExpiryDurationInMilliseconds,
+            @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+                    java.util.Map<String, String> freeformTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+                    java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("msaAppId") String msaAppId,
+            @com.fasterxml.jackson.annotation.JsonProperty("msaAppPassword") char[] msaAppPassword,
+            @com.fasterxml.jackson.annotation.JsonProperty("botId") String botId) {
+        super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
+        this.msaAppId = msaAppId;
         this.msaAppPassword = msaAppPassword;
         this.botId = botId;
     }
@@ -212,14 +238,27 @@ public final class CreateCortanaChannelDetails extends CreateChannelDetails {
 
     /** The client secret that you obtained from your bot registration. */
     @com.fasterxml.jackson.annotation.JsonProperty("msaAppPassword")
-    private final String msaAppPassword;
+    private final char[] msaAppPassword;
+
+    /**
+     * The client secret that you obtained from your bot registration.
+     *
+     * @return the value
+     * @deprecated Use getMsaAppPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getMsaAppPassword() {
+        return msaAppPassword != null ? new String(msaAppPassword) : null;
+    }
 
     /**
      * The client secret that you obtained from your bot registration.
      *
      * @return the value
      */
-    public String getMsaAppPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("msaAppPassword")
+    public char[] getMsaAppPassword__AsCharArray() {
         return msaAppPassword;
     }
 

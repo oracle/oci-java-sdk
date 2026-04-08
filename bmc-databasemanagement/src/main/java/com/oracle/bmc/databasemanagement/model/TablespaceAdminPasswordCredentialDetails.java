@@ -47,7 +47,7 @@ public final class TablespaceAdminPasswordCredentialDetails
         }
         /** The database user's password encoded using BASE64 scheme. */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The database user's password encoded using BASE64 scheme.
@@ -55,8 +55,14 @@ public final class TablespaceAdminPasswordCredentialDetails
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -101,19 +107,42 @@ public final class TablespaceAdminPasswordCredentialDetails
     @Deprecated
     public TablespaceAdminPasswordCredentialDetails(String username, Role role, String password) {
         super(username, role);
+        this.password = password != null ? password.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public TablespaceAdminPasswordCredentialDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("username") String username,
+            @com.fasterxml.jackson.annotation.JsonProperty("role") Role role,
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password) {
+        super(username, role);
         this.password = password;
     }
 
     /** The database user's password encoded using BASE64 scheme. */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The database user&#39;s password encoded using BASE64 scheme.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The database user's password encoded using BASE64 scheme.
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

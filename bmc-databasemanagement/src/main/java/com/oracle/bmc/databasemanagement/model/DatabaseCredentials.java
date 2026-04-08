@@ -25,8 +25,18 @@ package com.oracle.bmc.databasemanagement.model;
 public final class DatabaseCredentials
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"userName", "password", "secretId", "role"})
     public DatabaseCredentials(String userName, String password, String secretId, Role role) {
+        super();
+        this.userName = userName;
+        this.password = password != null ? password.toCharArray() : null;
+        this.secretId = secretId;
+        this.role = role;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    @java.beans.ConstructorProperties({"userName", "password", "secretId", "role"})
+    public DatabaseCredentials(String userName, char[] password, String secretId, Role role) {
         super();
         this.userName = userName;
         this.password = password;
@@ -53,7 +63,7 @@ public final class DatabaseCredentials
         }
         /** The password for the database user name. */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password for the database user name.
@@ -61,8 +71,14 @@ public final class DatabaseCredentials
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -159,14 +175,27 @@ public final class DatabaseCredentials
 
     /** The password for the database user name. */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password for the database user name.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password for the database user name.
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

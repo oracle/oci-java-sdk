@@ -169,7 +169,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
          * February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated database. Deprecated: This
@@ -179,8 +179,14 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -310,7 +316,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
          * 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
-        private String tlsCertificateKeyFilePassword;
+        private char[] tlsCertificateKeyFilePassword;
 
         /**
          * Client Certificate key file password. Deprecated: This field is deprecated and replaced
@@ -320,8 +326,17 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
          * @param tlsCertificateKeyFilePassword the value to set
          * @return this builder
          */
-        public Builder tlsCertificateKeyFilePassword(String tlsCertificateKeyFilePassword) {
+        public Builder tlsCertificateKeyFilePassword(char[] tlsCertificateKeyFilePassword) {
             this.tlsCertificateKeyFilePassword = tlsCertificateKeyFilePassword;
+            this.__explicitlySet__.add("tlsCertificateKeyFilePassword");
+            return this;
+        }
+
+        public Builder tlsCertificateKeyFilePassword(String tlsCertificateKeyFilePassword) {
+            this.tlsCertificateKeyFilePassword =
+                    tlsCertificateKeyFilePassword != null
+                            ? tlsCertificateKeyFilePassword.toCharArray()
+                            : null;
             this.__explicitlySet__.add("tlsCertificateKeyFilePassword");
             return this;
         }
@@ -502,6 +517,71 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
                 securityAttributes);
         this.connectionString = connectionString;
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.databaseId = databaseId;
+        this.securityProtocol = securityProtocol;
+        this.tlsCaFile = tlsCaFile;
+        this.tlsCertificateKeyFile = tlsCertificateKeyFile;
+        this.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
+        this.tlsCertificateKeyFilePassword =
+                tlsCertificateKeyFilePassword != null
+                        ? tlsCertificateKeyFilePassword.toCharArray()
+                        : null;
+        this.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateMongoDbConnectionDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("displayName") String displayName,
+            @com.fasterxml.jackson.annotation.JsonProperty("description") String description,
+            @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+                    java.util.Map<String, String> freeformTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+                    java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("vaultId") String vaultId,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyId") String keyId,
+            @com.fasterxml.jackson.annotation.JsonProperty("nsgIds") java.util.List<String> nsgIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("subnetId") String subnetId,
+            @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+                    RoutingMethod routingMethod,
+            @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+                    Boolean doesUseSecretIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+                    java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
+                    String connectionString,
+            @com.fasterxml.jackson.annotation.JsonProperty("username") String username,
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
+            @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+                    String passwordSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("databaseId") String databaseId,
+            @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
+                    MongoDbConnection.SecurityProtocol securityProtocol,
+            @com.fasterxml.jackson.annotation.JsonProperty("tlsCaFile") String tlsCaFile,
+            @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFile")
+                    String tlsCertificateKeyFile,
+            @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFileSecretId")
+                    String tlsCertificateKeyFileSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
+                    char[] tlsCertificateKeyFilePassword,
+            @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePasswordSecretId")
+                    String tlsCertificateKeyFilePasswordSecretId) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                securityAttributes);
+        this.connectionString = connectionString;
+        this.username = username;
         this.password = password;
         this.passwordSecretId = passwordSecretId;
         this.databaseId = databaseId;
@@ -549,7 +629,21 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
      * February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated database. Deprecated: This
+     * field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed
+     * after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated database. Deprecated: This
@@ -558,7 +652,8 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -675,7 +770,23 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
      * "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
-    private final String tlsCertificateKeyFilePassword;
+    private final char[] tlsCertificateKeyFilePassword;
+
+    /**
+     * Client Certificate key file password. Deprecated: This field is deprecated and replaced by
+     * &quot;tlsCertificateKeyFilePasswordSecretId&quot;. This field will be removed after February
+     * 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getTlsCertificateKeyFilePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTlsCertificateKeyFilePassword() {
+        return tlsCertificateKeyFilePassword != null
+                ? new String(tlsCertificateKeyFilePassword)
+                : null;
+    }
 
     /**
      * Client Certificate key file password. Deprecated: This field is deprecated and replaced by
@@ -683,7 +794,8 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
      *
      * @return the value
      */
-    public String getTlsCertificateKeyFilePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
+    public char[] getTlsCertificateKeyFilePassword__AsCharArray() {
         return tlsCertificateKeyFilePassword;
     }
 

@@ -109,7 +109,10 @@ public class PartnerIntegerationAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ActivateSubscriptionResponse::builder)
                 .logger(LOG, "activateSubscription")
-                .serviceDetails("PartnerIntegeration", "ActivateSubscription", "")
+                .serviceDetails(
+                        "PartnerIntegeration",
+                        "ActivateSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/PartnerSubscription/ActivateSubscription")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ActivateSubscriptionRequest::builder)
                 .basePath("/20260129")
@@ -142,7 +145,10 @@ public class PartnerIntegerationAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListingSubscriptionsResponse::builder)
                 .logger(LOG, "listingSubscriptions")
-                .serviceDetails("PartnerIntegeration", "ListingSubscriptions", "")
+                .serviceDetails(
+                        "PartnerIntegeration",
+                        "ListingSubscriptions",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/ListingSubscriptionsCollection/ListingSubscriptions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListingSubscriptionsRequest::builder)
                 .basePath("/20260129")
@@ -177,7 +183,10 @@ public class PartnerIntegerationAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ResolveSubscriptionResponse::builder)
                 .logger(LOG, "resolveSubscription")
-                .serviceDetails("PartnerIntegeration", "ResolveSubscription", "")
+                .serviceDetails(
+                        "PartnerIntegeration",
+                        "ResolveSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/PartnerSubscription/ResolveSubscription")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ResolveSubscriptionRequest::builder)
                 .basePath("/20260129")

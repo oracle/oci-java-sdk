@@ -23,6 +23,32 @@ package com.oracle.bmc.goldengate.model;
 public final class CreateOggDeploymentDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public CreateOggDeploymentDetails(
+            String deploymentName,
+            CredentialStore credentialStore,
+            String identityDomainId,
+            String passwordSecretId,
+            String adminUsername,
+            String adminPassword,
+            String certificate,
+            String key,
+            String oggVersion,
+            GroupToRolesMappingDetails groupToRolesMapping) {
+        super();
+        this.deploymentName = deploymentName;
+        this.credentialStore = credentialStore;
+        this.identityDomainId = identityDomainId;
+        this.passwordSecretId = passwordSecretId;
+        this.adminUsername = adminUsername;
+        this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
+        this.certificate = certificate;
+        this.key = key;
+        this.oggVersion = oggVersion;
+        this.groupToRolesMapping = groupToRolesMapping;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "deploymentName",
         "credentialStore",
@@ -41,7 +67,7 @@ public final class CreateOggDeploymentDetails
             String identityDomainId,
             String passwordSecretId,
             String adminUsername,
-            String adminPassword,
+            char[] adminPassword,
             String certificate,
             String key,
             String oggVersion,
@@ -155,7 +181,7 @@ public final class CreateOggDeploymentDetails
          * allowed. This field will be deprecated and replaced by "passwordSecretId".
          */
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-        private String adminPassword;
+        private char[] adminPassword;
 
         /**
          * The password associated with the GoldenGate deployment console username. The password
@@ -166,8 +192,14 @@ public final class CreateOggDeploymentDetails
          * @param adminPassword the value to set
          * @return this builder
          */
-        public Builder adminPassword(String adminPassword) {
+        public Builder adminPassword(char[] adminPassword) {
             this.adminPassword = adminPassword;
+            this.__explicitlySet__.add("adminPassword");
+            return this;
+        }
+
+        public Builder adminPassword(String adminPassword) {
+            this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
@@ -377,7 +409,22 @@ public final class CreateOggDeploymentDetails
      * will be deprecated and replaced by "passwordSecretId".
      */
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    private final String adminPassword;
+    private final char[] adminPassword;
+
+    /**
+     * The password associated with the GoldenGate deployment console username. The password must be
+     * 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1
+     * special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are
+     * not allowed. This field will be deprecated and replaced by &quot;passwordSecretId&quot;.
+     *
+     * @return the value
+     * @deprecated Use getAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAdminPassword() {
+        return adminPassword != null ? new String(adminPassword) : null;
+    }
 
     /**
      * The password associated with the GoldenGate deployment console username. The password must be
@@ -387,7 +434,8 @@ public final class CreateOggDeploymentDetails
      *
      * @return the value
      */
-    public String getAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+    public char[] getAdminPassword__AsCharArray() {
         return adminPassword;
     }
 

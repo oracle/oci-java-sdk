@@ -138,7 +138,7 @@ public final class CreateOsvcChannelDetails extends CreateChannelDetails {
         }
         /** The password for the digital-assistant agent. */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password for the digital-assistant agent.
@@ -146,8 +146,14 @@ public final class CreateOsvcChannelDetails extends CreateChannelDetails {
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -311,6 +317,39 @@ public final class CreateOsvcChannelDetails extends CreateChannelDetails {
         this.host = host;
         this.port = port;
         this.userName = userName;
+        this.password = password != null ? password.toCharArray() : null;
+        this.totalSessionCount = totalSessionCount;
+        this.channelService = channelService;
+        this.authenticationProviderName = authenticationProviderName;
+        this.botId = botId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateOsvcChannelDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("name") String name,
+            @com.fasterxml.jackson.annotation.JsonProperty("description") String description,
+            @com.fasterxml.jackson.annotation.JsonProperty("sessionExpiryDurationInMilliseconds")
+                    Long sessionExpiryDurationInMilliseconds,
+            @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+                    java.util.Map<String, String> freeformTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+                    java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("host") String host,
+            @com.fasterxml.jackson.annotation.JsonProperty("port") String port,
+            @com.fasterxml.jackson.annotation.JsonProperty("userName") String userName,
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
+            @com.fasterxml.jackson.annotation.JsonProperty("totalSessionCount")
+                    Integer totalSessionCount,
+            @com.fasterxml.jackson.annotation.JsonProperty("channelService")
+                    OsvcServiceType channelService,
+            @com.fasterxml.jackson.annotation.JsonProperty("authenticationProviderName")
+                    String authenticationProviderName,
+            @com.fasterxml.jackson.annotation.JsonProperty("botId") String botId) {
+        super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
+        this.host = host;
+        this.port = port;
+        this.userName = userName;
         this.password = password;
         this.totalSessionCount = totalSessionCount;
         this.channelService = channelService;
@@ -377,14 +416,27 @@ public final class CreateOsvcChannelDetails extends CreateChannelDetails {
 
     /** The password for the digital-assistant agent. */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password for the digital-assistant agent.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password for the digital-assistant agent.
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

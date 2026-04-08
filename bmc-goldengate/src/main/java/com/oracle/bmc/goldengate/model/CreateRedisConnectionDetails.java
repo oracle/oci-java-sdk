@@ -259,7 +259,7 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
          * "passwordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given
@@ -270,8 +270,14 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -345,7 +351,7 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
          * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
-        private String trustStorePassword;
+        private char[] trustStorePassword;
 
         /**
          * The TrustStore password. Deprecated: This field is deprecated and replaced by
@@ -354,8 +360,15 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
          * @param trustStorePassword the value to set
          * @return this builder
          */
-        public Builder trustStorePassword(String trustStorePassword) {
+        public Builder trustStorePassword(char[] trustStorePassword) {
             this.trustStorePassword = trustStorePassword;
+            this.__explicitlySet__.add("trustStorePassword");
+            return this;
+        }
+
+        public Builder trustStorePassword(String trustStorePassword) {
+            this.trustStorePassword =
+                    trustStorePassword != null ? trustStorePassword.toCharArray() : null;
             this.__explicitlySet__.add("trustStorePassword");
             return this;
         }
@@ -425,7 +438,7 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
          * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
-        private String keyStorePassword;
+        private char[] keyStorePassword;
 
         /**
          * The KeyStore password. Deprecated: This field is deprecated and replaced by
@@ -434,8 +447,15 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
          * @param keyStorePassword the value to set
          * @return this builder
          */
-        public Builder keyStorePassword(String keyStorePassword) {
+        public Builder keyStorePassword(char[] keyStorePassword) {
             this.keyStorePassword = keyStorePassword;
+            this.__explicitlySet__.add("keyStorePassword");
+            return this;
+        }
+
+        public Builder keyStorePassword(String keyStorePassword) {
+            this.keyStorePassword =
+                    keyStorePassword != null ? keyStorePassword.toCharArray() : null;
             this.__explicitlySet__.add("keyStorePassword");
             return this;
         }
@@ -685,6 +705,93 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
         this.securityProtocol = securityProtocol;
         this.authenticationType = authenticationType;
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.trustStore = trustStore;
+        this.trustStoreSecretId = trustStoreSecretId;
+        this.trustStorePassword =
+                trustStorePassword != null ? trustStorePassword.toCharArray() : null;
+        this.trustStorePasswordSecretId = trustStorePasswordSecretId;
+        this.keyStore = keyStore;
+        this.keyStoreSecretId = keyStoreSecretId;
+        this.keyStorePassword = keyStorePassword != null ? keyStorePassword.toCharArray() : null;
+        this.keyStorePasswordSecretId = keyStorePasswordSecretId;
+        this.redisClusterId = redisClusterId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateRedisConnectionDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("displayName") String displayName,
+            @com.fasterxml.jackson.annotation.JsonProperty("description") String description,
+            @com.fasterxml.jackson.annotation.JsonProperty("compartmentId") String compartmentId,
+            @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+                    java.util.Map<String, String> freeformTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+                    java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("locks")
+                    java.util.List<AddResourceLockDetails> locks,
+            @com.fasterxml.jackson.annotation.JsonProperty("vaultId") String vaultId,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyId") String keyId,
+            @com.fasterxml.jackson.annotation.JsonProperty("nsgIds") java.util.List<String> nsgIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("subnetId") String subnetId,
+            @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+                    RoutingMethod routingMethod,
+            @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+                    Boolean doesUseSecretIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId") String subscriptionId,
+            @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+                    String clusterPlacementGroupId,
+            @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+                    java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
+                    RedisConnection.TechnologyType technologyType,
+            @com.fasterxml.jackson.annotation.JsonProperty("servers") String servers,
+            @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
+                    RedisConnection.SecurityProtocol securityProtocol,
+            @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
+                    RedisConnection.AuthenticationType authenticationType,
+            @com.fasterxml.jackson.annotation.JsonProperty("username") String username,
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
+            @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+                    String passwordSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("trustStore") String trustStore,
+            @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
+                    String trustStoreSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
+                    char[] trustStorePassword,
+            @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
+                    String trustStorePasswordSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyStore") String keyStore,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
+                    String keyStoreSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
+                    char[] keyStorePassword,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
+                    String keyStorePasswordSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
+                    String redisClusterId) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                locks,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
+        this.technologyType = technologyType;
+        this.servers = servers;
+        this.securityProtocol = securityProtocol;
+        this.authenticationType = authenticationType;
+        this.username = username;
         this.password = password;
         this.passwordSecretId = passwordSecretId;
         this.trustStore = trustStore;
@@ -784,7 +891,22 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
      * will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and
+     * so on. Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;.
+     * This field will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
@@ -794,7 +916,8 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -862,7 +985,20 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
      * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
-    private final String trustStorePassword;
+    private final char[] trustStorePassword;
+
+    /**
+     * The TrustStore password. Deprecated: This field is deprecated and replaced by
+     * &quot;trustStorePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getTrustStorePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTrustStorePassword() {
+        return trustStorePassword != null ? new String(trustStorePassword) : null;
+    }
 
     /**
      * The TrustStore password. Deprecated: This field is deprecated and replaced by
@@ -870,7 +1006,8 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
      *
      * @return the value
      */
-    public String getTrustStorePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
+    public char[] getTrustStorePassword__AsCharArray() {
         return trustStorePassword;
     }
 
@@ -934,7 +1071,20 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
      * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
-    private final String keyStorePassword;
+    private final char[] keyStorePassword;
+
+    /**
+     * The KeyStore password. Deprecated: This field is deprecated and replaced by
+     * &quot;keyStorePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getKeyStorePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getKeyStorePassword() {
+        return keyStorePassword != null ? new String(keyStorePassword) : null;
+    }
 
     /**
      * The KeyStore password. Deprecated: This field is deprecated and replaced by
@@ -942,7 +1092,8 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
      *
      * @return the value
      */
-    public String getKeyStorePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
+    public char[] getKeyStorePassword__AsCharArray() {
         return keyStorePassword;
     }
 

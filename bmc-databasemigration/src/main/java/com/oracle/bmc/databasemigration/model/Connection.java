@@ -33,6 +33,57 @@ package com.oracle.bmc.databasemigration.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    protected Connection(
+            String id,
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String vaultId,
+            String keyId,
+            String subnetId,
+            java.util.List<IngressIpDetails> ingressIps,
+            java.util.List<String> nsgIds,
+            String username,
+            String password,
+            String replicationUsername,
+            String replicationPassword,
+            String secretId,
+            String privateEndpointId) {
+        super();
+        this.id = id;
+        this.displayName = displayName;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.vaultId = vaultId;
+        this.keyId = keyId;
+        this.subnetId = subnetId;
+        this.ingressIps = ingressIps;
+        this.nsgIds = nsgIds;
+        this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.replicationUsername = replicationUsername;
+        this.replicationPassword =
+                replicationPassword != null ? replicationPassword.toCharArray() : null;
+        this.secretId = secretId;
+        this.privateEndpointId = privateEndpointId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "id",
         "displayName",
@@ -75,9 +126,9 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String username,
-            String password,
+            char[] password,
             String replicationUsername,
-            String replicationPassword,
+            char[] replicationPassword,
             String secretId,
             String privateEndpointId) {
         super();
@@ -413,14 +464,27 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /** The password (credential) used when creating or updating this resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password (credential) used when creating or updating this resource.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password (credential) used when creating or updating this resource.
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -439,14 +503,27 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /** The password (credential) used when creating or updating this resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("replicationPassword")
-    private final String replicationPassword;
+    private final char[] replicationPassword;
+
+    /**
+     * The password (credential) used when creating or updating this resource.
+     *
+     * @return the value
+     * @deprecated Use getReplicationPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getReplicationPassword() {
+        return replicationPassword != null ? new String(replicationPassword) : null;
+    }
 
     /**
      * The password (credential) used when creating or updating this resource.
      *
      * @return the value
      */
-    public String getReplicationPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationPassword")
+    public char[] getReplicationPassword__AsCharArray() {
         return replicationPassword;
     }
 

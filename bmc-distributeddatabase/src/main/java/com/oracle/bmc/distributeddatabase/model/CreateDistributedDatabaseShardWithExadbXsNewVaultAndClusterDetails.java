@@ -30,7 +30,7 @@ public final class CreateDistributedDatabaseShardWithExadbXsNewVaultAndClusterDe
     public static class Builder {
         /** The admin password for the shard associated with Globally distributed database. */
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-        private String adminPassword;
+        private char[] adminPassword;
 
         /**
          * The admin password for the shard associated with Globally distributed database.
@@ -38,8 +38,14 @@ public final class CreateDistributedDatabaseShardWithExadbXsNewVaultAndClusterDe
          * @param adminPassword the value to set
          * @return this builder
          */
-        public Builder adminPassword(String adminPassword) {
+        public Builder adminPassword(char[] adminPassword) {
             this.adminPassword = adminPassword;
+            this.__explicitlySet__.add("adminPassword");
+            return this;
+        }
+
+        public Builder adminPassword(String adminPassword) {
+            this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
@@ -257,6 +263,35 @@ public final class CreateDistributedDatabaseShardWithExadbXsNewVaultAndClusterDe
             DbStorageVaultDetails dbStorageVaultDetails,
             VmClusterDetails vmClusterDetails) {
         super();
+        this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
+        this.peerDetails = peerDetails;
+        this.shardSpace = shardSpace;
+        this.vaultId = vaultId;
+        this.kmsKeyId = kmsKeyId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
+        this.availabilityDomain = availabilityDomain;
+        this.dbStorageVaultDetails = dbStorageVaultDetails;
+        this.vmClusterDetails = vmClusterDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateDistributedDatabaseShardWithExadbXsNewVaultAndClusterDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("adminPassword") char[] adminPassword,
+            @com.fasterxml.jackson.annotation.JsonProperty("peerDetails")
+                    java.util.List<CreateShardPeerWithExadbXsNewVaultAndClusterDetails> peerDetails,
+            @com.fasterxml.jackson.annotation.JsonProperty("shardSpace") String shardSpace,
+            @com.fasterxml.jackson.annotation.JsonProperty("vaultId") String vaultId,
+            @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId") String kmsKeyId,
+            @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+                    String kmsKeyVersionId,
+            @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+                    String availabilityDomain,
+            @com.fasterxml.jackson.annotation.JsonProperty("dbStorageVaultDetails")
+                    DbStorageVaultDetails dbStorageVaultDetails,
+            @com.fasterxml.jackson.annotation.JsonProperty("vmClusterDetails")
+                    VmClusterDetails vmClusterDetails) {
+        super();
         this.adminPassword = adminPassword;
         this.peerDetails = peerDetails;
         this.shardSpace = shardSpace;
@@ -270,14 +305,27 @@ public final class CreateDistributedDatabaseShardWithExadbXsNewVaultAndClusterDe
 
     /** The admin password for the shard associated with Globally distributed database. */
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    private final String adminPassword;
+    private final char[] adminPassword;
+
+    /**
+     * The admin password for the shard associated with Globally distributed database.
+     *
+     * @return the value
+     * @deprecated Use getAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAdminPassword() {
+        return adminPassword != null ? new String(adminPassword) : null;
+    }
 
     /**
      * The admin password for the shard associated with Globally distributed database.
      *
      * @return the value
      */
-    public String getAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+    public char[] getAdminPassword__AsCharArray() {
         return adminPassword;
     }
 

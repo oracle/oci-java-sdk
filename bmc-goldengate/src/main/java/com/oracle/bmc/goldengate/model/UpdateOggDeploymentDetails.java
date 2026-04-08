@@ -23,6 +23,28 @@ package com.oracle.bmc.goldengate.model;
 public final class UpdateOggDeploymentDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public UpdateOggDeploymentDetails(
+            CredentialStore credentialStore,
+            String identityDomainId,
+            String passwordSecretId,
+            String adminUsername,
+            String adminPassword,
+            String certificate,
+            String key,
+            UpdateGroupToRolesMappingDetails groupToRolesMapping) {
+        super();
+        this.credentialStore = credentialStore;
+        this.identityDomainId = identityDomainId;
+        this.passwordSecretId = passwordSecretId;
+        this.adminUsername = adminUsername;
+        this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
+        this.certificate = certificate;
+        this.key = key;
+        this.groupToRolesMapping = groupToRolesMapping;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "credentialStore",
         "identityDomainId",
@@ -38,7 +60,7 @@ public final class UpdateOggDeploymentDetails
             String identityDomainId,
             String passwordSecretId,
             String adminUsername,
-            String adminPassword,
+            char[] adminPassword,
             String certificate,
             String key,
             UpdateGroupToRolesMappingDetails groupToRolesMapping) {
@@ -130,7 +152,7 @@ public final class UpdateOggDeploymentDetails
          * allowed. This field will be deprecated and replaced by "passwordSecretId".
          */
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-        private String adminPassword;
+        private char[] adminPassword;
 
         /**
          * The password associated with the GoldenGate deployment console username. The password
@@ -141,8 +163,14 @@ public final class UpdateOggDeploymentDetails
          * @param adminPassword the value to set
          * @return this builder
          */
-        public Builder adminPassword(String adminPassword) {
+        public Builder adminPassword(char[] adminPassword) {
             this.adminPassword = adminPassword;
+            this.__explicitlySet__.add("adminPassword");
+            return this;
+        }
+
+        public Builder adminPassword(String adminPassword) {
+            this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
@@ -312,7 +340,22 @@ public final class UpdateOggDeploymentDetails
      * will be deprecated and replaced by "passwordSecretId".
      */
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    private final String adminPassword;
+    private final char[] adminPassword;
+
+    /**
+     * The password associated with the GoldenGate deployment console username. The password must be
+     * 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1
+     * special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are
+     * not allowed. This field will be deprecated and replaced by &quot;passwordSecretId&quot;.
+     *
+     * @return the value
+     * @deprecated Use getAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAdminPassword() {
+        return adminPassword != null ? new String(adminPassword) : null;
+    }
 
     /**
      * The password associated with the GoldenGate deployment console username. The password must be
@@ -322,7 +365,8 @@ public final class UpdateOggDeploymentDetails
      *
      * @return the value
      */
-    public String getAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+    public char[] getAdminPassword__AsCharArray() {
         return adminPassword;
     }
 
