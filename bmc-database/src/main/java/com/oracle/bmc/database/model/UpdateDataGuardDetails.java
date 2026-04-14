@@ -23,6 +23,21 @@ package com.oracle.bmc.database.model;
 public final class UpdateDataGuardDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public UpdateDataGuardDetails(
+            String databaseAdminPassword,
+            ProtectionMode protectionMode,
+            TransportType transportType,
+            Boolean isActiveDataGuardEnabled) {
+        super();
+        this.databaseAdminPassword =
+                databaseAdminPassword != null ? databaseAdminPassword.toCharArray() : null;
+        this.protectionMode = protectionMode;
+        this.transportType = transportType;
+        this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "databaseAdminPassword",
         "protectionMode",
@@ -30,7 +45,7 @@ public final class UpdateDataGuardDetails
         "isActiveDataGuardEnabled"
     })
     public UpdateDataGuardDetails(
-            String databaseAdminPassword,
+            char[] databaseAdminPassword,
             ProtectionMode protectionMode,
             TransportType transportType,
             Boolean isActiveDataGuardEnabled) {
@@ -49,7 +64,7 @@ public final class UpdateDataGuardDetails
          * <p>*The password MUST be the same as the primary admin password.**
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
-        private String databaseAdminPassword;
+        private char[] databaseAdminPassword;
 
         /**
          * The administrator password of the primary database in this Data Guard association.
@@ -59,8 +74,15 @@ public final class UpdateDataGuardDetails
          * @param databaseAdminPassword the value to set
          * @return this builder
          */
-        public Builder databaseAdminPassword(String databaseAdminPassword) {
+        public Builder databaseAdminPassword(char[] databaseAdminPassword) {
             this.databaseAdminPassword = databaseAdminPassword;
+            this.__explicitlySet__.add("databaseAdminPassword");
+            return this;
+        }
+
+        public Builder databaseAdminPassword(String databaseAdminPassword) {
+            this.databaseAdminPassword =
+                    databaseAdminPassword != null ? databaseAdminPassword.toCharArray() : null;
             this.__explicitlySet__.add("databaseAdminPassword");
             return this;
         }
@@ -191,7 +213,20 @@ public final class UpdateDataGuardDetails
      * <p>*The password MUST be the same as the primary admin password.**
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
-    private final String databaseAdminPassword;
+    private final char[] databaseAdminPassword;
+
+    /**
+     * The administrator password of the primary database in this Data Guard association. &lt;p&gt;
+     * *The password MUST be the same as the primary admin password.**
+     *
+     * @return the value
+     * @deprecated Use getDatabaseAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getDatabaseAdminPassword() {
+        return databaseAdminPassword != null ? new String(databaseAdminPassword) : null;
+    }
 
     /**
      * The administrator password of the primary database in this Data Guard association.
@@ -200,10 +235,10 @@ public final class UpdateDataGuardDetails
      *
      * @return the value
      */
-    public String getDatabaseAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
+    public char[] getDatabaseAdminPassword__AsCharArray() {
         return databaseAdminPassword;
     }
-
     /**
      * The protection mode of this Data Guard. For more information, see [Oracle Data Guard
      * Protection

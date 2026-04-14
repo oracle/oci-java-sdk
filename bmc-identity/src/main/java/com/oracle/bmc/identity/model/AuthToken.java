@@ -34,6 +34,28 @@ package com.oracle.bmc.identity.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class AuthToken extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public AuthToken(
+            String token,
+            String id,
+            String userId,
+            String description,
+            java.util.Date timeCreated,
+            java.util.Date timeExpires,
+            LifecycleState lifecycleState,
+            Long inactiveStatus) {
+        super();
+        this.token = token != null ? token.toCharArray() : null;
+        this.id = id;
+        this.userId = userId;
+        this.description = description;
+        this.timeCreated = timeCreated;
+        this.timeExpires = timeExpires;
+        this.lifecycleState = lifecycleState;
+        this.inactiveStatus = inactiveStatus;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "token",
         "id",
@@ -45,7 +67,7 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
         "inactiveStatus"
     })
     public AuthToken(
-            String token,
+            char[] token,
             String id,
             String userId,
             String description,
@@ -71,7 +93,7 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
          * and not for {@code ListAuthTokens} or {@code UpdateAuthToken}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("token")
-        private String token;
+        private char[] token;
 
         /**
          * The auth token. The value is available only in the response for {@code CreateAuthToken},
@@ -80,8 +102,14 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
          * @param token the value to set
          * @return this builder
          */
-        public Builder token(String token) {
+        public Builder token(char[] token) {
             this.token = token;
+            this.__explicitlySet__.add("token");
+            return this;
+        }
+
+        public Builder token(String token) {
+            this.token = token != null ? token.toCharArray() : null;
             this.__explicitlySet__.add("token");
             return this;
         }
@@ -281,7 +309,20 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
      * not for {@code ListAuthTokens} or {@code UpdateAuthToken}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("token")
-    private final String token;
+    private final char[] token;
+
+    /**
+     * The auth token. The value is available only in the response for {@code CreateAuthToken}, and
+     * not for {@code ListAuthTokens} or {@code UpdateAuthToken}.
+     *
+     * @return the value
+     * @deprecated Use getToken__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getToken() {
+        return token != null ? new String(token) : null;
+    }
 
     /**
      * The auth token. The value is available only in the response for {@code CreateAuthToken}, and
@@ -289,7 +330,8 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
      *
      * @return the value
      */
-    public String getToken() {
+    @com.fasterxml.jackson.annotation.JsonProperty("token")
+    public char[] getToken__AsCharArray() {
         return token;
     }
 

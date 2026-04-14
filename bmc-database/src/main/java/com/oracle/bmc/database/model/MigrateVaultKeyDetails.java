@@ -25,6 +25,22 @@ package com.oracle.bmc.database.model;
 public final class MigrateVaultKeyDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public MigrateVaultKeyDetails(
+            String kmsKeyId,
+            String kmsKeyVersionId,
+            String vaultId,
+            String tdeWalletPassword,
+            String adminPassword) {
+        super();
+        this.kmsKeyId = kmsKeyId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
+        this.vaultId = vaultId;
+        this.tdeWalletPassword = tdeWalletPassword != null ? tdeWalletPassword.toCharArray() : null;
+        this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "kmsKeyId",
         "kmsKeyVersionId",
@@ -36,8 +52,8 @@ public final class MigrateVaultKeyDetails
             String kmsKeyId,
             String kmsKeyVersionId,
             String vaultId,
-            String tdeWalletPassword,
-            String adminPassword) {
+            char[] tdeWalletPassword,
+            char[] adminPassword) {
         super();
         this.kmsKeyId = kmsKeyId;
         this.kmsKeyVersionId = kmsKeyVersionId;
@@ -117,7 +133,7 @@ public final class MigrateVaultKeyDetails
         }
         /** The existing TDE wallet password of the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
-        private String tdeWalletPassword;
+        private char[] tdeWalletPassword;
 
         /**
          * The existing TDE wallet password of the database.
@@ -125,14 +141,21 @@ public final class MigrateVaultKeyDetails
          * @param tdeWalletPassword the value to set
          * @return this builder
          */
-        public Builder tdeWalletPassword(String tdeWalletPassword) {
+        public Builder tdeWalletPassword(char[] tdeWalletPassword) {
             this.tdeWalletPassword = tdeWalletPassword;
+            this.__explicitlySet__.add("tdeWalletPassword");
+            return this;
+        }
+
+        public Builder tdeWalletPassword(String tdeWalletPassword) {
+            this.tdeWalletPassword =
+                    tdeWalletPassword != null ? tdeWalletPassword.toCharArray() : null;
             this.__explicitlySet__.add("tdeWalletPassword");
             return this;
         }
         /** The existing admin password of the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-        private String adminPassword;
+        private char[] adminPassword;
 
         /**
          * The existing admin password of the database.
@@ -140,8 +163,14 @@ public final class MigrateVaultKeyDetails
          * @param adminPassword the value to set
          * @return this builder
          */
-        public Builder adminPassword(String adminPassword) {
+        public Builder adminPassword(char[] adminPassword) {
             this.adminPassword = adminPassword;
+            this.__explicitlySet__.add("adminPassword");
+            return this;
+        }
+
+        public Builder adminPassword(String adminPassword) {
+            this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
@@ -256,27 +285,53 @@ public final class MigrateVaultKeyDetails
 
     /** The existing TDE wallet password of the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
-    private final String tdeWalletPassword;
+    private final char[] tdeWalletPassword;
+
+    /**
+     * The existing TDE wallet password of the database.
+     *
+     * @return the value
+     * @deprecated Use getTdeWalletPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTdeWalletPassword() {
+        return tdeWalletPassword != null ? new String(tdeWalletPassword) : null;
+    }
 
     /**
      * The existing TDE wallet password of the database.
      *
      * @return the value
      */
-    public String getTdeWalletPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
+    public char[] getTdeWalletPassword__AsCharArray() {
         return tdeWalletPassword;
     }
 
     /** The existing admin password of the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    private final String adminPassword;
+    private final char[] adminPassword;
+
+    /**
+     * The existing admin password of the database.
+     *
+     * @return the value
+     * @deprecated Use getAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAdminPassword() {
+        return adminPassword != null ? new String(adminPassword) : null;
+    }
 
     /**
      * The existing admin password of the database.
      *
      * @return the value
      */
-    public String getAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+    public char[] getAdminPassword__AsCharArray() {
         return adminPassword;
     }
 

@@ -630,6 +630,43 @@ public class DbMulticloudGCPProviderClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public ReplicateOracleDbGcpKeyRingResponse replicateOracleDbGcpKeyRing(
+            ReplicateOracleDbGcpKeyRingRequest request) {
+
+        Validate.notBlank(
+                request.getOracleDbGcpKeyRingId(), "oracleDbGcpKeyRingId must not be blank");
+        Objects.requireNonNull(
+                request.getReplicateOracleDbGcpKeyRingDetails(),
+                "replicateOracleDbGcpKeyRingDetails is required");
+
+        return clientCall(request, ReplicateOracleDbGcpKeyRingResponse::builder)
+                .logger(LOG, "replicateOracleDbGcpKeyRing")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "ReplicateOracleDbGcpKeyRing",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/ReplicateOracleDbGcpKeyRing")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReplicateOracleDbGcpKeyRingRequest::builder)
+                .basePath("/20240501")
+                .appendPathParam("oracleDbGcpKeyRing")
+                .appendPathParam(request.getOracleDbGcpKeyRingId())
+                .appendPathParam("actions")
+                .appendPathParam("replicate")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ReplicateOracleDbGcpKeyRingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReplicateOracleDbGcpKeyRingResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateOracleDbGcpIdentityConnectorResponse updateOracleDbGcpIdentityConnector(
             UpdateOracleDbGcpIdentityConnectorRequest request) {
 

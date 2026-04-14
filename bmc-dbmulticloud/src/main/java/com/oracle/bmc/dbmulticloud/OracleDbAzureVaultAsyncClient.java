@@ -326,6 +326,47 @@ public class OracleDbAzureVaultAsyncClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public java.util.concurrent.Future<ReplicateOracleDbAzureVaultResponse>
+            replicateOracleDbAzureVault(
+                    ReplicateOracleDbAzureVaultRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ReplicateOracleDbAzureVaultRequest,
+                                    ReplicateOracleDbAzureVaultResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getOracleDbAzureVaultId(), "oracleDbAzureVaultId must not be blank");
+        Objects.requireNonNull(
+                request.getReplicateOracleDbAzureVaultDetails(),
+                "replicateOracleDbAzureVaultDetails is required");
+
+        return clientCall(request, ReplicateOracleDbAzureVaultResponse::builder)
+                .logger(LOG, "replicateOracleDbAzureVault")
+                .serviceDetails(
+                        "OracleDbAzureVault",
+                        "ReplicateOracleDbAzureVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/ReplicateOracleDbAzureVault")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReplicateOracleDbAzureVaultRequest::builder)
+                .basePath("/20240501")
+                .appendPathParam("oracleDbAzureVault")
+                .appendPathParam(request.getOracleDbAzureVaultId())
+                .appendPathParam("actions")
+                .appendPathParam("replicate")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ReplicateOracleDbAzureVaultResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReplicateOracleDbAzureVaultResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateOracleDbAzureVaultResponse> updateOracleDbAzureVault(
             UpdateOracleDbAzureVaultRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

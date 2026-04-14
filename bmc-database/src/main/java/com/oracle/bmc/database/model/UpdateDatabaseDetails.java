@@ -26,6 +26,32 @@ package com.oracle.bmc.database.model;
 public final class UpdateDatabaseDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public UpdateDatabaseDetails(
+            DbBackupConfig dbBackupConfig,
+            String dbHomeId,
+            String newAdminPassword,
+            String oldTdeWalletPassword,
+            String newTdeWalletPassword,
+            DatabaseStorageSizeDetails storageSizeDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            PatchOptions patchOptions) {
+        super();
+        this.dbBackupConfig = dbBackupConfig;
+        this.dbHomeId = dbHomeId;
+        this.newAdminPassword = newAdminPassword != null ? newAdminPassword.toCharArray() : null;
+        this.oldTdeWalletPassword =
+                oldTdeWalletPassword != null ? oldTdeWalletPassword.toCharArray() : null;
+        this.newTdeWalletPassword =
+                newTdeWalletPassword != null ? newTdeWalletPassword.toCharArray() : null;
+        this.storageSizeDetails = storageSizeDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.patchOptions = patchOptions;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "dbBackupConfig",
         "dbHomeId",
@@ -40,9 +66,9 @@ public final class UpdateDatabaseDetails
     public UpdateDatabaseDetails(
             DbBackupConfig dbBackupConfig,
             String dbHomeId,
-            String newAdminPassword,
-            String oldTdeWalletPassword,
-            String newTdeWalletPassword,
+            char[] newAdminPassword,
+            char[] oldTdeWalletPassword,
+            char[] newTdeWalletPassword,
             DatabaseStorageSizeDetails storageSizeDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -96,7 +122,7 @@ public final class UpdateDatabaseDetails
          * \\#, or -.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("newAdminPassword")
-        private String newAdminPassword;
+        private char[] newAdminPassword;
 
         /**
          * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The
@@ -107,8 +133,15 @@ public final class UpdateDatabaseDetails
          * @param newAdminPassword the value to set
          * @return this builder
          */
-        public Builder newAdminPassword(String newAdminPassword) {
+        public Builder newAdminPassword(char[] newAdminPassword) {
             this.newAdminPassword = newAdminPassword;
+            this.__explicitlySet__.add("newAdminPassword");
+            return this;
+        }
+
+        public Builder newAdminPassword(String newAdminPassword) {
+            this.newAdminPassword =
+                    newAdminPassword != null ? newAdminPassword.toCharArray() : null;
             this.__explicitlySet__.add("newAdminPassword");
             return this;
         }
@@ -117,7 +150,7 @@ public final class UpdateDatabaseDetails
          * a new TDE wallet password.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("oldTdeWalletPassword")
-        private String oldTdeWalletPassword;
+        private char[] oldTdeWalletPassword;
 
         /**
          * The existing TDE wallet password. You must provide the existing password in order to set
@@ -126,8 +159,15 @@ public final class UpdateDatabaseDetails
          * @param oldTdeWalletPassword the value to set
          * @return this builder
          */
-        public Builder oldTdeWalletPassword(String oldTdeWalletPassword) {
+        public Builder oldTdeWalletPassword(char[] oldTdeWalletPassword) {
             this.oldTdeWalletPassword = oldTdeWalletPassword;
+            this.__explicitlySet__.add("oldTdeWalletPassword");
+            return this;
+        }
+
+        public Builder oldTdeWalletPassword(String oldTdeWalletPassword) {
+            this.oldTdeWalletPassword =
+                    oldTdeWalletPassword != null ? oldTdeWalletPassword.toCharArray() : null;
             this.__explicitlySet__.add("oldTdeWalletPassword");
             return this;
         }
@@ -137,7 +177,7 @@ public final class UpdateDatabaseDetails
          * characters. The special characters must be _, \\#, or -.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("newTdeWalletPassword")
-        private String newTdeWalletPassword;
+        private char[] newTdeWalletPassword;
 
         /**
          * The new password to open the TDE wallet. The password must be at least nine characters
@@ -147,8 +187,15 @@ public final class UpdateDatabaseDetails
          * @param newTdeWalletPassword the value to set
          * @return this builder
          */
-        public Builder newTdeWalletPassword(String newTdeWalletPassword) {
+        public Builder newTdeWalletPassword(char[] newTdeWalletPassword) {
             this.newTdeWalletPassword = newTdeWalletPassword;
+            this.__explicitlySet__.add("newTdeWalletPassword");
+            return this;
+        }
+
+        public Builder newTdeWalletPassword(String newTdeWalletPassword) {
+            this.newTdeWalletPassword =
+                    newTdeWalletPassword != null ? newTdeWalletPassword.toCharArray() : null;
             this.__explicitlySet__.add("newTdeWalletPassword");
             return this;
         }
@@ -311,7 +358,21 @@ public final class UpdateDatabaseDetails
      * numeric, and two special characters. The special characters must be _, \\#, or -.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("newAdminPassword")
-    private final String newAdminPassword;
+    private final char[] newAdminPassword;
+
+    /**
+     * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The password
+     * must be at least nine characters and contain at least two uppercase, two lowercase, two
+     * numeric, and two special characters. The special characters must be _, \\#, or -.
+     *
+     * @return the value
+     * @deprecated Use getNewAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getNewAdminPassword() {
+        return newAdminPassword != null ? new String(newAdminPassword) : null;
+    }
 
     /**
      * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The password
@@ -320,7 +381,8 @@ public final class UpdateDatabaseDetails
      *
      * @return the value
      */
-    public String getNewAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("newAdminPassword")
+    public char[] getNewAdminPassword__AsCharArray() {
         return newAdminPassword;
     }
 
@@ -329,7 +391,20 @@ public final class UpdateDatabaseDetails
      * new TDE wallet password.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("oldTdeWalletPassword")
-    private final String oldTdeWalletPassword;
+    private final char[] oldTdeWalletPassword;
+
+    /**
+     * The existing TDE wallet password. You must provide the existing password in order to set a
+     * new TDE wallet password.
+     *
+     * @return the value
+     * @deprecated Use getOldTdeWalletPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getOldTdeWalletPassword() {
+        return oldTdeWalletPassword != null ? new String(oldTdeWalletPassword) : null;
+    }
 
     /**
      * The existing TDE wallet password. You must provide the existing password in order to set a
@@ -337,7 +412,8 @@ public final class UpdateDatabaseDetails
      *
      * @return the value
      */
-    public String getOldTdeWalletPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("oldTdeWalletPassword")
+    public char[] getOldTdeWalletPassword__AsCharArray() {
         return oldTdeWalletPassword;
     }
 
@@ -347,7 +423,21 @@ public final class UpdateDatabaseDetails
      * special characters must be _, \\#, or -.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("newTdeWalletPassword")
-    private final String newTdeWalletPassword;
+    private final char[] newTdeWalletPassword;
+
+    /**
+     * The new password to open the TDE wallet. The password must be at least nine characters and
+     * contain at least two uppercase, two lowercase, two numeric, and two special characters. The
+     * special characters must be _, \\#, or -.
+     *
+     * @return the value
+     * @deprecated Use getNewTdeWalletPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getNewTdeWalletPassword() {
+        return newTdeWalletPassword != null ? new String(newTdeWalletPassword) : null;
+    }
 
     /**
      * The new password to open the TDE wallet. The password must be at least nine characters and
@@ -356,7 +446,8 @@ public final class UpdateDatabaseDetails
      *
      * @return the value
      */
-    public String getNewTdeWalletPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("newTdeWalletPassword")
+    public char[] getNewTdeWalletPassword__AsCharArray() {
         return newTdeWalletPassword;
     }
 

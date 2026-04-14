@@ -60,7 +60,7 @@ import com.oracle.bmc.dbmulticloud.responses.*;
  * install the AWS Identity Connector on an Exadata VM cluster in Oracle Exadata Database Service on
  * Dedicated Infrastructure (ExaDB-D).
  *
- * <p><b>Google AWS Key Resource:</b>&nbsp;&nbsp;The Oracle AWS Key Resource is used to register and
+ * <p><b>Oracle AWS Key Resource:</b>&nbsp;&nbsp;The Oracle AWS Key Resource is used to register and
  * manage a AWS Key within Oracle Cloud Infrastructure (OCI).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240501")
@@ -323,6 +323,22 @@ public interface DbMulticloudAwsProviderAsync extends AutoCloseable {
             RefreshOracleDbAwsKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             RefreshOracleDbAwsKeyRequest, RefreshOracleDbAwsKeyResponse>
+                    handler);
+
+    /**
+     * Replicate Oracle AWS Key resource to target region.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReplicateOracleDbAwsKeyResponse> replicateOracleDbAwsKey(
+            ReplicateOracleDbAwsKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ReplicateOracleDbAwsKeyRequest, ReplicateOracleDbAwsKeyResponse>
                     handler);
 
     /**

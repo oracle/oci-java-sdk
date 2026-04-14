@@ -23,6 +23,82 @@ package com.oracle.bmc.mysql.model;
 public final class UpdateDbSystemDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public UpdateDbSystemDetails(
+            String displayName,
+            String description,
+            String subnetId,
+            java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            DbSystem.DatabaseMode databaseMode,
+            DbSystem.AccessMode accessMode,
+            UpdateRestDetails rest,
+            UpdateDatabaseConsoleDetails databaseConsole,
+            Boolean isHighlyAvailable,
+            String availabilityDomain,
+            String faultDomain,
+            String shapeName,
+            String mysqlVersion,
+            String configurationId,
+            String adminUsername,
+            String adminPassword,
+            Integer dataStorageSizeInGBs,
+            DataStorageDetails dataStorage,
+            String hostnameLabel,
+            String ipAddress,
+            Integer port,
+            Integer portX,
+            UpdateBackupPolicyDetails backupPolicy,
+            UpdateMaintenanceDetails maintenance,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            UpdateDeletionPolicyDetails deletionPolicy,
+            CrashRecoveryStatus crashRecovery,
+            DatabaseManagementStatus databaseManagement,
+            SecureConnectionDetails secureConnections,
+            EncryptDataDetails encryptData,
+            java.util.List<CustomerContact> customerContacts,
+            UpdateReadEndpointDetails readEndpoint,
+            UpdateTelemetryConfigurationDetails telemetryConfiguration) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
+        this.databaseMode = databaseMode;
+        this.accessMode = accessMode;
+        this.rest = rest;
+        this.databaseConsole = databaseConsole;
+        this.isHighlyAvailable = isHighlyAvailable;
+        this.availabilityDomain = availabilityDomain;
+        this.faultDomain = faultDomain;
+        this.shapeName = shapeName;
+        this.mysqlVersion = mysqlVersion;
+        this.configurationId = configurationId;
+        this.adminUsername = adminUsername;
+        this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
+        this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.dataStorage = dataStorage;
+        this.hostnameLabel = hostnameLabel;
+        this.ipAddress = ipAddress;
+        this.port = port;
+        this.portX = portX;
+        this.backupPolicy = backupPolicy;
+        this.maintenance = maintenance;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.deletionPolicy = deletionPolicy;
+        this.crashRecovery = crashRecovery;
+        this.databaseManagement = databaseManagement;
+        this.secureConnections = secureConnections;
+        this.encryptData = encryptData;
+        this.customerContacts = customerContacts;
+        this.readEndpoint = readEndpoint;
+        this.telemetryConfiguration = telemetryConfiguration;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
@@ -77,7 +153,7 @@ public final class UpdateDbSystemDetails
             String mysqlVersion,
             String configurationId,
             String adminUsername,
-            String adminPassword,
+            char[] adminPassword,
             Integer dataStorageSizeInGBs,
             DataStorageDetails dataStorage,
             String hostnameLabel,
@@ -463,7 +539,7 @@ public final class UpdateDbSystemDetails
          * uppercase character, and 1 special (nonalphanumeric) character.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-        private String adminPassword;
+        private char[] adminPassword;
 
         /**
          * The password for the administrative user. The password must be between 8 and 32
@@ -473,8 +549,14 @@ public final class UpdateDbSystemDetails
          * @param adminPassword the value to set
          * @return this builder
          */
-        public Builder adminPassword(String adminPassword) {
+        public Builder adminPassword(char[] adminPassword) {
             this.adminPassword = adminPassword;
+            this.__explicitlySet__.add("adminPassword");
+            return this;
+        }
+
+        public Builder adminPassword(String adminPassword) {
+            this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
@@ -1224,7 +1306,21 @@ public final class UpdateDbSystemDetails
      * character, and 1 special (nonalphanumeric) character.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    private final String adminPassword;
+    private final char[] adminPassword;
+
+    /**
+     * The password for the administrative user. The password must be between 8 and 32 characters
+     * long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase
+     * character, and 1 special (nonalphanumeric) character.
+     *
+     * @return the value
+     * @deprecated Use getAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAdminPassword() {
+        return adminPassword != null ? new String(adminPassword) : null;
+    }
 
     /**
      * The password for the administrative user. The password must be between 8 and 32 characters
@@ -1233,7 +1329,8 @@ public final class UpdateDbSystemDetails
      *
      * @return the value
      */
-    public String getAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+    public char[] getAdminPassword__AsCharArray() {
         return adminPassword;
     }
 

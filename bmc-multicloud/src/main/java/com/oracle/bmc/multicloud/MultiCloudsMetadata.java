@@ -9,9 +9,10 @@ import com.oracle.bmc.multicloud.responses.*;
 
 /**
  * Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata
- * mappings related a Cloud Service Provider. For more information, see <link to docs>. This service
- * client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no
- * circuit breaker configuration is defined by the user.
+ * mappings related a Cloud Service Provider. For more information, see [Oracle Multicloud
+ * Hub](https://docs.oracle.com/iaas/Content/multicloud-hub/home.htm). This service client uses
+ * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
+ * breaker configuration is defined by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public interface MultiCloudsMetadata extends AutoCloseable {
@@ -65,9 +66,10 @@ public interface MultiCloudsMetadata extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Gets information about the Multicloud base compartment for a given tenancy Id. A Multicloud
-     * base compartment is an OCI compartment that maps to a subscription in a Cloud Service
-     * Provider (such as Azure, AWS, or Google Cloud).
+     * Gets details for Multicloud metadata for the specified Multicloud subscription. Multicloud
+     * metadata for a subscription includes the Multicloud base compartment (top-level OCI
+     * compartment). For more information, see [Getting Details for Multicloud
+     * Metadata](https://docs.oracle.com/iaas/Content/multicloud-hub/get-subscription-metadata.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -83,10 +85,10 @@ public interface MultiCloudsMetadata extends AutoCloseable {
     GetMultiCloudMetadataResponse getMultiCloudMetadata(GetMultiCloudMetadataRequest request);
 
     /**
-     * Gets a list of multicloud metadata with pairs of Multicloud base compartment and subscription
-     * across Cloud Service Providers from a tenancy Id. A Multicloud base compartment is an OCI
-     * compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or
-     * Google Cloud).
+     * Lists Multicloud metadata for Multicloud subscriptions in the specified compartment.
+     * Multicloud metadata for a subscription includes the Multicloud base compartment (top-level
+     * OCI compartment). For more information, see [Listing Multicloud Metadata for a
+     * Subscription](https://docs.oracle.com/iaas/Content/multicloud-hub/list-subscription-metadata.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

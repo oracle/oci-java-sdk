@@ -191,7 +191,7 @@ public final class ConnectionFromAtp extends Connection {
         }
         /** The password for the connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password for the connection.
@@ -199,8 +199,14 @@ public final class ConnectionFromAtp extends Connection {
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -350,6 +356,52 @@ public final class ConnectionFromAtp extends Connection {
         this.tnsAlias = tnsAlias;
         this.tnsNames = tnsNames;
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecret = passwordSecret;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public ConnectionFromAtp(
+            @com.fasterxml.jackson.annotation.JsonProperty("key") String key,
+            @com.fasterxml.jackson.annotation.JsonProperty("modelVersion") String modelVersion,
+            @com.fasterxml.jackson.annotation.JsonProperty("parentRef") ParentReference parentRef,
+            @com.fasterxml.jackson.annotation.JsonProperty("name") String name,
+            @com.fasterxml.jackson.annotation.JsonProperty("description") String description,
+            @com.fasterxml.jackson.annotation.JsonProperty("objectVersion") Integer objectVersion,
+            @com.fasterxml.jackson.annotation.JsonProperty("objectStatus") Integer objectStatus,
+            @com.fasterxml.jackson.annotation.JsonProperty("identifier") String identifier,
+            @com.fasterxml.jackson.annotation.JsonProperty("primarySchema") Schema primarySchema,
+            @com.fasterxml.jackson.annotation.JsonProperty("connectionProperties")
+                    java.util.List<ConnectionProperty> connectionProperties,
+            @com.fasterxml.jackson.annotation.JsonProperty("isDefault") Boolean isDefault,
+            @com.fasterxml.jackson.annotation.JsonProperty("metadata") ObjectMetadata metadata,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
+                    java.util.Map<String, String> keyMap,
+            @com.fasterxml.jackson.annotation.JsonProperty("tnsAlias") String tnsAlias,
+            @com.fasterxml.jackson.annotation.JsonProperty("tnsNames")
+                    java.util.List<String> tnsNames,
+            @com.fasterxml.jackson.annotation.JsonProperty("username") String username,
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
+            @com.fasterxml.jackson.annotation.JsonProperty("passwordSecret")
+                    SensitiveAttribute passwordSecret) {
+        super(
+                key,
+                modelVersion,
+                parentRef,
+                name,
+                description,
+                objectVersion,
+                objectStatus,
+                identifier,
+                primarySchema,
+                connectionProperties,
+                isDefault,
+                metadata,
+                keyMap);
+        this.tnsAlias = tnsAlias;
+        this.tnsNames = tnsNames;
+        this.username = username;
         this.password = password;
         this.passwordSecret = passwordSecret;
     }
@@ -395,14 +447,27 @@ public final class ConnectionFromAtp extends Connection {
 
     /** The password for the connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password for the connection.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password for the connection.
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

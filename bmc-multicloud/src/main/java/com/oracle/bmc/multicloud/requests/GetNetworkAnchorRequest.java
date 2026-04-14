@@ -26,10 +26,10 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getNetworkAnchorId() {
         return networkAnchorId;
     }
-    /** The subscription service name of the Cloud Service Provider. */
+    /** The cloud service provider. */
     private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
 
-    /** The subscription service name of the Cloud Service Provider. */
+    /** The cloud service provider. */
     public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
         return subscriptionServiceName;
     }
@@ -61,10 +61,10 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The Cloud Service Provider region. */
+    /** The cloud service provider region. */
     private String externalLocation;
 
-    /** The Cloud Service Provider region. */
+    /** The cloud service provider region. */
     public String getExternalLocation() {
         return externalLocation;
     }
@@ -104,11 +104,11 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The subscription service name of the Cloud Service Provider. */
+        /** The cloud service provider. */
         private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
 
         /**
-         * The subscription service name of the Cloud Service Provider.
+         * The cloud service provider.
          *
          * @param subscriptionServiceName the value to set
          * @return this builder instance
@@ -157,11 +157,11 @@ public class GetNetworkAnchorRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The Cloud Service Provider region. */
+        /** The cloud service provider region. */
         private String externalLocation = null;
 
         /**
-         * The Cloud Service Provider region.
+         * The cloud service provider region.
          *
          * @param externalLocation the value to set
          * @return this builder instance

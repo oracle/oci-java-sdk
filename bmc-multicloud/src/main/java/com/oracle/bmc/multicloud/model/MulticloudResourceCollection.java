@@ -5,7 +5,9 @@
 package com.oracle.bmc.multicloud.model;
 
 /**
- * Multicloud resource information across clouds. <br>
+ * Multicloud resources in the indicated Multicloud subscription. For more information, see
+ * [Multicloud Resources](https://docs.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

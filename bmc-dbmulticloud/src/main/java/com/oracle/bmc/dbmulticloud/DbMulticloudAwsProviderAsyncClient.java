@@ -568,6 +568,44 @@ public class DbMulticloudAwsProviderAsyncClient extends com.oracle.bmc.http.inte
     }
 
     @Override
+    public java.util.concurrent.Future<ReplicateOracleDbAwsKeyResponse> replicateOracleDbAwsKey(
+            ReplicateOracleDbAwsKeyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ReplicateOracleDbAwsKeyRequest, ReplicateOracleDbAwsKeyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getOracleDbAwsKeyId(), "oracleDbAwsKeyId must not be blank");
+        Objects.requireNonNull(
+                request.getReplicateOracleDbAwsKeyDetails(),
+                "replicateOracleDbAwsKeyDetails is required");
+
+        return clientCall(request, ReplicateOracleDbAwsKeyResponse::builder)
+                .logger(LOG, "replicateOracleDbAwsKey")
+                .serviceDetails(
+                        "DbMulticloudAwsProvider",
+                        "ReplicateOracleDbAwsKey",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAwsKey/ReplicateOracleDbAwsKey")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReplicateOracleDbAwsKeyRequest::builder)
+                .basePath("/20240501")
+                .appendPathParam("oracleDbAwsKey")
+                .appendPathParam(request.getOracleDbAwsKeyId())
+                .appendPathParam("actions")
+                .appendPathParam("replicate")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ReplicateOracleDbAwsKeyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReplicateOracleDbAwsKeyResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateOracleDbAwsIdentityConnectorResponse>
             updateOracleDbAwsIdentityConnector(
                     UpdateOracleDbAwsIdentityConnectorRequest request,

@@ -5,7 +5,7 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Action details <br>
+ * Action details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -40,12 +40,12 @@ public class Action extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
         this.description = description;
     }
 
-    /** Unique identifier of the object that represents the action */
+    /** Unique identifier of the object that represents the action. */
     @com.fasterxml.jackson.annotation.JsonProperty("referenceKey")
     private final String referenceKey;
 
     /**
-     * Unique identifier of the object that represents the action
+     * Unique identifier of the object that represents the action.
      *
      * @return the value
      */
@@ -53,7 +53,7 @@ public class Action extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
         return referenceKey;
     }
 
-    /** A string that describes whether the change is applied hot or cold */
+    /** A string that describes whether the change is applied hot or cold. */
     public enum State implements com.oracle.bmc.http.internal.BmcEnum {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
@@ -101,12 +101,12 @@ public class Action extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
             return UnknownEnumValue;
         }
     };
-    /** A string that describes whether the change is applied hot or cold */
+    /** A string that describes whether the change is applied hot or cold. */
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
     /**
-     * A string that describes whether the change is applied hot or cold
+     * A string that describes whether the change is applied hot or cold.
      *
      * @return the value
      */
@@ -180,7 +180,7 @@ public class Action extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
         return result;
     }
 
-    /** Type of action */
+    /** Type of action. */
     public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
         QuarterlyUpgrade("QUARTERLY_UPGRADE"),
         Patch("PATCH"),

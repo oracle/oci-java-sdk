@@ -105,7 +105,7 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
         }
         /** The Auth Token for the Twilio number. */
         @com.fasterxml.jackson.annotation.JsonProperty("authToken")
-        private String authToken;
+        private char[] authToken;
 
         /**
          * The Auth Token for the Twilio number.
@@ -113,8 +113,14 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
          * @param authToken the value to set
          * @return this builder
          */
-        public Builder authToken(String authToken) {
+        public Builder authToken(char[] authToken) {
             this.authToken = authToken;
+            this.__explicitlySet__.add("authToken");
+            return this;
+        }
+
+        public Builder authToken(String authToken) {
+            this.authToken = authToken != null ? authToken.toCharArray() : null;
             this.__explicitlySet__.add("authToken");
             return this;
         }
@@ -252,6 +258,33 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
         super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
         this.accountSID = accountSID;
         this.phoneNumber = phoneNumber;
+        this.authToken = authToken != null ? authToken.toCharArray() : null;
+        this.isMmsEnabled = isMmsEnabled;
+        this.originalConnectorsUrl = originalConnectorsUrl;
+        this.botId = botId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateTwilioChannelDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("name") String name,
+            @com.fasterxml.jackson.annotation.JsonProperty("description") String description,
+            @com.fasterxml.jackson.annotation.JsonProperty("sessionExpiryDurationInMilliseconds")
+                    Long sessionExpiryDurationInMilliseconds,
+            @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+                    java.util.Map<String, String> freeformTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+                    java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("accountSID") String accountSID,
+            @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber") String phoneNumber,
+            @com.fasterxml.jackson.annotation.JsonProperty("authToken") char[] authToken,
+            @com.fasterxml.jackson.annotation.JsonProperty("isMmsEnabled") Boolean isMmsEnabled,
+            @com.fasterxml.jackson.annotation.JsonProperty("originalConnectorsUrl")
+                    String originalConnectorsUrl,
+            @com.fasterxml.jackson.annotation.JsonProperty("botId") String botId) {
+        super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
+        this.accountSID = accountSID;
+        this.phoneNumber = phoneNumber;
         this.authToken = authToken;
         this.isMmsEnabled = isMmsEnabled;
         this.originalConnectorsUrl = originalConnectorsUrl;
@@ -286,14 +319,27 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
 
     /** The Auth Token for the Twilio number. */
     @com.fasterxml.jackson.annotation.JsonProperty("authToken")
-    private final String authToken;
+    private final char[] authToken;
+
+    /**
+     * The Auth Token for the Twilio number.
+     *
+     * @return the value
+     * @deprecated Use getAuthToken__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAuthToken() {
+        return authToken != null ? new String(authToken) : null;
+    }
 
     /**
      * The Auth Token for the Twilio number.
      *
      * @return the value
      */
-    public String getAuthToken() {
+    @com.fasterxml.jackson.annotation.JsonProperty("authToken")
+    public char[] getAuthToken__AsCharArray() {
         return authToken;
     }
 

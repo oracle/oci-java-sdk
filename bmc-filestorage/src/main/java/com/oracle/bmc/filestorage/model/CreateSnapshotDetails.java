@@ -27,6 +27,7 @@ public final class CreateSnapshotDetails
         "fileSystemId",
         "name",
         "expirationTime",
+        "lockDurationDetails",
         "freeformTags",
         "definedTags",
         "locks"
@@ -35,6 +36,7 @@ public final class CreateSnapshotDetails
             String fileSystemId,
             String name,
             java.util.Date expirationTime,
+            LockDurationDetails lockDurationDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<ResourceLock> locks) {
@@ -42,6 +44,7 @@ public final class CreateSnapshotDetails
         this.fileSystemId = fileSystemId;
         this.name = name;
         this.expirationTime = expirationTime;
+        this.lockDurationDetails = lockDurationDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.locks = locks;
@@ -108,6 +111,15 @@ public final class CreateSnapshotDetails
         public Builder expirationTime(java.util.Date expirationTime) {
             this.expirationTime = expirationTime;
             this.__explicitlySet__.add("expirationTime");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lockDurationDetails")
+        private LockDurationDetails lockDurationDetails;
+
+        public Builder lockDurationDetails(LockDurationDetails lockDurationDetails) {
+            this.lockDurationDetails = lockDurationDetails;
+            this.__explicitlySet__.add("lockDurationDetails");
             return this;
         }
         /**
@@ -182,6 +194,7 @@ public final class CreateSnapshotDetails
                             this.fileSystemId,
                             this.name,
                             this.expirationTime,
+                            this.lockDurationDetails,
                             this.freeformTags,
                             this.definedTags,
                             this.locks);
@@ -201,6 +214,9 @@ public final class CreateSnapshotDetails
             }
             if (model.wasPropertyExplicitlySet("expirationTime")) {
                 this.expirationTime(model.getExpirationTime());
+            }
+            if (model.wasPropertyExplicitlySet("lockDurationDetails")) {
+                this.lockDurationDetails(model.getLockDurationDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -279,6 +295,13 @@ public final class CreateSnapshotDetails
         return expirationTime;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lockDurationDetails")
+    private final LockDurationDetails lockDurationDetails;
+
+    public LockDurationDetails getLockDurationDetails() {
+        return lockDurationDetails;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -352,6 +375,7 @@ public final class CreateSnapshotDetails
         sb.append("fileSystemId=").append(String.valueOf(this.fileSystemId));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", expirationTime=").append(String.valueOf(this.expirationTime));
+        sb.append(", lockDurationDetails=").append(String.valueOf(this.lockDurationDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", locks=").append(String.valueOf(this.locks));
@@ -372,6 +396,7 @@ public final class CreateSnapshotDetails
         return java.util.Objects.equals(this.fileSystemId, other.fileSystemId)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.expirationTime, other.expirationTime)
+                && java.util.Objects.equals(this.lockDurationDetails, other.lockDurationDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.locks, other.locks)
@@ -387,6 +412,11 @@ public final class CreateSnapshotDetails
         result =
                 (result * PRIME)
                         + (this.expirationTime == null ? 43 : this.expirationTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lockDurationDetails == null
+                                ? 43
+                                : this.lockDurationDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());

@@ -5,7 +5,11 @@
 package com.oracle.bmc.multicloud.model;
 
 /**
- * Multicloud metadata information including base multicloud compartments information. <br>
+ * The Multicloud metadata for the indicated subscription. Multicloud metadata for a subscription
+ * includes the Multicloud base compartment (top-level OCI compartment). For more information, see
+ * [Getting Details for Multicloud
+ * Metadata](https://docs.oracle.com/iaas/Content/multicloud-hub/get-subscription-metadata.htm).
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -49,12 +53,18 @@ public final class MultiCloudMetadataSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** MultiCloud base compartment OCID associated with subscriptionId. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Multicloud base compartment associated with the indicated subscription ({@code
+         * subscriptionId}).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * MultiCloud base compartment OCID associated with subscriptionId.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Multicloud base compartment associated with the indicated subscription ({@code
+         * subscriptionId}).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -65,8 +75,8 @@ public final class MultiCloudMetadataSummary
             return this;
         }
         /**
-         * The date and time the multicloud compartment was created, in the format defined by [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time that the Multicloud base compartment was created, in the format defined
+         * by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          */
@@ -74,8 +84,8 @@ public final class MultiCloudMetadataSummary
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the multicloud compartment was created, in the format defined by [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time that the Multicloud base compartment was created, in the format defined
+         * by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -87,12 +97,16 @@ public final class MultiCloudMetadataSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Oracle Cloud Infrastructure subscriptionId. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OCI subscription.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
-         * Oracle Cloud Infrastructure subscriptionId.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OCI subscription.
          *
          * @param subscriptionId the value to set
          * @return this builder
@@ -226,12 +240,18 @@ public final class MultiCloudMetadataSummary
         return new Builder().copy(this);
     }
 
-    /** MultiCloud base compartment OCID associated with subscriptionId. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Multicloud base compartment associated with the indicated subscription ({@code
+     * subscriptionId}).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * MultiCloud base compartment OCID associated with subscriptionId.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Multicloud base compartment associated with the indicated subscription ({@code
+     * subscriptionId}).
      *
      * @return the value
      */
@@ -240,8 +260,8 @@ public final class MultiCloudMetadataSummary
     }
 
     /**
-     * The date and time the multicloud compartment was created, in the format defined by [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time that the Multicloud base compartment was created, in the format defined by
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      */
@@ -249,8 +269,8 @@ public final class MultiCloudMetadataSummary
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the multicloud compartment was created, in the format defined by [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time that the Multicloud base compartment was created, in the format defined by
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -260,12 +280,16 @@ public final class MultiCloudMetadataSummary
         return timeCreated;
     }
 
-    /** Oracle Cloud Infrastructure subscriptionId. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
+     * subscription.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * Oracle Cloud Infrastructure subscriptionId.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
+     * subscription.
      *
      * @return the value
      */

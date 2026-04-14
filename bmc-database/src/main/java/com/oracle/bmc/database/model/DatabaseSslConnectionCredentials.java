@@ -79,7 +79,7 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
         }
         /** The password that will be used to connect to the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password that will be used to connect to the database.
@@ -87,8 +87,14 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -186,6 +192,22 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
         super();
         this.credentialName = credentialName;
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.role = role;
+        this.sslSecretId = sslSecretId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public DatabaseSslConnectionCredentials(
+            @com.fasterxml.jackson.annotation.JsonProperty("credentialName") String credentialName,
+            @com.fasterxml.jackson.annotation.JsonProperty("username") String username,
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
+            @com.fasterxml.jackson.annotation.JsonProperty("role") Role role,
+            @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId") String sslSecretId) {
+        super();
+        this.credentialName = credentialName;
+        this.username = username;
         this.password = password;
         this.role = role;
         this.sslSecretId = sslSecretId;
@@ -239,17 +261,29 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
 
     /** The password that will be used to connect to the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password that will be used to connect to the database.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password that will be used to connect to the database.
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
-
     /** The role of the user that will be connecting to the database. */
     public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
         Sysdba("SYSDBA"),

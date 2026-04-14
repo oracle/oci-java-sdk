@@ -644,6 +644,47 @@ public class DbMulticloudGCPProviderAsyncClient extends com.oracle.bmc.http.inte
     }
 
     @Override
+    public java.util.concurrent.Future<ReplicateOracleDbGcpKeyRingResponse>
+            replicateOracleDbGcpKeyRing(
+                    ReplicateOracleDbGcpKeyRingRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ReplicateOracleDbGcpKeyRingRequest,
+                                    ReplicateOracleDbGcpKeyRingResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getOracleDbGcpKeyRingId(), "oracleDbGcpKeyRingId must not be blank");
+        Objects.requireNonNull(
+                request.getReplicateOracleDbGcpKeyRingDetails(),
+                "replicateOracleDbGcpKeyRingDetails is required");
+
+        return clientCall(request, ReplicateOracleDbGcpKeyRingResponse::builder)
+                .logger(LOG, "replicateOracleDbGcpKeyRing")
+                .serviceDetails(
+                        "DbMulticloudGCPProvider",
+                        "ReplicateOracleDbGcpKeyRing",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/ReplicateOracleDbGcpKeyRing")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReplicateOracleDbGcpKeyRingRequest::builder)
+                .basePath("/20240501")
+                .appendPathParam("oracleDbGcpKeyRing")
+                .appendPathParam(request.getOracleDbGcpKeyRingId())
+                .appendPathParam("actions")
+                .appendPathParam("replicate")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ReplicateOracleDbGcpKeyRingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReplicateOracleDbGcpKeyRingResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateOracleDbGcpIdentityConnectorResponse>
             updateOracleDbGcpIdentityConnector(
                     UpdateOracleDbGcpIdentityConnectorRequest request,

@@ -60,7 +60,7 @@ public final class CreateBasicImagePullSecretDetails extends CreateImagePullSecr
          * expected in base64 format.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password which should be used with the registry for authentication. The value is
@@ -69,8 +69,14 @@ public final class CreateBasicImagePullSecretDetails extends CreateImagePullSecr
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -117,6 +123,18 @@ public final class CreateBasicImagePullSecretDetails extends CreateImagePullSecr
             String registryEndpoint, String username, String password) {
         super(registryEndpoint);
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateBasicImagePullSecretDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("registryEndpoint")
+                    String registryEndpoint,
+            @com.fasterxml.jackson.annotation.JsonProperty("username") String username,
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password) {
+        super(registryEndpoint);
+        this.username = username;
         this.password = password;
     }
 
@@ -142,7 +160,20 @@ public final class CreateBasicImagePullSecretDetails extends CreateImagePullSecr
      * in base64 format.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password which should be used with the registry for authentication. The value is expected
+     * in base64 format.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password which should be used with the registry for authentication. The value is expected
@@ -150,7 +181,8 @@ public final class CreateBasicImagePullSecretDetails extends CreateImagePullSecr
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

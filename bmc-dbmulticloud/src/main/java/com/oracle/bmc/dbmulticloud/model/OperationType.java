@@ -57,6 +57,12 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     UpdateAwsKey("UPDATE_AWS_KEY"),
     MoveAwsKey("MOVE_AWS_KEY"),
     RefreshAwsKey("REFRESH_AWS_KEY"),
+    CreateReplicateResource("CREATE_REPLICATE_RESOURCE"),
+    UpdateReplicateResource("UPDATE_REPLICATE_RESOURCE"),
+    DeleteReplicateResource("DELETE_REPLICATE_RESOURCE"),
+    MoveReplicateResource("MOVE_REPLICATE_RESOURCE"),
+    RefreshReplicateResource("REFRESH_REPLICATE_RESOURCE"),
+    Replicate("REPLICATE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -37,7 +37,7 @@ public final class CreateDbSystemSourceImportFromUrlDetails extends CreateDbSyst
          * PAR.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceUrl")
-        private String sourceUrl;
+        private char[] sourceUrl;
 
         /**
          * The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object
@@ -51,8 +51,14 @@ public final class CreateDbSystemSourceImportFromUrlDetails extends CreateDbSyst
          * @param sourceUrl the value to set
          * @return this builder
          */
-        public Builder sourceUrl(String sourceUrl) {
+        public Builder sourceUrl(char[] sourceUrl) {
             this.sourceUrl = sourceUrl;
+            this.__explicitlySet__.add("sourceUrl");
+            return this;
+        }
+
+        public Builder sourceUrl(String sourceUrl) {
+            this.sourceUrl = sourceUrl != null ? sourceUrl.toCharArray() : null;
             this.__explicitlySet__.add("sourceUrl");
             return this;
         }
@@ -90,6 +96,14 @@ public final class CreateDbSystemSourceImportFromUrlDetails extends CreateDbSyst
     @Deprecated
     public CreateDbSystemSourceImportFromUrlDetails(String sourceUrl) {
         super();
+        this.sourceUrl = sourceUrl != null ? sourceUrl.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateDbSystemSourceImportFromUrlDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("sourceUrl") char[] sourceUrl) {
+        super();
         this.sourceUrl = sourceUrl;
     }
 
@@ -102,7 +116,25 @@ public final class CreateDbSystemSourceImportFromUrlDetails extends CreateDbSyst
      * with "Permit object reads" access type when using a @.manifest.json object PAR.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceUrl")
-    private final String sourceUrl;
+    private final char[] sourceUrl;
+
+    /**
+     * The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object
+     * from the Object Storage. Check [Using Pre-Authenticated
+     * Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * for information related to PAR creation. Please create PAR with &quot;Permit object
+     * reads&quot; access type and &quot;Enable Object Listing&quot; permission when using a
+     * bucket/prefix PAR. Please create PAR with &quot;Permit object reads&quot; access type when
+     * using a @.manifest.json object PAR.
+     *
+     * @return the value
+     * @deprecated Use getSourceUrl__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSourceUrl() {
+        return sourceUrl != null ? new String(sourceUrl) : null;
+    }
 
     /**
      * The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object
@@ -114,7 +146,8 @@ public final class CreateDbSystemSourceImportFromUrlDetails extends CreateDbSyst
      *
      * @return the value
      */
-    public String getSourceUrl() {
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceUrl")
+    public char[] getSourceUrl__AsCharArray() {
         return sourceUrl;
     }
 

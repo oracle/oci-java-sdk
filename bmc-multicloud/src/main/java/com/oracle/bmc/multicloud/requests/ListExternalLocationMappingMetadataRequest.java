@@ -15,11 +15,11 @@ import com.oracle.bmc.multicloud.model.*;
 public class ListExternalLocationMappingMetadataRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The subscription type of the Cloud Service Provider. */
+    /** The cloud service provider. */
     private java.util.List<com.oracle.bmc.multicloud.model.SubscriptionType>
             subscriptionServiceName;
 
-    /** The subscription type of the Cloud Service Provider. */
+    /** The cloud service provider. */
     public java.util.List<com.oracle.bmc.multicloud.model.SubscriptionType>
             getSubscriptionServiceName() {
         return subscriptionServiceName;
@@ -27,16 +27,16 @@ public class ListExternalLocationMappingMetadataRequest
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Multicloud base compartment in which to list resources. A Multicloud base compartment is an
-     * OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS,
-     * or Google Cloud).
+     * OCI compartment that maps to a subscription in a cloud service provider (such as Azure or
+     * AWS).
      */
     private String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Multicloud base compartment in which to list resources. A Multicloud base compartment is an
-     * OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS,
-     * or Google Cloud).
+     * OCI compartment that maps to a subscription in a cloud service provider (such as Azure or
+     * AWS).
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -84,10 +84,16 @@ public class ListExternalLocationMappingMetadataRequest
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). In
+     * general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+     */
     private com.oracle.bmc.multicloud.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). In
+     * general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+     */
     public com.oracle.bmc.multicloud.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -163,12 +169,12 @@ public class ListExternalLocationMappingMetadataRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The subscription type of the Cloud Service Provider. */
+        /** The cloud service provider. */
         private java.util.List<com.oracle.bmc.multicloud.model.SubscriptionType>
                 subscriptionServiceName = null;
 
         /**
-         * The subscription type of the Cloud Service Provider.
+         * The cloud service provider.
          *
          * @param subscriptionServiceName the value to set
          * @return this builder instance
@@ -181,7 +187,7 @@ public class ListExternalLocationMappingMetadataRequest
         }
 
         /**
-         * Singular setter. The subscription type of the Cloud Service Provider.
+         * Singular setter. The cloud service provider.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -193,16 +199,16 @@ public class ListExternalLocationMappingMetadataRequest
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Multicloud base compartment in which to list resources. A Multicloud base compartment is
-         * an OCI compartment that maps to a subscription in a Cloud Service Provider (such as
-         * Azure, AWS, or Google Cloud).
+         * an OCI compartment that maps to a subscription in a cloud service provider (such as Azure
+         * or AWS).
          */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Multicloud base compartment in which to list resources. A Multicloud base compartment is
-         * an OCI compartment that maps to a subscription in a Cloud Service Provider (such as
-         * Azure, AWS, or Google Cloud).
+         * an OCI compartment that maps to a subscription in a cloud service provider (such as Azure
+         * or AWS).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -270,11 +276,15 @@ public class ListExternalLocationMappingMetadataRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). In
+         * general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+         */
         private com.oracle.bmc.multicloud.model.SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). In
+         * general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
          *
          * @param sortOrder the value to set
          * @return this builder instance

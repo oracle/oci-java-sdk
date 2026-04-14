@@ -85,7 +85,7 @@ public final class CreateChannelSourceFromMysqlDetails extends CreateChannelSour
          * character, and 1 special (nonalphanumeric) character.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password for the replication user. The password must be between 8 and 32 characters
@@ -95,8 +95,14 @@ public final class CreateChannelSourceFromMysqlDetails extends CreateChannelSour
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -203,6 +209,29 @@ public final class CreateChannelSourceFromMysqlDetails extends CreateChannelSour
         this.hostname = hostname;
         this.port = port;
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.sslMode = sslMode;
+        this.sslCaCertificate = sslCaCertificate;
+        this.anonymousTransactionsHandling = anonymousTransactionsHandling;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateChannelSourceFromMysqlDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("hostname") String hostname,
+            @com.fasterxml.jackson.annotation.JsonProperty("port") Integer port,
+            @com.fasterxml.jackson.annotation.JsonProperty("username") String username,
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
+            @com.fasterxml.jackson.annotation.JsonProperty("sslMode")
+                    ChannelSourceMysql.SslMode sslMode,
+            @com.fasterxml.jackson.annotation.JsonProperty("sslCaCertificate")
+                    CaCertificate sslCaCertificate,
+            @com.fasterxml.jackson.annotation.JsonProperty("anonymousTransactionsHandling")
+                    AnonymousTransactionsHandling anonymousTransactionsHandling) {
+        super();
+        this.hostname = hostname;
+        this.port = port;
+        this.username = username;
         this.password = password;
         this.sslMode = sslMode;
         this.sslCaCertificate = sslCaCertificate;
@@ -260,7 +289,21 @@ public final class CreateChannelSourceFromMysqlDetails extends CreateChannelSour
      * and 1 special (nonalphanumeric) character.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password for the replication user. The password must be between 8 and 32 characters long,
+     * and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character,
+     * and 1 special (nonalphanumeric) character.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password for the replication user. The password must be between 8 and 32 characters long,
@@ -269,7 +312,8 @@ public final class CreateChannelSourceFromMysqlDetails extends CreateChannelSour
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

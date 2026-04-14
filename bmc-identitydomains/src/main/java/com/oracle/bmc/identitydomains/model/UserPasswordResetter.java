@@ -23,6 +23,53 @@ package com.oracle.bmc.identitydomains.model;
 public final class UserPasswordResetter
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public UserPasswordResetter(
+            String id,
+            String ocid,
+            java.util.List<String> schemas,
+            Meta meta,
+            IdcsCreatedBy idcsCreatedBy,
+            IdcsLastModifiedBy idcsLastModifiedBy,
+            java.util.List<IdcsPreventedOperations> idcsPreventedOperations,
+            java.util.List<Tags> tags,
+            Boolean deleteInProgress,
+            String idcsLastUpgradedInRelease,
+            String domainOcid,
+            String compartmentOcid,
+            String tenancyOcid,
+            String externalId,
+            Boolean bypassNotification,
+            Boolean userFlowControlledByExternalClient,
+            UserPasswordResetterUserToken userToken,
+            String notificationEmailTemplateId,
+            String oneTimePassword,
+            ExtensionSelfChangeUser urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser) {
+        super();
+        this.id = id;
+        this.ocid = ocid;
+        this.schemas = schemas;
+        this.meta = meta;
+        this.idcsCreatedBy = idcsCreatedBy;
+        this.idcsLastModifiedBy = idcsLastModifiedBy;
+        this.idcsPreventedOperations = idcsPreventedOperations;
+        this.tags = tags;
+        this.deleteInProgress = deleteInProgress;
+        this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+        this.domainOcid = domainOcid;
+        this.compartmentOcid = compartmentOcid;
+        this.tenancyOcid = tenancyOcid;
+        this.externalId = externalId;
+        this.bypassNotification = bypassNotification;
+        this.userFlowControlledByExternalClient = userFlowControlledByExternalClient;
+        this.userToken = userToken;
+        this.notificationEmailTemplateId = notificationEmailTemplateId;
+        this.oneTimePassword = oneTimePassword != null ? oneTimePassword.toCharArray() : null;
+        this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser =
+                urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "id",
         "ocid",
@@ -64,7 +111,7 @@ public final class UserPasswordResetter
             Boolean userFlowControlledByExternalClient,
             UserPasswordResetterUserToken userToken,
             String notificationEmailTemplateId,
-            String oneTimePassword,
+            char[] oneTimePassword,
             ExtensionSelfChangeUser urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser) {
         super();
         this.id = id;
@@ -530,7 +577,7 @@ public final class UserPasswordResetter
          * none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("oneTimePassword")
-        private String oneTimePassword;
+        private char[] oneTimePassword;
 
         /**
          * A one time password will be returned when the user doesn't have a primary email address.
@@ -542,8 +589,14 @@ public final class UserPasswordResetter
          * @param oneTimePassword the value to set
          * @return this builder
          */
-        public Builder oneTimePassword(String oneTimePassword) {
+        public Builder oneTimePassword(char[] oneTimePassword) {
             this.oneTimePassword = oneTimePassword;
+            this.__explicitlySet__.add("oneTimePassword");
+            return this;
+        }
+
+        public Builder oneTimePassword(String oneTimePassword) {
+            this.oneTimePassword = oneTimePassword != null ? oneTimePassword.toCharArray() : null;
             this.__explicitlySet__.add("oneTimePassword");
             return this;
         }
@@ -1051,7 +1104,22 @@ public final class UserPasswordResetter
      * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("oneTimePassword")
-    private final String oneTimePassword;
+    private final char[] oneTimePassword;
+
+    /**
+     * A one time password will be returned when the user doesn&#39;t have a primary email address.
+     * &lt;p&gt; *SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued:
+     * false - mutability: readOnly - required: false - returned: request - type: string -
+     * uniqueness: none
+     *
+     * @return the value
+     * @deprecated Use getOneTimePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getOneTimePassword() {
+        return oneTimePassword != null ? new String(oneTimePassword) : null;
+    }
 
     /**
      * A one time password will be returned when the user doesn't have a primary email address.
@@ -1061,7 +1129,8 @@ public final class UserPasswordResetter
      *
      * @return the value
      */
-    public String getOneTimePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("oneTimePassword")
+    public char[] getOneTimePassword__AsCharArray() {
         return oneTimePassword;
     }
 

@@ -24,8 +24,16 @@ package com.oracle.bmc.databasemigration.model;
 public final class UpdateAdminCredentials
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"username", "password"})
     public UpdateAdminCredentials(String username, String password) {
+        super();
+        this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    @java.beans.ConstructorProperties({"username", "password"})
+    public UpdateAdminCredentials(String username, char[] password) {
         super();
         this.username = username;
         this.password = password;
@@ -50,7 +58,7 @@ public final class UpdateAdminCredentials
         }
         /** Administrator password */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * Administrator password
@@ -58,8 +66,14 @@ public final class UpdateAdminCredentials
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -111,14 +125,27 @@ public final class UpdateAdminCredentials
 
     /** Administrator password */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * Administrator password
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * Administrator password
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

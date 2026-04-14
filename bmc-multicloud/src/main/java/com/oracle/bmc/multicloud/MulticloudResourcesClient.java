@@ -92,10 +92,6 @@ public class MulticloudResourcesClient extends com.oracle.bmc.http.internal.Base
     @Override
     public ListMulticloudResourcesResponse listMulticloudResources(
             ListMulticloudResourcesRequest request) {
-        Objects.requireNonNull(
-                request.getSubscriptionServiceName(), "subscriptionServiceName is required");
-
-        Objects.requireNonNull(request.getSubscriptionId(), "subscriptionId is required");
 
         return clientCall(request, ListMulticloudResourcesResponse::builder)
                 .logger(LOG, "listMulticloudResources")
@@ -118,6 +114,7 @@ public class MulticloudResourcesClient extends com.oracle.bmc.http.internal.Base
                         "subscriptionServiceName", request.getSubscriptionServiceName())
                 .appendQueryParam("subscriptionId", request.getSubscriptionId())
                 .appendQueryParam("externalLocation", request.getExternalLocation())
+                .appendQueryParam("resourceType", request.getResourceType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
