@@ -69,7 +69,7 @@ public final class OracleAwsS3DataTransferMediumDetails extends OracleDataTransf
          * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
          */
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
-        private String accessKeyId;
+        private char[] accessKeyId;
 
         /**
          * AWS access key credentials identifier Details:
@@ -78,8 +78,14 @@ public final class OracleAwsS3DataTransferMediumDetails extends OracleDataTransf
          * @param accessKeyId the value to set
          * @return this builder
          */
-        public Builder accessKeyId(String accessKeyId) {
+        public Builder accessKeyId(char[] accessKeyId) {
             this.accessKeyId = accessKeyId;
+            this.__explicitlySet__.add("accessKeyId");
+            return this;
+        }
+
+        public Builder accessKeyId(String accessKeyId) {
+            this.accessKeyId = accessKeyId != null ? accessKeyId.toCharArray() : null;
             this.__explicitlySet__.add("accessKeyId");
             return this;
         }
@@ -88,7 +94,7 @@ public final class OracleAwsS3DataTransferMediumDetails extends OracleDataTransf
          * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
          */
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
-        private String secretAccessKey;
+        private char[] secretAccessKey;
 
         /**
          * AWS secret access key credentials Details:
@@ -97,8 +103,14 @@ public final class OracleAwsS3DataTransferMediumDetails extends OracleDataTransf
          * @param secretAccessKey the value to set
          * @return this builder
          */
-        public Builder secretAccessKey(String secretAccessKey) {
+        public Builder secretAccessKey(char[] secretAccessKey) {
             this.secretAccessKey = secretAccessKey;
+            this.__explicitlySet__.add("secretAccessKey");
+            return this;
+        }
+
+        public Builder secretAccessKey(String secretAccessKey) {
+            this.secretAccessKey = secretAccessKey != null ? secretAccessKey.toCharArray() : null;
             this.__explicitlySet__.add("secretAccessKey");
             return this;
         }
@@ -169,6 +181,24 @@ public final class OracleAwsS3DataTransferMediumDetails extends OracleDataTransf
         super();
         this.name = name;
         this.region = region;
+        this.accessKeyId = accessKeyId != null ? accessKeyId.toCharArray() : null;
+        this.secretAccessKey = secretAccessKey != null ? secretAccessKey.toCharArray() : null;
+        this.objectStorageBucket = objectStorageBucket;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public OracleAwsS3DataTransferMediumDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("name") String name,
+            @com.fasterxml.jackson.annotation.JsonProperty("region") String region,
+            @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId") char[] accessKeyId,
+            @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
+                    char[] secretAccessKey,
+            @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucket")
+                    ObjectStoreBucket objectStorageBucket) {
+        super();
+        this.name = name;
+        this.region = region;
         this.accessKeyId = accessKeyId;
         this.secretAccessKey = secretAccessKey;
         this.objectStorageBucket = objectStorageBucket;
@@ -211,7 +241,20 @@ public final class OracleAwsS3DataTransferMediumDetails extends OracleDataTransf
      * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
      */
     @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
-    private final String accessKeyId;
+    private final char[] accessKeyId;
+
+    /**
+     * AWS access key credentials identifier Details:
+     * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     *
+     * @return the value
+     * @deprecated Use getAccessKeyId__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAccessKeyId() {
+        return accessKeyId != null ? new String(accessKeyId) : null;
+    }
 
     /**
      * AWS access key credentials identifier Details:
@@ -219,7 +262,8 @@ public final class OracleAwsS3DataTransferMediumDetails extends OracleDataTransf
      *
      * @return the value
      */
-    public String getAccessKeyId() {
+    @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
+    public char[] getAccessKeyId__AsCharArray() {
         return accessKeyId;
     }
 
@@ -228,7 +272,20 @@ public final class OracleAwsS3DataTransferMediumDetails extends OracleDataTransf
      * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
      */
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
-    private final String secretAccessKey;
+    private final char[] secretAccessKey;
+
+    /**
+     * AWS secret access key credentials Details:
+     * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     *
+     * @return the value
+     * @deprecated Use getSecretAccessKey__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSecretAccessKey() {
+        return secretAccessKey != null ? new String(secretAccessKey) : null;
+    }
 
     /**
      * AWS secret access key credentials Details:
@@ -236,7 +293,8 @@ public final class OracleAwsS3DataTransferMediumDetails extends OracleDataTransf
      *
      * @return the value
      */
-    public String getSecretAccessKey() {
+    @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
+    public char[] getSecretAccessKey__AsCharArray() {
         return secretAccessKey;
     }
 

@@ -23,6 +23,34 @@ package com.oracle.bmc.goldengate.model;
 public final class UpdateDatabaseRegistrationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public UpdateDatabaseRegistrationDetails(
+            String displayName,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String fqdn,
+            String username,
+            String password,
+            String connectionString,
+            SessionMode sessionMode,
+            String wallet,
+            String aliasName) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.fqdn = fqdn;
+        this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.connectionString = connectionString;
+        this.sessionMode = sessionMode;
+        this.wallet = wallet;
+        this.aliasName = aliasName;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
@@ -43,7 +71,7 @@ public final class UpdateDatabaseRegistrationDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String fqdn,
             String username,
-            String password,
+            char[] password,
             String connectionString,
             SessionMode sessionMode,
             String wallet,
@@ -182,7 +210,7 @@ public final class UpdateDatabaseRegistrationDetails
          * "passwordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given
@@ -193,8 +221,14 @@ public final class UpdateDatabaseRegistrationDetails
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -449,7 +483,22 @@ public final class UpdateDatabaseRegistrationDetails
      * will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and
+     * so on. Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;.
+     * This field will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
@@ -459,7 +508,8 @@ public final class UpdateDatabaseRegistrationDetails
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

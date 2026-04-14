@@ -54,7 +54,8 @@ public final class FusionEnvironment
         "environmentRole",
         "freeformTags",
         "definedTags",
-        "isSuspended"
+        "isSuspended",
+        "additionalEgressRules"
     })
     public FusionEnvironment(
             String id,
@@ -87,7 +88,8 @@ public final class FusionEnvironment
             EnvironmentRole environmentRole,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            Boolean isSuspended) {
+            Boolean isSuspended,
+            java.util.List<AdditionalEgressRule> additionalEgressRules) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -120,6 +122,7 @@ public final class FusionEnvironment
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.isSuspended = isSuspended;
+        this.additionalEgressRules = additionalEgressRules;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -374,15 +377,15 @@ public final class FusionEnvironment
             return this;
         }
         /**
-         * Enable IPv4/IPv6 dual stack support for the environment. Setting to true will assign an
-         * IPv6 address to the environment in addition to an IPv4 address.
+         * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to
+         * true will assign an IPv6 address to the environment in addition to an IPv4 address.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
         private Boolean isIPv6DualStackEnabled;
 
         /**
-         * Enable IPv4/IPv6 dual stack support for the environment. Setting to true will assign an
-         * IPv6 address to the environment in addition to an IPv4 address.
+         * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to
+         * true will assign an IPv6 address to the environment in addition to an IPv4 address.
          *
          * @param isIPv6DualStackEnabled the value to set
          * @return this builder
@@ -592,6 +595,30 @@ public final class FusionEnvironment
             this.__explicitlySet__.add("isSuspended");
             return this;
         }
+        /**
+         * Additional egress rules that should be applied to the environment. Some standard ports
+         * are open for general use; see [Securing Network Access to a Fusion Applications
+         * Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If
+         * access to a non-standard port is required, however, they can be listed here.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalEgressRules")
+        private java.util.List<AdditionalEgressRule> additionalEgressRules;
+
+        /**
+         * Additional egress rules that should be applied to the environment. Some standard ports
+         * are open for general use; see [Securing Network Access to a Fusion Applications
+         * Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If
+         * access to a non-standard port is required, however, they can be listed here.
+         *
+         * @param additionalEgressRules the value to set
+         * @return this builder
+         */
+        public Builder additionalEgressRules(
+                java.util.List<AdditionalEgressRule> additionalEgressRules) {
+            this.additionalEgressRules = additionalEgressRules;
+            this.__explicitlySet__.add("additionalEgressRules");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -629,7 +656,8 @@ public final class FusionEnvironment
                             this.environmentRole,
                             this.freeformTags,
                             this.definedTags,
-                            this.isSuspended);
+                            this.isSuspended,
+                            this.additionalEgressRules);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -730,6 +758,9 @@ public final class FusionEnvironment
             }
             if (model.wasPropertyExplicitlySet("isSuspended")) {
                 this.isSuspended(model.getIsSuspended());
+            }
+            if (model.wasPropertyExplicitlySet("additionalEgressRules")) {
+                this.additionalEgressRules(model.getAdditionalEgressRules());
             }
             return this;
         }
@@ -1007,15 +1038,15 @@ public final class FusionEnvironment
     }
 
     /**
-     * Enable IPv4/IPv6 dual stack support for the environment. Setting to true will assign an IPv6
-     * address to the environment in addition to an IPv4 address.
+     * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true
+     * will assign an IPv6 address to the environment in addition to an IPv4 address.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
     private final Boolean isIPv6DualStackEnabled;
 
     /**
-     * Enable IPv4/IPv6 dual stack support for the environment. Setting to true will assign an IPv6
-     * address to the environment in addition to an IPv4 address.
+     * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true
+     * will assign an IPv6 address to the environment in addition to an IPv4 address.
      *
      * @return the value
      */
@@ -1245,6 +1276,27 @@ public final class FusionEnvironment
         return isSuspended;
     }
 
+    /**
+     * Additional egress rules that should be applied to the environment. Some standard ports are
+     * open for general use; see [Securing Network Access to a Fusion Applications
+     * Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access
+     * to a non-standard port is required, however, they can be listed here.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalEgressRules")
+    private final java.util.List<AdditionalEgressRule> additionalEgressRules;
+
+    /**
+     * Additional egress rules that should be applied to the environment. Some standard ports are
+     * open for general use; see [Securing Network Access to a Fusion Applications
+     * Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access
+     * to a non-standard port is required, however, they can be listed here.
+     *
+     * @return the value
+     */
+    public java.util.List<AdditionalEgressRule> getAdditionalEgressRules() {
+        return additionalEgressRules;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1294,6 +1346,7 @@ public final class FusionEnvironment
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", isSuspended=").append(String.valueOf(this.isSuspended));
+        sb.append(", additionalEgressRules=").append(String.valueOf(this.additionalEgressRules));
         sb.append(")");
         return sb.toString();
     }
@@ -1343,6 +1396,7 @@ public final class FusionEnvironment
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.isSuspended, other.isSuspended)
+                && java.util.Objects.equals(this.additionalEgressRules, other.additionalEgressRules)
                 && super.equals(other);
     }
 
@@ -1423,6 +1477,11 @@ public final class FusionEnvironment
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.isSuspended == null ? 43 : this.isSuspended.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalEgressRules == null
+                                ? 43
+                                : this.additionalEgressRules.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

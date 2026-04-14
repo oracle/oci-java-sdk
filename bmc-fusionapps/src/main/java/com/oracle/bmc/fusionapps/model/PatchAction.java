@@ -52,12 +52,12 @@ public final class PatchAction extends Action {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** A string that describes whether the change is applied hot or cold */
+        /** A string that describes whether the change is applied hot or cold. */
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private Mode mode;
 
         /**
-         * A string that describes whether the change is applied hot or cold
+         * A string that describes whether the change is applied hot or cold.
          *
          * @param mode the value to set
          * @return this builder
@@ -67,12 +67,12 @@ public final class PatchAction extends Action {
             this.__explicitlySet__.add("mode");
             return this;
         }
-        /** patch artifact category */
+        /** Patch artifact category. */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private Category category;
 
         /**
-         * patch artifact category
+         * Patch artifact category.
          *
          * @param category the value to set
          * @return this builder
@@ -82,12 +82,12 @@ public final class PatchAction extends Action {
             this.__explicitlySet__.add("category");
             return this;
         }
-        /** patch bundle name */
+        /** Patch bundle name. */
         @com.fasterxml.jackson.annotation.JsonProperty("artifact")
         private String artifact;
 
         /**
-         * patch bundle name
+         * Patch bundle name.
          *
          * @param artifact the value to set
          * @return this builder
@@ -163,7 +163,7 @@ public final class PatchAction extends Action {
         this.artifact = artifact;
     }
 
-    /** A string that describes whether the change is applied hot or cold */
+    /** A string that describes whether the change is applied hot or cold. */
     public enum Mode implements com.oracle.bmc.http.internal.BmcEnum {
         Hot("HOT"),
         Cold("COLD"),
@@ -207,12 +207,12 @@ public final class PatchAction extends Action {
             return UnknownEnumValue;
         }
     };
-    /** A string that describes whether the change is applied hot or cold */
+    /** A string that describes whether the change is applied hot or cold. */
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final Mode mode;
 
     /**
-     * A string that describes whether the change is applied hot or cold
+     * A string that describes whether the change is applied hot or cold.
      *
      * @return the value
      */
@@ -220,7 +220,7 @@ public final class PatchAction extends Action {
         return mode;
     }
 
-    /** patch artifact category */
+    /** Patch artifact category. */
     public enum Category implements com.oracle.bmc.http.internal.BmcEnum {
         Monthly("MONTHLY"),
         Weekly("WEEKLY"),
@@ -267,12 +267,12 @@ public final class PatchAction extends Action {
             return UnknownEnumValue;
         }
     };
-    /** patch artifact category */
+    /** Patch artifact category. */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final Category category;
 
     /**
-     * patch artifact category
+     * Patch artifact category.
      *
      * @return the value
      */
@@ -280,12 +280,12 @@ public final class PatchAction extends Action {
         return category;
     }
 
-    /** patch bundle name */
+    /** Patch bundle name. */
     @com.fasterxml.jackson.annotation.JsonProperty("artifact")
     private final String artifact;
 
     /**
-     * patch bundle name
+     * Patch bundle name.
      *
      * @return the value
      */

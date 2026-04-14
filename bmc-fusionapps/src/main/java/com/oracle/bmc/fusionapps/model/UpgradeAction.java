@@ -52,12 +52,12 @@ public final class UpgradeAction extends Action {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** name of the repo */
+        /** Name of the repo. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * name of the repo
+         * Name of the repo.
          *
          * @param version the value to set
          * @return this builder
@@ -67,12 +67,12 @@ public final class UpgradeAction extends Action {
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** month qualifier */
+        /** Month qualifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("qualifier")
         private String qualifier;
 
         /**
-         * month qualifier
+         * Month qualifier.
          *
          * @param qualifier the value to set
          * @return this builder
@@ -142,12 +142,12 @@ public final class UpgradeAction extends Action {
         this.qualifier = qualifier;
     }
 
-    /** name of the repo */
+    /** Name of the repo. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * name of the repo
+     * Name of the repo.
      *
      * @return the value
      */
@@ -155,12 +155,12 @@ public final class UpgradeAction extends Action {
         return version;
     }
 
-    /** month qualifier */
+    /** Month qualifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("qualifier")
     private final String qualifier;
 
     /**
-     * month qualifier
+     * Month qualifier.
      *
      * @return the value
      */

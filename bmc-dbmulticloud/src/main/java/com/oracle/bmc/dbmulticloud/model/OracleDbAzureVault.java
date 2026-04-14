@@ -33,6 +33,7 @@ public final class OracleDbAzureVault
         "type",
         "location",
         "properties",
+        "replicationMetadata",
         "lifecycleState",
         "lifecycleStateDetails",
         "timeCreated",
@@ -52,6 +53,7 @@ public final class OracleDbAzureVault
             String type,
             String location,
             java.util.Map<String, String> properties,
+            ReplicationMetadata replicationMetadata,
             LifecycleState lifecycleState,
             String lifecycleStateDetails,
             java.util.Date timeCreated,
@@ -70,6 +72,7 @@ public final class OracleDbAzureVault
         this.type = type;
         this.location = location;
         this.properties = properties;
+        this.replicationMetadata = replicationMetadata;
         this.lifecycleState = lifecycleState;
         this.lifecycleStateDetails = lifecycleStateDetails;
         this.timeCreated = timeCreated;
@@ -227,6 +230,15 @@ public final class OracleDbAzureVault
         public Builder properties(java.util.Map<String, String> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationMetadata")
+        private ReplicationMetadata replicationMetadata;
+
+        public Builder replicationMetadata(ReplicationMetadata replicationMetadata) {
+            this.replicationMetadata = replicationMetadata;
+            this.__explicitlySet__.add("replicationMetadata");
             return this;
         }
         /** The lifecycle state of the Oracle DB Azure Vault resource. */
@@ -404,6 +416,7 @@ public final class OracleDbAzureVault
                             this.type,
                             this.location,
                             this.properties,
+                            this.replicationMetadata,
                             this.lifecycleState,
                             this.lifecycleStateDetails,
                             this.timeCreated,
@@ -446,6 +459,9 @@ public final class OracleDbAzureVault
             }
             if (model.wasPropertyExplicitlySet("properties")) {
                 this.properties(model.getProperties());
+            }
+            if (model.wasPropertyExplicitlySet("replicationMetadata")) {
+                this.replicationMetadata(model.getReplicationMetadata());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -611,6 +627,13 @@ public final class OracleDbAzureVault
      */
     public java.util.Map<String, String> getProperties() {
         return properties;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationMetadata")
+    private final ReplicationMetadata replicationMetadata;
+
+    public ReplicationMetadata getReplicationMetadata() {
+        return replicationMetadata;
     }
 
     /** The lifecycle state of the Oracle DB Azure Vault resource. */
@@ -826,6 +849,7 @@ public final class OracleDbAzureVault
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", location=").append(String.valueOf(this.location));
         sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append(", replicationMetadata=").append(String.valueOf(this.replicationMetadata));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleStateDetails=").append(String.valueOf(this.lifecycleStateDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -858,6 +882,7 @@ public final class OracleDbAzureVault
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.location, other.location)
                 && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.replicationMetadata, other.replicationMetadata)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleStateDetails, other.lifecycleStateDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -892,6 +917,11 @@ public final class OracleDbAzureVault
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationMetadata == null
+                                ? 43
+                                : this.replicationMetadata.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

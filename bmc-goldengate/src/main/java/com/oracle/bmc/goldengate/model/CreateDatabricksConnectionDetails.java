@@ -219,7 +219,7 @@ public final class CreateDatabricksConnectionDetails extends CreateConnectionDet
          * "passwordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password used to connect to Databricks. Only applicable for authenticationType ==
@@ -229,8 +229,14 @@ public final class CreateDatabricksConnectionDetails extends CreateConnectionDet
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -276,7 +282,7 @@ public final class CreateDatabricksConnectionDetails extends CreateConnectionDet
          * after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-        private String clientSecret;
+        private char[] clientSecret;
 
         /**
          * OAuth client secret, only applicable for authenticationType == OAUTH_M2M Deprecated: This
@@ -286,8 +292,14 @@ public final class CreateDatabricksConnectionDetails extends CreateConnectionDet
          * @param clientSecret the value to set
          * @return this builder
          */
-        public Builder clientSecret(String clientSecret) {
+        public Builder clientSecret(char[] clientSecret) {
             this.clientSecret = clientSecret;
+            this.__explicitlySet__.add("clientSecret");
+            return this;
+        }
+
+        public Builder clientSecret(String clientSecret) {
+            this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
             this.__explicitlySet__.add("clientSecret");
             return this;
         }
@@ -500,6 +512,72 @@ public final class CreateDatabricksConnectionDetails extends CreateConnectionDet
         this.technologyType = technologyType;
         this.authenticationType = authenticationType;
         this.connectionUrl = connectionUrl;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.clientId = clientId;
+        this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+        this.clientSecretSecretId = clientSecretSecretId;
+        this.storageCredentialName = storageCredentialName;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateDatabricksConnectionDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("displayName") String displayName,
+            @com.fasterxml.jackson.annotation.JsonProperty("description") String description,
+            @com.fasterxml.jackson.annotation.JsonProperty("compartmentId") String compartmentId,
+            @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+                    java.util.Map<String, String> freeformTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+                    java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("locks")
+                    java.util.List<AddResourceLockDetails> locks,
+            @com.fasterxml.jackson.annotation.JsonProperty("vaultId") String vaultId,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyId") String keyId,
+            @com.fasterxml.jackson.annotation.JsonProperty("nsgIds") java.util.List<String> nsgIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("subnetId") String subnetId,
+            @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+                    RoutingMethod routingMethod,
+            @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+                    Boolean doesUseSecretIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId") String subscriptionId,
+            @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+                    String clusterPlacementGroupId,
+            @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+                    java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
+                    DatabricksConnection.TechnologyType technologyType,
+            @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
+                    DatabricksConnection.AuthenticationType authenticationType,
+            @com.fasterxml.jackson.annotation.JsonProperty("connectionUrl") String connectionUrl,
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
+            @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+                    String passwordSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("clientId") String clientId,
+            @com.fasterxml.jackson.annotation.JsonProperty("clientSecret") char[] clientSecret,
+            @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
+                    String clientSecretSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("storageCredentialName")
+                    String storageCredentialName) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                locks,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
+        this.technologyType = technologyType;
+        this.authenticationType = authenticationType;
+        this.connectionUrl = connectionUrl;
         this.password = password;
         this.passwordSecretId = passwordSecretId;
         this.clientId = clientId;
@@ -557,7 +635,21 @@ public final class CreateDatabricksConnectionDetails extends CreateConnectionDet
      * "passwordSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password used to connect to Databricks. Only applicable for authenticationType
+     * &#x3D;&#x3D; PERSONAL_ACCESS_TOKEN. Deprecated: This field is deprecated and replaced by
+     * &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password used to connect to Databricks. Only applicable for authenticationType ==
@@ -566,7 +658,8 @@ public final class CreateDatabricksConnectionDetails extends CreateConnectionDet
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -608,7 +701,21 @@ public final class CreateDatabricksConnectionDetails extends CreateConnectionDet
      * February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-    private final String clientSecret;
+    private final char[] clientSecret;
+
+    /**
+     * OAuth client secret, only applicable for authenticationType &#x3D;&#x3D; OAUTH_M2M
+     * Deprecated: This field is deprecated and replaced by &quot;clientSecretSecretId&quot;. This
+     * field will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getClientSecret__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClientSecret() {
+        return clientSecret != null ? new String(clientSecret) : null;
+    }
 
     /**
      * OAuth client secret, only applicable for authenticationType == OAUTH_M2M Deprecated: This
@@ -617,7 +724,8 @@ public final class CreateDatabricksConnectionDetails extends CreateConnectionDet
      *
      * @return the value
      */
-    public String getClientSecret() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
+    public char[] getClientSecret__AsCharArray() {
         return clientSecret;
     }
 

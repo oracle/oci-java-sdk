@@ -556,6 +556,42 @@ public class DbMulticloudAwsProviderClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public ReplicateOracleDbAwsKeyResponse replicateOracleDbAwsKey(
+            ReplicateOracleDbAwsKeyRequest request) {
+
+        Validate.notBlank(request.getOracleDbAwsKeyId(), "oracleDbAwsKeyId must not be blank");
+        Objects.requireNonNull(
+                request.getReplicateOracleDbAwsKeyDetails(),
+                "replicateOracleDbAwsKeyDetails is required");
+
+        return clientCall(request, ReplicateOracleDbAwsKeyResponse::builder)
+                .logger(LOG, "replicateOracleDbAwsKey")
+                .serviceDetails(
+                        "DbMulticloudAwsProvider",
+                        "ReplicateOracleDbAwsKey",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAwsKey/ReplicateOracleDbAwsKey")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReplicateOracleDbAwsKeyRequest::builder)
+                .basePath("/20240501")
+                .appendPathParam("oracleDbAwsKey")
+                .appendPathParam(request.getOracleDbAwsKeyId())
+                .appendPathParam("actions")
+                .appendPathParam("replicate")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ReplicateOracleDbAwsKeyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReplicateOracleDbAwsKeyResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateOracleDbAwsIdentityConnectorResponse updateOracleDbAwsIdentityConnector(
             UpdateOracleDbAwsIdentityConnectorRequest request) {
 

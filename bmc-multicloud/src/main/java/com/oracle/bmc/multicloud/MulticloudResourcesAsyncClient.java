@@ -101,10 +101,6 @@ public class MulticloudResourcesAsyncClient extends com.oracle.bmc.http.internal
             final com.oracle.bmc.responses.AsyncHandler<
                             ListMulticloudResourcesRequest, ListMulticloudResourcesResponse>
                     handler) {
-        Objects.requireNonNull(
-                request.getSubscriptionServiceName(), "subscriptionServiceName is required");
-
-        Objects.requireNonNull(request.getSubscriptionId(), "subscriptionId is required");
 
         return clientCall(request, ListMulticloudResourcesResponse::builder)
                 .logger(LOG, "listMulticloudResources")
@@ -127,6 +123,7 @@ public class MulticloudResourcesAsyncClient extends com.oracle.bmc.http.internal
                         "subscriptionServiceName", request.getSubscriptionServiceName())
                 .appendQueryParam("subscriptionId", request.getSubscriptionId())
                 .appendQueryParam("externalLocation", request.getExternalLocation())
+                .appendQueryParam("resourceType", request.getResourceType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

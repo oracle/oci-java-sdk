@@ -9,9 +9,10 @@ import com.oracle.bmc.multicloud.responses.*;
 
 /**
  * Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata
- * mappings related a Cloud Service Provider. For more information, see <link to docs>. This service
- * client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no
- * circuit breaker configuration is defined by the user.
+ * mappings related a Cloud Service Provider. For more information, see [Oracle Multicloud
+ * Hub](https://docs.oracle.com/iaas/Content/multicloud-hub/home.htm). This service client uses
+ * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
+ * breaker configuration is defined by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public interface OmhubNetworkAnchor extends AutoCloseable {
@@ -65,7 +66,9 @@ public interface OmhubNetworkAnchor extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Gets information about a NetworkAnchor.
+     * Gets details for the specified network anchor. The subscription OCID and service name are
+     * required. For more information, see [Getting a Network Anchor's
+     * Details](https://docs.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -81,7 +84,10 @@ public interface OmhubNetworkAnchor extends AutoCloseable {
     GetNetworkAnchorResponse getNetworkAnchor(GetNetworkAnchorRequest request);
 
     /**
-     * Gets a list of NetworkAnchors.
+     * Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and
+     * partner cloud region. Details listed for each resource include name, state, VCN, and ODB
+     * network ID. For more information, see [Listing Network
+     * Anchors](https://docs.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

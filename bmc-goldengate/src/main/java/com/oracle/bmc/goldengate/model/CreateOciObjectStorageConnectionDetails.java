@@ -294,7 +294,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
          * "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
-        private String privateKeyPassphrase;
+        private char[] privateKeyPassphrase;
 
         /**
          * The passphrase of the private key. Deprecated: This field is deprecated and replaced by
@@ -303,8 +303,15 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
          * @param privateKeyPassphrase the value to set
          * @return this builder
          */
-        public Builder privateKeyPassphrase(String privateKeyPassphrase) {
+        public Builder privateKeyPassphrase(char[] privateKeyPassphrase) {
             this.privateKeyPassphrase = privateKeyPassphrase;
+            this.__explicitlySet__.add("privateKeyPassphrase");
+            return this;
+        }
+
+        public Builder privateKeyPassphrase(String privateKeyPassphrase) {
+            this.privateKeyPassphrase =
+                    privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null;
             this.__explicitlySet__.add("privateKeyPassphrase");
             return this;
         }
@@ -544,6 +551,76 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         this.userId = userId;
         this.privateKeyFile = privateKeyFile;
         this.privateKeyFileSecretId = privateKeyFileSecretId;
+        this.privateKeyPassphrase =
+                privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null;
+        this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+        this.publicKeyFingerprint = publicKeyFingerprint;
+        this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateOciObjectStorageConnectionDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("displayName") String displayName,
+            @com.fasterxml.jackson.annotation.JsonProperty("description") String description,
+            @com.fasterxml.jackson.annotation.JsonProperty("compartmentId") String compartmentId,
+            @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+                    java.util.Map<String, String> freeformTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+                    java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("locks")
+                    java.util.List<AddResourceLockDetails> locks,
+            @com.fasterxml.jackson.annotation.JsonProperty("vaultId") String vaultId,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyId") String keyId,
+            @com.fasterxml.jackson.annotation.JsonProperty("nsgIds") java.util.List<String> nsgIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("subnetId") String subnetId,
+            @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+                    RoutingMethod routingMethod,
+            @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+                    Boolean doesUseSecretIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId") String subscriptionId,
+            @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+                    String clusterPlacementGroupId,
+            @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+                    java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
+                    OciObjectStorageConnection.TechnologyType technologyType,
+            @com.fasterxml.jackson.annotation.JsonProperty("tenancyId") String tenancyId,
+            @com.fasterxml.jackson.annotation.JsonProperty("region") String region,
+            @com.fasterxml.jackson.annotation.JsonProperty("userId") String userId,
+            @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile") String privateKeyFile,
+            @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
+                    String privateKeyFileSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
+                    char[] privateKeyPassphrase,
+            @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphraseSecretId")
+                    String privateKeyPassphraseSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("publicKeyFingerprint")
+                    String publicKeyFingerprint,
+            @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
+                    Boolean shouldUseResourcePrincipal) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                locks,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
+        this.technologyType = technologyType;
+        this.tenancyId = tenancyId;
+        this.region = region;
+        this.userId = userId;
+        this.privateKeyFile = privateKeyFile;
+        this.privateKeyFileSecretId = privateKeyFileSecretId;
         this.privateKeyPassphrase = privateKeyPassphrase;
         this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
         this.publicKeyFingerprint = publicKeyFingerprint;
@@ -669,7 +746,20 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
      * "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
-    private final String privateKeyPassphrase;
+    private final char[] privateKeyPassphrase;
+
+    /**
+     * The passphrase of the private key. Deprecated: This field is deprecated and replaced by
+     * &quot;privateKeyPassphraseSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getPrivateKeyPassphrase__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPrivateKeyPassphrase() {
+        return privateKeyPassphrase != null ? new String(privateKeyPassphrase) : null;
+    }
 
     /**
      * The passphrase of the private key. Deprecated: This field is deprecated and replaced by
@@ -677,7 +767,8 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
      *
      * @return the value
      */
-    public String getPrivateKeyPassphrase() {
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
+    public char[] getPrivateKeyPassphrase__AsCharArray() {
         return privateKeyPassphrase;
     }
 

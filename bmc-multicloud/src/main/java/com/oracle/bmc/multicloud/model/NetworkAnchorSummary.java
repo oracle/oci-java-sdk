@@ -42,7 +42,8 @@ public final class NetworkAnchorSummary
         "freeformTags",
         "definedTags",
         "systemTags",
-        "subscriptionType"
+        "subscriptionType",
+        "cidrBlocks"
     })
     public NetworkAnchorSummary(
             String id,
@@ -63,7 +64,8 @@ public final class NetworkAnchorSummary
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
-            SubscriptionType subscriptionType) {
+            SubscriptionType subscriptionType,
+            java.util.List<String> cidrBlocks) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -84,6 +86,7 @@ public final class NetworkAnchorSummary
         this.definedTags = definedTags;
         this.systemTags = systemTags;
         this.subscriptionType = subscriptionType;
+        this.cidrBlocks = cidrBlocks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -433,6 +436,21 @@ public final class NetworkAnchorSummary
             this.__explicitlySet__.add("subscriptionType");
             return this;
         }
+        /** An Azure/GCP/AWS cidrBlocks */
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
+        private java.util.List<String> cidrBlocks;
+
+        /**
+         * An Azure/GCP/AWS cidrBlocks
+         *
+         * @param cidrBlocks the value to set
+         * @return this builder
+         */
+        public Builder cidrBlocks(java.util.List<String> cidrBlocks) {
+            this.cidrBlocks = cidrBlocks;
+            this.__explicitlySet__.add("cidrBlocks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -458,7 +476,8 @@ public final class NetworkAnchorSummary
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
-                            this.subscriptionType);
+                            this.subscriptionType,
+                            this.cidrBlocks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -523,6 +542,9 @@ public final class NetworkAnchorSummary
             }
             if (model.wasPropertyExplicitlySet("subscriptionType")) {
                 this.subscriptionType(model.getSubscriptionType());
+            }
+            if (model.wasPropertyExplicitlySet("cidrBlocks")) {
+                this.cidrBlocks(model.getCidrBlocks());
             }
             return this;
         }
@@ -838,6 +860,19 @@ public final class NetworkAnchorSummary
         return subscriptionType;
     }
 
+    /** An Azure/GCP/AWS cidrBlocks */
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
+    private final java.util.List<String> cidrBlocks;
+
+    /**
+     * An Azure/GCP/AWS cidrBlocks
+     *
+     * @return the value
+     */
+    public java.util.List<String> getCidrBlocks() {
+        return cidrBlocks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -876,6 +911,7 @@ public final class NetworkAnchorSummary
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", subscriptionType=").append(String.valueOf(this.subscriptionType));
+        sb.append(", cidrBlocks=").append(String.valueOf(this.cidrBlocks));
         sb.append(")");
         return sb.toString();
     }
@@ -913,6 +949,7 @@ public final class NetworkAnchorSummary
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.subscriptionType, other.subscriptionType)
+                && java.util.Objects.equals(this.cidrBlocks, other.cidrBlocks)
                 && super.equals(other);
     }
 
@@ -969,6 +1006,7 @@ public final class NetworkAnchorSummary
         result =
                 (result * PRIME)
                         + (this.subscriptionType == null ? 43 : this.subscriptionType.hashCode());
+        result = (result * PRIME) + (this.cidrBlocks == null ? 43 : this.cidrBlocks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

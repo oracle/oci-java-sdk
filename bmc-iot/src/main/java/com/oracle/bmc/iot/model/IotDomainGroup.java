@@ -121,17 +121,19 @@ public final class IotDomainGroup
             return this;
         }
         /**
-         * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time
-         * Objective (RTO), making it suitable for development and testing. STANDARD is recommended
-         * for production.
+         * Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time
+         * Objective (RTO), making it suitable for development and testing. PRODUCTION is
+         * recommended for production workloads. LIGHTWEIGHT and STANDARD are deprecated aliases for
+         * DEVELOPMENT and PRODUCTION respectively and will be removed in a future release.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
-         * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time
-         * Objective (RTO), making it suitable for development and testing. STANDARD is recommended
-         * for production.
+         * Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time
+         * Objective (RTO), making it suitable for development and testing. PRODUCTION is
+         * recommended for production workloads. LIGHTWEIGHT and STANDARD are deprecated aliases for
+         * DEVELOPMENT and PRODUCTION respectively and will be removed in a future release.
          *
          * @param type the value to set
          * @return this builder
@@ -493,11 +495,14 @@ public final class IotDomainGroup
     }
 
     /**
-     * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time
-     * Objective (RTO), making it suitable for development and testing. STANDARD is recommended for
-     * production.
+     * Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time
+     * Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended
+     * for production workloads. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and
+     * PRODUCTION respectively and will be removed in a future release.
      */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+        Production("PRODUCTION"),
+        Development("DEVELOPMENT"),
         Standard("STANDARD"),
         Lightweight("LIGHTWEIGHT"),
 
@@ -541,17 +546,19 @@ public final class IotDomainGroup
         }
     };
     /**
-     * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time
-     * Objective (RTO), making it suitable for development and testing. STANDARD is recommended for
-     * production.
+     * Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time
+     * Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended
+     * for production workloads. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and
+     * PRODUCTION respectively and will be removed in a future release.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
-     * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time
-     * Objective (RTO), making it suitable for development and testing. STANDARD is recommended for
-     * production.
+     * Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time
+     * Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended
+     * for production workloads. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and
+     * PRODUCTION respectively and will be removed in a future release.
      *
      * @return the value
      */

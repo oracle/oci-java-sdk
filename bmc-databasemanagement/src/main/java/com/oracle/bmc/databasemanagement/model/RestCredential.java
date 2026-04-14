@@ -22,6 +22,23 @@ package com.oracle.bmc.databasemanagement.model;
 public final class RestCredential
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public RestCredential(
+            String username,
+            String password,
+            SslTrustStoreType sslTrustStoreType,
+            String sslTrustStoreLocation,
+            String sslTrustStorePassword) {
+        super();
+        this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.sslTrustStoreType = sslTrustStoreType;
+        this.sslTrustStoreLocation = sslTrustStoreLocation;
+        this.sslTrustStorePassword =
+                sslTrustStorePassword != null ? sslTrustStorePassword.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "username",
         "password",
@@ -31,10 +48,10 @@ public final class RestCredential
     })
     public RestCredential(
             String username,
-            String password,
+            char[] password,
             SslTrustStoreType sslTrustStoreType,
             String sslTrustStoreLocation,
-            String sslTrustStorePassword) {
+            char[] sslTrustStorePassword) {
         super();
         this.username = username;
         this.password = password;
@@ -62,7 +79,7 @@ public final class RestCredential
         }
         /** The password of the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password of the user.
@@ -70,8 +87,14 @@ public final class RestCredential
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -107,7 +130,7 @@ public final class RestCredential
         }
         /** The password of the SSL truststore location in the agent. */
         @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStorePassword")
-        private String sslTrustStorePassword;
+        private char[] sslTrustStorePassword;
 
         /**
          * The password of the SSL truststore location in the agent.
@@ -115,8 +138,15 @@ public final class RestCredential
          * @param sslTrustStorePassword the value to set
          * @return this builder
          */
-        public Builder sslTrustStorePassword(String sslTrustStorePassword) {
+        public Builder sslTrustStorePassword(char[] sslTrustStorePassword) {
             this.sslTrustStorePassword = sslTrustStorePassword;
+            this.__explicitlySet__.add("sslTrustStorePassword");
+            return this;
+        }
+
+        public Builder sslTrustStorePassword(String sslTrustStorePassword) {
+            this.sslTrustStorePassword =
+                    sslTrustStorePassword != null ? sslTrustStorePassword.toCharArray() : null;
             this.__explicitlySet__.add("sslTrustStorePassword");
             return this;
         }
@@ -183,17 +213,29 @@ public final class RestCredential
 
     /** The password of the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password of the user.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password of the user.
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
-
     /** The SSL truststore type. */
     public enum SslTrustStoreType implements com.oracle.bmc.http.internal.BmcEnum {
         Jks("JKS"),
@@ -255,14 +297,27 @@ public final class RestCredential
 
     /** The password of the SSL truststore location in the agent. */
     @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStorePassword")
-    private final String sslTrustStorePassword;
+    private final char[] sslTrustStorePassword;
+
+    /**
+     * The password of the SSL truststore location in the agent.
+     *
+     * @return the value
+     * @deprecated Use getSslTrustStorePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSslTrustStorePassword() {
+        return sslTrustStorePassword != null ? new String(sslTrustStorePassword) : null;
+    }
 
     /**
      * The password of the SSL truststore location in the agent.
      *
      * @return the value
      */
-    public String getSslTrustStorePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStorePassword")
+    public char[] getSslTrustStorePassword__AsCharArray() {
         return sslTrustStorePassword;
     }
 

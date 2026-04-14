@@ -37,6 +37,7 @@ public final class CreateFusionEnvironmentDetails
         "additionalLanguagePacks",
         "isIPv6DualStackEnabled",
         "rules",
+        "additionalEgressRules",
         "createFusionEnvironmentAdminUserDetails",
         "freeformTags",
         "definedTags"
@@ -52,6 +53,7 @@ public final class CreateFusionEnvironmentDetails
             java.util.List<String> additionalLanguagePacks,
             Boolean isIPv6DualStackEnabled,
             java.util.List<Rule> rules,
+            java.util.List<AdditionalEgressRule> additionalEgressRules,
             CreateFusionEnvironmentAdminUserDetails createFusionEnvironmentAdminUserDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -66,6 +68,7 @@ public final class CreateFusionEnvironmentDetails
         this.additionalLanguagePacks = additionalLanguagePacks;
         this.isIPv6DualStackEnabled = isIPv6DualStackEnabled;
         this.rules = rules;
+        this.additionalEgressRules = additionalEgressRules;
         this.createFusionEnvironmentAdminUserDetails = createFusionEnvironmentAdminUserDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -195,17 +198,17 @@ public final class CreateFusionEnvironmentDetails
             return this;
         }
         /**
-         * Enable IPv4/IPv6 dual stack support for the environment. Setting to true will assign an
-         * IPv6 address to the environment in addition to an IPv4 address. Default value will be
-         * false if not set
+         * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to
+         * true will assign an IPv6 address to the environment in addition to an IPv4 address. The
+         * default value is false.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
         private Boolean isIPv6DualStackEnabled;
 
         /**
-         * Enable IPv4/IPv6 dual stack support for the environment. Setting to true will assign an
-         * IPv6 address to the environment in addition to an IPv4 address. Default value will be
-         * false if not set
+         * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to
+         * true will assign an IPv6 address to the environment in addition to an IPv4 address. The
+         * default value is false.
          *
          * @param isIPv6DualStackEnabled the value to set
          * @return this builder
@@ -228,6 +231,30 @@ public final class CreateFusionEnvironmentDetails
         public Builder rules(java.util.List<Rule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
+            return this;
+        }
+        /**
+         * Additional egress rules that should be applied to the environment. Some standard ports
+         * are open for general use; see [Securing Network Access to a Fusion Applications
+         * Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If
+         * access to a non-standard port is required, however, they can be listed here.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalEgressRules")
+        private java.util.List<AdditionalEgressRule> additionalEgressRules;
+
+        /**
+         * Additional egress rules that should be applied to the environment. Some standard ports
+         * are open for general use; see [Securing Network Access to a Fusion Applications
+         * Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If
+         * access to a non-standard port is required, however, they can be listed here.
+         *
+         * @param additionalEgressRules the value to set
+         * @return this builder
+         */
+        public Builder additionalEgressRules(
+                java.util.List<AdditionalEgressRule> additionalEgressRules) {
+            this.additionalEgressRules = additionalEgressRules;
+            this.__explicitlySet__.add("additionalEgressRules");
             return this;
         }
 
@@ -296,6 +323,7 @@ public final class CreateFusionEnvironmentDetails
                             this.additionalLanguagePacks,
                             this.isIPv6DualStackEnabled,
                             this.rules,
+                            this.additionalEgressRules,
                             this.createFusionEnvironmentAdminUserDetails,
                             this.freeformTags,
                             this.definedTags);
@@ -336,6 +364,9 @@ public final class CreateFusionEnvironmentDetails
             }
             if (model.wasPropertyExplicitlySet("rules")) {
                 this.rules(model.getRules());
+            }
+            if (model.wasPropertyExplicitlySet("additionalEgressRules")) {
+                this.additionalEgressRules(model.getAdditionalEgressRules());
             }
             if (model.wasPropertyExplicitlySet("createFusionEnvironmentAdminUserDetails")) {
                 this.createFusionEnvironmentAdminUserDetails(
@@ -463,17 +494,17 @@ public final class CreateFusionEnvironmentDetails
     }
 
     /**
-     * Enable IPv4/IPv6 dual stack support for the environment. Setting to true will assign an IPv6
-     * address to the environment in addition to an IPv4 address. Default value will be false if not
-     * set
+     * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true
+     * will assign an IPv6 address to the environment in addition to an IPv4 address. The default
+     * value is false.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
     private final Boolean isIPv6DualStackEnabled;
 
     /**
-     * Enable IPv4/IPv6 dual stack support for the environment. Setting to true will assign an IPv6
-     * address to the environment in addition to an IPv4 address. Default value will be false if not
-     * set
+     * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true
+     * will assign an IPv6 address to the environment in addition to an IPv4 address. The default
+     * value is false.
      *
      * @return the value
      */
@@ -492,6 +523,27 @@ public final class CreateFusionEnvironmentDetails
      */
     public java.util.List<Rule> getRules() {
         return rules;
+    }
+
+    /**
+     * Additional egress rules that should be applied to the environment. Some standard ports are
+     * open for general use; see [Securing Network Access to a Fusion Applications
+     * Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access
+     * to a non-standard port is required, however, they can be listed here.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalEgressRules")
+    private final java.util.List<AdditionalEgressRule> additionalEgressRules;
+
+    /**
+     * Additional egress rules that should be applied to the environment. Some standard ports are
+     * open for general use; see [Securing Network Access to a Fusion Applications
+     * Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access
+     * to a non-standard port is required, however, they can be listed here.
+     *
+     * @return the value
+     */
+    public java.util.List<AdditionalEgressRule> getAdditionalEgressRules() {
+        return additionalEgressRules;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("createFusionEnvironmentAdminUserDetails")
@@ -562,6 +614,7 @@ public final class CreateFusionEnvironmentDetails
                 .append(String.valueOf(this.additionalLanguagePacks));
         sb.append(", isIPv6DualStackEnabled=").append(String.valueOf(this.isIPv6DualStackEnabled));
         sb.append(", rules=").append(String.valueOf(this.rules));
+        sb.append(", additionalEgressRules=").append(String.valueOf(this.additionalEgressRules));
         sb.append(", createFusionEnvironmentAdminUserDetails=")
                 .append(String.valueOf(this.createFusionEnvironmentAdminUserDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -593,6 +646,7 @@ public final class CreateFusionEnvironmentDetails
                 && java.util.Objects.equals(
                         this.isIPv6DualStackEnabled, other.isIPv6DualStackEnabled)
                 && java.util.Objects.equals(this.rules, other.rules)
+                && java.util.Objects.equals(this.additionalEgressRules, other.additionalEgressRules)
                 && java.util.Objects.equals(
                         this.createFusionEnvironmentAdminUserDetails,
                         other.createFusionEnvironmentAdminUserDetails)
@@ -635,6 +689,11 @@ public final class CreateFusionEnvironmentDetails
                                 ? 43
                                 : this.isIPv6DualStackEnabled.hashCode());
         result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalEgressRules == null
+                                ? 43
+                                : this.additionalEgressRules.hashCode());
         result =
                 (result * PRIME)
                         + (this.createFusionEnvironmentAdminUserDetails == null

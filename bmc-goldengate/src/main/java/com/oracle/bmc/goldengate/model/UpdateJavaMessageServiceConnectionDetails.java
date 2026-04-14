@@ -220,7 +220,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
          * 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentials")
-        private String jndiSecurityCredentials;
+        private char[] jndiSecurityCredentials;
 
         /**
          * The password associated to the principal. Deprecated: This field is deprecated and
@@ -230,8 +230,15 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
          * @param jndiSecurityCredentials the value to set
          * @return this builder
          */
-        public Builder jndiSecurityCredentials(String jndiSecurityCredentials) {
+        public Builder jndiSecurityCredentials(char[] jndiSecurityCredentials) {
             this.jndiSecurityCredentials = jndiSecurityCredentials;
+            this.__explicitlySet__.add("jndiSecurityCredentials");
+            return this;
+        }
+
+        public Builder jndiSecurityCredentials(String jndiSecurityCredentials) {
+            this.jndiSecurityCredentials =
+                    jndiSecurityCredentials != null ? jndiSecurityCredentials.toCharArray() : null;
             this.__explicitlySet__.add("jndiSecurityCredentials");
             return this;
         }
@@ -319,7 +326,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
          * be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated Java Message Service.
@@ -329,8 +336,14 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -442,7 +455,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
          * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
-        private String trustStorePassword;
+        private char[] trustStorePassword;
 
         /**
          * The TrustStore password. Deprecated: This field is deprecated and replaced by
@@ -451,8 +464,15 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
          * @param trustStorePassword the value to set
          * @return this builder
          */
-        public Builder trustStorePassword(String trustStorePassword) {
+        public Builder trustStorePassword(char[] trustStorePassword) {
             this.trustStorePassword = trustStorePassword;
+            this.__explicitlySet__.add("trustStorePassword");
+            return this;
+        }
+
+        public Builder trustStorePassword(String trustStorePassword) {
+            this.trustStorePassword =
+                    trustStorePassword != null ? trustStorePassword.toCharArray() : null;
             this.__explicitlySet__.add("trustStorePassword");
             return this;
         }
@@ -522,7 +542,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
          * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
-        private String keyStorePassword;
+        private char[] keyStorePassword;
 
         /**
          * The KeyStore password. Deprecated: This field is deprecated and replaced by
@@ -531,8 +551,15 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
          * @param keyStorePassword the value to set
          * @return this builder
          */
-        public Builder keyStorePassword(String keyStorePassword) {
+        public Builder keyStorePassword(char[] keyStorePassword) {
             this.keyStorePassword = keyStorePassword;
+            this.__explicitlySet__.add("keyStorePassword");
+            return this;
+        }
+
+        public Builder keyStorePassword(String keyStorePassword) {
+            this.keyStorePassword =
+                    keyStorePassword != null ? keyStorePassword.toCharArray() : null;
             this.__explicitlySet__.add("keyStorePassword");
             return this;
         }
@@ -563,7 +590,7 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
          * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
-        private String sslKeyPassword;
+        private char[] sslKeyPassword;
 
         /**
          * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
@@ -573,8 +600,14 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
          * @param sslKeyPassword the value to set
          * @return this builder
          */
-        public Builder sslKeyPassword(String sslKeyPassword) {
+        public Builder sslKeyPassword(char[] sslKeyPassword) {
             this.sslKeyPassword = sslKeyPassword;
+            this.__explicitlySet__.add("sslKeyPassword");
+            return this;
+        }
+
+        public Builder sslKeyPassword(String sslKeyPassword) {
+            this.sslKeyPassword = sslKeyPassword != null ? sslKeyPassword.toCharArray() : null;
             this.__explicitlySet__.add("sslKeyPassword");
             return this;
         }
@@ -863,6 +896,108 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
         this.jndiProviderUrl = jndiProviderUrl;
         this.jndiInitialContextFactory = jndiInitialContextFactory;
         this.jndiSecurityPrincipal = jndiSecurityPrincipal;
+        this.jndiSecurityCredentials =
+                jndiSecurityCredentials != null ? jndiSecurityCredentials.toCharArray() : null;
+        this.jndiSecurityCredentialsSecretId = jndiSecurityCredentialsSecretId;
+        this.connectionUrl = connectionUrl;
+        this.connectionFactory = connectionFactory;
+        this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.securityProtocol = securityProtocol;
+        this.authenticationType = authenticationType;
+        this.trustStore = trustStore;
+        this.trustStoreSecretId = trustStoreSecretId;
+        this.trustStorePassword =
+                trustStorePassword != null ? trustStorePassword.toCharArray() : null;
+        this.trustStorePasswordSecretId = trustStorePasswordSecretId;
+        this.keyStore = keyStore;
+        this.keyStoreSecretId = keyStoreSecretId;
+        this.keyStorePassword = keyStorePassword != null ? keyStorePassword.toCharArray() : null;
+        this.keyStorePasswordSecretId = keyStorePasswordSecretId;
+        this.sslKeyPassword = sslKeyPassword != null ? sslKeyPassword.toCharArray() : null;
+        this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
+        this.privateIp = privateIp;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateJavaMessageServiceConnectionDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("displayName") String displayName,
+            @com.fasterxml.jackson.annotation.JsonProperty("description") String description,
+            @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+                    java.util.Map<String, String> freeformTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+                    java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("vaultId") String vaultId,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyId") String keyId,
+            @com.fasterxml.jackson.annotation.JsonProperty("nsgIds") java.util.List<String> nsgIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("subnetId") String subnetId,
+            @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+                    RoutingMethod routingMethod,
+            @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+                    Boolean doesUseSecretIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+                    java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            @com.fasterxml.jackson.annotation.JsonProperty("shouldUseJndi") Boolean shouldUseJndi,
+            @com.fasterxml.jackson.annotation.JsonProperty("jndiConnectionFactory")
+                    String jndiConnectionFactory,
+            @com.fasterxml.jackson.annotation.JsonProperty("jndiProviderUrl")
+                    String jndiProviderUrl,
+            @com.fasterxml.jackson.annotation.JsonProperty("jndiInitialContextFactory")
+                    String jndiInitialContextFactory,
+            @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityPrincipal")
+                    String jndiSecurityPrincipal,
+            @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentials")
+                    char[] jndiSecurityCredentials,
+            @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentialsSecretId")
+                    String jndiSecurityCredentialsSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("connectionUrl") String connectionUrl,
+            @com.fasterxml.jackson.annotation.JsonProperty("connectionFactory")
+                    String connectionFactory,
+            @com.fasterxml.jackson.annotation.JsonProperty("username") String username,
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
+            @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+                    String passwordSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
+                    JavaMessageServiceConnection.SecurityProtocol securityProtocol,
+            @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
+                    JavaMessageServiceConnection.AuthenticationType authenticationType,
+            @com.fasterxml.jackson.annotation.JsonProperty("trustStore") String trustStore,
+            @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
+                    String trustStoreSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
+                    char[] trustStorePassword,
+            @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
+                    String trustStorePasswordSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyStore") String keyStore,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
+                    String keyStoreSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
+                    char[] keyStorePassword,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
+                    String keyStorePasswordSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword") char[] sslKeyPassword,
+            @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
+                    String sslKeyPasswordSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("privateIp") String privateIp) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                securityAttributes);
+        this.shouldUseJndi = shouldUseJndi;
+        this.jndiConnectionFactory = jndiConnectionFactory;
+        this.jndiProviderUrl = jndiProviderUrl;
+        this.jndiInitialContextFactory = jndiInitialContextFactory;
+        this.jndiSecurityPrincipal = jndiSecurityPrincipal;
         this.jndiSecurityCredentials = jndiSecurityCredentials;
         this.jndiSecurityCredentialsSecretId = jndiSecurityCredentialsSecretId;
         this.connectionUrl = connectionUrl;
@@ -965,7 +1100,21 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
      * by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentials")
-    private final String jndiSecurityCredentials;
+    private final char[] jndiSecurityCredentials;
+
+    /**
+     * The password associated to the principal. Deprecated: This field is deprecated and replaced
+     * by &quot;jndiSecurityCredentialsSecretId&quot;. This field will be removed after February 15
+     * 2026.
+     *
+     * @return the value
+     * @deprecated Use getJndiSecurityCredentials__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getJndiSecurityCredentials() {
+        return jndiSecurityCredentials != null ? new String(jndiSecurityCredentials) : null;
+    }
 
     /**
      * The password associated to the principal. Deprecated: This field is deprecated and replaced
@@ -973,7 +1122,8 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
      *
      * @return the value
      */
-    public String getJndiSecurityCredentials() {
+    @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentials")
+    public char[] getJndiSecurityCredentials__AsCharArray() {
         return jndiSecurityCredentials;
     }
 
@@ -1053,7 +1203,21 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
      * removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated Java Message Service.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field
+     * will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated Java Message Service.
@@ -1062,7 +1226,8 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -1160,7 +1325,20 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
      * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
-    private final String trustStorePassword;
+    private final char[] trustStorePassword;
+
+    /**
+     * The TrustStore password. Deprecated: This field is deprecated and replaced by
+     * &quot;trustStorePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getTrustStorePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTrustStorePassword() {
+        return trustStorePassword != null ? new String(trustStorePassword) : null;
+    }
 
     /**
      * The TrustStore password. Deprecated: This field is deprecated and replaced by
@@ -1168,7 +1346,8 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
      *
      * @return the value
      */
-    public String getTrustStorePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
+    public char[] getTrustStorePassword__AsCharArray() {
         return trustStorePassword;
     }
 
@@ -1232,7 +1411,20 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
      * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
-    private final String keyStorePassword;
+    private final char[] keyStorePassword;
+
+    /**
+     * The KeyStore password. Deprecated: This field is deprecated and replaced by
+     * &quot;keyStorePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getKeyStorePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getKeyStorePassword() {
+        return keyStorePassword != null ? new String(keyStorePassword) : null;
+    }
 
     /**
      * The KeyStore password. Deprecated: This field is deprecated and replaced by
@@ -1240,7 +1432,8 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
      *
      * @return the value
      */
-    public String getKeyStorePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
+    public char[] getKeyStorePassword__AsCharArray() {
         return keyStorePassword;
     }
 
@@ -1269,7 +1462,21 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
      * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
-    private final String sslKeyPassword;
+    private final char[] sslKeyPassword;
+
+    /**
+     * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
+     * password, it should be provided. Deprecated: This field is deprecated and replaced by
+     * &quot;sslKeyPasswordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getSslKeyPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSslKeyPassword() {
+        return sslKeyPassword != null ? new String(sslKeyPassword) : null;
+    }
 
     /**
      * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
@@ -1278,7 +1485,8 @@ public final class UpdateJavaMessageServiceConnectionDetails extends UpdateConne
      *
      * @return the value
      */
-    public String getSslKeyPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
+    public char[] getSslKeyPassword__AsCharArray() {
         return sslKeyPassword;
     }
 

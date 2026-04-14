@@ -23,9 +23,21 @@ package com.oracle.bmc.bds.model;
 public final class ActivateBdsMetastoreConfigurationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"bdsApiKeyPassphrase", "clusterAdminPassword", "secretId"})
     public ActivateBdsMetastoreConfigurationDetails(
             String bdsApiKeyPassphrase, String clusterAdminPassword, String secretId) {
+        super();
+        this.bdsApiKeyPassphrase =
+                bdsApiKeyPassphrase != null ? bdsApiKeyPassphrase.toCharArray() : null;
+        this.clusterAdminPassword =
+                clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
+        this.secretId = secretId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    @java.beans.ConstructorProperties({"bdsApiKeyPassphrase", "clusterAdminPassword", "secretId"})
+    public ActivateBdsMetastoreConfigurationDetails(
+            char[] bdsApiKeyPassphrase, char[] clusterAdminPassword, String secretId) {
         super();
         this.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
         this.clusterAdminPassword = clusterAdminPassword;
@@ -38,7 +50,7 @@ public final class ActivateBdsMetastoreConfigurationDetails
          * Base-64 encoded passphrase of the BDS Api Key. Set only if metastore's type is EXTERNAL.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
-        private String bdsApiKeyPassphrase;
+        private char[] bdsApiKeyPassphrase;
 
         /**
          * Base-64 encoded passphrase of the BDS Api Key. Set only if metastore's type is EXTERNAL.
@@ -46,14 +58,21 @@ public final class ActivateBdsMetastoreConfigurationDetails
          * @param bdsApiKeyPassphrase the value to set
          * @return this builder
          */
-        public Builder bdsApiKeyPassphrase(String bdsApiKeyPassphrase) {
+        public Builder bdsApiKeyPassphrase(char[] bdsApiKeyPassphrase) {
             this.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
+            this.__explicitlySet__.add("bdsApiKeyPassphrase");
+            return this;
+        }
+
+        public Builder bdsApiKeyPassphrase(String bdsApiKeyPassphrase) {
+            this.bdsApiKeyPassphrase =
+                    bdsApiKeyPassphrase != null ? bdsApiKeyPassphrase.toCharArray() : null;
             this.__explicitlySet__.add("bdsApiKeyPassphrase");
             return this;
         }
         /** Base-64 encoded password for the cluster admin user. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-        private String clusterAdminPassword;
+        private char[] clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster admin user.
@@ -61,8 +80,15 @@ public final class ActivateBdsMetastoreConfigurationDetails
          * @param clusterAdminPassword the value to set
          * @return this builder
          */
-        public Builder clusterAdminPassword(String clusterAdminPassword) {
+        public Builder clusterAdminPassword(char[] clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
+            this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+
+        public Builder clusterAdminPassword(String clusterAdminPassword) {
+            this.clusterAdminPassword =
+                    clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
@@ -121,27 +147,53 @@ public final class ActivateBdsMetastoreConfigurationDetails
 
     /** Base-64 encoded passphrase of the BDS Api Key. Set only if metastore's type is EXTERNAL. */
     @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
-    private final String bdsApiKeyPassphrase;
+    private final char[] bdsApiKeyPassphrase;
+
+    /**
+     * Base-64 encoded passphrase of the BDS Api Key. Set only if metastore&#39;s type is EXTERNAL.
+     *
+     * @return the value
+     * @deprecated Use getBdsApiKeyPassphrase__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getBdsApiKeyPassphrase() {
+        return bdsApiKeyPassphrase != null ? new String(bdsApiKeyPassphrase) : null;
+    }
 
     /**
      * Base-64 encoded passphrase of the BDS Api Key. Set only if metastore's type is EXTERNAL.
      *
      * @return the value
      */
-    public String getBdsApiKeyPassphrase() {
+    @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
+    public char[] getBdsApiKeyPassphrase__AsCharArray() {
         return bdsApiKeyPassphrase;
     }
 
     /** Base-64 encoded password for the cluster admin user. */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-    private final String clusterAdminPassword;
+    private final char[] clusterAdminPassword;
+
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     *
+     * @return the value
+     * @deprecated Use getClusterAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClusterAdminPassword() {
+        return clusterAdminPassword != null ? new String(clusterAdminPassword) : null;
+    }
 
     /**
      * Base-64 encoded password for the cluster admin user.
      *
      * @return the value
      */
-    public String getClusterAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
+    public char[] getClusterAdminPassword__AsCharArray() {
         return clusterAdminPassword;
     }
 

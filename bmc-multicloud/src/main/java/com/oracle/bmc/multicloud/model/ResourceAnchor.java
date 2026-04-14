@@ -5,7 +5,7 @@
 package com.oracle.bmc.multicloud.model;
 
 /**
- * A ResourceAnchor is a description of a ResourceAnchor.
+ * A resource anchor.
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
@@ -92,14 +92,14 @@ public final class ResourceAnchor
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * ResourceAnchor.
+         * resource anchor.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * ResourceAnchor.
+         * resource anchor.
          *
          * @param id the value to set
          * @return this builder
@@ -174,7 +174,7 @@ public final class ResourceAnchor
             return this;
         }
         /**
-         * The date and time the ResourceAnchor was created, in the format defined by [RFC
+         * The date and time the resource anchor was created, in the format defined by [RFC
          * 3339](https://tools.ietf.org/html/rfc3339).
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
@@ -183,7 +183,7 @@ public final class ResourceAnchor
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the ResourceAnchor was created, in the format defined by [RFC
+         * The date and time the resource anchor was created, in the format defined by [RFC
          * 3339](https://tools.ietf.org/html/rfc3339).
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
@@ -197,7 +197,7 @@ public final class ResourceAnchor
             return this;
         }
         /**
-         * The date and time the ResourceAnchor was updated, in the format defined by [RFC
+         * The date and time the resource anchor was updated, in the format defined by [RFC
          * 3339](https://tools.ietf.org/html/rfc3339).
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
@@ -206,7 +206,7 @@ public final class ResourceAnchor
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the ResourceAnchor was updated, in the format defined by [RFC
+         * The date and time the resource anchor was updated, in the format defined by [RFC
          * 3339](https://tools.ietf.org/html/rfc3339).
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
@@ -219,12 +219,12 @@ public final class ResourceAnchor
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the ResourceAnchor. */
+        /** The current state of the resource anchor. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the ResourceAnchor.
+         * The current state of the resource anchor.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -235,7 +235,7 @@ public final class ResourceAnchor
             return this;
         }
         /**
-         * A message that describes the current state of the ResourceAnchor in more detail. For
+         * A message that describes the current state of the resource anchor in more detail. For
          * example, can be used to provide actionable information for a resource in the Failed
          * state.
          */
@@ -243,7 +243,7 @@ public final class ResourceAnchor
         private String lifecycleDetails;
 
         /**
-         * A message that describes the current state of the ResourceAnchor in more detail. For
+         * A message that describes the current state of the resource anchor in more detail. For
          * example, can be used to provide actionable information for a resource in the Failed
          * state.
          *
@@ -530,14 +530,14 @@ public final class ResourceAnchor
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * ResourceAnchor.
+     * resource anchor.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * ResourceAnchor.
+     * resource anchor.
      *
      * @return the value
      */
@@ -602,7 +602,7 @@ public final class ResourceAnchor
     }
 
     /**
-     * The date and time the ResourceAnchor was created, in the format defined by [RFC
+     * The date and time the resource anchor was created, in the format defined by [RFC
      * 3339](https://tools.ietf.org/html/rfc3339).
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
@@ -611,7 +611,7 @@ public final class ResourceAnchor
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the ResourceAnchor was created, in the format defined by [RFC
+     * The date and time the resource anchor was created, in the format defined by [RFC
      * 3339](https://tools.ietf.org/html/rfc3339).
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
@@ -623,7 +623,7 @@ public final class ResourceAnchor
     }
 
     /**
-     * The date and time the ResourceAnchor was updated, in the format defined by [RFC
+     * The date and time the resource anchor was updated, in the format defined by [RFC
      * 3339](https://tools.ietf.org/html/rfc3339).
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
@@ -632,7 +632,7 @@ public final class ResourceAnchor
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the ResourceAnchor was updated, in the format defined by [RFC
+     * The date and time the resource anchor was updated, in the format defined by [RFC
      * 3339](https://tools.ietf.org/html/rfc3339).
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
@@ -643,7 +643,7 @@ public final class ResourceAnchor
         return timeUpdated;
     }
 
-    /** The current state of the ResourceAnchor. */
+    /** The current state of the resource anchor. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Updating("UPDATING"),
@@ -693,12 +693,12 @@ public final class ResourceAnchor
             return UnknownEnumValue;
         }
     };
-    /** The current state of the ResourceAnchor. */
+    /** The current state of the resource anchor. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the ResourceAnchor.
+     * The current state of the resource anchor.
      *
      * @return the value
      */
@@ -707,15 +707,15 @@ public final class ResourceAnchor
     }
 
     /**
-     * A message that describes the current state of the ResourceAnchor in more detail. For example,
-     * can be used to provide actionable information for a resource in the Failed state.
+     * A message that describes the current state of the resource anchor in more detail. For
+     * example, can be used to provide actionable information for a resource in the Failed state.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message that describes the current state of the ResourceAnchor in more detail. For example,
-     * can be used to provide actionable information for a resource in the Failed state.
+     * A message that describes the current state of the resource anchor in more detail. For
+     * example, can be used to provide actionable information for a resource in the Failed state.
      *
      * @return the value
      */

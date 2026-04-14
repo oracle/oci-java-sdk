@@ -300,6 +300,8 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         RefreshFusionEnvironment("REFRESH_FUSION_ENVIRONMENT"),
         ExecuteColdPatch("EXECUTE_COLD_PATCH"),
         DataMaskFusionEnvironment("DATA_MASK_FUSION_ENVIRONMENT"),
+        EnableVanityDomain("ENABLE_VANITY_DOMAIN"),
+        DeleteVanityDomain("DELETE_VANITY_DOMAIN"),
         InitiateExtract("INITIATE_EXTRACT"),
         SubscriptionSuspend("SUBSCRIPTION_SUSPEND"),
         SubscriptionExpire("SUBSCRIPTION_EXPIRE"),

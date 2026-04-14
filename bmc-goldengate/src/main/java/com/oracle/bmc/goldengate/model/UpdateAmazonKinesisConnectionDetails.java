@@ -147,7 +147,7 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
          * replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
-        private String secretAccessKey;
+        private char[] secretAccessKey;
 
         /**
          * Secret access key to access the Amazon Kinesis. Deprecated: This field is deprecated and
@@ -156,8 +156,14 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
          * @param secretAccessKey the value to set
          * @return this builder
          */
-        public Builder secretAccessKey(String secretAccessKey) {
+        public Builder secretAccessKey(char[] secretAccessKey) {
             this.secretAccessKey = secretAccessKey;
+            this.__explicitlySet__.add("secretAccessKey");
+            return this;
+        }
+
+        public Builder secretAccessKey(String secretAccessKey) {
+            this.secretAccessKey = secretAccessKey != null ? secretAccessKey.toCharArray() : null;
             this.__explicitlySet__.add("secretAccessKey");
             return this;
         }
@@ -345,6 +351,51 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
                 doesUseSecretIds,
                 securityAttributes);
         this.accessKeyId = accessKeyId;
+        this.secretAccessKey = secretAccessKey != null ? secretAccessKey.toCharArray() : null;
+        this.secretAccessKeySecretId = secretAccessKeySecretId;
+        this.endpoint = endpoint;
+        this.region = region;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateAmazonKinesisConnectionDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("displayName") String displayName,
+            @com.fasterxml.jackson.annotation.JsonProperty("description") String description,
+            @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+                    java.util.Map<String, String> freeformTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+                    java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("vaultId") String vaultId,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyId") String keyId,
+            @com.fasterxml.jackson.annotation.JsonProperty("nsgIds") java.util.List<String> nsgIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("subnetId") String subnetId,
+            @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+                    RoutingMethod routingMethod,
+            @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+                    Boolean doesUseSecretIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+                    java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId") String accessKeyId,
+            @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
+                    char[] secretAccessKey,
+            @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
+                    String secretAccessKeySecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("endpoint") String endpoint,
+            @com.fasterxml.jackson.annotation.JsonProperty("region") String region) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                securityAttributes);
+        this.accessKeyId = accessKeyId;
         this.secretAccessKey = secretAccessKey;
         this.secretAccessKeySecretId = secretAccessKeySecretId;
         this.endpoint = endpoint;
@@ -369,7 +420,21 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
      * replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
-    private final String secretAccessKey;
+    private final char[] secretAccessKey;
+
+    /**
+     * Secret access key to access the Amazon Kinesis. Deprecated: This field is deprecated and
+     * replaced by &quot;secretAccessKeySecretId&quot;. This field will be removed after February 15
+     * 2026.
+     *
+     * @return the value
+     * @deprecated Use getSecretAccessKey__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSecretAccessKey() {
+        return secretAccessKey != null ? new String(secretAccessKey) : null;
+    }
 
     /**
      * Secret access key to access the Amazon Kinesis. Deprecated: This field is deprecated and
@@ -377,7 +442,8 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
      *
      * @return the value
      */
-    public String getSecretAccessKey() {
+    @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
+    public char[] getSecretAccessKey__AsCharArray() {
         return secretAccessKey;
     }
 

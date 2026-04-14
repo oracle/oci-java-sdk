@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-addons</artifactId>
-    <version>3.83.0</version>
+    <version>3.84.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -35,6 +35,7 @@
               <goal>run</goal>
             </goals>
             <configuration>
+              <protocArtifact>com.google.protobuf:protoc:3.21.5</protocArtifact>
               <inputDirectories>
                 <include>${project.basedir}/src/main/protobuf</include>
               </inputDirectories>
@@ -60,7 +61,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.83.0</version>
+      <version>3.84.0</version>
     </dependency>
   </dependencies>
 

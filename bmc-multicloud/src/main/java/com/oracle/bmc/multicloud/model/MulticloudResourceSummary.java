@@ -5,8 +5,10 @@
 package com.oracle.bmc.multicloud.model;
 
 /**
- * The multicloud resource, for eg. VMCluster, ExaInfra, and its attributes. The resource and
- * network anchor that represents <br>
+ * The properties that define the Multicloud resource. Details for each resource include Multicloud
+ * base compartment, name, state, resource type, and network anchor. For more information, see
+ * [Multicloud Resources](https://docs.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -37,6 +39,7 @@ public final class MulticloudResourceSummary
         "cspResourceId",
         "timeCreated",
         "cspAdditionalProperties",
+        "resourceAdditionalProperties",
         "timeUpdated",
         "lifecycleState",
         "freeformTags",
@@ -56,6 +59,7 @@ public final class MulticloudResourceSummary
             String cspResourceId,
             java.util.Date timeCreated,
             java.util.Map<String, String> cspAdditionalProperties,
+            java.util.Map<String, Object> resourceAdditionalProperties,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
@@ -74,6 +78,7 @@ public final class MulticloudResourceSummary
         this.cspResourceId = cspResourceId;
         this.timeCreated = timeCreated;
         this.cspAdditionalProperties = cspAdditionalProperties;
+        this.resourceAdditionalProperties = resourceAdditionalProperties;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.freeformTags = freeformTags;
@@ -98,12 +103,12 @@ public final class MulticloudResourceSummary
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Endpoint used to retrieve displayName and lifeCycleState of the resource. */
+        /** Endpoint used to retrieve the resource's display name and lifecycle state. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceDisplayName")
         private String resourceDisplayName;
 
         /**
-         * Endpoint used to retrieve displayName and lifeCycleState of the resource.
+         * Endpoint used to retrieve the resource's display name and lifecycle state.
          *
          * @param resourceDisplayName the value to set
          * @return this builder
@@ -113,12 +118,12 @@ public final class MulticloudResourceSummary
             this.__explicitlySet__.add("resourceDisplayName");
             return this;
         }
-        /** What resource it refers to. Eg. VMCluster, ExaInfra, etc. */
+        /** Type of resource, such as {@code VMCluster} or {@code ExaInfra}, */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
-         * What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+         * Type of resource, such as {@code VMCluster} or {@code ExaInfra},
          *
          * @param resourceType the value to set
          * @return this builder
@@ -128,12 +133,12 @@ public final class MulticloudResourceSummary
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** Compartment name associated the resource. */
+        /** Name of the compartment associated with the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
         private String compartmentName;
 
         /**
-         * Compartment name associated the resource.
+         * Name of the compartment associated with the resource.
          *
          * @param compartmentName the value to set
          * @return this builder
@@ -143,12 +148,12 @@ public final class MulticloudResourceSummary
             this.__explicitlySet__.add("compartmentName");
             return this;
         }
-        /** Compartment Id of the resource. */
+        /** Id of the compartment associated with the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Id of the resource.
+         * Id of the compartment associated with the resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -158,12 +163,12 @@ public final class MulticloudResourceSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Resource Anchor name. */
+        /** Name of the virtual cloud network (VCN) associated with the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnName")
         private String vcnName;
 
         /**
-         * Resource Anchor name.
+         * Name of the virtual cloud network (VCN) associated with the resource.
          *
          * @param vcnName the value to set
          * @return this builder
@@ -173,12 +178,12 @@ public final class MulticloudResourceSummary
             this.__explicitlySet__.add("vcnName");
             return this;
         }
-        /** Id of the Virtual Cloud Network associated to the resource. */
+        /** Id of the virtual cloud network (VCN) associated with the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * Id of the Virtual Cloud Network associated to the resource.
+         * Id of the virtual cloud network (VCN) associated with the resource.
          *
          * @param vcnId the value to set
          * @return this builder
@@ -188,12 +193,12 @@ public final class MulticloudResourceSummary
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-        /** Name of the network anchor associated to the resource. */
+        /** Name of the network anchor associated with the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorName")
         private String networkAnchorName;
 
         /**
-         * Name of the network anchor associated to the resource.
+         * Name of the network anchor associated with the resource.
          *
          * @param networkAnchorName the value to set
          * @return this builder
@@ -203,12 +208,16 @@ public final class MulticloudResourceSummary
             this.__explicitlySet__.add("networkAnchorName");
             return this;
         }
-        /** OCID of the Network Anchor */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * network anchor associated with the resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorId")
         private String networkAnchorId;
 
         /**
-         * OCID of the Network Anchor
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * network anchor associated with the resource.
          *
          * @param networkAnchorId the value to set
          * @return this builder
@@ -218,12 +227,12 @@ public final class MulticloudResourceSummary
             this.__explicitlySet__.add("networkAnchorId");
             return this;
         }
-        /** Resource Id that comes from the Multi Cloud Control Plane */
+        /** The resource Id that comes from the Multicloud control plane. */
         @com.fasterxml.jackson.annotation.JsonProperty("cspResourceId")
         private String cspResourceId;
 
         /**
-         * Resource Id that comes from the Multi Cloud Control Plane
+         * The resource Id that comes from the Multicloud control plane.
          *
          * @param cspResourceId the value to set
          * @return this builder
@@ -252,12 +261,14 @@ public final class MulticloudResourceSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** CSP Specific Additional Properties, AzureSubnetId for Azure */
+        /**
+         * Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
         private java.util.Map<String, String> cspAdditionalProperties;
 
         /**
-         * CSP Specific Additional Properties, AzureSubnetId for Azure
+         * Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
          *
          * @param cspAdditionalProperties the value to set
          * @return this builder
@@ -266,6 +277,26 @@ public final class MulticloudResourceSummary
                 java.util.Map<String, String> cspAdditionalProperties) {
             this.cspAdditionalProperties = cspAdditionalProperties;
             this.__explicitlySet__.add("cspAdditionalProperties");
+            return this;
+        }
+        /**
+         * Additional attributes specific to certain resource types, used to construct a URL for
+         * accessing the resource in the OCI console.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceAdditionalProperties")
+        private java.util.Map<String, Object> resourceAdditionalProperties;
+
+        /**
+         * Additional attributes specific to certain resource types, used to construct a URL for
+         * accessing the resource in the OCI console.
+         *
+         * @param resourceAdditionalProperties the value to set
+         * @return this builder
+         */
+        public Builder resourceAdditionalProperties(
+                java.util.Map<String, Object> resourceAdditionalProperties) {
+            this.resourceAdditionalProperties = resourceAdditionalProperties;
+            this.__explicitlySet__.add("resourceAdditionalProperties");
             return this;
         }
         /**
@@ -287,12 +318,12 @@ public final class MulticloudResourceSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the multicloud resource. */
+        /** The current state of the Multicloud resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the multicloud resource.
+         * The current state of the Multicloud resource.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -393,6 +424,7 @@ public final class MulticloudResourceSummary
                             this.cspResourceId,
                             this.timeCreated,
                             this.cspAdditionalProperties,
+                            this.resourceAdditionalProperties,
                             this.timeUpdated,
                             this.lifecycleState,
                             this.freeformTags,
@@ -442,6 +474,9 @@ public final class MulticloudResourceSummary
             if (model.wasPropertyExplicitlySet("cspAdditionalProperties")) {
                 this.cspAdditionalProperties(model.getCspAdditionalProperties());
             }
+            if (model.wasPropertyExplicitlySet("resourceAdditionalProperties")) {
+                this.resourceAdditionalProperties(model.getResourceAdditionalProperties());
+            }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
@@ -483,12 +518,12 @@ public final class MulticloudResourceSummary
         return resourceId;
     }
 
-    /** Endpoint used to retrieve displayName and lifeCycleState of the resource. */
+    /** Endpoint used to retrieve the resource's display name and lifecycle state. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceDisplayName")
     private final String resourceDisplayName;
 
     /**
-     * Endpoint used to retrieve displayName and lifeCycleState of the resource.
+     * Endpoint used to retrieve the resource's display name and lifecycle state.
      *
      * @return the value
      */
@@ -496,12 +531,12 @@ public final class MulticloudResourceSummary
         return resourceDisplayName;
     }
 
-    /** What resource it refers to. Eg. VMCluster, ExaInfra, etc. */
+    /** Type of resource, such as {@code VMCluster} or {@code ExaInfra}, */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
-     * What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+     * Type of resource, such as {@code VMCluster} or {@code ExaInfra},
      *
      * @return the value
      */
@@ -509,12 +544,12 @@ public final class MulticloudResourceSummary
         return resourceType;
     }
 
-    /** Compartment name associated the resource. */
+    /** Name of the compartment associated with the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
     private final String compartmentName;
 
     /**
-     * Compartment name associated the resource.
+     * Name of the compartment associated with the resource.
      *
      * @return the value
      */
@@ -522,12 +557,12 @@ public final class MulticloudResourceSummary
         return compartmentName;
     }
 
-    /** Compartment Id of the resource. */
+    /** Id of the compartment associated with the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Id of the resource.
+     * Id of the compartment associated with the resource.
      *
      * @return the value
      */
@@ -535,12 +570,12 @@ public final class MulticloudResourceSummary
         return compartmentId;
     }
 
-    /** Resource Anchor name. */
+    /** Name of the virtual cloud network (VCN) associated with the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnName")
     private final String vcnName;
 
     /**
-     * Resource Anchor name.
+     * Name of the virtual cloud network (VCN) associated with the resource.
      *
      * @return the value
      */
@@ -548,12 +583,12 @@ public final class MulticloudResourceSummary
         return vcnName;
     }
 
-    /** Id of the Virtual Cloud Network associated to the resource. */
+    /** Id of the virtual cloud network (VCN) associated with the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * Id of the Virtual Cloud Network associated to the resource.
+     * Id of the virtual cloud network (VCN) associated with the resource.
      *
      * @return the value
      */
@@ -561,12 +596,12 @@ public final class MulticloudResourceSummary
         return vcnId;
     }
 
-    /** Name of the network anchor associated to the resource. */
+    /** Name of the network anchor associated with the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorName")
     private final String networkAnchorName;
 
     /**
-     * Name of the network anchor associated to the resource.
+     * Name of the network anchor associated with the resource.
      *
      * @return the value
      */
@@ -574,12 +609,16 @@ public final class MulticloudResourceSummary
         return networkAnchorName;
     }
 
-    /** OCID of the Network Anchor */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * network anchor associated with the resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("networkAnchorId")
     private final String networkAnchorId;
 
     /**
-     * OCID of the Network Anchor
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * network anchor associated with the resource.
      *
      * @return the value
      */
@@ -587,12 +626,12 @@ public final class MulticloudResourceSummary
         return networkAnchorId;
     }
 
-    /** Resource Id that comes from the Multi Cloud Control Plane */
+    /** The resource Id that comes from the Multicloud control plane. */
     @com.fasterxml.jackson.annotation.JsonProperty("cspResourceId")
     private final String cspResourceId;
 
     /**
-     * Resource Id that comes from the Multi Cloud Control Plane
+     * The resource Id that comes from the Multicloud control plane.
      *
      * @return the value
      */
@@ -617,17 +656,34 @@ public final class MulticloudResourceSummary
         return timeCreated;
     }
 
-    /** CSP Specific Additional Properties, AzureSubnetId for Azure */
+    /** Properties specific to the cloud service provider. For example, AzureSubnetId for Azure. */
     @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
     private final java.util.Map<String, String> cspAdditionalProperties;
 
     /**
-     * CSP Specific Additional Properties, AzureSubnetId for Azure
+     * Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
      *
      * @return the value
      */
     public java.util.Map<String, String> getCspAdditionalProperties() {
         return cspAdditionalProperties;
+    }
+
+    /**
+     * Additional attributes specific to certain resource types, used to construct a URL for
+     * accessing the resource in the OCI console.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceAdditionalProperties")
+    private final java.util.Map<String, Object> resourceAdditionalProperties;
+
+    /**
+     * Additional attributes specific to certain resource types, used to construct a URL for
+     * accessing the resource in the OCI console.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, Object> getResourceAdditionalProperties() {
+        return resourceAdditionalProperties;
     }
 
     /**
@@ -647,7 +703,7 @@ public final class MulticloudResourceSummary
         return timeUpdated;
     }
 
-    /** The current state of the multicloud resource. */
+    /** The current state of the Multicloud resource. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -693,12 +749,12 @@ public final class MulticloudResourceSummary
             return UnknownEnumValue;
         }
     };
-    /** The current state of the multicloud resource. */
+    /** The current state of the Multicloud resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the multicloud resource.
+     * The current state of the Multicloud resource.
      *
      * @return the value
      */
@@ -799,6 +855,8 @@ public final class MulticloudResourceSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", cspAdditionalProperties=")
                 .append(String.valueOf(this.cspAdditionalProperties));
+        sb.append(", resourceAdditionalProperties=")
+                .append(String.valueOf(this.resourceAdditionalProperties));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -831,6 +889,8 @@ public final class MulticloudResourceSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(
                         this.cspAdditionalProperties, other.cspAdditionalProperties)
+                && java.util.Objects.equals(
+                        this.resourceAdditionalProperties, other.resourceAdditionalProperties)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -873,6 +933,11 @@ public final class MulticloudResourceSummary
                         + (this.cspAdditionalProperties == null
                                 ? 43
                                 : this.cspAdditionalProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceAdditionalProperties == null
+                                ? 43
+                                : this.resourceAdditionalProperties.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
                 (result * PRIME)

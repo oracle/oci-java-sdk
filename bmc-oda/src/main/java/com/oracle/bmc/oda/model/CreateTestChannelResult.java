@@ -123,7 +123,7 @@ public final class CreateTestChannelResult extends CreateChannelResult {
          * returned this once. If it is lost the keys will need to be rotated to generate a new key.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
-        private String secretKey;
+        private char[] secretKey;
 
         /**
          * The secret key used to verify the authenticity of received messages. This is only
@@ -132,8 +132,14 @@ public final class CreateTestChannelResult extends CreateChannelResult {
          * @param secretKey the value to set
          * @return this builder
          */
-        public Builder secretKey(String secretKey) {
+        public Builder secretKey(char[] secretKey) {
             this.secretKey = secretKey;
+            this.__explicitlySet__.add("secretKey");
+            return this;
+        }
+
+        public Builder secretKey(String secretKey) {
+            this.secretKey = secretKey != null ? secretKey.toCharArray() : null;
             this.__explicitlySet__.add("secretKey");
             return this;
         }
@@ -258,6 +264,42 @@ public final class CreateTestChannelResult extends CreateChannelResult {
                 timeUpdated,
                 freeformTags,
                 definedTags);
+        this.secretKey = secretKey != null ? secretKey.toCharArray() : null;
+        this.webhookUrl = webhookUrl;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateTestChannelResult(
+            @com.fasterxml.jackson.annotation.JsonProperty("id") String id,
+            @com.fasterxml.jackson.annotation.JsonProperty("name") String name,
+            @com.fasterxml.jackson.annotation.JsonProperty("description") String description,
+            @com.fasterxml.jackson.annotation.JsonProperty("category") ChannelCategory category,
+            @com.fasterxml.jackson.annotation.JsonProperty("sessionExpiryDurationInMilliseconds")
+                    Long sessionExpiryDurationInMilliseconds,
+            @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+                    LifecycleState lifecycleState,
+            @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+                    java.util.Date timeCreated,
+            @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+                    java.util.Date timeUpdated,
+            @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+                    java.util.Map<String, String> freeformTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+                    java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("secretKey") char[] secretKey,
+            @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl") String webhookUrl) {
+        super(
+                id,
+                name,
+                description,
+                category,
+                sessionExpiryDurationInMilliseconds,
+                lifecycleState,
+                timeCreated,
+                timeUpdated,
+                freeformTags,
+                definedTags);
         this.secretKey = secretKey;
         this.webhookUrl = webhookUrl;
     }
@@ -267,7 +309,20 @@ public final class CreateTestChannelResult extends CreateChannelResult {
      * this once. If it is lost the keys will need to be rotated to generate a new key.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
-    private final String secretKey;
+    private final char[] secretKey;
+
+    /**
+     * The secret key used to verify the authenticity of received messages. This is only returned
+     * this once. If it is lost the keys will need to be rotated to generate a new key.
+     *
+     * @return the value
+     * @deprecated Use getSecretKey__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSecretKey() {
+        return secretKey != null ? new String(secretKey) : null;
+    }
 
     /**
      * The secret key used to verify the authenticity of received messages. This is only returned
@@ -275,7 +330,8 @@ public final class CreateTestChannelResult extends CreateChannelResult {
      *
      * @return the value
      */
-    public String getSecretKey() {
+    @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
+    public char[] getSecretKey__AsCharArray() {
         return secretKey;
     }
 

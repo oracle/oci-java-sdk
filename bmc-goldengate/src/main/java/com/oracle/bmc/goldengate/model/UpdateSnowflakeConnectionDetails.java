@@ -187,7 +187,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
          * February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This
@@ -197,8 +197,14 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -275,7 +281,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
          * 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
-        private String privateKeyPassphrase;
+        private char[] privateKeyPassphrase;
 
         /**
          * Password if the private key file is encrypted. Deprecated: This field is deprecated and
@@ -285,8 +291,15 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
          * @param privateKeyPassphrase the value to set
          * @return this builder
          */
-        public Builder privateKeyPassphrase(String privateKeyPassphrase) {
+        public Builder privateKeyPassphrase(char[] privateKeyPassphrase) {
             this.privateKeyPassphrase = privateKeyPassphrase;
+            this.__explicitlySet__.add("privateKeyPassphrase");
+            return this;
+        }
+
+        public Builder privateKeyPassphrase(String privateKeyPassphrase) {
+            this.privateKeyPassphrase =
+                    privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null;
             this.__explicitlySet__.add("privateKeyPassphrase");
             return this;
         }
@@ -456,6 +469,63 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
         this.connectionUrl = connectionUrl;
         this.authenticationType = authenticationType;
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.privateKeyFile = privateKeyFile;
+        this.privateKeyFileSecretId = privateKeyFileSecretId;
+        this.privateKeyPassphrase =
+                privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null;
+        this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateSnowflakeConnectionDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("displayName") String displayName,
+            @com.fasterxml.jackson.annotation.JsonProperty("description") String description,
+            @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+                    java.util.Map<String, String> freeformTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+                    java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            @com.fasterxml.jackson.annotation.JsonProperty("vaultId") String vaultId,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyId") String keyId,
+            @com.fasterxml.jackson.annotation.JsonProperty("nsgIds") java.util.List<String> nsgIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("subnetId") String subnetId,
+            @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+                    RoutingMethod routingMethod,
+            @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+                    Boolean doesUseSecretIds,
+            @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+                    java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            @com.fasterxml.jackson.annotation.JsonProperty("connectionUrl") String connectionUrl,
+            @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
+                    SnowflakeConnection.AuthenticationType authenticationType,
+            @com.fasterxml.jackson.annotation.JsonProperty("username") String username,
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
+            @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+                    String passwordSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile") String privateKeyFile,
+            @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
+                    String privateKeyFileSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
+                    char[] privateKeyPassphrase,
+            @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphraseSecretId")
+                    String privateKeyPassphraseSecretId) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                securityAttributes);
+        this.connectionUrl = connectionUrl;
+        this.authenticationType = authenticationType;
+        this.username = username;
         this.password = password;
         this.passwordSecretId = passwordSecretId;
         this.privateKeyFile = privateKeyFile;
@@ -517,7 +587,21 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
      * 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This field
+     * is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after
+     * February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This field
@@ -526,7 +610,8 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -597,7 +682,21 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
      * 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
-    private final String privateKeyPassphrase;
+    private final char[] privateKeyPassphrase;
+
+    /**
+     * Password if the private key file is encrypted. Deprecated: This field is deprecated and
+     * replaced by &quot;privateKeyPassphraseSecretId&quot;. This field will be removed after
+     * February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getPrivateKeyPassphrase__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPrivateKeyPassphrase() {
+        return privateKeyPassphrase != null ? new String(privateKeyPassphrase) : null;
+    }
 
     /**
      * Password if the private key file is encrypted. Deprecated: This field is deprecated and
@@ -606,7 +705,8 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
      *
      * @return the value
      */
-    public String getPrivateKeyPassphrase() {
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
+    public char[] getPrivateKeyPassphrase__AsCharArray() {
         return privateKeyPassphrase;
     }
 

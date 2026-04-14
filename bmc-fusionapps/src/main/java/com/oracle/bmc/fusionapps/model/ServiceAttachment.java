@@ -401,6 +401,7 @@ public final class ServiceAttachment
         DigitalAssistant("DIGITAL_ASSISTANT"),
         IntegrationCloud("INTEGRATION_CLOUD"),
         AnalyticsWarehouse("ANALYTICS_WAREHOUSE"),
+        FusionDataIntelligence("FUSION_DATA_INTELLIGENCE"),
         Vbcs("VBCS"),
         VisualBuilderStudio("VISUAL_BUILDER_STUDIO"),
 

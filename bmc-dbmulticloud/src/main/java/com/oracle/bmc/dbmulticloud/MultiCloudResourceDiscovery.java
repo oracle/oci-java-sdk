@@ -60,7 +60,7 @@ import com.oracle.bmc.dbmulticloud.responses.*;
  * install the AWS Identity Connector on an Exadata VM cluster in Oracle Exadata Database Service on
  * Dedicated Infrastructure (ExaDB-D).
  *
- * <p><b>Google AWS Key Resource:</b>&nbsp;&nbsp;The Oracle AWS Key Resource is used to register and
+ * <p><b>Oracle AWS Key Resource:</b>&nbsp;&nbsp;The Oracle AWS Key Resource is used to register and
  * manage a AWS Key within Oracle Cloud Infrastructure (OCI).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by

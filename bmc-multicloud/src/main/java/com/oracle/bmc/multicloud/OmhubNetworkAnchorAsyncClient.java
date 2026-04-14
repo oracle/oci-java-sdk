@@ -161,7 +161,6 @@ public class OmhubNetworkAnchorAsyncClient extends com.oracle.bmc.http.internal.
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("externalLocation", request.getExternalLocation())
                 .appendQueryParam("networkAnchorOciSubnetId", request.getNetworkAnchorOciSubnetId())
-                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("networkAnchorOciVcnId", request.getNetworkAnchorOciVcnId())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("limit", request.getLimit())

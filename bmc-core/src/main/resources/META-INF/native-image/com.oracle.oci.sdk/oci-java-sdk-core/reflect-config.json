@@ -6965,6 +6965,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.core.model.InstanceReservationShapeConfigDetails$ResourceManagement",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.core.model.InstanceShapeConfig",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

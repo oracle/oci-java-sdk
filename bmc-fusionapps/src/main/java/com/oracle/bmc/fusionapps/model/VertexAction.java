@@ -5,7 +5,7 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Vertex update action <br>
+ * Vertex update action. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -52,12 +52,12 @@ public final class VertexAction extends Action {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** patch that delivered the vertex update prerequisite */
+        /** Patch that delivered the Vertex update prerequisite. */
         @com.fasterxml.jackson.annotation.JsonProperty("artifact")
         private String artifact;
 
         /**
-         * patch that delivered the vertex update prerequisite
+         * Patch that delivered the Vertex update prerequisite.
          *
          * @param artifact the value to set
          * @return this builder
@@ -114,12 +114,12 @@ public final class VertexAction extends Action {
         this.artifact = artifact;
     }
 
-    /** patch that delivered the vertex update prerequisite */
+    /** Patch that delivered the Vertex update prerequisite. */
     @com.fasterxml.jackson.annotation.JsonProperty("artifact")
     private final String artifact;
 
     /**
-     * patch that delivered the vertex update prerequisite
+     * Patch that delivered the Vertex update prerequisite.
      *
      * @return the value
      */
