@@ -25,6 +25,7 @@ permissions:
 
 jobs:
   macaron-check-github-actions:
+    name: Macaron Policy Verification
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
