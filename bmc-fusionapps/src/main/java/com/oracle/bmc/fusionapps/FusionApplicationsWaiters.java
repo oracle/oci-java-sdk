@@ -144,6 +144,111 @@ public class FusionApplicationsWaiters {
      *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetEmailSubdomainRequest, GetEmailSubdomainResponse>
+            forEmailSubdomain(
+                    GetEmailSubdomainRequest request,
+                    com.oracle.bmc.fusionapps.model.EmailSubdomain.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forEmailSubdomain(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetEmailSubdomainRequest, GetEmailSubdomainResponse>
+            forEmailSubdomain(
+                    GetEmailSubdomainRequest request,
+                    com.oracle.bmc.fusionapps.model.EmailSubdomain.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forEmailSubdomain(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetEmailSubdomainRequest, GetEmailSubdomainResponse>
+            forEmailSubdomain(
+                    GetEmailSubdomainRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.fusionapps.model.EmailSubdomain.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forEmailSubdomain(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for EmailSubdomain.
+    private com.oracle.bmc.waiter.Waiter<GetEmailSubdomainRequest, GetEmailSubdomainResponse>
+            forEmailSubdomain(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetEmailSubdomainRequest request,
+                    final com.oracle.bmc.fusionapps.model.EmailSubdomain.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.fusionapps.model.EmailSubdomain.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetEmailSubdomainRequest, GetEmailSubdomainResponse>() {
+                            @Override
+                            public GetEmailSubdomainResponse apply(
+                                    GetEmailSubdomainRequest request) {
+                                return client.getEmailSubdomain(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetEmailSubdomainResponse>() {
+                            @Override
+                            public boolean test(GetEmailSubdomainResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getEmailSubdomain().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetFusionEnvironmentRequest, GetFusionEnvironmentResponse>
             forFusionEnvironment(
                     GetFusionEnvironmentRequest request,
@@ -357,6 +462,210 @@ public class FusionApplicationsWaiters {
                         targetStatesSet.contains(
                                 com.oracle.bmc.fusionapps.model.FusionEnvironmentFamily
                                         .LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMarketingBrandRequest, GetMarketingBrandResponse>
+            forMarketingBrand(
+                    GetMarketingBrandRequest request,
+                    com.oracle.bmc.fusionapps.model.MarketingBrand.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMarketingBrand(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMarketingBrandRequest, GetMarketingBrandResponse>
+            forMarketingBrand(
+                    GetMarketingBrandRequest request,
+                    com.oracle.bmc.fusionapps.model.MarketingBrand.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forMarketingBrand(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMarketingBrandRequest, GetMarketingBrandResponse>
+            forMarketingBrand(
+                    GetMarketingBrandRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.fusionapps.model.MarketingBrand.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forMarketingBrand(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for MarketingBrand.
+    private com.oracle.bmc.waiter.Waiter<GetMarketingBrandRequest, GetMarketingBrandResponse>
+            forMarketingBrand(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetMarketingBrandRequest request,
+                    final com.oracle.bmc.fusionapps.model.MarketingBrand.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.fusionapps.model.MarketingBrand.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetMarketingBrandRequest, GetMarketingBrandResponse>() {
+                            @Override
+                            public GetMarketingBrandResponse apply(
+                                    GetMarketingBrandRequest request) {
+                                return client.getMarketingBrand(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetMarketingBrandResponse>() {
+                            @Override
+                            public boolean test(GetMarketingBrandResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getMarketingBrand().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMicrositeRequest, GetMicrositeResponse> forMicrosite(
+            GetMicrositeRequest request,
+            com.oracle.bmc.fusionapps.model.Microsite.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMicrosite(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMicrositeRequest, GetMicrositeResponse> forMicrosite(
+            GetMicrositeRequest request,
+            com.oracle.bmc.fusionapps.model.Microsite.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forMicrosite(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMicrositeRequest, GetMicrositeResponse> forMicrosite(
+            GetMicrositeRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.fusionapps.model.Microsite.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forMicrosite(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Microsite.
+    private com.oracle.bmc.waiter.Waiter<GetMicrositeRequest, GetMicrositeResponse> forMicrosite(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetMicrositeRequest request,
+            final com.oracle.bmc.fusionapps.model.Microsite.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.fusionapps.model.Microsite.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetMicrositeRequest, GetMicrositeResponse>() {
+                            @Override
+                            public GetMicrositeResponse apply(GetMicrositeRequest request) {
+                                return client.getMicrosite(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetMicrositeResponse>() {
+                            @Override
+                            public boolean test(GetMicrositeResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getMicrosite().getLifecycleState());
+                            }
+                        },
+                        false),
                 request);
     }
 

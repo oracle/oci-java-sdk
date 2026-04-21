@@ -236,7 +236,9 @@ public final class UpdateVnicDetails
          * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is
          * ignored. This is because the source/destination check is always disabled for VNICs in a
-         * VLAN. Example: {@code true}
+         * VLAN.
+         *
+         * <p>Example: {@code true}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
         private Boolean skipSourceDestCheck;
@@ -250,7 +252,9 @@ public final class UpdateVnicDetails
          * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is
          * ignored. This is because the source/destination check is always disabled for VNICs in a
-         * VLAN. Example: {@code true}
+         * VLAN.
+         *
+         * <p>Example: {@code true}
          *
          * @param skipSourceDestCheck the value to set
          * @return this builder
@@ -505,8 +509,9 @@ public final class UpdateVnicDetails
      *
      * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
-     * This is because the source/destination check is always disabled for VNICs in a VLAN. Example:
-     * {@code true}
+     * This is because the source/destination check is always disabled for VNICs in a VLAN.
+     *
+     * <p>Example: {@code true}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
     private final Boolean skipSourceDestCheck;
@@ -519,8 +524,9 @@ public final class UpdateVnicDetails
      *
      * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
-     * This is because the source/destination check is always disabled for VNICs in a VLAN. Example:
-     * {@code true}
+     * This is because the source/destination check is always disabled for VNICs in a VLAN.
+     *
+     * <p>Example: {@code true}
      *
      * @return the value
      */

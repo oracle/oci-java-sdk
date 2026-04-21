@@ -2450,6 +2450,39 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public MigrateConnectionResponse migrateConnection(MigrateConnectionRequest request) {
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+        Objects.requireNonNull(
+                request.getMigrateConnectionDetails(), "migrateConnectionDetails is required");
+
+        return clientCall(request, MigrateConnectionResponse::builder)
+                .logger(LOG, "migrateConnection")
+                .serviceDetails(
+                        "GoldenGate",
+                        "MigrateConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/MigrateConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(MigrateConnectionRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("migrate")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", MigrateConnectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", MigrateConnectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public PausePipelineResponse pausePipeline(PausePipelineRequest request) {
 
         Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");

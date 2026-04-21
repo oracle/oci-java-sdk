@@ -160,7 +160,7 @@ public final class RequestSummarizedUsagesDetails
          * The query usage type. COST by default if it is missing. Usage - Query the usage data.
          * Cost - Query the cost/billing data. Credit - Query the credit adjustments data.
          * ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments
-         * and expired credit.
+         * and expired credit. Usage_Only - Query the only usage data without cost or currency.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("queryType")
         private QueryType queryType;
@@ -169,7 +169,7 @@ public final class RequestSummarizedUsagesDetails
          * The query usage type. COST by default if it is missing. Usage - Query the usage data.
          * Cost - Query the cost/billing data. Credit - Query the credit adjustments data.
          * ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments
-         * and expired credit.
+         * and expired credit. Usage_Only - Query the only usage data without cost or currency.
          *
          * @param queryType the value to set
          * @return this builder
@@ -442,6 +442,7 @@ public final class RequestSummarizedUsagesDetails
      * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost -
      * Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit -
      * Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+     * Usage_Only - Query the only usage data without cost or currency.
      */
     public enum QueryType implements com.oracle.bmc.http.internal.BmcEnum {
         Usage("USAGE"),
@@ -449,6 +450,7 @@ public final class RequestSummarizedUsagesDetails
         Credit("CREDIT"),
         Expiredcredit("EXPIREDCREDIT"),
         Allcredit("ALLCREDIT"),
+        UsageOnly("USAGE_ONLY"),
         ;
 
         private final String value;
@@ -482,6 +484,7 @@ public final class RequestSummarizedUsagesDetails
      * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost -
      * Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit -
      * Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+     * Usage_Only - Query the only usage data without cost or currency.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("queryType")
     private final QueryType queryType;
@@ -490,6 +493,7 @@ public final class RequestSummarizedUsagesDetails
      * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost -
      * Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit -
      * Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+     * Usage_Only - Query the only usage data without cost or currency.
      *
      * @return the value
      */

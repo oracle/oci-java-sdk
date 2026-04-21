@@ -61,7 +61,6 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         "deploymentUrl",
         "systemTags",
         "isLatestVersion",
-        "timeUpgradeRequired",
         "storageUtilizationInBytes",
         "isStorageUtilizationLimitExceeded",
         "deploymentType",
@@ -120,7 +119,6 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             String deploymentUrl,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Boolean isLatestVersion,
-            java.util.Date timeUpgradeRequired,
             Long storageUtilizationInBytes,
             Boolean isStorageUtilizationLimitExceeded,
             DeploymentType deploymentType,
@@ -178,7 +176,6 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         this.deploymentUrl = deploymentUrl;
         this.systemTags = systemTags;
         this.isLatestVersion = isLatestVersion;
-        this.timeUpgradeRequired = timeUpgradeRequired;
         this.storageUtilizationInBytes = storageUtilizationInBytes;
         this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
         this.deploymentType = deploymentType;
@@ -424,12 +421,12 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Possible lifecycle states. */
+        /** Possible lifecycle states for a Deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * Possible lifecycle states.
+         * Possible lifecycle states for a Deployment.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -573,20 +570,34 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * public subnet in the customer tenancy. Can be provided only for public deployments. If
-         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatibility, this is an optional property. It will become mandatory for
-         * public deployments after October 1, 2024.
+         * public subnet in the customer tenancy used to host the public load balancer of the
+         * deployment.
+         *
+         * <p>Rules: - Create: Mandatory when isPublic is true. Must be a public, regional subnet in
+         * the same VCN as subnetId. - Update: - For public deployments, this property must be
+         * present and is immutable once set (cannot be changed to a different subnet). - Legacy
+         * exception: a public deployment created without this property may continue to be updated
+         * without providing it; once set, it becomes immutable.
+         *
+         * <p>Validation: - Must reference a public subnet. - Must be a regional subnet. - Must be
+         * in the same VCN as subnetId.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
         private String loadBalancerSubnetId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * public subnet in the customer tenancy. Can be provided only for public deployments. If
-         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatibility, this is an optional property. It will become mandatory for
-         * public deployments after October 1, 2024.
+         * public subnet in the customer tenancy used to host the public load balancer of the
+         * deployment.
+         *
+         * <p>Rules: - Create: Mandatory when isPublic is true. Must be a public, regional subnet in
+         * the same VCN as subnetId. - Update: - For public deployments, this property must be
+         * present and is immutable once set (cannot be changed to a different subnet). - Legacy
+         * exception: a public deployment created without this property may continue to be updated
+         * without providing it; once set, it becomes immutable.
+         *
+         * <p>Validation: - Must reference a public subnet. - Must be a regional subnet. - Must be
+         * in the same VCN as subnetId.
          *
          * @param loadBalancerSubnetId the value to set
          * @return this builder
@@ -878,33 +889,6 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         public Builder isLatestVersion(Boolean isLatestVersion) {
             this.isLatestVersion = isLatestVersion;
             this.__explicitlySet__.add("isLatestVersion");
-            return this;
-        }
-        /**
-         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
-         * when deployment will be forced to upgrade to a newer version. Old description: The date
-         * the existing version in use will no longer be considered as usable and an upgrade will be
-         * required. This date is typically 6 months after the version was released for use by GGS.
-         * The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-         * 2016-08-25T21:10:29.600Z}.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
-        private java.util.Date timeUpgradeRequired;
-
-        /**
-         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
-         * when deployment will be forced to upgrade to a newer version. Old description: The date
-         * the existing version in use will no longer be considered as usable and an upgrade will be
-         * required. This date is typically 6 months after the version was released for use by GGS.
-         * The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-         * 2016-08-25T21:10:29.600Z}.
-         *
-         * @param timeUpgradeRequired the value to set
-         * @return this builder
-         */
-        public Builder timeUpgradeRequired(java.util.Date timeUpgradeRequired) {
-            this.timeUpgradeRequired = timeUpgradeRequired;
-            this.__explicitlySet__.add("timeUpgradeRequired");
             return this;
         }
         /** The amount of storage being utilized (in bytes) */
@@ -1260,7 +1244,6 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                             this.deploymentUrl,
                             this.systemTags,
                             this.isLatestVersion,
-                            this.timeUpgradeRequired,
                             this.storageUtilizationInBytes,
                             this.isStorageUtilizationLimitExceeded,
                             this.deploymentType,
@@ -1400,9 +1383,6 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("isLatestVersion")) {
                 this.isLatestVersion(model.getIsLatestVersion());
-            }
-            if (model.wasPropertyExplicitlySet("timeUpgradeRequired")) {
-                this.timeUpgradeRequired(model.getTimeUpgradeRequired());
             }
             if (model.wasPropertyExplicitlySet("storageUtilizationInBytes")) {
                 this.storageUtilizationInBytes(model.getStorageUtilizationInBytes());
@@ -1669,12 +1649,64 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         return timeUpdated;
     }
 
-    /** Possible lifecycle states. */
+    /** Possible lifecycle states for a Deployment. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+        Creating("CREATING"),
+        Updating("UPDATING"),
+        Active("ACTIVE"),
+        Inactive("INACTIVE"),
+        Deleting("DELETING"),
+        Deleted("DELETED"),
+        Failed("FAILED"),
+        NeedsAttention("NEEDS_ATTENTION"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Possible lifecycle states for a Deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment.
      *
      * @return the value
      */
@@ -1801,20 +1833,32 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public
-     * subnet in the customer tenancy. Can be provided only for public deployments. If provided, the
-     * loadbalancer will be created in this subnet instead of the service tenancy. For backward
-     * compatibility, this is an optional property. It will become mandatory for public deployments
-     * after October 1, 2024.
+     * subnet in the customer tenancy used to host the public load balancer of the deployment.
+     *
+     * <p>Rules: - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the
+     * same VCN as subnetId. - Update: - For public deployments, this property must be present and
+     * is immutable once set (cannot be changed to a different subnet). - Legacy exception: a public
+     * deployment created without this property may continue to be updated without providing it;
+     * once set, it becomes immutable.
+     *
+     * <p>Validation: - Must reference a public subnet. - Must be a regional subnet. - Must be in
+     * the same VCN as subnetId.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
     private final String loadBalancerSubnetId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public
-     * subnet in the customer tenancy. Can be provided only for public deployments. If provided, the
-     * loadbalancer will be created in this subnet instead of the service tenancy. For backward
-     * compatibility, this is an optional property. It will become mandatory for public deployments
-     * after October 1, 2024.
+     * subnet in the customer tenancy used to host the public load balancer of the deployment.
+     *
+     * <p>Rules: - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the
+     * same VCN as subnetId. - Update: - For public deployments, this property must be present and
+     * is immutable once set (cannot be changed to a different subnet). - Legacy exception: a public
+     * deployment created without this property may continue to be updated without providing it;
+     * once set, it becomes immutable.
+     *
+     * <p>Validation: - Must reference a public subnet. - Must be a regional subnet. - Must be in
+     * the same VCN as subnetId.
      *
      * @return the value
      */
@@ -2070,31 +2114,6 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
      */
     public Boolean getIsLatestVersion() {
         return isLatestVersion;
-    }
-
-    /**
-     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
-     * when deployment will be forced to upgrade to a newer version. Old description: The date the
-     * existing version in use will no longer be considered as usable and an upgrade will be
-     * required. This date is typically 6 months after the version was released for use by GGS. The
-     * format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-     * 2016-08-25T21:10:29.600Z}.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
-    private final java.util.Date timeUpgradeRequired;
-
-    /**
-     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
-     * when deployment will be forced to upgrade to a newer version. Old description: The date the
-     * existing version in use will no longer be considered as usable and an upgrade will be
-     * required. This date is typically 6 months after the version was released for use by GGS. The
-     * format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-     * 2016-08-25T21:10:29.600Z}.
-     *
-     * @return the value
-     */
-    public java.util.Date getTimeUpgradeRequired() {
-        return timeUpgradeRequired;
     }
 
     /** The amount of storage being utilized (in bytes) */
@@ -2419,7 +2438,6 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", deploymentUrl=").append(String.valueOf(this.deploymentUrl));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", isLatestVersion=").append(String.valueOf(this.isLatestVersion));
-        sb.append(", timeUpgradeRequired=").append(String.valueOf(this.timeUpgradeRequired));
         sb.append(", storageUtilizationInBytes=")
                 .append(String.valueOf(this.storageUtilizationInBytes));
         sb.append(", isStorageUtilizationLimitExceeded=")
@@ -2501,7 +2519,6 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.deploymentUrl, other.deploymentUrl)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.isLatestVersion, other.isLatestVersion)
-                && java.util.Objects.equals(this.timeUpgradeRequired, other.timeUpgradeRequired)
                 && java.util.Objects.equals(
                         this.storageUtilizationInBytes, other.storageUtilizationInBytes)
                 && java.util.Objects.equals(
@@ -2628,11 +2645,6 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         result =
                 (result * PRIME)
                         + (this.isLatestVersion == null ? 43 : this.isLatestVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.timeUpgradeRequired == null
-                                ? 43
-                                : this.timeUpgradeRequired.hashCode());
         result =
                 (result * PRIME)
                         + (this.storageUtilizationInBytes == null

@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The customer facing object includes GPU memory cluster details. <br>
+ * The customer facing object includes GPU Memory Cluster details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,7 +33,8 @@ public final class CreateComputeGpuMemoryClusterDetails
         "definedTags",
         "freeformTags",
         "displayName",
-        "gpuMemoryClusterScaleConfig"
+        "gpuMemoryClusterScaleConfig",
+        "privateIpIds"
     })
     public CreateComputeGpuMemoryClusterDetails(
             String availabilityDomain,
@@ -45,7 +46,8 @@ public final class CreateComputeGpuMemoryClusterDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
             String displayName,
-            CreateComputeGpuMemoryClusterScaleConfig gpuMemoryClusterScaleConfig) {
+            CreateComputeGpuMemoryClusterScaleConfig gpuMemoryClusterScaleConfig,
+            java.util.List<String> privateIpIds) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -57,16 +59,17 @@ public final class CreateComputeGpuMemoryClusterDetails
         this.freeformTags = freeformTags;
         this.displayName = displayName;
         this.gpuMemoryClusterScaleConfig = gpuMemoryClusterScaleConfig;
+        this.privateIpIds = privateIpIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The availability domain of the GPU memory cluster. */
+        /** The availability domain of the GPU Memory Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain of the GPU memory cluster.
+         * The availability domain of the GPU Memory Cluster.
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -78,14 +81,14 @@ public final class CreateComputeGpuMemoryClusterDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the compute GPU memory cluster. compartment.
+         * compartment that contains the compute GPU Memory Cluster. compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the compute GPU memory cluster. compartment.
+         * compartment that contains the compute GPU Memory Cluster. compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -148,12 +151,12 @@ public final class CreateComputeGpuMemoryClusterDetails
             this.__explicitlySet__.add("instanceConfigurationId");
             return this;
         }
-        /** The number of instances currently running in the GpuMemoryCluster */
+        /** The desired number of instances for the GPU Memory Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Long size;
 
         /**
-         * The number of instances currently running in the GpuMemoryCluster
+         * The desired number of instances for the GPU Memory Cluster.
          *
          * @param size the value to set
          * @return this builder
@@ -243,6 +246,23 @@ public final class CreateComputeGpuMemoryClusterDetails
             this.__explicitlySet__.add("gpuMemoryClusterScaleConfig");
             return this;
         }
+        /**
+         * Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("privateIpIds")
+        private java.util.List<String> privateIpIds;
+
+        /**
+         * Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+         *
+         * @param privateIpIds the value to set
+         * @return this builder
+         */
+        public Builder privateIpIds(java.util.List<String> privateIpIds) {
+            this.privateIpIds = privateIpIds;
+            this.__explicitlySet__.add("privateIpIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -259,7 +279,8 @@ public final class CreateComputeGpuMemoryClusterDetails
                             this.definedTags,
                             this.freeformTags,
                             this.displayName,
-                            this.gpuMemoryClusterScaleConfig);
+                            this.gpuMemoryClusterScaleConfig,
+                            this.privateIpIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -298,6 +319,9 @@ public final class CreateComputeGpuMemoryClusterDetails
             if (model.wasPropertyExplicitlySet("gpuMemoryClusterScaleConfig")) {
                 this.gpuMemoryClusterScaleConfig(model.getGpuMemoryClusterScaleConfig());
             }
+            if (model.wasPropertyExplicitlySet("privateIpIds")) {
+                this.privateIpIds(model.getPrivateIpIds());
+            }
             return this;
         }
     }
@@ -311,12 +335,12 @@ public final class CreateComputeGpuMemoryClusterDetails
         return new Builder().copy(this);
     }
 
-    /** The availability domain of the GPU memory cluster. */
+    /** The availability domain of the GPU Memory Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain of the GPU memory cluster.
+     * The availability domain of the GPU Memory Cluster.
      *
      * @return the value
      */
@@ -326,14 +350,14 @@ public final class CreateComputeGpuMemoryClusterDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the compute GPU memory cluster. compartment.
+     * compartment that contains the compute GPU Memory Cluster. compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the compute GPU memory cluster. compartment.
+     * compartment that contains the compute GPU Memory Cluster. compartment.
      *
      * @return the value
      */
@@ -388,12 +412,12 @@ public final class CreateComputeGpuMemoryClusterDetails
         return instanceConfigurationId;
     }
 
-    /** The number of instances currently running in the GpuMemoryCluster */
+    /** The desired number of instances for the GPU Memory Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Long size;
 
     /**
-     * The number of instances currently running in the GpuMemoryCluster
+     * The desired number of instances for the GPU Memory Cluster.
      *
      * @return the value
      */
@@ -471,6 +495,19 @@ public final class CreateComputeGpuMemoryClusterDetails
         return gpuMemoryClusterScaleConfig;
     }
 
+    /** Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateIpIds")
+    private final java.util.List<String> privateIpIds;
+
+    /**
+     * Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+     *
+     * @return the value
+     */
+    public java.util.List<String> getPrivateIpIds() {
+        return privateIpIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -498,6 +535,7 @@ public final class CreateComputeGpuMemoryClusterDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", gpuMemoryClusterScaleConfig=")
                 .append(String.valueOf(this.gpuMemoryClusterScaleConfig));
+        sb.append(", privateIpIds=").append(String.valueOf(this.privateIpIds));
         sb.append(")");
         return sb.toString();
     }
@@ -524,6 +562,7 @@ public final class CreateComputeGpuMemoryClusterDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
                         this.gpuMemoryClusterScaleConfig, other.gpuMemoryClusterScaleConfig)
+                && java.util.Objects.equals(this.privateIpIds, other.privateIpIds)
                 && super.equals(other);
     }
 
@@ -559,6 +598,7 @@ public final class CreateComputeGpuMemoryClusterDetails
                         + (this.gpuMemoryClusterScaleConfig == null
                                 ? 43
                                 : this.gpuMemoryClusterScaleConfig.hashCode());
+        result = (result * PRIME) + (this.privateIpIds == null ? 43 : this.privateIpIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

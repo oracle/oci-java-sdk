@@ -15,10 +15,10 @@ public class BulkUpdateIpv6sRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.BulkUpdateIpv6sDetails> {
 
-    /** Update IPv6s details. */
+    /** Details of the IPv6s to update. */
     private com.oracle.bmc.core.model.BulkUpdateIpv6sDetails bulkUpdateIpv6sDetails;
 
-    /** Update IPv6s details. */
+    /** Details of the IPv6s to update. */
     public com.oracle.bmc.core.model.BulkUpdateIpv6sDetails getBulkUpdateIpv6sDetails() {
         return bulkUpdateIpv6sDetails;
     }
@@ -72,11 +72,11 @@ public class BulkUpdateIpv6sRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Update IPv6s details. */
+        /** Details of the IPv6s to update. */
         private com.oracle.bmc.core.model.BulkUpdateIpv6sDetails bulkUpdateIpv6sDetails = null;
 
         /**
-         * Update IPv6s details.
+         * Details of the IPv6s to update.
          *
          * @param bulkUpdateIpv6sDetails the value to set
          * @return this builder instance

@@ -4,29 +4,23 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Possible deploymentUpgrade lifecycle states. */
+/** The Connection migrate type. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum DeploymentUpgradeLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
-    Waiting("WAITING"),
-    InProgress("IN_PROGRESS"),
-    Failed("FAILED"),
-    Succeeded("SUCCEEDED"),
-    Canceling("CANCELING"),
-    Canceled("CANCELED"),
-    NeedsAttention("NEEDS_ATTENTION"),
+public enum MigrateConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
+    Secret("SECRET"),
     ;
 
     private final String value;
-    private static java.util.Map<String, DeploymentUpgradeLifecycleState> map;
+    private static java.util.Map<String, MigrateConnectionType> map;
 
     static {
         map = new java.util.HashMap<>();
-        for (DeploymentUpgradeLifecycleState v : DeploymentUpgradeLifecycleState.values()) {
+        for (MigrateConnectionType v : MigrateConnectionType.values()) {
             map.put(v.getValue(), v);
         }
     }
 
-    DeploymentUpgradeLifecycleState(String value) {
+    MigrateConnectionType(String value) {
         this.value = value;
     }
 
@@ -36,10 +30,10 @@ public enum DeploymentUpgradeLifecycleState implements com.oracle.bmc.http.inter
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
-    public static DeploymentUpgradeLifecycleState create(String key) {
+    public static MigrateConnectionType create(String key) {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid DeploymentUpgradeLifecycleState: " + key);
+        throw new IllegalArgumentException("Invalid MigrateConnectionType: " + key);
     }
 }

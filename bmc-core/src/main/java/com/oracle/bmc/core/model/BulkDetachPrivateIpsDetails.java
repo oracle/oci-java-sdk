@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Bulk Secondary IPv4 addresses detach object. <br>
+ * An object used to detatch Secondary IPv4 addresses with a bulk operation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -54,12 +54,12 @@ public final class BulkDetachPrivateIpsDetails
             this.__explicitlySet__.add("vnicId");
             return this;
         }
-        /** Secondary IPv4 addresses to detached. */
+        /** Secondary IPv4 addresses to detach. */
         @com.fasterxml.jackson.annotation.JsonProperty("bulkDetachPrivateIpItem")
         private java.util.List<BulkDetachPrivateIpItem> bulkDetachPrivateIpItem;
 
         /**
-         * Secondary IPv4 addresses to detached.
+         * Secondary IPv4 addresses to detach.
          *
          * @param bulkDetachPrivateIpItem the value to set
          * @return this builder
@@ -121,12 +121,12 @@ public final class BulkDetachPrivateIpsDetails
         return vnicId;
     }
 
-    /** Secondary IPv4 addresses to detached. */
+    /** Secondary IPv4 addresses to detach. */
     @com.fasterxml.jackson.annotation.JsonProperty("bulkDetachPrivateIpItem")
     private final java.util.List<BulkDetachPrivateIpItem> bulkDetachPrivateIpItem;
 
     /**
-     * Secondary IPv4 addresses to detached.
+     * Secondary IPv4 addresses to detach.
      *
      * @return the value
      */

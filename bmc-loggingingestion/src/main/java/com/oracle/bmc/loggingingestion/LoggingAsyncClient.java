@@ -34,7 +34,7 @@ public class LoggingAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     .serviceName(LoggingClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://ingestion.logging.{region}.oci.{secondLevelDomain}")
+                            "https://ingestion.logging.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -103,12 +103,16 @@ public class LoggingAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Validate.notBlank(request.getLogId(), "logId must not be blank");
         Objects.requireNonNull(request.getPutLogsDetails(), "putLogsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logId", request.getLogId());
+
         return clientCall(request, PutLogsResponse::builder)
                 .logger(LOG, "putLogs")
                 .serviceDetails(
                         "Logging",
                         "PutLogs",
                         "https://docs.oracle.com/iaas/api/#/en/logging-dataplane/20200831/LogEntry/PutLogs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PutLogsRequest::builder)
                 .basePath("/20200831")

@@ -2,84 +2,62 @@
  * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.core.requests;
+package com.oracle.bmc.fusionapps.requests;
 
-import com.oracle.bmc.core.model.*;
+import com.oracle.bmc.fusionapps.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeHostsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateComputeHostsRequest.
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/CreateMicrositeExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateMicrositeRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class UpdateComputeHostsRequest
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+public class CreateMicrositeRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                com.oracle.bmc.core.model.UpdateComputeHostsDetails> {
+                com.oracle.bmc.fusionapps.model.CreateMicrositeDetails> {
 
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compute host.
-     */
-    private String computeHostId;
+    /** unique FusionEnvironment identifier */
+    private String fusionEnvironmentId;
 
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compute host.
-     */
-    public String getComputeHostId() {
-        return computeHostId;
+    /** unique FusionEnvironment identifier */
+    public String getFusionEnvironmentId() {
+        return fusionEnvironmentId;
     }
-    /** Update compute capacity topology details. */
-    private com.oracle.bmc.core.model.UpdateComputeHostsDetails updateComputeHostsDetails;
+    /** unique brand identifier */
+    private String marketingBrandId;
 
-    /** Update compute capacity topology details. */
-    public com.oracle.bmc.core.model.UpdateComputeHostsDetails getUpdateComputeHostsDetails() {
-        return updateComputeHostsDetails;
+    /** unique brand identifier */
+    public String getMarketingBrandId() {
+        return marketingBrandId;
     }
-    /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
-     */
-    private String ifMatch;
+    /** Details for the new microsite */
+    private com.oracle.bmc.fusionapps.model.CreateMicrositeDetails createMicrositeDetails;
 
-    /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
-     */
-    public String getIfMatch() {
-        return ifMatch;
+    /** Details for the new microsite */
+    public com.oracle.bmc.fusionapps.model.CreateMicrositeDetails getCreateMicrositeDetails() {
+        return createMicrositeDetails;
     }
-    /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
      * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
      * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -92,82 +70,66 @@ public class UpdateComputeHostsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public com.oracle.bmc.core.model.UpdateComputeHostsDetails getBody$() {
-        return updateComputeHostsDetails;
+    public com.oracle.bmc.fusionapps.model.CreateMicrositeDetails getBody$() {
+        return createMicrositeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateComputeHostsRequest,
-                    com.oracle.bmc.core.model.UpdateComputeHostsDetails> {
+                    CreateMicrositeRequest,
+                    com.oracle.bmc.fusionapps.model.CreateMicrositeDetails> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compute host.
-         */
-        private String computeHostId = null;
+        /** unique FusionEnvironment identifier */
+        private String fusionEnvironmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compute host.
+         * unique FusionEnvironment identifier
          *
-         * @param computeHostId the value to set
+         * @param fusionEnvironmentId the value to set
          * @return this builder instance
          */
-        public Builder computeHostId(String computeHostId) {
-            this.computeHostId = computeHostId;
+        public Builder fusionEnvironmentId(String fusionEnvironmentId) {
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
 
-        /** Update compute capacity topology details. */
-        private com.oracle.bmc.core.model.UpdateComputeHostsDetails updateComputeHostsDetails =
+        /** unique brand identifier */
+        private String marketingBrandId = null;
+
+        /**
+         * unique brand identifier
+         *
+         * @param marketingBrandId the value to set
+         * @return this builder instance
+         */
+        public Builder marketingBrandId(String marketingBrandId) {
+            this.marketingBrandId = marketingBrandId;
+            return this;
+        }
+
+        /** Details for the new microsite */
+        private com.oracle.bmc.fusionapps.model.CreateMicrositeDetails createMicrositeDetails =
                 null;
 
         /**
-         * Update compute capacity topology details.
+         * Details for the new microsite
          *
-         * @param updateComputeHostsDetails the value to set
+         * @param createMicrositeDetails the value to set
          * @return this builder instance
          */
-        public Builder updateComputeHostsDetails(
-                com.oracle.bmc.core.model.UpdateComputeHostsDetails updateComputeHostsDetails) {
-            this.updateComputeHostsDetails = updateComputeHostsDetails;
+        public Builder createMicrositeDetails(
+                com.oracle.bmc.fusionapps.model.CreateMicrositeDetails createMicrositeDetails) {
+            this.createMicrositeDetails = createMicrositeDetails;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
-         */
-        private String ifMatch = null;
-
-        /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
-         *
-         * @param ifMatch the value to set
-         * @return this builder instance
-         */
-        public Builder ifMatch(String ifMatch) {
-            this.ifMatch = ifMatch;
-            return this;
-        }
-
-        /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * The client request ID for tracing.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -180,18 +142,18 @@ public class UpdateComputeHostsRequest
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
          * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
          * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
          * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
          * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -230,10 +192,10 @@ public class UpdateComputeHostsRequest
          *
          * @return this builder instance
          */
-        public Builder copy(UpdateComputeHostsRequest o) {
-            computeHostId(o.getComputeHostId());
-            updateComputeHostsDetails(o.getUpdateComputeHostsDetails());
-            ifMatch(o.getIfMatch());
+        public Builder copy(CreateMicrositeRequest o) {
+            fusionEnvironmentId(o.getFusionEnvironmentId());
+            marketingBrandId(o.getMarketingBrandId());
+            createMicrositeDetails(o.getCreateMicrositeDetails());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
@@ -242,7 +204,7 @@ public class UpdateComputeHostsRequest
         }
 
         /**
-         * Build the instance of UpdateComputeHostsRequest as configured by this builder
+         * Build the instance of CreateMicrositeRequest as configured by this builder
          *
          * <p>Note that this method takes calls to {@link
          * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
@@ -250,10 +212,10 @@ public class UpdateComputeHostsRequest
          *
          * <p>This is the preferred method to build an instance.
          *
-         * @return instance of UpdateComputeHostsRequest
+         * @return instance of CreateMicrositeRequest
          */
-        public UpdateComputeHostsRequest build() {
-            UpdateComputeHostsRequest request = buildWithoutInvocationCallback();
+        public CreateMicrositeRequest build() {
+            CreateMicrositeRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
@@ -266,30 +228,30 @@ public class UpdateComputeHostsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(com.oracle.bmc.core.model.UpdateComputeHostsDetails body) {
-            updateComputeHostsDetails(body);
+        public Builder body$(com.oracle.bmc.fusionapps.model.CreateMicrositeDetails body) {
+            createMicrositeDetails(body);
             return this;
         }
 
         /**
-         * Build the instance of UpdateComputeHostsRequest as configured by this builder
+         * Build the instance of CreateMicrositeRequest as configured by this builder
          *
          * <p>Note that this method does not take calls to {@link
          * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
-         * @return instance of UpdateComputeHostsRequest
+         * @return instance of CreateMicrositeRequest
          */
-        public UpdateComputeHostsRequest buildWithoutInvocationCallback() {
-            UpdateComputeHostsRequest request = new UpdateComputeHostsRequest();
-            request.computeHostId = computeHostId;
-            request.updateComputeHostsDetails = updateComputeHostsDetails;
-            request.ifMatch = ifMatch;
+        public CreateMicrositeRequest buildWithoutInvocationCallback() {
+            CreateMicrositeRequest request = new CreateMicrositeRequest();
+            request.fusionEnvironmentId = fusionEnvironmentId;
+            request.marketingBrandId = marketingBrandId;
+            request.createMicrositeDetails = createMicrositeDetails;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new UpdateComputeHostsRequest(computeHostId, updateComputeHostsDetails, ifMatch,
-            // opcRequestId, opcRetryToken);
+            // new CreateMicrositeRequest(fusionEnvironmentId, marketingBrandId,
+            // createMicrositeDetails, opcRequestId, opcRetryToken);
         }
     }
 
@@ -300,9 +262,9 @@ public class UpdateComputeHostsRequest
      */
     public Builder toBuilder() {
         return new Builder()
-                .computeHostId(computeHostId)
-                .updateComputeHostsDetails(updateComputeHostsDetails)
-                .ifMatch(ifMatch)
+                .fusionEnvironmentId(fusionEnvironmentId)
+                .marketingBrandId(marketingBrandId)
+                .createMicrositeDetails(createMicrositeDetails)
                 .opcRequestId(opcRequestId)
                 .opcRetryToken(opcRetryToken);
     }
@@ -321,10 +283,9 @@ public class UpdateComputeHostsRequest
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",computeHostId=").append(String.valueOf(this.computeHostId));
-        sb.append(",updateComputeHostsDetails=")
-                .append(String.valueOf(this.updateComputeHostsDetails));
-        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",fusionEnvironmentId=").append(String.valueOf(this.fusionEnvironmentId));
+        sb.append(",marketingBrandId=").append(String.valueOf(this.marketingBrandId));
+        sb.append(",createMicrositeDetails=").append(String.valueOf(this.createMicrositeDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(")");
@@ -336,16 +297,16 @@ public class UpdateComputeHostsRequest
         if (this == o) {
             return true;
         }
-        if (!(o instanceof UpdateComputeHostsRequest)) {
+        if (!(o instanceof CreateMicrositeRequest)) {
             return false;
         }
 
-        UpdateComputeHostsRequest other = (UpdateComputeHostsRequest) o;
+        CreateMicrositeRequest other = (CreateMicrositeRequest) o;
         return super.equals(o)
-                && java.util.Objects.equals(this.computeHostId, other.computeHostId)
+                && java.util.Objects.equals(this.fusionEnvironmentId, other.fusionEnvironmentId)
+                && java.util.Objects.equals(this.marketingBrandId, other.marketingBrandId)
                 && java.util.Objects.equals(
-                        this.updateComputeHostsDetails, other.updateComputeHostsDetails)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                        this.createMicrositeDetails, other.createMicrositeDetails)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
     }
@@ -356,13 +317,17 @@ public class UpdateComputeHostsRequest
         int result = super.hashCode();
         result =
                 (result * PRIME)
-                        + (this.computeHostId == null ? 43 : this.computeHostId.hashCode());
+                        + (this.fusionEnvironmentId == null
+                                ? 43
+                                : this.fusionEnvironmentId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.updateComputeHostsDetails == null
+                        + (this.marketingBrandId == null ? 43 : this.marketingBrandId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createMicrositeDetails == null
                                 ? 43
-                                : this.updateComputeHostsDetails.hashCode());
-        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+                                : this.createMicrositeDetails.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)

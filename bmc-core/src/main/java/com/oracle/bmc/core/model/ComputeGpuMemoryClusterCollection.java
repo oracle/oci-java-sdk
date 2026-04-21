@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A list of compute GPU memory clusters. <br>
+ * A list of compute GPU Memory Clusters. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class ComputeGpuMemoryClusterCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of compute GPU memory clusters. */
+        /** The list of compute GPU Memory Clusters. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ComputeGpuMemoryClusterSummary> items;
 
         /**
-         * The list of compute GPU memory clusters.
+         * The list of compute GPU Memory Clusters.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class ComputeGpuMemoryClusterCollection
         return new Builder().copy(this);
     }
 
-    /** The list of compute GPU memory clusters. */
+    /** The list of compute GPU Memory Clusters. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ComputeGpuMemoryClusterSummary> items;
 
     /**
-     * The list of compute GPU memory clusters.
+     * The list of compute GPU Memory Clusters.
      *
      * @return the value
      */

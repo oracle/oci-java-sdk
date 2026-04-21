@@ -128,6 +128,25 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
             return this;
         }
         /**
+         * A legal URL to connect to BigQuery including scheme, server name and port (if not the
+         * default port). Default: https://bigquery.googleapis.com
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+        private String endpoint;
+
+        /**
+         * A legal URL to connect to BigQuery including scheme, server name and port (if not the
+         * default port). Default: https://bigquery.googleapis.com
+         *
+         * @param endpoint the value to set
+         * @return this builder
+         */
+        public Builder endpoint(String endpoint) {
+            this.endpoint = endpoint;
+            this.__explicitlySet__.add("endpoint");
+            return this;
+        }
+        /**
          * The base64 encoded content of the service account key file containing the credentials
          * required to use Google BigQuery. Deprecated: This field is deprecated and replaced by
          * "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
@@ -189,6 +208,7 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
                             this.routingMethod,
                             this.doesUseSecretIds,
                             this.securityAttributes,
+                            this.endpoint,
                             this.serviceAccountKeyFile,
                             this.serviceAccountKeyFileSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -232,6 +252,9 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
             }
+            if (model.wasPropertyExplicitlySet("endpoint")) {
+                this.endpoint(model.getEndpoint());
+            }
             if (model.wasPropertyExplicitlySet("serviceAccountKeyFile")) {
                 this.serviceAccountKeyFile(model.getServiceAccountKeyFile());
             }
@@ -264,6 +287,7 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
             RoutingMethod routingMethod,
             Boolean doesUseSecretIds,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            String endpoint,
             String serviceAccountKeyFile,
             String serviceAccountKeyFileSecretId) {
         super(
@@ -278,8 +302,26 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
                 routingMethod,
                 doesUseSecretIds,
                 securityAttributes);
+        this.endpoint = endpoint;
         this.serviceAccountKeyFile = serviceAccountKeyFile;
         this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
+    }
+
+    /**
+     * A legal URL to connect to BigQuery including scheme, server name and port (if not the default
+     * port). Default: https://bigquery.googleapis.com
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+    private final String endpoint;
+
+    /**
+     * A legal URL to connect to BigQuery including scheme, server name and port (if not the default
+     * port). Default: https://bigquery.googleapis.com
+     *
+     * @return the value
+     */
+    public String getEndpoint() {
+        return endpoint;
     }
 
     /**
@@ -337,6 +379,7 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateGoogleBigQueryConnectionDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", endpoint=").append(String.valueOf(this.endpoint));
         sb.append(", serviceAccountKeyFile=").append(String.valueOf(this.serviceAccountKeyFile));
         sb.append(", serviceAccountKeyFileSecretId=")
                 .append(String.valueOf(this.serviceAccountKeyFileSecretId));
@@ -354,7 +397,8 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
         }
 
         UpdateGoogleBigQueryConnectionDetails other = (UpdateGoogleBigQueryConnectionDetails) o;
-        return java.util.Objects.equals(this.serviceAccountKeyFile, other.serviceAccountKeyFile)
+        return java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.serviceAccountKeyFile, other.serviceAccountKeyFile)
                 && java.util.Objects.equals(
                         this.serviceAccountKeyFileSecretId, other.serviceAccountKeyFileSecretId)
                 && super.equals(other);
@@ -364,6 +408,7 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
         result =
                 (result * PRIME)
                         + (this.serviceAccountKeyFile == null

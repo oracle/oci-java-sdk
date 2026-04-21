@@ -438,41 +438,6 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             return this;
         }
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
-         *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-        private String privateIp;
-
-        /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
-         *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
-         *
-         * @param privateIp the value to set
-         * @return this builder
-         */
-        public Builder privateIp(String privateIp) {
-            this.privateIp = privateIp;
-            this.__explicitlySet__.add("privateIp");
-            return this;
-        }
-        /**
          * An array of name-value pair attribute entries. Used as additional parameters in
          * connection string.
          */
@@ -546,7 +511,6 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
                             this.sslCert,
                             this.sslKey,
                             this.sslKeySecretId,
-                            this.privateIp,
                             this.additionalAttributes,
                             this.dbSystemId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -644,9 +608,6 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             if (model.wasPropertyExplicitlySet("sslKeySecretId")) {
                 this.sslKeySecretId(model.getSslKeySecretId());
             }
-            if (model.wasPropertyExplicitlySet("privateIp")) {
-                this.privateIp(model.getPrivateIp());
-            }
             if (model.wasPropertyExplicitlySet("additionalAttributes")) {
                 this.additionalAttributes(model.getAdditionalAttributes());
             }
@@ -697,7 +658,6 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             String sslCert,
             String sslKey,
             String sslKeySecretId,
-            String privateIp,
             java.util.List<NameValuePair> additionalAttributes,
             String dbSystemId) {
         super(
@@ -730,7 +690,6 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
         this.sslCert = sslCert;
         this.sslKey = sslKey;
         this.sslKeySecretId = sslKeySecretId;
-        this.privateIp = privateIp;
         this.additionalAttributes = additionalAttributes;
         this.dbSystemId = dbSystemId;
     }
@@ -778,7 +737,6 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             @com.fasterxml.jackson.annotation.JsonProperty("sslCert") String sslCert,
             @com.fasterxml.jackson.annotation.JsonProperty("sslKey") String sslKey,
             @com.fasterxml.jackson.annotation.JsonProperty("sslKeySecretId") String sslKeySecretId,
-            @com.fasterxml.jackson.annotation.JsonProperty("privateIp") String privateIp,
             @com.fasterxml.jackson.annotation.JsonProperty("additionalAttributes")
                     java.util.List<NameValuePair> additionalAttributes,
             @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId") String dbSystemId) {
@@ -812,7 +770,6 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
         this.sslCert = sslCert;
         this.sslKey = sslKey;
         this.sslKeySecretId = sslKeySecretId;
-        this.privateIp = privateIp;
         this.additionalAttributes = additionalAttributes;
         this.dbSystemId = dbSystemId;
     }
@@ -1072,39 +1029,6 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
     }
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
-     *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-    private final String privateIp;
-
-    /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
-     *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
-     *
-     * @return the value
-     */
-    public String getPrivateIp() {
-        return privateIp;
-    }
-
-    /**
      * An array of name-value pair attribute entries. Used as additional parameters in connection
      * string.
      */
@@ -1167,7 +1091,6 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
         sb.append(", sslCert=").append(String.valueOf(this.sslCert));
         sb.append(", sslKey=").append(String.valueOf(this.sslKey));
         sb.append(", sslKeySecretId=").append(String.valueOf(this.sslKeySecretId));
-        sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", additionalAttributes=").append(String.valueOf(this.additionalAttributes));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(")");
@@ -1198,7 +1121,6 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
                 && java.util.Objects.equals(this.sslCert, other.sslCert)
                 && java.util.Objects.equals(this.sslKey, other.sslKey)
                 && java.util.Objects.equals(this.sslKeySecretId, other.sslKeySecretId)
-                && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.additionalAttributes, other.additionalAttributes)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && super.equals(other);
@@ -1230,7 +1152,6 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
         result =
                 (result * PRIME)
                         + (this.sslKeySecretId == null ? 43 : this.sslKeySecretId.hashCode());
-        result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         result =
                 (result * PRIME)
                         + (this.additionalAttributes == null

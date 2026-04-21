@@ -38,12 +38,12 @@ public final class SearchLogsDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Start filter log's date and time, in the format defined by RFC3339. */
+        /** Start filter log's date and time, in the format defined by RFC 3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
-         * Start filter log's date and time, in the format defined by RFC3339.
+         * Start filter log's date and time, in the format defined by RFC 3339.
          *
          * @param timeStart the value to set
          * @return this builder
@@ -53,12 +53,12 @@ public final class SearchLogsDetails
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** End filter log's date and time, in the format defined by RFC3339. */
+        /** End filter log's date and time, in the format defined by RFC 3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
-         * End filter log's date and time, in the format defined by RFC3339.
+         * End filter log's date and time, in the format defined by RFC 3339.
          *
          * @param timeEnd the value to set
          * @return this builder
@@ -149,12 +149,12 @@ public final class SearchLogsDetails
         return new Builder().copy(this);
     }
 
-    /** Start filter log's date and time, in the format defined by RFC3339. */
+    /** Start filter log's date and time, in the format defined by RFC 3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
-     * Start filter log's date and time, in the format defined by RFC3339.
+     * Start filter log's date and time, in the format defined by RFC 3339.
      *
      * @return the value
      */
@@ -162,12 +162,12 @@ public final class SearchLogsDetails
         return timeStart;
     }
 
-    /** End filter log's date and time, in the format defined by RFC3339. */
+    /** End filter log's date and time, in the format defined by RFC 3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
-     * End filter log's date and time, in the format defined by RFC3339.
+     * End filter log's date and time, in the format defined by RFC 3339.
      *
      * @return the value
      */

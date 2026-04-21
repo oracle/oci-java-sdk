@@ -31,6 +31,7 @@ public final class LogSummary extends com.oracle.bmc.http.client.internal.Explic
         "configuration",
         "definedTags",
         "freeformTags",
+        "systemTags",
         "timeCreated",
         "timeLastModified",
         "retentionDuration",
@@ -46,6 +47,7 @@ public final class LogSummary extends com.oracle.bmc.http.client.internal.Explic
             Configuration configuration,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             java.util.Date timeLastModified,
             Integer retentionDuration,
@@ -60,6 +62,7 @@ public final class LogSummary extends com.oracle.bmc.http.client.internal.Explic
         this.configuration = configuration;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.timeLastModified = timeLastModified;
         this.retentionDuration = retentionDuration;
@@ -220,6 +223,25 @@ public final class LogSummary extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** Time the resource was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
@@ -296,6 +318,7 @@ public final class LogSummary extends com.oracle.bmc.http.client.internal.Explic
                             this.configuration,
                             this.definedTags,
                             this.freeformTags,
+                            this.systemTags,
                             this.timeCreated,
                             this.timeLastModified,
                             this.retentionDuration,
@@ -334,6 +357,9 @@ public final class LogSummary extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -539,6 +565,23 @@ public final class LogSummary extends com.oracle.bmc.http.client.internal.Explic
         return freeformTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     /** Time the resource was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
@@ -615,6 +658,7 @@ public final class LogSummary extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", configuration=").append(String.valueOf(this.configuration));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeLastModified=").append(String.valueOf(this.timeLastModified));
         sb.append(", retentionDuration=").append(String.valueOf(this.retentionDuration));
@@ -642,6 +686,7 @@ public final class LogSummary extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.configuration, other.configuration)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeLastModified, other.timeLastModified)
                 && java.util.Objects.equals(this.retentionDuration, other.retentionDuration)
@@ -666,6 +711,7 @@ public final class LogSummary extends com.oracle.bmc.http.client.internal.Explic
                         + (this.configuration == null ? 43 : this.configuration.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)

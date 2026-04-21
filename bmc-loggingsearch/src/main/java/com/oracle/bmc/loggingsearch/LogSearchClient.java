@@ -20,7 +20,8 @@ public class LogSearchClient extends com.oracle.bmc.http.internal.BaseSyncClient
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(LogSearchClient.class.getName())
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://logging.{region}.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://logging.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -88,12 +89,15 @@ public class LogSearchClient extends com.oracle.bmc.http.internal.BaseSyncClient
     public SearchLogsResponse searchLogs(SearchLogsRequest request) {
         Objects.requireNonNull(request.getSearchLogsDetails(), "searchLogsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, SearchLogsResponse::builder)
                 .logger(LOG, "searchLogs")
                 .serviceDetails(
                         "LogSearch",
                         "SearchLogs",
                         "https://docs.oracle.com/iaas/api/#/en/logging-search/20190909/SearchResult/SearchLogs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchLogsRequest::builder)
                 .basePath("/20190909")

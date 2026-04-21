@@ -43,7 +43,12 @@ public final class UpdateCloudVmClusterDetails
         "dataCollectionOptions",
         "fileSystemConfigurationDetails",
         "cloudAutomationUpdateDetails",
-        "vmBackupStorageType"
+        "vmBackupStorageType",
+        "dataStoragePercentage",
+        "recoStoragePercentage",
+        "sparseStoragePercentage",
+        "isLocalBackupEnabled",
+        "isSparseDiskgroupEnabled"
     })
     public UpdateCloudVmClusterDetails(
             String displayName,
@@ -65,7 +70,12 @@ public final class UpdateCloudVmClusterDetails
             DataCollectionOptions dataCollectionOptions,
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
             CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
-            VmBackupStorageType vmBackupStorageType) {
+            VmBackupStorageType vmBackupStorageType,
+            Integer dataStoragePercentage,
+            Integer recoStoragePercentage,
+            Integer sparseStoragePercentage,
+            Boolean isLocalBackupEnabled,
+            Boolean isSparseDiskgroupEnabled) {
         super();
         this.displayName = displayName;
         this.cpuCoreCount = cpuCoreCount;
@@ -87,6 +97,11 @@ public final class UpdateCloudVmClusterDetails
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
         this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
         this.vmBackupStorageType = vmBackupStorageType;
+        this.dataStoragePercentage = dataStoragePercentage;
+        this.recoStoragePercentage = recoStoragePercentage;
+        this.sparseStoragePercentage = sparseStoragePercentage;
+        this.isLocalBackupEnabled = isLocalBackupEnabled;
+        this.isSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -507,6 +522,117 @@ public final class UpdateCloudVmClusterDetails
             this.__explicitlySet__.add("vmBackupStorageType");
             return this;
         }
+        /**
+         * The percentage assigned to DATA storage (user data and database files). See [Storage
+         * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * in the Exadata documentation for details on the impact of the configuration settings on
+         * storage.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
+        private Integer dataStoragePercentage;
+
+        /**
+         * The percentage assigned to DATA storage (user data and database files). See [Storage
+         * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * in the Exadata documentation for details on the impact of the configuration settings on
+         * storage.
+         *
+         * @param dataStoragePercentage the value to set
+         * @return this builder
+         */
+        public Builder dataStoragePercentage(Integer dataStoragePercentage) {
+            this.dataStoragePercentage = dataStoragePercentage;
+            this.__explicitlySet__.add("dataStoragePercentage");
+            return this;
+        }
+        /**
+         * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery
+         * manager backups). See [Storage
+         * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * in the Exadata documentation for details on the impact of the configuration settings on
+         * storage.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("recoStoragePercentage")
+        private Integer recoStoragePercentage;
+
+        /**
+         * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery
+         * manager backups). See [Storage
+         * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * in the Exadata documentation for details on the impact of the configuration settings on
+         * storage.
+         *
+         * @param recoStoragePercentage the value to set
+         * @return this builder
+         */
+        public Builder recoStoragePercentage(Integer recoStoragePercentage) {
+            this.recoStoragePercentage = recoStoragePercentage;
+            this.__explicitlySet__.add("recoStoragePercentage");
+            return this;
+        }
+        /**
+         * The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage
+         * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * in the Exadata documentation for details on the impact of the configuration settings on
+         * storage.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sparseStoragePercentage")
+        private Integer sparseStoragePercentage;
+
+        /**
+         * The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage
+         * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * in the Exadata documentation for details on the impact of the configuration settings on
+         * storage.
+         *
+         * @param sparseStoragePercentage the value to set
+         * @return this builder
+         */
+        public Builder sparseStoragePercentage(Integer sparseStoragePercentage) {
+            this.sparseStoragePercentage = sparseStoragePercentage;
+            this.__explicitlySet__.add("sparseStoragePercentage");
+            return this;
+        }
+        /**
+         * If true, database backup on local Exadata storage is configured for the cloud VM cluster.
+         * If false, database backup on local Exadata storage is not available in the cloud VM
+         * cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isLocalBackupEnabled")
+        private Boolean isLocalBackupEnabled;
+
+        /**
+         * If true, database backup on local Exadata storage is configured for the cloud VM cluster.
+         * If false, database backup on local Exadata storage is not available in the cloud VM
+         * cluster.
+         *
+         * @param isLocalBackupEnabled the value to set
+         * @return this builder
+         */
+        public Builder isLocalBackupEnabled(Boolean isLocalBackupEnabled) {
+            this.isLocalBackupEnabled = isLocalBackupEnabled;
+            this.__explicitlySet__.add("isLocalBackupEnabled");
+            return this;
+        }
+        /**
+         * If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk
+         * group is not created.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSparseDiskgroupEnabled")
+        private Boolean isSparseDiskgroupEnabled;
+
+        /**
+         * If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk
+         * group is not created.
+         *
+         * @param isSparseDiskgroupEnabled the value to set
+         * @return this builder
+         */
+        public Builder isSparseDiskgroupEnabled(Boolean isSparseDiskgroupEnabled) {
+            this.isSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
+            this.__explicitlySet__.add("isSparseDiskgroupEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -533,7 +659,12 @@ public final class UpdateCloudVmClusterDetails
                             this.dataCollectionOptions,
                             this.fileSystemConfigurationDetails,
                             this.cloudAutomationUpdateDetails,
-                            this.vmBackupStorageType);
+                            this.vmBackupStorageType,
+                            this.dataStoragePercentage,
+                            this.recoStoragePercentage,
+                            this.sparseStoragePercentage,
+                            this.isLocalBackupEnabled,
+                            this.isSparseDiskgroupEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -601,6 +732,21 @@ public final class UpdateCloudVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("vmBackupStorageType")) {
                 this.vmBackupStorageType(model.getVmBackupStorageType());
+            }
+            if (model.wasPropertyExplicitlySet("dataStoragePercentage")) {
+                this.dataStoragePercentage(model.getDataStoragePercentage());
+            }
+            if (model.wasPropertyExplicitlySet("recoStoragePercentage")) {
+                this.recoStoragePercentage(model.getRecoStoragePercentage());
+            }
+            if (model.wasPropertyExplicitlySet("sparseStoragePercentage")) {
+                this.sparseStoragePercentage(model.getSparseStoragePercentage());
+            }
+            if (model.wasPropertyExplicitlySet("isLocalBackupEnabled")) {
+                this.isLocalBackupEnabled(model.getIsLocalBackupEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isSparseDiskgroupEnabled")) {
+                this.isSparseDiskgroupEnabled(model.getIsSparseDiskgroupEnabled());
             }
             return this;
         }
@@ -1047,6 +1193,105 @@ public final class UpdateCloudVmClusterDetails
         return vmBackupStorageType;
     }
 
+    /**
+     * The percentage assigned to DATA storage (user data and database files). See [Storage
+     * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * in the Exadata documentation for details on the impact of the configuration settings on
+     * storage.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
+    private final Integer dataStoragePercentage;
+
+    /**
+     * The percentage assigned to DATA storage (user data and database files). See [Storage
+     * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * in the Exadata documentation for details on the impact of the configuration settings on
+     * storage.
+     *
+     * @return the value
+     */
+    public Integer getDataStoragePercentage() {
+        return dataStoragePercentage;
+    }
+
+    /**
+     * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery
+     * manager backups). See [Storage
+     * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * in the Exadata documentation for details on the impact of the configuration settings on
+     * storage.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("recoStoragePercentage")
+    private final Integer recoStoragePercentage;
+
+    /**
+     * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery
+     * manager backups). See [Storage
+     * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * in the Exadata documentation for details on the impact of the configuration settings on
+     * storage.
+     *
+     * @return the value
+     */
+    public Integer getRecoStoragePercentage() {
+        return recoStoragePercentage;
+    }
+
+    /**
+     * The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage
+     * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * in the Exadata documentation for details on the impact of the configuration settings on
+     * storage.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sparseStoragePercentage")
+    private final Integer sparseStoragePercentage;
+
+    /**
+     * The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage
+     * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * in the Exadata documentation for details on the impact of the configuration settings on
+     * storage.
+     *
+     * @return the value
+     */
+    public Integer getSparseStoragePercentage() {
+        return sparseStoragePercentage;
+    }
+
+    /**
+     * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If
+     * false, database backup on local Exadata storage is not available in the cloud VM cluster.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isLocalBackupEnabled")
+    private final Boolean isLocalBackupEnabled;
+
+    /**
+     * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If
+     * false, database backup on local Exadata storage is not available in the cloud VM cluster.
+     *
+     * @return the value
+     */
+    public Boolean getIsLocalBackupEnabled() {
+        return isLocalBackupEnabled;
+    }
+
+    /**
+     * If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk
+     * group is not created.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSparseDiskgroupEnabled")
+    private final Boolean isSparseDiskgroupEnabled;
+
+    /**
+     * If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk
+     * group is not created.
+     *
+     * @return the value
+     */
+    public Boolean getIsSparseDiskgroupEnabled() {
+        return isSparseDiskgroupEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1084,6 +1329,13 @@ public final class UpdateCloudVmClusterDetails
         sb.append(", cloudAutomationUpdateDetails=")
                 .append(String.valueOf(this.cloudAutomationUpdateDetails));
         sb.append(", vmBackupStorageType=").append(String.valueOf(this.vmBackupStorageType));
+        sb.append(", dataStoragePercentage=").append(String.valueOf(this.dataStoragePercentage));
+        sb.append(", recoStoragePercentage=").append(String.valueOf(this.recoStoragePercentage));
+        sb.append(", sparseStoragePercentage=")
+                .append(String.valueOf(this.sparseStoragePercentage));
+        sb.append(", isLocalBackupEnabled=").append(String.valueOf(this.isLocalBackupEnabled));
+        sb.append(", isSparseDiskgroupEnabled=")
+                .append(String.valueOf(this.isSparseDiskgroupEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -1121,6 +1373,13 @@ public final class UpdateCloudVmClusterDetails
                 && java.util.Objects.equals(
                         this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
                 && java.util.Objects.equals(this.vmBackupStorageType, other.vmBackupStorageType)
+                && java.util.Objects.equals(this.dataStoragePercentage, other.dataStoragePercentage)
+                && java.util.Objects.equals(this.recoStoragePercentage, other.recoStoragePercentage)
+                && java.util.Objects.equals(
+                        this.sparseStoragePercentage, other.sparseStoragePercentage)
+                && java.util.Objects.equals(this.isLocalBackupEnabled, other.isLocalBackupEnabled)
+                && java.util.Objects.equals(
+                        this.isSparseDiskgroupEnabled, other.isSparseDiskgroupEnabled)
                 && super.equals(other);
     }
 
@@ -1188,6 +1447,31 @@ public final class UpdateCloudVmClusterDetails
                         + (this.vmBackupStorageType == null
                                 ? 43
                                 : this.vmBackupStorageType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStoragePercentage == null
+                                ? 43
+                                : this.dataStoragePercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recoStoragePercentage == null
+                                ? 43
+                                : this.recoStoragePercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sparseStoragePercentage == null
+                                ? 43
+                                : this.sparseStoragePercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLocalBackupEnabled == null
+                                ? 43
+                                : this.isLocalBackupEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSparseDiskgroupEnabled == null
+                                ? 43
+                                : this.isSparseDiskgroupEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

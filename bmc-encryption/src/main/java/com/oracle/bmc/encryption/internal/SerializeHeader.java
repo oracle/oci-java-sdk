@@ -17,7 +17,14 @@ import java.util.Map;
 public class SerializeHeader {
     private final MasterKeyProvider provider;
     private static final int INITIAL_OFFSET = 6; // version(short) + header_size(int)
+    // Upper bound on the JSON header allocation. The header carries key metadata,
+    // IV and optional AAD context; legitimate values are far below this limit.
+    private static final int MAX_HEADER_SIZE = 2 * 1024 * 1024; // 2 MB
     private static final short VERSION = 1;
+    private static final String INVALID_HEADER_READ_SIZE_MESSAGE =
+            "Failed to read a valid encryption header size. Check if this encrypted file has the correct format.";
+    private static final String INVALID_HEADER_CREATE_SIZE_MESSAGE =
+            "Failed to create a valid encryption header size. Reduce the encryption context size.";
 
     public SerializeHeader(MasterKeyProvider provider) {
         this.provider = provider;
@@ -28,11 +35,13 @@ public class SerializeHeader {
             DataKey dataKey, byte[] IVbytes, Map<String, String> context) {
         EncryptionHeader encryptionHeader = createEncryptionHeader(dataKey, IVbytes, context);
         String jsonHeader = serializeJsonHeader(encryptionHeader);
-        int headerLength = jsonHeader.getBytes().length;
+        byte[] jsonHeaderBytes = jsonHeader.getBytes();
+        int headerLength =
+                validateHeaderSize(jsonHeaderBytes.length, INVALID_HEADER_CREATE_SIZE_MESSAGE);
         ByteBuffer buffer = ByteBuffer.allocate(INITIAL_OFFSET + headerLength);
         buffer.putShort(VERSION);
         buffer.putInt(headerLength);
-        buffer.put(jsonHeader.getBytes());
+        buffer.put(jsonHeaderBytes);
         byte[] headerBytes = buffer.array();
         encryptionHeader.setHeaderBytes(headerBytes);
         return encryptionHeader;
@@ -116,10 +125,12 @@ public class SerializeHeader {
                             + VERSION
                             + "). Check if this encrypted file has the correct format.");
         }
-        int size = introHeader.getInt();
-        if (size <= 0) {
-            throw new RuntimeException(
-                    "Failed to read a valid encryption header size. Check if this encrypted file has the correct format.");
+        return validateHeaderSize(introHeader.getInt(), INVALID_HEADER_READ_SIZE_MESSAGE);
+    }
+
+    private int validateHeaderSize(int size, String errorMessage) {
+        if (size <= 0 || size > MAX_HEADER_SIZE) {
+            throw new IllegalArgumentException(errorMessage);
         }
         return size;
     }

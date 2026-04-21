@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * secondary ip object to delete as part of bulk deletion . <br>
+ * A secondary IPv6 object to delete as part of a bulk deletion. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,14 +33,14 @@ public final class BulkDeleteIpv6sItem
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * IPv6 to be deleted.
+         * IPv6 to delete.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6Id")
         private String ipv6Id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * IPv6 to be deleted.
+         * IPv6 to delete.
          *
          * @param ipv6Id the value to set
          * @return this builder
@@ -82,14 +82,14 @@ public final class BulkDeleteIpv6sItem
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6
-     * to be deleted.
+     * to delete.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6Id")
     private final String ipv6Id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6
-     * to be deleted.
+     * to delete.
      *
      * @return the value
      */

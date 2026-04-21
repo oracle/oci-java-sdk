@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Bulk Secondary IPv4 deletion object. <br>
+ * Details used tp delete Secondary IPv4 objects in a bulk operation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -99,12 +99,12 @@ public final class BulkDeletePrivateIpsDetails
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** Secondary IPv4 addresses to deleted */
+        /** A secondary IPv4 address to delete. */
         @com.fasterxml.jackson.annotation.JsonProperty("bulkDeletePrivateIpItem")
         private java.util.List<BulkDeletePrivateIpItem> bulkDeletePrivateIpItem;
 
         /**
-         * Secondary IPv4 addresses to deleted
+         * A secondary IPv4 address to delete.
          *
          * @param bulkDeletePrivateIpItem the value to set
          * @return this builder
@@ -209,12 +209,12 @@ public final class BulkDeletePrivateIpsDetails
         return subnetId;
     }
 
-    /** Secondary IPv4 addresses to deleted */
+    /** A secondary IPv4 address to delete. */
     @com.fasterxml.jackson.annotation.JsonProperty("bulkDeletePrivateIpItem")
     private final java.util.List<BulkDeletePrivateIpItem> bulkDeletePrivateIpItem;
 
     /**
-     * Secondary IPv4 addresses to deleted
+     * A secondary IPv4 address to delete.
      *
      * @return the value
      */

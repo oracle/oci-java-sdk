@@ -15,10 +15,10 @@ public class BulkDetachIpv6sRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.BulkDetachIpv6sDetails> {
 
-    /** detach IPv6s details. */
+    /** Details needed to detach IPv6s in bulk. */
     private com.oracle.bmc.core.model.BulkDetachIpv6sDetails bulkDetachIpv6sDetails;
 
-    /** detach IPv6s details. */
+    /** Details needed to detach IPv6s in bulk. */
     public com.oracle.bmc.core.model.BulkDetachIpv6sDetails getBulkDetachIpv6sDetails() {
         return bulkDetachIpv6sDetails;
     }
@@ -72,11 +72,11 @@ public class BulkDetachIpv6sRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** detach IPv6s details. */
+        /** Details needed to detach IPv6s in bulk. */
         private com.oracle.bmc.core.model.BulkDetachIpv6sDetails bulkDetachIpv6sDetails = null;
 
         /**
-         * detach IPv6s details.
+         * Details needed to detach IPv6s in bulk.
          *
          * @param bulkDetachIpv6sDetails the value to set
          * @return this builder instance

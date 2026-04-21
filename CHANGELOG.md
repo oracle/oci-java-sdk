@@ -3,6 +3,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.85.0 - 2026-04-21
+### Added 
+- Support for Azure AD, Avro Metadata, and Microsoft Fabric Eventstream (Kafka-like) data sources in the GoldenGate service 
+- Support for creating branded email subdomains without delegating DNS subzone in the Fusion Apps as a Service 
+- Support for IPv6 endpoints in the Events service  
+- Support for IPv6 endpoints in the Logging service  
+- Support for IPv6 endpoints in the Logging Search service  
+- Support for IPv6 endpoints in the Logging Ingestion service 
+- Support for reserved private IP IDs in the Compute service 
+- Support for USAGE_ONLY query type in the Usage Api service 
+- Support for resizing Data, Reco, and Sparse disk groups in the Database service 
+- Support for logging line format in the Functions service   
+
+### Breaking Changes 
+- Introduced a 2 MB maximum serialized encryption header size in the `bmc-encryption` module and updated client-side validation to throw `IllegalArgumentException` instead of `RuntimeException` when `OciCrypto.createEncryptingStream(...)`, `OciCrypto.encryptData(...)`, `OciCrypto.createDecryptingStream(...)`, or `OciCrypto.decryptData(...)` encounters an invalid encryption header size or an oversized encryption context 
+- Parameter types for `forDeployment(...)` waiter overloads have changed from `LifecycleState` / `LifecycleState[]` to `Deployment.LifecycleState` / `Deployment.LifecycleState[]` in `GoldenGateWaiters` in the GoldenGate service. 
+- Parameter types for `forDeploymentBackup(...)` waiter overloads have changed from `LifecycleState` / `LifecycleState[]` to `DeploymentBackup.LifecycleState` / `DeploymentBackup.LifecycleState[]` in `GoldenGateWaiters` in the GoldenGate service. 
+- Parameter types for `forDeploymentUpgrade(...)` waiter overloads have changed from `LifecycleState` / `LifecycleState[]` to `DeploymentUpgrade.LifecycleState` / `DeploymentUpgrade.LifecycleState[]` in `GoldenGateWaiters` in the GoldenGate service. 
+- Method `getPrivateIp()` has been removed from models `CreateGoldenGateConnectionDetails`, `CreateJavaMessageServiceConnectionDetails`, `CreateKafkaSchemaRegistryConnectionDetails`, `CreateMicrosoftSqlserverConnectionDetails`, `CreateMysqlConnectionDetails`, in the GoldenGate service. 
+- Return type of method `getLifecycleState()` has been changed to `LifecycleState` in the models `Deployment`, `DeploymentBackup`, `DeploymentBackupSummary`, `DeploymentSummary`, `DeploymentUpgrade`, `DeploymentUpgradeSummary` in the GoldenGate service. 
+- Method `getTimeUpgradeRequired()` has been removed from models `Deployment`, `DeploymentSummary` in the GoldenGate service. 
+- Class `DeploymentUpgradeLifecycleState` has been removed in the GoldenGate service. 
+- Field `GoldengateConnectionAssigmnentDelete` has been removed from `OperationType` in the GoldenGate service. 
+- Return types of method `getLifecycleState()` have been changed in request models `ListDeploymentBackupsRequest`, `ListDeploymentPeersRequest`, `ListDeploymentUpgradesRequest`, and `ListDeploymentsRequest` in the GoldenGate service.
+
 ## 3.84.0 - 2026-04-14
 ### Added 
 - Support for filesystem snapshot locking for ransomware protection in the File Storage service 

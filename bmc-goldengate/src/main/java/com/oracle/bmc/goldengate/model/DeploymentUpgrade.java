@@ -311,12 +311,12 @@ public final class DeploymentUpgrade
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Possible lifecycle states. */
+        /** Possible lifecycle states for a Deployment Upgrade. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * Possible lifecycle states.
+         * Possible lifecycle states for a Deployment Upgrade.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -965,12 +965,61 @@ public final class DeploymentUpgrade
         return timeUpdated;
     }
 
-    /** Possible lifecycle states. */
+    /** Possible lifecycle states for a Deployment Upgrade. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+        Waiting("WAITING"),
+        InProgress("IN_PROGRESS"),
+        Failed("FAILED"),
+        Succeeded("SUCCEEDED"),
+        Canceled("CANCELED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Possible lifecycle states for a Deployment Upgrade. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Upgrade.
      *
      * @return the value
      */

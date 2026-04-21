@@ -2,24 +2,12 @@
  * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.core.responses;
+package com.oracle.bmc.fusionapps.responses;
 
-import com.oracle.bmc.core.model.*;
+import com.oracle.bmc.fusionapps.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class GetComputeHostsResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
-    private String etag;
-
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     * @return the value
-     */
-    public String getEtag() {
-        return etag;
-    }
-
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+public class GetEmailSubdomainDnsConfigResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -36,39 +24,40 @@ public class GetComputeHostsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned {@code ComputeHost} instance. */
-    private com.oracle.bmc.core.model.ComputeHost computeHost;
+    /** The returned {@code MarketingBrandEmailSubdomainDnsConfig} instance. */
+    private com.oracle.bmc.fusionapps.model.MarketingBrandEmailSubdomainDnsConfig
+            marketingBrandEmailSubdomainDnsConfig;
 
     /**
-     * The returned {@code ComputeHost} instance.
+     * The returned {@code MarketingBrandEmailSubdomainDnsConfig} instance.
      *
      * @return the value
      */
-    public com.oracle.bmc.core.model.ComputeHost getComputeHost() {
-        return computeHost;
+    public com.oracle.bmc.fusionapps.model.MarketingBrandEmailSubdomainDnsConfig
+            getMarketingBrandEmailSubdomainDnsConfig() {
+        return marketingBrandEmailSubdomainDnsConfig;
     }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
-        "etag",
         "opcRequestId",
-        "computeHost"
+        "marketingBrandEmailSubdomainDnsConfig"
     })
-    private GetComputeHostsResponse(
+    private GetEmailSubdomainDnsConfigResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
-            String etag,
             String opcRequestId,
-            com.oracle.bmc.core.model.ComputeHost computeHost) {
+            com.oracle.bmc.fusionapps.model.MarketingBrandEmailSubdomainDnsConfig
+                    marketingBrandEmailSubdomainDnsConfig) {
         super(__httpStatusCode__, headers);
-        this.etag = etag;
         this.opcRequestId = opcRequestId;
-        this.computeHost = computeHost;
+        this.marketingBrandEmailSubdomainDnsConfig = marketingBrandEmailSubdomainDnsConfig;
     }
 
     public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetComputeHostsResponse> {
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetEmailSubdomainDnsConfigResponse> {
         private int __httpStatusCode__;
 
         @Override
@@ -82,20 +71,6 @@ public class GetComputeHostsResponse extends com.oracle.bmc.responses.BmcRespons
         @Override
         public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
-            return this;
-        }
-
-        /** For optimistic concurrency control. See {@code if-match}. */
-        private String etag;
-
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         * @param etag the value to set
-         * @return this builder
-         */
-        public Builder etag(String etag) {
-            this.etag = etag;
             return this;
         }
 
@@ -117,17 +92,20 @@ public class GetComputeHostsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned {@code ComputeHost} instance. */
-        private com.oracle.bmc.core.model.ComputeHost computeHost;
+        /** The returned {@code MarketingBrandEmailSubdomainDnsConfig} instance. */
+        private com.oracle.bmc.fusionapps.model.MarketingBrandEmailSubdomainDnsConfig
+                marketingBrandEmailSubdomainDnsConfig;
 
         /**
-         * The returned {@code ComputeHost} instance.
+         * The returned {@code MarketingBrandEmailSubdomainDnsConfig} instance.
          *
-         * @param computeHost the value to set
+         * @param marketingBrandEmailSubdomainDnsConfig the value to set
          * @return this builder
          */
-        public Builder computeHost(com.oracle.bmc.core.model.ComputeHost computeHost) {
-            this.computeHost = computeHost;
+        public Builder marketingBrandEmailSubdomainDnsConfig(
+                com.oracle.bmc.fusionapps.model.MarketingBrandEmailSubdomainDnsConfig
+                        marketingBrandEmailSubdomainDnsConfig) {
+            this.marketingBrandEmailSubdomainDnsConfig = marketingBrandEmailSubdomainDnsConfig;
             return this;
         }
 
@@ -137,12 +115,11 @@ public class GetComputeHostsResponse extends com.oracle.bmc.responses.BmcRespons
          * @return this builder instance
          */
         @Override
-        public Builder copy(GetComputeHostsResponse o) {
+        public Builder copy(GetEmailSubdomainDnsConfigResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
-            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
-            computeHost(o.getComputeHost());
+            marketingBrandEmailSubdomainDnsConfig(o.getMarketingBrandEmailSubdomainDnsConfig());
 
             return this;
         }
@@ -153,9 +130,12 @@ public class GetComputeHostsResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         @Override
-        public GetComputeHostsResponse build() {
-            return new GetComputeHostsResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, computeHost);
+        public GetEmailSubdomainDnsConfigResponse build() {
+            return new GetEmailSubdomainDnsConfigResponse(
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    marketingBrandEmailSubdomainDnsConfig);
         }
     }
 
@@ -173,9 +153,9 @@ public class GetComputeHostsResponse extends com.oracle.bmc.responses.BmcRespons
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
-        sb.append(",computeHost=").append(String.valueOf(computeHost));
+        sb.append(",marketingBrandEmailSubdomainDnsConfig=")
+                .append(String.valueOf(marketingBrandEmailSubdomainDnsConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -185,24 +165,28 @@ public class GetComputeHostsResponse extends com.oracle.bmc.responses.BmcRespons
         if (this == o) {
             return true;
         }
-        if (!(o instanceof GetComputeHostsResponse)) {
+        if (!(o instanceof GetEmailSubdomainDnsConfigResponse)) {
             return false;
         }
 
-        GetComputeHostsResponse other = (GetComputeHostsResponse) o;
+        GetEmailSubdomainDnsConfigResponse other = (GetEmailSubdomainDnsConfigResponse) o;
         return super.equals(o)
-                && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.computeHost, other.computeHost);
+                && java.util.Objects.equals(
+                        this.marketingBrandEmailSubdomainDnsConfig,
+                        other.marketingBrandEmailSubdomainDnsConfig);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result = (result * PRIME) + (this.computeHost == null ? 43 : this.computeHost.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.marketingBrandEmailSubdomainDnsConfig == null
+                                ? 43
+                                : this.marketingBrandEmailSubdomainDnsConfig.hashCode());
         return result;
     }
 }
