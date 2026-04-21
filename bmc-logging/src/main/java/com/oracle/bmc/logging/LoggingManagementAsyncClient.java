@@ -33,7 +33,9 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(LoggingManagementClient.class.getName())
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://logging.{region}.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://logging.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .endpointServiceName("logging")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -107,12 +109,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getChangeLogGroupCompartmentDetails(),
                 "changeLogGroupCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logGroupId", request.getLogGroupId());
+
         return clientCall(request, ChangeLogGroupCompartmentResponse::builder)
                 .logger(LOG, "changeLogGroupCompartment")
                 .serviceDetails(
                         "LoggingManagement",
                         "ChangeLogGroupCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/ChangeLogGroupCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeLogGroupCompartmentRequest::builder)
                 .basePath("/20200531")
@@ -145,12 +151,17 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
         Objects.requireNonNull(
                 request.getChangeLogLogGroupDetails(), "changeLogLogGroupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logGroupId", request.getLogGroupId());
+        requiredParametersMap.put("logId", request.getLogId());
+
         return clientCall(request, ChangeLogLogGroupResponse::builder)
                 .logger(LOG, "changeLogLogGroup")
                 .serviceDetails(
                         "LoggingManagement",
                         "ChangeLogLogGroup",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/ChangeLogLogGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeLogLogGroupRequest::builder)
                 .basePath("/20200531")
@@ -185,12 +196,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getChangeLogSavedSearchCompartmentDetails(),
                 "changeLogSavedSearchCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logSavedSearchId", request.getLogSavedSearchId());
+
         return clientCall(request, ChangeLogSavedSearchCompartmentResponse::builder)
                 .logger(LOG, "changeLogSavedSearchCompartment")
                 .serviceDetails(
                         "LoggingManagement",
                         "ChangeLogSavedSearchCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ChangeLogSavedSearchCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeLogSavedSearchCompartmentRequest::builder)
                 .basePath("/20200531")
@@ -225,12 +240,17 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getChangeUnifiedAgentConfigurationCompartmentDetails(),
                 "changeUnifiedAgentConfigurationCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "unifiedAgentConfigurationId", request.getUnifiedAgentConfigurationId());
+
         return clientCall(request, ChangeUnifiedAgentConfigurationCompartmentResponse::builder)
                 .logger(LOG, "changeUnifiedAgentConfigurationCompartment")
                 .serviceDetails(
                         "LoggingManagement",
                         "ChangeUnifiedAgentConfigurationCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ChangeUnifiedAgentConfigurationCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeUnifiedAgentConfigurationCompartmentRequest::builder)
                 .basePath("/20200531")
@@ -262,12 +282,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
         Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
         Objects.requireNonNull(request.getCreateLogDetails(), "createLogDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logGroupId", request.getLogGroupId());
+
         return clientCall(request, CreateLogResponse::builder)
                 .logger(LOG, "createLog")
                 .serviceDetails(
                         "LoggingManagement",
                         "CreateLog",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/CreateLog")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateLogRequest::builder)
                 .basePath("/20200531")
@@ -294,12 +318,15 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
         Objects.requireNonNull(
                 request.getCreateLogGroupDetails(), "createLogGroupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateLogGroupResponse::builder)
                 .logger(LOG, "createLogGroup")
                 .serviceDetails(
                         "LoggingManagement",
                         "CreateLogGroup",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/CreateLogGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateLogGroupRequest::builder)
                 .basePath("/20200531")
@@ -325,12 +352,15 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getCreateLogSavedSearchDetails(),
                 "createLogSavedSearchDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateLogSavedSearchResponse::builder)
                 .logger(LOG, "createLogSavedSearch")
                 .serviceDetails(
                         "LoggingManagement",
                         "CreateLogSavedSearch",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/CreateLogSavedSearch")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateLogSavedSearchRequest::builder)
                 .basePath("/20200531")
@@ -360,12 +390,15 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getCreateUnifiedAgentConfigurationDetails(),
                 "createUnifiedAgentConfigurationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateUnifiedAgentConfigurationResponse::builder)
                 .logger(LOG, "createUnifiedAgentConfiguration")
                 .serviceDetails(
                         "LoggingManagement",
                         "CreateUnifiedAgentConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/CreateUnifiedAgentConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateUnifiedAgentConfigurationRequest::builder)
                 .basePath("/20200531")
@@ -393,12 +426,17 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getLogId(), "logId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logGroupId", request.getLogGroupId());
+        requiredParametersMap.put("logId", request.getLogId());
+
         return clientCall(request, DeleteLogResponse::builder)
                 .logger(LOG, "deleteLog")
                 .serviceDetails(
                         "LoggingManagement",
                         "DeleteLog",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/DeleteLog")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteLogRequest::builder)
                 .basePath("/20200531")
@@ -425,12 +463,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logGroupId", request.getLogGroupId());
+
         return clientCall(request, DeleteLogGroupResponse::builder)
                 .logger(LOG, "deleteLogGroup")
                 .serviceDetails(
                         "LoggingManagement",
                         "DeleteLogGroup",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/DeleteLogGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteLogGroupRequest::builder)
                 .basePath("/20200531")
@@ -455,12 +497,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getLogSavedSearchId(), "logSavedSearchId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logSavedSearchId", request.getLogSavedSearchId());
+
         return clientCall(request, DeleteLogSavedSearchResponse::builder)
                 .logger(LOG, "deleteLogSavedSearch")
                 .serviceDetails(
                         "LoggingManagement",
                         "DeleteLogSavedSearch",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/DeleteLogSavedSearch")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteLogSavedSearchRequest::builder)
                 .basePath("/20200531")
@@ -487,12 +533,17 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getUnifiedAgentConfigurationId(),
                 "unifiedAgentConfigurationId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "unifiedAgentConfigurationId", request.getUnifiedAgentConfigurationId());
+
         return clientCall(request, DeleteUnifiedAgentConfigurationResponse::builder)
                 .logger(LOG, "deleteUnifiedAgentConfiguration")
                 .serviceDetails(
                         "LoggingManagement",
                         "DeleteUnifiedAgentConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/DeleteUnifiedAgentConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteUnifiedAgentConfigurationRequest::builder)
                 .basePath("/20200531")
@@ -519,12 +570,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, DeleteWorkRequestResponse::builder)
                 .logger(LOG, "deleteWorkRequest")
                 .serviceDetails(
                         "LoggingManagement",
                         "DeleteWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/DeleteWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteWorkRequestRequest::builder)
                 .basePath("/20200531")
@@ -549,12 +604,17 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getLogId(), "logId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logGroupId", request.getLogGroupId());
+        requiredParametersMap.put("logId", request.getLogId());
+
         return clientCall(request, GetLogResponse::builder)
                 .logger(LOG, "getLog")
                 .serviceDetails(
                         "LoggingManagement",
                         "GetLog",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/GetLog")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetLogRequest::builder)
                 .basePath("/20200531")
@@ -578,12 +638,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logGroupId", request.getLogGroupId());
+
         return clientCall(request, GetLogGroupResponse::builder)
                 .logger(LOG, "getLogGroup")
                 .serviceDetails(
                         "LoggingManagement",
                         "GetLogGroup",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/GetLogGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetLogGroupRequest::builder)
                 .basePath("/20200531")
@@ -609,12 +673,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getLogSavedSearchId(), "logSavedSearchId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logSavedSearchId", request.getLogSavedSearchId());
+
         return clientCall(request, GetLogSavedSearchResponse::builder)
                 .logger(LOG, "getLogSavedSearch")
                 .serviceDetails(
                         "LoggingManagement",
                         "GetLogSavedSearch",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/GetLogSavedSearch")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetLogSavedSearchRequest::builder)
                 .basePath("/20200531")
@@ -644,12 +712,17 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getUnifiedAgentConfigurationId(),
                 "unifiedAgentConfigurationId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "unifiedAgentConfigurationId", request.getUnifiedAgentConfigurationId());
+
         return clientCall(request, GetUnifiedAgentConfigurationResponse::builder)
                 .logger(LOG, "getUnifiedAgentConfiguration")
                 .serviceDetails(
                         "LoggingManagement",
                         "GetUnifiedAgentConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/GetUnifiedAgentConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetUnifiedAgentConfigurationRequest::builder)
                 .basePath("/20200531")
@@ -677,12 +750,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
                 .serviceDetails(
                         "LoggingManagement",
                         "GetWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/GetWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20200531")
@@ -708,12 +785,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListLogGroupsResponse::builder)
                 .logger(LOG, "listLogGroups")
                 .serviceDetails(
                         "LoggingManagement",
                         "ListLogGroups",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroupSummary/ListLogGroups")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLogGroupsRequest::builder)
                 .basePath("/20200531")
@@ -747,12 +828,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListLogSavedSearchesResponse::builder)
                 .logger(LOG, "listLogSavedSearches")
                 .serviceDetails(
                         "LoggingManagement",
                         "ListLogSavedSearches",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ListLogSavedSearches")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLogSavedSearchesRequest::builder)
                 .basePath("/20200531")
@@ -786,12 +871,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logGroupId", request.getLogGroupId());
+
         return clientCall(request, ListLogsResponse::builder)
                 .logger(LOG, "listLogs")
                 .serviceDetails(
                         "LoggingManagement",
                         "ListLogs",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSummary/ListLogs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLogsRequest::builder)
                 .basePath("/20200531")
@@ -826,18 +915,22 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
             final com.oracle.bmc.responses.AsyncHandler<ListServicesRequest, ListServicesResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListServicesResponse::builder)
                 .logger(LOG, "listServices")
                 .serviceDetails(
                         "LoggingManagement",
                         "ListServices",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/ServiceSummary/ListServices")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListServicesRequest::builder)
                 .basePath("/20200531")
                 .appendPathParam("v2")
                 .appendPathParam("registry")
                 .appendPathParam("services")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -862,12 +955,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListUnifiedAgentConfigurationsResponse::builder)
                 .logger(LOG, "listUnifiedAgentConfigurations")
                 .serviceDetails(
                         "LoggingManagement",
                         "ListUnifiedAgentConfigurations",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ListUnifiedAgentConfigurations")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListUnifiedAgentConfigurationsRequest::builder)
                 .basePath("/20200531")
@@ -909,12 +1006,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
                 .serviceDetails(
                         "LoggingManagement",
                         "ListWorkRequestErrors",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestError/ListWorkRequestErrors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20200531")
@@ -944,12 +1045,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
                 .serviceDetails(
                         "LoggingManagement",
                         "ListWorkRequestLogs",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestLog/ListWorkRequestLogs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20200531")
@@ -978,12 +1083,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
                 .serviceDetails(
                         "LoggingManagement",
                         "ListWorkRequests",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/ListWorkRequests")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20200531")
@@ -1020,12 +1129,17 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
         Validate.notBlank(request.getLogId(), "logId must not be blank");
         Objects.requireNonNull(request.getUpdateLogDetails(), "updateLogDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logGroupId", request.getLogGroupId());
+        requiredParametersMap.put("logId", request.getLogId());
+
         return clientCall(request, UpdateLogResponse::builder)
                 .logger(LOG, "updateLog")
                 .serviceDetails(
                         "LoggingManagement",
                         "UpdateLog",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/UpdateLog")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateLogRequest::builder)
                 .basePath("/20200531")
@@ -1055,12 +1169,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
         Objects.requireNonNull(
                 request.getUpdateLogGroupDetails(), "updateLogGroupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logGroupId", request.getLogGroupId());
+
         return clientCall(request, UpdateLogGroupResponse::builder)
                 .logger(LOG, "updateLogGroup")
                 .serviceDetails(
                         "LoggingManagement",
                         "UpdateLogGroup",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/UpdateLogGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateLogGroupRequest::builder)
                 .basePath("/20200531")
@@ -1089,12 +1207,16 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getUpdateLogSavedSearchDetails(),
                 "updateLogSavedSearchDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logSavedSearchId", request.getLogSavedSearchId());
+
         return clientCall(request, UpdateLogSavedSearchResponse::builder)
                 .logger(LOG, "updateLogSavedSearch")
                 .serviceDetails(
                         "LoggingManagement",
                         "UpdateLogSavedSearch",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/UpdateLogSavedSearch")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateLogSavedSearchRequest::builder)
                 .basePath("/20200531")
@@ -1129,12 +1251,17 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getUpdateUnifiedAgentConfigurationDetails(),
                 "updateUnifiedAgentConfigurationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "unifiedAgentConfigurationId", request.getUnifiedAgentConfigurationId());
+
         return clientCall(request, UpdateUnifiedAgentConfigurationResponse::builder)
                 .logger(LOG, "updateUnifiedAgentConfiguration")
                 .serviceDetails(
                         "LoggingManagement",
                         "UpdateUnifiedAgentConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/UpdateUnifiedAgentConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateUnifiedAgentConfigurationRequest::builder)
                 .basePath("/20200531")

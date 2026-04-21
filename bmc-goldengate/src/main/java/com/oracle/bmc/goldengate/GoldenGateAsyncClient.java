@@ -2616,6 +2616,42 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<MigrateConnectionResponse> migrateConnection(
+            MigrateConnectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            MigrateConnectionRequest, MigrateConnectionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+        Objects.requireNonNull(
+                request.getMigrateConnectionDetails(), "migrateConnectionDetails is required");
+
+        return clientCall(request, MigrateConnectionResponse::builder)
+                .logger(LOG, "migrateConnection")
+                .serviceDetails(
+                        "GoldenGate",
+                        "MigrateConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/MigrateConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(MigrateConnectionRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("migrate")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", MigrateConnectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", MigrateConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<PausePipelineResponse> pausePipeline(
             PausePipelineRequest request,
             final com.oracle.bmc.responses.AsyncHandler<PausePipelineRequest, PausePipelineResponse>

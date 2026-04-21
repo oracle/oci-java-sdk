@@ -79,6 +79,37 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
             return this;
         }
         /**
+         * Azure storage account key. This property is required when 'authenticationType' is set to
+         * 'SHARED_KEY'. e.g.:
+         * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field
+         * will be removed after February 15 2026.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
+        private char[] accountKey;
+
+        /**
+         * Azure storage account key. This property is required when 'authenticationType' is set to
+         * 'SHARED_KEY'. e.g.:
+         * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field
+         * will be removed after February 15 2026.
+         *
+         * @param accountKey the value to set
+         * @return this builder
+         */
+        public Builder accountKey(char[] accountKey) {
+            this.accountKey = accountKey;
+            this.__explicitlySet__.add("accountKey");
+            return this;
+        }
+
+        public Builder accountKey(String accountKey) {
+            this.accountKey = accountKey != null ? accountKey.toCharArray() : null;
+            this.__explicitlySet__.add("accountKey");
+            return this;
+        }
+        /**
          * The Azure Blob Storage endpoint where Iceberg data is stored. e.g.:
          * 'https://my-azure-storage-account.blob.core.windows.net'
          */
@@ -107,6 +138,7 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
                             this.accountName,
                             this.container,
                             this.accountKeySecretId,
+                            this.accountKey,
                             this.endpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -124,6 +156,9 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
             }
             if (model.wasPropertyExplicitlySet("accountKeySecretId")) {
                 this.accountKeySecretId(model.getAccountKeySecretId());
+            }
+            if (model.wasPropertyExplicitlySet("accountKey")) {
+                this.accountKey(model.getAccountKey());
             }
             if (model.wasPropertyExplicitlySet("endpoint")) {
                 this.endpoint(model.getEndpoint());
@@ -143,11 +178,33 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
 
     @Deprecated
     public UpdateAzureDataLakeStorageIcebergStorageDetails(
-            String accountName, String container, String accountKeySecretId, String endpoint) {
+            String accountName,
+            String container,
+            String accountKeySecretId,
+            String accountKey,
+            String endpoint) {
         super();
         this.accountName = accountName;
         this.container = container;
         this.accountKeySecretId = accountKeySecretId;
+        this.accountKey = accountKey != null ? accountKey.toCharArray() : null;
+        this.endpoint = endpoint;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateAzureDataLakeStorageIcebergStorageDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("accountName") String accountName,
+            @com.fasterxml.jackson.annotation.JsonProperty("container") String container,
+            @com.fasterxml.jackson.annotation.JsonProperty("accountKeySecretId")
+                    String accountKeySecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("accountKey") char[] accountKey,
+            @com.fasterxml.jackson.annotation.JsonProperty("endpoint") String endpoint) {
+        super();
+        this.accountName = accountName;
+        this.container = container;
+        this.accountKeySecretId = accountKeySecretId;
+        this.accountKey = accountKey;
         this.endpoint = endpoint;
     }
 
@@ -195,6 +252,46 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
     }
 
     /**
+     * Azure storage account key. This property is required when 'authenticationType' is set to
+     * 'SHARED_KEY'. e.g.:
+     * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be
+     * removed after February 15 2026.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
+    private final char[] accountKey;
+
+    /**
+     * Azure storage account key. This property is required when &#39;authenticationType&#39; is set
+     * to &#39;SHARED_KEY&#39;. e.g.:
+     * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ&#x3D;&#x3D;
+     * Deprecated: This field is deprecated and replaced by &quot;accountKeySecretId&quot;. This
+     * field will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getAccountKey__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAccountKey() {
+        return accountKey != null ? new String(accountKey) : null;
+    }
+
+    /**
+     * Azure storage account key. This property is required when 'authenticationType' is set to
+     * 'SHARED_KEY'. e.g.:
+     * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be
+     * removed after February 15 2026.
+     *
+     * @return the value
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
+    public char[] getAccountKey__AsCharArray() {
+        return accountKey;
+    }
+
+    /**
      * The Azure Blob Storage endpoint where Iceberg data is stored. e.g.:
      * 'https://my-azure-storage-account.blob.core.windows.net'
      */
@@ -229,6 +326,7 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
         sb.append(", accountName=").append(String.valueOf(this.accountName));
         sb.append(", container=").append(String.valueOf(this.container));
         sb.append(", accountKeySecretId=").append(String.valueOf(this.accountKeySecretId));
+        sb.append(", accountKey=").append("<redacted>");
         sb.append(", endpoint=").append(String.valueOf(this.endpoint));
         sb.append(")");
         return sb.toString();
@@ -248,6 +346,7 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
         return java.util.Objects.equals(this.accountName, other.accountName)
                 && java.util.Objects.equals(this.container, other.container)
                 && java.util.Objects.equals(this.accountKeySecretId, other.accountKeySecretId)
+                && java.util.Objects.equals(this.accountKey, other.accountKey)
                 && java.util.Objects.equals(this.endpoint, other.endpoint)
                 && super.equals(other);
     }
@@ -263,6 +362,7 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
                         + (this.accountKeySecretId == null
                                 ? 43
                                 : this.accountKeySecretId.hashCode());
+        result = (result * PRIME) + (this.accountKey == null ? 43 : this.accountKey.hashCode());
         result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
         return result;
     }

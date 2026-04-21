@@ -361,41 +361,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
             this.__explicitlySet__.add("shouldValidateServerCertificate");
             return this;
         }
-        /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
-         *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-        private String privateIp;
-
-        /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
-         *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
-         *
-         * @param privateIp the value to set
-         * @return this builder
-         */
-        public Builder privateIp(String privateIp) {
-            this.privateIp = privateIp;
-            this.__explicitlySet__.add("privateIp");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -428,8 +393,7 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
                             this.additionalAttributes,
                             this.securityProtocol,
                             this.sslCa,
-                            this.shouldValidateServerCertificate,
-                            this.privateIp);
+                            this.shouldValidateServerCertificate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -516,9 +480,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
             if (model.wasPropertyExplicitlySet("shouldValidateServerCertificate")) {
                 this.shouldValidateServerCertificate(model.getShouldValidateServerCertificate());
             }
-            if (model.wasPropertyExplicitlySet("privateIp")) {
-                this.privateIp(model.getPrivateIp());
-            }
             return this;
         }
     }
@@ -559,8 +520,7 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
             java.util.List<NameValuePair> additionalAttributes,
             MicrosoftSqlserverConnection.SecurityProtocol securityProtocol,
             String sslCa,
-            Boolean shouldValidateServerCertificate,
-            String privateIp) {
+            Boolean shouldValidateServerCertificate) {
         super(
                 displayName,
                 description,
@@ -588,7 +548,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
         this.securityProtocol = securityProtocol;
         this.sslCa = sslCa;
         this.shouldValidateServerCertificate = shouldValidateServerCertificate;
-        this.privateIp = privateIp;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
@@ -631,8 +590,7 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
                     MicrosoftSqlserverConnection.SecurityProtocol securityProtocol,
             @com.fasterxml.jackson.annotation.JsonProperty("sslCa") String sslCa,
             @com.fasterxml.jackson.annotation.JsonProperty("shouldValidateServerCertificate")
-                    Boolean shouldValidateServerCertificate,
-            @com.fasterxml.jackson.annotation.JsonProperty("privateIp") String privateIp) {
+                    Boolean shouldValidateServerCertificate) {
         super(
                 displayName,
                 description,
@@ -660,7 +618,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
         this.securityProtocol = securityProtocol;
         this.sslCa = sslCa;
         this.shouldValidateServerCertificate = shouldValidateServerCertificate;
-        this.privateIp = privateIp;
     }
 
     /** The Microsoft SQL Server technology type. */
@@ -845,39 +802,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
         return shouldValidateServerCertificate;
     }
 
-    /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
-     *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-    private final String privateIp;
-
-    /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
-     *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
-     *
-     * @return the value
-     */
-    public String getPrivateIp() {
-        return privateIp;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -905,7 +829,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
         sb.append(", sslCa=").append(String.valueOf(this.sslCa));
         sb.append(", shouldValidateServerCertificate=")
                 .append(String.valueOf(this.shouldValidateServerCertificate));
-        sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(")");
         return sb.toString();
     }
@@ -933,7 +856,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
                 && java.util.Objects.equals(this.sslCa, other.sslCa)
                 && java.util.Objects.equals(
                         this.shouldValidateServerCertificate, other.shouldValidateServerCertificate)
-                && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && super.equals(other);
     }
 
@@ -966,7 +888,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
                         + (this.shouldValidateServerCertificate == null
                                 ? 43
                                 : this.shouldValidateServerCertificate.hashCode());
-        result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         return result;
     }
 }

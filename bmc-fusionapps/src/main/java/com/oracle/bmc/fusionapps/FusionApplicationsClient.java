@@ -237,6 +237,45 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public CreateEmailSubdomainResponse createEmailSubdomain(CreateEmailSubdomainRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateEmailSubdomainDetails(),
+                "createEmailSubdomainDetails is required");
+
+        return clientCall(request, CreateEmailSubdomainResponse::builder)
+                .logger(LOG, "createEmailSubdomain")
+                .serviceDetails(
+                        "FusionApplications",
+                        "CreateEmailSubdomain",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/CreateEmailSubdomain")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateEmailSubdomainRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("emailSubdomains")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.EmailSubdomain.class,
+                        CreateEmailSubdomainResponse.Builder::emailSubdomain)
+                .handleResponseHeaderString("etag", CreateEmailSubdomainResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateEmailSubdomainResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateFusionEnvironmentResponse createFusionEnvironment(
             CreateFusionEnvironmentRequest request) {
         Objects.requireNonNull(
@@ -334,6 +373,79 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public CreateMarketingBrandResponse createMarketingBrand(CreateMarketingBrandRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateMarketingBrandDetails(),
+                "createMarketingBrandDetails is required");
+
+        return clientCall(request, CreateMarketingBrandResponse::builder)
+                .logger(LOG, "createMarketingBrand")
+                .serviceDetails(
+                        "FusionApplications",
+                        "CreateMarketingBrand",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/MarketingBrand/CreateMarketingBrand")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMarketingBrandRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.MarketingBrand.class,
+                        CreateMarketingBrandResponse.Builder::marketingBrand)
+                .handleResponseHeaderString("etag", CreateMarketingBrandResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMarketingBrandResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateMicrositeResponse createMicrosite(CreateMicrositeRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateMicrositeDetails(), "createMicrositeDetails is required");
+
+        return clientCall(request, CreateMicrositeResponse::builder)
+                .logger(LOG, "createMicrosite")
+                .serviceDetails(
+                        "FusionApplications",
+                        "CreateMicrosite",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/CreateMicrosite")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMicrositeRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("microsites")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.Microsite.class,
+                        CreateMicrositeResponse.Builder::microsite)
+                .handleResponseHeaderString("etag", CreateMicrositeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMicrositeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateRefreshActivityResponse createRefreshActivity(
             CreateRefreshActivityRequest request) {
 
@@ -400,6 +512,43 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         CreateServiceAttachmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateServiceAttachmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteEmailSubdomainResponse deleteEmailSubdomain(DeleteEmailSubdomainRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getEmailSubdomainId(), "emailSubdomainId must not be blank");
+
+        return clientCall(request, DeleteEmailSubdomainResponse::builder)
+                .logger(LOG, "deleteEmailSubdomain")
+                .serviceDetails(
+                        "FusionApplications",
+                        "DeleteEmailSubdomain",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/DeleteEmailSubdomain")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteEmailSubdomainRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("emailSubdomains")
+                .appendPathParam(request.getEmailSubdomainId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteEmailSubdomainResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteEmailSubdomainResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -497,6 +646,75 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteFusionEnvironmentFamilyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteMarketingBrandResponse deleteMarketingBrand(DeleteMarketingBrandRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        return clientCall(request, DeleteMarketingBrandResponse::builder)
+                .logger(LOG, "deleteMarketingBrand")
+                .serviceDetails(
+                        "FusionApplications",
+                        "DeleteMarketingBrand",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/MarketingBrand/DeleteMarketingBrand")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMarketingBrandRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMarketingBrandResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMarketingBrandResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteMicrositeResponse deleteMicrosite(DeleteMicrositeRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getMicrositeId(), "micrositeId must not be blank");
+
+        return clientCall(request, DeleteMicrositeResponse::builder)
+                .logger(LOG, "deleteMicrosite")
+                .serviceDetails(
+                        "FusionApplications",
+                        "DeleteMicrosite",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/DeleteMicrosite")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMicrositeRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("microsites")
+                .appendPathParam(request.getMicrositeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteMicrositeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMicrositeResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -632,6 +850,120 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString("etag", GetDataMaskingActivityResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDataMaskingActivityResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetEmailSubdomainResponse getEmailSubdomain(GetEmailSubdomainRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getEmailSubdomainId(), "emailSubdomainId must not be blank");
+
+        return clientCall(request, GetEmailSubdomainResponse::builder)
+                .logger(LOG, "getEmailSubdomain")
+                .serviceDetails(
+                        "FusionApplications",
+                        "GetEmailSubdomain",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/GetEmailSubdomain")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetEmailSubdomainRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("emailSubdomains")
+                .appendPathParam(request.getEmailSubdomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.EmailSubdomain.class,
+                        GetEmailSubdomainResponse.Builder::emailSubdomain)
+                .handleResponseHeaderString("etag", GetEmailSubdomainResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetEmailSubdomainResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetEmailSubdomainCsrResponse getEmailSubdomainCsr(GetEmailSubdomainCsrRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getEmailSubdomainId(), "emailSubdomainId must not be blank");
+
+        return clientCall(request, GetEmailSubdomainCsrResponse::builder)
+                .logger(LOG, "getEmailSubdomainCsr")
+                .serviceDetails(
+                        "FusionApplications",
+                        "GetEmailSubdomainCsr",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/GetEmailSubdomainCsr")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetEmailSubdomainCsrRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("emailSubdomains")
+                .appendPathParam(request.getEmailSubdomainId())
+                .appendPathParam("csr")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.MarketingBrandEmailSubdomainCsr.class,
+                        GetEmailSubdomainCsrResponse.Builder::marketingBrandEmailSubdomainCsr)
+                .handleResponseHeaderString("etag", GetEmailSubdomainCsrResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetEmailSubdomainCsrResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetEmailSubdomainDnsConfigResponse getEmailSubdomainDnsConfig(
+            GetEmailSubdomainDnsConfigRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getEmailSubdomainId(), "emailSubdomainId must not be blank");
+
+        return clientCall(request, GetEmailSubdomainDnsConfigResponse::builder)
+                .logger(LOG, "getEmailSubdomainDnsConfig")
+                .serviceDetails(
+                        "FusionApplications",
+                        "GetEmailSubdomainDnsConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/GetEmailSubdomainDnsConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetEmailSubdomainDnsConfigRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("emailSubdomains")
+                .appendPathParam(request.getEmailSubdomainId())
+                .appendPathParam("dnsConfig")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.MarketingBrandEmailSubdomainDnsConfig.class,
+                        GetEmailSubdomainDnsConfigResponse.Builder
+                                ::marketingBrandEmailSubdomainDnsConfig)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetEmailSubdomainDnsConfigResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -795,6 +1127,114 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         GetFusionEnvironmentStatusResponse.Builder::fusionEnvironmentStatus)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFusionEnvironmentStatusResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMarketingBrandResponse getMarketingBrand(GetMarketingBrandRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        return clientCall(request, GetMarketingBrandResponse::builder)
+                .logger(LOG, "getMarketingBrand")
+                .serviceDetails(
+                        "FusionApplications",
+                        "GetMarketingBrand",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/MarketingBrand/GetMarketingBrand")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMarketingBrandRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.MarketingBrand.class,
+                        GetMarketingBrandResponse.Builder::marketingBrand)
+                .handleResponseHeaderString("etag", GetMarketingBrandResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMarketingBrandResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMicrositeResponse getMicrosite(GetMicrositeRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getMicrositeId(), "micrositeId must not be blank");
+
+        return clientCall(request, GetMicrositeResponse::builder)
+                .logger(LOG, "getMicrosite")
+                .serviceDetails(
+                        "FusionApplications",
+                        "GetMicrosite",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/GetMicrosite")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMicrositeRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("microsites")
+                .appendPathParam(request.getMicrositeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.Microsite.class,
+                        GetMicrositeResponse.Builder::microsite)
+                .handleResponseHeaderString("etag", GetMicrositeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMicrositeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMicrositeDnsConfigResponse getMicrositeDnsConfig(
+            GetMicrositeDnsConfigRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getMicrositeId(), "micrositeId must not be blank");
+
+        return clientCall(request, GetMicrositeDnsConfigResponse::builder)
+                .logger(LOG, "getMicrositeDnsConfig")
+                .serviceDetails(
+                        "FusionApplications",
+                        "GetMicrositeDnsConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/GetMicrositeDnsConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMicrositeDnsConfigRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("microsites")
+                .appendPathParam(request.getMicrositeId())
+                .appendPathParam("dnsConfig")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.MarketingBrandMicrositeDnsConfig.class,
+                        GetMicrositeDnsConfigResponse.Builder::marketingBrandMicrositeDnsConfig)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMicrositeDnsConfigResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1026,6 +1466,48 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public ListEmailSubdomainsResponse listEmailSubdomains(ListEmailSubdomainsRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        return clientCall(request, ListEmailSubdomainsResponse::builder)
+                .logger(LOG, "listEmailSubdomains")
+                .serviceDetails(
+                        "FusionApplications",
+                        "ListEmailSubdomains",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/ListEmailSubdomains")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListEmailSubdomainsRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("emailSubdomains")
+                .appendQueryParam("emailSubdomainId", request.getEmailSubdomainId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.EmailSubdomainCollection.class,
+                        ListEmailSubdomainsResponse.Builder::emailSubdomainCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListEmailSubdomainsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListEmailSubdomainsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListFusionEnvironmentFamiliesResponse listFusionEnvironmentFamilies(
             ListFusionEnvironmentFamiliesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -1098,6 +1580,86 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListFusionEnvironmentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFusionEnvironmentsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMarketingBrandsResponse listMarketingBrands(ListMarketingBrandsRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, ListMarketingBrandsResponse::builder)
+                .logger(LOG, "listMarketingBrands")
+                .serviceDetails(
+                        "FusionApplications",
+                        "ListMarketingBrands",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/MarketingBrand/ListMarketingBrands")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMarketingBrandsRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendQueryParam("marketingBrandId", request.getMarketingBrandId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.MarketingBrandCollection.class,
+                        ListMarketingBrandsResponse.Builder::marketingBrandCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMarketingBrandsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMarketingBrandsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMicrositesResponse listMicrosites(ListMicrositesRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        return clientCall(request, ListMicrositesResponse::builder)
+                .logger(LOG, "listMicrosites")
+                .serviceDetails(
+                        "FusionApplications",
+                        "ListMicrosites",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/ListMicrosites")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMicrositesRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("microsites")
+                .appendQueryParam("micrositeId", request.getMicrositeId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.MicrositeCollection.class,
+                        ListMicrositesResponse.Builder::micrositeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMicrositesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMicrositesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1375,6 +1937,51 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public RequestEmailSubdomainCsrResponse requestEmailSubdomainCsr(
+            RequestEmailSubdomainCsrRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getEmailSubdomainId(), "emailSubdomainId must not be blank");
+        Objects.requireNonNull(
+                request.getRequestEmailSubdomainCsrDetails(),
+                "requestEmailSubdomainCsrDetails is required");
+
+        return clientCall(request, RequestEmailSubdomainCsrResponse::builder)
+                .logger(LOG, "requestEmailSubdomainCsr")
+                .serviceDetails(
+                        "FusionApplications",
+                        "RequestEmailSubdomainCsr",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/RequestEmailSubdomainCsr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RequestEmailSubdomainCsrRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("emailSubdomains")
+                .appendPathParam(request.getEmailSubdomainId())
+                .appendPathParam("actions")
+                .appendPathParam("requestEmailSubdomainCsr")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.MarketingBrandEmailSubdomainCsr.class,
+                        RequestEmailSubdomainCsrResponse.Builder::marketingBrandEmailSubdomainCsr)
+                .handleResponseHeaderString("etag", RequestEmailSubdomainCsrResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RequestEmailSubdomainCsrResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ResetFusionEnvironmentPasswordResponse resetFusionEnvironmentPassword(
             ResetFusionEnvironmentPasswordRequest request) {
         Objects.requireNonNull(
@@ -1413,6 +2020,48 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ResetFusionEnvironmentPasswordResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateEmailSubdomainResponse updateEmailSubdomain(UpdateEmailSubdomainRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getEmailSubdomainId(), "emailSubdomainId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateEmailSubdomainDetails(),
+                "updateEmailSubdomainDetails is required");
+
+        return clientCall(request, UpdateEmailSubdomainResponse::builder)
+                .logger(LOG, "updateEmailSubdomain")
+                .serviceDetails(
+                        "FusionApplications",
+                        "UpdateEmailSubdomain",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/UpdateEmailSubdomain")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateEmailSubdomainRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("emailSubdomains")
+                .appendPathParam(request.getEmailSubdomainId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.EmailSubdomain.class,
+                        UpdateEmailSubdomainResponse.Builder::emailSubdomain)
+                .handleResponseHeaderString("etag", UpdateEmailSubdomainResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateEmailSubdomainResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1487,6 +2136,85 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public UpdateMarketingBrandResponse updateMarketingBrand(UpdateMarketingBrandRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMarketingBrandDetails(),
+                "updateMarketingBrandDetails is required");
+
+        return clientCall(request, UpdateMarketingBrandResponse::builder)
+                .logger(LOG, "updateMarketingBrand")
+                .serviceDetails(
+                        "FusionApplications",
+                        "UpdateMarketingBrand",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/MarketingBrand/UpdateMarketingBrand")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMarketingBrandRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.MarketingBrand.class,
+                        UpdateMarketingBrandResponse.Builder::marketingBrand)
+                .handleResponseHeaderString("etag", UpdateMarketingBrandResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMarketingBrandResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMicrositeResponse updateMicrosite(UpdateMicrositeRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getMicrositeId(), "micrositeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMicrositeDetails(), "updateMicrositeDetails is required");
+
+        return clientCall(request, UpdateMicrositeResponse::builder)
+                .logger(LOG, "updateMicrosite")
+                .serviceDetails(
+                        "FusionApplications",
+                        "UpdateMicrosite",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/UpdateMicrosite")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMicrositeRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("microsites")
+                .appendPathParam(request.getMicrositeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.Microsite.class,
+                        UpdateMicrositeResponse.Builder::microsite)
+                .handleResponseHeaderString("etag", UpdateMicrositeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMicrositeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateRefreshActivityResponse updateRefreshActivity(
             UpdateRefreshActivityRequest request) {
 
@@ -1522,6 +2250,173 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString("etag", UpdateRefreshActivityResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRefreshActivityResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UploadEmailSubdomainCertificateResponse uploadEmailSubdomainCertificate(
+            UploadEmailSubdomainCertificateRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getEmailSubdomainId(), "emailSubdomainId must not be blank");
+        Objects.requireNonNull(
+                request.getUploadEmailSubdomainCertificateDetails(),
+                "uploadEmailSubdomainCertificateDetails is required");
+
+        return clientCall(request, UploadEmailSubdomainCertificateResponse::builder)
+                .logger(LOG, "uploadEmailSubdomainCertificate")
+                .serviceDetails(
+                        "FusionApplications",
+                        "UploadEmailSubdomainCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/UploadEmailSubdomainCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UploadEmailSubdomainCertificateRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("emailSubdomains")
+                .appendPathParam(request.getEmailSubdomainId())
+                .appendPathParam("actions")
+                .appendPathParam("uploadEmailSubdomainCertificate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UploadEmailSubdomainCertificateResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ValidateAndConfigureEmailSubdomainCertificateResponse
+            validateAndConfigureEmailSubdomainCertificate(
+                    ValidateAndConfigureEmailSubdomainCertificateRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getEmailSubdomainId(), "emailSubdomainId must not be blank");
+
+        return clientCall(request, ValidateAndConfigureEmailSubdomainCertificateResponse::builder)
+                .logger(LOG, "validateAndConfigureEmailSubdomainCertificate")
+                .serviceDetails(
+                        "FusionApplications",
+                        "ValidateAndConfigureEmailSubdomainCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/ValidateAndConfigureEmailSubdomainCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ValidateAndConfigureEmailSubdomainCertificateRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("emailSubdomains")
+                .appendPathParam(request.getEmailSubdomainId())
+                .appendPathParam("actions")
+                .appendPathParam("validateAndConfigureCertificate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ValidateAndConfigureEmailSubdomainCertificateResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ValidateAndConfigureEmailSubdomainCertificateResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ValidateAndConfigureEmailSubdomainDnsResponse validateAndConfigureEmailSubdomainDns(
+            ValidateAndConfigureEmailSubdomainDnsRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getEmailSubdomainId(), "emailSubdomainId must not be blank");
+
+        return clientCall(request, ValidateAndConfigureEmailSubdomainDnsResponse::builder)
+                .logger(LOG, "validateAndConfigureEmailSubdomainDns")
+                .serviceDetails(
+                        "FusionApplications",
+                        "ValidateAndConfigureEmailSubdomainDns",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/ValidateAndConfigureEmailSubdomainDns")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ValidateAndConfigureEmailSubdomainDnsRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("emailSubdomains")
+                .appendPathParam(request.getEmailSubdomainId())
+                .appendPathParam("actions")
+                .appendPathParam("validateAndConfigureDns")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ValidateAndConfigureEmailSubdomainDnsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ValidateAndConfigureEmailSubdomainDnsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ValidateAndConfigureMicrositeDnsResponse validateAndConfigureMicrositeDns(
+            ValidateAndConfigureMicrositeDnsRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getMarketingBrandId(), "marketingBrandId must not be blank");
+
+        Validate.notBlank(request.getMicrositeId(), "micrositeId must not be blank");
+
+        return clientCall(request, ValidateAndConfigureMicrositeDnsResponse::builder)
+                .logger(LOG, "validateAndConfigureMicrositeDns")
+                .serviceDetails(
+                        "FusionApplications",
+                        "ValidateAndConfigureMicrositeDns",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/ValidateAndConfigureMicrositeDns")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ValidateAndConfigureMicrositeDnsRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("marketingBrands")
+                .appendPathParam(request.getMarketingBrandId())
+                .appendPathParam("microsites")
+                .appendPathParam(request.getMicrositeId())
+                .appendPathParam("actions")
+                .appendPathParam("validateAndConfigureDns")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ValidateAndConfigureMicrositeDnsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ValidateAndConfigureMicrositeDnsResponse.Builder::opcRequestId)
                 .callSync();
     }
 

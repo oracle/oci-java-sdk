@@ -118,6 +118,22 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates an email Subdomain for a brand
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateEmailSubdomainResponse> createEmailSubdomain(
+            CreateEmailSubdomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateEmailSubdomainRequest, CreateEmailSubdomainResponse>
+                    handler);
+
+    /**
      * Creates a new FusionEnvironment.
      *
      * @param request The request object containing the details to send
@@ -170,6 +186,37 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a marketing brand for fusion environment
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateMarketingBrandResponse> createMarketingBrand(
+            CreateMarketingBrandRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateMarketingBrandRequest, CreateMarketingBrandResponse>
+                    handler);
+
+    /**
+     * Creates a microsite for brand
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateMicrositeResponse> createMicrosite(
+            CreateMicrositeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateMicrositeRequest, CreateMicrositeResponse>
+                    handler);
+
+    /**
      * Creates a new RefreshActivity.
      *
      * @param request The request object containing the details to send
@@ -199,6 +246,22 @@ public interface FusionApplicationsAsync extends AutoCloseable {
             CreateServiceAttachmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateServiceAttachmentRequest, CreateServiceAttachmentResponse>
+                    handler);
+
+    /**
+     * Delete an email subdomain for a brand
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteEmailSubdomainResponse> deleteEmailSubdomain(
+            DeleteEmailSubdomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteEmailSubdomainRequest, DeleteEmailSubdomainResponse>
                     handler);
 
     /**
@@ -252,6 +315,37 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                                     DeleteFusionEnvironmentFamilyRequest,
                                     DeleteFusionEnvironmentFamilyResponse>
                             handler);
+
+    /**
+     * Deletes a Marketing brand for fusion Environment
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMarketingBrandResponse> deleteMarketingBrand(
+            DeleteMarketingBrandRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMarketingBrandRequest, DeleteMarketingBrandResponse>
+                    handler);
+
+    /**
+     * Delete microsite for a brand
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMicrositeResponse> deleteMicrosite(
+            DeleteMicrositeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteMicrositeRequest, DeleteMicrositeResponse>
+                    handler);
 
     /**
      * Deletes a scheduled RefreshActivity resource by identifier
@@ -316,6 +410,54 @@ public interface FusionApplicationsAsync extends AutoCloseable {
             GetDataMaskingActivityRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetDataMaskingActivityRequest, GetDataMaskingActivityResponse>
+                    handler);
+
+    /**
+     * Gets an email subdomain for the brand
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetEmailSubdomainResponse> getEmailSubdomain(
+            GetEmailSubdomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailSubdomainRequest, GetEmailSubdomainResponse>
+                    handler);
+
+    /**
+     * Gets a CSR for email subdomain for a brand
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetEmailSubdomainCsrResponse> getEmailSubdomainCsr(
+            GetEmailSubdomainCsrRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailSubdomainCsrRequest, GetEmailSubdomainCsrResponse>
+                    handler);
+
+    /**
+     * Get all DNS records for emailSubdomain
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetEmailSubdomainDnsConfigResponse> getEmailSubdomainDnsConfig(
+            GetEmailSubdomainDnsConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailSubdomainDnsConfigRequest, GetEmailSubdomainDnsConfigResponse>
                     handler);
 
     /**
@@ -401,6 +543,53 @@ public interface FusionApplicationsAsync extends AutoCloseable {
             GetFusionEnvironmentStatusRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetFusionEnvironmentStatusRequest, GetFusionEnvironmentStatusResponse>
+                    handler);
+
+    /**
+     * Gets a Marketing Brand by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMarketingBrandResponse> getMarketingBrand(
+            GetMarketingBrandRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMarketingBrandRequest, GetMarketingBrandResponse>
+                    handler);
+
+    /**
+     * Get the microsite for the brand
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMicrositeResponse> getMicrosite(
+            GetMicrositeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetMicrositeRequest, GetMicrositeResponse>
+                    handler);
+
+    /**
+     * Get DNS records for microsite
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMicrositeDnsConfigResponse> getMicrositeDnsConfig(
+            GetMicrositeDnsConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMicrositeDnsConfigRequest, GetMicrositeDnsConfigResponse>
                     handler);
 
     /**
@@ -513,6 +702,22 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of email subdomains for a brand
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListEmailSubdomainsResponse> listEmailSubdomains(
+            ListEmailSubdomainsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListEmailSubdomainsRequest, ListEmailSubdomainsResponse>
+                    handler);
+
+    /**
      * Returns a list of FusionEnvironmentFamilies.
      *
      * @param request The request object containing the details to send
@@ -544,6 +749,37 @@ public interface FusionApplicationsAsync extends AutoCloseable {
             ListFusionEnvironmentsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListFusionEnvironmentsRequest, ListFusionEnvironmentsResponse>
+                    handler);
+
+    /**
+     * Returns a list of marketing brands
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMarketingBrandsResponse> listMarketingBrands(
+            ListMarketingBrandsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMarketingBrandsRequest, ListMarketingBrandsResponse>
+                    handler);
+
+    /**
+     * Returns a list of microsites
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMicrositesResponse> listMicrosites(
+            ListMicrositesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListMicrositesRequest, ListMicrositesResponse>
                     handler);
 
     /**
@@ -660,6 +896,22 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Request Email Subdomain CSR
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RequestEmailSubdomainCsrResponse> requestEmailSubdomainCsr(
+            RequestEmailSubdomainCsrRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RequestEmailSubdomainCsrRequest, RequestEmailSubdomainCsrResponse>
+                    handler);
+
+    /**
      * Reset FusionEnvironment admin password. This API will be deprecated on Mon, 15 Jan 2024
      * 01:00:00 GMT. Users can reset password themselves, FAaaS will no longer provide an API for
      * this.
@@ -678,6 +930,22 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                                     ResetFusionEnvironmentPasswordRequest,
                                     ResetFusionEnvironmentPasswordResponse>
                             handler);
+
+    /**
+     * Updates an email subdomain
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateEmailSubdomainResponse> updateEmailSubdomain(
+            UpdateEmailSubdomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateEmailSubdomainRequest, UpdateEmailSubdomainResponse>
+                    handler);
 
     /**
      * Updates the FusionEnvironment
@@ -714,6 +982,37 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Updates a Marketing Brand
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateMarketingBrandResponse> updateMarketingBrand(
+            UpdateMarketingBrandRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMarketingBrandRequest, UpdateMarketingBrandResponse>
+                    handler);
+
+    /**
+     * Updates an microsite
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateMicrositeResponse> updateMicrosite(
+            UpdateMicrositeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateMicrositeRequest, UpdateMicrositeResponse>
+                    handler);
+
+    /**
      * Updates a scheduled RefreshActivity.
      *
      * @param request The request object containing the details to send
@@ -728,6 +1027,78 @@ public interface FusionApplicationsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateRefreshActivityRequest, UpdateRefreshActivityResponse>
                     handler);
+
+    /**
+     * upload certificate for emailSubdomain
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UploadEmailSubdomainCertificateResponse>
+            uploadEmailSubdomainCertificate(
+                    UploadEmailSubdomainCertificateRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UploadEmailSubdomainCertificateRequest,
+                                    UploadEmailSubdomainCertificateResponse>
+                            handler);
+
+    /**
+     * Validate and configure certificate for emailSubdomain
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ValidateAndConfigureEmailSubdomainCertificateResponse>
+            validateAndConfigureEmailSubdomainCertificate(
+                    ValidateAndConfigureEmailSubdomainCertificateRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ValidateAndConfigureEmailSubdomainCertificateRequest,
+                                    ValidateAndConfigureEmailSubdomainCertificateResponse>
+                            handler);
+
+    /**
+     * Validate and configure DNS records for emailSubdomain
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ValidateAndConfigureEmailSubdomainDnsResponse>
+            validateAndConfigureEmailSubdomainDns(
+                    ValidateAndConfigureEmailSubdomainDnsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ValidateAndConfigureEmailSubdomainDnsRequest,
+                                    ValidateAndConfigureEmailSubdomainDnsResponse>
+                            handler);
+
+    /**
+     * Validate and configure DNS records for microsite
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ValidateAndConfigureMicrositeDnsResponse>
+            validateAndConfigureMicrositeDns(
+                    ValidateAndConfigureMicrositeDnsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ValidateAndConfigureMicrositeDnsRequest,
+                                    ValidateAndConfigureMicrositeDnsResponse>
+                            handler);
 
     /**
      * Verify whether a service instance can be attached to the fusion pod

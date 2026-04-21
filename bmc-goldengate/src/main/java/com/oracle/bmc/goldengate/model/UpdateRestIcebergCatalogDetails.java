@@ -67,13 +67,33 @@ public final class UpdateRestIcebergCatalogDetails extends UpdateIcebergCatalogD
             this.__explicitlySet__.add("propertiesSecretId");
             return this;
         }
+        /**
+         * The base64 encoded content of the configuration file containing additional properties for
+         * the REST catalog.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("properties")
+        private String properties;
+
+        /**
+         * The base64 encoded content of the configuration file containing additional properties for
+         * the REST catalog.
+         *
+         * @param properties the value to set
+         * @return this builder
+         */
+        public Builder properties(String properties) {
+            this.properties = properties;
+            this.__explicitlySet__.add("properties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateRestIcebergCatalogDetails build() {
             UpdateRestIcebergCatalogDetails model =
-                    new UpdateRestIcebergCatalogDetails(this.uri, this.propertiesSecretId);
+                    new UpdateRestIcebergCatalogDetails(
+                            this.uri, this.propertiesSecretId, this.properties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -87,6 +107,9 @@ public final class UpdateRestIcebergCatalogDetails extends UpdateIcebergCatalogD
             }
             if (model.wasPropertyExplicitlySet("propertiesSecretId")) {
                 this.propertiesSecretId(model.getPropertiesSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
             }
             return this;
         }
@@ -102,10 +125,12 @@ public final class UpdateRestIcebergCatalogDetails extends UpdateIcebergCatalogD
     }
 
     @Deprecated
-    public UpdateRestIcebergCatalogDetails(String uri, String propertiesSecretId) {
+    public UpdateRestIcebergCatalogDetails(
+            String uri, String propertiesSecretId, String properties) {
         super();
         this.uri = uri;
         this.propertiesSecretId = propertiesSecretId;
+        this.properties = properties;
     }
 
     /** The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1' */
@@ -142,6 +167,23 @@ public final class UpdateRestIcebergCatalogDetails extends UpdateIcebergCatalogD
         return propertiesSecretId;
     }
 
+    /**
+     * The base64 encoded content of the configuration file containing additional properties for the
+     * REST catalog.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("properties")
+    private final String properties;
+
+    /**
+     * The base64 encoded content of the configuration file containing additional properties for the
+     * REST catalog.
+     *
+     * @return the value
+     */
+    public String getProperties() {
+        return properties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -159,6 +201,7 @@ public final class UpdateRestIcebergCatalogDetails extends UpdateIcebergCatalogD
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", uri=").append(String.valueOf(this.uri));
         sb.append(", propertiesSecretId=").append(String.valueOf(this.propertiesSecretId));
+        sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(")");
         return sb.toString();
     }
@@ -175,6 +218,7 @@ public final class UpdateRestIcebergCatalogDetails extends UpdateIcebergCatalogD
         UpdateRestIcebergCatalogDetails other = (UpdateRestIcebergCatalogDetails) o;
         return java.util.Objects.equals(this.uri, other.uri)
                 && java.util.Objects.equals(this.propertiesSecretId, other.propertiesSecretId)
+                && java.util.Objects.equals(this.properties, other.properties)
                 && super.equals(other);
     }
 
@@ -188,6 +232,7 @@ public final class UpdateRestIcebergCatalogDetails extends UpdateIcebergCatalogD
                         + (this.propertiesSecretId == null
                                 ? 43
                                 : this.propertiesSecretId.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
         return result;
     }
 }

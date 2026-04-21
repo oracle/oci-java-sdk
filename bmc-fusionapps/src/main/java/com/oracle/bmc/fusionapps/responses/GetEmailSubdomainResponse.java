@@ -2,12 +2,12 @@
  * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.core.responses;
+package com.oracle.bmc.fusionapps.responses;
 
-import com.oracle.bmc.core.model.*;
+import com.oracle.bmc.fusionapps.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class UpdateComputeHostsResponse extends com.oracle.bmc.responses.BmcResponse {
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+public class GetEmailSubdomainResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
@@ -36,24 +36,16 @@ public class UpdateComputeHostsResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
-     * with this ID to track the status of the request.
-     */
-    private String opcWorkRequestId;
+    /** The returned {@code EmailSubdomain} instance. */
+    private com.oracle.bmc.fusionapps.model.EmailSubdomain emailSubdomain;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
-     * with this ID to track the status of the request.
+     * The returned {@code EmailSubdomain} instance.
      *
      * @return the value
      */
-    public String getOpcWorkRequestId() {
-        return opcWorkRequestId;
+    public com.oracle.bmc.fusionapps.model.EmailSubdomain getEmailSubdomain() {
+        return emailSubdomain;
     }
 
     @java.beans.ConstructorProperties({
@@ -61,22 +53,22 @@ public class UpdateComputeHostsResponse extends com.oracle.bmc.responses.BmcResp
         "headers",
         "etag",
         "opcRequestId",
-        "opcWorkRequestId"
+        "emailSubdomain"
     })
-    private UpdateComputeHostsResponse(
+    private GetEmailSubdomainResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
-            String opcWorkRequestId) {
+            com.oracle.bmc.fusionapps.model.EmailSubdomain emailSubdomain) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
-        this.opcWorkRequestId = opcWorkRequestId;
+        this.emailSubdomain = emailSubdomain;
     }
 
     public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateComputeHostsResponse> {
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetEmailSubdomainResponse> {
         private int __httpStatusCode__;
 
         @Override
@@ -125,25 +117,18 @@ public class UpdateComputeHostsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
-         * with this ID to track the status of the request.
-         */
-        private String opcWorkRequestId;
+        /** The returned {@code EmailSubdomain} instance. */
+        private com.oracle.bmc.fusionapps.model.EmailSubdomain emailSubdomain;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
-         * with this ID to track the status of the request.
+         * The returned {@code EmailSubdomain} instance.
          *
-         * @param opcWorkRequestId the value to set
+         * @param emailSubdomain the value to set
          * @return this builder
          */
-        public Builder opcWorkRequestId(String opcWorkRequestId) {
-            this.opcWorkRequestId = opcWorkRequestId;
+        public Builder emailSubdomain(
+                com.oracle.bmc.fusionapps.model.EmailSubdomain emailSubdomain) {
+            this.emailSubdomain = emailSubdomain;
             return this;
         }
 
@@ -153,12 +138,12 @@ public class UpdateComputeHostsResponse extends com.oracle.bmc.responses.BmcResp
          * @return this builder instance
          */
         @Override
-        public Builder copy(UpdateComputeHostsResponse o) {
+        public Builder copy(GetEmailSubdomainResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
-            opcWorkRequestId(o.getOpcWorkRequestId());
+            emailSubdomain(o.getEmailSubdomain());
 
             return this;
         }
@@ -169,9 +154,9 @@ public class UpdateComputeHostsResponse extends com.oracle.bmc.responses.BmcResp
          * @return the response object
          */
         @Override
-        public UpdateComputeHostsResponse build() {
-            return new UpdateComputeHostsResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, opcWorkRequestId);
+        public GetEmailSubdomainResponse build() {
+            return new GetEmailSubdomainResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, emailSubdomain);
         }
     }
 
@@ -191,7 +176,7 @@ public class UpdateComputeHostsResponse extends com.oracle.bmc.responses.BmcResp
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
-        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",emailSubdomain=").append(String.valueOf(emailSubdomain));
         sb.append(")");
         return sb.toString();
     }
@@ -201,15 +186,15 @@ public class UpdateComputeHostsResponse extends com.oracle.bmc.responses.BmcResp
         if (this == o) {
             return true;
         }
-        if (!(o instanceof UpdateComputeHostsResponse)) {
+        if (!(o instanceof GetEmailSubdomainResponse)) {
             return false;
         }
 
-        UpdateComputeHostsResponse other = (UpdateComputeHostsResponse) o;
+        GetEmailSubdomainResponse other = (GetEmailSubdomainResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId);
+                && java.util.Objects.equals(this.emailSubdomain, other.emailSubdomain);
     }
 
     @Override
@@ -220,7 +205,7 @@ public class UpdateComputeHostsResponse extends com.oracle.bmc.responses.BmcResp
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+                        + (this.emailSubdomain == null ? 43 : this.emailSubdomain.hashCode());
         return result;
     }
 }

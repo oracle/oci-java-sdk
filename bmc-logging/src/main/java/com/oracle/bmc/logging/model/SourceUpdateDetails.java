@@ -31,12 +31,14 @@ public final class SourceUpdateDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Log category parameters are stored here. */
+        /**
+         * Log category parameters are stored here. The resource for a service log can't be updated.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.Map<String, String> parameters;
 
         /**
-         * Log category parameters are stored here.
+         * Log category parameters are stored here. The resource for a service log can't be updated.
          *
          * @param parameters the value to set
          * @return this builder
@@ -76,12 +78,12 @@ public final class SourceUpdateDetails
         return new Builder().copy(this);
     }
 
-    /** Log category parameters are stored here. */
+    /** Log category parameters are stored here. The resource for a service log can't be updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.Map<String, String> parameters;
 
     /**
-     * Log category parameters are stored here.
+     * Log category parameters are stored here. The resource for a service log can't be updated.
      *
      * @return the value
      */

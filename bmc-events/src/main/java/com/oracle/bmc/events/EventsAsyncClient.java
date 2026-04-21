@@ -33,7 +33,9 @@ public class EventsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(EventsClient.class.getName())
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://events.{region}.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://events.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .endpointServiceName("events")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -106,12 +108,16 @@ public class EventsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 request.getChangeRuleCompartmentDetails(),
                 "changeRuleCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ruleId", request.getRuleId());
+
         return clientCall(request, ChangeRuleCompartmentResponse::builder)
                 .logger(LOG, "changeRuleCompartment")
                 .serviceDetails(
                         "Events",
                         "ChangeRuleCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/ChangeRuleCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeRuleCompartmentRequest::builder)
                 .basePath("/20181201")
@@ -136,12 +142,15 @@ public class EventsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                     handler) {
         Objects.requireNonNull(request.getCreateRuleDetails(), "createRuleDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateRuleResponse::builder)
                 .logger(LOG, "createRule")
                 .serviceDetails(
                         "Events",
                         "CreateRule",
                         "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/CreateRule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateRuleRequest::builder)
                 .basePath("/20181201")
@@ -166,12 +175,16 @@ public class EventsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
 
         Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ruleId", request.getRuleId());
+
         return clientCall(request, DeleteRuleResponse::builder)
                 .logger(LOG, "deleteRule")
                 .serviceDetails(
                         "Events",
                         "DeleteRule",
                         "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/DeleteRule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteRuleRequest::builder)
                 .basePath("/20181201")
@@ -192,12 +205,16 @@ public class EventsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
 
         Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ruleId", request.getRuleId());
+
         return clientCall(request, GetRuleResponse::builder)
                 .logger(LOG, "getRule")
                 .serviceDetails(
                         "Events",
                         "GetRule",
                         "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/GetRule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetRuleRequest::builder)
                 .basePath("/20181201")
@@ -218,12 +235,16 @@ public class EventsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListRulesResponse::builder)
                 .logger(LOG, "listRules")
                 .serviceDetails(
                         "Events",
                         "ListRules",
                         "https://docs.oracle.com/iaas/api/#/en/events/20181201/RuleSummary/ListRules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRulesRequest::builder)
                 .basePath("/20181201")
@@ -255,12 +276,16 @@ public class EventsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
         Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
         Objects.requireNonNull(request.getUpdateRuleDetails(), "updateRuleDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ruleId", request.getRuleId());
+
         return clientCall(request, UpdateRuleResponse::builder)
                 .logger(LOG, "updateRule")
                 .serviceDetails(
                         "Events",
                         "UpdateRule",
                         "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/UpdateRule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateRuleRequest::builder)
                 .basePath("/20181201")

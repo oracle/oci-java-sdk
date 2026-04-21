@@ -8,9 +8,10 @@ import com.oracle.bmc.loggingingestion.requests.*;
 import com.oracle.bmc.loggingingestion.responses.*;
 
 /**
- * Use the Logging Ingestion API to ingest your application logs. This service client uses
- * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
- * breaker configuration is defined by the user.
+ * Use the Logging Ingestion API to ingest your application logs. For more information, see [Logging
+ * Overview](https://docs.oracle.com/iaas/Content/Logging/Concepts/loggingoverview.htm). This
+ * service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default
+ * if no circuit breaker configuration is defined by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
 public interface Logging extends AutoCloseable {
@@ -62,6 +63,16 @@ public interface Logging extends AutoCloseable {
      *     template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
+     * Determines whether dual stack endpoint should be used or not. Set
+     * dualStackEndpointTemplateEnabled to "true" if the user wants to enable use of dual stack
+     * endpoint template. Default value is "false"
+     *
+     * @param dualStackEndpointTemplateEnabled flag to enable the use of dual stack endpoint
+     *     template
+     */
+    void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled);
 
     /**
      * This API allows ingesting logs associated with a logId. A success response implies the data

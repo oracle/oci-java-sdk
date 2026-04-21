@@ -50,10 +50,18 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * When setting the page limit, specifies the maximum number of unfiltered records that can be
+     * fetched from the data store in one request. Filtering happens after the records are
+     * retrieved. Subsequent pages might include results that match the query criteria.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * When setting the page limit, specifies the maximum number of unfiltered records that can be
+     * fetched from the data store in one request. Filtering happens after the records are
+     * retrieved. Subsequent pages might include results that match the query criteria.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -118,11 +126,17 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The maximum number of items to return in a paginated "List" call. */
+        /**
+         * When setting the page limit, specifies the maximum number of unfiltered records that can
+         * be fetched from the data store in one request. Filtering happens after the records are
+         * retrieved. Subsequent pages might include results that match the query criteria.
+         */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return in a paginated "List" call.
+         * When setting the page limit, specifies the maximum number of unfiltered records that can
+         * be fetched from the data store in one request. Filtering happens after the records are
+         * retrieved. Subsequent pages might include results that match the query criteria.
          *
          * @param limit the value to set
          * @return this builder instance

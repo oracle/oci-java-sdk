@@ -45,11 +45,11 @@ public class ListDeploymentBackupsRequest
     public String getDeploymentId() {
         return deploymentId;
     }
-    /** A filter to return only the resources that match the 'lifecycleState' given. */
-    private com.oracle.bmc.goldengate.model.LifecycleState lifecycleState;
+    /** A filter to return only the deployment backups having the 'lifecycleState' given. */
+    private com.oracle.bmc.goldengate.model.DeploymentBackup.LifecycleState lifecycleState;
 
-    /** A filter to return only the resources that match the 'lifecycleState' given. */
-    public com.oracle.bmc.goldengate.model.LifecycleState getLifecycleState() {
+    /** A filter to return only the deployment backups having the 'lifecycleState' given. */
+    public com.oracle.bmc.goldengate.model.DeploymentBackup.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /** A filter to return only the resources that match the entire 'displayName' given. */
@@ -195,17 +195,18 @@ public class ListDeploymentBackupsRequest
             return this;
         }
 
-        /** A filter to return only the resources that match the 'lifecycleState' given. */
-        private com.oracle.bmc.goldengate.model.LifecycleState lifecycleState = null;
+        /** A filter to return only the deployment backups having the 'lifecycleState' given. */
+        private com.oracle.bmc.goldengate.model.DeploymentBackup.LifecycleState lifecycleState =
+                null;
 
         /**
-         * A filter to return only the resources that match the 'lifecycleState' given.
+         * A filter to return only the deployment backups having the 'lifecycleState' given.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
-                com.oracle.bmc.goldengate.model.LifecycleState lifecycleState) {
+                com.oracle.bmc.goldengate.model.DeploymentBackup.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             return this;
         }

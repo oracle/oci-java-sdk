@@ -223,7 +223,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
          * "server1.example.com:9092,server2.example.com:9092"}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
-        private java.util.List<KafkaBootstrapServer> bootstrapServers;
+        private java.util.List<CreateKafkaBootstrapServer> bootstrapServers;
 
         /**
          * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of
@@ -234,7 +234,8 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
          * @param bootstrapServers the value to set
          * @return this builder
          */
-        public Builder bootstrapServers(java.util.List<KafkaBootstrapServer> bootstrapServers) {
+        public Builder bootstrapServers(
+                java.util.List<CreateKafkaBootstrapServer> bootstrapServers) {
             this.bootstrapServers = bootstrapServers;
             this.__explicitlySet__.add("bootstrapServers");
             return this;
@@ -796,7 +797,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
             KafkaConnection.TechnologyType technologyType,
             String streamPoolId,
             String clusterId,
-            java.util.List<KafkaBootstrapServer> bootstrapServers,
+            java.util.List<CreateKafkaBootstrapServer> bootstrapServers,
             KafkaConnection.SecurityProtocol securityProtocol,
             String username,
             String password,
@@ -884,7 +885,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
             @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId") String streamPoolId,
             @com.fasterxml.jackson.annotation.JsonProperty("clusterId") String clusterId,
             @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
-                    java.util.List<KafkaBootstrapServer> bootstrapServers,
+                    java.util.List<CreateKafkaBootstrapServer> bootstrapServers,
             @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
                     KafkaConnection.SecurityProtocol securityProtocol,
             @com.fasterxml.jackson.annotation.JsonProperty("username") String username,
@@ -1007,7 +1008,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      * "server1.example.com:9092,server2.example.com:9092"}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
-    private final java.util.List<KafkaBootstrapServer> bootstrapServers;
+    private final java.util.List<CreateKafkaBootstrapServer> bootstrapServers;
 
     /**
      * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of
@@ -1017,7 +1018,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      *
      * @return the value
      */
-    public java.util.List<KafkaBootstrapServer> getBootstrapServers() {
+    public java.util.List<CreateKafkaBootstrapServer> getBootstrapServers() {
         return bootstrapServers;
     }
 

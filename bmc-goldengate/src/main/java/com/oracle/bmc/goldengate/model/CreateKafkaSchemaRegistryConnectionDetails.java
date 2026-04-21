@@ -506,41 +506,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             this.__explicitlySet__.add("sslKeyPasswordSecretId");
             return this;
         }
-        /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
-         *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-        private String privateIp;
-
-        /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
-         *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
-         *
-         * @param privateIp the value to set
-         * @return this builder
-         */
-        public Builder privateIp(String privateIp) {
-            this.privateIp = privateIp;
-            this.__explicitlySet__.add("privateIp");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -578,8 +543,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                             this.keyStorePassword,
                             this.keyStorePasswordSecretId,
                             this.sslKeyPassword,
-                            this.sslKeyPasswordSecretId,
-                            this.privateIp);
+                            this.sslKeyPasswordSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -681,9 +645,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             if (model.wasPropertyExplicitlySet("sslKeyPasswordSecretId")) {
                 this.sslKeyPasswordSecretId(model.getSslKeyPasswordSecretId());
             }
-            if (model.wasPropertyExplicitlySet("privateIp")) {
-                this.privateIp(model.getPrivateIp());
-            }
             return this;
         }
     }
@@ -729,8 +690,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             String keyStorePassword,
             String keyStorePasswordSecretId,
             String sslKeyPassword,
-            String sslKeyPasswordSecretId,
-            String privateIp) {
+            String sslKeyPasswordSecretId) {
         super(
                 displayName,
                 description,
@@ -764,7 +724,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         this.keyStorePasswordSecretId = keyStorePasswordSecretId;
         this.sslKeyPassword = sslKeyPassword != null ? sslKeyPassword.toCharArray() : null;
         this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
-        this.privateIp = privateIp;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
@@ -817,8 +776,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                     String keyStorePasswordSecretId,
             @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword") char[] sslKeyPassword,
             @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
-                    String sslKeyPasswordSecretId,
-            @com.fasterxml.jackson.annotation.JsonProperty("privateIp") String privateIp) {
+                    String sslKeyPasswordSecretId) {
         super(
                 displayName,
                 description,
@@ -851,7 +809,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         this.keyStorePasswordSecretId = keyStorePasswordSecretId;
         this.sslKeyPassword = sslKeyPassword;
         this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
-        this.privateIp = privateIp;
     }
 
     /** The Kafka (e.g. Confluent) Schema Registry technology type. */
@@ -1197,39 +1154,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         return sslKeyPasswordSecretId;
     }
 
-    /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
-     *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-    private final String privateIp;
-
-    /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
-     *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
-     *
-     * @return the value
-     */
-    public String getPrivateIp() {
-        return privateIp;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -1263,7 +1187,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                 .append(String.valueOf(this.keyStorePasswordSecretId));
         sb.append(", sslKeyPassword=").append("<redacted>");
         sb.append(", sslKeyPasswordSecretId=").append(String.valueOf(this.sslKeyPasswordSecretId));
-        sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(")");
         return sb.toString();
     }
@@ -1298,7 +1221,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                 && java.util.Objects.equals(this.sslKeyPassword, other.sslKeyPassword)
                 && java.util.Objects.equals(
                         this.sslKeyPasswordSecretId, other.sslKeyPasswordSecretId)
-                && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && super.equals(other);
     }
 
@@ -1356,7 +1278,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                         + (this.sslKeyPasswordSecretId == null
                                 ? 43
                                 : this.sslKeyPasswordSecretId.hashCode());
-        result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         return result;
     }
 }

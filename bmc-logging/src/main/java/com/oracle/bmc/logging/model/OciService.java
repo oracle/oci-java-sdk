@@ -41,12 +41,18 @@ public final class OciService extends Source {
             this.__explicitlySet__.add("service");
             return this;
         }
-        /** The unique identifier of the resource emitting the log. */
+        /**
+         * The unique identifier of the resource emitting the log. The resource can be updated, and
+         * the resource value can vary depending on the OCI service to which the resource belongs
+         * to.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("resource")
         private String resource;
 
         /**
-         * The unique identifier of the resource emitting the log.
+         * The unique identifier of the resource emitting the log. The resource can be updated, and
+         * the resource value can vary depending on the OCI service to which the resource belongs
+         * to.
          *
          * @param resource the value to set
          * @return this builder
@@ -71,12 +77,14 @@ public final class OciService extends Source {
             this.__explicitlySet__.add("category");
             return this;
         }
-        /** Log category parameters are stored here. */
+        /**
+         * Log category parameters are stored here. The resource for a service log can't be updated.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.Map<String, String> parameters;
 
         /**
-         * Log category parameters are stored here.
+         * Log category parameters are stored here. The resource for a service log can't be updated.
          *
          * @param parameters the value to set
          * @return this builder
@@ -152,12 +160,16 @@ public final class OciService extends Source {
         return service;
     }
 
-    /** The unique identifier of the resource emitting the log. */
+    /**
+     * The unique identifier of the resource emitting the log. The resource can be updated, and the
+     * resource value can vary depending on the OCI service to which the resource belongs to.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("resource")
     private final String resource;
 
     /**
-     * The unique identifier of the resource emitting the log.
+     * The unique identifier of the resource emitting the log. The resource can be updated, and the
+     * resource value can vary depending on the OCI service to which the resource belongs to.
      *
      * @return the value
      */
@@ -178,12 +190,12 @@ public final class OciService extends Source {
         return category;
     }
 
-    /** Log category parameters are stored here. */
+    /** Log category parameters are stored here. The resource for a service log can't be updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.Map<String, String> parameters;
 
     /**
-     * Log category parameters are stored here.
+     * Log category parameters are stored here. The resource for a service log can't be updated.
      *
      * @return the value
      */

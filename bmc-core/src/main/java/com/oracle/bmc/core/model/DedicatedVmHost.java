@@ -423,16 +423,10 @@ public final class DedicatedVmHost
             this.__explicitlySet__.add("remainingMemoryInGBs");
             return this;
         }
-        /** A list of total and remaining CPU and memory per capacity bucket. */
+
         @com.fasterxml.jackson.annotation.JsonProperty("capacityBins")
         private java.util.List<CapacityBin> capacityBins;
 
-        /**
-         * A list of total and remaining CPU and memory per capacity bucket.
-         *
-         * @param capacityBins the value to set
-         * @return this builder
-         */
         public Builder capacityBins(java.util.List<CapacityBin> capacityBins) {
             this.capacityBins = capacityBins;
             this.__explicitlySet__.add("capacityBins");
@@ -906,15 +900,9 @@ public final class DedicatedVmHost
         return remainingMemoryInGBs;
     }
 
-    /** A list of total and remaining CPU and memory per capacity bucket. */
     @com.fasterxml.jackson.annotation.JsonProperty("capacityBins")
     private final java.util.List<CapacityBin> capacityBins;
 
-    /**
-     * A list of total and remaining CPU and memory per capacity bucket.
-     *
-     * @return the value
-     */
     public java.util.List<CapacityBin> getCapacityBins() {
         return capacityBins;
     }

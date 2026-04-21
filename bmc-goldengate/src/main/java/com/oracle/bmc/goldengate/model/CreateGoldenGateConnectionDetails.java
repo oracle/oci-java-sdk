@@ -292,41 +292,6 @@ public final class CreateGoldenGateConnectionDetails extends CreateConnectionDet
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
-        /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
-         *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-        private String privateIp;
-
-        /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
-         *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
-         *
-         * @param privateIp the value to set
-         * @return this builder
-         */
-        public Builder privateIp(String privateIp) {
-            this.privateIp = privateIp;
-            this.__explicitlySet__.add("privateIp");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -355,8 +320,7 @@ public final class CreateGoldenGateConnectionDetails extends CreateConnectionDet
                             this.port,
                             this.username,
                             this.password,
-                            this.passwordSecretId,
-                            this.privateIp);
+                            this.passwordSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -431,9 +395,6 @@ public final class CreateGoldenGateConnectionDetails extends CreateConnectionDet
             if (model.wasPropertyExplicitlySet("passwordSecretId")) {
                 this.passwordSecretId(model.getPasswordSecretId());
             }
-            if (model.wasPropertyExplicitlySet("privateIp")) {
-                this.privateIp(model.getPrivateIp());
-            }
             return this;
         }
     }
@@ -470,8 +431,7 @@ public final class CreateGoldenGateConnectionDetails extends CreateConnectionDet
             Integer port,
             String username,
             String password,
-            String passwordSecretId,
-            String privateIp) {
+            String passwordSecretId) {
         super(
                 displayName,
                 description,
@@ -495,7 +455,6 @@ public final class CreateGoldenGateConnectionDetails extends CreateConnectionDet
         this.username = username;
         this.password = password != null ? password.toCharArray() : null;
         this.passwordSecretId = passwordSecretId;
-        this.privateIp = privateIp;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
@@ -531,8 +490,7 @@ public final class CreateGoldenGateConnectionDetails extends CreateConnectionDet
             @com.fasterxml.jackson.annotation.JsonProperty("username") String username,
             @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
             @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
-                    String passwordSecretId,
-            @com.fasterxml.jackson.annotation.JsonProperty("privateIp") String privateIp) {
+                    String passwordSecretId) {
         super(
                 displayName,
                 description,
@@ -556,7 +514,6 @@ public final class CreateGoldenGateConnectionDetails extends CreateConnectionDet
         this.username = username;
         this.password = password;
         this.passwordSecretId = passwordSecretId;
-        this.privateIp = privateIp;
     }
 
     /** The GoldenGate technology type. */
@@ -681,39 +638,6 @@ public final class CreateGoldenGateConnectionDetails extends CreateConnectionDet
         return passwordSecretId;
     }
 
-    /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
-     *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-    private final String privateIp;
-
-    /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
-     *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
-     *
-     * @return the value
-     */
-    public String getPrivateIp() {
-        return privateIp;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -736,7 +660,6 @@ public final class CreateGoldenGateConnectionDetails extends CreateConnectionDet
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
-        sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(")");
         return sb.toString();
     }
@@ -758,7 +681,6 @@ public final class CreateGoldenGateConnectionDetails extends CreateConnectionDet
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
-                && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && super.equals(other);
     }
 
@@ -777,7 +699,6 @@ public final class CreateGoldenGateConnectionDetails extends CreateConnectionDet
         result =
                 (result * PRIME)
                         + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
-        result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         return result;
     }
 }

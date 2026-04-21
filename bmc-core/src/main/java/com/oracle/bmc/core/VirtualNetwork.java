@@ -277,7 +277,7 @@ public interface VirtualNetwork extends AutoCloseable {
             BulkAddVirtualCircuitPublicPrefixesRequest request);
 
     /**
-     * Create new IPv6s for a VNIC or Subnet.
+     * Create new IPv6s in bulk for a VNIC or subnet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -309,7 +309,7 @@ public interface VirtualNetwork extends AutoCloseable {
     BulkCreatePrivateIpsResponse bulkCreatePrivateIps(BulkCreatePrivateIpsRequest request);
 
     /**
-     * Unassigns and deletes IPv6s for a VNIC.
+     * Unassign and delete IPv6s for a VNIC in bulk.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -325,7 +325,7 @@ public interface VirtualNetwork extends AutoCloseable {
     BulkDeleteIpv6sResponse bulkDeleteIpv6s(BulkDeleteIpv6sRequest request);
 
     /**
-     * Unassigns and deletes secondary private IPv4s for a VNIC.
+     * Unassign and delete secondary private IPv4s for a VNIC.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -362,7 +362,7 @@ public interface VirtualNetwork extends AutoCloseable {
             BulkDeleteVirtualCircuitPublicPrefixesRequest request);
 
     /**
-     * detach the specified IPv6s.
+     * Detach the specified IPv6s.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -378,8 +378,8 @@ public interface VirtualNetwork extends AutoCloseable {
     BulkDetachIpv6sResponse bulkDetachIpv6s(BulkDetachIpv6sRequest request);
 
     /**
-     * Unassign the specified PrivateIP address from Virtual Network Interface Card (VNIC). You must
-     * specify the PrivateIP
+     * Unassign the specified private IP addresses from the Virtual Network Interface Card (VNIC).
+     * You must specify the PrivateIP object's
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
@@ -396,7 +396,7 @@ public interface VirtualNetwork extends AutoCloseable {
     BulkDetachPrivateIpsResponse bulkDetachPrivateIps(BulkDetachPrivateIpsRequest request);
 
     /**
-     * Updates the specified IPv6s.
+     * Updates the specified IPv6s in bulk.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -412,7 +412,7 @@ public interface VirtualNetwork extends AutoCloseable {
     BulkUpdateIpv6sResponse bulkUpdateIpv6s(BulkUpdateIpv6sRequest request);
 
     /**
-     * Updates existing secondary Private IPv4s for a VNIC.
+     * Update existing secondary private IPv4s for a VNIC.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

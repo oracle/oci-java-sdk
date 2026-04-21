@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Bulk Secondary IPv6 addresses detach object. <br>
+ * Details needed to bulk detach secondary IPv6 addresses. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -35,14 +35,16 @@ public final class BulkDetachIpv6sDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VNIC of which IPv6s should be detached. The VNIC and IPv6s must be in the same subnet.
+         * VNIC from which multiple IPv6s should be detached. The VNIC and IPv6s must be in the same
+         * subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VNIC of which IPv6s should be detached. The VNIC and IPv6s must be in the same subnet.
+         * VNIC from which multiple IPv6s should be detached. The VNIC and IPv6s must be in the same
+         * subnet.
          *
          * @param vnicId the value to set
          * @return this builder
@@ -52,12 +54,12 @@ public final class BulkDetachIpv6sDetails
             this.__explicitlySet__.add("vnicId");
             return this;
         }
-        /** Secondary IPv6 addresses to detached. */
+        /** A secondary IPv6 address to detach. */
         @com.fasterxml.jackson.annotation.JsonProperty("bulkDetachIpv6sItem")
         private java.util.List<BulkDetachIpv6sItem> bulkDetachIpv6sItem;
 
         /**
-         * Secondary IPv6 addresses to detached.
+         * A secondary IPv6 address to detach.
          *
          * @param bulkDetachIpv6sItem the value to set
          * @return this builder
@@ -104,14 +106,14 @@ public final class BulkDetachIpv6sDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
-     * of which IPv6s should be detached. The VNIC and IPv6s must be in the same subnet.
+     * from which multiple IPv6s should be detached. The VNIC and IPv6s must be in the same subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
-     * of which IPv6s should be detached. The VNIC and IPv6s must be in the same subnet.
+     * from which multiple IPv6s should be detached. The VNIC and IPv6s must be in the same subnet.
      *
      * @return the value
      */
@@ -119,12 +121,12 @@ public final class BulkDetachIpv6sDetails
         return vnicId;
     }
 
-    /** Secondary IPv6 addresses to detached. */
+    /** A secondary IPv6 address to detach. */
     @com.fasterxml.jackson.annotation.JsonProperty("bulkDetachIpv6sItem")
     private final java.util.List<BulkDetachIpv6sItem> bulkDetachIpv6sItem;
 
     /**
-     * Secondary IPv6 addresses to detached.
+     * A secondary IPv6 address to detach.
      *
      * @return the value
      */

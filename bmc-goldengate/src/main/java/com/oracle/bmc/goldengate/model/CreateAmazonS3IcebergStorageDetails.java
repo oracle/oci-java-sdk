@@ -91,6 +91,33 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
             this.__explicitlySet__.add("secretAccessKeySecretId");
             return this;
         }
+        /**
+         * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This
+         * field will be removed after February 15 2026.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
+        private char[] secretAccessKey;
+
+        /**
+         * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This
+         * field will be removed after February 15 2026.
+         *
+         * @param secretAccessKey the value to set
+         * @return this builder
+         */
+        public Builder secretAccessKey(char[] secretAccessKey) {
+            this.secretAccessKey = secretAccessKey;
+            this.__explicitlySet__.add("secretAccessKey");
+            return this;
+        }
+
+        public Builder secretAccessKey(String secretAccessKey) {
+            this.secretAccessKey = secretAccessKey != null ? secretAccessKey.toCharArray() : null;
+            this.__explicitlySet__.add("secretAccessKey");
+            return this;
+        }
         /** The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2' */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
@@ -132,6 +159,7 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
                             this.endpoint,
                             this.accessKeyId,
                             this.secretAccessKeySecretId,
+                            this.secretAccessKey,
                             this.region,
                             this.bucket);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -153,6 +181,9 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
             }
             if (model.wasPropertyExplicitlySet("secretAccessKeySecretId")) {
                 this.secretAccessKeySecretId(model.getSecretAccessKeySecretId());
+            }
+            if (model.wasPropertyExplicitlySet("secretAccessKey")) {
+                this.secretAccessKey(model.getSecretAccessKey());
             }
             if (model.wasPropertyExplicitlySet("region")) {
                 this.region(model.getRegion());
@@ -179,6 +210,7 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
             String endpoint,
             String accessKeyId,
             String secretAccessKeySecretId,
+            String secretAccessKey,
             String region,
             String bucket) {
         super();
@@ -186,6 +218,30 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
         this.endpoint = endpoint;
         this.accessKeyId = accessKeyId;
         this.secretAccessKeySecretId = secretAccessKeySecretId;
+        this.secretAccessKey = secretAccessKey != null ? secretAccessKey.toCharArray() : null;
+        this.region = region;
+        this.bucket = bucket;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateAmazonS3IcebergStorageDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("schemeType")
+                    AmazonS3IcebergStorage.SchemeType schemeType,
+            @com.fasterxml.jackson.annotation.JsonProperty("endpoint") String endpoint,
+            @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId") String accessKeyId,
+            @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
+                    String secretAccessKeySecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
+                    char[] secretAccessKey,
+            @com.fasterxml.jackson.annotation.JsonProperty("region") String region,
+            @com.fasterxml.jackson.annotation.JsonProperty("bucket") String bucket) {
+        super();
+        this.schemeType = schemeType;
+        this.endpoint = endpoint;
+        this.accessKeyId = accessKeyId;
+        this.secretAccessKeySecretId = secretAccessKeySecretId;
+        this.secretAccessKey = secretAccessKey;
         this.region = region;
         this.bucket = bucket;
     }
@@ -246,6 +302,40 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
         return secretAccessKeySecretId;
     }
 
+    /**
+     * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated:
+     * This field is deprecated and replaced by "secretAccessKeySecretId". This field will be
+     * removed after February 15 2026.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
+    private final char[] secretAccessKey;
+
+    /**
+     * Secret access key to access the Amazon S3 bucket. e.g.: &quot;this-is-not-the-secret&quot;
+     * Deprecated: This field is deprecated and replaced by &quot;secretAccessKeySecretId&quot;.
+     * This field will be removed after February 15 2026.
+     *
+     * @return the value
+     * @deprecated Use getSecretAccessKey__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSecretAccessKey() {
+        return secretAccessKey != null ? new String(secretAccessKey) : null;
+    }
+
+    /**
+     * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated:
+     * This field is deprecated and replaced by "secretAccessKeySecretId". This field will be
+     * removed after February 15 2026.
+     *
+     * @return the value
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
+    public char[] getSecretAccessKey__AsCharArray() {
+        return secretAccessKey;
+    }
+
     /** The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2' */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
@@ -292,6 +382,7 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
         sb.append(", accessKeyId=").append(String.valueOf(this.accessKeyId));
         sb.append(", secretAccessKeySecretId=")
                 .append(String.valueOf(this.secretAccessKeySecretId));
+        sb.append(", secretAccessKey=").append("<redacted>");
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", bucket=").append(String.valueOf(this.bucket));
         sb.append(")");
@@ -313,6 +404,7 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
                 && java.util.Objects.equals(this.accessKeyId, other.accessKeyId)
                 && java.util.Objects.equals(
                         this.secretAccessKeySecretId, other.secretAccessKeySecretId)
+                && java.util.Objects.equals(this.secretAccessKey, other.secretAccessKey)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.bucket, other.bucket)
                 && super.equals(other);
@@ -330,6 +422,9 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
                         + (this.secretAccessKeySecretId == null
                                 ? 43
                                 : this.secretAccessKeySecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretAccessKey == null ? 43 : this.secretAccessKey.hashCode());
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.bucket == null ? 43 : this.bucket.hashCode());
         return result;

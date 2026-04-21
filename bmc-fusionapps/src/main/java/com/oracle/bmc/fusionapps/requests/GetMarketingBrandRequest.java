@@ -2,77 +2,78 @@
  * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.core.requests;
+package com.oracle.bmc.fusionapps.requests;
 
-import com.oracle.bmc.core.model.*;
+import com.oracle.bmc.fusionapps.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeHostsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetComputeHostsRequest.
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/GetMarketingBrandExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMarketingBrandRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class GetComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+public class GetMarketingBrandRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compute host.
-     */
-    private String computeHostId;
+    /** unique FusionEnvironment identifier */
+    private String fusionEnvironmentId;
 
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compute host.
-     */
-    public String getComputeHostId() {
-        return computeHostId;
+    /** unique FusionEnvironment identifier */
+    public String getFusionEnvironmentId() {
+        return fusionEnvironmentId;
     }
-    /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     */
+    /** unique brand identifier */
+    private String marketingBrandId;
+
+    /** unique brand identifier */
+    public String getMarketingBrandId() {
+        return marketingBrandId;
+    }
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    GetComputeHostsRequest, java.lang.Void> {
+                    GetMarketingBrandRequest, java.lang.Void> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compute host.
-         */
-        private String computeHostId = null;
+        /** unique FusionEnvironment identifier */
+        private String fusionEnvironmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compute host.
+         * unique FusionEnvironment identifier
          *
-         * @param computeHostId the value to set
+         * @param fusionEnvironmentId the value to set
          * @return this builder instance
          */
-        public Builder computeHostId(String computeHostId) {
-            this.computeHostId = computeHostId;
+        public Builder fusionEnvironmentId(String fusionEnvironmentId) {
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
 
+        /** unique brand identifier */
+        private String marketingBrandId = null;
+
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * unique brand identifier
+         *
+         * @param marketingBrandId the value to set
+         * @return this builder instance
          */
+        public Builder marketingBrandId(String marketingBrandId) {
+            this.marketingBrandId = marketingBrandId;
+            return this;
+        }
+
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * The client request ID for tracing.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -111,8 +112,9 @@ public class GetComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<j
          *
          * @return this builder instance
          */
-        public Builder copy(GetComputeHostsRequest o) {
-            computeHostId(o.getComputeHostId());
+        public Builder copy(GetMarketingBrandRequest o) {
+            fusionEnvironmentId(o.getFusionEnvironmentId());
+            marketingBrandId(o.getMarketingBrandId());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -120,7 +122,7 @@ public class GetComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Build the instance of GetComputeHostsRequest as configured by this builder
+         * Build the instance of GetMarketingBrandRequest as configured by this builder
          *
          * <p>Note that this method takes calls to {@link
          * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
@@ -128,30 +130,31 @@ public class GetComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<j
          *
          * <p>This is the preferred method to build an instance.
          *
-         * @return instance of GetComputeHostsRequest
+         * @return instance of GetMarketingBrandRequest
          */
-        public GetComputeHostsRequest build() {
-            GetComputeHostsRequest request = buildWithoutInvocationCallback();
+        public GetMarketingBrandRequest build() {
+            GetMarketingBrandRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
 
         /**
-         * Build the instance of GetComputeHostsRequest as configured by this builder
+         * Build the instance of GetMarketingBrandRequest as configured by this builder
          *
          * <p>Note that this method does not take calls to {@link
          * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
-         * @return instance of GetComputeHostsRequest
+         * @return instance of GetMarketingBrandRequest
          */
-        public GetComputeHostsRequest buildWithoutInvocationCallback() {
-            GetComputeHostsRequest request = new GetComputeHostsRequest();
-            request.computeHostId = computeHostId;
+        public GetMarketingBrandRequest buildWithoutInvocationCallback() {
+            GetMarketingBrandRequest request = new GetMarketingBrandRequest();
+            request.fusionEnvironmentId = fusionEnvironmentId;
+            request.marketingBrandId = marketingBrandId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetComputeHostsRequest(computeHostId, opcRequestId);
+            // new GetMarketingBrandRequest(fusionEnvironmentId, marketingBrandId, opcRequestId);
         }
     }
 
@@ -161,7 +164,10 @@ public class GetComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<j
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().computeHostId(computeHostId).opcRequestId(opcRequestId);
+        return new Builder()
+                .fusionEnvironmentId(fusionEnvironmentId)
+                .marketingBrandId(marketingBrandId)
+                .opcRequestId(opcRequestId);
     }
 
     /**
@@ -178,7 +184,8 @@ public class GetComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<j
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",computeHostId=").append(String.valueOf(this.computeHostId));
+        sb.append(",fusionEnvironmentId=").append(String.valueOf(this.fusionEnvironmentId));
+        sb.append(",marketingBrandId=").append(String.valueOf(this.marketingBrandId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -189,13 +196,14 @@ public class GetComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<j
         if (this == o) {
             return true;
         }
-        if (!(o instanceof GetComputeHostsRequest)) {
+        if (!(o instanceof GetMarketingBrandRequest)) {
             return false;
         }
 
-        GetComputeHostsRequest other = (GetComputeHostsRequest) o;
+        GetMarketingBrandRequest other = (GetMarketingBrandRequest) o;
         return super.equals(o)
-                && java.util.Objects.equals(this.computeHostId, other.computeHostId)
+                && java.util.Objects.equals(this.fusionEnvironmentId, other.fusionEnvironmentId)
+                && java.util.Objects.equals(this.marketingBrandId, other.marketingBrandId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -205,7 +213,12 @@ public class GetComputeHostsRequest extends com.oracle.bmc.requests.BmcRequest<j
         int result = super.hashCode();
         result =
                 (result * PRIME)
-                        + (this.computeHostId == null ? 43 : this.computeHostId.hashCode());
+                        + (this.fusionEnvironmentId == null
+                                ? 43
+                                : this.fusionEnvironmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.marketingBrandId == null ? 43 : this.marketingBrandId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

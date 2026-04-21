@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Secondary IPv6 object to creation as part of bulk creation . <br>
+ * Secondary IPv6 object to use as part of bulk IPv6 object creation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -205,12 +205,12 @@ public final class BulkCreateIpv6sItem
             this.__explicitlySet__.add("ipv6SubnetCidr");
             return this;
         }
-        /** Length of cidr range. Optional field to specify flexible cidr. */
+        /** Length of the CIDR range. Optional field to specify a flexible CIDR. */
         @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
         private Integer cidrPrefixLength;
 
         /**
-         * Length of cidr range. Optional field to specify flexible cidr.
+         * Length of the CIDR range. Optional field to specify a flexible CIDR.
          *
          * @param cidrPrefixLength the value to set
          * @return this builder
@@ -448,12 +448,12 @@ public final class BulkCreateIpv6sItem
         return ipv6SubnetCidr;
     }
 
-    /** Length of cidr range. Optional field to specify flexible cidr. */
+    /** Length of the CIDR range. Optional field to specify a flexible CIDR. */
     @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
     private final Integer cidrPrefixLength;
 
     /**
-     * Length of cidr range. Optional field to specify flexible cidr.
+     * Length of the CIDR range. Optional field to specify a flexible CIDR.
      *
      * @return the value
      */

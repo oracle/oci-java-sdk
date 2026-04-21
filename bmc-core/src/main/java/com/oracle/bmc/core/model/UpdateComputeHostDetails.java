@@ -17,14 +17,14 @@ package com.oracle.bmc.core.model;
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateComputeHostsDetails.Builder.class)
+        builder = UpdateComputeHostDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UpdateComputeHostsDetails
+public final class UpdateComputeHostDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"definedTags", "displayName", "freeformTags"})
-    public UpdateComputeHostsDetails(
+    public UpdateComputeHostDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags) {
@@ -110,9 +110,9 @@ public final class UpdateComputeHostsDetails
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public UpdateComputeHostsDetails build() {
-            UpdateComputeHostsDetails model =
-                    new UpdateComputeHostsDetails(
+        public UpdateComputeHostDetails build() {
+            UpdateComputeHostDetails model =
+                    new UpdateComputeHostDetails(
                             this.definedTags, this.displayName, this.freeformTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -121,7 +121,7 @@ public final class UpdateComputeHostsDetails
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateComputeHostsDetails model) {
+        public Builder copy(UpdateComputeHostDetails model) {
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
@@ -220,7 +220,7 @@ public final class UpdateComputeHostsDetails
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("UpdateComputeHostsDetails(");
+        sb.append("UpdateComputeHostDetails(");
         sb.append("super=").append(super.toString());
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -234,11 +234,11 @@ public final class UpdateComputeHostsDetails
         if (this == o) {
             return true;
         }
-        if (!(o instanceof UpdateComputeHostsDetails)) {
+        if (!(o instanceof UpdateComputeHostDetails)) {
             return false;
         }
 
-        UpdateComputeHostsDetails other = (UpdateComputeHostsDetails) o;
+        UpdateComputeHostDetails other = (UpdateComputeHostDetails) o;
         return java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)

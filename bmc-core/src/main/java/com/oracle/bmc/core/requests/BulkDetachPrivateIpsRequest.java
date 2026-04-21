@@ -15,10 +15,10 @@ public class BulkDetachPrivateIpsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.BulkDetachPrivateIpsDetails> {
 
-    /** Secondary IPv4 addresses to detach. */
+    /** The secondary IPv4 addresses to detach. */
     private com.oracle.bmc.core.model.BulkDetachPrivateIpsDetails bulkDetachPrivateIpsDetails;
 
-    /** Secondary IPv4 addresses to detach. */
+    /** The secondary IPv4 addresses to detach. */
     public com.oracle.bmc.core.model.BulkDetachPrivateIpsDetails getBulkDetachPrivateIpsDetails() {
         return bulkDetachPrivateIpsDetails;
     }
@@ -73,12 +73,12 @@ public class BulkDetachPrivateIpsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Secondary IPv4 addresses to detach. */
+        /** The secondary IPv4 addresses to detach. */
         private com.oracle.bmc.core.model.BulkDetachPrivateIpsDetails bulkDetachPrivateIpsDetails =
                 null;
 
         /**
-         * Secondary IPv4 addresses to detach.
+         * The secondary IPv4 addresses to detach.
          *
          * @param bulkDetachPrivateIpsDetails the value to set
          * @return this builder instance

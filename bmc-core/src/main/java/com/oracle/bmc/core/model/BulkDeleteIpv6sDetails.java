@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Bulk Secondary IPv6 addresses deletion object. <br>
+ * A secondary IPv6 address bulk deletion object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -57,14 +57,14 @@ public final class BulkDeleteIpv6sDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet from which the IPv6s addresses are to be deleted.
+         * subnet from which the IPv6s addresses are deleted.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet from which the IPv6s addresses are to be deleted.
+         * subnet from which the IPv6s addresses are deleted.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -74,12 +74,12 @@ public final class BulkDeleteIpv6sDetails
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** IPv6 addresses to deleted. */
+        /** An IPv6 address to delete. */
         @com.fasterxml.jackson.annotation.JsonProperty("bulkDeleteIpv6sItem")
         private java.util.List<BulkDeleteIpv6sItem> bulkDeleteIpv6sItem;
 
         /**
-         * IPv6 addresses to deleted.
+         * An IPv6 address to delete.
          *
          * @param bulkDeleteIpv6sItem the value to set
          * @return this builder
@@ -147,14 +147,14 @@ public final class BulkDeleteIpv6sDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet from which the IPv6s addresses are to be deleted.
+     * subnet from which the IPv6s addresses are deleted.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet from which the IPv6s addresses are to be deleted.
+     * subnet from which the IPv6s addresses are deleted.
      *
      * @return the value
      */
@@ -162,12 +162,12 @@ public final class BulkDeleteIpv6sDetails
         return subnetId;
     }
 
-    /** IPv6 addresses to deleted. */
+    /** An IPv6 address to delete. */
     @com.fasterxml.jackson.annotation.JsonProperty("bulkDeleteIpv6sItem")
     private final java.util.List<BulkDeleteIpv6sItem> bulkDeleteIpv6sItem;
 
     /**
-     * IPv6 addresses to deleted.
+     * An IPv6 address to delete.
      *
      * @return the value
      */

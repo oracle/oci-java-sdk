@@ -274,7 +274,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create new IPv6s for a VNIC or Subnet.
+     * Create new IPv6s in bulk for a VNIC or subnet.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -305,7 +305,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Unassigns and deletes IPv6s for a VNIC.
+     * Unassign and delete IPv6s for a VNIC in bulk.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -320,7 +320,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Unassigns and deletes secondary private IPv4s for a VNIC.
+     * Unassign and delete secondary private IPv4s for a VNIC.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -358,7 +358,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
-     * detach the specified IPv6s.
+     * Detach the specified IPv6s.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -373,8 +373,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Unassign the specified PrivateIP address from Virtual Network Interface Card (VNIC). You must
-     * specify the PrivateIP
+     * Unassign the specified private IP addresses from the Virtual Network Interface Card (VNIC).
+     * You must specify the PrivateIP object's
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
@@ -391,7 +391,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified IPv6s.
+     * Updates the specified IPv6s in bulk.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -406,7 +406,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates existing secondary Private IPv4s for a VNIC.
+     * Update existing secondary private IPv4s for a VNIC.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

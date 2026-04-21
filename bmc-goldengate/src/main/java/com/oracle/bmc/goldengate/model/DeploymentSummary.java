@@ -52,7 +52,6 @@ public final class DeploymentSummary
         "deploymentUrl",
         "systemTags",
         "isLatestVersion",
-        "timeUpgradeRequired",
         "deploymentType",
         "storageUtilizationInBytes",
         "isStorageUtilizationLimitExceeded",
@@ -68,7 +67,7 @@ public final class DeploymentSummary
             String compartmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            LifecycleState lifecycleState,
+            Deployment.LifecycleState lifecycleState,
             LifecycleSubState lifecycleSubState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
@@ -90,7 +89,6 @@ public final class DeploymentSummary
             String deploymentUrl,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Boolean isLatestVersion,
-            java.util.Date timeUpgradeRequired,
             DeploymentType deploymentType,
             Long storageUtilizationInBytes,
             Boolean isStorageUtilizationLimitExceeded,
@@ -127,7 +125,6 @@ public final class DeploymentSummary
         this.deploymentUrl = deploymentUrl;
         this.systemTags = systemTags;
         this.isLatestVersion = isLatestVersion;
-        this.timeUpgradeRequired = timeUpgradeRequired;
         this.deploymentType = deploymentType;
         this.storageUtilizationInBytes = storageUtilizationInBytes;
         this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
@@ -245,17 +242,17 @@ public final class DeploymentSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Possible lifecycle states. */
+        /** Possible lifecycle states for a Deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
+        private Deployment.LifecycleState lifecycleState;
 
         /**
-         * Possible lifecycle states.
+         * Possible lifecycle states for a Deployment.
          *
          * @param lifecycleState the value to set
          * @return this builder
          */
-        public Builder lifecycleState(LifecycleState lifecycleState) {
+        public Builder lifecycleState(Deployment.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -364,20 +361,34 @@ public final class DeploymentSummary
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * public subnet in the customer tenancy. Can be provided only for public deployments. If
-         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatibility, this is an optional property. It will become mandatory for
-         * public deployments after October 1, 2024.
+         * public subnet in the customer tenancy used to host the public load balancer of the
+         * deployment.
+         *
+         * <p>Rules: - Create: Mandatory when isPublic is true. Must be a public, regional subnet in
+         * the same VCN as subnetId. - Update: - For public deployments, this property must be
+         * present and is immutable once set (cannot be changed to a different subnet). - Legacy
+         * exception: a public deployment created without this property may continue to be updated
+         * without providing it; once set, it becomes immutable.
+         *
+         * <p>Validation: - Must reference a public subnet. - Must be a regional subnet. - Must be
+         * in the same VCN as subnetId.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
         private String loadBalancerSubnetId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * public subnet in the customer tenancy. Can be provided only for public deployments. If
-         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatibility, this is an optional property. It will become mandatory for
-         * public deployments after October 1, 2024.
+         * public subnet in the customer tenancy used to host the public load balancer of the
+         * deployment.
+         *
+         * <p>Rules: - Create: Mandatory when isPublic is true. Must be a public, regional subnet in
+         * the same VCN as subnetId. - Update: - For public deployments, this property must be
+         * present and is immutable once set (cannot be changed to a different subnet). - Legacy
+         * exception: a public deployment created without this property may continue to be updated
+         * without providing it; once set, it becomes immutable.
+         *
+         * <p>Validation: - Must reference a public subnet. - Must be a regional subnet. - Must be
+         * in the same VCN as subnetId.
          *
          * @param loadBalancerSubnetId the value to set
          * @return this builder
@@ -653,33 +664,6 @@ public final class DeploymentSummary
             return this;
         }
         /**
-         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
-         * when deployment will be forced to upgrade to a newer version. Old description: The date
-         * the existing version in use will no longer be considered as usable and an upgrade will be
-         * required. This date is typically 6 months after the version was released for use by GGS.
-         * The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-         * 2016-08-25T21:10:29.600Z}.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
-        private java.util.Date timeUpgradeRequired;
-
-        /**
-         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
-         * when deployment will be forced to upgrade to a newer version. Old description: The date
-         * the existing version in use will no longer be considered as usable and an upgrade will be
-         * required. This date is typically 6 months after the version was released for use by GGS.
-         * The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-         * 2016-08-25T21:10:29.600Z}.
-         *
-         * @param timeUpgradeRequired the value to set
-         * @return this builder
-         */
-        public Builder timeUpgradeRequired(java.util.Date timeUpgradeRequired) {
-            this.timeUpgradeRequired = timeUpgradeRequired;
-            this.__explicitlySet__.add("timeUpgradeRequired");
-            return this;
-        }
-        /**
          * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the
          * value 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in
          * favor of 'DATABASE_ORACLE'.
@@ -863,7 +847,6 @@ public final class DeploymentSummary
                             this.deploymentUrl,
                             this.systemTags,
                             this.isLatestVersion,
-                            this.timeUpgradeRequired,
                             this.deploymentType,
                             this.storageUtilizationInBytes,
                             this.isStorageUtilizationLimitExceeded,
@@ -962,9 +945,6 @@ public final class DeploymentSummary
             }
             if (model.wasPropertyExplicitlySet("isLatestVersion")) {
                 this.isLatestVersion(model.getIsLatestVersion());
-            }
-            if (model.wasPropertyExplicitlySet("timeUpgradeRequired")) {
-                this.timeUpgradeRequired(model.getTimeUpgradeRequired());
             }
             if (model.wasPropertyExplicitlySet("deploymentType")) {
                 this.deploymentType(model.getDeploymentType());
@@ -1095,16 +1075,16 @@ public final class DeploymentSummary
         return timeUpdated;
     }
 
-    /** Possible lifecycle states. */
+    /** Possible lifecycle states for a Deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final LifecycleState lifecycleState;
+    private final Deployment.LifecycleState lifecycleState;
 
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment.
      *
      * @return the value
      */
-    public LifecycleState getLifecycleState() {
+    public Deployment.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
@@ -1201,20 +1181,32 @@ public final class DeploymentSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public
-     * subnet in the customer tenancy. Can be provided only for public deployments. If provided, the
-     * loadbalancer will be created in this subnet instead of the service tenancy. For backward
-     * compatibility, this is an optional property. It will become mandatory for public deployments
-     * after October 1, 2024.
+     * subnet in the customer tenancy used to host the public load balancer of the deployment.
+     *
+     * <p>Rules: - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the
+     * same VCN as subnetId. - Update: - For public deployments, this property must be present and
+     * is immutable once set (cannot be changed to a different subnet). - Legacy exception: a public
+     * deployment created without this property may continue to be updated without providing it;
+     * once set, it becomes immutable.
+     *
+     * <p>Validation: - Must reference a public subnet. - Must be a regional subnet. - Must be in
+     * the same VCN as subnetId.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
     private final String loadBalancerSubnetId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public
-     * subnet in the customer tenancy. Can be provided only for public deployments. If provided, the
-     * loadbalancer will be created in this subnet instead of the service tenancy. For backward
-     * compatibility, this is an optional property. It will become mandatory for public deployments
-     * after October 1, 2024.
+     * subnet in the customer tenancy used to host the public load balancer of the deployment.
+     *
+     * <p>Rules: - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the
+     * same VCN as subnetId. - Update: - For public deployments, this property must be present and
+     * is immutable once set (cannot be changed to a different subnet). - Legacy exception: a public
+     * deployment created without this property may continue to be updated without providing it;
+     * once set, it becomes immutable.
+     *
+     * <p>Validation: - Must reference a public subnet. - Must be a regional subnet. - Must be in
+     * the same VCN as subnetId.
      *
      * @return the value
      */
@@ -1456,31 +1448,6 @@ public final class DeploymentSummary
     }
 
     /**
-     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
-     * when deployment will be forced to upgrade to a newer version. Old description: The date the
-     * existing version in use will no longer be considered as usable and an upgrade will be
-     * required. This date is typically 6 months after the version was released for use by GGS. The
-     * format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-     * 2016-08-25T21:10:29.600Z}.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
-    private final java.util.Date timeUpgradeRequired;
-
-    /**
-     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
-     * when deployment will be forced to upgrade to a newer version. Old description: The date the
-     * existing version in use will no longer be considered as usable and an upgrade will be
-     * required. This date is typically 6 months after the version was released for use by GGS. The
-     * format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-     * 2016-08-25T21:10:29.600Z}.
-     *
-     * @return the value
-     */
-    public java.util.Date getTimeUpgradeRequired() {
-        return timeUpgradeRequired;
-    }
-
-    /**
      * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the value
      * 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in favor of
      * 'DATABASE_ORACLE'.
@@ -1655,7 +1622,6 @@ public final class DeploymentSummary
         sb.append(", deploymentUrl=").append(String.valueOf(this.deploymentUrl));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", isLatestVersion=").append(String.valueOf(this.isLatestVersion));
-        sb.append(", timeUpgradeRequired=").append(String.valueOf(this.timeUpgradeRequired));
         sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
         sb.append(", storageUtilizationInBytes=")
                 .append(String.valueOf(this.storageUtilizationInBytes));
@@ -1709,7 +1675,6 @@ public final class DeploymentSummary
                 && java.util.Objects.equals(this.deploymentUrl, other.deploymentUrl)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.isLatestVersion, other.isLatestVersion)
-                && java.util.Objects.equals(this.timeUpgradeRequired, other.timeUpgradeRequired)
                 && java.util.Objects.equals(this.deploymentType, other.deploymentType)
                 && java.util.Objects.equals(
                         this.storageUtilizationInBytes, other.storageUtilizationInBytes)
@@ -1792,11 +1757,6 @@ public final class DeploymentSummary
         result =
                 (result * PRIME)
                         + (this.isLatestVersion == null ? 43 : this.isLatestVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.timeUpgradeRequired == null
-                                ? 43
-                                : this.timeUpgradeRequired.hashCode());
         result =
                 (result * PRIME)
                         + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
