@@ -17,8 +17,6 @@ on:
       - ".github/workflows/**"
       - ".github/actions/**"
   workflow_dispatch:
-  schedule:
-    - cron: "0 4 * * 3"
 
 permissions:
   contents: read
