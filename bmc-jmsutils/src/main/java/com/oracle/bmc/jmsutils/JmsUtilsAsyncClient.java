@@ -34,7 +34,9 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                     .serviceName(JmsUtilsClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://javamanagement-utils.{region}.oci.{secondLevelDomain}")
+                            "https://utils.javamanagement.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .serviceUsesDualStackByDefault()
+                    .endpointServiceName("utils.javamanagement")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -104,12 +106,16 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
                 .serviceDetails(
                         "JmsUtils",
                         "CancelWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequest/CancelWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20250521")
@@ -135,12 +141,16 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
         Validate.notBlank(
                 request.getJavaMigrationAnalysisId(), "javaMigrationAnalysisId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("javaMigrationAnalysisId", request.getJavaMigrationAnalysisId());
+
         return clientCall(request, DeleteJavaMigrationAnalysisResponse::builder)
                 .logger(LOG, "deleteJavaMigrationAnalysis")
                 .serviceDetails(
                         "JmsUtils",
                         "DeleteJavaMigrationAnalysis",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/JavaMigrationAnalysis/DeleteJavaMigrationAnalysis")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaMigrationAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -167,12 +177,17 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 request.getPerformanceTuningAnalysisId(),
                 "performanceTuningAnalysisId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "performanceTuningAnalysisId", request.getPerformanceTuningAnalysisId());
+
         return clientCall(request, DeletePerformanceTuningAnalysisResponse::builder)
                 .logger(LOG, "deletePerformanceTuningAnalysis")
                 .serviceDetails(
                         "JmsUtils",
                         "DeletePerformanceTuningAnalysis",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/PerformanceTuningAnalysis/DeletePerformanceTuningAnalysis")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePerformanceTuningAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -196,12 +211,15 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                                     GetAnalyzeApplicationsConfigurationResponse>
                             handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, GetAnalyzeApplicationsConfigurationResponse::builder)
                 .logger(LOG, "getAnalyzeApplicationsConfiguration")
                 .serviceDetails(
                         "JmsUtils",
                         "GetAnalyzeApplicationsConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/AnalyzeApplicationsConfiguration/GetAnalyzeApplicationsConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAnalyzeApplicationsConfigurationRequest::builder)
                 .basePath("/20250521")
@@ -231,12 +249,16 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
         Validate.notBlank(
                 request.getJavaMigrationAnalysisId(), "javaMigrationAnalysisId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("javaMigrationAnalysisId", request.getJavaMigrationAnalysisId());
+
         return clientCall(request, GetJavaMigrationAnalysisResponse::builder)
                 .logger(LOG, "getJavaMigrationAnalysis")
                 .serviceDetails(
                         "JmsUtils",
                         "GetJavaMigrationAnalysis",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/JavaMigrationAnalysis/GetJavaMigrationAnalysis")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaMigrationAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -266,12 +288,17 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 request.getPerformanceTuningAnalysisId(),
                 "performanceTuningAnalysisId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "performanceTuningAnalysisId", request.getPerformanceTuningAnalysisId());
+
         return clientCall(request, GetPerformanceTuningAnalysisResponse::builder)
                 .logger(LOG, "getPerformanceTuningAnalysis")
                 .serviceDetails(
                         "JmsUtils",
                         "GetPerformanceTuningAnalysis",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/PerformanceTuningAnalysis/GetPerformanceTuningAnalysis")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPerformanceTuningAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -299,12 +326,15 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                                     GetSubscriptionAcknowledgmentConfigurationResponse>
                             handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, GetSubscriptionAcknowledgmentConfigurationResponse::builder)
                 .logger(LOG, "getSubscriptionAcknowledgmentConfiguration")
                 .serviceDetails(
                         "JmsUtils",
                         "GetSubscriptionAcknowledgmentConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/SubscriptionAcknowledgmentConfiguration/GetSubscriptionAcknowledgmentConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSubscriptionAcknowledgmentConfigurationRequest::builder)
                 .basePath("/20250521")
@@ -333,12 +363,16 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
                 .serviceDetails(
                         "JmsUtils",
                         "GetWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequest/GetWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20250521")
@@ -364,12 +398,15 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                             ListJavaMigrationAnalysisRequest, ListJavaMigrationAnalysisResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListJavaMigrationAnalysisResponse::builder)
                 .logger(LOG, "listJavaMigrationAnalysis")
                 .serviceDetails(
                         "JmsUtils",
                         "ListJavaMigrationAnalysis",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/JavaMigrationAnalysis/ListJavaMigrationAnalysis")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaMigrationAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -402,12 +439,15 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                                     ListPerformanceTuningAnalysisResponse>
                             handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListPerformanceTuningAnalysisResponse::builder)
                 .logger(LOG, "listPerformanceTuningAnalysis")
                 .serviceDetails(
                         "JmsUtils",
                         "ListPerformanceTuningAnalysis",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/PerformanceTuningAnalysis/ListPerformanceTuningAnalysis")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPerformanceTuningAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -444,12 +484,16 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkItemsResponse::builder)
                 .logger(LOG, "listWorkItems")
                 .serviceDetails(
                         "JmsUtils",
                         "ListWorkItems",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkItemSummary/ListWorkItems")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkItemsRequest::builder)
                 .basePath("/20250521")
@@ -479,12 +523,16 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
                 .serviceDetails(
                         "JmsUtils",
                         "ListWorkRequestErrors",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequestError/ListWorkRequestErrors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20250521")
@@ -516,12 +564,16 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
                 .serviceDetails(
                         "JmsUtils",
                         "ListWorkRequestLogs",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequestLogEntry/ListWorkRequestLogs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20250521")
@@ -551,12 +603,15 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                             ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
                 .serviceDetails(
                         "JmsUtils",
                         "ListWorkRequests",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequest/ListWorkRequests")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20250521")
@@ -593,12 +648,15 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 request.getRequestJavaMigrationAnalysisDetails(),
                 "requestJavaMigrationAnalysisDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, RequestJavaMigrationAnalysisResponse::builder)
                 .logger(LOG, "requestJavaMigrationAnalysis")
                 .serviceDetails(
                         "JmsUtils",
                         "RequestJavaMigrationAnalysis",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/JavaMigrationAnalysis/RequestJavaMigrationAnalysis")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestJavaMigrationAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -630,12 +688,15 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 request.getRequestPerformanceTuningAnalysisDetails(),
                 "requestPerformanceTuningAnalysisDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, RequestPerformanceTuningAnalysisResponse::builder)
                 .logger(LOG, "requestPerformanceTuningAnalysis")
                 .serviceDetails(
                         "JmsUtils",
                         "RequestPerformanceTuningAnalysis",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/PerformanceTuningAnalysis/RequestPerformanceTuningAnalysis")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestPerformanceTuningAnalysisRequest::builder)
                 .basePath("/20250521")
@@ -667,12 +728,15 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 request.getUpdateAnalyzeApplicationsConfigurationDetails(),
                 "updateAnalyzeApplicationsConfigurationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, UpdateAnalyzeApplicationsConfigurationResponse::builder)
                 .logger(LOG, "updateAnalyzeApplicationsConfiguration")
                 .serviceDetails(
                         "JmsUtils",
                         "UpdateAnalyzeApplicationsConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/AnalyzeApplicationsConfiguration/UpdateAnalyzeApplicationsConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateAnalyzeApplicationsConfigurationRequest::builder)
                 .basePath("/20250521")
@@ -706,12 +770,15 @@ public class JmsUtilsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 request.getUpdateSubscriptionAcknowledgmentConfigurationDetails(),
                 "updateSubscriptionAcknowledgmentConfigurationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, UpdateSubscriptionAcknowledgmentConfigurationResponse::builder)
                 .logger(LOG, "updateSubscriptionAcknowledgmentConfiguration")
                 .serviceDetails(
                         "JmsUtils",
                         "UpdateSubscriptionAcknowledgmentConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/SubscriptionAcknowledgmentConfiguration/UpdateSubscriptionAcknowledgmentConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSubscriptionAcknowledgmentConfigurationRequest::builder)
                 .basePath("/20250521")

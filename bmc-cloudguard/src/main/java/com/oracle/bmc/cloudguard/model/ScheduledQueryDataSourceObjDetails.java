@@ -57,12 +57,12 @@ public final class ScheduledQueryDataSourceObjDetails extends DataSourceDetails 
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Interval in minutes which query is run periodically. */
+        /** Interval in seconds which query is run periodically. */
         @com.fasterxml.jackson.annotation.JsonProperty("intervalInSeconds")
         private Integer intervalInSeconds;
 
         /**
-         * Interval in minutes which query is run periodically.
+         * Interval in seconds which query is run periodically.
          *
          * @param intervalInSeconds the value to set
          * @return this builder
@@ -171,12 +171,12 @@ public final class ScheduledQueryDataSourceObjDetails extends DataSourceDetails 
         return description;
     }
 
-    /** Interval in minutes which query is run periodically. */
+    /** Interval in seconds which query is run periodically. */
     @com.fasterxml.jackson.annotation.JsonProperty("intervalInSeconds")
     private final Integer intervalInSeconds;
 
     /**
-     * Interval in minutes which query is run periodically.
+     * Interval in seconds which query is run periodically.
      *
      * @return the value
      */

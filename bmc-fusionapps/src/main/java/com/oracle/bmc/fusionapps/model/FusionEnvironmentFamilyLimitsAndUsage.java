@@ -26,16 +26,19 @@ public final class FusionEnvironmentFamilyLimitsAndUsage
     @java.beans.ConstructorProperties({
         "productionLimitAndUsage",
         "testLimitAndUsage",
-        "developmentLimitAndUsage"
+        "developmentLimitAndUsage",
+        "demoLimitAndUsage"
     })
     public FusionEnvironmentFamilyLimitsAndUsage(
             LimitAndUsage productionLimitAndUsage,
             LimitAndUsage testLimitAndUsage,
-            LimitAndUsage developmentLimitAndUsage) {
+            LimitAndUsage developmentLimitAndUsage,
+            LimitAndUsage demoLimitAndUsage) {
         super();
         this.productionLimitAndUsage = productionLimitAndUsage;
         this.testLimitAndUsage = testLimitAndUsage;
         this.developmentLimitAndUsage = developmentLimitAndUsage;
+        this.demoLimitAndUsage = demoLimitAndUsage;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -68,6 +71,15 @@ public final class FusionEnvironmentFamilyLimitsAndUsage
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("demoLimitAndUsage")
+        private LimitAndUsage demoLimitAndUsage;
+
+        public Builder demoLimitAndUsage(LimitAndUsage demoLimitAndUsage) {
+            this.demoLimitAndUsage = demoLimitAndUsage;
+            this.__explicitlySet__.add("demoLimitAndUsage");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -76,7 +88,8 @@ public final class FusionEnvironmentFamilyLimitsAndUsage
                     new FusionEnvironmentFamilyLimitsAndUsage(
                             this.productionLimitAndUsage,
                             this.testLimitAndUsage,
-                            this.developmentLimitAndUsage);
+                            this.developmentLimitAndUsage,
+                            this.demoLimitAndUsage);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -93,6 +106,9 @@ public final class FusionEnvironmentFamilyLimitsAndUsage
             }
             if (model.wasPropertyExplicitlySet("developmentLimitAndUsage")) {
                 this.developmentLimitAndUsage(model.getDevelopmentLimitAndUsage());
+            }
+            if (model.wasPropertyExplicitlySet("demoLimitAndUsage")) {
+                this.demoLimitAndUsage(model.getDemoLimitAndUsage());
             }
             return this;
         }
@@ -128,6 +144,13 @@ public final class FusionEnvironmentFamilyLimitsAndUsage
         return developmentLimitAndUsage;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("demoLimitAndUsage")
+    private final LimitAndUsage demoLimitAndUsage;
+
+    public LimitAndUsage getDemoLimitAndUsage() {
+        return demoLimitAndUsage;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -147,6 +170,7 @@ public final class FusionEnvironmentFamilyLimitsAndUsage
         sb.append(", testLimitAndUsage=").append(String.valueOf(this.testLimitAndUsage));
         sb.append(", developmentLimitAndUsage=")
                 .append(String.valueOf(this.developmentLimitAndUsage));
+        sb.append(", demoLimitAndUsage=").append(String.valueOf(this.demoLimitAndUsage));
         sb.append(")");
         return sb.toString();
     }
@@ -165,6 +189,7 @@ public final class FusionEnvironmentFamilyLimitsAndUsage
                 && java.util.Objects.equals(this.testLimitAndUsage, other.testLimitAndUsage)
                 && java.util.Objects.equals(
                         this.developmentLimitAndUsage, other.developmentLimitAndUsage)
+                && java.util.Objects.equals(this.demoLimitAndUsage, other.demoLimitAndUsage)
                 && super.equals(other);
     }
 
@@ -185,6 +210,9 @@ public final class FusionEnvironmentFamilyLimitsAndUsage
                         + (this.developmentLimitAndUsage == null
                                 ? 43
                                 : this.developmentLimitAndUsage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.demoLimitAndUsage == null ? 43 : this.demoLimitAndUsage.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

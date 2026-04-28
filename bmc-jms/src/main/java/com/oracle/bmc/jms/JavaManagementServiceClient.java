@@ -21,7 +21,9 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                     .serviceName(JavaManagementServiceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://javamanagement.{region}.oci.{secondLevelDomain}")
+                            "https://javamanagement.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .serviceUsesDualStackByDefault()
+                    .endpointServiceName("javamanagement")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -160,12 +162,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getAddFleetInstallationSitesDetails(),
                 "addFleetInstallationSitesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, AddFleetInstallationSitesResponse::builder)
                 .logger(LOG, "addFleetInstallationSites")
                 .serviceDetails(
                         "JavaManagementService",
                         "AddFleetInstallationSites",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/AddFleetInstallationSites")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddFleetInstallationSitesRequest::builder)
                 .basePath("/20210610")
@@ -192,12 +198,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
                 .serviceDetails(
                         "JavaManagementService",
                         "CancelWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/CancelWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20210610")
@@ -221,12 +231,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getChangeFleetCompartmentDetails(),
                 "changeFleetCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, ChangeFleetCompartmentResponse::builder)
                 .logger(LOG, "changeFleetCompartment")
                 .serviceDetails(
                         "JavaManagementService",
                         "ChangeFleetCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ChangeFleetCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeFleetCompartmentRequest::builder)
                 .basePath("/20210610")
@@ -255,12 +269,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Objects.requireNonNull(
                 request.getCreateBlocklistDetails(), "createBlocklistDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, CreateBlocklistResponse::builder)
                 .logger(LOG, "createBlocklist")
                 .serviceDetails(
                         "JavaManagementService",
                         "CreateBlocklist",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/CreateBlocklist")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateBlocklistRequest::builder)
                 .basePath("/20210610")
@@ -288,12 +306,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Objects.requireNonNull(
                 request.getCreateDrsFileDetails(), "createDrsFileDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, CreateDrsFileResponse::builder)
                 .logger(LOG, "createDrsFile")
                 .serviceDetails(
                         "JavaManagementService",
                         "CreateDrsFile",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateDrsFile")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDrsFileRequest::builder)
                 .basePath("/20210610")
@@ -317,12 +339,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     public CreateFleetResponse createFleet(CreateFleetRequest request) {
         Objects.requireNonNull(request.getCreateFleetDetails(), "createFleetDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateFleetResponse::builder)
                 .logger(LOG, "createFleet")
                 .serviceDetails(
                         "JavaManagementService",
                         "CreateFleet",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateFleet")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFleetRequest::builder)
                 .basePath("/20210610")
@@ -344,12 +369,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Objects.requireNonNull(
                 request.getCreateJmsPluginDetails(), "createJmsPluginDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateJmsPluginResponse::builder)
                 .logger(LOG, "createJmsPlugin")
                 .serviceDetails(
                         "JavaManagementService",
                         "CreateJmsPlugin",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/CreateJmsPlugin")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateJmsPluginRequest::builder)
                 .basePath("/20210610")
@@ -373,12 +401,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Objects.requireNonNull(
                 request.getCreateTaskScheduleDetails(), "createTaskScheduleDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateTaskScheduleResponse::builder)
                 .logger(LOG, "createTaskSchedule")
                 .serviceDetails(
                         "JavaManagementService",
                         "CreateTaskSchedule",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/TaskSchedule/CreateTaskSchedule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateTaskScheduleRequest::builder)
                 .basePath("/20210610")
@@ -404,12 +435,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getBlocklistKey(), "blocklistKey must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put("blocklistKey", request.getBlocklistKey());
+
         return clientCall(request, DeleteBlocklistResponse::builder)
                 .logger(LOG, "deleteBlocklist")
                 .serviceDetails(
                         "JavaManagementService",
                         "DeleteBlocklist",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/DeleteBlocklist")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteBlocklistRequest::builder)
                 .basePath("/20210610")
@@ -435,12 +471,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Validate.notBlank(
                 request.getCryptoAnalysisResultId(), "cryptoAnalysisResultId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put("cryptoAnalysisResultId", request.getCryptoAnalysisResultId());
+
         return clientCall(request, DeleteCryptoAnalysisResultResponse::builder)
                 .logger(LOG, "deleteCryptoAnalysisResult")
                 .serviceDetails(
                         "JavaManagementService",
                         "DeleteCryptoAnalysisResult",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/DeleteCryptoAnalysisResult")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCryptoAnalysisResultRequest::builder)
                 .basePath("/20210610")
@@ -467,12 +508,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getDrsFileKey(), "drsFileKey must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put("drsFileKey", request.getDrsFileKey());
+
         return clientCall(request, DeleteDrsFileResponse::builder)
                 .logger(LOG, "deleteDrsFile")
                 .serviceDetails(
                         "JavaManagementService",
                         "DeleteDrsFile",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/DeleteDrsFile")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDrsFileRequest::builder)
                 .basePath("/20210610")
@@ -496,12 +542,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, DeleteFleetResponse::builder)
                 .logger(LOG, "deleteFleet")
                 .serviceDetails(
                         "JavaManagementService",
                         "DeleteFleet",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DeleteFleet")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFleetRequest::builder)
                 .basePath("/20210610")
@@ -528,12 +578,18 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getJavaMigrationAnalysisResultId(),
                 "javaMigrationAnalysisResultId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put(
+                "javaMigrationAnalysisResultId", request.getJavaMigrationAnalysisResultId());
+
         return clientCall(request, DeleteJavaMigrationAnalysisResultResponse::builder)
                 .logger(LOG, "deleteJavaMigrationAnalysisResult")
                 .serviceDetails(
                         "JavaManagementService",
                         "DeleteJavaMigrationAnalysisResult",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/DeleteJavaMigrationAnalysisResult")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaMigrationAnalysisResultRequest::builder)
                 .basePath("/20210610")
@@ -559,12 +615,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getJmsPluginId(), "jmsPluginId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("jmsPluginId", request.getJmsPluginId());
+
         return clientCall(request, DeleteJmsPluginResponse::builder)
                 .logger(LOG, "deleteJmsPlugin")
                 .serviceDetails(
                         "JavaManagementService",
                         "DeleteJmsPlugin",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/DeleteJmsPlugin")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJmsPluginRequest::builder)
                 .basePath("/20210610")
@@ -589,12 +649,19 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getPerformanceTuningAnalysisResultId(),
                 "performanceTuningAnalysisResultId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put(
+                "performanceTuningAnalysisResultId",
+                request.getPerformanceTuningAnalysisResultId());
+
         return clientCall(request, DeletePerformanceTuningAnalysisResultResponse::builder)
                 .logger(LOG, "deletePerformanceTuningAnalysisResult")
                 .serviceDetails(
                         "JavaManagementService",
                         "DeletePerformanceTuningAnalysisResult",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/DeletePerformanceTuningAnalysisResult")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePerformanceTuningAnalysisResultRequest::builder)
                 .basePath("/20210610")
@@ -620,12 +687,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getTaskScheduleId(), "taskScheduleId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("taskScheduleId", request.getTaskScheduleId());
+
         return clientCall(request, DeleteTaskScheduleResponse::builder)
                 .logger(LOG, "deleteTaskSchedule")
                 .serviceDetails(
                         "JavaManagementService",
                         "DeleteTaskSchedule",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/TaskSchedule/DeleteTaskSchedule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteTaskScheduleRequest::builder)
                 .basePath("/20210610")
@@ -647,12 +718,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
         Objects.requireNonNull(request.getDisableDrsDetails(), "disableDrsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, DisableDrsResponse::builder)
                 .logger(LOG, "disableDrs")
                 .serviceDetails(
                         "JavaManagementService",
                         "DisableDrs",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DisableDrs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableDrsRequest::builder)
                 .basePath("/20210610")
@@ -679,12 +754,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
         Objects.requireNonNull(request.getEnableDrsDetails(), "enableDrsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, EnableDrsResponse::builder)
                 .logger(LOG, "enableDrs")
                 .serviceDetails(
                         "JavaManagementService",
                         "EnableDrs",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/EnableDrs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableDrsRequest::builder)
                 .basePath("/20210610")
@@ -714,12 +793,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getGenerateAgentDeployScriptDetails(),
                 "generateAgentDeployScriptDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, GenerateAgentDeployScriptResponse::builder)
                 .logger(LOG, "generateAgentDeployScript")
                 .serviceDetails(
                         "JavaManagementService",
                         "GenerateAgentDeployScript",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GenerateAgentDeployScript")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateAgentDeployScriptRequest::builder)
                 .basePath("/20210610")
@@ -750,12 +833,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getGenerateAgentInstallerConfigurationDetails(),
                 "generateAgentInstallerConfigurationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, GenerateAgentInstallerConfigurationResponse::builder)
                 .logger(LOG, "generateAgentInstallerConfiguration")
                 .serviceDetails(
                         "JavaManagementService",
                         "GenerateAgentInstallerConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AgentInstallerSummary/GenerateAgentInstallerConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateAgentInstallerConfigurationRequest::builder)
                 .basePath("/20210610")
@@ -790,12 +876,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getGenerateLoadPipelineScriptDetails(),
                 "generateLoadPipelineScriptDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, GenerateLoadPipelineScriptResponse::builder)
                 .logger(LOG, "generateLoadPipelineScript")
                 .serviceDetails(
                         "JavaManagementService",
                         "GenerateLoadPipelineScript",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GenerateLoadPipelineScript")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateLoadPipelineScriptRequest::builder)
                 .basePath("/20210610")
@@ -828,12 +918,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Validate.notBlank(
                 request.getCryptoAnalysisResultId(), "cryptoAnalysisResultId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put("cryptoAnalysisResultId", request.getCryptoAnalysisResultId());
+
         return clientCall(request, GetCryptoAnalysisResultResponse::builder)
                 .logger(LOG, "getCryptoAnalysisResult")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetCryptoAnalysisResult",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/GetCryptoAnalysisResult")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCryptoAnalysisResultRequest::builder)
                 .basePath("/20210610")
@@ -860,12 +955,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getDrsFileKey(), "drsFileKey must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put("drsFileKey", request.getDrsFileKey());
+
         return clientCall(request, GetDrsFileResponse::builder)
                 .logger(LOG, "getDrsFile")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetDrsFile",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/GetDrsFile")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDrsFileRequest::builder)
                 .basePath("/20210610")
@@ -890,12 +990,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, GetExportSettingResponse::builder)
                 .logger(LOG, "getExportSetting")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetExportSetting",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/GetExportSetting")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetExportSettingRequest::builder)
                 .basePath("/20210610")
@@ -919,12 +1023,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, GetExportStatusResponse::builder)
                 .logger(LOG, "getExportStatus")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetExportStatus",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportStatus/GetExportStatus")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetExportStatusRequest::builder)
                 .basePath("/20210610")
@@ -948,12 +1056,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, GetFleetResponse::builder)
                 .logger(LOG, "getFleet")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetFleet",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GetFleet")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetRequest::builder)
                 .basePath("/20210610")
@@ -975,12 +1087,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, GetFleetAdvancedFeatureConfigurationResponse::builder)
                 .logger(LOG, "getFleetAdvancedFeatureConfiguration")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetFleetAdvancedFeatureConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAdvancedFeatureConfiguration/GetFleetAdvancedFeatureConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetAdvancedFeatureConfigurationRequest::builder)
                 .basePath("/20210610")
@@ -1009,12 +1125,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, GetFleetAgentConfigurationResponse::builder)
                 .logger(LOG, "getFleetAgentConfiguration")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetFleetAgentConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/GetFleetAgentConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetAgentConfigurationRequest::builder)
                 .basePath("/20210610")
@@ -1039,12 +1159,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFamilyVersion(), "familyVersion must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("familyVersion", request.getFamilyVersion());
+
         return clientCall(request, GetJavaFamilyResponse::builder)
                 .logger(LOG, "getJavaFamily")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetJavaFamily",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaFamily/GetJavaFamily")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaFamilyRequest::builder)
                 .basePath("/20210610")
@@ -1071,12 +1195,18 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getJavaMigrationAnalysisResultId(),
                 "javaMigrationAnalysisResultId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put(
+                "javaMigrationAnalysisResultId", request.getJavaMigrationAnalysisResultId());
+
         return clientCall(request, GetJavaMigrationAnalysisResultResponse::builder)
                 .logger(LOG, "getJavaMigrationAnalysisResult")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetJavaMigrationAnalysisResult",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/GetJavaMigrationAnalysisResult")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaMigrationAnalysisResultRequest::builder)
                 .basePath("/20210610")
@@ -1103,12 +1233,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getReleaseVersion(), "releaseVersion must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("releaseVersion", request.getReleaseVersion());
+
         return clientCall(request, GetJavaReleaseResponse::builder)
                 .logger(LOG, "getJavaRelease")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetJavaRelease",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/GetJavaRelease")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaReleaseRequest::builder)
                 .basePath("/20210610")
@@ -1130,12 +1264,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getJmsPluginId(), "jmsPluginId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("jmsPluginId", request.getJmsPluginId());
+
         return clientCall(request, GetJmsPluginResponse::builder)
                 .logger(LOG, "getJmsPlugin")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetJmsPlugin",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/GetJmsPlugin")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJmsPluginRequest::builder)
                 .basePath("/20210610")
@@ -1164,12 +1302,19 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getPerformanceTuningAnalysisResultId(),
                 "performanceTuningAnalysisResultId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put(
+                "performanceTuningAnalysisResultId",
+                request.getPerformanceTuningAnalysisResultId());
+
         return clientCall(request, GetPerformanceTuningAnalysisResultResponse::builder)
                 .logger(LOG, "getPerformanceTuningAnalysisResult")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetPerformanceTuningAnalysisResult",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/GetPerformanceTuningAnalysisResult")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPerformanceTuningAnalysisResultRequest::builder)
                 .basePath("/20210610")
@@ -1197,12 +1342,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getTaskScheduleId(), "taskScheduleId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("taskScheduleId", request.getTaskScheduleId());
+
         return clientCall(request, GetTaskScheduleResponse::builder)
                 .logger(LOG, "getTaskSchedule")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetTaskSchedule",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/TaskSchedule/GetTaskSchedule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetTaskScheduleRequest::builder)
                 .basePath("/20210610")
@@ -1226,12 +1375,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
                 .serviceDetails(
                         "JavaManagementService",
                         "GetWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/GetWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20210610")
@@ -1254,12 +1407,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public ListAgentInstallersResponse listAgentInstallers(ListAgentInstallersRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListAgentInstallersResponse::builder)
                 .logger(LOG, "listAgentInstallers")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListAgentInstallers",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AgentInstallerSummary/ListAgentInstallers")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAgentInstallersRequest::builder)
                 .basePath("/20210610")
@@ -1288,12 +1444,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public ListAnnouncementsResponse listAnnouncements(ListAnnouncementsRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListAnnouncementsResponse::builder)
                 .logger(LOG, "listAnnouncements")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListAnnouncements",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AnnouncementCollection/ListAnnouncements")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAnnouncementsRequest::builder)
                 .basePath("/20210610")
@@ -1323,12 +1482,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, ListBlocklistsResponse::builder)
                 .logger(LOG, "listBlocklists")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListBlocklists",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/ListBlocklists")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListBlocklistsRequest::builder)
                 .basePath("/20210610")
@@ -1359,12 +1522,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, ListContainersResponse::builder)
                 .logger(LOG, "listContainers")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListContainers",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ContainerSummary/ListContainers")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListContainersRequest::builder)
                 .basePath("/20210610")
@@ -1404,12 +1571,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, ListCryptoAnalysisResultsResponse::builder)
                 .logger(LOG, "listCryptoAnalysisResults")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListCryptoAnalysisResults",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/ListCryptoAnalysisResults")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCryptoAnalysisResultsRequest::builder)
                 .basePath("/20210610")
@@ -1449,12 +1620,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, ListDrsFilesResponse::builder)
                 .logger(LOG, "listDrsFiles")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListDrsFiles",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFileCollection/ListDrsFiles")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDrsFilesRequest::builder)
                 .basePath("/20210610")
@@ -1483,12 +1658,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, ListFleetDiagnosesResponse::builder)
                 .logger(LOG, "listFleetDiagnoses")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListFleetDiagnoses",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetDiagnosisSummary/ListFleetDiagnoses")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetDiagnosesRequest::builder)
                 .basePath("/20210610")
@@ -1513,12 +1692,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public ListFleetErrorsResponse listFleetErrors(ListFleetErrorsRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListFleetErrorsResponse::builder)
                 .logger(LOG, "listFleetErrors")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListFleetErrors",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetErrorSummary/ListFleetErrors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetErrorsRequest::builder)
                 .basePath("/20210610")
@@ -1557,12 +1739,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public ListFleetsResponse listFleets(ListFleetsRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListFleetsResponse::builder)
                 .logger(LOG, "listFleets")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListFleets",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ListFleets")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetsRequest::builder)
                 .basePath("/20210610")
@@ -1595,12 +1780,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, ListInstallationSitesResponse::builder)
                 .logger(LOG, "listInstallationSites")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListInstallationSites",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/ListInstallationSites")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstallationSitesRequest::builder)
                 .basePath("/20210610")
@@ -1641,12 +1830,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public ListJavaFamiliesResponse listJavaFamilies(ListJavaFamiliesRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListJavaFamiliesResponse::builder)
                 .logger(LOG, "listJavaFamilies")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListJavaFamilies",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaFamily/ListJavaFamilies")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaFamiliesRequest::builder)
                 .basePath("/20210610")
@@ -1677,12 +1869,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, ListJavaMigrationAnalysisResultsResponse::builder)
                 .logger(LOG, "listJavaMigrationAnalysisResults")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListJavaMigrationAnalysisResults",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/ListJavaMigrationAnalysisResults")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaMigrationAnalysisResultsRequest::builder)
                 .basePath("/20210610")
@@ -1717,12 +1913,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public ListJavaReleasesResponse listJavaReleases(ListJavaReleasesRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListJavaReleasesResponse::builder)
                 .logger(LOG, "listJavaReleases")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListJavaReleases",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/ListJavaReleases")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaReleasesRequest::builder)
                 .basePath("/20210610")
@@ -1752,12 +1951,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public ListJmsPluginsResponse listJmsPlugins(ListJmsPluginsRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListJmsPluginsResponse::builder)
                 .logger(LOG, "listJmsPlugins")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListJmsPlugins",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/ListJmsPlugins")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJmsPluginsRequest::builder)
                 .basePath("/20210610")
@@ -1796,12 +1998,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public ListJreUsageResponse listJreUsage(ListJreUsageRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListJreUsageResponse::builder)
                 .logger(LOG, "listJreUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListJreUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/ListJreUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJreUsageRequest::builder)
                 .basePath("/20210610")
@@ -1837,12 +2042,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getLibraryKey(), "libraryKey must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put("libraryKey", request.getLibraryKey());
+
         return clientCall(request, ListLibraryApplicationUsageResponse::builder)
                 .logger(LOG, "listLibraryApplicationUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListLibraryApplicationUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryApplicationUsageSummary/ListLibraryApplicationUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLibraryApplicationUsageRequest::builder)
                 .basePath("/20210610")
@@ -1883,12 +2093,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getLibraryKey(), "libraryKey must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put("libraryKey", request.getLibraryKey());
+
         return clientCall(request, ListLibraryManagedInstanceUsageResponse::builder)
                 .logger(LOG, "listLibraryManagedInstanceUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListLibraryManagedInstanceUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryManagedInstanceUsageSummary/ListLibraryManagedInstanceUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLibraryManagedInstanceUsageRequest::builder)
                 .basePath("/20210610")
@@ -1929,12 +2144,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, ListPerformanceTuningAnalysisResultsResponse::builder)
                 .logger(LOG, "listPerformanceTuningAnalysisResults")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListPerformanceTuningAnalysisResults",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/ListPerformanceTuningAnalysisResults")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPerformanceTuningAnalysisResultsRequest::builder)
                 .basePath("/20210610")
@@ -1970,12 +2189,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public ListPluginErrorsResponse listPluginErrors(ListPluginErrorsRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListPluginErrorsResponse::builder)
                 .logger(LOG, "listPluginErrors")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListPluginErrors",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PluginErrorSummary/ListPluginErrors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPluginErrorsRequest::builder)
                 .basePath("/20210610")
@@ -2014,12 +2236,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public ListTaskSchedulesResponse listTaskSchedules(ListTaskSchedulesRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListTaskSchedulesResponse::builder)
                 .logger(LOG, "listTaskSchedules")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListTaskSchedules",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/TaskSchedule/ListTaskSchedules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListTaskSchedulesRequest::builder)
                 .basePath("/20210610")
@@ -2054,12 +2279,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getPackageName(), "packageName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put("packageName", request.getPackageName());
+
         return clientCall(request, ListUncorrelatedPackageApplicationUsageResponse::builder)
                 .logger(LOG, "listUncorrelatedPackageApplicationUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListUncorrelatedPackageApplicationUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/UncorrelatedPackageApplicationUsageSummary/ListUncorrelatedPackageApplicationUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListUncorrelatedPackageApplicationUsageRequest::builder)
                 .basePath("/20210610")
@@ -2102,12 +2332,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getPackageName(), "packageName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put("packageName", request.getPackageName());
+
         return clientCall(request, ListUncorrelatedPackageManagedInstanceUsageResponse::builder)
                 .logger(LOG, "listUncorrelatedPackageManagedInstanceUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListUncorrelatedPackageManagedInstanceUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/UncorrelatedPackageManagedInstanceUsageSummary/ListUncorrelatedPackageManagedInstanceUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListUncorrelatedPackageManagedInstanceUsageRequest::builder)
                 .basePath("/20210610")
@@ -2147,12 +2382,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, ListUncorrelatedPackageUsageResponse::builder)
                 .logger(LOG, "listUncorrelatedPackageUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListUncorrelatedPackageUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/UncorrelatedPackageUsageSummary/ListUncorrelatedPackageUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListUncorrelatedPackageUsageRequest::builder)
                 .basePath("/20210610")
@@ -2188,12 +2427,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkItemsResponse::builder)
                 .logger(LOG, "listWorkItems")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListWorkItems",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkItemSummary/ListWorkItems")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkItemsRequest::builder)
                 .basePath("/20210610")
@@ -2221,12 +2464,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListWorkRequestErrors",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestError/ListWorkRequestErrors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20210610")
@@ -2253,12 +2500,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListWorkRequestLogs",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestLogEntry/ListWorkRequestLogs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20210610")
@@ -2283,12 +2534,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
                 .serviceDetails(
                         "JavaManagementService",
                         "ListWorkRequests",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/ListWorkRequests")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20210610")
@@ -2326,12 +2580,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getRemoveFleetInstallationSitesDetails(),
                 "removeFleetInstallationSitesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, RemoveFleetInstallationSitesResponse::builder)
                 .logger(LOG, "removeFleetInstallationSites")
                 .serviceDetails(
                         "JavaManagementService",
                         "RemoveFleetInstallationSites",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/RemoveFleetInstallationSites")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveFleetInstallationSitesRequest::builder)
                 .basePath("/20210610")
@@ -2363,12 +2621,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getRequestCryptoAnalysesDetails(),
                 "requestCryptoAnalysesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, RequestCryptoAnalysesResponse::builder)
                 .logger(LOG, "requestCryptoAnalyses")
                 .serviceDetails(
                         "JavaManagementService",
                         "RequestCryptoAnalyses",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestCryptoAnalyses")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestCryptoAnalysesRequest::builder)
                 .basePath("/20210610")
@@ -2398,12 +2660,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getRequestDeployedApplicationMigrationAnalysesDetails(),
                 "requestDeployedApplicationMigrationAnalysesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, RequestDeployedApplicationMigrationAnalysesResponse::builder)
                 .logger(LOG, "requestDeployedApplicationMigrationAnalyses")
                 .serviceDetails(
                         "JavaManagementService",
                         "RequestDeployedApplicationMigrationAnalyses",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestDeployedApplicationMigrationAnalyses")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestDeployedApplicationMigrationAnalysesRequest::builder)
                 .basePath("/20210610")
@@ -2434,12 +2700,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getRequestJavaMigrationAnalysesDetails(),
                 "requestJavaMigrationAnalysesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, RequestJavaMigrationAnalysesResponse::builder)
                 .logger(LOG, "requestJavaMigrationAnalyses")
                 .serviceDetails(
                         "JavaManagementService",
                         "RequestJavaMigrationAnalyses",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestJavaMigrationAnalyses")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestJavaMigrationAnalysesRequest::builder)
                 .basePath("/20210610")
@@ -2468,12 +2738,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getRequestJfrRecordingsDetails(),
                 "requestJfrRecordingsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, RequestJfrRecordingsResponse::builder)
                 .logger(LOG, "requestJfrRecordings")
                 .serviceDetails(
                         "JavaManagementService",
                         "RequestJfrRecordings",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestJfrRecordings")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestJfrRecordingsRequest::builder)
                 .basePath("/20210610")
@@ -2502,12 +2776,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getRequestPerformanceTuningAnalysesDetails(),
                 "requestPerformanceTuningAnalysesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, RequestPerformanceTuningAnalysesResponse::builder)
                 .logger(LOG, "requestPerformanceTuningAnalyses")
                 .serviceDetails(
                         "JavaManagementService",
                         "RequestPerformanceTuningAnalyses",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestPerformanceTuningAnalyses")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestPerformanceTuningAnalysesRequest::builder)
                 .basePath("/20210610")
@@ -2535,12 +2813,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Objects.requireNonNull(
                 request.getScanJavaServerUsageDetails(), "scanJavaServerUsageDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, ScanJavaServerUsageResponse::builder)
                 .logger(LOG, "scanJavaServerUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "ScanJavaServerUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerUsage/ScanJavaServerUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ScanJavaServerUsageRequest::builder)
                 .basePath("/20210610")
@@ -2569,12 +2851,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Objects.requireNonNull(
                 request.getScanLibraryUsageDetails(), "scanLibraryUsageDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, ScanLibraryUsageResponse::builder)
                 .logger(LOG, "scanLibraryUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "ScanLibraryUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryUsage/ScanLibraryUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ScanLibraryUsageRequest::builder)
                 .basePath("/20210610")
@@ -2601,12 +2887,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, SummarizeApplicationInstallationUsageResponse::builder)
                 .logger(LOG, "summarizeApplicationInstallationUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeApplicationInstallationUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationInstallationUsageSummary/SummarizeApplicationInstallationUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeApplicationInstallationUsageRequest::builder)
                 .basePath("/20210610")
@@ -2661,12 +2951,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, SummarizeApplicationUsageResponse::builder)
                 .logger(LOG, "summarizeApplicationUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeApplicationUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationUsage/SummarizeApplicationUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeApplicationUsageRequest::builder)
                 .basePath("/20210610")
@@ -2718,12 +3012,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, SummarizeDeployedApplicationInstallationUsageResponse::builder)
                 .logger(LOG, "summarizeDeployedApplicationInstallationUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeDeployedApplicationInstallationUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DeployedApplicationInstallationUsageSummary/SummarizeDeployedApplicationInstallationUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeDeployedApplicationInstallationUsageRequest::builder)
                 .basePath("/20210610")
@@ -2771,12 +3069,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, SummarizeDeployedApplicationUsageResponse::builder)
                 .logger(LOG, "summarizeDeployedApplicationUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeDeployedApplicationUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DeployedApplicationUsage/SummarizeDeployedApplicationUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeDeployedApplicationUsageRequest::builder)
                 .basePath("/20210610")
@@ -2816,12 +3118,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public SummarizeFleetErrorsResponse summarizeFleetErrors(SummarizeFleetErrorsRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, SummarizeFleetErrorsResponse::builder)
                 .logger(LOG, "summarizeFleetErrors")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeFleetErrors",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetErrorAggregation/SummarizeFleetErrors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeFleetErrorsRequest::builder)
                 .basePath("/20210610")
@@ -2849,12 +3154,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, SummarizeInstallationUsageResponse::builder)
                 .logger(LOG, "summarizeInstallationUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeInstallationUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationUsage/SummarizeInstallationUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeInstallationUsageRequest::builder)
                 .basePath("/20210610")
@@ -2883,6 +3192,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         request.getOsFamily(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("pathContains", request.getPathContains())
+                .appendEnumQueryParam("jreSecurityStatus", request.getJreSecurityStatus())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -2902,12 +3212,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, SummarizeJavaServerInstanceUsageResponse::builder)
                 .logger(LOG, "summarizeJavaServerInstanceUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeJavaServerInstanceUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerInstanceUsage/SummarizeJavaServerInstanceUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeJavaServerInstanceUsageRequest::builder)
                 .basePath("/20210610")
@@ -2951,12 +3265,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, SummarizeJavaServerUsageResponse::builder)
                 .logger(LOG, "summarizeJavaServerUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeJavaServerUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerUsage/SummarizeJavaServerUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeJavaServerUsageRequest::builder)
                 .basePath("/20210610")
@@ -2992,12 +3310,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, SummarizeJreUsageResponse::builder)
                 .logger(LOG, "summarizeJreUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeJreUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/SummarizeJreUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeJreUsageRequest::builder)
                 .basePath("/20210610")
@@ -3045,12 +3367,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, SummarizeLibraryInventoryResponse::builder)
                 .logger(LOG, "summarizeLibraryInventory")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeLibraryInventory",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryInventory/SummarizeLibraryInventory")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeLibraryInventoryRequest::builder)
                 .basePath("/20210610")
@@ -3080,12 +3406,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, SummarizeLibraryUsageResponse::builder)
                 .logger(LOG, "summarizeLibraryUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeLibraryUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryUsage/SummarizeLibraryUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeLibraryUsageRequest::builder)
                 .basePath("/20210610")
@@ -3126,12 +3456,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, SummarizeManagedInstanceUsageResponse::builder)
                 .logger(LOG, "summarizeManagedInstanceUsage")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeManagedInstanceUsage",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ManagedInstanceUsage/SummarizeManagedInstanceUsage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeManagedInstanceUsageRequest::builder)
                 .basePath("/20210610")
@@ -3181,12 +3515,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     public SummarizePluginErrorsResponse summarizePluginErrors(
             SummarizePluginErrorsRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, SummarizePluginErrorsResponse::builder)
                 .logger(LOG, "summarizePluginErrors")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizePluginErrors",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PluginErrorAggregation/SummarizePluginErrors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizePluginErrorsRequest::builder)
                 .basePath("/20210610")
@@ -3212,12 +3549,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     public SummarizeResourceInventoryResponse summarizeResourceInventory(
             SummarizeResourceInventoryRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, SummarizeResourceInventoryResponse::builder)
                 .logger(LOG, "summarizeResourceInventory")
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeResourceInventory",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/SummarizeResourceInventory")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeResourceInventoryRequest::builder)
                 .basePath("/20210610")
@@ -3246,12 +3586,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getDrsFileKey(), "drsFileKey must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put("drsFileKey", request.getDrsFileKey());
+
         return clientCall(request, UpdateDrsFileResponse::builder)
                 .logger(LOG, "updateDrsFile")
                 .serviceDetails(
                         "JavaManagementService",
                         "UpdateDrsFile",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateDrsFile")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDrsFileRequest::builder)
                 .basePath("/20210610")
@@ -3279,12 +3624,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Objects.requireNonNull(
                 request.getUpdateExportSettingDetails(), "updateExportSettingDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, UpdateExportSettingResponse::builder)
                 .logger(LOG, "updateExportSetting")
                 .serviceDetails(
                         "JavaManagementService",
                         "UpdateExportSetting",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/UpdateExportSetting")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateExportSettingRequest::builder)
                 .basePath("/20210610")
@@ -3311,12 +3660,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
         Objects.requireNonNull(request.getUpdateFleetDetails(), "updateFleetDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, UpdateFleetResponse::builder)
                 .logger(LOG, "updateFleet")
                 .serviceDetails(
                         "JavaManagementService",
                         "UpdateFleet",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateFleet")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetRequest::builder)
                 .basePath("/20210610")
@@ -3343,12 +3696,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getUpdateFleetAdvancedFeatureConfigurationDetails(),
                 "updateFleetAdvancedFeatureConfigurationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, UpdateFleetAdvancedFeatureConfigurationResponse::builder)
                 .logger(LOG, "updateFleetAdvancedFeatureConfiguration")
                 .serviceDetails(
                         "JavaManagementService",
                         "UpdateFleetAdvancedFeatureConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAdvancedFeatureConfiguration/UpdateFleetAdvancedFeatureConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetAdvancedFeatureConfigurationRequest::builder)
                 .basePath("/20210610")
@@ -3382,12 +3739,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 request.getUpdateFleetAgentConfigurationDetails(),
                 "updateFleetAgentConfigurationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+
         return clientCall(request, UpdateFleetAgentConfigurationResponse::builder)
                 .logger(LOG, "updateFleetAgentConfiguration")
                 .serviceDetails(
                         "JavaManagementService",
                         "UpdateFleetAgentConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/UpdateFleetAgentConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetAgentConfigurationRequest::builder)
                 .basePath("/20210610")
@@ -3415,12 +3776,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         Objects.requireNonNull(
                 request.getUpdateJmsPluginDetails(), "updateJmsPluginDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("jmsPluginId", request.getJmsPluginId());
+
         return clientCall(request, UpdateJmsPluginResponse::builder)
                 .logger(LOG, "updateJmsPlugin")
                 .serviceDetails(
                         "JavaManagementService",
                         "UpdateJmsPlugin",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/UpdateJmsPlugin")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateJmsPluginRequest::builder)
                 .basePath("/20210610")
@@ -3447,12 +3812,16 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
         Validate.notBlank(request.getTaskScheduleId(), "taskScheduleId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("taskScheduleId", request.getTaskScheduleId());
+
         return clientCall(request, UpdateTaskScheduleResponse::builder)
                 .logger(LOG, "updateTaskSchedule")
                 .serviceDetails(
                         "JavaManagementService",
                         "UpdateTaskSchedule",
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/TaskSchedule/UpdateTaskSchedule")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateTaskScheduleRequest::builder)
                 .basePath("/20210610")

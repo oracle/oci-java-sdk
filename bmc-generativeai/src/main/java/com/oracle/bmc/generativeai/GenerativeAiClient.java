@@ -21,7 +21,8 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .serviceName(GenerativeAiClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://generativeai.{region}.oci.{secondLevelDomain}")
+                            "https://generativeai.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .endpointServiceName("generativeai")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -129,12 +130,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getHostedDeploymentId(), "hostedDeploymentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedDeploymentId", request.getHostedDeploymentId());
+
         return clientCall(request, AddArtifactResponse::builder)
                 .logger(LOG, "addArtifact")
                 .serviceDetails(
                         "GenerativeAi",
                         "AddArtifact",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeployment/AddArtifact")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddArtifactRequest::builder)
                 .basePath("/20231130")
@@ -162,12 +167,17 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getVectorStoreConnectorFileSyncId(),
                 "vectorStoreConnectorFileSyncId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "vectorStoreConnectorFileSyncId", request.getVectorStoreConnectorFileSyncId());
+
         return clientCall(request, CancelVectorStoreConnectorFileSyncResponse::builder)
                 .logger(LOG, "cancelVectorStoreConnectorFileSync")
                 .serviceDetails(
                         "GenerativeAi",
                         "CancelVectorStoreConnectorFileSync",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorFileSync/CancelVectorStoreConnectorFileSync")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelVectorStoreConnectorFileSyncRequest::builder)
                 .basePath("/20231130")
@@ -195,12 +205,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getChangeApiKeyCompartmentDetails(),
                 "changeApiKeyCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("apiKeyId", request.getApiKeyId());
+
         return clientCall(request, ChangeApiKeyCompartmentResponse::builder)
                 .logger(LOG, "changeApiKeyCompartment")
                 .serviceDetails(
                         "GenerativeAi",
                         "ChangeApiKeyCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/ChangeApiKeyCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeApiKeyCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -229,12 +243,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getChangeDedicatedAiClusterCompartmentDetails(),
                 "changeDedicatedAiClusterCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dedicatedAiClusterId", request.getDedicatedAiClusterId());
+
         return clientCall(request, ChangeDedicatedAiClusterCompartmentResponse::builder)
                 .logger(LOG, "changeDedicatedAiClusterCompartment")
                 .serviceDetails(
                         "GenerativeAi",
                         "ChangeDedicatedAiClusterCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/ChangeDedicatedAiClusterCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDedicatedAiClusterCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -263,12 +281,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getChangeEndpointCompartmentDetails(),
                 "changeEndpointCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("endpointId", request.getEndpointId());
+
         return clientCall(request, ChangeEndpointCompartmentResponse::builder)
                 .logger(LOG, "changeEndpointCompartment")
                 .serviceDetails(
                         "GenerativeAi",
                         "ChangeEndpointCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/ChangeEndpointCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeEndpointCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -299,12 +321,17 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getChangeGenerativeAiPrivateEndpointCompartmentDetails(),
                 "changeGenerativeAiPrivateEndpointCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "generativeAiPrivateEndpointId", request.getGenerativeAiPrivateEndpointId());
+
         return clientCall(request, ChangeGenerativeAiPrivateEndpointCompartmentResponse::builder)
                 .logger(LOG, "changeGenerativeAiPrivateEndpointCompartment")
                 .serviceDetails(
                         "GenerativeAi",
                         "ChangeGenerativeAiPrivateEndpointCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiPrivateEndpoint/ChangeGenerativeAiPrivateEndpointCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeGenerativeAiPrivateEndpointCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -338,12 +365,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getChangeGenerativeAiProjectCompartmentDetails(),
                 "changeGenerativeAiProjectCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("generativeAiProjectId", request.getGenerativeAiProjectId());
+
         return clientCall(request, ChangeGenerativeAiProjectCompartmentResponse::builder)
                 .logger(LOG, "changeGenerativeAiProjectCompartment")
                 .serviceDetails(
                         "GenerativeAi",
                         "ChangeGenerativeAiProjectCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiProject/ChangeGenerativeAiProjectCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeGenerativeAiProjectCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -373,12 +404,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getChangeHostedApplicationCompartmentDetails(),
                 "changeHostedApplicationCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedApplicationId", request.getHostedApplicationId());
+
         return clientCall(request, ChangeHostedApplicationCompartmentResponse::builder)
                 .logger(LOG, "changeHostedApplicationCompartment")
                 .serviceDetails(
                         "GenerativeAi",
                         "ChangeHostedApplicationCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplication/ChangeHostedApplicationCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeHostedApplicationCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -410,12 +445,17 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getChangeHostedApplicationStorageCompartmentDetails(),
                 "changeHostedApplicationStorageCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "hostedApplicationStorageId", request.getHostedApplicationStorageId());
+
         return clientCall(request, ChangeHostedApplicationStorageCompartmentResponse::builder)
                 .logger(LOG, "changeHostedApplicationStorageCompartment")
                 .serviceDetails(
                         "GenerativeAi",
                         "ChangeHostedApplicationStorageCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationStorage/ChangeHostedApplicationStorageCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeHostedApplicationStorageCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -444,12 +484,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getChangeImportedModelCompartmentDetails(),
                 "changeImportedModelCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("importedModelId", request.getImportedModelId());
+
         return clientCall(request, ChangeImportedModelCompartmentResponse::builder)
                 .logger(LOG, "changeImportedModelCompartment")
                 .serviceDetails(
                         "GenerativeAi",
                         "ChangeImportedModelCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ImportedModel/ChangeImportedModelCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeImportedModelCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -478,12 +522,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getChangeModelCompartmentDetails(),
                 "changeModelCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("modelId", request.getModelId());
+
         return clientCall(request, ChangeModelCompartmentResponse::builder)
                 .logger(LOG, "changeModelCompartment")
                 .serviceDetails(
                         "GenerativeAi",
                         "ChangeModelCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/ChangeModelCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeModelCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -511,12 +559,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getChangeSemanticStoreCompartmentDetails(),
                 "changeSemanticStoreCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("semanticStoreId", request.getSemanticStoreId());
+
         return clientCall(request, ChangeSemanticStoreCompartmentResponse::builder)
                 .logger(LOG, "changeSemanticStoreCompartment")
                 .serviceDetails(
                         "GenerativeAi",
                         "ChangeSemanticStoreCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SemanticStore/ChangeSemanticStoreCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeSemanticStoreCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -543,12 +595,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     public CreateApiKeyResponse createApiKey(CreateApiKeyRequest request) {
         Objects.requireNonNull(request.getCreateApiKeyDetails(), "createApiKeyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateApiKeyResponse::builder)
                 .logger(LOG, "createApiKey")
                 .serviceDetails(
                         "GenerativeAi",
                         "CreateApiKey",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/CreateApiKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateApiKeyRequest::builder)
                 .basePath("/20231130")
@@ -574,12 +629,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getCreateDedicatedAiClusterDetails(),
                 "createDedicatedAiClusterDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateDedicatedAiClusterResponse::builder)
                 .logger(LOG, "createDedicatedAiCluster")
                 .serviceDetails(
                         "GenerativeAi",
                         "CreateDedicatedAiCluster",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/CreateDedicatedAiCluster")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDedicatedAiClusterRequest::builder)
                 .basePath("/20231130")
@@ -609,12 +667,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Objects.requireNonNull(
                 request.getCreateEndpointDetails(), "createEndpointDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateEndpointResponse::builder)
                 .logger(LOG, "createEndpoint")
                 .serviceDetails(
                         "GenerativeAi",
                         "CreateEndpoint",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/CreateEndpoint")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateEndpointRequest::builder)
                 .basePath("/20231130")
@@ -645,9 +706,12 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getCreateGenerativeAiPrivateEndpointDetails(),
                 "createGenerativeAiPrivateEndpointDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateGenerativeAiPrivateEndpointResponse::builder)
                 .logger(LOG, "createGenerativeAiPrivateEndpoint")
                 .serviceDetails("GenerativeAi", "CreateGenerativeAiPrivateEndpoint", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateGenerativeAiPrivateEndpointRequest::builder)
                 .basePath("/20231130")
@@ -679,12 +743,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getCreateGenerativeAiProjectDetails(),
                 "createGenerativeAiProjectDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateGenerativeAiProjectResponse::builder)
                 .logger(LOG, "createGenerativeAiProject")
                 .serviceDetails(
                         "GenerativeAi",
                         "CreateGenerativeAiProject",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiProject/CreateGenerativeAiProject")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateGenerativeAiProjectRequest::builder)
                 .basePath("/20231130")
@@ -713,12 +780,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getCreateHostedApplicationDetails(),
                 "createHostedApplicationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateHostedApplicationResponse::builder)
                 .logger(LOG, "createHostedApplication")
                 .serviceDetails(
                         "GenerativeAi",
                         "CreateHostedApplication",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplication/CreateHostedApplication")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateHostedApplicationRequest::builder)
                 .basePath("/20231130")
@@ -747,12 +817,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getCreateHostedApplicationStorageDetails(),
                 "createHostedApplicationStorageDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateHostedApplicationStorageResponse::builder)
                 .logger(LOG, "createHostedApplicationStorage")
                 .serviceDetails(
                         "GenerativeAi",
                         "CreateHostedApplicationStorage",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationStorage/CreateHostedApplicationStorage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateHostedApplicationStorageRequest::builder)
                 .basePath("/20231130")
@@ -783,12 +856,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getCreateHostedDeploymentDetails(),
                 "createHostedDeploymentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateHostedDeploymentResponse::builder)
                 .logger(LOG, "createHostedDeployment")
                 .serviceDetails(
                         "GenerativeAi",
                         "CreateHostedDeployment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeployment/CreateHostedDeployment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateHostedDeploymentRequest::builder)
                 .basePath("/20231130")
@@ -815,12 +891,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Objects.requireNonNull(
                 request.getCreateImportedModelDetails(), "createImportedModelDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateImportedModelResponse::builder)
                 .logger(LOG, "createImportedModel")
                 .serviceDetails(
                         "GenerativeAi",
                         "CreateImportedModel",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ImportedModel/CreateImportedModel")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateImportedModelRequest::builder)
                 .basePath("/20231130")
@@ -846,12 +925,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     public CreateModelResponse createModel(CreateModelRequest request) {
         Objects.requireNonNull(request.getCreateModelDetails(), "createModelDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateModelResponse::builder)
                 .logger(LOG, "createModel")
                 .serviceDetails(
                         "GenerativeAi",
                         "CreateModel",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/CreateModel")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateModelRequest::builder)
                 .basePath("/20231130")
@@ -879,12 +961,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Objects.requireNonNull(
                 request.getCreateSemanticStoreDetails(), "createSemanticStoreDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateSemanticStoreResponse::builder)
                 .logger(LOG, "createSemanticStore")
                 .serviceDetails(
                         "GenerativeAi",
                         "CreateSemanticStore",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SemanticStore/CreateSemanticStore")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSemanticStoreRequest::builder)
                 .basePath("/20231130")
@@ -913,12 +998,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getCreateVectorStoreConnectorDetails(),
                 "createVectorStoreConnectorDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateVectorStoreConnectorResponse::builder)
                 .logger(LOG, "createVectorStoreConnector")
                 .serviceDetails(
                         "GenerativeAi",
                         "CreateVectorStoreConnector",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnector/CreateVectorStoreConnector")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVectorStoreConnectorRequest::builder)
                 .basePath("/20231130")
@@ -948,12 +1036,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getCreateVectorStoreConnectorFileSyncDetails(),
                 "createVectorStoreConnectorFileSyncDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateVectorStoreConnectorFileSyncResponse::builder)
                 .logger(LOG, "createVectorStoreConnectorFileSync")
                 .serviceDetails(
                         "GenerativeAi",
                         "CreateVectorStoreConnectorFileSync",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorFileSync/CreateVectorStoreConnectorFileSync")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVectorStoreConnectorFileSyncRequest::builder)
                 .basePath("/20231130")
@@ -983,12 +1074,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("apiKeyId", request.getApiKeyId());
+
         return clientCall(request, DeleteApiKeyResponse::builder)
                 .logger(LOG, "deleteApiKey")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteApiKey",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/DeleteApiKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteApiKeyRequest::builder)
                 .basePath("/20231130")
@@ -1010,12 +1105,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(
                 request.getDedicatedAiClusterId(), "dedicatedAiClusterId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dedicatedAiClusterId", request.getDedicatedAiClusterId());
+
         return clientCall(request, DeleteDedicatedAiClusterResponse::builder)
                 .logger(LOG, "deleteDedicatedAiCluster")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteDedicatedAiCluster",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/DeleteDedicatedAiCluster")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDedicatedAiClusterRequest::builder)
                 .basePath("/20231130")
@@ -1038,12 +1137,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getEndpointId(), "endpointId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("endpointId", request.getEndpointId());
+
         return clientCall(request, DeleteEndpointResponse::builder)
                 .logger(LOG, "deleteEndpoint")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteEndpoint",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/DeleteEndpoint")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteEndpointRequest::builder)
                 .basePath("/20231130")
@@ -1068,12 +1171,17 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getGenerativeAiPrivateEndpointId(),
                 "generativeAiPrivateEndpointId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "generativeAiPrivateEndpointId", request.getGenerativeAiPrivateEndpointId());
+
         return clientCall(request, DeleteGenerativeAiPrivateEndpointResponse::builder)
                 .logger(LOG, "deleteGenerativeAiPrivateEndpoint")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteGenerativeAiPrivateEndpoint",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiPrivateEndpoint/DeleteGenerativeAiPrivateEndpoint")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteGenerativeAiPrivateEndpointRequest::builder)
                 .basePath("/20231130")
@@ -1099,12 +1207,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(
                 request.getGenerativeAiProjectId(), "generativeAiProjectId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("generativeAiProjectId", request.getGenerativeAiProjectId());
+
         return clientCall(request, DeleteGenerativeAiProjectResponse::builder)
                 .logger(LOG, "deleteGenerativeAiProject")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteGenerativeAiProject",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiProject/DeleteGenerativeAiProject")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteGenerativeAiProjectRequest::builder)
                 .basePath("/20231130")
@@ -1129,12 +1241,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(
                 request.getHostedApplicationId(), "hostedApplicationId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedApplicationId", request.getHostedApplicationId());
+
         return clientCall(request, DeleteHostedApplicationResponse::builder)
                 .logger(LOG, "deleteHostedApplication")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteHostedApplication",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplication/DeleteHostedApplication")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteHostedApplicationRequest::builder)
                 .basePath("/20231130")
@@ -1160,12 +1276,17 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getHostedApplicationStorageId(),
                 "hostedApplicationStorageId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "hostedApplicationStorageId", request.getHostedApplicationStorageId());
+
         return clientCall(request, DeleteHostedApplicationStorageResponse::builder)
                 .logger(LOG, "deleteHostedApplicationStorage")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteHostedApplicationStorage",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationStorage/DeleteHostedApplicationStorage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteHostedApplicationStorageRequest::builder)
                 .basePath("/20231130")
@@ -1190,12 +1311,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getHostedDeploymentId(), "hostedDeploymentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedDeploymentId", request.getHostedDeploymentId());
+
         return clientCall(request, DeleteHostedDeploymentResponse::builder)
                 .logger(LOG, "deleteHostedDeployment")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteHostedDeployment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeployment/DeleteHostedDeployment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteHostedDeploymentRequest::builder)
                 .basePath("/20231130")
@@ -1221,12 +1346,17 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedDeploymentId", request.getHostedDeploymentId());
+        requiredParametersMap.put("artifactId", request.getArtifactId());
+
         return clientCall(request, DeleteHostedDeploymentArtifactResponse::builder)
                 .logger(LOG, "deleteHostedDeploymentArtifact")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteHostedDeploymentArtifact",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeployment/DeleteHostedDeploymentArtifact")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteHostedDeploymentArtifactRequest::builder)
                 .basePath("/20231130")
@@ -1252,12 +1382,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getImportedModelId(), "importedModelId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("importedModelId", request.getImportedModelId());
+
         return clientCall(request, DeleteImportedModelResponse::builder)
                 .logger(LOG, "deleteImportedModel")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteImportedModel",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ImportedModel/DeleteImportedModel")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteImportedModelRequest::builder)
                 .basePath("/20231130")
@@ -1280,12 +1414,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("modelId", request.getModelId());
+
         return clientCall(request, DeleteModelResponse::builder)
                 .logger(LOG, "deleteModel")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteModel",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/DeleteModel")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteModelRequest::builder)
                 .basePath("/20231130")
@@ -1307,12 +1445,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getSemanticStoreId(), "semanticStoreId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("semanticStoreId", request.getSemanticStoreId());
+
         return clientCall(request, DeleteSemanticStoreResponse::builder)
                 .logger(LOG, "deleteSemanticStore")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteSemanticStore",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SemanticStore/DeleteSemanticStore")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSemanticStoreRequest::builder)
                 .basePath("/20231130")
@@ -1337,12 +1479,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(
                 request.getVectorStoreConnectorId(), "vectorStoreConnectorId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vectorStoreConnectorId", request.getVectorStoreConnectorId());
+
         return clientCall(request, DeleteVectorStoreConnectorResponse::builder)
                 .logger(LOG, "deleteVectorStoreConnector")
                 .serviceDetails(
                         "GenerativeAi",
                         "DeleteVectorStoreConnector",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnector/DeleteVectorStoreConnector")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVectorStoreConnectorRequest::builder)
                 .basePath("/20231130")
@@ -1365,12 +1511,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("apiKeyId", request.getApiKeyId());
+
         return clientCall(request, GetApiKeyResponse::builder)
                 .logger(LOG, "getApiKey")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetApiKey",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/GetApiKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetApiKeyRequest::builder)
                 .basePath("/20231130")
@@ -1395,12 +1545,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(
                 request.getDedicatedAiClusterId(), "dedicatedAiClusterId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dedicatedAiClusterId", request.getDedicatedAiClusterId());
+
         return clientCall(request, GetDedicatedAiClusterResponse::builder)
                 .logger(LOG, "getDedicatedAiCluster")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetDedicatedAiCluster",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/GetDedicatedAiCluster")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDedicatedAiClusterRequest::builder)
                 .basePath("/20231130")
@@ -1423,12 +1577,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getEndpointId(), "endpointId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("endpointId", request.getEndpointId());
+
         return clientCall(request, GetEndpointResponse::builder)
                 .logger(LOG, "getEndpoint")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetEndpoint",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/GetEndpoint")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetEndpointRequest::builder)
                 .basePath("/20231130")
@@ -1454,12 +1612,17 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getGenerativeAiPrivateEndpointId(),
                 "generativeAiPrivateEndpointId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "generativeAiPrivateEndpointId", request.getGenerativeAiPrivateEndpointId());
+
         return clientCall(request, GetGenerativeAiPrivateEndpointResponse::builder)
                 .logger(LOG, "getGenerativeAiPrivateEndpoint")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetGenerativeAiPrivateEndpoint",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiPrivateEndpoint/GetGenerativeAiPrivateEndpoint")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetGenerativeAiPrivateEndpointRequest::builder)
                 .basePath("/20231130")
@@ -1486,12 +1649,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(
                 request.getGenerativeAiProjectId(), "generativeAiProjectId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("generativeAiProjectId", request.getGenerativeAiProjectId());
+
         return clientCall(request, GetGenerativeAiProjectResponse::builder)
                 .logger(LOG, "getGenerativeAiProject")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetGenerativeAiProject",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiProject/GetGenerativeAiProject")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetGenerativeAiProjectRequest::builder)
                 .basePath("/20231130")
@@ -1515,12 +1682,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(
                 request.getHostedApplicationId(), "hostedApplicationId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedApplicationId", request.getHostedApplicationId());
+
         return clientCall(request, GetHostedApplicationResponse::builder)
                 .logger(LOG, "getHostedApplication")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetHostedApplication",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplication/GetHostedApplication")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetHostedApplicationRequest::builder)
                 .basePath("/20231130")
@@ -1546,12 +1717,17 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getHostedApplicationStorageId(),
                 "hostedApplicationStorageId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "hostedApplicationStorageId", request.getHostedApplicationStorageId());
+
         return clientCall(request, GetHostedApplicationStorageResponse::builder)
                 .logger(LOG, "getHostedApplicationStorage")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetHostedApplicationStorage",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationStorage/GetHostedApplicationStorage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetHostedApplicationStorageRequest::builder)
                 .basePath("/20231130")
@@ -1575,12 +1751,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getHostedDeploymentId(), "hostedDeploymentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedDeploymentId", request.getHostedDeploymentId());
+
         return clientCall(request, GetHostedDeploymentResponse::builder)
                 .logger(LOG, "getHostedDeployment")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetHostedDeployment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeployment/GetHostedDeployment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetHostedDeploymentRequest::builder)
                 .basePath("/20231130")
@@ -1603,12 +1783,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getImportedModelId(), "importedModelId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("importedModelId", request.getImportedModelId());
+
         return clientCall(request, GetImportedModelResponse::builder)
                 .logger(LOG, "getImportedModel")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetImportedModel",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ImportedModel/GetImportedModel")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetImportedModelRequest::builder)
                 .basePath("/20231130")
@@ -1631,12 +1815,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("modelId", request.getModelId());
+
         return clientCall(request, GetModelResponse::builder)
                 .logger(LOG, "getModel")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetModel",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/GetModel")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetModelRequest::builder)
                 .basePath("/20231130")
@@ -1659,12 +1847,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getSemanticStoreId(), "semanticStoreId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("semanticStoreId", request.getSemanticStoreId());
+
         return clientCall(request, GetSemanticStoreResponse::builder)
                 .logger(LOG, "getSemanticStore")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetSemanticStore",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SemanticStore/GetSemanticStore")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSemanticStoreRequest::builder)
                 .basePath("/20231130")
@@ -1689,12 +1881,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(
                 request.getVectorStoreConnectorId(), "vectorStoreConnectorId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vectorStoreConnectorId", request.getVectorStoreConnectorId());
+
         return clientCall(request, GetVectorStoreConnectorResponse::builder)
                 .logger(LOG, "getVectorStoreConnector")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetVectorStoreConnector",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnector/GetVectorStoreConnector")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVectorStoreConnectorRequest::builder)
                 .basePath("/20231130")
@@ -1720,12 +1916,17 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getVectorStoreConnectorFileSyncId(),
                 "vectorStoreConnectorFileSyncId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "vectorStoreConnectorFileSyncId", request.getVectorStoreConnectorFileSyncId());
+
         return clientCall(request, GetVectorStoreConnectorFileSyncResponse::builder)
                 .logger(LOG, "getVectorStoreConnectorFileSync")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetVectorStoreConnectorFileSync",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorFileSync/GetVectorStoreConnectorFileSync")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVectorStoreConnectorFileSyncRequest::builder)
                 .basePath("/20231130")
@@ -1753,12 +1954,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(
                 request.getVectorStoreConnectorId(), "vectorStoreConnectorId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vectorStoreConnectorId", request.getVectorStoreConnectorId());
+
         return clientCall(request, GetVectorStoreConnectorStatsResponse::builder)
                 .logger(LOG, "getVectorStoreConnectorStats")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetVectorStoreConnectorStats",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorStats/GetVectorStoreConnectorStats")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVectorStoreConnectorStatsRequest::builder)
                 .basePath("/20231130")
@@ -1784,12 +1989,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
                 .serviceDetails(
                         "GenerativeAi",
                         "GetWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/WorkRequest/GetWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20231130")
@@ -1813,12 +2022,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     public ListApiKeysResponse listApiKeys(ListApiKeysRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListApiKeysResponse::builder)
                 .logger(LOG, "listApiKeys")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListApiKeys",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKeyCollection/ListApiKeys")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListApiKeysRequest::builder)
                 .basePath("/20231130")
@@ -1849,12 +2062,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
             ListDedicatedAiClustersRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListDedicatedAiClustersResponse::builder)
                 .logger(LOG, "listDedicatedAiClusters")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListDedicatedAiClusters",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiClusterCollection/ListDedicatedAiClusters")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDedicatedAiClustersRequest::builder)
                 .basePath("/20231130")
@@ -1884,12 +2101,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     public ListEndpointsResponse listEndpoints(ListEndpointsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListEndpointsResponse::builder)
                 .logger(LOG, "listEndpoints")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListEndpoints",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/EndpointCollection/ListEndpoints")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListEndpointsRequest::builder)
                 .basePath("/20231130")
@@ -1922,12 +2143,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
             ListGenerativeAiPrivateEndpointsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListGenerativeAiPrivateEndpointsResponse::builder)
                 .logger(LOG, "listGenerativeAiPrivateEndpoints")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListGenerativeAiPrivateEndpoints",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiPrivateEndpointCollection/ListGenerativeAiPrivateEndpoints")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListGenerativeAiPrivateEndpointsRequest::builder)
                 .basePath("/20231130")
@@ -1963,12 +2188,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
             ListGenerativeAiProjectsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListGenerativeAiProjectsResponse::builder)
                 .logger(LOG, "listGenerativeAiProjects")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListGenerativeAiProjects",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiProjectCollection/ListGenerativeAiProjects")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListGenerativeAiProjectsRequest::builder)
                 .basePath("/20231130")
@@ -1999,12 +2228,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
             ListHostedApplicationStoragesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListHostedApplicationStoragesResponse::builder)
                 .logger(LOG, "listHostedApplicationStorages")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListHostedApplicationStorages",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationStorageCollection/ListHostedApplicationStorages")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListHostedApplicationStoragesRequest::builder)
                 .basePath("/20231130")
@@ -2039,12 +2272,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
             ListHostedApplicationsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListHostedApplicationsResponse::builder)
                 .logger(LOG, "listHostedApplications")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListHostedApplications",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationCollection/ListHostedApplications")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListHostedApplicationsRequest::builder)
                 .basePath("/20231130")
@@ -2075,12 +2312,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
             ListHostedDeploymentsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListHostedDeploymentsResponse::builder)
                 .logger(LOG, "listHostedDeployments")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListHostedDeployments",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeploymentCollection/ListHostedDeployments")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListHostedDeploymentsRequest::builder)
                 .basePath("/20231130")
@@ -2111,12 +2352,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     public ListImportedModelsResponse listImportedModels(ListImportedModelsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListImportedModelsResponse::builder)
                 .logger(LOG, "listImportedModels")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListImportedModels",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ImportedModelCollection/ListImportedModels")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListImportedModelsRequest::builder)
                 .basePath("/20231130")
@@ -2151,12 +2396,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     public ListModelsResponse listModels(ListModelsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListModelsResponse::builder)
                 .logger(LOG, "listModels")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListModels",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListModelsRequest::builder)
                 .basePath("/20231130")
@@ -2190,12 +2439,15 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     @Override
     public ListSemanticStoresResponse listSemanticStores(ListSemanticStoresRequest request) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListSemanticStoresResponse::builder)
                 .logger(LOG, "listSemanticStores")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListSemanticStores",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SemanticStoreCollection/ListSemanticStores")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSemanticStoresRequest::builder)
                 .basePath("/20231130")
@@ -2236,12 +2488,17 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getVectorStoreConnectorFileSyncId(),
                 "vectorStoreConnectorFileSyncId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "vectorStoreConnectorFileSyncId", request.getVectorStoreConnectorFileSyncId());
+
         return clientCall(request, ListVectorStoreConnectorFileSyncIngestionLogsResponse::builder)
                 .logger(LOG, "listVectorStoreConnectorFileSyncIngestionLogs")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListVectorStoreConnectorFileSyncIngestionLogs",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/FileSyncIngestionLogsCollection/ListVectorStoreConnectorFileSyncIngestionLogs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVectorStoreConnectorFileSyncIngestionLogsRequest::builder)
                 .basePath("/20231130")
@@ -2274,12 +2531,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
             ListVectorStoreConnectorFileSyncsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVectorStoreConnectorFileSyncsResponse::builder)
                 .logger(LOG, "listVectorStoreConnectorFileSyncs")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListVectorStoreConnectorFileSyncs",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorFileSyncCollection/ListVectorStoreConnectorFileSyncs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVectorStoreConnectorFileSyncsRequest::builder)
                 .basePath("/20231130")
@@ -2317,12 +2578,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(
                 request.getVectorStoreConnectorId(), "vectorStoreConnectorId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vectorStoreConnectorId", request.getVectorStoreConnectorId());
+
         return clientCall(request, ListVectorStoreConnectorIngestionLogsResponse::builder)
                 .logger(LOG, "listVectorStoreConnectorIngestionLogs")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListVectorStoreConnectorIngestionLogs",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorIngestionLogsCollection/ListVectorStoreConnectorIngestionLogs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVectorStoreConnectorIngestionLogsRequest::builder)
                 .basePath("/20231130")
@@ -2356,12 +2621,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
             ListVectorStoreConnectorsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVectorStoreConnectorsResponse::builder)
                 .logger(LOG, "listVectorStoreConnectors")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListVectorStoreConnectors",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnectorCollection/ListVectorStoreConnectors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVectorStoreConnectorsRequest::builder)
                 .basePath("/20231130")
@@ -2394,12 +2663,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListWorkRequestErrors",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/WorkRequestError/ListWorkRequestErrors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20231130")
@@ -2428,12 +2701,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListWorkRequestLogs",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/WorkRequestLogEntry/ListWorkRequestLogs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20231130")
@@ -2461,12 +2738,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
                 .serviceDetails(
                         "GenerativeAi",
                         "ListWorkRequests",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/WorkRequest/ListWorkRequests")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20231130")
@@ -2498,12 +2779,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
         Objects.requireNonNull(request.getRenewApiKeyDetails(), "renewApiKeyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("apiKeyId", request.getApiKeyId());
+
         return clientCall(request, RenewApiKeyResponse::builder)
                 .logger(LOG, "renewApiKey")
                 .serviceDetails(
                         "GenerativeAi",
                         "RenewApiKey",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/RenewApiKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RenewApiKeyRequest::builder)
                 .basePath("/20231130")
@@ -2533,12 +2818,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Objects.requireNonNull(
                 request.getSetApiKeyStateDetails(), "setApiKeyStateDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("apiKeyId", request.getApiKeyId());
+
         return clientCall(request, SetApiKeyStateResponse::builder)
                 .logger(LOG, "setApiKeyState")
                 .serviceDetails(
                         "GenerativeAi",
                         "SetApiKeyState",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/SetApiKeyState")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SetApiKeyStateRequest::builder)
                 .basePath("/20231130")
@@ -2567,12 +2856,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(request.getApiKeyId(), "apiKeyId must not be blank");
         Objects.requireNonNull(request.getUpdateApiKeyDetails(), "updateApiKeyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("apiKeyId", request.getApiKeyId());
+
         return clientCall(request, UpdateApiKeyResponse::builder)
                 .logger(LOG, "updateApiKey")
                 .serviceDetails(
                         "GenerativeAi",
                         "UpdateApiKey",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ApiKey/UpdateApiKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateApiKeyRequest::builder)
                 .basePath("/20231130")
@@ -2602,12 +2895,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getUpdateDedicatedAiClusterDetails(),
                 "updateDedicatedAiClusterDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dedicatedAiClusterId", request.getDedicatedAiClusterId());
+
         return clientCall(request, UpdateDedicatedAiClusterResponse::builder)
                 .logger(LOG, "updateDedicatedAiCluster")
                 .serviceDetails(
                         "GenerativeAi",
                         "UpdateDedicatedAiCluster",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/UpdateDedicatedAiCluster")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDedicatedAiClusterRequest::builder)
                 .basePath("/20231130")
@@ -2637,12 +2934,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Objects.requireNonNull(
                 request.getUpdateEndpointDetails(), "updateEndpointDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("endpointId", request.getEndpointId());
+
         return clientCall(request, UpdateEndpointResponse::builder)
                 .logger(LOG, "updateEndpoint")
                 .serviceDetails(
                         "GenerativeAi",
                         "UpdateEndpoint",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/UpdateEndpoint")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateEndpointRequest::builder)
                 .basePath("/20231130")
@@ -2675,12 +2976,17 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getUpdateGenerativeAiPrivateEndpointDetails(),
                 "updateGenerativeAiPrivateEndpointDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "generativeAiPrivateEndpointId", request.getGenerativeAiPrivateEndpointId());
+
         return clientCall(request, UpdateGenerativeAiPrivateEndpointResponse::builder)
                 .logger(LOG, "updateGenerativeAiPrivateEndpoint")
                 .serviceDetails(
                         "GenerativeAi",
                         "UpdateGenerativeAiPrivateEndpoint",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiPrivateEndpoint/UpdateGenerativeAiPrivateEndpoint")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateGenerativeAiPrivateEndpointRequest::builder)
                 .basePath("/20231130")
@@ -2716,12 +3022,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getUpdateGenerativeAiProjectDetails(),
                 "updateGenerativeAiProjectDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("generativeAiProjectId", request.getGenerativeAiProjectId());
+
         return clientCall(request, UpdateGenerativeAiProjectResponse::builder)
                 .logger(LOG, "updateGenerativeAiProject")
                 .serviceDetails(
                         "GenerativeAi",
                         "UpdateGenerativeAiProject",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/GenerativeAiProject/UpdateGenerativeAiProject")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateGenerativeAiProjectRequest::builder)
                 .basePath("/20231130")
@@ -2754,12 +3064,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getUpdateHostedApplicationDetails(),
                 "updateHostedApplicationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedApplicationId", request.getHostedApplicationId());
+
         return clientCall(request, UpdateHostedApplicationResponse::builder)
                 .logger(LOG, "updateHostedApplication")
                 .serviceDetails(
                         "GenerativeAi",
                         "UpdateHostedApplication",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplication/UpdateHostedApplication")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateHostedApplicationRequest::builder)
                 .basePath("/20231130")
@@ -2787,12 +3101,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getUpdateHostedDeploymentDetails(),
                 "updateHostedDeploymentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedDeploymentId", request.getHostedDeploymentId());
+
         return clientCall(request, UpdateHostedDeploymentResponse::builder)
                 .logger(LOG, "updateHostedDeployment")
                 .serviceDetails(
                         "GenerativeAi",
                         "UpdateHostedDeployment",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedDeployment/UpdateHostedDeployment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateHostedDeploymentRequest::builder)
                 .basePath("/20231130")
@@ -2823,12 +3141,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Objects.requireNonNull(
                 request.getUpdateImportedModelDetails(), "updateImportedModelDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("importedModelId", request.getImportedModelId());
+
         return clientCall(request, UpdateImportedModelResponse::builder)
                 .logger(LOG, "updateImportedModel")
                 .serviceDetails(
                         "GenerativeAi",
                         "UpdateImportedModel",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ImportedModel/UpdateImportedModel")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateImportedModelRequest::builder)
                 .basePath("/20231130")
@@ -2857,12 +3179,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
         Objects.requireNonNull(request.getUpdateModelDetails(), "updateModelDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("modelId", request.getModelId());
+
         return clientCall(request, UpdateModelResponse::builder)
                 .logger(LOG, "updateModel")
                 .serviceDetails(
                         "GenerativeAi",
                         "UpdateModel",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/UpdateModel")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateModelRequest::builder)
                 .basePath("/20231130")
@@ -2889,12 +3215,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
         Objects.requireNonNull(
                 request.getUpdateSemanticStoreDetails(), "updateSemanticStoreDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("semanticStoreId", request.getSemanticStoreId());
+
         return clientCall(request, UpdateSemanticStoreResponse::builder)
                 .logger(LOG, "updateSemanticStore")
                 .serviceDetails(
                         "GenerativeAi",
                         "UpdateSemanticStore",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SemanticStore/UpdateSemanticStore")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSemanticStoreRequest::builder)
                 .basePath("/20231130")
@@ -2924,12 +3254,16 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 request.getUpdateVectorStoreConnectorDetails(),
                 "updateVectorStoreConnectorDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vectorStoreConnectorId", request.getVectorStoreConnectorId());
+
         return clientCall(request, UpdateVectorStoreConnectorResponse::builder)
                 .logger(LOG, "updateVectorStoreConnector")
                 .serviceDetails(
                         "GenerativeAi",
                         "UpdateVectorStoreConnector",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/VectorStoreConnector/UpdateVectorStoreConnector")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVectorStoreConnectorRequest::builder)
                 .basePath("/20231130")

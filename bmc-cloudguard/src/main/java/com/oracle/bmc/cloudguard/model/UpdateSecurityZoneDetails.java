@@ -27,6 +27,7 @@ public final class UpdateSecurityZoneDetails
         "displayName",
         "description",
         "securityZoneRecipeId",
+        "isInheritanceAfterDeleteEnabled",
         "freeformTags",
         "definedTags"
     })
@@ -34,12 +35,14 @@ public final class UpdateSecurityZoneDetails
             String displayName,
             String description,
             String securityZoneRecipeId,
+            Boolean isInheritanceAfterDeleteEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
         this.securityZoneRecipeId = securityZoneRecipeId;
+        this.isInheritanceAfterDeleteEnabled = isInheritanceAfterDeleteEnabled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -91,6 +94,25 @@ public final class UpdateSecurityZoneDetails
         public Builder securityZoneRecipeId(String securityZoneRecipeId) {
             this.securityZoneRecipeId = securityZoneRecipeId;
             this.__explicitlySet__.add("securityZoneRecipeId");
+            return this;
+        }
+        /**
+         * Indicates if upon deletion of the security zone the comparment should inherit parent
+         * security zone
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isInheritanceAfterDeleteEnabled")
+        private Boolean isInheritanceAfterDeleteEnabled;
+
+        /**
+         * Indicates if upon deletion of the security zone the comparment should inherit parent
+         * security zone
+         *
+         * @param isInheritanceAfterDeleteEnabled the value to set
+         * @return this builder
+         */
+        public Builder isInheritanceAfterDeleteEnabled(Boolean isInheritanceAfterDeleteEnabled) {
+            this.isInheritanceAfterDeleteEnabled = isInheritanceAfterDeleteEnabled;
+            this.__explicitlySet__.add("isInheritanceAfterDeleteEnabled");
             return this;
         }
         /**
@@ -146,6 +168,7 @@ public final class UpdateSecurityZoneDetails
                             this.displayName,
                             this.description,
                             this.securityZoneRecipeId,
+                            this.isInheritanceAfterDeleteEnabled,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -164,6 +187,9 @@ public final class UpdateSecurityZoneDetails
             }
             if (model.wasPropertyExplicitlySet("securityZoneRecipeId")) {
                 this.securityZoneRecipeId(model.getSecurityZoneRecipeId());
+            }
+            if (model.wasPropertyExplicitlySet("isInheritanceAfterDeleteEnabled")) {
+                this.isInheritanceAfterDeleteEnabled(model.getIsInheritanceAfterDeleteEnabled());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -224,6 +250,23 @@ public final class UpdateSecurityZoneDetails
     }
 
     /**
+     * Indicates if upon deletion of the security zone the comparment should inherit parent security
+     * zone
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isInheritanceAfterDeleteEnabled")
+    private final Boolean isInheritanceAfterDeleteEnabled;
+
+    /**
+     * Indicates if upon deletion of the security zone the comparment should inherit parent security
+     * zone
+     *
+     * @return the value
+     */
+    public Boolean getIsInheritanceAfterDeleteEnabled() {
+        return isInheritanceAfterDeleteEnabled;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
@@ -279,6 +322,8 @@ public final class UpdateSecurityZoneDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", securityZoneRecipeId=").append(String.valueOf(this.securityZoneRecipeId));
+        sb.append(", isInheritanceAfterDeleteEnabled=")
+                .append(String.valueOf(this.isInheritanceAfterDeleteEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -298,6 +343,8 @@ public final class UpdateSecurityZoneDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.securityZoneRecipeId, other.securityZoneRecipeId)
+                && java.util.Objects.equals(
+                        this.isInheritanceAfterDeleteEnabled, other.isInheritanceAfterDeleteEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -314,6 +361,11 @@ public final class UpdateSecurityZoneDetails
                         + (this.securityZoneRecipeId == null
                                 ? 43
                                 : this.securityZoneRecipeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isInheritanceAfterDeleteEnabled == null
+                                ? 43
+                                : this.isInheritanceAfterDeleteEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

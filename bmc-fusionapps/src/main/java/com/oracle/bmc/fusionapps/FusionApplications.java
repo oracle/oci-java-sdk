@@ -249,6 +249,39 @@ public interface FusionApplications extends AutoCloseable {
     CreateServiceAttachmentResponse createServiceAttachment(CreateServiceAttachmentRequest request);
 
     /**
+     * Create a VanityDomain
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/CreateVanityDomainExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVanityDomain
+     *     API.
+     */
+    CreateVanityDomainResponse createVanityDomain(CreateVanityDomainRequest request);
+
+    /**
+     * Create a VanityDomainActivity
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/CreateVanityDomainActivityExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateVanityDomainActivity API.
+     */
+    CreateVanityDomainActivityResponse createVanityDomainActivity(
+            CreateVanityDomainActivityRequest request);
+
+    /**
      * Delete an email subdomain for a brand
      *
      * @param request The request object containing the details to send
@@ -377,6 +410,23 @@ public interface FusionApplications extends AutoCloseable {
      *     DeleteServiceAttachment API.
      */
     DeleteServiceAttachmentResponse deleteServiceAttachment(DeleteServiceAttachmentRequest request);
+
+    /**
+     * Deletes a VanityDomainActivity
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/DeleteVanityDomainActivityExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteVanityDomainActivity API.
+     */
+    DeleteVanityDomainActivityResponse deleteVanityDomainActivity(
+            DeleteVanityDomainActivityRequest request);
 
     /**
      * Begin the process of showing the details about where to retrieve data extract for a Fusion
@@ -642,6 +692,38 @@ public interface FusionApplications extends AutoCloseable {
     GetServiceAttachmentResponse getServiceAttachment(GetServiceAttachmentRequest request);
 
     /**
+     * Gets a VanityDomain
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/GetVanityDomainExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVanityDomain
+     *     API.
+     */
+    GetVanityDomainResponse getVanityDomain(GetVanityDomainRequest request);
+
+    /**
+     * Gets a VanityDomainActivity
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/GetVanityDomainActivityExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetVanityDomainActivity API.
+     */
+    GetVanityDomainActivityResponse getVanityDomainActivity(GetVanityDomainActivityRequest request);
+
+    /**
      * Gets the status of the work request with the given ID.
      *
      * @param request The request object containing the details to send
@@ -850,6 +932,22 @@ public interface FusionApplications extends AutoCloseable {
             ListTimeAvailableForRefreshesRequest request);
 
     /**
+     * Lists all VanityDomains.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/ListVanityDomainsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVanityDomains
+     *     API.
+     */
+    ListVanityDomainsResponse listVanityDomains(ListVanityDomainsRequest request);
+
+    /**
      * Return a (paginated) list of errors for a given work request.
      *
      * @param request The request object containing the details to send
@@ -932,6 +1030,23 @@ public interface FusionApplications extends AutoCloseable {
      */
     ResetFusionEnvironmentPasswordResponse resetFusionEnvironmentPassword(
             ResetFusionEnvironmentPasswordRequest request);
+
+    /**
+     * Submit Vanity Domain Validation
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/SubmitVanityDomainValidationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SubmitVanityDomainValidation API.
+     */
+    SubmitVanityDomainValidationResponse submitVanityDomainValidation(
+            SubmitVanityDomainValidationRequest request);
 
     /**
      * Updates an email subdomain
@@ -1031,6 +1146,39 @@ public interface FusionApplications extends AutoCloseable {
     UpdateRefreshActivityResponse updateRefreshActivity(UpdateRefreshActivityRequest request);
 
     /**
+     * Updates a VanityDomain
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/UpdateVanityDomainExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVanityDomain
+     *     API.
+     */
+    UpdateVanityDomainResponse updateVanityDomain(UpdateVanityDomainRequest request);
+
+    /**
+     * Updates a VanityDomainActivity
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/UpdateVanityDomainActivityExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateVanityDomainActivity API.
+     */
+    UpdateVanityDomainActivityResponse updateVanityDomainActivity(
+            UpdateVanityDomainActivityRequest request);
+
+    /**
      * upload certificate for emailSubdomain
      *
      * @param request The request object containing the details to send
@@ -1046,6 +1194,23 @@ public interface FusionApplications extends AutoCloseable {
      */
     UploadEmailSubdomainCertificateResponse uploadEmailSubdomainCertificate(
             UploadEmailSubdomainCertificateRequest request);
+
+    /**
+     * Upload Vanity Domain certificate
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/UploadVanityDomainCertificateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UploadVanityDomainCertificate API.
+     */
+    UploadVanityDomainCertificateResponse uploadVanityDomainCertificate(
+            UploadVanityDomainCertificateRequest request);
 
     /**
      * Validate and configure certificate for emailSubdomain

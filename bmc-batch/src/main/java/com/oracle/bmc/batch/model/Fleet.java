@@ -24,7 +24,10 @@ package com.oracle.bmc.batch.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ServiceManagedFleet.class,
-            name = "SERVICE_MANAGED_FLEET")
+            name = "SERVICE_MANAGED_FLEET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ServiceManagedGpuFleet.class,
+            name = "SERVICE_MANAGED_GPU_FLEET")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -78,6 +81,7 @@ public class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcM
     /** Type of the fleet. Also serves as a discriminator for sub-entities. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         ServiceManagedFleet("SERVICE_MANAGED_FLEET"),
+        ServiceManagedGpuFleet("SERVICE_MANAGED_GPU_FLEET"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

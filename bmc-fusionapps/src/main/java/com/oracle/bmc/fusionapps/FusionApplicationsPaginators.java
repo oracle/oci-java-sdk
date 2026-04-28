@@ -1267,6 +1267,124 @@ public class FusionApplicationsPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listVanityDomains operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListVanityDomainsResponse> listVanityDomainsResponseIterator(
+            final ListVanityDomainsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVanityDomainsRequest.Builder,
+                ListVanityDomainsRequest,
+                ListVanityDomainsResponse>(
+                new java.util.function.Supplier<ListVanityDomainsRequest.Builder>() {
+                    @Override
+                    public ListVanityDomainsRequest.Builder get() {
+                        return ListVanityDomainsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVanityDomainsResponse, String>() {
+                    @Override
+                    public String apply(ListVanityDomainsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVanityDomainsRequest.Builder>,
+                        ListVanityDomainsRequest>() {
+                    @Override
+                    public ListVanityDomainsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVanityDomainsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVanityDomainsRequest, ListVanityDomainsResponse>() {
+                    @Override
+                    public ListVanityDomainsResponse apply(ListVanityDomainsRequest request) {
+                        return client.listVanityDomains(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.fusionapps.model.VanityDomainSummary} objects contained in responses from the
+     * listVanityDomains operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.fusionapps.model.VanityDomainSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.fusionapps.model.VanityDomainSummary>
+            listVanityDomainsRecordIterator(final ListVanityDomainsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVanityDomainsRequest.Builder,
+                ListVanityDomainsRequest,
+                ListVanityDomainsResponse,
+                com.oracle.bmc.fusionapps.model.VanityDomainSummary>(
+                new java.util.function.Supplier<ListVanityDomainsRequest.Builder>() {
+                    @Override
+                    public ListVanityDomainsRequest.Builder get() {
+                        return ListVanityDomainsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVanityDomainsResponse, String>() {
+                    @Override
+                    public String apply(ListVanityDomainsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVanityDomainsRequest.Builder>,
+                        ListVanityDomainsRequest>() {
+                    @Override
+                    public ListVanityDomainsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVanityDomainsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVanityDomainsRequest, ListVanityDomainsResponse>() {
+                    @Override
+                    public ListVanityDomainsResponse apply(ListVanityDomainsRequest request) {
+                        return client.listVanityDomains(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVanityDomainsResponse,
+                        java.util.List<com.oracle.bmc.fusionapps.model.VanityDomainSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.fusionapps.model.VanityDomainSummary>
+                            apply(ListVanityDomainsResponse response) {
+                        return response.getVanityDomainCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listWorkRequestErrors operation. This iterable will fetch more data from the server as
      * needed.
      *

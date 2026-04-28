@@ -24,6 +24,7 @@ public final class EmbedTextDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "inputs",
+        "embedContents",
         "servingMode",
         "compartmentId",
         "isEcho",
@@ -34,6 +35,7 @@ public final class EmbedTextDetails
     })
     public EmbedTextDetails(
             java.util.List<String> inputs,
+            java.util.List<EmbedContent> embedContents,
             ServingMode servingMode,
             String compartmentId,
             Boolean isEcho,
@@ -43,6 +45,7 @@ public final class EmbedTextDetails
             InputType inputType) {
         super();
         this.inputs = inputs;
+        this.embedContents = embedContents;
         this.servingMode = servingMode;
         this.compartmentId = compartmentId;
         this.isEcho = isEcho;
@@ -73,6 +76,21 @@ public final class EmbedTextDetails
         public Builder inputs(java.util.List<String> inputs) {
             this.inputs = inputs;
             this.__explicitlySet__.add("inputs");
+            return this;
+        }
+        /** An array of text/image inputs to be embedded. Supported for Embed v4 models. */
+        @com.fasterxml.jackson.annotation.JsonProperty("embedContents")
+        private java.util.List<EmbedContent> embedContents;
+
+        /**
+         * An array of text/image inputs to be embedded. Supported for Embed v4 models.
+         *
+         * @param embedContents the value to set
+         * @return this builder
+         */
+        public Builder embedContents(java.util.List<EmbedContent> embedContents) {
+            this.embedContents = embedContents;
+            this.__explicitlySet__.add("embedContents");
             return this;
         }
 
@@ -202,6 +220,7 @@ public final class EmbedTextDetails
             EmbedTextDetails model =
                     new EmbedTextDetails(
                             this.inputs,
+                            this.embedContents,
                             this.servingMode,
                             this.compartmentId,
                             this.isEcho,
@@ -219,6 +238,9 @@ public final class EmbedTextDetails
         public Builder copy(EmbedTextDetails model) {
             if (model.wasPropertyExplicitlySet("inputs")) {
                 this.inputs(model.getInputs());
+            }
+            if (model.wasPropertyExplicitlySet("embedContents")) {
+                this.embedContents(model.getEmbedContents());
             }
             if (model.wasPropertyExplicitlySet("servingMode")) {
                 this.servingMode(model.getServingMode());
@@ -271,6 +293,19 @@ public final class EmbedTextDetails
      */
     public java.util.List<String> getInputs() {
         return inputs;
+    }
+
+    /** An array of text/image inputs to be embedded. Supported for Embed v4 models. */
+    @com.fasterxml.jackson.annotation.JsonProperty("embedContents")
+    private final java.util.List<EmbedContent> embedContents;
+
+    /**
+     * An array of text/image inputs to be embedded. Supported for Embed v4 models.
+     *
+     * @return the value
+     */
+    public java.util.List<EmbedContent> getEmbedContents() {
+        return embedContents;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("servingMode")
@@ -500,6 +535,7 @@ public final class EmbedTextDetails
         sb.append("EmbedTextDetails(");
         sb.append("super=").append(super.toString());
         sb.append("inputs=").append(String.valueOf(this.inputs));
+        sb.append(", embedContents=").append(String.valueOf(this.embedContents));
         sb.append(", servingMode=").append(String.valueOf(this.servingMode));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", isEcho=").append(String.valueOf(this.isEcho));
@@ -522,6 +558,7 @@ public final class EmbedTextDetails
 
         EmbedTextDetails other = (EmbedTextDetails) o;
         return java.util.Objects.equals(this.inputs, other.inputs)
+                && java.util.Objects.equals(this.embedContents, other.embedContents)
                 && java.util.Objects.equals(this.servingMode, other.servingMode)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.isEcho, other.isEcho)
@@ -537,6 +574,9 @@ public final class EmbedTextDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.inputs == null ? 43 : this.inputs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.embedContents == null ? 43 : this.embedContents.hashCode());
         result = (result * PRIME) + (this.servingMode == null ? 43 : this.servingMode.hashCode());
         result =
                 (result * PRIME)

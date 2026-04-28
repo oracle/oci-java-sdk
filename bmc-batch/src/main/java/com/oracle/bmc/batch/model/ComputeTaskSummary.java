@@ -54,6 +54,24 @@ public final class ComputeTaskSummary extends BatchTaskSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hierarchicalName")
+        private String hierarchicalName;
+
+        public Builder hierarchicalName(String hierarchicalName) {
+            this.hierarchicalName = hierarchicalName;
+            this.__explicitlySet__.add("hierarchicalName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("groupTaskName")
+        private String groupTaskName;
+
+        public Builder groupTaskName(String groupTaskName) {
+            this.groupTaskName = groupTaskName;
+            this.__explicitlySet__.add("groupTaskName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -90,6 +108,8 @@ public final class ComputeTaskSummary extends BatchTaskSummary {
                             this.id,
                             this.jobId,
                             this.name,
+                            this.hierarchicalName,
+                            this.groupTaskName,
                             this.description,
                             this.lifecycleState,
                             this.lifecycleDetails);
@@ -109,6 +129,12 @@ public final class ComputeTaskSummary extends BatchTaskSummary {
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("hierarchicalName")) {
+                this.hierarchicalName(model.getHierarchicalName());
+            }
+            if (model.wasPropertyExplicitlySet("groupTaskName")) {
+                this.groupTaskName(model.getGroupTaskName());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -137,10 +163,20 @@ public final class ComputeTaskSummary extends BatchTaskSummary {
             String id,
             String jobId,
             String name,
+            String hierarchicalName,
+            String groupTaskName,
             String description,
             BatchTask.LifecycleState lifecycleState,
             String lifecycleDetails) {
-        super(id, jobId, name, description, lifecycleState, lifecycleDetails);
+        super(
+                id,
+                jobId,
+                name,
+                hierarchicalName,
+                groupTaskName,
+                description,
+                lifecycleState,
+                lifecycleDetails);
     }
 
     @Override

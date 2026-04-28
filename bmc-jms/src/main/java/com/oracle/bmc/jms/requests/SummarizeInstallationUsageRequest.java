@@ -178,6 +178,13 @@ public class SummarizeInstallationUsageRequest
     public String getPathContains() {
         return pathContains;
     }
+    /** The security status of the Java Runtime. */
+    private com.oracle.bmc.jms.model.JreSecurityStatus jreSecurityStatus;
+
+    /** The security status of the Java Runtime. */
+    public com.oracle.bmc.jms.model.JreSecurityStatus getJreSecurityStatus() {
+        return jreSecurityStatus;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -480,6 +487,21 @@ public class SummarizeInstallationUsageRequest
             return this;
         }
 
+        /** The security status of the Java Runtime. */
+        private com.oracle.bmc.jms.model.JreSecurityStatus jreSecurityStatus = null;
+
+        /**
+         * The security status of the Java Runtime.
+         *
+         * @param jreSecurityStatus the value to set
+         * @return this builder instance
+         */
+        public Builder jreSecurityStatus(
+                com.oracle.bmc.jms.model.JreSecurityStatus jreSecurityStatus) {
+            this.jreSecurityStatus = jreSecurityStatus;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -527,6 +549,7 @@ public class SummarizeInstallationUsageRequest
             opcRequestId(o.getOpcRequestId());
             osFamily(o.getOsFamily());
             pathContains(o.getPathContains());
+            jreSecurityStatus(o.getJreSecurityStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -578,10 +601,12 @@ public class SummarizeInstallationUsageRequest
             request.opcRequestId = opcRequestId;
             request.osFamily = osFamily;
             request.pathContains = pathContains;
+            request.jreSecurityStatus = jreSecurityStatus;
             return request;
             // new SummarizeInstallationUsageRequest(fleetId, jreVendor, jreDistribution,
             // jreVersion, installationPath, applicationId, managedInstanceId, fields, timeStart,
-            // timeEnd, limit, page, sortOrder, sortBy, opcRequestId, osFamily, pathContains);
+            // timeEnd, limit, page, sortOrder, sortBy, opcRequestId, osFamily, pathContains,
+            // jreSecurityStatus);
         }
     }
 
@@ -608,7 +633,8 @@ public class SummarizeInstallationUsageRequest
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
                 .osFamily(osFamily)
-                .pathContains(pathContains);
+                .pathContains(pathContains)
+                .jreSecurityStatus(jreSecurityStatus);
     }
 
     /**
@@ -642,6 +668,7 @@ public class SummarizeInstallationUsageRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",osFamily=").append(String.valueOf(this.osFamily));
         sb.append(",pathContains=").append(String.valueOf(this.pathContains));
+        sb.append(",jreSecurityStatus=").append(String.valueOf(this.jreSecurityStatus));
         sb.append(")");
         return sb.toString();
     }
@@ -673,7 +700,8 @@ public class SummarizeInstallationUsageRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
-                && java.util.Objects.equals(this.pathContains, other.pathContains);
+                && java.util.Objects.equals(this.pathContains, other.pathContains)
+                && java.util.Objects.equals(this.jreSecurityStatus, other.jreSecurityStatus);
     }
 
     @Override
@@ -705,6 +733,9 @@ public class SummarizeInstallationUsageRequest
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
         result = (result * PRIME) + (this.pathContains == null ? 43 : this.pathContains.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jreSecurityStatus == null ? 43 : this.jreSecurityStatus.hashCode());
         return result;
     }
 }

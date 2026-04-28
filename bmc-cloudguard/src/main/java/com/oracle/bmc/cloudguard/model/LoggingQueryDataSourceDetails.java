@@ -73,15 +73,15 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
             return this;
         }
         /**
-         * The integer value that must be exceeded, fall below or equal to (depending on the
-         * operator), for the query result to trigger an event
+         * DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending
+         * on the operator), for the query result to trigger an event
          */
         @com.fasterxml.jackson.annotation.JsonProperty("threshold")
         private Integer threshold;
 
         /**
-         * The integer value that must be exceeded, fall below or equal to (depending on the
-         * operator), for the query result to trigger an event
+         * DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending
+         * on the operator), for the query result to trigger an event
          *
          * @param threshold the value to set
          * @return this builder
@@ -100,12 +100,12 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
             this.__explicitlySet__.add("queryStartTime");
             return this;
         }
-        /** Operator used in data source */
+        /** DEPRECATED - Operator used in data source */
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private LoggingQueryOperatorType operator;
 
         /**
-         * Operator used in data source
+         * DEPRECATED - Operator used in data source
          *
          * @param operator the value to set
          * @return this builder
@@ -281,15 +281,15 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
     }
 
     /**
-     * The integer value that must be exceeded, fall below or equal to (depending on the operator),
-     * for the query result to trigger an event
+     * DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on
+     * the operator), for the query result to trigger an event
      */
     @com.fasterxml.jackson.annotation.JsonProperty("threshold")
     private final Integer threshold;
 
     /**
-     * The integer value that must be exceeded, fall below or equal to (depending on the operator),
-     * for the query result to trigger an event
+     * DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on
+     * the operator), for the query result to trigger an event
      *
      * @return the value
      */
@@ -304,12 +304,12 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
         return queryStartTime;
     }
 
-    /** Operator used in data source */
+    /** DEPRECATED - Operator used in data source */
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final LoggingQueryOperatorType operator;
 
     /**
-     * Operator used in data source
+     * DEPRECATED - Operator used in data source
      *
      * @return the value
      */

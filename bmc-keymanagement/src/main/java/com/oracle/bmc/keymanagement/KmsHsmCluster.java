@@ -118,6 +118,24 @@ public interface KmsHsmCluster extends AutoCloseable {
     CreateHsmClusterResponse createHsmCluster(CreateHsmClusterRequest request);
 
     /**
+     * Disables management audit logging for the given HSM Cluster resource. This requires the
+     * Crypto Officer (CO) password. This operation is idempotent: if audit logging is already
+     * disabled, the call is a no-op and returns success.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/DisableAuditMgmtLoggingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableAuditMgmtLogging API.
+     */
+    DisableAuditMgmtLoggingResponse disableAuditMgmtLogging(DisableAuditMgmtLoggingRequest request);
+
+    /**
      * Retrieves the certificate signing request for the designated HSM Cluster resource.
      *
      * @param request The request object containing the details to send
@@ -133,6 +151,26 @@ public interface KmsHsmCluster extends AutoCloseable {
      */
     DownloadCertificateSigningRequestResponse downloadCertificateSigningRequest(
             DownloadCertificateSigningRequestRequest request);
+
+    /**
+     * Validates that the Dynamic Group and bucket policy supplied during EnableAuditLogging /
+     * CreateHsmCluster are now in place. If the cluster is in WAITING_FOR_CUSTOMER, and validation
+     * is successful, status is progressed and a work request is started. If the cluster has already
+     * progressed past that gate, the call is idempotent and returns 202 with the current cluster
+     * representation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/EnableAuditMgmtLoggingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableAuditMgmtLogging API.
+     */
+    EnableAuditMgmtLoggingResponse enableAuditMgmtLogging(EnableAuditMgmtLoggingRequest request);
 
     /**
      * Retrieves configuration details for the specified HSM Cluster resource.
@@ -185,6 +223,23 @@ public interface KmsHsmCluster extends AutoCloseable {
      *     GetPreCoUserCredentials API.
      */
     GetPreCoUserCredentialsResponse getPreCoUserCredentials(GetPreCoUserCredentialsRequest request);
+
+    /**
+     * Initiates the process of enabling audit logs for a HSM cluster resource by taking in the
+     * required parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/InitiateAuditLoggingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     InitiateAuditLogging API.
+     */
+    InitiateAuditLoggingResponse initiateAuditLogging(InitiateAuditLoggingRequest request);
 
     /**
      * Lists all HSM cluster resources contained within the specified compartment.
@@ -240,6 +295,23 @@ public interface KmsHsmCluster extends AutoCloseable {
      */
     ScheduleHsmClusterDeletionResponse scheduleHsmClusterDeletion(
             ScheduleHsmClusterDeletionRequest request);
+
+    /**
+     * update bucket details of management audit logs for a HSM cluster resource by hsmClusterId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/UpdateAuditLoggingDestinationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateAuditLoggingDestination API.
+     */
+    UpdateAuditLoggingDestinationResponse updateAuditLoggingDestination(
+            UpdateAuditLoggingDestinationRequest request);
 
     /**
      * Modifies properties of an HSM cluster resource, including `displayName`, `freeformTags` and

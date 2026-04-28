@@ -136,12 +136,12 @@ public final class CreateFusionEnvironmentDetails
             this.__explicitlySet__.add("fusionEnvironmentFamilyId");
             return this;
         }
-        /** The type of environment. Valid values are Production, Test, or Development. */
+        /** The type of environment. Valid values are Production, Test, Development, or Demo. */
         @com.fasterxml.jackson.annotation.JsonProperty("fusionEnvironmentType")
         private FusionEnvironment.FusionEnvironmentType fusionEnvironmentType;
 
         /**
-         * The type of environment. Valid values are Production, Test, or Development.
+         * The type of environment. Valid values are Production, Test, Development, or Demo.
          *
          * @param fusionEnvironmentType the value to set
          * @return this builder
@@ -236,8 +236,8 @@ public final class CreateFusionEnvironmentDetails
         /**
          * Additional egress rules that should be applied to the environment. Some standard ports
          * are open for general use; see [Securing Network Access to a Fusion Applications
-         * Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If
-         * access to a non-standard port is required, however, they can be listed here.
+         * Environment](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache).
+         * If access to a non-standard port is required, however, they can be listed here.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("additionalEgressRules")
         private java.util.List<AdditionalEgressRule> additionalEgressRules;
@@ -245,8 +245,8 @@ public final class CreateFusionEnvironmentDetails
         /**
          * Additional egress rules that should be applied to the environment. Some standard ports
          * are open for general use; see [Securing Network Access to a Fusion Applications
-         * Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If
-         * access to a non-standard port is required, however, they can be listed here.
+         * Environment](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache).
+         * If access to a non-standard port is required, however, they can be listed here.
          *
          * @param additionalEgressRules the value to set
          * @return this builder
@@ -441,12 +441,12 @@ public final class CreateFusionEnvironmentDetails
         return fusionEnvironmentFamilyId;
     }
 
-    /** The type of environment. Valid values are Production, Test, or Development. */
+    /** The type of environment. Valid values are Production, Test, Development, or Demo. */
     @com.fasterxml.jackson.annotation.JsonProperty("fusionEnvironmentType")
     private final FusionEnvironment.FusionEnvironmentType fusionEnvironmentType;
 
     /**
-     * The type of environment. Valid values are Production, Test, or Development.
+     * The type of environment. Valid values are Production, Test, Development, or Demo.
      *
      * @return the value
      */
@@ -528,8 +528,8 @@ public final class CreateFusionEnvironmentDetails
     /**
      * Additional egress rules that should be applied to the environment. Some standard ports are
      * open for general use; see [Securing Network Access to a Fusion Applications
-     * Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access
-     * to a non-standard port is required, however, they can be listed here.
+     * Environment](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache).
+     * If access to a non-standard port is required, however, they can be listed here.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("additionalEgressRules")
     private final java.util.List<AdditionalEgressRule> additionalEgressRules;
@@ -537,8 +537,8 @@ public final class CreateFusionEnvironmentDetails
     /**
      * Additional egress rules that should be applied to the environment. Some standard ports are
      * open for general use; see [Securing Network Access to a Fusion Applications
-     * Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access
-     * to a non-standard port is required, however, they can be listed here.
+     * Environment](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache).
+     * If access to a non-standard port is required, however, they can be listed here.
      *
      * @return the value
      */

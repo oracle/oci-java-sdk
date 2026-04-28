@@ -21,12 +21,13 @@ package com.oracle.bmc.batch.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class FleetShape extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"shapeName", "ocpus", "memoryInGBs"})
-    public FleetShape(String shapeName, Integer ocpus, Integer memoryInGBs) {
+    @java.beans.ConstructorProperties({"shapeName", "ocpus", "memoryInGBs", "diskSizeInGBs"})
+    public FleetShape(String shapeName, Integer ocpus, Integer memoryInGBs, Integer diskSizeInGBs) {
         super();
         this.shapeName = shapeName;
         this.ocpus = ocpus;
         this.memoryInGBs = memoryInGBs;
+        this.diskSizeInGBs = diskSizeInGBs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,12 +47,12 @@ public final class FleetShape extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-        /** Number of OCPUs required by the shape. */
+        /** Number of OCPUs required for the shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Integer ocpus;
 
         /**
-         * Number of OCPUs required by the shape.
+         * Number of OCPUs required for the shape.
          *
          * @param ocpus the value to set
          * @return this builder
@@ -61,12 +62,12 @@ public final class FleetShape extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-        /** Amount of memory in GBs required by the shape. */
+        /** Amount of memory in GBs required for the shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Integer memoryInGBs;
 
         /**
-         * Amount of memory in GBs required by the shape.
+         * Amount of memory in GBs required for the shape.
          *
          * @param memoryInGBs the value to set
          * @return this builder
@@ -76,12 +77,29 @@ public final class FleetShape extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
+        /** Amount of disk space in GBs required for the shape. */
+        @com.fasterxml.jackson.annotation.JsonProperty("diskSizeInGBs")
+        private Integer diskSizeInGBs;
+
+        /**
+         * Amount of disk space in GBs required for the shape.
+         *
+         * @param diskSizeInGBs the value to set
+         * @return this builder
+         */
+        public Builder diskSizeInGBs(Integer diskSizeInGBs) {
+            this.diskSizeInGBs = diskSizeInGBs;
+            this.__explicitlySet__.add("diskSizeInGBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FleetShape build() {
-            FleetShape model = new FleetShape(this.shapeName, this.ocpus, this.memoryInGBs);
+            FleetShape model =
+                    new FleetShape(
+                            this.shapeName, this.ocpus, this.memoryInGBs, this.diskSizeInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -98,6 +116,9 @@ public final class FleetShape extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("memoryInGBs")) {
                 this.memoryInGBs(model.getMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("diskSizeInGBs")) {
+                this.diskSizeInGBs(model.getDiskSizeInGBs());
             }
             return this;
         }
@@ -125,12 +146,12 @@ public final class FleetShape extends com.oracle.bmc.http.client.internal.Explic
         return shapeName;
     }
 
-    /** Number of OCPUs required by the shape. */
+    /** Number of OCPUs required for the shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Integer ocpus;
 
     /**
-     * Number of OCPUs required by the shape.
+     * Number of OCPUs required for the shape.
      *
      * @return the value
      */
@@ -138,17 +159,30 @@ public final class FleetShape extends com.oracle.bmc.http.client.internal.Explic
         return ocpus;
     }
 
-    /** Amount of memory in GBs required by the shape. */
+    /** Amount of memory in GBs required for the shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Integer memoryInGBs;
 
     /**
-     * Amount of memory in GBs required by the shape.
+     * Amount of memory in GBs required for the shape.
      *
      * @return the value
      */
     public Integer getMemoryInGBs() {
         return memoryInGBs;
+    }
+
+    /** Amount of disk space in GBs required for the shape. */
+    @com.fasterxml.jackson.annotation.JsonProperty("diskSizeInGBs")
+    private final Integer diskSizeInGBs;
+
+    /**
+     * Amount of disk space in GBs required for the shape.
+     *
+     * @return the value
+     */
+    public Integer getDiskSizeInGBs() {
+        return diskSizeInGBs;
     }
 
     @Override
@@ -169,6 +203,7 @@ public final class FleetShape extends com.oracle.bmc.http.client.internal.Explic
         sb.append("shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", ocpus=").append(String.valueOf(this.ocpus));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", diskSizeInGBs=").append(String.valueOf(this.diskSizeInGBs));
         sb.append(")");
         return sb.toString();
     }
@@ -186,6 +221,7 @@ public final class FleetShape extends com.oracle.bmc.http.client.internal.Explic
         return java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.ocpus, other.ocpus)
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(this.diskSizeInGBs, other.diskSizeInGBs)
                 && super.equals(other);
     }
 
@@ -196,6 +232,9 @@ public final class FleetShape extends com.oracle.bmc.http.client.internal.Explic
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
         result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diskSizeInGBs == null ? 43 : this.diskSizeInGBs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

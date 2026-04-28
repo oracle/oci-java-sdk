@@ -27,18 +27,21 @@ public final class CreateHsmClusterDetails
         "compartmentId",
         "displayName",
         "definedTags",
-        "freeformTags"
+        "freeformTags",
+        "auditLogConfig"
     })
     public CreateHsmClusterDetails(
             String compartmentId,
             String displayName,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            AuditLoggingConfig auditLogConfig) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.auditLogConfig = auditLogConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -125,6 +128,15 @@ public final class CreateHsmClusterDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("auditLogConfig")
+        private AuditLoggingConfig auditLogConfig;
+
+        public Builder auditLogConfig(AuditLoggingConfig auditLogConfig) {
+            this.auditLogConfig = auditLogConfig;
+            this.__explicitlySet__.add("auditLogConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -134,7 +146,8 @@ public final class CreateHsmClusterDetails
                             this.compartmentId,
                             this.displayName,
                             this.definedTags,
-                            this.freeformTags);
+                            this.freeformTags,
+                            this.auditLogConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -154,6 +167,9 @@ public final class CreateHsmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("auditLogConfig")) {
+                this.auditLogConfig(model.getAuditLogConfig());
             }
             return this;
         }
@@ -240,6 +256,13 @@ public final class CreateHsmClusterDetails
         return freeformTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("auditLogConfig")
+    private final AuditLoggingConfig auditLogConfig;
+
+    public AuditLoggingConfig getAuditLogConfig() {
+        return auditLogConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -259,6 +282,7 @@ public final class CreateHsmClusterDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", auditLogConfig=").append(String.valueOf(this.auditLogConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -277,6 +301,7 @@ public final class CreateHsmClusterDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.auditLogConfig, other.auditLogConfig)
                 && super.equals(other);
     }
 
@@ -290,6 +315,9 @@ public final class CreateHsmClusterDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.auditLogConfig == null ? 43 : this.auditLogConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

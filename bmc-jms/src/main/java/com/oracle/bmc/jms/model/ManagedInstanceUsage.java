@@ -7,8 +7,7 @@ package com.oracle.bmc.jms.model;
 /**
  * Managed instance usage during a specified time period. An entity that emits usage events to Java
  * Management Service (JMS) is represented as a managed instance. A managed instance has a unique
- * identity which is used by JMS to distinguish it from other managed instances. Currently, JMS
- * supports only one kind of managed instance, a Management Agent. <br>
+ * identity which is used by JMS to distinguish it from other managed instances. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
