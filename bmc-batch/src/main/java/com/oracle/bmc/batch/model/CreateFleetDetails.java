@@ -23,6 +23,9 @@ package com.oracle.bmc.batch.model;
         defaultImpl = CreateFleetDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateServiceManagedGpuFleetDetails.class,
+            name = "SERVICE_MANAGED_GPU_FLEET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateServiceManagedFleetDetails.class,
             name = "SERVICE_MANAGED_FLEET")
 })
@@ -78,6 +81,7 @@ public class CreateFleetDetails extends com.oracle.bmc.http.client.internal.Expl
     /** Type of the fleet. Also serves as a discriminator for sub-entities. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         ServiceManagedFleet("SERVICE_MANAGED_FLEET"),
+        ServiceManagedGpuFleet("SERVICE_MANAGED_GPU_FLEET"),
         ;
 
         private final String value;

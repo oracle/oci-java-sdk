@@ -112,6 +112,24 @@ public interface KmsHsmClusterAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Disables management audit logging for the given HSM Cluster resource. This requires the
+     * Crypto Officer (CO) password. This operation is idempotent: if audit logging is already
+     * disabled, the call is a no-op and returns success.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableAuditMgmtLoggingResponse> disableAuditMgmtLogging(
+            DisableAuditMgmtLoggingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DisableAuditMgmtLoggingRequest, DisableAuditMgmtLoggingResponse>
+                    handler);
+
+    /**
      * Retrieves the certificate signing request for the designated HSM Cluster resource.
      *
      * @param request The request object containing the details to send
@@ -128,6 +146,26 @@ public interface KmsHsmClusterAsync extends AutoCloseable {
                                     DownloadCertificateSigningRequestRequest,
                                     DownloadCertificateSigningRequestResponse>
                             handler);
+
+    /**
+     * Validates that the Dynamic Group and bucket policy supplied during EnableAuditLogging /
+     * CreateHsmCluster are now in place. If the cluster is in WAITING_FOR_CUSTOMER, and validation
+     * is successful, status is progressed and a work request is started. If the cluster has already
+     * progressed past that gate, the call is idempotent and returns 202 with the current cluster
+     * representation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableAuditMgmtLoggingResponse> enableAuditMgmtLogging(
+            EnableAuditMgmtLoggingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            EnableAuditMgmtLoggingRequest, EnableAuditMgmtLoggingResponse>
+                    handler);
 
     /**
      * Retrieves configuration details for the specified HSM Cluster resource.
@@ -178,6 +216,23 @@ public interface KmsHsmClusterAsync extends AutoCloseable {
             GetPreCoUserCredentialsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetPreCoUserCredentialsRequest, GetPreCoUserCredentialsResponse>
+                    handler);
+
+    /**
+     * Initiates the process of enabling audit logs for a HSM cluster resource by taking in the
+     * required parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<InitiateAuditLoggingResponse> initiateAuditLogging(
+            InitiateAuditLoggingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            InitiateAuditLoggingRequest, InitiateAuditLoggingResponse>
                     handler);
 
     /**
@@ -232,6 +287,24 @@ public interface KmsHsmClusterAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ScheduleHsmClusterDeletionRequest, ScheduleHsmClusterDeletionResponse>
                     handler);
+
+    /**
+     * update bucket details of management audit logs for a HSM cluster resource by hsmClusterId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAuditLoggingDestinationResponse>
+            updateAuditLoggingDestination(
+                    UpdateAuditLoggingDestinationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAuditLoggingDestinationRequest,
+                                    UpdateAuditLoggingDestinationResponse>
+                            handler);
 
     /**
      * Modifies properties of an HSM cluster resource, including `displayName`, `freeformTags` and

@@ -562,6 +562,43 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public UpdateRegisteredVaultForMtlsResponse updateRegisteredVaultForMtls(
+            UpdateRegisteredVaultForMtlsRequest request) {
+
+        Validate.notBlank(request.getVaultId(), "vaultId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRegisteredVaultForMtlsDetails(),
+                "updateRegisteredVaultForMtlsDetails is required");
+
+        return clientCall(request, UpdateRegisteredVaultForMtlsResponse::builder)
+                .logger(LOG, "updateRegisteredVaultForMtls")
+                .serviceDetails(
+                        "KmsVault",
+                        "UpdateRegisteredVaultForMtls",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/UpdateRegisteredVaultForMtlsDetails/UpdateRegisteredVaultForMtls")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRegisteredVaultForMtlsRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("vaults")
+                .appendPathParam(request.getVaultId())
+                .appendPathParam("updateRegisteredVaultForMtls")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.VaultMtlsUpdateResponse.class,
+                        UpdateRegisteredVaultForMtlsResponse.Builder::vaultMtlsUpdateResponse)
+                .handleResponseHeaderString(
+                        "etag", UpdateRegisteredVaultForMtlsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateRegisteredVaultForMtlsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateVaultResponse updateVault(UpdateVaultRequest request) {
 
         Validate.notBlank(request.getVaultId(), "vaultId must not be blank");

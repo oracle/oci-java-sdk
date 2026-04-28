@@ -698,16 +698,7 @@ public interface CloudGuard extends AutoCloseable {
             DeleteTargetResponderRecipeRequest request);
 
     /**
-     * Deletes and unregisters the WLP agent for an on-premise resource. x-obmcs-splat: routing:
-     * strategy: route-to-any-ad serviceList: [ 'cloudguard-cp-SPLAT_ENV' ] resources: wlpAgent:
-     * serviceResourceName: WlpAgent targetCompartmentId:
-     * downstream.getOr404('cloudguard-cp-SPLAT_ENV', 'GetWlpAgent',
-     * request.resourceId).compartmentId actionKind: delete resourceOcid: request.resourceId
-     * reconciliationCanStartAfterSecs: 30 permissions: [ \"WLP_AGENT_DELETE\" ] authorization:
-     * mode: automated check: resources['wlpAgent'].grantedPermissions.contains('WLP_AGENT_DELETE')
-     * allowCrossTenancy: true tagStore: mode: automated maximumAttemptCount: 3 throttling:
-     * perUserLimit: rpsLimit: 15 perTenantLimit: rpsLimit: 30 quotas: mode: automated search: mode:
-     * backfilling operationResourceName: wlpAgent lock: mode: test operationResourceName: wlpAgent
+     * Deletes and unregisters the WLP agent for an on-premise resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

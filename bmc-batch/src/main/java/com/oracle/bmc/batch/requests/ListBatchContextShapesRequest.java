@@ -65,6 +65,13 @@ public class ListBatchContextShapesRequest
     public String getPage() {
         return page;
     }
+    /** The type of a shape. */
+    private com.oracle.bmc.batch.model.ShapeType shapeType;
+
+    /** The type of a shape. */
+    public com.oracle.bmc.batch.model.ShapeType getShapeType() {
+        return shapeType;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID. The only valid characters for request IDs
@@ -159,6 +166,20 @@ public class ListBatchContextShapesRequest
             return this;
         }
 
+        /** The type of a shape. */
+        private com.oracle.bmc.batch.model.ShapeType shapeType = null;
+
+        /**
+         * The type of a shape.
+         *
+         * @param shapeType the value to set
+         * @return this builder instance
+         */
+        public Builder shapeType(com.oracle.bmc.batch.model.ShapeType shapeType) {
+            this.shapeType = shapeType;
+            return this;
+        }
+
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID. The only valid characters for request
@@ -213,6 +234,7 @@ public class ListBatchContextShapesRequest
             availabilityDomain(o.getAvailabilityDomain());
             limit(o.getLimit());
             page(o.getPage());
+            shapeType(o.getShapeType());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -252,10 +274,11 @@ public class ListBatchContextShapesRequest
             request.availabilityDomain = availabilityDomain;
             request.limit = limit;
             request.page = page;
+            request.shapeType = shapeType;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListBatchContextShapesRequest(compartmentId, availabilityDomain, limit, page,
-            // opcRequestId);
+            // shapeType, opcRequestId);
         }
     }
 
@@ -270,6 +293,7 @@ public class ListBatchContextShapesRequest
                 .availabilityDomain(availabilityDomain)
                 .limit(limit)
                 .page(page)
+                .shapeType(shapeType)
                 .opcRequestId(opcRequestId);
     }
 
@@ -291,6 +315,7 @@ public class ListBatchContextShapesRequest
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",shapeType=").append(String.valueOf(this.shapeType));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -311,6 +336,7 @@ public class ListBatchContextShapesRequest
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.shapeType, other.shapeType)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -328,6 +354,7 @@ public class ListBatchContextShapesRequest
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.shapeType == null ? 43 : this.shapeType.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

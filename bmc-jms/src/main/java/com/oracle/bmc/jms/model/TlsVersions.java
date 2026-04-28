@@ -4,7 +4,10 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** List of TLS versions to be disabled. */
+/**
+ * List of TLS versions to be disabled. The following versions are deprecated and won't perform any
+ * action if specified in the payload: TLS_1_0, TLS_1_1
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public enum TlsVersions implements com.oracle.bmc.http.internal.BmcEnum {
     Tls10("TLS_1_0"),

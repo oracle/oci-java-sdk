@@ -52,12 +52,31 @@ public class ListBatchTasksRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public com.oracle.bmc.batch.model.BatchTask.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** The name of the task. */
+    /**
+     * The hierarchical name of the batch task. Mutually exclusive with the task id query parameter:
+     * you can't pass both.
+     */
     private String name;
 
-    /** The name of the task. */
+    /**
+     * The hierarchical name of the batch task. Mutually exclusive with the task id query parameter:
+     * you can't pass both.
+     */
     public String getName() {
         return name;
+    }
+    /**
+     * The UUID of the batch task. Mutually exclusive with the task name and group task name query
+     * parameters: you can't pass both.
+     */
+    private String taskId;
+
+    /**
+     * The UUID of the batch task. Mutually exclusive with the task name and group task name query
+     * parameters: you can't pass both.
+     */
+    public String getTaskId() {
+        return taskId;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
@@ -186,17 +205,39 @@ public class ListBatchTasksRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The name of the task. */
+        /**
+         * The hierarchical name of the batch task. Mutually exclusive with the task id query
+         * parameter: you can't pass both.
+         */
         private String name = null;
 
         /**
-         * The name of the task.
+         * The hierarchical name of the batch task. Mutually exclusive with the task id query
+         * parameter: you can't pass both.
          *
          * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        /**
+         * The UUID of the batch task. Mutually exclusive with the task name and group task name
+         * query parameters: you can't pass both.
+         */
+        private String taskId = null;
+
+        /**
+         * The UUID of the batch task. Mutually exclusive with the task name and group task name
+         * query parameters: you can't pass both.
+         *
+         * @param taskId the value to set
+         * @return this builder instance
+         */
+        public Builder taskId(String taskId) {
+            this.taskId = taskId;
             return this;
         }
 
@@ -326,6 +367,7 @@ public class ListBatchTasksRequest extends com.oracle.bmc.requests.BmcRequest<ja
             batchJobId(o.getBatchJobId());
             lifecycleState(o.getLifecycleState());
             name(o.getName());
+            taskId(o.getTaskId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -369,14 +411,15 @@ public class ListBatchTasksRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.batchJobId = batchJobId;
             request.lifecycleState = lifecycleState;
             request.name = name;
+            request.taskId = taskId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListBatchTasksRequest(compartmentId, batchJobId, lifecycleState, name, limit,
-            // page, sortOrder, sortBy, opcRequestId);
+            // new ListBatchTasksRequest(compartmentId, batchJobId, lifecycleState, name, taskId,
+            // limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -391,6 +434,7 @@ public class ListBatchTasksRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .batchJobId(batchJobId)
                 .lifecycleState(lifecycleState)
                 .name(name)
+                .taskId(taskId)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -416,6 +460,7 @@ public class ListBatchTasksRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",batchJobId=").append(String.valueOf(this.batchJobId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",taskId=").append(String.valueOf(this.taskId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -440,6 +485,7 @@ public class ListBatchTasksRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 && java.util.Objects.equals(this.batchJobId, other.batchJobId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.taskId, other.taskId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -459,6 +505,7 @@ public class ListBatchTasksRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.taskId == null ? 43 : this.taskId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

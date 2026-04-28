@@ -220,6 +220,38 @@ public class KmsHsmClusterClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public DisableAuditMgmtLoggingResponse disableAuditMgmtLogging(
+            DisableAuditMgmtLoggingRequest request) {
+
+        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
+
+        return clientCall(request, DisableAuditMgmtLoggingResponse::builder)
+                .logger(LOG, "disableAuditMgmtLogging")
+                .serviceDetails(
+                        "KmsHsmCluster",
+                        "DisableAuditMgmtLogging",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/DisableAuditMgmtLogging")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableAuditMgmtLoggingRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("hsmClusters")
+                .appendPathParam(request.getHsmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("disableAuditMgmtLogging")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableAuditMgmtLoggingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableAuditMgmtLoggingResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public DownloadCertificateSigningRequestResponse downloadCertificateSigningRequest(
             DownloadCertificateSigningRequestRequest request) {
 
@@ -249,6 +281,42 @@ public class KmsHsmClusterClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DownloadCertificateSigningRequestResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableAuditMgmtLoggingResponse enableAuditMgmtLogging(
+            EnableAuditMgmtLoggingRequest request) {
+
+        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
+
+        return clientCall(request, EnableAuditMgmtLoggingResponse::builder)
+                .logger(LOG, "enableAuditMgmtLogging")
+                .serviceDetails(
+                        "KmsHsmCluster",
+                        "EnableAuditMgmtLogging",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/EnableAuditMgmtLogging")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableAuditMgmtLoggingRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("hsmClusters")
+                .appendPathParam(request.getHsmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("enableAuditMgmtLogging")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.EnableAuditMgmtLogging.class,
+                        EnableAuditMgmtLoggingResponse.Builder::enableAuditMgmtLogging)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableAuditMgmtLoggingResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableAuditMgmtLoggingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", EnableAuditMgmtLoggingResponse.Builder::etag)
                 .callSync();
     }
 
@@ -341,6 +409,42 @@ public class KmsHsmClusterClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("etag", GetPreCoUserCredentialsResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPreCoUserCredentialsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public InitiateAuditLoggingResponse initiateAuditLogging(InitiateAuditLoggingRequest request) {
+
+        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getInitiateAuditLoggingDetails(),
+                "initiateAuditLoggingDetails is required");
+
+        return clientCall(request, InitiateAuditLoggingResponse::builder)
+                .logger(LOG, "initiateAuditLogging")
+                .serviceDetails(
+                        "KmsHsmCluster",
+                        "InitiateAuditLogging",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/InitiateAuditLogging")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InitiateAuditLoggingRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("hsmClusters")
+                .appendPathParam(request.getHsmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("initiateAuditLogging")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.AuditLogging.class,
+                        InitiateAuditLoggingResponse.Builder::auditLogging)
+                .handleResponseHeaderString("etag", InitiateAuditLoggingResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", InitiateAuditLoggingResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -446,6 +550,48 @@ public class KmsHsmClusterClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "etag", ScheduleHsmClusterDeletionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ScheduleHsmClusterDeletionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateAuditLoggingDestinationResponse updateAuditLoggingDestination(
+            UpdateAuditLoggingDestinationRequest request) {
+
+        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateAuditLoggingDestinationDetails(),
+                "updateAuditLoggingDestinationDetails is required");
+
+        return clientCall(request, UpdateAuditLoggingDestinationResponse::builder)
+                .logger(LOG, "updateAuditLoggingDestination")
+                .serviceDetails(
+                        "KmsHsmCluster",
+                        "UpdateAuditLoggingDestination",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/UpdateAuditLoggingDestination")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAuditLoggingDestinationRequest::builder)
+                .basePath("/")
+                .appendPathParam("20180608")
+                .appendPathParam("hsmClusters")
+                .appendPathParam(request.getHsmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("updateAuditLoggingDestination")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.keymanagement.model.AuditLogging.class,
+                        UpdateAuditLoggingDestinationResponse.Builder::auditLogging)
+                .handleResponseHeaderString(
+                        "etag", UpdateAuditLoggingDestinationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateAuditLoggingDestinationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateAuditLoggingDestinationResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

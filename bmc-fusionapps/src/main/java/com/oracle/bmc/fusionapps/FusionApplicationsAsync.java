@@ -249,6 +249,38 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a VanityDomain
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateVanityDomainResponse> createVanityDomain(
+            CreateVanityDomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateVanityDomainRequest, CreateVanityDomainResponse>
+                    handler);
+
+    /**
+     * Create a VanityDomainActivity
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateVanityDomainActivityResponse> createVanityDomainActivity(
+            CreateVanityDomainActivityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateVanityDomainActivityRequest, CreateVanityDomainActivityResponse>
+                    handler);
+
+    /**
      * Delete an email subdomain for a brand
      *
      * @param request The request object containing the details to send
@@ -377,6 +409,22 @@ public interface FusionApplicationsAsync extends AutoCloseable {
             DeleteServiceAttachmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteServiceAttachmentRequest, DeleteServiceAttachmentResponse>
+                    handler);
+
+    /**
+     * Deletes a VanityDomainActivity
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteVanityDomainActivityResponse> deleteVanityDomainActivity(
+            DeleteVanityDomainActivityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVanityDomainActivityRequest, DeleteVanityDomainActivityResponse>
                     handler);
 
     /**
@@ -641,6 +689,37 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a VanityDomain
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVanityDomainResponse> getVanityDomain(
+            GetVanityDomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVanityDomainRequest, GetVanityDomainResponse>
+                    handler);
+
+    /**
+     * Gets a VanityDomainActivity
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVanityDomainActivityResponse> getVanityDomainActivity(
+            GetVanityDomainActivityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetVanityDomainActivityRequest, GetVanityDomainActivityResponse>
+                    handler);
+
+    /**
      * Gets the status of the work request with the given ID.
      *
      * @param request The request object containing the details to send
@@ -849,6 +928,22 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists all VanityDomains.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVanityDomainsResponse> listVanityDomains(
+            ListVanityDomainsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListVanityDomainsRequest, ListVanityDomainsResponse>
+                    handler);
+
+    /**
      * Return a (paginated) list of errors for a given work request.
      *
      * @param request The request object containing the details to send
@@ -930,6 +1025,23 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                                     ResetFusionEnvironmentPasswordRequest,
                                     ResetFusionEnvironmentPasswordResponse>
                             handler);
+
+    /**
+     * Submit Vanity Domain Validation
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SubmitVanityDomainValidationResponse> submitVanityDomainValidation(
+            SubmitVanityDomainValidationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SubmitVanityDomainValidationRequest,
+                            SubmitVanityDomainValidationResponse>
+                    handler);
 
     /**
      * Updates an email subdomain
@@ -1029,6 +1141,38 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates a VanityDomain
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateVanityDomainResponse> updateVanityDomain(
+            UpdateVanityDomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVanityDomainRequest, UpdateVanityDomainResponse>
+                    handler);
+
+    /**
+     * Updates a VanityDomainActivity
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateVanityDomainActivityResponse> updateVanityDomainActivity(
+            UpdateVanityDomainActivityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVanityDomainActivityRequest, UpdateVanityDomainActivityResponse>
+                    handler);
+
+    /**
      * upload certificate for emailSubdomain
      *
      * @param request The request object containing the details to send
@@ -1044,6 +1188,24 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UploadEmailSubdomainCertificateRequest,
                                     UploadEmailSubdomainCertificateResponse>
+                            handler);
+
+    /**
+     * Upload Vanity Domain certificate
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UploadVanityDomainCertificateResponse>
+            uploadVanityDomainCertificate(
+                    UploadVanityDomainCertificateRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UploadVanityDomainCertificateRequest,
+                                    UploadVanityDomainCertificateResponse>
                             handler);
 
     /**

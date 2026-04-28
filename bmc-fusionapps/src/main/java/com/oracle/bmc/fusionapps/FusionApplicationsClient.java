@@ -516,6 +516,77 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public CreateVanityDomainResponse createVanityDomain(CreateVanityDomainRequest request) {
+        Objects.requireNonNull(
+                request.getCreateVanityDomainDetails(), "createVanityDomainDetails is required");
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, CreateVanityDomainResponse::builder)
+                .logger(LOG, "createVanityDomain")
+                .serviceDetails("FusionApplications", "CreateVanityDomain", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVanityDomainRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("vanityDomains")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.VanityDomain.class,
+                        CreateVanityDomainResponse.Builder::vanityDomain)
+                .handleResponseHeaderString("etag", CreateVanityDomainResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateVanityDomainResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVanityDomainResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateVanityDomainActivityResponse createVanityDomainActivity(
+            CreateVanityDomainActivityRequest request) {
+        Objects.requireNonNull(
+                request.getCreateVanityDomainActivityDetails(),
+                "createVanityDomainActivityDetails is required");
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, CreateVanityDomainActivityResponse::builder)
+                .logger(LOG, "createVanityDomainActivity")
+                .serviceDetails(
+                        "FusionApplications",
+                        "CreateVanityDomainActivity",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomainActivity/CreateVanityDomainActivity")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVanityDomainActivityRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("vanityDomainActivities")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateVanityDomainActivityResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVanityDomainActivityResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "vanity-activity-id",
+                        CreateVanityDomainActivityResponse.Builder::vanityActivityId)
+                .callSync();
+    }
+
+    @Override
     public DeleteEmailSubdomainResponse deleteEmailSubdomain(DeleteEmailSubdomainRequest request) {
 
         Validate.notBlank(
@@ -784,6 +855,41 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         DeleteServiceAttachmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteServiceAttachmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteVanityDomainActivityResponse deleteVanityDomainActivity(
+            DeleteVanityDomainActivityRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(
+                request.getVanityDomainActivityId(), "vanityDomainActivityId must not be blank");
+
+        return clientCall(request, DeleteVanityDomainActivityResponse::builder)
+                .logger(LOG, "deleteVanityDomainActivity")
+                .serviceDetails(
+                        "FusionApplications",
+                        "DeleteVanityDomainActivity",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomainActivity/DeleteVanityDomainActivity")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVanityDomainActivityRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("vanityDomainActivities")
+                .appendPathParam(request.getVanityDomainActivityId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteVanityDomainActivityResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVanityDomainActivityResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1340,6 +1446,76 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public GetVanityDomainResponse getVanityDomain(GetVanityDomainRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getVanityDomainId(), "vanityDomainId must not be blank");
+
+        return clientCall(request, GetVanityDomainResponse::builder)
+                .logger(LOG, "getVanityDomain")
+                .serviceDetails(
+                        "FusionApplications",
+                        "GetVanityDomain",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomain/GetVanityDomain")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVanityDomainRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("vanityDomains")
+                .appendPathParam(request.getVanityDomainId())
+                .appendQueryParam("doesDownloadOriginCsr", request.getDoesDownloadOriginCsr())
+                .appendQueryParam("doesDownloadAkamaiCsr", request.getDoesDownloadAkamaiCsr())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.VanityDomain.class,
+                        GetVanityDomainResponse.Builder::vanityDomain)
+                .handleResponseHeaderString("etag", GetVanityDomainResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVanityDomainResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetVanityDomainActivityResponse getVanityDomainActivity(
+            GetVanityDomainActivityRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(
+                request.getVanityDomainActivityId(), "vanityDomainActivityId must not be blank");
+
+        return clientCall(request, GetVanityDomainActivityResponse::builder)
+                .logger(LOG, "getVanityDomainActivity")
+                .serviceDetails(
+                        "FusionApplications",
+                        "GetVanityDomainActivity",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomainActivity/GetVanityDomainActivity")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVanityDomainActivityRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("vanityDomainActivities")
+                .appendPathParam(request.getVanityDomainActivityId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.VanityDomainActivity.class,
+                        GetVanityDomainActivityResponse.Builder::vanityDomainActivity)
+                .handleResponseHeaderString("etag", GetVanityDomainActivityResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVanityDomainActivityResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
@@ -1834,6 +2010,46 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public ListVanityDomainsResponse listVanityDomains(ListVanityDomainsRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getIsFullVanityDomain(), "isFullVanityDomain is required");
+
+        return clientCall(request, ListVanityDomainsResponse::builder)
+                .logger(LOG, "listVanityDomains")
+                .serviceDetails(
+                        "FusionApplications",
+                        "ListVanityDomains",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomain/ListVanityDomains")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVanityDomainsRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("vanityDomains")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("isFullVanityDomain", request.getIsFullVanityDomain())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.VanityDomainCollection.class,
+                        ListVanityDomainsResponse.Builder::vanityDomainCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVanityDomainsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListVanityDomainsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
 
@@ -2020,6 +2236,43 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ResetFusionEnvironmentPasswordResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public SubmitVanityDomainValidationResponse submitVanityDomainValidation(
+            SubmitVanityDomainValidationRequest request) {
+
+        Validate.notBlank(request.getVanityDomainId(), "vanityDomainId must not be blank");
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, SubmitVanityDomainValidationResponse::builder)
+                .logger(LOG, "submitVanityDomainValidation")
+                .serviceDetails(
+                        "FusionApplications",
+                        "SubmitVanityDomainValidation",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomain/SubmitVanityDomainValidation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SubmitVanityDomainValidationRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("vanityDomains")
+                .appendPathParam(request.getVanityDomainId())
+                .appendPathParam("actions")
+                .appendPathParam("submitValidation")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        SubmitVanityDomainValidationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SubmitVanityDomainValidationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2254,6 +2507,80 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public UpdateVanityDomainResponse updateVanityDomain(UpdateVanityDomainRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getVanityDomainId(), "vanityDomainId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateVanityDomainDetails(), "updateVanityDomainDetails is required");
+
+        return clientCall(request, UpdateVanityDomainResponse::builder)
+                .logger(LOG, "updateVanityDomain")
+                .serviceDetails(
+                        "FusionApplications",
+                        "UpdateVanityDomain",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomain/UpdateVanityDomain")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVanityDomainRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("vanityDomains")
+                .appendPathParam(request.getVanityDomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateVanityDomainResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVanityDomainResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateVanityDomainActivityResponse updateVanityDomainActivity(
+            UpdateVanityDomainActivityRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(
+                request.getVanityDomainActivityId(), "vanityDomainActivityId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateVanityDomainActivityDetails(),
+                "updateVanityDomainActivityDetails is required");
+
+        return clientCall(request, UpdateVanityDomainActivityResponse::builder)
+                .logger(LOG, "updateVanityDomainActivity")
+                .serviceDetails(
+                        "FusionApplications",
+                        "UpdateVanityDomainActivity",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomainActivity/UpdateVanityDomainActivity")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVanityDomainActivityRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("vanityDomainActivities")
+                .appendPathParam(request.getVanityDomainActivityId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateVanityDomainActivityResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVanityDomainActivityResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UploadEmailSubdomainCertificateResponse uploadEmailSubdomainCertificate(
             UploadEmailSubdomainCertificateRequest request) {
 
@@ -2292,6 +2619,47 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UploadEmailSubdomainCertificateResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UploadVanityDomainCertificateResponse uploadVanityDomainCertificate(
+            UploadVanityDomainCertificateRequest request) {
+        Objects.requireNonNull(
+                request.getUploadVanityDomainCertificateDetails(),
+                "uploadVanityDomainCertificateDetails is required");
+
+        Validate.notBlank(request.getVanityDomainId(), "vanityDomainId must not be blank");
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, UploadVanityDomainCertificateResponse::builder)
+                .logger(LOG, "uploadVanityDomainCertificate")
+                .serviceDetails(
+                        "FusionApplications",
+                        "UploadVanityDomainCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomain/UploadVanityDomainCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UploadVanityDomainCertificateRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("vanityDomains")
+                .appendPathParam(request.getVanityDomainId())
+                .appendPathParam("actions")
+                .appendPathParam("uploadCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UploadVanityDomainCertificateResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UploadVanityDomainCertificateResponse.Builder::opcRequestId)
                 .callSync();
     }
 

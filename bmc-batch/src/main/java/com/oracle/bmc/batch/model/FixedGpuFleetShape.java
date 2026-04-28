@@ -1,0 +1,172 @@
+/**
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.batch.model;
+
+/**
+ * Fixed shape of the GPU fleet. Describes hardware resources of each node in the fleet. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
+ * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
+ * fields into account. The constructor, on the other hand, does not take the explicitly set fields
+ * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
+ * null}).
+ */
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20251031")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+        builder = FixedGpuFleetShape.Builder.class)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+public final class FixedGpuFleetShape extends GpuFleetShape {
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        /** The name of the fixed GPU fleet shape. */
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
+        private String shapeName;
+
+        /**
+         * The name of the fixed GPU fleet shape.
+         *
+         * @param shapeName the value to set
+         * @return this builder
+         */
+        public Builder shapeName(String shapeName) {
+            this.shapeName = shapeName;
+            this.__explicitlySet__.add("shapeName");
+            return this;
+        }
+        /** Amount of disk space in GBs required for the shape. */
+        @com.fasterxml.jackson.annotation.JsonProperty("diskSizeInGBs")
+        private Integer diskSizeInGBs;
+
+        /**
+         * Amount of disk space in GBs required for the shape.
+         *
+         * @param diskSizeInGBs the value to set
+         * @return this builder
+         */
+        public Builder diskSizeInGBs(Integer diskSizeInGBs) {
+            this.diskSizeInGBs = diskSizeInGBs;
+            this.__explicitlySet__.add("diskSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public FixedGpuFleetShape build() {
+            FixedGpuFleetShape model = new FixedGpuFleetShape(this.shapeName, this.diskSizeInGBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(FixedGpuFleetShape model) {
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("diskSizeInGBs")) {
+                this.diskSizeInGBs(model.getDiskSizeInGBs());
+            }
+            return this;
+        }
+    }
+
+    /** Create a new builder. */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    @Deprecated
+    public FixedGpuFleetShape(String shapeName, Integer diskSizeInGBs) {
+        super();
+        this.shapeName = shapeName;
+        this.diskSizeInGBs = diskSizeInGBs;
+    }
+
+    /** The name of the fixed GPU fleet shape. */
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
+    private final String shapeName;
+
+    /**
+     * The name of the fixed GPU fleet shape.
+     *
+     * @return the value
+     */
+    public String getShapeName() {
+        return shapeName;
+    }
+
+    /** Amount of disk space in GBs required for the shape. */
+    @com.fasterxml.jackson.annotation.JsonProperty("diskSizeInGBs")
+    private final Integer diskSizeInGBs;
+
+    /**
+     * Amount of disk space in GBs required for the shape.
+     *
+     * @return the value
+     */
+    public Integer getDiskSizeInGBs() {
+        return diskSizeInGBs;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     *
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("FixedGpuFleetShape(");
+        sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", diskSizeInGBs=").append(String.valueOf(this.diskSizeInGBs));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof FixedGpuFleetShape)) {
+            return false;
+        }
+
+        FixedGpuFleetShape other = (FixedGpuFleetShape) o;
+        return java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.diskSizeInGBs, other.diskSizeInGBs)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diskSizeInGBs == null ? 43 : this.diskSizeInGBs.hashCode());
+        return result;
+    }
+}

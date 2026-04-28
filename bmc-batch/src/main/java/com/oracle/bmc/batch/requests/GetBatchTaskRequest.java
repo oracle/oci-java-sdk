@@ -26,10 +26,16 @@ public class GetBatchTaskRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getBatchJobId() {
         return batchJobId;
     }
-    /** The name of the batch task. */
+    /**
+     * The hierarchical name of the batch task. Mutually exclusive with the task id query parameter:
+     * you can't pass both.
+     */
     private String taskName;
 
-    /** The name of the batch task. */
+    /**
+     * The hierarchical name of the batch task. Mutually exclusive with the task id query parameter:
+     * you can't pass both.
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -73,11 +79,15 @@ public class GetBatchTaskRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The name of the batch task. */
+        /**
+         * The hierarchical name of the batch task. Mutually exclusive with the task id query
+         * parameter: you can't pass both.
+         */
         private String taskName = null;
 
         /**
-         * The name of the batch task.
+         * The hierarchical name of the batch task. Mutually exclusive with the task id query
+         * parameter: you can't pass both.
          *
          * @param taskName the value to set
          * @return this builder instance

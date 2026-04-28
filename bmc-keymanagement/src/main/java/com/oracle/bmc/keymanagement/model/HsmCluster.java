@@ -31,7 +31,9 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
         "dnsName",
         "timeOfDeletion",
         "definedTags",
-        "freeformTags"
+        "freeformTags",
+        "auditLogConfig",
+        "pendingInstructions"
     })
     public HsmCluster(
             String id,
@@ -43,7 +45,9 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
             String dnsName,
             java.util.Date timeOfDeletion,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            HsmClusterAuditLoggingInfo auditLogConfig,
+            HsmClusterPendingInstructions pendingInstructions) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -55,6 +59,8 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
         this.timeOfDeletion = timeOfDeletion;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.auditLogConfig = auditLogConfig;
+        this.pendingInstructions = pendingInstructions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -261,6 +267,24 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("auditLogConfig")
+        private HsmClusterAuditLoggingInfo auditLogConfig;
+
+        public Builder auditLogConfig(HsmClusterAuditLoggingInfo auditLogConfig) {
+            this.auditLogConfig = auditLogConfig;
+            this.__explicitlySet__.add("auditLogConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("pendingInstructions")
+        private HsmClusterPendingInstructions pendingInstructions;
+
+        public Builder pendingInstructions(HsmClusterPendingInstructions pendingInstructions) {
+            this.pendingInstructions = pendingInstructions;
+            this.__explicitlySet__.add("pendingInstructions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -276,7 +300,9 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
                             this.dnsName,
                             this.timeOfDeletion,
                             this.definedTags,
-                            this.freeformTags);
+                            this.freeformTags,
+                            this.auditLogConfig,
+                            this.pendingInstructions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -314,6 +340,12 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("auditLogConfig")) {
+                this.auditLogConfig(model.getAuditLogConfig());
+            }
+            if (model.wasPropertyExplicitlySet("pendingInstructions")) {
+                this.pendingInstructions(model.getPendingInstructions());
             }
             return this;
         }
@@ -565,6 +597,20 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
         return freeformTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("auditLogConfig")
+    private final HsmClusterAuditLoggingInfo auditLogConfig;
+
+    public HsmClusterAuditLoggingInfo getAuditLogConfig() {
+        return auditLogConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("pendingInstructions")
+    private final HsmClusterPendingInstructions pendingInstructions;
+
+    public HsmClusterPendingInstructions getPendingInstructions() {
+        return pendingInstructions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -590,6 +636,8 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", auditLogConfig=").append(String.valueOf(this.auditLogConfig));
+        sb.append(", pendingInstructions=").append(String.valueOf(this.pendingInstructions));
         sb.append(")");
         return sb.toString();
     }
@@ -614,6 +662,8 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.auditLogConfig, other.auditLogConfig)
+                && java.util.Objects.equals(this.pendingInstructions, other.pendingInstructions)
                 && super.equals(other);
     }
 
@@ -637,6 +687,14 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
                         + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.auditLogConfig == null ? 43 : this.auditLogConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pendingInstructions == null
+                                ? 43
+                                : this.pendingInstructions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

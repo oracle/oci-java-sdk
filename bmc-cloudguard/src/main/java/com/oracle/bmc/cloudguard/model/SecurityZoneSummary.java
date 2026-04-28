@@ -34,6 +34,7 @@ public final class SecurityZoneSummary
         "timeUpdated",
         "lifecycleState",
         "lifecycleDetails",
+        "isInheritanceAfterDeleteEnabled",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -48,6 +49,7 @@ public final class SecurityZoneSummary
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String lifecycleDetails,
+            Boolean isInheritanceAfterDeleteEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -61,6 +63,7 @@ public final class SecurityZoneSummary
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.isInheritanceAfterDeleteEnabled = isInheritanceAfterDeleteEnabled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -208,6 +211,25 @@ public final class SecurityZoneSummary
             return this;
         }
         /**
+         * Indicates if upon deletion of the security zone the comparment should inherit parent
+         * security zone
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isInheritanceAfterDeleteEnabled")
+        private Boolean isInheritanceAfterDeleteEnabled;
+
+        /**
+         * Indicates if upon deletion of the security zone the comparment should inherit parent
+         * security zone
+         *
+         * @param isInheritanceAfterDeleteEnabled the value to set
+         * @return this builder
+         */
+        public Builder isInheritanceAfterDeleteEnabled(Boolean isInheritanceAfterDeleteEnabled) {
+            this.isInheritanceAfterDeleteEnabled = isInheritanceAfterDeleteEnabled;
+            this.__explicitlySet__.add("isInheritanceAfterDeleteEnabled");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
@@ -293,6 +315,7 @@ public final class SecurityZoneSummary
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.isInheritanceAfterDeleteEnabled,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -330,6 +353,9 @@ public final class SecurityZoneSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isInheritanceAfterDeleteEnabled")) {
+                this.isInheritanceAfterDeleteEnabled(model.getIsInheritanceAfterDeleteEnabled());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -475,6 +501,23 @@ public final class SecurityZoneSummary
     }
 
     /**
+     * Indicates if upon deletion of the security zone the comparment should inherit parent security
+     * zone
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isInheritanceAfterDeleteEnabled")
+    private final Boolean isInheritanceAfterDeleteEnabled;
+
+    /**
+     * Indicates if upon deletion of the security zone the comparment should inherit parent security
+     * zone
+     *
+     * @return the value
+     */
+    public Boolean getIsInheritanceAfterDeleteEnabled() {
+        return isInheritanceAfterDeleteEnabled;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
@@ -561,6 +604,8 @@ public final class SecurityZoneSummary
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", isInheritanceAfterDeleteEnabled=")
+                .append(String.valueOf(this.isInheritanceAfterDeleteEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -587,6 +632,8 @@ public final class SecurityZoneSummary
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(
+                        this.isInheritanceAfterDeleteEnabled, other.isInheritanceAfterDeleteEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -616,6 +663,11 @@ public final class SecurityZoneSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isInheritanceAfterDeleteEnabled == null
+                                ? 43
+                                : this.isInheritanceAfterDeleteEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

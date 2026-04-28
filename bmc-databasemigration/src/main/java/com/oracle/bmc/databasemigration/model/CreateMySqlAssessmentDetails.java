@@ -138,6 +138,21 @@ public final class CreateMySqlAssessmentDetails extends CreateAssessmentDetails 
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** Assessment migration scope. */
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationScope")
+        private MigrationScopeMySql migrationScope;
+
+        /**
+         * Assessment migration scope.
+         *
+         * @param migrationScope the value to set
+         * @return this builder
+         */
+        public Builder migrationScope(MigrationScopeMySql migrationScope) {
+            this.migrationScope = migrationScope;
+            this.__explicitlySet__.add("migrationScope");
+            return this;
+        }
         /**
          * Database objects to exclude from migration, cannot be specified alongside
          * 'includeObjects'
@@ -216,6 +231,7 @@ public final class CreateMySqlAssessmentDetails extends CreateAssessmentDetails 
                             this.targetDatabaseConnection,
                             this.freeformTags,
                             this.definedTags,
+                            this.migrationScope,
                             this.excludeObjects,
                             this.includeObjects,
                             this.bulkIncludeExcludeData);
@@ -263,6 +279,9 @@ public final class CreateMySqlAssessmentDetails extends CreateAssessmentDetails 
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("migrationScope")) {
+                this.migrationScope(model.getMigrationScope());
+            }
             if (model.wasPropertyExplicitlySet("excludeObjects")) {
                 this.excludeObjects(model.getExcludeObjects());
             }
@@ -299,6 +318,7 @@ public final class CreateMySqlAssessmentDetails extends CreateAssessmentDetails 
             TargetAssessmentConnection targetDatabaseConnection,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            MigrationScopeMySql migrationScope,
             java.util.List<MySqlDatabaseObject> excludeObjects,
             java.util.List<MySqlDatabaseObject> includeObjects,
             String bulkIncludeExcludeData) {
@@ -315,9 +335,23 @@ public final class CreateMySqlAssessmentDetails extends CreateAssessmentDetails 
                 targetDatabaseConnection,
                 freeformTags,
                 definedTags);
+        this.migrationScope = migrationScope;
         this.excludeObjects = excludeObjects;
         this.includeObjects = includeObjects;
         this.bulkIncludeExcludeData = bulkIncludeExcludeData;
+    }
+
+    /** Assessment migration scope. */
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationScope")
+    private final MigrationScopeMySql migrationScope;
+
+    /**
+     * Assessment migration scope.
+     *
+     * @return the value
+     */
+    public MigrationScopeMySql getMigrationScope() {
+        return migrationScope;
     }
 
     /**
@@ -384,6 +418,7 @@ public final class CreateMySqlAssessmentDetails extends CreateAssessmentDetails 
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateMySqlAssessmentDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", migrationScope=").append(String.valueOf(this.migrationScope));
         sb.append(", excludeObjects=").append(String.valueOf(this.excludeObjects));
         sb.append(", includeObjects=").append(String.valueOf(this.includeObjects));
         sb.append(", bulkIncludeExcludeData=").append(String.valueOf(this.bulkIncludeExcludeData));
@@ -401,7 +436,8 @@ public final class CreateMySqlAssessmentDetails extends CreateAssessmentDetails 
         }
 
         CreateMySqlAssessmentDetails other = (CreateMySqlAssessmentDetails) o;
-        return java.util.Objects.equals(this.excludeObjects, other.excludeObjects)
+        return java.util.Objects.equals(this.migrationScope, other.migrationScope)
+                && java.util.Objects.equals(this.excludeObjects, other.excludeObjects)
                 && java.util.Objects.equals(this.includeObjects, other.includeObjects)
                 && java.util.Objects.equals(
                         this.bulkIncludeExcludeData, other.bulkIncludeExcludeData)
@@ -412,6 +448,9 @@ public final class CreateMySqlAssessmentDetails extends CreateAssessmentDetails 
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.migrationScope == null ? 43 : this.migrationScope.hashCode());
         result =
                 (result * PRIME)
                         + (this.excludeObjects == null ? 43 : this.excludeObjects.hashCode());

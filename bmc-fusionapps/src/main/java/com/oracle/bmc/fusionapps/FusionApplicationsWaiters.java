@@ -993,6 +993,223 @@ public class FusionApplicationsWaiters {
     }
 
     /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVanityDomainRequest, GetVanityDomainResponse>
+            forVanityDomain(
+                    GetVanityDomainRequest request,
+                    com.oracle.bmc.fusionapps.model.VanityDomain.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forVanityDomain(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVanityDomainRequest, GetVanityDomainResponse>
+            forVanityDomain(
+                    GetVanityDomainRequest request,
+                    com.oracle.bmc.fusionapps.model.VanityDomain.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forVanityDomain(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVanityDomainRequest, GetVanityDomainResponse>
+            forVanityDomain(
+                    GetVanityDomainRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.fusionapps.model.VanityDomain.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forVanityDomain(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for VanityDomain.
+    private com.oracle.bmc.waiter.Waiter<GetVanityDomainRequest, GetVanityDomainResponse>
+            forVanityDomain(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetVanityDomainRequest request,
+                    final com.oracle.bmc.fusionapps.model.VanityDomain.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.fusionapps.model.VanityDomain.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetVanityDomainRequest, GetVanityDomainResponse>() {
+                            @Override
+                            public GetVanityDomainResponse apply(GetVanityDomainRequest request) {
+                                return client.getVanityDomain(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetVanityDomainResponse>() {
+                            @Override
+                            public boolean test(GetVanityDomainResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getVanityDomain().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.fusionapps.model.VanityDomain.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVanityDomainActivityRequest, GetVanityDomainActivityResponse>
+            forVanityDomainActivity(
+                    GetVanityDomainActivityRequest request,
+                    com.oracle.bmc.fusionapps.model.VanityDomainActivity.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forVanityDomainActivity(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVanityDomainActivityRequest, GetVanityDomainActivityResponse>
+            forVanityDomainActivity(
+                    GetVanityDomainActivityRequest request,
+                    com.oracle.bmc.fusionapps.model.VanityDomainActivity.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forVanityDomainActivity(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetVanityDomainActivityRequest, GetVanityDomainActivityResponse>
+            forVanityDomainActivity(
+                    GetVanityDomainActivityRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.fusionapps.model.VanityDomainActivity.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forVanityDomainActivity(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for VanityDomainActivity.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetVanityDomainActivityRequest, GetVanityDomainActivityResponse>
+            forVanityDomainActivity(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetVanityDomainActivityRequest request,
+                    final com.oracle.bmc.fusionapps.model.VanityDomainActivity.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.fusionapps.model.VanityDomainActivity.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetVanityDomainActivityRequest, GetVanityDomainActivityResponse>() {
+                            @Override
+                            public GetVanityDomainActivityResponse apply(
+                                    GetVanityDomainActivityRequest request) {
+                                return client.getVanityDomainActivity(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetVanityDomainActivityResponse>() {
+                            @Override
+                            public boolean test(GetVanityDomainActivityResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getVanityDomainActivity().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using default configuration.
      *
      * @param request the request to send

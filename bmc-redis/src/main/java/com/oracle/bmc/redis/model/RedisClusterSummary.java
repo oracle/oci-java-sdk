@@ -46,6 +46,7 @@ public final class RedisClusterSummary
         "clusterMode",
         "shardCount",
         "nsgIds",
+        "backupId",
         "securityAttributes",
         "freeformTags",
         "definedTags",
@@ -73,6 +74,7 @@ public final class RedisClusterSummary
             RedisCluster.ClusterMode clusterMode,
             Integer shardCount,
             java.util.List<String> nsgIds,
+            String backupId,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -99,6 +101,7 @@ public final class RedisClusterSummary
         this.clusterMode = clusterMode;
         this.shardCount = shardCount;
         this.nsgIds = nsgIds;
+        this.backupId = backupId;
         this.securityAttributes = securityAttributes;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -474,6 +477,21 @@ public final class RedisClusterSummary
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+        /** The ID of the OCI Cache Backup from which this cluster was created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupId")
+        private String backupId;
+
+        /**
+         * The ID of the OCI Cache Backup from which this cluster was created.
+         *
+         * @param backupId the value to set
+         * @return this builder
+         */
+        public Builder backupId(String backupId) {
+            this.backupId = backupId;
+            this.__explicitlySet__.add("backupId");
+            return this;
+        }
         /**
          * Security attributes for redis cluster resource. Each key is predefined and scoped to a
          * namespace. For more information, see [Resource
@@ -588,6 +606,7 @@ public final class RedisClusterSummary
                             this.clusterMode,
                             this.shardCount,
                             this.nsgIds,
+                            this.backupId,
                             this.securityAttributes,
                             this.freeformTags,
                             this.definedTags,
@@ -662,6 +681,9 @@ public final class RedisClusterSummary
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("backupId")) {
+                this.backupId(model.getBackupId());
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
@@ -1005,6 +1027,19 @@ public final class RedisClusterSummary
         return nsgIds;
     }
 
+    /** The ID of the OCI Cache Backup from which this cluster was created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupId")
+    private final String backupId;
+
+    /**
+     * The ID of the OCI Cache Backup from which this cluster was created.
+     *
+     * @return the value
+     */
+    public String getBackupId() {
+        return backupId;
+    }
+
     /**
      * Security attributes for redis cluster resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource
@@ -1118,6 +1153,7 @@ public final class RedisClusterSummary
         sb.append(", clusterMode=").append(String.valueOf(this.clusterMode));
         sb.append(", shardCount=").append(String.valueOf(this.shardCount));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", backupId=").append(String.valueOf(this.backupId));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1160,6 +1196,7 @@ public final class RedisClusterSummary
                 && java.util.Objects.equals(this.clusterMode, other.clusterMode)
                 && java.util.Objects.equals(this.shardCount, other.shardCount)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.backupId, other.backupId)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1220,6 +1257,7 @@ public final class RedisClusterSummary
         result = (result * PRIME) + (this.clusterMode == null ? 43 : this.clusterMode.hashCode());
         result = (result * PRIME) + (this.shardCount == null ? 43 : this.shardCount.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.backupId == null ? 43 : this.backupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.securityAttributes == null

@@ -34,7 +34,9 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                     .serviceName(JavaDownloadClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://javamanagementservice-download.{region}.oci.{secondLevelDomain}")
+                            "https://{dualStack?download.javamanagement:javamanagementservice-download}.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .serviceUsesDualStackByDefault()
+                    .endpointServiceName("download.javamanagement")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -131,12 +133,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
                 .serviceDetails(
                         "JavaDownload",
                         "CancelWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/CancelWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/")
@@ -161,12 +167,15 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getCreateJavaDownloadReportDetails(),
                 "createJavaDownloadReportDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateJavaDownloadReportResponse::builder)
                 .logger(LOG, "createJavaDownloadReport")
                 .serviceDetails(
                         "JavaDownload",
                         "CreateJavaDownloadReport",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/CreateJavaDownloadReport")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateJavaDownloadReportRequest::builder)
                 .basePath("/")
@@ -194,12 +203,15 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getCreateJavaDownloadTokenDetails(),
                 "createJavaDownloadTokenDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateJavaDownloadTokenResponse::builder)
                 .logger(LOG, "createJavaDownloadToken")
                 .serviceDetails(
                         "JavaDownload",
                         "CreateJavaDownloadToken",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/CreateJavaDownloadToken")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateJavaDownloadTokenRequest::builder)
                 .basePath("/")
@@ -233,12 +245,15 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getCreateJavaLicenseAcceptanceRecordDetails(),
                 "createJavaLicenseAcceptanceRecordDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateJavaLicenseAcceptanceRecordResponse::builder)
                 .logger(LOG, "createJavaLicenseAcceptanceRecord")
                 .serviceDetails(
                         "JavaDownload",
                         "CreateJavaLicenseAcceptanceRecord",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/CreateJavaLicenseAcceptanceRecord")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateJavaLicenseAcceptanceRecordRequest::builder)
                 .basePath("/")
@@ -270,12 +285,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Validate.notBlank(
                 request.getJavaDownloadReportId(), "javaDownloadReportId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("javaDownloadReportId", request.getJavaDownloadReportId());
+
         return clientCall(request, DeleteJavaDownloadReportResponse::builder)
                 .logger(LOG, "deleteJavaDownloadReport")
                 .serviceDetails(
                         "JavaDownload",
                         "DeleteJavaDownloadReport",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/DeleteJavaDownloadReport")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaDownloadReportRequest::builder)
                 .basePath("/")
@@ -303,12 +322,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Validate.notBlank(
                 request.getJavaDownloadTokenId(), "javaDownloadTokenId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("javaDownloadTokenId", request.getJavaDownloadTokenId());
+
         return clientCall(request, DeleteJavaDownloadTokenResponse::builder)
                 .logger(LOG, "deleteJavaDownloadToken")
                 .serviceDetails(
                         "JavaDownload",
                         "DeleteJavaDownloadToken",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/DeleteJavaDownloadToken")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaDownloadTokenRequest::builder)
                 .basePath("/")
@@ -339,12 +362,17 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getJavaLicenseAcceptanceRecordId(),
                 "javaLicenseAcceptanceRecordId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "javaLicenseAcceptanceRecordId", request.getJavaLicenseAcceptanceRecordId());
+
         return clientCall(request, DeleteJavaLicenseAcceptanceRecordResponse::builder)
                 .logger(LOG, "deleteJavaLicenseAcceptanceRecord")
                 .serviceDetails(
                         "JavaDownload",
                         "DeleteJavaLicenseAcceptanceRecord",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/DeleteJavaLicenseAcceptanceRecord")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaLicenseAcceptanceRecordRequest::builder)
                 .basePath("/")
@@ -372,12 +400,15 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getGenerateArtifactDownloadUrlDetails(),
                 "generateArtifactDownloadUrlDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, GenerateArtifactDownloadUrlResponse::builder)
                 .logger(LOG, "generateArtifactDownloadUrl")
                 .serviceDetails(
                         "JavaDownload",
                         "GenerateArtifactDownloadUrl",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateArtifactDownloadUrlRequest::builder)
                 .basePath("/")
@@ -405,12 +436,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Validate.notBlank(
                 request.getJavaDownloadReportId(), "javaDownloadReportId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("javaDownloadReportId", request.getJavaDownloadReportId());
+
         return clientCall(request, GetJavaDownloadReportResponse::builder)
                 .logger(LOG, "getJavaDownloadReport")
                 .serviceDetails(
                         "JavaDownload",
                         "GetJavaDownloadReport",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/GetJavaDownloadReport")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaDownloadReportRequest::builder)
                 .basePath("/")
@@ -440,12 +475,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Validate.notBlank(
                 request.getJavaDownloadReportId(), "javaDownloadReportId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("javaDownloadReportId", request.getJavaDownloadReportId());
+
         return clientCall(request, GetJavaDownloadReportContentResponse::builder)
                 .logger(LOG, "getJavaDownloadReportContent")
                 .serviceDetails(
                         "JavaDownload",
                         "GetJavaDownloadReportContent",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/GetJavaDownloadReportContent")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaDownloadReportContentRequest::builder)
                 .basePath("/")
@@ -476,12 +515,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Validate.notBlank(
                 request.getJavaDownloadTokenId(), "javaDownloadTokenId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("javaDownloadTokenId", request.getJavaDownloadTokenId());
+
         return clientCall(request, GetJavaDownloadTokenResponse::builder)
                 .logger(LOG, "getJavaDownloadToken")
                 .serviceDetails(
                         "JavaDownload",
                         "GetJavaDownloadToken",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/GetJavaDownloadToken")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaDownloadTokenRequest::builder)
                 .basePath("/")
@@ -508,12 +551,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getLicenseType().getValue(), "licenseType must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("licenseType", request.getLicenseType());
+
         return clientCall(request, GetJavaLicenseResponse::builder)
                 .logger(LOG, "getJavaLicense")
                 .serviceDetails(
                         "JavaDownload",
                         "GetJavaLicense",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicense/GetJavaLicense")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaLicenseRequest::builder)
                 .basePath("/")
@@ -543,12 +590,17 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getJavaLicenseAcceptanceRecordId(),
                 "javaLicenseAcceptanceRecordId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "javaLicenseAcceptanceRecordId", request.getJavaLicenseAcceptanceRecordId());
+
         return clientCall(request, GetJavaLicenseAcceptanceRecordResponse::builder)
                 .logger(LOG, "getJavaLicenseAcceptanceRecord")
                 .serviceDetails(
                         "JavaDownload",
                         "GetJavaLicenseAcceptanceRecord",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/GetJavaLicenseAcceptanceRecord")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaLicenseAcceptanceRecordRequest::builder)
                 .basePath("/")
@@ -577,12 +629,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
                 .serviceDetails(
                         "JavaDownload",
                         "GetWorkRequest",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/GetWorkRequest")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/")
@@ -609,12 +665,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListJavaDownloadRecordsResponse::builder)
                 .logger(LOG, "listJavaDownloadRecords")
                 .serviceDetails(
                         "JavaDownload",
                         "ListJavaDownloadRecords",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadRecord/ListJavaDownloadRecords")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaDownloadRecordsRequest::builder)
                 .basePath("/")
@@ -652,12 +712,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListJavaDownloadReportsResponse::builder)
                 .logger(LOG, "listJavaDownloadReports")
                 .serviceDetails(
                         "JavaDownload",
                         "ListJavaDownloadReports",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/ListJavaDownloadReports")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaDownloadReportsRequest::builder)
                 .basePath("/")
@@ -691,12 +755,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListJavaDownloadTokensResponse::builder)
                 .logger(LOG, "listJavaDownloadTokens")
                 .serviceDetails(
                         "JavaDownload",
                         "ListJavaDownloadTokens",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/ListJavaDownloadTokens")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaDownloadTokensRequest::builder)
                 .basePath("/")
@@ -735,12 +803,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListJavaLicenseAcceptanceRecordsResponse::builder)
                 .logger(LOG, "listJavaLicenseAcceptanceRecords")
                 .serviceDetails(
                         "JavaDownload",
                         "ListJavaLicenseAcceptanceRecords",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/ListJavaLicenseAcceptanceRecords")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaLicenseAcceptanceRecordsRequest::builder)
                 .basePath("/")
@@ -778,12 +850,15 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                             ListJavaLicensesRequest, ListJavaLicensesResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListJavaLicensesResponse::builder)
                 .logger(LOG, "listJavaLicenses")
                 .serviceDetails(
                         "JavaDownload",
                         "ListJavaLicenses",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicense/ListJavaLicenses")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaLicensesRequest::builder)
                 .basePath("/")
@@ -816,12 +891,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
                 .serviceDetails(
                         "JavaDownload",
                         "ListWorkRequestErrors",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequestError/ListWorkRequestErrors")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/")
@@ -854,12 +933,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
                 .serviceDetails(
                         "JavaDownload",
                         "ListWorkRequestLogs",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequestLogEntry/ListWorkRequestLogs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/")
@@ -891,12 +974,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
                 .serviceDetails(
                         "JavaDownload",
                         "ListWorkRequests",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/ListWorkRequests")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/")
@@ -934,12 +1021,15 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getRequestSummarizedJavaDownloadCountsDetails(),
                 "requestSummarizedJavaDownloadCountsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, RequestSummarizedJavaDownloadCountsResponse::builder)
                 .logger(LOG, "requestSummarizedJavaDownloadCounts")
                 .serviceDetails(
                         "JavaDownload",
                         "RequestSummarizedJavaDownloadCounts",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadCountAggregation/RequestSummarizedJavaDownloadCounts")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestSummarizedJavaDownloadCountsRequest::builder)
                 .basePath("/")
@@ -976,12 +1066,16 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getUpdateJavaDownloadTokenDetails(),
                 "updateJavaDownloadTokenDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("javaDownloadTokenId", request.getJavaDownloadTokenId());
+
         return clientCall(request, UpdateJavaDownloadTokenResponse::builder)
                 .logger(LOG, "updateJavaDownloadToken")
                 .serviceDetails(
                         "JavaDownload",
                         "UpdateJavaDownloadToken",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/UpdateJavaDownloadToken")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateJavaDownloadTokenRequest::builder)
                 .basePath("/")
@@ -1016,12 +1110,17 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getUpdateJavaLicenseAcceptanceRecordDetails(),
                 "updateJavaLicenseAcceptanceRecordDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "javaLicenseAcceptanceRecordId", request.getJavaLicenseAcceptanceRecordId());
+
         return clientCall(request, UpdateJavaLicenseAcceptanceRecordResponse::builder)
                 .logger(LOG, "updateJavaLicenseAcceptanceRecord")
                 .serviceDetails(
                         "JavaDownload",
                         "UpdateJavaLicenseAcceptanceRecord",
                         "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/UpdateJavaLicenseAcceptanceRecord")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateJavaLicenseAcceptanceRecordRequest::builder)
                 .basePath("/")

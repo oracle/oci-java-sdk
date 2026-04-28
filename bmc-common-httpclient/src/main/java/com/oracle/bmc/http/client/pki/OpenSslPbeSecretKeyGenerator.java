@@ -59,12 +59,17 @@ class OpenSslPbeSecretKeyGenerator {
         int bytesNeeded = keyLength / 8;
         byte[] key = new byte[bytesNeeded];
         int offset = 0;
+        byte[] previousDigest = null;
 
         for (; ; ) {
+            if (previousDigest != null) {
+                digest.update(previousDigest, 0, previousDigest.length);
+            }
             digest.update(password, 0, password.length);
             digest.update(salt, 0, salt.length);
 
             final byte[] digested = digest.digest();
+            previousDigest = digested;
 
             int len = (bytesNeeded > digested.length) ? digested.length : bytesNeeded;
             System.arraycopy(digested, 0, key, offset, len);

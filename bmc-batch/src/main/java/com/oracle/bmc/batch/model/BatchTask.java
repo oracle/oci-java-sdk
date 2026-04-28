@@ -22,7 +22,10 @@ package com.oracle.bmc.batch.model;
         property = "type",
         defaultImpl = BatchTask.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ComputeTask.class, name = "COMPUTE")
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ComputeTask.class,
+            name = "COMPUTE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GroupTask.class, name = "GROUP")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -31,6 +34,8 @@ public class BatchTask extends com.oracle.bmc.http.client.internal.ExplicitlySet
     @java.beans.ConstructorProperties({
         "id",
         "name",
+        "hierarchicalName",
+        "groupTaskName",
         "description",
         "lifecycleState",
         "lifecycleDetails",
@@ -41,6 +46,8 @@ public class BatchTask extends com.oracle.bmc.http.client.internal.ExplicitlySet
     protected BatchTask(
             String id,
             String name,
+            String hierarchicalName,
+            String groupTaskName,
             String description,
             LifecycleState lifecycleState,
             String lifecycleDetails,
@@ -50,6 +57,8 @@ public class BatchTask extends com.oracle.bmc.http.client.internal.ExplicitlySet
         super();
         this.id = id;
         this.name = name;
+        this.hierarchicalName = hierarchicalName;
+        this.groupTaskName = groupTaskName;
         this.description = description;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -82,6 +91,38 @@ public class BatchTask extends com.oracle.bmc.http.client.internal.ExplicitlySet
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * The hierarchical name of the task, which incorporates names of all parent group tasks,
+     * separated by "." (dot symbol). Maximum nesting depth is 4 levels. Example:
+     * groupTaskA.nestedGroupTaskB.thisTaskName
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("hierarchicalName")
+    private final String hierarchicalName;
+
+    /**
+     * The hierarchical name of the task, which incorporates names of all parent group tasks,
+     * separated by "." (dot symbol). Maximum nesting depth is 4 levels. Example:
+     * groupTaskA.nestedGroupTaskB.thisTaskName
+     *
+     * @return the value
+     */
+    public String getHierarchicalName() {
+        return hierarchicalName;
+    }
+
+    /** The hierarchical name of the group task. Null for top-level tasks. */
+    @com.fasterxml.jackson.annotation.JsonProperty("groupTaskName")
+    private final String groupTaskName;
+
+    /**
+     * The hierarchical name of the group task. Null for top-level tasks.
+     *
+     * @return the value
+     */
+    public String getGroupTaskName() {
+        return groupTaskName;
     }
 
     /** An optional description that provides additional context next to the displayName. */
@@ -191,12 +232,18 @@ public class BatchTask extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return entitlementClaims;
     }
 
-    /** A list of tasks from the same job this task depends on referenced by name. */
+    /**
+     * A list of tasks on which this tasks depends, referenced by name. Dependencies must be within
+     * the same parent (job or group task). For tasks within a group task, all dependencies must
+     * also be within that same group task.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dependencies")
     private final java.util.List<String> dependencies;
 
     /**
-     * A list of tasks from the same job this task depends on referenced by name.
+     * A list of tasks on which this tasks depends, referenced by name. Dependencies must be within
+     * the same parent (job or group task). For tasks within a group task, all dependencies must
+     * also be within that same group task.
      *
      * @return the value
      */
@@ -234,6 +281,8 @@ public class BatchTask extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", hierarchicalName=").append(String.valueOf(this.hierarchicalName));
+        sb.append(", groupTaskName=").append(String.valueOf(this.groupTaskName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -256,6 +305,8 @@ public class BatchTask extends com.oracle.bmc.http.client.internal.ExplicitlySet
         BatchTask other = (BatchTask) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.hierarchicalName, other.hierarchicalName)
+                && java.util.Objects.equals(this.groupTaskName, other.groupTaskName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -271,6 +322,12 @@ public class BatchTask extends com.oracle.bmc.http.client.internal.ExplicitlySet
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hierarchicalName == null ? 43 : this.hierarchicalName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupTaskName == null ? 43 : this.groupTaskName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =
                 (result * PRIME)
@@ -294,6 +351,7 @@ public class BatchTask extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /** Type of the batch task. Also serves as a discriminator for sub-entities. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Compute("COMPUTE"),
+        Group("GROUP"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
