@@ -85,6 +85,7 @@ class JerseyHttpResponse implements HttpResponse {
 
             return CompletableFuture.completedFuture(inputStream);
         } catch (Exception e) {
+            closeResponseSilently();
             return failedFuture(e);
         } finally {
             if (contentType != null) {
@@ -140,6 +141,14 @@ class JerseyHttpResponse implements HttpResponse {
         }
         // todo: is this correct? we still need to keep an inputstream returned by body() available
         response.close();
+    }
+
+    private void closeResponseSilently() {
+        try {
+            response.close();
+        } catch (Exception closeException) {
+            log.debug("Exception while closing response", closeException);
+        }
     }
 
     private static <T> CompletableFuture<T> failedFuture(Throwable failure) {

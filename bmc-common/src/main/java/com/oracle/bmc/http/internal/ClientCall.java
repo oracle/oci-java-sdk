@@ -109,6 +109,8 @@ public final class ClientCall<
     private Executor offloadExecutor = null;
     private boolean firstAttempt = true;
     private BiConsumer<RESP_BUILDER, Object> responseEventStreamHandler;
+    private volatile boolean syncCallInterrupted = false;
+    private volatile HttpResponse pendingSyncResponse;
 
     // Unless overridden, throw BmcException when receive a response error.
     @SuppressWarnings("rawtypes")
@@ -745,7 +747,19 @@ public final class ClientCall<
                         });
             }
             if (responseBodyUnwrappedType == InputStream.class) {
-                future = rawResponse.streamBody();
+                future =
+                        rawResponse
+                                .streamBody()
+                                .thenCompose(
+                                        deserialized -> {
+                                            if (syncCallInterrupted) {
+                                                closeStreamSilently((InputStream) deserialized);
+                                                closeResponseSilently(rawResponse);
+                                                return ClientCall.failedFuture(
+                                                        new InterruptedException());
+                                            }
+                                            return CompletableFuture.completedFuture(deserialized);
+                                        });
             } else if (responseBodyUnwrappedType == String.class) {
                 future = rawResponse.textBody();
                 if (APPLICATION_JSON_TYPE.equalsIgnoreCase(
@@ -796,6 +810,43 @@ public final class ClientCall<
             built = interceptResponse.apply(built);
         }
         return built;
+    }
+
+    private HttpResponse trackPendingSyncResponse(HttpResponse response) {
+        pendingSyncResponse = response;
+        if (syncCallInterrupted) {
+            closePendingSyncResponse();
+        }
+        return response;
+    }
+
+    private void closePendingSyncResponse() {
+        HttpResponse response = pendingSyncResponse;
+        pendingSyncResponse = null;
+        closeResponseSilently(response);
+    }
+
+    private void clearPendingSyncResponse() {
+        pendingSyncResponse = null;
+    }
+
+    private void closeResponseSilently(HttpResponse response) {
+        if (response == null) {
+            return;
+        }
+        try {
+            response.close();
+        } catch (Exception e) {
+            logger.debug("Failed to close interrupted response", e);
+        }
+    }
+
+    private void closeStreamSilently(InputStream stream) {
+        try {
+            stream.close();
+        } catch (IOException e) {
+            logger.debug("Failed to close interrupted response stream", e);
+        }
     }
 
     private static <T> CompletionStage<T> failedFuture(Throwable t) {
@@ -1045,6 +1096,7 @@ public final class ClientCall<
                                                 }
                                             })
                                     .thenCompose(Function.identity());
+                    upstream = upstream.thenApply(this::trackPendingSyncResponse);
                 } catch (Exception e) {
                     return failedFuture(e);
                 }
@@ -1085,6 +1137,7 @@ public final class ClientCall<
                                                 }
                                             })
                                     .thenCompose(Function.identity());
+                    upstream = upstream.thenApply(this::trackPendingSyncResponse);
                 } catch (Exception e) {
                     addToHistory(e);
                     circuitBreaker.onError(
@@ -1169,10 +1222,20 @@ public final class ClientCall<
         waiterScheduler = WaiterScheduler.SYNC;
         SyncFutureWaiter futureWaiter = new SyncFutureWaiter();
         offloadExecutor = futureWaiter;
+        syncCallInterrupted = false;
+        clearPendingSyncResponse();
         httpRequest = httpRequest.offloadExecutor(offloadExecutor);
+        CompletionStage<RESP> stage = callAsync0(null);
+        stage.whenComplete((resp, exc) -> clearPendingSyncResponse());
 
         try {
-            return futureWaiter.listenForResult(callAsync0(null));
+            return futureWaiter.listenForResult(stage);
+        } catch (InterruptedException e) {
+            syncCallInterrupted = true;
+            closePendingSyncResponse();
+            stage.toCompletableFuture().cancel(true);
+            Thread.currentThread().interrupt();
+            throw BmcException.createClientSide("Unknown error", e, null, buildServiceDetails());
         } catch (SdkRuntimeException e) {
             throw e;
         } catch (Throwable e) {
