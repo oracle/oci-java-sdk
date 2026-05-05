@@ -34,7 +34,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
@@ -46,6 +49,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -860,6 +864,63 @@ public class ClientCallTest {
             assertEquals(contentType, headers.get(CONTENT_TYPE));
             assertEquals(contentLength, headers.get(CONTENT_LENGTH));
             assertEquals(contentEncoding, headers.get(CONTENT_ENCODING));
+        }
+
+        @Test
+        public void testInterruptedSyncStreamingCallClosesPendingResponse() throws Exception {
+            Map<String, List<String>> headers = new HashMap<>();
+            CompletableFuture<InputStream> bodyFuture = new CompletableFuture<>();
+            InputStream mockStream = mock(InputStream.class);
+            CountDownLatch streamRequested = new CountDownLatch(1);
+            CountDownLatch streamClosed = new CountDownLatch(1);
+            AtomicReference<Throwable> failure = new AtomicReference<>();
+
+            when(mockResponse.headers()).thenReturn(headers);
+            when(mockResponse.status()).thenReturn(200);
+            when(mockResponse.streamBody())
+                    .thenAnswer(
+                            invocation -> {
+                                streamRequested.countDown();
+                                return bodyFuture;
+                            });
+            doAnswer(
+                            invocation -> {
+                                streamClosed.countDown();
+                                return null;
+                            })
+                    .when(mockStream)
+                    .close();
+
+            Thread worker =
+                    new Thread(
+                            () -> {
+                                try {
+                                    ClientCall.builder(
+                                                    mockClient, new TestRequest(), responseBuilder)
+                                            .logger(mockLogger, "mockLogger")
+                                            .method(Method.GET)
+                                            .handleBody(
+                                                    InputStream.class,
+                                                    TestResponse.Builder::inputStream)
+                                            .callSync();
+                                    fail("Expected interrupted call to fail");
+                                } catch (Throwable t) {
+                                    failure.set(t);
+                                }
+                            });
+
+            worker.start();
+            assertTrue(streamRequested.await(5, TimeUnit.SECONDS));
+
+            worker.interrupt();
+            worker.join(5000);
+
+            assertThat(failure.get(), instanceOf(BmcException.class));
+            assertThat(failure.get().getCause(), instanceOf(InterruptedException.class));
+            verify(mockResponse).close();
+
+            bodyFuture.complete(mockStream);
+            assertTrue(streamClosed.await(5, TimeUnit.SECONDS));
         }
 
         @Test

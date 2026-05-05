@@ -712,6 +712,8 @@ public final class DedicatedAiCluster
         LargeGeneric2("LARGE_GENERIC_2"),
         LargeGenericV2("LARGE_GENERIC_V2"),
         LargeGenericV3("LARGE_GENERIC_V3"),
+        LargeGenericV4("LARGE_GENERIC_V4"),
+        LargeGenericV5("LARGE_GENERIC_V5"),
         CohereH100X1("COHERE_H100_X1"),
         CohereA10080GX1("COHERE_A100_80G_X1"),
         CohereA10040GX1("COHERE_A100_40G_X1"),
