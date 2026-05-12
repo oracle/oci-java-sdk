@@ -25,6 +25,7 @@ public final class CreateDigitalTwinInstanceDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "iotDomainId",
+        "connectivityType",
         "authId",
         "externalKey",
         "displayName",
@@ -32,11 +33,13 @@ public final class CreateDigitalTwinInstanceDetails
         "digitalTwinAdapterId",
         "digitalTwinModelId",
         "digitalTwinModelSpecUri",
+        "gateways",
         "freeformTags",
         "definedTags"
     })
     public CreateDigitalTwinInstanceDetails(
             String iotDomainId,
+            DigitalTwinInstanceConnectivityType connectivityType,
             String authId,
             String externalKey,
             String displayName,
@@ -44,10 +47,12 @@ public final class CreateDigitalTwinInstanceDetails
             String digitalTwinAdapterId,
             String digitalTwinModelId,
             String digitalTwinModelSpecUri,
+            java.util.List<String> gateways,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.iotDomainId = iotDomainId;
+        this.connectivityType = connectivityType;
         this.authId = authId;
         this.externalKey = externalKey;
         this.displayName = displayName;
@@ -55,6 +60,7 @@ public final class CreateDigitalTwinInstanceDetails
         this.digitalTwinAdapterId = digitalTwinAdapterId;
         this.digitalTwinModelId = digitalTwinModelId;
         this.digitalTwinModelSpecUri = digitalTwinModelSpecUri;
+        this.gateways = gateways;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -78,6 +84,21 @@ public final class CreateDigitalTwinInstanceDetails
         public Builder iotDomainId(String iotDomainId) {
             this.iotDomainId = iotDomainId;
             this.__explicitlySet__.add("iotDomainId");
+            return this;
+        }
+        /** Connectivity type of the digital twin instance */
+        @com.fasterxml.jackson.annotation.JsonProperty("connectivityType")
+        private DigitalTwinInstanceConnectivityType connectivityType;
+
+        /**
+         * Connectivity type of the digital twin instance
+         *
+         * @param connectivityType the value to set
+         * @return this builder
+         */
+        public Builder connectivityType(DigitalTwinInstanceConnectivityType connectivityType) {
+            this.connectivityType = connectivityType;
+            this.__explicitlySet__.add("connectivityType");
             return this;
         }
         /**
@@ -212,6 +233,27 @@ public final class CreateDigitalTwinInstanceDetails
             return this;
         }
         /**
+         * An array of unique ids
+         * ([OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
+         * IoT digital twin instances with connectivityType equals to GATEWAY.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("gateways")
+        private java.util.List<String> gateways;
+
+        /**
+         * An array of unique ids
+         * ([OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
+         * IoT digital twin instances with connectivityType equals to GATEWAY.
+         *
+         * @param gateways the value to set
+         * @return this builder
+         */
+        public Builder gateways(java.util.List<String> gateways) {
+            this.gateways = gateways;
+            this.__explicitlySet__.add("gateways");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -270,6 +312,7 @@ public final class CreateDigitalTwinInstanceDetails
             CreateDigitalTwinInstanceDetails model =
                     new CreateDigitalTwinInstanceDetails(
                             this.iotDomainId,
+                            this.connectivityType,
                             this.authId,
                             this.externalKey,
                             this.displayName,
@@ -277,6 +320,7 @@ public final class CreateDigitalTwinInstanceDetails
                             this.digitalTwinAdapterId,
                             this.digitalTwinModelId,
                             this.digitalTwinModelSpecUri,
+                            this.gateways,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -289,6 +333,9 @@ public final class CreateDigitalTwinInstanceDetails
         public Builder copy(CreateDigitalTwinInstanceDetails model) {
             if (model.wasPropertyExplicitlySet("iotDomainId")) {
                 this.iotDomainId(model.getIotDomainId());
+            }
+            if (model.wasPropertyExplicitlySet("connectivityType")) {
+                this.connectivityType(model.getConnectivityType());
             }
             if (model.wasPropertyExplicitlySet("authId")) {
                 this.authId(model.getAuthId());
@@ -310,6 +357,9 @@ public final class CreateDigitalTwinInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("digitalTwinModelSpecUri")) {
                 this.digitalTwinModelSpecUri(model.getDigitalTwinModelSpecUri());
+            }
+            if (model.wasPropertyExplicitlySet("gateways")) {
+                this.gateways(model.getGateways());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -345,6 +395,19 @@ public final class CreateDigitalTwinInstanceDetails
      */
     public String getIotDomainId() {
         return iotDomainId;
+    }
+
+    /** Connectivity type of the digital twin instance */
+    @com.fasterxml.jackson.annotation.JsonProperty("connectivityType")
+    private final DigitalTwinInstanceConnectivityType connectivityType;
+
+    /**
+     * Connectivity type of the digital twin instance
+     *
+     * @return the value
+     */
+    public DigitalTwinInstanceConnectivityType getConnectivityType() {
+        return connectivityType;
     }
 
     /**
@@ -465,6 +528,25 @@ public final class CreateDigitalTwinInstanceDetails
     }
 
     /**
+     * An array of unique ids
+     * ([OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT
+     * digital twin instances with connectivityType equals to GATEWAY.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("gateways")
+    private final java.util.List<String> gateways;
+
+    /**
+     * An array of unique ids
+     * ([OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT
+     * digital twin instances with connectivityType equals to GATEWAY.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getGateways() {
+        return gateways;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -526,6 +608,7 @@ public final class CreateDigitalTwinInstanceDetails
         sb.append("CreateDigitalTwinInstanceDetails(");
         sb.append("super=").append(super.toString());
         sb.append("iotDomainId=").append(String.valueOf(this.iotDomainId));
+        sb.append(", connectivityType=").append(String.valueOf(this.connectivityType));
         sb.append(", authId=").append(String.valueOf(this.authId));
         sb.append(", externalKey=").append(String.valueOf(this.externalKey));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -534,6 +617,7 @@ public final class CreateDigitalTwinInstanceDetails
         sb.append(", digitalTwinModelId=").append(String.valueOf(this.digitalTwinModelId));
         sb.append(", digitalTwinModelSpecUri=")
                 .append(String.valueOf(this.digitalTwinModelSpecUri));
+        sb.append(", gateways=").append(String.valueOf(this.gateways));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -551,6 +635,7 @@ public final class CreateDigitalTwinInstanceDetails
 
         CreateDigitalTwinInstanceDetails other = (CreateDigitalTwinInstanceDetails) o;
         return java.util.Objects.equals(this.iotDomainId, other.iotDomainId)
+                && java.util.Objects.equals(this.connectivityType, other.connectivityType)
                 && java.util.Objects.equals(this.authId, other.authId)
                 && java.util.Objects.equals(this.externalKey, other.externalKey)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -559,6 +644,7 @@ public final class CreateDigitalTwinInstanceDetails
                 && java.util.Objects.equals(this.digitalTwinModelId, other.digitalTwinModelId)
                 && java.util.Objects.equals(
                         this.digitalTwinModelSpecUri, other.digitalTwinModelSpecUri)
+                && java.util.Objects.equals(this.gateways, other.gateways)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -569,6 +655,9 @@ public final class CreateDigitalTwinInstanceDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.iotDomainId == null ? 43 : this.iotDomainId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectivityType == null ? 43 : this.connectivityType.hashCode());
         result = (result * PRIME) + (this.authId == null ? 43 : this.authId.hashCode());
         result = (result * PRIME) + (this.externalKey == null ? 43 : this.externalKey.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
@@ -588,6 +677,7 @@ public final class CreateDigitalTwinInstanceDetails
                         + (this.digitalTwinModelSpecUri == null
                                 ? 43
                                 : this.digitalTwinModelSpecUri.hashCode());
+        result = (result * PRIME) + (this.gateways == null ? 43 : this.gateways.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

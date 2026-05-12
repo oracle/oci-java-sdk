@@ -24,10 +24,13 @@ package com.oracle.bmc.iot.model;
 public final class DigitalTwinAdapterEnvelopeMapping
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"timeObserved"})
-    public DigitalTwinAdapterEnvelopeMapping(String timeObserved) {
+    @java.beans.ConstructorProperties({"timeObserved", "target", "contentRoot"})
+    public DigitalTwinAdapterEnvelopeMapping(
+            String timeObserved, String target, String contentRoot) {
         super();
         this.timeObserved = timeObserved;
+        this.target = target;
+        this.contentRoot = contentRoot;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -57,13 +60,52 @@ public final class DigitalTwinAdapterEnvelopeMapping
             this.__explicitlySet__.add("timeObserved");
             return this;
         }
+        /**
+         * Optional. JQ expression to map the target resource, which is externalKey of digital twin
+         * instance, the incoming data belongs to.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("target")
+        private String target;
+
+        /**
+         * Optional. JQ expression to map the target resource, which is externalKey of digital twin
+         * instance, the incoming data belongs to.
+         *
+         * @param target the value to set
+         * @return this builder
+         */
+        public Builder target(String target) {
+            this.target = target;
+            this.__explicitlySet__.add("target");
+            return this;
+        }
+        /**
+         * JSON Path string to override the context root before delegating to the adapter of the
+         * target digital twin instance.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("contentRoot")
+        private String contentRoot;
+
+        /**
+         * JSON Path string to override the context root before delegating to the adapter of the
+         * target digital twin instance.
+         *
+         * @param contentRoot the value to set
+         * @return this builder
+         */
+        public Builder contentRoot(String contentRoot) {
+            this.contentRoot = contentRoot;
+            this.__explicitlySet__.add("contentRoot");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DigitalTwinAdapterEnvelopeMapping build() {
             DigitalTwinAdapterEnvelopeMapping model =
-                    new DigitalTwinAdapterEnvelopeMapping(this.timeObserved);
+                    new DigitalTwinAdapterEnvelopeMapping(
+                            this.timeObserved, this.target, this.contentRoot);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -74,6 +116,12 @@ public final class DigitalTwinAdapterEnvelopeMapping
         public Builder copy(DigitalTwinAdapterEnvelopeMapping model) {
             if (model.wasPropertyExplicitlySet("timeObserved")) {
                 this.timeObserved(model.getTimeObserved());
+            }
+            if (model.wasPropertyExplicitlySet("target")) {
+                this.target(model.getTarget());
+            }
+            if (model.wasPropertyExplicitlySet("contentRoot")) {
+                this.contentRoot(model.getContentRoot());
             }
             return this;
         }
@@ -111,6 +159,40 @@ public final class DigitalTwinAdapterEnvelopeMapping
         return timeObserved;
     }
 
+    /**
+     * Optional. JQ expression to map the target resource, which is externalKey of digital twin
+     * instance, the incoming data belongs to.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("target")
+    private final String target;
+
+    /**
+     * Optional. JQ expression to map the target resource, which is externalKey of digital twin
+     * instance, the incoming data belongs to.
+     *
+     * @return the value
+     */
+    public String getTarget() {
+        return target;
+    }
+
+    /**
+     * JSON Path string to override the context root before delegating to the adapter of the target
+     * digital twin instance.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("contentRoot")
+    private final String contentRoot;
+
+    /**
+     * JSON Path string to override the context root before delegating to the adapter of the target
+     * digital twin instance.
+     *
+     * @return the value
+     */
+    public String getContentRoot() {
+        return contentRoot;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -127,6 +209,8 @@ public final class DigitalTwinAdapterEnvelopeMapping
         sb.append("DigitalTwinAdapterEnvelopeMapping(");
         sb.append("super=").append(super.toString());
         sb.append("timeObserved=").append(String.valueOf(this.timeObserved));
+        sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", contentRoot=").append(String.valueOf(this.contentRoot));
         sb.append(")");
         return sb.toString();
     }
@@ -142,6 +226,8 @@ public final class DigitalTwinAdapterEnvelopeMapping
 
         DigitalTwinAdapterEnvelopeMapping other = (DigitalTwinAdapterEnvelopeMapping) o;
         return java.util.Objects.equals(this.timeObserved, other.timeObserved)
+                && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.contentRoot, other.contentRoot)
                 && super.equals(other);
     }
 
@@ -150,6 +236,8 @@ public final class DigitalTwinAdapterEnvelopeMapping
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.timeObserved == null ? 43 : this.timeObserved.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result = (result * PRIME) + (this.contentRoot == null ? 43 : this.contentRoot.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

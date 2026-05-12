@@ -1,0 +1,111 @@
+/**
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.databasetoolsruntime.model;
+
+/**
+ * Contains the details for the SQL statements to execute on the database connection. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
+ * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
+ * fields into account. The constructor, on the other hand, does not take the explicitly set fields
+ * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
+ * null}).
+ */
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230222")
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type",
+        defaultImpl = ExecuteSqlResponse.class)
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ExecuteSqlResponseStandard.class,
+            name = "STANDARD"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ExecuteSqlResponseScript.class,
+            name = "SCRIPT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ExecuteSqlResponseBatch.class,
+            name = "BATCH")
+})
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+public class ExecuteSqlResponse extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    @Deprecated
+    @java.beans.ConstructorProperties({"env", "version"})
+    protected ExecuteSqlResponse(ExecuteSqlResponseEnv env, String version) {
+        super();
+        this.env = env;
+        this.version = version;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("env")
+    private final ExecuteSqlResponseEnv env;
+
+    public ExecuteSqlResponseEnv getEnv() {
+        return env;
+    }
+
+    /** Script version */
+    @com.fasterxml.jackson.annotation.JsonProperty("version")
+    private final String version;
+
+    /**
+     * Script version
+     *
+     * @return the value
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     *
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ExecuteSqlResponse(");
+        sb.append("super=").append(super.toString());
+        sb.append("env=").append(String.valueOf(this.env));
+        sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ExecuteSqlResponse)) {
+            return false;
+        }
+
+        ExecuteSqlResponse other = (ExecuteSqlResponse) o;
+        return java.util.Objects.equals(this.env, other.env)
+                && java.util.Objects.equals(this.version, other.version)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.env == null ? 43 : this.env.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + super.hashCode();
+        return result;
+    }
+}

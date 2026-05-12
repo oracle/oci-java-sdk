@@ -12,6 +12,14 @@ public enum ImportedModelCapability implements com.oracle.bmc.http.internal.BmcE
     Embedding("EMBEDDING"),
     Rerank("RERANK"),
     TextToImage("TEXT_TO_IMAGE"),
+    ImageTextToImage("IMAGE_TEXT_TO_IMAGE"),
+    ImageTextToVideo("IMAGE_TEXT_TO_VIDEO"),
+    ImageToImage("IMAGE_TO_IMAGE"),
+    Realtime("REALTIME"),
+    AudioToAudio("AUDIO_TO_AUDIO"),
+    AudioToText("AUDIO_TO_TEXT"),
+    TextToAudio("TEXT_TO_AUDIO"),
+    TextToVideo("TEXT_TO_VIDEO"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

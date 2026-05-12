@@ -27,7 +27,10 @@ package com.oracle.bmc.databasetools.model;
             name = "NO_PROXY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DatabaseToolsConnectionOracleDatabaseProxyClientUserNameSummary.class,
-            name = "USER_NAME")
+            name = "USER_NAME"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DatabaseToolsConnectionOracleDatabaseProxyClientUserNameAutoDetectSummary.class,
+            name = "USER_NAME_AUTO_DETECT")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

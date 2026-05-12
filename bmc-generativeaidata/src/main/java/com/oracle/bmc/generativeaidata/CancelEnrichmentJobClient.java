@@ -95,7 +95,10 @@ public class CancelEnrichmentJobClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, CancelEnrichmentJobResponse::builder)
                 .logger(LOG, "cancelEnrichmentJob")
-                .serviceDetails("CancelEnrichmentJob", "CancelEnrichmentJob", "")
+                .serviceDetails(
+                        "CancelEnrichmentJob",
+                        "CancelEnrichmentJob",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJob/CancelEnrichmentJob")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelEnrichmentJobRequest::builder)
                 .basePath("/20260325")

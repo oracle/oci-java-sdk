@@ -108,7 +108,10 @@ public class ListEnrichmentJobsAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListEnrichmentJobsResponse::builder)
                 .logger(LOG, "listEnrichmentJobs")
-                .serviceDetails("ListEnrichmentJobs", "ListEnrichmentJobs", "")
+                .serviceDetails(
+                        "ListEnrichmentJobs",
+                        "ListEnrichmentJobs",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJobCollection/ListEnrichmentJobs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListEnrichmentJobsRequest::builder)
                 .basePath("/20260325")

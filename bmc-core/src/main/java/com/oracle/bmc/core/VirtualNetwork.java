@@ -4391,6 +4391,53 @@ public interface VirtualNetwork extends AutoCloseable {
     ModifyVcnCidrResponse modifyVcnCidr(ModifyVcnCidrRequest request);
 
     /**
+     * Updates a Subnet by evaluating a sequence of patch instructions (JSON List Patch). This
+     * operation is restricted to IPv6 CIDR-related fields only. Supported selections (exact match)
+     * are: - ipv6CidrBlock - ipv6CidrBlocks Only the REPLACE operation is supported. The request
+     * must include the If-Match header for optimistic concurrency control. This is an asynchronous
+     * operation. The subnet\u2019s lifecycleState is set to UPDATING while the patch work request
+     * is in progress, and changes back to AVAILABLE after the patch operation is complete. All
+     * patch instructions are applied atomically as a single operation; either all succeed or none
+     * are applied.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/PatchSubnetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchSubnet API.
+     */
+    PatchSubnetResponse patchSubnet(PatchSubnetRequest request);
+
+    /**
+     * Updates a VCN by evaluating a sequence of patch instructions (JSON List Patch). This
+     * operation is restricted to IPv6 CIDR-related fields only. Supported selections (exact match)
+     * are: - ipv6CidrBlock - ipv6PublicCidrBlock - ipv6PrivateCidrBlocks - byoipv6CidrDetails Only
+     * the REPLACE operation is supported. The request must include the If-Match header for
+     * optimistic concurrency control. This is an asynchronous operation. The VCN\u2019s
+     * lifecycleState is set to UPDATING while the patch work request is in progress, and changes
+     * back to AVAILABLE after the patch operation is complete. All patch instructions are applied
+     * atomically as a single operation; either all succeed or none are applied. NOTE:
+     * `ipv6PublicCidrBlock` represents Oracle provided GUA on VCN. With PATCH API, customer can
+     * only remove it if present. Since this is Oracle provided CIDR, there is no concept of
+     * replacing with customer provided CIDR.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/PatchVcnExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchVcn API.
+     */
+    PatchVcnResponse patchVcn(PatchVcnRequest request);
+
+    /**
      * Unassign the specified PrivateIP address from Virtual Network Interface Card (VNIC). You must
      * specify the PrivateIP
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

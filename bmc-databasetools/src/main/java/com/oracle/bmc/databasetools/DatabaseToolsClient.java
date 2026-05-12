@@ -134,10 +134,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, AddDatabaseToolsConnectionLockResponse::builder)
                 .logger(LOG, "addDatabaseToolsConnectionLock")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "AddDatabaseToolsConnectionLock",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/AddDatabaseToolsConnectionLock")
+                .serviceDetails("DatabaseTools", "AddDatabaseToolsConnectionLock", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDatabaseToolsConnectionLockRequest::builder)
                 .basePath("/20201005")
@@ -161,6 +158,44 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public AddDatabaseToolsDatabaseApiGatewayConfigLockResponse
+            addDatabaseToolsDatabaseApiGatewayConfigLock(
+                    AddDatabaseToolsDatabaseApiGatewayConfigLockRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsDatabaseApiGatewayConfigId(),
+                "databaseToolsDatabaseApiGatewayConfigId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddDatabaseToolsDatabaseApiGatewayConfigLockResponse::builder)
+                .logger(LOG, "addDatabaseToolsDatabaseApiGatewayConfigLock")
+                .serviceDetails("DatabaseTools", "AddDatabaseToolsDatabaseApiGatewayConfigLock", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDatabaseToolsDatabaseApiGatewayConfigLockRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsDatabaseApiGatewayConfigs")
+                .appendPathParam(request.getDatabaseToolsDatabaseApiGatewayConfigId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsDatabaseApiGatewayConfig
+                                .class,
+                        AddDatabaseToolsDatabaseApiGatewayConfigLockResponse.Builder
+                                ::databaseToolsDatabaseApiGatewayConfig)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddDatabaseToolsDatabaseApiGatewayConfigLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", AddDatabaseToolsDatabaseApiGatewayConfigLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public AddDatabaseToolsIdentityLockResponse addDatabaseToolsIdentityLock(
             AddDatabaseToolsIdentityLockRequest request) {
 
@@ -171,10 +206,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, AddDatabaseToolsIdentityLockResponse::builder)
                 .logger(LOG, "addDatabaseToolsIdentityLock")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "AddDatabaseToolsIdentityLock",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/AddDatabaseToolsIdentityLock")
+                .serviceDetails("DatabaseTools", "AddDatabaseToolsIdentityLock", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDatabaseToolsIdentityLockRequest::builder)
                 .basePath("/20201005")
@@ -198,6 +230,76 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public AddDatabaseToolsMcpServerLockResponse addDatabaseToolsMcpServerLock(
+            AddDatabaseToolsMcpServerLockRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpServerId(),
+                "databaseToolsMcpServerId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddDatabaseToolsMcpServerLockResponse::builder)
+                .logger(LOG, "addDatabaseToolsMcpServerLock")
+                .serviceDetails("DatabaseTools", "AddDatabaseToolsMcpServerLock", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDatabaseToolsMcpServerLockRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpServers")
+                .appendPathParam(request.getDatabaseToolsMcpServerId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsMcpServer.class,
+                        AddDatabaseToolsMcpServerLockResponse.Builder::databaseToolsMcpServer)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddDatabaseToolsMcpServerLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", AddDatabaseToolsMcpServerLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public AddDatabaseToolsMcpToolsetLockResponse addDatabaseToolsMcpToolsetLock(
+            AddDatabaseToolsMcpToolsetLockRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpToolsetId(),
+                "databaseToolsMcpToolsetId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddDatabaseToolsMcpToolsetLockResponse::builder)
+                .logger(LOG, "addDatabaseToolsMcpToolsetLock")
+                .serviceDetails("DatabaseTools", "AddDatabaseToolsMcpToolsetLock", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDatabaseToolsMcpToolsetLockRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpToolsets")
+                .appendPathParam(request.getDatabaseToolsMcpToolsetId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsMcpToolset.class,
+                        AddDatabaseToolsMcpToolsetLockResponse.Builder::databaseToolsMcpToolset)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddDatabaseToolsMcpToolsetLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", AddDatabaseToolsMcpToolsetLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public AddDatabaseToolsPrivateEndpointLockResponse addDatabaseToolsPrivateEndpointLock(
             AddDatabaseToolsPrivateEndpointLockRequest request) {
 
@@ -209,10 +311,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, AddDatabaseToolsPrivateEndpointLockResponse::builder)
                 .logger(LOG, "addDatabaseToolsPrivateEndpointLock")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "AddDatabaseToolsPrivateEndpointLock",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/AddDatabaseToolsPrivateEndpointLock")
+                .serviceDetails("DatabaseTools", "AddDatabaseToolsPrivateEndpointLock", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDatabaseToolsPrivateEndpointLockRequest::builder)
                 .basePath("/20201005")
@@ -237,6 +336,71 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public AddDatabaseToolsSqlReportLockResponse addDatabaseToolsSqlReportLock(
+            AddDatabaseToolsSqlReportLockRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsSqlReportId(),
+                "databaseToolsSqlReportId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddDatabaseToolsSqlReportLockResponse::builder)
+                .logger(LOG, "addDatabaseToolsSqlReportLock")
+                .serviceDetails("DatabaseTools", "AddDatabaseToolsSqlReportLock", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDatabaseToolsSqlReportLockRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsSqlReports")
+                .appendPathParam(request.getDatabaseToolsSqlReportId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsSqlReport.class,
+                        AddDatabaseToolsSqlReportLockResponse.Builder::databaseToolsSqlReport)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddDatabaseToolsSqlReportLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", AddDatabaseToolsSqlReportLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CascadingDeleteDatabaseToolsMcpServerResponse cascadingDeleteDatabaseToolsMcpServer(
+            CascadingDeleteDatabaseToolsMcpServerRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpServerId(),
+                "databaseToolsMcpServerId must not be blank");
+
+        return clientCall(request, CascadingDeleteDatabaseToolsMcpServerResponse::builder)
+                .logger(LOG, "cascadingDeleteDatabaseToolsMcpServer")
+                .serviceDetails("DatabaseTools", "CascadingDeleteDatabaseToolsMcpServer", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CascadingDeleteDatabaseToolsMcpServerRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpServers")
+                .appendPathParam(request.getDatabaseToolsMcpServerId())
+                .appendPathParam("actions")
+                .appendPathParam("cascadingDelete")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CascadingDeleteDatabaseToolsMcpServerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CascadingDeleteDatabaseToolsMcpServerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeDatabaseToolsConnectionCompartmentResponse
             changeDatabaseToolsConnectionCompartment(
                     ChangeDatabaseToolsConnectionCompartmentRequest request) {
@@ -250,10 +414,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ChangeDatabaseToolsConnectionCompartmentResponse::builder)
                 .logger(LOG, "changeDatabaseToolsConnectionCompartment")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "ChangeDatabaseToolsConnectionCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ChangeDatabaseToolsConnectionCompartment")
+                .serviceDetails("DatabaseTools", "ChangeDatabaseToolsConnectionCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDatabaseToolsConnectionCompartmentRequest::builder)
                 .basePath("/20201005")
@@ -276,6 +437,46 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentResponse
+            changeDatabaseToolsDatabaseApiGatewayConfigCompartment(
+                    ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsDatabaseApiGatewayConfigId(),
+                "databaseToolsDatabaseApiGatewayConfigId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentDetails(),
+                "changeDatabaseToolsDatabaseApiGatewayConfigCompartmentDetails is required");
+
+        return clientCall(
+                        request,
+                        ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentResponse::builder)
+                .logger(LOG, "changeDatabaseToolsDatabaseApiGatewayConfigCompartment")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ChangeDatabaseToolsDatabaseApiGatewayConfigCompartment",
+                        "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(
+                        ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsDatabaseApiGatewayConfigs")
+                .appendPathParam(request.getDatabaseToolsDatabaseApiGatewayConfigId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentResponse.Builder
+                                ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeDatabaseToolsIdentityCompartmentResponse changeDatabaseToolsIdentityCompartment(
             ChangeDatabaseToolsIdentityCompartmentRequest request) {
 
@@ -287,10 +488,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ChangeDatabaseToolsIdentityCompartmentResponse::builder)
                 .logger(LOG, "changeDatabaseToolsIdentityCompartment")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "ChangeDatabaseToolsIdentityCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ChangeDatabaseToolsIdentityCompartment")
+                .serviceDetails("DatabaseTools", "ChangeDatabaseToolsIdentityCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDatabaseToolsIdentityCompartmentRequest::builder)
                 .basePath("/20201005")
@@ -313,6 +511,74 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public ChangeDatabaseToolsMcpServerCompartmentResponse changeDatabaseToolsMcpServerCompartment(
+            ChangeDatabaseToolsMcpServerCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpServerId(),
+                "databaseToolsMcpServerId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDatabaseToolsMcpServerCompartmentDetails(),
+                "changeDatabaseToolsMcpServerCompartmentDetails is required");
+
+        return clientCall(request, ChangeDatabaseToolsMcpServerCompartmentResponse::builder)
+                .logger(LOG, "changeDatabaseToolsMcpServerCompartment")
+                .serviceDetails("DatabaseTools", "ChangeDatabaseToolsMcpServerCompartment", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDatabaseToolsMcpServerCompartmentRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpServers")
+                .appendPathParam(request.getDatabaseToolsMcpServerId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeDatabaseToolsMcpServerCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDatabaseToolsMcpServerCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeDatabaseToolsMcpToolsetCompartmentResponse
+            changeDatabaseToolsMcpToolsetCompartment(
+                    ChangeDatabaseToolsMcpToolsetCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpToolsetId(),
+                "databaseToolsMcpToolsetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDatabaseToolsMcpToolsetCompartmentDetails(),
+                "changeDatabaseToolsMcpToolsetCompartmentDetails is required");
+
+        return clientCall(request, ChangeDatabaseToolsMcpToolsetCompartmentResponse::builder)
+                .logger(LOG, "changeDatabaseToolsMcpToolsetCompartment")
+                .serviceDetails("DatabaseTools", "ChangeDatabaseToolsMcpToolsetCompartment", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDatabaseToolsMcpToolsetCompartmentRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpToolsets")
+                .appendPathParam(request.getDatabaseToolsMcpToolsetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDatabaseToolsMcpToolsetCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeDatabaseToolsPrivateEndpointCompartmentResponse
             changeDatabaseToolsPrivateEndpointCompartment(
                     ChangeDatabaseToolsPrivateEndpointCompartmentRequest request) {
@@ -327,9 +593,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
         return clientCall(request, ChangeDatabaseToolsPrivateEndpointCompartmentResponse::builder)
                 .logger(LOG, "changeDatabaseToolsPrivateEndpointCompartment")
                 .serviceDetails(
-                        "DatabaseTools",
-                        "ChangeDatabaseToolsPrivateEndpointCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ChangeDatabaseToolsPrivateEndpointCompartment")
+                        "DatabaseTools", "ChangeDatabaseToolsPrivateEndpointCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDatabaseToolsPrivateEndpointCompartmentRequest::builder)
                 .basePath("/20201005")
@@ -349,6 +613,38 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeDatabaseToolsPrivateEndpointCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeDatabaseToolsSqlReportCompartmentResponse changeDatabaseToolsSqlReportCompartment(
+            ChangeDatabaseToolsSqlReportCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsSqlReportId(),
+                "databaseToolsSqlReportId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDatabaseToolsSqlReportCompartmentDetails(),
+                "changeDatabaseToolsSqlReportCompartmentDetails is required");
+
+        return clientCall(request, ChangeDatabaseToolsSqlReportCompartmentResponse::builder)
+                .logger(LOG, "changeDatabaseToolsSqlReportCompartment")
+                .serviceDetails("DatabaseTools", "ChangeDatabaseToolsSqlReportCompartment", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDatabaseToolsSqlReportCompartmentRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsSqlReports")
+                .appendPathParam(request.getDatabaseToolsSqlReportId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDatabaseToolsSqlReportCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -388,6 +684,42 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public CreateDatabaseToolsDatabaseApiGatewayConfigResponse
+            createDatabaseToolsDatabaseApiGatewayConfig(
+                    CreateDatabaseToolsDatabaseApiGatewayConfigRequest request) {
+        Objects.requireNonNull(
+                request.getCreateDatabaseToolsDatabaseApiGatewayConfigDetails(),
+                "createDatabaseToolsDatabaseApiGatewayConfigDetails is required");
+
+        return clientCall(request, CreateDatabaseToolsDatabaseApiGatewayConfigResponse::builder)
+                .logger(LOG, "createDatabaseToolsDatabaseApiGatewayConfig")
+                .serviceDetails("DatabaseTools", "CreateDatabaseToolsDatabaseApiGatewayConfig", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDatabaseToolsDatabaseApiGatewayConfigRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsDatabaseApiGatewayConfigs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsDatabaseApiGatewayConfig
+                                .class,
+                        CreateDatabaseToolsDatabaseApiGatewayConfigResponse.Builder
+                                ::databaseToolsDatabaseApiGatewayConfig)
+                .handleResponseHeaderString(
+                        "location",
+                        CreateDatabaseToolsDatabaseApiGatewayConfigResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "etag", CreateDatabaseToolsDatabaseApiGatewayConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateDatabaseToolsDatabaseApiGatewayConfigResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateDatabaseToolsIdentityResponse createDatabaseToolsIdentity(
             CreateDatabaseToolsIdentityRequest request) {
         Objects.requireNonNull(
@@ -418,6 +750,76 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         CreateDatabaseToolsIdentityResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDatabaseToolsIdentityResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateDatabaseToolsMcpServerResponse createDatabaseToolsMcpServer(
+            CreateDatabaseToolsMcpServerRequest request) {
+        Objects.requireNonNull(
+                request.getCreateDatabaseToolsMcpServerDetails(),
+                "createDatabaseToolsMcpServerDetails is required");
+
+        return clientCall(request, CreateDatabaseToolsMcpServerResponse::builder)
+                .logger(LOG, "createDatabaseToolsMcpServer")
+                .serviceDetails("DatabaseTools", "CreateDatabaseToolsMcpServer", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDatabaseToolsMcpServerRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpServers")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsMcpServer.class,
+                        CreateDatabaseToolsMcpServerResponse.Builder::databaseToolsMcpServer)
+                .handleResponseHeaderString(
+                        "location", CreateDatabaseToolsMcpServerResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "etag", CreateDatabaseToolsMcpServerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateDatabaseToolsMcpServerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateDatabaseToolsMcpServerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateDatabaseToolsMcpToolsetResponse createDatabaseToolsMcpToolset(
+            CreateDatabaseToolsMcpToolsetRequest request) {
+        Objects.requireNonNull(
+                request.getCreateDatabaseToolsMcpToolsetDetails(),
+                "createDatabaseToolsMcpToolsetDetails is required");
+
+        return clientCall(request, CreateDatabaseToolsMcpToolsetResponse::builder)
+                .logger(LOG, "createDatabaseToolsMcpToolset")
+                .serviceDetails("DatabaseTools", "CreateDatabaseToolsMcpToolset", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDatabaseToolsMcpToolsetRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpToolsets")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsMcpToolset.class,
+                        CreateDatabaseToolsMcpToolsetResponse.Builder::databaseToolsMcpToolset)
+                .handleResponseHeaderString(
+                        "location", CreateDatabaseToolsMcpToolsetResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "etag", CreateDatabaseToolsMcpToolsetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateDatabaseToolsMcpToolsetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateDatabaseToolsMcpToolsetResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -458,6 +860,41 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public CreateDatabaseToolsSqlReportResponse createDatabaseToolsSqlReport(
+            CreateDatabaseToolsSqlReportRequest request) {
+        Objects.requireNonNull(
+                request.getCreateDatabaseToolsSqlReportDetails(),
+                "createDatabaseToolsSqlReportDetails is required");
+
+        return clientCall(request, CreateDatabaseToolsSqlReportResponse::builder)
+                .logger(LOG, "createDatabaseToolsSqlReport")
+                .serviceDetails("DatabaseTools", "CreateDatabaseToolsSqlReport", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDatabaseToolsSqlReportRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsSqlReports")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsSqlReport.class,
+                        CreateDatabaseToolsSqlReportResponse.Builder::databaseToolsSqlReport)
+                .handleResponseHeaderString(
+                        "location", CreateDatabaseToolsSqlReportResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "etag", CreateDatabaseToolsSqlReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateDatabaseToolsSqlReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateDatabaseToolsSqlReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteDatabaseToolsConnectionResponse deleteDatabaseToolsConnection(
             DeleteDatabaseToolsConnectionRequest request) {
 
@@ -467,10 +904,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, DeleteDatabaseToolsConnectionResponse::builder)
                 .logger(LOG, "deleteDatabaseToolsConnection")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "DeleteDatabaseToolsConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/DeleteDatabaseToolsConnection")
+                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsConnection", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDatabaseToolsConnectionRequest::builder)
                 .basePath("/20201005")
@@ -490,6 +924,33 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public DeleteDatabaseToolsDatabaseApiGatewayConfigResponse
+            deleteDatabaseToolsDatabaseApiGatewayConfig(
+                    DeleteDatabaseToolsDatabaseApiGatewayConfigRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsDatabaseApiGatewayConfigId(),
+                "databaseToolsDatabaseApiGatewayConfigId must not be blank");
+
+        return clientCall(request, DeleteDatabaseToolsDatabaseApiGatewayConfigResponse::builder)
+                .logger(LOG, "deleteDatabaseToolsDatabaseApiGatewayConfig")
+                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsDatabaseApiGatewayConfig", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDatabaseToolsDatabaseApiGatewayConfigRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsDatabaseApiGatewayConfigs")
+                .appendPathParam(request.getDatabaseToolsDatabaseApiGatewayConfigId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteDatabaseToolsDatabaseApiGatewayConfigResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteDatabaseToolsIdentityResponse deleteDatabaseToolsIdentity(
             DeleteDatabaseToolsIdentityRequest request) {
 
@@ -498,10 +959,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, DeleteDatabaseToolsIdentityResponse::builder)
                 .logger(LOG, "deleteDatabaseToolsIdentity")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "DeleteDatabaseToolsIdentity",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/DeleteDatabaseToolsIdentity")
+                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsIdentity", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDatabaseToolsIdentityRequest::builder)
                 .basePath("/20201005")
@@ -520,6 +978,64 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public DeleteDatabaseToolsMcpServerResponse deleteDatabaseToolsMcpServer(
+            DeleteDatabaseToolsMcpServerRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpServerId(),
+                "databaseToolsMcpServerId must not be blank");
+
+        return clientCall(request, DeleteDatabaseToolsMcpServerResponse::builder)
+                .logger(LOG, "deleteDatabaseToolsMcpServer")
+                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsMcpServer", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDatabaseToolsMcpServerRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpServers")
+                .appendPathParam(request.getDatabaseToolsMcpServerId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteDatabaseToolsMcpServerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteDatabaseToolsMcpServerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteDatabaseToolsMcpToolsetResponse deleteDatabaseToolsMcpToolset(
+            DeleteDatabaseToolsMcpToolsetRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpToolsetId(),
+                "databaseToolsMcpToolsetId must not be blank");
+
+        return clientCall(request, DeleteDatabaseToolsMcpToolsetResponse::builder)
+                .logger(LOG, "deleteDatabaseToolsMcpToolset")
+                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsMcpToolset", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDatabaseToolsMcpToolsetRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpToolsets")
+                .appendPathParam(request.getDatabaseToolsMcpToolsetId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteDatabaseToolsMcpToolsetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteDatabaseToolsMcpToolsetResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteDatabaseToolsPrivateEndpointResponse deleteDatabaseToolsPrivateEndpoint(
             DeleteDatabaseToolsPrivateEndpointRequest request) {
 
@@ -529,10 +1045,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, DeleteDatabaseToolsPrivateEndpointResponse::builder)
                 .logger(LOG, "deleteDatabaseToolsPrivateEndpoint")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "DeleteDatabaseToolsPrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/DeleteDatabaseToolsPrivateEndpoint")
+                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsPrivateEndpoint", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDatabaseToolsPrivateEndpointRequest::builder)
                 .basePath("/20201005")
@@ -552,6 +1065,32 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public DeleteDatabaseToolsSqlReportResponse deleteDatabaseToolsSqlReport(
+            DeleteDatabaseToolsSqlReportRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsSqlReportId(),
+                "databaseToolsSqlReportId must not be blank");
+
+        return clientCall(request, DeleteDatabaseToolsSqlReportResponse::builder)
+                .logger(LOG, "deleteDatabaseToolsSqlReport")
+                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsSqlReport", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDatabaseToolsSqlReportRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsSqlReports")
+                .appendPathParam(request.getDatabaseToolsSqlReportId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteDatabaseToolsSqlReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetDatabaseToolsConnectionResponse getDatabaseToolsConnection(
             GetDatabaseToolsConnectionRequest request) {
 
@@ -561,10 +1100,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetDatabaseToolsConnectionResponse::builder)
                 .logger(LOG, "getDatabaseToolsConnection")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "GetDatabaseToolsConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/GetDatabaseToolsConnection")
+                .serviceDetails("DatabaseTools", "GetDatabaseToolsConnection", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsConnectionRequest::builder)
                 .basePath("/20201005")
@@ -584,6 +1120,39 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public GetDatabaseToolsDatabaseApiGatewayConfigResponse
+            getDatabaseToolsDatabaseApiGatewayConfig(
+                    GetDatabaseToolsDatabaseApiGatewayConfigRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsDatabaseApiGatewayConfigId(),
+                "databaseToolsDatabaseApiGatewayConfigId must not be blank");
+
+        return clientCall(request, GetDatabaseToolsDatabaseApiGatewayConfigResponse::builder)
+                .logger(LOG, "getDatabaseToolsDatabaseApiGatewayConfig")
+                .serviceDetails("DatabaseTools", "GetDatabaseToolsDatabaseApiGatewayConfig", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseToolsDatabaseApiGatewayConfigRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsDatabaseApiGatewayConfigs")
+                .appendPathParam(request.getDatabaseToolsDatabaseApiGatewayConfigId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsDatabaseApiGatewayConfig
+                                .class,
+                        GetDatabaseToolsDatabaseApiGatewayConfigResponse.Builder
+                                ::databaseToolsDatabaseApiGatewayConfig)
+                .handleResponseHeaderString(
+                        "etag", GetDatabaseToolsDatabaseApiGatewayConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDatabaseToolsDatabaseApiGatewayConfigResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetDatabaseToolsEndpointServiceResponse getDatabaseToolsEndpointService(
             GetDatabaseToolsEndpointServiceRequest request) {
 
@@ -593,10 +1162,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetDatabaseToolsEndpointServiceResponse::builder)
                 .logger(LOG, "getDatabaseToolsEndpointService")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "GetDatabaseToolsEndpointService",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/GetDatabaseToolsEndpointService")
+                .serviceDetails("DatabaseTools", "GetDatabaseToolsEndpointService", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsEndpointServiceRequest::builder)
                 .basePath("/20201005")
@@ -626,10 +1192,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetDatabaseToolsIdentityResponse::builder)
                 .logger(LOG, "getDatabaseToolsIdentity")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "GetDatabaseToolsIdentity",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/GetDatabaseToolsIdentity")
+                .serviceDetails("DatabaseTools", "GetDatabaseToolsIdentity", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsIdentityRequest::builder)
                 .basePath("/20201005")
@@ -648,6 +1211,63 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public GetDatabaseToolsMcpServerResponse getDatabaseToolsMcpServer(
+            GetDatabaseToolsMcpServerRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpServerId(),
+                "databaseToolsMcpServerId must not be blank");
+
+        return clientCall(request, GetDatabaseToolsMcpServerResponse::builder)
+                .logger(LOG, "getDatabaseToolsMcpServer")
+                .serviceDetails("DatabaseTools", "GetDatabaseToolsMcpServer", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseToolsMcpServerRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpServers")
+                .appendPathParam(request.getDatabaseToolsMcpServerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsMcpServer.class,
+                        GetDatabaseToolsMcpServerResponse.Builder::databaseToolsMcpServer)
+                .handleResponseHeaderString("etag", GetDatabaseToolsMcpServerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDatabaseToolsMcpServerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetDatabaseToolsMcpToolsetResponse getDatabaseToolsMcpToolset(
+            GetDatabaseToolsMcpToolsetRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpToolsetId(),
+                "databaseToolsMcpToolsetId must not be blank");
+
+        return clientCall(request, GetDatabaseToolsMcpToolsetResponse::builder)
+                .logger(LOG, "getDatabaseToolsMcpToolset")
+                .serviceDetails("DatabaseTools", "GetDatabaseToolsMcpToolset", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseToolsMcpToolsetRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpToolsets")
+                .appendPathParam(request.getDatabaseToolsMcpToolsetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsMcpToolset.class,
+                        GetDatabaseToolsMcpToolsetResponse.Builder::databaseToolsMcpToolset)
+                .handleResponseHeaderString(
+                        "etag", GetDatabaseToolsMcpToolsetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDatabaseToolsMcpToolsetResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetDatabaseToolsPrivateEndpointResponse getDatabaseToolsPrivateEndpoint(
             GetDatabaseToolsPrivateEndpointRequest request) {
 
@@ -657,10 +1277,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetDatabaseToolsPrivateEndpointResponse::builder)
                 .logger(LOG, "getDatabaseToolsPrivateEndpoint")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "GetDatabaseToolsPrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/GetDatabaseToolsPrivateEndpoint")
+                .serviceDetails("DatabaseTools", "GetDatabaseToolsPrivateEndpoint", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsPrivateEndpointRequest::builder)
                 .basePath("/20201005")
@@ -682,16 +1299,41 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public GetDatabaseToolsSqlReportResponse getDatabaseToolsSqlReport(
+            GetDatabaseToolsSqlReportRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsSqlReportId(),
+                "databaseToolsSqlReportId must not be blank");
+
+        return clientCall(request, GetDatabaseToolsSqlReportResponse::builder)
+                .logger(LOG, "getDatabaseToolsSqlReport")
+                .serviceDetails("DatabaseTools", "GetDatabaseToolsSqlReport", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseToolsSqlReportRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsSqlReports")
+                .appendPathParam(request.getDatabaseToolsSqlReportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsSqlReport.class,
+                        GetDatabaseToolsSqlReportResponse.Builder::databaseToolsSqlReport)
+                .handleResponseHeaderString("etag", GetDatabaseToolsSqlReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDatabaseToolsSqlReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/GetWorkRequest")
+                .serviceDetails("DatabaseTools", "GetWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20201005")
@@ -717,10 +1359,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListDatabaseToolsConnectionsResponse::builder)
                 .logger(LOG, "listDatabaseToolsConnections")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "ListDatabaseToolsConnections",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ListDatabaseToolsConnections")
+                .serviceDetails("DatabaseTools", "ListDatabaseToolsConnections", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsConnectionsRequest::builder)
                 .basePath("/20201005")
@@ -762,16 +1401,54 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public ListDatabaseToolsDatabaseApiGatewayConfigsResponse
+            listDatabaseToolsDatabaseApiGatewayConfigs(
+                    ListDatabaseToolsDatabaseApiGatewayConfigsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDatabaseToolsDatabaseApiGatewayConfigsResponse::builder)
+                .logger(LOG, "listDatabaseToolsDatabaseApiGatewayConfigs")
+                .serviceDetails("DatabaseTools", "ListDatabaseToolsDatabaseApiGatewayConfigs", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDatabaseToolsDatabaseApiGatewayConfigsRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsDatabaseApiGatewayConfigs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "type",
+                        request.getType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model
+                                .DatabaseToolsDatabaseApiGatewayConfigCollection.class,
+                        ListDatabaseToolsDatabaseApiGatewayConfigsResponse.Builder
+                                ::databaseToolsDatabaseApiGatewayConfigCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDatabaseToolsDatabaseApiGatewayConfigsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDatabaseToolsDatabaseApiGatewayConfigsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListDatabaseToolsEndpointServicesResponse listDatabaseToolsEndpointServices(
             ListDatabaseToolsEndpointServicesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListDatabaseToolsEndpointServicesResponse::builder)
                 .logger(LOG, "listDatabaseToolsEndpointServices")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "ListDatabaseToolsEndpointServices",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/ListDatabaseToolsEndpointServices")
+                .serviceDetails("DatabaseTools", "ListDatabaseToolsEndpointServices", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsEndpointServicesRequest::builder)
                 .basePath("/20201005")
@@ -808,10 +1485,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListDatabaseToolsIdentitiesResponse::builder)
                 .logger(LOG, "listDatabaseToolsIdentities")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "ListDatabaseToolsIdentities",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ListDatabaseToolsIdentities")
+                .serviceDetails("DatabaseTools", "ListDatabaseToolsIdentities", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsIdentitiesRequest::builder)
                 .basePath("/20201005")
@@ -844,16 +1518,125 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public ListDatabaseToolsMcpServersResponse listDatabaseToolsMcpServers(
+            ListDatabaseToolsMcpServersRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDatabaseToolsMcpServersResponse::builder)
+                .logger(LOG, "listDatabaseToolsMcpServers")
+                .serviceDetails("DatabaseTools", "ListDatabaseToolsMcpServers", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDatabaseToolsMcpServersRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpServers")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam(
+                        "databaseToolsConnectionId", request.getDatabaseToolsConnectionId())
+                .appendQueryParam(
+                        "relatedResourceIdentifier", request.getRelatedResourceIdentifier())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "type",
+                        request.getType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsMcpServerCollection.class,
+                        ListDatabaseToolsMcpServersResponse.Builder
+                                ::databaseToolsMcpServerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDatabaseToolsMcpServersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDatabaseToolsMcpServersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListDatabaseToolsMcpToolsetVersionsResponse listDatabaseToolsMcpToolsetVersions(
+            ListDatabaseToolsMcpToolsetVersionsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDatabaseToolsMcpToolsetVersionsResponse::builder)
+                .logger(LOG, "listDatabaseToolsMcpToolsetVersions")
+                .serviceDetails("DatabaseTools", "ListDatabaseToolsMcpToolsetVersions", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDatabaseToolsMcpToolsetVersionsRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpToolsetVersions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("databaseToolsMcpServerId", request.getDatabaseToolsMcpServerId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsMcpToolsetVersionCollection
+                                .class,
+                        ListDatabaseToolsMcpToolsetVersionsResponse.Builder
+                                ::databaseToolsMcpToolsetVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDatabaseToolsMcpToolsetVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDatabaseToolsMcpToolsetVersionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListDatabaseToolsMcpToolsetsResponse listDatabaseToolsMcpToolsets(
+            ListDatabaseToolsMcpToolsetsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDatabaseToolsMcpToolsetsResponse::builder)
+                .logger(LOG, "listDatabaseToolsMcpToolsets")
+                .serviceDetails("DatabaseTools", "ListDatabaseToolsMcpToolsets", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDatabaseToolsMcpToolsetsRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpToolsets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "type",
+                        request.getType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("databaseToolsMcpServerId", request.getDatabaseToolsMcpServerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsMcpToolsetCollection.class,
+                        ListDatabaseToolsMcpToolsetsResponse.Builder
+                                ::databaseToolsMcpToolsetCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDatabaseToolsMcpToolsetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDatabaseToolsMcpToolsetsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListDatabaseToolsPrivateEndpointsResponse listDatabaseToolsPrivateEndpoints(
             ListDatabaseToolsPrivateEndpointsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListDatabaseToolsPrivateEndpointsResponse::builder)
                 .logger(LOG, "listDatabaseToolsPrivateEndpoints")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "ListDatabaseToolsPrivateEndpoints",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ListDatabaseToolsPrivateEndpoints")
+                .serviceDetails("DatabaseTools", "ListDatabaseToolsPrivateEndpoints", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsPrivateEndpointsRequest::builder)
                 .basePath("/20201005")
@@ -885,6 +1668,43 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public ListDatabaseToolsSqlReportsResponse listDatabaseToolsSqlReports(
+            ListDatabaseToolsSqlReportsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDatabaseToolsSqlReportsResponse::builder)
+                .logger(LOG, "listDatabaseToolsSqlReports")
+                .serviceDetails("DatabaseTools", "ListDatabaseToolsSqlReports", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDatabaseToolsSqlReportsRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsSqlReports")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "type",
+                        request.getType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsSqlReportCollection.class,
+                        ListDatabaseToolsSqlReportsResponse.Builder
+                                ::databaseToolsSqlReportCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDatabaseToolsSqlReportsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDatabaseToolsSqlReportsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
 
@@ -892,10 +1712,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestError/ListWorkRequestErrors")
+                .serviceDetails("DatabaseTools", "ListWorkRequestErrors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20201005")
@@ -926,10 +1743,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestLogEntry/ListWorkRequestLogs")
+                .serviceDetails("DatabaseTools", "ListWorkRequestLogs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20201005")
@@ -959,10 +1773,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/ListWorkRequests")
+                .serviceDetails("DatabaseTools", "ListWorkRequests", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20201005")
@@ -998,10 +1809,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RefreshDatabaseToolsIdentityCredentialResponse::builder)
                 .logger(LOG, "refreshDatabaseToolsIdentityCredential")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "RefreshDatabaseToolsIdentityCredential",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/RefreshDatabaseToolsIdentityCredential")
+                .serviceDetails("DatabaseTools", "RefreshDatabaseToolsIdentityCredential", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RefreshDatabaseToolsIdentityCredentialRequest::builder)
                 .basePath("/20201005")
@@ -1034,10 +1842,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RemoveDatabaseToolsConnectionLockResponse::builder)
                 .logger(LOG, "removeDatabaseToolsConnectionLock")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "RemoveDatabaseToolsConnectionLock",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/RemoveDatabaseToolsConnectionLock")
+                .serviceDetails("DatabaseTools", "RemoveDatabaseToolsConnectionLock", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveDatabaseToolsConnectionLockRequest::builder)
                 .basePath("/20201005")
@@ -1061,6 +1866,47 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public RemoveDatabaseToolsDatabaseApiGatewayConfigLockResponse
+            removeDatabaseToolsDatabaseApiGatewayConfigLock(
+                    RemoveDatabaseToolsDatabaseApiGatewayConfigLockRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsDatabaseApiGatewayConfigId(),
+                "databaseToolsDatabaseApiGatewayConfigId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveDatabaseToolsDatabaseApiGatewayConfigLockResponse::builder)
+                .logger(LOG, "removeDatabaseToolsDatabaseApiGatewayConfigLock")
+                .serviceDetails(
+                        "DatabaseTools", "RemoveDatabaseToolsDatabaseApiGatewayConfigLock", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDatabaseToolsDatabaseApiGatewayConfigLockRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsDatabaseApiGatewayConfigs")
+                .appendPathParam(request.getDatabaseToolsDatabaseApiGatewayConfigId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsDatabaseApiGatewayConfig
+                                .class,
+                        RemoveDatabaseToolsDatabaseApiGatewayConfigLockResponse.Builder
+                                ::databaseToolsDatabaseApiGatewayConfig)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveDatabaseToolsDatabaseApiGatewayConfigLockResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag",
+                        RemoveDatabaseToolsDatabaseApiGatewayConfigLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public RemoveDatabaseToolsIdentityLockResponse removeDatabaseToolsIdentityLock(
             RemoveDatabaseToolsIdentityLockRequest request) {
 
@@ -1071,10 +1917,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RemoveDatabaseToolsIdentityLockResponse::builder)
                 .logger(LOG, "removeDatabaseToolsIdentityLock")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "RemoveDatabaseToolsIdentityLock",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/RemoveDatabaseToolsIdentityLock")
+                .serviceDetails("DatabaseTools", "RemoveDatabaseToolsIdentityLock", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveDatabaseToolsIdentityLockRequest::builder)
                 .basePath("/20201005")
@@ -1098,6 +1941,76 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public RemoveDatabaseToolsMcpServerLockResponse removeDatabaseToolsMcpServerLock(
+            RemoveDatabaseToolsMcpServerLockRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpServerId(),
+                "databaseToolsMcpServerId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveDatabaseToolsMcpServerLockResponse::builder)
+                .logger(LOG, "removeDatabaseToolsMcpServerLock")
+                .serviceDetails("DatabaseTools", "RemoveDatabaseToolsMcpServerLock", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDatabaseToolsMcpServerLockRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpServers")
+                .appendPathParam(request.getDatabaseToolsMcpServerId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsMcpServer.class,
+                        RemoveDatabaseToolsMcpServerLockResponse.Builder::databaseToolsMcpServer)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveDatabaseToolsMcpServerLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", RemoveDatabaseToolsMcpServerLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public RemoveDatabaseToolsMcpToolsetLockResponse removeDatabaseToolsMcpToolsetLock(
+            RemoveDatabaseToolsMcpToolsetLockRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpToolsetId(),
+                "databaseToolsMcpToolsetId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveDatabaseToolsMcpToolsetLockResponse::builder)
+                .logger(LOG, "removeDatabaseToolsMcpToolsetLock")
+                .serviceDetails("DatabaseTools", "RemoveDatabaseToolsMcpToolsetLock", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDatabaseToolsMcpToolsetLockRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpToolsets")
+                .appendPathParam(request.getDatabaseToolsMcpToolsetId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsMcpToolset.class,
+                        RemoveDatabaseToolsMcpToolsetLockResponse.Builder::databaseToolsMcpToolset)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveDatabaseToolsMcpToolsetLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", RemoveDatabaseToolsMcpToolsetLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public RemoveDatabaseToolsPrivateEndpointLockResponse removeDatabaseToolsPrivateEndpointLock(
             RemoveDatabaseToolsPrivateEndpointLockRequest request) {
 
@@ -1109,10 +2022,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RemoveDatabaseToolsPrivateEndpointLockResponse::builder)
                 .logger(LOG, "removeDatabaseToolsPrivateEndpointLock")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "RemoveDatabaseToolsPrivateEndpointLock",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/RemoveDatabaseToolsPrivateEndpointLock")
+                .serviceDetails("DatabaseTools", "RemoveDatabaseToolsPrivateEndpointLock", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveDatabaseToolsPrivateEndpointLockRequest::builder)
                 .basePath("/20201005")
@@ -1137,6 +2047,41 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public RemoveDatabaseToolsSqlReportLockResponse removeDatabaseToolsSqlReportLock(
+            RemoveDatabaseToolsSqlReportLockRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsSqlReportId(),
+                "databaseToolsSqlReportId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveDatabaseToolsSqlReportLockResponse::builder)
+                .logger(LOG, "removeDatabaseToolsSqlReportLock")
+                .serviceDetails("DatabaseTools", "RemoveDatabaseToolsSqlReportLock", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDatabaseToolsSqlReportLockRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsSqlReports")
+                .appendPathParam(request.getDatabaseToolsSqlReportId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsSqlReport.class,
+                        RemoveDatabaseToolsSqlReportLockResponse.Builder::databaseToolsSqlReport)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveDatabaseToolsSqlReportLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", RemoveDatabaseToolsSqlReportLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public UpdateDatabaseToolsConnectionResponse updateDatabaseToolsConnection(
             UpdateDatabaseToolsConnectionRequest request) {
 
@@ -1149,10 +2094,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, UpdateDatabaseToolsConnectionResponse::builder)
                 .logger(LOG, "updateDatabaseToolsConnection")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "UpdateDatabaseToolsConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/UpdateDatabaseToolsConnection")
+                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsConnection", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseToolsConnectionRequest::builder)
                 .basePath("/20201005")
@@ -1173,6 +2115,44 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public UpdateDatabaseToolsDatabaseApiGatewayConfigResponse
+            updateDatabaseToolsDatabaseApiGatewayConfig(
+                    UpdateDatabaseToolsDatabaseApiGatewayConfigRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsDatabaseApiGatewayConfigId(),
+                "databaseToolsDatabaseApiGatewayConfigId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDatabaseToolsDatabaseApiGatewayConfigDetails(),
+                "updateDatabaseToolsDatabaseApiGatewayConfigDetails is required");
+
+        return clientCall(request, UpdateDatabaseToolsDatabaseApiGatewayConfigResponse::builder)
+                .logger(LOG, "updateDatabaseToolsDatabaseApiGatewayConfig")
+                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsDatabaseApiGatewayConfig", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDatabaseToolsDatabaseApiGatewayConfigRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsDatabaseApiGatewayConfigs")
+                .appendPathParam(request.getDatabaseToolsDatabaseApiGatewayConfigId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsDatabaseApiGatewayConfig
+                                .class,
+                        UpdateDatabaseToolsDatabaseApiGatewayConfigResponse.Builder
+                                ::databaseToolsDatabaseApiGatewayConfig)
+                .handleResponseHeaderString(
+                        "etag", UpdateDatabaseToolsDatabaseApiGatewayConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateDatabaseToolsDatabaseApiGatewayConfigResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateDatabaseToolsIdentityResponse updateDatabaseToolsIdentity(
             UpdateDatabaseToolsIdentityRequest request) {
 
@@ -1184,10 +2164,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, UpdateDatabaseToolsIdentityResponse::builder)
                 .logger(LOG, "updateDatabaseToolsIdentity")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "UpdateDatabaseToolsIdentity",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/UpdateDatabaseToolsIdentity")
+                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsIdentity", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseToolsIdentityRequest::builder)
                 .basePath("/20201005")
@@ -1207,6 +2184,72 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public UpdateDatabaseToolsMcpServerResponse updateDatabaseToolsMcpServer(
+            UpdateDatabaseToolsMcpServerRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpServerId(),
+                "databaseToolsMcpServerId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDatabaseToolsMcpServerDetails(),
+                "updateDatabaseToolsMcpServerDetails is required");
+
+        return clientCall(request, UpdateDatabaseToolsMcpServerResponse::builder)
+                .logger(LOG, "updateDatabaseToolsMcpServer")
+                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsMcpServer", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDatabaseToolsMcpServerRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpServers")
+                .appendPathParam(request.getDatabaseToolsMcpServerId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateDatabaseToolsMcpServerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateDatabaseToolsMcpServerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateDatabaseToolsMcpToolsetResponse updateDatabaseToolsMcpToolset(
+            UpdateDatabaseToolsMcpToolsetRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsMcpToolsetId(),
+                "databaseToolsMcpToolsetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDatabaseToolsMcpToolsetDetails(),
+                "updateDatabaseToolsMcpToolsetDetails is required");
+
+        return clientCall(request, UpdateDatabaseToolsMcpToolsetResponse::builder)
+                .logger(LOG, "updateDatabaseToolsMcpToolset")
+                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsMcpToolset", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDatabaseToolsMcpToolsetRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsMcpToolsets")
+                .appendPathParam(request.getDatabaseToolsMcpToolsetId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateDatabaseToolsMcpToolsetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateDatabaseToolsMcpToolsetResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateDatabaseToolsPrivateEndpointResponse updateDatabaseToolsPrivateEndpoint(
             UpdateDatabaseToolsPrivateEndpointRequest request) {
 
@@ -1219,10 +2262,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, UpdateDatabaseToolsPrivateEndpointResponse::builder)
                 .logger(LOG, "updateDatabaseToolsPrivateEndpoint")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "UpdateDatabaseToolsPrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/UpdateDatabaseToolsPrivateEndpoint")
+                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsPrivateEndpoint", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseToolsPrivateEndpointRequest::builder)
                 .basePath("/20201005")
@@ -1243,6 +2283,41 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     @Override
+    public UpdateDatabaseToolsSqlReportResponse updateDatabaseToolsSqlReport(
+            UpdateDatabaseToolsSqlReportRequest request) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsSqlReportId(),
+                "databaseToolsSqlReportId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDatabaseToolsSqlReportDetails(),
+                "updateDatabaseToolsSqlReportDetails is required");
+
+        return clientCall(request, UpdateDatabaseToolsSqlReportResponse::builder)
+                .logger(LOG, "updateDatabaseToolsSqlReport")
+                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsSqlReport", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDatabaseToolsSqlReportRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsSqlReports")
+                .appendPathParam(request.getDatabaseToolsSqlReportId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsSqlReport.class,
+                        UpdateDatabaseToolsSqlReportResponse.Builder::databaseToolsSqlReport)
+                .handleResponseHeaderString(
+                        "etag", UpdateDatabaseToolsSqlReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateDatabaseToolsSqlReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ValidateDatabaseToolsConnectionResponse validateDatabaseToolsConnection(
             ValidateDatabaseToolsConnectionRequest request) {
 
@@ -1255,10 +2330,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ValidateDatabaseToolsConnectionResponse::builder)
                 .logger(LOG, "validateDatabaseToolsConnection")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "ValidateDatabaseToolsConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ValidateDatabaseToolsConnection")
+                .serviceDetails("DatabaseTools", "ValidateDatabaseToolsConnection", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateDatabaseToolsConnectionRequest::builder)
                 .basePath("/20201005")
@@ -1293,10 +2365,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ValidateDatabaseToolsIdentityCredentialResponse::builder)
                 .logger(LOG, "validateDatabaseToolsIdentityCredential")
-                .serviceDetails(
-                        "DatabaseTools",
-                        "ValidateDatabaseToolsIdentityCredential",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ValidateDatabaseToolsIdentityCredential")
+                .serviceDetails("DatabaseTools", "ValidateDatabaseToolsIdentityCredential", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateDatabaseToolsIdentityCredentialRequest::builder)
                 .basePath("/20201005")

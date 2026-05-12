@@ -208,6 +208,25 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
             this.__explicitlySet__.add("proxyClient");
             return this;
         }
+        /**
+         * Specifies the authentication type used by the Database Tools service to authenticate with
+         * the database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
+        private AuthenticationType authenticationType;
+
+        /**
+         * Specifies the authentication type used by the Database Tools service to authenticate with
+         * the database.
+         *
+         * @param authenticationType the value to set
+         * @return this builder
+         */
+        public Builder authenticationType(AuthenticationType authenticationType) {
+            this.authenticationType = authenticationType;
+            this.__explicitlySet__.add("authenticationType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -229,7 +248,8 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
                             this.advancedProperties,
                             this.keyStores,
                             this.privateEndpointId,
-                            this.proxyClient);
+                            this.proxyClient,
+                            this.authenticationType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -283,6 +303,9 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
             if (model.wasPropertyExplicitlySet("proxyClient")) {
                 this.proxyClient(model.getProxyClient());
             }
+            if (model.wasPropertyExplicitlySet("authenticationType")) {
+                this.authenticationType(model.getAuthenticationType());
+            }
             return this;
         }
     }
@@ -312,7 +335,8 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
             java.util.Map<String, String> advancedProperties,
             java.util.List<DatabaseToolsKeyStoreDetails> keyStores,
             String privateEndpointId,
-            DatabaseToolsConnectionOracleDatabaseProxyClientDetails proxyClient) {
+            DatabaseToolsConnectionOracleDatabaseProxyClientDetails proxyClient,
+            AuthenticationType authenticationType) {
         super(
                 displayName,
                 compartmentId,
@@ -329,6 +353,7 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
         this.keyStores = keyStores;
         this.privateEndpointId = privateEndpointId;
         this.proxyClient = proxyClient;
+        this.authenticationType = authenticationType;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
@@ -431,6 +456,23 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
         return proxyClient;
     }
 
+    /**
+     * Specifies the authentication type used by the Database Tools service to authenticate with the
+     * database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
+    private final AuthenticationType authenticationType;
+
+    /**
+     * Specifies the authentication type used by the Database Tools service to authenticate with the
+     * database.
+     *
+     * @return the value
+     */
+    public AuthenticationType getAuthenticationType() {
+        return authenticationType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -454,6 +496,7 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
         sb.append(", keyStores=").append(String.valueOf(this.keyStores));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
         sb.append(", proxyClient=").append(String.valueOf(this.proxyClient));
+        sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(")");
         return sb.toString();
     }
@@ -477,6 +520,7 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
                 && java.util.Objects.equals(this.keyStores, other.keyStores)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
                 && java.util.Objects.equals(this.proxyClient, other.proxyClient)
+                && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && super.equals(other);
     }
 
@@ -502,6 +546,11 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
                 (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
         result = (result * PRIME) + (this.proxyClient == null ? 43 : this.proxyClient.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationType == null
+                                ? 43
+                                : this.authenticationType.hashCode());
         return result;
     }
 }

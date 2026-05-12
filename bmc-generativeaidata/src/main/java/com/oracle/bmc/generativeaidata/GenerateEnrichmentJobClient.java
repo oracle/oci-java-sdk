@@ -97,7 +97,10 @@ public class GenerateEnrichmentJobClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GenerateEnrichmentJobResponse::builder)
                 .logger(LOG, "generateEnrichmentJob")
-                .serviceDetails("GenerateEnrichmentJob", "GenerateEnrichmentJob", "")
+                .serviceDetails(
+                        "GenerateEnrichmentJob",
+                        "GenerateEnrichmentJob",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJob/GenerateEnrichmentJob")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateEnrichmentJobRequest::builder)
                 .basePath("/20260325")

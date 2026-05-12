@@ -128,7 +128,10 @@ public class GetEnrichmentJobClient extends com.oracle.bmc.http.internal.BaseSyn
 
         return clientCall(request, GetEnrichmentJobResponse::builder)
                 .logger(LOG, "getEnrichmentJob")
-                .serviceDetails("GetEnrichmentJob", "GetEnrichmentJob", "")
+                .serviceDetails(
+                        "GetEnrichmentJob",
+                        "GetEnrichmentJob",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJob/GetEnrichmentJob")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetEnrichmentJobRequest::builder)
                 .basePath("/20260325")

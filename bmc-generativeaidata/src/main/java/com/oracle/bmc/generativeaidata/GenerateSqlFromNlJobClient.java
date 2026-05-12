@@ -95,7 +95,10 @@ public class GenerateSqlFromNlJobClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GenerateSqlFromNlResponse::builder)
                 .logger(LOG, "generateSqlFromNl")
-                .serviceDetails("GenerateSqlFromNlJob", "GenerateSqlFromNl", "")
+                .serviceDetails(
+                        "GenerateSqlFromNlJob",
+                        "GenerateSqlFromNl",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/GenerateSqlFromNlJob/GenerateSqlFromNl")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateSqlFromNlRequest::builder)
                 .basePath("/20260325")
