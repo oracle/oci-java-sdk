@@ -7238,6 +7238,70 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<PatchSubnetResponse> patchSubnet(
+            PatchSubnetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PatchSubnetRequest, PatchSubnetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+        Objects.requireNonNull(request.getPatchSubnetDetails(), "patchSubnetDetails is required");
+
+        return clientCall(request, PatchSubnetResponse::builder)
+                .logger(LOG, "patchSubnet")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "PatchSubnet",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/PatchSubnet")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchSubnetRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchSubnetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", PatchSubnetResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchVcnResponse> patchVcn(
+            PatchVcnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PatchVcnRequest, PatchVcnResponse>
+                    handler) {
+
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(request.getPatchVcnDetails(), "patchVcnDetails is required");
+
+        return clientCall(request, PatchVcnResponse::builder)
+                .logger(LOG, "patchVcn")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "PatchVcn",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/PatchVcn")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchVcnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchVcnResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", PatchVcnResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<PrivateIpVnicDetachResponse> privateIpVnicDetach(
             PrivateIpVnicDetachRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

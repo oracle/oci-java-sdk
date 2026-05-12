@@ -1089,6 +1089,7 @@ public class IotAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("digitalTwinModelId", request.getDigitalTwinModelId())
                 .appendQueryParam("digitalTwinModelSpecUri", request.getDigitalTwinModelSpecUri())
+                .appendEnumQueryParam("connectivityType", request.getConnectivityType())
                 .appendQueryParam("iotDomainId", request.getIotDomainId())
                 .appendQueryParam("id", request.getId())
                 .accept("application/json")

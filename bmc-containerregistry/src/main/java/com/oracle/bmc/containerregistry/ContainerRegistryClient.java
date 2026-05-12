@@ -90,7 +90,10 @@ public class ContainerRegistryClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, GetAccessTokenResponse::builder)
                 .logger(LOG, "getAccessToken")
-                .serviceDetails("ContainerRegistry", "GetAccessToken", "")
+                .serviceDetails(
+                        "ContainerRegistry",
+                        "GetAccessToken",
+                        "https://docs.oracle.com/iaas/api/#/en/container-registry/20180419/AccessToken/GetAccessToken")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAccessTokenRequest::builder)
                 .basePath("/20180419")

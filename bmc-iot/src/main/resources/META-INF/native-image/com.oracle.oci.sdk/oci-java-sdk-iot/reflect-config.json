@@ -339,6 +339,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.iot.model.DigitalTwinInstanceConnectivityType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.iot.model.DigitalTwinInstanceSummary",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

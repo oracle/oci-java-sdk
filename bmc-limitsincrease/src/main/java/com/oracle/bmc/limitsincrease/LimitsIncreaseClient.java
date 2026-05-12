@@ -132,7 +132,10 @@ public class LimitsIncreaseClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, CancelLimitsIncreaseItemRequestResponse::builder)
                 .logger(LOG, "cancelLimitsIncreaseItemRequest")
-                .serviceDetails("LimitsIncrease", "CancelLimitsIncreaseItemRequest", "")
+                .serviceDetails(
+                        "LimitsIncrease",
+                        "CancelLimitsIncreaseItemRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseItemRequest/CancelLimitsIncreaseItemRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelLimitsIncreaseItemRequestRequest::builder)
                 .basePath("/20251101")
@@ -165,7 +168,10 @@ public class LimitsIncreaseClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, CancelLimitsIncreaseRequestResponse::builder)
                 .logger(LOG, "cancelLimitsIncreaseRequest")
-                .serviceDetails("LimitsIncrease", "CancelLimitsIncreaseRequest", "")
+                .serviceDetails(
+                        "LimitsIncrease",
+                        "CancelLimitsIncreaseRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/CancelLimitsIncreaseRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelLimitsIncreaseRequestRequest::builder)
                 .basePath("/20251101")
@@ -197,7 +203,10 @@ public class LimitsIncreaseClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, CreateLimitsIncreaseRequestResponse::builder)
                 .logger(LOG, "createLimitsIncreaseRequest")
-                .serviceDetails("LimitsIncrease", "CreateLimitsIncreaseRequest", "")
+                .serviceDetails(
+                        "LimitsIncrease",
+                        "CreateLimitsIncreaseRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/CreateLimitsIncreaseRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateLimitsIncreaseRequestRequest::builder)
                 .basePath("/20251101")
@@ -226,7 +235,10 @@ public class LimitsIncreaseClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, DeleteLimitsIncreaseRequestResponse::builder)
                 .logger(LOG, "deleteLimitsIncreaseRequest")
-                .serviceDetails("LimitsIncrease", "DeleteLimitsIncreaseRequest", "")
+                .serviceDetails(
+                        "LimitsIncrease",
+                        "DeleteLimitsIncreaseRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/DeleteLimitsIncreaseRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteLimitsIncreaseRequestRequest::builder)
                 .basePath("/20251101")
@@ -251,7 +263,10 @@ public class LimitsIncreaseClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetLimitsIncreaseItemRequestResponse::builder)
                 .logger(LOG, "getLimitsIncreaseItemRequest")
-                .serviceDetails("LimitsIncrease", "GetLimitsIncreaseItemRequest", "")
+                .serviceDetails(
+                        "LimitsIncrease",
+                        "GetLimitsIncreaseItemRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseItemRequest/GetLimitsIncreaseItemRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetLimitsIncreaseItemRequestRequest::builder)
                 .basePath("/20251101")
@@ -280,7 +295,10 @@ public class LimitsIncreaseClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetLimitsIncreaseRequestResponse::builder)
                 .logger(LOG, "getLimitsIncreaseRequest")
-                .serviceDetails("LimitsIncrease", "GetLimitsIncreaseRequest", "")
+                .serviceDetails(
+                        "LimitsIncrease",
+                        "GetLimitsIncreaseRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/GetLimitsIncreaseRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetLimitsIncreaseRequestRequest::builder)
                 .basePath("/20251101")
@@ -305,7 +323,10 @@ public class LimitsIncreaseClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListLimitsIncreaseItemRequestsResponse::builder)
                 .logger(LOG, "listLimitsIncreaseItemRequests")
-                .serviceDetails("LimitsIncrease", "ListLimitsIncreaseItemRequests", "")
+                .serviceDetails(
+                        "LimitsIncrease",
+                        "ListLimitsIncreaseItemRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseItemRequestCollection/ListLimitsIncreaseItemRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLimitsIncreaseItemRequestsRequest::builder)
                 .basePath("/20251101")
@@ -342,7 +363,10 @@ public class LimitsIncreaseClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListLimitsIncreaseQuestionsResponse::builder)
                 .logger(LOG, "listLimitsIncreaseQuestions")
-                .serviceDetails("LimitsIncrease", "ListLimitsIncreaseQuestions", "")
+                .serviceDetails(
+                        "LimitsIncrease",
+                        "ListLimitsIncreaseQuestions",
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseQuestionCollection/ListLimitsIncreaseQuestions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLimitsIncreaseQuestionsRequest::builder)
                 .basePath("/20251101")
@@ -375,7 +399,10 @@ public class LimitsIncreaseClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListLimitsIncreaseRequestsResponse::builder)
                 .logger(LOG, "listLimitsIncreaseRequests")
-                .serviceDetails("LimitsIncrease", "ListLimitsIncreaseRequests", "")
+                .serviceDetails(
+                        "LimitsIncrease",
+                        "ListLimitsIncreaseRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/ListLimitsIncreaseRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLimitsIncreaseRequestsRequest::builder)
                 .basePath("/20251101")
@@ -412,7 +439,10 @@ public class LimitsIncreaseClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, PatchLimitsIncreaseRequestResponse::builder)
                 .logger(LOG, "patchLimitsIncreaseRequest")
-                .serviceDetails("LimitsIncrease", "PatchLimitsIncreaseRequest", "")
+                .serviceDetails(
+                        "LimitsIncrease",
+                        "PatchLimitsIncreaseRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/PatchLimitsIncreaseRequest")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchLimitsIncreaseRequestRequest::builder)
                 .basePath("/20251101")
@@ -445,7 +475,10 @@ public class LimitsIncreaseClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, UpdateLimitsIncreaseRequestResponse::builder)
                 .logger(LOG, "updateLimitsIncreaseRequest")
-                .serviceDetails("LimitsIncrease", "UpdateLimitsIncreaseRequest", "")
+                .serviceDetails(
+                        "LimitsIncrease",
+                        "UpdateLimitsIncreaseRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/UpdateLimitsIncreaseRequest")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateLimitsIncreaseRequestRequest::builder)
                 .basePath("/20251101")

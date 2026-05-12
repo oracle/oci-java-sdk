@@ -81,6 +81,24 @@ public interface DatabaseTools extends AutoCloseable {
             AddDatabaseToolsConnectionLockRequest request);
 
     /**
+     * Adds a lock to a DatabaseToolsDatabaseApiGatewayConfig resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/AddDatabaseToolsDatabaseApiGatewayConfigLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddDatabaseToolsDatabaseApiGatewayConfigLock API.
+     */
+    AddDatabaseToolsDatabaseApiGatewayConfigLockResponse
+            addDatabaseToolsDatabaseApiGatewayConfigLock(
+                    AddDatabaseToolsDatabaseApiGatewayConfigLockRequest request);
+
+    /**
      * Adds a lock to a DatabaseToolsIdentity resource.
      *
      * @param request The request object containing the details to send
@@ -98,6 +116,40 @@ public interface DatabaseTools extends AutoCloseable {
             AddDatabaseToolsIdentityLockRequest request);
 
     /**
+     * Adds a lock to a DatabaseToolsMcpServer resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/AddDatabaseToolsMcpServerLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddDatabaseToolsMcpServerLock API.
+     */
+    AddDatabaseToolsMcpServerLockResponse addDatabaseToolsMcpServerLock(
+            AddDatabaseToolsMcpServerLockRequest request);
+
+    /**
+     * Adds a lock to a DatabaseToolsMcpToolset resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/AddDatabaseToolsMcpToolsetLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddDatabaseToolsMcpToolsetLock API.
+     */
+    AddDatabaseToolsMcpToolsetLockResponse addDatabaseToolsMcpToolsetLock(
+            AddDatabaseToolsMcpToolsetLockRequest request);
+
+    /**
      * Adds a lock to a DatabaseToolsPrivateEndpoint resource.
      *
      * @param request The request object containing the details to send
@@ -113,6 +165,40 @@ public interface DatabaseTools extends AutoCloseable {
      */
     AddDatabaseToolsPrivateEndpointLockResponse addDatabaseToolsPrivateEndpointLock(
             AddDatabaseToolsPrivateEndpointLockRequest request);
+
+    /**
+     * Adds a lock to a DatabaseToolsSqlReport resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/AddDatabaseToolsSqlReportLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddDatabaseToolsSqlReportLock API.
+     */
+    AddDatabaseToolsSqlReportLockResponse addDatabaseToolsSqlReportLock(
+            AddDatabaseToolsSqlReportLockRequest request);
+
+    /**
+     * Deletes Database Tools McpServer resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/CascadingDeleteDatabaseToolsMcpServerExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CascadingDeleteDatabaseToolsMcpServer API.
+     */
+    CascadingDeleteDatabaseToolsMcpServerResponse cascadingDeleteDatabaseToolsMcpServer(
+            CascadingDeleteDatabaseToolsMcpServerRequest request);
 
     /**
      * Moves the specified Database Tools connection to a different compartment in the same tenancy.
@@ -135,6 +221,27 @@ public interface DatabaseTools extends AutoCloseable {
             ChangeDatabaseToolsConnectionCompartmentRequest request);
 
     /**
+     * Moves the specified Database Tools database API gateway config to a different compartment in
+     * the same tenancy. For information about moving resources between compartments, see [Moving
+     * Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/DbApiGatewayConfig/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeDatabaseToolsDatabaseApiGatewayConfigCompartment API.
+     */
+    ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentResponse
+            changeDatabaseToolsDatabaseApiGatewayConfigCompartment(
+                    ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentRequest request);
+
+    /**
      * Moves the specified Database Tools identity to a different compartment in the same tenancy.
      * For information about moving resources between compartments, see [Moving Resources to a
      * Different
@@ -153,6 +260,41 @@ public interface DatabaseTools extends AutoCloseable {
      */
     ChangeDatabaseToolsIdentityCompartmentResponse changeDatabaseToolsIdentityCompartment(
             ChangeDatabaseToolsIdentityCompartmentRequest request);
+
+    /**
+     * Moves the specified Database Tools mcpserver to a different compartment in the same tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ChangeDatabaseToolsMcpServerCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeDatabaseToolsMcpServerCompartment API.
+     */
+    ChangeDatabaseToolsMcpServerCompartmentResponse changeDatabaseToolsMcpServerCompartment(
+            ChangeDatabaseToolsMcpServerCompartmentRequest request);
+
+    /**
+     * Moves the specified Database Tools MCP Toolset to a different compartment in the same
+     * tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ChangeDatabaseToolsMcpToolsetCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeDatabaseToolsMcpToolsetCompartment API.
+     */
+    ChangeDatabaseToolsMcpToolsetCompartmentResponse changeDatabaseToolsMcpToolsetCompartment(
+            ChangeDatabaseToolsMcpToolsetCompartmentRequest request);
 
     /**
      * Moves a Database Tools private endpoint into a different compartment in the same tenancy. For
@@ -175,6 +317,23 @@ public interface DatabaseTools extends AutoCloseable {
                     ChangeDatabaseToolsPrivateEndpointCompartmentRequest request);
 
     /**
+     * Moves the specified Database Tools SQL Report to a different compartment in the same tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ChangeDatabaseToolsSqlReportCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeDatabaseToolsSqlReportCompartment API.
+     */
+    ChangeDatabaseToolsSqlReportCompartmentResponse changeDatabaseToolsSqlReportCompartment(
+            ChangeDatabaseToolsSqlReportCompartmentRequest request);
+
+    /**
      * Creates a new Database Tools connection.
      *
      * @param request The request object containing the details to send
@@ -190,6 +349,23 @@ public interface DatabaseTools extends AutoCloseable {
      */
     CreateDatabaseToolsConnectionResponse createDatabaseToolsConnection(
             CreateDatabaseToolsConnectionRequest request);
+
+    /**
+     * Creates a new Database Tools database API gateway config.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/CreateDatabaseToolsDatabaseApiGatewayConfigExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateDatabaseToolsDatabaseApiGatewayConfig API.
+     */
+    CreateDatabaseToolsDatabaseApiGatewayConfigResponse createDatabaseToolsDatabaseApiGatewayConfig(
+            CreateDatabaseToolsDatabaseApiGatewayConfigRequest request);
 
     /**
      * Creates a new Database Tools identity.
@@ -209,6 +385,40 @@ public interface DatabaseTools extends AutoCloseable {
             CreateDatabaseToolsIdentityRequest request);
 
     /**
+     * Creates a new Database Tools MCP server.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/CreateDatabaseToolsMcpServerExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateDatabaseToolsMcpServer API.
+     */
+    CreateDatabaseToolsMcpServerResponse createDatabaseToolsMcpServer(
+            CreateDatabaseToolsMcpServerRequest request);
+
+    /**
+     * Creates a new Database Tools MCP Toolset.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/CreateDatabaseToolsMcpToolsetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateDatabaseToolsMcpToolset API.
+     */
+    CreateDatabaseToolsMcpToolsetResponse createDatabaseToolsMcpToolset(
+            CreateDatabaseToolsMcpToolsetRequest request);
+
+    /**
      * Creates a new Database Tools private endpoint.
      *
      * @param request The request object containing the details to send
@@ -224,6 +434,23 @@ public interface DatabaseTools extends AutoCloseable {
      */
     CreateDatabaseToolsPrivateEndpointResponse createDatabaseToolsPrivateEndpoint(
             CreateDatabaseToolsPrivateEndpointRequest request);
+
+    /**
+     * Creates a new Database Tools Sql Report.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/CreateDatabaseToolsSqlReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateDatabaseToolsSqlReport API.
+     */
+    CreateDatabaseToolsSqlReportResponse createDatabaseToolsSqlReport(
+            CreateDatabaseToolsSqlReportRequest request);
 
     /**
      * Deletes the specified Database Tools connection resource.
@@ -243,6 +470,23 @@ public interface DatabaseTools extends AutoCloseable {
             DeleteDatabaseToolsConnectionRequest request);
 
     /**
+     * Deletes the specified Database Tools database API gateway config resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/DeleteDatabaseToolsDatabaseApiGatewayConfigExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteDatabaseToolsDatabaseApiGatewayConfig API.
+     */
+    DeleteDatabaseToolsDatabaseApiGatewayConfigResponse deleteDatabaseToolsDatabaseApiGatewayConfig(
+            DeleteDatabaseToolsDatabaseApiGatewayConfigRequest request);
+
+    /**
      * Deletes the specified Database Tools identity resource.
      *
      * @param request The request object containing the details to send
@@ -258,6 +502,40 @@ public interface DatabaseTools extends AutoCloseable {
      */
     DeleteDatabaseToolsIdentityResponse deleteDatabaseToolsIdentity(
             DeleteDatabaseToolsIdentityRequest request);
+
+    /**
+     * Deletes the specified Database Tools MCP server resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/DeleteDatabaseToolsMcpServerExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteDatabaseToolsMcpServer API.
+     */
+    DeleteDatabaseToolsMcpServerResponse deleteDatabaseToolsMcpServer(
+            DeleteDatabaseToolsMcpServerRequest request);
+
+    /**
+     * Deletes the specified Database Tools MCP Toolset resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/DeleteDatabaseToolsMcpToolsetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteDatabaseToolsMcpToolset API.
+     */
+    DeleteDatabaseToolsMcpToolsetResponse deleteDatabaseToolsMcpToolset(
+            DeleteDatabaseToolsMcpToolsetRequest request);
 
     /**
      * Deletes the specified Database Tools private endpoint.
@@ -277,6 +555,23 @@ public interface DatabaseTools extends AutoCloseable {
             DeleteDatabaseToolsPrivateEndpointRequest request);
 
     /**
+     * Deletes the specified Database Tools SQL Report resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/DeleteDatabaseToolsSqlReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteDatabaseToolsSqlReport API.
+     */
+    DeleteDatabaseToolsSqlReportResponse deleteDatabaseToolsSqlReport(
+            DeleteDatabaseToolsSqlReportRequest request);
+
+    /**
      * Gets details of the specified Database Tools connection.
      *
      * @param request The request object containing the details to send
@@ -292,6 +587,23 @@ public interface DatabaseTools extends AutoCloseable {
      */
     GetDatabaseToolsConnectionResponse getDatabaseToolsConnection(
             GetDatabaseToolsConnectionRequest request);
+
+    /**
+     * Gets details of the specified Database Tools database API gateway config.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/GetDatabaseToolsDatabaseApiGatewayConfigExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetDatabaseToolsDatabaseApiGatewayConfig API.
+     */
+    GetDatabaseToolsDatabaseApiGatewayConfigResponse getDatabaseToolsDatabaseApiGatewayConfig(
+            GetDatabaseToolsDatabaseApiGatewayConfigRequest request);
 
     /**
      * Gets details for the specified Database Tools endpoint service.
@@ -328,6 +640,40 @@ public interface DatabaseTools extends AutoCloseable {
             GetDatabaseToolsIdentityRequest request);
 
     /**
+     * Gets details of the specified Database Tools MCP server.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/GetDatabaseToolsMcpServerExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetDatabaseToolsMcpServer API.
+     */
+    GetDatabaseToolsMcpServerResponse getDatabaseToolsMcpServer(
+            GetDatabaseToolsMcpServerRequest request);
+
+    /**
+     * Gets details of the specified Database Tools MCP Toolset.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/GetDatabaseToolsMcpToolsetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetDatabaseToolsMcpToolset API.
+     */
+    GetDatabaseToolsMcpToolsetResponse getDatabaseToolsMcpToolset(
+            GetDatabaseToolsMcpToolsetRequest request);
+
+    /**
      * Gets details of a specified Database Tools private endpoint.
      *
      * @param request The request object containing the details to send
@@ -343,6 +689,23 @@ public interface DatabaseTools extends AutoCloseable {
      */
     GetDatabaseToolsPrivateEndpointResponse getDatabaseToolsPrivateEndpoint(
             GetDatabaseToolsPrivateEndpointRequest request);
+
+    /**
+     * Gets details of the specified Database Tools SQL report.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/GetDatabaseToolsSqlReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetDatabaseToolsSqlReport API.
+     */
+    GetDatabaseToolsSqlReportResponse getDatabaseToolsSqlReport(
+            GetDatabaseToolsSqlReportRequest request);
 
     /**
      * Gets the status of the specified work request.
@@ -375,6 +738,23 @@ public interface DatabaseTools extends AutoCloseable {
      */
     ListDatabaseToolsConnectionsResponse listDatabaseToolsConnections(
             ListDatabaseToolsConnectionsRequest request);
+
+    /**
+     * Returns a list of Database Tools database API gateway configs.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ListDatabaseToolsDatabaseApiGatewayConfigsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListDatabaseToolsDatabaseApiGatewayConfigs API.
+     */
+    ListDatabaseToolsDatabaseApiGatewayConfigsResponse listDatabaseToolsDatabaseApiGatewayConfigs(
+            ListDatabaseToolsDatabaseApiGatewayConfigsRequest request);
 
     /**
      * Returns a list of Database Tools endpoint services.
@@ -411,6 +791,57 @@ public interface DatabaseTools extends AutoCloseable {
             ListDatabaseToolsIdentitiesRequest request);
 
     /**
+     * Returns a list of Database Tools MCP servers.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ListDatabaseToolsMcpServersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListDatabaseToolsMcpServers API.
+     */
+    ListDatabaseToolsMcpServersResponse listDatabaseToolsMcpServers(
+            ListDatabaseToolsMcpServersRequest request);
+
+    /**
+     * Returns a list of Database Tools Toolset versions
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ListDatabaseToolsMcpToolsetVersionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListDatabaseToolsMcpToolsetVersions API.
+     */
+    ListDatabaseToolsMcpToolsetVersionsResponse listDatabaseToolsMcpToolsetVersions(
+            ListDatabaseToolsMcpToolsetVersionsRequest request);
+
+    /**
+     * Returns a list of Database Tools Toolsets.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ListDatabaseToolsMcpToolsetsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListDatabaseToolsMcpToolsets API.
+     */
+    ListDatabaseToolsMcpToolsetsResponse listDatabaseToolsMcpToolsets(
+            ListDatabaseToolsMcpToolsetsRequest request);
+
+    /**
      * Returns a list of Database Tools private endpoints.
      *
      * @param request The request object containing the details to send
@@ -426,6 +857,23 @@ public interface DatabaseTools extends AutoCloseable {
      */
     ListDatabaseToolsPrivateEndpointsResponse listDatabaseToolsPrivateEndpoints(
             ListDatabaseToolsPrivateEndpointsRequest request);
+
+    /**
+     * Returns a list of Database Tools SQL reports.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ListDatabaseToolsSqlReportsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListDatabaseToolsSqlReports API.
+     */
+    ListDatabaseToolsSqlReportsResponse listDatabaseToolsSqlReports(
+            ListDatabaseToolsSqlReportsRequest request);
 
     /**
      * Returns a paginated list of errors for the specified work request.
@@ -510,6 +958,24 @@ public interface DatabaseTools extends AutoCloseable {
             RemoveDatabaseToolsConnectionLockRequest request);
 
     /**
+     * Removes a lock from a DatabaseToolsDatabaseApiGatewayConfig resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/RemoveDatabaseToolsDatabaseApiGatewayConfigLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveDatabaseToolsDatabaseApiGatewayConfigLock API.
+     */
+    RemoveDatabaseToolsDatabaseApiGatewayConfigLockResponse
+            removeDatabaseToolsDatabaseApiGatewayConfigLock(
+                    RemoveDatabaseToolsDatabaseApiGatewayConfigLockRequest request);
+
+    /**
      * Removes a lock from a DatabaseToolsIdentity resource.
      *
      * @param request The request object containing the details to send
@@ -525,6 +991,40 @@ public interface DatabaseTools extends AutoCloseable {
      */
     RemoveDatabaseToolsIdentityLockResponse removeDatabaseToolsIdentityLock(
             RemoveDatabaseToolsIdentityLockRequest request);
+
+    /**
+     * Removes a lock from a DatabaseToolsMcpServer resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/RemoveDatabaseToolsMcpServerLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveDatabaseToolsMcpServerLock API.
+     */
+    RemoveDatabaseToolsMcpServerLockResponse removeDatabaseToolsMcpServerLock(
+            RemoveDatabaseToolsMcpServerLockRequest request);
+
+    /**
+     * Removes a lock from a DatabaseToolsMcpToolset resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/RemoveDatabaseToolsMcpToolsetLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveDatabaseToolsMcpToolsetLock API.
+     */
+    RemoveDatabaseToolsMcpToolsetLockResponse removeDatabaseToolsMcpToolsetLock(
+            RemoveDatabaseToolsMcpToolsetLockRequest request);
 
     /**
      * Removes a lock from a DatabaseToolsPrivateEndpoint resource.
@@ -544,6 +1044,23 @@ public interface DatabaseTools extends AutoCloseable {
             RemoveDatabaseToolsPrivateEndpointLockRequest request);
 
     /**
+     * Removes a lock from a DatabaseToolsSqlReport resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/RemoveDatabaseToolsSqlReportLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveDatabaseToolsSqlReportLock API.
+     */
+    RemoveDatabaseToolsSqlReportLockResponse removeDatabaseToolsSqlReportLock(
+            RemoveDatabaseToolsSqlReportLockRequest request);
+
+    /**
      * Updates the specified Database Tools connection.
      *
      * @param request The request object containing the details to send
@@ -559,6 +1076,23 @@ public interface DatabaseTools extends AutoCloseable {
      */
     UpdateDatabaseToolsConnectionResponse updateDatabaseToolsConnection(
             UpdateDatabaseToolsConnectionRequest request);
+
+    /**
+     * Updates the specified Database Tools database API gateway config.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/UpdateDatabaseToolsDatabaseApiGatewayConfigExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateDatabaseToolsDatabaseApiGatewayConfig API.
+     */
+    UpdateDatabaseToolsDatabaseApiGatewayConfigResponse updateDatabaseToolsDatabaseApiGatewayConfig(
+            UpdateDatabaseToolsDatabaseApiGatewayConfigRequest request);
 
     /**
      * Updates the specified Database Tools identity.
@@ -578,6 +1112,40 @@ public interface DatabaseTools extends AutoCloseable {
             UpdateDatabaseToolsIdentityRequest request);
 
     /**
+     * Updates the specified Database Tools MCP server.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/UpdateDatabaseToolsMcpServerExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateDatabaseToolsMcpServer API.
+     */
+    UpdateDatabaseToolsMcpServerResponse updateDatabaseToolsMcpServer(
+            UpdateDatabaseToolsMcpServerRequest request);
+
+    /**
+     * Updates the specified Database Tools MCP Toolset.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/UpdateDatabaseToolsMcpToolsetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateDatabaseToolsMcpToolset API.
+     */
+    UpdateDatabaseToolsMcpToolsetResponse updateDatabaseToolsMcpToolset(
+            UpdateDatabaseToolsMcpToolsetRequest request);
+
+    /**
      * Updates the specified Database Tools private endpoint.
      *
      * @param request The request object containing the details to send
@@ -593,6 +1161,23 @@ public interface DatabaseTools extends AutoCloseable {
      */
     UpdateDatabaseToolsPrivateEndpointResponse updateDatabaseToolsPrivateEndpoint(
             UpdateDatabaseToolsPrivateEndpointRequest request);
+
+    /**
+     * Updates the specified Database Tools SQL Report.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/UpdateDatabaseToolsSqlReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateDatabaseToolsSqlReport API.
+     */
+    UpdateDatabaseToolsSqlReportResponse updateDatabaseToolsSqlReport(
+            UpdateDatabaseToolsSqlReportRequest request);
 
     /**
      * Validates the Database Tools connection details by establishing a connection to the database.

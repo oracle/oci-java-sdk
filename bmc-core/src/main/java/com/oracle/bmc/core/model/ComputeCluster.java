@@ -5,18 +5,21 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A remote direct memory access (RDMA) network group.
+ * The data for creating a [compute
+ * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute
+ * cluster is an empty remote direct memory access (RDMA) network group
  *
- * <p>A cluster network on a [compute
- * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a group of
- * high performance computing (HPC), GPU, or optimized instances that are connected with an ultra
- * low-latency network.
+ * <p>After the compute cluster is created, you can use the compute cluster's OCID with the {@link
+ * #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances in the
+ * compute cluster. The instances must be created in the same compartment and availability domain as
+ * the cluster.
  *
  * <p>Use compute clusters when you want to manage instances in the cluster individually in the RDMA
  * network group.
  *
- * <p>For details about cluster networks that use instance pools to manage groups of identical
- * instances, see {@link ClusterNetwork}. <br>
+ * <p>For details about creating a cluster network that uses instance pools to manage groups of
+ * identical instances, see {@link #createClusterNetworkDetails(CreateClusterNetworkDetailsRequest)
+ * createClusterNetworkDetails}. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

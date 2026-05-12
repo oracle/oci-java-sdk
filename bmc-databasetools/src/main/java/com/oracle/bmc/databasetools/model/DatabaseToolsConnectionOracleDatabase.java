@@ -177,12 +177,16 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
             this.__explicitlySet__.add("connectionString");
             return this;
         }
-        /** The database user name. */
+        /**
+         * The database user name. When authenticationType is TOKEN, if provided, userName must be
+         * in square brackets (for example, [proxyClient]).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
-         * The database user name.
+         * The database user name. When authenticationType is TOKEN, if provided, userName must be
+         * in square brackets (for example, [proxyClient]).
          *
          * @param userName the value to set
          * @return this builder
@@ -269,6 +273,21 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
             this.__explicitlySet__.add("proxyClient");
             return this;
         }
+        /** Specifies the authentication type used to connect to the database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
+        private AuthenticationType authenticationType;
+
+        /**
+         * Specifies the authentication type used to connect to the database.
+         *
+         * @param authenticationType the value to set
+         * @return this builder
+         */
+        public Builder authenticationType(AuthenticationType authenticationType) {
+            this.authenticationType = authenticationType;
+            this.__explicitlySet__.add("authenticationType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -297,7 +316,8 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
                             this.advancedProperties,
                             this.keyStores,
                             this.privateEndpointId,
-                            this.proxyClient);
+                            this.proxyClient,
+                            this.authenticationType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -372,6 +392,9 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
             if (model.wasPropertyExplicitlySet("proxyClient")) {
                 this.proxyClient(model.getProxyClient());
             }
+            if (model.wasPropertyExplicitlySet("authenticationType")) {
+                this.authenticationType(model.getAuthenticationType());
+            }
             return this;
         }
     }
@@ -408,7 +431,8 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
             java.util.Map<String, String> advancedProperties,
             java.util.List<DatabaseToolsKeyStore> keyStores,
             String privateEndpointId,
-            DatabaseToolsConnectionOracleDatabaseProxyClient proxyClient) {
+            DatabaseToolsConnectionOracleDatabaseProxyClient proxyClient,
+            AuthenticationType authenticationType) {
         super(
                 id,
                 displayName,
@@ -432,6 +456,7 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
         this.keyStores = keyStores;
         this.privateEndpointId = privateEndpointId;
         this.proxyClient = proxyClient;
+        this.authenticationType = authenticationType;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
@@ -454,12 +479,16 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
         return connectionString;
     }
 
-    /** The database user name. */
+    /**
+     * The database user name. When authenticationType is TOKEN, if provided, userName must be in
+     * square brackets (for example, [proxyClient]).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
-     * The database user name.
+     * The database user name. When authenticationType is TOKEN, if provided, userName must be in
+     * square brackets (for example, [proxyClient]).
      *
      * @return the value
      */
@@ -534,6 +563,19 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
         return proxyClient;
     }
 
+    /** Specifies the authentication type used to connect to the database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
+    private final AuthenticationType authenticationType;
+
+    /**
+     * Specifies the authentication type used to connect to the database.
+     *
+     * @return the value
+     */
+    public AuthenticationType getAuthenticationType() {
+        return authenticationType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -557,6 +599,7 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
         sb.append(", keyStores=").append(String.valueOf(this.keyStores));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
         sb.append(", proxyClient=").append(String.valueOf(this.proxyClient));
+        sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(")");
         return sb.toString();
     }
@@ -579,6 +622,7 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
                 && java.util.Objects.equals(this.keyStores, other.keyStores)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
                 && java.util.Objects.equals(this.proxyClient, other.proxyClient)
+                && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && super.equals(other);
     }
 
@@ -604,6 +648,11 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
                 (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
         result = (result * PRIME) + (this.proxyClient == null ? 43 : this.proxyClient.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationType == null
+                                ? 43
+                                : this.authenticationType.hashCode());
         return result;
     }
 }

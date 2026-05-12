@@ -4351,6 +4351,51 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates a Subnet by evaluating a sequence of patch instructions (JSON List Patch). This
+     * operation is restricted to IPv6 CIDR-related fields only. Supported selections (exact match)
+     * are: - ipv6CidrBlock - ipv6CidrBlocks Only the REPLACE operation is supported. The request
+     * must include the If-Match header for optimistic concurrency control. This is an asynchronous
+     * operation. The subnet\u2019s lifecycleState is set to UPDATING while the patch work request
+     * is in progress, and changes back to AVAILABLE after the patch operation is complete. All
+     * patch instructions are applied atomically as a single operation; either all succeed or none
+     * are applied.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchSubnetResponse> patchSubnet(
+            PatchSubnetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PatchSubnetRequest, PatchSubnetResponse> handler);
+
+    /**
+     * Updates a VCN by evaluating a sequence of patch instructions (JSON List Patch). This
+     * operation is restricted to IPv6 CIDR-related fields only. Supported selections (exact match)
+     * are: - ipv6CidrBlock - ipv6PublicCidrBlock - ipv6PrivateCidrBlocks - byoipv6CidrDetails Only
+     * the REPLACE operation is supported. The request must include the If-Match header for
+     * optimistic concurrency control. This is an asynchronous operation. The VCN\u2019s
+     * lifecycleState is set to UPDATING while the patch work request is in progress, and changes
+     * back to AVAILABLE after the patch operation is complete. All patch instructions are applied
+     * atomically as a single operation; either all succeed or none are applied. NOTE:
+     * `ipv6PublicCidrBlock` represents Oracle provided GUA on VCN. With PATCH API, customer can
+     * only remove it if present. Since this is Oracle provided CIDR, there is no concept of
+     * replacing with customer provided CIDR.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchVcnResponse> patchVcn(
+            PatchVcnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PatchVcnRequest, PatchVcnResponse> handler);
+
+    /**
      * Unassign the specified PrivateIP address from Virtual Network Interface Card (VNIC). You must
      * specify the PrivateIP
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
