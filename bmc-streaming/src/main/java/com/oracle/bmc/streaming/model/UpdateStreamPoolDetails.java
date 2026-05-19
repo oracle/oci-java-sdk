@@ -49,10 +49,22 @@ public final class UpdateStreamPoolDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /**
+         * The name of the stream pool. Avoid entering confidential information.
+         *
+         * <p>Example: {@code MyStreamPool}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the stream pool. Avoid entering confidential information.
+         *
+         * <p>Example: {@code MyStreamPool}
+         *
+         * @param name the value to set
+         * @return this builder
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -210,9 +222,21 @@ public final class UpdateStreamPoolDetails
         return new Builder().copy(this);
     }
 
+    /**
+     * The name of the stream pool. Avoid entering confidential information.
+     *
+     * <p>Example: {@code MyStreamPool}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the stream pool. Avoid entering confidential information.
+     *
+     * <p>Example: {@code MyStreamPool}
+     *
+     * @return the value
+     */
     public String getName() {
         return name;
     }

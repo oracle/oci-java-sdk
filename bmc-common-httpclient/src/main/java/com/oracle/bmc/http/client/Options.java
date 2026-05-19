@@ -20,6 +20,16 @@ public enum Options {
     private static final String JAVASDK_TOKEN_REFRESH_ENABLED_SYSTEM_PROPERTY =
             "oci.javasdk.token.refresh.enabled";
 
+    /** The system property key for sync-request async core thread timeout enablement. */
+    private static final String
+            JAVASDK_SYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED_SYSTEM_PROPERTY =
+                    "oci.javasdk.sync.requests.async.core.thread.timeout.enabled";
+
+    /** The system property key for async-request async core thread timeout enablement. */
+    private static final String
+            JAVASDK_ASYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED_SYSTEM_PROPERTY =
+                    "oci.javasdk.async.requests.async.core.thread.timeout.enabled";
+
     /**
      * Flag indicating whether token refresh retries are enabled. By default, the token refresh
      * retries are enabled for 401s and processing exceptions. You have the flexibility to disable
@@ -31,12 +41,30 @@ public enum Options {
      */
     private static volatile boolean TOKEN_REFRESH_RETRY_ENABLED;
 
+    /**
+     * Flag indicating whether idle core threads in the SDK-managed async HTTP executor may time out
+     * for sync request execution. Default is false.
+     */
+    private static volatile boolean SYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED;
+
+    /**
+     * Flag indicating whether idle core threads in the SDK-managed async HTTP executor may time out
+     * for async request execution. Default is false.
+     */
+    private static volatile boolean ASYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED;
+
     static {
         /**
-         * Initializes token refresher. Token refresh can be managed by system property {@value
-         * #JAVASDK_TOKEN_REFRESH_ENABLED_SYSTEM_PROPERTY}. The default is true.
+         * Initializes token refresher and async core thread timeout options. Token refresh can be
+         * managed by system property {@value #JAVASDK_TOKEN_REFRESH_ENABLED_SYSTEM_PROPERTY}. The
+         * default is true. Sync and async request async core thread timeout options can be managed
+         * by system properties {@value
+         * #JAVASDK_SYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED_SYSTEM_PROPERTY} and {@value
+         * #JAVASDK_ASYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED_SYSTEM_PROPERTY}. The default
+         * is false.
          */
         initializeTokenRefreshRetryEnabled();
+        initializeAsyncCoreThreadTimeoutOptions();
     }
 
     /**
@@ -122,5 +150,51 @@ public enum Options {
      */
     public static boolean isTokenRefreshRetrierEnabled() {
         return TOKEN_REFRESH_RETRY_ENABLED;
+    }
+
+    /** Initializes async core thread timeout enablement based on system properties. */
+    private static void initializeAsyncCoreThreadTimeoutOptions() {
+        SYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED =
+                Boolean.parseBoolean(
+                        System.getProperty(
+                                JAVASDK_SYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED_SYSTEM_PROPERTY,
+                                "false"));
+        ASYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED =
+                Boolean.parseBoolean(
+                        System.getProperty(
+                                JAVASDK_ASYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED_SYSTEM_PROPERTY,
+                                "false"));
+        LOG.debug(
+                "Setting sync requests async core thread timeout to {} ({} set to {})",
+                SYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED,
+                JAVASDK_SYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED_SYSTEM_PROPERTY,
+                System.getProperty(
+                        JAVASDK_SYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED_SYSTEM_PROPERTY));
+        LOG.debug(
+                "Setting async requests async core thread timeout to {} ({} set to {})",
+                ASYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED,
+                JAVASDK_ASYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED_SYSTEM_PROPERTY,
+                System.getProperty(
+                        JAVASDK_ASYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED_SYSTEM_PROPERTY));
+    }
+
+    /**
+     * Returns whether idle core threads in the SDK-managed async HTTP executor may time out for
+     * sync request execution.
+     *
+     * @return true if idle core async executor threads may time out for sync request execution
+     */
+    public static boolean isSyncRequestsAsyncCoreThreadTimeoutEnabled() {
+        return SYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED;
+    }
+
+    /**
+     * Returns whether idle core threads in the SDK-managed async HTTP executor may time out for
+     * async request execution.
+     *
+     * @return true if idle core async executor threads may time out for async request execution
+     */
+    public static boolean isAsyncRequestsAsyncCoreThreadTimeoutEnabled() {
+        return ASYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED;
     }
 }

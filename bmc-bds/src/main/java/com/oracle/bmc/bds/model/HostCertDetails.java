@@ -22,8 +22,17 @@ package com.oracle.bmc.bds.model;
 public final class HostCertDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"hostName", "certificate", "privateKey"})
     public HostCertDetails(String hostName, String certificate, String privateKey) {
+        super();
+        this.hostName = hostName;
+        this.certificate = certificate;
+        this.privateKey = privateKey != null ? privateKey.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    @java.beans.ConstructorProperties({"hostName", "certificate", "privateKey"})
+    public HostCertDetails(String hostName, String certificate, char[] privateKey) {
         super();
         this.hostName = hostName;
         this.certificate = certificate;
@@ -64,7 +73,7 @@ public final class HostCertDetails
         }
         /** Private key of the provided certificate */
         @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
-        private String privateKey;
+        private char[] privateKey;
 
         /**
          * Private key of the provided certificate
@@ -72,8 +81,14 @@ public final class HostCertDetails
          * @param privateKey the value to set
          * @return this builder
          */
-        public Builder privateKey(String privateKey) {
+        public Builder privateKey(char[] privateKey) {
             this.privateKey = privateKey;
+            this.__explicitlySet__.add("privateKey");
+            return this;
+        }
+
+        public Builder privateKey(String privateKey) {
+            this.privateKey = privateKey != null ? privateKey.toCharArray() : null;
             this.__explicitlySet__.add("privateKey");
             return this;
         }
@@ -142,14 +157,27 @@ public final class HostCertDetails
 
     /** Private key of the provided certificate */
     @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
-    private final String privateKey;
+    private final char[] privateKey;
+
+    /**
+     * Private key of the provided certificate
+     *
+     * @return the value
+     * @deprecated Use getPrivateKey__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPrivateKey() {
+        return privateKey != null ? new String(privateKey) : null;
+    }
 
     /**
      * Private key of the provided certificate
      *
      * @return the value
      */
-    public String getPrivateKey() {
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
+    public char[] getPrivateKey__AsCharArray() {
         return privateKey;
     }
 
@@ -170,7 +198,7 @@ public final class HostCertDetails
         sb.append("super=").append(super.toString());
         sb.append("hostName=").append(String.valueOf(this.hostName));
         sb.append(", certificate=").append(String.valueOf(this.certificate));
-        sb.append(", privateKey=").append(String.valueOf(this.privateKey));
+        sb.append(", privateKey=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

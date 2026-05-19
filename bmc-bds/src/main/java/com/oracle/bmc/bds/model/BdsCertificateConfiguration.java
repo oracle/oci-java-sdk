@@ -381,6 +381,7 @@ public final class BdsCertificateConfiguration
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

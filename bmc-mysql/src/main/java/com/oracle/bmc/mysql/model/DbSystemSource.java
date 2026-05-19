@@ -32,6 +32,9 @@ package com.oracle.bmc.mysql.model;
             value = DbSystemSourceFromNone.class,
             name = "NONE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DbSystemSourceFromDbSystem.class,
+            name = "DBSYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DbSystemSourceImportFromUrl.class,
             name = "IMPORTURL")
 })
@@ -90,6 +93,7 @@ public class DbSystemSource extends com.oracle.bmc.http.client.internal.Explicit
         Backup("BACKUP"),
         Pitr("PITR"),
         Importurl("IMPORTURL"),
+        Dbsystem("DBSYSTEM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

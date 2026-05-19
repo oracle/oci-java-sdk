@@ -23,6 +23,9 @@ package com.oracle.bmc.mysql.model;
         defaultImpl = CreateDbSystemSourceDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDbSystemSourceFromDbSystemDetails.class,
+            name = "DBSYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDbSystemSourceFromBackupDetails.class,
             name = "BACKUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -91,6 +94,7 @@ public class CreateDbSystemSourceDetails
         Backup("BACKUP"),
         Pitr("PITR"),
         Importurl("IMPORTURL"),
+        Dbsystem("DBSYSTEM"),
         ;
 
         private final String value;

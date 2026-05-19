@@ -21,11 +21,14 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
                     .serviceName(GenerativeAiInferenceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://inference.generativeai.{region}.oci.{secondLevelDomain}")
+                            "https://inference.generativeai.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .endpointServiceName("inference.generativeai")
                     .build();
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(GenerativeAiInferenceClient.class);
+
+    private final GenerativeAiInferencePaginators paginators;
 
     GenerativeAiInferenceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
@@ -35,6 +38,8 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
                 builder,
                 authenticationDetailsProvider,
                 CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+
+        this.paginators = new GenerativeAiInferencePaginators(this);
     }
 
     /**
@@ -91,12 +96,15 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
         Objects.requireNonNull(
                 request.getApplyGuardrailsDetails(), "applyGuardrailsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ApplyGuardrailsResponse::builder)
                 .logger(LOG, "applyGuardrails")
                 .serviceDetails(
                         "GenerativeAiInference",
                         "ApplyGuardrails",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/ApplyGuardrailsResult/ApplyGuardrails")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ApplyGuardrailsRequest::builder)
                 .basePath("/20231130")
@@ -119,12 +127,15 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
     public ChatResponse chat(ChatRequest request) {
         Objects.requireNonNull(request.getChatDetails(), "chatDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ChatResponse::builder)
                 .logger(LOG, "chat")
                 .serviceDetails(
                         "GenerativeAiInference",
                         "Chat",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/ChatResult/Chat")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChatRequest::builder)
                 .basePath("/20231130")
@@ -150,12 +161,15 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
     public EmbedTextResponse embedText(EmbedTextRequest request) {
         Objects.requireNonNull(request.getEmbedTextDetails(), "embedTextDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, EmbedTextResponse::builder)
                 .logger(LOG, "embedText")
                 .serviceDetails(
                         "GenerativeAiInference",
                         "EmbedText",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/EmbedTextResult/EmbedText")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EmbedTextRequest::builder)
                 .basePath("/20231130")
@@ -181,12 +195,15 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
     public GenerateTextResponse generateText(GenerateTextRequest request) {
         Objects.requireNonNull(request.getGenerateTextDetails(), "generateTextDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, GenerateTextResponse::builder)
                 .logger(LOG, "generateText")
                 .serviceDetails(
                         "GenerativeAiInference",
                         "GenerateText",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/GenerateTextResult/GenerateText")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateTextRequest::builder)
                 .basePath("/20231130")
@@ -211,8 +228,45 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public ListGuardrailVersionsResponse listGuardrailVersions(
+            ListGuardrailVersionsRequest request) {
+        Objects.requireNonNull(request.getOpcCompartmentId(), "opcCompartmentId is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
+        return clientCall(request, ListGuardrailVersionsResponse::builder)
+                .logger(LOG, "listGuardrailVersions")
+                .serviceDetails(
+                        "GenerativeAiInference",
+                        "ListGuardrailVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/GuardrailVersionCollection/ListGuardrailVersions")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListGuardrailVersionsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("guardrailVersions")
+                .appendEnumQueryParam("state", request.getState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-compartment-id", request.getOpcCompartmentId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeaiinference.model.GuardrailVersionCollection.class,
+                        ListGuardrailVersionsResponse.Builder::guardrailVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListGuardrailVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListGuardrailVersionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public RerankTextResponse rerankText(RerankTextRequest request) {
         Objects.requireNonNull(request.getRerankTextDetails(), "rerankTextDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
 
         return clientCall(request, RerankTextResponse::builder)
                 .logger(LOG, "rerankText")
@@ -220,6 +274,7 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
                         "GenerativeAiInference",
                         "RerankText",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/RerankTextResult/RerankText")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RerankTextRequest::builder)
                 .basePath("/20231130")
@@ -246,12 +301,15 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
         Objects.requireNonNull(
                 request.getSummarizeTextDetails(), "summarizeTextDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, SummarizeTextResponse::builder)
                 .logger(LOG, "summarizeText")
                 .serviceDetails(
                         "GenerativeAiInference",
                         "SummarizeText",
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/SummarizeTextResult/SummarizeText")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SummarizeTextRequest::builder)
                 .basePath("/20231130")
@@ -272,6 +330,11 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
                         "model-deprecation-info",
                         SummarizeTextResponse.Builder::modelDeprecationInfo)
                 .callSync();
+    }
+
+    @Override
+    public GenerativeAiInferencePaginators getPaginators() {
+        return paginators;
     }
 
     /**

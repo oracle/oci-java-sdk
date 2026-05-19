@@ -23,10 +23,12 @@ package com.oracle.bmc.generativeaiinference.model;
 public final class ApplyGuardrailsResult
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"results"})
-    public ApplyGuardrailsResult(GuardrailsResults results) {
+    @java.beans.ConstructorProperties({"results", "guardrailVersion"})
+    public ApplyGuardrailsResult(
+            GuardrailsResults results, GuardrailVersionResponse guardrailVersion) {
         super();
         this.results = results;
+        this.guardrailVersion = guardrailVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -41,11 +43,21 @@ public final class ApplyGuardrailsResult
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("guardrailVersion")
+        private GuardrailVersionResponse guardrailVersion;
+
+        public Builder guardrailVersion(GuardrailVersionResponse guardrailVersion) {
+            this.guardrailVersion = guardrailVersion;
+            this.__explicitlySet__.add("guardrailVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApplyGuardrailsResult build() {
-            ApplyGuardrailsResult model = new ApplyGuardrailsResult(this.results);
+            ApplyGuardrailsResult model =
+                    new ApplyGuardrailsResult(this.results, this.guardrailVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -56,6 +68,9 @@ public final class ApplyGuardrailsResult
         public Builder copy(ApplyGuardrailsResult model) {
             if (model.wasPropertyExplicitlySet("results")) {
                 this.results(model.getResults());
+            }
+            if (model.wasPropertyExplicitlySet("guardrailVersion")) {
+                this.guardrailVersion(model.getGuardrailVersion());
             }
             return this;
         }
@@ -77,6 +92,13 @@ public final class ApplyGuardrailsResult
         return results;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("guardrailVersion")
+    private final GuardrailVersionResponse guardrailVersion;
+
+    public GuardrailVersionResponse getGuardrailVersion() {
+        return guardrailVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -93,6 +115,7 @@ public final class ApplyGuardrailsResult
         sb.append("ApplyGuardrailsResult(");
         sb.append("super=").append(super.toString());
         sb.append("results=").append(String.valueOf(this.results));
+        sb.append(", guardrailVersion=").append(String.valueOf(this.guardrailVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -107,7 +130,9 @@ public final class ApplyGuardrailsResult
         }
 
         ApplyGuardrailsResult other = (ApplyGuardrailsResult) o;
-        return java.util.Objects.equals(this.results, other.results) && super.equals(other);
+        return java.util.Objects.equals(this.results, other.results)
+                && java.util.Objects.equals(this.guardrailVersion, other.guardrailVersion)
+                && super.equals(other);
     }
 
     @Override
@@ -115,6 +140,9 @@ public final class ApplyGuardrailsResult
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.results == null ? 43 : this.results.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.guardrailVersion == null ? 43 : this.guardrailVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

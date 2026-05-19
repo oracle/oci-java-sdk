@@ -23,47 +23,22 @@ package com.oracle.bmc.bds.model;
 public final class CreateBdsCertificateConfigurationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    public CreateBdsCertificateConfigurationDetails(
-            String displayName,
-            String certificateAuthorityId,
-            BdsCertificateConfiguration.Type certificateType,
-            String compartmentId,
-            String clusterAdminPassword,
-            String secretId) {
-        super();
-        this.displayName = displayName;
-        this.certificateAuthorityId = certificateAuthorityId;
-        this.certificateType = certificateType;
-        this.compartmentId = compartmentId;
-        this.clusterAdminPassword =
-                clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
-        this.secretId = secretId;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonCreator
-    @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
         "certificateAuthorityId",
         "certificateType",
-        "compartmentId",
-        "clusterAdminPassword",
-        "secretId"
+        "compartmentId"
     })
     public CreateBdsCertificateConfigurationDetails(
             String displayName,
             String certificateAuthorityId,
             BdsCertificateConfiguration.Type certificateType,
-            String compartmentId,
-            char[] clusterAdminPassword,
-            String secretId) {
+            String compartmentId) {
         super();
         this.displayName = displayName;
         this.certificateAuthorityId = certificateAuthorityId;
         this.certificateType = certificateType;
         this.compartmentId = compartmentId;
-        this.clusterAdminPassword = clusterAdminPassword;
-        this.secretId = secretId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -140,43 +115,6 @@ public final class CreateBdsCertificateConfigurationDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Base-64 encoded password for the cluster admin user. */
-        @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-        private char[] clusterAdminPassword;
-
-        /**
-         * Base-64 encoded password for the cluster admin user.
-         *
-         * @param clusterAdminPassword the value to set
-         * @return this builder
-         */
-        public Builder clusterAdminPassword(char[] clusterAdminPassword) {
-            this.clusterAdminPassword = clusterAdminPassword;
-            this.__explicitlySet__.add("clusterAdminPassword");
-            return this;
-        }
-
-        public Builder clusterAdminPassword(String clusterAdminPassword) {
-            this.clusterAdminPassword =
-                    clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
-            this.__explicitlySet__.add("clusterAdminPassword");
-            return this;
-        }
-        /** The secretId for the clusterAdminPassword. */
-        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
-        private String secretId;
-
-        /**
-         * The secretId for the clusterAdminPassword.
-         *
-         * @param secretId the value to set
-         * @return this builder
-         */
-        public Builder secretId(String secretId) {
-            this.secretId = secretId;
-            this.__explicitlySet__.add("secretId");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -187,9 +125,7 @@ public final class CreateBdsCertificateConfigurationDetails
                             this.displayName,
                             this.certificateAuthorityId,
                             this.certificateType,
-                            this.compartmentId,
-                            this.clusterAdminPassword,
-                            this.secretId);
+                            this.compartmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -209,12 +145,6 @@ public final class CreateBdsCertificateConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
-            }
-            if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
-                this.clusterAdminPassword(model.getClusterAdminPassword());
-            }
-            if (model.wasPropertyExplicitlySet("secretId")) {
-                this.secretId(model.getSecretId());
             }
             return this;
         }
@@ -293,45 +223,6 @@ public final class CreateBdsCertificateConfigurationDetails
         return compartmentId;
     }
 
-    /** Base-64 encoded password for the cluster admin user. */
-    @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-    private final char[] clusterAdminPassword;
-
-    /**
-     * Base-64 encoded password for the cluster admin user.
-     *
-     * @return the value
-     * @deprecated Use getClusterAdminPassword__AsCharArray() instead.
-     */
-    @Deprecated
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    public String getClusterAdminPassword() {
-        return clusterAdminPassword != null ? new String(clusterAdminPassword) : null;
-    }
-
-    /**
-     * Base-64 encoded password for the cluster admin user.
-     *
-     * @return the value
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-    public char[] getClusterAdminPassword__AsCharArray() {
-        return clusterAdminPassword;
-    }
-
-    /** The secretId for the clusterAdminPassword. */
-    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
-    private final String secretId;
-
-    /**
-     * The secretId for the clusterAdminPassword.
-     *
-     * @return the value
-     */
-    public String getSecretId() {
-        return secretId;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -351,8 +242,6 @@ public final class CreateBdsCertificateConfigurationDetails
         sb.append(", certificateAuthorityId=").append(String.valueOf(this.certificateAuthorityId));
         sb.append(", certificateType=").append(String.valueOf(this.certificateType));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(", clusterAdminPassword=").append("<redacted>");
-        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(")");
         return sb.toString();
     }
@@ -373,8 +262,6 @@ public final class CreateBdsCertificateConfigurationDetails
                         this.certificateAuthorityId, other.certificateAuthorityId)
                 && java.util.Objects.equals(this.certificateType, other.certificateType)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
-                && java.util.Objects.equals(this.secretId, other.secretId)
                 && super.equals(other);
     }
 
@@ -394,12 +281,6 @@ public final class CreateBdsCertificateConfigurationDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.clusterAdminPassword == null
-                                ? 43
-                                : this.clusterAdminPassword.hashCode());
-        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
