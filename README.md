@@ -267,6 +267,27 @@ To resolve this problem, you can run Maven with the following parameter:
 
 The low default value in Java will be addressed and resolved in upcoming minor Java version releases.
 
+### Idle Jersey async executor threads
+
+When using the Jersey HTTP client, SDK requests are executed through Jersey's async request path. After request execution, idle `jersey-client-async-executor-*` threads may remain in a waiting state. By default, this behavior is preserved for compatibility.
+
+Customers who want idle core threads in the SDK-managed Jersey async executor to time out can opt in separately for sync and async SDK clients:
+
+```
+ClientConfiguration configuration =
+        ClientConfiguration.builder()
+                .syncRequestsAsyncCoreThreadTimeoutEnabled(true)
+                .asyncRequestsAsyncCoreThreadTimeoutEnabled(true)
+                .build();
+```
+
+The same behavior can also be enabled with system properties:
+
+```
+-Doci.javasdk.sync.requests.async.core.thread.timeout.enabled=true
+-Doci.javasdk.async.requests.async.core.thread.timeout.enabled=true
+```
+
 ## License
 
 Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.

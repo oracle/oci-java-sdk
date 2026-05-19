@@ -6,6 +6,7 @@ package com.oracle.bmc;
 
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.OciCircuitBreaker;
+import com.oracle.bmc.http.client.Options;
 import com.oracle.bmc.retrier.RetryConfiguration;
 
 /** This class provides configuration options for client requests. */
@@ -34,6 +35,21 @@ public class ClientConfiguration {
     /** The circuit-breaker to use. Default is no circuit-breaker. */
     private final OciCircuitBreaker circuitBreaker;
 
+    /**
+     * Whether idle core threads in the SDK-managed async HTTP executor may time out. Default is
+     * controlled by the {@code oci.javasdk.sync.requests.async.core.thread.timeout.enabled} system
+     * property, or false if the property is absent.
+     */
+    private final boolean syncRequestsAsyncCoreThreadTimeoutEnabled;
+
+    /**
+     * Whether idle core threads in the SDK-managed async HTTP executor may time out for async
+     * request execution. Default is controlled by the {@code
+     * oci.javasdk.async.requests.async.core.thread.timeout.enabled} system property, or false if
+     * the property is absent.
+     */
+    private final boolean asyncRequestsAsyncCoreThreadTimeoutEnabled;
+
     // Explicit @Builder on constructor so we can enforce default values.
     private ClientConfiguration(
             Integer connectionTimeoutMillis,
@@ -42,7 +58,9 @@ public class ClientConfiguration {
             Boolean disableDataBufferingOnUpload,
             RetryConfiguration retryConfiguration,
             CircuitBreakerConfiguration circuitBreakerConfiguration,
-            OciCircuitBreaker circuitBreaker) {
+            OciCircuitBreaker circuitBreaker,
+            Boolean syncRequestsAsyncCoreThreadTimeoutEnabled,
+            Boolean asyncRequestsAsyncCoreThreadTimeoutEnabled) {
 
         this.connectionTimeoutMillis =
                 getOrDefault(connectionTimeoutMillis, CONNECTION_TIMEOUT_MILLIS);
@@ -51,6 +69,14 @@ public class ClientConfiguration {
         this.retryConfiguration = retryConfiguration;
         this.circuitBreakerConfiguration = circuitBreakerConfiguration;
         this.circuitBreaker = circuitBreaker;
+        this.syncRequestsAsyncCoreThreadTimeoutEnabled =
+                getOrDefault(
+                        syncRequestsAsyncCoreThreadTimeoutEnabled,
+                        Options.isSyncRequestsAsyncCoreThreadTimeoutEnabled());
+        this.asyncRequestsAsyncCoreThreadTimeoutEnabled =
+                getOrDefault(
+                        asyncRequestsAsyncCoreThreadTimeoutEnabled,
+                        Options.isAsyncRequestsAsyncCoreThreadTimeoutEnabled());
     }
 
     private static <T> T getOrDefault(T value, T defaultValue) {
@@ -85,6 +111,14 @@ public class ClientConfiguration {
         return this.circuitBreaker;
     }
 
+    public boolean isSyncRequestsAsyncCoreThreadTimeoutEnabled() {
+        return this.syncRequestsAsyncCoreThreadTimeoutEnabled;
+    }
+
+    public boolean isAsyncRequestsAsyncCoreThreadTimeoutEnabled() {
+        return this.asyncRequestsAsyncCoreThreadTimeoutEnabled;
+    }
+
     public String toString() {
         return "ClientConfiguration(connectionTimeoutMillis="
                 + this.getConnectionTimeoutMillis()
@@ -98,6 +132,10 @@ public class ClientConfiguration {
                 + this.getCircuitBreakerConfiguration()
                 + ", circuitBreaker="
                 + this.getCircuitBreaker()
+                + ", syncRequestsAsyncCoreThreadTimeoutEnabled="
+                + this.isSyncRequestsAsyncCoreThreadTimeoutEnabled()
+                + ", asyncRequestsAsyncCoreThreadTimeoutEnabled="
+                + this.isAsyncRequestsAsyncCoreThreadTimeoutEnabled()
                 + ")";
     }
 
@@ -110,6 +148,8 @@ public class ClientConfiguration {
         private CircuitBreakerConfiguration circuitBreakerConfiguration;
 
         private OciCircuitBreaker circuitBreaker;
+        private Boolean syncRequestsAsyncCoreThreadTimeoutEnabled;
+        private Boolean asyncRequestsAsyncCoreThreadTimeoutEnabled;
 
         ClientConfigurationBuilder() {}
 
@@ -151,6 +191,40 @@ public class ClientConfiguration {
             return this;
         }
 
+        /**
+         * Opt in to allowing idle core threads in the SDK-managed async HTTP executor to time out.
+         * If unset, the default is controlled by the {@code
+         * oci.javasdk.sync.requests.async.core.thread.timeout.enabled} system property, or false if
+         * the property is absent.
+         *
+         * @param syncRequestsAsyncCoreThreadTimeoutEnabled whether idle core async executor threads
+         *     may time out for sync request execution
+         * @return this builder
+         */
+        public ClientConfigurationBuilder syncRequestsAsyncCoreThreadTimeoutEnabled(
+                Boolean syncRequestsAsyncCoreThreadTimeoutEnabled) {
+            this.syncRequestsAsyncCoreThreadTimeoutEnabled =
+                    syncRequestsAsyncCoreThreadTimeoutEnabled;
+            return this;
+        }
+
+        /**
+         * Opt in to allowing idle core threads in the SDK-managed async HTTP executor to time out
+         * for async request execution. If unset, the default is controlled by the {@code
+         * oci.javasdk.async.requests.async.core.thread.timeout.enabled} system property, or false
+         * if the property is absent.
+         *
+         * @param asyncRequestsAsyncCoreThreadTimeoutEnabled whether idle core async executor
+         *     threads may time out for async request execution
+         * @return this builder
+         */
+        public ClientConfigurationBuilder asyncRequestsAsyncCoreThreadTimeoutEnabled(
+                Boolean asyncRequestsAsyncCoreThreadTimeoutEnabled) {
+            this.asyncRequestsAsyncCoreThreadTimeoutEnabled =
+                    asyncRequestsAsyncCoreThreadTimeoutEnabled;
+            return this;
+        }
+
         public ClientConfiguration build() {
             return new ClientConfiguration(
                     connectionTimeoutMillis,
@@ -159,7 +233,9 @@ public class ClientConfiguration {
                     disableDataBufferingOnUpload,
                     retryConfiguration,
                     circuitBreakerConfiguration,
-                    circuitBreaker);
+                    circuitBreaker,
+                    syncRequestsAsyncCoreThreadTimeoutEnabled,
+                    asyncRequestsAsyncCoreThreadTimeoutEnabled);
         }
 
         public String toString() {
@@ -177,6 +253,10 @@ public class ClientConfiguration {
                     + this.circuitBreakerConfiguration
                     + ", circuitBreaker="
                     + this.circuitBreaker
+                    + ", syncRequestsAsyncCoreThreadTimeoutEnabled="
+                    + this.syncRequestsAsyncCoreThreadTimeoutEnabled
+                    + ", asyncRequestsAsyncCoreThreadTimeoutEnabled="
+                    + this.asyncRequestsAsyncCoreThreadTimeoutEnabled
                     + ")";
         }
     }

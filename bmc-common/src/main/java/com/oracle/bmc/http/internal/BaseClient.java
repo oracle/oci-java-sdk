@@ -355,6 +355,9 @@ abstract class BaseClient implements AutoCloseable {
                         .property(
                                 StandardClientProperties.ASYNC_POOL_SIZE,
                                 clientConfigurationToUse.getMaxAsyncThreads())
+                        .property(
+                                StandardClientProperties.ASYNC_POOL_CORE_THREAD_TIMEOUT_ENABLED,
+                                isAsyncThreadPoolCoreThreadTimeoutEnabled())
                         .registerRequestInterceptor(
                                 Priorities.AUTHENTICATION,
                                 new AuthnClientFilter(defaultRequestSigner, requestSigners))
@@ -373,6 +376,12 @@ abstract class BaseClient implements AutoCloseable {
                         ? userDefinedCircuitBreaker
                         : CircuitBreakerHelper.makeCircuitBreaker(
                                 httpClient, circuitBreakerConfiguration);
+    }
+
+    private boolean isAsyncThreadPoolCoreThreadTimeoutEnabled() {
+        return this instanceof BaseAsyncClient
+                ? clientConfigurationToUse.isAsyncRequestsAsyncCoreThreadTimeoutEnabled()
+                : clientConfigurationToUse.isSyncRequestsAsyncCoreThreadTimeoutEnabled();
     }
 
     /**

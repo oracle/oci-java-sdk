@@ -93,6 +93,16 @@ public interface GenerativeAiInference extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Determines whether dual stack endpoint should be used or not. Set
+     * dualStackEndpointTemplateEnabled to "true" if the user wants to enable use of dual stack
+     * endpoint template. Default value is "false"
+     *
+     * @param dualStackEndpointTemplateEnabled flag to enable the use of dual stack endpoint
+     *     template
+     */
+    void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled);
+
+    /**
      * Applies guardrails to the input text, including content moderation, PII detection, and prompt
      * injection protection.
      *
@@ -163,6 +173,22 @@ public interface GenerativeAiInference extends AutoCloseable {
     GenerateTextResponse generateText(GenerateTextRequest request);
 
     /**
+     * List the available guardrail system versions.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/ListGuardrailVersionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListGuardrailVersions API.
+     */
+    ListGuardrailVersionsResponse listGuardrailVersions(ListGuardrailVersionsRequest request);
+
+    /**
      * Reranks the text responses based on the input documents and a prompt.
      *
      * <p>Rerank assigns an index and a relevance score to each document, indicating which document
@@ -194,4 +220,14 @@ public interface GenerativeAiInference extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeText API.
      */
     SummarizeTextResponse summarizeText(SummarizeTextRequest request);
+
+    /**
+     * Gets the pre-configured paginators available for list operations in this service which may
+     * return multiple pages of data. These paginators provide an {@link java.lang.Iterable}
+     * interface so that service responses, or resources/records, can be iterated through without
+     * having to manually deal with pagination and page tokens.
+     *
+     * @return The service paginators.
+     */
+    GenerativeAiInferencePaginators getPaginators();
 }

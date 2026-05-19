@@ -18,6 +18,8 @@ public final class StandardClientProperties {
             ClientProperty.create("connectTimeout");
     public static final ClientProperty<Integer> ASYNC_POOL_SIZE =
             ClientProperty.create("asyncPoolSize");
+    public static final ClientProperty<Boolean> ASYNC_POOL_CORE_THREAD_TIMEOUT_ENABLED =
+            ClientProperty.create("asyncPoolCoreThreadTimeoutEnabled");
     public static final ClientProperty<Boolean> BUFFER_REQUEST =
             ClientProperty.create("bufferRequest");
     public static final ClientProperty<KeyStoreWithPassword> KEY_STORE =

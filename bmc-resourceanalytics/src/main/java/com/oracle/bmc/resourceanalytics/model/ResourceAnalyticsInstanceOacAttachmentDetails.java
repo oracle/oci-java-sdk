@@ -30,20 +30,26 @@ public final class ResourceAnalyticsInstanceOacAttachmentDetails
         "networkDetails",
         "subnetId",
         "nsgIds",
-        "licenseModel"
+        "licenseModel",
+        "capacityType",
+        "capacityValue"
     })
     public ResourceAnalyticsInstanceOacAttachmentDetails(
             String idcsDomainId,
             ResourceAnalyticsInstanceOacNetworkDetails networkDetails,
             String subnetId,
             java.util.List<String> nsgIds,
-            LicenseModel licenseModel) {
+            LicenseModel licenseModel,
+            CapacityType capacityType,
+            Integer capacityValue) {
         super();
         this.idcsDomainId = idcsDomainId;
         this.networkDetails = networkDetails;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
         this.licenseModel = licenseModel;
+        this.capacityType = capacityType;
+        this.capacityValue = capacityValue;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -121,6 +127,42 @@ public final class ResourceAnalyticsInstanceOacAttachmentDetails
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
+        /** The capacity model to use for the Analytics Instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityType")
+        private CapacityType capacityType;
+
+        /**
+         * The capacity model to use for the Analytics Instance.
+         *
+         * @param capacityType the value to set
+         * @return this builder
+         */
+        public Builder capacityType(CapacityType capacityType) {
+            this.capacityType = capacityType;
+            this.__explicitlySet__.add("capacityType");
+            return this;
+        }
+        /**
+         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of
+         * users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and
+         * other resources allocated to the Analytics Instance.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityValue")
+        private Integer capacityValue;
+
+        /**
+         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of
+         * users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and
+         * other resources allocated to the Analytics Instance.
+         *
+         * @param capacityValue the value to set
+         * @return this builder
+         */
+        public Builder capacityValue(Integer capacityValue) {
+            this.capacityValue = capacityValue;
+            this.__explicitlySet__.add("capacityValue");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -132,7 +174,9 @@ public final class ResourceAnalyticsInstanceOacAttachmentDetails
                             this.networkDetails,
                             this.subnetId,
                             this.nsgIds,
-                            this.licenseModel);
+                            this.licenseModel,
+                            this.capacityType,
+                            this.capacityValue);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -155,6 +199,12 @@ public final class ResourceAnalyticsInstanceOacAttachmentDetails
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("capacityType")) {
+                this.capacityType(model.getCapacityType());
+            }
+            if (model.wasPropertyExplicitlySet("capacityValue")) {
+                this.capacityValue(model.getCapacityValue());
             }
             return this;
         }
@@ -265,6 +315,71 @@ public final class ResourceAnalyticsInstanceOacAttachmentDetails
         return licenseModel;
     }
 
+    /** The capacity model to use for the Analytics Instance. */
+    public enum CapacityType implements com.oracle.bmc.http.internal.BmcEnum {
+        OlpuCount("OLPU_COUNT"),
+        UserCount("USER_COUNT"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CapacityType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CapacityType v : CapacityType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CapacityType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CapacityType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid CapacityType: " + key);
+        }
+    };
+    /** The capacity model to use for the Analytics Instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityType")
+    private final CapacityType capacityType;
+
+    /**
+     * The capacity model to use for the Analytics Instance.
+     *
+     * @return the value
+     */
+    public CapacityType getCapacityType() {
+        return capacityType;
+    }
+
+    /**
+     * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users
+     * (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other
+     * resources allocated to the Analytics Instance.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityValue")
+    private final Integer capacityValue;
+
+    /**
+     * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users
+     * (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other
+     * resources allocated to the Analytics Instance.
+     *
+     * @return the value
+     */
+    public Integer getCapacityValue() {
+        return capacityValue;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -285,6 +400,8 @@ public final class ResourceAnalyticsInstanceOacAttachmentDetails
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", capacityType=").append(String.valueOf(this.capacityType));
+        sb.append(", capacityValue=").append(String.valueOf(this.capacityValue));
         sb.append(")");
         return sb.toString();
     }
@@ -305,6 +422,8 @@ public final class ResourceAnalyticsInstanceOacAttachmentDetails
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.capacityType, other.capacityType)
+                && java.util.Objects.equals(this.capacityValue, other.capacityValue)
                 && super.equals(other);
     }
 
@@ -319,6 +438,10 @@ public final class ResourceAnalyticsInstanceOacAttachmentDetails
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result = (result * PRIME) + (this.capacityType == null ? 43 : this.capacityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityValue == null ? 43 : this.capacityValue.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

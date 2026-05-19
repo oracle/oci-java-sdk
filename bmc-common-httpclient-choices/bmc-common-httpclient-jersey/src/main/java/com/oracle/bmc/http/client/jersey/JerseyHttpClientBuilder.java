@@ -108,6 +108,7 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
     private boolean useApacheConnector = true;
     private ExecutorServiceProvider executorServiceProvider = null;
     private boolean useJerseyDefaultExecutorServiceProvider = false;
+    private boolean asyncThreadPoolCoreThreadTimeoutEnabled = false;
     private ClientBuilderDecorator decorator = SIMPLE_DECORATOR;
 
     private boolean shouldSetDefaultConnectionManagerForApacheConnector = false;
@@ -175,6 +176,8 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
     public <T> HttpClientBuilder property(ClientProperty<T> key, T value) {
         if (key == StandardClientProperties.ASYNC_POOL_SIZE) {
             properties.put(ClientProperties.ASYNC_THREADPOOL_SIZE, value);
+        } else if (key == StandardClientProperties.ASYNC_POOL_CORE_THREAD_TIMEOUT_ENABLED) {
+            asyncThreadPoolCoreThreadTimeoutEnabled = (((Boolean) value) == Boolean.TRUE);
         } else if (key == StandardClientProperties.READ_TIMEOUT) {
             properties.put(ClientProperties.READ_TIMEOUT, (int) ((Duration) value).toMillis());
         } else if (key == StandardClientProperties.CONNECT_TIMEOUT) {
@@ -372,7 +375,18 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
             // no specific ExecutorServiceProvider set
             if (!useJerseyDefaultExecutorServiceProvider) {
                 // not told to use Jersey's default
-                client.register(DaemonClientAsyncExecutorProvider.class);
+                if (asyncThreadPoolCoreThreadTimeoutEnabled) {
+                    // Registering an instance bypasses Jersey injection, so pass the pool size
+                    // explicitly along with the SDK-specific timeout flag.
+                    client.register(
+                            new DaemonClientAsyncExecutorProvider(
+                                    getAsyncThreadPoolSize(),
+                                    asyncThreadPoolCoreThreadTimeoutEnabled));
+                } else {
+                    // Registering the class lets Jersey inject ClientAsyncThreadPoolSize from
+                    // ClientProperties.ASYNC_THREADPOOL_SIZE.
+                    client.register(DaemonClientAsyncExecutorProvider.class);
+                }
             }
         }
 
@@ -413,6 +427,10 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
 
     private boolean shouldUseApacheConnector() {
         return JerseyHttpProvider.isApacheDependencyPresent && useApacheConnector;
+    }
+
+    private int getAsyncThreadPoolSize() {
+        return ((Number) properties.get(ClientProperties.ASYNC_THREADPOOL_SIZE)).intValue();
     }
 
     private static class PrioritizedValue<T> {

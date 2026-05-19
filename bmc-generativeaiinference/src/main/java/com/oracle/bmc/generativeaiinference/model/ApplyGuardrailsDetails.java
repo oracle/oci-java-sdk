@@ -23,12 +23,21 @@ package com.oracle.bmc.generativeaiinference.model;
 public final class ApplyGuardrailsDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"input", "guardrailConfigs", "compartmentId"})
+    @java.beans.ConstructorProperties({
+        "input",
+        "guardrailConfigs",
+        "guardrailVersionConfig",
+        "compartmentId"
+    })
     public ApplyGuardrailsDetails(
-            GuardrailsInput input, GuardrailConfigs guardrailConfigs, String compartmentId) {
+            GuardrailsInput input,
+            GuardrailConfigs guardrailConfigs,
+            GuardrailVersionConfig guardrailVersionConfig,
+            String compartmentId) {
         super();
         this.input = input;
         this.guardrailConfigs = guardrailConfigs;
+        this.guardrailVersionConfig = guardrailVersionConfig;
         this.compartmentId = compartmentId;
     }
 
@@ -50,6 +59,15 @@ public final class ApplyGuardrailsDetails
         public Builder guardrailConfigs(GuardrailConfigs guardrailConfigs) {
             this.guardrailConfigs = guardrailConfigs;
             this.__explicitlySet__.add("guardrailConfigs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("guardrailVersionConfig")
+        private GuardrailVersionConfig guardrailVersionConfig;
+
+        public Builder guardrailVersionConfig(GuardrailVersionConfig guardrailVersionConfig) {
+            this.guardrailVersionConfig = guardrailVersionConfig;
+            this.__explicitlySet__.add("guardrailVersionConfig");
             return this;
         }
         /** The OCID of the compartment to apply guardrails. */
@@ -74,7 +92,10 @@ public final class ApplyGuardrailsDetails
         public ApplyGuardrailsDetails build() {
             ApplyGuardrailsDetails model =
                     new ApplyGuardrailsDetails(
-                            this.input, this.guardrailConfigs, this.compartmentId);
+                            this.input,
+                            this.guardrailConfigs,
+                            this.guardrailVersionConfig,
+                            this.compartmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -88,6 +109,9 @@ public final class ApplyGuardrailsDetails
             }
             if (model.wasPropertyExplicitlySet("guardrailConfigs")) {
                 this.guardrailConfigs(model.getGuardrailConfigs());
+            }
+            if (model.wasPropertyExplicitlySet("guardrailVersionConfig")) {
+                this.guardrailVersionConfig(model.getGuardrailVersionConfig());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -117,6 +141,13 @@ public final class ApplyGuardrailsDetails
 
     public GuardrailConfigs getGuardrailConfigs() {
         return guardrailConfigs;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("guardrailVersionConfig")
+    private final GuardrailVersionConfig guardrailVersionConfig;
+
+    public GuardrailVersionConfig getGuardrailVersionConfig() {
+        return guardrailVersionConfig;
     }
 
     /** The OCID of the compartment to apply guardrails. */
@@ -149,6 +180,7 @@ public final class ApplyGuardrailsDetails
         sb.append("super=").append(super.toString());
         sb.append("input=").append(String.valueOf(this.input));
         sb.append(", guardrailConfigs=").append(String.valueOf(this.guardrailConfigs));
+        sb.append(", guardrailVersionConfig=").append(String.valueOf(this.guardrailVersionConfig));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
         return sb.toString();
@@ -166,6 +198,8 @@ public final class ApplyGuardrailsDetails
         ApplyGuardrailsDetails other = (ApplyGuardrailsDetails) o;
         return java.util.Objects.equals(this.input, other.input)
                 && java.util.Objects.equals(this.guardrailConfigs, other.guardrailConfigs)
+                && java.util.Objects.equals(
+                        this.guardrailVersionConfig, other.guardrailVersionConfig)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && super.equals(other);
     }
@@ -178,6 +212,11 @@ public final class ApplyGuardrailsDetails
         result =
                 (result * PRIME)
                         + (this.guardrailConfigs == null ? 43 : this.guardrailConfigs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.guardrailVersionConfig == null
+                                ? 43
+                                : this.guardrailVersionConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

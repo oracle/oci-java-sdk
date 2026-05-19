@@ -29,6 +29,9 @@ public final class TenancyAttachmentSummary
         "resourceAnalyticsInstanceId",
         "tenancyId",
         "isReportingTenancy",
+        "dataPopulationStatus",
+        "timeDataPopulationStarted",
+        "timeDataPopulationEnded",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -41,6 +44,9 @@ public final class TenancyAttachmentSummary
             String resourceAnalyticsInstanceId,
             String tenancyId,
             Boolean isReportingTenancy,
+            TenancyAttachment.DataPopulationStatus dataPopulationStatus,
+            java.util.Date timeDataPopulationStarted,
+            java.util.Date timeDataPopulationEnded,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             TenancyAttachment.LifecycleState lifecycleState,
@@ -52,6 +58,9 @@ public final class TenancyAttachmentSummary
         this.resourceAnalyticsInstanceId = resourceAnalyticsInstanceId;
         this.tenancyId = tenancyId;
         this.isReportingTenancy = isReportingTenancy;
+        this.dataPopulationStatus = dataPopulationStatus;
+        this.timeDataPopulationStarted = timeDataPopulationStarted;
+        this.timeDataPopulationEnded = timeDataPopulationEnded;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -146,6 +155,68 @@ public final class TenancyAttachmentSummary
         public Builder isReportingTenancy(Boolean isReportingTenancy) {
             this.isReportingTenancy = isReportingTenancy;
             this.__explicitlySet__.add("isReportingTenancy");
+            return this;
+        }
+        /** The overall status of the data population from the tenancy. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dataPopulationStatus")
+        private TenancyAttachment.DataPopulationStatus dataPopulationStatus;
+
+        /**
+         * The overall status of the data population from the tenancy.
+         *
+         * @param dataPopulationStatus the value to set
+         * @return this builder
+         */
+        public Builder dataPopulationStatus(
+                TenancyAttachment.DataPopulationStatus dataPopulationStatus) {
+            this.dataPopulationStatus = dataPopulationStatus;
+            this.__explicitlySet__.add("dataPopulationStatus");
+            return this;
+        }
+        /**
+         * The date and time the data population tasks started, in the format defined by [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDataPopulationStarted")
+        private java.util.Date timeDataPopulationStarted;
+
+        /**
+         * The date and time the data population tasks started, in the format defined by [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeDataPopulationStarted the value to set
+         * @return this builder
+         */
+        public Builder timeDataPopulationStarted(java.util.Date timeDataPopulationStarted) {
+            this.timeDataPopulationStarted = timeDataPopulationStarted;
+            this.__explicitlySet__.add("timeDataPopulationStarted");
+            return this;
+        }
+        /**
+         * The date and time the data population tasks completed, in the format defined by [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDataPopulationEnded")
+        private java.util.Date timeDataPopulationEnded;
+
+        /**
+         * The date and time the data population tasks completed, in the format defined by [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeDataPopulationEnded the value to set
+         * @return this builder
+         */
+        public Builder timeDataPopulationEnded(java.util.Date timeDataPopulationEnded) {
+            this.timeDataPopulationEnded = timeDataPopulationEnded;
+            this.__explicitlySet__.add("timeDataPopulationEnded");
             return this;
         }
         /**
@@ -263,6 +334,9 @@ public final class TenancyAttachmentSummary
                             this.resourceAnalyticsInstanceId,
                             this.tenancyId,
                             this.isReportingTenancy,
+                            this.dataPopulationStatus,
+                            this.timeDataPopulationStarted,
+                            this.timeDataPopulationEnded,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -290,6 +364,15 @@ public final class TenancyAttachmentSummary
             }
             if (model.wasPropertyExplicitlySet("isReportingTenancy")) {
                 this.isReportingTenancy(model.getIsReportingTenancy());
+            }
+            if (model.wasPropertyExplicitlySet("dataPopulationStatus")) {
+                this.dataPopulationStatus(model.getDataPopulationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeDataPopulationStarted")) {
+                this.timeDataPopulationStarted(model.getTimeDataPopulationStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeDataPopulationEnded")) {
+                this.timeDataPopulationEnded(model.getTimeDataPopulationEnded());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -394,6 +477,61 @@ public final class TenancyAttachmentSummary
      */
     public Boolean getIsReportingTenancy() {
         return isReportingTenancy;
+    }
+
+    /** The overall status of the data population from the tenancy. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dataPopulationStatus")
+    private final TenancyAttachment.DataPopulationStatus dataPopulationStatus;
+
+    /**
+     * The overall status of the data population from the tenancy.
+     *
+     * @return the value
+     */
+    public TenancyAttachment.DataPopulationStatus getDataPopulationStatus() {
+        return dataPopulationStatus;
+    }
+
+    /**
+     * The date and time the data population tasks started, in the format defined by [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDataPopulationStarted")
+    private final java.util.Date timeDataPopulationStarted;
+
+    /**
+     * The date and time the data population tasks started, in the format defined by [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeDataPopulationStarted() {
+        return timeDataPopulationStarted;
+    }
+
+    /**
+     * The date and time the data population tasks completed, in the format defined by [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDataPopulationEnded")
+    private final java.util.Date timeDataPopulationEnded;
+
+    /**
+     * The date and time the data population tasks completed, in the format defined by [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeDataPopulationEnded() {
+        return timeDataPopulationEnded;
     }
 
     /**
@@ -508,6 +646,11 @@ public final class TenancyAttachmentSummary
                 .append(String.valueOf(this.resourceAnalyticsInstanceId));
         sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(", isReportingTenancy=").append(String.valueOf(this.isReportingTenancy));
+        sb.append(", dataPopulationStatus=").append(String.valueOf(this.dataPopulationStatus));
+        sb.append(", timeDataPopulationStarted=")
+                .append(String.valueOf(this.timeDataPopulationStarted));
+        sb.append(", timeDataPopulationEnded=")
+                .append(String.valueOf(this.timeDataPopulationEnded));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -533,6 +676,11 @@ public final class TenancyAttachmentSummary
                         this.resourceAnalyticsInstanceId, other.resourceAnalyticsInstanceId)
                 && java.util.Objects.equals(this.tenancyId, other.tenancyId)
                 && java.util.Objects.equals(this.isReportingTenancy, other.isReportingTenancy)
+                && java.util.Objects.equals(this.dataPopulationStatus, other.dataPopulationStatus)
+                && java.util.Objects.equals(
+                        this.timeDataPopulationStarted, other.timeDataPopulationStarted)
+                && java.util.Objects.equals(
+                        this.timeDataPopulationEnded, other.timeDataPopulationEnded)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -558,6 +706,21 @@ public final class TenancyAttachmentSummary
                         + (this.isReportingTenancy == null
                                 ? 43
                                 : this.isReportingTenancy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataPopulationStatus == null
+                                ? 43
+                                : this.dataPopulationStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataPopulationStarted == null
+                                ? 43
+                                : this.timeDataPopulationStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataPopulationEnded == null
+                                ? 43
+                                : this.timeDataPopulationEnded.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

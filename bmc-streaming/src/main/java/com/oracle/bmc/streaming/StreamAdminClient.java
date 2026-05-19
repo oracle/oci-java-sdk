@@ -152,6 +152,9 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeConnectHarnessCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeConnectHarnessCompartmentResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -184,6 +187,9 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeStreamCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeStreamCompartmentResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -216,6 +222,9 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeStreamPoolCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeStreamPoolCompartmentResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -245,6 +254,9 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         CreateConnectHarnessResponse.Builder::connectHarness)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateConnectHarnessResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateConnectHarnessResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", CreateConnectHarnessResponse.Builder::etag)
                 .callSync();
     }
@@ -272,6 +284,8 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         CreateStreamResponse.Builder::stream)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateStreamResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateStreamResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", CreateStreamResponse.Builder::etag)
                 .callSync();
     }
@@ -301,6 +315,8 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         CreateStreamPoolResponse.Builder::streamPool)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateStreamPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateStreamPoolResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", CreateStreamPoolResponse.Builder::etag)
                 .callSync();
     }
@@ -327,6 +343,9 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteConnectHarnessResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteConnectHarnessResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -352,6 +371,8 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteStreamResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteStreamResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -377,6 +398,8 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteStreamPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteStreamPoolResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -461,6 +484,33 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", GetStreamPoolResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetStreamPoolResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, GetWorkRequestResponse::builder)
+                .logger(LOG, "getWorkRequest")
+                .serviceDetails(
+                        "StreamAdmin",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/WorkRequest/GetWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.streaming.model.WorkRequest.class,
+                        GetWorkRequestResponse.Builder::workRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -576,6 +626,114 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ListWorkRequestErrorsResponse listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request) {
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestErrorsResponse::builder)
+                .logger(LOG, "listWorkRequestErrors")
+                .serviceDetails(
+                        "StreamAdmin",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/WorkRequestErrorCollection/ListWorkRequestErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestErrorsRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("errors")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.streaming.model.WorkRequestErrorCollection.class,
+                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListWorkRequestErrorsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestLogsResponse::builder)
+                .logger(LOG, "listWorkRequestLogs")
+                .serviceDetails(
+                        "StreamAdmin",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/WorkRequestLogEntry/ListWorkRequestLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestLogsRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("logs")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.streaming.model.WorkRequestLogEntryCollection.class,
+                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListWorkRequestLogsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
+
+        return clientCall(request, ListWorkRequestsResponse::builder)
+                .logger(LOG, "listWorkRequests")
+                .serviceDetails(
+                        "StreamAdmin",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/WorkRequestSummaryCollection/ListWorkRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestsRequest::builder)
+                .basePath("/20180418")
+                .appendPathParam("workRequests")
+                .appendQueryParam("workRequestId", request.getWorkRequestId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.streaming.model.WorkRequestSummaryCollection.class,
+                        ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListWorkRequestsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateConnectHarnessResponse updateConnectHarness(UpdateConnectHarnessRequest request) {
 
         Validate.notBlank(request.getConnectHarnessId(), "connectHarnessId must not be blank");
@@ -604,6 +762,9 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         UpdateConnectHarnessResponse.Builder::connectHarness)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConnectHarnessResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateConnectHarnessResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", UpdateConnectHarnessResponse.Builder::etag)
                 .callSync();
     }
@@ -635,6 +796,8 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         UpdateStreamResponse.Builder::stream)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateStreamResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateStreamResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", UpdateStreamResponse.Builder::etag)
                 .callSync();
     }
@@ -667,6 +830,8 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         UpdateStreamPoolResponse.Builder::streamPool)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateStreamPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateStreamPoolResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", UpdateStreamPoolResponse.Builder::etag)
                 .callSync();
     }

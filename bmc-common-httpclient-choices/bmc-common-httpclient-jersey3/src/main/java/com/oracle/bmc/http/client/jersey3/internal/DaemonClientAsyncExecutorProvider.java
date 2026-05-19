@@ -13,7 +13,10 @@ import org.glassfish.jersey.internal.util.collection.Value;
 import org.glassfish.jersey.internal.util.collection.Values;
 import org.glassfish.jersey.spi.ThreadPoolExecutorProvider;
 
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.logging.Logger;
 
 /** Mostly copied from jersey DefaultClientAsyncExecutorProvider, but with daemon threads */
@@ -23,11 +26,18 @@ public class DaemonClientAsyncExecutorProvider extends ThreadPoolExecutorProvide
             Logger.getLogger(DaemonClientAsyncExecutorProvider.class.getName());
 
     private final LazyValue<Integer> asyncThreadPoolSize;
+    private final boolean allowCoreThreadTimeOut;
 
     @Inject
     public DaemonClientAsyncExecutorProvider(
             @Named("ClientAsyncThreadPoolSize") final int poolSize) {
+        this(poolSize, false);
+    }
+
+    public DaemonClientAsyncExecutorProvider(
+            final int poolSize, final boolean allowCoreThreadTimeOut) {
         super("jersey-client-async-executor");
+        this.allowCoreThreadTimeOut = allowCoreThreadTimeOut;
 
         this.asyncThreadPoolSize =
                 Values.lazy(
@@ -64,6 +74,28 @@ public class DaemonClientAsyncExecutorProvider extends ThreadPoolExecutorProvide
         } else {
             return 0;
         }
+    }
+
+    @Override
+    protected ThreadPoolExecutor createExecutor(
+            int corePoolSize,
+            int maximumPoolSize,
+            long keepAliveTime,
+            BlockingQueue<Runnable> workQueue,
+            ThreadFactory threadFactory,
+            RejectedExecutionHandler rejectedExecutionHandler) {
+        ThreadPoolExecutor executor =
+                super.createExecutor(
+                        corePoolSize,
+                        maximumPoolSize,
+                        keepAliveTime,
+                        workQueue,
+                        threadFactory,
+                        rejectedExecutionHandler);
+        if (allowCoreThreadTimeOut) {
+            executor.allowCoreThreadTimeOut(true);
+        }
+        return executor;
     }
 
     @Override
