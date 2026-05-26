@@ -145,7 +145,7 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
         private ServiceAccountTokenSupplier serviceAccountTokenSupplier;
 
         /** Flag to enable new Service Account level token caching */
-        private boolean isTokenCachingEnabled = false;
+        private boolean isTokenCachingEnabled = true;
 
         public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder() {
             this.serviceAccountTokenSupplier = new DefaultServiceAccountTokenProvider();

@@ -23,11 +23,13 @@ package com.oracle.bmc.clusterplacementgroups.model;
 public final class CapabilityDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"service", "name"})
-    public CapabilityDetails(String service, String name) {
+    @java.beans.ConstructorProperties({"service", "name", "additionalDetails"})
+    public CapabilityDetails(
+            String service, String name, AdditionalCapabilityDetails additionalDetails) {
         super();
         this.service = service;
         this.name = name;
+        this.additionalDetails = additionalDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -63,11 +65,21 @@ public final class CapabilityDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
+        private AdditionalCapabilityDetails additionalDetails;
+
+        public Builder additionalDetails(AdditionalCapabilityDetails additionalDetails) {
+            this.additionalDetails = additionalDetails;
+            this.__explicitlySet__.add("additionalDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CapabilityDetails build() {
-            CapabilityDetails model = new CapabilityDetails(this.service, this.name);
+            CapabilityDetails model =
+                    new CapabilityDetails(this.service, this.name, this.additionalDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -81,6 +93,9 @@ public final class CapabilityDetails
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("additionalDetails")) {
+                this.additionalDetails(model.getAdditionalDetails());
             }
             return this;
         }
@@ -121,6 +136,13 @@ public final class CapabilityDetails
         return name;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
+    private final AdditionalCapabilityDetails additionalDetails;
+
+    public AdditionalCapabilityDetails getAdditionalDetails() {
+        return additionalDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -138,6 +160,7 @@ public final class CapabilityDetails
         sb.append("super=").append(super.toString());
         sb.append("service=").append(String.valueOf(this.service));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -154,6 +177,7 @@ public final class CapabilityDetails
         CapabilityDetails other = (CapabilityDetails) o;
         return java.util.Objects.equals(this.service, other.service)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
                 && super.equals(other);
     }
 
@@ -163,6 +187,9 @@ public final class CapabilityDetails
         int result = 1;
         result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalDetails == null ? 43 : this.additionalDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

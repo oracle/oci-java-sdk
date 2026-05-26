@@ -9,7 +9,8 @@ import com.oracle.bmc.networkfirewall.responses.*;
 
 /**
  * Use the Network Firewall API to create network firewalls and configure policies that regulates
- * network traffic in and across VCNs.
+ * network traffic in and across VCNs. For more information, see [Overview of Network
+ * Firewall](https://docs.oracle.com/iaas/Content/network-firewall/overview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public interface NetworkFirewallAsync extends AutoCloseable {
@@ -917,6 +918,24 @@ public interface NetworkFirewallAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetNetworkFirewallRequest, GetNetworkFirewallResponse>
                     handler);
+
+    /**
+     * Get Overall health status of Network Firewall
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNetworkFirewallHealthStatusResponse>
+            getNetworkFirewallHealthStatus(
+                    GetNetworkFirewallHealthStatusRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetNetworkFirewallHealthStatusRequest,
+                                    GetNetworkFirewallHealthStatusResponse>
+                            handler);
 
     /**
      * Gets a NetworkFirewallPolicy given the network firewall policy identifier.

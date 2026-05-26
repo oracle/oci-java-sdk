@@ -4,7 +4,10 @@
  */
 package com.oracle.bmc.networkfirewall.model;
 
-/** Application Type: * ICMP - An ICMP application. * ICMPv6 - An ICMPv6 support application. */
+/**
+ * Application Type: * ICMP - A user-defined ICMP application. * ICMPv6 - A user-defined ICMPv6
+ * support application.
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public enum AppType implements com.oracle.bmc.http.internal.BmcEnum {
     Icmp("ICMP"),

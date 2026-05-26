@@ -36,6 +36,8 @@ public final class CreateCloudAutonomousVmClusterDetails
         "clusterTimeZone",
         "computeModel",
         "isMtlsEnabledVmCluster",
+        "distributionAlgorithm",
+        "sgaPercentage",
         "dbServers",
         "maintenanceWindowDetails",
         "scanListenerPortTls",
@@ -60,6 +62,8 @@ public final class CreateCloudAutonomousVmClusterDetails
             String clusterTimeZone,
             ComputeModel computeModel,
             Boolean isMtlsEnabledVmCluster,
+            DistributionAlgorithm distributionAlgorithm,
+            Float sgaPercentage,
             java.util.List<String> dbServers,
             MaintenanceWindow maintenanceWindowDetails,
             Integer scanListenerPortTls,
@@ -83,6 +87,8 @@ public final class CreateCloudAutonomousVmClusterDetails
         this.clusterTimeZone = clusterTimeZone;
         this.computeModel = computeModel;
         this.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
+        this.distributionAlgorithm = distributionAlgorithm;
+        this.sgaPercentage = sgaPercentage;
         this.dbServers = dbServers;
         this.maintenanceWindowDetails = maintenanceWindowDetails;
         this.scanListenerPortTls = scanListenerPortTls;
@@ -303,6 +309,36 @@ public final class CreateCloudAutonomousVmClusterDetails
         public Builder isMtlsEnabledVmCluster(Boolean isMtlsEnabledVmCluster) {
             this.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
             this.__explicitlySet__.add("isMtlsEnabledVmCluster");
+            return this;
+        }
+        /** The distribution algorithm used for the Autonomous VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("distributionAlgorithm")
+        private DistributionAlgorithm distributionAlgorithm;
+
+        /**
+         * The distribution algorithm used for the Autonomous VM cluster.
+         *
+         * @param distributionAlgorithm the value to set
+         * @return this builder
+         */
+        public Builder distributionAlgorithm(DistributionAlgorithm distributionAlgorithm) {
+            this.distributionAlgorithm = distributionAlgorithm;
+            this.__explicitlySet__.add("distributionAlgorithm");
+            return this;
+        }
+        /** Percentage of ECPU memory allocated for SGA(System Global Area). */
+        @com.fasterxml.jackson.annotation.JsonProperty("sgaPercentage")
+        private Float sgaPercentage;
+
+        /**
+         * Percentage of ECPU memory allocated for SGA(System Global Area).
+         *
+         * @param sgaPercentage the value to set
+         * @return this builder
+         */
+        public Builder sgaPercentage(Float sgaPercentage) {
+            this.sgaPercentage = sgaPercentage;
+            this.__explicitlySet__.add("sgaPercentage");
             return this;
         }
         /** The list of database servers. */
@@ -546,6 +582,8 @@ public final class CreateCloudAutonomousVmClusterDetails
                             this.clusterTimeZone,
                             this.computeModel,
                             this.isMtlsEnabledVmCluster,
+                            this.distributionAlgorithm,
+                            this.sgaPercentage,
                             this.dbServers,
                             this.maintenanceWindowDetails,
                             this.scanListenerPortTls,
@@ -599,6 +637,12 @@ public final class CreateCloudAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("isMtlsEnabledVmCluster")) {
                 this.isMtlsEnabledVmCluster(model.getIsMtlsEnabledVmCluster());
+            }
+            if (model.wasPropertyExplicitlySet("distributionAlgorithm")) {
+                this.distributionAlgorithm(model.getDistributionAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("sgaPercentage")) {
+                this.sgaPercentage(model.getSgaPercentage());
             }
             if (model.wasPropertyExplicitlySet("dbServers")) {
                 this.dbServers(model.getDbServers());
@@ -861,6 +905,65 @@ public final class CreateCloudAutonomousVmClusterDetails
      */
     public Boolean getIsMtlsEnabledVmCluster() {
         return isMtlsEnabledVmCluster;
+    }
+
+    /** The distribution algorithm used for the Autonomous VM cluster. */
+    public enum DistributionAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+        ResourceOptimized("RESOURCE_OPTIMIZED"),
+        DistributionOptimized("DISTRIBUTION_OPTIMIZED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DistributionAlgorithm> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DistributionAlgorithm v : DistributionAlgorithm.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DistributionAlgorithm(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DistributionAlgorithm create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid DistributionAlgorithm: " + key);
+        }
+    };
+    /** The distribution algorithm used for the Autonomous VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("distributionAlgorithm")
+    private final DistributionAlgorithm distributionAlgorithm;
+
+    /**
+     * The distribution algorithm used for the Autonomous VM cluster.
+     *
+     * @return the value
+     */
+    public DistributionAlgorithm getDistributionAlgorithm() {
+        return distributionAlgorithm;
+    }
+
+    /** Percentage of ECPU memory allocated for SGA(System Global Area). */
+    @com.fasterxml.jackson.annotation.JsonProperty("sgaPercentage")
+    private final Float sgaPercentage;
+
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     *
+     * @return the value
+     */
+    public Float getSgaPercentage() {
+        return sgaPercentage;
     }
 
     /** The list of database servers. */
@@ -1140,6 +1243,8 @@ public final class CreateCloudAutonomousVmClusterDetails
         sb.append(", clusterTimeZone=").append(String.valueOf(this.clusterTimeZone));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", isMtlsEnabledVmCluster=").append(String.valueOf(this.isMtlsEnabledVmCluster));
+        sb.append(", distributionAlgorithm=").append(String.valueOf(this.distributionAlgorithm));
+        sb.append(", sgaPercentage=").append(String.valueOf(this.sgaPercentage));
         sb.append(", dbServers=").append(String.valueOf(this.dbServers));
         sb.append(", maintenanceWindowDetails=")
                 .append(String.valueOf(this.maintenanceWindowDetails));
@@ -1182,6 +1287,8 @@ public final class CreateCloudAutonomousVmClusterDetails
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(
                         this.isMtlsEnabledVmCluster, other.isMtlsEnabledVmCluster)
+                && java.util.Objects.equals(this.distributionAlgorithm, other.distributionAlgorithm)
+                && java.util.Objects.equals(this.sgaPercentage, other.sgaPercentage)
                 && java.util.Objects.equals(this.dbServers, other.dbServers)
                 && java.util.Objects.equals(
                         this.maintenanceWindowDetails, other.maintenanceWindowDetails)
@@ -1241,6 +1348,14 @@ public final class CreateCloudAutonomousVmClusterDetails
                         + (this.isMtlsEnabledVmCluster == null
                                 ? 43
                                 : this.isMtlsEnabledVmCluster.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.distributionAlgorithm == null
+                                ? 43
+                                : this.distributionAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sgaPercentage == null ? 43 : this.sgaPercentage.hashCode());
         result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
         result =
                 (result * PRIME)

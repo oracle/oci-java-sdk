@@ -42,7 +42,9 @@ public final class CreateAutonomousVmClusterDetails
         "definedTags",
         "scanListenerPortTls",
         "scanListenerPortNonTls",
-        "isMtlsEnabled"
+        "isMtlsEnabled",
+        "distributionAlgorithm",
+        "sgaPercentage"
     })
     public CreateAutonomousVmClusterDetails(
             String compartmentId,
@@ -63,7 +65,9 @@ public final class CreateAutonomousVmClusterDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Integer scanListenerPortTls,
             Integer scanListenerPortNonTls,
-            Boolean isMtlsEnabled) {
+            Boolean isMtlsEnabled,
+            DistributionAlgorithm distributionAlgorithm,
+            Float sgaPercentage) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -84,6 +88,8 @@ public final class CreateAutonomousVmClusterDetails
         this.scanListenerPortTls = scanListenerPortTls;
         this.scanListenerPortNonTls = scanListenerPortNonTls;
         this.isMtlsEnabled = isMtlsEnabled;
+        this.distributionAlgorithm = distributionAlgorithm;
+        this.sgaPercentage = sgaPercentage;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -428,6 +434,36 @@ public final class CreateAutonomousVmClusterDetails
             this.__explicitlySet__.add("isMtlsEnabled");
             return this;
         }
+        /** The distribution algorithm used for the Autonomous VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("distributionAlgorithm")
+        private DistributionAlgorithm distributionAlgorithm;
+
+        /**
+         * The distribution algorithm used for the Autonomous VM cluster.
+         *
+         * @param distributionAlgorithm the value to set
+         * @return this builder
+         */
+        public Builder distributionAlgorithm(DistributionAlgorithm distributionAlgorithm) {
+            this.distributionAlgorithm = distributionAlgorithm;
+            this.__explicitlySet__.add("distributionAlgorithm");
+            return this;
+        }
+        /** Percentage of ECPU memory allocated for SGA(System Global Area). */
+        @com.fasterxml.jackson.annotation.JsonProperty("sgaPercentage")
+        private Float sgaPercentage;
+
+        /**
+         * Percentage of ECPU memory allocated for SGA(System Global Area).
+         *
+         * @param sgaPercentage the value to set
+         * @return this builder
+         */
+        public Builder sgaPercentage(Float sgaPercentage) {
+            this.sgaPercentage = sgaPercentage;
+            this.__explicitlySet__.add("sgaPercentage");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -453,7 +489,9 @@ public final class CreateAutonomousVmClusterDetails
                             this.definedTags,
                             this.scanListenerPortTls,
                             this.scanListenerPortNonTls,
-                            this.isMtlsEnabled);
+                            this.isMtlsEnabled,
+                            this.distributionAlgorithm,
+                            this.sgaPercentage);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -518,6 +556,12 @@ public final class CreateAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("isMtlsEnabled")) {
                 this.isMtlsEnabled(model.getIsMtlsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("distributionAlgorithm")) {
+                this.distributionAlgorithm(model.getDistributionAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("sgaPercentage")) {
+                this.sgaPercentage(model.getSgaPercentage());
             }
             return this;
         }
@@ -901,6 +945,65 @@ public final class CreateAutonomousVmClusterDetails
         return isMtlsEnabled;
     }
 
+    /** The distribution algorithm used for the Autonomous VM cluster. */
+    public enum DistributionAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+        ResourceOptimized("RESOURCE_OPTIMIZED"),
+        DistributionOptimized("DISTRIBUTION_OPTIMIZED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DistributionAlgorithm> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DistributionAlgorithm v : DistributionAlgorithm.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DistributionAlgorithm(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DistributionAlgorithm create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid DistributionAlgorithm: " + key);
+        }
+    };
+    /** The distribution algorithm used for the Autonomous VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("distributionAlgorithm")
+    private final DistributionAlgorithm distributionAlgorithm;
+
+    /**
+     * The distribution algorithm used for the Autonomous VM cluster.
+     *
+     * @return the value
+     */
+    public DistributionAlgorithm getDistributionAlgorithm() {
+        return distributionAlgorithm;
+    }
+
+    /** Percentage of ECPU memory allocated for SGA(System Global Area). */
+    @com.fasterxml.jackson.annotation.JsonProperty("sgaPercentage")
+    private final Float sgaPercentage;
+
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     *
+     * @return the value
+     */
+    public Float getSgaPercentage() {
+        return sgaPercentage;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -940,6 +1043,8 @@ public final class CreateAutonomousVmClusterDetails
         sb.append(", scanListenerPortTls=").append(String.valueOf(this.scanListenerPortTls));
         sb.append(", scanListenerPortNonTls=").append(String.valueOf(this.scanListenerPortNonTls));
         sb.append(", isMtlsEnabled=").append(String.valueOf(this.isMtlsEnabled));
+        sb.append(", distributionAlgorithm=").append(String.valueOf(this.distributionAlgorithm));
+        sb.append(", sgaPercentage=").append(String.valueOf(this.sgaPercentage));
         sb.append(")");
         return sb.toString();
     }
@@ -979,6 +1084,8 @@ public final class CreateAutonomousVmClusterDetails
                 && java.util.Objects.equals(
                         this.scanListenerPortNonTls, other.scanListenerPortNonTls)
                 && java.util.Objects.equals(this.isMtlsEnabled, other.isMtlsEnabled)
+                && java.util.Objects.equals(this.distributionAlgorithm, other.distributionAlgorithm)
+                && java.util.Objects.equals(this.sgaPercentage, other.sgaPercentage)
                 && super.equals(other);
     }
 
@@ -1049,6 +1156,14 @@ public final class CreateAutonomousVmClusterDetails
         result =
                 (result * PRIME)
                         + (this.isMtlsEnabled == null ? 43 : this.isMtlsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.distributionAlgorithm == null
+                                ? 43
+                                : this.distributionAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sgaPercentage == null ? 43 : this.sgaPercentage.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

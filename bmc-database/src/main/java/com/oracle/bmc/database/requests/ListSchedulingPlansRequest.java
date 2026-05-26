@@ -179,6 +179,47 @@ public class ListSchedulingPlansRequest extends com.oracle.bmc.requests.BmcReque
     public String getId() {
         return id;
     }
+    /** A filter to return only resources that match the given plan intent exactly. */
+    private PlanIntent planIntent;
+
+    /** A filter to return only resources that match the given plan intent exactly. */
+    public enum PlanIntent implements com.oracle.bmc.http.internal.BmcEnum {
+        ExadataInfrastructureFullSoftwareUpdate("EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"),
+        ExadataInfrastructureSecurityUpdate("EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, PlanIntent> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PlanIntent v : PlanIntent.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        PlanIntent(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PlanIntent create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid PlanIntent: " + key);
+        }
+    };
+
+    /** A filter to return only resources that match the given plan intent exactly. */
+    public PlanIntent getPlanIntent() {
+        return planIntent;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -354,6 +395,20 @@ public class ListSchedulingPlansRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /** A filter to return only resources that match the given plan intent exactly. */
+        private PlanIntent planIntent = null;
+
+        /**
+         * A filter to return only resources that match the given plan intent exactly.
+         *
+         * @param planIntent the value to set
+         * @return this builder instance
+         */
+        public Builder planIntent(PlanIntent planIntent) {
+            this.planIntent = planIntent;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -395,6 +450,7 @@ public class ListSchedulingPlansRequest extends com.oracle.bmc.requests.BmcReque
             displayName(o.getDisplayName());
             resourceId(o.getResourceId());
             id(o.getId());
+            planIntent(o.getPlanIntent());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -440,9 +496,11 @@ public class ListSchedulingPlansRequest extends com.oracle.bmc.requests.BmcReque
             request.displayName = displayName;
             request.resourceId = resourceId;
             request.id = id;
+            request.planIntent = planIntent;
             return request;
             // new ListSchedulingPlansRequest(compartmentId, limit, page, opcRequestId, sortBy,
-            // sortOrder, lifecycleState, schedulingPolicyId, displayName, resourceId, id);
+            // sortOrder, lifecycleState, schedulingPolicyId, displayName, resourceId, id,
+            // planIntent);
         }
     }
 
@@ -463,7 +521,8 @@ public class ListSchedulingPlansRequest extends com.oracle.bmc.requests.BmcReque
                 .schedulingPolicyId(schedulingPolicyId)
                 .displayName(displayName)
                 .resourceId(resourceId)
-                .id(id);
+                .id(id)
+                .planIntent(planIntent);
     }
 
     /**
@@ -491,6 +550,7 @@ public class ListSchedulingPlansRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",resourceId=").append(String.valueOf(this.resourceId));
         sb.append(",id=").append(String.valueOf(this.id));
+        sb.append(",planIntent=").append(String.valueOf(this.planIntent));
         sb.append(")");
         return sb.toString();
     }
@@ -516,7 +576,8 @@ public class ListSchedulingPlansRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.schedulingPolicyId, other.schedulingPolicyId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
-                && java.util.Objects.equals(this.id, other.id);
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.planIntent, other.planIntent);
     }
 
     @Override
@@ -542,6 +603,7 @@ public class ListSchedulingPlansRequest extends com.oracle.bmc.requests.BmcReque
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.planIntent == null ? 43 : this.planIntent.hashCode());
         return result;
     }
 }

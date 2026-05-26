@@ -378,6 +378,44 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeComputeTargetCompartmentResponse>
+            changeComputeTargetCompartment(
+                    ChangeComputeTargetCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeTargetCompartmentRequest,
+                                    ChangeComputeTargetCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getComputeTargetId(), "computeTargetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeTargetCompartmentDetails(),
+                "changeComputeTargetCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeTargetCompartmentResponse::builder)
+                .logger(LOG, "changeComputeTargetCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeComputeTargetCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/ChangeComputeTargetCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeTargetCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("computeTargets")
+                .appendPathParam(request.getComputeTargetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeTargetCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDataSciencePrivateEndpointCompartmentResponse>
             changeDataSciencePrivateEndpointCompartment(
                     ChangeDataSciencePrivateEndpointCompartmentRequest request,
@@ -1027,6 +1065,43 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         ChangeScheduleCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeScheduleCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateComputeTargetResponse> createComputeTarget(
+            CreateComputeTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateComputeTargetRequest, CreateComputeTargetResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateComputeTargetDetails(), "createComputeTargetDetails is required");
+
+        return clientCall(request, CreateComputeTargetResponse::builder)
+                .logger(LOG, "createComputeTarget")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateComputeTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/CreateComputeTarget")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateComputeTargetRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("computeTargets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ComputeTarget.class,
+                        CreateComputeTargetResponse.Builder::computeTarget)
+                .handleResponseHeaderString("etag", CreateComputeTargetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateComputeTargetResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateComputeTargetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateComputeTargetResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -2036,6 +2111,37 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteComputeTargetResponse> deleteComputeTarget(
+            DeleteComputeTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteComputeTargetRequest, DeleteComputeTargetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getComputeTargetId(), "computeTargetId must not be blank");
+
+        return clientCall(request, DeleteComputeTargetResponse::builder)
+                .logger(LOG, "deleteComputeTarget")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteComputeTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/DeleteComputeTarget")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteComputeTargetRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("computeTargets")
+                .appendPathParam(request.getComputeTargetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteComputeTargetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteComputeTargetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDataSciencePrivateEndpointResponse>
             deleteDataSciencePrivateEndpoint(
                     DeleteDataSciencePrivateEndpointRequest request,
@@ -2732,6 +2838,37 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ExportModelArtifactResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeTargetResponse> getComputeTarget(
+            GetComputeTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeTargetRequest, GetComputeTargetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getComputeTargetId(), "computeTargetId must not be blank");
+
+        return clientCall(request, GetComputeTargetResponse::builder)
+                .logger(LOG, "getComputeTarget")
+                .serviceDetails(
+                        "DataScience",
+                        "GetComputeTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/GetComputeTarget")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeTargetRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("computeTargets")
+                .appendPathParam(request.getComputeTargetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ComputeTarget.class,
+                        GetComputeTargetResponse.Builder::computeTarget)
+                .handleResponseHeaderString("etag", GetComputeTargetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeTargetResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -4037,6 +4174,81 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ImportModelArtifactResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeTargetShapesResponse> listComputeTargetShapes(
+            ListComputeTargetShapesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeTargetShapesRequest, ListComputeTargetShapesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeTargetShapesResponse::builder)
+                .logger(LOG, "listComputeTargetShapes")
+                .serviceDetails(
+                        "DataScience",
+                        "ListComputeTargetShapes",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTargetShapeSummary/ListComputeTargetShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeTargetShapesRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("computeTargetShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ComputeTargetShapeSummary.class,
+                        ListComputeTargetShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListComputeTargetShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListComputeTargetShapesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListComputeTargetShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeTargetsResponse> listComputeTargets(
+            ListComputeTargetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeTargetsRequest, ListComputeTargetsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeTargetsResponse::builder)
+                .logger(LOG, "listComputeTargets")
+                .serviceDetails(
+                        "DataScience",
+                        "ListComputeTargets",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTargetSummary/ListComputeTargets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeTargetsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("computeTargets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ComputeTargetSummary.class,
+                        ListComputeTargetsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListComputeTargetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListComputeTargetsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListComputeTargetsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -5435,6 +5647,40 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString(
                         "opc-request-id",
                         TriggerMlApplicationInstanceViewFlowResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeTargetResponse> updateComputeTarget(
+            UpdateComputeTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeTargetRequest, UpdateComputeTargetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getComputeTargetId(), "computeTargetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeTargetDetails(), "updateComputeTargetDetails is required");
+
+        return clientCall(request, UpdateComputeTargetResponse::builder)
+                .logger(LOG, "updateComputeTarget")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateComputeTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/UpdateComputeTarget")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeTargetRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("computeTargets")
+                .appendPathParam(request.getComputeTargetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateComputeTargetResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateComputeTargetResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

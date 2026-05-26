@@ -32,6 +32,9 @@ package com.oracle.bmc.datascience.model;
             value = ManagedEgressStandaloneJobInfrastructureConfigurationDetails.class,
             name = "ME_STANDALONE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ManagedComputeClusterJobInfrastructureConfigurationDetails.class,
+            name = "MANAGED_COMPUTE_CLUSTER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = StandaloneJobInfrastructureConfigurationDetails.class,
             name = "STANDALONE")
 })
@@ -91,6 +94,7 @@ public class JobInfrastructureConfigurationDetails
         MeStandalone("ME_STANDALONE"),
         MultiNode("MULTI_NODE"),
         Empty("EMPTY"),
+        ManagedComputeCluster("MANAGED_COMPUTE_CLUSTER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

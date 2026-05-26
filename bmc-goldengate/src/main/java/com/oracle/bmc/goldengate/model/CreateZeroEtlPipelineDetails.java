@@ -120,6 +120,24 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
+        private Integer cpuCoreCount;
+
+        public Builder cpuCoreCount(Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
+            this.__explicitlySet__.add("cpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
+        private Boolean isAutoScalingEnabled;
+
+        public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
+            this.isAutoScalingEnabled = isAutoScalingEnabled;
+            this.__explicitlySet__.add("isAutoScalingEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("processOptions")
         private ProcessOptions processOptions;
 
@@ -145,6 +163,8 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
                             this.sourceConnectionDetails,
                             this.targetConnectionDetails,
                             this.subnetId,
+                            this.cpuCoreCount,
+                            this.isAutoScalingEnabled,
                             this.processOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -184,6 +204,12 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
+                this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
             if (model.wasPropertyExplicitlySet("processOptions")) {
                 this.processOptions(model.getProcessOptions());
             }
@@ -212,6 +238,8 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
             SourcePipelineConnectionDetails sourceConnectionDetails,
             TargetPipelineConnectionDetails targetConnectionDetails,
             String subnetId,
+            Integer cpuCoreCount,
+            Boolean isAutoScalingEnabled,
             ProcessOptions processOptions) {
         super(
                 displayName,
@@ -223,7 +251,9 @@ public final class CreateZeroEtlPipelineDetails extends CreatePipelineDetails {
                 locks,
                 sourceConnectionDetails,
                 targetConnectionDetails,
-                subnetId);
+                subnetId,
+                cpuCoreCount,
+                isAutoScalingEnabled);
         this.processOptions = processOptions;
     }
 

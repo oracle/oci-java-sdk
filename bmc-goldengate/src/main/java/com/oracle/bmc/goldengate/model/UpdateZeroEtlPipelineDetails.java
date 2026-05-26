@@ -82,6 +82,24 @@ public final class UpdateZeroEtlPipelineDetails extends UpdatePipelineDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
+        private Integer cpuCoreCount;
+
+        public Builder cpuCoreCount(Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
+            this.__explicitlySet__.add("cpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
+        private Boolean isAutoScalingEnabled;
+
+        public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
+            this.isAutoScalingEnabled = isAutoScalingEnabled;
+            this.__explicitlySet__.add("isAutoScalingEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("processOptions")
         private ProcessOptions processOptions;
 
@@ -118,6 +136,8 @@ public final class UpdateZeroEtlPipelineDetails extends UpdatePipelineDetails {
                             this.freeformTags,
                             this.definedTags,
                             this.subnetId,
+                            this.cpuCoreCount,
+                            this.isAutoScalingEnabled,
                             this.processOptions,
                             this.mappingRules);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -146,6 +166,12 @@ public final class UpdateZeroEtlPipelineDetails extends UpdatePipelineDetails {
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
+                this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
             if (model.wasPropertyExplicitlySet("processOptions")) {
                 this.processOptions(model.getProcessOptions());
             }
@@ -173,9 +199,19 @@ public final class UpdateZeroEtlPipelineDetails extends UpdatePipelineDetails {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String subnetId,
+            Integer cpuCoreCount,
+            Boolean isAutoScalingEnabled,
             ProcessOptions processOptions,
             java.util.List<MappingRule> mappingRules) {
-        super(displayName, description, licenseModel, freeformTags, definedTags, subnetId);
+        super(
+                displayName,
+                description,
+                licenseModel,
+                freeformTags,
+                definedTags,
+                subnetId,
+                cpuCoreCount,
+                isAutoScalingEnabled);
         this.processOptions = processOptions;
         this.mappingRules = mappingRules;
     }

@@ -23,12 +23,6 @@ package com.oracle.bmc.datascience.model;
         defaultImpl = AuthConfiguration.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = IdcsAuthConfiguration.class,
-            name = "IDCS"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = IdcsCustomServiceAuthConfiguration.class,
-            name = "IDCS_CUSTOM_SERVICE"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = IamAuthConfiguration.class,
             name = "IAM")
 })
@@ -83,9 +77,7 @@ public class AuthConfiguration extends com.oracle.bmc.http.client.internal.Expli
 
     /** Type of AuthN/Z */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
-        Idcs("IDCS"),
         Iam("IAM"),
-        IdcsCustomService("IDCS_CUSTOM_SERVICE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

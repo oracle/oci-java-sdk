@@ -23,11 +23,13 @@ package com.oracle.bmc.goldengate.model;
 public final class SwitchoverDeploymentPeerDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"availabilityDomain", "faultDomain"})
-    public SwitchoverDeploymentPeerDetails(String availabilityDomain, String faultDomain) {
+    @java.beans.ConstructorProperties({"availabilityDomain", "faultDomain", "mode"})
+    public SwitchoverDeploymentPeerDetails(
+            String availabilityDomain, String faultDomain, Mode mode) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.faultDomain = faultDomain;
+        this.mode = mode;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -62,13 +64,33 @@ public final class SwitchoverDeploymentPeerDetails
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
+        /**
+         * Specifies the switchover mode. SWITCHOVER performs a planned role transition to the
+         * standby; FAILOVER performs a forced promotion when the primary is not available.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("mode")
+        private Mode mode;
+
+        /**
+         * Specifies the switchover mode. SWITCHOVER performs a planned role transition to the
+         * standby; FAILOVER performs a forced promotion when the primary is not available.
+         *
+         * @param mode the value to set
+         * @return this builder
+         */
+        public Builder mode(Mode mode) {
+            this.mode = mode;
+            this.__explicitlySet__.add("mode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SwitchoverDeploymentPeerDetails build() {
             SwitchoverDeploymentPeerDetails model =
-                    new SwitchoverDeploymentPeerDetails(this.availabilityDomain, this.faultDomain);
+                    new SwitchoverDeploymentPeerDetails(
+                            this.availabilityDomain, this.faultDomain, this.mode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +104,9 @@ public final class SwitchoverDeploymentPeerDetails
             }
             if (model.wasPropertyExplicitlySet("faultDomain")) {
                 this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("mode")) {
+                this.mode(model.getMode());
             }
             return this;
         }
@@ -122,6 +147,59 @@ public final class SwitchoverDeploymentPeerDetails
         return faultDomain;
     }
 
+    /**
+     * Specifies the switchover mode. SWITCHOVER performs a planned role transition to the standby;
+     * FAILOVER performs a forced promotion when the primary is not available.
+     */
+    public enum Mode implements com.oracle.bmc.http.internal.BmcEnum {
+        Switchover("SWITCHOVER"),
+        Failover("FAILOVER"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Mode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Mode v : Mode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Mode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Mode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Mode: " + key);
+        }
+    };
+    /**
+     * Specifies the switchover mode. SWITCHOVER performs a planned role transition to the standby;
+     * FAILOVER performs a forced promotion when the primary is not available.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("mode")
+    private final Mode mode;
+
+    /**
+     * Specifies the switchover mode. SWITCHOVER performs a planned role transition to the standby;
+     * FAILOVER performs a forced promotion when the primary is not available.
+     *
+     * @return the value
+     */
+    public Mode getMode() {
+        return mode;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +217,7 @@ public final class SwitchoverDeploymentPeerDetails
         sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", mode=").append(String.valueOf(this.mode));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +234,7 @@ public final class SwitchoverDeploymentPeerDetails
         SwitchoverDeploymentPeerDetails other = (SwitchoverDeploymentPeerDetails) o;
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.mode, other.mode)
                 && super.equals(other);
     }
 
@@ -168,6 +248,7 @@ public final class SwitchoverDeploymentPeerDetails
                                 ? 43
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result = (result * PRIME) + (this.mode == null ? 43 : this.mode.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

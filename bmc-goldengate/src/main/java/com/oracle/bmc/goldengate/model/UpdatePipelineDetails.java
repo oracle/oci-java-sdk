@@ -37,7 +37,9 @@ public class UpdatePipelineDetails
         "licenseModel",
         "freeformTags",
         "definedTags",
-        "subnetId"
+        "subnetId",
+        "cpuCoreCount",
+        "isAutoScalingEnabled"
     })
     protected UpdatePipelineDetails(
             String displayName,
@@ -45,7 +47,9 @@ public class UpdatePipelineDetails
             LicenseModel licenseModel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String subnetId) {
+            String subnetId,
+            Integer cpuCoreCount,
+            Boolean isAutoScalingEnabled) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -53,6 +57,8 @@ public class UpdatePipelineDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.subnetId = subnetId;
+        this.cpuCoreCount = cpuCoreCount;
+        this.isAutoScalingEnabled = isAutoScalingEnabled;
     }
 
     /** An object's Display Name. */
@@ -151,6 +157,32 @@ public class UpdatePipelineDetails
         return subnetId;
     }
 
+    /** The Minimum number of OCPUs to be made available for this Deployment. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
+    private final Integer cpuCoreCount;
+
+    /**
+     * The Minimum number of OCPUs to be made available for this Deployment.
+     *
+     * @return the value
+     */
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
+
+    /** Indicates if auto scaling is enabled for the Deployment's CPU core count. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
+    private final Boolean isAutoScalingEnabled;
+
+    /**
+     * Indicates if auto scaling is enabled for the Deployment's CPU core count.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoScalingEnabled() {
+        return isAutoScalingEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -172,6 +204,8 @@ public class UpdatePipelineDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -192,6 +226,8 @@ public class UpdatePipelineDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
                 && super.equals(other);
     }
 
@@ -205,6 +241,12 @@ public class UpdatePipelineDetails
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoScalingEnabled == null
+                                ? 43
+                                : this.isAutoScalingEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

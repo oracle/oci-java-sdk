@@ -86,7 +86,9 @@ public final class CloudAutonomousVmCluster
         "systemTags",
         "subscriptionId",
         "multiCloudIdentityConnectorConfigs",
-        "tdeKeyStoreType"
+        "tdeKeyStoreType",
+        "distributionAlgorithm",
+        "sgaPercentage"
     })
     public CloudAutonomousVmCluster(
             String id,
@@ -151,7 +153,9 @@ public final class CloudAutonomousVmCluster
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String subscriptionId,
             java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs,
-            TdeKeyStoreType tdeKeyStoreType) {
+            TdeKeyStoreType tdeKeyStoreType,
+            DistributionAlgorithm distributionAlgorithm,
+            Float sgaPercentage) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -217,6 +221,8 @@ public final class CloudAutonomousVmCluster
         this.subscriptionId = subscriptionId;
         this.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
         this.tdeKeyStoreType = tdeKeyStoreType;
+        this.distributionAlgorithm = distributionAlgorithm;
+        this.sgaPercentage = sgaPercentage;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1356,6 +1362,36 @@ public final class CloudAutonomousVmCluster
             this.__explicitlySet__.add("tdeKeyStoreType");
             return this;
         }
+        /** The distribution algorithm used for the Autonomous VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("distributionAlgorithm")
+        private DistributionAlgorithm distributionAlgorithm;
+
+        /**
+         * The distribution algorithm used for the Autonomous VM cluster.
+         *
+         * @param distributionAlgorithm the value to set
+         * @return this builder
+         */
+        public Builder distributionAlgorithm(DistributionAlgorithm distributionAlgorithm) {
+            this.distributionAlgorithm = distributionAlgorithm;
+            this.__explicitlySet__.add("distributionAlgorithm");
+            return this;
+        }
+        /** Percentage of ECPU memory allocated for SGA(System Global Area). */
+        @com.fasterxml.jackson.annotation.JsonProperty("sgaPercentage")
+        private Float sgaPercentage;
+
+        /**
+         * Percentage of ECPU memory allocated for SGA(System Global Area).
+         *
+         * @param sgaPercentage the value to set
+         * @return this builder
+         */
+        public Builder sgaPercentage(Float sgaPercentage) {
+            this.sgaPercentage = sgaPercentage;
+            this.__explicitlySet__.add("sgaPercentage");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1425,7 +1461,9 @@ public final class CloudAutonomousVmCluster
                             this.systemTags,
                             this.subscriptionId,
                             this.multiCloudIdentityConnectorConfigs,
-                            this.tdeKeyStoreType);
+                            this.tdeKeyStoreType,
+                            this.distributionAlgorithm,
+                            this.sgaPercentage);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1629,6 +1667,12 @@ public final class CloudAutonomousVmCluster
             }
             if (model.wasPropertyExplicitlySet("tdeKeyStoreType")) {
                 this.tdeKeyStoreType(model.getTdeKeyStoreType());
+            }
+            if (model.wasPropertyExplicitlySet("distributionAlgorithm")) {
+                this.distributionAlgorithm(model.getDistributionAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("sgaPercentage")) {
+                this.sgaPercentage(model.getSgaPercentage());
             }
             return this;
         }
@@ -2842,6 +2886,78 @@ public final class CloudAutonomousVmCluster
         return tdeKeyStoreType;
     }
 
+    /** The distribution algorithm used for the Autonomous VM cluster. */
+    public enum DistributionAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+        ResourceOptimized("RESOURCE_OPTIMIZED"),
+        DistributionOptimized("DISTRIBUTION_OPTIMIZED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DistributionAlgorithm.class);
+
+        private final String value;
+        private static java.util.Map<String, DistributionAlgorithm> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DistributionAlgorithm v : DistributionAlgorithm.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DistributionAlgorithm(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DistributionAlgorithm create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DistributionAlgorithm', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The distribution algorithm used for the Autonomous VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("distributionAlgorithm")
+    private final DistributionAlgorithm distributionAlgorithm;
+
+    /**
+     * The distribution algorithm used for the Autonomous VM cluster.
+     *
+     * @return the value
+     */
+    public DistributionAlgorithm getDistributionAlgorithm() {
+        return distributionAlgorithm;
+    }
+
+    /** Percentage of ECPU memory allocated for SGA(System Global Area). */
+    @com.fasterxml.jackson.annotation.JsonProperty("sgaPercentage")
+    private final Float sgaPercentage;
+
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     *
+     * @return the value
+     */
+    public Float getSgaPercentage() {
+        return sgaPercentage;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2938,6 +3054,8 @@ public final class CloudAutonomousVmCluster
         sb.append(", multiCloudIdentityConnectorConfigs=")
                 .append(String.valueOf(this.multiCloudIdentityConnectorConfigs));
         sb.append(", tdeKeyStoreType=").append(String.valueOf(this.tdeKeyStoreType));
+        sb.append(", distributionAlgorithm=").append(String.valueOf(this.distributionAlgorithm));
+        sb.append(", sgaPercentage=").append(String.valueOf(this.sgaPercentage));
         sb.append(")");
         return sb.toString();
     }
@@ -3044,6 +3162,8 @@ public final class CloudAutonomousVmCluster
                         this.multiCloudIdentityConnectorConfigs,
                         other.multiCloudIdentityConnectorConfigs)
                 && java.util.Objects.equals(this.tdeKeyStoreType, other.tdeKeyStoreType)
+                && java.util.Objects.equals(this.distributionAlgorithm, other.distributionAlgorithm)
+                && java.util.Objects.equals(this.sgaPercentage, other.sgaPercentage)
                 && super.equals(other);
     }
 
@@ -3258,6 +3378,14 @@ public final class CloudAutonomousVmCluster
         result =
                 (result * PRIME)
                         + (this.tdeKeyStoreType == null ? 43 : this.tdeKeyStoreType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.distributionAlgorithm == null
+                                ? 43
+                                : this.distributionAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sgaPercentage == null ? 43 : this.sgaPercentage.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

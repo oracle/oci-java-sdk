@@ -22,6 +22,56 @@ public class ListParamsForActionTypeRequest
     public com.oracle.bmc.database.model.RecommendedScheduledActionSummary.ActionType getType() {
         return type;
     }
+    /**
+     * The plan intent the action will be used for. Relevant to action type that can be used in
+     * multiple plans
+     */
+    private PlanIntent planIntent;
+
+    /**
+     * The plan intent the action will be used for. Relevant to action type that can be used in
+     * multiple plans
+     */
+    public enum PlanIntent implements com.oracle.bmc.http.internal.BmcEnum {
+        ExadataInfrastructureFullSoftwareUpdate("EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"),
+        ExadataInfrastructureSecurityUpdate("EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, PlanIntent> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PlanIntent v : PlanIntent.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        PlanIntent(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PlanIntent create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid PlanIntent: " + key);
+        }
+    };
+
+    /**
+     * The plan intent the action will be used for. Relevant to action type that can be used in
+     * multiple plans
+     */
+    public PlanIntent getPlanIntent() {
+        return planIntent;
+    }
     /** The maximum number of items to return per page. */
     private Integer limit;
 
@@ -63,6 +113,24 @@ public class ListParamsForActionTypeRequest
         public Builder type(
                 com.oracle.bmc.database.model.RecommendedScheduledActionSummary.ActionType type) {
             this.type = type;
+            return this;
+        }
+
+        /**
+         * The plan intent the action will be used for. Relevant to action type that can be used in
+         * multiple plans
+         */
+        private PlanIntent planIntent = null;
+
+        /**
+         * The plan intent the action will be used for. Relevant to action type that can be used in
+         * multiple plans
+         *
+         * @param planIntent the value to set
+         * @return this builder instance
+         */
+        public Builder planIntent(PlanIntent planIntent) {
+            this.planIntent = planIntent;
             return this;
         }
 
@@ -139,6 +207,7 @@ public class ListParamsForActionTypeRequest
          */
         public Builder copy(ListParamsForActionTypeRequest o) {
             type(o.getType());
+            planIntent(o.getPlanIntent());
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
@@ -177,11 +246,12 @@ public class ListParamsForActionTypeRequest
         public ListParamsForActionTypeRequest buildWithoutInvocationCallback() {
             ListParamsForActionTypeRequest request = new ListParamsForActionTypeRequest();
             request.type = type;
+            request.planIntent = planIntent;
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListParamsForActionTypeRequest(type, limit, page, opcRequestId);
+            // new ListParamsForActionTypeRequest(type, planIntent, limit, page, opcRequestId);
         }
     }
 
@@ -191,7 +261,12 @@ public class ListParamsForActionTypeRequest
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().type(type).limit(limit).page(page).opcRequestId(opcRequestId);
+        return new Builder()
+                .type(type)
+                .planIntent(planIntent)
+                .limit(limit)
+                .page(page)
+                .opcRequestId(opcRequestId);
     }
 
     /**
@@ -209,6 +284,7 @@ public class ListParamsForActionTypeRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",type=").append(String.valueOf(this.type));
+        sb.append(",planIntent=").append(String.valueOf(this.planIntent));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -228,6 +304,7 @@ public class ListParamsForActionTypeRequest
         ListParamsForActionTypeRequest other = (ListParamsForActionTypeRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.planIntent, other.planIntent)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -238,6 +315,7 @@ public class ListParamsForActionTypeRequest
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.planIntent == null ? 43 : this.planIntent.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

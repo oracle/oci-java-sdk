@@ -47,12 +47,12 @@ public final class SecurityRuleMatchCriteria
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** An array of IP address list names to be evaluated against the traffic source address. */
+        /** An array of address list names to be evaluated against the traffic source address. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceAddress")
         private java.util.List<String> sourceAddress;
 
         /**
-         * An array of IP address list names to be evaluated against the traffic source address.
+         * An array of address list names to be evaluated against the traffic source address.
          *
          * @param sourceAddress the value to set
          * @return this builder
@@ -63,15 +63,13 @@ public final class SecurityRuleMatchCriteria
             return this;
         }
         /**
-         * An array of IP address list names to be evaluated against the traffic destination
-         * address.
+         * An array of address list names to be evaluated against the traffic destination address.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationAddress")
         private java.util.List<String> destinationAddress;
 
         /**
-         * An array of IP address list names to be evaluated against the traffic destination
-         * address.
+         * An array of address list names to be evaluated against the traffic destination address.
          *
          * @param destinationAddress the value to set
          * @return this builder
@@ -184,12 +182,12 @@ public final class SecurityRuleMatchCriteria
         return new Builder().copy(this);
     }
 
-    /** An array of IP address list names to be evaluated against the traffic source address. */
+    /** An array of address list names to be evaluated against the traffic source address. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceAddress")
     private final java.util.List<String> sourceAddress;
 
     /**
-     * An array of IP address list names to be evaluated against the traffic source address.
+     * An array of address list names to be evaluated against the traffic source address.
      *
      * @return the value
      */
@@ -197,14 +195,12 @@ public final class SecurityRuleMatchCriteria
         return sourceAddress;
     }
 
-    /**
-     * An array of IP address list names to be evaluated against the traffic destination address.
-     */
+    /** An array of address list names to be evaluated against the traffic destination address. */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationAddress")
     private final java.util.List<String> destinationAddress;
 
     /**
-     * An array of IP address list names to be evaluated against the traffic destination address.
+     * An array of address list names to be evaluated against the traffic destination address.
      *
      * @return the value
      */

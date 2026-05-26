@@ -23,12 +23,6 @@ package com.oracle.bmc.datascience.model;
         defaultImpl = CreateAuthConfigurationDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateIdcsAuthConfigurationDetails.class,
-            name = "IDCS"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateIdcsCustomServiceAuthConfigurationDetails.class,
-            name = "IDCS_CUSTOM_SERVICE"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateIamAuthConfigurationCreateDetails.class,
             name = "IAM")
 })

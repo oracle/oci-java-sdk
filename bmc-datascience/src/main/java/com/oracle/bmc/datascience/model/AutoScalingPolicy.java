@@ -30,7 +30,7 @@ public final class AutoScalingPolicy extends ScalingPolicy {
         /**
          * For threshold-based autoscaling policies, this value is the minimum period of time to
          * wait between scaling actions. The cooldown period gives the system time to stabilize
-         * before rescaling. The minimum value is 600 seconds, which is also the default. The
+         * before rescaling. The minimum value is 300 seconds, which is also the default. The
          * cooldown period starts when the model deployment becomes ACTIVE after the scaling
          * operation.
          */
@@ -40,7 +40,7 @@ public final class AutoScalingPolicy extends ScalingPolicy {
         /**
          * For threshold-based autoscaling policies, this value is the minimum period of time to
          * wait between scaling actions. The cooldown period gives the system time to stabilize
-         * before rescaling. The minimum value is 600 seconds, which is also the default. The
+         * before rescaling. The minimum value is 300 seconds, which is also the default. The
          * cooldown period starts when the model deployment becomes ACTIVE after the scaling
          * operation.
          *
@@ -135,7 +135,7 @@ public final class AutoScalingPolicy extends ScalingPolicy {
     /**
      * For threshold-based autoscaling policies, this value is the minimum period of time to wait
      * between scaling actions. The cooldown period gives the system time to stabilize before
-     * rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period
+     * rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period
      * starts when the model deployment becomes ACTIVE after the scaling operation.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("coolDownInSeconds")
@@ -144,7 +144,7 @@ public final class AutoScalingPolicy extends ScalingPolicy {
     /**
      * For threshold-based autoscaling policies, this value is the minimum period of time to wait
      * between scaling actions. The cooldown period gives the system time to stabilize before
-     * rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period
+     * rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period
      * starts when the model deployment becomes ACTIVE after the scaling operation.
      *
      * @return the value
