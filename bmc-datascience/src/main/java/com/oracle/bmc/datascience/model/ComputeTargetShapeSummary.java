@@ -1,0 +1,245 @@
+/**
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.datascience.model;
+
+/**
+ * The compute shape used to launch a compute target. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
+ * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
+ * fields into account. The constructor, on the other hand, does not take the explicitly set fields
+ * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
+ * null}).
+ */
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+        builder = ComputeTargetShapeSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+public final class ComputeTargetShapeSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "coreCount", "memoryInGBs", "shapeSeries"})
+    public ComputeTargetShapeSummary(
+            String name,
+            Integer coreCount,
+            Integer memoryInGBs,
+            ComputeTargetShapeSeries shapeSeries) {
+        super();
+        this.name = name;
+        this.coreCount = coreCount;
+        this.memoryInGBs = memoryInGBs;
+        this.shapeSeries = shapeSeries;
+    }
+
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        /** The name of the compute target shape. */
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        /**
+         * The name of the compute target shape.
+         *
+         * @param name the value to set
+         * @return this builder
+         */
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+        /** The number of cores associated with this compute target shape. */
+        @com.fasterxml.jackson.annotation.JsonProperty("coreCount")
+        private Integer coreCount;
+
+        /**
+         * The number of cores associated with this compute target shape.
+         *
+         * @param coreCount the value to set
+         * @return this builder
+         */
+        public Builder coreCount(Integer coreCount) {
+            this.coreCount = coreCount;
+            this.__explicitlySet__.add("coreCount");
+            return this;
+        }
+        /** The amount of memory in GBs associated with this compute target shape. */
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
+        private Integer memoryInGBs;
+
+        /**
+         * The amount of memory in GBs associated with this compute target shape.
+         *
+         * @param memoryInGBs the value to set
+         * @return this builder
+         */
+        public Builder memoryInGBs(Integer memoryInGBs) {
+            this.memoryInGBs = memoryInGBs;
+            this.__explicitlySet__.add("memoryInGBs");
+            return this;
+        }
+        /** The family that the compute shape belongs to. */
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
+        private ComputeTargetShapeSeries shapeSeries;
+
+        /**
+         * The family that the compute shape belongs to.
+         *
+         * @param shapeSeries the value to set
+         * @return this builder
+         */
+        public Builder shapeSeries(ComputeTargetShapeSeries shapeSeries) {
+            this.shapeSeries = shapeSeries;
+            this.__explicitlySet__.add("shapeSeries");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public ComputeTargetShapeSummary build() {
+            ComputeTargetShapeSummary model =
+                    new ComputeTargetShapeSummary(
+                            this.name, this.coreCount, this.memoryInGBs, this.shapeSeries);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(ComputeTargetShapeSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("coreCount")) {
+                this.coreCount(model.getCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("memoryInGBs")) {
+                this.memoryInGBs(model.getMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("shapeSeries")) {
+                this.shapeSeries(model.getShapeSeries());
+            }
+            return this;
+        }
+    }
+
+    /** Create a new builder. */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    /** The name of the compute target shape. */
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    private final String name;
+
+    /**
+     * The name of the compute target shape.
+     *
+     * @return the value
+     */
+    public String getName() {
+        return name;
+    }
+
+    /** The number of cores associated with this compute target shape. */
+    @com.fasterxml.jackson.annotation.JsonProperty("coreCount")
+    private final Integer coreCount;
+
+    /**
+     * The number of cores associated with this compute target shape.
+     *
+     * @return the value
+     */
+    public Integer getCoreCount() {
+        return coreCount;
+    }
+
+    /** The amount of memory in GBs associated with this compute target shape. */
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
+    private final Integer memoryInGBs;
+
+    /**
+     * The amount of memory in GBs associated with this compute target shape.
+     *
+     * @return the value
+     */
+    public Integer getMemoryInGBs() {
+        return memoryInGBs;
+    }
+
+    /** The family that the compute shape belongs to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
+    private final ComputeTargetShapeSeries shapeSeries;
+
+    /**
+     * The family that the compute shape belongs to.
+     *
+     * @return the value
+     */
+    public ComputeTargetShapeSeries getShapeSeries() {
+        return shapeSeries;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     *
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("ComputeTargetShapeSummary(");
+        sb.append("super=").append(super.toString());
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", coreCount=").append(String.valueOf(this.coreCount));
+        sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", shapeSeries=").append(String.valueOf(this.shapeSeries));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ComputeTargetShapeSummary)) {
+            return false;
+        }
+
+        ComputeTargetShapeSummary other = (ComputeTargetShapeSummary) o;
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.coreCount, other.coreCount)
+                && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(this.shapeSeries, other.shapeSeries)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.coreCount == null ? 43 : this.coreCount.hashCode());
+        result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result = (result * PRIME) + (this.shapeSeries == null ? 43 : this.shapeSeries.hashCode());
+        result = (result * PRIME) + super.hashCode();
+        return result;
+    }
+}

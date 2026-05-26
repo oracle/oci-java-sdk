@@ -78,7 +78,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         "ingressIps",
         "subscriptionId",
         "clusterPlacementGroupId",
-        "securityAttributes"
+        "securityAttributes",
+        "disasterRecoveryStatus"
     })
     public Deployment(
             String id,
@@ -136,7 +137,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             java.util.List<IngressIpDetails> ingressIps,
             String subscriptionId,
             String clusterPlacementGroupId,
-            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            DisasterRecoveryStatus disasterRecoveryStatus) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -194,6 +196,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         this.subscriptionId = subscriptionId;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.securityAttributes = securityAttributes;
+        this.disasterRecoveryStatus = disasterRecoveryStatus;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -716,17 +719,17 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * The deployment category defines the broad separation of the deployment type into three
-         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-         * 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into four
+         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
+         * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private DeploymentCategory category;
 
         /**
-         * The deployment category defines the broad separation of the deployment type into three
-         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-         * 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into four
+         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
+         * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
          *
          * @param category the value to set
          * @return this builder
@@ -1199,6 +1202,27 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("securityAttributes");
             return this;
         }
+        /**
+         * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster
+         * recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a
+         * clusterPlacementGroupId is provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryStatus")
+        private DisasterRecoveryStatus disasterRecoveryStatus;
+
+        /**
+         * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster
+         * recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a
+         * clusterPlacementGroupId is provided.
+         *
+         * @param disasterRecoveryStatus the value to set
+         * @return this builder
+         */
+        public Builder disasterRecoveryStatus(DisasterRecoveryStatus disasterRecoveryStatus) {
+            this.disasterRecoveryStatus = disasterRecoveryStatus;
+            this.__explicitlySet__.add("disasterRecoveryStatus");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1261,7 +1285,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                             this.ingressIps,
                             this.subscriptionId,
                             this.clusterPlacementGroupId,
-                            this.securityAttributes);
+                            this.securityAttributes,
+                            this.disasterRecoveryStatus);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1438,6 +1463,9 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("disasterRecoveryStatus")) {
+                this.disasterRecoveryStatus(model.getDisasterRecoveryStatus());
             }
             return this;
         }
@@ -1961,17 +1989,17 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three
-     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-     * 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into four
+     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
+     * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final DeploymentCategory category;
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three
-     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-     * 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into four
+     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
+     * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
      *
      * @return the value
      */
@@ -2384,6 +2412,25 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         return securityAttributes;
     }
 
+    /**
+     * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster
+     * recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a
+     * clusterPlacementGroupId is provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryStatus")
+    private final DisasterRecoveryStatus disasterRecoveryStatus;
+
+    /**
+     * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster
+     * recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a
+     * clusterPlacementGroupId is provided.
+     *
+     * @return the value
+     */
+    public DisasterRecoveryStatus getDisasterRecoveryStatus() {
+        return disasterRecoveryStatus;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2466,6 +2513,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", disasterRecoveryStatus=").append(String.valueOf(this.disasterRecoveryStatus));
         sb.append(")");
         return sb.toString();
     }
@@ -2548,6 +2596,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(
+                        this.disasterRecoveryStatus, other.disasterRecoveryStatus)
                 && super.equals(other);
     }
 
@@ -2719,6 +2769,11 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                         + (this.securityAttributes == null
                                 ? 43
                                 : this.securityAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.disasterRecoveryStatus == null
+                                ? 43
+                                : this.disasterRecoveryStatus.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

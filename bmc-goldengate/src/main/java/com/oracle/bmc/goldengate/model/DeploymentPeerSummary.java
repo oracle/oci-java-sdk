@@ -37,7 +37,9 @@ public final class DeploymentPeerSummary
         "timeLastSynced",
         "subscriptionId",
         "clusterPlacementGroupId",
-        "lifecycleState"
+        "lifecycleState",
+        "precheckStatus",
+        "timeLastPrecheckPerformed"
     })
     public DeploymentPeerSummary(
             String deploymentId,
@@ -53,7 +55,9 @@ public final class DeploymentPeerSummary
             java.util.Date timeLastSynced,
             String subscriptionId,
             String clusterPlacementGroupId,
-            LifecycleState lifecycleState) {
+            LifecycleState lifecycleState,
+            PrecheckStatus precheckStatus,
+            java.util.Date timeLastPrecheckPerformed) {
         super();
         this.deploymentId = deploymentId;
         this.region = region;
@@ -69,6 +73,8 @@ public final class DeploymentPeerSummary
         this.subscriptionId = subscriptionId;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.lifecycleState = lifecycleState;
+        this.precheckStatus = precheckStatus;
+        this.timeLastPrecheckPerformed = timeLastPrecheckPerformed;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -319,6 +325,40 @@ public final class DeploymentPeerSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** Status of the DR precheck result. */
+        @com.fasterxml.jackson.annotation.JsonProperty("precheckStatus")
+        private PrecheckStatus precheckStatus;
+
+        /**
+         * Status of the DR precheck result.
+         *
+         * @param precheckStatus the value to set
+         * @return this builder
+         */
+        public Builder precheckStatus(PrecheckStatus precheckStatus) {
+            this.precheckStatus = precheckStatus;
+            this.__explicitlySet__.add("precheckStatus");
+            return this;
+        }
+        /**
+         * The timestamp when pre-check started. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-26T20:19:29.600Z}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastPrecheckPerformed")
+        private java.util.Date timeLastPrecheckPerformed;
+
+        /**
+         * The timestamp when pre-check started. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-26T20:19:29.600Z}.
+         *
+         * @param timeLastPrecheckPerformed the value to set
+         * @return this builder
+         */
+        public Builder timeLastPrecheckPerformed(java.util.Date timeLastPrecheckPerformed) {
+            this.timeLastPrecheckPerformed = timeLastPrecheckPerformed;
+            this.__explicitlySet__.add("timeLastPrecheckPerformed");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -339,7 +379,9 @@ public final class DeploymentPeerSummary
                             this.timeLastSynced,
                             this.subscriptionId,
                             this.clusterPlacementGroupId,
-                            this.lifecycleState);
+                            this.lifecycleState,
+                            this.precheckStatus,
+                            this.timeLastPrecheckPerformed);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -389,6 +431,12 @@ public final class DeploymentPeerSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("precheckStatus")) {
+                this.precheckStatus(model.getPrecheckStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastPrecheckPerformed")) {
+                this.timeLastPrecheckPerformed(model.getTimeLastPrecheckPerformed());
             }
             return this;
         }
@@ -615,6 +663,7 @@ public final class DeploymentPeerSummary
         Failed("FAILED"),
         Updating("UPDATING"),
         Deleting("DELETING"),
+        Inactive("INACTIVE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -670,6 +719,36 @@ public final class DeploymentPeerSummary
         return lifecycleState;
     }
 
+    /** Status of the DR precheck result. */
+    @com.fasterxml.jackson.annotation.JsonProperty("precheckStatus")
+    private final PrecheckStatus precheckStatus;
+
+    /**
+     * Status of the DR precheck result.
+     *
+     * @return the value
+     */
+    public PrecheckStatus getPrecheckStatus() {
+        return precheckStatus;
+    }
+
+    /**
+     * The timestamp when pre-check started. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-26T20:19:29.600Z}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastPrecheckPerformed")
+    private final java.util.Date timeLastPrecheckPerformed;
+
+    /**
+     * The timestamp when pre-check started. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-26T20:19:29.600Z}.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastPrecheckPerformed() {
+        return timeLastPrecheckPerformed;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -700,6 +779,9 @@ public final class DeploymentPeerSummary
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", precheckStatus=").append(String.valueOf(this.precheckStatus));
+        sb.append(", timeLastPrecheckPerformed=")
+                .append(String.valueOf(this.timeLastPrecheckPerformed));
         sb.append(")");
         return sb.toString();
     }
@@ -729,6 +811,9 @@ public final class DeploymentPeerSummary
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.precheckStatus, other.precheckStatus)
+                && java.util.Objects.equals(
+                        this.timeLastPrecheckPerformed, other.timeLastPrecheckPerformed)
                 && super.equals(other);
     }
 
@@ -766,6 +851,14 @@ public final class DeploymentPeerSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.precheckStatus == null ? 43 : this.precheckStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastPrecheckPerformed == null
+                                ? 43
+                                : this.timeLastPrecheckPerformed.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

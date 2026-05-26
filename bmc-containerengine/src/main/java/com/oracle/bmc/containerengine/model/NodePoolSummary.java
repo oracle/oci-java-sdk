@@ -47,7 +47,8 @@ public final class NodePoolSummary
         "nodeEvictionNodePoolSettings",
         "nodePoolCyclingDetails",
         "secondaryVnics",
-        "networkLaunchType"
+        "networkLaunchType",
+        "primaryVnic"
     })
     public NodePoolSummary(
             String id,
@@ -74,7 +75,8 @@ public final class NodePoolSummary
             NodeEvictionNodePoolSettings nodeEvictionNodePoolSettings,
             NodePoolCyclingDetails nodePoolCyclingDetails,
             java.util.List<NodePoolSecondaryVnicDetails> secondaryVnics,
-            NetworkLaunchType networkLaunchType) {
+            NetworkLaunchType networkLaunchType,
+            NodePoolPrimaryVnicDetails primaryVnic) {
         super();
         this.id = id;
         this.lifecycleState = lifecycleState;
@@ -101,6 +103,7 @@ public final class NodePoolSummary
         this.nodePoolCyclingDetails = nodePoolCyclingDetails;
         this.secondaryVnics = secondaryVnics;
         this.networkLaunchType = networkLaunchType;
+        this.primaryVnic = primaryVnic;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -505,6 +508,15 @@ public final class NodePoolSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryVnic")
+        private NodePoolPrimaryVnicDetails primaryVnic;
+
+        public Builder primaryVnic(NodePoolPrimaryVnicDetails primaryVnic) {
+            this.primaryVnic = primaryVnic;
+            this.__explicitlySet__.add("primaryVnic");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -535,7 +547,8 @@ public final class NodePoolSummary
                             this.nodeEvictionNodePoolSettings,
                             this.nodePoolCyclingDetails,
                             this.secondaryVnics,
-                            this.networkLaunchType);
+                            this.networkLaunchType,
+                            this.primaryVnic);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -618,6 +631,9 @@ public final class NodePoolSummary
             }
             if (model.wasPropertyExplicitlySet("networkLaunchType")) {
                 this.networkLaunchType(model.getNetworkLaunchType());
+            }
+            if (model.wasPropertyExplicitlySet("primaryVnic")) {
+                this.primaryVnic(model.getPrimaryVnic());
             }
             return this;
         }
@@ -977,6 +993,13 @@ public final class NodePoolSummary
         return networkLaunchType;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryVnic")
+    private final NodePoolPrimaryVnicDetails primaryVnic;
+
+    public NodePoolPrimaryVnicDetails getPrimaryVnic() {
+        return primaryVnic;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1018,6 +1041,7 @@ public final class NodePoolSummary
         sb.append(", nodePoolCyclingDetails=").append(String.valueOf(this.nodePoolCyclingDetails));
         sb.append(", secondaryVnics=").append(String.valueOf(this.secondaryVnics));
         sb.append(", networkLaunchType=").append(String.valueOf(this.networkLaunchType));
+        sb.append(", primaryVnic=").append(String.valueOf(this.primaryVnic));
         sb.append(")");
         return sb.toString();
     }
@@ -1059,6 +1083,7 @@ public final class NodePoolSummary
                         this.nodePoolCyclingDetails, other.nodePoolCyclingDetails)
                 && java.util.Objects.equals(this.secondaryVnics, other.secondaryVnics)
                 && java.util.Objects.equals(this.networkLaunchType, other.networkLaunchType)
+                && java.util.Objects.equals(this.primaryVnic, other.primaryVnic)
                 && super.equals(other);
     }
 
@@ -1123,6 +1148,7 @@ public final class NodePoolSummary
         result =
                 (result * PRIME)
                         + (this.networkLaunchType == null ? 43 : this.networkLaunchType.hashCode());
+        result = (result * PRIME) + (this.primaryVnic == null ? 43 : this.primaryVnic.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

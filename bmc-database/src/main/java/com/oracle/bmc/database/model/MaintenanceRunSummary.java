@@ -57,7 +57,9 @@ public final class MaintenanceRunSummary
         "systemTags",
         "isMaintenanceRunGranular",
         "totalTimeTakenInMins",
-        "databaseSoftwareImageId"
+        "referenceResourceIdForImageUpdates",
+        "databaseSoftwareImageId",
+        "windowTypeDescriptions"
     })
     public MaintenanceRunSummary(
             String id,
@@ -93,7 +95,9 @@ public final class MaintenanceRunSummary
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Boolean isMaintenanceRunGranular,
             Integer totalTimeTakenInMins,
-            String databaseSoftwareImageId) {
+            String referenceResourceIdForImageUpdates,
+            String databaseSoftwareImageId,
+            java.util.List<WindowTypeDescription> windowTypeDescriptions) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -128,7 +132,9 @@ public final class MaintenanceRunSummary
         this.systemTags = systemTags;
         this.isMaintenanceRunGranular = isMaintenanceRunGranular;
         this.totalTimeTakenInMins = totalTimeTakenInMins;
+        this.referenceResourceIdForImageUpdates = referenceResourceIdForImageUpdates;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.windowTypeDescriptions = windowTypeDescriptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -682,6 +688,32 @@ public final class MaintenanceRunSummary
             return this;
         }
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * resource the maintenance run will refer to when trying to fetch target versions. This
+         * field is set during maintenance run creation based on infrastructure's maintenance run
+         * version preferences. Currently this is only be supported for monthly maintenance runs
+         * created via scheduling plans.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("referenceResourceIdForImageUpdates")
+        private String referenceResourceIdForImageUpdates;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * resource the maintenance run will refer to when trying to fetch target versions. This
+         * field is set during maintenance run creation based on infrastructure's maintenance run
+         * version preferences. Currently this is only be supported for monthly maintenance runs
+         * created via scheduling plans.
+         *
+         * @param referenceResourceIdForImageUpdates the value to set
+         * @return this builder
+         */
+        public Builder referenceResourceIdForImageUpdates(
+                String referenceResourceIdForImageUpdates) {
+            this.referenceResourceIdForImageUpdates = referenceResourceIdForImageUpdates;
+            this.__explicitlySet__.add("referenceResourceIdForImageUpdates");
+            return this;
+        }
+        /**
          * The Autonomous AI Database Software Image
          * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
@@ -698,6 +730,26 @@ public final class MaintenanceRunSummary
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+        /**
+         * A list of key-value pairs where the key will contain the window type and value contains
+         * all the windowDetails of that window type.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("windowTypeDescriptions")
+        private java.util.List<WindowTypeDescription> windowTypeDescriptions;
+
+        /**
+         * A list of key-value pairs where the key will contain the window type and value contains
+         * all the windowDetails of that window type.
+         *
+         * @param windowTypeDescriptions the value to set
+         * @return this builder
+         */
+        public Builder windowTypeDescriptions(
+                java.util.List<WindowTypeDescription> windowTypeDescriptions) {
+            this.windowTypeDescriptions = windowTypeDescriptions;
+            this.__explicitlySet__.add("windowTypeDescriptions");
             return this;
         }
 
@@ -740,7 +792,9 @@ public final class MaintenanceRunSummary
                             this.systemTags,
                             this.isMaintenanceRunGranular,
                             this.totalTimeTakenInMins,
-                            this.databaseSoftwareImageId);
+                            this.referenceResourceIdForImageUpdates,
+                            this.databaseSoftwareImageId,
+                            this.windowTypeDescriptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -849,8 +903,15 @@ public final class MaintenanceRunSummary
             if (model.wasPropertyExplicitlySet("totalTimeTakenInMins")) {
                 this.totalTimeTakenInMins(model.getTotalTimeTakenInMins());
             }
+            if (model.wasPropertyExplicitlySet("referenceResourceIdForImageUpdates")) {
+                this.referenceResourceIdForImageUpdates(
+                        model.getReferenceResourceIdForImageUpdates());
+            }
             if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
                 this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("windowTypeDescriptions")) {
+                this.windowTypeDescriptions(model.getWindowTypeDescriptions());
             }
             return this;
         }
@@ -1658,6 +1719,29 @@ public final class MaintenanceRunSummary
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * resource the maintenance run will refer to when trying to fetch target versions. This field
+     * is set during maintenance run creation based on infrastructure's maintenance run version
+     * preferences. Currently this is only be supported for monthly maintenance runs created via
+     * scheduling plans.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("referenceResourceIdForImageUpdates")
+    private final String referenceResourceIdForImageUpdates;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * resource the maintenance run will refer to when trying to fetch target versions. This field
+     * is set during maintenance run creation based on infrastructure's maintenance run version
+     * preferences. Currently this is only be supported for monthly maintenance runs created via
+     * scheduling plans.
+     *
+     * @return the value
+     */
+    public String getReferenceResourceIdForImageUpdates() {
+        return referenceResourceIdForImageUpdates;
+    }
+
+    /**
      * The Autonomous AI Database Software Image
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
@@ -1672,6 +1756,23 @@ public final class MaintenanceRunSummary
      */
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
+    }
+
+    /**
+     * A list of key-value pairs where the key will contain the window type and value contains all
+     * the windowDetails of that window type.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("windowTypeDescriptions")
+    private final java.util.List<WindowTypeDescription> windowTypeDescriptions;
+
+    /**
+     * A list of key-value pairs where the key will contain the window type and value contains all
+     * the windowDetails of that window type.
+     *
+     * @return the value
+     */
+    public java.util.List<WindowTypeDescription> getWindowTypeDescriptions() {
+        return windowTypeDescriptions;
     }
 
     @Override
@@ -1729,8 +1830,11 @@ public final class MaintenanceRunSummary
         sb.append(", isMaintenanceRunGranular=")
                 .append(String.valueOf(this.isMaintenanceRunGranular));
         sb.append(", totalTimeTakenInMins=").append(String.valueOf(this.totalTimeTakenInMins));
+        sb.append(", referenceResourceIdForImageUpdates=")
+                .append(String.valueOf(this.referenceResourceIdForImageUpdates));
         sb.append(", databaseSoftwareImageId=")
                 .append(String.valueOf(this.databaseSoftwareImageId));
+        sb.append(", windowTypeDescriptions=").append(String.valueOf(this.windowTypeDescriptions));
         sb.append(")");
         return sb.toString();
     }
@@ -1789,7 +1893,12 @@ public final class MaintenanceRunSummary
                         this.isMaintenanceRunGranular, other.isMaintenanceRunGranular)
                 && java.util.Objects.equals(this.totalTimeTakenInMins, other.totalTimeTakenInMins)
                 && java.util.Objects.equals(
+                        this.referenceResourceIdForImageUpdates,
+                        other.referenceResourceIdForImageUpdates)
+                && java.util.Objects.equals(
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
+                && java.util.Objects.equals(
+                        this.windowTypeDescriptions, other.windowTypeDescriptions)
                 && super.equals(other);
     }
 
@@ -1912,9 +2021,19 @@ public final class MaintenanceRunSummary
                                 : this.totalTimeTakenInMins.hashCode());
         result =
                 (result * PRIME)
+                        + (this.referenceResourceIdForImageUpdates == null
+                                ? 43
+                                : this.referenceResourceIdForImageUpdates.hashCode());
+        result =
+                (result * PRIME)
                         + (this.databaseSoftwareImageId == null
                                 ? 43
                                 : this.databaseSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.windowTypeDescriptions == null
+                                ? 43
+                                : this.windowTypeDescriptions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

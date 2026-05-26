@@ -3786,6 +3786,9 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                         "remainingOcpusGreaterThanOrEqualTo",
                         request.getRemainingOcpusGreaterThanOrEqualTo())
                 .appendQueryParam(
+                        "remainingLocalVolumeInGBsGreaterThanOrEqualTo",
+                        request.getRemainingLocalVolumeInGBsGreaterThanOrEqualTo())
+                .appendQueryParam(
                         "isMemoryEncryptionEnabled", request.getIsMemoryEncryptionEnabled())
                 .accept("application/json, application/x-json-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())

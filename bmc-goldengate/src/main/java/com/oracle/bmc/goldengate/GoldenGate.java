@@ -316,6 +316,21 @@ public interface GoldenGate extends AutoCloseable {
             ChangePipelineCompartmentRequest request);
 
     /**
+     * Clones the pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ClonePipelineExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ClonePipeline API.
+     */
+    ClonePipelineResponse clonePipeline(ClonePipelineRequest request);
+
+    /**
      * Collects the diagnostic of a Deployment. When provided, If-Match is checked against ETag
      * values of the resource.
      *
@@ -627,6 +642,23 @@ public interface GoldenGate extends AutoCloseable {
     ExportDeploymentWalletResponse exportDeploymentWallet(ExportDeploymentWalletRequest request);
 
     /**
+     * Generates disaster recovery precheck report for standby peer.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/GenerateDisasterRecoveryPrecheckReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GenerateDisasterRecoveryPrecheckReport API.
+     */
+    GenerateDisasterRecoveryPrecheckReportResponse generateDisasterRecoveryPrecheckReport(
+            GenerateDisasterRecoveryPrecheckReportRequest request);
+
+    /**
      * Generates a Pre-Authenticated Request Object URL to a DB2 for z/OS library that needs to be
      * uploaded to your DB2 for z/OS server in order to establish GoldenGate connections to it. For
      * licensing reasons, the URL is accessible for 10 minutes only.
@@ -752,6 +784,24 @@ public interface GoldenGate extends AutoCloseable {
      *     GetDeploymentUpgrade API.
      */
     GetDeploymentUpgradeResponse getDeploymentUpgrade(GetDeploymentUpgradeRequest request);
+
+    /**
+     * Returns DR precheck report for a standby peer with the specified placement
+     * (availabilityDomain and faultDomain).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/GetDisasterRecoveryPrecheckReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetDisasterRecoveryPrecheckReport API.
+     */
+    GetDisasterRecoveryPrecheckReportResponse getDisasterRecoveryPrecheckReport(
+            GetDisasterRecoveryPrecheckReportRequest request);
 
     /**
      * Retrieves a Pipeline details.

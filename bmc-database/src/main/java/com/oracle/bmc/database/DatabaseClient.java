@@ -10345,6 +10345,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .basePath("/20160918")
                 .appendPathParam("dbSystemComputePerformance")
                 .appendQueryParam("dbSystemShape", request.getDbSystemShape())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -11396,6 +11397,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .basePath("/20160918")
                 .appendPathParam("scheduledActionParams")
                 .appendEnumQueryParam("type", request.getType())
+                .appendEnumQueryParam("planIntent", request.getPlanIntent())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
@@ -11655,6 +11657,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("resourceId", request.getResourceId())
                 .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("planIntent", request.getPlanIntent())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -11689,6 +11692,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("cadence", request.getCadence())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(

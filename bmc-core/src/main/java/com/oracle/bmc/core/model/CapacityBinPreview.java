@@ -27,17 +27,20 @@ public final class CapacityBinPreview
         "capacityIndex",
         "totalOcpus",
         "totalMemoryInGBs",
+        "totalLocalVolumeInGBs",
         "supportedShapes"
     })
     public CapacityBinPreview(
             Integer capacityIndex,
             Float totalOcpus,
             Float totalMemoryInGBs,
+            Float totalLocalVolumeInGBs,
             java.util.List<String> supportedShapes) {
         super();
         this.capacityIndex = capacityIndex;
         this.totalOcpus = totalOcpus;
         this.totalMemoryInGBs = totalMemoryInGBs;
+        this.totalLocalVolumeInGBs = totalLocalVolumeInGBs;
         this.supportedShapes = supportedShapes;
     }
 
@@ -88,6 +91,21 @@ public final class CapacityBinPreview
             this.__explicitlySet__.add("totalMemoryInGBs");
             return this;
         }
+        /** The total local volume of the capacity bucket, in GBs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalLocalVolumeInGBs")
+        private Float totalLocalVolumeInGBs;
+
+        /**
+         * The total local volume of the capacity bucket, in GBs.
+         *
+         * @param totalLocalVolumeInGBs the value to set
+         * @return this builder
+         */
+        public Builder totalLocalVolumeInGBs(Float totalLocalVolumeInGBs) {
+            this.totalLocalVolumeInGBs = totalLocalVolumeInGBs;
+            this.__explicitlySet__.add("totalLocalVolumeInGBs");
+            return this;
+        }
         /** List of VMI shapes supported on each capacity bucket. */
         @com.fasterxml.jackson.annotation.JsonProperty("supportedShapes")
         private java.util.List<String> supportedShapes;
@@ -113,6 +131,7 @@ public final class CapacityBinPreview
                             this.capacityIndex,
                             this.totalOcpus,
                             this.totalMemoryInGBs,
+                            this.totalLocalVolumeInGBs,
                             this.supportedShapes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -130,6 +149,9 @@ public final class CapacityBinPreview
             }
             if (model.wasPropertyExplicitlySet("totalMemoryInGBs")) {
                 this.totalMemoryInGBs(model.getTotalMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("totalLocalVolumeInGBs")) {
+                this.totalLocalVolumeInGBs(model.getTotalLocalVolumeInGBs());
             }
             if (model.wasPropertyExplicitlySet("supportedShapes")) {
                 this.supportedShapes(model.getSupportedShapes());
@@ -186,6 +208,19 @@ public final class CapacityBinPreview
         return totalMemoryInGBs;
     }
 
+    /** The total local volume of the capacity bucket, in GBs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalLocalVolumeInGBs")
+    private final Float totalLocalVolumeInGBs;
+
+    /**
+     * The total local volume of the capacity bucket, in GBs.
+     *
+     * @return the value
+     */
+    public Float getTotalLocalVolumeInGBs() {
+        return totalLocalVolumeInGBs;
+    }
+
     /** List of VMI shapes supported on each capacity bucket. */
     @com.fasterxml.jackson.annotation.JsonProperty("supportedShapes")
     private final java.util.List<String> supportedShapes;
@@ -217,6 +252,7 @@ public final class CapacityBinPreview
         sb.append("capacityIndex=").append(String.valueOf(this.capacityIndex));
         sb.append(", totalOcpus=").append(String.valueOf(this.totalOcpus));
         sb.append(", totalMemoryInGBs=").append(String.valueOf(this.totalMemoryInGBs));
+        sb.append(", totalLocalVolumeInGBs=").append(String.valueOf(this.totalLocalVolumeInGBs));
         sb.append(", supportedShapes=").append(String.valueOf(this.supportedShapes));
         sb.append(")");
         return sb.toString();
@@ -235,6 +271,7 @@ public final class CapacityBinPreview
         return java.util.Objects.equals(this.capacityIndex, other.capacityIndex)
                 && java.util.Objects.equals(this.totalOcpus, other.totalOcpus)
                 && java.util.Objects.equals(this.totalMemoryInGBs, other.totalMemoryInGBs)
+                && java.util.Objects.equals(this.totalLocalVolumeInGBs, other.totalLocalVolumeInGBs)
                 && java.util.Objects.equals(this.supportedShapes, other.supportedShapes)
                 && super.equals(other);
     }
@@ -250,6 +287,11 @@ public final class CapacityBinPreview
         result =
                 (result * PRIME)
                         + (this.totalMemoryInGBs == null ? 43 : this.totalMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalLocalVolumeInGBs == null
+                                ? 43
+                                : this.totalLocalVolumeInGBs.hashCode());
         result =
                 (result * PRIME)
                         + (this.supportedShapes == null ? 43 : this.supportedShapes.hashCode());

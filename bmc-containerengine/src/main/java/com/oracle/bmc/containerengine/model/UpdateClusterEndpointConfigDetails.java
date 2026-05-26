@@ -23,12 +23,15 @@ package com.oracle.bmc.containerengine.model;
 public final class UpdateClusterEndpointConfigDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"nsgIds", "isPublicIpEnabled"})
+    @java.beans.ConstructorProperties({"nsgIds", "isPublicIpEnabled", "securityAttributes"})
     public UpdateClusterEndpointConfigDetails(
-            java.util.List<String> nsgIds, Boolean isPublicIpEnabled) {
+            java.util.List<String> nsgIds,
+            Boolean isPublicIpEnabled,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.nsgIds = nsgIds;
         this.isPublicIpEnabled = isPublicIpEnabled;
+        this.securityAttributes = securityAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -71,13 +74,40 @@ public final class UpdateClusterEndpointConfigDetails
             this.__explicitlySet__.add("isPublicIpEnabled");
             return this;
         }
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateClusterEndpointConfigDetails build() {
             UpdateClusterEndpointConfigDetails model =
-                    new UpdateClusterEndpointConfigDetails(this.nsgIds, this.isPublicIpEnabled);
+                    new UpdateClusterEndpointConfigDetails(
+                            this.nsgIds, this.isPublicIpEnabled, this.securityAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -91,6 +121,9 @@ public final class UpdateClusterEndpointConfigDetails
             }
             if (model.wasPropertyExplicitlySet("isPublicIpEnabled")) {
                 this.isPublicIpEnabled(model.getIsPublicIpEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             return this;
         }
@@ -139,6 +172,29 @@ public final class UpdateClusterEndpointConfigDetails
         return isPublicIpEnabled;
     }
 
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -156,6 +212,7 @@ public final class UpdateClusterEndpointConfigDetails
         sb.append("super=").append(super.toString());
         sb.append("nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", isPublicIpEnabled=").append(String.valueOf(this.isPublicIpEnabled));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -172,6 +229,7 @@ public final class UpdateClusterEndpointConfigDetails
         UpdateClusterEndpointConfigDetails other = (UpdateClusterEndpointConfigDetails) o;
         return java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.isPublicIpEnabled, other.isPublicIpEnabled)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
 
@@ -183,6 +241,11 @@ public final class UpdateClusterEndpointConfigDetails
         result =
                 (result * PRIME)
                         + (this.isPublicIpEnabled == null ? 43 : this.isPublicIpEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

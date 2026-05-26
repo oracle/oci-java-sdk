@@ -32,6 +32,7 @@ public final class CreateCloudExadataInfrastructureDetails
         "computeCount",
         "storageCount",
         "maintenanceWindow",
+        "maintenanceVersionPreferences",
         "freeformTags",
         "definedTags",
         "clusterPlacementGroupId",
@@ -48,6 +49,7 @@ public final class CreateCloudExadataInfrastructureDetails
             Integer computeCount,
             Integer storageCount,
             MaintenanceWindow maintenanceWindow,
+            MaintenanceVersionPreferenceDetails maintenanceVersionPreferences,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String clusterPlacementGroupId,
@@ -63,6 +65,7 @@ public final class CreateCloudExadataInfrastructureDetails
         this.computeCount = computeCount;
         this.storageCount = storageCount;
         this.maintenanceWindow = maintenanceWindow;
+        this.maintenanceVersionPreferences = maintenanceVersionPreferences;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
@@ -179,6 +182,16 @@ public final class CreateCloudExadataInfrastructureDetails
         public Builder maintenanceWindow(MaintenanceWindow maintenanceWindow) {
             this.maintenanceWindow = maintenanceWindow;
             this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceVersionPreferences")
+        private MaintenanceVersionPreferenceDetails maintenanceVersionPreferences;
+
+        public Builder maintenanceVersionPreferences(
+                MaintenanceVersionPreferenceDetails maintenanceVersionPreferences) {
+            this.maintenanceVersionPreferences = maintenanceVersionPreferences;
+            this.__explicitlySet__.add("maintenanceVersionPreferences");
             return this;
         }
         /**
@@ -325,6 +338,7 @@ public final class CreateCloudExadataInfrastructureDetails
                             this.computeCount,
                             this.storageCount,
                             this.maintenanceWindow,
+                            this.maintenanceVersionPreferences,
                             this.freeformTags,
                             this.definedTags,
                             this.clusterPlacementGroupId,
@@ -360,6 +374,9 @@ public final class CreateCloudExadataInfrastructureDetails
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
                 this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceVersionPreferences")) {
+                this.maintenanceVersionPreferences(model.getMaintenanceVersionPreferences());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -486,6 +503,13 @@ public final class CreateCloudExadataInfrastructureDetails
 
     public MaintenanceWindow getMaintenanceWindow() {
         return maintenanceWindow;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceVersionPreferences")
+    private final MaintenanceVersionPreferenceDetails maintenanceVersionPreferences;
+
+    public MaintenanceVersionPreferenceDetails getMaintenanceVersionPreferences() {
+        return maintenanceVersionPreferences;
     }
 
     /**
@@ -625,6 +649,8 @@ public final class CreateCloudExadataInfrastructureDetails
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", storageCount=").append(String.valueOf(this.storageCount));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", maintenanceVersionPreferences=")
+                .append(String.valueOf(this.maintenanceVersionPreferences));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", clusterPlacementGroupId=")
@@ -654,6 +680,8 @@ public final class CreateCloudExadataInfrastructureDetails
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.storageCount, other.storageCount)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(
+                        this.maintenanceVersionPreferences, other.maintenanceVersionPreferences)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(
@@ -684,6 +712,11 @@ public final class CreateCloudExadataInfrastructureDetails
         result =
                 (result * PRIME)
                         + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceVersionPreferences == null
+                                ? 43
+                                : this.maintenanceVersionPreferences.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

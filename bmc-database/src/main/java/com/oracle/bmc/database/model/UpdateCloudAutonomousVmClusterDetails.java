@@ -34,6 +34,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
         "nsgIds",
         "freeformTags",
         "definedTags",
+        "clusterTimeZone",
+        "scanListenerPortTls",
+        "scanListenerPortNonTls",
+        "isMtlsEnabledVmCluster",
+        "distributionAlgorithm",
         "securityAttributes"
     })
     public UpdateCloudAutonomousVmClusterDetails(
@@ -47,6 +52,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
             java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String clusterTimeZone,
+            Integer scanListenerPortTls,
+            Integer scanListenerPortNonTls,
+            Boolean isMtlsEnabledVmCluster,
+            DistributionAlgorithm distributionAlgorithm,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.description = description;
@@ -59,6 +69,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
         this.nsgIds = nsgIds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.clusterTimeZone = clusterTimeZone;
+        this.scanListenerPortTls = scanListenerPortTls;
+        this.scanListenerPortNonTls = scanListenerPortNonTls;
+        this.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
+        this.distributionAlgorithm = distributionAlgorithm;
         this.securityAttributes = securityAttributes;
     }
 
@@ -280,6 +295,89 @@ public final class UpdateCloudAutonomousVmClusterDetails
             return this;
         }
         /**
+         * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterTimeZone")
+        private String clusterTimeZone;
+
+        /**
+         * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
+         *
+         * @param clusterTimeZone the value to set
+         * @return this builder
+         */
+        public Builder clusterTimeZone(String clusterTimeZone) {
+            this.clusterTimeZone = clusterTimeZone;
+            this.__explicitlySet__.add("clusterTimeZone");
+            return this;
+        }
+        /** The SCAN Listener TLS port. Default is 2484. */
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTls")
+        private Integer scanListenerPortTls;
+
+        /**
+         * The SCAN Listener TLS port. Default is 2484.
+         *
+         * @param scanListenerPortTls the value to set
+         * @return this builder
+         */
+        public Builder scanListenerPortTls(Integer scanListenerPortTls) {
+            this.scanListenerPortTls = scanListenerPortTls;
+            this.__explicitlySet__.add("scanListenerPortTls");
+            return this;
+        }
+        /** The SCAN Listener Non TLS port. Default is 1521. */
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortNonTls")
+        private Integer scanListenerPortNonTls;
+
+        /**
+         * The SCAN Listener Non TLS port. Default is 1521.
+         *
+         * @param scanListenerPortNonTls the value to set
+         * @return this builder
+         */
+        public Builder scanListenerPortNonTls(Integer scanListenerPortNonTls) {
+            this.scanListenerPortNonTls = scanListenerPortNonTls;
+            this.__explicitlySet__.add("scanListenerPortNonTls");
+            return this;
+        }
+        /**
+         * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster.
+         * This is applicable to database TLS Certificates only. Default is TLS
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMtlsEnabledVmCluster")
+        private Boolean isMtlsEnabledVmCluster;
+
+        /**
+         * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster.
+         * This is applicable to database TLS Certificates only. Default is TLS
+         *
+         * @param isMtlsEnabledVmCluster the value to set
+         * @return this builder
+         */
+        public Builder isMtlsEnabledVmCluster(Boolean isMtlsEnabledVmCluster) {
+            this.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
+            this.__explicitlySet__.add("isMtlsEnabledVmCluster");
+            return this;
+        }
+        /** The distribution algorithm used for the Autonomous VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("distributionAlgorithm")
+        private DistributionAlgorithm distributionAlgorithm;
+
+        /**
+         * The distribution algorithm used for the Autonomous VM cluster.
+         *
+         * @param distributionAlgorithm the value to set
+         * @return this builder
+         */
+        public Builder distributionAlgorithm(DistributionAlgorithm distributionAlgorithm) {
+            this.distributionAlgorithm = distributionAlgorithm;
+            this.__explicitlySet__.add("distributionAlgorithm");
+            return this;
+        }
+        /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource
          * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
@@ -320,6 +418,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
                             this.nsgIds,
                             this.freeformTags,
                             this.definedTags,
+                            this.clusterTimeZone,
+                            this.scanListenerPortTls,
+                            this.scanListenerPortNonTls,
+                            this.isMtlsEnabledVmCluster,
+                            this.distributionAlgorithm,
                             this.securityAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -358,6 +461,21 @@ public final class UpdateCloudAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("clusterTimeZone")) {
+                this.clusterTimeZone(model.getClusterTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortTls")) {
+                this.scanListenerPortTls(model.getScanListenerPortTls());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortNonTls")) {
+                this.scanListenerPortNonTls(model.getScanListenerPortNonTls());
+            }
+            if (model.wasPropertyExplicitlySet("isMtlsEnabledVmCluster")) {
+                this.isMtlsEnabledVmCluster(model.getIsMtlsEnabledVmCluster());
+            }
+            if (model.wasPropertyExplicitlySet("distributionAlgorithm")) {
+                this.distributionAlgorithm(model.getDistributionAlgorithm());
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
@@ -614,6 +732,112 @@ public final class UpdateCloudAutonomousVmClusterDetails
     }
 
     /**
+     * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterTimeZone")
+    private final String clusterTimeZone;
+
+    /**
+     * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
+     *
+     * @return the value
+     */
+    public String getClusterTimeZone() {
+        return clusterTimeZone;
+    }
+
+    /** The SCAN Listener TLS port. Default is 2484. */
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTls")
+    private final Integer scanListenerPortTls;
+
+    /**
+     * The SCAN Listener TLS port. Default is 2484.
+     *
+     * @return the value
+     */
+    public Integer getScanListenerPortTls() {
+        return scanListenerPortTls;
+    }
+
+    /** The SCAN Listener Non TLS port. Default is 1521. */
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortNonTls")
+    private final Integer scanListenerPortNonTls;
+
+    /**
+     * The SCAN Listener Non TLS port. Default is 1521.
+     *
+     * @return the value
+     */
+    public Integer getScanListenerPortNonTls() {
+        return scanListenerPortNonTls;
+    }
+
+    /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This
+     * is applicable to database TLS Certificates only. Default is TLS
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMtlsEnabledVmCluster")
+    private final Boolean isMtlsEnabledVmCluster;
+
+    /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This
+     * is applicable to database TLS Certificates only. Default is TLS
+     *
+     * @return the value
+     */
+    public Boolean getIsMtlsEnabledVmCluster() {
+        return isMtlsEnabledVmCluster;
+    }
+
+    /** The distribution algorithm used for the Autonomous VM cluster. */
+    public enum DistributionAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+        ResourceOptimized("RESOURCE_OPTIMIZED"),
+        DistributionOptimized("DISTRIBUTION_OPTIMIZED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DistributionAlgorithm> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DistributionAlgorithm v : DistributionAlgorithm.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DistributionAlgorithm(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DistributionAlgorithm create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid DistributionAlgorithm: " + key);
+        }
+    };
+    /** The distribution algorithm used for the Autonomous VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("distributionAlgorithm")
+    private final DistributionAlgorithm distributionAlgorithm;
+
+    /**
+     * The distribution algorithm used for the Autonomous VM cluster.
+     *
+     * @return the value
+     */
+    public DistributionAlgorithm getDistributionAlgorithm() {
+        return distributionAlgorithm;
+    }
+
+    /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
      * more information, see [Resource
      * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
@@ -662,6 +886,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", clusterTimeZone=").append(String.valueOf(this.clusterTimeZone));
+        sb.append(", scanListenerPortTls=").append(String.valueOf(this.scanListenerPortTls));
+        sb.append(", scanListenerPortNonTls=").append(String.valueOf(this.scanListenerPortNonTls));
+        sb.append(", isMtlsEnabledVmCluster=").append(String.valueOf(this.isMtlsEnabledVmCluster));
+        sb.append(", distributionAlgorithm=").append(String.valueOf(this.distributionAlgorithm));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
@@ -690,6 +919,13 @@ public final class UpdateCloudAutonomousVmClusterDetails
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.clusterTimeZone, other.clusterTimeZone)
+                && java.util.Objects.equals(this.scanListenerPortTls, other.scanListenerPortTls)
+                && java.util.Objects.equals(
+                        this.scanListenerPortNonTls, other.scanListenerPortNonTls)
+                && java.util.Objects.equals(
+                        this.isMtlsEnabledVmCluster, other.isMtlsEnabledVmCluster)
+                && java.util.Objects.equals(this.distributionAlgorithm, other.distributionAlgorithm)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
@@ -724,6 +960,29 @@ public final class UpdateCloudAutonomousVmClusterDetails
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterTimeZone == null ? 43 : this.clusterTimeZone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortTls == null
+                                ? 43
+                                : this.scanListenerPortTls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortNonTls == null
+                                ? 43
+                                : this.scanListenerPortNonTls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMtlsEnabledVmCluster == null
+                                ? 43
+                                : this.isMtlsEnabledVmCluster.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.distributionAlgorithm == null
+                                ? 43
+                                : this.distributionAlgorithm.hashCode());
         result =
                 (result * PRIME)
                         + (this.securityAttributes == null

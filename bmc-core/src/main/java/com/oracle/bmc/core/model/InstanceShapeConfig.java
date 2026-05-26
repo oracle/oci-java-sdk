@@ -37,7 +37,8 @@ public final class InstanceShapeConfig
         "localDisksTotalSizeInGBs",
         "localDiskDescription",
         "vcpus",
-        "resourceManagement"
+        "resourceManagement",
+        "localVolumeSizeInGBs"
     })
     public InstanceShapeConfig(
             Float ocpus,
@@ -52,7 +53,8 @@ public final class InstanceShapeConfig
             Float localDisksTotalSizeInGBs,
             String localDiskDescription,
             Integer vcpus,
-            ResourceManagement resourceManagement) {
+            ResourceManagement resourceManagement,
+            Integer localVolumeSizeInGBs) {
         super();
         this.ocpus = ocpus;
         this.memoryInGBs = memoryInGBs;
@@ -67,6 +69,7 @@ public final class InstanceShapeConfig
         this.localDiskDescription = localDiskDescription;
         this.vcpus = vcpus;
         this.resourceManagement = resourceManagement;
+        this.localVolumeSizeInGBs = localVolumeSizeInGBs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -306,6 +309,27 @@ public final class InstanceShapeConfig
             this.__explicitlySet__.add("resourceManagement");
             return this;
         }
+        /**
+         * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If
+         * the shape is DenseLV, the value will be greater than 0. For all other shapes, the value
+         * will be null.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("localVolumeSizeInGBs")
+        private Integer localVolumeSizeInGBs;
+
+        /**
+         * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If
+         * the shape is DenseLV, the value will be greater than 0. For all other shapes, the value
+         * will be null.
+         *
+         * @param localVolumeSizeInGBs the value to set
+         * @return this builder
+         */
+        public Builder localVolumeSizeInGBs(Integer localVolumeSizeInGBs) {
+            this.localVolumeSizeInGBs = localVolumeSizeInGBs;
+            this.__explicitlySet__.add("localVolumeSizeInGBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -325,7 +349,8 @@ public final class InstanceShapeConfig
                             this.localDisksTotalSizeInGBs,
                             this.localDiskDescription,
                             this.vcpus,
-                            this.resourceManagement);
+                            this.resourceManagement,
+                            this.localVolumeSizeInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -372,6 +397,9 @@ public final class InstanceShapeConfig
             }
             if (model.wasPropertyExplicitlySet("resourceManagement")) {
                 this.resourceManagement(model.getResourceManagement());
+            }
+            if (model.wasPropertyExplicitlySet("localVolumeSizeInGBs")) {
+                this.localVolumeSizeInGBs(model.getLocalVolumeSizeInGBs());
             }
             return this;
         }
@@ -691,6 +719,25 @@ public final class InstanceShapeConfig
         return resourceManagement;
     }
 
+    /**
+     * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the
+     * shape is DenseLV, the value will be greater than 0. For all other shapes, the value will be
+     * null.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("localVolumeSizeInGBs")
+    private final Integer localVolumeSizeInGBs;
+
+    /**
+     * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the
+     * shape is DenseLV, the value will be greater than 0. For all other shapes, the value will be
+     * null.
+     *
+     * @return the value
+     */
+    public Integer getLocalVolumeSizeInGBs() {
+        return localVolumeSizeInGBs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -722,6 +769,7 @@ public final class InstanceShapeConfig
         sb.append(", localDiskDescription=").append(String.valueOf(this.localDiskDescription));
         sb.append(", vcpus=").append(String.valueOf(this.vcpus));
         sb.append(", resourceManagement=").append(String.valueOf(this.resourceManagement));
+        sb.append(", localVolumeSizeInGBs=").append(String.valueOf(this.localVolumeSizeInGBs));
         sb.append(")");
         return sb.toString();
     }
@@ -752,6 +800,7 @@ public final class InstanceShapeConfig
                 && java.util.Objects.equals(this.localDiskDescription, other.localDiskDescription)
                 && java.util.Objects.equals(this.vcpus, other.vcpus)
                 && java.util.Objects.equals(this.resourceManagement, other.resourceManagement)
+                && java.util.Objects.equals(this.localVolumeSizeInGBs, other.localVolumeSizeInGBs)
                 && super.equals(other);
     }
 
@@ -802,6 +851,11 @@ public final class InstanceShapeConfig
                         + (this.resourceManagement == null
                                 ? 43
                                 : this.resourceManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localVolumeSizeInGBs == null
+                                ? 43
+                                : this.localVolumeSizeInGBs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

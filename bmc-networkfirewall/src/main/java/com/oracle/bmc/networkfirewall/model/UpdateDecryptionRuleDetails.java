@@ -30,6 +30,7 @@ public final class UpdateDecryptionRuleDetails
         "action",
         "decryptionProfile",
         "secret",
+        "secrets",
         "position"
     })
     public UpdateDecryptionRuleDetails(
@@ -38,6 +39,7 @@ public final class UpdateDecryptionRuleDetails
             DecryptionActionType action,
             String decryptionProfile,
             String secret,
+            java.util.List<String> secrets,
             RulePosition position) {
         super();
         this.description = description;
@@ -45,6 +47,7 @@ public final class UpdateDecryptionRuleDetails
         this.action = action;
         this.decryptionProfile = decryptionProfile;
         this.secret = secret;
+        this.secrets = secrets;
         this.position = position;
     }
 
@@ -135,6 +138,21 @@ public final class UpdateDecryptionRuleDetails
             this.__explicitlySet__.add("secret");
             return this;
         }
+        /** An array of mapped secrets. */
+        @com.fasterxml.jackson.annotation.JsonProperty("secrets")
+        private java.util.List<String> secrets;
+
+        /**
+         * An array of mapped secrets.
+         *
+         * @param secrets the value to set
+         * @return this builder
+         */
+        public Builder secrets(java.util.List<String> secrets) {
+            this.secrets = secrets;
+            this.__explicitlySet__.add("secrets");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private RulePosition position;
@@ -156,6 +174,7 @@ public final class UpdateDecryptionRuleDetails
                             this.action,
                             this.decryptionProfile,
                             this.secret,
+                            this.secrets,
                             this.position);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -179,6 +198,9 @@ public final class UpdateDecryptionRuleDetails
             }
             if (model.wasPropertyExplicitlySet("secret")) {
                 this.secret(model.getSecret());
+            }
+            if (model.wasPropertyExplicitlySet("secrets")) {
+                this.secrets(model.getSecrets());
             }
             if (model.wasPropertyExplicitlySet("position")) {
                 this.position(model.getPosition());
@@ -267,6 +289,19 @@ public final class UpdateDecryptionRuleDetails
         return secret;
     }
 
+    /** An array of mapped secrets. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secrets")
+    private final java.util.List<String> secrets;
+
+    /**
+     * An array of mapped secrets.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getSecrets() {
+        return secrets;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final RulePosition position;
 
@@ -294,6 +329,7 @@ public final class UpdateDecryptionRuleDetails
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", decryptionProfile=").append(String.valueOf(this.decryptionProfile));
         sb.append(", secret=").append(String.valueOf(this.secret));
+        sb.append(", secrets=").append(String.valueOf(this.secrets));
         sb.append(", position=").append(String.valueOf(this.position));
         sb.append(")");
         return sb.toString();
@@ -314,6 +350,7 @@ public final class UpdateDecryptionRuleDetails
                 && java.util.Objects.equals(this.action, other.action)
                 && java.util.Objects.equals(this.decryptionProfile, other.decryptionProfile)
                 && java.util.Objects.equals(this.secret, other.secret)
+                && java.util.Objects.equals(this.secrets, other.secrets)
                 && java.util.Objects.equals(this.position, other.position)
                 && super.equals(other);
     }
@@ -329,6 +366,7 @@ public final class UpdateDecryptionRuleDetails
                 (result * PRIME)
                         + (this.decryptionProfile == null ? 43 : this.decryptionProfile.hashCode());
         result = (result * PRIME) + (this.secret == null ? 43 : this.secret.hashCode());
+        result = (result * PRIME) + (this.secrets == null ? 43 : this.secrets.hashCode());
         result = (result * PRIME) + (this.position == null ? 43 : this.position.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

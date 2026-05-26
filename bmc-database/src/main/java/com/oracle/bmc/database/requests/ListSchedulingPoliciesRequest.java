@@ -164,6 +164,13 @@ public class ListSchedulingPoliciesRequest
     public String getDisplayName() {
         return displayName;
     }
+    /** A filter to return only resources that match the given cadence period exactly. */
+    private com.oracle.bmc.database.model.SchedulingPolicySummary.Cadence cadence;
+
+    /** A filter to return only resources that match the given cadence period exactly. */
+    public com.oracle.bmc.database.model.SchedulingPolicySummary.Cadence getCadence() {
+        return cadence;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -300,6 +307,21 @@ public class ListSchedulingPoliciesRequest
             return this;
         }
 
+        /** A filter to return only resources that match the given cadence period exactly. */
+        private com.oracle.bmc.database.model.SchedulingPolicySummary.Cadence cadence = null;
+
+        /**
+         * A filter to return only resources that match the given cadence period exactly.
+         *
+         * @param cadence the value to set
+         * @return this builder instance
+         */
+        public Builder cadence(
+                com.oracle.bmc.database.model.SchedulingPolicySummary.Cadence cadence) {
+            this.cadence = cadence;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -338,6 +360,7 @@ public class ListSchedulingPoliciesRequest
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
+            cadence(o.getCadence());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -380,9 +403,10 @@ public class ListSchedulingPoliciesRequest
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
+            request.cadence = cadence;
             return request;
             // new ListSchedulingPoliciesRequest(compartmentId, limit, page, opcRequestId, sortBy,
-            // sortOrder, lifecycleState, displayName);
+            // sortOrder, lifecycleState, displayName, cadence);
         }
     }
 
@@ -400,7 +424,8 @@ public class ListSchedulingPoliciesRequest
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
-                .displayName(displayName);
+                .displayName(displayName)
+                .cadence(cadence);
     }
 
     /**
@@ -425,6 +450,7 @@ public class ListSchedulingPoliciesRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",cadence=").append(String.valueOf(this.cadence));
         sb.append(")");
         return sb.toString();
     }
@@ -447,7 +473,8 @@ public class ListSchedulingPoliciesRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.displayName, other.displayName);
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.cadence, other.cadence);
     }
 
     @Override
@@ -466,6 +493,7 @@ public class ListSchedulingPoliciesRequest
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.cadence == null ? 43 : this.cadence.hashCode());
         return result;
     }
 }

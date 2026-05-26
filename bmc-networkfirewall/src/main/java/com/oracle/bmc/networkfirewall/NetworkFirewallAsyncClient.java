@@ -2068,6 +2068,42 @@ public class NetworkFirewallAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetNetworkFirewallHealthStatusResponse>
+            getNetworkFirewallHealthStatus(
+                    GetNetworkFirewallHealthStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetNetworkFirewallHealthStatusRequest,
+                                    GetNetworkFirewallHealthStatusResponse>
+                            handler) {
+
+        Validate.notBlank(request.getNetworkFirewallId(), "networkFirewallId must not be blank");
+
+        return clientCall(request, GetNetworkFirewallHealthStatusResponse::builder)
+                .logger(LOG, "getNetworkFirewallHealthStatus")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "GetNetworkFirewallHealthStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallHealthStatus/GetNetworkFirewallHealthStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNetworkFirewallHealthStatusRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewalls")
+                .appendPathParam(request.getNetworkFirewallId())
+                .appendPathParam("healthStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.NetworkFirewallHealthStatus.class,
+                        GetNetworkFirewallHealthStatusResponse.Builder::networkFirewallHealthStatus)
+                .handleResponseHeaderString(
+                        "etag", GetNetworkFirewallHealthStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetNetworkFirewallHealthStatusResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetNetworkFirewallPolicyResponse> getNetworkFirewallPolicy(
             GetNetworkFirewallPolicyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

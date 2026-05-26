@@ -879,14 +879,14 @@ public class CreateAutonomousContainerDatabaseBase
 
     /**
      * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%,
-     * 25%, and 50%, with 50% being the default option.
+     * 25%, 50%, 75%, and 100%, with 50% being the default option.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmFailoverReservation")
     private final Integer vmFailoverReservation;
 
     /**
      * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%,
-     * 25%, and 50%, with 50% being the default option.
+     * 25%, 50%, 75%, and 100%, with 50% being the default option.
      *
      * @return the value
      */
@@ -954,6 +954,7 @@ public class CreateAutonomousContainerDatabaseBase
     public enum NetServicesArchitecture implements com.oracle.bmc.http.internal.BmcEnum {
         Dedicated("DEDICATED"),
         Shared("SHARED"),
+        Drcp("DRCP"),
         ;
 
         private final String value;

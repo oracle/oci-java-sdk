@@ -58,6 +58,8 @@ public final class DeploymentSummary
         "subscriptionId",
         "clusterPlacementGroupId",
         "securityAttributes",
+        "disasterRecoveryStatus",
+        "deploymentRole",
         "locks"
     })
     public DeploymentSummary(
@@ -95,6 +97,8 @@ public final class DeploymentSummary
             String subscriptionId,
             String clusterPlacementGroupId,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            DisasterRecoveryStatus disasterRecoveryStatus,
+            DeploymentRole deploymentRole,
             java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
@@ -131,6 +135,8 @@ public final class DeploymentSummary
         this.subscriptionId = subscriptionId;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.securityAttributes = securityAttributes;
+        this.disasterRecoveryStatus = disasterRecoveryStatus;
+        this.deploymentRole = deploymentRole;
         this.locks = locks;
     }
 
@@ -492,17 +498,17 @@ public final class DeploymentSummary
             return this;
         }
         /**
-         * The deployment category defines the broad separation of the deployment type into three
-         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-         * 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into four
+         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
+         * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private DeploymentCategory category;
 
         /**
-         * The deployment category defines the broad separation of the deployment type into three
-         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-         * 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into four
+         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
+         * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
          *
          * @param category the value to set
          * @return this builder
@@ -797,6 +803,42 @@ public final class DeploymentSummary
             this.__explicitlySet__.add("securityAttributes");
             return this;
         }
+        /**
+         * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster
+         * recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a
+         * clusterPlacementGroupId is provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryStatus")
+        private DisasterRecoveryStatus disasterRecoveryStatus;
+
+        /**
+         * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster
+         * recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a
+         * clusterPlacementGroupId is provided.
+         *
+         * @param disasterRecoveryStatus the value to set
+         * @return this builder
+         */
+        public Builder disasterRecoveryStatus(DisasterRecoveryStatus disasterRecoveryStatus) {
+            this.disasterRecoveryStatus = disasterRecoveryStatus;
+            this.__explicitlySet__.add("disasterRecoveryStatus");
+            return this;
+        }
+        /** The type of the deployment role. */
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentRole")
+        private DeploymentRole deploymentRole;
+
+        /**
+         * The type of the deployment role.
+         *
+         * @param deploymentRole the value to set
+         * @return this builder
+         */
+        public Builder deploymentRole(DeploymentRole deploymentRole) {
+            this.deploymentRole = deploymentRole;
+            this.__explicitlySet__.add("deploymentRole");
+            return this;
+        }
         /** Locks associated with this resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
         private java.util.List<ResourceLock> locks;
@@ -853,6 +895,8 @@ public final class DeploymentSummary
                             this.subscriptionId,
                             this.clusterPlacementGroupId,
                             this.securityAttributes,
+                            this.disasterRecoveryStatus,
+                            this.deploymentRole,
                             this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -964,6 +1008,12 @@ public final class DeploymentSummary
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("disasterRecoveryStatus")) {
+                this.disasterRecoveryStatus(model.getDisasterRecoveryStatus());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentRole")) {
+                this.deploymentRole(model.getDeploymentRole());
             }
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
@@ -1296,17 +1346,17 @@ public final class DeploymentSummary
     }
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three
-     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-     * 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into four
+     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
+     * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final DeploymentCategory category;
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three
-     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-     * 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into four
+     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
+     * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
      *
      * @return the value
      */
@@ -1565,6 +1615,38 @@ public final class DeploymentSummary
         return securityAttributes;
     }
 
+    /**
+     * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster
+     * recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a
+     * clusterPlacementGroupId is provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryStatus")
+    private final DisasterRecoveryStatus disasterRecoveryStatus;
+
+    /**
+     * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster
+     * recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a
+     * clusterPlacementGroupId is provided.
+     *
+     * @return the value
+     */
+    public DisasterRecoveryStatus getDisasterRecoveryStatus() {
+        return disasterRecoveryStatus;
+    }
+
+    /** The type of the deployment role. */
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentRole")
+    private final DeploymentRole deploymentRole;
+
+    /**
+     * The type of the deployment role.
+     *
+     * @return the value
+     */
+    public DeploymentRole getDeploymentRole() {
+        return deploymentRole;
+    }
+
     /** Locks associated with this resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<ResourceLock> locks;
@@ -1631,6 +1713,8 @@ public final class DeploymentSummary
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", disasterRecoveryStatus=").append(String.valueOf(this.disasterRecoveryStatus));
+        sb.append(", deploymentRole=").append(String.valueOf(this.deploymentRole));
         sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
@@ -1685,6 +1769,9 @@ public final class DeploymentSummary
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(
+                        this.disasterRecoveryStatus, other.disasterRecoveryStatus)
+                && java.util.Objects.equals(this.deploymentRole, other.deploymentRole)
                 && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
@@ -1783,6 +1870,14 @@ public final class DeploymentSummary
                         + (this.securityAttributes == null
                                 ? 43
                                 : this.securityAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.disasterRecoveryStatus == null
+                                ? 43
+                                : this.disasterRecoveryStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentRole == null ? 43 : this.deploymentRole.hashCode());
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

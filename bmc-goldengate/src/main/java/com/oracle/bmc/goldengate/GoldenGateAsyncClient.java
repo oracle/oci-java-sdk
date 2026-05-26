@@ -647,6 +647,43 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ClonePipelineResponse> clonePipeline(
+            ClonePipelineRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ClonePipelineRequest, ClonePipelineResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getClonePipelineDetails(), "clonePipelineDetails is required");
+
+        return clientCall(request, ClonePipelineResponse::builder)
+                .logger(LOG, "clonePipeline")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ClonePipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/ClonePipeline")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ClonePipelineRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam("actions")
+                .appendPathParam("clone")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.Pipeline.class,
+                        ClonePipelineResponse.Builder::pipeline)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ClonePipelineResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ClonePipelineResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", ClonePipelineResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CollectDeploymentDiagnosticResponse>
             collectDeploymentDiagnostic(
                     CollectDeploymentDiagnosticRequest request,
@@ -1330,6 +1367,47 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateDisasterRecoveryPrecheckReportResponse>
+            generateDisasterRecoveryPrecheckReport(
+                    GenerateDisasterRecoveryPrecheckReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateDisasterRecoveryPrecheckReportRequest,
+                                    GenerateDisasterRecoveryPrecheckReportResponse>
+                            handler) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getGenerateDisasterRecoveryPrecheckReportDetails(),
+                "generateDisasterRecoveryPrecheckReportDetails is required");
+
+        return clientCall(request, GenerateDisasterRecoveryPrecheckReportResponse::builder)
+                .logger(LOG, "generateDisasterRecoveryPrecheckReport")
+                .serviceDetails(
+                        "GoldenGate",
+                        "GenerateDisasterRecoveryPrecheckReport",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GenerateDisasterRecoveryPrecheckReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateDisasterRecoveryPrecheckReportRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("generateDisasterRecoveryPrecheckReport")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        GenerateDisasterRecoveryPrecheckReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GenerateDisasterRecoveryPrecheckReportResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GenerateLibraryUrlResponse> generateLibraryUrl(
             GenerateLibraryUrlRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1589,6 +1667,46 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .handleResponseHeaderString("etag", GetDeploymentUpgradeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDeploymentUpgradeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDisasterRecoveryPrecheckReportResponse>
+            getDisasterRecoveryPrecheckReport(
+                    GetDisasterRecoveryPrecheckReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDisasterRecoveryPrecheckReportRequest,
+                                    GetDisasterRecoveryPrecheckReportResponse>
+                            handler) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
+
+        Objects.requireNonNull(request.getFaultDomain(), "faultDomain is required");
+
+        return clientCall(request, GetDisasterRecoveryPrecheckReportResponse::builder)
+                .logger(LOG, "getDisasterRecoveryPrecheckReport")
+                .serviceDetails(
+                        "GoldenGate",
+                        "GetDisasterRecoveryPrecheckReport",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GetDisasterRecoveryPrecheckReport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDisasterRecoveryPrecheckReportRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("disasterRecoveryPrecheckReport")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("faultDomain", request.getFaultDomain())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DisasterRecoveryPrecheckReport.class,
+                        GetDisasterRecoveryPrecheckReportResponse.Builder
+                                ::disasterRecoveryPrecheckReport)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDisasterRecoveryPrecheckReportResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

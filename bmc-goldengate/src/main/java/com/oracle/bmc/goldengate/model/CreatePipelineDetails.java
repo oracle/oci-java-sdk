@@ -41,7 +41,9 @@ public class CreatePipelineDetails
         "locks",
         "sourceConnectionDetails",
         "targetConnectionDetails",
-        "subnetId"
+        "subnetId",
+        "cpuCoreCount",
+        "isAutoScalingEnabled"
     })
     protected CreatePipelineDetails(
             String displayName,
@@ -53,7 +55,9 @@ public class CreatePipelineDetails
             java.util.List<ResourceLock> locks,
             SourcePipelineConnectionDetails sourceConnectionDetails,
             TargetPipelineConnectionDetails targetConnectionDetails,
-            String subnetId) {
+            String subnetId,
+            Integer cpuCoreCount,
+            Boolean isAutoScalingEnabled) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -65,6 +69,8 @@ public class CreatePipelineDetails
         this.sourceConnectionDetails = sourceConnectionDetails;
         this.targetConnectionDetails = targetConnectionDetails;
         this.subnetId = subnetId;
+        this.cpuCoreCount = cpuCoreCount;
+        this.isAutoScalingEnabled = isAutoScalingEnabled;
     }
 
     /** An object's Display Name. */
@@ -207,6 +213,32 @@ public class CreatePipelineDetails
         return subnetId;
     }
 
+    /** The Minimum number of OCPUs to be made available for this Deployment. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
+    private final Integer cpuCoreCount;
+
+    /**
+     * The Minimum number of OCPUs to be made available for this Deployment.
+     *
+     * @return the value
+     */
+    public Integer getCpuCoreCount() {
+        return cpuCoreCount;
+    }
+
+    /** Indicates if auto scaling is enabled for the Deployment's CPU core count. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
+    private final Boolean isAutoScalingEnabled;
+
+    /**
+     * Indicates if auto scaling is enabled for the Deployment's CPU core count.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoScalingEnabled() {
+        return isAutoScalingEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -234,6 +266,8 @@ public class CreatePipelineDetails
         sb.append(", targetConnectionDetails=")
                 .append(String.valueOf(this.targetConnectionDetails));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -260,6 +294,8 @@ public class CreatePipelineDetails
                 && java.util.Objects.equals(
                         this.targetConnectionDetails, other.targetConnectionDetails)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
                 && super.equals(other);
     }
 
@@ -287,6 +323,12 @@ public class CreatePipelineDetails
                                 ? 43
                                 : this.targetConnectionDetails.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoScalingEnabled == null
+                                ? 43
+                                : this.isAutoScalingEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

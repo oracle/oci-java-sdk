@@ -3432,6 +3432,9 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "remainingOcpusGreaterThanOrEqualTo",
                         request.getRemainingOcpusGreaterThanOrEqualTo())
                 .appendQueryParam(
+                        "remainingLocalVolumeInGBsGreaterThanOrEqualTo",
+                        request.getRemainingLocalVolumeInGBsGreaterThanOrEqualTo())
+                .appendQueryParam(
                         "isMemoryEncryptionEnabled", request.getIsMemoryEncryptionEnabled())
                 .accept("application/json, application/x-json-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())

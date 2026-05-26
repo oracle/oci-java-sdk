@@ -23,6 +23,9 @@ package com.oracle.bmc.datascience.model;
         defaultImpl = ModelDeploymentSystemData.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ManagedComputeClusterModelDeploymentSystemData.class,
+            name = "MANAGED_COMPUTE_CLUSTER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = InstancePoolModelDeploymentSystemData.class,
             name = "INSTANCE_POOL")
 })
@@ -95,6 +98,7 @@ public class ModelDeploymentSystemData
     /** The infrastructure type of the model deployment. */
     public enum SystemInfraType implements com.oracle.bmc.http.internal.BmcEnum {
         InstancePool("INSTANCE_POOL"),
+        ManagedComputeCluster("MANAGED_COMPUTE_CLUSTER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

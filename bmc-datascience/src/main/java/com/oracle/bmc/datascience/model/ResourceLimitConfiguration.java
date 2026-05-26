@@ -5,7 +5,8 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Configuration of IDCS AuthN/Z for online prediction <br>
+ * Resource limit configuration details for workload on managed compute cluster type compute target
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -17,53 +18,58 @@ package com.oracle.bmc.datascience.model;
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IdcsAuthConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
+        builder = ResourceLimitConfiguration.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class IdcsAuthConfiguration extends AuthConfiguration {
+public final class ResourceLimitConfiguration
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    @Deprecated
+    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs"})
+    public ResourceLimitConfiguration(Float ocpus, Float memoryInGBs) {
+        super();
+        this.ocpus = ocpus;
+        this.memoryInGBs = memoryInGBs;
+    }
+
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Identity Domain OCID */
-        @com.fasterxml.jackson.annotation.JsonProperty("domainId")
-        private String domainId;
+        /** Burstable limit for cpu. */
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
+        private Float ocpus;
 
         /**
-         * Identity Domain OCID
+         * Burstable limit for cpu.
          *
-         * @param domainId the value to set
+         * @param ocpus the value to set
          * @return this builder
          */
-        public Builder domainId(String domainId) {
-            this.domainId = domainId;
-            this.__explicitlySet__.add("domainId");
+        public Builder ocpus(Float ocpus) {
+            this.ocpus = ocpus;
+            this.__explicitlySet__.add("ocpus");
             return this;
         }
-        /** Name of the IDCS application */
-        @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
-        private String applicationName;
+        /** Burstable limit for memory. */
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
+        private Float memoryInGBs;
 
         /**
-         * Name of the IDCS application
+         * Burstable limit for memory.
          *
-         * @param applicationName the value to set
+         * @param memoryInGBs the value to set
          * @return this builder
          */
-        public Builder applicationName(String applicationName) {
-            this.applicationName = applicationName;
-            this.__explicitlySet__.add("applicationName");
+        public Builder memoryInGBs(Float memoryInGBs) {
+            this.memoryInGBs = memoryInGBs;
+            this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public IdcsAuthConfiguration build() {
-            IdcsAuthConfiguration model =
-                    new IdcsAuthConfiguration(this.domainId, this.applicationName);
+        public ResourceLimitConfiguration build() {
+            ResourceLimitConfiguration model =
+                    new ResourceLimitConfiguration(this.ocpus, this.memoryInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -71,12 +77,12 @@ public final class IdcsAuthConfiguration extends AuthConfiguration {
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IdcsAuthConfiguration model) {
-            if (model.wasPropertyExplicitlySet("domainId")) {
-                this.domainId(model.getDomainId());
+        public Builder copy(ResourceLimitConfiguration model) {
+            if (model.wasPropertyExplicitlySet("ocpus")) {
+                this.ocpus(model.getOcpus());
             }
-            if (model.wasPropertyExplicitlySet("applicationName")) {
-                this.applicationName(model.getApplicationName());
+            if (model.wasPropertyExplicitlySet("memoryInGBs")) {
+                this.memoryInGBs(model.getMemoryInGBs());
             }
             return this;
         }
@@ -91,37 +97,30 @@ public final class IdcsAuthConfiguration extends AuthConfiguration {
         return new Builder().copy(this);
     }
 
-    @Deprecated
-    public IdcsAuthConfiguration(String domainId, String applicationName) {
-        super();
-        this.domainId = domainId;
-        this.applicationName = applicationName;
-    }
-
-    /** Identity Domain OCID */
-    @com.fasterxml.jackson.annotation.JsonProperty("domainId")
-    private final String domainId;
+    /** Burstable limit for cpu. */
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
+    private final Float ocpus;
 
     /**
-     * Identity Domain OCID
+     * Burstable limit for cpu.
      *
      * @return the value
      */
-    public String getDomainId() {
-        return domainId;
+    public Float getOcpus() {
+        return ocpus;
     }
 
-    /** Name of the IDCS application */
-    @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
-    private final String applicationName;
+    /** Burstable limit for memory. */
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
+    private final Float memoryInGBs;
 
     /**
-     * Name of the IDCS application
+     * Burstable limit for memory.
      *
      * @return the value
      */
-    public String getApplicationName() {
-        return applicationName;
+    public Float getMemoryInGBs() {
+        return memoryInGBs;
     }
 
     @Override
@@ -137,10 +136,10 @@ public final class IdcsAuthConfiguration extends AuthConfiguration {
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("IdcsAuthConfiguration(");
-        sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", domainId=").append(String.valueOf(this.domainId));
-        sb.append(", applicationName=").append(String.valueOf(this.applicationName));
+        sb.append("ResourceLimitConfiguration(");
+        sb.append("super=").append(super.toString());
+        sb.append("ocpus=").append(String.valueOf(this.ocpus));
+        sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
         sb.append(")");
         return sb.toString();
     }
@@ -150,24 +149,23 @@ public final class IdcsAuthConfiguration extends AuthConfiguration {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof IdcsAuthConfiguration)) {
+        if (!(o instanceof ResourceLimitConfiguration)) {
             return false;
         }
 
-        IdcsAuthConfiguration other = (IdcsAuthConfiguration) o;
-        return java.util.Objects.equals(this.domainId, other.domainId)
-                && java.util.Objects.equals(this.applicationName, other.applicationName)
+        ResourceLimitConfiguration other = (ResourceLimitConfiguration) o;
+        return java.util.Objects.equals(this.ocpus, other.ocpus)
+                && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
                 && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
-        int result = super.hashCode();
-        result = (result * PRIME) + (this.domainId == null ? 43 : this.domainId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.applicationName == null ? 43 : this.applicationName.hashCode());
+        int result = 1;
+        result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
+        result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

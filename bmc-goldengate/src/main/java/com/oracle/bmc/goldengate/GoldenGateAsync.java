@@ -311,6 +311,21 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Clones the pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ClonePipelineResponse> clonePipeline(
+            ClonePipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ClonePipelineRequest, ClonePipelineResponse>
+                    handler);
+
+    /**
      * Collects the diagnostic of a Deployment. When provided, If-Match is checked against ETag
      * values of the resource.
      *
@@ -612,6 +627,24 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Generates disaster recovery precheck report for standby peer.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateDisasterRecoveryPrecheckReportResponse>
+            generateDisasterRecoveryPrecheckReport(
+                    GenerateDisasterRecoveryPrecheckReportRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateDisasterRecoveryPrecheckReportRequest,
+                                    GenerateDisasterRecoveryPrecheckReportResponse>
+                            handler);
+
+    /**
      * Generates a Pre-Authenticated Request Object URL to a DB2 for z/OS library that needs to be
      * uploaded to your DB2 for z/OS server in order to establish GoldenGate connections to it. For
      * licensing reasons, the URL is accessible for 10 minutes only.
@@ -737,6 +770,25 @@ public interface GoldenGateAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetDeploymentUpgradeRequest, GetDeploymentUpgradeResponse>
                     handler);
+
+    /**
+     * Returns DR precheck report for a standby peer with the specified placement
+     * (availabilityDomain and faultDomain).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDisasterRecoveryPrecheckReportResponse>
+            getDisasterRecoveryPrecheckReport(
+                    GetDisasterRecoveryPrecheckReportRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetDisasterRecoveryPrecheckReportRequest,
+                                    GetDisasterRecoveryPrecheckReportResponse>
+                            handler);
 
     /**
      * Retrieves a Pipeline details.

@@ -49,6 +49,7 @@ public class ListRecommendedScheduledActionsRequest
     /** The scheduling plan intent the scheduled actions will be for. */
     public enum PlanIntent implements com.oracle.bmc.http.internal.BmcEnum {
         ExadataInfrastructureFullSoftwareUpdate("EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"),
+        ExadataInfrastructureSecurityUpdate("EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"),
         ;
 
         private final String value;
