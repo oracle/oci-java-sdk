@@ -501,7 +501,7 @@ public class GenerateSqlFromNlJobClient implements GenerateSqlFromNlJob {
                         "GenerateSqlFromNlJob",
                         "GenerateSqlFromNl",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/GenerateSqlFromNlJob/GenerateSqlFromNl");
         java.util.function.Function<javax.ws.rs.core.Response, GenerateSqlFromNlResponse>
                 transformer =
                         GenerateSqlFromNlConverter.fromResponse(

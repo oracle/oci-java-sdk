@@ -119,10 +119,16 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
+
+        public Builder password(char[] password) {
+            this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
 
         public Builder password(String password) {
-            this.password = password;
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -137,13 +143,21 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("replicationPassword")
-        private String replicationPassword;
+        private char[] replicationPassword;
 
-        public Builder replicationPassword(String replicationPassword) {
+        public Builder replicationPassword(char[] replicationPassword) {
             this.replicationPassword = replicationPassword;
             this.__explicitlySet__.add("replicationPassword");
             return this;
         }
+
+        public Builder replicationPassword(String replicationPassword) {
+            this.replicationPassword =
+                    replicationPassword != null ? replicationPassword.toCharArray() : null;
+            this.__explicitlySet__.add("replicationPassword");
+            return this;
+        }
+
         /**
          * The type of MySQL source or target connection.
          * Example: OCI_MYSQL represents OCI MySQL HeatWave Database Service
@@ -501,6 +515,62 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             String password,
             String replicationUsername,
             String replicationPassword,
+            MysqlConnection.TechnologyType technologyType,
+            String host,
+            Integer port,
+            String databaseName,
+            MysqlConnection.SecurityProtocol securityProtocol,
+            MysqlConnection.SslMode sslMode,
+            String sslCa,
+            String sslCrl,
+            String sslCert,
+            String sslKey,
+            java.util.List<NameValuePair> additionalAttributes,
+            String dbSystemId) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                subnetId,
+                nsgIds,
+                username,
+                password,
+                replicationUsername,
+                replicationPassword);
+        this.technologyType = technologyType;
+        this.host = host;
+        this.port = port;
+        this.databaseName = databaseName;
+        this.securityProtocol = securityProtocol;
+        this.sslMode = sslMode;
+        this.sslCa = sslCa;
+        this.sslCrl = sslCrl;
+        this.sslCert = sslCert;
+        this.sslKey = sslKey;
+        this.additionalAttributes = additionalAttributes;
+        this.dbSystemId = dbSystemId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateMysqlConnectionDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String vaultId,
+            String keyId,
+            String subnetId,
+            java.util.List<String> nsgIds,
+            String username,
+            char[] password,
+            String replicationUsername,
+            char[] replicationPassword,
             MysqlConnection.TechnologyType technologyType,
             String host,
             Integer port,

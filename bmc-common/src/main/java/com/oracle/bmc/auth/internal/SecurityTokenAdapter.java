@@ -149,4 +149,23 @@ public class SecurityTokenAdapter {
     public String getSecurityToken() {
         return this.securityToken;
     }
+
+    /**
+     * Get the remaining duration for which the token is valid, from current time to expiration
+     * time.
+     *
+     * @return token remaining validity duration Example: If the token expires at
+     *     2025-12-08T15:00:00Z and the current time is 2025-12-08T14:30:00Z, this method will
+     *     return a Duration of 30 minutes.
+     */
+    public Duration getTokenRemainingDuration() {
+        return jwt.map(
+                        jwtClaimsSet -> {
+                            Date exp = jwtClaimsSet.getExpirationTime();
+                            return (exp != null)
+                                    ? Duration.between(Instant.now(), exp.toInstant())
+                                    : Duration.ZERO;
+                        })
+                .orElse(Duration.ZERO);
+    }
 }

@@ -31,6 +31,7 @@ public final class UpdateDigitalTwinInstanceDetails
         "digitalTwinAdapterId",
         "digitalTwinModelId",
         "digitalTwinModelSpecUri",
+        "gateways",
         "freeformTags",
         "definedTags"
     })
@@ -42,6 +43,7 @@ public final class UpdateDigitalTwinInstanceDetails
             String digitalTwinAdapterId,
             String digitalTwinModelId,
             String digitalTwinModelSpecUri,
+            java.util.List<String> gateways,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -52,6 +54,7 @@ public final class UpdateDigitalTwinInstanceDetails
         this.digitalTwinAdapterId = digitalTwinAdapterId;
         this.digitalTwinModelId = digitalTwinModelId;
         this.digitalTwinModelSpecUri = digitalTwinModelSpecUri;
+        this.gateways = gateways;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -179,6 +182,24 @@ public final class UpdateDigitalTwinInstanceDetails
             return this;
         }
         /**
+         * An array of unique ids ([OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("gateways")
+        private java.util.List<String> gateways;
+
+        /**
+         * An array of unique ids ([OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+         *
+         * @param gateways the value to set
+         * @return this builder
+         **/
+        public Builder gateways(java.util.List<String> gateways) {
+            this.gateways = gateways;
+            this.__explicitlySet__.add("gateways");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -241,6 +262,7 @@ public final class UpdateDigitalTwinInstanceDetails
                             this.digitalTwinAdapterId,
                             this.digitalTwinModelId,
                             this.digitalTwinModelSpecUri,
+                            this.gateways,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -271,6 +293,9 @@ public final class UpdateDigitalTwinInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("digitalTwinModelSpecUri")) {
                 this.digitalTwinModelSpecUri(model.getDigitalTwinModelSpecUri());
+            }
+            if (model.wasPropertyExplicitlySet("gateways")) {
+                this.gateways(model.getGateways());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -400,6 +425,22 @@ public final class UpdateDigitalTwinInstanceDetails
     }
 
     /**
+     * An array of unique ids ([OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("gateways")
+    private final java.util.List<String> gateways;
+
+    /**
+     * An array of unique ids ([OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getGateways() {
+        return gateways;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -465,6 +506,7 @@ public final class UpdateDigitalTwinInstanceDetails
         sb.append(", digitalTwinModelId=").append(String.valueOf(this.digitalTwinModelId));
         sb.append(", digitalTwinModelSpecUri=")
                 .append(String.valueOf(this.digitalTwinModelSpecUri));
+        sb.append(", gateways=").append(String.valueOf(this.gateways));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -489,6 +531,7 @@ public final class UpdateDigitalTwinInstanceDetails
                 && java.util.Objects.equals(this.digitalTwinModelId, other.digitalTwinModelId)
                 && java.util.Objects.equals(
                         this.digitalTwinModelSpecUri, other.digitalTwinModelSpecUri)
+                && java.util.Objects.equals(this.gateways, other.gateways)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -517,6 +560,7 @@ public final class UpdateDigitalTwinInstanceDetails
                         + (this.digitalTwinModelSpecUri == null
                                 ? 43
                                 : this.digitalTwinModelSpecUri.hashCode());
+        result = (result * PRIME) + (this.gateways == null ? 43 : this.gateways.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

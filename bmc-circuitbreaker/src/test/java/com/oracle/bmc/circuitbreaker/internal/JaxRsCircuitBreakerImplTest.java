@@ -539,22 +539,63 @@ public class JaxRsCircuitBreakerImplTest {
     }
 
     @Test
-    public void testMaxWaitDurationInHalfOpenState() {
+    public void testAutomaticTransitionToHalfOpenState() throws InterruptedException {
+        JaxRsCircuitBreakerImpl circuitBreaker =
+                new JaxRsCircuitBreakerImpl(
+                        CircuitBreakerConfiguration.builder()
+                                .failureRateThreshold(50)
+                                .permittedNumberOfCallsInHalfOpenState(4)
+                                .slidingWindowSize(SLIDING_WINDOW_SIZE)
+                                .minimumNumberOfCalls(MIN_NUM_CALLS)
+                                .waitDurationInOpenState(Duration.ofSeconds(2))
+                                .circuitBreakerEventListener(eventListener)
+                                .build());
+
+        openCircuitBreaker(circuitBreaker);
+
+        assertEquals(
+                com.oracle.bmc.circuitbreaker.CircuitBreakerState.OPEN, circuitBreaker.getState());
+        assertEventuallyState(
+                circuitBreaker,
+                com.oracle.bmc.circuitbreaker.CircuitBreakerState.HALF_OPEN,
+                Duration.ofSeconds(5));
+    }
+
+    @Test
+    public void testMaxWaitDurationInHalfOpenState() throws InterruptedException {
         Duration maxWaitDurationInHalfOpenState = Duration.ofSeconds(1);
-        CircuitBreakerConfiguration config =
-                CircuitBreakerConfiguration.builder()
-                        .failureRateThreshold(50)
-                        .permittedNumberOfCallsInHalfOpenState(4)
-                        .slidingWindowSize(SLIDING_WINDOW_SIZE)
-                        .minimumNumberOfCalls(MIN_NUM_CALLS)
-                        .waitDurationInOpenState(Duration.ofSeconds(2))
-                        .circuitBreakerEventListener(eventListener)
-                        .maxWaitDurationInHalfOpenState(maxWaitDurationInHalfOpenState)
-                        .build();
+        JaxRsCircuitBreakerImpl circuitBreaker =
+                new JaxRsCircuitBreakerImpl(
+                        CircuitBreakerConfiguration.builder()
+                                .failureRateThreshold(50)
+                                .permittedNumberOfCallsInHalfOpenState(4)
+                                .slidingWindowSize(SLIDING_WINDOW_SIZE)
+                                .minimumNumberOfCalls(MIN_NUM_CALLS)
+                                .waitDurationInOpenState(Duration.ofSeconds(2))
+                                .circuitBreakerEventListener(eventListener)
+                                .maxWaitDurationInHalfOpenState(maxWaitDurationInHalfOpenState)
+                                .build());
 
-        JaxRsCircuitBreakerImpl circuitBreaker = new JaxRsCircuitBreakerImpl(config);
+        circuitBreaker.getInternalCircuitBreaker().transitionToOpenState();
+        circuitBreaker.getInternalCircuitBreaker().transitionToHalfOpenState();
 
-        // Open the circuit breaker
+        assertEquals(
+                com.oracle.bmc.circuitbreaker.CircuitBreakerState.HALF_OPEN,
+                circuitBreaker.getState());
+
+        Response response = circuitBreaker.decorateSupplier(invocation200::invoke).get();
+        assertEquals(200, response.getStatus());
+        assertEquals(
+                com.oracle.bmc.circuitbreaker.CircuitBreakerState.HALF_OPEN,
+                circuitBreaker.getState());
+
+        assertEventuallyState(
+                circuitBreaker,
+                com.oracle.bmc.circuitbreaker.CircuitBreakerState.OPEN,
+                maxWaitDurationInHalfOpenState.plusSeconds(2));
+    }
+
+    private void openCircuitBreaker(JaxRsCircuitBreakerImpl circuitBreaker) {
         for (int i = 0; i < MIN_NUM_CALLS + 2; i++) {
             Supplier<Response> clientCall = circuitBreaker.decorateSupplier(invocation503::invoke);
             try {
@@ -563,39 +604,21 @@ public class JaxRsCircuitBreakerImplTest {
                 break;
             }
         }
-        assertEquals(
-                CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+    }
 
-        // Wait for the circuit breaker to transition to HALF_OPEN state
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+    private void assertEventuallyState(
+            JaxRsCircuitBreakerImpl circuitBreaker,
+            com.oracle.bmc.circuitbreaker.CircuitBreakerState expectedState,
+            Duration timeout)
+            throws InterruptedException {
+        long deadline = System.nanoTime() + timeout.toNanos();
+        while (System.nanoTime() < deadline) {
+            if (circuitBreaker.getState() == expectedState) {
+                return;
+            }
+            Thread.sleep(25);
         }
-        assertEquals(
-                CircuitBreaker.State.HALF_OPEN,
-                circuitBreaker.getInternalCircuitBreaker().getState());
-
-        // Make a call in HALF_OPEN state
-        Supplier<Response> clientCall = circuitBreaker.decorateSupplier(invocation503::invoke);
-        try {
-            clientCall.get();
-        } catch (CallNotAllowedException ex) {
-            verify(eventListener, atLeastOnce()).onCallNotPermitted();
-        }
-
-        // Wait for maxWaitDurationInHalfOpenState
-        try {
-            Thread.sleep(
-                    maxWaitDurationInHalfOpenState.toMillis()
-                            + 100); // add some extra time to account for test variability
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
-        // The circuit breaker should still be in OPEN state because maxWaitDurationInHalfOpenState has passed
-        assertEquals(
-                CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(expectedState, circuitBreaker.getState());
     }
 
     @Test

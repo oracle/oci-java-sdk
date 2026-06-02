@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The customer facing object includes GPU memory cluster details.
+ * The customer facing object includes GPU Memory Cluster details.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -33,6 +33,7 @@ public final class ComputeGpuMemoryCluster
         "computeClusterId",
         "size",
         "gpuMemoryClusterScaleConfig",
+        "privateIpIds",
         "definedTags",
         "freeformTags",
         "systemTags",
@@ -49,6 +50,7 @@ public final class ComputeGpuMemoryCluster
             String computeClusterId,
             Long size,
             ComputeGpuMemoryClusterScaleConfig gpuMemoryClusterScaleConfig,
+            java.util.List<String> privateIpIds,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -64,6 +66,7 @@ public final class ComputeGpuMemoryCluster
         this.computeClusterId = computeClusterId;
         this.size = size;
         this.gpuMemoryClusterScaleConfig = gpuMemoryClusterScaleConfig;
+        this.privateIpIds = privateIpIds;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
         this.systemTags = systemTags;
@@ -74,14 +77,14 @@ public final class ComputeGpuMemoryCluster
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The availability domain of the GPU memory cluster.
+         * The availability domain of the GPU Memory Cluster.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain of the GPU memory cluster.
+         * The availability domain of the GPU Memory Cluster.
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -92,14 +95,14 @@ public final class ComputeGpuMemoryCluster
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
          *
          * @param id the value to set
          * @return this builder
@@ -146,14 +149,14 @@ public final class ComputeGpuMemoryCluster
             return this;
         }
         /**
-         * The lifecycle state of the GPU memory cluster
+         * The lifecycle state of the GPU Memory Cluster
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The lifecycle state of the GPU memory cluster
+         * The lifecycle state of the GPU Memory Cluster
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -200,14 +203,14 @@ public final class ComputeGpuMemoryCluster
             return this;
         }
         /**
-         * The number of instances currently running in the GpuMemoryCluster
+         * The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Long size;
 
         /**
-         * The number of instances currently running in the GpuMemoryCluster
+         * The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
          *
          * @param size the value to set
          * @return this builder
@@ -225,6 +228,22 @@ public final class ComputeGpuMemoryCluster
                 ComputeGpuMemoryClusterScaleConfig gpuMemoryClusterScaleConfig) {
             this.gpuMemoryClusterScaleConfig = gpuMemoryClusterScaleConfig;
             this.__explicitlySet__.add("gpuMemoryClusterScaleConfig");
+            return this;
+        }
+        /**
+         * Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("privateIpIds")
+        private java.util.List<String> privateIpIds;
+
+        /**
+         * Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+         * @param privateIpIds the value to set
+         * @return this builder
+         **/
+        public Builder privateIpIds(java.util.List<String> privateIpIds) {
+            this.privateIpIds = privateIpIds;
+            this.__explicitlySet__.add("privateIpIds");
             return this;
         }
         /**
@@ -317,7 +336,7 @@ public final class ComputeGpuMemoryCluster
             return this;
         }
         /**
-         * The date and time the GPU memory cluster was created.
+         * The date and time the GPU Memory Cluster was created.
          * <p>
          * Example: {@code 2016-09-15T21:10:29.600Z}
          *
@@ -326,7 +345,7 @@ public final class ComputeGpuMemoryCluster
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the GPU memory cluster was created.
+         * The date and time the GPU Memory Cluster was created.
          * <p>
          * Example: {@code 2016-09-15T21:10:29.600Z}
          *
@@ -354,6 +373,7 @@ public final class ComputeGpuMemoryCluster
                             this.computeClusterId,
                             this.size,
                             this.gpuMemoryClusterScaleConfig,
+                            this.privateIpIds,
                             this.definedTags,
                             this.freeformTags,
                             this.systemTags,
@@ -394,6 +414,9 @@ public final class ComputeGpuMemoryCluster
             if (model.wasPropertyExplicitlySet("gpuMemoryClusterScaleConfig")) {
                 this.gpuMemoryClusterScaleConfig(model.getGpuMemoryClusterScaleConfig());
             }
+            if (model.wasPropertyExplicitlySet("privateIpIds")) {
+                this.privateIpIds(model.getPrivateIpIds());
+            }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
@@ -425,14 +448,14 @@ public final class ComputeGpuMemoryCluster
     }
 
     /**
-     * The availability domain of the GPU memory cluster.
+     * The availability domain of the GPU Memory Cluster.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain of the GPU memory cluster.
+     * The availability domain of the GPU Memory Cluster.
      *
      * @return the value
      **/
@@ -441,14 +464,14 @@ public final class ComputeGpuMemoryCluster
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
      *
      * @return the value
      **/
@@ -489,7 +512,7 @@ public final class ComputeGpuMemoryCluster
     }
 
     /**
-     * The lifecycle state of the GPU memory cluster
+     * The lifecycle state of the GPU Memory Cluster
      *
      **/
     public enum LifecycleState {
@@ -541,14 +564,14 @@ public final class ComputeGpuMemoryCluster
         }
     };
     /**
-     * The lifecycle state of the GPU memory cluster
+     * The lifecycle state of the GPU Memory Cluster
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The lifecycle state of the GPU memory cluster
+     * The lifecycle state of the GPU Memory Cluster
      *
      * @return the value
      **/
@@ -589,14 +612,14 @@ public final class ComputeGpuMemoryCluster
     }
 
     /**
-     * The number of instances currently running in the GpuMemoryCluster
+     * The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Long size;
 
     /**
-     * The number of instances currently running in the GpuMemoryCluster
+     * The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
      *
      * @return the value
      **/
@@ -609,6 +632,20 @@ public final class ComputeGpuMemoryCluster
 
     public ComputeGpuMemoryClusterScaleConfig getGpuMemoryClusterScaleConfig() {
         return gpuMemoryClusterScaleConfig;
+    }
+
+    /**
+     * Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateIpIds")
+    private final java.util.List<String> privateIpIds;
+
+    /**
+     * Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+     * @return the value
+     **/
+    public java.util.List<String> getPrivateIpIds() {
+        return privateIpIds;
     }
 
     /**
@@ -692,7 +729,7 @@ public final class ComputeGpuMemoryCluster
     }
 
     /**
-     * The date and time the GPU memory cluster was created.
+     * The date and time the GPU Memory Cluster was created.
      * <p>
      * Example: {@code 2016-09-15T21:10:29.600Z}
      *
@@ -701,7 +738,7 @@ public final class ComputeGpuMemoryCluster
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the GPU memory cluster was created.
+     * The date and time the GPU Memory Cluster was created.
      * <p>
      * Example: {@code 2016-09-15T21:10:29.600Z}
      *
@@ -736,6 +773,7 @@ public final class ComputeGpuMemoryCluster
         sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", gpuMemoryClusterScaleConfig=")
                 .append(String.valueOf(this.gpuMemoryClusterScaleConfig));
+        sb.append(", privateIpIds=").append(String.valueOf(this.privateIpIds));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -766,6 +804,7 @@ public final class ComputeGpuMemoryCluster
                 && java.util.Objects.equals(this.size, other.size)
                 && java.util.Objects.equals(
                         this.gpuMemoryClusterScaleConfig, other.gpuMemoryClusterScaleConfig)
+                && java.util.Objects.equals(this.privateIpIds, other.privateIpIds)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -807,6 +846,7 @@ public final class ComputeGpuMemoryCluster
                         + (this.gpuMemoryClusterScaleConfig == null
                                 ? 43
                                 : this.gpuMemoryClusterScaleConfig.hashCode());
+        result = (result * PRIME) + (this.privateIpIds == null ? 43 : this.privateIpIds.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

@@ -174,7 +174,7 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password used to connect to Databricks.
@@ -184,11 +184,18 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
          * Note: When provided, 'password' field must not be provided.
@@ -233,7 +240,7 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-        private String clientSecret;
+        private char[] clientSecret;
 
         /**
          * OAuth client secret, only applicable for authenticationType == OAUTH_M2M
@@ -242,11 +249,18 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
          * @param clientSecret the value to set
          * @return this builder
          **/
-        public Builder clientSecret(String clientSecret) {
+        public Builder clientSecret(char[] clientSecret) {
             this.clientSecret = clientSecret;
             this.__explicitlySet__.add("clientSecret");
             return this;
         }
+
+        public Builder clientSecret(String clientSecret) {
+            this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+            this.__explicitlySet__.add("clientSecret");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
          * Only applicable for authenticationType == OAUTH_M2M.
@@ -428,6 +442,50 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
                 securityAttributes);
         this.authenticationType = authenticationType;
         this.connectionUrl = connectionUrl;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.clientId = clientId;
+        this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+        this.clientSecretSecretId = clientSecretSecretId;
+        this.storageCredentialName = storageCredentialName;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateDatabricksConnectionDetails(
+            String displayName,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            DatabricksConnection.AuthenticationType authenticationType,
+            String connectionUrl,
+            char[] password,
+            String passwordSecretId,
+            String clientId,
+            char[] clientSecret,
+            String clientSecretSecretId,
+            String storageCredentialName) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                securityAttributes);
+        this.authenticationType = authenticationType;
+        this.connectionUrl = connectionUrl;
         this.password = password;
         this.passwordSecretId = passwordSecretId;
         this.clientId = clientId;
@@ -477,7 +535,21 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password used to connect to Databricks.
+     * Only applicable for authenticationType &#x3D;&#x3D; PERSONAL_ACCESS_TOKEN.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password used to connect to Databricks.
@@ -486,7 +558,8 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
      *
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -530,7 +603,20 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-    private final String clientSecret;
+    private final char[] clientSecret;
+
+    /**
+     * OAuth client secret, only applicable for authenticationType &#x3D;&#x3D; OAUTH_M2M
+     * Deprecated: This field is deprecated and replaced by &quot;clientSecretSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getClientSecret__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClientSecret() {
+        return clientSecret != null ? new String(clientSecret) : null;
+    }
 
     /**
      * OAuth client secret, only applicable for authenticationType == OAUTH_M2M
@@ -538,7 +624,8 @@ public final class UpdateDatabricksConnectionDetails extends UpdateConnectionDet
      *
      * @return the value
      **/
-    public String getClientSecret() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
+    public char[] getClientSecret__AsCharArray() {
         return clientSecret;
     }
 

@@ -80,6 +80,26 @@ public final class GoogleCloudStorageIcebergStorage extends IcebergStorage {
             this.__explicitlySet__.add("serviceAccountKeyFileSecretId");
             return this;
         }
+        /**
+         * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+         * Default: https://storage.googleapis.com
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+        private String endpoint;
+
+        /**
+         * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+         * Default: https://storage.googleapis.com
+         *
+         * @param endpoint the value to set
+         * @return this builder
+         **/
+        public Builder endpoint(String endpoint) {
+            this.endpoint = endpoint;
+            this.__explicitlySet__.add("endpoint");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -87,7 +107,10 @@ public final class GoogleCloudStorageIcebergStorage extends IcebergStorage {
         public GoogleCloudStorageIcebergStorage build() {
             GoogleCloudStorageIcebergStorage model =
                     new GoogleCloudStorageIcebergStorage(
-                            this.bucket, this.projectId, this.serviceAccountKeyFileSecretId);
+                            this.bucket,
+                            this.projectId,
+                            this.serviceAccountKeyFileSecretId,
+                            this.endpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -104,6 +127,9 @@ public final class GoogleCloudStorageIcebergStorage extends IcebergStorage {
             }
             if (model.wasPropertyExplicitlySet("serviceAccountKeyFileSecretId")) {
                 this.serviceAccountKeyFileSecretId(model.getServiceAccountKeyFileSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("endpoint")) {
+                this.endpoint(model.getEndpoint());
             }
             return this;
         }
@@ -122,11 +148,15 @@ public final class GoogleCloudStorageIcebergStorage extends IcebergStorage {
 
     @Deprecated
     public GoogleCloudStorageIcebergStorage(
-            String bucket, String projectId, String serviceAccountKeyFileSecretId) {
+            String bucket,
+            String projectId,
+            String serviceAccountKeyFileSecretId,
+            String endpoint) {
         super();
         this.bucket = bucket;
         this.projectId = projectId;
         this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
+        this.endpoint = endpoint;
     }
 
     /**
@@ -175,6 +205,24 @@ public final class GoogleCloudStorageIcebergStorage extends IcebergStorage {
         return serviceAccountKeyFileSecretId;
     }
 
+    /**
+     * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+     * Default: https://storage.googleapis.com
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+    private final String endpoint;
+
+    /**
+     * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+     * Default: https://storage.googleapis.com
+     *
+     * @return the value
+     **/
+    public String getEndpoint() {
+        return endpoint;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -193,6 +241,7 @@ public final class GoogleCloudStorageIcebergStorage extends IcebergStorage {
         sb.append(", projectId=").append(String.valueOf(this.projectId));
         sb.append(", serviceAccountKeyFileSecretId=")
                 .append(String.valueOf(this.serviceAccountKeyFileSecretId));
+        sb.append(", endpoint=").append(String.valueOf(this.endpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -211,6 +260,7 @@ public final class GoogleCloudStorageIcebergStorage extends IcebergStorage {
                 && java.util.Objects.equals(this.projectId, other.projectId)
                 && java.util.Objects.equals(
                         this.serviceAccountKeyFileSecretId, other.serviceAccountKeyFileSecretId)
+                && java.util.Objects.equals(this.endpoint, other.endpoint)
                 && super.equals(other);
     }
 
@@ -225,6 +275,7 @@ public final class GoogleCloudStorageIcebergStorage extends IcebergStorage {
                         + (this.serviceAccountKeyFileSecretId == null
                                 ? 43
                                 : this.serviceAccountKeyFileSecretId.hashCode());
+        result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
         return result;
     }
 }

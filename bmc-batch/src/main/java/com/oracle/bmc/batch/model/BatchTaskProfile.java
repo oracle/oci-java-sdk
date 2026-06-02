@@ -31,6 +31,8 @@ public final class BatchTaskProfile extends com.oracle.bmc.http.internal.Explici
         "description",
         "minOcpus",
         "minMemoryInGBs",
+        "minDiskSizeInGBs",
+        "extendedInformation",
         "lifecycleState",
         "timeCreated",
         "timeUpdated",
@@ -45,6 +47,8 @@ public final class BatchTaskProfile extends com.oracle.bmc.http.internal.Explici
             String description,
             Integer minOcpus,
             Integer minMemoryInGBs,
+            Integer minDiskSizeInGBs,
+            BatchTaskProfileExtendedInformation extendedInformation,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -58,6 +62,8 @@ public final class BatchTaskProfile extends com.oracle.bmc.http.internal.Explici
         this.description = description;
         this.minOcpus = minOcpus;
         this.minMemoryInGBs = minMemoryInGBs;
+        this.minDiskSizeInGBs = minDiskSizeInGBs;
+        this.extendedInformation = extendedInformation;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -162,6 +168,32 @@ public final class BatchTaskProfile extends com.oracle.bmc.http.internal.Explici
         public Builder minMemoryInGBs(Integer minMemoryInGBs) {
             this.minMemoryInGBs = minMemoryInGBs;
             this.__explicitlySet__.add("minMemoryInGBs");
+            return this;
+        }
+        /**
+         * The minimum required size of disk space in GBs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("minDiskSizeInGBs")
+        private Integer minDiskSizeInGBs;
+
+        /**
+         * The minimum required size of disk space in GBs.
+         * @param minDiskSizeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder minDiskSizeInGBs(Integer minDiskSizeInGBs) {
+            this.minDiskSizeInGBs = minDiskSizeInGBs;
+            this.__explicitlySet__.add("minDiskSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("extendedInformation")
+        private BatchTaskProfileExtendedInformation extendedInformation;
+
+        public Builder extendedInformation(
+                BatchTaskProfileExtendedInformation extendedInformation) {
+            this.extendedInformation = extendedInformation;
+            this.__explicitlySet__.add("extendedInformation");
             return this;
         }
         /**
@@ -310,6 +342,8 @@ public final class BatchTaskProfile extends com.oracle.bmc.http.internal.Explici
                             this.description,
                             this.minOcpus,
                             this.minMemoryInGBs,
+                            this.minDiskSizeInGBs,
+                            this.extendedInformation,
                             this.lifecycleState,
                             this.timeCreated,
                             this.timeUpdated,
@@ -341,6 +375,12 @@ public final class BatchTaskProfile extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("minMemoryInGBs")) {
                 this.minMemoryInGBs(model.getMinMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("minDiskSizeInGBs")) {
+                this.minDiskSizeInGBs(model.getMinDiskSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("extendedInformation")) {
+                this.extendedInformation(model.getExtendedInformation());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -457,6 +497,27 @@ public final class BatchTaskProfile extends com.oracle.bmc.http.internal.Explici
      **/
     public Integer getMinMemoryInGBs() {
         return minMemoryInGBs;
+    }
+
+    /**
+     * The minimum required size of disk space in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minDiskSizeInGBs")
+    private final Integer minDiskSizeInGBs;
+
+    /**
+     * The minimum required size of disk space in GBs.
+     * @return the value
+     **/
+    public Integer getMinDiskSizeInGBs() {
+        return minDiskSizeInGBs;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("extendedInformation")
+    private final BatchTaskProfileExtendedInformation extendedInformation;
+
+    public BatchTaskProfileExtendedInformation getExtendedInformation() {
+        return extendedInformation;
     }
 
     /**
@@ -648,6 +709,8 @@ public final class BatchTaskProfile extends com.oracle.bmc.http.internal.Explici
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", minOcpus=").append(String.valueOf(this.minOcpus));
         sb.append(", minMemoryInGBs=").append(String.valueOf(this.minMemoryInGBs));
+        sb.append(", minDiskSizeInGBs=").append(String.valueOf(this.minDiskSizeInGBs));
+        sb.append(", extendedInformation=").append(String.valueOf(this.extendedInformation));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -674,6 +737,8 @@ public final class BatchTaskProfile extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.minOcpus, other.minOcpus)
                 && java.util.Objects.equals(this.minMemoryInGBs, other.minMemoryInGBs)
+                && java.util.Objects.equals(this.minDiskSizeInGBs, other.minDiskSizeInGBs)
+                && java.util.Objects.equals(this.extendedInformation, other.extendedInformation)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -697,6 +762,14 @@ public final class BatchTaskProfile extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.minMemoryInGBs == null ? 43 : this.minMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minDiskSizeInGBs == null ? 43 : this.minDiskSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extendedInformation == null
+                                ? 43
+                                : this.extendedInformation.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

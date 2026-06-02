@@ -221,15 +221,21 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
          * The authentication token to use when connecting to the Oracle Streaming Service.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("authToken")
-        private String authToken;
+        private char[] authToken;
 
         /**
          * The authentication token to use when connecting to the Oracle Streaming Service.
          * @param authToken the value to set
          * @return this builder
          **/
-        public Builder authToken(String authToken) {
+        public Builder authToken(char[] authToken) {
             this.authToken = authToken;
+            this.__explicitlySet__.add("authToken");
+            return this;
+        }
+
+        public Builder authToken(String authToken) {
+            this.authToken = authToken != null ? authToken.toCharArray() : null;
             this.__explicitlySet__.add("authToken");
             return this;
         }
@@ -341,6 +347,37 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
             String userName,
             String streamPoolId,
             String authToken) {
+        super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
+        this.eventSinkBotIds = eventSinkBotIds;
+        this.inboundMessageTopic = inboundMessageTopic;
+        this.outboundMessageTopic = outboundMessageTopic;
+        this.bootstrapServers = bootstrapServers;
+        this.securityProtocol = securityProtocol;
+        this.saslMechanism = saslMechanism;
+        this.tenancyName = tenancyName;
+        this.userName = userName;
+        this.streamPoolId = streamPoolId;
+        this.authToken = authToken != null ? authToken.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateOSSChannelDetails(
+            String name,
+            String description,
+            Long sessionExpiryDurationInMilliseconds,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<String> eventSinkBotIds,
+            String inboundMessageTopic,
+            String outboundMessageTopic,
+            String bootstrapServers,
+            String securityProtocol,
+            String saslMechanism,
+            String tenancyName,
+            String userName,
+            String streamPoolId,
+            char[] authToken) {
         super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
         this.eventSinkBotIds = eventSinkBotIds;
         this.inboundMessageTopic = inboundMessageTopic;
@@ -484,13 +521,25 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
      * The authentication token to use when connecting to the Oracle Streaming Service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authToken")
-    private final String authToken;
+    private final char[] authToken;
+
+    /**
+     * The authentication token to use when connecting to the Oracle Streaming Service.
+     * return the value
+     * @Deprecated - Use getAuthToken__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAuthToken() {
+        return authToken != null ? new String(authToken) : null;
+    }
 
     /**
      * The authentication token to use when connecting to the Oracle Streaming Service.
      * @return the value
      **/
-    public String getAuthToken() {
+    @com.fasterxml.jackson.annotation.JsonProperty("authToken")
+    public char[] getAuthToken__AsCharArray() {
         return authToken;
     }
 

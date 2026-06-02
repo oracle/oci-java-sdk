@@ -225,7 +225,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
-        private String accountKey;
+        private char[] accountKey;
 
         /**
          * Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
@@ -235,11 +235,18 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
          * @param accountKey the value to set
          * @return this builder
          **/
-        public Builder accountKey(String accountKey) {
+        public Builder accountKey(char[] accountKey) {
             this.accountKey = accountKey;
             this.__explicitlySet__.add("accountKey");
             return this;
         }
+
+        public Builder accountKey(String accountKey) {
+            this.accountKey = accountKey != null ? accountKey.toCharArray() : null;
+            this.__explicitlySet__.add("accountKey");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
          * Note: When provided, 'accountKey' field must not be provided.
@@ -268,7 +275,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sasToken")
-        private String sasToken;
+        private char[] sasToken;
 
         /**
          * Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is
@@ -279,11 +286,18 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
          * @param sasToken the value to set
          * @return this builder
          **/
-        public Builder sasToken(String sasToken) {
+        public Builder sasToken(char[] sasToken) {
             this.sasToken = sasToken;
             this.__explicitlySet__.add("sasToken");
             return this;
         }
+
+        public Builder sasToken(String sasToken) {
+            this.sasToken = sasToken != null ? sasToken.toCharArray() : null;
+            this.__explicitlySet__.add("sasToken");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
          * Note: When provided, 'sasToken' field must not be provided.
@@ -351,7 +365,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-        private String clientSecret;
+        private char[] clientSecret;
 
         /**
          * Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
@@ -361,11 +375,18 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
          * @param clientSecret the value to set
          * @return this builder
          **/
-        public Builder clientSecret(String clientSecret) {
+        public Builder clientSecret(char[] clientSecret) {
             this.clientSecret = clientSecret;
             this.__explicitlySet__.add("clientSecret");
             return this;
         }
+
+        public Builder clientSecret(String clientSecret) {
+            this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+            this.__explicitlySet__.add("clientSecret");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
          * Note: When provided, 'clientSecret' field must not be provided.
@@ -623,6 +644,68 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         this.technologyType = technologyType;
         this.authenticationType = authenticationType;
         this.accountName = accountName;
+        this.accountKey = accountKey != null ? accountKey.toCharArray() : null;
+        this.accountKeySecretId = accountKeySecretId;
+        this.sasToken = sasToken != null ? sasToken.toCharArray() : null;
+        this.sasTokenSecretId = sasTokenSecretId;
+        this.azureTenantId = azureTenantId;
+        this.clientId = clientId;
+        this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+        this.clientSecretSecretId = clientSecretSecretId;
+        this.endpoint = endpoint;
+        this.azureAuthorityHost = azureAuthorityHost;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateAzureDataLakeStorageConnectionDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            AzureDataLakeStorageConnection.TechnologyType technologyType,
+            AzureDataLakeStorageConnection.AuthenticationType authenticationType,
+            String accountName,
+            char[] accountKey,
+            String accountKeySecretId,
+            char[] sasToken,
+            String sasTokenSecretId,
+            String azureTenantId,
+            String clientId,
+            char[] clientSecret,
+            String clientSecretSecretId,
+            String endpoint,
+            String azureAuthorityHost) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                locks,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
+        this.technologyType = technologyType;
+        this.authenticationType = authenticationType;
+        this.accountName = accountName;
         this.accountKey = accountKey;
         this.accountKeySecretId = accountKeySecretId;
         this.sasToken = sasToken;
@@ -688,7 +771,21 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
-    private final String accountKey;
+    private final char[] accountKey;
+
+    /**
+     * Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;.
+     * e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ&#x3D;&#x3D;
+     * Deprecated: This field is deprecated and replaced by &quot;accountKeySecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getAccountKey__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAccountKey() {
+        return accountKey != null ? new String(accountKey) : null;
+    }
 
     /**
      * Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
@@ -697,7 +794,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
      *
      * @return the value
      **/
-    public String getAccountKey() {
+    @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
+    public char[] getAccountKey__AsCharArray() {
         return accountKey;
     }
 
@@ -727,7 +825,22 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sasToken")
-    private final String sasToken;
+    private final char[] sasToken;
+
+    /**
+     * Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is
+     * required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;.
+     * e.g.: ?sv&#x3D;2020-06-08&amp;ss&#x3D;bfqt&amp;srt&#x3D;sco&amp;sp&#x3D;rwdlacupyx&amp;se&#x3D;2020-09-10T20:27:28Z&amp;st&#x3D;2022-08-05T12:27:28Z&amp;spr&#x3D;https&amp;sig&#x3D;C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+     * Deprecated: This field is deprecated and replaced by &quot;sasTokenSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getSasToken__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSasToken() {
+        return sasToken != null ? new String(sasToken) : null;
+    }
 
     /**
      * Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is
@@ -737,7 +850,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
      *
      * @return the value
      **/
-    public String getSasToken() {
+    @com.fasterxml.jackson.annotation.JsonProperty("sasToken")
+    public char[] getSasToken__AsCharArray() {
         return sasToken;
     }
 
@@ -802,7 +916,21 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-    private final String clientSecret;
+    private final char[] clientSecret;
+
+    /**
+     * Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;.
+     * e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+     * Deprecated: This field is deprecated and replaced by &quot;clientSecretSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getClientSecret__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClientSecret() {
+        return clientSecret != null ? new String(clientSecret) : null;
+    }
 
     /**
      * Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
@@ -811,7 +939,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
      *
      * @return the value
      **/
-    public String getClientSecret() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
+    public char[] getClientSecret__AsCharArray() {
         return clientSecret;
     }
 

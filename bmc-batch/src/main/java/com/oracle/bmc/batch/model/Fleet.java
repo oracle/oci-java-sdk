@@ -25,6 +25,10 @@ package com.oracle.bmc.batch.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ServiceManagedFleet.class,
         name = "SERVICE_MANAGED_FLEET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ServiceManagedGpuFleet.class,
+        name = "SERVICE_MANAGED_GPU_FLEET"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -79,6 +83,7 @@ public class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
      **/
     public enum Type {
         ServiceManagedFleet("SERVICE_MANAGED_FLEET"),
+        ServiceManagedGpuFleet("SERVICE_MANAGED_GPU_FLEET"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

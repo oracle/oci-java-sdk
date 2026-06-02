@@ -238,7 +238,7 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
-        private String privateKeyPassphrase;
+        private char[] privateKeyPassphrase;
 
         /**
          * The passphrase of the private key.
@@ -247,11 +247,19 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
          * @param privateKeyPassphrase the value to set
          * @return this builder
          **/
-        public Builder privateKeyPassphrase(String privateKeyPassphrase) {
+        public Builder privateKeyPassphrase(char[] privateKeyPassphrase) {
             this.privateKeyPassphrase = privateKeyPassphrase;
             this.__explicitlySet__.add("privateKeyPassphrase");
             return this;
         }
+
+        public Builder privateKeyPassphrase(String privateKeyPassphrase) {
+            this.privateKeyPassphrase =
+                    privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null;
+            this.__explicitlySet__.add("privateKeyPassphrase");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
          * Note: When provided, 'privateKeyPassphrase' field must not be provided.
@@ -461,6 +469,53 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
         this.userId = userId;
         this.privateKeyFile = privateKeyFile;
         this.privateKeyFileSecretId = privateKeyFileSecretId;
+        this.privateKeyPassphrase =
+                privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null;
+        this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+        this.publicKeyFingerprint = publicKeyFingerprint;
+        this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateOciObjectStorageConnectionDetails(
+            String displayName,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            String tenancyId,
+            String region,
+            String userId,
+            String privateKeyFile,
+            String privateKeyFileSecretId,
+            char[] privateKeyPassphrase,
+            String privateKeyPassphraseSecretId,
+            String publicKeyFingerprint,
+            Boolean shouldUseResourcePrincipal) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                securityAttributes);
+        this.tenancyId = tenancyId;
+        this.region = region;
+        this.userId = userId;
+        this.privateKeyFile = privateKeyFile;
+        this.privateKeyFileSecretId = privateKeyFileSecretId;
         this.privateKeyPassphrase = privateKeyPassphrase;
         this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
         this.publicKeyFingerprint = publicKeyFingerprint;
@@ -567,7 +622,20 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
-    private final String privateKeyPassphrase;
+    private final char[] privateKeyPassphrase;
+
+    /**
+     * The passphrase of the private key.
+     * Deprecated: This field is deprecated and replaced by &quot;privateKeyPassphraseSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPrivateKeyPassphrase__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPrivateKeyPassphrase() {
+        return privateKeyPassphrase != null ? new String(privateKeyPassphrase) : null;
+    }
 
     /**
      * The passphrase of the private key.
@@ -575,7 +643,8 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
      *
      * @return the value
      **/
-    public String getPrivateKeyPassphrase() {
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
+    public char[] getPrivateKeyPassphrase__AsCharArray() {
         return privateKeyPassphrase;
     }
 

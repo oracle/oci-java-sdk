@@ -32,8 +32,14 @@ public class ListNamedCredentialsConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getManagementAgentId(), "managementAgentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20200202").path("namedCredentials");
+                newBaseTarget.path("/20200202").path("namedCredentials");
 
         if (request.getPage() != null) {
             target =

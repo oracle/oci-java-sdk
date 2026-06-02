@@ -6,8 +6,8 @@ package com.oracle.bmc.networkfirewall.model;
 
 /**
  * Application Type:
- * * ICMP - An ICMP application.
- * * ICMPv6 - An ICMPv6 support application.
+ * * ICMP - A user-defined ICMP application.
+ * * ICMPv6 - A user-defined ICMPv6 support application.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")

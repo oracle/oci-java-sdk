@@ -33,8 +33,15 @@ public class GetCryptoAnalysisResultConverter {
         Validate.notBlank(
                 request.getCryptoAnalysisResultId(), "cryptoAnalysisResultId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put("cryptoAnalysisResultId", request.getCryptoAnalysisResultId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20210610")
                         .path("fleets")
                         .path(

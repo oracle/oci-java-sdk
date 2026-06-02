@@ -304,6 +304,20 @@ public interface ManagedInstanceGroup extends AutoCloseable {
             ListManagedInstanceGroupInstalledPackagesRequest request);
 
     /**
+     * Lists all managed instances for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the managed instance name. The results list all managed instances that have already been added to the group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupManagedInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroupManagedInstances API.
+     */
+    ListManagedInstanceGroupManagedInstancesResponse listManagedInstanceGroupManagedInstances(
+            ListManagedInstanceGroupManagedInstancesRequest request);
+
+    /**
      * Retrieve a list of module streams, along with a summary of their
      * status, from a managed instance group.  Filters may be applied to select
      * a subset of module streams based on the filter criteria.
@@ -379,6 +393,20 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      */
     RebootManagedInstanceGroupResponse rebootManagedInstanceGroup(
             RebootManagedInstanceGroupRequest request);
+
+    /**
+     * Refreshes the package, Windows update or Snap information on a managed instance with the latest data from the software source. This does not update packages on the instance. It provides the service with the latest package data.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RefreshSoftwareOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshSoftwareOnManagedInstanceGroup API.
+     */
+    RefreshSoftwareOnManagedInstanceGroupResponse refreshSoftwareOnManagedInstanceGroup(
+            RefreshSoftwareOnManagedInstanceGroupRequest request);
 
     /**
      * Removes a profile for a module stream that is installed on a managed instance group. Providing the module stream name (without specifying a profile name) removes all profiles that have been installed for the module stream.

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of a cloud database node.
+ * The details of a cloud DB node.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -297,13 +297,13 @@ public final class CloudDbNode extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * Name of the domain.
+         * The name of the domain.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainName")
         private String domainName;
 
         /**
-         * Name of the domain.
+         * The name of the domain.
          * @param domainName the value to set
          * @return this builder
          **/
@@ -762,13 +762,13 @@ public final class CloudDbNode extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Name of the domain.
+     * The name of the domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainName")
     private final String domainName;
 
     /**
-     * Name of the domain.
+     * The name of the domain.
      * @return the value
      **/
     public String getDomainName() {

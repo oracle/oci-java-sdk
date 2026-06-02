@@ -1274,6 +1274,60 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListAvailableSoftwareSourcesToAddResponse>
+            listAvailableSoftwareSourcesToAdd(
+                    ListAvailableSoftwareSourcesToAddRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAvailableSoftwareSourcesToAddRequest,
+                                    ListAvailableSoftwareSourcesToAddResponse>
+                            handler) {
+        LOG.trace("Called async listAvailableSoftwareSourcesToAdd");
+        final ListAvailableSoftwareSourcesToAddRequest interceptedRequest =
+                ListAvailableSoftwareSourcesToAddConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAvailableSoftwareSourcesToAddConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SoftwareSource",
+                        "ListAvailableSoftwareSourcesToAdd",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListAvailableSoftwareSourcesToAdd");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAvailableSoftwareSourcesToAddResponse>
+                transformer =
+                        ListAvailableSoftwareSourcesToAddConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAvailableSoftwareSourcesToAddRequest,
+                        ListAvailableSoftwareSourcesToAddResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAvailableSoftwareSourcesToAddRequest,
+                                ListAvailableSoftwareSourcesToAddResponse>,
+                        java.util.concurrent.Future<ListAvailableSoftwareSourcesToAddResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAvailableSoftwareSourcesToAddRequest,
+                    ListAvailableSoftwareSourcesToAddResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEntitlementsResponse> listEntitlements(
             ListEntitlementsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

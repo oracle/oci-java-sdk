@@ -31,8 +31,13 @@ public class SearchLogsConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getSearchLogsDetails(), "searchLogsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20190909").path("search");
+                newBaseTarget.path("/20190909").path("search");
 
         if (request.getLimit() != null) {
             target =

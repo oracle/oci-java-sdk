@@ -61,6 +61,7 @@ public final class ExadataInfrastructure
         "contacts",
         "maintenanceSLOStatus",
         "maintenanceWindow",
+        "maintenanceVersionPreferences",
         "storageServerVersion",
         "dbServerVersion",
         "monthlyDbServerVersion",
@@ -118,6 +119,7 @@ public final class ExadataInfrastructure
             java.util.List<ExadataInfrastructureContact> contacts,
             MaintenanceSLOStatus maintenanceSLOStatus,
             MaintenanceWindow maintenanceWindow,
+            MaintenanceVersionPreferenceDetails maintenanceVersionPreferences,
             String storageServerVersion,
             String dbServerVersion,
             String monthlyDbServerVersion,
@@ -174,6 +176,7 @@ public final class ExadataInfrastructure
         this.contacts = contacts;
         this.maintenanceSLOStatus = maintenanceSLOStatus;
         this.maintenanceWindow = maintenanceWindow;
+        this.maintenanceVersionPreferences = maintenanceVersionPreferences;
         this.storageServerVersion = storageServerVersion;
         this.dbServerVersion = dbServerVersion;
         this.monthlyDbServerVersion = monthlyDbServerVersion;
@@ -807,6 +810,16 @@ public final class ExadataInfrastructure
             this.__explicitlySet__.add("maintenanceWindow");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceVersionPreferences")
+        private MaintenanceVersionPreferenceDetails maintenanceVersionPreferences;
+
+        public Builder maintenanceVersionPreferences(
+                MaintenanceVersionPreferenceDetails maintenanceVersionPreferences) {
+            this.maintenanceVersionPreferences = maintenanceVersionPreferences;
+            this.__explicitlySet__.add("maintenanceVersionPreferences");
+            return this;
+        }
         /**
          * The software version of the storage servers (cells) in the Exadata infrastructure.
          **/
@@ -1135,6 +1148,7 @@ public final class ExadataInfrastructure
                             this.contacts,
                             this.maintenanceSLOStatus,
                             this.maintenanceWindow,
+                            this.maintenanceVersionPreferences,
                             this.storageServerVersion,
                             this.dbServerVersion,
                             this.monthlyDbServerVersion,
@@ -1273,6 +1287,9 @@ public final class ExadataInfrastructure
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
                 this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceVersionPreferences")) {
+                this.maintenanceVersionPreferences(model.getMaintenanceVersionPreferences());
             }
             if (model.wasPropertyExplicitlySet("storageServerVersion")) {
                 this.storageServerVersion(model.getStorageServerVersion());
@@ -2036,6 +2053,13 @@ public final class ExadataInfrastructure
         return maintenanceWindow;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceVersionPreferences")
+    private final MaintenanceVersionPreferenceDetails maintenanceVersionPreferences;
+
+    public MaintenanceVersionPreferenceDetails getMaintenanceVersionPreferences() {
+        return maintenanceVersionPreferences;
+    }
+
     /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      **/
@@ -2394,6 +2418,8 @@ public final class ExadataInfrastructure
         sb.append(", contacts=").append(String.valueOf(this.contacts));
         sb.append(", maintenanceSLOStatus=").append(String.valueOf(this.maintenanceSLOStatus));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", maintenanceVersionPreferences=")
+                .append(String.valueOf(this.maintenanceVersionPreferences));
         sb.append(", storageServerVersion=").append(String.valueOf(this.storageServerVersion));
         sb.append(", dbServerVersion=").append(String.valueOf(this.dbServerVersion));
         sb.append(", monthlyDbServerVersion=").append(String.valueOf(this.monthlyDbServerVersion));
@@ -2474,6 +2500,8 @@ public final class ExadataInfrastructure
                 && java.util.Objects.equals(this.contacts, other.contacts)
                 && java.util.Objects.equals(this.maintenanceSLOStatus, other.maintenanceSLOStatus)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(
+                        this.maintenanceVersionPreferences, other.maintenanceVersionPreferences)
                 && java.util.Objects.equals(this.storageServerVersion, other.storageServerVersion)
                 && java.util.Objects.equals(this.dbServerVersion, other.dbServerVersion)
                 && java.util.Objects.equals(
@@ -2611,6 +2639,11 @@ public final class ExadataInfrastructure
         result =
                 (result * PRIME)
                         + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceVersionPreferences == null
+                                ? 43
+                                : this.maintenanceVersionPreferences.hashCode());
         result =
                 (result * PRIME)
                         + (this.storageServerVersion == null

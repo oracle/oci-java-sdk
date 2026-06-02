@@ -36,7 +36,8 @@ public final class DeploymentTypeSummary
         "oggVersion",
         "supportedTechnologiesUrl",
         "defaultUsername",
-        "supportedCapabilities"
+        "supportedCapabilities",
+        "supportedLicenseTypes"
     })
     public DeploymentTypeSummary(
             DeploymentCategory category,
@@ -48,7 +49,8 @@ public final class DeploymentTypeSummary
             String oggVersion,
             String supportedTechnologiesUrl,
             String defaultUsername,
-            java.util.List<SupportedCapabilities> supportedCapabilities) {
+            java.util.List<SupportedCapabilities> supportedCapabilities,
+            java.util.List<LicenseModel> supportedLicenseTypes) {
         super();
         this.category = category;
         this.displayName = displayName;
@@ -60,21 +62,22 @@ public final class DeploymentTypeSummary
         this.supportedTechnologiesUrl = supportedTechnologiesUrl;
         this.defaultUsername = defaultUsername;
         this.supportedCapabilities = supportedCapabilities;
+        this.supportedLicenseTypes = supportedLicenseTypes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The deployment category defines the broad separation of the deployment type into three categories.
-         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into four categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private DeploymentCategory category;
 
         /**
-         * The deployment category defines the broad separation of the deployment type into three categories.
-         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into four categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
          *
          * @param category the value to set
          * @return this builder
@@ -259,6 +262,24 @@ public final class DeploymentTypeSummary
             this.__explicitlySet__.add("supportedCapabilities");
             return this;
         }
+        /**
+         * The list of Oracle license models supported by the deployment type.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedLicenseTypes")
+        private java.util.List<LicenseModel> supportedLicenseTypes;
+
+        /**
+         * The list of Oracle license models supported by the deployment type.
+         *
+         * @param supportedLicenseTypes the value to set
+         * @return this builder
+         **/
+        public Builder supportedLicenseTypes(java.util.List<LicenseModel> supportedLicenseTypes) {
+            this.supportedLicenseTypes = supportedLicenseTypes;
+            this.__explicitlySet__.add("supportedLicenseTypes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -275,7 +296,8 @@ public final class DeploymentTypeSummary
                             this.oggVersion,
                             this.supportedTechnologiesUrl,
                             this.defaultUsername,
-                            this.supportedCapabilities);
+                            this.supportedCapabilities,
+                            this.supportedLicenseTypes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -314,6 +336,9 @@ public final class DeploymentTypeSummary
             if (model.wasPropertyExplicitlySet("supportedCapabilities")) {
                 this.supportedCapabilities(model.getSupportedCapabilities());
             }
+            if (model.wasPropertyExplicitlySet("supportedLicenseTypes")) {
+                this.supportedLicenseTypes(model.getSupportedLicenseTypes());
+            }
             return this;
         }
     }
@@ -330,16 +355,16 @@ public final class DeploymentTypeSummary
     }
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three categories.
-     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into four categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final DeploymentCategory category;
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three categories.
-     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into four categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
      *
      * @return the value
      **/
@@ -503,6 +528,22 @@ public final class DeploymentTypeSummary
         return supportedCapabilities;
     }
 
+    /**
+     * The list of Oracle license models supported by the deployment type.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedLicenseTypes")
+    private final java.util.List<LicenseModel> supportedLicenseTypes;
+
+    /**
+     * The list of Oracle license models supported by the deployment type.
+     *
+     * @return the value
+     **/
+    public java.util.List<LicenseModel> getSupportedLicenseTypes() {
+        return supportedLicenseTypes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -528,6 +569,7 @@ public final class DeploymentTypeSummary
                 .append(String.valueOf(this.supportedTechnologiesUrl));
         sb.append(", defaultUsername=").append(String.valueOf(this.defaultUsername));
         sb.append(", supportedCapabilities=").append(String.valueOf(this.supportedCapabilities));
+        sb.append(", supportedLicenseTypes=").append(String.valueOf(this.supportedLicenseTypes));
         sb.append(")");
         return sb.toString();
     }
@@ -553,6 +595,7 @@ public final class DeploymentTypeSummary
                         this.supportedTechnologiesUrl, other.supportedTechnologiesUrl)
                 && java.util.Objects.equals(this.defaultUsername, other.defaultUsername)
                 && java.util.Objects.equals(this.supportedCapabilities, other.supportedCapabilities)
+                && java.util.Objects.equals(this.supportedLicenseTypes, other.supportedLicenseTypes)
                 && super.equals(other);
     }
 
@@ -592,6 +635,11 @@ public final class DeploymentTypeSummary
                         + (this.supportedCapabilities == null
                                 ? 43
                                 : this.supportedCapabilities.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedLicenseTypes == null
+                                ? 43
+                                : this.supportedLicenseTypes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

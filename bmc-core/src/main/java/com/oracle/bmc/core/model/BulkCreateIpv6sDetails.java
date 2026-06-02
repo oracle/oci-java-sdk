@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Bulk Secondary IPv6 addresses creation object.
+ * Details needed to create secondary IPv6 addresses with a bulk operation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -37,7 +37,7 @@ public final class BulkCreateIpv6sDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6s to. The
-         * IPv6 will be in the VNIC's subnet.
+         * IPv6s will be in the VNIC's subnet.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
@@ -45,7 +45,7 @@ public final class BulkCreateIpv6sDetails
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6s to. The
-         * IPv6 will be in the VNIC's subnet.
+         * IPv6s will be in the VNIC's subnet.
          *
          * @param vnicId the value to set
          * @return this builder
@@ -76,14 +76,14 @@ public final class BulkCreateIpv6sDetails
             return this;
         }
         /**
-         * Secondary IPv6 addresses to assign.
+         * A secondary IPv6 address to assign.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bulkCreateIpv6sItem")
         private java.util.List<BulkCreateIpv6sItem> bulkCreateIpv6sItem;
 
         /**
-         * Secondary IPv6 addresses to assign.
+         * A secondary IPv6 address to assign.
          *
          * @param bulkCreateIpv6sItem the value to set
          * @return this builder
@@ -136,7 +136,7 @@ public final class BulkCreateIpv6sDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6s to. The
-     * IPv6 will be in the VNIC's subnet.
+     * IPv6s will be in the VNIC's subnet.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
@@ -144,7 +144,7 @@ public final class BulkCreateIpv6sDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6s to. The
-     * IPv6 will be in the VNIC's subnet.
+     * IPv6s will be in the VNIC's subnet.
      *
      * @return the value
      **/
@@ -171,14 +171,14 @@ public final class BulkCreateIpv6sDetails
     }
 
     /**
-     * Secondary IPv6 addresses to assign.
+     * A secondary IPv6 address to assign.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bulkCreateIpv6sItem")
     private final java.util.List<BulkCreateIpv6sItem> bulkCreateIpv6sItem;
 
     /**
-     * Secondary IPv6 addresses to assign.
+     * A secondary IPv6 address to assign.
      *
      * @return the value
      **/

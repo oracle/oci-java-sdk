@@ -503,7 +503,7 @@ public class PartnerIntegerationClient implements PartnerIntegeration {
                         "PartnerIntegeration",
                         "ActivateSubscription",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/PartnerSubscription/ActivateSubscription");
         java.util.function.Function<javax.ws.rs.core.Response, ActivateSubscriptionResponse>
                 transformer =
                         ActivateSubscriptionConverter.fromResponse(
@@ -544,7 +544,7 @@ public class PartnerIntegerationClient implements PartnerIntegeration {
                         "PartnerIntegeration",
                         "ListingSubscriptions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/ListingSubscriptionsCollection/ListingSubscriptions");
         java.util.function.Function<javax.ws.rs.core.Response, ListingSubscriptionsResponse>
                 transformer =
                         ListingSubscriptionsConverter.fromResponse(
@@ -582,7 +582,7 @@ public class PartnerIntegerationClient implements PartnerIntegeration {
                         "PartnerIntegeration",
                         "ResolveSubscription",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/PartnerSubscription/ResolveSubscription");
         java.util.function.Function<javax.ws.rs.core.Response, ResolveSubscriptionResponse>
                 transformer =
                         ResolveSubscriptionConverter.fromResponse(

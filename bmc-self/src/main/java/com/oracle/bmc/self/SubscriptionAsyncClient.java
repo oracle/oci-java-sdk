@@ -482,7 +482,10 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequest/CancelWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -531,7 +534,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "Subscription",
                         "ChangeSubscriptionCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/ChangeSubscriptionCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeSubscriptionCompartmentResponse>
                 transformer =
@@ -583,7 +586,10 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "CreateSubscription", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "CreateSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/CreateSubscription");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateSubscriptionResponse>
                 transformer =
                         CreateSubscriptionConverter.fromResponse(
@@ -631,7 +637,10 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 DeleteSubscriptionConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "DeleteSubscription", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "DeleteSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/DeleteSubscription");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteSubscriptionResponse>
                 transformer =
                         DeleteSubscriptionConverter.fromResponse(
@@ -674,7 +683,10 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 GetSubscriptionConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "GetSubscription", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "GetSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/GetSubscription");
         final java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
                 transformer =
                         GetSubscriptionConverter.fromResponse(
@@ -717,7 +729,10 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 GetSubscriptionTokenConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "GetSubscriptionToken", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "GetSubscriptionToken",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/SubscriptionToken/GetSubscriptionToken");
         final java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionTokenResponse>
                 transformer =
                         GetSubscriptionTokenConverter.fromResponse(
@@ -761,7 +776,10 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -803,7 +821,10 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 ListSubscriptionsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "ListSubscriptions", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "ListSubscriptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/SubscriptionCollection/ListSubscriptions");
         final java.util.function.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
                 transformer =
                         ListSubscriptionsConverter.fromResponse(
@@ -846,7 +867,10 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequestError/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -890,7 +914,10 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequestLogEntry/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -934,7 +961,10 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequest/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -977,7 +1007,10 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                 UpdateSubscriptionConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "UpdateSubscription", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "UpdateSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/UpdateSubscription");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
                 transformer =
                         UpdateSubscriptionConverter.fromResponse(

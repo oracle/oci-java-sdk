@@ -52,13 +52,13 @@ public final class PatchAction extends Action {
             return this;
         }
         /**
-         * A string that describes whether the change is applied hot or cold
+         * A string that describes whether the change is applied hot or cold.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private Mode mode;
 
         /**
-         * A string that describes whether the change is applied hot or cold
+         * A string that describes whether the change is applied hot or cold.
          * @param mode the value to set
          * @return this builder
          **/
@@ -68,13 +68,13 @@ public final class PatchAction extends Action {
             return this;
         }
         /**
-         * patch artifact category
+         * Patch artifact category.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private Category category;
 
         /**
-         * patch artifact category
+         * Patch artifact category.
          * @param category the value to set
          * @return this builder
          **/
@@ -84,13 +84,13 @@ public final class PatchAction extends Action {
             return this;
         }
         /**
-         * patch bundle name
+         * Patch bundle name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("artifact")
         private String artifact;
 
         /**
-         * patch bundle name
+         * Patch bundle name.
          * @param artifact the value to set
          * @return this builder
          **/
@@ -168,7 +168,7 @@ public final class PatchAction extends Action {
     }
 
     /**
-     * A string that describes whether the change is applied hot or cold
+     * A string that describes whether the change is applied hot or cold.
      **/
     public enum Mode {
         Hot("HOT"),
@@ -214,13 +214,13 @@ public final class PatchAction extends Action {
         }
     };
     /**
-     * A string that describes whether the change is applied hot or cold
+     * A string that describes whether the change is applied hot or cold.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final Mode mode;
 
     /**
-     * A string that describes whether the change is applied hot or cold
+     * A string that describes whether the change is applied hot or cold.
      * @return the value
      **/
     public Mode getMode() {
@@ -228,7 +228,7 @@ public final class PatchAction extends Action {
     }
 
     /**
-     * patch artifact category
+     * Patch artifact category.
      **/
     public enum Category {
         Monthly("MONTHLY"),
@@ -277,13 +277,13 @@ public final class PatchAction extends Action {
         }
     };
     /**
-     * patch artifact category
+     * Patch artifact category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final Category category;
 
     /**
-     * patch artifact category
+     * Patch artifact category.
      * @return the value
      **/
     public Category getCategory() {
@@ -291,13 +291,13 @@ public final class PatchAction extends Action {
     }
 
     /**
-     * patch bundle name
+     * Patch bundle name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("artifact")
     private final String artifact;
 
     /**
-     * patch bundle name
+     * Patch bundle name.
      * @return the value
      **/
     public String getArtifact() {

@@ -19,6 +19,50 @@ package com.oracle.bmc.cloudmigrations.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogicalUnit extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public LogicalUnit(
+            String address,
+            Long discardMaxSizeInBytes,
+            Boolean isDiscardZeroesData,
+            String diskId,
+            String id,
+            Integer lunMapping,
+            LunStatus lunStatus,
+            String password,
+            Integer paths,
+            Integer port,
+            String portal,
+            String productId,
+            String serial,
+            Integer size,
+            String storageDomainId,
+            String target,
+            String username,
+            String vendorId,
+            String volumeGroupId) {
+        super();
+        this.address = address;
+        this.discardMaxSizeInBytes = discardMaxSizeInBytes;
+        this.isDiscardZeroesData = isDiscardZeroesData;
+        this.diskId = diskId;
+        this.id = id;
+        this.lunMapping = lunMapping;
+        this.lunStatus = lunStatus;
+        this.password = password != null ? password.toCharArray() : null;
+        this.paths = paths;
+        this.port = port;
+        this.portal = portal;
+        this.productId = productId;
+        this.serial = serial;
+        this.size = size;
+        this.storageDomainId = storageDomainId;
+        this.target = target;
+        this.username = username;
+        this.vendorId = vendorId;
+        this.volumeGroupId = volumeGroupId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "address",
         "discardMaxSizeInBytes",
@@ -48,7 +92,7 @@ public final class LogicalUnit extends com.oracle.bmc.http.internal.ExplicitlySe
             String id,
             Integer lunMapping,
             LunStatus lunStatus,
-            String password,
+            char[] password,
             Integer paths,
             Integer port,
             String portal,
@@ -200,18 +244,25 @@ public final class LogicalUnit extends com.oracle.bmc.http.internal.ExplicitlySe
          * Password of the logical unit.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * Password of the logical unit.
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * Paths of the logical unit.
          **/
@@ -632,13 +683,25 @@ public final class LogicalUnit extends com.oracle.bmc.http.internal.ExplicitlySe
      * Password of the logical unit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * Password of the logical unit.
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * Password of the logical unit.
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

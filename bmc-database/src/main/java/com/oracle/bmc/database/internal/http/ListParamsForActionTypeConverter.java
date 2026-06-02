@@ -40,6 +40,14 @@ public class ListParamsForActionTypeConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getType().getValue()));
 
+        if (request.getPlanIntent() != null) {
+            target =
+                    target.queryParam(
+                            "planIntent",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPlanIntent().getValue()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

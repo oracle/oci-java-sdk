@@ -378,6 +378,25 @@ public interface ManagedInstanceGroupAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists all managed instances for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the managed instance name. The results list all managed instances that have already been added to the group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListManagedInstanceGroupManagedInstancesResponse>
+            listManagedInstanceGroupManagedInstances(
+                    ListManagedInstanceGroupManagedInstancesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListManagedInstanceGroupManagedInstancesRequest,
+                                    ListManagedInstanceGroupManagedInstancesResponse>
+                            handler);
+
+    /**
      * Retrieve a list of module streams, along with a summary of their
      * status, from a managed instance group.  Filters may be applied to select
      * a subset of module streams based on the filter criteria.
@@ -469,6 +488,25 @@ public interface ManagedInstanceGroupAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             RebootManagedInstanceGroupRequest, RebootManagedInstanceGroupResponse>
                     handler);
+
+    /**
+     * Refreshes the package, Windows update or Snap information on a managed instance with the latest data from the software source. This does not update packages on the instance. It provides the service with the latest package data.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RefreshSoftwareOnManagedInstanceGroupResponse>
+            refreshSoftwareOnManagedInstanceGroup(
+                    RefreshSoftwareOnManagedInstanceGroupRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshSoftwareOnManagedInstanceGroupRequest,
+                                    RefreshSoftwareOnManagedInstanceGroupResponse>
+                            handler);
 
     /**
      * Removes a profile for a module stream that is installed on a managed instance group. Providing the module stream name (without specifying a profile name) removes all profiles that have been installed for the module stream.

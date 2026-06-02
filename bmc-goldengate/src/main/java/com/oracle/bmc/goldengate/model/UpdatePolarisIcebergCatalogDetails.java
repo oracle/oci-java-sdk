@@ -81,14 +81,14 @@ public final class UpdatePolarisIcebergCatalogDetails extends UpdateIcebergCatal
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
         private String clientSecretSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
          *
          * @param clientSecretSecretId the value to set
          * @return this builder
@@ -98,6 +98,31 @@ public final class UpdatePolarisIcebergCatalogDetails extends UpdateIcebergCatal
             this.__explicitlySet__.add("clientSecretSecretId");
             return this;
         }
+        /**
+         * Client secret required to connect to Polaris.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
+        private char[] clientSecret;
+
+        /**
+         * Client secret required to connect to Polaris.
+         *
+         * @param clientSecret the value to set
+         * @return this builder
+         **/
+        public Builder clientSecret(char[] clientSecret) {
+            this.clientSecret = clientSecret;
+            this.__explicitlySet__.add("clientSecret");
+            return this;
+        }
+
+        public Builder clientSecret(String clientSecret) {
+            this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+            this.__explicitlySet__.add("clientSecret");
+            return this;
+        }
+
         /**
          * The Snowflake role used to access Polaris.
          **/
@@ -125,6 +150,7 @@ public final class UpdatePolarisIcebergCatalogDetails extends UpdateIcebergCatal
                             this.name,
                             this.clientId,
                             this.clientSecretSecretId,
+                            this.clientSecret,
                             this.principalRole);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -145,6 +171,9 @@ public final class UpdatePolarisIcebergCatalogDetails extends UpdateIcebergCatal
             }
             if (model.wasPropertyExplicitlySet("clientSecretSecretId")) {
                 this.clientSecretSecretId(model.getClientSecretSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("clientSecret")) {
+                this.clientSecret(model.getClientSecret());
             }
             if (model.wasPropertyExplicitlySet("principalRole")) {
                 this.principalRole(model.getPrincipalRole());
@@ -170,12 +199,32 @@ public final class UpdatePolarisIcebergCatalogDetails extends UpdateIcebergCatal
             String name,
             String clientId,
             String clientSecretSecretId,
+            String clientSecret,
             String principalRole) {
         super();
         this.uri = uri;
         this.name = name;
         this.clientId = clientId;
         this.clientSecretSecretId = clientSecretSecretId;
+        this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+        this.principalRole = principalRole;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdatePolarisIcebergCatalogDetails(
+            String uri,
+            String name,
+            String clientId,
+            String clientSecretSecretId,
+            char[] clientSecret,
+            String principalRole) {
+        super();
+        this.uri = uri;
+        this.name = name;
+        this.clientId = clientId;
+        this.clientSecretSecretId = clientSecretSecretId;
+        this.clientSecret = clientSecret;
         this.principalRole = principalRole;
     }
 
@@ -226,19 +275,48 @@ public final class UpdatePolarisIcebergCatalogDetails extends UpdateIcebergCatal
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
     private final String clientSecretSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
      *
      * @return the value
      **/
     public String getClientSecretSecretId() {
         return clientSecretSecretId;
+    }
+
+    /**
+     * Client secret required to connect to Polaris.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
+    private final char[] clientSecret;
+
+    /**
+     * Client secret required to connect to Polaris.
+     *
+     * return the value
+     * @Deprecated - Use getClientSecret__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClientSecret() {
+        return clientSecret != null ? new String(clientSecret) : null;
+    }
+
+    /**
+     * Client secret required to connect to Polaris.
+     *
+     * @return the value
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
+    public char[] getClientSecret__AsCharArray() {
+        return clientSecret;
     }
 
     /**
@@ -273,6 +351,7 @@ public final class UpdatePolarisIcebergCatalogDetails extends UpdateIcebergCatal
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", clientId=").append(String.valueOf(this.clientId));
         sb.append(", clientSecretSecretId=").append(String.valueOf(this.clientSecretSecretId));
+        sb.append(", clientSecret=").append("<redacted>");
         sb.append(", principalRole=").append(String.valueOf(this.principalRole));
         sb.append(")");
         return sb.toString();
@@ -292,6 +371,7 @@ public final class UpdatePolarisIcebergCatalogDetails extends UpdateIcebergCatal
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.clientId, other.clientId)
                 && java.util.Objects.equals(this.clientSecretSecretId, other.clientSecretSecretId)
+                && java.util.Objects.equals(this.clientSecret, other.clientSecret)
                 && java.util.Objects.equals(this.principalRole, other.principalRole)
                 && super.equals(other);
     }
@@ -308,6 +388,7 @@ public final class UpdatePolarisIcebergCatalogDetails extends UpdateIcebergCatal
                         + (this.clientSecretSecretId == null
                                 ? 43
                                 : this.clientSecretSecretId.hashCode());
+        result = (result * PRIME) + (this.clientSecret == null ? 43 : this.clientSecret.hashCode());
         result =
                 (result * PRIME)
                         + (this.principalRole == null ? 43 : this.principalRole.hashCode());

@@ -418,14 +418,14 @@ public final class CreateVirtualCircuitDetails
             return this;
         }
         /**
-         * The service key name offered by the provider (if the customer is connecting via a provider).
+         * The service key name or activation key offered by the provider (if the customer is connecting via a provider).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyName")
         private String providerServiceKeyName;
 
         /**
-         * The service key name offered by the provider (if the customer is connecting via a provider).
+         * The service key name or activation key offered by the provider (if the customer is connecting via a provider).
          *
          * @param providerServiceKeyName the value to set
          * @return this builder
@@ -1017,14 +1017,14 @@ public final class CreateVirtualCircuitDetails
     }
 
     /**
-     * The service key name offered by the provider (if the customer is connecting via a provider).
+     * The service key name or activation key offered by the provider (if the customer is connecting via a provider).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyName")
     private final String providerServiceKeyName;
 
     /**
-     * The service key name offered by the provider (if the customer is connecting via a provider).
+     * The service key name or activation key offered by the provider (if the customer is connecting via a provider).
      *
      * @return the value
      **/

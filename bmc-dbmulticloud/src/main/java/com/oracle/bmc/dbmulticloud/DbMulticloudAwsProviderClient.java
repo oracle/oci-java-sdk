@@ -1056,6 +1056,49 @@ public class DbMulticloudAwsProviderClient implements DbMulticloudAwsProvider {
     }
 
     @Override
+    public ReplicateOracleDbAwsKeyResponse replicateOracleDbAwsKey(
+            ReplicateOracleDbAwsKeyRequest request) {
+        LOG.trace("Called replicateOracleDbAwsKey");
+        final ReplicateOracleDbAwsKeyRequest interceptedRequest =
+                ReplicateOracleDbAwsKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReplicateOracleDbAwsKeyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbMulticloudAwsProvider",
+                        "ReplicateOracleDbAwsKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAwsKey/ReplicateOracleDbAwsKey");
+        java.util.function.Function<javax.ws.rs.core.Response, ReplicateOracleDbAwsKeyResponse>
+                transformer =
+                        ReplicateOracleDbAwsKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getReplicateOracleDbAwsKeyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateOracleDbAwsIdentityConnectorResponse updateOracleDbAwsIdentityConnector(
             UpdateOracleDbAwsIdentityConnectorRequest request) {
         LOG.trace("Called updateOracleDbAwsIdentityConnector");

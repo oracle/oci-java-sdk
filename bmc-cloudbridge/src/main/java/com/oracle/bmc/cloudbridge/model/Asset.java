@@ -27,6 +27,10 @@ package com.oracle.bmc.cloudbridge.model;
         name = "AWS_EC2"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = InventoryAsset.class,
+        name = "INVENTORY_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = VmwareVmAsset.class,
         name = "VMWARE_VM"
     ),
@@ -52,7 +56,8 @@ public class Asset extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
         "lifecycleState",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "environmentType"
     })
     protected Asset(
             String displayName,
@@ -67,7 +72,8 @@ public class Asset extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
             LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            EnvironmentType environmentType) {
         super();
         this.displayName = displayName;
         this.inventoryId = inventoryId;
@@ -82,6 +88,7 @@ public class Asset extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.environmentType = environmentType;
     }
 
     /**
@@ -332,6 +339,20 @@ public class Asset extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
         return systemTags;
     }
 
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+    private final EnvironmentType environmentType;
+
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * @return the value
+     **/
+    public EnvironmentType getEnvironmentType() {
+        return environmentType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -359,6 +380,7 @@ public class Asset extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(")");
         return sb.toString();
     }
@@ -386,6 +408,7 @@ public class Asset extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && super.equals(other);
     }
 
@@ -414,6 +437,9 @@ public class Asset extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentType == null ? 43 : this.environmentType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

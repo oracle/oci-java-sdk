@@ -31,8 +31,13 @@ public class EmbedTextConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getEmbedTextDetails(), "embedTextDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20231130").path("actions").path("embedText");
+                newBaseTarget.path("/20231130").path("actions").path("embedText");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

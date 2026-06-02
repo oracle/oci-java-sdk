@@ -30,7 +30,8 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
         "hourOfDay",
         "dayOfWeek",
         "dayOfMonth",
-        "month"
+        "month",
+        "lockDurationDetails"
     })
     public SnapshotSchedule(
             String schedulePrefix,
@@ -41,7 +42,8 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
             Integer hourOfDay,
             DayOfWeek dayOfWeek,
             Integer dayOfMonth,
-            Month month) {
+            Month month,
+            LockDurationDetails lockDurationDetails) {
         super();
         this.schedulePrefix = schedulePrefix;
         this.timeScheduleStart = timeScheduleStart;
@@ -52,6 +54,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
         this.dayOfWeek = dayOfWeek;
         this.dayOfMonth = dayOfMonth;
         this.month = month;
+        this.lockDurationDetails = lockDurationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -241,6 +244,15 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lockDurationDetails")
+        private LockDurationDetails lockDurationDetails;
+
+        public Builder lockDurationDetails(LockDurationDetails lockDurationDetails) {
+            this.lockDurationDetails = lockDurationDetails;
+            this.__explicitlySet__.add("lockDurationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -255,7 +267,8 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
                             this.hourOfDay,
                             this.dayOfWeek,
                             this.dayOfMonth,
-                            this.month);
+                            this.month,
+                            this.lockDurationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -290,6 +303,9 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("month")) {
                 this.month(model.getMonth());
+            }
+            if (model.wasPropertyExplicitlySet("lockDurationDetails")) {
+                this.lockDurationDetails(model.getLockDurationDetails());
             }
             return this;
         }
@@ -686,6 +702,13 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
         return month;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lockDurationDetails")
+    private final LockDurationDetails lockDurationDetails;
+
+    public LockDurationDetails getLockDurationDetails() {
+        return lockDurationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -710,6 +733,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
         sb.append(", dayOfWeek=").append(String.valueOf(this.dayOfWeek));
         sb.append(", dayOfMonth=").append(String.valueOf(this.dayOfMonth));
         sb.append(", month=").append(String.valueOf(this.month));
+        sb.append(", lockDurationDetails=").append(String.valueOf(this.lockDurationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -734,6 +758,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.dayOfWeek, other.dayOfWeek)
                 && java.util.Objects.equals(this.dayOfMonth, other.dayOfMonth)
                 && java.util.Objects.equals(this.month, other.month)
+                && java.util.Objects.equals(this.lockDurationDetails, other.lockDurationDetails)
                 && super.equals(other);
     }
 
@@ -758,6 +783,11 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
         result = (result * PRIME) + (this.dayOfWeek == null ? 43 : this.dayOfWeek.hashCode());
         result = (result * PRIME) + (this.dayOfMonth == null ? 43 : this.dayOfMonth.hashCode());
         result = (result * PRIME) + (this.month == null ? 43 : this.month.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lockDurationDetails == null
+                                ? 43
+                                : this.lockDurationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

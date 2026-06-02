@@ -33,7 +33,8 @@ public class GenerativeAiInferenceAsyncClient implements GenerativeAiInferenceAs
                     .serviceName(GenerativeAiInferenceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://inference.generativeai.{region}.oci.{secondLevelDomain}")
+                            "https://inference.generativeai.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .endpointServiceName("inference.generativeai")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -53,6 +54,7 @@ public class GenerativeAiInferenceAsyncClient implements GenerativeAiInferenceAs
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+    private final java.util.Map<String, Boolean> optionsMap = new java.util.HashMap<>();
 
     // This pattern matches substrings that are enclosed within curly braces {}
     private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
@@ -305,6 +307,9 @@ public class GenerativeAiInferenceAsyncClient implements GenerativeAiInferenceAs
                 }
             }
         }
+        enableDualStackEndpoints(
+                com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils
+                        .isDualStackEnabledForClientDefault(SERVICE));
         if (endpoint != null) {
             setEndpoint(endpoint);
         }
@@ -464,6 +469,14 @@ public class GenerativeAiInferenceAsyncClient implements GenerativeAiInferenceAs
                 com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
                         .getRealmSpecificEndpointTemplate(
                                 useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public synchronized void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled) {
+        optionsMap.put(
+                com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils.DUAL_STACK_OPTION,
+                dualStackEndpointTemplateEnabled);
+        client.setOptionsMap(optionsMap);
     }
 
     @Override
@@ -654,6 +667,53 @@ public class GenerativeAiInferenceAsyncClient implements GenerativeAiInferenceAs
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GenerateTextRequest, GenerateTextResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGuardrailVersionsResponse> listGuardrailVersions(
+            ListGuardrailVersionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListGuardrailVersionsRequest, ListGuardrailVersionsResponse>
+                    handler) {
+        LOG.trace("Called async listGuardrailVersions");
+        final ListGuardrailVersionsRequest interceptedRequest =
+                ListGuardrailVersionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListGuardrailVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiInference",
+                        "ListGuardrailVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/GuardrailVersionCollection/ListGuardrailVersions");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListGuardrailVersionsResponse>
+                transformer =
+                        ListGuardrailVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListGuardrailVersionsRequest, ListGuardrailVersionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListGuardrailVersionsRequest, ListGuardrailVersionsResponse>,
+                        java.util.concurrent.Future<ListGuardrailVersionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListGuardrailVersionsRequest, ListGuardrailVersionsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

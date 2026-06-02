@@ -11,6 +11,7 @@ package com.oracle.bmc.cloudbridge.model;
 public enum AssetSourceType {
     Vmware("VMWARE"),
     Aws("AWS"),
+    Olvm("OLVM"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -30,8 +30,13 @@ public class ListJavaReleasesConverter {
             com.oracle.bmc.jms.requests.ListJavaReleasesRequest request) {
         Validate.notNull(request, "request instance is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20210610").path("javaReleases");
+                newBaseTarget.path("/20210610").path("javaReleases");
 
         if (request.getReleaseVersion() != null) {
             target =

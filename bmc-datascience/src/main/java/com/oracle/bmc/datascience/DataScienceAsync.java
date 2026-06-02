@@ -185,6 +185,24 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a compute target into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeTargetCompartmentResponse>
+            changeComputeTargetCompartment(
+                    ChangeComputeTargetCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeTargetCompartmentRequest,
+                                    ChangeComputeTargetCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a private endpoint into a different compartment. When provided, If-Match is checked against ETag values of the resource.
      *
      *
@@ -474,6 +492,22 @@ public interface DataScienceAsync extends AutoCloseable {
             ChangeScheduleCompartmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeScheduleCompartmentRequest, ChangeScheduleCompartmentResponse>
+                    handler);
+
+    /**
+     * Creates a new compute target resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateComputeTargetResponse> createComputeTarget(
+            CreateComputeTargetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateComputeTargetRequest, CreateComputeTargetResponse>
                     handler);
 
     /**
@@ -932,6 +966,22 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified compute target.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteComputeTargetResponse> deleteComputeTarget(
+            DeleteComputeTargetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteComputeTargetRequest, DeleteComputeTargetResponse>
+                    handler);
+
+    /**
      * Deletes a private endpoint using `privateEndpointId`.
      *
      *
@@ -1271,6 +1321,21 @@ public interface DataScienceAsync extends AutoCloseable {
             ExportModelArtifactRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ExportModelArtifactRequest, ExportModelArtifactResponse>
+                    handler);
+
+    /**
+     * Retrieves the compute target for the specified `computeTargetId`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeTargetResponse> getComputeTarget(
+            GetComputeTargetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetComputeTargetRequest, GetComputeTargetResponse>
                     handler);
 
     /**
@@ -1837,6 +1902,39 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the valid compute target shapes.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeTargetShapesResponse> listComputeTargetShapes(
+            ListComputeTargetShapesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeTargetShapesRequest, ListComputeTargetShapesResponse>
+                    handler);
+
+    /**
+     * List all compute targets in the specified compartment. Supports queries on various other parameters in the query alongside compartmentId (must be included).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeTargetsResponse> listComputeTargets(
+            ListComputeTargetsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeTargetsRequest, ListComputeTargetsResponse>
+                    handler);
+
+    /**
      * List containers.
      *
      * @param request The request object containing the details to send
@@ -2396,6 +2494,22 @@ public interface DataScienceAsync extends AutoCloseable {
                                     TriggerMlApplicationInstanceViewFlowRequest,
                                     TriggerMlApplicationInstanceViewFlowResponse>
                             handler);
+
+    /**
+     * Updates the compute target.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeTargetResponse> updateComputeTarget(
+            UpdateComputeTargetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeTargetRequest, UpdateComputeTargetResponse>
+                    handler);
 
     /**
      * Updates a private endpoint using a `privateEndpointId`.  If changes to a private endpoint match

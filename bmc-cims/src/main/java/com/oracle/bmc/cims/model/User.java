@@ -24,7 +24,6 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "firstName",
         "lastName",
         "country",
-        "csi",
         "phone",
         "timezone",
         "organizationName",
@@ -37,7 +36,6 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             String firstName,
             String lastName,
             String country,
-            String csi,
             String phone,
             String timezone,
             String organizationName,
@@ -49,7 +47,6 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.firstName = firstName;
         this.lastName = lastName;
         this.country = country;
-        this.csi = csi;
         this.phone = phone;
         this.timezone = timezone;
         this.organizationName = organizationName;
@@ -122,22 +119,6 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
-            return this;
-        }
-        /**
-         * The CSI associated with the user.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("csi")
-        private String csi;
-
-        /**
-         * The CSI associated with the user.
-         * @param csi the value to set
-         * @return this builder
-         **/
-        public Builder csi(String csi) {
-            this.csi = csi;
-            this.__explicitlySet__.add("csi");
             return this;
         }
         /**
@@ -261,7 +242,6 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.firstName,
                             this.lastName,
                             this.country,
-                            this.csi,
                             this.phone,
                             this.timezone,
                             this.organizationName,
@@ -287,9 +267,6 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("country")) {
                 this.country(model.getCountry());
-            }
-            if (model.wasPropertyExplicitlySet("csi")) {
-                this.csi(model.getCsi());
             }
             if (model.wasPropertyExplicitlySet("phone")) {
                 this.phone(model.getPhone());
@@ -378,20 +355,6 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
      **/
     public String getCountry() {
         return country;
-    }
-
-    /**
-     * The CSI associated with the user.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("csi")
-    private final String csi;
-
-    /**
-     * The CSI associated with the user.
-     * @return the value
-     **/
-    public String getCsi() {
-        return csi;
     }
 
     /**
@@ -510,7 +473,6 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", firstName=").append(String.valueOf(this.firstName));
         sb.append(", lastName=").append(String.valueOf(this.lastName));
         sb.append(", country=").append(String.valueOf(this.country));
-        sb.append(", csi=").append(String.valueOf(this.csi));
         sb.append(", phone=").append(String.valueOf(this.phone));
         sb.append(", timezone=").append(String.valueOf(this.timezone));
         sb.append(", organizationName=").append(String.valueOf(this.organizationName));
@@ -535,7 +497,6 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.firstName, other.firstName)
                 && java.util.Objects.equals(this.lastName, other.lastName)
                 && java.util.Objects.equals(this.country, other.country)
-                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.phone, other.phone)
                 && java.util.Objects.equals(this.timezone, other.timezone)
                 && java.util.Objects.equals(this.organizationName, other.organizationName)
@@ -553,7 +514,6 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result = (result * PRIME) + (this.firstName == null ? 43 : this.firstName.hashCode());
         result = (result * PRIME) + (this.lastName == null ? 43 : this.lastName.hashCode());
         result = (result * PRIME) + (this.country == null ? 43 : this.country.hashCode());
-        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.phone == null ? 43 : this.phone.hashCode());
         result = (result * PRIME) + (this.timezone == null ? 43 : this.timezone.hashCode());
         result =

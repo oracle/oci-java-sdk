@@ -8,7 +8,7 @@ import com.oracle.bmc.multicloud.requests.*;
 import com.oracle.bmc.multicloud.responses.*;
 
 /**
- * Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see <link to docs>.
+ * Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see [Oracle Multicloud Hub](https://docs.oracle.com/iaas/Content/multicloud-hub/home.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public interface OmhubResourceAnchorAsync extends AutoCloseable {
@@ -59,7 +59,10 @@ public interface OmhubResourceAnchorAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Gets information about a ResourceAnchor.
+     * Gets details for the specified resource anchor. The subscription OCID and service name are required.
+     * For more information, see
+     * [Getting a Resource Anchor's Details (OCI)](https://docs.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -75,7 +78,10 @@ public interface OmhubResourceAnchorAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of ResourceAnchors.
+     * Lists resource anchors in the specified Multicloud subscription.
+     * Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+     * For more information, see
+     * [Listing Resource Anchors](https://docs.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
      *
      *
      * @param request The request object containing the details to send

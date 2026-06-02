@@ -12,6 +12,21 @@ import com.oracle.bmc.logging.model.*;
 public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
+     * Compartment OCID to list resources in. Please see compartmentIdInSubtree
+     *      for nested compartments traversal.
+     *
+     */
+    private String compartmentId;
+
+    /**
+     * Compartment OCID to list resources in. Please see compartmentIdInSubtree
+     *      for nested compartments traversal.
+     *
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
      *
@@ -33,6 +48,25 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        /**
+         * Compartment OCID to list resources in. Please see compartmentIdInSubtree
+         *      for nested compartments traversal.
+         *
+         */
+        private String compartmentId = null;
+
+        /**
+         * Compartment OCID to list resources in. Please see compartmentIdInSubtree
+         *      for nested compartments traversal.
+         *
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -81,6 +115,7 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
          * @return this builder instance
          */
         public Builder copy(ListServicesRequest o) {
+            compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -114,9 +149,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
          */
         public ListServicesRequest buildWithoutInvocationCallback() {
             ListServicesRequest request = new ListServicesRequest();
+            request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListServicesRequest(opcRequestId);
+            // new ListServicesRequest(compartmentId, opcRequestId);
         }
     }
 
@@ -125,7 +161,7 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().opcRequestId(opcRequestId);
+        return new Builder().compartmentId(compartmentId).opcRequestId(opcRequestId);
     }
 
     /**
@@ -141,6 +177,7 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -156,13 +193,18 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         ListServicesRequest other = (ListServicesRequest) o;
-        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+        return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

@@ -235,7 +235,7 @@ public interface VirtualNetwork extends AutoCloseable {
             BulkAddVirtualCircuitPublicPrefixesRequest request);
 
     /**
-     * Create new IPv6s for a VNIC or Subnet.
+     * Create new IPv6s in bulk for a VNIC or subnet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -261,7 +261,7 @@ public interface VirtualNetwork extends AutoCloseable {
     BulkCreatePrivateIpsResponse bulkCreatePrivateIps(BulkCreatePrivateIpsRequest request);
 
     /**
-     * Unassigns and deletes IPv6s for a VNIC.
+     * Unassign and delete IPv6s for a VNIC in bulk.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -274,7 +274,7 @@ public interface VirtualNetwork extends AutoCloseable {
     BulkDeleteIpv6sResponse bulkDeleteIpv6s(BulkDeleteIpv6sRequest request);
 
     /**
-     * Unassigns and deletes secondary private IPv4s for a VNIC.
+     * Unassign and delete secondary private IPv4s for a VNIC.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -304,7 +304,7 @@ public interface VirtualNetwork extends AutoCloseable {
             BulkDeleteVirtualCircuitPublicPrefixesRequest request);
 
     /**
-     * detach the specified IPv6s.
+     * Detach the specified IPv6s.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -317,7 +317,7 @@ public interface VirtualNetwork extends AutoCloseable {
     BulkDetachIpv6sResponse bulkDetachIpv6s(BulkDetachIpv6sRequest request);
 
     /**
-     * Unassign the specified PrivateIP address from Virtual Network Interface Card (VNIC). You must specify the PrivateIP [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Unassign the specified private IP addresses from the Virtual Network Interface Card (VNIC). You must specify the PrivateIP object's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -330,7 +330,7 @@ public interface VirtualNetwork extends AutoCloseable {
     BulkDetachPrivateIpsResponse bulkDetachPrivateIps(BulkDetachPrivateIpsRequest request);
 
     /**
-     * Updates the specified IPv6s.
+     * Updates the specified IPv6s in bulk.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -343,7 +343,7 @@ public interface VirtualNetwork extends AutoCloseable {
     BulkUpdateIpv6sResponse bulkUpdateIpv6s(BulkUpdateIpv6sRequest request);
 
     /**
-     * Updates existing secondary Private IPv4s for a VNIC.
+     * Update existing secondary private IPv4s for a VNIC.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -3628,6 +3628,55 @@ public interface VirtualNetwork extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ModifyVcnCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ModifyVcnCidr API.
      */
     ModifyVcnCidrResponse modifyVcnCidr(ModifyVcnCidrRequest request);
+
+    /**
+     * Updates a Subnet by evaluating a sequence of patch instructions (JSON List Patch).
+     * This operation is restricted to IPv6 CIDR-related fields only.
+     * Supported selections (exact match) are:
+     *   - ipv6CidrBlock
+     *   - ipv6CidrBlocks
+     * Only the REPLACE operation is supported.
+     * The request must include the If-Match header for optimistic concurrency control.
+     * This is an asynchronous operation. The subnet\u2019s lifecycleState is set to UPDATING while the patch work request
+     * is in progress, and changes back to AVAILABLE after the patch operation is complete.
+     * All patch instructions are applied atomically as a single operation; either all succeed or none are applied.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/PatchSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchSubnet API.
+     */
+    PatchSubnetResponse patchSubnet(PatchSubnetRequest request);
+
+    /**
+     * Updates a VCN by evaluating a sequence of patch instructions (JSON List Patch).
+     * This operation is restricted to IPv6 CIDR-related fields only.
+     * Supported selections (exact match) are:
+     *   - ipv6CidrBlock
+     *   - ipv6PublicCidrBlock
+     *   - ipv6PrivateCidrBlocks
+     *   - byoipv6CidrDetails
+     * Only the REPLACE operation is supported.
+     * The request must include the If-Match header for optimistic concurrency control.
+     * This is an asynchronous operation. The VCN\u2019s lifecycleState is set to UPDATING while the patch work request
+     * is in progress, and changes back to AVAILABLE after the patch operation is complete.
+     * All patch instructions are applied atomically as a single operation; either all succeed or none are applied.
+     * NOTE:
+     * `ipv6PublicCidrBlock` represents Oracle provided GUA on VCN. With PATCH API, customer can only remove it if present.
+     * Since this is Oracle provided CIDR, there is no concept of replacing with customer provided CIDR.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/PatchVcnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchVcn API.
+     */
+    PatchVcnResponse patchVcn(PatchVcnRequest request);
 
     /**
      * Unassign the specified PrivateIP address from Virtual Network Interface Card (VNIC). You must specify the PrivateIP [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

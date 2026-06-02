@@ -25,16 +25,17 @@ public class ListDeploymentPeersRequest extends com.oracle.bmc.requests.BmcReque
         return deploymentId;
     }
     /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
+     * A filter to return only the deployment peers having the 'lifecycleState' given.
      *
      */
-    private com.oracle.bmc.goldengate.model.LifecycleState lifecycleState;
+    private com.oracle.bmc.goldengate.model.DeploymentPeerSummary.LifecycleState lifecycleState;
 
     /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
+     * A filter to return only the deployment peers having the 'lifecycleState' given.
      *
      */
-    public com.oracle.bmc.goldengate.model.LifecycleState getLifecycleState() {
+    public com.oracle.bmc.goldengate.model.DeploymentPeerSummary.LifecycleState
+            getLifecycleState() {
         return lifecycleState;
     }
     /**
@@ -186,19 +187,21 @@ public class ListDeploymentPeersRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * A filter to return only the resources that match the 'lifecycleState' given.
+         * A filter to return only the deployment peers having the 'lifecycleState' given.
          *
          */
-        private com.oracle.bmc.goldengate.model.LifecycleState lifecycleState = null;
+        private com.oracle.bmc.goldengate.model.DeploymentPeerSummary.LifecycleState
+                lifecycleState = null;
 
         /**
-         * A filter to return only the resources that match the 'lifecycleState' given.
+         * A filter to return only the deployment peers having the 'lifecycleState' given.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
-                com.oracle.bmc.goldengate.model.LifecycleState lifecycleState) {
+                com.oracle.bmc.goldengate.model.DeploymentPeerSummary.LifecycleState
+                        lifecycleState) {
             this.lifecycleState = lifecycleState;
             return this;
         }

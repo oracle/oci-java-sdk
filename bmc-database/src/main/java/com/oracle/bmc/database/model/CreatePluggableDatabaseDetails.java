@@ -25,6 +25,35 @@ package com.oracle.bmc.database.model;
 public final class CreatePluggableDatabaseDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public CreatePluggableDatabaseDetails(
+            String pdbName,
+            String containerDatabaseId,
+            String pdbAdminPassword,
+            String tdeWalletPassword,
+            Boolean shouldPdbAdminAccountBeLocked,
+            String containerDatabaseAdminPassword,
+            Boolean shouldCreatePdbBackup,
+            CreatePluggableDatabaseCreationTypeDetails pdbCreationTypeDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.pdbName = pdbName;
+        this.containerDatabaseId = containerDatabaseId;
+        this.pdbAdminPassword = pdbAdminPassword;
+        this.tdeWalletPassword = tdeWalletPassword;
+        this.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
+        this.containerDatabaseAdminPassword =
+                containerDatabaseAdminPassword != null
+                        ? containerDatabaseAdminPassword.toCharArray()
+                        : null;
+        this.shouldCreatePdbBackup = shouldCreatePdbBackup;
+        this.pdbCreationTypeDetails = pdbCreationTypeDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "pdbName",
         "containerDatabaseId",
@@ -43,7 +72,7 @@ public final class CreatePluggableDatabaseDetails
             String pdbAdminPassword,
             String tdeWalletPassword,
             Boolean shouldPdbAdminAccountBeLocked,
-            String containerDatabaseAdminPassword,
+            char[] containerDatabaseAdminPassword,
             Boolean shouldCreatePdbBackup,
             CreatePluggableDatabaseCreationTypeDetails pdbCreationTypeDetails,
             java.util.Map<String, String> freeformTags,
@@ -151,18 +180,28 @@ public final class CreatePluggableDatabaseDetails
          * The DB system administrator password of the Container Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseAdminPassword")
-        private String containerDatabaseAdminPassword;
+        private char[] containerDatabaseAdminPassword;
 
         /**
          * The DB system administrator password of the Container Database.
          * @param containerDatabaseAdminPassword the value to set
          * @return this builder
          **/
-        public Builder containerDatabaseAdminPassword(String containerDatabaseAdminPassword) {
+        public Builder containerDatabaseAdminPassword(char[] containerDatabaseAdminPassword) {
             this.containerDatabaseAdminPassword = containerDatabaseAdminPassword;
             this.__explicitlySet__.add("containerDatabaseAdminPassword");
             return this;
         }
+
+        public Builder containerDatabaseAdminPassword(String containerDatabaseAdminPassword) {
+            this.containerDatabaseAdminPassword =
+                    containerDatabaseAdminPassword != null
+                            ? containerDatabaseAdminPassword.toCharArray()
+                            : null;
+            this.__explicitlySet__.add("containerDatabaseAdminPassword");
+            return this;
+        }
+
         /**
          * Indicates whether to take Pluggable Database Backup after the operation.
          **/
@@ -382,13 +421,27 @@ public final class CreatePluggableDatabaseDetails
      * The DB system administrator password of the Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseAdminPassword")
-    private final String containerDatabaseAdminPassword;
+    private final char[] containerDatabaseAdminPassword;
+
+    /**
+     * The DB system administrator password of the Container Database.
+     * return the value
+     * @Deprecated - Use getContainerDatabaseAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getContainerDatabaseAdminPassword() {
+        return containerDatabaseAdminPassword != null
+                ? new String(containerDatabaseAdminPassword)
+                : null;
+    }
 
     /**
      * The DB system administrator password of the Container Database.
      * @return the value
      **/
-    public String getContainerDatabaseAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseAdminPassword")
+    public char[] getContainerDatabaseAdminPassword__AsCharArray() {
         return containerDatabaseAdminPassword;
     }
 

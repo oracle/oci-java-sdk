@@ -14,12 +14,12 @@ public class BulkDeleteIpv6sRequest
                 com.oracle.bmc.core.model.BulkDeleteIpv6sDetails> {
 
     /**
-     * Delete IPv6s details.
+     * Details of the IPv6s to delete.
      */
     private com.oracle.bmc.core.model.BulkDeleteIpv6sDetails bulkDeleteIpv6sDetails;
 
     /**
-     * Delete IPv6s details.
+     * Details of the IPv6s to delete.
      */
     public com.oracle.bmc.core.model.BulkDeleteIpv6sDetails getBulkDeleteIpv6sDetails() {
         return bulkDeleteIpv6sDetails;
@@ -79,12 +79,12 @@ public class BulkDeleteIpv6sRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Delete IPv6s details.
+         * Details of the IPv6s to delete.
          */
         private com.oracle.bmc.core.model.BulkDeleteIpv6sDetails bulkDeleteIpv6sDetails = null;
 
         /**
-         * Delete IPv6s details.
+         * Details of the IPv6s to delete.
          * @param bulkDeleteIpv6sDetails the value to set
          * @return this builder instance
          */

@@ -33,7 +33,10 @@ public final class AssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         "lifecycleState",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "assetClassName",
+        "assetClassVersion",
+        "environmentType"
     })
     public AssetSummary(
             String displayName,
@@ -49,7 +52,10 @@ public final class AssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             Asset.LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String assetClassName,
+            String assetClassVersion,
+            EnvironmentType environmentType) {
         super();
         this.displayName = displayName;
         this.inventoryId = inventoryId;
@@ -65,6 +71,9 @@ public final class AssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.assetClassName = assetClassName;
+        this.assetClassVersion = assetClassVersion;
+        this.environmentType = environmentType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -312,6 +321,54 @@ public final class AssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * The name of the asset class.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("assetClassName")
+        private String assetClassName;
+
+        /**
+         * The name of the asset class.
+         * @param assetClassName the value to set
+         * @return this builder
+         **/
+        public Builder assetClassName(String assetClassName) {
+            this.assetClassName = assetClassName;
+            this.__explicitlySet__.add("assetClassName");
+            return this;
+        }
+        /**
+         * The version of the asset class.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("assetClassVersion")
+        private String assetClassVersion;
+
+        /**
+         * The version of the asset class.
+         * @param assetClassVersion the value to set
+         * @return this builder
+         **/
+        public Builder assetClassVersion(String assetClassVersion) {
+            this.assetClassVersion = assetClassVersion;
+            this.__explicitlySet__.add("assetClassVersion");
+            return this;
+        }
+        /**
+         * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private EnvironmentType environmentType;
+
+        /**
+         * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+         * @param environmentType the value to set
+         * @return this builder
+         **/
+        public Builder environmentType(EnvironmentType environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -332,7 +389,10 @@ public final class AssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.lifecycleState,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.assetClassName,
+                            this.assetClassVersion,
+                            this.environmentType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -382,6 +442,15 @@ public final class AssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("assetClassName")) {
+                this.assetClassName(model.getAssetClassName());
+            }
+            if (model.wasPropertyExplicitlySet("assetClassVersion")) {
+                this.assetClassVersion(model.getAssetClassVersion());
+            }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
             }
             return this;
         }
@@ -612,6 +681,48 @@ public final class AssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         return systemTags;
     }
 
+    /**
+     * The name of the asset class.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assetClassName")
+    private final String assetClassName;
+
+    /**
+     * The name of the asset class.
+     * @return the value
+     **/
+    public String getAssetClassName() {
+        return assetClassName;
+    }
+
+    /**
+     * The version of the asset class.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assetClassVersion")
+    private final String assetClassVersion;
+
+    /**
+     * The version of the asset class.
+     * @return the value
+     **/
+    public String getAssetClassVersion() {
+        return assetClassVersion;
+    }
+
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+    private final EnvironmentType environmentType;
+
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * @return the value
+     **/
+    public EnvironmentType getEnvironmentType() {
+        return environmentType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -640,6 +751,9 @@ public final class AssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", assetClassName=").append(String.valueOf(this.assetClassName));
+        sb.append(", assetClassVersion=").append(String.valueOf(this.assetClassVersion));
+        sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(")");
         return sb.toString();
     }
@@ -668,6 +782,9 @@ public final class AssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.assetClassName, other.assetClassName)
+                && java.util.Objects.equals(this.assetClassVersion, other.assetClassVersion)
+                && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && super.equals(other);
     }
 
@@ -697,6 +814,15 @@ public final class AssetSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assetClassName == null ? 43 : this.assetClassName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assetClassVersion == null ? 43 : this.assetClassVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentType == null ? 43 : this.environmentType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

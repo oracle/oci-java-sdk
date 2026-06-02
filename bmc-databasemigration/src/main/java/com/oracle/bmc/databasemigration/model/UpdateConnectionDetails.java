@@ -34,6 +34,37 @@ package com.oracle.bmc.databasemigration.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    protected UpdateConnectionDetails(
+            String displayName,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String vaultId,
+            String keyId,
+            String subnetId,
+            java.util.List<String> nsgIds,
+            String username,
+            String password,
+            String replicationUsername,
+            String replicationPassword) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.vaultId = vaultId;
+        this.keyId = keyId;
+        this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
+        this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.replicationUsername = replicationUsername;
+        this.replicationPassword =
+                replicationPassword != null ? replicationPassword.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
@@ -58,9 +89,9 @@ public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.Explic
             String subnetId,
             java.util.List<String> nsgIds,
             String username,
-            String password,
+            char[] password,
             String replicationUsername,
-            String replicationPassword) {
+            char[] replicationPassword) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -227,14 +258,27 @@ public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.Explic
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password (credential) used when creating or updating this resource.
+     *
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password (credential) used when creating or updating this resource.
      *
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -259,14 +303,27 @@ public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.Explic
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicationPassword")
-    private final String replicationPassword;
+    private final char[] replicationPassword;
+
+    /**
+     * The password (credential) used when creating or updating this resource.
+     *
+     * return the value
+     * @Deprecated - Use getReplicationPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getReplicationPassword() {
+        return replicationPassword != null ? new String(replicationPassword) : null;
+    }
 
     /**
      * The password (credential) used when creating or updating this resource.
      *
      * @return the value
      **/
-    public String getReplicationPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationPassword")
+    public char[] getReplicationPassword__AsCharArray() {
         return replicationPassword;
     }
 

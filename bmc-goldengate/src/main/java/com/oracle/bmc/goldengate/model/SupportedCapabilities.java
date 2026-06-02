@@ -18,6 +18,13 @@ public enum SupportedCapabilities {
     DisasterRecovery("DISASTER_RECOVERY"),
     ScheduleManualBackup("SCHEDULE_MANUAL_BACKUP"),
     Multicloud("MULTICLOUD"),
+    TrailFiles("TRAIL_FILES"),
+    MasterKeyOperations("MASTER_KEY_OPERATIONS"),
+    TruststoreCertificates("TRUSTSTORE_CERTIFICATES"),
+    DeploymentDiagnostics("DEPLOYMENT_DIAGNOSTICS"),
+    Credentials("CREDENTIALS"),
+    ConsoleAccess("CONSOLE_ACCESS"),
+    NetworkConfiguration("NETWORK_CONFIGURATION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

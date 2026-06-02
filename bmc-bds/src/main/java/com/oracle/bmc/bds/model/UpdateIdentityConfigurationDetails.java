@@ -22,6 +22,21 @@ package com.oracle.bmc.bds.model;
 public final class UpdateIdentityConfigurationDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public UpdateIdentityConfigurationDetails(
+            String clusterAdminPassword,
+            String secretId,
+            UpstConfigurationDetails upstConfigurationDetails,
+            IamUserSyncConfigurationDetails iamUserSyncConfigurationDetails) {
+        super();
+        this.clusterAdminPassword =
+                clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
+        this.secretId = secretId;
+        this.upstConfigurationDetails = upstConfigurationDetails;
+        this.iamUserSyncConfigurationDetails = iamUserSyncConfigurationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "clusterAdminPassword",
         "secretId",
@@ -29,7 +44,7 @@ public final class UpdateIdentityConfigurationDetails
         "iamUserSyncConfigurationDetails"
     })
     public UpdateIdentityConfigurationDetails(
-            String clusterAdminPassword,
+            char[] clusterAdminPassword,
             String secretId,
             UpstConfigurationDetails upstConfigurationDetails,
             IamUserSyncConfigurationDetails iamUserSyncConfigurationDetails) {
@@ -46,18 +61,26 @@ public final class UpdateIdentityConfigurationDetails
          * Base-64 encoded password for the cluster admin user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-        private String clusterAdminPassword;
+        private char[] clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster admin user.
          * @param clusterAdminPassword the value to set
          * @return this builder
          **/
-        public Builder clusterAdminPassword(String clusterAdminPassword) {
+        public Builder clusterAdminPassword(char[] clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
+
+        public Builder clusterAdminPassword(String clusterAdminPassword) {
+            this.clusterAdminPassword =
+                    clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
+            this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+
         /**
          * The secretId for the clusterAdminPassword.
          **/
@@ -143,13 +166,25 @@ public final class UpdateIdentityConfigurationDetails
      * Base-64 encoded password for the cluster admin user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-    private final String clusterAdminPassword;
+    private final char[] clusterAdminPassword;
+
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     * return the value
+     * @Deprecated - Use getClusterAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClusterAdminPassword() {
+        return clusterAdminPassword != null ? new String(clusterAdminPassword) : null;
+    }
 
     /**
      * Base-64 encoded password for the cluster admin user.
      * @return the value
      **/
-    public String getClusterAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
+    public char[] getClusterAdminPassword__AsCharArray() {
         return clusterAdminPassword;
     }
 

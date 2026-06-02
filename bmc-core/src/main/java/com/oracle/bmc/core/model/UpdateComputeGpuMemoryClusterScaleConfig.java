@@ -71,14 +71,14 @@ public final class UpdateComputeGpuMemoryClusterScaleConfig
             return this;
         }
         /**
-         * The configured target size for the GPU Memory cluster.
+         * The configured target size for the GPU Memory Cluster.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetSize")
         private Long targetSize;
 
         /**
-         * The configured target size for the GPU Memory cluster.
+         * The configured target size for the GPU Memory Cluster.
          *
          * @param targetSize the value to set
          * @return this builder
@@ -161,14 +161,14 @@ public final class UpdateComputeGpuMemoryClusterScaleConfig
     }
 
     /**
-     * The configured target size for the GPU Memory cluster.
+     * The configured target size for the GPU Memory Cluster.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetSize")
     private final Long targetSize;
 
     /**
-     * The configured target size for the GPU Memory cluster.
+     * The configured target size for the GPU Memory Cluster.
      *
      * @return the value
      **/

@@ -14,12 +14,12 @@ public class BulkDeletePrivateIpsRequest
                 com.oracle.bmc.core.model.BulkDeletePrivateIpsDetails> {
 
     /**
-     * Details of secondary IPv4 addresses to deleted.
+     * Details of the secondary IPv4 addresses to delete.
      */
     private com.oracle.bmc.core.model.BulkDeletePrivateIpsDetails bulkDeletePrivateIpsDetails;
 
     /**
-     * Details of secondary IPv4 addresses to deleted.
+     * Details of the secondary IPv4 addresses to delete.
      */
     public com.oracle.bmc.core.model.BulkDeletePrivateIpsDetails getBulkDeletePrivateIpsDetails() {
         return bulkDeletePrivateIpsDetails;
@@ -80,13 +80,13 @@ public class BulkDeletePrivateIpsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details of secondary IPv4 addresses to deleted.
+         * Details of the secondary IPv4 addresses to delete.
          */
         private com.oracle.bmc.core.model.BulkDeletePrivateIpsDetails bulkDeletePrivateIpsDetails =
                 null;
 
         /**
-         * Details of secondary IPv4 addresses to deleted.
+         * Details of the secondary IPv4 addresses to delete.
          * @param bulkDeletePrivateIpsDetails the value to set
          * @return this builder instance
          */

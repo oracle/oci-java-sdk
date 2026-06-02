@@ -22,6 +22,44 @@ package com.oracle.bmc.oda.model;
 public final class CreateAuthenticationProviderDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public CreateAuthenticationProviderDetails(
+            AuthenticationGrantType grantType,
+            AuthenticationIdentityProvider identityProvider,
+            String name,
+            String tokenEndpointUrl,
+            String authorizationEndpointUrl,
+            String shortAuthorizationCodeRequestUrl,
+            String revokeTokenEndpointUrl,
+            String clientId,
+            String clientSecret,
+            String scopes,
+            String subjectClaim,
+            Integer refreshTokenRetentionPeriodInDays,
+            String redirectUrl,
+            Boolean isVisible,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.grantType = grantType;
+        this.identityProvider = identityProvider;
+        this.name = name;
+        this.tokenEndpointUrl = tokenEndpointUrl;
+        this.authorizationEndpointUrl = authorizationEndpointUrl;
+        this.shortAuthorizationCodeRequestUrl = shortAuthorizationCodeRequestUrl;
+        this.revokeTokenEndpointUrl = revokeTokenEndpointUrl;
+        this.clientId = clientId;
+        this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+        this.scopes = scopes;
+        this.subjectClaim = subjectClaim;
+        this.refreshTokenRetentionPeriodInDays = refreshTokenRetentionPeriodInDays;
+        this.redirectUrl = redirectUrl;
+        this.isVisible = isVisible;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "grantType",
         "identityProvider",
@@ -49,7 +87,7 @@ public final class CreateAuthenticationProviderDetails
             String shortAuthorizationCodeRequestUrl,
             String revokeTokenEndpointUrl,
             String clientId,
-            String clientSecret,
+            char[] clientSecret,
             String scopes,
             String subjectClaim,
             Integer refreshTokenRetentionPeriodInDays,
@@ -228,7 +266,7 @@ public final class CreateAuthenticationProviderDetails
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-        private String clientSecret;
+        private char[] clientSecret;
 
         /**
          * The client secret for the IDP application (OAuth Client) that was registered as described in Identity Provider
@@ -237,11 +275,18 @@ public final class CreateAuthenticationProviderDetails
          * @param clientSecret the value to set
          * @return this builder
          **/
-        public Builder clientSecret(String clientSecret) {
+        public Builder clientSecret(char[] clientSecret) {
             this.clientSecret = clientSecret;
             this.__explicitlySet__.add("clientSecret");
             return this;
         }
+
+        public Builder clientSecret(String clientSecret) {
+            this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+            this.__explicitlySet__.add("clientSecret");
+            return this;
+        }
+
         /**
          * A space-separated list of the scopes that must be included when Digital Assistant requests an access token from
          * the provider. Include all the scopes that are required to access the resources. If refresh tokens are enabled,
@@ -599,7 +644,20 @@ public final class CreateAuthenticationProviderDetails
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-    private final String clientSecret;
+    private final char[] clientSecret;
+
+    /**
+     * The client secret for the IDP application (OAuth Client) that was registered as described in Identity Provider
+     * Registration. With Microsoft identity platform, use the application secret.
+     *
+     * return the value
+     * @Deprecated - Use getClientSecret__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClientSecret() {
+        return clientSecret != null ? new String(clientSecret) : null;
+    }
 
     /**
      * The client secret for the IDP application (OAuth Client) that was registered as described in Identity Provider
@@ -607,7 +665,8 @@ public final class CreateAuthenticationProviderDetails
      *
      * @return the value
      **/
-    public String getClientSecret() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
+    public char[] getClientSecret__AsCharArray() {
         return clientSecret;
     }
 

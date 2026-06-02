@@ -221,6 +221,19 @@ public class ListDigitalTwinInstancesRequest
         return digitalTwinModelSpecUri;
     }
     /**
+     * Filter resources whose connectivityType matches the specified value.
+     *
+     */
+    private com.oracle.bmc.iot.model.DigitalTwinInstanceConnectivityType connectivityType;
+
+    /**
+     * Filter resources whose connectivityType matches the specified value.
+     *
+     */
+    public com.oracle.bmc.iot.model.DigitalTwinInstanceConnectivityType getConnectivityType() {
+        return connectivityType;
+    }
+    /**
      * Filter resources by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
      *
      */
@@ -416,6 +429,25 @@ public class ListDigitalTwinInstancesRequest
         }
 
         /**
+         * Filter resources whose connectivityType matches the specified value.
+         *
+         */
+        private com.oracle.bmc.iot.model.DigitalTwinInstanceConnectivityType connectivityType =
+                null;
+
+        /**
+         * Filter resources whose connectivityType matches the specified value.
+         *
+         * @param connectivityType the value to set
+         * @return this builder instance
+         */
+        public Builder connectivityType(
+                com.oracle.bmc.iot.model.DigitalTwinInstanceConnectivityType connectivityType) {
+            this.connectivityType = connectivityType;
+            return this;
+        }
+
+        /**
          * Filter resources by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
          *
          */
@@ -470,6 +502,7 @@ public class ListDigitalTwinInstancesRequest
             opcRequestId(o.getOpcRequestId());
             digitalTwinModelId(o.getDigitalTwinModelId());
             digitalTwinModelSpecUri(o.getDigitalTwinModelSpecUri());
+            connectivityType(o.getConnectivityType());
             id(o.getId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -513,9 +546,10 @@ public class ListDigitalTwinInstancesRequest
             request.opcRequestId = opcRequestId;
             request.digitalTwinModelId = digitalTwinModelId;
             request.digitalTwinModelSpecUri = digitalTwinModelSpecUri;
+            request.connectivityType = connectivityType;
             request.id = id;
             return request;
-            // new ListDigitalTwinInstancesRequest(iotDomainId, displayName, limit, page, lifecycleState, sortOrder, sortBy, opcRequestId, digitalTwinModelId, digitalTwinModelSpecUri, id);
+            // new ListDigitalTwinInstancesRequest(iotDomainId, displayName, limit, page, lifecycleState, sortOrder, sortBy, opcRequestId, digitalTwinModelId, digitalTwinModelSpecUri, connectivityType, id);
         }
     }
 
@@ -535,6 +569,7 @@ public class ListDigitalTwinInstancesRequest
                 .opcRequestId(opcRequestId)
                 .digitalTwinModelId(digitalTwinModelId)
                 .digitalTwinModelSpecUri(digitalTwinModelSpecUri)
+                .connectivityType(connectivityType)
                 .id(id);
     }
 
@@ -561,6 +596,7 @@ public class ListDigitalTwinInstancesRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",digitalTwinModelId=").append(String.valueOf(this.digitalTwinModelId));
         sb.append(",digitalTwinModelSpecUri=").append(String.valueOf(this.digitalTwinModelSpecUri));
+        sb.append(",connectivityType=").append(String.valueOf(this.connectivityType));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(")");
         return sb.toString();
@@ -588,6 +624,7 @@ public class ListDigitalTwinInstancesRequest
                 && java.util.Objects.equals(this.digitalTwinModelId, other.digitalTwinModelId)
                 && java.util.Objects.equals(
                         this.digitalTwinModelSpecUri, other.digitalTwinModelSpecUri)
+                && java.util.Objects.equals(this.connectivityType, other.connectivityType)
                 && java.util.Objects.equals(this.id, other.id);
     }
 
@@ -615,6 +652,9 @@ public class ListDigitalTwinInstancesRequest
                         + (this.digitalTwinModelSpecUri == null
                                 ? 43
                                 : this.digitalTwinModelSpecUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectivityType == null ? 43 : this.connectivityType.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         return result;
     }

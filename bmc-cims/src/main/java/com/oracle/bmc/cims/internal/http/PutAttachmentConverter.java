@@ -67,10 +67,6 @@ public class PutAttachmentConverter {
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
-        if (request.getCsi() != null) {
-            ib.header("csi", request.getCsi());
-        }
-
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
         }

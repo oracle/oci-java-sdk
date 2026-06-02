@@ -27,6 +27,10 @@ package com.oracle.bmc.osmanagementhub.model;
         name = "WINDOWS_STANDALONE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UbuntuStandaloneProfile.class,
+        name = "UBUNTU_STANDALONE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = LifecycleProfile.class,
         name = "LIFECYCLE"
     ),

@@ -39,6 +39,8 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         "remainingOcpus",
         "totalMemoryInGBs",
         "remainingMemoryInGBs",
+        "totalLocalVolumeInGBs",
+        "remainingLocalVolumeInGBs",
         "capacityBins",
         "computeBareMetalHostId"
     })
@@ -60,6 +62,8 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
             Float remainingOcpus,
             Float totalMemoryInGBs,
             Float remainingMemoryInGBs,
+            Float totalLocalVolumeInGBs,
+            Float remainingLocalVolumeInGBs,
             java.util.List<CapacityBin> capacityBins,
             String computeBareMetalHostId) {
         super();
@@ -80,6 +84,8 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         this.remainingOcpus = remainingOcpus;
         this.totalMemoryInGBs = totalMemoryInGBs;
         this.remainingMemoryInGBs = remainingMemoryInGBs;
+        this.totalLocalVolumeInGBs = totalLocalVolumeInGBs;
+        this.remainingLocalVolumeInGBs = remainingLocalVolumeInGBs;
         this.capacityBins = capacityBins;
         this.computeBareMetalHostId = computeBareMetalHostId;
     }
@@ -424,14 +430,50 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * A list of total and remaining CPU and memory per capacity bucket.
+         * The total local volume of the dedicated VM host, in GBs.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalLocalVolumeInGBs")
+        private Float totalLocalVolumeInGBs;
+
+        /**
+         * The total local volume of the dedicated VM host, in GBs.
+         *
+         * @param totalLocalVolumeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder totalLocalVolumeInGBs(Float totalLocalVolumeInGBs) {
+            this.totalLocalVolumeInGBs = totalLocalVolumeInGBs;
+            this.__explicitlySet__.add("totalLocalVolumeInGBs");
+            return this;
+        }
+        /**
+         * The remaining local volume of the dedicated VM host, in GBs.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("remainingLocalVolumeInGBs")
+        private Float remainingLocalVolumeInGBs;
+
+        /**
+         * The remaining local volume of the dedicated VM host, in GBs.
+         *
+         * @param remainingLocalVolumeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder remainingLocalVolumeInGBs(Float remainingLocalVolumeInGBs) {
+            this.remainingLocalVolumeInGBs = remainingLocalVolumeInGBs;
+            this.__explicitlySet__.add("remainingLocalVolumeInGBs");
+            return this;
+        }
+        /**
+         * A list of total and remaining CPU, memory, and local volume per capacity bucket.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityBins")
         private java.util.List<CapacityBin> capacityBins;
 
         /**
-         * A list of total and remaining CPU and memory per capacity bucket.
+         * A list of total and remaining CPU, memory, and local volume per capacity bucket.
          *
          * @param capacityBins the value to set
          * @return this builder
@@ -483,6 +525,8 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
                             this.remainingOcpus,
                             this.totalMemoryInGBs,
                             this.remainingMemoryInGBs,
+                            this.totalLocalVolumeInGBs,
+                            this.remainingLocalVolumeInGBs,
                             this.capacityBins,
                             this.computeBareMetalHostId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -543,6 +587,12 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("remainingMemoryInGBs")) {
                 this.remainingMemoryInGBs(model.getRemainingMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("totalLocalVolumeInGBs")) {
+                this.totalLocalVolumeInGBs(model.getTotalLocalVolumeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("remainingLocalVolumeInGBs")) {
+                this.remainingLocalVolumeInGBs(model.getRemainingLocalVolumeInGBs());
             }
             if (model.wasPropertyExplicitlySet("capacityBins")) {
                 this.capacityBins(model.getCapacityBins());
@@ -920,14 +970,46 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * A list of total and remaining CPU and memory per capacity bucket.
+     * The total local volume of the dedicated VM host, in GBs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalLocalVolumeInGBs")
+    private final Float totalLocalVolumeInGBs;
+
+    /**
+     * The total local volume of the dedicated VM host, in GBs.
+     *
+     * @return the value
+     **/
+    public Float getTotalLocalVolumeInGBs() {
+        return totalLocalVolumeInGBs;
+    }
+
+    /**
+     * The remaining local volume of the dedicated VM host, in GBs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("remainingLocalVolumeInGBs")
+    private final Float remainingLocalVolumeInGBs;
+
+    /**
+     * The remaining local volume of the dedicated VM host, in GBs.
+     *
+     * @return the value
+     **/
+    public Float getRemainingLocalVolumeInGBs() {
+        return remainingLocalVolumeInGBs;
+    }
+
+    /**
+     * A list of total and remaining CPU, memory, and local volume per capacity bucket.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityBins")
     private final java.util.List<CapacityBin> capacityBins;
 
     /**
-     * A list of total and remaining CPU and memory per capacity bucket.
+     * A list of total and remaining CPU, memory, and local volume per capacity bucket.
      *
      * @return the value
      **/
@@ -984,6 +1066,9 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         sb.append(", remainingOcpus=").append(String.valueOf(this.remainingOcpus));
         sb.append(", totalMemoryInGBs=").append(String.valueOf(this.totalMemoryInGBs));
         sb.append(", remainingMemoryInGBs=").append(String.valueOf(this.remainingMemoryInGBs));
+        sb.append(", totalLocalVolumeInGBs=").append(String.valueOf(this.totalLocalVolumeInGBs));
+        sb.append(", remainingLocalVolumeInGBs=")
+                .append(String.valueOf(this.remainingLocalVolumeInGBs));
         sb.append(", capacityBins=").append(String.valueOf(this.capacityBins));
         sb.append(", computeBareMetalHostId=").append(String.valueOf(this.computeBareMetalHostId));
         sb.append(")");
@@ -1019,6 +1104,9 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.remainingOcpus, other.remainingOcpus)
                 && java.util.Objects.equals(this.totalMemoryInGBs, other.totalMemoryInGBs)
                 && java.util.Objects.equals(this.remainingMemoryInGBs, other.remainingMemoryInGBs)
+                && java.util.Objects.equals(this.totalLocalVolumeInGBs, other.totalLocalVolumeInGBs)
+                && java.util.Objects.equals(
+                        this.remainingLocalVolumeInGBs, other.remainingLocalVolumeInGBs)
                 && java.util.Objects.equals(this.capacityBins, other.capacityBins)
                 && java.util.Objects.equals(
                         this.computeBareMetalHostId, other.computeBareMetalHostId)
@@ -1076,6 +1164,16 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
                         + (this.remainingMemoryInGBs == null
                                 ? 43
                                 : this.remainingMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalLocalVolumeInGBs == null
+                                ? 43
+                                : this.totalLocalVolumeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remainingLocalVolumeInGBs == null
+                                ? 43
+                                : this.remainingLocalVolumeInGBs.hashCode());
         result = (result * PRIME) + (this.capacityBins == null ? 43 : this.capacityBins.hashCode());
         result =
                 (result * PRIME)

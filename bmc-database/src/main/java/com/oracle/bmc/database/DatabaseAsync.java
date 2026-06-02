@@ -5432,7 +5432,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
+     * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration. Adding compartmentId does not affect results.
      *
      *
      * @param request The request object containing the details to send

@@ -31,6 +31,8 @@ public final class AutonomousVmClusterSummary
         "lifecycleState",
         "lifecycleDetails",
         "timeZone",
+        "distributionAlgorithm",
+        "sgaPercentage",
         "exadataInfrastructureId",
         "vmClusterNetworkId",
         "isLocalBackupEnabled",
@@ -85,6 +87,8 @@ public final class AutonomousVmClusterSummary
             LifecycleState lifecycleState,
             String lifecycleDetails,
             String timeZone,
+            DistributionAlgorithm distributionAlgorithm,
+            Float sgaPercentage,
             String exadataInfrastructureId,
             String vmClusterNetworkId,
             Boolean isLocalBackupEnabled,
@@ -138,6 +142,8 @@ public final class AutonomousVmClusterSummary
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeZone = timeZone;
+        this.distributionAlgorithm = distributionAlgorithm;
+        this.sgaPercentage = sgaPercentage;
         this.exadataInfrastructureId = exadataInfrastructureId;
         this.vmClusterNetworkId = vmClusterNetworkId;
         this.isLocalBackupEnabled = isLocalBackupEnabled;
@@ -298,6 +304,38 @@ public final class AutonomousVmClusterSummary
         public Builder timeZone(String timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
+            return this;
+        }
+        /**
+         * The distribution algorithm used for the Autonomous VM cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("distributionAlgorithm")
+        private DistributionAlgorithm distributionAlgorithm;
+
+        /**
+         * The distribution algorithm used for the Autonomous VM cluster.
+         * @param distributionAlgorithm the value to set
+         * @return this builder
+         **/
+        public Builder distributionAlgorithm(DistributionAlgorithm distributionAlgorithm) {
+            this.distributionAlgorithm = distributionAlgorithm;
+            this.__explicitlySet__.add("distributionAlgorithm");
+            return this;
+        }
+        /**
+         * Percentage of ECPU memory allocated for SGA(System Global Area).
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sgaPercentage")
+        private Float sgaPercentage;
+
+        /**
+         * Percentage of ECPU memory allocated for SGA(System Global Area).
+         * @param sgaPercentage the value to set
+         * @return this builder
+         **/
+        public Builder sgaPercentage(Float sgaPercentage) {
+            this.sgaPercentage = sgaPercentage;
+            this.__explicitlySet__.add("sgaPercentage");
             return this;
         }
         /**
@@ -1071,6 +1109,8 @@ public final class AutonomousVmClusterSummary
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeZone,
+                            this.distributionAlgorithm,
+                            this.sgaPercentage,
                             this.exadataInfrastructureId,
                             this.vmClusterNetworkId,
                             this.isLocalBackupEnabled,
@@ -1144,6 +1184,12 @@ public final class AutonomousVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("timeZone")) {
                 this.timeZone(model.getTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("distributionAlgorithm")) {
+                this.distributionAlgorithm(model.getDistributionAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("sgaPercentage")) {
+                this.sgaPercentage(model.getSgaPercentage());
             }
             if (model.wasPropertyExplicitlySet("exadataInfrastructureId")) {
                 this.exadataInfrastructureId(model.getExadataInfrastructureId());
@@ -1450,6 +1496,82 @@ public final class AutonomousVmClusterSummary
      **/
     public String getTimeZone() {
         return timeZone;
+    }
+
+    /**
+     * The distribution algorithm used for the Autonomous VM cluster.
+     **/
+    public enum DistributionAlgorithm {
+        ResourceOptimized("RESOURCE_OPTIMIZED"),
+        DistributionOptimized("DISTRIBUTION_OPTIMIZED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DistributionAlgorithm.class);
+
+        private final String value;
+        private static java.util.Map<String, DistributionAlgorithm> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DistributionAlgorithm v : DistributionAlgorithm.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DistributionAlgorithm(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DistributionAlgorithm create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DistributionAlgorithm', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The distribution algorithm used for the Autonomous VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("distributionAlgorithm")
+    private final DistributionAlgorithm distributionAlgorithm;
+
+    /**
+     * The distribution algorithm used for the Autonomous VM cluster.
+     * @return the value
+     **/
+    public DistributionAlgorithm getDistributionAlgorithm() {
+        return distributionAlgorithm;
+    }
+
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sgaPercentage")
+    private final Float sgaPercentage;
+
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * @return the value
+     **/
+    public Float getSgaPercentage() {
+        return sgaPercentage;
     }
 
     /**
@@ -2228,6 +2350,8 @@ public final class AutonomousVmClusterSummary
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeZone=").append(String.valueOf(this.timeZone));
+        sb.append(", distributionAlgorithm=").append(String.valueOf(this.distributionAlgorithm));
+        sb.append(", sgaPercentage=").append(String.valueOf(this.sgaPercentage));
         sb.append(", exadataInfrastructureId=")
                 .append(String.valueOf(this.exadataInfrastructureId));
         sb.append(", vmClusterNetworkId=").append(String.valueOf(this.vmClusterNetworkId));
@@ -2311,6 +2435,8 @@ public final class AutonomousVmClusterSummary
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeZone, other.timeZone)
+                && java.util.Objects.equals(this.distributionAlgorithm, other.distributionAlgorithm)
+                && java.util.Objects.equals(this.sgaPercentage, other.sgaPercentage)
                 && java.util.Objects.equals(
                         this.exadataInfrastructureId, other.exadataInfrastructureId)
                 && java.util.Objects.equals(this.vmClusterNetworkId, other.vmClusterNetworkId)
@@ -2401,6 +2527,14 @@ public final class AutonomousVmClusterSummary
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.distributionAlgorithm == null
+                                ? 43
+                                : this.distributionAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sgaPercentage == null ? 43 : this.sgaPercentage.hashCode());
         result =
                 (result * PRIME)
                         + (this.exadataInfrastructureId == null

@@ -19,6 +19,54 @@ package com.oracle.bmc.cloudmigrations.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class Storage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public Storage(
+            String id,
+            String address,
+            String comment,
+            String storageDescription,
+            java.util.List<OlvmProperty> driverOptions,
+            java.util.List<OlvmProperty> driverSensitiveOptions,
+            java.util.List<LogicalUnit> logicalUnits,
+            String mountOptions,
+            Integer nfsRetrans,
+            Integer nfsTimeo,
+            NfsVersion nfsVersion,
+            Boolean isOverrideLuns,
+            String password,
+            Integer paths,
+            Integer port,
+            String portal,
+            String target,
+            String username,
+            Type type,
+            String vfsType,
+            VolumeGroup volumeGroup) {
+        super();
+        this.id = id;
+        this.address = address;
+        this.comment = comment;
+        this.storageDescription = storageDescription;
+        this.driverOptions = driverOptions;
+        this.driverSensitiveOptions = driverSensitiveOptions;
+        this.logicalUnits = logicalUnits;
+        this.mountOptions = mountOptions;
+        this.nfsRetrans = nfsRetrans;
+        this.nfsTimeo = nfsTimeo;
+        this.nfsVersion = nfsVersion;
+        this.isOverrideLuns = isOverrideLuns;
+        this.password = password != null ? password.toCharArray() : null;
+        this.paths = paths;
+        this.port = port;
+        this.portal = portal;
+        this.target = target;
+        this.username = username;
+        this.type = type;
+        this.vfsType = vfsType;
+        this.volumeGroup = volumeGroup;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "id",
         "address",
@@ -55,7 +103,7 @@ public final class Storage extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             Integer nfsTimeo,
             NfsVersion nfsVersion,
             Boolean isOverrideLuns,
-            String password,
+            char[] password,
             Integer paths,
             Integer port,
             String portal,
@@ -286,18 +334,25 @@ public final class Storage extends com.oracle.bmc.http.internal.ExplicitlySetBmc
          * Password of the host storage.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * Password of the host storage.
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * Paths of the host storage.
          **/
@@ -744,13 +799,25 @@ public final class Storage extends com.oracle.bmc.http.internal.ExplicitlySetBmc
      * Password of the host storage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * Password of the host storage.
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * Password of the host storage.
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

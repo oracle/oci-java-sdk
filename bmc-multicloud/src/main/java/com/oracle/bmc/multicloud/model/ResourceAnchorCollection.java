@@ -5,7 +5,7 @@
 package com.oracle.bmc.multicloud.model;
 
 /**
- * Results of a resourceAnchor search. Contains both ResourceAnchorSummary items and other information, such as metadata.
+ * List of resource anchors in the indicated Multicloud subscription.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class ResourceAnchorCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of resourceAnchors.
+         * List of resource anchors.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourceAnchorSummary> items;
 
         /**
-         * List of resourceAnchors.
+         * List of resource anchors.
          * @param items the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class ResourceAnchorCollection
     }
 
     /**
-     * List of resourceAnchors.
+     * List of resource anchors.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourceAnchorSummary> items;
 
     /**
-     * List of resourceAnchors.
+     * List of resource anchors.
      * @return the value
      **/
     public java.util.List<ResourceAnchorSummary> getItems() {

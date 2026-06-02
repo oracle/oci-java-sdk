@@ -64,6 +64,14 @@ public class ListIncidentsConverter {
                                     request.getSortOrder().getValue()));
         }
 
+        if (request.getTimeUpdatedGreaterThanOrEqualTo() != null) {
+            target =
+                    target.queryParam(
+                            "timeUpdatedGreaterThanOrEqualTo",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeUpdatedGreaterThanOrEqualTo()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(
@@ -91,10 +99,6 @@ public class ListIncidentsConverter {
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
-
-        if (request.getCsi() != null) {
-            ib.header("csi", request.getCsi());
-        }
 
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());

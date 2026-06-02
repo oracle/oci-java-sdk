@@ -26,6 +26,23 @@ public class CreateStreamResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    /**
      * For optimistic concurrency control. See {@code if-match}.
      */
     private String etag;
@@ -55,6 +72,7 @@ public class CreateStreamResponse extends com.oracle.bmc.responses.BmcResponse {
         "__httpStatusCode__",
         "headers",
         "opcRequestId",
+        "opcWorkRequestId",
         "etag",
         "stream"
     })
@@ -62,10 +80,12 @@ public class CreateStreamResponse extends com.oracle.bmc.responses.BmcResponse {
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
+            String opcWorkRequestId,
             String etag,
             com.oracle.bmc.streaming.model.Stream stream) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
         this.etag = etag;
         this.stream = stream;
     }
@@ -101,6 +121,25 @@ public class CreateStreamResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
+         *
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -142,6 +181,7 @@ public class CreateStreamResponse extends com.oracle.bmc.responses.BmcResponse {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             etag(o.getEtag());
             stream(o.getStream());
 
@@ -154,7 +194,7 @@ public class CreateStreamResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public CreateStreamResponse build() {
             return new CreateStreamResponse(
-                    __httpStatusCode__, headers, opcRequestId, etag, stream);
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId, etag, stream);
         }
     }
 
@@ -172,6 +212,7 @@ public class CreateStreamResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",stream=").append(String.valueOf(stream));
         sb.append(")");
@@ -190,6 +231,7 @@ public class CreateStreamResponse extends com.oracle.bmc.responses.BmcResponse {
         CreateStreamResponse other = (CreateStreamResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.stream, other.stream);
     }
@@ -199,6 +241,9 @@ public class CreateStreamResponse extends com.oracle.bmc.responses.BmcResponse {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.stream == null ? 43 : this.stream.hashCode());
         return result;

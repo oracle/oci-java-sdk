@@ -407,6 +407,7 @@ public final class ServiceAttachment extends com.oracle.bmc.http.internal.Explic
         DigitalAssistant("DIGITAL_ASSISTANT"),
         IntegrationCloud("INTEGRATION_CLOUD"),
         AnalyticsWarehouse("ANALYTICS_WAREHOUSE"),
+        FusionDataIntelligence("FUSION_DATA_INTELLIGENCE"),
         Vbcs("VBCS"),
         VisualBuilderStudio("VISUAL_BUILDER_STUDIO"),
 

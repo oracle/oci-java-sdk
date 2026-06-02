@@ -93,18 +93,25 @@ public final class CreateMSTeamsChannelDetails extends CreateChannelDetails {
          * The client secret that you obtained from your bot registration.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("msaAppPassword")
-        private String msaAppPassword;
+        private char[] msaAppPassword;
 
         /**
          * The client secret that you obtained from your bot registration.
          * @param msaAppPassword the value to set
          * @return this builder
          **/
-        public Builder msaAppPassword(String msaAppPassword) {
+        public Builder msaAppPassword(char[] msaAppPassword) {
             this.msaAppPassword = msaAppPassword;
             this.__explicitlySet__.add("msaAppPassword");
             return this;
         }
+
+        public Builder msaAppPassword(String msaAppPassword) {
+            this.msaAppPassword = msaAppPassword != null ? msaAppPassword.toCharArray() : null;
+            this.__explicitlySet__.add("msaAppPassword");
+            return this;
+        }
+
         /**
          * The ID of the Skill or Digital Assistant that the Channel is routed to.
          **/
@@ -196,6 +203,23 @@ public final class CreateMSTeamsChannelDetails extends CreateChannelDetails {
             String botId) {
         super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
         this.msaAppId = msaAppId;
+        this.msaAppPassword = msaAppPassword != null ? msaAppPassword.toCharArray() : null;
+        this.botId = botId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateMSTeamsChannelDetails(
+            String name,
+            String description,
+            Long sessionExpiryDurationInMilliseconds,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String msaAppId,
+            char[] msaAppPassword,
+            String botId) {
+        super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
+        this.msaAppId = msaAppId;
         this.msaAppPassword = msaAppPassword;
         this.botId = botId;
     }
@@ -218,13 +242,25 @@ public final class CreateMSTeamsChannelDetails extends CreateChannelDetails {
      * The client secret that you obtained from your bot registration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("msaAppPassword")
-    private final String msaAppPassword;
+    private final char[] msaAppPassword;
+
+    /**
+     * The client secret that you obtained from your bot registration.
+     * return the value
+     * @Deprecated - Use getMsaAppPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getMsaAppPassword() {
+        return msaAppPassword != null ? new String(msaAppPassword) : null;
+    }
 
     /**
      * The client secret that you obtained from your bot registration.
      * @return the value
      **/
-    public String getMsaAppPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("msaAppPassword")
+    public char[] getMsaAppPassword__AsCharArray() {
         return msaAppPassword;
     }
 

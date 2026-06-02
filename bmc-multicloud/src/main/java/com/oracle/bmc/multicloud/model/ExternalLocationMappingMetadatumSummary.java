@@ -5,9 +5,7 @@
 package com.oracle.bmc.multicloud.model;
 
 /**
- * Flat Map of CSP Region -> CSP-Physical-AZ -> OCI Site Group
- * All fields in this object has immutable mappings. Please don't add any field that case change
- * for any customer as this is only for Oracle Cloud Infrastructure internal service use.
+ * Flat Map of CSP Region -> CSP-Physical-AZ -> OCI Site Group.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

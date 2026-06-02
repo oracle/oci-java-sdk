@@ -484,7 +484,10 @@ public class GetEnrichmentJobAsyncClient implements GetEnrichmentJobAsync {
                 GetEnrichmentJobConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "GetEnrichmentJob", "GetEnrichmentJob", ib.getRequestUri().toString(), "");
+                        "GetEnrichmentJob",
+                        "GetEnrichmentJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJob/GetEnrichmentJob");
         final java.util.function.Function<javax.ws.rs.core.Response, GetEnrichmentJobResponse>
                 transformer =
                         GetEnrichmentJobConverter.fromResponse(

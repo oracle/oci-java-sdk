@@ -25,6 +25,50 @@ package com.oracle.bmc.database.model;
 public final class CreateDatabaseDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public CreateDatabaseDetails(
+            String dbName,
+            String dbUniqueName,
+            String databaseSoftwareImageId,
+            String pdbName,
+            String adminPassword,
+            String tdeWalletPassword,
+            String characterSet,
+            String ncharacterSet,
+            DbWorkload dbWorkload,
+            DbBackupConfig dbBackupConfig,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String kmsKeyId,
+            String kmsKeyVersionId,
+            String vaultId,
+            String sidPrefix,
+            String keyStoreId,
+            EncryptionKeyLocationDetails encryptionKeyLocationDetails,
+            DatabaseStorageSizeDetails storageSizeDetails) {
+        super();
+        this.dbName = dbName;
+        this.dbUniqueName = dbUniqueName;
+        this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.pdbName = pdbName;
+        this.adminPassword = adminPassword;
+        this.tdeWalletPassword = tdeWalletPassword != null ? tdeWalletPassword.toCharArray() : null;
+        this.characterSet = characterSet;
+        this.ncharacterSet = ncharacterSet;
+        this.dbWorkload = dbWorkload;
+        this.dbBackupConfig = dbBackupConfig;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.kmsKeyId = kmsKeyId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
+        this.vaultId = vaultId;
+        this.sidPrefix = sidPrefix;
+        this.keyStoreId = keyStoreId;
+        this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+        this.storageSizeDetails = storageSizeDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "dbName",
         "dbUniqueName",
@@ -52,7 +96,7 @@ public final class CreateDatabaseDetails
             String databaseSoftwareImageId,
             String pdbName,
             String adminPassword,
-            String tdeWalletPassword,
+            char[] tdeWalletPassword,
             String characterSet,
             String ncharacterSet,
             DbWorkload dbWorkload,
@@ -174,18 +218,26 @@ public final class CreateDatabaseDetails
          * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
-        private String tdeWalletPassword;
+        private char[] tdeWalletPassword;
 
         /**
          * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
          * @param tdeWalletPassword the value to set
          * @return this builder
          **/
-        public Builder tdeWalletPassword(String tdeWalletPassword) {
+        public Builder tdeWalletPassword(char[] tdeWalletPassword) {
             this.tdeWalletPassword = tdeWalletPassword;
             this.__explicitlySet__.add("tdeWalletPassword");
             return this;
         }
+
+        public Builder tdeWalletPassword(String tdeWalletPassword) {
+            this.tdeWalletPassword =
+                    tdeWalletPassword != null ? tdeWalletPassword.toCharArray() : null;
+            this.__explicitlySet__.add("tdeWalletPassword");
+            return this;
+        }
+
         /**
          * The character set for the database.  The default is AL32UTF8. Allowed values are:
          * <p>
@@ -589,13 +641,25 @@ public final class CreateDatabaseDetails
      * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
-    private final String tdeWalletPassword;
+    private final char[] tdeWalletPassword;
+
+    /**
+     * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+     * return the value
+     * @Deprecated - Use getTdeWalletPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTdeWalletPassword() {
+        return tdeWalletPassword != null ? new String(tdeWalletPassword) : null;
+    }
 
     /**
      * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
      * @return the value
      **/
-    public String getTdeWalletPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
+    public char[] getTdeWalletPassword__AsCharArray() {
         return tdeWalletPassword;
     }
 

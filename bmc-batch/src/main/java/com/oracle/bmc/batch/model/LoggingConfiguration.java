@@ -5,7 +5,7 @@
 package com.oracle.bmc.batch.model;
 
 /**
- * Logging configuration for batch context.
+ * Logging configuration of the batch context.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -75,7 +75,7 @@ public class LoggingConfiguration extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Discriminator for sub-entities.
+     * Type of the logging configuration. Discriminator for sub-entities.
      **/
     public enum Type {
         OciLogging("OCI_LOGGING"),

@@ -260,7 +260,7 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
@@ -269,11 +269,18 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
          * Note: When provided, 'password' field must not be provided.
@@ -369,38 +376,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
             this.__explicitlySet__.add("shouldValidateServerCertificate");
             return this;
         }
-        /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-         * field, or make sure the host name is resolvable in the target VCN.
-         * <p>
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-         * In case the privateIp is provided, the subnetId must also be provided.
-         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-        private String privateIp;
-
-        /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-         * field, or make sure the host name is resolvable in the target VCN.
-         * <p>
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-         * In case the privateIp is provided, the subnetId must also be provided.
-         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-         *
-         * @param privateIp the value to set
-         * @return this builder
-         **/
-        public Builder privateIp(String privateIp) {
-            this.privateIp = privateIp;
-            this.__explicitlySet__.add("privateIp");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -433,8 +408,7 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
                             this.additionalAttributes,
                             this.securityProtocol,
                             this.sslCa,
-                            this.shouldValidateServerCertificate,
-                            this.privateIp);
+                            this.shouldValidateServerCertificate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -521,9 +495,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
             if (model.wasPropertyExplicitlySet("shouldValidateServerCertificate")) {
                 this.shouldValidateServerCertificate(model.getShouldValidateServerCertificate());
             }
-            if (model.wasPropertyExplicitlySet("privateIp")) {
-                this.privateIp(model.getPrivateIp());
-            }
             return this;
         }
     }
@@ -566,8 +537,65 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
             java.util.List<NameValuePair> additionalAttributes,
             MicrosoftSqlserverConnection.SecurityProtocol securityProtocol,
             String sslCa,
-            Boolean shouldValidateServerCertificate,
-            String privateIp) {
+            Boolean shouldValidateServerCertificate) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                locks,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
+        this.technologyType = technologyType;
+        this.databaseName = databaseName;
+        this.host = host;
+        this.port = port;
+        this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.additionalAttributes = additionalAttributes;
+        this.securityProtocol = securityProtocol;
+        this.sslCa = sslCa;
+        this.shouldValidateServerCertificate = shouldValidateServerCertificate;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateMicrosoftSqlserverConnectionDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            MicrosoftSqlserverConnection.TechnologyType technologyType,
+            String databaseName,
+            String host,
+            Integer port,
+            String username,
+            char[] password,
+            String passwordSecretId,
+            java.util.List<NameValuePair> additionalAttributes,
+            MicrosoftSqlserverConnection.SecurityProtocol securityProtocol,
+            String sslCa,
+            Boolean shouldValidateServerCertificate) {
         super(
                 displayName,
                 description,
@@ -595,7 +623,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
         this.securityProtocol = securityProtocol;
         this.sslCa = sslCa;
         this.shouldValidateServerCertificate = shouldValidateServerCertificate;
-        this.privateIp = privateIp;
     }
 
     /**
@@ -684,7 +711,20 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
@@ -692,7 +732,8 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
      *
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -780,36 +821,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
         return shouldValidateServerCertificate;
     }
 
-    /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-     * field, or make sure the host name is resolvable in the target VCN.
-     * <p>
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-     * In case the privateIp is provided, the subnetId must also be provided.
-     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-    private final String privateIp;
-
-    /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-     * field, or make sure the host name is resolvable in the target VCN.
-     * <p>
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-     * In case the privateIp is provided, the subnetId must also be provided.
-     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-     *
-     * @return the value
-     **/
-    public String getPrivateIp() {
-        return privateIp;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -836,7 +847,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
         sb.append(", sslCa=").append(String.valueOf(this.sslCa));
         sb.append(", shouldValidateServerCertificate=")
                 .append(String.valueOf(this.shouldValidateServerCertificate));
-        sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(")");
         return sb.toString();
     }
@@ -864,7 +874,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
                 && java.util.Objects.equals(this.sslCa, other.sslCa)
                 && java.util.Objects.equals(
                         this.shouldValidateServerCertificate, other.shouldValidateServerCertificate)
-                && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && super.equals(other);
     }
 
@@ -897,7 +906,6 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
                         + (this.shouldValidateServerCertificate == null
                                 ? 43
                                 : this.shouldValidateServerCertificate.hashCode());
-        result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         return result;
     }
 }

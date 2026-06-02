@@ -52,12 +52,28 @@ public class SummarizeManagedInstanceAnalyticsConverter {
                                     request.getCompartmentId()));
         }
 
+        if (request.getCompartmentIdInSubtree() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentIdInSubtree",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentIdInSubtree()));
+        }
+
         if (request.getManagedInstanceGroupId() != null) {
             target =
                     target.queryParam(
                             "managedInstanceGroupId",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getManagedInstanceGroupId()));
+        }
+
+        if (request.getDynamicSetId() != null) {
+            target =
+                    target.queryParam(
+                            "dynamicSetId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDynamicSetId()));
         }
 
         if (request.getLifecycleEnvironmentId() != null) {

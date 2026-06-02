@@ -34,8 +34,14 @@ public class ChangeRuleCompartmentConverter {
                 request.getChangeRuleCompartmentDetails(),
                 "changeRuleCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ruleId", request.getRuleId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20181201")
                         .path("rules")
                         .path(

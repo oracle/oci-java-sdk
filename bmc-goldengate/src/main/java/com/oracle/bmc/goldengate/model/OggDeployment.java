@@ -28,6 +28,7 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
         "credentialStore",
         "identityDomainId",
         "passwordSecretId",
+        "keySecretId",
         "groupToRolesMapping"
     })
     public OggDeployment(
@@ -38,6 +39,7 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
             CredentialStore credentialStore,
             String identityDomainId,
             String passwordSecretId,
+            String keySecretId,
             GroupToRolesMappingDetails groupToRolesMapping) {
         super();
         this.deploymentName = deploymentName;
@@ -47,6 +49,7 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
         this.credentialStore = credentialStore;
         this.identityDomainId = identityDomainId;
         this.passwordSecretId = passwordSecretId;
+        this.keySecretId = keySecretId;
         this.groupToRolesMapping = groupToRolesMapping;
     }
 
@@ -180,6 +183,24 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("keySecretId")
+        private String keySecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+         *
+         * @param keySecretId the value to set
+         * @return this builder
+         **/
+        public Builder keySecretId(String keySecretId) {
+            this.keySecretId = keySecretId;
+            this.__explicitlySet__.add("keySecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("groupToRolesMapping")
         private GroupToRolesMappingDetails groupToRolesMapping;
@@ -203,6 +224,7 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
                             this.credentialStore,
                             this.identityDomainId,
                             this.passwordSecretId,
+                            this.keySecretId,
                             this.groupToRolesMapping);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -232,6 +254,9 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("passwordSecretId")) {
                 this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("keySecretId")) {
+                this.keySecretId(model.getKeySecretId());
             }
             if (model.wasPropertyExplicitlySet("groupToRolesMapping")) {
                 this.groupToRolesMapping(model.getGroupToRolesMapping());
@@ -365,6 +390,22 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
         return passwordSecretId;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keySecretId")
+    private final String keySecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+     *
+     * @return the value
+     **/
+    public String getKeySecretId() {
+        return keySecretId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("groupToRolesMapping")
     private final GroupToRolesMappingDetails groupToRolesMapping;
 
@@ -393,6 +434,7 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", credentialStore=").append(String.valueOf(this.credentialStore));
         sb.append(", identityDomainId=").append(String.valueOf(this.identityDomainId));
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", keySecretId=").append(String.valueOf(this.keySecretId));
         sb.append(", groupToRolesMapping=").append(String.valueOf(this.groupToRolesMapping));
         sb.append(")");
         return sb.toString();
@@ -415,6 +457,7 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.credentialStore, other.credentialStore)
                 && java.util.Objects.equals(this.identityDomainId, other.identityDomainId)
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(this.keySecretId, other.keySecretId)
                 && java.util.Objects.equals(this.groupToRolesMapping, other.groupToRolesMapping)
                 && super.equals(other);
     }
@@ -440,6 +483,7 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result = (result * PRIME) + (this.keySecretId == null ? 43 : this.keySecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.groupToRolesMapping == null

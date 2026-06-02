@@ -21,7 +21,8 @@ public class GenerativeAiInferenceClient implements GenerativeAiInference {
                     .serviceName(GenerativeAiInferenceClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://inference.generativeai.{region}.oci.{secondLevelDomain}")
+                            "https://inference.generativeai.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .endpointServiceName("inference.generativeai")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
@@ -33,6 +34,7 @@ public class GenerativeAiInferenceClient implements GenerativeAiInference {
         return client;
     }
 
+    private final GenerativeAiInferencePaginators paginators;
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -49,6 +51,7 @@ public class GenerativeAiInferenceClient implements GenerativeAiInference {
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
     private String regionId;
+    private final java.util.Map<String, Boolean> optionsMap = new java.util.HashMap<>();
 
     // This pattern matches substrings that are enclosed within curly braces {}
     private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
@@ -303,6 +306,8 @@ public class GenerativeAiInferenceClient implements GenerativeAiInference {
 
         this.refreshClient();
 
+        this.paginators = new GenerativeAiInferencePaginators(this);
+
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
                     (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
@@ -318,6 +323,9 @@ public class GenerativeAiInferenceClient implements GenerativeAiInference {
                 }
             }
         }
+        enableDualStackEndpoints(
+                com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils
+                        .isDualStackEnabledForClientDefault(SERVICE));
         if (endpoint != null) {
             setEndpoint(endpoint);
         }
@@ -476,6 +484,14 @@ public class GenerativeAiInferenceClient implements GenerativeAiInference {
                 com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
                         .getRealmSpecificEndpointTemplate(
                                 useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public synchronized void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled) {
+        optionsMap.put(
+                com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils.DUAL_STACK_OPTION,
+                dualStackEndpointTemplateEnabled);
+        client.setOptionsMap(optionsMap);
     }
 
     @Override
@@ -644,6 +660,44 @@ public class GenerativeAiInferenceClient implements GenerativeAiInference {
     }
 
     @Override
+    public ListGuardrailVersionsResponse listGuardrailVersions(
+            ListGuardrailVersionsRequest request) {
+        LOG.trace("Called listGuardrailVersions");
+        final ListGuardrailVersionsRequest interceptedRequest =
+                ListGuardrailVersionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListGuardrailVersionsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAiInference",
+                        "ListGuardrailVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/GuardrailVersionCollection/ListGuardrailVersions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListGuardrailVersionsResponse>
+                transformer =
+                        ListGuardrailVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RerankTextResponse rerankText(RerankTextRequest request) {
         LOG.trace("Called rerankText");
         final RerankTextRequest interceptedRequest = RerankTextConverter.interceptRequest(request);
@@ -720,5 +774,10 @@ public class GenerativeAiInferenceClient implements GenerativeAiInference {
                                 return transformer.apply(response);
                             });
                 });
+    }
+
+    @Override
+    public GenerativeAiInferencePaginators getPaginators() {
+        return paginators;
     }
 }

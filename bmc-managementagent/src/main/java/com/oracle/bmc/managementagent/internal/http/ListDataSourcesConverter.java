@@ -31,8 +31,14 @@ public class ListDataSourcesConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20200202")
                         .path("managementAgents")
                         .path(

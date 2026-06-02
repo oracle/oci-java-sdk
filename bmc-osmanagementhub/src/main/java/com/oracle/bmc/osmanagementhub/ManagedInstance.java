@@ -256,6 +256,19 @@ public interface ManagedInstance extends AutoCloseable {
             InstallPackagesOnManagedInstanceRequest request);
 
     /**
+     * Installs specified snaps on a managed instance.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/InstallSnapsOnManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallSnapsOnManagedInstance API.
+     */
+    InstallSnapsOnManagedInstanceResponse installSnapsOnManagedInstance(
+            InstallSnapsOnManagedInstanceRequest request);
+
+    /**
      * Installs Windows updates on the specified managed instance.
      *
      * @param request The request object containing the details to send
@@ -366,6 +379,20 @@ public interface ManagedInstance extends AutoCloseable {
      */
     ListManagedInstanceModulesResponse listManagedInstanceModules(
             ListManagedInstanceModulesRequest request);
+
+    /**
+     * Retrieves a list of snaps for a managed instance. Filters may be applied to select a subset of snaps based on the filter criteria.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceSnapsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceSnaps API.
+     */
+    ListManagedInstanceSnapsResponse listManagedInstanceSnaps(
+            ListManagedInstanceSnapsRequest request);
 
     /**
      * Returns a list of updatable packages for a managed instance.
@@ -483,6 +510,19 @@ public interface ManagedInstance extends AutoCloseable {
             RemovePackagesFromManagedInstanceRequest request);
 
     /**
+     * Removes specified snaps from a managed instance.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RemoveSnapsFromManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveSnapsFromManagedInstance API.
+     */
+    RemoveSnapsFromManagedInstanceResponse removeSnapsFromManagedInstance(
+            RemoveSnapsFromManagedInstanceRequest request);
+
+    /**
      * Enables a new stream for a module that already has a stream enabled.
      * If any profiles or packages from the original module are installed,
      * switching to a new stream will remove the existing packages and
@@ -498,6 +538,19 @@ public interface ManagedInstance extends AutoCloseable {
      */
     SwitchModuleStreamOnManagedInstanceResponse switchModuleStreamOnManagedInstance(
             SwitchModuleStreamOnManagedInstanceRequest request);
+
+    /**
+     * Switches the snap channel on a managed instance.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SwitchSnapChannelOnManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchSnapChannelOnManagedInstance API.
+     */
+    SwitchSnapChannelOnManagedInstanceResponse switchSnapChannelOnManagedInstance(
+            SwitchSnapChannelOnManagedInstanceRequest request);
 
     /**
      * Install all of the available package updates for all of the managed instances in a compartment. This applies only to standalone non-Windows instances. This will not update instances that belong to a group or lifecycle environment.

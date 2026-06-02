@@ -28,6 +28,7 @@ public final class SoftwarePackageSummary
         "type",
         "version",
         "architecture",
+        "lastModifiedDate",
         "checksum",
         "checksumType",
         "isLatest",
@@ -40,6 +41,7 @@ public final class SoftwarePackageSummary
             String type,
             String version,
             SoftwarePackageArchitecture architecture,
+            String lastModifiedDate,
             String checksum,
             String checksumType,
             Boolean isLatest,
@@ -51,6 +53,7 @@ public final class SoftwarePackageSummary
         this.type = type;
         this.version = version;
         this.architecture = architecture;
+        this.lastModifiedDate = lastModifiedDate;
         this.checksum = checksum;
         this.checksumType = checksumType;
         this.isLatest = isLatest;
@@ -138,6 +141,22 @@ public final class SoftwarePackageSummary
         public Builder architecture(SoftwarePackageArchitecture architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
+            return this;
+        }
+        /**
+         * The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedDate")
+        private String lastModifiedDate;
+
+        /**
+         * The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * @param lastModifiedDate the value to set
+         * @return this builder
+         **/
+        public Builder lastModifiedDate(String lastModifiedDate) {
+            this.lastModifiedDate = lastModifiedDate;
+            this.__explicitlySet__.add("lastModifiedDate");
             return this;
         }
         /**
@@ -232,6 +251,7 @@ public final class SoftwarePackageSummary
                             this.type,
                             this.version,
                             this.architecture,
+                            this.lastModifiedDate,
                             this.checksum,
                             this.checksumType,
                             this.isLatest,
@@ -259,6 +279,9 @@ public final class SoftwarePackageSummary
             }
             if (model.wasPropertyExplicitlySet("architecture")) {
                 this.architecture(model.getArchitecture());
+            }
+            if (model.wasPropertyExplicitlySet("lastModifiedDate")) {
+                this.lastModifiedDate(model.getLastModifiedDate());
             }
             if (model.wasPropertyExplicitlySet("checksum")) {
                 this.checksum(model.getChecksum());
@@ -361,6 +384,20 @@ public final class SoftwarePackageSummary
     }
 
     /**
+     * The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedDate")
+    private final String lastModifiedDate;
+
+    /**
+     * The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * @return the value
+     **/
+    public String getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    /**
      * Checksum of the package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("checksum")
@@ -449,6 +486,7 @@ public final class SoftwarePackageSummary
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", architecture=").append(String.valueOf(this.architecture));
+        sb.append(", lastModifiedDate=").append(String.valueOf(this.lastModifiedDate));
         sb.append(", checksum=").append(String.valueOf(this.checksum));
         sb.append(", checksumType=").append(String.valueOf(this.checksumType));
         sb.append(", isLatest=").append(String.valueOf(this.isLatest));
@@ -473,6 +511,7 @@ public final class SoftwarePackageSummary
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.architecture, other.architecture)
+                && java.util.Objects.equals(this.lastModifiedDate, other.lastModifiedDate)
                 && java.util.Objects.equals(this.checksum, other.checksum)
                 && java.util.Objects.equals(this.checksumType, other.checksumType)
                 && java.util.Objects.equals(this.isLatest, other.isLatest)
@@ -490,6 +529,9 @@ public final class SoftwarePackageSummary
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.architecture == null ? 43 : this.architecture.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastModifiedDate == null ? 43 : this.lastModifiedDate.hashCode());
         result = (result * PRIME) + (this.checksum == null ? 43 : this.checksum.hashCode());
         result = (result * PRIME) + (this.checksumType == null ? 43 : this.checksumType.hashCode());
         result = (result * PRIME) + (this.isLatest == null ? 43 : this.isLatest.hashCode());

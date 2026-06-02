@@ -35,8 +35,14 @@ public class ChangeApiKeyCompartmentConverter {
                 request.getChangeApiKeyCompartmentDetails(),
                 "changeApiKeyCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("apiKeyId", request.getApiKeyId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20231130")
                         .path("apikeys")
                         .path(

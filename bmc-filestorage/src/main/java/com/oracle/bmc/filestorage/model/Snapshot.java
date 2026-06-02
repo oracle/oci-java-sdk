@@ -32,6 +32,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "isCloneSource",
         "lifecycleDetails",
         "locks",
+        "lockDurationDetails",
+        "timeLocked",
         "freeformTags",
         "definedTags",
         "systemTags",
@@ -50,6 +52,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
             Boolean isCloneSource,
             String lifecycleDetails,
             java.util.List<ResourceLock> locks,
+            LockDurationDetails lockDurationDetails,
+            java.util.Date timeLocked,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -67,6 +71,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.isCloneSource = isCloneSource;
         this.lifecycleDetails = lifecycleDetails;
         this.locks = locks;
+        this.lockDurationDetails = lockDurationDetails;
+        this.timeLocked = timeLocked;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -306,6 +312,35 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
             this.__explicitlySet__.add("locks");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lockDurationDetails")
+        private LockDurationDetails lockDurationDetails;
+
+        public Builder lockDurationDetails(LockDurationDetails lockDurationDetails) {
+            this.lockDurationDetails = lockDurationDetails;
+            this.__explicitlySet__.add("lockDurationDetails");
+            return this;
+        }
+        /**
+         * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked.
+         * It is a read-only property because the user should not be able to set it, it is set by our service.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
+        private java.util.Date timeLocked;
+
+        /**
+         * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked.
+         * It is a read-only property because the user should not be able to set it, it is set by our service.
+         *
+         * @param timeLocked the value to set
+         * @return this builder
+         **/
+        public Builder timeLocked(java.util.Date timeLocked) {
+            this.timeLocked = timeLocked;
+            this.__explicitlySet__.add("timeLocked");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair
          *  with no predefined name, type, or namespace.
@@ -425,6 +460,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.isCloneSource,
                             this.lifecycleDetails,
                             this.locks,
+                            this.lockDurationDetails,
+                            this.timeLocked,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -470,6 +507,12 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
+            }
+            if (model.wasPropertyExplicitlySet("lockDurationDetails")) {
+                this.lockDurationDetails(model.getLockDurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeLocked")) {
+                this.timeLocked(model.getTimeLocked());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -809,6 +852,31 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return locks;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lockDurationDetails")
+    private final LockDurationDetails lockDurationDetails;
+
+    public LockDurationDetails getLockDurationDetails() {
+        return lockDurationDetails;
+    }
+
+    /**
+     * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked.
+     * It is a read-only property because the user should not be able to set it, it is set by our service.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
+    private final java.util.Date timeLocked;
+
+    /**
+     * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked.
+     * It is a read-only property because the user should not be able to set it, it is set by our service.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeLocked() {
+        return timeLocked;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
      *  with no predefined name, type, or namespace.
@@ -924,6 +992,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", isCloneSource=").append(String.valueOf(this.isCloneSource));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", locks=").append(String.valueOf(this.locks));
+        sb.append(", lockDurationDetails=").append(String.valueOf(this.lockDurationDetails));
+        sb.append(", timeLocked=").append(String.valueOf(this.timeLocked));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -955,6 +1025,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.isCloneSource, other.isCloneSource)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.locks, other.locks)
+                && java.util.Objects.equals(this.lockDurationDetails, other.lockDurationDetails)
+                && java.util.Objects.equals(this.timeLocked, other.timeLocked)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -985,6 +1057,12 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lockDurationDetails == null
+                                ? 43
+                                : this.lockDurationDetails.hashCode());
+        result = (result * PRIME) + (this.timeLocked == null ? 43 : this.timeLocked.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

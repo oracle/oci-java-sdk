@@ -12,23 +12,23 @@ import com.oracle.bmc.multicloud.model.*;
 public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     private String resourceAnchorId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     public String getResourceAnchorId() {
         return resourceAnchorId;
     }
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      */
     private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
 
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      */
     public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
         return subscriptionServiceName;
@@ -64,12 +64,16 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
         return opcRequestId;
     }
     /**
-     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * Whether to fetch and include the compartment name.
+     * Setting this field to {@code true} might introduce additional latency.
+     *
      */
     private Boolean shouldFetchCompartmentName;
 
     /**
-     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * Whether to fetch and include the compartment name.
+     * Setting this field to {@code true} might introduce additional latency.
+     *
      */
     public Boolean getShouldFetchCompartmentName() {
         return shouldFetchCompartmentName;
@@ -83,12 +87,12 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          */
         private String resourceAnchorId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          * @param resourceAnchorId the value to set
          * @return this builder instance
          */
@@ -98,12 +102,12 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The subscription service name of the Cloud Service Provider.
+         * The cloud service provider.
          */
         private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
 
         /**
-         * The subscription service name of the Cloud Service Provider.
+         * The cloud service provider.
          * @param subscriptionServiceName the value to set
          * @return this builder instance
          */
@@ -152,12 +156,16 @@ public class GetResourceAnchorRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+         * Whether to fetch and include the compartment name.
+         * Setting this field to {@code true} might introduce additional latency.
+         *
          */
         private Boolean shouldFetchCompartmentName = null;
 
         /**
-         * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+         * Whether to fetch and include the compartment name.
+         * Setting this field to {@code true} might introduce additional latency.
+         *
          * @param shouldFetchCompartmentName the value to set
          * @return this builder instance
          */

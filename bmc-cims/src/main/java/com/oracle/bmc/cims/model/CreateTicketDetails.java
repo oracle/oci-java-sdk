@@ -94,7 +94,6 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * <b>Important</b>: On January 27, 2026, the <b>Max Length</b> value will change to 1500.
          * The description of the support request. Avoid entering confidential information.
          *
          **/
@@ -102,7 +101,6 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
         private String description;
 
         /**
-         * <b>Important</b>: On January 27, 2026, the <b>Max Length</b> value will change to 1500.
          * The description of the support request. Avoid entering confidential information.
          *
          * @param description the value to set
@@ -252,7 +250,6 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * <b>Important</b>: On January 27, 2026, the <b>Max Length</b> value will change to 1500.
      * The description of the support request. Avoid entering confidential information.
      *
      **/
@@ -260,7 +257,6 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
     private final String description;
 
     /**
-     * <b>Important</b>: On January 27, 2026, the <b>Max Length</b> value will change to 1500.
      * The description of the support request. Avoid entering confidential information.
      *
      * @return the value

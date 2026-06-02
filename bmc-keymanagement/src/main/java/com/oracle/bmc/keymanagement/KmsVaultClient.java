@@ -1108,6 +1108,49 @@ public class KmsVaultClient implements KmsVault {
     }
 
     @Override
+    public UpdateRegisteredVaultForMtlsResponse updateRegisteredVaultForMtls(
+            UpdateRegisteredVaultForMtlsRequest request) {
+        LOG.trace("Called updateRegisteredVaultForMtls");
+        final UpdateRegisteredVaultForMtlsRequest interceptedRequest =
+                UpdateRegisteredVaultForMtlsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRegisteredVaultForMtlsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault",
+                        "UpdateRegisteredVaultForMtls",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/UpdateRegisteredVaultForMtlsDetails/UpdateRegisteredVaultForMtls");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRegisteredVaultForMtlsResponse>
+                transformer =
+                        UpdateRegisteredVaultForMtlsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateRegisteredVaultForMtlsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateVaultResponse updateVault(UpdateVaultRequest request) {
         LOG.trace("Called updateVault");
         final UpdateVaultRequest interceptedRequest =

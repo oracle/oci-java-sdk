@@ -9,6 +9,7 @@ package com.oracle.bmc.osmanagementhub.model;
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum OsFamily {
+    OracleLinux10("ORACLE_LINUX_10"),
     OracleLinux9("ORACLE_LINUX_9"),
     OracleLinux8("ORACLE_LINUX_8"),
     OracleLinux7("ORACLE_LINUX_7"),
@@ -16,7 +17,12 @@ public enum OsFamily {
     WindowsServer2016("WINDOWS_SERVER_2016"),
     WindowsServer2019("WINDOWS_SERVER_2019"),
     WindowsServer2022("WINDOWS_SERVER_2022"),
+    WindowsServer2025("WINDOWS_SERVER_2025"),
+    Windows11("WINDOWS_11"),
     All("ALL"),
+    Ubuntu2004("UBUNTU_20_04"),
+    Ubuntu2204("UBUNTU_22_04"),
+    Ubuntu2404("UBUNTU_24_04"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

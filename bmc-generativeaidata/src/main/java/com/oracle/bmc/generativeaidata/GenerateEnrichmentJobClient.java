@@ -502,7 +502,7 @@ public class GenerateEnrichmentJobClient implements GenerateEnrichmentJob {
                         "GenerateEnrichmentJob",
                         "GenerateEnrichmentJob",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJob/GenerateEnrichmentJob");
         java.util.function.Function<javax.ws.rs.core.Response, GenerateEnrichmentJobResponse>
                 transformer =
                         GenerateEnrichmentJobConverter.fromResponse(

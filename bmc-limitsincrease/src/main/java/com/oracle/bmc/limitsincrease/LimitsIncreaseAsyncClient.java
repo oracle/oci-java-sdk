@@ -489,7 +489,7 @@ public class LimitsIncreaseAsyncClient implements LimitsIncreaseAsync {
                         "LimitsIncrease",
                         "CancelLimitsIncreaseItemRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseItemRequest/CancelLimitsIncreaseItemRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CancelLimitsIncreaseItemRequestResponse>
                 transformer =
@@ -543,7 +543,7 @@ public class LimitsIncreaseAsyncClient implements LimitsIncreaseAsync {
                         "LimitsIncrease",
                         "CancelLimitsIncreaseRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/CancelLimitsIncreaseRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CancelLimitsIncreaseRequestResponse>
                 transformer =
@@ -595,7 +595,7 @@ public class LimitsIncreaseAsyncClient implements LimitsIncreaseAsync {
                         "LimitsIncrease",
                         "CreateLimitsIncreaseRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/CreateLimitsIncreaseRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateLimitsIncreaseRequestResponse>
                 transformer =
@@ -651,7 +651,7 @@ public class LimitsIncreaseAsyncClient implements LimitsIncreaseAsync {
                         "LimitsIncrease",
                         "DeleteLimitsIncreaseRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/DeleteLimitsIncreaseRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteLimitsIncreaseRequestResponse>
                 transformer =
@@ -702,7 +702,7 @@ public class LimitsIncreaseAsyncClient implements LimitsIncreaseAsync {
                         "LimitsIncrease",
                         "GetLimitsIncreaseItemRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseItemRequest/GetLimitsIncreaseItemRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetLimitsIncreaseItemRequestResponse>
                 transformer =
@@ -751,7 +751,7 @@ public class LimitsIncreaseAsyncClient implements LimitsIncreaseAsync {
                         "LimitsIncrease",
                         "GetLimitsIncreaseRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/GetLimitsIncreaseRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetLimitsIncreaseRequestResponse>
                 transformer =
@@ -801,7 +801,7 @@ public class LimitsIncreaseAsyncClient implements LimitsIncreaseAsync {
                         "LimitsIncrease",
                         "ListLimitsIncreaseItemRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseItemRequestCollection/ListLimitsIncreaseItemRequests");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListLimitsIncreaseItemRequestsResponse>
                 transformer =
@@ -853,7 +853,7 @@ public class LimitsIncreaseAsyncClient implements LimitsIncreaseAsync {
                         "LimitsIncrease",
                         "ListLimitsIncreaseQuestions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseQuestionCollection/ListLimitsIncreaseQuestions");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListLimitsIncreaseQuestionsResponse>
                 transformer =
@@ -904,7 +904,7 @@ public class LimitsIncreaseAsyncClient implements LimitsIncreaseAsync {
                         "LimitsIncrease",
                         "ListLimitsIncreaseRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/ListLimitsIncreaseRequests");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListLimitsIncreaseRequestsResponse>
                 transformer =
@@ -955,7 +955,7 @@ public class LimitsIncreaseAsyncClient implements LimitsIncreaseAsync {
                         "LimitsIncrease",
                         "PatchLimitsIncreaseRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/PatchLimitsIncreaseRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, PatchLimitsIncreaseRequestResponse>
                 transformer =
@@ -1011,7 +1011,7 @@ public class LimitsIncreaseAsyncClient implements LimitsIncreaseAsync {
                         "LimitsIncrease",
                         "UpdateLimitsIncreaseRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/UpdateLimitsIncreaseRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateLimitsIncreaseRequestResponse>
                 transformer =

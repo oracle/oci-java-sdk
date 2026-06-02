@@ -1059,6 +1059,51 @@ public class ManagedInstanceClient implements ManagedInstance {
     }
 
     @Override
+    public InstallSnapsOnManagedInstanceResponse installSnapsOnManagedInstance(
+            InstallSnapsOnManagedInstanceRequest request) {
+        LOG.trace("Called installSnapsOnManagedInstance");
+        final InstallSnapsOnManagedInstanceRequest interceptedRequest =
+                InstallSnapsOnManagedInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallSnapsOnManagedInstanceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "InstallSnapsOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallSnapsOnManagedInstance");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, InstallSnapsOnManagedInstanceResponse>
+                transformer =
+                        InstallSnapsOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getInstallSnapsOnManagedInstanceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public InstallWindowsUpdatesOnManagedInstanceResponse installWindowsUpdatesOnManagedInstance(
             InstallWindowsUpdatesOnManagedInstanceRequest request) {
         LOG.trace("Called installWindowsUpdatesOnManagedInstance");
@@ -1370,6 +1415,44 @@ public class ManagedInstanceClient implements ManagedInstance {
         java.util.function.Function<javax.ws.rs.core.Response, ListManagedInstanceModulesResponse>
                 transformer =
                         ListManagedInstanceModulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListManagedInstanceSnapsResponse listManagedInstanceSnaps(
+            ListManagedInstanceSnapsRequest request) {
+        LOG.trace("Called listManagedInstanceSnaps");
+        final ListManagedInstanceSnapsRequest interceptedRequest =
+                ListManagedInstanceSnapsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceSnapsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceSnaps",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceSnaps");
+        java.util.function.Function<javax.ws.rs.core.Response, ListManagedInstanceSnapsResponse>
+                transformer =
+                        ListManagedInstanceSnapsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1724,6 +1807,51 @@ public class ManagedInstanceClient implements ManagedInstance {
     }
 
     @Override
+    public RemoveSnapsFromManagedInstanceResponse removeSnapsFromManagedInstance(
+            RemoveSnapsFromManagedInstanceRequest request) {
+        LOG.trace("Called removeSnapsFromManagedInstance");
+        final RemoveSnapsFromManagedInstanceRequest interceptedRequest =
+                RemoveSnapsFromManagedInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveSnapsFromManagedInstanceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "RemoveSnapsFromManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RemoveSnapsFromManagedInstance");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveSnapsFromManagedInstanceResponse>
+                transformer =
+                        RemoveSnapsFromManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRemoveSnapsFromManagedInstanceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public SwitchModuleStreamOnManagedInstanceResponse switchModuleStreamOnManagedInstance(
             SwitchModuleStreamOnManagedInstanceRequest request) {
         LOG.trace("Called switchModuleStreamOnManagedInstance");
@@ -1763,6 +1891,51 @@ public class ManagedInstanceClient implements ManagedInstance {
                                                 ib,
                                                 retriedRequest
                                                         .getSwitchModuleStreamOnManagedInstanceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SwitchSnapChannelOnManagedInstanceResponse switchSnapChannelOnManagedInstance(
+            SwitchSnapChannelOnManagedInstanceRequest request) {
+        LOG.trace("Called switchSnapChannelOnManagedInstance");
+        final SwitchSnapChannelOnManagedInstanceRequest interceptedRequest =
+                SwitchSnapChannelOnManagedInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SwitchSnapChannelOnManagedInstanceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "SwitchSnapChannelOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/SwitchSnapChannelOnManagedInstance");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SwitchSnapChannelOnManagedInstanceResponse>
+                transformer =
+                        SwitchSnapChannelOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSwitchSnapChannelOnManagedInstanceDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

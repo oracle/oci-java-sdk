@@ -64,7 +64,8 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Changes the management type for a HeatWave MySQL instance, from BASIC to FULL and vice versa.
-     * It can also be used to enable or disable database management.
+     * It can also be used to enable or disable Database Management.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -79,6 +80,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Retrieves information pertaining to the binary log of a specific MySQL server.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -92,6 +94,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Retrieves general information regarding the replication of a specific MySQL server.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -106,6 +109,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Gets the health metrics for a fleet of HeatWave clusters in a compartment.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -119,6 +123,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Retrieves the general information for a specific MySQL Database.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -132,6 +137,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Gets the health metrics for a fleet of MySQL Databases in a compartment.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -144,7 +150,8 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
     GetMySqlFleetMetricResponse getMySqlFleetMetric(GetMySqlFleetMetricRequest request);
 
     /**
-     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     * Retrieves query sample details, explain plan, and potential warnings for a given digest.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -158,6 +165,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Retrieves information about the high availability members of a specific MySQL server's replication group.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -172,6 +180,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Retrieves information about the inbound replications of a specific MySQL server.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -185,6 +194,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Retrieves configuration data for a specific MySQL database.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -199,6 +209,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Retrieves the SQL performance data for a specific MySQL database.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -213,6 +224,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Gets the list of Managed MySQL Databases in a specific compartment.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -227,6 +239,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Retrieves any potential errors for a given digest.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -240,6 +253,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Retrieves information pertaining to the outbound replications of a specific MySQL server.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -254,6 +268,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
 
     /**
      * Gets the availability metrics for the MySQL Database specified by managedMySqlDatabaseId.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

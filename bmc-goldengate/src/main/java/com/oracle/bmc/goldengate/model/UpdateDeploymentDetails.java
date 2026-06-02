@@ -294,18 +294,36 @@ public final class UpdateDeploymentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
-         * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+         * <p>
+         * Rules:
+         * - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+         * - Update:
+         *   - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+         *   - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+         * <p>
+         * Validation:
+         * - Must reference a public subnet.
+         * - Must be a regional subnet.
+         * - Must be in the same VCN as subnetId.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
         private String loadBalancerSubnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
-         * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+         * <p>
+         * Rules:
+         * - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+         * - Update:
+         *   - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+         *   - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+         * <p>
+         * Validation:
+         * - Must reference a public subnet.
+         * - Must be a regional subnet.
+         * - Must be in the same VCN as subnetId.
          *
          * @param loadBalancerSubnetId the value to set
          * @return this builder
@@ -760,18 +778,36 @@ public final class UpdateDeploymentDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
-     * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-     * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     * <p>
+     * Rules:
+     * - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * - Update:
+     *   - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     *   - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     * <p>
+     * Validation:
+     * - Must reference a public subnet.
+     * - Must be a regional subnet.
+     * - Must be in the same VCN as subnetId.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
     private final String loadBalancerSubnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
-     * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-     * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     * <p>
+     * Rules:
+     * - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * - Update:
+     *   - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     *   - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     * <p>
+     * Validation:
+     * - Must reference a public subnet.
+     * - Must be a regional subnet.
+     * - Must be in the same VCN as subnetId.
      *
      * @return the value
      **/

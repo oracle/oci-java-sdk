@@ -210,6 +210,47 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
             this.__explicitlySet__.add("environmentVariables");
             return this;
         }
+        /**
+         * The chosen specification from predefined set of endpoints a user can access.
+         * For example, if the value is 'openai', the user can access OpenAI-compliant endpoints
+         * like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("predictApiSpecification")
+        private String predictApiSpecification;
+
+        /**
+         * The chosen specification from predefined set of endpoints a user can access.
+         * For example, if the value is 'openai', the user can access OpenAI-compliant endpoints
+         * like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+         *
+         * @param predictApiSpecification the value to set
+         * @return this builder
+         **/
+        public Builder predictApiSpecification(String predictApiSpecification) {
+            this.predictApiSpecification = predictApiSpecification;
+            this.__explicitlySet__.add("predictApiSpecification");
+            return this;
+        }
+        /**
+         * List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("customHttpEndpoints")
+        private java.util.List<InferenceHttpEndpoint> customHttpEndpoints;
+
+        /**
+         * List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+         *
+         * @param customHttpEndpoints the value to set
+         * @return this builder
+         **/
+        public Builder customHttpEndpoints(
+                java.util.List<InferenceHttpEndpoint> customHttpEndpoints) {
+            this.customHttpEndpoints = customHttpEndpoints;
+            this.__explicitlySet__.add("customHttpEndpoints");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -224,7 +265,9 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
                             this.entrypoint,
                             this.serverPort,
                             this.healthCheckPort,
-                            this.environmentVariables);
+                            this.environmentVariables,
+                            this.predictApiSpecification,
+                            this.customHttpEndpoints);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -257,6 +300,12 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
             if (model.wasPropertyExplicitlySet("environmentVariables")) {
                 this.environmentVariables(model.getEnvironmentVariables());
             }
+            if (model.wasPropertyExplicitlySet("predictApiSpecification")) {
+                this.predictApiSpecification(model.getPredictApiSpecification());
+            }
+            if (model.wasPropertyExplicitlySet("customHttpEndpoints")) {
+                this.customHttpEndpoints(model.getCustomHttpEndpoints());
+            }
             return this;
         }
     }
@@ -281,7 +330,9 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
             java.util.List<String> entrypoint,
             Integer serverPort,
             Integer healthCheckPort,
-            java.util.Map<String, String> environmentVariables) {
+            java.util.Map<String, String> environmentVariables,
+            String predictApiSpecification,
+            java.util.List<InferenceHttpEndpoint> customHttpEndpoints) {
         super();
         this.image = image;
         this.imageDigest = imageDigest;
@@ -291,6 +342,8 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
         this.serverPort = serverPort;
         this.healthCheckPort = healthCheckPort;
         this.environmentVariables = environmentVariables;
+        this.predictApiSpecification = predictApiSpecification;
+        this.customHttpEndpoints = customHttpEndpoints;
     }
 
     /**
@@ -459,6 +512,42 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
         return environmentVariables;
     }
 
+    /**
+     * The chosen specification from predefined set of endpoints a user can access.
+     * For example, if the value is 'openai', the user can access OpenAI-compliant endpoints
+     * like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("predictApiSpecification")
+    private final String predictApiSpecification;
+
+    /**
+     * The chosen specification from predefined set of endpoints a user can access.
+     * For example, if the value is 'openai', the user can access OpenAI-compliant endpoints
+     * like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+     *
+     * @return the value
+     **/
+    public String getPredictApiSpecification() {
+        return predictApiSpecification;
+    }
+
+    /**
+     * List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customHttpEndpoints")
+    private final java.util.List<InferenceHttpEndpoint> customHttpEndpoints;
+
+    /**
+     * List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+     *
+     * @return the value
+     **/
+    public java.util.List<InferenceHttpEndpoint> getCustomHttpEndpoints() {
+        return customHttpEndpoints;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -481,6 +570,9 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
         sb.append(", serverPort=").append(String.valueOf(this.serverPort));
         sb.append(", healthCheckPort=").append(String.valueOf(this.healthCheckPort));
         sb.append(", environmentVariables=").append(String.valueOf(this.environmentVariables));
+        sb.append(", predictApiSpecification=")
+                .append(String.valueOf(this.predictApiSpecification));
+        sb.append(", customHttpEndpoints=").append(String.valueOf(this.customHttpEndpoints));
         sb.append(")");
         return sb.toString();
     }
@@ -504,6 +596,9 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
                 && java.util.Objects.equals(this.serverPort, other.serverPort)
                 && java.util.Objects.equals(this.healthCheckPort, other.healthCheckPort)
                 && java.util.Objects.equals(this.environmentVariables, other.environmentVariables)
+                && java.util.Objects.equals(
+                        this.predictApiSpecification, other.predictApiSpecification)
+                && java.util.Objects.equals(this.customHttpEndpoints, other.customHttpEndpoints)
                 && super.equals(other);
     }
 
@@ -527,6 +622,16 @@ public final class UpdateOcirModelDeploymentEnvironmentConfigurationDetails
                         + (this.environmentVariables == null
                                 ? 43
                                 : this.environmentVariables.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.predictApiSpecification == null
+                                ? 43
+                                : this.predictApiSpecification.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customHttpEndpoints == null
+                                ? 43
+                                : this.customHttpEndpoints.hashCode());
         return result;
     }
 }

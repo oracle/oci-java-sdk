@@ -576,11 +576,57 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "AddDatabaseToolsConnectionLock",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/AddDatabaseToolsConnectionLock");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, AddDatabaseToolsConnectionLockResponse>
                 transformer =
                         AddDatabaseToolsConnectionLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public AddDatabaseToolsDatabaseApiGatewayConfigLockResponse
+            addDatabaseToolsDatabaseApiGatewayConfigLock(
+                    AddDatabaseToolsDatabaseApiGatewayConfigLockRequest request) {
+        LOG.trace("Called addDatabaseToolsDatabaseApiGatewayConfigLock");
+        final AddDatabaseToolsDatabaseApiGatewayConfigLockRequest interceptedRequest =
+                AddDatabaseToolsDatabaseApiGatewayConfigLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddDatabaseToolsDatabaseApiGatewayConfigLockConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsDatabaseApiGatewayConfigLock",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        AddDatabaseToolsDatabaseApiGatewayConfigLockResponse>
+                transformer =
+                        AddDatabaseToolsDatabaseApiGatewayConfigLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -619,10 +665,96 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "AddDatabaseToolsIdentityLock",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/AddDatabaseToolsIdentityLock");
+                        "");
         java.util.function.Function<javax.ws.rs.core.Response, AddDatabaseToolsIdentityLockResponse>
                 transformer =
                         AddDatabaseToolsIdentityLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public AddDatabaseToolsMcpServerLockResponse addDatabaseToolsMcpServerLock(
+            AddDatabaseToolsMcpServerLockRequest request) {
+        LOG.trace("Called addDatabaseToolsMcpServerLock");
+        final AddDatabaseToolsMcpServerLockRequest interceptedRequest =
+                AddDatabaseToolsMcpServerLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddDatabaseToolsMcpServerLockConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsMcpServerLock",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, AddDatabaseToolsMcpServerLockResponse>
+                transformer =
+                        AddDatabaseToolsMcpServerLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public AddDatabaseToolsMcpToolsetLockResponse addDatabaseToolsMcpToolsetLock(
+            AddDatabaseToolsMcpToolsetLockRequest request) {
+        LOG.trace("Called addDatabaseToolsMcpToolsetLock");
+        final AddDatabaseToolsMcpToolsetLockRequest interceptedRequest =
+                AddDatabaseToolsMcpToolsetLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddDatabaseToolsMcpToolsetLockConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsMcpToolsetLock",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, AddDatabaseToolsMcpToolsetLockResponse>
+                transformer =
+                        AddDatabaseToolsMcpToolsetLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -662,7 +794,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "AddDatabaseToolsPrivateEndpointLock",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/AddDatabaseToolsPrivateEndpointLock");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, AddDatabaseToolsPrivateEndpointLockResponse>
                 transformer =
@@ -688,6 +820,90 @@ public class DatabaseToolsClient implements DatabaseTools {
     }
 
     @Override
+    public AddDatabaseToolsSqlReportLockResponse addDatabaseToolsSqlReportLock(
+            AddDatabaseToolsSqlReportLockRequest request) {
+        LOG.trace("Called addDatabaseToolsSqlReportLock");
+        final AddDatabaseToolsSqlReportLockRequest interceptedRequest =
+                AddDatabaseToolsSqlReportLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddDatabaseToolsSqlReportLockConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsSqlReportLock",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, AddDatabaseToolsSqlReportLockResponse>
+                transformer =
+                        AddDatabaseToolsSqlReportLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CascadingDeleteDatabaseToolsMcpServerResponse cascadingDeleteDatabaseToolsMcpServer(
+            CascadingDeleteDatabaseToolsMcpServerRequest request) {
+        LOG.trace("Called cascadingDeleteDatabaseToolsMcpServer");
+        final CascadingDeleteDatabaseToolsMcpServerRequest interceptedRequest =
+                CascadingDeleteDatabaseToolsMcpServerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CascadingDeleteDatabaseToolsMcpServerConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "CascadingDeleteDatabaseToolsMcpServer",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CascadingDeleteDatabaseToolsMcpServerResponse>
+                transformer =
+                        CascadingDeleteDatabaseToolsMcpServerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDatabaseToolsConnectionCompartmentResponse
             changeDatabaseToolsConnectionCompartment(
                     ChangeDatabaseToolsConnectionCompartmentRequest request) {
@@ -707,7 +923,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "ChangeDatabaseToolsConnectionCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ChangeDatabaseToolsConnectionCompartment");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseToolsConnectionCompartmentResponse>
                 transformer =
@@ -734,6 +950,54 @@ public class DatabaseToolsClient implements DatabaseTools {
     }
 
     @Override
+    public ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentResponse
+            changeDatabaseToolsDatabaseApiGatewayConfigCompartment(
+                    ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentRequest request) {
+        LOG.trace("Called changeDatabaseToolsDatabaseApiGatewayConfigCompartment");
+        final ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentRequest interceptedRequest =
+                ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "ChangeDatabaseToolsDatabaseApiGatewayConfigCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentResponse>
+                transformer =
+                        ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentConverter
+                                .fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDatabaseToolsIdentityCompartmentResponse changeDatabaseToolsIdentityCompartment(
             ChangeDatabaseToolsIdentityCompartmentRequest request) {
         LOG.trace("Called changeDatabaseToolsIdentityCompartment");
@@ -752,7 +1016,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "ChangeDatabaseToolsIdentityCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ChangeDatabaseToolsIdentityCompartment");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseToolsIdentityCompartmentResponse>
                 transformer =
@@ -779,6 +1043,97 @@ public class DatabaseToolsClient implements DatabaseTools {
     }
 
     @Override
+    public ChangeDatabaseToolsMcpServerCompartmentResponse changeDatabaseToolsMcpServerCompartment(
+            ChangeDatabaseToolsMcpServerCompartmentRequest request) {
+        LOG.trace("Called changeDatabaseToolsMcpServerCompartment");
+        final ChangeDatabaseToolsMcpServerCompartmentRequest interceptedRequest =
+                ChangeDatabaseToolsMcpServerCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDatabaseToolsMcpServerCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "ChangeDatabaseToolsMcpServerCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDatabaseToolsMcpServerCompartmentResponse>
+                transformer =
+                        ChangeDatabaseToolsMcpServerCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDatabaseToolsMcpServerCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeDatabaseToolsMcpToolsetCompartmentResponse
+            changeDatabaseToolsMcpToolsetCompartment(
+                    ChangeDatabaseToolsMcpToolsetCompartmentRequest request) {
+        LOG.trace("Called changeDatabaseToolsMcpToolsetCompartment");
+        final ChangeDatabaseToolsMcpToolsetCompartmentRequest interceptedRequest =
+                ChangeDatabaseToolsMcpToolsetCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDatabaseToolsMcpToolsetCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "ChangeDatabaseToolsMcpToolsetCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDatabaseToolsMcpToolsetCompartmentResponse>
+                transformer =
+                        ChangeDatabaseToolsMcpToolsetCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDatabaseToolsMcpToolsetCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDatabaseToolsPrivateEndpointCompartmentResponse
             changeDatabaseToolsPrivateEndpointCompartment(
                     ChangeDatabaseToolsPrivateEndpointCompartmentRequest request) {
@@ -798,7 +1153,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "ChangeDatabaseToolsPrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ChangeDatabaseToolsPrivateEndpointCompartment");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeDatabaseToolsPrivateEndpointCompartmentResponse>
@@ -819,6 +1174,51 @@ public class DatabaseToolsClient implements DatabaseTools {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeDatabaseToolsPrivateEndpointCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeDatabaseToolsSqlReportCompartmentResponse changeDatabaseToolsSqlReportCompartment(
+            ChangeDatabaseToolsSqlReportCompartmentRequest request) {
+        LOG.trace("Called changeDatabaseToolsSqlReportCompartment");
+        final ChangeDatabaseToolsSqlReportCompartmentRequest interceptedRequest =
+                ChangeDatabaseToolsSqlReportCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDatabaseToolsSqlReportCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "ChangeDatabaseToolsSqlReportCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDatabaseToolsSqlReportCompartmentResponse>
+                transformer =
+                        ChangeDatabaseToolsSqlReportCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDatabaseToolsSqlReportCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -871,6 +1271,54 @@ public class DatabaseToolsClient implements DatabaseTools {
     }
 
     @Override
+    public CreateDatabaseToolsDatabaseApiGatewayConfigResponse
+            createDatabaseToolsDatabaseApiGatewayConfig(
+                    CreateDatabaseToolsDatabaseApiGatewayConfigRequest request) {
+        LOG.trace("Called createDatabaseToolsDatabaseApiGatewayConfig");
+        final CreateDatabaseToolsDatabaseApiGatewayConfigRequest interceptedRequest =
+                CreateDatabaseToolsDatabaseApiGatewayConfigConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDatabaseToolsDatabaseApiGatewayConfigConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "CreateDatabaseToolsDatabaseApiGatewayConfig",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        CreateDatabaseToolsDatabaseApiGatewayConfigResponse>
+                transformer =
+                        CreateDatabaseToolsDatabaseApiGatewayConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateDatabaseToolsDatabaseApiGatewayConfigDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateDatabaseToolsIdentityResponse createDatabaseToolsIdentity(
             CreateDatabaseToolsIdentityRequest request) {
         LOG.trace("Called createDatabaseToolsIdentity");
@@ -908,6 +1356,95 @@ public class DatabaseToolsClient implements DatabaseTools {
                                                 ib,
                                                 retriedRequest
                                                         .getCreateDatabaseToolsIdentityDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateDatabaseToolsMcpServerResponse createDatabaseToolsMcpServer(
+            CreateDatabaseToolsMcpServerRequest request) {
+        LOG.trace("Called createDatabaseToolsMcpServer");
+        final CreateDatabaseToolsMcpServerRequest interceptedRequest =
+                CreateDatabaseToolsMcpServerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDatabaseToolsMcpServerConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "CreateDatabaseToolsMcpServer",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDatabaseToolsMcpServerResponse>
+                transformer =
+                        CreateDatabaseToolsMcpServerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateDatabaseToolsMcpServerDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateDatabaseToolsMcpToolsetResponse createDatabaseToolsMcpToolset(
+            CreateDatabaseToolsMcpToolsetRequest request) {
+        LOG.trace("Called createDatabaseToolsMcpToolset");
+        final CreateDatabaseToolsMcpToolsetRequest interceptedRequest =
+                CreateDatabaseToolsMcpToolsetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDatabaseToolsMcpToolsetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "CreateDatabaseToolsMcpToolset",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateDatabaseToolsMcpToolsetResponse>
+                transformer =
+                        CreateDatabaseToolsMcpToolsetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateDatabaseToolsMcpToolsetDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -960,6 +1497,50 @@ public class DatabaseToolsClient implements DatabaseTools {
     }
 
     @Override
+    public CreateDatabaseToolsSqlReportResponse createDatabaseToolsSqlReport(
+            CreateDatabaseToolsSqlReportRequest request) {
+        LOG.trace("Called createDatabaseToolsSqlReport");
+        final CreateDatabaseToolsSqlReportRequest interceptedRequest =
+                CreateDatabaseToolsSqlReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDatabaseToolsSqlReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "CreateDatabaseToolsSqlReport",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDatabaseToolsSqlReportResponse>
+                transformer =
+                        CreateDatabaseToolsSqlReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateDatabaseToolsSqlReportDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteDatabaseToolsConnectionResponse deleteDatabaseToolsConnection(
             DeleteDatabaseToolsConnectionRequest request) {
         LOG.trace("Called deleteDatabaseToolsConnection");
@@ -977,11 +1558,54 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "DeleteDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/DeleteDatabaseToolsConnection");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseToolsConnectionResponse>
                 transformer =
                         DeleteDatabaseToolsConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteDatabaseToolsDatabaseApiGatewayConfigResponse
+            deleteDatabaseToolsDatabaseApiGatewayConfig(
+                    DeleteDatabaseToolsDatabaseApiGatewayConfigRequest request) {
+        LOG.trace("Called deleteDatabaseToolsDatabaseApiGatewayConfig");
+        final DeleteDatabaseToolsDatabaseApiGatewayConfigRequest interceptedRequest =
+                DeleteDatabaseToolsDatabaseApiGatewayConfigConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDatabaseToolsDatabaseApiGatewayConfigConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "DeleteDatabaseToolsDatabaseApiGatewayConfig",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DeleteDatabaseToolsDatabaseApiGatewayConfigResponse>
+                transformer =
+                        DeleteDatabaseToolsDatabaseApiGatewayConfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1017,10 +1641,89 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "DeleteDatabaseToolsIdentity",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/DeleteDatabaseToolsIdentity");
+                        "");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteDatabaseToolsIdentityResponse>
                 transformer =
                         DeleteDatabaseToolsIdentityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteDatabaseToolsMcpServerResponse deleteDatabaseToolsMcpServer(
+            DeleteDatabaseToolsMcpServerRequest request) {
+        LOG.trace("Called deleteDatabaseToolsMcpServer");
+        final DeleteDatabaseToolsMcpServerRequest interceptedRequest =
+                DeleteDatabaseToolsMcpServerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDatabaseToolsMcpServerConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "DeleteDatabaseToolsMcpServer",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDatabaseToolsMcpServerResponse>
+                transformer =
+                        DeleteDatabaseToolsMcpServerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteDatabaseToolsMcpToolsetResponse deleteDatabaseToolsMcpToolset(
+            DeleteDatabaseToolsMcpToolsetRequest request) {
+        LOG.trace("Called deleteDatabaseToolsMcpToolset");
+        final DeleteDatabaseToolsMcpToolsetRequest interceptedRequest =
+                DeleteDatabaseToolsMcpToolsetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDatabaseToolsMcpToolsetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "DeleteDatabaseToolsMcpToolset",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteDatabaseToolsMcpToolsetResponse>
+                transformer =
+                        DeleteDatabaseToolsMcpToolsetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1056,11 +1759,50 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "DeleteDatabaseToolsPrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/DeleteDatabaseToolsPrivateEndpoint");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseToolsPrivateEndpointResponse>
                 transformer =
                         DeleteDatabaseToolsPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteDatabaseToolsSqlReportResponse deleteDatabaseToolsSqlReport(
+            DeleteDatabaseToolsSqlReportRequest request) {
+        LOG.trace("Called deleteDatabaseToolsSqlReport");
+        final DeleteDatabaseToolsSqlReportRequest interceptedRequest =
+                DeleteDatabaseToolsSqlReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDatabaseToolsSqlReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "DeleteDatabaseToolsSqlReport",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDatabaseToolsSqlReportResponse>
+                transformer =
+                        DeleteDatabaseToolsSqlReportConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1096,10 +1838,51 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "GetDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/GetDatabaseToolsConnection");
+                        "");
         java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseToolsConnectionResponse>
                 transformer =
                         GetDatabaseToolsConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDatabaseToolsDatabaseApiGatewayConfigResponse
+            getDatabaseToolsDatabaseApiGatewayConfig(
+                    GetDatabaseToolsDatabaseApiGatewayConfigRequest request) {
+        LOG.trace("Called getDatabaseToolsDatabaseApiGatewayConfig");
+        final GetDatabaseToolsDatabaseApiGatewayConfigRequest interceptedRequest =
+                GetDatabaseToolsDatabaseApiGatewayConfigConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseToolsDatabaseApiGatewayConfigConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsDatabaseApiGatewayConfig",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDatabaseToolsDatabaseApiGatewayConfigResponse>
+                transformer =
+                        GetDatabaseToolsDatabaseApiGatewayConfigConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1134,7 +1917,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "GetDatabaseToolsEndpointService",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/GetDatabaseToolsEndpointService");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsEndpointServiceResponse>
                 transformer =
@@ -1173,10 +1956,86 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "GetDatabaseToolsIdentity",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/GetDatabaseToolsIdentity");
+                        "");
         java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseToolsIdentityResponse>
                 transformer =
                         GetDatabaseToolsIdentityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDatabaseToolsMcpServerResponse getDatabaseToolsMcpServer(
+            GetDatabaseToolsMcpServerRequest request) {
+        LOG.trace("Called getDatabaseToolsMcpServer");
+        final GetDatabaseToolsMcpServerRequest interceptedRequest =
+                GetDatabaseToolsMcpServerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseToolsMcpServerConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsMcpServer",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseToolsMcpServerResponse>
+                transformer =
+                        GetDatabaseToolsMcpServerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDatabaseToolsMcpToolsetResponse getDatabaseToolsMcpToolset(
+            GetDatabaseToolsMcpToolsetRequest request) {
+        LOG.trace("Called getDatabaseToolsMcpToolset");
+        final GetDatabaseToolsMcpToolsetRequest interceptedRequest =
+                GetDatabaseToolsMcpToolsetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseToolsMcpToolsetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsMcpToolset",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseToolsMcpToolsetResponse>
+                transformer =
+                        GetDatabaseToolsMcpToolsetConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1211,11 +2070,49 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "GetDatabaseToolsPrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/GetDatabaseToolsPrivateEndpoint");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsPrivateEndpointResponse>
                 transformer =
                         GetDatabaseToolsPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDatabaseToolsSqlReportResponse getDatabaseToolsSqlReport(
+            GetDatabaseToolsSqlReportRequest request) {
+        LOG.trace("Called getDatabaseToolsSqlReport");
+        final GetDatabaseToolsSqlReportRequest interceptedRequest =
+                GetDatabaseToolsSqlReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseToolsSqlReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsSqlReport",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseToolsSqlReportResponse>
+                transformer =
+                        GetDatabaseToolsSqlReportConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1246,10 +2143,7 @@ public class DatabaseToolsClient implements DatabaseTools {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DatabaseTools",
-                        "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/GetWorkRequest");
+                        "DatabaseTools", "GetWorkRequest", ib.getRequestUri().toString(), "");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1285,10 +2179,52 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "ListDatabaseToolsConnections",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ListDatabaseToolsConnections");
+                        "");
         java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseToolsConnectionsResponse>
                 transformer =
                         ListDatabaseToolsConnectionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDatabaseToolsDatabaseApiGatewayConfigsResponse
+            listDatabaseToolsDatabaseApiGatewayConfigs(
+                    ListDatabaseToolsDatabaseApiGatewayConfigsRequest request) {
+        LOG.trace("Called listDatabaseToolsDatabaseApiGatewayConfigs");
+        final ListDatabaseToolsDatabaseApiGatewayConfigsRequest interceptedRequest =
+                ListDatabaseToolsDatabaseApiGatewayConfigsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseToolsDatabaseApiGatewayConfigsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsDatabaseApiGatewayConfigs",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListDatabaseToolsDatabaseApiGatewayConfigsResponse>
+                transformer =
+                        ListDatabaseToolsDatabaseApiGatewayConfigsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1323,7 +2259,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "ListDatabaseToolsEndpointServices",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/ListDatabaseToolsEndpointServices");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsEndpointServicesResponse>
                 transformer =
@@ -1362,10 +2298,126 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "ListDatabaseToolsIdentities",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ListDatabaseToolsIdentities");
+                        "");
         java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseToolsIdentitiesResponse>
                 transformer =
                         ListDatabaseToolsIdentitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDatabaseToolsMcpServersResponse listDatabaseToolsMcpServers(
+            ListDatabaseToolsMcpServersRequest request) {
+        LOG.trace("Called listDatabaseToolsMcpServers");
+        final ListDatabaseToolsMcpServersRequest interceptedRequest =
+                ListDatabaseToolsMcpServersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseToolsMcpServersConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsMcpServers",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseToolsMcpServersResponse>
+                transformer =
+                        ListDatabaseToolsMcpServersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDatabaseToolsMcpToolsetVersionsResponse listDatabaseToolsMcpToolsetVersions(
+            ListDatabaseToolsMcpToolsetVersionsRequest request) {
+        LOG.trace("Called listDatabaseToolsMcpToolsetVersions");
+        final ListDatabaseToolsMcpToolsetVersionsRequest interceptedRequest =
+                ListDatabaseToolsMcpToolsetVersionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseToolsMcpToolsetVersionsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsMcpToolsetVersions",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDatabaseToolsMcpToolsetVersionsResponse>
+                transformer =
+                        ListDatabaseToolsMcpToolsetVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDatabaseToolsMcpToolsetsResponse listDatabaseToolsMcpToolsets(
+            ListDatabaseToolsMcpToolsetsRequest request) {
+        LOG.trace("Called listDatabaseToolsMcpToolsets");
+        final ListDatabaseToolsMcpToolsetsRequest interceptedRequest =
+                ListDatabaseToolsMcpToolsetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseToolsMcpToolsetsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsMcpToolsets",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseToolsMcpToolsetsResponse>
+                transformer =
+                        ListDatabaseToolsMcpToolsetsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1400,11 +2452,49 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "ListDatabaseToolsPrivateEndpoints",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ListDatabaseToolsPrivateEndpoints");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsPrivateEndpointsResponse>
                 transformer =
                         ListDatabaseToolsPrivateEndpointsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDatabaseToolsSqlReportsResponse listDatabaseToolsSqlReports(
+            ListDatabaseToolsSqlReportsRequest request) {
+        LOG.trace("Called listDatabaseToolsSqlReports");
+        final ListDatabaseToolsSqlReportsRequest interceptedRequest =
+                ListDatabaseToolsSqlReportsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseToolsSqlReportsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsSqlReports",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseToolsSqlReportsResponse>
+                transformer =
+                        ListDatabaseToolsSqlReportsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1439,7 +2529,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestError/ListWorkRequestErrors");
+                        "");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1473,10 +2563,7 @@ public class DatabaseToolsClient implements DatabaseTools {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DatabaseTools",
-                        "ListWorkRequestLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestLogEntry/ListWorkRequestLogs");
+                        "DatabaseTools", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1510,10 +2597,7 @@ public class DatabaseToolsClient implements DatabaseTools {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DatabaseTools",
-                        "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/ListWorkRequests");
+                        "DatabaseTools", "ListWorkRequests", ib.getRequestUri().toString(), "");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1552,7 +2636,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "RefreshDatabaseToolsIdentityCredential",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/RefreshDatabaseToolsIdentityCredential");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, RefreshDatabaseToolsIdentityCredentialResponse>
                 transformer =
@@ -1596,11 +2680,57 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "RemoveDatabaseToolsConnectionLock",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/RemoveDatabaseToolsConnectionLock");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveDatabaseToolsConnectionLockResponse>
                 transformer =
                         RemoveDatabaseToolsConnectionLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveDatabaseToolsDatabaseApiGatewayConfigLockResponse
+            removeDatabaseToolsDatabaseApiGatewayConfigLock(
+                    RemoveDatabaseToolsDatabaseApiGatewayConfigLockRequest request) {
+        LOG.trace("Called removeDatabaseToolsDatabaseApiGatewayConfigLock");
+        final RemoveDatabaseToolsDatabaseApiGatewayConfigLockRequest interceptedRequest =
+                RemoveDatabaseToolsDatabaseApiGatewayConfigLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveDatabaseToolsDatabaseApiGatewayConfigLockConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsDatabaseApiGatewayConfigLock",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        RemoveDatabaseToolsDatabaseApiGatewayConfigLockResponse>
+                transformer =
+                        RemoveDatabaseToolsDatabaseApiGatewayConfigLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1639,11 +2769,97 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "RemoveDatabaseToolsIdentityLock",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/RemoveDatabaseToolsIdentityLock");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveDatabaseToolsIdentityLockResponse>
                 transformer =
                         RemoveDatabaseToolsIdentityLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveDatabaseToolsMcpServerLockResponse removeDatabaseToolsMcpServerLock(
+            RemoveDatabaseToolsMcpServerLockRequest request) {
+        LOG.trace("Called removeDatabaseToolsMcpServerLock");
+        final RemoveDatabaseToolsMcpServerLockRequest interceptedRequest =
+                RemoveDatabaseToolsMcpServerLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveDatabaseToolsMcpServerLockConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsMcpServerLock",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveDatabaseToolsMcpServerLockResponse>
+                transformer =
+                        RemoveDatabaseToolsMcpServerLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveDatabaseToolsMcpToolsetLockResponse removeDatabaseToolsMcpToolsetLock(
+            RemoveDatabaseToolsMcpToolsetLockRequest request) {
+        LOG.trace("Called removeDatabaseToolsMcpToolsetLock");
+        final RemoveDatabaseToolsMcpToolsetLockRequest interceptedRequest =
+                RemoveDatabaseToolsMcpToolsetLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveDatabaseToolsMcpToolsetLockConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsMcpToolsetLock",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveDatabaseToolsMcpToolsetLockResponse>
+                transformer =
+                        RemoveDatabaseToolsMcpToolsetLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1683,11 +2899,54 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "RemoveDatabaseToolsPrivateEndpointLock",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/RemoveDatabaseToolsPrivateEndpointLock");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveDatabaseToolsPrivateEndpointLockResponse>
                 transformer =
                         RemoveDatabaseToolsPrivateEndpointLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveDatabaseToolsSqlReportLockResponse removeDatabaseToolsSqlReportLock(
+            RemoveDatabaseToolsSqlReportLockRequest request) {
+        LOG.trace("Called removeDatabaseToolsSqlReportLock");
+        final RemoveDatabaseToolsSqlReportLockRequest interceptedRequest =
+                RemoveDatabaseToolsSqlReportLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveDatabaseToolsSqlReportLockConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsSqlReportLock",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveDatabaseToolsSqlReportLockResponse>
+                transformer =
+                        RemoveDatabaseToolsSqlReportLockConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1726,7 +2985,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "UpdateDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/UpdateDatabaseToolsConnection");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseToolsConnectionResponse>
                 transformer =
@@ -1753,6 +3012,53 @@ public class DatabaseToolsClient implements DatabaseTools {
     }
 
     @Override
+    public UpdateDatabaseToolsDatabaseApiGatewayConfigResponse
+            updateDatabaseToolsDatabaseApiGatewayConfig(
+                    UpdateDatabaseToolsDatabaseApiGatewayConfigRequest request) {
+        LOG.trace("Called updateDatabaseToolsDatabaseApiGatewayConfig");
+        final UpdateDatabaseToolsDatabaseApiGatewayConfigRequest interceptedRequest =
+                UpdateDatabaseToolsDatabaseApiGatewayConfigConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDatabaseToolsDatabaseApiGatewayConfigConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "UpdateDatabaseToolsDatabaseApiGatewayConfig",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        UpdateDatabaseToolsDatabaseApiGatewayConfigResponse>
+                transformer =
+                        UpdateDatabaseToolsDatabaseApiGatewayConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateDatabaseToolsDatabaseApiGatewayConfigDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateDatabaseToolsIdentityResponse updateDatabaseToolsIdentity(
             UpdateDatabaseToolsIdentityRequest request) {
         LOG.trace("Called updateDatabaseToolsIdentity");
@@ -1770,7 +3076,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "UpdateDatabaseToolsIdentity",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/UpdateDatabaseToolsIdentity");
+                        "");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateDatabaseToolsIdentityResponse>
                 transformer =
                         UpdateDatabaseToolsIdentityConverter.fromResponse(
@@ -1796,6 +3102,93 @@ public class DatabaseToolsClient implements DatabaseTools {
     }
 
     @Override
+    public UpdateDatabaseToolsMcpServerResponse updateDatabaseToolsMcpServer(
+            UpdateDatabaseToolsMcpServerRequest request) {
+        LOG.trace("Called updateDatabaseToolsMcpServer");
+        final UpdateDatabaseToolsMcpServerRequest interceptedRequest =
+                UpdateDatabaseToolsMcpServerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDatabaseToolsMcpServerConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "UpdateDatabaseToolsMcpServer",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDatabaseToolsMcpServerResponse>
+                transformer =
+                        UpdateDatabaseToolsMcpServerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateDatabaseToolsMcpServerDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateDatabaseToolsMcpToolsetResponse updateDatabaseToolsMcpToolset(
+            UpdateDatabaseToolsMcpToolsetRequest request) {
+        LOG.trace("Called updateDatabaseToolsMcpToolset");
+        final UpdateDatabaseToolsMcpToolsetRequest interceptedRequest =
+                UpdateDatabaseToolsMcpToolsetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDatabaseToolsMcpToolsetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "UpdateDatabaseToolsMcpToolset",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateDatabaseToolsMcpToolsetResponse>
+                transformer =
+                        UpdateDatabaseToolsMcpToolsetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateDatabaseToolsMcpToolsetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateDatabaseToolsPrivateEndpointResponse updateDatabaseToolsPrivateEndpoint(
             UpdateDatabaseToolsPrivateEndpointRequest request) {
         LOG.trace("Called updateDatabaseToolsPrivateEndpoint");
@@ -1813,7 +3206,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "UpdateDatabaseToolsPrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/UpdateDatabaseToolsPrivateEndpoint");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseToolsPrivateEndpointResponse>
                 transformer =
@@ -1840,6 +3233,49 @@ public class DatabaseToolsClient implements DatabaseTools {
     }
 
     @Override
+    public UpdateDatabaseToolsSqlReportResponse updateDatabaseToolsSqlReport(
+            UpdateDatabaseToolsSqlReportRequest request) {
+        LOG.trace("Called updateDatabaseToolsSqlReport");
+        final UpdateDatabaseToolsSqlReportRequest interceptedRequest =
+                UpdateDatabaseToolsSqlReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDatabaseToolsSqlReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "UpdateDatabaseToolsSqlReport",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDatabaseToolsSqlReportResponse>
+                transformer =
+                        UpdateDatabaseToolsSqlReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateDatabaseToolsSqlReportDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ValidateDatabaseToolsConnectionResponse validateDatabaseToolsConnection(
             ValidateDatabaseToolsConnectionRequest request) {
         LOG.trace("Called validateDatabaseToolsConnection");
@@ -1857,7 +3293,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "ValidateDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ValidateDatabaseToolsConnection");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateDatabaseToolsConnectionResponse>
                 transformer =
@@ -1902,7 +3338,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                         "DatabaseTools",
                         "ValidateDatabaseToolsIdentityCredential",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ValidateDatabaseToolsIdentityCredential");
+                        "");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateDatabaseToolsIdentityCredentialResponse>
                 transformer =

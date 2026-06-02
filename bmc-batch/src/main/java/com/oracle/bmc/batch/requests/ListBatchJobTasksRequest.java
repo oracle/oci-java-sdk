@@ -38,15 +38,59 @@ public class ListBatchJobTasksRequest extends com.oracle.bmc.requests.BmcRequest
         return lifecycleState;
     }
     /**
-     * The name of the task.
+     * The hierarchical name of the batch task. Mutually exclusive with the task id query parameter: you can't pass both.
      */
     private String name;
 
     /**
-     * The name of the task.
+     * The hierarchical name of the batch task. Mutually exclusive with the task id query parameter: you can't pass both.
      */
     public String getName() {
         return name;
+    }
+    /**
+     * The UUID of the batch task. Mutually exclusive with the task name and group task name query parameters: you can't pass both.
+     */
+    private String taskId;
+
+    /**
+     * The UUID of the batch task. Mutually exclusive with the task name and group task name query parameters: you can't pass both.
+     */
+    public String getTaskId() {
+        return taskId;
+    }
+    /**
+     * Hierarchical name of the group task. A filter to return only tasks contained within the selected group task. Omit to return top-level tasks only. Can be combined with task name query parameter, in which case task name becomes a hierarchical name relative to the selected group task, e.g. ?groupTaskName=A.B&taskName=C.D is equal to ?taskName=A.B.C.D. Mutually exclusive with the task id query parameter: you can't pass both.
+     */
+    private String groupTaskName;
+
+    /**
+     * Hierarchical name of the group task. A filter to return only tasks contained within the selected group task. Omit to return top-level tasks only. Can be combined with task name query parameter, in which case task name becomes a hierarchical name relative to the selected group task, e.g. ?groupTaskName=A.B&taskName=C.D is equal to ?taskName=A.B.C.D. Mutually exclusive with the task id query parameter: you can't pass both.
+     */
+    public String getGroupTaskName() {
+        return groupTaskName;
+    }
+    /**
+     * Filter tasks by type. Valid values are: COMPUTE, GROUP.
+     */
+    private com.oracle.bmc.batch.model.BatchTask.Type type;
+
+    /**
+     * Filter tasks by type. Valid values are: COMPUTE, GROUP.
+     */
+    public com.oracle.bmc.batch.model.BatchTask.Type getType() {
+        return type;
+    }
+    /**
+     * Defines the hierarchical scope of the tasks to be returned. When set to SHALLOW, which is default, only tasks contained directly (non-recursively) within current hierarchy entry are returned. When set to DEEP, tasks contained within current hierarchy entry and all its descendants recursively are returned. The default hierarchy entry is root, i.e. batch job itself. To use a different hierarchy entry, provide the group task name as a query parameter.  The specified group task becomes the entry point instead of the batch job.
+     */
+    private com.oracle.bmc.batch.model.BatchTaskHierarchyView hierarchyView;
+
+    /**
+     * Defines the hierarchical scope of the tasks to be returned. When set to SHALLOW, which is default, only tasks contained directly (non-recursively) within current hierarchy entry are returned. When set to DEEP, tasks contained within current hierarchy entry and all its descendants recursively are returned. The default hierarchy entry is root, i.e. batch job itself. To use a different hierarchy entry, provide the group task name as a query parameter.  The specified group task becomes the entry point instead of the batch job.
+     */
+    public com.oracle.bmc.batch.model.BatchTaskHierarchyView getHierarchyView() {
+        return hierarchyView;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
@@ -169,17 +213,78 @@ public class ListBatchJobTasksRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The name of the task.
+         * The hierarchical name of the batch task. Mutually exclusive with the task id query parameter: you can't pass both.
          */
         private String name = null;
 
         /**
-         * The name of the task.
+         * The hierarchical name of the batch task. Mutually exclusive with the task id query parameter: you can't pass both.
          * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        /**
+         * The UUID of the batch task. Mutually exclusive with the task name and group task name query parameters: you can't pass both.
+         */
+        private String taskId = null;
+
+        /**
+         * The UUID of the batch task. Mutually exclusive with the task name and group task name query parameters: you can't pass both.
+         * @param taskId the value to set
+         * @return this builder instance
+         */
+        public Builder taskId(String taskId) {
+            this.taskId = taskId;
+            return this;
+        }
+
+        /**
+         * Hierarchical name of the group task. A filter to return only tasks contained within the selected group task. Omit to return top-level tasks only. Can be combined with task name query parameter, in which case task name becomes a hierarchical name relative to the selected group task, e.g. ?groupTaskName=A.B&taskName=C.D is equal to ?taskName=A.B.C.D. Mutually exclusive with the task id query parameter: you can't pass both.
+         */
+        private String groupTaskName = null;
+
+        /**
+         * Hierarchical name of the group task. A filter to return only tasks contained within the selected group task. Omit to return top-level tasks only. Can be combined with task name query parameter, in which case task name becomes a hierarchical name relative to the selected group task, e.g. ?groupTaskName=A.B&taskName=C.D is equal to ?taskName=A.B.C.D. Mutually exclusive with the task id query parameter: you can't pass both.
+         * @param groupTaskName the value to set
+         * @return this builder instance
+         */
+        public Builder groupTaskName(String groupTaskName) {
+            this.groupTaskName = groupTaskName;
+            return this;
+        }
+
+        /**
+         * Filter tasks by type. Valid values are: COMPUTE, GROUP.
+         */
+        private com.oracle.bmc.batch.model.BatchTask.Type type = null;
+
+        /**
+         * Filter tasks by type. Valid values are: COMPUTE, GROUP.
+         * @param type the value to set
+         * @return this builder instance
+         */
+        public Builder type(com.oracle.bmc.batch.model.BatchTask.Type type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Defines the hierarchical scope of the tasks to be returned. When set to SHALLOW, which is default, only tasks contained directly (non-recursively) within current hierarchy entry are returned. When set to DEEP, tasks contained within current hierarchy entry and all its descendants recursively are returned. The default hierarchy entry is root, i.e. batch job itself. To use a different hierarchy entry, provide the group task name as a query parameter.  The specified group task becomes the entry point instead of the batch job.
+         */
+        private com.oracle.bmc.batch.model.BatchTaskHierarchyView hierarchyView = null;
+
+        /**
+         * Defines the hierarchical scope of the tasks to be returned. When set to SHALLOW, which is default, only tasks contained directly (non-recursively) within current hierarchy entry are returned. When set to DEEP, tasks contained within current hierarchy entry and all its descendants recursively are returned. The default hierarchy entry is root, i.e. batch job itself. To use a different hierarchy entry, provide the group task name as a query parameter.  The specified group task becomes the entry point instead of the batch job.
+         * @param hierarchyView the value to set
+         * @return this builder instance
+         */
+        public Builder hierarchyView(
+                com.oracle.bmc.batch.model.BatchTaskHierarchyView hierarchyView) {
+            this.hierarchyView = hierarchyView;
             return this;
         }
 
@@ -311,6 +416,10 @@ public class ListBatchJobTasksRequest extends com.oracle.bmc.requests.BmcRequest
             batchJobId(o.getBatchJobId());
             lifecycleState(o.getLifecycleState());
             name(o.getName());
+            taskId(o.getTaskId());
+            groupTaskName(o.getGroupTaskName());
+            type(o.getType());
+            hierarchyView(o.getHierarchyView());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -351,13 +460,17 @@ public class ListBatchJobTasksRequest extends com.oracle.bmc.requests.BmcRequest
             request.batchJobId = batchJobId;
             request.lifecycleState = lifecycleState;
             request.name = name;
+            request.taskId = taskId;
+            request.groupTaskName = groupTaskName;
+            request.type = type;
+            request.hierarchyView = hierarchyView;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListBatchJobTasksRequest(batchJobId, lifecycleState, name, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListBatchJobTasksRequest(batchJobId, lifecycleState, name, taskId, groupTaskName, type, hierarchyView, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -370,6 +483,10 @@ public class ListBatchJobTasksRequest extends com.oracle.bmc.requests.BmcRequest
                 .batchJobId(batchJobId)
                 .lifecycleState(lifecycleState)
                 .name(name)
+                .taskId(taskId)
+                .groupTaskName(groupTaskName)
+                .type(type)
+                .hierarchyView(hierarchyView)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -393,6 +510,10 @@ public class ListBatchJobTasksRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",batchJobId=").append(String.valueOf(this.batchJobId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",taskId=").append(String.valueOf(this.taskId));
+        sb.append(",groupTaskName=").append(String.valueOf(this.groupTaskName));
+        sb.append(",type=").append(String.valueOf(this.type));
+        sb.append(",hierarchyView=").append(String.valueOf(this.hierarchyView));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -416,6 +537,10 @@ public class ListBatchJobTasksRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(this.batchJobId, other.batchJobId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.taskId, other.taskId)
+                && java.util.Objects.equals(this.groupTaskName, other.groupTaskName)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.hierarchyView, other.hierarchyView)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -432,6 +557,14 @@ public class ListBatchJobTasksRequest extends com.oracle.bmc.requests.BmcRequest
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.taskId == null ? 43 : this.taskId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupTaskName == null ? 43 : this.groupTaskName.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hierarchyView == null ? 43 : this.hierarchyView.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

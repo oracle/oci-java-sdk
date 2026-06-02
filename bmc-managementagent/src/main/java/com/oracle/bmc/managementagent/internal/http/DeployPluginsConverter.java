@@ -31,8 +31,13 @@ public class DeployPluginsConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getDeployPluginsDetails(), "deployPluginsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20200202")
                         .path("managementAgents")
                         .path("actions")

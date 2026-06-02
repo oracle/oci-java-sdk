@@ -13,34 +13,12 @@ public class ListMulticloudResourcesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The subscription service name of the Cloud Service Provider.
-     */
-    private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
-
-    /**
-     * The subscription service name of the Cloud Service Provider.
-     */
-    public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
-        return subscriptionServiceName;
-    }
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-     */
-    private String subscriptionId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-     */
-    public String getSubscriptionId() {
-        return subscriptionId;
-    }
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     private String resourceAnchorId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     public String getResourceAnchorId() {
         return resourceAnchorId;
@@ -92,11 +70,15 @@ public class ListMulticloudResourcesRequest
     }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+     *
      */
     private com.oracle.bmc.multicloud.model.SortOrder sortOrder;
 
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+     *
      */
     public com.oracle.bmc.multicloud.model.SortOrder getSortOrder() {
         return sortOrder;
@@ -155,15 +137,48 @@ public class ListMulticloudResourcesRequest
         return sortBy;
     }
     /**
-     * The Cloud Service Provider region.
+     * The cloud service provider.
+     */
+    private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
+
+    /**
+     * The cloud service provider.
+     */
+    public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
+        return subscriptionServiceName;
+    }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+     */
+    private String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+    /**
+     * The cloud service provider region.
      */
     private String externalLocation;
 
     /**
-     * The Cloud Service Provider region.
+     * The cloud service provider region.
      */
     public String getExternalLocation() {
         return externalLocation;
+    }
+    /**
+     * Filter alerts by resource type (e.g. ADBD, VMCluster).
+     */
+    private String resourceType;
+
+    /**
+     * Filter alerts by resource type (e.g. ADBD, VMCluster).
+     */
+    public String getResourceType() {
+        return resourceType;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -193,43 +208,12 @@ public class ListMulticloudResourcesRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The subscription service name of the Cloud Service Provider.
-         */
-        private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
-
-        /**
-         * The subscription service name of the Cloud Service Provider.
-         * @param subscriptionServiceName the value to set
-         * @return this builder instance
-         */
-        public Builder subscriptionServiceName(
-                com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName) {
-            this.subscriptionServiceName = subscriptionServiceName;
-            return this;
-        }
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-         */
-        private String subscriptionId = null;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-         * @param subscriptionId the value to set
-         * @return this builder instance
-         */
-        public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = subscriptionId;
-            return this;
-        }
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          */
         private String resourceAnchorId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          * @param resourceAnchorId the value to set
          * @return this builder instance
          */
@@ -297,11 +281,15 @@ public class ListMulticloudResourcesRequest
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+         *
          */
         private com.oracle.bmc.multicloud.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -330,17 +318,63 @@ public class ListMulticloudResourcesRequest
         }
 
         /**
-         * The Cloud Service Provider region.
+         * The cloud service provider.
+         */
+        private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
+
+        /**
+         * The cloud service provider.
+         * @param subscriptionServiceName the value to set
+         * @return this builder instance
+         */
+        public Builder subscriptionServiceName(
+                com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName) {
+            this.subscriptionServiceName = subscriptionServiceName;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+         */
+        private String subscriptionId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+         * @param subscriptionId the value to set
+         * @return this builder instance
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
+         * The cloud service provider region.
          */
         private String externalLocation = null;
 
         /**
-         * The Cloud Service Provider region.
+         * The cloud service provider region.
          * @param externalLocation the value to set
          * @return this builder instance
          */
         public Builder externalLocation(String externalLocation) {
             this.externalLocation = externalLocation;
+            return this;
+        }
+
+        /**
+         * Filter alerts by resource type (e.g. ADBD, VMCluster).
+         */
+        private String resourceType = null;
+
+        /**
+         * Filter alerts by resource type (e.g. ADBD, VMCluster).
+         * @param resourceType the value to set
+         * @return this builder instance
+         */
+        public Builder resourceType(String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
 
@@ -395,15 +429,16 @@ public class ListMulticloudResourcesRequest
          * @return this builder instance
          */
         public Builder copy(ListMulticloudResourcesRequest o) {
-            subscriptionServiceName(o.getSubscriptionServiceName());
-            subscriptionId(o.getSubscriptionId());
             resourceAnchorId(o.getResourceAnchorId());
             compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            subscriptionServiceName(o.getSubscriptionServiceName());
+            subscriptionId(o.getSubscriptionId());
             externalLocation(o.getExternalLocation());
+            resourceType(o.getResourceType());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -437,18 +472,19 @@ public class ListMulticloudResourcesRequest
          */
         public ListMulticloudResourcesRequest buildWithoutInvocationCallback() {
             ListMulticloudResourcesRequest request = new ListMulticloudResourcesRequest();
-            request.subscriptionServiceName = subscriptionServiceName;
-            request.subscriptionId = subscriptionId;
             request.resourceAnchorId = resourceAnchorId;
             request.compartmentId = compartmentId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.subscriptionServiceName = subscriptionServiceName;
+            request.subscriptionId = subscriptionId;
             request.externalLocation = externalLocation;
+            request.resourceType = resourceType;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListMulticloudResourcesRequest(subscriptionServiceName, subscriptionId, resourceAnchorId, compartmentId, limit, page, sortOrder, sortBy, externalLocation, opcRequestId);
+            // new ListMulticloudResourcesRequest(resourceAnchorId, compartmentId, limit, page, sortOrder, sortBy, subscriptionServiceName, subscriptionId, externalLocation, resourceType, opcRequestId);
         }
     }
 
@@ -458,15 +494,16 @@ public class ListMulticloudResourcesRequest
      */
     public Builder toBuilder() {
         return new Builder()
-                .subscriptionServiceName(subscriptionServiceName)
-                .subscriptionId(subscriptionId)
                 .resourceAnchorId(resourceAnchorId)
                 .compartmentId(compartmentId)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
+                .subscriptionServiceName(subscriptionServiceName)
+                .subscriptionId(subscriptionId)
                 .externalLocation(externalLocation)
+                .resourceType(resourceType)
                 .opcRequestId(opcRequestId);
     }
 
@@ -483,15 +520,16 @@ public class ListMulticloudResourcesRequest
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",subscriptionServiceName=").append(String.valueOf(this.subscriptionServiceName));
-        sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(",resourceAnchorId=").append(String.valueOf(this.resourceAnchorId));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",subscriptionServiceName=").append(String.valueOf(this.subscriptionServiceName));
+        sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(",externalLocation=").append(String.valueOf(this.externalLocation));
+        sb.append(",resourceType=").append(String.valueOf(this.resourceType));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -508,16 +546,17 @@ public class ListMulticloudResourcesRequest
 
         ListMulticloudResourcesRequest other = (ListMulticloudResourcesRequest) o;
         return super.equals(o)
-                && java.util.Objects.equals(
-                        this.subscriptionServiceName, other.subscriptionServiceName)
-                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.resourceAnchorId, other.resourceAnchorId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(
+                        this.subscriptionServiceName, other.subscriptionServiceName)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.externalLocation, other.externalLocation)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -525,14 +564,6 @@ public class ListMulticloudResourcesRequest
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.subscriptionServiceName == null
-                                ? 43
-                                : this.subscriptionServiceName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.resourceAnchorId == null ? 43 : this.resourceAnchorId.hashCode());
@@ -545,7 +576,16 @@ public class ListMulticloudResourcesRequest
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result =
                 (result * PRIME)
+                        + (this.subscriptionServiceName == null
+                                ? 43
+                                : this.subscriptionServiceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.externalLocation == null ? 43 : this.externalLocation.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

@@ -21,23 +21,45 @@ package com.oracle.bmc.bds.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public ReplaceNodeDetails(
+            String nodeHostName,
+            String nodeBackupId,
+            String clusterAdminPassword,
+            java.util.List<String> heterogeneousShapes,
+            String secretId,
+            String shape) {
+        super();
+        this.nodeHostName = nodeHostName;
+        this.nodeBackupId = nodeBackupId;
+        this.clusterAdminPassword =
+                clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
+        this.heterogeneousShapes = heterogeneousShapes;
+        this.secretId = secretId;
+        this.shape = shape;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "nodeHostName",
         "nodeBackupId",
         "clusterAdminPassword",
+        "heterogeneousShapes",
         "secretId",
         "shape"
     })
     public ReplaceNodeDetails(
             String nodeHostName,
             String nodeBackupId,
-            String clusterAdminPassword,
+            char[] clusterAdminPassword,
+            java.util.List<String> heterogeneousShapes,
             String secretId,
             String shape) {
         super();
         this.nodeHostName = nodeHostName;
         this.nodeBackupId = nodeBackupId;
         this.clusterAdminPassword = clusterAdminPassword;
+        this.heterogeneousShapes = heterogeneousShapes;
         this.secretId = secretId;
         this.shape = shape;
     }
@@ -80,16 +102,40 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
          * Base-64 encoded password for the cluster admin user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-        private String clusterAdminPassword;
+        private char[] clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster admin user.
          * @param clusterAdminPassword the value to set
          * @return this builder
          **/
-        public Builder clusterAdminPassword(String clusterAdminPassword) {
+        public Builder clusterAdminPassword(char[] clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+
+        public Builder clusterAdminPassword(String clusterAdminPassword) {
+            this.clusterAdminPassword =
+                    clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
+            this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+
+        /**
+         * Heterogeneous shape of the node if the default shape is not available.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("heterogeneousShapes")
+        private java.util.List<String> heterogeneousShapes;
+
+        /**
+         * Heterogeneous shape of the node if the default shape is not available.
+         * @param heterogeneousShapes the value to set
+         * @return this builder
+         **/
+        public Builder heterogeneousShapes(java.util.List<String> heterogeneousShapes) {
+            this.heterogeneousShapes = heterogeneousShapes;
+            this.__explicitlySet__.add("heterogeneousShapes");
             return this;
         }
         /**
@@ -134,6 +180,7 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
                             this.nodeHostName,
                             this.nodeBackupId,
                             this.clusterAdminPassword,
+                            this.heterogeneousShapes,
                             this.secretId,
                             this.shape);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -152,6 +199,9 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("heterogeneousShapes")) {
+                this.heterogeneousShapes(model.getHeterogeneousShapes());
             }
             if (model.wasPropertyExplicitlySet("secretId")) {
                 this.secretId(model.getSecretId());
@@ -206,14 +256,40 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
      * Base-64 encoded password for the cluster admin user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-    private final String clusterAdminPassword;
+    private final char[] clusterAdminPassword;
+
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     * return the value
+     * @Deprecated - Use getClusterAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClusterAdminPassword() {
+        return clusterAdminPassword != null ? new String(clusterAdminPassword) : null;
+    }
 
     /**
      * Base-64 encoded password for the cluster admin user.
      * @return the value
      **/
-    public String getClusterAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
+    public char[] getClusterAdminPassword__AsCharArray() {
         return clusterAdminPassword;
+    }
+
+    /**
+     * Heterogeneous shape of the node if the default shape is not available.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("heterogeneousShapes")
+    private final java.util.List<String> heterogeneousShapes;
+
+    /**
+     * Heterogeneous shape of the node if the default shape is not available.
+     * @return the value
+     **/
+    public java.util.List<String> getHeterogeneousShapes() {
+        return heterogeneousShapes;
     }
 
     /**
@@ -261,6 +337,7 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
         sb.append("nodeHostName=").append(String.valueOf(this.nodeHostName));
         sb.append(", nodeBackupId=").append(String.valueOf(this.nodeBackupId));
         sb.append(", clusterAdminPassword=").append("<redacted>");
+        sb.append(", heterogeneousShapes=").append(String.valueOf(this.heterogeneousShapes));
         sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(")");
@@ -280,6 +357,7 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
         return java.util.Objects.equals(this.nodeHostName, other.nodeHostName)
                 && java.util.Objects.equals(this.nodeBackupId, other.nodeBackupId)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.heterogeneousShapes, other.heterogeneousShapes)
                 && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && super.equals(other);
@@ -296,6 +374,11 @@ public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.Expli
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heterogeneousShapes == null
+                                ? 43
+                                : this.heterogeneousShapes.hashCode());
         result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + super.hashCode();

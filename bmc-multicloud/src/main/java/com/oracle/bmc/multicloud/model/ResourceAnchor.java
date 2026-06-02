@@ -5,7 +5,7 @@
 package com.oracle.bmc.multicloud.model;
 
 /**
- * A ResourceAnchor is a description of a ResourceAnchor.
+ * A resource anchor.
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to
  * an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -87,13 +87,13 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          * @param id the value to set
          * @return this builder
          **/
@@ -167,7 +167,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -176,7 +176,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -189,7 +189,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -198,7 +198,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -211,13 +211,13 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The current state of the ResourceAnchor.
+         * The current state of the resource anchor.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the ResourceAnchor.
+         * The current state of the resource anchor.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -227,7 +227,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * A message that describes the current state of the ResourceAnchor in more detail. For example,
+         * A message that describes the current state of the resource anchor in more detail. For example,
          * can be used to provide actionable information for a resource in the Failed state.
          *
          **/
@@ -235,7 +235,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
         private String lifecycleDetails;
 
         /**
-         * A message that describes the current state of the ResourceAnchor in more detail. For example,
+         * A message that describes the current state of the resource anchor in more detail. For example,
          * can be used to provide actionable information for a resource in the Failed state.
          *
          * @param lifecycleDetails the value to set
@@ -520,13 +520,13 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      * @return the value
      **/
     public String getId() {
@@ -590,7 +590,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -599,7 +599,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -610,7 +610,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -619,7 +619,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -630,7 +630,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The current state of the ResourceAnchor.
+     * The current state of the resource anchor.
      **/
     public enum LifecycleState {
         Creating("CREATING"),
@@ -682,13 +682,13 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
         }
     };
     /**
-     * The current state of the ResourceAnchor.
+     * The current state of the resource anchor.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the ResourceAnchor.
+     * The current state of the resource anchor.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -696,7 +696,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * A message that describes the current state of the ResourceAnchor in more detail. For example,
+     * A message that describes the current state of the resource anchor in more detail. For example,
      * can be used to provide actionable information for a resource in the Failed state.
      *
      **/
@@ -704,7 +704,7 @@ public final class ResourceAnchor extends com.oracle.bmc.http.internal.Explicitl
     private final String lifecycleDetails;
 
     /**
-     * A message that describes the current state of the ResourceAnchor in more detail. For example,
+     * A message that describes the current state of the resource anchor in more detail. For example,
      * can be used to provide actionable information for a resource in the Failed state.
      *
      * @return the value

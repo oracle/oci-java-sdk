@@ -1664,6 +1664,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
          * - LH - indicates an Oracle Autonomous AI Lakehouse database
          * <p>
          **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+         * When creating an Autonomous AI Database, if this parameter is not specified, the default value is {@code OLTP}.
          * <p>
          *
          * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -1681,6 +1682,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
          * - LH - indicates an Oracle Autonomous AI Lakehouse database
          * <p>
          **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+         * When creating an Autonomous AI Database, if this parameter is not specified, the default value is {@code OLTP}.
          * <p>
          *
          * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -4838,6 +4840,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
      * - LH - indicates an Oracle Autonomous AI Lakehouse database
      * <p>
      **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+     * When creating an Autonomous AI Database, if this parameter is not specified, the default value is {@code OLTP}.
      * <p>
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -4900,6 +4903,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
      * - LH - indicates an Oracle Autonomous AI Lakehouse database
      * <p>
      **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+     * When creating an Autonomous AI Database, if this parameter is not specified, the default value is {@code OLTP}.
      * <p>
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -4917,6 +4921,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
      * - LH - indicates an Oracle Autonomous AI Lakehouse database
      * <p>
      **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+     * When creating an Autonomous AI Database, if this parameter is not specified, the default value is {@code OLTP}.
      * <p>
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -6543,6 +6548,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
     public enum NetServicesArchitecture {
         Dedicated("DEDICATED"),
         Shared("SHARED"),
+        Drcp("DRCP"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

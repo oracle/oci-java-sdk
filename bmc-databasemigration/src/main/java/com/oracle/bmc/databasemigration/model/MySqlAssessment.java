@@ -199,6 +199,22 @@ public final class MySqlAssessment extends Assessment {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * Assessment migration scope.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationScope")
+        private MigrationScopeMySql migrationScope;
+
+        /**
+         * Assessment migration scope.
+         * @param migrationScope the value to set
+         * @return this builder
+         **/
+        public Builder migrationScope(MigrationScopeMySql migrationScope) {
+            this.migrationScope = migrationScope;
+            this.__explicitlySet__.add("migrationScope");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -224,7 +240,8 @@ public final class MySqlAssessment extends Assessment {
                             this.timeUpdated,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.migrationScope);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -290,6 +307,9 @@ public final class MySqlAssessment extends Assessment {
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("migrationScope")) {
+                this.migrationScope(model.getMigrationScope());
+            }
             return this;
         }
     }
@@ -325,7 +345,8 @@ public final class MySqlAssessment extends Assessment {
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            MigrationScopeMySql migrationScope) {
         super(
                 id,
                 description,
@@ -346,6 +367,21 @@ public final class MySqlAssessment extends Assessment {
                 freeformTags,
                 definedTags,
                 systemTags);
+        this.migrationScope = migrationScope;
+    }
+
+    /**
+     * Assessment migration scope.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationScope")
+    private final MigrationScopeMySql migrationScope;
+
+    /**
+     * Assessment migration scope.
+     * @return the value
+     **/
+    public MigrationScopeMySql getMigrationScope() {
+        return migrationScope;
     }
 
     @Override
@@ -362,6 +398,7 @@ public final class MySqlAssessment extends Assessment {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MySqlAssessment(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", migrationScope=").append(String.valueOf(this.migrationScope));
         sb.append(")");
         return sb.toString();
     }
@@ -376,13 +413,17 @@ public final class MySqlAssessment extends Assessment {
         }
 
         MySqlAssessment other = (MySqlAssessment) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.migrationScope, other.migrationScope)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.migrationScope == null ? 43 : this.migrationScope.hashCode());
         return result;
     }
 }

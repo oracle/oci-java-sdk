@@ -33,9 +33,9 @@ public enum OperationType {
     GoldengateConnectionDelete("GOLDENGATE_CONNECTION_DELETE"),
     GoldengateConnectionMove("GOLDENGATE_CONNECTION_MOVE"),
     GoldengateConnectionRefresh("GOLDENGATE_CONNECTION_REFRESH"),
+    GoldengateConnectionMigrateSecrets("GOLDENGATE_CONNECTION_MIGRATE_SECRETS"),
     GoldengateConnectionAssignmentCreate("GOLDENGATE_CONNECTION_ASSIGNMENT_CREATE"),
     GoldengateConnectionAssignmentDelete("GOLDENGATE_CONNECTION_ASSIGNMENT_DELETE"),
-    GoldengateConnectionAssigmnentDelete("GOLDENGATE_CONNECTION_ASSIGMNENT_DELETE"),
     GoldengateDeploymentDiagnosticCollect("GOLDENGATE_DEPLOYMENT_DIAGNOSTIC_COLLECT"),
     GoldengateDeploymentWalletExport("GOLDENGATE_DEPLOYMENT_WALLET_EXPORT"),
     GoldengateDeploymentWalletImport("GOLDENGATE_DEPLOYMENT_WALLET_IMPORT"),
@@ -53,6 +53,9 @@ public enum OperationType {
     GoldengatePipelineDiagnosticsCollect("GOLDENGATE_PIPELINE_DIAGNOSTICS_COLLECT"),
     GoldengateSwitchoverDeploymentPeer("GOLDENGATE_SWITCHOVER_DEPLOYMENT_PEER"),
     GoldengatePipelinePause("GOLDENGATE_PIPELINE_PAUSE"),
+    GoldengatePipelineClone("GOLDENGATE_PIPELINE_CLONE"),
+    GoldengateDeploymentDisasterRecoveryPrecheck(
+            "GOLDENGATE_DEPLOYMENT_DISASTER_RECOVERY_PRECHECK"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

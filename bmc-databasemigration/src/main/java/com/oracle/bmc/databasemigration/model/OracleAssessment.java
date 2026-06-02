@@ -200,6 +200,22 @@ public final class OracleAssessment extends Assessment {
             return this;
         }
         /**
+         * Assessment migration scope.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationScope")
+        private MigrationScopeOracle migrationScope;
+
+        /**
+         * Assessment migration scope.
+         * @param migrationScope the value to set
+         * @return this builder
+         **/
+        public Builder migrationScope(MigrationScopeOracle migrationScope) {
+            this.migrationScope = migrationScope;
+            this.__explicitlySet__.add("migrationScope");
+            return this;
+        }
+        /**
          * True if CDB should be defined, false otherwise.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCdbSupported")
@@ -241,6 +257,7 @@ public final class OracleAssessment extends Assessment {
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.migrationScope,
                             this.isCdbSupported);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -307,6 +324,9 @@ public final class OracleAssessment extends Assessment {
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("migrationScope")) {
+                this.migrationScope(model.getMigrationScope());
+            }
             if (model.wasPropertyExplicitlySet("isCdbSupported")) {
                 this.isCdbSupported(model.getIsCdbSupported());
             }
@@ -346,6 +366,7 @@ public final class OracleAssessment extends Assessment {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            MigrationScopeOracle migrationScope,
             Boolean isCdbSupported) {
         super(
                 id,
@@ -367,7 +388,22 @@ public final class OracleAssessment extends Assessment {
                 freeformTags,
                 definedTags,
                 systemTags);
+        this.migrationScope = migrationScope;
         this.isCdbSupported = isCdbSupported;
+    }
+
+    /**
+     * Assessment migration scope.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationScope")
+    private final MigrationScopeOracle migrationScope;
+
+    /**
+     * Assessment migration scope.
+     * @return the value
+     **/
+    public MigrationScopeOracle getMigrationScope() {
+        return migrationScope;
     }
 
     /**
@@ -398,6 +434,7 @@ public final class OracleAssessment extends Assessment {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OracleAssessment(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", migrationScope=").append(String.valueOf(this.migrationScope));
         sb.append(", isCdbSupported=").append(String.valueOf(this.isCdbSupported));
         sb.append(")");
         return sb.toString();
@@ -413,7 +450,8 @@ public final class OracleAssessment extends Assessment {
         }
 
         OracleAssessment other = (OracleAssessment) o;
-        return java.util.Objects.equals(this.isCdbSupported, other.isCdbSupported)
+        return java.util.Objects.equals(this.migrationScope, other.migrationScope)
+                && java.util.Objects.equals(this.isCdbSupported, other.isCdbSupported)
                 && super.equals(other);
     }
 
@@ -421,6 +459,9 @@ public final class OracleAssessment extends Assessment {
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.migrationScope == null ? 43 : this.migrationScope.hashCode());
         result =
                 (result * PRIME)
                         + (this.isCdbSupported == null ? 43 : this.isCdbSupported.hashCode());

@@ -66,7 +66,7 @@ public final class DeploymentUpgradeSummary
             String oggVersion,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            LifecycleState lifecycleState,
+            DeploymentUpgrade.LifecycleState lifecycleState,
             LifecycleSubState lifecycleSubState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
@@ -325,19 +325,19 @@ public final class DeploymentUpgradeSummary
             return this;
         }
         /**
-         * Possible lifecycle states.
+         * Possible lifecycle states for a Deployment Upgrade.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
+        private DeploymentUpgrade.LifecycleState lifecycleState;
 
         /**
-         * Possible lifecycle states.
+         * Possible lifecycle states for a Deployment Upgrade.
          *
          * @param lifecycleState the value to set
          * @return this builder
          **/
-        public Builder lifecycleState(LifecycleState lifecycleState) {
+        public Builder lifecycleState(DeploymentUpgrade.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -1016,18 +1016,18 @@ public final class DeploymentUpgradeSummary
     }
 
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Upgrade.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final LifecycleState lifecycleState;
+    private final DeploymentUpgrade.LifecycleState lifecycleState;
 
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Upgrade.
      *
      * @return the value
      **/
-    public LifecycleState getLifecycleState() {
+    public DeploymentUpgrade.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 

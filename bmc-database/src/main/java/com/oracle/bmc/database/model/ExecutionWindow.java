@@ -42,7 +42,8 @@ public final class ExecutionWindow extends com.oracle.bmc.http.internal.Explicit
         "windowType",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "windowDetails"
     })
     public ExecutionWindow(
             String id,
@@ -66,7 +67,8 @@ public final class ExecutionWindow extends com.oracle.bmc.http.internal.Explicit
             WindowType windowType,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String windowDetails) {
         super();
         this.id = id;
         this.executionResourceId = executionResourceId;
@@ -90,6 +92,7 @@ public final class ExecutionWindow extends com.oracle.bmc.http.internal.Explicit
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.windowDetails = windowDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -471,6 +474,30 @@ public final class ExecutionWindow extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * A message that gives a description of its creation. For example, if the window type is unplanned,
+         * the message must specify the window display name. If the window has been deferred from another window,
+         * the message should additionally reference the deferred window\u2019s display name and provide the justification
+         * for creating the unplanned window.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("windowDetails")
+        private String windowDetails;
+
+        /**
+         * A message that gives a description of its creation. For example, if the window type is unplanned,
+         * the message must specify the window display name. If the window has been deferred from another window,
+         * the message should additionally reference the deferred window\u2019s display name and provide the justification
+         * for creating the unplanned window.
+         *
+         * @param windowDetails the value to set
+         * @return this builder
+         **/
+        public Builder windowDetails(String windowDetails) {
+            this.windowDetails = windowDetails;
+            this.__explicitlySet__.add("windowDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -499,7 +526,8 @@ public final class ExecutionWindow extends com.oracle.bmc.http.internal.Explicit
                             this.windowType,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.windowDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -573,6 +601,9 @@ public final class ExecutionWindow extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("windowDetails")) {
+                this.windowDetails(model.getWindowDetails());
             }
             return this;
         }
@@ -1080,6 +1111,28 @@ public final class ExecutionWindow extends com.oracle.bmc.http.internal.Explicit
         return systemTags;
     }
 
+    /**
+     * A message that gives a description of its creation. For example, if the window type is unplanned,
+     * the message must specify the window display name. If the window has been deferred from another window,
+     * the message should additionally reference the deferred window\u2019s display name and provide the justification
+     * for creating the unplanned window.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("windowDetails")
+    private final String windowDetails;
+
+    /**
+     * A message that gives a description of its creation. For example, if the window type is unplanned,
+     * the message must specify the window display name. If the window has been deferred from another window,
+     * the message should additionally reference the deferred window\u2019s display name and provide the justification
+     * for creating the unplanned window.
+     *
+     * @return the value
+     **/
+    public String getWindowDetails() {
+        return windowDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1117,6 +1170,7 @@ public final class ExecutionWindow extends com.oracle.bmc.http.internal.Explicit
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", windowDetails=").append(String.valueOf(this.windowDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1154,6 +1208,7 @@ public final class ExecutionWindow extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.windowDetails, other.windowDetails)
                 && super.equals(other);
     }
 
@@ -1217,6 +1272,9 @@ public final class ExecutionWindow extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.windowDetails == null ? 43 : this.windowDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

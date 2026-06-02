@@ -5,7 +5,7 @@
 package com.oracle.bmc.multicloud.model;
 
 /**
- * Multicloud subscription object
+ * A Multicloud subscription.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -26,6 +26,7 @@ public final class MulticloudSubscriptionSummary
         "classicSubscriptionId",
         "subscriptionId",
         "partnerCloudAccountIdentifier",
+        "partnerCloudTenantIdentifier",
         "serviceName",
         "timeLinkedDate",
         "paymentPlan",
@@ -43,6 +44,7 @@ public final class MulticloudSubscriptionSummary
             String classicSubscriptionId,
             String subscriptionId,
             String partnerCloudAccountIdentifier,
+            String partnerCloudTenantIdentifier,
             SubscriptionType serviceName,
             java.util.Date timeLinkedDate,
             String paymentPlan,
@@ -59,6 +61,7 @@ public final class MulticloudSubscriptionSummary
         this.classicSubscriptionId = classicSubscriptionId;
         this.subscriptionId = subscriptionId;
         this.partnerCloudAccountIdentifier = partnerCloudAccountIdentifier;
+        this.partnerCloudTenantIdentifier = partnerCloudTenantIdentifier;
         this.serviceName = serviceName;
         this.timeLinkedDate = timeLinkedDate;
         this.paymentPlan = paymentPlan;
@@ -76,13 +79,13 @@ public final class MulticloudSubscriptionSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Subscription ID for OCI and Partner cloud in classic format.
+         * Subscription ID for OCI and partner cloud in classic format.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("classicSubscriptionId")
         private String classicSubscriptionId;
 
         /**
-         * Subscription ID for OCI and Partner cloud in classic format.
+         * Subscription ID for OCI and partner cloud in classic format.
          * @param classicSubscriptionId the value to set
          * @return this builder
          **/
@@ -92,13 +95,17 @@ public final class MulticloudSubscriptionSummary
             return this;
         }
         /**
-         * URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+         * URL to the subscription details page.
+         * Example: {@code https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1}.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
-         * URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+         * URL to the subscription details page.
+         * Example: {@code https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1}.
+         *
          * @param subscriptionId the value to set
          * @return this builder
          **/
@@ -124,13 +131,29 @@ public final class MulticloudSubscriptionSummary
             return this;
         }
         /**
-         * The serviceName that externalLocation map object belongs to.
+         * The partner cloud tenant ID.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudTenantIdentifier")
+        private String partnerCloudTenantIdentifier;
+
+        /**
+         * The partner cloud tenant ID.
+         * @param partnerCloudTenantIdentifier the value to set
+         * @return this builder
+         **/
+        public Builder partnerCloudTenantIdentifier(String partnerCloudTenantIdentifier) {
+            this.partnerCloudTenantIdentifier = partnerCloudTenantIdentifier;
+            this.__explicitlySet__.add("partnerCloudTenantIdentifier");
+            return this;
+        }
+        /**
+         * The cloud service provider.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private SubscriptionType serviceName;
 
         /**
-         * The serviceName that externalLocation map object belongs to.
+         * The cloud service provider.
          * @param serviceName the value to set
          * @return this builder
          **/
@@ -140,7 +163,7 @@ public final class MulticloudSubscriptionSummary
             return this;
         }
         /**
-         * The date and time for when the multicloud was created, in the format defined by
+         * The date and time that the Multicloud base compartment was created, in the format defined by
          * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          **/
@@ -148,7 +171,7 @@ public final class MulticloudSubscriptionSummary
         private java.util.Date timeLinkedDate;
 
         /**
-         * The date and time for when the multicloud was created, in the format defined by
+         * The date and time that the Multicloud base compartment was created, in the format defined by
          * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeLinkedDate the value to set
@@ -192,7 +215,7 @@ public final class MulticloudSubscriptionSummary
             return this;
         }
         /**
-         * The date and time for when the subscription is finishing, in the format defined by
+         * The end date and time for the subscription, in the format defined by
          * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          **/
@@ -200,7 +223,7 @@ public final class MulticloudSubscriptionSummary
         private java.util.Date timeEndDate;
 
         /**
-         * The date and time for when the subscription is finishing, in the format defined by
+         * The end date and time for the subscription, in the format defined by
          * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeEndDate the value to set
@@ -228,13 +251,15 @@ public final class MulticloudSubscriptionSummary
             return this;
         }
         /**
-         * CSP Specific Additional Properties, AzureSubnetId for Azure
+         * Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
         private java.util.Map<String, String> cspAdditionalProperties;
 
         /**
-         * CSP Specific Additional Properties, AzureSubnetId for Azure
+         * Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
+         *
          * @param cspAdditionalProperties the value to set
          * @return this builder
          **/
@@ -245,7 +270,7 @@ public final class MulticloudSubscriptionSummary
             return this;
         }
         /**
-         * The date and time the subscription was created, in the format defined by
+         * The date and time that the subscription was created, in the format defined by
          * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          **/
@@ -253,7 +278,7 @@ public final class MulticloudSubscriptionSummary
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the subscription was created, in the format defined by
+         * The date and time that the subscription was created, in the format defined by
          * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeCreated the value to set
@@ -265,7 +290,7 @@ public final class MulticloudSubscriptionSummary
             return this;
         }
         /**
-         * The date and time the subscription was updated, in the format defined by
+         * The date and time that the subscription was updated, in the format defined by
          * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          **/
@@ -273,7 +298,7 @@ public final class MulticloudSubscriptionSummary
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the subscription was updated, in the format defined by
+         * The date and time that the subscription was updated, in the format defined by
          * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeUpdated the value to set
@@ -365,6 +390,7 @@ public final class MulticloudSubscriptionSummary
                             this.classicSubscriptionId,
                             this.subscriptionId,
                             this.partnerCloudAccountIdentifier,
+                            this.partnerCloudTenantIdentifier,
                             this.serviceName,
                             this.timeLinkedDate,
                             this.paymentPlan,
@@ -393,6 +419,9 @@ public final class MulticloudSubscriptionSummary
             }
             if (model.wasPropertyExplicitlySet("partnerCloudAccountIdentifier")) {
                 this.partnerCloudAccountIdentifier(model.getPartnerCloudAccountIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("partnerCloudTenantIdentifier")) {
+                this.partnerCloudTenantIdentifier(model.getPartnerCloudTenantIdentifier());
             }
             if (model.wasPropertyExplicitlySet("serviceName")) {
                 this.serviceName(model.getServiceName());
@@ -446,13 +475,13 @@ public final class MulticloudSubscriptionSummary
     }
 
     /**
-     * Subscription ID for OCI and Partner cloud in classic format.
+     * Subscription ID for OCI and partner cloud in classic format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classicSubscriptionId")
     private final String classicSubscriptionId;
 
     /**
-     * Subscription ID for OCI and Partner cloud in classic format.
+     * Subscription ID for OCI and partner cloud in classic format.
      * @return the value
      **/
     public String getClassicSubscriptionId() {
@@ -460,13 +489,17 @@ public final class MulticloudSubscriptionSummary
     }
 
     /**
-     * URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+     * URL to the subscription details page.
+     * Example: {@code https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1}.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+     * URL to the subscription details page.
+     * Example: {@code https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1}.
+     *
      * @return the value
      **/
     public String getSubscriptionId() {
@@ -488,13 +521,27 @@ public final class MulticloudSubscriptionSummary
     }
 
     /**
-     * The serviceName that externalLocation map object belongs to.
+     * The partner cloud tenant ID.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudTenantIdentifier")
+    private final String partnerCloudTenantIdentifier;
+
+    /**
+     * The partner cloud tenant ID.
+     * @return the value
+     **/
+    public String getPartnerCloudTenantIdentifier() {
+        return partnerCloudTenantIdentifier;
+    }
+
+    /**
+     * The cloud service provider.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final SubscriptionType serviceName;
 
     /**
-     * The serviceName that externalLocation map object belongs to.
+     * The cloud service provider.
      * @return the value
      **/
     public SubscriptionType getServiceName() {
@@ -502,7 +549,7 @@ public final class MulticloudSubscriptionSummary
     }
 
     /**
-     * The date and time for when the multicloud was created, in the format defined by
+     * The date and time that the Multicloud base compartment was created, in the format defined by
      * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      **/
@@ -510,7 +557,7 @@ public final class MulticloudSubscriptionSummary
     private final java.util.Date timeLinkedDate;
 
     /**
-     * The date and time for when the multicloud was created, in the format defined by
+     * The date and time that the Multicloud base compartment was created, in the format defined by
      * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
@@ -548,7 +595,7 @@ public final class MulticloudSubscriptionSummary
     }
 
     /**
-     * The date and time for when the subscription is finishing, in the format defined by
+     * The end date and time for the subscription, in the format defined by
      * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      **/
@@ -556,7 +603,7 @@ public final class MulticloudSubscriptionSummary
     private final java.util.Date timeEndDate;
 
     /**
-     * The date and time for when the subscription is finishing, in the format defined by
+     * The end date and time for the subscription, in the format defined by
      * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
@@ -628,13 +675,15 @@ public final class MulticloudSubscriptionSummary
     }
 
     /**
-     * CSP Specific Additional Properties, AzureSubnetId for Azure
+     * Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
     private final java.util.Map<String, String> cspAdditionalProperties;
 
     /**
-     * CSP Specific Additional Properties, AzureSubnetId for Azure
+     * Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
+     *
      * @return the value
      **/
     public java.util.Map<String, String> getCspAdditionalProperties() {
@@ -642,7 +691,7 @@ public final class MulticloudSubscriptionSummary
     }
 
     /**
-     * The date and time the subscription was created, in the format defined by
+     * The date and time that the subscription was created, in the format defined by
      * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      **/
@@ -650,7 +699,7 @@ public final class MulticloudSubscriptionSummary
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the subscription was created, in the format defined by
+     * The date and time that the subscription was created, in the format defined by
      * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
@@ -660,7 +709,7 @@ public final class MulticloudSubscriptionSummary
     }
 
     /**
-     * The date and time the subscription was updated, in the format defined by
+     * The date and time that the subscription was updated, in the format defined by
      * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      **/
@@ -668,7 +717,7 @@ public final class MulticloudSubscriptionSummary
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the subscription was updated, in the format defined by
+     * The date and time that the subscription was updated, in the format defined by
      * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
@@ -759,6 +808,8 @@ public final class MulticloudSubscriptionSummary
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", partnerCloudAccountIdentifier=")
                 .append(String.valueOf(this.partnerCloudAccountIdentifier));
+        sb.append(", partnerCloudTenantIdentifier=")
+                .append(String.valueOf(this.partnerCloudTenantIdentifier));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", timeLinkedDate=").append(String.valueOf(this.timeLinkedDate));
         sb.append(", paymentPlan=").append(String.valueOf(this.paymentPlan));
@@ -790,6 +841,8 @@ public final class MulticloudSubscriptionSummary
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(
                         this.partnerCloudAccountIdentifier, other.partnerCloudAccountIdentifier)
+                && java.util.Objects.equals(
+                        this.partnerCloudTenantIdentifier, other.partnerCloudTenantIdentifier)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
                 && java.util.Objects.equals(this.timeLinkedDate, other.timeLinkedDate)
                 && java.util.Objects.equals(this.paymentPlan, other.paymentPlan)
@@ -823,6 +876,11 @@ public final class MulticloudSubscriptionSummary
                         + (this.partnerCloudAccountIdentifier == null
                                 ? 43
                                 : this.partnerCloudAccountIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partnerCloudTenantIdentifier == null
+                                ? 43
+                                : this.partnerCloudTenantIdentifier.hashCode());
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
         result =
                 (result * PRIME)

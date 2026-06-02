@@ -5,7 +5,7 @@
 package com.oracle.bmc.multicloud.model;
 
 /**
- * Summary information about a ResourceAnchor.
+ * The properties that define a resource anchor.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -40,7 +40,8 @@ public final class ResourceAnchorSummary
         "subscriptionId",
         "systemTags",
         "linkedCompartmentId",
-        "linkedCompartmentName"
+        "linkedCompartmentName",
+        "resourceAnchorUri"
     })
     public ResourceAnchorSummary(
             String id,
@@ -60,7 +61,8 @@ public final class ResourceAnchorSummary
             String subscriptionId,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String linkedCompartmentId,
-            String linkedCompartmentName) {
+            String linkedCompartmentName,
+            String resourceAnchorUri) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -80,18 +82,19 @@ public final class ResourceAnchorSummary
         this.systemTags = systemTags;
         this.linkedCompartmentId = linkedCompartmentId;
         this.linkedCompartmentName = linkedCompartmentName;
+        this.resourceAnchorUri = resourceAnchorUri;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          * @param id the value to set
          * @return this builder
          **/
@@ -149,13 +152,13 @@ public final class ResourceAnchorSummary
             return this;
         }
         /**
-         * Partner Cloud Account Identifier of the Cloud Service Provider.
+         * Partner cloud account identifier of the cloud service provider.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudAccountIdentifier")
         private String partnerCloudAccountIdentifier;
 
         /**
-         * Partner Cloud Account Identifier of the Cloud Service Provider.
+         * Partner cloud account identifier of the cloud service provider.
          * @param partnerCloudAccountIdentifier the value to set
          * @return this builder
          **/
@@ -165,13 +168,13 @@ public final class ResourceAnchorSummary
             return this;
         }
         /**
-         * Resource Anchor Id in the Cloud Service Provider.
+         * Resource anchor ID in the cloud service provider.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cspResourceAnchorId")
         private String cspResourceAnchorId;
 
         /**
-         * Resource Anchor Id in the Cloud Service Provider.
+         * Resource anchor ID in the cloud service provider.
          * @param cspResourceAnchorId the value to set
          * @return this builder
          **/
@@ -181,13 +184,13 @@ public final class ResourceAnchorSummary
             return this;
         }
         /**
-         * Resource Anchor Name in the Cloud Service Provider.
+         * Resource anchor name in the cloud service provider.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cspResourceAnchorName")
         private String cspResourceAnchorName;
 
         /**
-         * Resource Anchor Name in the Cloud Service Provider.
+         * Resource anchor name in the cloud service provider.
          * @param cspResourceAnchorName the value to set
          * @return this builder
          **/
@@ -197,13 +200,13 @@ public final class ResourceAnchorSummary
             return this;
         }
         /**
-         * CSP Specific Additional Properties, AzureSubnetId for Azure
+         * Cloud service provider-specific properties, such as AzureSubnetId for Azure.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
         private java.util.Map<String, String> cspAdditionalProperties;
 
         /**
-         * CSP Specific Additional Properties, AzureSubnetId for Azure
+         * Cloud service provider-specific properties, such as AzureSubnetId for Azure.
          * @param cspAdditionalProperties the value to set
          * @return this builder
          **/
@@ -214,7 +217,7 @@ public final class ResourceAnchorSummary
             return this;
         }
         /**
-         * The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -223,7 +226,7 @@ public final class ResourceAnchorSummary
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -236,7 +239,7 @@ public final class ResourceAnchorSummary
             return this;
         }
         /**
-         * The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -245,7 +248,7 @@ public final class ResourceAnchorSummary
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -258,13 +261,13 @@ public final class ResourceAnchorSummary
             return this;
         }
         /**
-         * The current state of the ResourceAnchor.
+         * The current state of the resource anchor.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ResourceAnchor.LifecycleState lifecycleState;
 
         /**
-         * The current state of the ResourceAnchor.
+         * The current state of the resource anchor.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -274,7 +277,7 @@ public final class ResourceAnchorSummary
             return this;
         }
         /**
-         * A message that describes the current state of the ResourceAnchor in more detail. For example,
+         * A message that describes the current state of the resource anchor in more detail. For example,
          * can be used to provide actionable information for a resource in the Failed state.
          *
          **/
@@ -282,7 +285,7 @@ public final class ResourceAnchorSummary
         private String lifecycleDetails;
 
         /**
-         * A message that describes the current state of the ResourceAnchor in more detail. For example,
+         * A message that describes the current state of the resource anchor in more detail. For example,
          * can be used to provide actionable information for a resource in the Failed state.
          *
          * @param lifecycleDetails the value to set
@@ -381,16 +384,16 @@ public final class ResourceAnchorSummary
             return this;
         }
         /**
-         * Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.
-         * This compartmentId is different from where resource Anchor live.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the optional OCI compartment that was created or linked with the resource anchor.
+         * This compartment is different from the compartment that contains the resource anchor.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("linkedCompartmentId")
         private String linkedCompartmentId;
 
         /**
-         * Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.
-         * This compartmentId is different from where resource Anchor live.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the optional OCI compartment that was created or linked with the resource anchor.
+         * This compartment is different from the compartment that contains the resource anchor.
          *
          * @param linkedCompartmentId the value to set
          * @return this builder
@@ -401,19 +404,39 @@ public final class ResourceAnchorSummary
             return this;
         }
         /**
-         * The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+         * The name of the optional OCI compartment that was created or linked with the resource anchor.
+         * This compartment is different from the compartment that contains the resource anchor.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("linkedCompartmentName")
         private String linkedCompartmentName;
 
         /**
-         * The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+         * The name of the optional OCI compartment that was created or linked with the resource anchor.
+         * This compartment is different from the compartment that contains the resource anchor.
+         *
          * @param linkedCompartmentName the value to set
          * @return this builder
          **/
         public Builder linkedCompartmentName(String linkedCompartmentName) {
             this.linkedCompartmentName = linkedCompartmentName;
             this.__explicitlySet__.add("linkedCompartmentName");
+            return this;
+        }
+        /**
+         * URI for the cloud service provider's resource anchor.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceAnchorUri")
+        private String resourceAnchorUri;
+
+        /**
+         * URI for the cloud service provider's resource anchor.
+         * @param resourceAnchorUri the value to set
+         * @return this builder
+         **/
+        public Builder resourceAnchorUri(String resourceAnchorUri) {
+            this.resourceAnchorUri = resourceAnchorUri;
+            this.__explicitlySet__.add("resourceAnchorUri");
             return this;
         }
 
@@ -440,7 +463,8 @@ public final class ResourceAnchorSummary
                             this.subscriptionId,
                             this.systemTags,
                             this.linkedCompartmentId,
-                            this.linkedCompartmentName);
+                            this.linkedCompartmentName,
+                            this.resourceAnchorUri);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -503,6 +527,9 @@ public final class ResourceAnchorSummary
             if (model.wasPropertyExplicitlySet("linkedCompartmentName")) {
                 this.linkedCompartmentName(model.getLinkedCompartmentName());
             }
+            if (model.wasPropertyExplicitlySet("resourceAnchorUri")) {
+                this.resourceAnchorUri(model.getResourceAnchorUri());
+            }
             return this;
         }
     }
@@ -519,13 +546,13 @@ public final class ResourceAnchorSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      * @return the value
      **/
     public String getId() {
@@ -575,13 +602,13 @@ public final class ResourceAnchorSummary
     }
 
     /**
-     * Partner Cloud Account Identifier of the Cloud Service Provider.
+     * Partner cloud account identifier of the cloud service provider.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partnerCloudAccountIdentifier")
     private final String partnerCloudAccountIdentifier;
 
     /**
-     * Partner Cloud Account Identifier of the Cloud Service Provider.
+     * Partner cloud account identifier of the cloud service provider.
      * @return the value
      **/
     public String getPartnerCloudAccountIdentifier() {
@@ -589,13 +616,13 @@ public final class ResourceAnchorSummary
     }
 
     /**
-     * Resource Anchor Id in the Cloud Service Provider.
+     * Resource anchor ID in the cloud service provider.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cspResourceAnchorId")
     private final String cspResourceAnchorId;
 
     /**
-     * Resource Anchor Id in the Cloud Service Provider.
+     * Resource anchor ID in the cloud service provider.
      * @return the value
      **/
     public String getCspResourceAnchorId() {
@@ -603,13 +630,13 @@ public final class ResourceAnchorSummary
     }
 
     /**
-     * Resource Anchor Name in the Cloud Service Provider.
+     * Resource anchor name in the cloud service provider.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cspResourceAnchorName")
     private final String cspResourceAnchorName;
 
     /**
-     * Resource Anchor Name in the Cloud Service Provider.
+     * Resource anchor name in the cloud service provider.
      * @return the value
      **/
     public String getCspResourceAnchorName() {
@@ -617,13 +644,13 @@ public final class ResourceAnchorSummary
     }
 
     /**
-     * CSP Specific Additional Properties, AzureSubnetId for Azure
+     * Cloud service provider-specific properties, such as AzureSubnetId for Azure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cspAdditionalProperties")
     private final java.util.Map<String, String> cspAdditionalProperties;
 
     /**
-     * CSP Specific Additional Properties, AzureSubnetId for Azure
+     * Cloud service provider-specific properties, such as AzureSubnetId for Azure.
      * @return the value
      **/
     public java.util.Map<String, String> getCspAdditionalProperties() {
@@ -631,7 +658,7 @@ public final class ResourceAnchorSummary
     }
 
     /**
-     * The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -640,7 +667,7 @@ public final class ResourceAnchorSummary
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -651,7 +678,7 @@ public final class ResourceAnchorSummary
     }
 
     /**
-     * The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -660,7 +687,7 @@ public final class ResourceAnchorSummary
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -671,13 +698,13 @@ public final class ResourceAnchorSummary
     }
 
     /**
-     * The current state of the ResourceAnchor.
+     * The current state of the resource anchor.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ResourceAnchor.LifecycleState lifecycleState;
 
     /**
-     * The current state of the ResourceAnchor.
+     * The current state of the resource anchor.
      * @return the value
      **/
     public ResourceAnchor.LifecycleState getLifecycleState() {
@@ -685,7 +712,7 @@ public final class ResourceAnchorSummary
     }
 
     /**
-     * A message that describes the current state of the ResourceAnchor in more detail. For example,
+     * A message that describes the current state of the resource anchor in more detail. For example,
      * can be used to provide actionable information for a resource in the Failed state.
      *
      **/
@@ -693,7 +720,7 @@ public final class ResourceAnchorSummary
     private final String lifecycleDetails;
 
     /**
-     * A message that describes the current state of the ResourceAnchor in more detail. For example,
+     * A message that describes the current state of the resource anchor in more detail. For example,
      * can be used to provide actionable information for a resource in the Failed state.
      *
      * @return the value
@@ -781,16 +808,16 @@ public final class ResourceAnchorSummary
     }
 
     /**
-     * Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.
-     * This compartmentId is different from where resource Anchor live.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the optional OCI compartment that was created or linked with the resource anchor.
+     * This compartment is different from the compartment that contains the resource anchor.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("linkedCompartmentId")
     private final String linkedCompartmentId;
 
     /**
-     * Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.
-     * This compartmentId is different from where resource Anchor live.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the optional OCI compartment that was created or linked with the resource anchor.
+     * This compartment is different from the compartment that contains the resource anchor.
      *
      * @return the value
      **/
@@ -799,17 +826,35 @@ public final class ResourceAnchorSummary
     }
 
     /**
-     * The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+     * The name of the optional OCI compartment that was created or linked with the resource anchor.
+     * This compartment is different from the compartment that contains the resource anchor.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("linkedCompartmentName")
     private final String linkedCompartmentName;
 
     /**
-     * The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+     * The name of the optional OCI compartment that was created or linked with the resource anchor.
+     * This compartment is different from the compartment that contains the resource anchor.
+     *
      * @return the value
      **/
     public String getLinkedCompartmentName() {
         return linkedCompartmentName;
+    }
+
+    /**
+     * URI for the cloud service provider's resource anchor.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceAnchorUri")
+    private final String resourceAnchorUri;
+
+    /**
+     * URI for the cloud service provider's resource anchor.
+     * @return the value
+     **/
+    public String getResourceAnchorUri() {
+        return resourceAnchorUri;
     }
 
     @Override
@@ -846,6 +891,7 @@ public final class ResourceAnchorSummary
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", linkedCompartmentId=").append(String.valueOf(this.linkedCompartmentId));
         sb.append(", linkedCompartmentName=").append(String.valueOf(this.linkedCompartmentName));
+        sb.append(", resourceAnchorUri=").append(String.valueOf(this.resourceAnchorUri));
         sb.append(")");
         return sb.toString();
     }
@@ -880,6 +926,7 @@ public final class ResourceAnchorSummary
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.linkedCompartmentId, other.linkedCompartmentId)
                 && java.util.Objects.equals(this.linkedCompartmentName, other.linkedCompartmentName)
+                && java.util.Objects.equals(this.resourceAnchorUri, other.resourceAnchorUri)
                 && super.equals(other);
     }
 
@@ -939,6 +986,9 @@ public final class ResourceAnchorSummary
                         + (this.linkedCompartmentName == null
                                 ? 43
                                 : this.linkedCompartmentName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceAnchorUri == null ? 43 : this.resourceAnchorUri.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -16,6 +16,8 @@ import com.oracle.bmc.generativeaiinference.responses.*;
  *
  * To learn more about the service, see the [Generative AI documentation](https://docs.oracle.com/iaas/Content/generative-ai/home.htm).
  *
+ **Important:** The IP addresses behind each DNS endpoint might change over time. Always use the DNS hostname listed under the following **API Endpoints** section and avoid using hard-coded fixed IP addresses.
+ *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 public interface GenerativeAiInferenceAsync extends AutoCloseable {
@@ -66,7 +68,23 @@ public interface GenerativeAiInferenceAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Applies guardrails to the input text, including content moderation, PII detection, and prompt injection protection.
+     * Determines whether dual stack endpoint should be used or not.
+     * Set dualStackEndpointTemplateEnabled to "true" if the user wants to enable use of dual stack endpoint template. Default value is "false"
+     * @param dualStackEndpointTemplateEnabled flag to enable the use of dual stack endpoint template
+     */
+    void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled);
+
+    /**
+     * Applies guardrails to the input content, including content moderation, PII detection, and prompt injection protection.
+     * Case 1: Use `input` when the customer wants simple single-text moderation. Existing
+     * customers can continue to use this field without changing their current integration.
+     * Case 2: Use `multimodalInput` when the customer wants moderation over text, image, or a
+     * combination of both.
+     * `multimodalInput` supports a single text item, an array of text items only, an array of
+     * images only, or a mixed ordered combination of text and image items.
+     * Clients may provide `input`, `multimodalInput`, or both. At least one of these fields must
+     * be provided. If both `input` and `multimodalInput` are provided, the service will process
+     * `input` and discard `multimodalInput`.
      *
      *
      * @param request The request object containing the details to send
@@ -127,6 +145,23 @@ public interface GenerativeAiInferenceAsync extends AutoCloseable {
     java.util.concurrent.Future<GenerateTextResponse> generateText(
             GenerateTextRequest request,
             com.oracle.bmc.responses.AsyncHandler<GenerateTextRequest, GenerateTextResponse>
+                    handler);
+
+    /**
+     * List the available guardrail system versions.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListGuardrailVersionsResponse> listGuardrailVersions(
+            ListGuardrailVersionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListGuardrailVersionsRequest, ListGuardrailVersionsResponse>
                     handler);
 
     /**
