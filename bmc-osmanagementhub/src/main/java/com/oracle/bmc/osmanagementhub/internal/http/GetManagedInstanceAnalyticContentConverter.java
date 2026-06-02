@@ -46,12 +46,28 @@ public class GetManagedInstanceAnalyticContentConverter {
                                     request.getCompartmentId()));
         }
 
+        if (request.getCompartmentIdInSubtree() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentIdInSubtree",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentIdInSubtree()));
+        }
+
         if (request.getManagedInstanceGroupId() != null) {
             target =
                     target.queryParam(
                             "managedInstanceGroupId",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getManagedInstanceGroupId()));
+        }
+
+        if (request.getDynamicSetId() != null) {
+            target =
+                    target.queryParam(
+                            "dynamicSetId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDynamicSetId()));
         }
 
         if (request.getLifecycleEnvironmentId() != null) {
@@ -112,6 +128,14 @@ public class GetManagedInstanceAnalyticContentConverter {
                                     request.getBugUpdatesAvailableEqualsTo()));
         }
 
+        if (request.getOtherUpdatesAvailableEqualsTo() != null) {
+            target =
+                    target.queryParam(
+                            "otherUpdatesAvailableEqualsTo",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getOtherUpdatesAvailableEqualsTo()));
+        }
+
         if (request.getSecurityUpdatesAvailableGreaterThan() != null) {
             target =
                     target.queryParam(
@@ -126,6 +150,14 @@ public class GetManagedInstanceAnalyticContentConverter {
                             "bugUpdatesAvailableGreaterThan",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getBugUpdatesAvailableGreaterThan()));
+        }
+
+        if (request.getOtherUpdatesAvailableGreaterThan() != null) {
+            target =
+                    target.queryParam(
+                            "otherUpdatesAvailableGreaterThan",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getOtherUpdatesAvailableGreaterThan()));
         }
 
         if (request.getLocation() != null) {

@@ -9,7 +9,9 @@ import com.oracle.bmc.ocvp.model.*;
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/InplaceUpgradeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use InplaceUpgradeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
-public class InplaceUpgradeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+public class InplaceUpgradeRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ocvp.model.InplaceUpgradeDetails> {
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
@@ -23,6 +25,17 @@ public class InplaceUpgradeRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     public String getEsxiHostId() {
         return esxiHostId;
+    }
+    /**
+     * The details for upgrading ESXi host.
+     */
+    private com.oracle.bmc.ocvp.model.InplaceUpgradeDetails inplaceUpgradeDetails;
+
+    /**
+     * The details for upgrading ESXi host.
+     */
+    public com.oracle.bmc.ocvp.model.InplaceUpgradeDetails getInplaceUpgradeDetails() {
+        return inplaceUpgradeDetails;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -82,9 +95,19 @@ public class InplaceUpgradeRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return opcRequestId;
     }
 
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.ocvp.model.InplaceUpgradeDetails getBody$() {
+        return inplaceUpgradeDetails;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    InplaceUpgradeRequest, java.lang.Void> {
+                    InplaceUpgradeRequest, com.oracle.bmc.ocvp.model.InplaceUpgradeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -103,6 +126,22 @@ public class InplaceUpgradeRequest extends com.oracle.bmc.requests.BmcRequest<ja
          */
         public Builder esxiHostId(String esxiHostId) {
             this.esxiHostId = esxiHostId;
+            return this;
+        }
+
+        /**
+         * The details for upgrading ESXi host.
+         */
+        private com.oracle.bmc.ocvp.model.InplaceUpgradeDetails inplaceUpgradeDetails = null;
+
+        /**
+         * The details for upgrading ESXi host.
+         * @param inplaceUpgradeDetails the value to set
+         * @return this builder instance
+         */
+        public Builder inplaceUpgradeDetails(
+                com.oracle.bmc.ocvp.model.InplaceUpgradeDetails inplaceUpgradeDetails) {
+            this.inplaceUpgradeDetails = inplaceUpgradeDetails;
             return this;
         }
 
@@ -204,6 +243,7 @@ public class InplaceUpgradeRequest extends com.oracle.bmc.requests.BmcRequest<ja
          */
         public Builder copy(InplaceUpgradeRequest o) {
             esxiHostId(o.getEsxiHostId());
+            inplaceUpgradeDetails(o.getInplaceUpgradeDetails());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
@@ -230,6 +270,17 @@ public class InplaceUpgradeRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(com.oracle.bmc.ocvp.model.InplaceUpgradeDetails body) {
+            inplaceUpgradeDetails(body);
+            return this;
+        }
+
+        /**
          * Build the instance of InplaceUpgradeRequest as configured by this builder
          *
          * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
@@ -240,11 +291,12 @@ public class InplaceUpgradeRequest extends com.oracle.bmc.requests.BmcRequest<ja
         public InplaceUpgradeRequest buildWithoutInvocationCallback() {
             InplaceUpgradeRequest request = new InplaceUpgradeRequest();
             request.esxiHostId = esxiHostId;
+            request.inplaceUpgradeDetails = inplaceUpgradeDetails;
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new InplaceUpgradeRequest(esxiHostId, opcRetryToken, ifMatch, opcRequestId);
+            // new InplaceUpgradeRequest(esxiHostId, inplaceUpgradeDetails, opcRetryToken, ifMatch, opcRequestId);
         }
     }
 
@@ -255,6 +307,7 @@ public class InplaceUpgradeRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public Builder toBuilder() {
         return new Builder()
                 .esxiHostId(esxiHostId)
+                .inplaceUpgradeDetails(inplaceUpgradeDetails)
                 .opcRetryToken(opcRetryToken)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
@@ -274,6 +327,7 @@ public class InplaceUpgradeRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",esxiHostId=").append(String.valueOf(this.esxiHostId));
+        sb.append(",inplaceUpgradeDetails=").append(String.valueOf(this.inplaceUpgradeDetails));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -293,6 +347,7 @@ public class InplaceUpgradeRequest extends com.oracle.bmc.requests.BmcRequest<ja
         InplaceUpgradeRequest other = (InplaceUpgradeRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.esxiHostId, other.esxiHostId)
+                && java.util.Objects.equals(this.inplaceUpgradeDetails, other.inplaceUpgradeDetails)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -303,6 +358,11 @@ public class InplaceUpgradeRequest extends com.oracle.bmc.requests.BmcRequest<ja
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.esxiHostId == null ? 43 : this.esxiHostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inplaceUpgradeDetails == null
+                                ? 43
+                                : this.inplaceUpgradeDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());

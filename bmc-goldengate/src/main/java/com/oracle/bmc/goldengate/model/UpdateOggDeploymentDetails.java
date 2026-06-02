@@ -23,16 +23,6 @@ package com.oracle.bmc.goldengate.model;
 public final class UpdateOggDeploymentDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({
-        "credentialStore",
-        "identityDomainId",
-        "passwordSecretId",
-        "adminUsername",
-        "adminPassword",
-        "certificate",
-        "key",
-        "groupToRolesMapping"
-    })
     public UpdateOggDeploymentDetails(
             CredentialStore credentialStore,
             String identityDomainId,
@@ -41,6 +31,42 @@ public final class UpdateOggDeploymentDetails
             String adminPassword,
             String certificate,
             String key,
+            String keySecretId,
+            UpdateGroupToRolesMappingDetails groupToRolesMapping) {
+        super();
+        this.credentialStore = credentialStore;
+        this.identityDomainId = identityDomainId;
+        this.passwordSecretId = passwordSecretId;
+        this.adminUsername = adminUsername;
+        this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
+        this.certificate = certificate;
+        this.key = key;
+        this.keySecretId = keySecretId;
+        this.groupToRolesMapping = groupToRolesMapping;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "credentialStore",
+        "identityDomainId",
+        "passwordSecretId",
+        "adminUsername",
+        "adminPassword",
+        "certificate",
+        "key",
+        "keySecretId",
+        "groupToRolesMapping"
+    })
+    public UpdateOggDeploymentDetails(
+            CredentialStore credentialStore,
+            String identityDomainId,
+            String passwordSecretId,
+            String adminUsername,
+            char[] adminPassword,
+            String certificate,
+            String key,
+            String keySecretId,
             UpdateGroupToRolesMappingDetails groupToRolesMapping) {
         super();
         this.credentialStore = credentialStore;
@@ -50,6 +76,7 @@ public final class UpdateOggDeploymentDetails
         this.adminPassword = adminPassword;
         this.certificate = certificate;
         this.key = key;
+        this.keySecretId = keySecretId;
         this.groupToRolesMapping = groupToRolesMapping;
     }
 
@@ -135,7 +162,7 @@ public final class UpdateOggDeploymentDetails
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-        private String adminPassword;
+        private char[] adminPassword;
 
         /**
          * The password associated with the GoldenGate deployment console username.
@@ -146,11 +173,18 @@ public final class UpdateOggDeploymentDetails
          * @param adminPassword the value to set
          * @return this builder
          **/
-        public Builder adminPassword(String adminPassword) {
+        public Builder adminPassword(char[] adminPassword) {
             this.adminPassword = adminPassword;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
+
+        public Builder adminPassword(String adminPassword) {
+            this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
+            this.__explicitlySet__.add("adminPassword");
+            return this;
+        }
+
         /**
          * The base64 encoded content of the PEM file containing the SSL certificate.
          *
@@ -187,6 +221,24 @@ public final class UpdateOggDeploymentDetails
             this.__explicitlySet__.add("key");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("keySecretId")
+        private String keySecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+         *
+         * @param keySecretId the value to set
+         * @return this builder
+         **/
+        public Builder keySecretId(String keySecretId) {
+            this.keySecretId = keySecretId;
+            this.__explicitlySet__.add("keySecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("groupToRolesMapping")
         private UpdateGroupToRolesMappingDetails groupToRolesMapping;
@@ -210,6 +262,7 @@ public final class UpdateOggDeploymentDetails
                             this.adminPassword,
                             this.certificate,
                             this.key,
+                            this.keySecretId,
                             this.groupToRolesMapping);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -239,6 +292,9 @@ public final class UpdateOggDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("key")) {
                 this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("keySecretId")) {
+                this.keySecretId(model.getKeySecretId());
             }
             if (model.wasPropertyExplicitlySet("groupToRolesMapping")) {
                 this.groupToRolesMapping(model.getGroupToRolesMapping());
@@ -330,7 +386,22 @@ public final class UpdateOggDeploymentDetails
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    private final String adminPassword;
+    private final char[] adminPassword;
+
+    /**
+     * The password associated with the GoldenGate deployment console username.
+     * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
+     * and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed.
+     * This field will be deprecated and replaced by &quot;passwordSecretId&quot;.
+     *
+     * return the value
+     * @Deprecated - Use getAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAdminPassword() {
+        return adminPassword != null ? new String(adminPassword) : null;
+    }
 
     /**
      * The password associated with the GoldenGate deployment console username.
@@ -340,7 +411,8 @@ public final class UpdateOggDeploymentDetails
      *
      * @return the value
      **/
-    public String getAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+    public char[] getAdminPassword__AsCharArray() {
         return adminPassword;
     }
 
@@ -376,6 +448,22 @@ public final class UpdateOggDeploymentDetails
         return key;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keySecretId")
+    private final String keySecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+     *
+     * @return the value
+     **/
+    public String getKeySecretId() {
+        return keySecretId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("groupToRolesMapping")
     private final UpdateGroupToRolesMappingDetails groupToRolesMapping;
 
@@ -404,6 +492,7 @@ public final class UpdateOggDeploymentDetails
         sb.append(", adminPassword=").append("<redacted>");
         sb.append(", certificate=").append(String.valueOf(this.certificate));
         sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", keySecretId=").append(String.valueOf(this.keySecretId));
         sb.append(", groupToRolesMapping=").append(String.valueOf(this.groupToRolesMapping));
         sb.append(")");
         return sb.toString();
@@ -426,6 +515,7 @@ public final class UpdateOggDeploymentDetails
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.certificate, other.certificate)
                 && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.keySecretId, other.keySecretId)
                 && java.util.Objects.equals(this.groupToRolesMapping, other.groupToRolesMapping)
                 && super.equals(other);
     }
@@ -451,6 +541,7 @@ public final class UpdateOggDeploymentDetails
                         + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
         result = (result * PRIME) + (this.certificate == null ? 43 : this.certificate.hashCode());
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.keySecretId == null ? 43 : this.keySecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.groupToRolesMapping == null

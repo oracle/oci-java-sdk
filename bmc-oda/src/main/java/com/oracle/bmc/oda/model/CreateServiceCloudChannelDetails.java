@@ -157,18 +157,25 @@ public final class CreateServiceCloudChannelDetails extends CreateChannelDetails
          * The password for the Oracle B2C Service staff member who has the necessary profile permissions.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password for the Oracle B2C Service staff member who has the necessary profile permissions.
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * The type of Service Cloud client.
          **/
@@ -272,6 +279,27 @@ public final class CreateServiceCloudChannelDetails extends CreateChannelDetails
         this.domainName = domainName;
         this.hostNamePrefix = hostNamePrefix;
         this.userName = userName;
+        this.password = password != null ? password.toCharArray() : null;
+        this.clientType = clientType;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateServiceCloudChannelDetails(
+            String name,
+            String description,
+            Long sessionExpiryDurationInMilliseconds,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String domainName,
+            String hostNamePrefix,
+            String userName,
+            char[] password,
+            ServiceCloudClientType clientType) {
+        super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
+        this.domainName = domainName;
+        this.hostNamePrefix = hostNamePrefix;
+        this.userName = userName;
         this.password = password;
         this.clientType = clientType;
     }
@@ -354,13 +382,25 @@ public final class CreateServiceCloudChannelDetails extends CreateChannelDetails
      * The password for the Oracle B2C Service staff member who has the necessary profile permissions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password for the Oracle B2C Service staff member who has the necessary profile permissions.
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password for the Oracle B2C Service staff member who has the necessary profile permissions.
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

@@ -65,6 +65,14 @@ public class ListBatchTasksConverter {
                                     request.getName()));
         }
 
+        if (request.getTaskId() != null) {
+            target =
+                    target.queryParam(
+                            "taskId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTaskId()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

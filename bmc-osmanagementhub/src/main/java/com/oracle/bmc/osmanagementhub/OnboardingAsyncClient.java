@@ -852,6 +852,65 @@ public class OnboardingAsyncClient implements OnboardingAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DetachManagementStationFromProfileResponse>
+            detachManagementStationFromProfile(
+                    DetachManagementStationFromProfileRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DetachManagementStationFromProfileRequest,
+                                    DetachManagementStationFromProfileResponse>
+                            handler) {
+        LOG.trace("Called async detachManagementStationFromProfile");
+        final DetachManagementStationFromProfileRequest interceptedRequest =
+                DetachManagementStationFromProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachManagementStationFromProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Onboarding",
+                        "DetachManagementStationFromProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/DetachManagementStationFromProfile");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DetachManagementStationFromProfileResponse>
+                transformer =
+                        DetachManagementStationFromProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DetachManagementStationFromProfileRequest,
+                        DetachManagementStationFromProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DetachManagementStationFromProfileRequest,
+                                DetachManagementStationFromProfileResponse>,
+                        java.util.concurrent.Future<DetachManagementStationFromProfileResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetachManagementStationFromProfileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DetachManagementStationFromProfileRequest,
+                    DetachManagementStationFromProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachSoftwareSourcesFromProfileResponse>
             detachSoftwareSourcesFromProfile(
                     DetachSoftwareSourcesFromProfileRequest request,

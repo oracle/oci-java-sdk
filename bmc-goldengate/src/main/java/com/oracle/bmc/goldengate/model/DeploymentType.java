@@ -20,6 +20,8 @@ public enum DeploymentType {
     DatabaseDb2I("DATABASE_DB2I"),
     Ggsa("GGSA"),
     DataTransforms("DATA_TRANSFORMS"),
+    VeridataServer("VERIDATA_SERVER"),
+    VeridataAgent("VERIDATA_AGENT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

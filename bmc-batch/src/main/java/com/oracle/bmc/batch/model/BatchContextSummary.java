@@ -189,14 +189,14 @@ public final class BatchContextSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+         * A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+         * A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
@@ -464,14 +464,14 @@ public final class BatchContextSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+     * A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+     * A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      *
      * @return the value
      **/

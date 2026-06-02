@@ -34,6 +34,7 @@ public final class UpdateExadataInfrastructureDetails
         "corporateProxy",
         "contacts",
         "maintenanceWindow",
+        "maintenanceVersionPreferences",
         "additionalStorageCount",
         "isMultiRackDeployment",
         "multiRackConfigurationFile",
@@ -57,6 +58,7 @@ public final class UpdateExadataInfrastructureDetails
             String corporateProxy,
             java.util.List<ExadataInfrastructureContact> contacts,
             MaintenanceWindow maintenanceWindow,
+            MaintenanceVersionPreferenceDetails maintenanceVersionPreferences,
             Integer additionalStorageCount,
             Boolean isMultiRackDeployment,
             byte[] multiRackConfigurationFile,
@@ -79,6 +81,7 @@ public final class UpdateExadataInfrastructureDetails
         this.corporateProxy = corporateProxy;
         this.contacts = contacts;
         this.maintenanceWindow = maintenanceWindow;
+        this.maintenanceVersionPreferences = maintenanceVersionPreferences;
         this.additionalStorageCount = additionalStorageCount;
         this.isMultiRackDeployment = isMultiRackDeployment;
         this.multiRackConfigurationFile = multiRackConfigurationFile;
@@ -230,6 +233,16 @@ public final class UpdateExadataInfrastructureDetails
         public Builder maintenanceWindow(MaintenanceWindow maintenanceWindow) {
             this.maintenanceWindow = maintenanceWindow;
             this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceVersionPreferences")
+        private MaintenanceVersionPreferenceDetails maintenanceVersionPreferences;
+
+        public Builder maintenanceVersionPreferences(
+                MaintenanceVersionPreferenceDetails maintenanceVersionPreferences) {
+            this.maintenanceVersionPreferences = maintenanceVersionPreferences;
+            this.__explicitlySet__.add("maintenanceVersionPreferences");
             return this;
         }
         /**
@@ -462,6 +475,7 @@ public final class UpdateExadataInfrastructureDetails
                             this.corporateProxy,
                             this.contacts,
                             this.maintenanceWindow,
+                            this.maintenanceVersionPreferences,
                             this.additionalStorageCount,
                             this.isMultiRackDeployment,
                             this.multiRackConfigurationFile,
@@ -508,6 +522,9 @@ public final class UpdateExadataInfrastructureDetails
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
                 this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceVersionPreferences")) {
+                this.maintenanceVersionPreferences(model.getMaintenanceVersionPreferences());
             }
             if (model.wasPropertyExplicitlySet("additionalStorageCount")) {
                 this.additionalStorageCount(model.getAdditionalStorageCount());
@@ -677,6 +694,13 @@ public final class UpdateExadataInfrastructureDetails
 
     public MaintenanceWindow getMaintenanceWindow() {
         return maintenanceWindow;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceVersionPreferences")
+    private final MaintenanceVersionPreferenceDetails maintenanceVersionPreferences;
+
+    public MaintenanceVersionPreferenceDetails getMaintenanceVersionPreferences() {
+        return maintenanceVersionPreferences;
     }
 
     /**
@@ -933,6 +957,8 @@ public final class UpdateExadataInfrastructureDetails
         sb.append(", corporateProxy=").append(String.valueOf(this.corporateProxy));
         sb.append(", contacts=").append(String.valueOf(this.contacts));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", maintenanceVersionPreferences=")
+                .append(String.valueOf(this.maintenanceVersionPreferences));
         sb.append(", additionalStorageCount=").append(String.valueOf(this.additionalStorageCount));
         sb.append(", isMultiRackDeployment=").append(String.valueOf(this.isMultiRackDeployment));
         sb.append(", multiRackConfigurationFile=")
@@ -982,6 +1008,8 @@ public final class UpdateExadataInfrastructureDetails
                 && java.util.Objects.equals(this.corporateProxy, other.corporateProxy)
                 && java.util.Objects.equals(this.contacts, other.contacts)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(
+                        this.maintenanceVersionPreferences, other.maintenanceVersionPreferences)
                 && java.util.Objects.equals(
                         this.additionalStorageCount, other.additionalStorageCount)
                 && java.util.Objects.equals(this.isMultiRackDeployment, other.isMultiRackDeployment)
@@ -1034,6 +1062,11 @@ public final class UpdateExadataInfrastructureDetails
         result =
                 (result * PRIME)
                         + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceVersionPreferences == null
+                                ? 43
+                                : this.maintenanceVersionPreferences.hashCode());
         result =
                 (result * PRIME)
                         + (this.additionalStorageCount == null

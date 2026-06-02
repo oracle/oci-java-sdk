@@ -110,10 +110,16 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
+
+        public Builder password(char[] password) {
+            this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
 
         public Builder password(String password) {
-            this.password = password;
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -128,13 +134,21 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("replicationPassword")
-        private String replicationPassword;
+        private char[] replicationPassword;
 
-        public Builder replicationPassword(String replicationPassword) {
+        public Builder replicationPassword(char[] replicationPassword) {
             this.replicationPassword = replicationPassword;
             this.__explicitlySet__.add("replicationPassword");
             return this;
         }
+
+        public Builder replicationPassword(String replicationPassword) {
+            this.replicationPassword =
+                    replicationPassword != null ? replicationPassword.toCharArray() : null;
+            this.__explicitlySet__.add("replicationPassword");
+            return this;
+        }
+
         /**
          * The IP Address of the host.
          **/
@@ -463,6 +477,58 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             String password,
             String replicationUsername,
             String replicationPassword,
+            String host,
+            Integer port,
+            String databaseName,
+            MysqlConnection.SecurityProtocol securityProtocol,
+            MysqlConnection.SslMode sslMode,
+            String sslCa,
+            String sslCrl,
+            String sslCert,
+            String sslKey,
+            java.util.List<NameValuePair> additionalAttributes,
+            String dbSystemId) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                subnetId,
+                nsgIds,
+                username,
+                password,
+                replicationUsername,
+                replicationPassword);
+        this.host = host;
+        this.port = port;
+        this.databaseName = databaseName;
+        this.securityProtocol = securityProtocol;
+        this.sslMode = sslMode;
+        this.sslCa = sslCa;
+        this.sslCrl = sslCrl;
+        this.sslCert = sslCert;
+        this.sslKey = sslKey;
+        this.additionalAttributes = additionalAttributes;
+        this.dbSystemId = dbSystemId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateMysqlConnectionDetails(
+            String displayName,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String vaultId,
+            String keyId,
+            String subnetId,
+            java.util.List<String> nsgIds,
+            String username,
+            char[] password,
+            String replicationUsername,
+            char[] replicationPassword,
             String host,
             Integer port,
             String databaseName,

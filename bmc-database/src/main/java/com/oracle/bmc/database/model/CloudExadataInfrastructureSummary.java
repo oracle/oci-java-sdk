@@ -49,6 +49,7 @@ public final class CloudExadataInfrastructureSummary
         "timeCreated",
         "lifecycleDetails",
         "maintenanceWindow",
+        "maintenanceVersionPreferences",
         "lastMaintenanceRunId",
         "nextMaintenanceRunId",
         "freeformTags",
@@ -92,6 +93,7 @@ public final class CloudExadataInfrastructureSummary
             java.util.Date timeCreated,
             String lifecycleDetails,
             MaintenanceWindow maintenanceWindow,
+            MaintenanceVersionPreferenceDetails maintenanceVersionPreferences,
             String lastMaintenanceRunId,
             String nextMaintenanceRunId,
             java.util.Map<String, String> freeformTags,
@@ -134,6 +136,7 @@ public final class CloudExadataInfrastructureSummary
         this.timeCreated = timeCreated;
         this.lifecycleDetails = lifecycleDetails;
         this.maintenanceWindow = maintenanceWindow;
+        this.maintenanceVersionPreferences = maintenanceVersionPreferences;
         this.lastMaintenanceRunId = lastMaintenanceRunId;
         this.nextMaintenanceRunId = nextMaintenanceRunId;
         this.freeformTags = freeformTags;
@@ -551,6 +554,16 @@ public final class CloudExadataInfrastructureSummary
             this.__explicitlySet__.add("maintenanceWindow");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceVersionPreferences")
+        private MaintenanceVersionPreferenceDetails maintenanceVersionPreferences;
+
+        public Builder maintenanceVersionPreferences(
+                MaintenanceVersionPreferenceDetails maintenanceVersionPreferences) {
+            this.maintenanceVersionPreferences = maintenanceVersionPreferences;
+            this.__explicitlySet__.add("maintenanceVersionPreferences");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
          **/
@@ -872,6 +885,7 @@ public final class CloudExadataInfrastructureSummary
                             this.timeCreated,
                             this.lifecycleDetails,
                             this.maintenanceWindow,
+                            this.maintenanceVersionPreferences,
                             this.lastMaintenanceRunId,
                             this.nextMaintenanceRunId,
                             this.freeformTags,
@@ -970,6 +984,9 @@ public final class CloudExadataInfrastructureSummary
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
                 this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceVersionPreferences")) {
+                this.maintenanceVersionPreferences(model.getMaintenanceVersionPreferences());
             }
             if (model.wasPropertyExplicitlySet("lastMaintenanceRunId")) {
                 this.lastMaintenanceRunId(model.getLastMaintenanceRunId());
@@ -1434,6 +1451,13 @@ public final class CloudExadataInfrastructureSummary
         return maintenanceWindow;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceVersionPreferences")
+    private final MaintenanceVersionPreferenceDetails maintenanceVersionPreferences;
+
+    public MaintenanceVersionPreferenceDetails getMaintenanceVersionPreferences() {
+        return maintenanceVersionPreferences;
+    }
+
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      **/
@@ -1778,6 +1802,8 @@ public final class CloudExadataInfrastructureSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", maintenanceVersionPreferences=")
+                .append(String.valueOf(this.maintenanceVersionPreferences));
         sb.append(", lastMaintenanceRunId=").append(String.valueOf(this.lastMaintenanceRunId));
         sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -1840,6 +1866,8 @@ public final class CloudExadataInfrastructureSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(
+                        this.maintenanceVersionPreferences, other.maintenanceVersionPreferences)
                 && java.util.Objects.equals(this.lastMaintenanceRunId, other.lastMaintenanceRunId)
                 && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -1946,6 +1974,11 @@ public final class CloudExadataInfrastructureSummary
         result =
                 (result * PRIME)
                         + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceVersionPreferences == null
+                                ? 43
+                                : this.maintenanceVersionPreferences.hashCode());
         result =
                 (result * PRIME)
                         + (this.lastMaintenanceRunId == null

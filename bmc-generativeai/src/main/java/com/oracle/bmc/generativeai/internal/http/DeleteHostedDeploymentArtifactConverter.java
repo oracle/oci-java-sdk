@@ -34,8 +34,15 @@ public class DeleteHostedDeploymentArtifactConverter {
         Validate.notBlank(request.getHostedDeploymentId(), "hostedDeploymentId must not be blank");
         Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedDeploymentId", request.getHostedDeploymentId());
+        requiredParametersMap.put("artifactId", request.getArtifactId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20231130")
                         .path("hostedDeployments")
                         .path(

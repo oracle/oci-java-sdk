@@ -23,6 +23,86 @@ package com.oracle.bmc.mysql.model;
 public final class CreateDbSystemDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public CreateDbSystemDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            CreateRestDetails rest,
+            CreateDatabaseConsoleDetails databaseConsole,
+            Boolean isHighlyAvailable,
+            String availabilityDomain,
+            String faultDomain,
+            String configurationId,
+            String shapeName,
+            String mysqlVersion,
+            String subnetId,
+            java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            String adminUsername,
+            String adminPassword,
+            Integer dataStorageSizeInGBs,
+            DataStorageDetails dataStorage,
+            String hostnameLabel,
+            String ipAddress,
+            Integer port,
+            Integer portX,
+            CreateBackupPolicyDetails backupPolicy,
+            CreateDbSystemSourceDetails source,
+            CreateMaintenanceDetails maintenance,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            CreateDeletionPolicyDetails deletionPolicy,
+            CrashRecoveryStatus crashRecovery,
+            DatabaseManagementStatus databaseManagement,
+            SecureConnectionDetails secureConnections,
+            EncryptDataDetails encryptData,
+            DbSystem.DatabaseMode databaseMode,
+            DbSystem.AccessMode accessMode,
+            java.util.List<CustomerContact> customerContacts,
+            CreateReadEndpointDetails readEndpoint,
+            CreateTelemetryConfigurationDetails telemetryConfiguration) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.rest = rest;
+        this.databaseConsole = databaseConsole;
+        this.isHighlyAvailable = isHighlyAvailable;
+        this.availabilityDomain = availabilityDomain;
+        this.faultDomain = faultDomain;
+        this.configurationId = configurationId;
+        this.shapeName = shapeName;
+        this.mysqlVersion = mysqlVersion;
+        this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
+        this.adminUsername = adminUsername;
+        this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
+        this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.dataStorage = dataStorage;
+        this.hostnameLabel = hostnameLabel;
+        this.ipAddress = ipAddress;
+        this.port = port;
+        this.portX = portX;
+        this.backupPolicy = backupPolicy;
+        this.source = source;
+        this.maintenance = maintenance;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.deletionPolicy = deletionPolicy;
+        this.crashRecovery = crashRecovery;
+        this.databaseManagement = databaseManagement;
+        this.secureConnections = secureConnections;
+        this.encryptData = encryptData;
+        this.databaseMode = databaseMode;
+        this.accessMode = accessMode;
+        this.customerContacts = customerContacts;
+        this.readEndpoint = readEndpoint;
+        this.telemetryConfiguration = telemetryConfiguration;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
@@ -78,7 +158,7 @@ public final class CreateDbSystemDetails
             java.util.List<String> nsgIds,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String adminUsername,
-            String adminPassword,
+            char[] adminPassword,
             Integer dataStorageSizeInGBs,
             DataStorageDetails dataStorage,
             String hostnameLabel,
@@ -435,7 +515,7 @@ public final class CreateDbSystemDetails
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-        private String adminPassword;
+        private char[] adminPassword;
 
         /**
          * The password for the administrative user. The password must be
@@ -446,11 +526,18 @@ public final class CreateDbSystemDetails
          * @param adminPassword the value to set
          * @return this builder
          **/
-        public Builder adminPassword(String adminPassword) {
+        public Builder adminPassword(char[] adminPassword) {
             this.adminPassword = adminPassword;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
+
+        public Builder adminPassword(String adminPassword) {
+            this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
+            this.__explicitlySet__.add("adminPassword");
+            return this;
+        }
+
         /**
          * Initial size of the data volume in GBs that will be created and attached.
          * Keep in mind that this only specifies the size of the database data volume,
@@ -1236,7 +1323,22 @@ public final class CreateDbSystemDetails
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    private final String adminPassword;
+    private final char[] adminPassword;
+
+    /**
+     * The password for the administrative user. The password must be
+     * between 8 and 32 characters long, and must contain at least 1
+     * numeric character, 1 lowercase character, 1 uppercase character, and
+     * 1 special (nonalphanumeric) character.
+     *
+     * return the value
+     * @Deprecated - Use getAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAdminPassword() {
+        return adminPassword != null ? new String(adminPassword) : null;
+    }
 
     /**
      * The password for the administrative user. The password must be
@@ -1246,7 +1348,8 @@ public final class CreateDbSystemDetails
      *
      * @return the value
      **/
-    public String getAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+    public char[] getAdminPassword__AsCharArray() {
         return adminPassword;
     }
 

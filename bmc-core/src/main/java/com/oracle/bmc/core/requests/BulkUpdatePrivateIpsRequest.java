@@ -14,12 +14,12 @@ public class BulkUpdatePrivateIpsRequest
                 com.oracle.bmc.core.model.BulkUpdatePrivateIpsDetails> {
 
     /**
-     * Details of secondary IPv4 addresses to be updated.
+     * Details of the secondary IPv4 addresses to update.
      */
     private com.oracle.bmc.core.model.BulkUpdatePrivateIpsDetails bulkUpdatePrivateIpsDetails;
 
     /**
-     * Details of secondary IPv4 addresses to be updated.
+     * Details of the secondary IPv4 addresses to update.
      */
     public com.oracle.bmc.core.model.BulkUpdatePrivateIpsDetails getBulkUpdatePrivateIpsDetails() {
         return bulkUpdatePrivateIpsDetails;
@@ -80,13 +80,13 @@ public class BulkUpdatePrivateIpsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details of secondary IPv4 addresses to be updated.
+         * Details of the secondary IPv4 addresses to update.
          */
         private com.oracle.bmc.core.model.BulkUpdatePrivateIpsDetails bulkUpdatePrivateIpsDetails =
                 null;
 
         /**
-         * Details of secondary IPv4 addresses to be updated.
+         * Details of the secondary IPv4 addresses to update.
          * @param bulkUpdatePrivateIpsDetails the value to set
          * @return this builder instance
          */

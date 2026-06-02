@@ -45,21 +45,6 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return opcRequestId;
     }
     /**
-     * The Customer Support Identifier (CSI) number associated with the support account.
-     * The CSI is optional for all support request types.
-     *
-     */
-    private String csi;
-
-    /**
-     * The Customer Support Identifier (CSI) number associated with the support account.
-     * The CSI is optional for all support request types.
-     *
-     */
-    public String getCsi() {
-        return csi;
-    }
-    /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
      * User OCID is mandatory for OCI Users and optional for Multicloud users.
      *
@@ -194,25 +179,6 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
-            return this;
-        }
-
-        /**
-         * The Customer Support Identifier (CSI) number associated with the support account.
-         * The CSI is optional for all support request types.
-         *
-         */
-        private String csi = null;
-
-        /**
-         * The Customer Support Identifier (CSI) number associated with the support account.
-         * The CSI is optional for all support request types.
-         *
-         * @param csi the value to set
-         * @return this builder instance
-         */
-        public Builder csi(String csi) {
-            this.csi = csi;
             return this;
         }
 
@@ -360,7 +326,6 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
             incidentKey(o.getIncidentKey());
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
-            csi(o.getCsi());
             ocid(o.getOcid());
             homeregion(o.getHomeregion());
             problemtype(o.getProblemtype());
@@ -403,7 +368,6 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.incidentKey = incidentKey;
             request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
-            request.csi = csi;
             request.ocid = ocid;
             request.homeregion = homeregion;
             request.problemtype = problemtype;
@@ -412,7 +376,7 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.idtoken = idtoken;
             request.domainid = domainid;
             return request;
-            // new GetIncidentRequest(incidentKey, compartmentId, opcRequestId, csi, ocid, homeregion, problemtype, bearertokentype, bearertoken, idtoken, domainid);
+            // new GetIncidentRequest(incidentKey, compartmentId, opcRequestId, ocid, homeregion, problemtype, bearertokentype, bearertoken, idtoken, domainid);
         }
     }
 
@@ -425,7 +389,6 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .incidentKey(incidentKey)
                 .compartmentId(compartmentId)
                 .opcRequestId(opcRequestId)
-                .csi(csi)
                 .ocid(ocid)
                 .homeregion(homeregion)
                 .problemtype(problemtype)
@@ -451,7 +414,6 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",incidentKey=").append(String.valueOf(this.incidentKey));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
-        sb.append(",csi=").append(String.valueOf(this.csi));
         sb.append(",ocid=").append(String.valueOf(this.ocid));
         sb.append(",homeregion=").append(String.valueOf(this.homeregion));
         sb.append(",problemtype=").append(String.valueOf(this.problemtype));
@@ -477,7 +439,6 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.incidentKey, other.incidentKey)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.ocid, other.ocid)
                 && java.util.Objects.equals(this.homeregion, other.homeregion)
                 && java.util.Objects.equals(this.problemtype, other.problemtype)
@@ -496,7 +457,6 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
         result = (result * PRIME) + (this.homeregion == null ? 43 : this.homeregion.hashCode());
         result = (result * PRIME) + (this.problemtype == null ? 43 : this.problemtype.hashCode());

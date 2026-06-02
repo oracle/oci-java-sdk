@@ -14,12 +14,12 @@ public class BulkCreateIpv6sRequest
                 com.oracle.bmc.core.model.BulkCreateIpv6sDetails> {
 
     /**
-     * Bulk Create Ipv6s.
+     * Create Ipv6s in bulk.
      */
     private com.oracle.bmc.core.model.BulkCreateIpv6sDetails bulkCreateIpv6sDetails;
 
     /**
-     * Bulk Create Ipv6s.
+     * Create Ipv6s in bulk.
      */
     public com.oracle.bmc.core.model.BulkCreateIpv6sDetails getBulkCreateIpv6sDetails() {
         return bulkCreateIpv6sDetails;
@@ -79,12 +79,12 @@ public class BulkCreateIpv6sRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Bulk Create Ipv6s.
+         * Create Ipv6s in bulk.
          */
         private com.oracle.bmc.core.model.BulkCreateIpv6sDetails bulkCreateIpv6sDetails = null;
 
         /**
-         * Bulk Create Ipv6s.
+         * Create Ipv6s in bulk.
          * @param bulkCreateIpv6sDetails the value to set
          * @return this builder instance
          */

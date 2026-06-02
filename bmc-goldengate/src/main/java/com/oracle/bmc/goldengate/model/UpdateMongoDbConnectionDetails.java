@@ -174,7 +174,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated database.
@@ -183,11 +183,18 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
          * Note: When provided, 'password' field must not be provided.
@@ -310,7 +317,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
-        private String tlsCertificateKeyFilePassword;
+        private char[] tlsCertificateKeyFilePassword;
 
         /**
          * Client Certificate key file password.
@@ -319,11 +326,21 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
          * @param tlsCertificateKeyFilePassword the value to set
          * @return this builder
          **/
-        public Builder tlsCertificateKeyFilePassword(String tlsCertificateKeyFilePassword) {
+        public Builder tlsCertificateKeyFilePassword(char[] tlsCertificateKeyFilePassword) {
             this.tlsCertificateKeyFilePassword = tlsCertificateKeyFilePassword;
             this.__explicitlySet__.add("tlsCertificateKeyFilePassword");
             return this;
         }
+
+        public Builder tlsCertificateKeyFilePassword(String tlsCertificateKeyFilePassword) {
+            this.tlsCertificateKeyFilePassword =
+                    tlsCertificateKeyFilePassword != null
+                            ? tlsCertificateKeyFilePassword.toCharArray()
+                            : null;
+            this.__explicitlySet__.add("tlsCertificateKeyFilePassword");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file.
          * Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
@@ -502,6 +519,59 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
                 securityAttributes);
         this.connectionString = connectionString;
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.databaseId = databaseId;
+        this.securityProtocol = securityProtocol;
+        this.tlsCaFile = tlsCaFile;
+        this.tlsCertificateKeyFile = tlsCertificateKeyFile;
+        this.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
+        this.tlsCertificateKeyFilePassword =
+                tlsCertificateKeyFilePassword != null
+                        ? tlsCertificateKeyFilePassword.toCharArray()
+                        : null;
+        this.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateMongoDbConnectionDetails(
+            String displayName,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            String connectionString,
+            String username,
+            char[] password,
+            String passwordSecretId,
+            String databaseId,
+            MongoDbConnection.SecurityProtocol securityProtocol,
+            String tlsCaFile,
+            String tlsCertificateKeyFile,
+            String tlsCertificateKeyFileSecretId,
+            char[] tlsCertificateKeyFilePassword,
+            String tlsCertificateKeyFilePasswordSecretId) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                securityAttributes);
+        this.connectionString = connectionString;
+        this.username = username;
         this.password = password;
         this.passwordSecretId = passwordSecretId;
         this.databaseId = databaseId;
@@ -555,7 +625,20 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated database.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated database.
@@ -563,7 +646,8 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
      *
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -677,7 +761,22 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
-    private final String tlsCertificateKeyFilePassword;
+    private final char[] tlsCertificateKeyFilePassword;
+
+    /**
+     * Client Certificate key file password.
+     * Deprecated: This field is deprecated and replaced by &quot;tlsCertificateKeyFilePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getTlsCertificateKeyFilePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTlsCertificateKeyFilePassword() {
+        return tlsCertificateKeyFilePassword != null
+                ? new String(tlsCertificateKeyFilePassword)
+                : null;
+    }
 
     /**
      * Client Certificate key file password.
@@ -685,7 +784,8 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
      *
      * @return the value
      **/
-    public String getTlsCertificateKeyFilePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
+    public char[] getTlsCertificateKeyFilePassword__AsCharArray() {
         return tlsCertificateKeyFilePassword;
     }
 

@@ -50,6 +50,7 @@ public final class CreateDeploymentDetails
         "subscriptionId",
         "clusterPlacementGroupId",
         "securityAttributes",
+        "disasterRecoveryStatus",
         "oggData",
         "maintenanceWindow",
         "maintenanceConfiguration",
@@ -82,6 +83,7 @@ public final class CreateDeploymentDetails
             String subscriptionId,
             String clusterPlacementGroupId,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            DisasterRecoveryStatus disasterRecoveryStatus,
             CreateOggDeploymentDetails oggData,
             CreateMaintenanceWindowDetails maintenanceWindow,
             CreateMaintenanceConfigurationDetails maintenanceConfiguration,
@@ -113,6 +115,7 @@ public final class CreateDeploymentDetails
         this.subscriptionId = subscriptionId;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.securityAttributes = securityAttributes;
+        this.disasterRecoveryStatus = disasterRecoveryStatus;
         this.oggData = oggData;
         this.maintenanceWindow = maintenanceWindow;
         this.maintenanceConfiguration = maintenanceConfiguration;
@@ -423,18 +426,36 @@ public final class CreateDeploymentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
-         * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+         * <p>
+         * Rules:
+         * - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+         * - Update:
+         *   - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+         *   - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+         * <p>
+         * Validation:
+         * - Must reference a public subnet.
+         * - Must be a regional subnet.
+         * - Must be in the same VCN as subnetId.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
         private String loadBalancerSubnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
-         * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+         * <p>
+         * Rules:
+         * - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+         * - Update:
+         *   - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+         *   - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+         * <p>
+         * Validation:
+         * - Must reference a public subnet.
+         * - Must be a regional subnet.
+         * - Must be in the same VCN as subnetId.
          *
          * @param loadBalancerSubnetId the value to set
          * @return this builder
@@ -619,6 +640,26 @@ public final class CreateDeploymentDetails
             this.__explicitlySet__.add("securityAttributes");
             return this;
         }
+        /**
+         * Indicates if disaster recovery is enabled for a deployment.
+         * If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryStatus")
+        private DisasterRecoveryStatus disasterRecoveryStatus;
+
+        /**
+         * Indicates if disaster recovery is enabled for a deployment.
+         * If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+         *
+         * @param disasterRecoveryStatus the value to set
+         * @return this builder
+         **/
+        public Builder disasterRecoveryStatus(DisasterRecoveryStatus disasterRecoveryStatus) {
+            this.disasterRecoveryStatus = disasterRecoveryStatus;
+            this.__explicitlySet__.add("disasterRecoveryStatus");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("oggData")
         private CreateOggDeploymentDetails oggData;
@@ -689,6 +730,7 @@ public final class CreateDeploymentDetails
                             this.subscriptionId,
                             this.clusterPlacementGroupId,
                             this.securityAttributes,
+                            this.disasterRecoveryStatus,
                             this.oggData,
                             this.maintenanceWindow,
                             this.maintenanceConfiguration,
@@ -778,6 +820,9 @@ public final class CreateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("disasterRecoveryStatus")) {
+                this.disasterRecoveryStatus(model.getDisasterRecoveryStatus());
             }
             if (model.wasPropertyExplicitlySet("oggData")) {
                 this.oggData(model.getOggData());
@@ -1075,18 +1120,36 @@ public final class CreateDeploymentDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
-     * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-     * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     * <p>
+     * Rules:
+     * - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * - Update:
+     *   - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     *   - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     * <p>
+     * Validation:
+     * - Must reference a public subnet.
+     * - Must be a regional subnet.
+     * - Must be in the same VCN as subnetId.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
     private final String loadBalancerSubnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
-     * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-     * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     * <p>
+     * Rules:
+     * - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * - Update:
+     *   - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     *   - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     * <p>
+     * Validation:
+     * - Must reference a public subnet.
+     * - Must be a regional subnet.
+     * - Must be in the same VCN as subnetId.
      *
      * @return the value
      **/
@@ -1250,6 +1313,24 @@ public final class CreateDeploymentDetails
         return securityAttributes;
     }
 
+    /**
+     * Indicates if disaster recovery is enabled for a deployment.
+     * If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryStatus")
+    private final DisasterRecoveryStatus disasterRecoveryStatus;
+
+    /**
+     * Indicates if disaster recovery is enabled for a deployment.
+     * If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     *
+     * @return the value
+     **/
+    public DisasterRecoveryStatus getDisasterRecoveryStatus() {
+        return disasterRecoveryStatus;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("oggData")
     private final CreateOggDeploymentDetails oggData;
 
@@ -1320,6 +1401,7 @@ public final class CreateDeploymentDetails
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", disasterRecoveryStatus=").append(String.valueOf(this.disasterRecoveryStatus));
         sb.append(", oggData=").append(String.valueOf(this.oggData));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", maintenanceConfiguration=")
@@ -1367,6 +1449,8 @@ public final class CreateDeploymentDetails
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(
+                        this.disasterRecoveryStatus, other.disasterRecoveryStatus)
                 && java.util.Objects.equals(this.oggData, other.oggData)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(
@@ -1449,6 +1533,11 @@ public final class CreateDeploymentDetails
                         + (this.securityAttributes == null
                                 ? 43
                                 : this.securityAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.disasterRecoveryStatus == null
+                                ? 43
+                                : this.disasterRecoveryStatus.hashCode());
         result = (result * PRIME) + (this.oggData == null ? 43 : this.oggData.hashCode());
         result =
                 (result * PRIME)

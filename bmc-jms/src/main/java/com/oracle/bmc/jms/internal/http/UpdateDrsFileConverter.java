@@ -33,8 +33,15 @@ public class UpdateDrsFileConverter {
         Validate.notNull(request.getUpdateDrsFileDetails(), "updateDrsFileDetails is required");
         Validate.notBlank(request.getDrsFileKey(), "drsFileKey must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("fleetId", request.getFleetId());
+        requiredParametersMap.put("drsFileKey", request.getDrsFileKey());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20210610")
                         .path("fleets")
                         .path(

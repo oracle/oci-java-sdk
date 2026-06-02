@@ -29,6 +29,7 @@ public final class UpdateFusionEnvironmentDetails
         "additionalLanguagePacks",
         "isIPv6DualStackEnabled",
         "rules",
+        "additionalEgressRules",
         "freeformTags",
         "definedTags"
     })
@@ -39,6 +40,7 @@ public final class UpdateFusionEnvironmentDetails
             java.util.List<String> additionalLanguagePacks,
             Boolean isIPv6DualStackEnabled,
             java.util.List<Rule> rules,
+            java.util.List<AdditionalEgressRule> additionalEgressRules,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -48,6 +50,7 @@ public final class UpdateFusionEnvironmentDetails
         this.additionalLanguagePacks = additionalLanguagePacks;
         this.isIPv6DualStackEnabled = isIPv6DualStackEnabled;
         this.rules = rules;
+        this.additionalEgressRules = additionalEgressRules;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -112,13 +115,13 @@ public final class UpdateFusionEnvironmentDetails
             return this;
         }
         /**
-         * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
         private Boolean isIPv6DualStackEnabled;
 
         /**
-         * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
          * @param isIPv6DualStackEnabled the value to set
          * @return this builder
          **/
@@ -141,6 +144,23 @@ public final class UpdateFusionEnvironmentDetails
         public Builder rules(java.util.List<Rule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
+            return this;
+        }
+        /**
+         * Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalEgressRules")
+        private java.util.List<AdditionalEgressRule> additionalEgressRules;
+
+        /**
+         * Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
+         * @param additionalEgressRules the value to set
+         * @return this builder
+         **/
+        public Builder additionalEgressRules(
+                java.util.List<AdditionalEgressRule> additionalEgressRules) {
+            this.additionalEgressRules = additionalEgressRules;
+            this.__explicitlySet__.add("additionalEgressRules");
             return this;
         }
         /**
@@ -197,6 +217,7 @@ public final class UpdateFusionEnvironmentDetails
                             this.additionalLanguagePacks,
                             this.isIPv6DualStackEnabled,
                             this.rules,
+                            this.additionalEgressRules,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -224,6 +245,9 @@ public final class UpdateFusionEnvironmentDetails
             }
             if (model.wasPropertyExplicitlySet("rules")) {
                 this.rules(model.getRules());
+            }
+            if (model.wasPropertyExplicitlySet("additionalEgressRules")) {
+                this.additionalEgressRules(model.getAdditionalEgressRules());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -296,13 +320,13 @@ public final class UpdateFusionEnvironmentDetails
     }
 
     /**
-     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
     private final Boolean isIPv6DualStackEnabled;
 
     /**
-     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
      * @return the value
      **/
     public Boolean getIsIPv6DualStackEnabled() {
@@ -321,6 +345,20 @@ public final class UpdateFusionEnvironmentDetails
      **/
     public java.util.List<Rule> getRules() {
         return rules;
+    }
+
+    /**
+     * Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalEgressRules")
+    private final java.util.List<AdditionalEgressRule> additionalEgressRules;
+
+    /**
+     * Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
+     * @return the value
+     **/
+    public java.util.List<AdditionalEgressRule> getAdditionalEgressRules() {
+        return additionalEgressRules;
     }
 
     /**
@@ -380,6 +418,7 @@ public final class UpdateFusionEnvironmentDetails
                 .append(String.valueOf(this.additionalLanguagePacks));
         sb.append(", isIPv6DualStackEnabled=").append(String.valueOf(this.isIPv6DualStackEnabled));
         sb.append(", rules=").append(String.valueOf(this.rules));
+        sb.append(", additionalEgressRules=").append(String.valueOf(this.additionalEgressRules));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -404,6 +443,7 @@ public final class UpdateFusionEnvironmentDetails
                 && java.util.Objects.equals(
                         this.isIPv6DualStackEnabled, other.isIPv6DualStackEnabled)
                 && java.util.Objects.equals(this.rules, other.rules)
+                && java.util.Objects.equals(this.additionalEgressRules, other.additionalEgressRules)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -429,6 +469,11 @@ public final class UpdateFusionEnvironmentDetails
                                 ? 43
                                 : this.isIPv6DualStackEnabled.hashCode());
         result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalEgressRules == null
+                                ? 43
+                                : this.additionalEgressRules.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

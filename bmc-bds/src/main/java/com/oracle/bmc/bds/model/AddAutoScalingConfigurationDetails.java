@@ -22,6 +22,27 @@ package com.oracle.bmc.bds.model;
 public final class AddAutoScalingConfigurationDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public AddAutoScalingConfigurationDetails(
+            String displayName,
+            Node.NodeType nodeType,
+            Boolean isEnabled,
+            String clusterAdminPassword,
+            String secretId,
+            AutoScalePolicy policy,
+            AddAutoScalePolicyDetails policyDetails) {
+        super();
+        this.displayName = displayName;
+        this.nodeType = nodeType;
+        this.isEnabled = isEnabled;
+        this.clusterAdminPassword =
+                clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
+        this.secretId = secretId;
+        this.policy = policy;
+        this.policyDetails = policyDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
         "nodeType",
@@ -35,7 +56,7 @@ public final class AddAutoScalingConfigurationDetails
             String displayName,
             Node.NodeType nodeType,
             Boolean isEnabled,
-            String clusterAdminPassword,
+            char[] clusterAdminPassword,
             String secretId,
             AutoScalePolicy policy,
             AddAutoScalePolicyDetails policyDetails) {
@@ -103,18 +124,26 @@ public final class AddAutoScalingConfigurationDetails
          * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-        private String clusterAdminPassword;
+        private char[] clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
          * @param clusterAdminPassword the value to set
          * @return this builder
          **/
-        public Builder clusterAdminPassword(String clusterAdminPassword) {
+        public Builder clusterAdminPassword(char[] clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
+
+        public Builder clusterAdminPassword(String clusterAdminPassword) {
+            this.clusterAdminPassword =
+                    clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
+            this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+
         /**
          * The secretId for the clusterAdminPassword.
          **/
@@ -253,13 +282,25 @@ public final class AddAutoScalingConfigurationDetails
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-    private final String clusterAdminPassword;
+    private final char[] clusterAdminPassword;
+
+    /**
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * return the value
+     * @Deprecated - Use getClusterAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClusterAdminPassword() {
+        return clusterAdminPassword != null ? new String(clusterAdminPassword) : null;
+    }
 
     /**
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      * @return the value
      **/
-    public String getClusterAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
+    public char[] getClusterAdminPassword__AsCharArray() {
         return clusterAdminPassword;
     }
 

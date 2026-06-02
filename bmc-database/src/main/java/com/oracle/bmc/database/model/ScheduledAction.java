@@ -543,6 +543,7 @@ public final class ScheduledAction extends com.oracle.bmc.http.internal.Explicit
         FsuVmClusterOsSoftwareUpdate("FSU_VM_CLUSTER_OS_SOFTWARE_UPDATE"),
         FsuVmClusterGiSoftwareUpdate("FSU_VM_CLUSTER_GI_SOFTWARE_UPDATE"),
         FsuVmClusterGiOsSoftwareUpdate("FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE"),
+        DbServerOnlineSoftwareUpdate("DB_SERVER_ONLINE_SOFTWARE_UPDATE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -32,6 +32,10 @@ public final class TenancyAttachment extends com.oracle.bmc.http.internal.Explic
         "resourceAnalyticsInstanceId",
         "tenancyId",
         "isReportingTenancy",
+        "monitoredRegions",
+        "dataPopulationStatus",
+        "timeDataPopulationStarted",
+        "timeDataPopulationEnded",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -44,6 +48,10 @@ public final class TenancyAttachment extends com.oracle.bmc.http.internal.Explic
             String resourceAnalyticsInstanceId,
             String tenancyId,
             Boolean isReportingTenancy,
+            java.util.List<TenancyAttachmentMonitoredRegionSummary> monitoredRegions,
+            DataPopulationStatus dataPopulationStatus,
+            java.util.Date timeDataPopulationStarted,
+            java.util.Date timeDataPopulationEnded,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
@@ -55,6 +63,10 @@ public final class TenancyAttachment extends com.oracle.bmc.http.internal.Explic
         this.resourceAnalyticsInstanceId = resourceAnalyticsInstanceId;
         this.tenancyId = tenancyId;
         this.isReportingTenancy = isReportingTenancy;
+        this.monitoredRegions = monitoredRegions;
+        this.dataPopulationStatus = dataPopulationStatus;
+        this.timeDataPopulationStarted = timeDataPopulationStarted;
+        this.timeDataPopulationEnded = timeDataPopulationEnded;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -142,6 +154,83 @@ public final class TenancyAttachment extends com.oracle.bmc.http.internal.Explic
         public Builder isReportingTenancy(Boolean isReportingTenancy) {
             this.isReportingTenancy = isReportingTenancy;
             this.__explicitlySet__.add("isReportingTenancy");
+            return this;
+        }
+        /**
+         * List of monitored regions with their data population status.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("monitoredRegions")
+        private java.util.List<TenancyAttachmentMonitoredRegionSummary> monitoredRegions;
+
+        /**
+         * List of monitored regions with their data population status.
+         * @param monitoredRegions the value to set
+         * @return this builder
+         **/
+        public Builder monitoredRegions(
+                java.util.List<TenancyAttachmentMonitoredRegionSummary> monitoredRegions) {
+            this.monitoredRegions = monitoredRegions;
+            this.__explicitlySet__.add("monitoredRegions");
+            return this;
+        }
+        /**
+         * The overall status of the data population from the tenancy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataPopulationStatus")
+        private DataPopulationStatus dataPopulationStatus;
+
+        /**
+         * The overall status of the data population from the tenancy.
+         * @param dataPopulationStatus the value to set
+         * @return this builder
+         **/
+        public Builder dataPopulationStatus(DataPopulationStatus dataPopulationStatus) {
+            this.dataPopulationStatus = dataPopulationStatus;
+            this.__explicitlySet__.add("dataPopulationStatus");
+            return this;
+        }
+        /**
+         * The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDataPopulationStarted")
+        private java.util.Date timeDataPopulationStarted;
+
+        /**
+         * The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeDataPopulationStarted the value to set
+         * @return this builder
+         **/
+        public Builder timeDataPopulationStarted(java.util.Date timeDataPopulationStarted) {
+            this.timeDataPopulationStarted = timeDataPopulationStarted;
+            this.__explicitlySet__.add("timeDataPopulationStarted");
+            return this;
+        }
+        /**
+         * The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDataPopulationEnded")
+        private java.util.Date timeDataPopulationEnded;
+
+        /**
+         * The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeDataPopulationEnded the value to set
+         * @return this builder
+         **/
+        public Builder timeDataPopulationEnded(java.util.Date timeDataPopulationEnded) {
+            this.timeDataPopulationEnded = timeDataPopulationEnded;
+            this.__explicitlySet__.add("timeDataPopulationEnded");
             return this;
         }
         /**
@@ -258,6 +347,10 @@ public final class TenancyAttachment extends com.oracle.bmc.http.internal.Explic
                             this.resourceAnalyticsInstanceId,
                             this.tenancyId,
                             this.isReportingTenancy,
+                            this.monitoredRegions,
+                            this.dataPopulationStatus,
+                            this.timeDataPopulationStarted,
+                            this.timeDataPopulationEnded,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -285,6 +378,18 @@ public final class TenancyAttachment extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("isReportingTenancy")) {
                 this.isReportingTenancy(model.getIsReportingTenancy());
+            }
+            if (model.wasPropertyExplicitlySet("monitoredRegions")) {
+                this.monitoredRegions(model.getMonitoredRegions());
+            }
+            if (model.wasPropertyExplicitlySet("dataPopulationStatus")) {
+                this.dataPopulationStatus(model.getDataPopulationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeDataPopulationStarted")) {
+                this.timeDataPopulationStarted(model.getTimeDataPopulationStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeDataPopulationEnded")) {
+                this.timeDataPopulationEnded(model.getTimeDataPopulationEnded());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -384,6 +489,129 @@ public final class TenancyAttachment extends com.oracle.bmc.http.internal.Explic
      **/
     public Boolean getIsReportingTenancy() {
         return isReportingTenancy;
+    }
+
+    /**
+     * List of monitored regions with their data population status.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("monitoredRegions")
+    private final java.util.List<TenancyAttachmentMonitoredRegionSummary> monitoredRegions;
+
+    /**
+     * List of monitored regions with their data population status.
+     * @return the value
+     **/
+    public java.util.List<TenancyAttachmentMonitoredRegionSummary> getMonitoredRegions() {
+        return monitoredRegions;
+    }
+
+    /**
+     * The overall status of the data population from the tenancy.
+     **/
+    public enum DataPopulationStatus {
+        Accepted("ACCEPTED"),
+        InProgress("IN_PROGRESS"),
+        Waiting("WAITING"),
+        Failed("FAILED"),
+        Succeeded("SUCCEEDED"),
+        Canceling("CANCELING"),
+        Canceled("CANCELED"),
+        NeedsAttention("NEEDS_ATTENTION"),
+        PartiallySucceeded("PARTIALLY_SUCCEEDED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DataPopulationStatus.class);
+
+        private final String value;
+        private static java.util.Map<String, DataPopulationStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DataPopulationStatus v : DataPopulationStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DataPopulationStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DataPopulationStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DataPopulationStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The overall status of the data population from the tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataPopulationStatus")
+    private final DataPopulationStatus dataPopulationStatus;
+
+    /**
+     * The overall status of the data population from the tenancy.
+     * @return the value
+     **/
+    public DataPopulationStatus getDataPopulationStatus() {
+        return dataPopulationStatus;
+    }
+
+    /**
+     * The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDataPopulationStarted")
+    private final java.util.Date timeDataPopulationStarted;
+
+    /**
+     * The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeDataPopulationStarted() {
+        return timeDataPopulationStarted;
+    }
+
+    /**
+     * The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDataPopulationEnded")
+    private final java.util.Date timeDataPopulationEnded;
+
+    /**
+     * The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeDataPopulationEnded() {
+        return timeDataPopulationEnded;
     }
 
     /**
@@ -551,6 +779,12 @@ public final class TenancyAttachment extends com.oracle.bmc.http.internal.Explic
                 .append(String.valueOf(this.resourceAnalyticsInstanceId));
         sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(", isReportingTenancy=").append(String.valueOf(this.isReportingTenancy));
+        sb.append(", monitoredRegions=").append(String.valueOf(this.monitoredRegions));
+        sb.append(", dataPopulationStatus=").append(String.valueOf(this.dataPopulationStatus));
+        sb.append(", timeDataPopulationStarted=")
+                .append(String.valueOf(this.timeDataPopulationStarted));
+        sb.append(", timeDataPopulationEnded=")
+                .append(String.valueOf(this.timeDataPopulationEnded));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -576,6 +810,12 @@ public final class TenancyAttachment extends com.oracle.bmc.http.internal.Explic
                         this.resourceAnalyticsInstanceId, other.resourceAnalyticsInstanceId)
                 && java.util.Objects.equals(this.tenancyId, other.tenancyId)
                 && java.util.Objects.equals(this.isReportingTenancy, other.isReportingTenancy)
+                && java.util.Objects.equals(this.monitoredRegions, other.monitoredRegions)
+                && java.util.Objects.equals(this.dataPopulationStatus, other.dataPopulationStatus)
+                && java.util.Objects.equals(
+                        this.timeDataPopulationStarted, other.timeDataPopulationStarted)
+                && java.util.Objects.equals(
+                        this.timeDataPopulationEnded, other.timeDataPopulationEnded)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -601,6 +841,24 @@ public final class TenancyAttachment extends com.oracle.bmc.http.internal.Explic
                         + (this.isReportingTenancy == null
                                 ? 43
                                 : this.isReportingTenancy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.monitoredRegions == null ? 43 : this.monitoredRegions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataPopulationStatus == null
+                                ? 43
+                                : this.dataPopulationStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataPopulationStarted == null
+                                ? 43
+                                : this.timeDataPopulationStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDataPopulationEnded == null
+                                ? 43
+                                : this.timeDataPopulationEnded.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

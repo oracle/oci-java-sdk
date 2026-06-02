@@ -42,7 +42,7 @@ import com.oracle.bmc.dbmulticloud.responses.*;
  * <b>AWS</b>:<br>
  * <b>Oracle AWS Connector Resource:</b>&nbsp;&nbsp;The Oracle AWS Connector Resource is used to install the AWS Identity Connector on an Exadata VM cluster in Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D).
  *
- * <b>Google AWS Key Resource:</b>&nbsp;&nbsp;The Oracle AWS Key Resource is used to register and manage a AWS Key within Oracle Cloud Infrastructure (OCI).
+ * <b>Oracle AWS Key Resource:</b>&nbsp;&nbsp;The Oracle AWS Key Resource is used to register and manage a AWS Key within Oracle Cloud Infrastructure (OCI).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -174,6 +174,20 @@ public interface OracleDbAzureVault extends AutoCloseable {
      */
     RefreshOracleDbAzureVaultResponse refreshOracleDbAzureVault(
             RefreshOracleDbAzureVaultRequest request);
+
+    /**
+     * Replicate the Oracle DB Azure Vault resource to target region.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dbmulticloud/ReplicateOracleDbAzureVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReplicateOracleDbAzureVault API.
+     */
+    ReplicateOracleDbAzureVaultResponse replicateOracleDbAzureVault(
+            ReplicateOracleDbAzureVaultRequest request);
 
     /**
      * Modifies the configuration details of an existing Oracle Database Azure Vault resource identified by its unique [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation updates only the specified fields in the request body.

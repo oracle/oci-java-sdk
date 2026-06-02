@@ -19,11 +19,13 @@ package com.oracle.bmc.generativeaiinference.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CategoryScore extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "score"})
-    public CategoryScore(String name, Double score) {
+    @java.beans.ConstructorProperties({"name", "score", "flaggedModalities"})
+    public CategoryScore(
+            String name, Double score, java.util.List<FlaggedModalities> flaggedModalities) {
         super();
         this.name = name;
         this.score = score;
+        this.flaggedModalities = flaggedModalities;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -60,12 +62,32 @@ public final class CategoryScore extends com.oracle.bmc.http.internal.Explicitly
             this.__explicitlySet__.add("score");
             return this;
         }
+        /**
+         * The input modalities flagged by this category score. Present only when the request is
+         * processed using a non-empty {@code multimodalInput}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("flaggedModalities")
+        private java.util.List<FlaggedModalities> flaggedModalities;
+
+        /**
+         * The input modalities flagged by this category score. Present only when the request is
+         * processed using a non-empty {@code multimodalInput}.
+         *
+         * @param flaggedModalities the value to set
+         * @return this builder
+         **/
+        public Builder flaggedModalities(java.util.List<FlaggedModalities> flaggedModalities) {
+            this.flaggedModalities = flaggedModalities;
+            this.__explicitlySet__.add("flaggedModalities");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CategoryScore build() {
-            CategoryScore model = new CategoryScore(this.name, this.score);
+            CategoryScore model = new CategoryScore(this.name, this.score, this.flaggedModalities);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +101,9 @@ public final class CategoryScore extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("score")) {
                 this.score(model.getScore());
+            }
+            if (model.wasPropertyExplicitlySet("flaggedModalities")) {
+                this.flaggedModalities(model.getFlaggedModalities());
             }
             return this;
         }
@@ -123,6 +148,71 @@ public final class CategoryScore extends com.oracle.bmc.http.internal.Explicitly
         return score;
     }
 
+    /**
+     **/
+    public enum FlaggedModalities {
+        Text("TEXT"),
+        Image("IMAGE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(FlaggedModalities.class);
+
+        private final String value;
+        private static java.util.Map<String, FlaggedModalities> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (FlaggedModalities v : FlaggedModalities.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        FlaggedModalities(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static FlaggedModalities create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'FlaggedModalities', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The input modalities flagged by this category score. Present only when the request is
+     * processed using a non-empty {@code multimodalInput}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("flaggedModalities")
+    private final java.util.List<FlaggedModalities> flaggedModalities;
+
+    /**
+     * The input modalities flagged by this category score. Present only when the request is
+     * processed using a non-empty {@code multimodalInput}.
+     *
+     * @return the value
+     **/
+    public java.util.List<FlaggedModalities> getFlaggedModalities() {
+        return flaggedModalities;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +229,7 @@ public final class CategoryScore extends com.oracle.bmc.http.internal.Explicitly
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", score=").append(String.valueOf(this.score));
+        sb.append(", flaggedModalities=").append(String.valueOf(this.flaggedModalities));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +246,7 @@ public final class CategoryScore extends com.oracle.bmc.http.internal.Explicitly
         CategoryScore other = (CategoryScore) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.score, other.score)
+                && java.util.Objects.equals(this.flaggedModalities, other.flaggedModalities)
                 && super.equals(other);
     }
 
@@ -164,6 +256,9 @@ public final class CategoryScore extends com.oracle.bmc.http.internal.Explicitly
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.score == null ? 43 : this.score.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.flaggedModalities == null ? 43 : this.flaggedModalities.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

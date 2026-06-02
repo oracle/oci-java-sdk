@@ -80,16 +80,16 @@ public final class DeploymentEnvironmentSummary
             return this;
         }
         /**
-         * The deployment category defines the broad separation of the deployment type into three categories.
-         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into four categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private DeploymentCategory category;
 
         /**
-         * The deployment category defines the broad separation of the deployment type into three categories.
-         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into four categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
          *
          * @param category the value to set
          * @return this builder
@@ -330,16 +330,16 @@ public final class DeploymentEnvironmentSummary
     }
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three categories.
-     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into four categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final DeploymentCategory category;
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three categories.
-     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into four categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
      *
      * @return the value
      **/

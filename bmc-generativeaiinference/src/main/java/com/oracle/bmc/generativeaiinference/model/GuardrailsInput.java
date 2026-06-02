@@ -25,6 +25,10 @@ package com.oracle.bmc.generativeaiinference.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GuardrailsTextInput.class,
         name = "TEXT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GuardrailsImageInput.class,
+        name = "IMAGE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -79,6 +83,7 @@ public class GuardrailsInput extends com.oracle.bmc.http.internal.ExplicitlySetB
      **/
     public enum Type {
         Text("TEXT"),
+        Image("IMAGE"),
         ;
 
         private final String value;

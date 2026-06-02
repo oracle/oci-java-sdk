@@ -22,6 +22,12 @@ public enum OperationType {
     DeleteDatabaseToolsIdentity("DELETE_DATABASE_TOOLS_IDENTITY"),
     UpdateDatabaseToolsIdentity("UPDATE_DATABASE_TOOLS_IDENTITY"),
     RefreshDatabaseToolsIdentityCredential("REFRESH_DATABASE_TOOLS_IDENTITY_CREDENTIAL"),
+    CreateDatabaseToolsMcpServer("CREATE_DATABASE_TOOLS_MCP_SERVER"),
+    DeleteDatabaseToolsMcpServer("DELETE_DATABASE_TOOLS_MCP_SERVER"),
+    UpdateDatabaseToolsMcpServer("UPDATE_DATABASE_TOOLS_MCP_SERVER"),
+    CreateDatabaseToolsMcpToolset("CREATE_DATABASE_TOOLS_MCP_TOOLSET"),
+    DeleteDatabaseToolsMcpToolset("DELETE_DATABASE_TOOLS_MCP_TOOLSET"),
+    UpdateDatabaseToolsMcpToolset("UPDATE_DATABASE_TOOLS_MCP_TOOLSET"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

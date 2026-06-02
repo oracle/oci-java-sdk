@@ -154,13 +154,13 @@ public class DiscoveredCloudDbSystemComponent
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas OCI resource matching the discovered DB system component.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas OCI resource matching the discovered DB system component.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbaasId")
     private final String dbaasId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas OCI resource matching the discovered DB system component.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas OCI resource matching the discovered DB system component.
      * @return the value
      **/
     public String getDbaasId() {

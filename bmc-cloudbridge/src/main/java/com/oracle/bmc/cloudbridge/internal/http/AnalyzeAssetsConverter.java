@@ -121,6 +121,22 @@ public class AnalyzeAssetsConverter {
                                     request.getInventoryId()));
         }
 
+        if (request.getAssetClassName() != null) {
+            target =
+                    target.queryParam(
+                            "assetClassName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAssetClassName()));
+        }
+
+        if (request.getAssetClassVersion() != null) {
+            target =
+                    target.queryParam(
+                            "assetClassVersion",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAssetClassVersion()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

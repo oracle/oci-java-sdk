@@ -464,7 +464,6 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
          * about why you would skip the source/destination check, see
          * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          * <p>
-         *
          * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the {@code skipSourceDestCheck} attribute is {@code true}.
          * This is because the source/destination check is always disabled for VNICs in a VLAN.
@@ -481,7 +480,6 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
          * about why you would skip the source/destination check, see
          * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          * <p>
-         *
          * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the {@code skipSourceDestCheck} attribute is {@code true}.
          * This is because the source/destination check is always disabled for VNICs in a VLAN.
@@ -1060,7 +1058,6 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
      * about why you would skip the source/destination check, see
      * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * <p>
-     *
      * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the {@code skipSourceDestCheck} attribute is {@code true}.
      * This is because the source/destination check is always disabled for VNICs in a VLAN.
@@ -1077,7 +1074,6 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
      * about why you would skip the source/destination check, see
      * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * <p>
-     *
      * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the {@code skipSourceDestCheck} attribute is {@code true}.
      * This is because the source/destination check is always disabled for VNICs in a VLAN.

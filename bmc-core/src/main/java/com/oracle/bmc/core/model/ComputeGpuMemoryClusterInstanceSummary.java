@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The customer facing GPU memory cluster instance object details.
+ * The customer facing GPU Memory Cluster instance object details.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -62,14 +62,14 @@ public final class ComputeGpuMemoryClusterInstanceSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The availability domain of the GPU memory cluster instance.
+         * The availability domain of the GPU Memory Cluster instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain of the GPU memory cluster instance.
+         * The availability domain of the GPU Memory Cluster instance.
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -80,14 +80,14 @@ public final class ComputeGpuMemoryClusterInstanceSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster instance
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster instance
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster instance
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster instance
          *
          * @param id the value to set
          * @return this builder
@@ -118,13 +118,13 @@ public final class ComputeGpuMemoryClusterInstanceSummary
             return this;
         }
         /**
-         * The fault domain the GPU memory cluster instance is running in.
+         * The fault domain the GPU Memory Cluster instance is running in.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
-         * The fault domain the GPU memory cluster instance is running in.
+         * The fault domain the GPU Memory Cluster instance is running in.
          * @param faultDomain the value to set
          * @return this builder
          **/
@@ -192,14 +192,14 @@ public final class ComputeGpuMemoryClusterInstanceSummary
             return this;
         }
         /**
-         * The lifecycle state of the GPU memory cluster instance
+         * The lifecycle state of the GPU Memory Cluster instance
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The lifecycle state of the GPU memory cluster instance
+         * The lifecycle state of the GPU Memory Cluster instance
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -230,7 +230,7 @@ public final class ComputeGpuMemoryClusterInstanceSummary
             return this;
         }
         /**
-         * The date and time the GPU memory cluster instance was created.
+         * The date and time the GPU Memory Cluster instance was created.
          * <p>
          * Example: {@code 2016-09-15T21:10:29.600Z}
          *
@@ -239,7 +239,7 @@ public final class ComputeGpuMemoryClusterInstanceSummary
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the GPU memory cluster instance was created.
+         * The date and time the GPU Memory Cluster instance was created.
          * <p>
          * Example: {@code 2016-09-15T21:10:29.600Z}
          *
@@ -322,14 +322,14 @@ public final class ComputeGpuMemoryClusterInstanceSummary
     }
 
     /**
-     * The availability domain of the GPU memory cluster instance.
+     * The availability domain of the GPU Memory Cluster instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain of the GPU memory cluster instance.
+     * The availability domain of the GPU Memory Cluster instance.
      *
      * @return the value
      **/
@@ -338,14 +338,14 @@ public final class ComputeGpuMemoryClusterInstanceSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster instance
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster instance
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster instance
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster instance
      *
      * @return the value
      **/
@@ -372,13 +372,13 @@ public final class ComputeGpuMemoryClusterInstanceSummary
     }
 
     /**
-     * The fault domain the GPU memory cluster instance is running in.
+     * The fault domain the GPU Memory Cluster instance is running in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
-     * The fault domain the GPU memory cluster instance is running in.
+     * The fault domain the GPU Memory Cluster instance is running in.
      * @return the value
      **/
     public String getFaultDomain() {
@@ -438,7 +438,7 @@ public final class ComputeGpuMemoryClusterInstanceSummary
     }
 
     /**
-     * The lifecycle state of the GPU memory cluster instance
+     * The lifecycle state of the GPU Memory Cluster instance
      *
      **/
     public enum LifecycleState {
@@ -496,14 +496,14 @@ public final class ComputeGpuMemoryClusterInstanceSummary
         }
     };
     /**
-     * The lifecycle state of the GPU memory cluster instance
+     * The lifecycle state of the GPU Memory Cluster instance
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The lifecycle state of the GPU memory cluster instance
+     * The lifecycle state of the GPU Memory Cluster instance
      *
      * @return the value
      **/
@@ -530,7 +530,7 @@ public final class ComputeGpuMemoryClusterInstanceSummary
     }
 
     /**
-     * The date and time the GPU memory cluster instance was created.
+     * The date and time the GPU Memory Cluster instance was created.
      * <p>
      * Example: {@code 2016-09-15T21:10:29.600Z}
      *
@@ -539,7 +539,7 @@ public final class ComputeGpuMemoryClusterInstanceSummary
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the GPU memory cluster instance was created.
+     * The date and time the GPU Memory Cluster instance was created.
      * <p>
      * Example: {@code 2016-09-15T21:10:29.600Z}
      *

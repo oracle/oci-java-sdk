@@ -340,6 +340,24 @@ public interface KmsVaultAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update fleet ids for the registered mTLS vault.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRegisteredVaultForMtlsResponse> updateRegisteredVaultForMtls(
+            UpdateRegisteredVaultForMtlsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRegisteredVaultForMtlsRequest,
+                            UpdateRegisteredVaultForMtlsResponse>
+                    handler);
+
+    /**
      * Updates the properties of a vault. Specifically, you can update the
      * `displayName`, `freeformTags`, and `definedTags` properties. Furthermore,
      * the vault must be in an ACTIVE or CREATING state to be updated.

@@ -76,6 +76,20 @@ public class ListManagedInstanceUpdatablePackagesRequest
         return advisoryName;
     }
     /**
+     * The advisory severity.
+     *
+     */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisorySeverity> advisorySeverity;
+
+    /**
+     * The advisory severity.
+     *
+     */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisorySeverity>
+            getAdvisorySeverity() {
+        return advisorySeverity;
+    }
+    /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     private String compartmentId;
@@ -319,6 +333,36 @@ public class ListManagedInstanceUpdatablePackagesRequest
         }
 
         /**
+         * The advisory severity.
+         *
+         */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisorySeverity>
+                advisorySeverity = null;
+
+        /**
+         * The advisory severity.
+         *
+         * @param advisorySeverity the value to set
+         * @return this builder instance
+         */
+        public Builder advisorySeverity(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisorySeverity>
+                        advisorySeverity) {
+            this.advisorySeverity = advisorySeverity;
+            return this;
+        }
+
+        /**
+         * Singular setter. The advisory severity.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder advisorySeverity(AdvisorySeverity singularValue) {
+            return this.advisorySeverity(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          */
         private String compartmentId = null;
@@ -459,6 +503,7 @@ public class ListManagedInstanceUpdatablePackagesRequest
             displayName(o.getDisplayName());
             displayNameContains(o.getDisplayNameContains());
             advisoryName(o.getAdvisoryName());
+            advisorySeverity(o.getAdvisorySeverity());
             compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
@@ -503,6 +548,7 @@ public class ListManagedInstanceUpdatablePackagesRequest
             request.displayName = displayName;
             request.displayNameContains = displayNameContains;
             request.advisoryName = advisoryName;
+            request.advisorySeverity = advisorySeverity;
             request.compartmentId = compartmentId;
             request.limit = limit;
             request.page = page;
@@ -510,7 +556,7 @@ public class ListManagedInstanceUpdatablePackagesRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListManagedInstanceUpdatablePackagesRequest(managedInstanceId, classificationType, displayName, displayNameContains, advisoryName, compartmentId, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListManagedInstanceUpdatablePackagesRequest(managedInstanceId, classificationType, displayName, displayNameContains, advisoryName, advisorySeverity, compartmentId, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -525,6 +571,7 @@ public class ListManagedInstanceUpdatablePackagesRequest
                 .displayName(displayName)
                 .displayNameContains(displayNameContains)
                 .advisoryName(advisoryName)
+                .advisorySeverity(advisorySeverity)
                 .compartmentId(compartmentId)
                 .limit(limit)
                 .page(page)
@@ -551,6 +598,7 @@ public class ListManagedInstanceUpdatablePackagesRequest
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",displayNameContains=").append(String.valueOf(this.displayNameContains));
         sb.append(",advisoryName=").append(String.valueOf(this.advisoryName));
+        sb.append(",advisorySeverity=").append(String.valueOf(this.advisorySeverity));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -578,6 +626,7 @@ public class ListManagedInstanceUpdatablePackagesRequest
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.displayNameContains, other.displayNameContains)
                 && java.util.Objects.equals(this.advisoryName, other.advisoryName)
+                && java.util.Objects.equals(this.advisorySeverity, other.advisorySeverity)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -605,6 +654,9 @@ public class ListManagedInstanceUpdatablePackagesRequest
                                 ? 43
                                 : this.displayNameContains.hashCode());
         result = (result * PRIME) + (this.advisoryName == null ? 43 : this.advisoryName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.advisorySeverity == null ? 43 : this.advisorySeverity.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

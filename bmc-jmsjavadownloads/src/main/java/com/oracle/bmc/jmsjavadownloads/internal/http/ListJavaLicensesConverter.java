@@ -30,8 +30,13 @@ public class ListJavaLicensesConverter {
             com.oracle.bmc.jmsjavadownloads.requests.ListJavaLicensesRequest request) {
         Validate.notNull(request, "request instance is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/").path("20230601").path("javaLicenses");
+                newBaseTarget.path("/").path("20230601").path("javaLicenses");
 
         if (request.getLicenseType() != null) {
             target =

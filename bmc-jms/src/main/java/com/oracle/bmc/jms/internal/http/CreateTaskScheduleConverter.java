@@ -32,8 +32,13 @@ public class CreateTaskScheduleConverter {
         Validate.notNull(
                 request.getCreateTaskScheduleDetails(), "createTaskScheduleDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20210610").path("taskSchedules");
+                newBaseTarget.path("/20210610").path("taskSchedules");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

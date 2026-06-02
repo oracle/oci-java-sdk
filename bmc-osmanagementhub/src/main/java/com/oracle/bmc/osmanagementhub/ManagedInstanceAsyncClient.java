@@ -1215,6 +1215,63 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<InstallSnapsOnManagedInstanceResponse>
+            installSnapsOnManagedInstance(
+                    InstallSnapsOnManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    InstallSnapsOnManagedInstanceRequest,
+                                    InstallSnapsOnManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async installSnapsOnManagedInstance");
+        final InstallSnapsOnManagedInstanceRequest interceptedRequest =
+                InstallSnapsOnManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallSnapsOnManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "InstallSnapsOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallSnapsOnManagedInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, InstallSnapsOnManagedInstanceResponse>
+                transformer =
+                        InstallSnapsOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        InstallSnapsOnManagedInstanceRequest, InstallSnapsOnManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                InstallSnapsOnManagedInstanceRequest,
+                                InstallSnapsOnManagedInstanceResponse>,
+                        java.util.concurrent.Future<InstallSnapsOnManagedInstanceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getInstallSnapsOnManagedInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    InstallSnapsOnManagedInstanceRequest, InstallSnapsOnManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<InstallWindowsUpdatesOnManagedInstanceResponse>
             installWindowsUpdatesOnManagedInstance(
                     InstallWindowsUpdatesOnManagedInstanceRequest request,
@@ -1639,6 +1696,54 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListManagedInstanceModulesRequest, ListManagedInstanceModulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedInstanceSnapsResponse> listManagedInstanceSnaps(
+            ListManagedInstanceSnapsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListManagedInstanceSnapsRequest, ListManagedInstanceSnapsResponse>
+                    handler) {
+        LOG.trace("Called async listManagedInstanceSnaps");
+        final ListManagedInstanceSnapsRequest interceptedRequest =
+                ListManagedInstanceSnapsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceSnapsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceSnaps",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceSnaps");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListManagedInstanceSnapsResponse>
+                transformer =
+                        ListManagedInstanceSnapsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListManagedInstanceSnapsRequest, ListManagedInstanceSnapsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListManagedInstanceSnapsRequest, ListManagedInstanceSnapsResponse>,
+                        java.util.concurrent.Future<ListManagedInstanceSnapsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListManagedInstanceSnapsRequest, ListManagedInstanceSnapsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2088,6 +2193,64 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveSnapsFromManagedInstanceResponse>
+            removeSnapsFromManagedInstance(
+                    RemoveSnapsFromManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveSnapsFromManagedInstanceRequest,
+                                    RemoveSnapsFromManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async removeSnapsFromManagedInstance");
+        final RemoveSnapsFromManagedInstanceRequest interceptedRequest =
+                RemoveSnapsFromManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveSnapsFromManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "RemoveSnapsFromManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RemoveSnapsFromManagedInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveSnapsFromManagedInstanceResponse>
+                transformer =
+                        RemoveSnapsFromManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveSnapsFromManagedInstanceRequest,
+                        RemoveSnapsFromManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveSnapsFromManagedInstanceRequest,
+                                RemoveSnapsFromManagedInstanceResponse>,
+                        java.util.concurrent.Future<RemoveSnapsFromManagedInstanceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveSnapsFromManagedInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveSnapsFromManagedInstanceRequest, RemoveSnapsFromManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SwitchModuleStreamOnManagedInstanceResponse>
             switchModuleStreamOnManagedInstance(
                     SwitchModuleStreamOnManagedInstanceRequest request,
@@ -2135,6 +2298,65 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     SwitchModuleStreamOnManagedInstanceRequest,
                     SwitchModuleStreamOnManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SwitchSnapChannelOnManagedInstanceResponse>
+            switchSnapChannelOnManagedInstance(
+                    SwitchSnapChannelOnManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SwitchSnapChannelOnManagedInstanceRequest,
+                                    SwitchSnapChannelOnManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async switchSnapChannelOnManagedInstance");
+        final SwitchSnapChannelOnManagedInstanceRequest interceptedRequest =
+                SwitchSnapChannelOnManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SwitchSnapChannelOnManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "SwitchSnapChannelOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/SwitchSnapChannelOnManagedInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SwitchSnapChannelOnManagedInstanceResponse>
+                transformer =
+                        SwitchSnapChannelOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SwitchSnapChannelOnManagedInstanceRequest,
+                        SwitchSnapChannelOnManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SwitchSnapChannelOnManagedInstanceRequest,
+                                SwitchSnapChannelOnManagedInstanceResponse>,
+                        java.util.concurrent.Future<SwitchSnapChannelOnManagedInstanceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSwitchSnapChannelOnManagedInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SwitchSnapChannelOnManagedInstanceRequest,
+                    SwitchSnapChannelOnManagedInstanceResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

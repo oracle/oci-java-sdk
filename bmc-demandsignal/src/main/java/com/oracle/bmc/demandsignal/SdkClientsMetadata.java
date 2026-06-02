@@ -7,5 +7,10 @@ package com.oracle.bmc.demandsignal;
 import com.oracle.bmc.SdkClients;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
-@SdkClients({OccDemandSignalAsyncClient.class, OccDemandSignalClient.class})
+@SdkClients({
+    OccDemandSignalAsyncClient.class,
+    OccDemandSignalClient.class,
+    OccMetricAlarmAsyncClient.class,
+    OccMetricAlarmClient.class
+})
 public final class SdkClientsMetadata {}

@@ -64,6 +64,14 @@ public class ListBatchContextShapesConverter {
                                     request.getPage()));
         }
 
+        if (request.getShapeType() != null) {
+            target =
+                    target.queryParam(
+                            "shapeType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getShapeType().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

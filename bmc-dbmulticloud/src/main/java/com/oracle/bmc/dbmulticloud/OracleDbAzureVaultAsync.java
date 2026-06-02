@@ -42,7 +42,7 @@ import com.oracle.bmc.dbmulticloud.responses.*;
  * <b>AWS</b>:<br>
  * <b>Oracle AWS Connector Resource:</b>&nbsp;&nbsp;The Oracle AWS Connector Resource is used to install the AWS Identity Connector on an Exadata VM cluster in Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D).
  *
- * <b>Google AWS Key Resource:</b>&nbsp;&nbsp;The Oracle AWS Key Resource is used to register and manage a AWS Key within Oracle Cloud Infrastructure (OCI).
+ * <b>Oracle AWS Key Resource:</b>&nbsp;&nbsp;The Oracle AWS Key Resource is used to register and manage a AWS Key within Oracle Cloud Infrastructure (OCI).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240501")
@@ -194,6 +194,23 @@ public interface OracleDbAzureVaultAsync extends AutoCloseable {
             RefreshOracleDbAzureVaultRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             RefreshOracleDbAzureVaultRequest, RefreshOracleDbAzureVaultResponse>
+                    handler);
+
+    /**
+     * Replicate the Oracle DB Azure Vault resource to target region.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ReplicateOracleDbAzureVaultResponse> replicateOracleDbAzureVault(
+            ReplicateOracleDbAzureVaultRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ReplicateOracleDbAzureVaultRequest, ReplicateOracleDbAzureVaultResponse>
                     handler);
 
     /**

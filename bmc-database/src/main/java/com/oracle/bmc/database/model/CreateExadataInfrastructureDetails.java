@@ -38,6 +38,7 @@ public final class CreateExadataInfrastructureDetails
         "corporateProxy",
         "contacts",
         "maintenanceWindow",
+        "maintenanceVersionPreferences",
         "storageCount",
         "computeCount",
         "isMultiRackDeployment",
@@ -65,6 +66,7 @@ public final class CreateExadataInfrastructureDetails
             String corporateProxy,
             java.util.List<ExadataInfrastructureContact> contacts,
             MaintenanceWindow maintenanceWindow,
+            MaintenanceVersionPreferenceDetails maintenanceVersionPreferences,
             Integer storageCount,
             Integer computeCount,
             Boolean isMultiRackDeployment,
@@ -91,6 +93,7 @@ public final class CreateExadataInfrastructureDetails
         this.corporateProxy = corporateProxy;
         this.contacts = contacts;
         this.maintenanceWindow = maintenanceWindow;
+        this.maintenanceVersionPreferences = maintenanceVersionPreferences;
         this.storageCount = storageCount;
         this.computeCount = computeCount;
         this.isMultiRackDeployment = isMultiRackDeployment;
@@ -320,6 +323,16 @@ public final class CreateExadataInfrastructureDetails
             this.__explicitlySet__.add("maintenanceWindow");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceVersionPreferences")
+        private MaintenanceVersionPreferenceDetails maintenanceVersionPreferences;
+
+        public Builder maintenanceVersionPreferences(
+                MaintenanceVersionPreferenceDetails maintenanceVersionPreferences) {
+            this.maintenanceVersionPreferences = maintenanceVersionPreferences;
+            this.__explicitlySet__.add("maintenanceVersionPreferences");
+            return this;
+        }
         /**
          * The number of storage servers for the Exadata infrastructure.
          **/
@@ -545,6 +558,7 @@ public final class CreateExadataInfrastructureDetails
                             this.corporateProxy,
                             this.contacts,
                             this.maintenanceWindow,
+                            this.maintenanceVersionPreferences,
                             this.storageCount,
                             this.computeCount,
                             this.isMultiRackDeployment,
@@ -603,6 +617,9 @@ public final class CreateExadataInfrastructureDetails
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
                 this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceVersionPreferences")) {
+                this.maintenanceVersionPreferences(model.getMaintenanceVersionPreferences());
             }
             if (model.wasPropertyExplicitlySet("storageCount")) {
                 this.storageCount(model.getStorageCount());
@@ -842,6 +859,13 @@ public final class CreateExadataInfrastructureDetails
         return maintenanceWindow;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceVersionPreferences")
+    private final MaintenanceVersionPreferenceDetails maintenanceVersionPreferences;
+
+    public MaintenanceVersionPreferenceDetails getMaintenanceVersionPreferences() {
+        return maintenanceVersionPreferences;
+    }
+
     /**
      * The number of storage servers for the Exadata infrastructure.
      **/
@@ -1050,6 +1074,8 @@ public final class CreateExadataInfrastructureDetails
         sb.append(", corporateProxy=").append(String.valueOf(this.corporateProxy));
         sb.append(", contacts=").append(String.valueOf(this.contacts));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", maintenanceVersionPreferences=")
+                .append(String.valueOf(this.maintenanceVersionPreferences));
         sb.append(", storageCount=").append(String.valueOf(this.storageCount));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", isMultiRackDeployment=").append(String.valueOf(this.isMultiRackDeployment));
@@ -1102,6 +1128,8 @@ public final class CreateExadataInfrastructureDetails
                 && java.util.Objects.equals(this.corporateProxy, other.corporateProxy)
                 && java.util.Objects.equals(this.contacts, other.contacts)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(
+                        this.maintenanceVersionPreferences, other.maintenanceVersionPreferences)
                 && java.util.Objects.equals(this.storageCount, other.storageCount)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.isMultiRackDeployment, other.isMultiRackDeployment)
@@ -1157,6 +1185,11 @@ public final class CreateExadataInfrastructureDetails
         result =
                 (result * PRIME)
                         + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceVersionPreferences == null
+                                ? 43
+                                : this.maintenanceVersionPreferences.hashCode());
         result = (result * PRIME) + (this.storageCount == null ? 43 : this.storageCount.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result =

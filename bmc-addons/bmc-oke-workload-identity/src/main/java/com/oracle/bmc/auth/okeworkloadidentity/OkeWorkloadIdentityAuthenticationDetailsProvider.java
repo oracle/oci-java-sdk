@@ -161,7 +161,10 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
         private ServiceAccountTokenSupplier serviceAccountTokenSupplier;
 
         /** Flag to enable new Service Account level token caching */
-        private boolean isTokenCachingEnabled = false;
+        private boolean isTokenCachingEnabled = true;
+
+        /** Flag to check if default session key supplier is used */
+        private boolean isUsingDefaultSessionKeySupplier = false;
 
         public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder() {
             this.serviceAccountTokenSupplier = new DefaultServiceAccountTokenProvider();
@@ -220,6 +223,10 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
         public OkeWorkloadIdentityAuthenticationDetailsProvider build() {
             // autodetect region
             autoDetectEndpointUsingMetadataUrl();
+
+            // If a sessionKeySupplier is not provided by the customer, the default supplier is used
+            this.isUsingDefaultSessionKeySupplier = this.sessionKeySupplier == null;
+
             // if customer has enabled new SA level token caching then use custom implementation of
             // SessionKeySupplier else it will fall back to non-caching SDK behaviour.
             if (this.isTokenCachingEnabled) {
@@ -308,7 +315,8 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
                     serviceAccountTokenSupplier,
                     provider,
                     configurator,
-                    circuitBreakerConfig);
+                    circuitBreakerConfig,
+                    isUsingDefaultSessionKeySupplier);
         }
 
         @Override

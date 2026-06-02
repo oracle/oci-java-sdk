@@ -5,7 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Un allocated resources details of the Exadata Cloud@Customer infrastructure. Applies to Exadata Cloud@Customer instances only.
+ * Displays details of unallocated resources for the Exadata Cloud@Customer infrastructure.
+ * Applies to Exadata Cloud@Customer instances only.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

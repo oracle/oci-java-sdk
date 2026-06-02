@@ -23,6 +23,10 @@ package com.oracle.bmc.batch.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateServiceManagedGpuFleetDetails.class,
+        name = "SERVICE_MANAGED_GPU_FLEET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateServiceManagedFleetDetails.class,
         name = "SERVICE_MANAGED_FLEET"
     )
@@ -79,6 +83,7 @@ public class CreateFleetDetails extends com.oracle.bmc.http.internal.ExplicitlyS
      **/
     public enum Type {
         ServiceManagedFleet("SERVICE_MANAGED_FLEET"),
+        ServiceManagedGpuFleet("SERVICE_MANAGED_GPU_FLEET"),
         ;
 
         private final String value;

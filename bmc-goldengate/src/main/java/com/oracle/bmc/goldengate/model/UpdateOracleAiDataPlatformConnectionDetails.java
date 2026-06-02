@@ -251,6 +251,56 @@ public final class UpdateOracleAiDataPlatformConnectionDetails extends UpdateCon
             return this;
         }
         /**
+         * The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+         * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
+        private String privateKeyFile;
+
+        /**
+         * The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+         * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
+         *
+         * @param privateKeyFile the value to set
+         * @return this builder
+         **/
+        public Builder privateKeyFile(String privateKeyFile) {
+            this.privateKeyFile = privateKeyFile;
+            this.__explicitlySet__.add("privateKeyFile");
+            return this;
+        }
+        /**
+         * The passphrase of the private key.
+         * Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
+        private char[] privateKeyPassphrase;
+
+        /**
+         * The passphrase of the private key.
+         * Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
+         *
+         * @param privateKeyPassphrase the value to set
+         * @return this builder
+         **/
+        public Builder privateKeyPassphrase(char[] privateKeyPassphrase) {
+            this.privateKeyPassphrase = privateKeyPassphrase;
+            this.__explicitlySet__.add("privateKeyPassphrase");
+            return this;
+        }
+
+        public Builder privateKeyPassphrase(String privateKeyPassphrase) {
+            this.privateKeyPassphrase =
+                    privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null;
+            this.__explicitlySet__.add("privateKeyPassphrase");
+            return this;
+        }
+
+        /**
          * The fingerprint of the API Key of the user specified by the userId.
          * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
          *
@@ -314,6 +364,8 @@ public final class UpdateOracleAiDataPlatformConnectionDetails extends UpdateCon
                             this.userId,
                             this.privateKeyFileSecretId,
                             this.privateKeyPassphraseSecretId,
+                            this.privateKeyFile,
+                            this.privateKeyPassphrase,
                             this.publicKeyFingerprint,
                             this.shouldUseResourcePrincipal);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -375,6 +427,12 @@ public final class UpdateOracleAiDataPlatformConnectionDetails extends UpdateCon
             if (model.wasPropertyExplicitlySet("privateKeyPassphraseSecretId")) {
                 this.privateKeyPassphraseSecretId(model.getPrivateKeyPassphraseSecretId());
             }
+            if (model.wasPropertyExplicitlySet("privateKeyFile")) {
+                this.privateKeyFile(model.getPrivateKeyFile());
+            }
+            if (model.wasPropertyExplicitlySet("privateKeyPassphrase")) {
+                this.privateKeyPassphrase(model.getPrivateKeyPassphrase());
+            }
             if (model.wasPropertyExplicitlySet("publicKeyFingerprint")) {
                 this.publicKeyFingerprint(model.getPublicKeyFingerprint());
             }
@@ -415,6 +473,8 @@ public final class UpdateOracleAiDataPlatformConnectionDetails extends UpdateCon
             String userId,
             String privateKeyFileSecretId,
             String privateKeyPassphraseSecretId,
+            String privateKeyFile,
+            String privateKeyPassphrase,
             String publicKeyFingerprint,
             Boolean shouldUseResourcePrincipal) {
         super(
@@ -435,6 +495,57 @@ public final class UpdateOracleAiDataPlatformConnectionDetails extends UpdateCon
         this.userId = userId;
         this.privateKeyFileSecretId = privateKeyFileSecretId;
         this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+        this.privateKeyFile = privateKeyFile;
+        this.privateKeyPassphrase =
+                privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null;
+        this.publicKeyFingerprint = publicKeyFingerprint;
+        this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateOracleAiDataPlatformConnectionDetails(
+            String displayName,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            String connectionUrl,
+            String tenancyId,
+            String region,
+            String userId,
+            String privateKeyFileSecretId,
+            String privateKeyPassphraseSecretId,
+            String privateKeyFile,
+            char[] privateKeyPassphrase,
+            String publicKeyFingerprint,
+            Boolean shouldUseResourcePrincipal) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                securityAttributes);
+        this.connectionUrl = connectionUrl;
+        this.tenancyId = tenancyId;
+        this.region = region;
+        this.userId = userId;
+        this.privateKeyFileSecretId = privateKeyFileSecretId;
+        this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+        this.privateKeyFile = privateKeyFile;
+        this.privateKeyPassphrase = privateKeyPassphrase;
         this.publicKeyFingerprint = publicKeyFingerprint;
         this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
     }
@@ -550,6 +661,58 @@ public final class UpdateOracleAiDataPlatformConnectionDetails extends UpdateCon
     }
 
     /**
+     * The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+     * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
+    private final String privateKeyFile;
+
+    /**
+     * The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+     * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
+     *
+     * @return the value
+     **/
+    public String getPrivateKeyFile() {
+        return privateKeyFile;
+    }
+
+    /**
+     * The passphrase of the private key.
+     * Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
+    private final char[] privateKeyPassphrase;
+
+    /**
+     * The passphrase of the private key.
+     * Deprecated: This field is deprecated and replaced by &quot;privateKeyPassphraseSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPrivateKeyPassphrase__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPrivateKeyPassphrase() {
+        return privateKeyPassphrase != null ? new String(privateKeyPassphrase) : null;
+    }
+
+    /**
+     * The passphrase of the private key.
+     * Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
+     *
+     * @return the value
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
+    public char[] getPrivateKeyPassphrase__AsCharArray() {
+        return privateKeyPassphrase;
+    }
+
+    /**
      * The fingerprint of the API Key of the user specified by the userId.
      * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      *
@@ -606,6 +769,8 @@ public final class UpdateOracleAiDataPlatformConnectionDetails extends UpdateCon
         sb.append(", privateKeyFileSecretId=").append(String.valueOf(this.privateKeyFileSecretId));
         sb.append(", privateKeyPassphraseSecretId=")
                 .append(String.valueOf(this.privateKeyPassphraseSecretId));
+        sb.append(", privateKeyFile=").append(String.valueOf(this.privateKeyFile));
+        sb.append(", privateKeyPassphrase=").append("<redacted>");
         sb.append(", publicKeyFingerprint=").append(String.valueOf(this.publicKeyFingerprint));
         sb.append(", shouldUseResourcePrincipal=")
                 .append(String.valueOf(this.shouldUseResourcePrincipal));
@@ -632,6 +797,8 @@ public final class UpdateOracleAiDataPlatformConnectionDetails extends UpdateCon
                         this.privateKeyFileSecretId, other.privateKeyFileSecretId)
                 && java.util.Objects.equals(
                         this.privateKeyPassphraseSecretId, other.privateKeyPassphraseSecretId)
+                && java.util.Objects.equals(this.privateKeyFile, other.privateKeyFile)
+                && java.util.Objects.equals(this.privateKeyPassphrase, other.privateKeyPassphrase)
                 && java.util.Objects.equals(this.publicKeyFingerprint, other.publicKeyFingerprint)
                 && java.util.Objects.equals(
                         this.shouldUseResourcePrincipal, other.shouldUseResourcePrincipal)
@@ -658,6 +825,14 @@ public final class UpdateOracleAiDataPlatformConnectionDetails extends UpdateCon
                         + (this.privateKeyPassphraseSecretId == null
                                 ? 43
                                 : this.privateKeyPassphraseSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateKeyFile == null ? 43 : this.privateKeyFile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateKeyPassphrase == null
+                                ? 43
+                                : this.privateKeyPassphrase.hashCode());
         result =
                 (result * PRIME)
                         + (this.publicKeyFingerprint == null

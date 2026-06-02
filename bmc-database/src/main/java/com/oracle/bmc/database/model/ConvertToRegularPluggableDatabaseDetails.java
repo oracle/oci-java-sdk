@@ -23,6 +23,21 @@ package com.oracle.bmc.database.model;
 public final class ConvertToRegularPluggableDatabaseDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public ConvertToRegularPluggableDatabaseDetails(
+            Boolean shouldCreatePdbBackup,
+            String containerDatabaseAdminPassword,
+            String tdeWalletPassword) {
+        super();
+        this.shouldCreatePdbBackup = shouldCreatePdbBackup;
+        this.containerDatabaseAdminPassword =
+                containerDatabaseAdminPassword != null
+                        ? containerDatabaseAdminPassword.toCharArray()
+                        : null;
+        this.tdeWalletPassword = tdeWalletPassword != null ? tdeWalletPassword.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "shouldCreatePdbBackup",
         "containerDatabaseAdminPassword",
@@ -30,8 +45,8 @@ public final class ConvertToRegularPluggableDatabaseDetails
     })
     public ConvertToRegularPluggableDatabaseDetails(
             Boolean shouldCreatePdbBackup,
-            String containerDatabaseAdminPassword,
-            String tdeWalletPassword) {
+            char[] containerDatabaseAdminPassword,
+            char[] tdeWalletPassword) {
         super();
         this.shouldCreatePdbBackup = shouldCreatePdbBackup;
         this.containerDatabaseAdminPassword = containerDatabaseAdminPassword;
@@ -60,31 +75,48 @@ public final class ConvertToRegularPluggableDatabaseDetails
          * The DB system administrator password of the Container Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseAdminPassword")
-        private String containerDatabaseAdminPassword;
+        private char[] containerDatabaseAdminPassword;
 
         /**
          * The DB system administrator password of the Container Database.
          * @param containerDatabaseAdminPassword the value to set
          * @return this builder
          **/
-        public Builder containerDatabaseAdminPassword(String containerDatabaseAdminPassword) {
+        public Builder containerDatabaseAdminPassword(char[] containerDatabaseAdminPassword) {
             this.containerDatabaseAdminPassword = containerDatabaseAdminPassword;
             this.__explicitlySet__.add("containerDatabaseAdminPassword");
             return this;
         }
+
+        public Builder containerDatabaseAdminPassword(String containerDatabaseAdminPassword) {
+            this.containerDatabaseAdminPassword =
+                    containerDatabaseAdminPassword != null
+                            ? containerDatabaseAdminPassword.toCharArray()
+                            : null;
+            this.__explicitlySet__.add("containerDatabaseAdminPassword");
+            return this;
+        }
+
         /**
          * The existing TDE wallet password of the Container Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
-        private String tdeWalletPassword;
+        private char[] tdeWalletPassword;
 
         /**
          * The existing TDE wallet password of the Container Database.
          * @param tdeWalletPassword the value to set
          * @return this builder
          **/
-        public Builder tdeWalletPassword(String tdeWalletPassword) {
+        public Builder tdeWalletPassword(char[] tdeWalletPassword) {
             this.tdeWalletPassword = tdeWalletPassword;
+            this.__explicitlySet__.add("tdeWalletPassword");
+            return this;
+        }
+
+        public Builder tdeWalletPassword(String tdeWalletPassword) {
+            this.tdeWalletPassword =
+                    tdeWalletPassword != null ? tdeWalletPassword.toCharArray() : null;
             this.__explicitlySet__.add("tdeWalletPassword");
             return this;
         }
@@ -148,13 +180,27 @@ public final class ConvertToRegularPluggableDatabaseDetails
      * The DB system administrator password of the Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseAdminPassword")
-    private final String containerDatabaseAdminPassword;
+    private final char[] containerDatabaseAdminPassword;
+
+    /**
+     * The DB system administrator password of the Container Database.
+     * return the value
+     * @Deprecated - Use getContainerDatabaseAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getContainerDatabaseAdminPassword() {
+        return containerDatabaseAdminPassword != null
+                ? new String(containerDatabaseAdminPassword)
+                : null;
+    }
 
     /**
      * The DB system administrator password of the Container Database.
      * @return the value
      **/
-    public String getContainerDatabaseAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseAdminPassword")
+    public char[] getContainerDatabaseAdminPassword__AsCharArray() {
         return containerDatabaseAdminPassword;
     }
 
@@ -162,13 +208,25 @@ public final class ConvertToRegularPluggableDatabaseDetails
      * The existing TDE wallet password of the Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
-    private final String tdeWalletPassword;
+    private final char[] tdeWalletPassword;
+
+    /**
+     * The existing TDE wallet password of the Container Database.
+     * return the value
+     * @Deprecated - Use getTdeWalletPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTdeWalletPassword() {
+        return tdeWalletPassword != null ? new String(tdeWalletPassword) : null;
+    }
 
     /**
      * The existing TDE wallet password of the Container Database.
      * @return the value
      **/
-    public String getTdeWalletPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
+    public char[] getTdeWalletPassword__AsCharArray() {
         return tdeWalletPassword;
     }
 

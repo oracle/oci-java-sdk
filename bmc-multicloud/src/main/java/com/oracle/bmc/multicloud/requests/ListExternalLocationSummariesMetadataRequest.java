@@ -13,26 +13,26 @@ public class ListExternalLocationSummariesMetadataRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      */
     private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
 
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      */
     public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
         return subscriptionServiceName;
     }
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.
-     * A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      *
      */
     private String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.
-     * A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      *
      */
     public String getCompartmentId() {
@@ -50,12 +50,12 @@ public class ListExternalLocationSummariesMetadataRequest
         return subscriptionId;
     }
     /**
-     * The resource type query (i.e. dbsystem, instance etc.)
+     * The resource type query (for example, dbsystem or instance).
      */
     private EntityType entityType;
 
     /**
-     * The resource type query (i.e. dbsystem, instance etc.)
+     * The resource type query (for example, dbsystem or instance).
      **/
     public enum EntityType {
         Dbsystem("dbsystem"),
@@ -90,7 +90,7 @@ public class ListExternalLocationSummariesMetadataRequest
     };
 
     /**
-     * The resource type query (i.e. dbsystem, instance etc.)
+     * The resource type query (for example, dbsystem or instance).
      */
     public EntityType getEntityType() {
         return entityType;
@@ -131,11 +131,15 @@ public class ListExternalLocationSummariesMetadataRequest
     }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+     *
      */
     private com.oracle.bmc.multicloud.model.SortOrder sortOrder;
 
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+     *
      */
     public com.oracle.bmc.multicloud.model.SortOrder getSortOrder() {
         return sortOrder;
@@ -221,12 +225,12 @@ public class ListExternalLocationSummariesMetadataRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The subscription service name of the Cloud Service Provider.
+         * The cloud service provider.
          */
         private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
 
         /**
-         * The subscription service name of the Cloud Service Provider.
+         * The cloud service provider.
          * @param subscriptionServiceName the value to set
          * @return this builder instance
          */
@@ -238,14 +242,14 @@ public class ListExternalLocationSummariesMetadataRequest
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.
-         * A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+         * A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
          *
          */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.
-         * A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+         * A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -271,12 +275,12 @@ public class ListExternalLocationSummariesMetadataRequest
         }
 
         /**
-         * The resource type query (i.e. dbsystem, instance etc.)
+         * The resource type query (for example, dbsystem or instance).
          */
         private EntityType entityType = null;
 
         /**
-         * The resource type query (i.e. dbsystem, instance etc.)
+         * The resource type query (for example, dbsystem or instance).
          * @param entityType the value to set
          * @return this builder instance
          */
@@ -329,11 +333,15 @@ public class ListExternalLocationSummariesMetadataRequest
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+         *
          */
         private com.oracle.bmc.multicloud.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */

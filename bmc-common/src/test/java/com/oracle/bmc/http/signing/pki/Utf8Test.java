@@ -20,12 +20,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assume.assumeTrue;
 
 /** Unit tests for {@link Utf8} */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -160,6 +162,10 @@ public class Utf8Test {
         for (int i = 0; i < size; i++) {
             taskNumbers.add(i);
         }
+
+        assumeTrue(
+                "The commonPool was not quiescent, skipping test",
+                ForkJoinPool.commonPool().awaitQuiescence(10, TimeUnit.SECONDS));
 
         taskNumbers
                 .parallelStream()

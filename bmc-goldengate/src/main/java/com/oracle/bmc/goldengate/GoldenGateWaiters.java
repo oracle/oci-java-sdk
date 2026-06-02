@@ -445,12 +445,12 @@ public class GoldenGateWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
-     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDeploymentRequest, GetDeploymentResponse> forDeployment(
             GetDeploymentRequest request,
-            com.oracle.bmc.goldengate.model.LifecycleState... targetStates) {
+            com.oracle.bmc.goldengate.model.Deployment.LifecycleState... targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
         com.oracle.bmc.util.internal.Validate.noNullElements(
@@ -471,7 +471,7 @@ public class GoldenGateWaiters {
      */
     public com.oracle.bmc.waiter.Waiter<GetDeploymentRequest, GetDeploymentResponse> forDeployment(
             GetDeploymentRequest request,
-            com.oracle.bmc.goldengate.model.LifecycleState targetState,
+            com.oracle.bmc.goldengate.model.Deployment.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         com.oracle.bmc.util.internal.Validate.notNull(
@@ -490,17 +490,17 @@ public class GoldenGateWaiters {
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDeploymentRequest, GetDeploymentResponse> forDeployment(
             GetDeploymentRequest request,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
-            com.oracle.bmc.goldengate.model.LifecycleState... targetStates) {
+            com.oracle.bmc.goldengate.model.Deployment.LifecycleState... targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
-                targetStates, "At least one targetState must be provided");
+                targetStates, "At least one target state must be provided");
         com.oracle.bmc.util.internal.Validate.noNullElements(
-                targetStates, "Null targetState values are not permitted");
+                targetStates, "Null target states are not permitted");
 
         return forDeployment(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -512,9 +512,9 @@ public class GoldenGateWaiters {
     private com.oracle.bmc.waiter.Waiter<GetDeploymentRequest, GetDeploymentResponse> forDeployment(
             com.oracle.bmc.waiter.BmcGenericWaiter waiter,
             final GetDeploymentRequest request,
-            final com.oracle.bmc.goldengate.model.LifecycleState... targetStates) {
-        final java.util.Set<com.oracle.bmc.goldengate.model.LifecycleState> targetStatesSet =
-                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+            final com.oracle.bmc.goldengate.model.Deployment.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.goldengate.model.Deployment.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
 
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
@@ -535,7 +535,7 @@ public class GoldenGateWaiters {
                             }
                         },
                         targetStatesSet.contains(
-                                com.oracle.bmc.goldengate.model.LifecycleState.Deleted)),
+                                com.oracle.bmc.goldengate.model.Deployment.LifecycleState.Deleted)),
                 request);
     }
 
@@ -543,13 +543,14 @@ public class GoldenGateWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
-     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDeploymentBackupRequest, GetDeploymentBackupResponse>
             forDeploymentBackup(
                     GetDeploymentBackupRequest request,
-                    com.oracle.bmc.goldengate.model.LifecycleState... targetStates) {
+                    com.oracle.bmc.goldengate.model.DeploymentBackup.LifecycleState...
+                            targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
         com.oracle.bmc.util.internal.Validate.noNullElements(
@@ -571,7 +572,7 @@ public class GoldenGateWaiters {
     public com.oracle.bmc.waiter.Waiter<GetDeploymentBackupRequest, GetDeploymentBackupResponse>
             forDeploymentBackup(
                     GetDeploymentBackupRequest request,
-                    com.oracle.bmc.goldengate.model.LifecycleState targetState,
+                    com.oracle.bmc.goldengate.model.DeploymentBackup.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         com.oracle.bmc.util.internal.Validate.notNull(
@@ -590,18 +591,19 @@ public class GoldenGateWaiters {
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDeploymentBackupRequest, GetDeploymentBackupResponse>
             forDeploymentBackup(
                     GetDeploymentBackupRequest request,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
-                    com.oracle.bmc.goldengate.model.LifecycleState... targetStates) {
+                    com.oracle.bmc.goldengate.model.DeploymentBackup.LifecycleState...
+                            targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
-                targetStates, "At least one targetState must be provided");
+                targetStates, "At least one target state must be provided");
         com.oracle.bmc.util.internal.Validate.noNullElements(
-                targetStates, "Null targetState values are not permitted");
+                targetStates, "Null target states are not permitted");
 
         return forDeploymentBackup(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -614,9 +616,10 @@ public class GoldenGateWaiters {
             forDeploymentBackup(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetDeploymentBackupRequest request,
-                    final com.oracle.bmc.goldengate.model.LifecycleState... targetStates) {
-        final java.util.Set<com.oracle.bmc.goldengate.model.LifecycleState> targetStatesSet =
-                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+                    final com.oracle.bmc.goldengate.model.DeploymentBackup.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.goldengate.model.DeploymentBackup.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
 
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
@@ -638,7 +641,8 @@ public class GoldenGateWaiters {
                             }
                         },
                         targetStatesSet.contains(
-                                com.oracle.bmc.goldengate.model.LifecycleState.Deleted)),
+                                com.oracle.bmc.goldengate.model.DeploymentBackup.LifecycleState
+                                        .Deleted)),
                 request);
     }
 
@@ -646,13 +650,14 @@ public class GoldenGateWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
-     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDeploymentUpgradeRequest, GetDeploymentUpgradeResponse>
             forDeploymentUpgrade(
                     GetDeploymentUpgradeRequest request,
-                    com.oracle.bmc.goldengate.model.LifecycleState... targetStates) {
+                    com.oracle.bmc.goldengate.model.DeploymentUpgrade.LifecycleState...
+                            targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
         com.oracle.bmc.util.internal.Validate.noNullElements(
@@ -674,7 +679,7 @@ public class GoldenGateWaiters {
     public com.oracle.bmc.waiter.Waiter<GetDeploymentUpgradeRequest, GetDeploymentUpgradeResponse>
             forDeploymentUpgrade(
                     GetDeploymentUpgradeRequest request,
-                    com.oracle.bmc.goldengate.model.LifecycleState targetState,
+                    com.oracle.bmc.goldengate.model.DeploymentUpgrade.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         com.oracle.bmc.util.internal.Validate.notNull(
@@ -693,18 +698,19 @@ public class GoldenGateWaiters {
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDeploymentUpgradeRequest, GetDeploymentUpgradeResponse>
             forDeploymentUpgrade(
                     GetDeploymentUpgradeRequest request,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
-                    com.oracle.bmc.goldengate.model.LifecycleState... targetStates) {
+                    com.oracle.bmc.goldengate.model.DeploymentUpgrade.LifecycleState...
+                            targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
-                targetStates, "At least one targetState must be provided");
+                targetStates, "At least one target state must be provided");
         com.oracle.bmc.util.internal.Validate.noNullElements(
-                targetStates, "Null targetState values are not permitted");
+                targetStates, "Null target states are not permitted");
 
         return forDeploymentUpgrade(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -717,9 +723,10 @@ public class GoldenGateWaiters {
             forDeploymentUpgrade(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetDeploymentUpgradeRequest request,
-                    final com.oracle.bmc.goldengate.model.LifecycleState... targetStates) {
-        final java.util.Set<com.oracle.bmc.goldengate.model.LifecycleState> targetStatesSet =
-                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+                    final com.oracle.bmc.goldengate.model.DeploymentUpgrade.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.goldengate.model.DeploymentUpgrade.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
 
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
@@ -740,8 +747,7 @@ public class GoldenGateWaiters {
                                         response.getDeploymentUpgrade().getLifecycleState());
                             }
                         },
-                        targetStatesSet.contains(
-                                com.oracle.bmc.goldengate.model.LifecycleState.Deleted)),
+                        false),
                 request);
     }
 

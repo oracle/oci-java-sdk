@@ -22,15 +22,22 @@ package com.oracle.bmc.filestorage.model;
 public final class UpdateSnapshotDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"freeformTags", "definedTags", "expirationTime"})
+    @java.beans.ConstructorProperties({
+        "freeformTags",
+        "definedTags",
+        "expirationTime",
+        "lockDurationDetails"
+    })
     public UpdateSnapshotDetails(
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Date expirationTime) {
+            java.util.Date expirationTime,
+            LockDurationDetails lockDurationDetails) {
         super();
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.expirationTime = expirationTime;
+        this.lockDurationDetails = lockDurationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -105,13 +112,25 @@ public final class UpdateSnapshotDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lockDurationDetails")
+        private LockDurationDetails lockDurationDetails;
+
+        public Builder lockDurationDetails(LockDurationDetails lockDurationDetails) {
+            this.lockDurationDetails = lockDurationDetails;
+            this.__explicitlySet__.add("lockDurationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSnapshotDetails build() {
             UpdateSnapshotDetails model =
                     new UpdateSnapshotDetails(
-                            this.freeformTags, this.definedTags, this.expirationTime);
+                            this.freeformTags,
+                            this.definedTags,
+                            this.expirationTime,
+                            this.lockDurationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -128,6 +147,9 @@ public final class UpdateSnapshotDetails
             }
             if (model.wasPropertyExplicitlySet("expirationTime")) {
                 this.expirationTime(model.getExpirationTime());
+            }
+            if (model.wasPropertyExplicitlySet("lockDurationDetails")) {
+                this.lockDurationDetails(model.getLockDurationDetails());
             }
             return this;
         }
@@ -206,6 +228,13 @@ public final class UpdateSnapshotDetails
         return expirationTime;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lockDurationDetails")
+    private final LockDurationDetails lockDurationDetails;
+
+    public LockDurationDetails getLockDurationDetails() {
+        return lockDurationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -223,6 +252,7 @@ public final class UpdateSnapshotDetails
         sb.append("freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", expirationTime=").append(String.valueOf(this.expirationTime));
+        sb.append(", lockDurationDetails=").append(String.valueOf(this.lockDurationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -240,6 +270,7 @@ public final class UpdateSnapshotDetails
         return java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.expirationTime, other.expirationTime)
+                && java.util.Objects.equals(this.lockDurationDetails, other.lockDurationDetails)
                 && super.equals(other);
     }
 
@@ -252,6 +283,11 @@ public final class UpdateSnapshotDetails
         result =
                 (result * PRIME)
                         + (this.expirationTime == null ? 43 : this.expirationTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lockDurationDetails == null
+                                ? 43
+                                : this.lockDurationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

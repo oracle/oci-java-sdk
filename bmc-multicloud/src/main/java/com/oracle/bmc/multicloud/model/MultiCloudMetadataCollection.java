@@ -5,7 +5,10 @@
 package com.oracle.bmc.multicloud.model;
 
 /**
- * Multicloud metadata information across clouds.
+ * Multicloud metadata for Multicloud subscriptions in the indicated compartment.
+ * For more information, see
+ * [Listing Multicloud Metadata for a Subscription](https://docs.oracle.com/iaas/Content/multicloud-hub/list-subscription-metadata.htm).
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

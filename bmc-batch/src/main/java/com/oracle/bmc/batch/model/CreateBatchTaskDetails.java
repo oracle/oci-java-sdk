@@ -25,6 +25,10 @@ package com.oracle.bmc.batch.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateComputeTaskDetails.class,
         name = "COMPUTE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateGroupTaskDetails.class,
+        name = "GROUP"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -94,13 +98,13 @@ public class CreateBatchTaskDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * A list of tasks from the same job this task depends on referenced by name.
+     * A list of tasks on which this tasks depends, referenced by name. Dependencies must be within the same parent (job or group task). For tasks within a group task, all dependencies must also be within that same group task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dependencies")
     private final java.util.List<String> dependencies;
 
     /**
-     * A list of tasks from the same job this task depends on referenced by name.
+     * A list of tasks on which this tasks depends, referenced by name. Dependencies must be within the same parent (job or group task). For tasks within a group task, all dependencies must also be within that same group task.
      * @return the value
      **/
     public java.util.List<String> getDependencies() {
@@ -186,6 +190,7 @@ public class CreateBatchTaskDetails extends com.oracle.bmc.http.internal.Explici
      **/
     public enum Type {
         Compute("COMPUTE"),
+        Group("GROUP"),
         ;
 
         private final String value;

@@ -55,10 +55,6 @@ public class GetIncidentConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
-        if (request.getCsi() != null) {
-            ib.header("csi", request.getCsi());
-        }
-
         if (request.getOcid() != null) {
             ib.header("ocid", request.getOcid());
         }

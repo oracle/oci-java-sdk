@@ -46,7 +46,8 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
         "vaultId",
         "keyId",
         "secretCompartmentId",
-        "secretId"
+        "secretId",
+        "connectionId"
     })
     public DatabaseRegistration(
             String id,
@@ -72,7 +73,8 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
             String vaultId,
             String keyId,
             String secretCompartmentId,
-            String secretId) {
+            String secretId,
+            String connectionId) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -98,6 +100,7 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
         this.keyId = keyId;
         this.secretCompartmentId = secretCompartmentId;
         this.secretId = secretId;
+        this.connectionId = connectionId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -591,6 +594,26 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("secretId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being
+         * referenced as the successor resource of the deprecated database registration.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
+        private String connectionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being
+         * referenced as the successor resource of the deprecated database registration.
+         *
+         * @param connectionId the value to set
+         * @return this builder
+         **/
+        public Builder connectionId(String connectionId) {
+            this.connectionId = connectionId;
+            this.__explicitlySet__.add("connectionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -621,7 +644,8 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
                             this.vaultId,
                             this.keyId,
                             this.secretCompartmentId,
-                            this.secretId);
+                            this.secretId,
+                            this.connectionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -701,6 +725,9 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("secretId")) {
                 this.secretId(model.getSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("connectionId")) {
+                this.connectionId(model.getConnectionId());
             }
             return this;
         }
@@ -1209,6 +1236,24 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
         return secretId;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being
+     * referenced as the successor resource of the deprecated database registration.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
+    private final String connectionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being
+     * referenced as the successor resource of the deprecated database registration.
+     *
+     * @return the value
+     **/
+    public String getConnectionId() {
+        return connectionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1247,6 +1292,7 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", secretCompartmentId=").append(String.valueOf(this.secretCompartmentId));
         sb.append(", secretId=").append(String.valueOf(this.secretId));
+        sb.append(", connectionId=").append(String.valueOf(this.connectionId));
         sb.append(")");
         return sb.toString();
     }
@@ -1285,6 +1331,7 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.secretCompartmentId, other.secretCompartmentId)
                 && java.util.Objects.equals(this.secretId, other.secretId)
+                && java.util.Objects.equals(this.connectionId, other.connectionId)
                 && super.equals(other);
     }
 
@@ -1328,6 +1375,7 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
                                 ? 43
                                 : this.secretCompartmentId.hashCode());
         result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
+        result = (result * PRIME) + (this.connectionId == null ? 43 : this.connectionId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

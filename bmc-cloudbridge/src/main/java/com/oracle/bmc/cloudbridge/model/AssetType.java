@@ -11,6 +11,7 @@ package com.oracle.bmc.cloudbridge.model;
 public enum AssetType {
     VmwareVm("VMWARE_VM"),
     Vm("VM"),
+    InventoryAsset("INVENTORY_ASSET"),
     AwsEc2("AWS_EC2"),
     AwsEbs("AWS_EBS"),
 

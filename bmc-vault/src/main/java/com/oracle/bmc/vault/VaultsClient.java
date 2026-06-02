@@ -314,6 +314,17 @@ public class VaultsClient implements Vaults {
                         com.oracle.bmc.util.internal.SpiClientConfiguratorUtils
                                 .getEnabledSpiClientConfigurators();
         allConfigurators.addAll(additionalSpiClientConfigurators);
+        if (com.oracle.bmc.Options.isDefaultConnectionPoolingApacheConfiguratorEnabledForClassName(
+                this.getClass().getName())) {
+            restClientFactoryBuilder =
+                    restClientFactoryBuilder.defaultConfigurator(
+                            new com.oracle.bmc.http.ConnectionPoolingApacheConfigurator(
+                                    com.oracle.bmc.http.ApacheConnectionPoolConfig.builder()
+                                            .totalOpenConnections(100)
+                                            .defaultMaxConnectionsPerRoute(100)
+                                            .idleConnectionTimeoutInMillis(60000L)
+                                            .build()));
+        }
         this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)

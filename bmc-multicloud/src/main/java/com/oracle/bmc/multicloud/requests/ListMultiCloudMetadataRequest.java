@@ -59,11 +59,15 @@ public class ListMultiCloudMetadataRequest
     }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+     *
      */
     private com.oracle.bmc.multicloud.model.SortOrder sortOrder;
 
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+     *
      */
     public com.oracle.bmc.multicloud.model.SortOrder getSortOrder() {
         return sortOrder;
@@ -207,11 +211,15 @@ public class ListMultiCloudMetadataRequest
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+         *
          */
         private com.oracle.bmc.multicloud.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */

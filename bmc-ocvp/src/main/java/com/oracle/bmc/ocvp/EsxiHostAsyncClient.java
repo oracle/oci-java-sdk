@@ -637,7 +637,12 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 InplaceUpgradeRequest, InplaceUpgradeResponse>,
                         java.util.concurrent.Future<InplaceUpgradeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getInplaceUpgradeDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

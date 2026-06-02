@@ -80,4 +80,55 @@ public enum Options {
     public static boolean isTokenRefreshRetrierEnabled() {
         return TOKEN_REFRESH_RETRY_ENABLED;
     }
+
+    /**
+     * The prefix for the system property key that controls whether the ConnectionPoolingApacheConfigurator is
+     * enabled by default.
+     *
+     * The default of this property is "true". Note that not all clients set a ConnectionPoolingApacheConfigurator
+     * as default configurator.
+     */
+    private static final String
+            JAVASDK_DEFAULT_CONNECTION_POOLING_APACHE_CONFIGURATOR_ENABLED_GLOBAL =
+                    "oci.javasdk.ConnectionPoolingApacheConfigurator.enabled.global";
+
+    /**
+     * The prefix for the system property key that controls whether the ConnectionPoolingApacheConfigurator is
+     * enabled by default.
+     * The whole system property key can be constructed by appending the fully-qualified class name, e.g.
+     * "oci.javasdk.ConnectionPoolingApacheConfigurator.enabled.com.oracle.bmc.vault.VaultsClient".
+     *
+     * The default of this property is "true". Note that not all clients set a ConnectionPoolingApacheConfigurator
+     * as default configurator.
+     */
+    private static final String
+            JAVASDK_DEFAULT_CONNECTION_POOLING_APACHE_CONFIGURATOR_ENABLED_PREFIX =
+                    "oci.javasdk.ConnectionPoolingApacheConfigurator.enabled.";
+
+    /**
+     * Returns true if the ConnectionPoolingApacheConfigurator should be used for the given class name,
+     * provided it has been set as default configurator by the client.
+     * @param className fully-qualified class name of the client
+     * @return true if ConnectionPoolingApacheConfigurator should be used, provided it has been set by the client
+     */
+    public static boolean isDefaultConnectionPoolingApacheConfiguratorEnabledForClassName(
+            String className) {
+        String key = JAVASDK_DEFAULT_CONNECTION_POOLING_APACHE_CONFIGURATOR_ENABLED_GLOBAL;
+        boolean globalValue = Boolean.parseBoolean(System.getProperty(key, "true"));
+        if (!globalValue) {
+            LOG.info(
+                    "ConnectionPoolingApacheConfigurator as default for all clients has been disabled by system property {}",
+                    key);
+        }
+
+        key = JAVASDK_DEFAULT_CONNECTION_POOLING_APACHE_CONFIGURATOR_ENABLED_PREFIX + className;
+        boolean classValue = Boolean.parseBoolean(System.getProperty(key, "true"));
+        if (!classValue) {
+            LOG.info(
+                    "ConnectionPoolingApacheConfigurator as default for client {} has been disabled by system property {}",
+                    className,
+                    key);
+        }
+        return globalValue && classValue;
+    }
 }

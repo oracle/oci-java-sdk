@@ -14,13 +14,13 @@ public class CreateCloudDbSystemDiscoveryRequest
                 com.oracle.bmc.databasemanagement.model.CreateCloudDbSystemDiscoveryDetails> {
 
     /**
-     * The details required to create an cloud DB system discovery.
+     * The details required to create a cloud DB system discovery.
      */
     private com.oracle.bmc.databasemanagement.model.CreateCloudDbSystemDiscoveryDetails
             createCloudDbSystemDiscoveryDetails;
 
     /**
-     * The details required to create an cloud DB system discovery.
+     * The details required to create a cloud DB system discovery.
      */
     public com.oracle.bmc.databasemanagement.model.CreateCloudDbSystemDiscoveryDetails
             getCreateCloudDbSystemDiscoveryDetails() {
@@ -78,13 +78,13 @@ public class CreateCloudDbSystemDiscoveryRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The details required to create an cloud DB system discovery.
+         * The details required to create a cloud DB system discovery.
          */
         private com.oracle.bmc.databasemanagement.model.CreateCloudDbSystemDiscoveryDetails
                 createCloudDbSystemDiscoveryDetails = null;
 
         /**
-         * The details required to create an cloud DB system discovery.
+         * The details required to create a cloud DB system discovery.
          * @param createCloudDbSystemDiscoveryDetails the value to set
          * @return this builder instance
          */

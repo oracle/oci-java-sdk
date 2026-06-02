@@ -33,7 +33,8 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                     .serviceName(JavaDownloadClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://javamanagementservice-download.{region}.oci.{secondLevelDomain}")
+                            "https://{dualStack?download.javamanagement:javamanagementservice-download}.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .endpointServiceName("download.javamanagement")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -53,6 +54,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+    private final java.util.Map<String, Boolean> optionsMap = new java.util.HashMap<>();
 
     // This pattern matches substrings that are enclosed within curly braces {}
     private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
@@ -305,6 +307,9 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                 }
             }
         }
+        enableDualStackEndpoints(
+                com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils
+                        .isDualStackEnabledForClientDefault(SERVICE));
         if (endpoint != null) {
             setEndpoint(endpoint);
         }
@@ -468,6 +473,14 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                 com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
                         .getRealmSpecificEndpointTemplate(
                                 useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public synchronized void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled) {
+        optionsMap.put(
+                com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils.DUAL_STACK_OPTION,
+                dualStackEndpointTemplateEnabled);
+        client.setOptionsMap(optionsMap);
     }
 
     @Override

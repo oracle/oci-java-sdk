@@ -23,6 +23,10 @@ package com.oracle.bmc.osmanagementhub.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateUbuntuStandAloneProfileDetails.class,
+        name = "UBUNTU_STANDALONE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateGroupProfileDetails.class,
         name = "GROUP"
     ),
@@ -77,7 +81,7 @@ public class CreateProfileDetails extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering
+     * A user-friendly name. Must be unique and you can change the name later. Avoid entering
      * confidential information.
      *
      **/
@@ -85,7 +89,7 @@ public class CreateProfileDetails extends com.oracle.bmc.http.internal.Explicitl
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering
+     * A user-friendly name. Must be unique and you can change the name later. Avoid entering
      * confidential information.
      *
      * @return the value
@@ -124,7 +128,7 @@ public class CreateProfileDetails extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * description: The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate
-     * with an instance once registered. This is required when creating a profile for non-OCI instances.
+     * with an instance once registered. This is used when creating a profile for non-OCI instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
@@ -132,7 +136,7 @@ public class CreateProfileDetails extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * description: The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate
-     * with an instance once registered. This is required when creating a profile for non-OCI instances.
+     * with an instance once registered. This is used when creating a profile for non-OCI instances.
      *
      * @return the value
      **/

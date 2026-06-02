@@ -28,6 +28,7 @@ public final class UpdateApplicationDetails
         "networkSecurityGroupIds",
         "syslogUrl",
         "traceConfig",
+        "logging",
         "freeformTags",
         "definedTags",
         "imagePolicyConfig",
@@ -38,6 +39,7 @@ public final class UpdateApplicationDetails
             java.util.List<String> networkSecurityGroupIds,
             String syslogUrl,
             ApplicationTraceConfig traceConfig,
+            ApplicationLoggingConfig logging,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             ImagePolicyConfig imagePolicyConfig,
@@ -47,6 +49,7 @@ public final class UpdateApplicationDetails
         this.networkSecurityGroupIds = networkSecurityGroupIds;
         this.syslogUrl = syslogUrl;
         this.traceConfig = traceConfig;
+        this.logging = logging;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.imagePolicyConfig = imagePolicyConfig;
@@ -134,6 +137,15 @@ public final class UpdateApplicationDetails
         public Builder traceConfig(ApplicationTraceConfig traceConfig) {
             this.traceConfig = traceConfig;
             this.__explicitlySet__.add("traceConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("logging")
+        private ApplicationLoggingConfig logging;
+
+        public Builder logging(ApplicationLoggingConfig logging) {
+            this.logging = logging;
+            this.__explicitlySet__.add("logging");
             return this;
         }
         /**
@@ -228,6 +240,7 @@ public final class UpdateApplicationDetails
                             this.networkSecurityGroupIds,
                             this.syslogUrl,
                             this.traceConfig,
+                            this.logging,
                             this.freeformTags,
                             this.definedTags,
                             this.imagePolicyConfig,
@@ -251,6 +264,9 @@ public final class UpdateApplicationDetails
             }
             if (model.wasPropertyExplicitlySet("traceConfig")) {
                 this.traceConfig(model.getTraceConfig());
+            }
+            if (model.wasPropertyExplicitlySet("logging")) {
+                this.logging(model.getLogging());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -352,6 +368,13 @@ public final class UpdateApplicationDetails
         return traceConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("logging")
+    private final ApplicationLoggingConfig logging;
+
+    public ApplicationLoggingConfig getLogging() {
+        return logging;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -442,6 +465,7 @@ public final class UpdateApplicationDetails
                 .append(String.valueOf(this.networkSecurityGroupIds));
         sb.append(", syslogUrl=").append(String.valueOf(this.syslogUrl));
         sb.append(", traceConfig=").append(String.valueOf(this.traceConfig));
+        sb.append(", logging=").append(String.valueOf(this.logging));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", imagePolicyConfig=").append(String.valueOf(this.imagePolicyConfig));
@@ -465,6 +489,7 @@ public final class UpdateApplicationDetails
                         this.networkSecurityGroupIds, other.networkSecurityGroupIds)
                 && java.util.Objects.equals(this.syslogUrl, other.syslogUrl)
                 && java.util.Objects.equals(this.traceConfig, other.traceConfig)
+                && java.util.Objects.equals(this.logging, other.logging)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.imagePolicyConfig, other.imagePolicyConfig)
@@ -484,6 +509,7 @@ public final class UpdateApplicationDetails
                                 : this.networkSecurityGroupIds.hashCode());
         result = (result * PRIME) + (this.syslogUrl == null ? 43 : this.syslogUrl.hashCode());
         result = (result * PRIME) + (this.traceConfig == null ? 43 : this.traceConfig.hashCode());
+        result = (result * PRIME) + (this.logging == null ? 43 : this.logging.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

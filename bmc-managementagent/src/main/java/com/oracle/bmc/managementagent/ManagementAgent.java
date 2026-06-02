@@ -62,6 +62,13 @@ public interface ManagementAgent extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Determines whether dual stack endpoint should be used or not.
+     * Set dualStackEndpointTemplateEnabled to "true" if the user wants to enable use of dual stack endpoint template. Default value is "false"
+     * @param dualStackEndpointTemplateEnabled flag to enable the use of dual stack endpoint template
+     */
+    void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled);
+
+    /**
      * Datasource creation request to given Management Agent.
      *
      * @param request The request object containing the details to send
@@ -352,7 +359,7 @@ public interface ManagementAgent extends AutoCloseable {
 
     /**
      * Returns a list of Management Agents.
-     * If no explicit page size limit is specified, it will default to 1000 when compartmentIdInSubtree is true and 5000 otherwise.
+     * If no explicit page size limit is specified, it will default to 1000.
      * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
      *
      * @param request The request object containing the details to send

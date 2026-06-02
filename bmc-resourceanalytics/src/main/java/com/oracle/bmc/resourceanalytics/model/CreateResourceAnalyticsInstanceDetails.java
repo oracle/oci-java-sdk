@@ -30,6 +30,7 @@ public final class CreateResourceAnalyticsInstanceDetails
         "subnetId",
         "isMutualTlsRequired",
         "nsgIds",
+        "computeCount",
         "licenseModel",
         "freeformTags",
         "definedTags"
@@ -42,6 +43,7 @@ public final class CreateResourceAnalyticsInstanceDetails
             String subnetId,
             Boolean isMutualTlsRequired,
             java.util.List<String> nsgIds,
+            Integer computeCount,
             LicenseModel licenseModel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -53,6 +55,7 @@ public final class CreateResourceAnalyticsInstanceDetails
         this.subnetId = subnetId;
         this.isMutualTlsRequired = isMutualTlsRequired;
         this.nsgIds = nsgIds;
+        this.computeCount = computeCount;
         this.licenseModel = licenseModel;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -174,6 +177,22 @@ public final class CreateResourceAnalyticsInstanceDetails
             return this;
         }
         /**
+         * The compute amount (CPUs) available to the Autonomous Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Integer computeCount;
+
+        /**
+         * The compute amount (CPUs) available to the Autonomous Database.
+         * @param computeCount the value to set
+         * @return this builder
+         **/
+        public Builder computeCount(Integer computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+        /**
          * The Oracle license model that applies to the ADW instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
@@ -252,6 +271,7 @@ public final class CreateResourceAnalyticsInstanceDetails
                             this.subnetId,
                             this.isMutualTlsRequired,
                             this.nsgIds,
+                            this.computeCount,
                             this.licenseModel,
                             this.freeformTags,
                             this.definedTags);
@@ -283,6 +303,9 @@ public final class CreateResourceAnalyticsInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
@@ -408,6 +431,20 @@ public final class CreateResourceAnalyticsInstanceDetails
     }
 
     /**
+     * The compute amount (CPUs) available to the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Integer computeCount;
+
+    /**
+     * The compute amount (CPUs) available to the Autonomous Database.
+     * @return the value
+     **/
+    public Integer getComputeCount() {
+        return computeCount;
+    }
+
+    /**
      * The Oracle license model that applies to the ADW instance.
      **/
     public enum LicenseModel {
@@ -521,6 +558,7 @@ public final class CreateResourceAnalyticsInstanceDetails
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", isMutualTlsRequired=").append(String.valueOf(this.isMutualTlsRequired));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -545,6 +583,7 @@ public final class CreateResourceAnalyticsInstanceDetails
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.isMutualTlsRequired, other.isMutualTlsRequired)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -570,6 +609,7 @@ public final class CreateResourceAnalyticsInstanceDetails
                                 ? 43
                                 : this.isMutualTlsRequired.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

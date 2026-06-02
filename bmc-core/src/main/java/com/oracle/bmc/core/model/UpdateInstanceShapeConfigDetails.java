@@ -36,7 +36,8 @@ public final class UpdateInstanceShapeConfigDetails
         "memoryInGBs",
         "baselineOcpuUtilization",
         "nvmes",
-        "resourceManagement"
+        "resourceManagement",
+        "localVolumeSizeInGBs"
     })
     public UpdateInstanceShapeConfigDetails(
             Float ocpus,
@@ -44,7 +45,8 @@ public final class UpdateInstanceShapeConfigDetails
             Float memoryInGBs,
             BaselineOcpuUtilization baselineOcpuUtilization,
             Integer nvmes,
-            ResourceManagement resourceManagement) {
+            ResourceManagement resourceManagement,
+            Integer localVolumeSizeInGBs) {
         super();
         this.ocpus = ocpus;
         this.vcpus = vcpus;
@@ -52,6 +54,7 @@ public final class UpdateInstanceShapeConfigDetails
         this.baselineOcpuUtilization = baselineOcpuUtilization;
         this.nvmes = nvmes;
         this.resourceManagement = resourceManagement;
+        this.localVolumeSizeInGBs = localVolumeSizeInGBs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -180,6 +183,28 @@ public final class UpdateInstanceShapeConfigDetails
             this.__explicitlySet__.add("resourceManagement");
             return this;
         }
+        /**
+         * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape
+         * is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);
+         * any non-null value for a non-DenseLV shape results in an error.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("localVolumeSizeInGBs")
+        private Integer localVolumeSizeInGBs;
+
+        /**
+         * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape
+         * is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);
+         * any non-null value for a non-DenseLV shape results in an error.
+         *
+         * @param localVolumeSizeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder localVolumeSizeInGBs(Integer localVolumeSizeInGBs) {
+            this.localVolumeSizeInGBs = localVolumeSizeInGBs;
+            this.__explicitlySet__.add("localVolumeSizeInGBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -192,7 +217,8 @@ public final class UpdateInstanceShapeConfigDetails
                             this.memoryInGBs,
                             this.baselineOcpuUtilization,
                             this.nvmes,
-                            this.resourceManagement);
+                            this.resourceManagement,
+                            this.localVolumeSizeInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -218,6 +244,9 @@ public final class UpdateInstanceShapeConfigDetails
             }
             if (model.wasPropertyExplicitlySet("resourceManagement")) {
                 this.resourceManagement(model.getResourceManagement());
+            }
+            if (model.wasPropertyExplicitlySet("localVolumeSizeInGBs")) {
+                this.localVolumeSizeInGBs(model.getLocalVolumeSizeInGBs());
             }
             return this;
         }
@@ -425,6 +454,26 @@ public final class UpdateInstanceShapeConfigDetails
         return resourceManagement;
     }
 
+    /**
+     * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape
+     * is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);
+     * any non-null value for a non-DenseLV shape results in an error.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("localVolumeSizeInGBs")
+    private final Integer localVolumeSizeInGBs;
+
+    /**
+     * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape
+     * is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);
+     * any non-null value for a non-DenseLV shape results in an error.
+     *
+     * @return the value
+     **/
+    public Integer getLocalVolumeSizeInGBs() {
+        return localVolumeSizeInGBs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -446,6 +495,7 @@ public final class UpdateInstanceShapeConfigDetails
                 .append(String.valueOf(this.baselineOcpuUtilization));
         sb.append(", nvmes=").append(String.valueOf(this.nvmes));
         sb.append(", resourceManagement=").append(String.valueOf(this.resourceManagement));
+        sb.append(", localVolumeSizeInGBs=").append(String.valueOf(this.localVolumeSizeInGBs));
         sb.append(")");
         return sb.toString();
     }
@@ -467,6 +517,7 @@ public final class UpdateInstanceShapeConfigDetails
                         this.baselineOcpuUtilization, other.baselineOcpuUtilization)
                 && java.util.Objects.equals(this.nvmes, other.nvmes)
                 && java.util.Objects.equals(this.resourceManagement, other.resourceManagement)
+                && java.util.Objects.equals(this.localVolumeSizeInGBs, other.localVolumeSizeInGBs)
                 && super.equals(other);
     }
 
@@ -488,6 +539,11 @@ public final class UpdateInstanceShapeConfigDetails
                         + (this.resourceManagement == null
                                 ? 43
                                 : this.resourceManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localVolumeSizeInGBs == null
+                                ? 43
+                                : this.localVolumeSizeInGBs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

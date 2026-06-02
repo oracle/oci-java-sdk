@@ -25,13 +25,13 @@ public class UpdateCloudDbSystemRequest
         return cloudDbSystemId;
     }
     /**
-     * The details required to update an cloud DB system.
+     * The details required to update a cloud DB system.
      */
     private com.oracle.bmc.databasemanagement.model.UpdateCloudDbSystemDetails
             updateCloudDbSystemDetails;
 
     /**
-     * The details required to update an cloud DB system.
+     * The details required to update a cloud DB system.
      */
     public com.oracle.bmc.databasemanagement.model.UpdateCloudDbSystemDetails
             getUpdateCloudDbSystemDetails() {
@@ -104,13 +104,13 @@ public class UpdateCloudDbSystemRequest
         }
 
         /**
-         * The details required to update an cloud DB system.
+         * The details required to update a cloud DB system.
          */
         private com.oracle.bmc.databasemanagement.model.UpdateCloudDbSystemDetails
                 updateCloudDbSystemDetails = null;
 
         /**
-         * The details required to update an cloud DB system.
+         * The details required to update a cloud DB system.
          * @param updateCloudDbSystemDetails the value to set
          * @return this builder instance
          */

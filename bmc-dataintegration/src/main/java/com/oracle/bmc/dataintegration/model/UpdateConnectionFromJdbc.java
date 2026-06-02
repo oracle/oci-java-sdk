@@ -137,15 +137,21 @@ public final class UpdateConnectionFromJdbc extends UpdateConnectionDetails {
          * The password for the connection.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password for the connection.
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -267,6 +273,38 @@ public final class UpdateConnectionFromJdbc extends UpdateConnectionDetails {
                 connectionProperties,
                 registryMetadata);
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecret = passwordSecret;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateConnectionFromJdbc(
+            String key,
+            String modelVersion,
+            ParentReference parentRef,
+            String name,
+            String description,
+            Integer objectStatus,
+            Integer objectVersion,
+            String identifier,
+            java.util.List<ConnectionProperty> connectionProperties,
+            RegistryMetadata registryMetadata,
+            String username,
+            char[] password,
+            SensitiveAttribute passwordSecret) {
+        super(
+                key,
+                modelVersion,
+                parentRef,
+                name,
+                description,
+                objectStatus,
+                objectVersion,
+                identifier,
+                connectionProperties,
+                registryMetadata);
+        this.username = username;
         this.password = password;
         this.passwordSecret = passwordSecret;
     }
@@ -289,13 +327,25 @@ public final class UpdateConnectionFromJdbc extends UpdateConnectionDetails {
      * The password for the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password for the connection.
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password for the connection.
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

@@ -89,14 +89,6 @@ public class ListNetworkAnchorsConverter {
                                     request.getNetworkAnchorOciSubnetId()));
         }
 
-        if (request.getCompartmentIdInSubtree() != null) {
-            target =
-                    target.queryParam(
-                            "compartmentIdInSubtree",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getCompartmentIdInSubtree()));
-        }
-
         if (request.getNetworkAnchorOciVcnId() != null) {
             target =
                     target.queryParam(

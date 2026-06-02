@@ -85,13 +85,13 @@ public final class ServiceManagedFleet extends Fleet {
             return this;
         }
         /**
-         * A message that describes the current state of the service manage fleet configuration in more detail.
+         * A message that describes the current state of the service managed fleet configuration in more detail.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private String details;
 
         /**
-         * A message that describes the current state of the service manage fleet configuration in more detail.
+         * A message that describes the current state of the service managed fleet configuration in more detail.
          * @param details the value to set
          * @return this builder
          **/
@@ -215,13 +215,13 @@ public final class ServiceManagedFleet extends Fleet {
     }
 
     /**
-     * A message that describes the current state of the service manage fleet configuration in more detail.
+     * A message that describes the current state of the service managed fleet configuration in more detail.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final String details;
 
     /**
-     * A message that describes the current state of the service manage fleet configuration in more detail.
+     * A message that describes the current state of the service managed fleet configuration in more detail.
      * @return the value
      **/
     public String getDetails() {

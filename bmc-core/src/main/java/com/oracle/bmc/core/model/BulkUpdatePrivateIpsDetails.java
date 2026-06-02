@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Bulk Secondary IPv4 addresses update object.
+ * Details used for a secondary IPv4 address bulk update.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -53,14 +53,14 @@ public final class BulkUpdatePrivateIpsDetails
             return this;
         }
         /**
-         * Secondary IPv4 addresses to updated.
+         * A secondary IPv4 address to update.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bulkUpdatePrivateIpItem")
         private java.util.List<BulkUpdatePrivateIpItem> bulkUpdatePrivateIpItem;
 
         /**
-         * Secondary IPv4 addresses to updated.
+         * A secondary IPv4 address to update.
          *
          * @param bulkUpdatePrivateIpItem the value to set
          * @return this builder
@@ -126,14 +126,14 @@ public final class BulkUpdatePrivateIpsDetails
     }
 
     /**
-     * Secondary IPv4 addresses to updated.
+     * A secondary IPv4 address to update.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bulkUpdatePrivateIpItem")
     private final java.util.List<BulkUpdatePrivateIpItem> bulkUpdatePrivateIpItem;
 
     /**
-     * Secondary IPv4 addresses to updated.
+     * A secondary IPv4 address to update.
      *
      * @return the value
      **/

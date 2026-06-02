@@ -49,13 +49,13 @@ public final class UnifiedAgentMonitoringUrlSource
             return this;
         }
         /**
-         * List of UnifiedAgentKubernetesScrapeTarget.
+         * List of UnifiedAgentUrlScrapeTarget.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scrapeTargets")
         private java.util.List<UnifiedAgentUrlScrapeTarget> scrapeTargets;
 
         /**
-         * List of UnifiedAgentKubernetesScrapeTarget.
+         * List of UnifiedAgentUrlScrapeTarget.
          * @param scrapeTargets the value to set
          * @return this builder
          **/
@@ -115,13 +115,13 @@ public final class UnifiedAgentMonitoringUrlSource
     }
 
     /**
-     * List of UnifiedAgentKubernetesScrapeTarget.
+     * List of UnifiedAgentUrlScrapeTarget.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scrapeTargets")
     private final java.util.List<UnifiedAgentUrlScrapeTarget> scrapeTargets;
 
     /**
-     * List of UnifiedAgentKubernetesScrapeTarget.
+     * List of UnifiedAgentUrlScrapeTarget.
      * @return the value
      **/
     public java.util.List<UnifiedAgentUrlScrapeTarget> getScrapeTargets() {

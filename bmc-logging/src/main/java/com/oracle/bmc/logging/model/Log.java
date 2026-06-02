@@ -28,6 +28,7 @@ public final class Log extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         "isEnabled",
         "definedTags",
         "freeformTags",
+        "systemTags",
         "configuration",
         "lifecycleState",
         "timeCreated",
@@ -44,6 +45,7 @@ public final class Log extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             Boolean isEnabled,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Configuration configuration,
             LogLifecycleState lifecycleState,
             java.util.Date timeCreated,
@@ -59,6 +61,7 @@ public final class Log extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         this.isEnabled = isEnabled;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.systemTags = systemTags;
         this.configuration = configuration;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
@@ -216,6 +219,26 @@ public final class Log extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("configuration")
         private Configuration configuration;
@@ -320,6 +343,7 @@ public final class Log extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                             this.isEnabled,
                             this.definedTags,
                             this.freeformTags,
+                            this.systemTags,
                             this.configuration,
                             this.lifecycleState,
                             this.timeCreated,
@@ -357,6 +381,9 @@ public final class Log extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("configuration")) {
                 this.configuration(model.getConfiguration());
@@ -569,6 +596,24 @@ public final class Log extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         return freeformTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("configuration")
     private final Configuration configuration;
 
@@ -668,6 +713,7 @@ public final class Log extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", configuration=").append(String.valueOf(this.configuration));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -696,6 +742,7 @@ public final class Log extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.configuration, other.configuration)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -717,6 +764,7 @@ public final class Log extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.configuration == null ? 43 : this.configuration.hashCode());

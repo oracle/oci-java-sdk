@@ -488,7 +488,7 @@ public class CancelEnrichmentJobAsyncClient implements CancelEnrichmentJobAsync 
                         "CancelEnrichmentJob",
                         "CancelEnrichmentJob",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJob/CancelEnrichmentJob");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelEnrichmentJobResponse>
                 transformer =
                         CancelEnrichmentJobConverter.fromResponse(

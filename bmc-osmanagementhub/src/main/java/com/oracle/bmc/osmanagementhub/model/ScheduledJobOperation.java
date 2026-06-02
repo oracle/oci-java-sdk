@@ -29,7 +29,10 @@ public final class ScheduledJobOperation
         "manageModuleStreamsDetails",
         "switchModuleStreamsDetails",
         "softwareSourceIds",
-        "rebootTimeoutInMins"
+        "rebootTimeoutInMins",
+        "installSnapDetails",
+        "removeSnapDetails",
+        "switchSnapChannelDetails"
     })
     public ScheduledJobOperation(
             OperationTypes operationType,
@@ -38,7 +41,10 @@ public final class ScheduledJobOperation
             ManageModuleStreamsInScheduledJobDetails manageModuleStreamsDetails,
             ModuleStreamDetails switchModuleStreamsDetails,
             java.util.List<String> softwareSourceIds,
-            Integer rebootTimeoutInMins) {
+            Integer rebootTimeoutInMins,
+            InstallSnapDetails installSnapDetails,
+            RemoveSnapDetails removeSnapDetails,
+            SwitchSnapChannelDetails switchSnapChannelDetails) {
         super();
         this.operationType = operationType;
         this.packageNames = packageNames;
@@ -47,6 +53,9 @@ public final class ScheduledJobOperation
         this.switchModuleStreamsDetails = switchModuleStreamsDetails;
         this.softwareSourceIds = softwareSourceIds;
         this.rebootTimeoutInMins = rebootTimeoutInMins;
+        this.installSnapDetails = installSnapDetails;
+        this.removeSnapDetails = removeSnapDetails;
+        this.switchSnapChannelDetails = switchSnapChannelDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -165,6 +174,33 @@ public final class ScheduledJobOperation
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("installSnapDetails")
+        private InstallSnapDetails installSnapDetails;
+
+        public Builder installSnapDetails(InstallSnapDetails installSnapDetails) {
+            this.installSnapDetails = installSnapDetails;
+            this.__explicitlySet__.add("installSnapDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("removeSnapDetails")
+        private RemoveSnapDetails removeSnapDetails;
+
+        public Builder removeSnapDetails(RemoveSnapDetails removeSnapDetails) {
+            this.removeSnapDetails = removeSnapDetails;
+            this.__explicitlySet__.add("removeSnapDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("switchSnapChannelDetails")
+        private SwitchSnapChannelDetails switchSnapChannelDetails;
+
+        public Builder switchSnapChannelDetails(SwitchSnapChannelDetails switchSnapChannelDetails) {
+            this.switchSnapChannelDetails = switchSnapChannelDetails;
+            this.__explicitlySet__.add("switchSnapChannelDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -177,7 +213,10 @@ public final class ScheduledJobOperation
                             this.manageModuleStreamsDetails,
                             this.switchModuleStreamsDetails,
                             this.softwareSourceIds,
-                            this.rebootTimeoutInMins);
+                            this.rebootTimeoutInMins,
+                            this.installSnapDetails,
+                            this.removeSnapDetails,
+                            this.switchSnapChannelDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -206,6 +245,15 @@ public final class ScheduledJobOperation
             }
             if (model.wasPropertyExplicitlySet("rebootTimeoutInMins")) {
                 this.rebootTimeoutInMins(model.getRebootTimeoutInMins());
+            }
+            if (model.wasPropertyExplicitlySet("installSnapDetails")) {
+                this.installSnapDetails(model.getInstallSnapDetails());
+            }
+            if (model.wasPropertyExplicitlySet("removeSnapDetails")) {
+                this.removeSnapDetails(model.getRemoveSnapDetails());
+            }
+            if (model.wasPropertyExplicitlySet("switchSnapChannelDetails")) {
+                this.switchSnapChannelDetails(model.getSwitchSnapChannelDetails());
             }
             return this;
         }
@@ -320,6 +368,27 @@ public final class ScheduledJobOperation
         return rebootTimeoutInMins;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("installSnapDetails")
+    private final InstallSnapDetails installSnapDetails;
+
+    public InstallSnapDetails getInstallSnapDetails() {
+        return installSnapDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("removeSnapDetails")
+    private final RemoveSnapDetails removeSnapDetails;
+
+    public RemoveSnapDetails getRemoveSnapDetails() {
+        return removeSnapDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("switchSnapChannelDetails")
+    private final SwitchSnapChannelDetails switchSnapChannelDetails;
+
+    public SwitchSnapChannelDetails getSwitchSnapChannelDetails() {
+        return switchSnapChannelDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -343,6 +412,10 @@ public final class ScheduledJobOperation
                 .append(String.valueOf(this.switchModuleStreamsDetails));
         sb.append(", softwareSourceIds=").append(String.valueOf(this.softwareSourceIds));
         sb.append(", rebootTimeoutInMins=").append(String.valueOf(this.rebootTimeoutInMins));
+        sb.append(", installSnapDetails=").append(String.valueOf(this.installSnapDetails));
+        sb.append(", removeSnapDetails=").append(String.valueOf(this.removeSnapDetails));
+        sb.append(", switchSnapChannelDetails=")
+                .append(String.valueOf(this.switchSnapChannelDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -366,6 +439,10 @@ public final class ScheduledJobOperation
                         this.switchModuleStreamsDetails, other.switchModuleStreamsDetails)
                 && java.util.Objects.equals(this.softwareSourceIds, other.softwareSourceIds)
                 && java.util.Objects.equals(this.rebootTimeoutInMins, other.rebootTimeoutInMins)
+                && java.util.Objects.equals(this.installSnapDetails, other.installSnapDetails)
+                && java.util.Objects.equals(this.removeSnapDetails, other.removeSnapDetails)
+                && java.util.Objects.equals(
+                        this.switchSnapChannelDetails, other.switchSnapChannelDetails)
                 && super.equals(other);
     }
 
@@ -400,6 +477,19 @@ public final class ScheduledJobOperation
                         + (this.rebootTimeoutInMins == null
                                 ? 43
                                 : this.rebootTimeoutInMins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.installSnapDetails == null
+                                ? 43
+                                : this.installSnapDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.removeSnapDetails == null ? 43 : this.removeSnapDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.switchSnapChannelDetails == null
+                                ? 43
+                                : this.switchSnapChannelDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

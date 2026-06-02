@@ -19,8 +19,16 @@ package com.oracle.bmc.fleetappsmanagement.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class Variable extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "value"})
     public Variable(String name, String value) {
+        super();
+        this.name = name;
+        this.value = value != null ? value.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    @java.beans.ConstructorProperties({"name", "value"})
+    public Variable(String name, char[] value) {
         super();
         this.name = name;
         this.value = value;
@@ -48,15 +56,21 @@ public final class Variable extends com.oracle.bmc.http.internal.ExplicitlySetBm
          * The value corresponding to the variable name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
-        private String value;
+        private char[] value;
 
         /**
          * The value corresponding to the variable name.
          * @param value the value to set
          * @return this builder
          **/
-        public Builder value(String value) {
+        public Builder value(char[] value) {
             this.value = value;
+            this.__explicitlySet__.add("value");
+            return this;
+        }
+
+        public Builder value(String value) {
+            this.value = value != null ? value.toCharArray() : null;
             this.__explicitlySet__.add("value");
             return this;
         }
@@ -113,13 +127,25 @@ public final class Variable extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * The value corresponding to the variable name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
-    private final String value;
+    private final char[] value;
+
+    /**
+     * The value corresponding to the variable name.
+     * return the value
+     * @Deprecated - Use getValue__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getValue() {
+        return value != null ? new String(value) : null;
+    }
 
     /**
      * The value corresponding to the variable name.
      * @return the value
      **/
-    public String getValue() {
+    @com.fasterxml.jackson.annotation.JsonProperty("value")
+    public char[] getValue__AsCharArray() {
         return value;
     }
 

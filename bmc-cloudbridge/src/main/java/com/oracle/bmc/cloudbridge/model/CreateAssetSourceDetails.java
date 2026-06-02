@@ -27,6 +27,10 @@ package com.oracle.bmc.cloudbridge.model;
         name = "VMWARE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateOlvmAssetSourceDetails.class,
+        name = "OLVM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateAwsAssetSourceDetails.class,
         name = "AWS"
     )
@@ -43,7 +47,8 @@ public class CreateAssetSourceDetails extends com.oracle.bmc.http.internal.Expli
         "discoveryScheduleId",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "environmentType"
     })
     protected CreateAssetSourceDetails(
             String displayName,
@@ -54,7 +59,8 @@ public class CreateAssetSourceDetails extends com.oracle.bmc.http.internal.Expli
             String discoveryScheduleId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            EnvironmentType environmentType) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
@@ -65,6 +71,7 @@ public class CreateAssetSourceDetails extends com.oracle.bmc.http.internal.Expli
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.environmentType = environmentType;
     }
 
     /**
@@ -217,6 +224,20 @@ public class CreateAssetSourceDetails extends com.oracle.bmc.http.internal.Expli
         return systemTags;
     }
 
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+    private final EnvironmentType environmentType;
+
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * @return the value
+     **/
+    public EnvironmentType getEnvironmentType() {
+        return environmentType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -240,6 +261,7 @@ public class CreateAssetSourceDetails extends com.oracle.bmc.http.internal.Expli
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(")");
         return sb.toString();
     }
@@ -263,6 +285,7 @@ public class CreateAssetSourceDetails extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && super.equals(other);
     }
 
@@ -291,6 +314,9 @@ public class CreateAssetSourceDetails extends com.oracle.bmc.http.internal.Expli
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentType == null ? 43 : this.environmentType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -26,13 +26,13 @@ public class EnableCloudDbSystemDatabaseManagementRequest
         return cloudDbSystemId;
     }
     /**
-     * The details required to enable Stack Monitoring for an cloud DB system.
+     * The details required to enable Stack Monitoring for a cloud DB system.
      */
     private com.oracle.bmc.databasemanagement.model.EnableCloudDbSystemDatabaseManagementDetails
             enableCloudDbSystemDatabaseManagementDetails;
 
     /**
-     * The details required to enable Stack Monitoring for an cloud DB system.
+     * The details required to enable Stack Monitoring for a cloud DB system.
      */
     public com.oracle.bmc.databasemanagement.model.EnableCloudDbSystemDatabaseManagementDetails
             getEnableCloudDbSystemDatabaseManagementDetails() {
@@ -128,13 +128,13 @@ public class EnableCloudDbSystemDatabaseManagementRequest
         }
 
         /**
-         * The details required to enable Stack Monitoring for an cloud DB system.
+         * The details required to enable Stack Monitoring for a cloud DB system.
          */
         private com.oracle.bmc.databasemanagement.model.EnableCloudDbSystemDatabaseManagementDetails
                 enableCloudDbSystemDatabaseManagementDetails = null;
 
         /**
-         * The details required to enable Stack Monitoring for an cloud DB system.
+         * The details required to enable Stack Monitoring for a cloud DB system.
          * @param enableCloudDbSystemDatabaseManagementDetails the value to set
          * @return this builder instance
          */

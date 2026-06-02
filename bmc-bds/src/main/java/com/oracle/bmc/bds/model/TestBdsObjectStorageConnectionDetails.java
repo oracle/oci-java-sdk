@@ -22,9 +22,19 @@ package com.oracle.bmc.bds.model;
 public final class TestBdsObjectStorageConnectionDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"objectStorageUri", "passphrase", "objectStorageRegion"})
     public TestBdsObjectStorageConnectionDetails(
             String objectStorageUri, String passphrase, String objectStorageRegion) {
+        super();
+        this.objectStorageUri = objectStorageUri;
+        this.passphrase = passphrase != null ? passphrase.toCharArray() : null;
+        this.objectStorageRegion = objectStorageRegion;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    @java.beans.ConstructorProperties({"objectStorageUri", "passphrase", "objectStorageRegion"})
+    public TestBdsObjectStorageConnectionDetails(
+            String objectStorageUri, char[] passphrase, String objectStorageRegion) {
         super();
         this.objectStorageUri = objectStorageUri;
         this.passphrase = passphrase;
@@ -53,18 +63,25 @@ public final class TestBdsObjectStorageConnectionDetails
          * Base64 passphrase used to secure the private key which will be created on user behalf.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
-        private String passphrase;
+        private char[] passphrase;
 
         /**
          * Base64 passphrase used to secure the private key which will be created on user behalf.
          * @param passphrase the value to set
          * @return this builder
          **/
-        public Builder passphrase(String passphrase) {
+        public Builder passphrase(char[] passphrase) {
             this.passphrase = passphrase;
             this.__explicitlySet__.add("passphrase");
             return this;
         }
+
+        public Builder passphrase(String passphrase) {
+            this.passphrase = passphrase != null ? passphrase.toCharArray() : null;
+            this.__explicitlySet__.add("passphrase");
+            return this;
+        }
+
         /**
          * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
          **/
@@ -139,13 +156,25 @@ public final class TestBdsObjectStorageConnectionDetails
      * Base64 passphrase used to secure the private key which will be created on user behalf.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
-    private final String passphrase;
+    private final char[] passphrase;
+
+    /**
+     * Base64 passphrase used to secure the private key which will be created on user behalf.
+     * return the value
+     * @Deprecated - Use getPassphrase__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassphrase() {
+        return passphrase != null ? new String(passphrase) : null;
+    }
 
     /**
      * Base64 passphrase used to secure the private key which will be created on user behalf.
      * @return the value
      **/
-    public String getPassphrase() {
+    @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
+    public char[] getPassphrase__AsCharArray() {
         return passphrase;
     }
 

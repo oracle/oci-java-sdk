@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Bulk Secondary IPv4 addresses creation object.
+ * Details used to create secondary private IPv4 addresses in a bulk operation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -94,14 +94,14 @@ public final class BulkCreatePrivateIpsDetails
             return this;
         }
         /**
-         * Secondary IPv4 addresses to assign.
+         * A secondary IPv4 address to assign.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bulkCreatePrivateIpItem")
         private java.util.List<BulkCreatePrivateIpItem> bulkCreatePrivateIpItem;
 
         /**
-         * Secondary IPv4 addresses to assign.
+         * A secondary IPv4 address to assign.
          *
          * @param bulkCreatePrivateIpItem the value to set
          * @return this builder
@@ -206,14 +206,14 @@ public final class BulkCreatePrivateIpsDetails
     }
 
     /**
-     * Secondary IPv4 addresses to assign.
+     * A secondary IPv4 address to assign.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bulkCreatePrivateIpItem")
     private final java.util.List<BulkCreatePrivateIpItem> bulkCreatePrivateIpItem;
 
     /**
-     * Secondary IPv4 addresses to assign.
+     * A secondary IPv4 address to assign.
      *
      * @return the value
      **/

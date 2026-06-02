@@ -19,8 +19,15 @@ package com.oracle.bmc.bds.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PasswordSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"adminPassword"})
     public PasswordSummary(String adminPassword) {
+        super();
+        this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    @java.beans.ConstructorProperties({"adminPassword"})
+    public PasswordSummary(char[] adminPassword) {
         super();
         this.adminPassword = adminPassword;
     }
@@ -31,15 +38,21 @@ public final class PasswordSummary extends com.oracle.bmc.http.internal.Explicit
          * Base-64 encoded new admin password for the requested service after the reset operation.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-        private String adminPassword;
+        private char[] adminPassword;
 
         /**
          * Base-64 encoded new admin password for the requested service after the reset operation.
          * @param adminPassword the value to set
          * @return this builder
          **/
-        public Builder adminPassword(String adminPassword) {
+        public Builder adminPassword(char[] adminPassword) {
             this.adminPassword = adminPassword;
+            this.__explicitlySet__.add("adminPassword");
+            return this;
+        }
+
+        public Builder adminPassword(String adminPassword) {
+            this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
@@ -79,13 +92,25 @@ public final class PasswordSummary extends com.oracle.bmc.http.internal.Explicit
      * Base-64 encoded new admin password for the requested service after the reset operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    private final String adminPassword;
+    private final char[] adminPassword;
+
+    /**
+     * Base-64 encoded new admin password for the requested service after the reset operation.
+     * return the value
+     * @Deprecated - Use getAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAdminPassword() {
+        return adminPassword != null ? new String(adminPassword) : null;
+    }
 
     /**
      * Base-64 encoded new admin password for the requested service after the reset operation.
      * @return the value
      **/
-    public String getAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+    public char[] getAdminPassword__AsCharArray() {
         return adminPassword;
     }
 
@@ -103,7 +128,7 @@ public final class PasswordSummary extends com.oracle.bmc.http.internal.Explicit
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PasswordSummary(");
         sb.append("super=").append(super.toString());
-        sb.append("adminPassword=").append(String.valueOf(this.adminPassword));
+        sb.append("adminPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

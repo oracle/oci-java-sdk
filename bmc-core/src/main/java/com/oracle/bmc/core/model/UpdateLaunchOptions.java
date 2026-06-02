@@ -86,6 +86,7 @@ public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.Expl
          * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
          * when you launch an instance using hardware-assisted (SR-IOV) networking.
          * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
+         * * {@code ACCELERATEDPV} - VM instances launch with accelerated paravirtualized networking type.
          * <p>
          * Before you change the networking type, detach all VNICs and block volumes except for the primary
          * VNIC and the boot volume.
@@ -108,6 +109,7 @@ public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.Expl
          * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
          * when you launch an instance using hardware-assisted (SR-IOV) networking.
          * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
+         * * {@code ACCELERATEDPV} - VM instances launch with accelerated paravirtualized networking type.
          * <p>
          * Before you change the networking type, detach all VNICs and block volumes except for the primary
          * VNIC and the boot volume.
@@ -302,6 +304,7 @@ public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.Expl
      * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
      * when you launch an instance using hardware-assisted (SR-IOV) networking.
      * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * {@code ACCELERATEDPV} - VM instances launch with accelerated paravirtualized networking type.
      * <p>
      * Before you change the networking type, detach all VNICs and block volumes except for the primary
      * VNIC and the boot volume.
@@ -319,6 +322,7 @@ public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.Expl
     public enum NetworkType {
         Vfio("VFIO"),
         Paravirtualized("PARAVIRTUALIZED"),
+        Acceleratedpv("ACCELERATEDPV"),
         ;
 
         private final String value;
@@ -353,6 +357,7 @@ public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.Expl
      * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
      * when you launch an instance using hardware-assisted (SR-IOV) networking.
      * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * {@code ACCELERATEDPV} - VM instances launch with accelerated paravirtualized networking type.
      * <p>
      * Before you change the networking type, detach all VNICs and block volumes except for the primary
      * VNIC and the boot volume.
@@ -375,6 +380,7 @@ public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.Expl
      * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
      * when you launch an instance using hardware-assisted (SR-IOV) networking.
      * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * {@code ACCELERATEDPV} - VM instances launch with accelerated paravirtualized networking type.
      * <p>
      * Before you change the networking type, detach all VNICs and block volumes except for the primary
      * VNIC and the boot volume.

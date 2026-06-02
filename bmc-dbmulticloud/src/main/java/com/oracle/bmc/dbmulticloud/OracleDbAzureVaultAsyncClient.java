@@ -784,6 +784,63 @@ public class OracleDbAzureVaultAsyncClient implements OracleDbAzureVaultAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ReplicateOracleDbAzureVaultResponse>
+            replicateOracleDbAzureVault(
+                    ReplicateOracleDbAzureVaultRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ReplicateOracleDbAzureVaultRequest,
+                                    ReplicateOracleDbAzureVaultResponse>
+                            handler) {
+        LOG.trace("Called async replicateOracleDbAzureVault");
+        final ReplicateOracleDbAzureVaultRequest interceptedRequest =
+                ReplicateOracleDbAzureVaultConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReplicateOracleDbAzureVaultConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OracleDbAzureVault",
+                        "ReplicateOracleDbAzureVault",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/ReplicateOracleDbAzureVault");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ReplicateOracleDbAzureVaultResponse>
+                transformer =
+                        ReplicateOracleDbAzureVaultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ReplicateOracleDbAzureVaultRequest, ReplicateOracleDbAzureVaultResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ReplicateOracleDbAzureVaultRequest,
+                                ReplicateOracleDbAzureVaultResponse>,
+                        java.util.concurrent.Future<ReplicateOracleDbAzureVaultResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getReplicateOracleDbAzureVaultDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ReplicateOracleDbAzureVaultRequest, ReplicateOracleDbAzureVaultResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateOracleDbAzureVaultResponse> updateOracleDbAzureVault(
             UpdateOracleDbAzureVaultRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

@@ -647,6 +647,59 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateEmailSubdomainResponse> createEmailSubdomain(
+            CreateEmailSubdomainRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateEmailSubdomainRequest, CreateEmailSubdomainResponse>
+                    handler) {
+        LOG.trace("Called async createEmailSubdomain");
+        final CreateEmailSubdomainRequest interceptedRequest =
+                CreateEmailSubdomainConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateEmailSubdomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "CreateEmailSubdomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/CreateEmailSubdomain");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateEmailSubdomainResponse>
+                transformer =
+                        CreateEmailSubdomainConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateEmailSubdomainRequest, CreateEmailSubdomainResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateEmailSubdomainRequest, CreateEmailSubdomainResponse>,
+                        java.util.concurrent.Future<CreateEmailSubdomainResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateEmailSubdomainDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateEmailSubdomainRequest, CreateEmailSubdomainResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFusionEnvironmentResponse> createFusionEnvironment(
             CreateFusionEnvironmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -817,6 +870,111 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMarketingBrandResponse> createMarketingBrand(
+            CreateMarketingBrandRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMarketingBrandRequest, CreateMarketingBrandResponse>
+                    handler) {
+        LOG.trace("Called async createMarketingBrand");
+        final CreateMarketingBrandRequest interceptedRequest =
+                CreateMarketingBrandConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMarketingBrandConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "CreateMarketingBrand",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/MarketingBrand/CreateMarketingBrand");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateMarketingBrandResponse>
+                transformer =
+                        CreateMarketingBrandConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateMarketingBrandRequest, CreateMarketingBrandResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMarketingBrandRequest, CreateMarketingBrandResponse>,
+                        java.util.concurrent.Future<CreateMarketingBrandResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMarketingBrandDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMarketingBrandRequest, CreateMarketingBrandResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMicrositeResponse> createMicrosite(
+            CreateMicrositeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMicrositeRequest, CreateMicrositeResponse>
+                    handler) {
+        LOG.trace("Called async createMicrosite");
+        final CreateMicrositeRequest interceptedRequest =
+                CreateMicrositeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMicrositeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "CreateMicrosite",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/CreateMicrosite");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateMicrositeResponse>
+                transformer =
+                        CreateMicrositeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateMicrositeRequest, CreateMicrositeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMicrositeRequest, CreateMicrositeResponse>,
+                        java.util.concurrent.Future<CreateMicrositeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMicrositeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMicrositeRequest, CreateMicrositeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRefreshActivityResponse> createRefreshActivity(
             CreateRefreshActivityRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -911,6 +1069,162 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateServiceAttachmentRequest, CreateServiceAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVanityDomainResponse> createVanityDomain(
+            CreateVanityDomainRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateVanityDomainRequest, CreateVanityDomainResponse>
+                    handler) {
+        LOG.trace("Called async createVanityDomain");
+        final CreateVanityDomainRequest interceptedRequest =
+                CreateVanityDomainConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVanityDomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "CreateVanityDomain",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateVanityDomainResponse>
+                transformer =
+                        CreateVanityDomainConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateVanityDomainRequest, CreateVanityDomainResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateVanityDomainRequest, CreateVanityDomainResponse>,
+                        java.util.concurrent.Future<CreateVanityDomainResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVanityDomainDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateVanityDomainRequest, CreateVanityDomainResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVanityDomainActivityResponse>
+            createVanityDomainActivity(
+                    CreateVanityDomainActivityRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateVanityDomainActivityRequest,
+                                    CreateVanityDomainActivityResponse>
+                            handler) {
+        LOG.trace("Called async createVanityDomainActivity");
+        final CreateVanityDomainActivityRequest interceptedRequest =
+                CreateVanityDomainActivityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVanityDomainActivityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "CreateVanityDomainActivity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomainActivity/CreateVanityDomainActivity");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateVanityDomainActivityResponse>
+                transformer =
+                        CreateVanityDomainActivityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateVanityDomainActivityRequest, CreateVanityDomainActivityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateVanityDomainActivityRequest,
+                                CreateVanityDomainActivityResponse>,
+                        java.util.concurrent.Future<CreateVanityDomainActivityResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVanityDomainActivityDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateVanityDomainActivityRequest, CreateVanityDomainActivityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEmailSubdomainResponse> deleteEmailSubdomain(
+            DeleteEmailSubdomainRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteEmailSubdomainRequest, DeleteEmailSubdomainResponse>
+                    handler) {
+        LOG.trace("Called async deleteEmailSubdomain");
+        final DeleteEmailSubdomainRequest interceptedRequest =
+                DeleteEmailSubdomainConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteEmailSubdomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "DeleteEmailSubdomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/DeleteEmailSubdomain");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteEmailSubdomainResponse>
+                transformer =
+                        DeleteEmailSubdomainConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteEmailSubdomainRequest, DeleteEmailSubdomainResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteEmailSubdomainRequest, DeleteEmailSubdomainResponse>,
+                        java.util.concurrent.Future<DeleteEmailSubdomainResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteEmailSubdomainRequest, DeleteEmailSubdomainResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1076,6 +1390,99 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMarketingBrandResponse> deleteMarketingBrand(
+            DeleteMarketingBrandRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMarketingBrandRequest, DeleteMarketingBrandResponse>
+                    handler) {
+        LOG.trace("Called async deleteMarketingBrand");
+        final DeleteMarketingBrandRequest interceptedRequest =
+                DeleteMarketingBrandConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMarketingBrandConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "DeleteMarketingBrand",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/MarketingBrand/DeleteMarketingBrand");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMarketingBrandResponse>
+                transformer =
+                        DeleteMarketingBrandConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteMarketingBrandRequest, DeleteMarketingBrandResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMarketingBrandRequest, DeleteMarketingBrandResponse>,
+                        java.util.concurrent.Future<DeleteMarketingBrandResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMarketingBrandRequest, DeleteMarketingBrandResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMicrositeResponse> deleteMicrosite(
+            DeleteMicrositeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMicrositeRequest, DeleteMicrositeResponse>
+                    handler) {
+        LOG.trace("Called async deleteMicrosite");
+        final DeleteMicrositeRequest interceptedRequest =
+                DeleteMicrositeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMicrositeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "DeleteMicrosite",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/DeleteMicrosite");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMicrositeResponse>
+                transformer =
+                        DeleteMicrositeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteMicrositeRequest, DeleteMicrositeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMicrositeRequest, DeleteMicrositeResponse>,
+                        java.util.concurrent.Future<DeleteMicrositeResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMicrositeRequest, DeleteMicrositeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRefreshActivityResponse> deleteRefreshActivity(
             DeleteRefreshActivityRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1171,6 +1578,57 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteVanityDomainActivityResponse>
+            deleteVanityDomainActivity(
+                    DeleteVanityDomainActivityRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteVanityDomainActivityRequest,
+                                    DeleteVanityDomainActivityResponse>
+                            handler) {
+        LOG.trace("Called async deleteVanityDomainActivity");
+        final DeleteVanityDomainActivityRequest interceptedRequest =
+                DeleteVanityDomainActivityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVanityDomainActivityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "DeleteVanityDomainActivity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomainActivity/DeleteVanityDomainActivity");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteVanityDomainActivityResponse>
+                transformer =
+                        DeleteVanityDomainActivityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteVanityDomainActivityRequest, DeleteVanityDomainActivityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteVanityDomainActivityRequest,
+                                DeleteVanityDomainActivityResponse>,
+                        java.util.concurrent.Future<DeleteVanityDomainActivityResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteVanityDomainActivityRequest, DeleteVanityDomainActivityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GenerateExtractDetailsResponse> generateExtractDetails(
             GenerateExtractDetailsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1252,6 +1710,150 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetDataMaskingActivityRequest, GetDataMaskingActivityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEmailSubdomainResponse> getEmailSubdomain(
+            GetEmailSubdomainRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailSubdomainRequest, GetEmailSubdomainResponse>
+                    handler) {
+        LOG.trace("Called async getEmailSubdomain");
+        final GetEmailSubdomainRequest interceptedRequest =
+                GetEmailSubdomainConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetEmailSubdomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "GetEmailSubdomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/GetEmailSubdomain");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEmailSubdomainResponse>
+                transformer =
+                        GetEmailSubdomainConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetEmailSubdomainRequest, GetEmailSubdomainResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetEmailSubdomainRequest, GetEmailSubdomainResponse>,
+                        java.util.concurrent.Future<GetEmailSubdomainResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetEmailSubdomainRequest, GetEmailSubdomainResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEmailSubdomainCsrResponse> getEmailSubdomainCsr(
+            GetEmailSubdomainCsrRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailSubdomainCsrRequest, GetEmailSubdomainCsrResponse>
+                    handler) {
+        LOG.trace("Called async getEmailSubdomainCsr");
+        final GetEmailSubdomainCsrRequest interceptedRequest =
+                GetEmailSubdomainCsrConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetEmailSubdomainCsrConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "GetEmailSubdomainCsr",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/GetEmailSubdomainCsr");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEmailSubdomainCsrResponse>
+                transformer =
+                        GetEmailSubdomainCsrConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetEmailSubdomainCsrRequest, GetEmailSubdomainCsrResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetEmailSubdomainCsrRequest, GetEmailSubdomainCsrResponse>,
+                        java.util.concurrent.Future<GetEmailSubdomainCsrResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetEmailSubdomainCsrRequest, GetEmailSubdomainCsrResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEmailSubdomainDnsConfigResponse>
+            getEmailSubdomainDnsConfig(
+                    GetEmailSubdomainDnsConfigRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetEmailSubdomainDnsConfigRequest,
+                                    GetEmailSubdomainDnsConfigResponse>
+                            handler) {
+        LOG.trace("Called async getEmailSubdomainDnsConfig");
+        final GetEmailSubdomainDnsConfigRequest interceptedRequest =
+                GetEmailSubdomainDnsConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetEmailSubdomainDnsConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "GetEmailSubdomainDnsConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/GetEmailSubdomainDnsConfig");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetEmailSubdomainDnsConfigResponse>
+                transformer =
+                        GetEmailSubdomainDnsConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetEmailSubdomainDnsConfigRequest, GetEmailSubdomainDnsConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetEmailSubdomainDnsConfigRequest,
+                                GetEmailSubdomainDnsConfigResponse>,
+                        java.util.concurrent.Future<GetEmailSubdomainDnsConfigResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetEmailSubdomainDnsConfigRequest, GetEmailSubdomainDnsConfigResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1525,6 +2127,143 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetMarketingBrandResponse> getMarketingBrand(
+            GetMarketingBrandRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMarketingBrandRequest, GetMarketingBrandResponse>
+                    handler) {
+        LOG.trace("Called async getMarketingBrand");
+        final GetMarketingBrandRequest interceptedRequest =
+                GetMarketingBrandConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMarketingBrandConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "GetMarketingBrand",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/MarketingBrand/GetMarketingBrand");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMarketingBrandResponse>
+                transformer =
+                        GetMarketingBrandConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetMarketingBrandRequest, GetMarketingBrandResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMarketingBrandRequest, GetMarketingBrandResponse>,
+                        java.util.concurrent.Future<GetMarketingBrandResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMarketingBrandRequest, GetMarketingBrandResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMicrositeResponse> getMicrosite(
+            GetMicrositeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetMicrositeRequest, GetMicrositeResponse>
+                    handler) {
+        LOG.trace("Called async getMicrosite");
+        final GetMicrositeRequest interceptedRequest =
+                GetMicrositeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMicrositeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "GetMicrosite",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/GetMicrosite");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMicrositeResponse>
+                transformer =
+                        GetMicrositeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetMicrositeRequest, GetMicrositeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMicrositeRequest, GetMicrositeResponse>,
+                        java.util.concurrent.Future<GetMicrositeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMicrositeRequest, GetMicrositeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMicrositeDnsConfigResponse> getMicrositeDnsConfig(
+            GetMicrositeDnsConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMicrositeDnsConfigRequest, GetMicrositeDnsConfigResponse>
+                    handler) {
+        LOG.trace("Called async getMicrositeDnsConfig");
+        final GetMicrositeDnsConfigRequest interceptedRequest =
+                GetMicrositeDnsConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMicrositeDnsConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "GetMicrositeDnsConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/GetMicrositeDnsConfig");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMicrositeDnsConfigResponse>
+                transformer =
+                        GetMicrositeDnsConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMicrositeDnsConfigRequest, GetMicrositeDnsConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMicrositeDnsConfigRequest, GetMicrositeDnsConfigResponse>,
+                        java.util.concurrent.Future<GetMicrositeDnsConfigResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMicrositeDnsConfigRequest, GetMicrositeDnsConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRefreshActivityResponse> getRefreshActivity(
             GetRefreshActivityRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1652,6 +2391,100 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetServiceAttachmentRequest, GetServiceAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVanityDomainResponse> getVanityDomain(
+            GetVanityDomainRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetVanityDomainRequest, GetVanityDomainResponse>
+                    handler) {
+        LOG.trace("Called async getVanityDomain");
+        final GetVanityDomainRequest interceptedRequest =
+                GetVanityDomainConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVanityDomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "GetVanityDomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomain/GetVanityDomain");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetVanityDomainResponse>
+                transformer =
+                        GetVanityDomainConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetVanityDomainRequest, GetVanityDomainResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetVanityDomainRequest, GetVanityDomainResponse>,
+                        java.util.concurrent.Future<GetVanityDomainResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetVanityDomainRequest, GetVanityDomainResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVanityDomainActivityResponse> getVanityDomainActivity(
+            GetVanityDomainActivityRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetVanityDomainActivityRequest, GetVanityDomainActivityResponse>
+                    handler) {
+        LOG.trace("Called async getVanityDomainActivity");
+        final GetVanityDomainActivityRequest interceptedRequest =
+                GetVanityDomainActivityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVanityDomainActivityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "GetVanityDomainActivity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomainActivity/GetVanityDomainActivity");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetVanityDomainActivityResponse>
+                transformer =
+                        GetVanityDomainActivityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetVanityDomainActivityRequest, GetVanityDomainActivityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetVanityDomainActivityRequest, GetVanityDomainActivityResponse>,
+                        java.util.concurrent.Future<GetVanityDomainActivityResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetVanityDomainActivityRequest, GetVanityDomainActivityResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1850,6 +2683,53 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListEmailSubdomainsResponse> listEmailSubdomains(
+            ListEmailSubdomainsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListEmailSubdomainsRequest, ListEmailSubdomainsResponse>
+                    handler) {
+        LOG.trace("Called async listEmailSubdomains");
+        final ListEmailSubdomainsRequest interceptedRequest =
+                ListEmailSubdomainsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEmailSubdomainsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "ListEmailSubdomains",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/ListEmailSubdomains");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEmailSubdomainsResponse>
+                transformer =
+                        ListEmailSubdomainsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListEmailSubdomainsRequest, ListEmailSubdomainsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListEmailSubdomainsRequest, ListEmailSubdomainsResponse>,
+                        java.util.concurrent.Future<ListEmailSubdomainsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListEmailSubdomainsRequest, ListEmailSubdomainsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFusionEnvironmentFamiliesResponse>
             listFusionEnvironmentFamilies(
                     ListFusionEnvironmentFamiliesRequest request,
@@ -1935,6 +2815,98 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListFusionEnvironmentsRequest, ListFusionEnvironmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMarketingBrandsResponse> listMarketingBrands(
+            ListMarketingBrandsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMarketingBrandsRequest, ListMarketingBrandsResponse>
+                    handler) {
+        LOG.trace("Called async listMarketingBrands");
+        final ListMarketingBrandsRequest interceptedRequest =
+                ListMarketingBrandsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMarketingBrandsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "ListMarketingBrands",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/MarketingBrand/ListMarketingBrands");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMarketingBrandsResponse>
+                transformer =
+                        ListMarketingBrandsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMarketingBrandsRequest, ListMarketingBrandsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMarketingBrandsRequest, ListMarketingBrandsResponse>,
+                        java.util.concurrent.Future<ListMarketingBrandsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMarketingBrandsRequest, ListMarketingBrandsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMicrositesResponse> listMicrosites(
+            ListMicrositesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMicrositesRequest, ListMicrositesResponse>
+                    handler) {
+        LOG.trace("Called async listMicrosites");
+        final ListMicrositesRequest interceptedRequest =
+                ListMicrositesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMicrositesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "ListMicrosites",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/ListMicrosites");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMicrositesResponse>
+                transformer =
+                        ListMicrositesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListMicrositesRequest, ListMicrositesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMicrositesRequest, ListMicrositesResponse>,
+                        java.util.concurrent.Future<ListMicrositesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMicrositesRequest, ListMicrositesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2141,6 +3113,52 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListVanityDomainsResponse> listVanityDomains(
+            ListVanityDomainsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListVanityDomainsRequest, ListVanityDomainsResponse>
+                    handler) {
+        LOG.trace("Called async listVanityDomains");
+        final ListVanityDomainsRequest interceptedRequest =
+                ListVanityDomainsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVanityDomainsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "ListVanityDomains",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomain/ListVanityDomains");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListVanityDomainsResponse>
+                transformer =
+                        ListVanityDomainsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListVanityDomainsRequest, ListVanityDomainsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListVanityDomainsRequest, ListVanityDomainsResponse>,
+                        java.util.concurrent.Future<ListVanityDomainsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListVanityDomainsRequest, ListVanityDomainsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2281,6 +3299,59 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RequestEmailSubdomainCsrResponse> requestEmailSubdomainCsr(
+            RequestEmailSubdomainCsrRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RequestEmailSubdomainCsrRequest, RequestEmailSubdomainCsrResponse>
+                    handler) {
+        LOG.trace("Called async requestEmailSubdomainCsr");
+        final RequestEmailSubdomainCsrRequest interceptedRequest =
+                RequestEmailSubdomainCsrConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestEmailSubdomainCsrConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "RequestEmailSubdomainCsr",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/RequestEmailSubdomainCsr");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RequestEmailSubdomainCsrResponse>
+                transformer =
+                        RequestEmailSubdomainCsrConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RequestEmailSubdomainCsrRequest, RequestEmailSubdomainCsrResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RequestEmailSubdomainCsrRequest, RequestEmailSubdomainCsrResponse>,
+                        java.util.concurrent.Future<RequestEmailSubdomainCsrResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRequestEmailSubdomainCsrDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RequestEmailSubdomainCsrRequest, RequestEmailSubdomainCsrResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ResetFusionEnvironmentPasswordResponse>
             resetFusionEnvironmentPassword(
                     ResetFusionEnvironmentPasswordRequest request,
@@ -2326,6 +3397,109 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ResetFusionEnvironmentPasswordRequest, ResetFusionEnvironmentPasswordResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitVanityDomainValidationResponse>
+            submitVanityDomainValidation(
+                    SubmitVanityDomainValidationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SubmitVanityDomainValidationRequest,
+                                    SubmitVanityDomainValidationResponse>
+                            handler) {
+        LOG.trace("Called async submitVanityDomainValidation");
+        final SubmitVanityDomainValidationRequest interceptedRequest =
+                SubmitVanityDomainValidationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SubmitVanityDomainValidationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "SubmitVanityDomainValidation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomain/SubmitVanityDomainValidation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SubmitVanityDomainValidationResponse>
+                transformer =
+                        SubmitVanityDomainValidationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SubmitVanityDomainValidationRequest, SubmitVanityDomainValidationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SubmitVanityDomainValidationRequest,
+                                SubmitVanityDomainValidationResponse>,
+                        java.util.concurrent.Future<SubmitVanityDomainValidationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SubmitVanityDomainValidationRequest, SubmitVanityDomainValidationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEmailSubdomainResponse> updateEmailSubdomain(
+            UpdateEmailSubdomainRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateEmailSubdomainRequest, UpdateEmailSubdomainResponse>
+                    handler) {
+        LOG.trace("Called async updateEmailSubdomain");
+        final UpdateEmailSubdomainRequest interceptedRequest =
+                UpdateEmailSubdomainConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateEmailSubdomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "UpdateEmailSubdomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/UpdateEmailSubdomain");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateEmailSubdomainResponse>
+                transformer =
+                        UpdateEmailSubdomainConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateEmailSubdomainRequest, UpdateEmailSubdomainResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateEmailSubdomainRequest, UpdateEmailSubdomainResponse>,
+                        java.util.concurrent.Future<UpdateEmailSubdomainResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateEmailSubdomainDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateEmailSubdomainRequest, UpdateEmailSubdomainResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2448,6 +3622,109 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateMarketingBrandResponse> updateMarketingBrand(
+            UpdateMarketingBrandRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMarketingBrandRequest, UpdateMarketingBrandResponse>
+                    handler) {
+        LOG.trace("Called async updateMarketingBrand");
+        final UpdateMarketingBrandRequest interceptedRequest =
+                UpdateMarketingBrandConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMarketingBrandConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "UpdateMarketingBrand",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/MarketingBrand/UpdateMarketingBrand");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMarketingBrandResponse>
+                transformer =
+                        UpdateMarketingBrandConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMarketingBrandRequest, UpdateMarketingBrandResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMarketingBrandRequest, UpdateMarketingBrandResponse>,
+                        java.util.concurrent.Future<UpdateMarketingBrandResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMarketingBrandDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMarketingBrandRequest, UpdateMarketingBrandResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMicrositeResponse> updateMicrosite(
+            UpdateMicrositeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMicrositeRequest, UpdateMicrositeResponse>
+                    handler) {
+        LOG.trace("Called async updateMicrosite");
+        final UpdateMicrositeRequest interceptedRequest =
+                UpdateMicrositeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMicrositeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "UpdateMicrosite",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/UpdateMicrosite");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMicrositeResponse>
+                transformer =
+                        UpdateMicrositeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateMicrositeRequest, UpdateMicrositeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMicrositeRequest, UpdateMicrositeResponse>,
+                        java.util.concurrent.Future<UpdateMicrositeResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMicrositeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMicrositeRequest, UpdateMicrositeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateRefreshActivityResponse> updateRefreshActivity(
             UpdateRefreshActivityRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2487,6 +3764,390 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateRefreshActivityRequest, UpdateRefreshActivityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVanityDomainResponse> updateVanityDomain(
+            UpdateVanityDomainRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVanityDomainRequest, UpdateVanityDomainResponse>
+                    handler) {
+        LOG.trace("Called async updateVanityDomain");
+        final UpdateVanityDomainRequest interceptedRequest =
+                UpdateVanityDomainConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVanityDomainConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "UpdateVanityDomain",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomain/UpdateVanityDomain");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateVanityDomainResponse>
+                transformer =
+                        UpdateVanityDomainConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateVanityDomainRequest, UpdateVanityDomainResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateVanityDomainRequest, UpdateVanityDomainResponse>,
+                        java.util.concurrent.Future<UpdateVanityDomainResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVanityDomainDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateVanityDomainRequest, UpdateVanityDomainResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVanityDomainActivityResponse>
+            updateVanityDomainActivity(
+                    UpdateVanityDomainActivityRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateVanityDomainActivityRequest,
+                                    UpdateVanityDomainActivityResponse>
+                            handler) {
+        LOG.trace("Called async updateVanityDomainActivity");
+        final UpdateVanityDomainActivityRequest interceptedRequest =
+                UpdateVanityDomainActivityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVanityDomainActivityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "UpdateVanityDomainActivity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomainActivity/UpdateVanityDomainActivity");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateVanityDomainActivityResponse>
+                transformer =
+                        UpdateVanityDomainActivityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateVanityDomainActivityRequest, UpdateVanityDomainActivityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateVanityDomainActivityRequest,
+                                UpdateVanityDomainActivityResponse>,
+                        java.util.concurrent.Future<UpdateVanityDomainActivityResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVanityDomainActivityDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateVanityDomainActivityRequest, UpdateVanityDomainActivityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UploadEmailSubdomainCertificateResponse>
+            uploadEmailSubdomainCertificate(
+                    UploadEmailSubdomainCertificateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UploadEmailSubdomainCertificateRequest,
+                                    UploadEmailSubdomainCertificateResponse>
+                            handler) {
+        LOG.trace("Called async uploadEmailSubdomainCertificate");
+        final UploadEmailSubdomainCertificateRequest interceptedRequest =
+                UploadEmailSubdomainCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UploadEmailSubdomainCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "UploadEmailSubdomainCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/UploadEmailSubdomainCertificate");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UploadEmailSubdomainCertificateResponse>
+                transformer =
+                        UploadEmailSubdomainCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UploadEmailSubdomainCertificateRequest,
+                        UploadEmailSubdomainCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UploadEmailSubdomainCertificateRequest,
+                                UploadEmailSubdomainCertificateResponse>,
+                        java.util.concurrent.Future<UploadEmailSubdomainCertificateResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUploadEmailSubdomainCertificateDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UploadEmailSubdomainCertificateRequest,
+                    UploadEmailSubdomainCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UploadVanityDomainCertificateResponse>
+            uploadVanityDomainCertificate(
+                    UploadVanityDomainCertificateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UploadVanityDomainCertificateRequest,
+                                    UploadVanityDomainCertificateResponse>
+                            handler) {
+        LOG.trace("Called async uploadVanityDomainCertificate");
+        final UploadVanityDomainCertificateRequest interceptedRequest =
+                UploadVanityDomainCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UploadVanityDomainCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "UploadVanityDomainCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/VanityDomain/UploadVanityDomainCertificate");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UploadVanityDomainCertificateResponse>
+                transformer =
+                        UploadVanityDomainCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UploadVanityDomainCertificateRequest, UploadVanityDomainCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UploadVanityDomainCertificateRequest,
+                                UploadVanityDomainCertificateResponse>,
+                        java.util.concurrent.Future<UploadVanityDomainCertificateResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUploadVanityDomainCertificateDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UploadVanityDomainCertificateRequest, UploadVanityDomainCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateAndConfigureEmailSubdomainCertificateResponse>
+            validateAndConfigureEmailSubdomainCertificate(
+                    ValidateAndConfigureEmailSubdomainCertificateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ValidateAndConfigureEmailSubdomainCertificateRequest,
+                                    ValidateAndConfigureEmailSubdomainCertificateResponse>
+                            handler) {
+        LOG.trace("Called async validateAndConfigureEmailSubdomainCertificate");
+        final ValidateAndConfigureEmailSubdomainCertificateRequest interceptedRequest =
+                ValidateAndConfigureEmailSubdomainCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateAndConfigureEmailSubdomainCertificateConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "ValidateAndConfigureEmailSubdomainCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/ValidateAndConfigureEmailSubdomainCertificate");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ValidateAndConfigureEmailSubdomainCertificateResponse>
+                transformer =
+                        ValidateAndConfigureEmailSubdomainCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ValidateAndConfigureEmailSubdomainCertificateRequest,
+                        ValidateAndConfigureEmailSubdomainCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ValidateAndConfigureEmailSubdomainCertificateRequest,
+                                ValidateAndConfigureEmailSubdomainCertificateResponse>,
+                        java.util.concurrent.Future<
+                                ValidateAndConfigureEmailSubdomainCertificateResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ValidateAndConfigureEmailSubdomainCertificateRequest,
+                    ValidateAndConfigureEmailSubdomainCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateAndConfigureEmailSubdomainDnsResponse>
+            validateAndConfigureEmailSubdomainDns(
+                    ValidateAndConfigureEmailSubdomainDnsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ValidateAndConfigureEmailSubdomainDnsRequest,
+                                    ValidateAndConfigureEmailSubdomainDnsResponse>
+                            handler) {
+        LOG.trace("Called async validateAndConfigureEmailSubdomainDns");
+        final ValidateAndConfigureEmailSubdomainDnsRequest interceptedRequest =
+                ValidateAndConfigureEmailSubdomainDnsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateAndConfigureEmailSubdomainDnsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "ValidateAndConfigureEmailSubdomainDns",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/EmailSubdomain/ValidateAndConfigureEmailSubdomainDns");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ValidateAndConfigureEmailSubdomainDnsResponse>
+                transformer =
+                        ValidateAndConfigureEmailSubdomainDnsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ValidateAndConfigureEmailSubdomainDnsRequest,
+                        ValidateAndConfigureEmailSubdomainDnsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ValidateAndConfigureEmailSubdomainDnsRequest,
+                                ValidateAndConfigureEmailSubdomainDnsResponse>,
+                        java.util.concurrent.Future<ValidateAndConfigureEmailSubdomainDnsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ValidateAndConfigureEmailSubdomainDnsRequest,
+                    ValidateAndConfigureEmailSubdomainDnsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateAndConfigureMicrositeDnsResponse>
+            validateAndConfigureMicrositeDns(
+                    ValidateAndConfigureMicrositeDnsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ValidateAndConfigureMicrositeDnsRequest,
+                                    ValidateAndConfigureMicrositeDnsResponse>
+                            handler) {
+        LOG.trace("Called async validateAndConfigureMicrositeDns");
+        final ValidateAndConfigureMicrositeDnsRequest interceptedRequest =
+                ValidateAndConfigureMicrositeDnsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateAndConfigureMicrositeDnsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "ValidateAndConfigureMicrositeDns",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/Microsite/ValidateAndConfigureMicrositeDns");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ValidateAndConfigureMicrositeDnsResponse>
+                transformer =
+                        ValidateAndConfigureMicrositeDnsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ValidateAndConfigureMicrositeDnsRequest,
+                        ValidateAndConfigureMicrositeDnsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ValidateAndConfigureMicrositeDnsRequest,
+                                ValidateAndConfigureMicrositeDnsResponse>,
+                        java.util.concurrent.Future<ValidateAndConfigureMicrositeDnsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ValidateAndConfigureMicrositeDnsRequest,
+                    ValidateAndConfigureMicrositeDnsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

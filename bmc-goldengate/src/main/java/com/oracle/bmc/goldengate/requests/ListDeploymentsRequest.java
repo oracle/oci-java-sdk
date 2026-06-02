@@ -70,16 +70,16 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         return assignableConnectionId;
     }
     /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
+     * A filter to return only the deployments having the 'lifecycleState' given.
      *
      */
-    private com.oracle.bmc.goldengate.model.LifecycleState lifecycleState;
+    private com.oracle.bmc.goldengate.model.Deployment.LifecycleState lifecycleState;
 
     /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
+     * A filter to return only the deployments having the 'lifecycleState' given.
      *
      */
-    public com.oracle.bmc.goldengate.model.LifecycleState getLifecycleState() {
+    public com.oracle.bmc.goldengate.model.Deployment.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
@@ -328,19 +328,19 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * A filter to return only the resources that match the 'lifecycleState' given.
+         * A filter to return only the deployments having the 'lifecycleState' given.
          *
          */
-        private com.oracle.bmc.goldengate.model.LifecycleState lifecycleState = null;
+        private com.oracle.bmc.goldengate.model.Deployment.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only the resources that match the 'lifecycleState' given.
+         * A filter to return only the deployments having the 'lifecycleState' given.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
-                com.oracle.bmc.goldengate.model.LifecycleState lifecycleState) {
+                com.oracle.bmc.goldengate.model.Deployment.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             return this;
         }

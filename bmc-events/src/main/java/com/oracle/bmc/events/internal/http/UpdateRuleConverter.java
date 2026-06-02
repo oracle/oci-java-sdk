@@ -32,8 +32,14 @@ public class UpdateRuleConverter {
         Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
         Validate.notNull(request.getUpdateRuleDetails(), "updateRuleDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ruleId", request.getRuleId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20181201")
                         .path("rules")
                         .path(

@@ -940,6 +940,121 @@ public class ManagedInstancePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listManagedInstanceSnaps operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListManagedInstanceSnapsResponse> listManagedInstanceSnapsResponseIterator(
+            final ListManagedInstanceSnapsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListManagedInstanceSnapsRequest.Builder, ListManagedInstanceSnapsRequest,
+                ListManagedInstanceSnapsResponse>(
+                new java.util.function.Supplier<ListManagedInstanceSnapsRequest.Builder>() {
+                    @Override
+                    public ListManagedInstanceSnapsRequest.Builder get() {
+                        return ListManagedInstanceSnapsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListManagedInstanceSnapsResponse, String>() {
+                    @Override
+                    public String apply(ListManagedInstanceSnapsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListManagedInstanceSnapsRequest.Builder>,
+                        ListManagedInstanceSnapsRequest>() {
+                    @Override
+                    public ListManagedInstanceSnapsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListManagedInstanceSnapsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListManagedInstanceSnapsRequest, ListManagedInstanceSnapsResponse>() {
+                    @Override
+                    public ListManagedInstanceSnapsResponse apply(
+                            ListManagedInstanceSnapsRequest request) {
+                        return client.listManagedInstanceSnaps(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagementhub.model.SnapSummary} objects
+     * contained in responses from the listManagedInstanceSnaps operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagementhub.model.SnapSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagementhub.model.SnapSummary>
+            listManagedInstanceSnapsRecordIterator(final ListManagedInstanceSnapsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListManagedInstanceSnapsRequest.Builder, ListManagedInstanceSnapsRequest,
+                ListManagedInstanceSnapsResponse, com.oracle.bmc.osmanagementhub.model.SnapSummary>(
+                new java.util.function.Supplier<ListManagedInstanceSnapsRequest.Builder>() {
+                    @Override
+                    public ListManagedInstanceSnapsRequest.Builder get() {
+                        return ListManagedInstanceSnapsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListManagedInstanceSnapsResponse, String>() {
+                    @Override
+                    public String apply(ListManagedInstanceSnapsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListManagedInstanceSnapsRequest.Builder>,
+                        ListManagedInstanceSnapsRequest>() {
+                    @Override
+                    public ListManagedInstanceSnapsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListManagedInstanceSnapsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListManagedInstanceSnapsRequest, ListManagedInstanceSnapsResponse>() {
+                    @Override
+                    public ListManagedInstanceSnapsResponse apply(
+                            ListManagedInstanceSnapsRequest request) {
+                        return client.listManagedInstanceSnaps(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListManagedInstanceSnapsResponse,
+                        java.util.List<com.oracle.bmc.osmanagementhub.model.SnapSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.osmanagementhub.model.SnapSummary> apply(
+                            ListManagedInstanceSnapsResponse response) {
+                        return response.getSnapCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listManagedInstanceUpdatablePackages operation. This iterable
      * will fetch more data from the server as needed.
      *

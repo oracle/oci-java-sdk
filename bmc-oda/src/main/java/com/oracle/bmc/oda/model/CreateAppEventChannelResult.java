@@ -124,7 +124,7 @@ public final class CreateAppEventChannelResult extends CreateChannelResult {
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
-        private String secretKey;
+        private char[] secretKey;
 
         /**
          * The secret key used to verify the authenticity of received messages.
@@ -133,11 +133,18 @@ public final class CreateAppEventChannelResult extends CreateChannelResult {
          * @param secretKey the value to set
          * @return this builder
          **/
-        public Builder secretKey(String secretKey) {
+        public Builder secretKey(char[] secretKey) {
             this.secretKey = secretKey;
             this.__explicitlySet__.add("secretKey");
             return this;
         }
+
+        public Builder secretKey(String secretKey) {
+            this.secretKey = secretKey != null ? secretKey.toCharArray() : null;
+            this.__explicitlySet__.add("secretKey");
+            return this;
+        }
+
         /**
          * The URL for sending errors and responses to.
          **/
@@ -304,6 +311,40 @@ public final class CreateAppEventChannelResult extends CreateChannelResult {
                 timeUpdated,
                 freeformTags,
                 definedTags);
+        this.secretKey = secretKey != null ? secretKey.toCharArray() : null;
+        this.outboundUrl = outboundUrl;
+        this.eventSinkBotIds = eventSinkBotIds;
+        this.webhookUrl = webhookUrl;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateAppEventChannelResult(
+            String id,
+            String name,
+            String description,
+            ChannelCategory category,
+            Long sessionExpiryDurationInMilliseconds,
+            LifecycleState lifecycleState,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            char[] secretKey,
+            String outboundUrl,
+            java.util.List<String> eventSinkBotIds,
+            String webhookUrl) {
+        super(
+                id,
+                name,
+                description,
+                category,
+                sessionExpiryDurationInMilliseconds,
+                lifecycleState,
+                timeCreated,
+                timeUpdated,
+                freeformTags,
+                definedTags);
         this.secretKey = secretKey;
         this.outboundUrl = outboundUrl;
         this.eventSinkBotIds = eventSinkBotIds;
@@ -316,7 +357,20 @@ public final class CreateAppEventChannelResult extends CreateChannelResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
-    private final String secretKey;
+    private final char[] secretKey;
+
+    /**
+     * The secret key used to verify the authenticity of received messages.
+     * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
+     *
+     * return the value
+     * @Deprecated - Use getSecretKey__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSecretKey() {
+        return secretKey != null ? new String(secretKey) : null;
+    }
 
     /**
      * The secret key used to verify the authenticity of received messages.
@@ -324,7 +378,8 @@ public final class CreateAppEventChannelResult extends CreateChannelResult {
      *
      * @return the value
      **/
-    public String getSecretKey() {
+    @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
+    public char[] getSecretKey__AsCharArray() {
         return secretKey;
     }
 

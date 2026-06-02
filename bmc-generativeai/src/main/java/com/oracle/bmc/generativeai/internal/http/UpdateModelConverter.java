@@ -32,8 +32,14 @@ public class UpdateModelConverter {
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
         Validate.notNull(request.getUpdateModelDetails(), "updateModelDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("modelId", request.getModelId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20231130")
                         .path("models")
                         .path(

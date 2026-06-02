@@ -23,6 +23,20 @@ package com.oracle.bmc.dns.model;
 public final class DynectMigrationDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public DynectMigrationDetails(
+            String customerName,
+            String username,
+            String password,
+            java.util.Map<String, java.util.List<MigrationReplacement>> httpRedirectReplacements) {
+        super();
+        this.customerName = customerName;
+        this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.httpRedirectReplacements = httpRedirectReplacements;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "customerName",
         "username",
@@ -32,7 +46,7 @@ public final class DynectMigrationDetails
     public DynectMigrationDetails(
             String customerName,
             String username,
-            String password,
+            char[] password,
             java.util.Map<String, java.util.List<MigrationReplacement>> httpRedirectReplacements) {
         super();
         this.customerName = customerName;
@@ -84,7 +98,7 @@ public final class DynectMigrationDetails
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * DynECT API password for the provided username.
@@ -92,11 +106,18 @@ public final class DynectMigrationDetails
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * A map of fully-qualified domain names (FQDNs) to an array of {@code MigrationReplacement} objects.
          *
@@ -201,14 +222,27 @@ public final class DynectMigrationDetails
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * DynECT API password for the provided username.
+     *
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * DynECT API password for the provided username.
      *
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

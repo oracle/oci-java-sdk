@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The list of aggregated metrics for Managed MySQL Databases in the fleet.
+ * The list of aggregated metrics for Managed MySQL Databases in the fleet. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -202,13 +202,13 @@ public final class MySqlDatabaseUsageMetrics
             return this;
         }
         /**
-         * The customer's selected type for HeatWave management.
+         * The selected management type for a HeatWave MySQL DB system.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("heatWaveManagementType")
         private ManagedMySqlDatabase.HeatWaveManagementType heatWaveManagementType;
 
         /**
-         * The customer's selected type for HeatWave management.
+         * The selected management type for a HeatWave MySQL DB system.
          * @param heatWaveManagementType the value to set
          * @return this builder
          **/
@@ -481,13 +481,13 @@ public final class MySqlDatabaseUsageMetrics
     }
 
     /**
-     * The customer's selected type for HeatWave management.
+     * The selected management type for a HeatWave MySQL DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveManagementType")
     private final ManagedMySqlDatabase.HeatWaveManagementType heatWaveManagementType;
 
     /**
-     * The customer's selected type for HeatWave management.
+     * The selected management type for a HeatWave MySQL DB system.
      * @return the value
      **/
     public ManagedMySqlDatabase.HeatWaveManagementType getHeatWaveManagementType() {

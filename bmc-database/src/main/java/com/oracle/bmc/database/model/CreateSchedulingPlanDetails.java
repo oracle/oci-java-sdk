@@ -30,7 +30,8 @@ public final class CreateSchedulingPlanDetails
         "serviceType",
         "isUsingRecommendedScheduledActions",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "planIntent"
     })
     public CreateSchedulingPlanDetails(
             String compartmentId,
@@ -39,7 +40,8 @@ public final class CreateSchedulingPlanDetails
             ServiceType serviceType,
             Boolean isUsingRecommendedScheduledActions,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            PlanIntent planIntent) {
         super();
         this.compartmentId = compartmentId;
         this.schedulingPolicyId = schedulingPolicyId;
@@ -48,6 +50,7 @@ public final class CreateSchedulingPlanDetails
         this.isUsingRecommendedScheduledActions = isUsingRecommendedScheduledActions;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.planIntent = planIntent;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -178,6 +181,22 @@ public final class CreateSchedulingPlanDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("planIntent")
+        private PlanIntent planIntent;
+
+        /**
+         * The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
+         * @param planIntent the value to set
+         * @return this builder
+         **/
+        public Builder planIntent(PlanIntent planIntent) {
+            this.planIntent = planIntent;
+            this.__explicitlySet__.add("planIntent");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -191,7 +210,8 @@ public final class CreateSchedulingPlanDetails
                             this.serviceType,
                             this.isUsingRecommendedScheduledActions,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.planIntent);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -221,6 +241,9 @@ public final class CreateSchedulingPlanDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("planIntent")) {
+                this.planIntent(model.getPlanIntent());
             }
             return this;
         }
@@ -383,6 +406,55 @@ public final class CreateSchedulingPlanDetails
         return definedTags;
     }
 
+    /**
+     * The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
+     **/
+    public enum PlanIntent {
+        ExadataInfrastructureFullSoftwareUpdate("EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"),
+        ExadataInfrastructureSecurityUpdate("EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, PlanIntent> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PlanIntent v : PlanIntent.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        PlanIntent(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PlanIntent create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid PlanIntent: " + key);
+        }
+    };
+    /**
+     * The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("planIntent")
+    private final PlanIntent planIntent;
+
+    /**
+     * The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
+     * @return the value
+     **/
+    public PlanIntent getPlanIntent() {
+        return planIntent;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -405,6 +477,7 @@ public final class CreateSchedulingPlanDetails
                 .append(String.valueOf(this.isUsingRecommendedScheduledActions));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", planIntent=").append(String.valueOf(this.planIntent));
         sb.append(")");
         return sb.toString();
     }
@@ -428,6 +501,7 @@ public final class CreateSchedulingPlanDetails
                         other.isUsingRecommendedScheduledActions)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.planIntent, other.planIntent)
                 && super.equals(other);
     }
 
@@ -452,6 +526,7 @@ public final class CreateSchedulingPlanDetails
                                 : this.isUsingRecommendedScheduledActions.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.planIntent == null ? 43 : this.planIntent.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

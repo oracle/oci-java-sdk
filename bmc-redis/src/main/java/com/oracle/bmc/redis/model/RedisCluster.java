@@ -42,6 +42,8 @@ public final class RedisCluster extends com.oracle.bmc.http.internal.ExplicitlyS
         "clusterMode",
         "shardCount",
         "nsgIds",
+        "backupId",
+        "importFromObjectStorageDetails",
         "securityAttributes",
         "freeformTags",
         "definedTags",
@@ -70,6 +72,8 @@ public final class RedisCluster extends com.oracle.bmc.http.internal.ExplicitlyS
             ClusterMode clusterMode,
             Integer shardCount,
             java.util.List<String> nsgIds,
+            String backupId,
+            ImportOciCacheFromObjectStorageDetails importFromObjectStorageDetails,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -97,6 +101,8 @@ public final class RedisCluster extends com.oracle.bmc.http.internal.ExplicitlyS
         this.clusterMode = clusterMode;
         this.shardCount = shardCount;
         this.nsgIds = nsgIds;
+        this.backupId = backupId;
+        this.importFromObjectStorageDetails = importFromObjectStorageDetails;
         this.securityAttributes = securityAttributes;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -457,6 +463,32 @@ public final class RedisCluster extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
+         * The ID of the OCI Cache Backup from which this cluster was created.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("backupId")
+        private String backupId;
+
+        /**
+         * The ID of the OCI Cache Backup from which this cluster was created.
+         * @param backupId the value to set
+         * @return this builder
+         **/
+        public Builder backupId(String backupId) {
+            this.backupId = backupId;
+            this.__explicitlySet__.add("backupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("importFromObjectStorageDetails")
+        private ImportOciCacheFromObjectStorageDetails importFromObjectStorageDetails;
+
+        public Builder importFromObjectStorageDetails(
+                ImportOciCacheFromObjectStorageDetails importFromObjectStorageDetails) {
+            this.importFromObjectStorageDetails = importFromObjectStorageDetails;
+            this.__explicitlySet__.add("importFromObjectStorageDetails");
+            return this;
+        }
+        /**
          * Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -571,6 +603,8 @@ public final class RedisCluster extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.clusterMode,
                             this.shardCount,
                             this.nsgIds,
+                            this.backupId,
+                            this.importFromObjectStorageDetails,
                             this.securityAttributes,
                             this.freeformTags,
                             this.definedTags,
@@ -648,6 +682,12 @@ public final class RedisCluster extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("backupId")) {
+                this.backupId(model.getBackupId());
+            }
+            if (model.wasPropertyExplicitlySet("importFromObjectStorageDetails")) {
+                this.importFromObjectStorageDetails(model.getImportFromObjectStorageDetails());
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
@@ -1134,6 +1174,27 @@ public final class RedisCluster extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
+     * The ID of the OCI Cache Backup from which this cluster was created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupId")
+    private final String backupId;
+
+    /**
+     * The ID of the OCI Cache Backup from which this cluster was created.
+     * @return the value
+     **/
+    public String getBackupId() {
+        return backupId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("importFromObjectStorageDetails")
+    private final ImportOciCacheFromObjectStorageDetails importFromObjectStorageDetails;
+
+    public ImportOciCacheFromObjectStorageDetails getImportFromObjectStorageDetails() {
+        return importFromObjectStorageDetails;
+    }
+
+    /**
      * Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -1248,6 +1309,9 @@ public final class RedisCluster extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", clusterMode=").append(String.valueOf(this.clusterMode));
         sb.append(", shardCount=").append(String.valueOf(this.shardCount));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", backupId=").append(String.valueOf(this.backupId));
+        sb.append(", importFromObjectStorageDetails=")
+                .append(String.valueOf(this.importFromObjectStorageDetails));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1291,6 +1355,9 @@ public final class RedisCluster extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.clusterMode, other.clusterMode)
                 && java.util.Objects.equals(this.shardCount, other.shardCount)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.backupId, other.backupId)
+                && java.util.Objects.equals(
+                        this.importFromObjectStorageDetails, other.importFromObjectStorageDetails)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1354,6 +1421,12 @@ public final class RedisCluster extends com.oracle.bmc.http.internal.ExplicitlyS
         result = (result * PRIME) + (this.clusterMode == null ? 43 : this.clusterMode.hashCode());
         result = (result * PRIME) + (this.shardCount == null ? 43 : this.shardCount.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.backupId == null ? 43 : this.backupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.importFromObjectStorageDetails == null
+                                ? 43
+                                : this.importFromObjectStorageDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.securityAttributes == null

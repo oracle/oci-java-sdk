@@ -39,6 +39,17 @@ public class SummarizeManagedInstanceAnalyticsRequest
         return compartmentId;
     }
     /**
+     * Indicates whether to include subcompartments in the returned results. Default is false.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * Indicates whether to include subcompartments in the returned results. Default is false.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
      */
     private String managedInstanceGroupId;
@@ -48,6 +59,17 @@ public class SummarizeManagedInstanceAnalyticsRequest
      */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
+    }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+     */
+    private String dynamicSetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+     */
+    public String getDynamicSetId() {
+        return dynamicSetId;
     }
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment. This filter returns only resource contained with the specified lifecycle environment.
@@ -320,6 +342,21 @@ public class SummarizeManagedInstanceAnalyticsRequest
         }
 
         /**
+         * Indicates whether to include subcompartments in the returned results. Default is false.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * Indicates whether to include subcompartments in the returned results. Default is false.
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
          */
         private String managedInstanceGroupId = null;
@@ -331,6 +368,21 @@ public class SummarizeManagedInstanceAnalyticsRequest
          */
         public Builder managedInstanceGroupId(String managedInstanceGroupId) {
             this.managedInstanceGroupId = managedInstanceGroupId;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+         */
+        private String dynamicSetId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+         * @param dynamicSetId the value to set
+         * @return this builder instance
+         */
+        public Builder dynamicSetId(String dynamicSetId) {
+            this.dynamicSetId = dynamicSetId;
             return this;
         }
 
@@ -650,7 +702,9 @@ public class SummarizeManagedInstanceAnalyticsRequest
         public Builder copy(SummarizeManagedInstanceAnalyticsRequest o) {
             metricNames(o.getMetricNames());
             compartmentId(o.getCompartmentId());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             managedInstanceGroupId(o.getManagedInstanceGroupId());
+            dynamicSetId(o.getDynamicSetId());
             lifecycleEnvironmentId(o.getLifecycleEnvironmentId());
             lifecycleStageId(o.getLifecycleStageId());
             status(o.getStatus());
@@ -700,7 +754,9 @@ public class SummarizeManagedInstanceAnalyticsRequest
                     new SummarizeManagedInstanceAnalyticsRequest();
             request.metricNames = metricNames;
             request.compartmentId = compartmentId;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.managedInstanceGroupId = managedInstanceGroupId;
+            request.dynamicSetId = dynamicSetId;
             request.lifecycleEnvironmentId = lifecycleEnvironmentId;
             request.lifecycleStageId = lifecycleStageId;
             request.status = status;
@@ -716,7 +772,7 @@ public class SummarizeManagedInstanceAnalyticsRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SummarizeManagedInstanceAnalyticsRequest(metricNames, compartmentId, managedInstanceGroupId, lifecycleEnvironmentId, lifecycleStageId, status, location, locationNotEqualTo, osFamily, isManagedByAutonomousLinux, displayName, displayNameContains, limit, page, sortBy, sortOrder, opcRequestId);
+            // new SummarizeManagedInstanceAnalyticsRequest(metricNames, compartmentId, compartmentIdInSubtree, managedInstanceGroupId, dynamicSetId, lifecycleEnvironmentId, lifecycleStageId, status, location, locationNotEqualTo, osFamily, isManagedByAutonomousLinux, displayName, displayNameContains, limit, page, sortBy, sortOrder, opcRequestId);
         }
     }
 
@@ -728,7 +784,9 @@ public class SummarizeManagedInstanceAnalyticsRequest
         return new Builder()
                 .metricNames(metricNames)
                 .compartmentId(compartmentId)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .managedInstanceGroupId(managedInstanceGroupId)
+                .dynamicSetId(dynamicSetId)
                 .lifecycleEnvironmentId(lifecycleEnvironmentId)
                 .lifecycleStageId(lifecycleStageId)
                 .status(status)
@@ -760,7 +818,9 @@ public class SummarizeManagedInstanceAnalyticsRequest
         sb.append("super=").append(super.toString());
         sb.append(",metricNames=").append(String.valueOf(this.metricNames));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",managedInstanceGroupId=").append(String.valueOf(this.managedInstanceGroupId));
+        sb.append(",dynamicSetId=").append(String.valueOf(this.dynamicSetId));
         sb.append(",lifecycleEnvironmentId=").append(String.valueOf(this.lifecycleEnvironmentId));
         sb.append(",lifecycleStageId=").append(String.valueOf(this.lifecycleStageId));
         sb.append(",status=").append(String.valueOf(this.status));
@@ -795,7 +855,10 @@ public class SummarizeManagedInstanceAnalyticsRequest
                 && java.util.Objects.equals(this.metricNames, other.metricNames)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(
                         this.managedInstanceGroupId, other.managedInstanceGroupId)
+                && java.util.Objects.equals(this.dynamicSetId, other.dynamicSetId)
                 && java.util.Objects.equals(
                         this.lifecycleEnvironmentId, other.lifecycleEnvironmentId)
                 && java.util.Objects.equals(this.lifecycleStageId, other.lifecycleStageId)
@@ -824,9 +887,15 @@ public class SummarizeManagedInstanceAnalyticsRequest
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result =
+                (result * PRIME)
                         + (this.managedInstanceGroupId == null
                                 ? 43
                                 : this.managedInstanceGroupId.hashCode());
+        result = (result * PRIME) + (this.dynamicSetId == null ? 43 : this.dynamicSetId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleEnvironmentId == null

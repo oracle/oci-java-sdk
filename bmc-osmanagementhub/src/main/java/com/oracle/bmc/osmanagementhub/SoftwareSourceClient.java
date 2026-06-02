@@ -1194,6 +1194,47 @@ public class SoftwareSourceClient implements SoftwareSource {
     }
 
     @Override
+    public ListAvailableSoftwareSourcesToAddResponse listAvailableSoftwareSourcesToAdd(
+            ListAvailableSoftwareSourcesToAddRequest request) {
+        LOG.trace("Called listAvailableSoftwareSourcesToAdd");
+        final ListAvailableSoftwareSourcesToAddRequest interceptedRequest =
+                ListAvailableSoftwareSourcesToAddConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAvailableSoftwareSourcesToAddConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SoftwareSource",
+                        "ListAvailableSoftwareSourcesToAdd",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListAvailableSoftwareSourcesToAdd");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAvailableSoftwareSourcesToAddResponse>
+                transformer =
+                        ListAvailableSoftwareSourcesToAddConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListEntitlementsResponse listEntitlements(ListEntitlementsRequest request) {
         LOG.trace("Called listEntitlements");
         final ListEntitlementsRequest interceptedRequest =

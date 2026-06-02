@@ -137,7 +137,7 @@ public final class MaintenanceDetails extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * The maintenance schedule type of the DB system.
-         * EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+         * EARLY: Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
          * REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
          *
          **/
@@ -146,7 +146,7 @@ public final class MaintenanceDetails extends com.oracle.bmc.http.internal.Expli
 
         /**
          * The maintenance schedule type of the DB system.
-         * EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+         * EARLY: Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
          * REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
          *
          * @param maintenanceScheduleType the value to set
@@ -356,7 +356,7 @@ public final class MaintenanceDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * The maintenance schedule type of the DB system.
-     * EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+     * EARLY: Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
      * REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
      *
      **/
@@ -365,7 +365,7 @@ public final class MaintenanceDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * The maintenance schedule type of the DB system.
-     * EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+     * EARLY: Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
      * REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
      *
      * @return the value

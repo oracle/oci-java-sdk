@@ -30,8 +30,13 @@ public class ListTaskSchedulesConverter {
             com.oracle.bmc.jms.requests.ListTaskSchedulesRequest request) {
         Validate.notNull(request, "request instance is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20210610").path("taskSchedules");
+                newBaseTarget.path("/20210610").path("taskSchedules");
 
         if (request.getFleetId() != null) {
             target =

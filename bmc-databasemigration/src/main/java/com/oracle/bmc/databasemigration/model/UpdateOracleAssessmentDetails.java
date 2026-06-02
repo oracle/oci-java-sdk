@@ -129,6 +129,22 @@ public final class UpdateOracleAssessmentDetails extends UpdateAssessmentDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Assessment migration scope.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationScope")
+        private MigrationScopeOracle migrationScope;
+
+        /**
+         * Assessment migration scope.
+         * @param migrationScope the value to set
+         * @return this builder
+         **/
+        public Builder migrationScope(MigrationScopeOracle migrationScope) {
+            this.migrationScope = migrationScope;
+            this.__explicitlySet__.add("migrationScope");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -146,7 +162,8 @@ public final class UpdateOracleAssessmentDetails extends UpdateAssessmentDetails
                             this.sourceDatabaseConnection,
                             this.targetDatabaseConnection,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.migrationScope);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -188,6 +205,9 @@ public final class UpdateOracleAssessmentDetails extends UpdateAssessmentDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("migrationScope")) {
+                this.migrationScope(model.getMigrationScope());
+            }
             return this;
         }
     }
@@ -215,7 +235,8 @@ public final class UpdateOracleAssessmentDetails extends UpdateAssessmentDetails
             SourceAssessmentConnection sourceDatabaseConnection,
             TargetAssessmentConnection targetDatabaseConnection,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            MigrationScopeOracle migrationScope) {
         super(
                 description,
                 displayName,
@@ -228,6 +249,21 @@ public final class UpdateOracleAssessmentDetails extends UpdateAssessmentDetails
                 targetDatabaseConnection,
                 freeformTags,
                 definedTags);
+        this.migrationScope = migrationScope;
+    }
+
+    /**
+     * Assessment migration scope.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationScope")
+    private final MigrationScopeOracle migrationScope;
+
+    /**
+     * Assessment migration scope.
+     * @return the value
+     **/
+    public MigrationScopeOracle getMigrationScope() {
+        return migrationScope;
     }
 
     @Override
@@ -244,6 +280,7 @@ public final class UpdateOracleAssessmentDetails extends UpdateAssessmentDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateOracleAssessmentDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", migrationScope=").append(String.valueOf(this.migrationScope));
         sb.append(")");
         return sb.toString();
     }
@@ -258,13 +295,17 @@ public final class UpdateOracleAssessmentDetails extends UpdateAssessmentDetails
         }
 
         UpdateOracleAssessmentDetails other = (UpdateOracleAssessmentDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.migrationScope, other.migrationScope)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.migrationScope == null ? 43 : this.migrationScope.hashCode());
         return result;
     }
 }

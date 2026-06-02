@@ -28,6 +28,17 @@ public class GetManagedInstanceAnalyticContentRequest
         return compartmentId;
     }
     /**
+     * Indicates whether to include subcompartments in the returned results. Default is false.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * Indicates whether to include subcompartments in the returned results. Default is false.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
      */
     private String managedInstanceGroupId;
@@ -37,6 +48,17 @@ public class GetManagedInstanceAnalyticContentRequest
      */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
+    }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+     */
+    private String dynamicSetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+     */
+    public String getDynamicSetId() {
+        return dynamicSetId;
     }
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment. This filter returns only resource contained with the specified lifecycle environment.
@@ -116,6 +138,17 @@ public class GetManagedInstanceAnalyticContentRequest
         return bugUpdatesAvailableEqualsTo;
     }
     /**
+     * A filter to return instances that have the specified number of available other updates.
+     */
+    private Integer otherUpdatesAvailableEqualsTo;
+
+    /**
+     * A filter to return instances that have the specified number of available other updates.
+     */
+    public Integer getOtherUpdatesAvailableEqualsTo() {
+        return otherUpdatesAvailableEqualsTo;
+    }
+    /**
      * A filter to return instances that have more available security updates than the number specified.
      */
     private Integer securityUpdatesAvailableGreaterThan;
@@ -136,6 +169,17 @@ public class GetManagedInstanceAnalyticContentRequest
      */
     public Integer getBugUpdatesAvailableGreaterThan() {
         return bugUpdatesAvailableGreaterThan;
+    }
+    /**
+     * A filter to return instances that have more available other updates than the number specified.
+     */
+    private Integer otherUpdatesAvailableGreaterThan;
+
+    /**
+     * A filter to return instances that have more available other updates than the number specified.
+     */
+    public Integer getOtherUpdatesAvailableGreaterThan() {
+        return otherUpdatesAvailableGreaterThan;
     }
     /**
      * A filter to return only resources whose location matches the given value.
@@ -246,6 +290,7 @@ public class GetManagedInstanceAnalyticContentRequest
         Security("SECURITY"),
         Bugfix("BUGFIX"),
         Activity("ACTIVITY"),
+        Other("OTHER"),
         All("ALL"),
         ;
 
@@ -322,6 +367,21 @@ public class GetManagedInstanceAnalyticContentRequest
         }
 
         /**
+         * Indicates whether to include subcompartments in the returned results. Default is false.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * Indicates whether to include subcompartments in the returned results. Default is false.
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
          */
         private String managedInstanceGroupId = null;
@@ -333,6 +393,21 @@ public class GetManagedInstanceAnalyticContentRequest
          */
         public Builder managedInstanceGroupId(String managedInstanceGroupId) {
             this.managedInstanceGroupId = managedInstanceGroupId;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+         */
+        private String dynamicSetId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+         * @param dynamicSetId the value to set
+         * @return this builder instance
+         */
+        public Builder dynamicSetId(String dynamicSetId) {
+            this.dynamicSetId = dynamicSetId;
             return this;
         }
 
@@ -462,6 +537,21 @@ public class GetManagedInstanceAnalyticContentRequest
         }
 
         /**
+         * A filter to return instances that have the specified number of available other updates.
+         */
+        private Integer otherUpdatesAvailableEqualsTo = null;
+
+        /**
+         * A filter to return instances that have the specified number of available other updates.
+         * @param otherUpdatesAvailableEqualsTo the value to set
+         * @return this builder instance
+         */
+        public Builder otherUpdatesAvailableEqualsTo(Integer otherUpdatesAvailableEqualsTo) {
+            this.otherUpdatesAvailableEqualsTo = otherUpdatesAvailableEqualsTo;
+            return this;
+        }
+
+        /**
          * A filter to return instances that have more available security updates than the number specified.
          */
         private Integer securityUpdatesAvailableGreaterThan = null;
@@ -489,6 +579,21 @@ public class GetManagedInstanceAnalyticContentRequest
          */
         public Builder bugUpdatesAvailableGreaterThan(Integer bugUpdatesAvailableGreaterThan) {
             this.bugUpdatesAvailableGreaterThan = bugUpdatesAvailableGreaterThan;
+            return this;
+        }
+
+        /**
+         * A filter to return instances that have more available other updates than the number specified.
+         */
+        private Integer otherUpdatesAvailableGreaterThan = null;
+
+        /**
+         * A filter to return instances that have more available other updates than the number specified.
+         * @param otherUpdatesAvailableGreaterThan the value to set
+         * @return this builder instance
+         */
+        public Builder otherUpdatesAvailableGreaterThan(Integer otherUpdatesAvailableGreaterThan) {
+            this.otherUpdatesAvailableGreaterThan = otherUpdatesAvailableGreaterThan;
             return this;
         }
 
@@ -662,7 +767,9 @@ public class GetManagedInstanceAnalyticContentRequest
          */
         public Builder copy(GetManagedInstanceAnalyticContentRequest o) {
             compartmentId(o.getCompartmentId());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             managedInstanceGroupId(o.getManagedInstanceGroupId());
+            dynamicSetId(o.getDynamicSetId());
             lifecycleEnvironmentId(o.getLifecycleEnvironmentId());
             lifecycleStageId(o.getLifecycleStageId());
             status(o.getStatus());
@@ -670,8 +777,10 @@ public class GetManagedInstanceAnalyticContentRequest
             displayNameContains(o.getDisplayNameContains());
             securityUpdatesAvailableEqualsTo(o.getSecurityUpdatesAvailableEqualsTo());
             bugUpdatesAvailableEqualsTo(o.getBugUpdatesAvailableEqualsTo());
+            otherUpdatesAvailableEqualsTo(o.getOtherUpdatesAvailableEqualsTo());
             securityUpdatesAvailableGreaterThan(o.getSecurityUpdatesAvailableGreaterThan());
             bugUpdatesAvailableGreaterThan(o.getBugUpdatesAvailableGreaterThan());
+            otherUpdatesAvailableGreaterThan(o.getOtherUpdatesAvailableGreaterThan());
             location(o.getLocation());
             locationNotEqualTo(o.getLocationNotEqualTo());
             osFamily(o.getOsFamily());
@@ -713,7 +822,9 @@ public class GetManagedInstanceAnalyticContentRequest
             GetManagedInstanceAnalyticContentRequest request =
                     new GetManagedInstanceAnalyticContentRequest();
             request.compartmentId = compartmentId;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.managedInstanceGroupId = managedInstanceGroupId;
+            request.dynamicSetId = dynamicSetId;
             request.lifecycleEnvironmentId = lifecycleEnvironmentId;
             request.lifecycleStageId = lifecycleStageId;
             request.status = status;
@@ -721,8 +832,10 @@ public class GetManagedInstanceAnalyticContentRequest
             request.displayNameContains = displayNameContains;
             request.securityUpdatesAvailableEqualsTo = securityUpdatesAvailableEqualsTo;
             request.bugUpdatesAvailableEqualsTo = bugUpdatesAvailableEqualsTo;
+            request.otherUpdatesAvailableEqualsTo = otherUpdatesAvailableEqualsTo;
             request.securityUpdatesAvailableGreaterThan = securityUpdatesAvailableGreaterThan;
             request.bugUpdatesAvailableGreaterThan = bugUpdatesAvailableGreaterThan;
+            request.otherUpdatesAvailableGreaterThan = otherUpdatesAvailableGreaterThan;
             request.location = location;
             request.locationNotEqualTo = locationNotEqualTo;
             request.osFamily = osFamily;
@@ -731,7 +844,7 @@ public class GetManagedInstanceAnalyticContentRequest
             request.reportType = reportType;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetManagedInstanceAnalyticContentRequest(compartmentId, managedInstanceGroupId, lifecycleEnvironmentId, lifecycleStageId, status, displayName, displayNameContains, securityUpdatesAvailableEqualsTo, bugUpdatesAvailableEqualsTo, securityUpdatesAvailableGreaterThan, bugUpdatesAvailableGreaterThan, location, locationNotEqualTo, osFamily, isManagedByAutonomousLinux, reportFormat, reportType, opcRequestId);
+            // new GetManagedInstanceAnalyticContentRequest(compartmentId, compartmentIdInSubtree, managedInstanceGroupId, dynamicSetId, lifecycleEnvironmentId, lifecycleStageId, status, displayName, displayNameContains, securityUpdatesAvailableEqualsTo, bugUpdatesAvailableEqualsTo, otherUpdatesAvailableEqualsTo, securityUpdatesAvailableGreaterThan, bugUpdatesAvailableGreaterThan, otherUpdatesAvailableGreaterThan, location, locationNotEqualTo, osFamily, isManagedByAutonomousLinux, reportFormat, reportType, opcRequestId);
         }
     }
 
@@ -742,7 +855,9 @@ public class GetManagedInstanceAnalyticContentRequest
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .managedInstanceGroupId(managedInstanceGroupId)
+                .dynamicSetId(dynamicSetId)
                 .lifecycleEnvironmentId(lifecycleEnvironmentId)
                 .lifecycleStageId(lifecycleStageId)
                 .status(status)
@@ -750,8 +865,10 @@ public class GetManagedInstanceAnalyticContentRequest
                 .displayNameContains(displayNameContains)
                 .securityUpdatesAvailableEqualsTo(securityUpdatesAvailableEqualsTo)
                 .bugUpdatesAvailableEqualsTo(bugUpdatesAvailableEqualsTo)
+                .otherUpdatesAvailableEqualsTo(otherUpdatesAvailableEqualsTo)
                 .securityUpdatesAvailableGreaterThan(securityUpdatesAvailableGreaterThan)
                 .bugUpdatesAvailableGreaterThan(bugUpdatesAvailableGreaterThan)
+                .otherUpdatesAvailableGreaterThan(otherUpdatesAvailableGreaterThan)
                 .location(location)
                 .locationNotEqualTo(locationNotEqualTo)
                 .osFamily(osFamily)
@@ -775,7 +892,9 @@ public class GetManagedInstanceAnalyticContentRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",managedInstanceGroupId=").append(String.valueOf(this.managedInstanceGroupId));
+        sb.append(",dynamicSetId=").append(String.valueOf(this.dynamicSetId));
         sb.append(",lifecycleEnvironmentId=").append(String.valueOf(this.lifecycleEnvironmentId));
         sb.append(",lifecycleStageId=").append(String.valueOf(this.lifecycleStageId));
         sb.append(",status=").append(String.valueOf(this.status));
@@ -785,10 +904,14 @@ public class GetManagedInstanceAnalyticContentRequest
                 .append(String.valueOf(this.securityUpdatesAvailableEqualsTo));
         sb.append(",bugUpdatesAvailableEqualsTo=")
                 .append(String.valueOf(this.bugUpdatesAvailableEqualsTo));
+        sb.append(",otherUpdatesAvailableEqualsTo=")
+                .append(String.valueOf(this.otherUpdatesAvailableEqualsTo));
         sb.append(",securityUpdatesAvailableGreaterThan=")
                 .append(String.valueOf(this.securityUpdatesAvailableGreaterThan));
         sb.append(",bugUpdatesAvailableGreaterThan=")
                 .append(String.valueOf(this.bugUpdatesAvailableGreaterThan));
+        sb.append(",otherUpdatesAvailableGreaterThan=")
+                .append(String.valueOf(this.otherUpdatesAvailableGreaterThan));
         sb.append(",location=").append(String.valueOf(this.location));
         sb.append(",locationNotEqualTo=").append(String.valueOf(this.locationNotEqualTo));
         sb.append(",osFamily=").append(String.valueOf(this.osFamily));
@@ -815,7 +938,10 @@ public class GetManagedInstanceAnalyticContentRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(
                         this.managedInstanceGroupId, other.managedInstanceGroupId)
+                && java.util.Objects.equals(this.dynamicSetId, other.dynamicSetId)
                 && java.util.Objects.equals(
                         this.lifecycleEnvironmentId, other.lifecycleEnvironmentId)
                 && java.util.Objects.equals(this.lifecycleStageId, other.lifecycleStageId)
@@ -828,10 +954,15 @@ public class GetManagedInstanceAnalyticContentRequest
                 && java.util.Objects.equals(
                         this.bugUpdatesAvailableEqualsTo, other.bugUpdatesAvailableEqualsTo)
                 && java.util.Objects.equals(
+                        this.otherUpdatesAvailableEqualsTo, other.otherUpdatesAvailableEqualsTo)
+                && java.util.Objects.equals(
                         this.securityUpdatesAvailableGreaterThan,
                         other.securityUpdatesAvailableGreaterThan)
                 && java.util.Objects.equals(
                         this.bugUpdatesAvailableGreaterThan, other.bugUpdatesAvailableGreaterThan)
+                && java.util.Objects.equals(
+                        this.otherUpdatesAvailableGreaterThan,
+                        other.otherUpdatesAvailableGreaterThan)
                 && java.util.Objects.equals(this.location, other.location)
                 && java.util.Objects.equals(this.locationNotEqualTo, other.locationNotEqualTo)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
@@ -851,9 +982,15 @@ public class GetManagedInstanceAnalyticContentRequest
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result =
+                (result * PRIME)
                         + (this.managedInstanceGroupId == null
                                 ? 43
                                 : this.managedInstanceGroupId.hashCode());
+        result = (result * PRIME) + (this.dynamicSetId == null ? 43 : this.dynamicSetId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleEnvironmentId == null
@@ -881,6 +1018,11 @@ public class GetManagedInstanceAnalyticContentRequest
                                 : this.bugUpdatesAvailableEqualsTo.hashCode());
         result =
                 (result * PRIME)
+                        + (this.otherUpdatesAvailableEqualsTo == null
+                                ? 43
+                                : this.otherUpdatesAvailableEqualsTo.hashCode());
+        result =
+                (result * PRIME)
                         + (this.securityUpdatesAvailableGreaterThan == null
                                 ? 43
                                 : this.securityUpdatesAvailableGreaterThan.hashCode());
@@ -889,6 +1031,11 @@ public class GetManagedInstanceAnalyticContentRequest
                         + (this.bugUpdatesAvailableGreaterThan == null
                                 ? 43
                                 : this.bugUpdatesAvailableGreaterThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.otherUpdatesAvailableGreaterThan == null
+                                ? 43
+                                : this.otherUpdatesAvailableGreaterThan.hashCode());
         result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
         result =
                 (result * PRIME)

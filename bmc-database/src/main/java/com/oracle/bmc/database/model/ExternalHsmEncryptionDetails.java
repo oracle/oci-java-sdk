@@ -31,15 +31,21 @@ public final class ExternalHsmEncryptionDetails extends EncryptionKeyLocationDet
          * Provide the HSM password as you would in RDBMS for External HSM.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hsmPassword")
-        private String hsmPassword;
+        private char[] hsmPassword;
 
         /**
          * Provide the HSM password as you would in RDBMS for External HSM.
          * @param hsmPassword the value to set
          * @return this builder
          **/
-        public Builder hsmPassword(String hsmPassword) {
+        public Builder hsmPassword(char[] hsmPassword) {
             this.hsmPassword = hsmPassword;
+            this.__explicitlySet__.add("hsmPassword");
+            return this;
+        }
+
+        public Builder hsmPassword(String hsmPassword) {
+            this.hsmPassword = hsmPassword != null ? hsmPassword.toCharArray() : null;
             this.__explicitlySet__.add("hsmPassword");
             return this;
         }
@@ -78,6 +84,13 @@ public final class ExternalHsmEncryptionDetails extends EncryptionKeyLocationDet
     @Deprecated
     public ExternalHsmEncryptionDetails(String hsmPassword) {
         super();
+        this.hsmPassword = hsmPassword != null ? hsmPassword.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public ExternalHsmEncryptionDetails(char[] hsmPassword) {
+        super();
         this.hsmPassword = hsmPassword;
     }
 
@@ -85,13 +98,25 @@ public final class ExternalHsmEncryptionDetails extends EncryptionKeyLocationDet
      * Provide the HSM password as you would in RDBMS for External HSM.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hsmPassword")
-    private final String hsmPassword;
+    private final char[] hsmPassword;
+
+    /**
+     * Provide the HSM password as you would in RDBMS for External HSM.
+     * return the value
+     * @Deprecated - Use getHsmPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getHsmPassword() {
+        return hsmPassword != null ? new String(hsmPassword) : null;
+    }
 
     /**
      * Provide the HSM password as you would in RDBMS for External HSM.
      * @return the value
      **/
-    public String getHsmPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("hsmPassword")
+    public char[] getHsmPassword__AsCharArray() {
         return hsmPassword;
     }
 

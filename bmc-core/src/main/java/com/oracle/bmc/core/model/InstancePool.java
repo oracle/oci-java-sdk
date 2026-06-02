@@ -36,7 +36,8 @@ public final class InstancePool extends com.oracle.bmc.http.internal.ExplicitlyS
         "loadBalancers",
         "instanceDisplayNameFormatter",
         "instanceHostnameFormatter",
-        "lifecycleManagement"
+        "lifecycleManagement",
+        "currentSize"
     })
     public InstancePool(
             String id,
@@ -52,7 +53,8 @@ public final class InstancePool extends com.oracle.bmc.http.internal.ExplicitlyS
             java.util.List<InstancePoolLoadBalancerAttachment> loadBalancers,
             String instanceDisplayNameFormatter,
             String instanceHostnameFormatter,
-            InstancePoolLifecycleManagementDetails lifecycleManagement) {
+            InstancePoolLifecycleManagementDetails lifecycleManagement,
+            Integer currentSize) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -68,6 +70,7 @@ public final class InstancePool extends com.oracle.bmc.http.internal.ExplicitlyS
         this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
         this.instanceHostnameFormatter = instanceHostnameFormatter;
         this.lifecycleManagement = lifecycleManagement;
+        this.currentSize = currentSize;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -335,6 +338,22 @@ public final class InstancePool extends com.oracle.bmc.http.internal.ExplicitlyS
             this.__explicitlySet__.add("lifecycleManagement");
             return this;
         }
+        /**
+         * Count of instance in running state associated to the Instance Pool.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("currentSize")
+        private Integer currentSize;
+
+        /**
+         * Count of instance in running state associated to the Instance Pool.
+         * @param currentSize the value to set
+         * @return this builder
+         **/
+        public Builder currentSize(Integer currentSize) {
+            this.currentSize = currentSize;
+            this.__explicitlySet__.add("currentSize");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -355,7 +374,8 @@ public final class InstancePool extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.loadBalancers,
                             this.instanceDisplayNameFormatter,
                             this.instanceHostnameFormatter,
-                            this.lifecycleManagement);
+                            this.lifecycleManagement,
+                            this.currentSize);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -405,6 +425,9 @@ public final class InstancePool extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("lifecycleManagement")) {
                 this.lifecycleManagement(model.getLifecycleManagement());
+            }
+            if (model.wasPropertyExplicitlySet("currentSize")) {
+                this.currentSize(model.getCurrentSize());
             }
             return this;
         }
@@ -706,6 +729,20 @@ public final class InstancePool extends com.oracle.bmc.http.internal.ExplicitlyS
         return lifecycleManagement;
     }
 
+    /**
+     * Count of instance in running state associated to the Instance Pool.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("currentSize")
+    private final Integer currentSize;
+
+    /**
+     * Count of instance in running state associated to the Instance Pool.
+     * @return the value
+     **/
+    public Integer getCurrentSize() {
+        return currentSize;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -738,6 +775,7 @@ public final class InstancePool extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", instanceHostnameFormatter=")
                 .append(String.valueOf(this.instanceHostnameFormatter));
         sb.append(", lifecycleManagement=").append(String.valueOf(this.lifecycleManagement));
+        sb.append(", currentSize=").append(String.valueOf(this.currentSize));
         sb.append(")");
         return sb.toString();
     }
@@ -770,6 +808,7 @@ public final class InstancePool extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(
                         this.instanceHostnameFormatter, other.instanceHostnameFormatter)
                 && java.util.Objects.equals(this.lifecycleManagement, other.lifecycleManagement)
+                && java.util.Objects.equals(this.currentSize, other.currentSize)
                 && super.equals(other);
     }
 
@@ -817,6 +856,7 @@ public final class InstancePool extends com.oracle.bmc.http.internal.ExplicitlyS
                         + (this.lifecycleManagement == null
                                 ? 43
                                 : this.lifecycleManagement.hashCode());
+        result = (result * PRIME) + (this.currentSize == null ? 43 : this.currentSize.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

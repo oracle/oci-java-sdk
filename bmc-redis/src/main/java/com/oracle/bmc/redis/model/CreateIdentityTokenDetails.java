@@ -22,17 +22,11 @@ package com.oracle.bmc.redis.model;
 public final class CreateIdentityTokenDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"publicKey", "redisUser", "freeformTags", "definedTags"})
-    public CreateIdentityTokenDetails(
-            String publicKey,
-            String redisUser,
-            java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+    @java.beans.ConstructorProperties({"publicKey", "redisUser"})
+    public CreateIdentityTokenDetails(String publicKey, String redisUser) {
         super();
         this.publicKey = publicKey;
         this.redisUser = redisUser;
-        this.freeformTags = freeformTags;
-        this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -69,55 +63,13 @@ public final class CreateIdentityTokenDetails
             this.__explicitlySet__.add("redisUser");
             return this;
         }
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
-
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         * @param freeformTags the value to set
-         * @return this builder
-         **/
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
-            return this;
-        }
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         * @param definedTags the value to set
-         * @return this builder
-         **/
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateIdentityTokenDetails build() {
             CreateIdentityTokenDetails model =
-                    new CreateIdentityTokenDetails(
-                            this.publicKey, this.redisUser, this.freeformTags, this.definedTags);
+                    new CreateIdentityTokenDetails(this.publicKey, this.redisUser);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -131,12 +83,6 @@ public final class CreateIdentityTokenDetails
             }
             if (model.wasPropertyExplicitlySet("redisUser")) {
                 this.redisUser(model.getRedisUser());
-            }
-            if (model.wasPropertyExplicitlySet("freeformTags")) {
-                this.freeformTags(model.getFreeformTags());
-            }
-            if (model.wasPropertyExplicitlySet("definedTags")) {
-                this.definedTags(model.getDefinedTags());
             }
             return this;
         }
@@ -181,42 +127,6 @@ public final class CreateIdentityTokenDetails
         return redisUser;
     }
 
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    private final java.util.Map<String, String> freeformTags;
-
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     * @return the value
-     **/
-    public java.util.Map<String, String> getFreeformTags() {
-        return freeformTags;
-    }
-
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     * @return the value
-     **/
-    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
-        return definedTags;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -233,8 +143,6 @@ public final class CreateIdentityTokenDetails
         sb.append("super=").append(super.toString());
         sb.append("publicKey=").append(String.valueOf(this.publicKey));
         sb.append(", redisUser=").append(String.valueOf(this.redisUser));
-        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
-        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -251,8 +159,6 @@ public final class CreateIdentityTokenDetails
         CreateIdentityTokenDetails other = (CreateIdentityTokenDetails) o;
         return java.util.Objects.equals(this.publicKey, other.publicKey)
                 && java.util.Objects.equals(this.redisUser, other.redisUser)
-                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -262,8 +168,6 @@ public final class CreateIdentityTokenDetails
         int result = 1;
         result = (result * PRIME) + (this.publicKey == null ? 43 : this.publicKey.hashCode());
         result = (result * PRIME) + (this.redisUser == null ? 43 : this.redisUser.hashCode());
-        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
-        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

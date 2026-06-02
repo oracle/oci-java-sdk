@@ -169,6 +169,7 @@ public final class RequestSummarizedUsagesDetails
          * Credit - Query the credit adjustments data.
          * ExpiredCredit - Query the expired credits data.
          * AllCredit - Query the credit adjustments and expired credit.
+         * Usage_Only - Query the only usage data without cost or currency.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryType")
@@ -181,6 +182,7 @@ public final class RequestSummarizedUsagesDetails
          * Credit - Query the credit adjustments data.
          * ExpiredCredit - Query the expired credits data.
          * AllCredit - Query the credit adjustments and expired credit.
+         * Usage_Only - Query the only usage data without cost or currency.
          *
          * @param queryType the value to set
          * @return this builder
@@ -473,6 +475,7 @@ public final class RequestSummarizedUsagesDetails
      * Credit - Query the credit adjustments data.
      * ExpiredCredit - Query the expired credits data.
      * AllCredit - Query the credit adjustments and expired credit.
+     * Usage_Only - Query the only usage data without cost or currency.
      *
      **/
     public enum QueryType {
@@ -481,6 +484,7 @@ public final class RequestSummarizedUsagesDetails
         Credit("CREDIT"),
         Expiredcredit("EXPIREDCREDIT"),
         Allcredit("ALLCREDIT"),
+        UsageOnly("USAGE_ONLY"),
         ;
 
         private final String value;
@@ -517,6 +521,7 @@ public final class RequestSummarizedUsagesDetails
      * Credit - Query the credit adjustments data.
      * ExpiredCredit - Query the expired credits data.
      * AllCredit - Query the credit adjustments and expired credit.
+     * Usage_Only - Query the only usage data without cost or currency.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryType")
@@ -529,6 +534,7 @@ public final class RequestSummarizedUsagesDetails
      * Credit - Query the credit adjustments data.
      * ExpiredCredit - Query the expired credits data.
      * AllCredit - Query the credit adjustments and expired credit.
+     * Usage_Only - Query the only usage data without cost or currency.
      *
      * @return the value
      **/

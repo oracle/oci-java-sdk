@@ -33,7 +33,8 @@ public final class AutonomousDatabaseConnectionUrls
         "mongoDbUrl",
         "machineLearningNotebookUrl",
         "ordsUrl",
-        "databaseTransformsUrl"
+        "databaseTransformsUrl",
+        "spatialStudioUrl"
     })
     public AutonomousDatabaseConnectionUrls(
             String sqlDevWebUrl,
@@ -43,7 +44,8 @@ public final class AutonomousDatabaseConnectionUrls
             String mongoDbUrl,
             String machineLearningNotebookUrl,
             String ordsUrl,
-            String databaseTransformsUrl) {
+            String databaseTransformsUrl,
+            String spatialStudioUrl) {
         super();
         this.sqlDevWebUrl = sqlDevWebUrl;
         this.apexUrl = apexUrl;
@@ -53,6 +55,7 @@ public final class AutonomousDatabaseConnectionUrls
         this.machineLearningNotebookUrl = machineLearningNotebookUrl;
         this.ordsUrl = ordsUrl;
         this.databaseTransformsUrl = databaseTransformsUrl;
+        this.spatialStudioUrl = spatialStudioUrl;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -185,6 +188,22 @@ public final class AutonomousDatabaseConnectionUrls
             this.__explicitlySet__.add("databaseTransformsUrl");
             return this;
         }
+        /**
+         * The URL of the Spatial Studio for the Autonomous AI Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("spatialStudioUrl")
+        private String spatialStudioUrl;
+
+        /**
+         * The URL of the Spatial Studio for the Autonomous AI Database.
+         * @param spatialStudioUrl the value to set
+         * @return this builder
+         **/
+        public Builder spatialStudioUrl(String spatialStudioUrl) {
+            this.spatialStudioUrl = spatialStudioUrl;
+            this.__explicitlySet__.add("spatialStudioUrl");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -199,7 +218,8 @@ public final class AutonomousDatabaseConnectionUrls
                             this.mongoDbUrl,
                             this.machineLearningNotebookUrl,
                             this.ordsUrl,
-                            this.databaseTransformsUrl);
+                            this.databaseTransformsUrl,
+                            this.spatialStudioUrl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -231,6 +251,9 @@ public final class AutonomousDatabaseConnectionUrls
             }
             if (model.wasPropertyExplicitlySet("databaseTransformsUrl")) {
                 this.databaseTransformsUrl(model.getDatabaseTransformsUrl());
+            }
+            if (model.wasPropertyExplicitlySet("spatialStudioUrl")) {
+                this.spatialStudioUrl(model.getSpatialStudioUrl());
             }
             return this;
         }
@@ -359,6 +382,20 @@ public final class AutonomousDatabaseConnectionUrls
         return databaseTransformsUrl;
     }
 
+    /**
+     * The URL of the Spatial Studio for the Autonomous AI Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("spatialStudioUrl")
+    private final String spatialStudioUrl;
+
+    /**
+     * The URL of the Spatial Studio for the Autonomous AI Database.
+     * @return the value
+     **/
+    public String getSpatialStudioUrl() {
+        return spatialStudioUrl;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -383,6 +420,7 @@ public final class AutonomousDatabaseConnectionUrls
                 .append(String.valueOf(this.machineLearningNotebookUrl));
         sb.append(", ordsUrl=").append(String.valueOf(this.ordsUrl));
         sb.append(", databaseTransformsUrl=").append(String.valueOf(this.databaseTransformsUrl));
+        sb.append(", spatialStudioUrl=").append(String.valueOf(this.spatialStudioUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -408,6 +446,7 @@ public final class AutonomousDatabaseConnectionUrls
                         this.machineLearningNotebookUrl, other.machineLearningNotebookUrl)
                 && java.util.Objects.equals(this.ordsUrl, other.ordsUrl)
                 && java.util.Objects.equals(this.databaseTransformsUrl, other.databaseTransformsUrl)
+                && java.util.Objects.equals(this.spatialStudioUrl, other.spatialStudioUrl)
                 && super.equals(other);
     }
 
@@ -437,6 +476,9 @@ public final class AutonomousDatabaseConnectionUrls
                         + (this.databaseTransformsUrl == null
                                 ? 43
                                 : this.databaseTransformsUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.spatialStudioUrl == null ? 43 : this.spatialStudioUrl.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

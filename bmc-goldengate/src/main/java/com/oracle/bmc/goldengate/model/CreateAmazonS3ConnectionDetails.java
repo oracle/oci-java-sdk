@@ -207,7 +207,7 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
-        private String secretAccessKey;
+        private char[] secretAccessKey;
 
         /**
          * Secret access key to access the Amazon S3 bucket.
@@ -217,11 +217,18 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
          * @param secretAccessKey the value to set
          * @return this builder
          **/
-        public Builder secretAccessKey(String secretAccessKey) {
+        public Builder secretAccessKey(char[] secretAccessKey) {
             this.secretAccessKey = secretAccessKey;
             this.__explicitlySet__.add("secretAccessKey");
             return this;
         }
+
+        public Builder secretAccessKey(String secretAccessKey) {
+            this.secretAccessKey = secretAccessKey != null ? secretAccessKey.toCharArray() : null;
+            this.__explicitlySet__.add("secretAccessKey");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
          * Note: When provided, 'secretAccessKey' field must not be provided.
@@ -441,6 +448,54 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
                 securityAttributes);
         this.technologyType = technologyType;
         this.accessKeyId = accessKeyId;
+        this.secretAccessKey = secretAccessKey != null ? secretAccessKey.toCharArray() : null;
+        this.secretAccessKeySecretId = secretAccessKeySecretId;
+        this.endpoint = endpoint;
+        this.region = region;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateAmazonS3ConnectionDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            AmazonS3Connection.TechnologyType technologyType,
+            String accessKeyId,
+            char[] secretAccessKey,
+            String secretAccessKeySecretId,
+            String endpoint,
+            String region) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                locks,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
+        this.technologyType = technologyType;
+        this.accessKeyId = accessKeyId;
         this.secretAccessKey = secretAccessKey;
         this.secretAccessKeySecretId = secretAccessKeySecretId;
         this.endpoint = endpoint;
@@ -486,7 +541,21 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
-    private final String secretAccessKey;
+    private final char[] secretAccessKey;
+
+    /**
+     * Secret access key to access the Amazon S3 bucket.
+     * e.g.: &quot;this-is-not-the-secret&quot;
+     * Deprecated: This field is deprecated and replaced by &quot;secretAccessKeySecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getSecretAccessKey__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSecretAccessKey() {
+        return secretAccessKey != null ? new String(secretAccessKey) : null;
+    }
 
     /**
      * Secret access key to access the Amazon S3 bucket.
@@ -495,7 +564,8 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
      *
      * @return the value
      **/
-    public String getSecretAccessKey() {
+    @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
+    public char[] getSecretAccessKey__AsCharArray() {
         return secretAccessKey;
     }
 

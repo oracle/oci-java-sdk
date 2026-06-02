@@ -125,34 +125,48 @@ public final class CreateSlackChannelDetails extends CreateChannelDetails {
          * The Signing Secret for the Slack App.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("signingSecret")
-        private String signingSecret;
+        private char[] signingSecret;
 
         /**
          * The Signing Secret for the Slack App.
          * @param signingSecret the value to set
          * @return this builder
          **/
-        public Builder signingSecret(String signingSecret) {
+        public Builder signingSecret(char[] signingSecret) {
             this.signingSecret = signingSecret;
             this.__explicitlySet__.add("signingSecret");
             return this;
         }
+
+        public Builder signingSecret(String signingSecret) {
+            this.signingSecret = signingSecret != null ? signingSecret.toCharArray() : null;
+            this.__explicitlySet__.add("signingSecret");
+            return this;
+        }
+
         /**
          * The Client Secret for the Slack App.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-        private String clientSecret;
+        private char[] clientSecret;
 
         /**
          * The Client Secret for the Slack App.
          * @param clientSecret the value to set
          * @return this builder
          **/
-        public Builder clientSecret(String clientSecret) {
+        public Builder clientSecret(char[] clientSecret) {
             this.clientSecret = clientSecret;
             this.__explicitlySet__.add("clientSecret");
             return this;
         }
+
+        public Builder clientSecret(String clientSecret) {
+            this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+            this.__explicitlySet__.add("clientSecret");
+            return this;
+        }
+
         /**
          * The ID of the Skill or Digital Assistant that the Channel is routed to.
          **/
@@ -261,6 +275,29 @@ public final class CreateSlackChannelDetails extends CreateChannelDetails {
         this.clientId = clientId;
         this.authSuccessUrl = authSuccessUrl;
         this.authErrorUrl = authErrorUrl;
+        this.signingSecret = signingSecret != null ? signingSecret.toCharArray() : null;
+        this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+        this.botId = botId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateSlackChannelDetails(
+            String name,
+            String description,
+            Long sessionExpiryDurationInMilliseconds,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String clientId,
+            String authSuccessUrl,
+            String authErrorUrl,
+            char[] signingSecret,
+            char[] clientSecret,
+            String botId) {
+        super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
+        this.clientId = clientId;
+        this.authSuccessUrl = authSuccessUrl;
+        this.authErrorUrl = authErrorUrl;
         this.signingSecret = signingSecret;
         this.clientSecret = clientSecret;
         this.botId = botId;
@@ -312,13 +349,25 @@ public final class CreateSlackChannelDetails extends CreateChannelDetails {
      * The Signing Secret for the Slack App.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingSecret")
-    private final String signingSecret;
+    private final char[] signingSecret;
+
+    /**
+     * The Signing Secret for the Slack App.
+     * return the value
+     * @Deprecated - Use getSigningSecret__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSigningSecret() {
+        return signingSecret != null ? new String(signingSecret) : null;
+    }
 
     /**
      * The Signing Secret for the Slack App.
      * @return the value
      **/
-    public String getSigningSecret() {
+    @com.fasterxml.jackson.annotation.JsonProperty("signingSecret")
+    public char[] getSigningSecret__AsCharArray() {
         return signingSecret;
     }
 
@@ -326,13 +375,25 @@ public final class CreateSlackChannelDetails extends CreateChannelDetails {
      * The Client Secret for the Slack App.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-    private final String clientSecret;
+    private final char[] clientSecret;
+
+    /**
+     * The Client Secret for the Slack App.
+     * return the value
+     * @Deprecated - Use getClientSecret__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClientSecret() {
+        return clientSecret != null ? new String(clientSecret) : null;
+    }
 
     /**
      * The Client Secret for the Slack App.
      * @return the value
      **/
-    public String getClientSecret() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
+    public char[] getClientSecret__AsCharArray() {
         return clientSecret;
     }
 

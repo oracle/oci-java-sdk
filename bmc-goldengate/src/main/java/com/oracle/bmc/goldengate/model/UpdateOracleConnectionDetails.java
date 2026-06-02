@@ -157,7 +157,7 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given technology.
@@ -167,11 +167,18 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
          * The password Oracle GoldenGate uses to connect the associated system of the given technology.
@@ -281,20 +288,32 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             return this;
         }
         /**
-         * The mode of the database connection session to be established by the data client.
-         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
-         * Connection to a RAC database involves a redirection received from the SCAN listeners
-         * to the database node to connect to. By default the mode would be DIRECT.
+         * Specifies the session mode for the database connection.
+         * Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses.
+         * For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT.
+         * In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN.
+         * It is recommended to configure RAC with FQDN-based SCAN listeners.
+         * <p>
+         * The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
+         * In this case, the default is REDIRECT.
+         * <p>
+         * Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
         private OracleConnection.SessionMode sessionMode;
 
         /**
-         * The mode of the database connection session to be established by the data client.
-         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
-         * Connection to a RAC database involves a redirection received from the SCAN listeners
-         * to the database node to connect to. By default the mode would be DIRECT.
+         * Specifies the session mode for the database connection.
+         * Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses.
+         * For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT.
+         * In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN.
+         * It is recommended to configure RAC with FQDN-based SCAN listeners.
+         * <p>
+         * The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
+         * In this case, the default is REDIRECT.
+         * <p>
+         * Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
          *
          * @param sessionMode the value to set
          * @return this builder
@@ -305,28 +324,18 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             return this;
         }
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-         * field, or make sure the host name is resolvable in the target VCN.
+         * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
          * <p>
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-         * In case the privateIp is provided, the subnetId must also be provided.
-         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+         * For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-         * field, or make sure the host name is resolvable in the target VCN.
+         * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
          * <p>
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-         * In case the privateIp is provided, the subnetId must also be provided.
-         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+         * For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
          *
          * @param privateIp the value to set
          * @return this builder
@@ -504,6 +513,54 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
                 doesUseSecretIds,
                 securityAttributes);
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.connectionString = connectionString;
+        this.authenticationMode = authenticationMode;
+        this.wallet = wallet;
+        this.walletSecretId = walletSecretId;
+        this.sessionMode = sessionMode;
+        this.privateIp = privateIp;
+        this.databaseId = databaseId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateOracleConnectionDetails(
+            String displayName,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            String username,
+            char[] password,
+            String passwordSecretId,
+            String connectionString,
+            OracleConnection.AuthenticationMode authenticationMode,
+            String wallet,
+            String walletSecretId,
+            OracleConnection.SessionMode sessionMode,
+            String privateIp,
+            String databaseId) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                securityAttributes);
+        this.username = username;
         this.password = password;
         this.passwordSecretId = passwordSecretId;
         this.connectionString = connectionString;
@@ -542,7 +599,21 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
@@ -551,7 +622,8 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
      *
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -654,20 +726,32 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
     }
 
     /**
-     * The mode of the database connection session to be established by the data client.
-     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
-     * Connection to a RAC database involves a redirection received from the SCAN listeners
-     * to the database node to connect to. By default the mode would be DIRECT.
+     * Specifies the session mode for the database connection.
+     * Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses.
+     * For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT.
+     * In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN.
+     * It is recommended to configure RAC with FQDN-based SCAN listeners.
+     * <p>
+     * The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
+     * In this case, the default is REDIRECT.
+     * <p>
+     * Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
     private final OracleConnection.SessionMode sessionMode;
 
     /**
-     * The mode of the database connection session to be established by the data client.
-     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
-     * Connection to a RAC database involves a redirection received from the SCAN listeners
-     * to the database node to connect to. By default the mode would be DIRECT.
+     * Specifies the session mode for the database connection.
+     * Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses.
+     * For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT.
+     * In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN.
+     * It is recommended to configure RAC with FQDN-based SCAN listeners.
+     * <p>
+     * The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
+     * In this case, the default is REDIRECT.
+     * <p>
+     * Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
      *
      * @return the value
      **/
@@ -676,28 +760,18 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
     }
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-     * field, or make sure the host name is resolvable in the target VCN.
+     * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      * <p>
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-     * In case the privateIp is provided, the subnetId must also be provided.
-     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-     * field, or make sure the host name is resolvable in the target VCN.
+     * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      * <p>
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-     * In case the privateIp is provided, the subnetId must also be provided.
-     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
      *
      * @return the value
      **/

@@ -30,6 +30,11 @@ public enum OperationType {
     DeleteOciCacheConfigSet("DELETE_OCI_CACHE_CONFIG_SET"),
     ChangeOciCacheConfigSetCompartment("CHANGE_OCI_CACHE_CONFIG_SET_COMPARTMENT"),
     ChangeOciCacheUserCompartment("CHANGE_OCI_CACHE_USER_COMPARTMENT"),
+    CreateOciCacheBackup("CREATE_OCI_CACHE_BACKUP"),
+    UpdateOciCacheBackup("UPDATE_OCI_CACHE_BACKUP"),
+    DeleteOciCacheBackup("DELETE_OCI_CACHE_BACKUP"),
+    MoveOciCacheBackup("MOVE_OCI_CACHE_BACKUP"),
+    ExportOciCacheBackupToOs("EXPORT_OCI_CACHE_BACKUP_TO_OS"),
     PatchOciCacheCluster("PATCH_OCI_CACHE_CLUSTER"),
     ReplaceOciCacheNode("REPLACE_OCI_CACHE_NODE"),
 

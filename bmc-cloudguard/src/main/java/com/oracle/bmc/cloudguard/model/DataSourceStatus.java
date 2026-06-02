@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The enablement status of the data source
+ * The enablement status of the data source with value of ENABLED or DISABLED
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum DataSourceStatus {
