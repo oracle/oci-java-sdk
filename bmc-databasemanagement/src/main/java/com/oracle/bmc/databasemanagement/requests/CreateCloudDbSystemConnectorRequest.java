@@ -16,11 +16,11 @@ public class CreateCloudDbSystemConnectorRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemanagement.model.CreateCloudDbSystemConnectorDetails> {
 
-    /** The details required to create an cloud connector. */
+    /** The details required to create a cloud connector. */
     private com.oracle.bmc.databasemanagement.model.CreateCloudDbSystemConnectorDetails
             createCloudDbSystemConnectorDetails;
 
-    /** The details required to create an cloud connector. */
+    /** The details required to create a cloud connector. */
     public com.oracle.bmc.databasemanagement.model.CreateCloudDbSystemConnectorDetails
             getCreateCloudDbSystemConnectorDetails() {
         return createCloudDbSystemConnectorDetails;
@@ -70,12 +70,12 @@ public class CreateCloudDbSystemConnectorRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The details required to create an cloud connector. */
+        /** The details required to create a cloud connector. */
         private com.oracle.bmc.databasemanagement.model.CreateCloudDbSystemConnectorDetails
                 createCloudDbSystemConnectorDetails = null;
 
         /**
-         * The details required to create an cloud connector.
+         * The details required to create a cloud connector.
          *
          * @param createCloudDbSystemConnectorDetails the value to set
          * @return this builder instance

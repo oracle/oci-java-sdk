@@ -4,7 +4,10 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The version of the Json format of MySQL Explain. */
+/**
+ * The version of the JSON format of the MySQL explain plan. MySQL support within OCI Database
+ * Management service has been deprecated as of January 29, 2026.
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum MySqlJsonExplainVersion implements com.oracle.bmc.http.internal.BmcEnum {
     V1("V1"),

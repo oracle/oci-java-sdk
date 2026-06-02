@@ -65,6 +65,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.AdditionalMatchers.and;
 import static org.mockito.AdditionalMatchers.gt;
@@ -910,6 +911,69 @@ public class UploadManagerTest {
                         eq(ChecksumAlgorithm.Crc32C.getValue()));
     }
 
+    @Test
+    public void upload_singleUpload_closesSourceStream() {
+        UploadConfiguration uploadConfiguration =
+                UploadConfiguration.builder().allowMultipartUploads(false).build();
+        UploadManager uploadManager = new UploadManager(objectStorage, uploadConfiguration);
+
+        TrackCloseInputStream sourceStream = new TrackCloseInputStream(CONTENT.getBytes());
+        UploadRequest request =
+                UploadRequest.builder(sourceStream, CONTENT_LENGTH)
+                        .build(
+                                PutObjectRequest.builder()
+                                        .namespaceName(NAMESPACE_NAME)
+                                        .bucketName(BUCKET_NAME)
+                                        .objectName(OBJECT_NAME)
+                                        .build());
+
+        when(objectStorage.putObject(any(PutObjectRequest.class)))
+                .thenAnswer(
+                        invocationOnMock -> {
+                            InputStream requestBody =
+                                    invocationOnMock
+                                            .<PutObjectRequest>getArgument(0)
+                                            .getPutObjectBody();
+                            byte[] buffer = new byte[READ_BLOCK_SIZE];
+                            while (requestBody.read(buffer) != -1) {}
+                            return PutObjectResponse.builder().build();
+                        });
+
+        uploadManager.upload(request);
+
+        assertTrue(sourceStream.isClosed());
+    }
+
+    @Test
+    public void upload_multipartUpload_closesSourceStream() {
+        UploadConfiguration uploadConfiguration = getMultipartUploadConfiguration();
+        UploadManager uploadManager =
+                new UploadManager(objectStorage, uploadConfiguration) {
+                    @Override
+                    protected MultipartObjectAssembler createAssembler(
+                            PutObjectRequest request,
+                            UploadRequest uploadRequest,
+                            ExecutorService executorService) {
+                        return assembler;
+                    }
+                };
+
+        TrackCloseInputStream sourceStream = new TrackCloseInputStream(CONTENT.getBytes());
+        UploadRequest request =
+                UploadRequest.builder(sourceStream, CONTENT_LENGTH)
+                        .build(
+                                PutObjectRequest.builder()
+                                        .namespaceName(NAMESPACE_NAME)
+                                        .bucketName(BUCKET_NAME)
+                                        .objectName(OBJECT_NAME)
+                                        .build());
+        when(assembler.commit()).thenReturn(CommitMultipartUploadResponse.builder().build());
+
+        uploadManager.upload(request);
+
+        assertTrue(sourceStream.isClosed());
+    }
+
     private static UploadConfiguration getMultipartUploadConfiguration() {
         return UploadConfiguration.builder()
                 .minimumLengthForMultipartUpload(10)
@@ -956,5 +1020,23 @@ public class UploadManagerTest {
         assertEquals("finalEtag", response.getETag());
         assertEquals(CLIENT_REQ_ID, response.getOpcClientRequestId());
         assertEquals(REQ_ID, response.getOpcRequestId());
+    }
+
+    private static final class TrackCloseInputStream extends ByteArrayInputStream {
+        private boolean closed;
+
+        private TrackCloseInputStream(byte[] data) {
+            super(data);
+        }
+
+        @Override
+        public void close() throws IOException {
+            closed = true;
+            super.close();
+        }
+
+        private boolean isClosed() {
+            return closed;
+        }
     }
 }

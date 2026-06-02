@@ -31,6 +31,7 @@ public final class UpdateByolDetails
         "timeTermStart",
         "timeTermEnd",
         "entitlementKey",
+        "siteId",
         "freeformTags",
         "definedTags"
     })
@@ -42,6 +43,7 @@ public final class UpdateByolDetails
             java.util.Date timeTermStart,
             java.util.Date timeTermEnd,
             String entitlementKey,
+            String siteId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -52,6 +54,7 @@ public final class UpdateByolDetails
         this.timeTermStart = timeTermStart;
         this.timeTermEnd = timeTermEnd;
         this.entitlementKey = entitlementKey;
+        this.siteId = siteId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -189,6 +192,21 @@ public final class UpdateByolDetails
             this.__explicitlySet__.add("entitlementKey");
             return this;
         }
+        /** The hyperscaler identifier in Broadcom systems. */
+        @com.fasterxml.jackson.annotation.JsonProperty("siteId")
+        private String siteId;
+
+        /**
+         * The hyperscaler identifier in Broadcom systems.
+         *
+         * @param siteId the value to set
+         * @return this builder
+         */
+        public Builder siteId(String siteId) {
+            this.siteId = siteId;
+            this.__explicitlySet__.add("siteId");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -254,6 +272,7 @@ public final class UpdateByolDetails
                             this.timeTermStart,
                             this.timeTermEnd,
                             this.entitlementKey,
+                            this.siteId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -284,6 +303,9 @@ public final class UpdateByolDetails
             }
             if (model.wasPropertyExplicitlySet("entitlementKey")) {
                 this.entitlementKey(model.getEntitlementKey());
+            }
+            if (model.wasPropertyExplicitlySet("siteId")) {
+                this.siteId(model.getSiteId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -419,6 +441,19 @@ public final class UpdateByolDetails
         return entitlementKey;
     }
 
+    /** The hyperscaler identifier in Broadcom systems. */
+    @com.fasterxml.jackson.annotation.JsonProperty("siteId")
+    private final String siteId;
+
+    /**
+     * The hyperscaler identifier in Broadcom systems.
+     *
+     * @return the value
+     */
+    public String getSiteId() {
+        return siteId;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -487,6 +522,7 @@ public final class UpdateByolDetails
         sb.append(", timeTermStart=").append(String.valueOf(this.timeTermStart));
         sb.append(", timeTermEnd=").append(String.valueOf(this.timeTermEnd));
         sb.append(", entitlementKey=").append(String.valueOf(this.entitlementKey));
+        sb.append(", siteId=").append(String.valueOf(this.siteId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -510,6 +546,7 @@ public final class UpdateByolDetails
                 && java.util.Objects.equals(this.timeTermStart, other.timeTermStart)
                 && java.util.Objects.equals(this.timeTermEnd, other.timeTermEnd)
                 && java.util.Objects.equals(this.entitlementKey, other.entitlementKey)
+                && java.util.Objects.equals(this.siteId, other.siteId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -530,6 +567,7 @@ public final class UpdateByolDetails
         result =
                 (result * PRIME)
                         + (this.entitlementKey == null ? 43 : this.entitlementKey.hashCode());
+        result = (result * PRIME) + (this.siteId == null ? 43 : this.siteId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

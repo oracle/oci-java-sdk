@@ -91,15 +91,11 @@ public final class CreateTicketDetails
             this.__explicitlySet__.add("title");
             return this;
         }
-        /**
-         * <b>Important</b>: On January 27, 2026, the <b>Max Length</b> value will change to 1500.
-         * The description of the support request. Avoid entering confidential information.
-         */
+        /** The description of the support request. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * <b>Important</b>: On January 27, 2026, the <b>Max Length</b> value will change to 1500.
          * The description of the support request. Avoid entering confidential information.
          *
          * @param description the value to set
@@ -241,16 +237,12 @@ public final class CreateTicketDetails
         return title;
     }
 
-    /**
-     * <b>Important</b>: On January 27, 2026, the <b>Max Length</b> value will change to 1500. The
-     * description of the support request. Avoid entering confidential information.
-     */
+    /** The description of the support request. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * <b>Important</b>: On January 27, 2026, the <b>Max Length</b> value will change to 1500. The
-     * description of the support request. Avoid entering confidential information.
+     * The description of the support request. Avoid entering confidential information.
      *
      * @return the value
      */

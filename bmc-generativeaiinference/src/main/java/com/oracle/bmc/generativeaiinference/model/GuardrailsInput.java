@@ -24,7 +24,10 @@ package com.oracle.bmc.generativeaiinference.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GuardrailsTextInput.class,
-            name = "TEXT")
+            name = "TEXT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GuardrailsImageInput.class,
+            name = "IMAGE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -78,6 +81,7 @@ public class GuardrailsInput extends com.oracle.bmc.http.client.internal.Explici
     /** The type of the input data. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Text("TEXT"),
+        Image("IMAGE"),
         ;
 
         private final String value;

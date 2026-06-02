@@ -15,11 +15,11 @@ public class CreateCloudDbSystemRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemanagement.model.CreateCloudDbSystemDetails> {
 
-    /** The details required to create an cloud DB system. */
+    /** The details required to create a cloud DB system. */
     private com.oracle.bmc.databasemanagement.model.CreateCloudDbSystemDetails
             createCloudDbSystemDetails;
 
-    /** The details required to create an cloud DB system. */
+    /** The details required to create a cloud DB system. */
     public com.oracle.bmc.databasemanagement.model.CreateCloudDbSystemDetails
             getCreateCloudDbSystemDetails() {
         return createCloudDbSystemDetails;
@@ -69,12 +69,12 @@ public class CreateCloudDbSystemRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The details required to create an cloud DB system. */
+        /** The details required to create a cloud DB system. */
         private com.oracle.bmc.databasemanagement.model.CreateCloudDbSystemDetails
                 createCloudDbSystemDetails = null;
 
         /**
-         * The details required to create an cloud DB system.
+         * The details required to create a cloud DB system.
          *
          * @param createCloudDbSystemDetails the value to set
          * @return this builder instance

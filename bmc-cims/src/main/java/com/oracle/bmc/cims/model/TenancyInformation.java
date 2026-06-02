@@ -23,30 +23,14 @@ package com.oracle.bmc.cims.model;
 public final class TenancyInformation
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"customerSupportKey", "tenancyId"})
-    public TenancyInformation(String customerSupportKey, String tenancyId) {
+    @java.beans.ConstructorProperties({"tenancyId"})
+    public TenancyInformation(String tenancyId) {
         super();
-        this.customerSupportKey = customerSupportKey;
         this.tenancyId = tenancyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Customer Support Identifier (CSI) number associated with the tenancy. */
-        @com.fasterxml.jackson.annotation.JsonProperty("customerSupportKey")
-        private String customerSupportKey;
-
-        /**
-         * The Customer Support Identifier (CSI) number associated with the tenancy.
-         *
-         * @param customerSupportKey the value to set
-         * @return this builder
-         */
-        public Builder customerSupportKey(String customerSupportKey) {
-            this.customerSupportKey = customerSupportKey;
-            this.__explicitlySet__.add("customerSupportKey");
-            return this;
-        }
         /** The OCID of the tenancy. */
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
@@ -67,8 +51,7 @@ public final class TenancyInformation
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TenancyInformation build() {
-            TenancyInformation model =
-                    new TenancyInformation(this.customerSupportKey, this.tenancyId);
+            TenancyInformation model = new TenancyInformation(this.tenancyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -77,9 +60,6 @@ public final class TenancyInformation
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(TenancyInformation model) {
-            if (model.wasPropertyExplicitlySet("customerSupportKey")) {
-                this.customerSupportKey(model.getCustomerSupportKey());
-            }
             if (model.wasPropertyExplicitlySet("tenancyId")) {
                 this.tenancyId(model.getTenancyId());
             }
@@ -94,19 +74,6 @@ public final class TenancyInformation
 
     public Builder toBuilder() {
         return new Builder().copy(this);
-    }
-
-    /** The Customer Support Identifier (CSI) number associated with the tenancy. */
-    @com.fasterxml.jackson.annotation.JsonProperty("customerSupportKey")
-    private final String customerSupportKey;
-
-    /**
-     * The Customer Support Identifier (CSI) number associated with the tenancy.
-     *
-     * @return the value
-     */
-    public String getCustomerSupportKey() {
-        return customerSupportKey;
     }
 
     /** The OCID of the tenancy. */
@@ -137,8 +104,7 @@ public final class TenancyInformation
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TenancyInformation(");
         sb.append("super=").append(super.toString());
-        sb.append("customerSupportKey=").append(String.valueOf(this.customerSupportKey));
-        sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append("tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(")");
         return sb.toString();
     }
@@ -153,20 +119,13 @@ public final class TenancyInformation
         }
 
         TenancyInformation other = (TenancyInformation) o;
-        return java.util.Objects.equals(this.customerSupportKey, other.customerSupportKey)
-                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
-                && super.equals(other);
+        return java.util.Objects.equals(this.tenancyId, other.tenancyId) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result =
-                (result * PRIME)
-                        + (this.customerSupportKey == null
-                                ? 43
-                                : this.customerSupportKey.hashCode());
         result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

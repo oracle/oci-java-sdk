@@ -111,59 +111,64 @@ public class UploadManager {
         ChecksumAlgorithm enforceAlgoChecksum =
                 uploadConfiguration.getEnforceAdditionalChecksumBeforeUpload();
 
-        if (MultipartUtils.shouldCalculateMd5(uploadConfiguration, putObjectRequest)) {
-            ChecksumUtils.MD5Calculation md5Calculation =
-                    ChecksumUtils.calculateMd5(
-                            putObjectRequest.getPutObjectBody(),
-                            putObjectRequest.getContentLength());
-            putObjectRequest =
-                    PutObjectRequest.builder()
-                            .copy(putObjectRequest)
-                            .contentMD5(md5Calculation.getMd5())
-                            .putObjectBody(
-                                    ProgressTrackingInputStreamFactory.create(
-                                            md5Calculation.getStreamToUse(),
-                                            progressTrackerFactory.getProgressTracker()))
-                            .build();
-        } else if (MultipartUtils.shouldCalculateAdditionalChecksum(
-                uploadConfiguration, putObjectRequest)) {
-            putObjectRequest =
-                    updateRequestWithChecksum(
-                            putObjectRequest, enforceAlgoChecksum, progressTrackerFactory);
-        } else if (MultipartUtils.shouldSetAdditionalChecksum(
-                uploadConfiguration, putObjectRequest)) {
-            putObjectRequest =
-                    PutObjectRequest.builder()
-                            .copy(putObjectRequest)
-                            .opcChecksumAlgorithm(algorithm)
-                            .putObjectBody(
-                                    ProgressTrackingInputStreamFactory.create(
-                                            putObjectRequest.getPutObjectBody(),
-                                            progressTrackerFactory.getProgressTracker()))
-                            .build();
-        } else {
-            putObjectRequest =
-                    PutObjectRequest.builder()
-                            .copy(putObjectRequest)
-                            .putObjectBody(
-                                    ProgressTrackingInputStreamFactory.create(
-                                            putObjectRequest.getPutObjectBody(),
-                                            progressTrackerFactory.getProgressTracker()))
-                            .build();
+        try {
+            if (MultipartUtils.shouldCalculateMd5(uploadConfiguration, putObjectRequest)) {
+                ChecksumUtils.MD5Calculation md5Calculation =
+                        ChecksumUtils.calculateMd5(
+                                putObjectRequest.getPutObjectBody(),
+                                putObjectRequest.getContentLength());
+                putObjectRequest =
+                        PutObjectRequest.builder()
+                                .copy(putObjectRequest)
+                                .contentMD5(md5Calculation.getMd5())
+                                .putObjectBody(
+                                        ProgressTrackingInputStreamFactory.create(
+                                                md5Calculation.getStreamToUse(),
+                                                progressTrackerFactory.getProgressTracker()))
+                                .build();
+            } else if (MultipartUtils.shouldCalculateAdditionalChecksum(
+                    uploadConfiguration, putObjectRequest)) {
+                putObjectRequest =
+                        updateRequestWithChecksum(
+                                putObjectRequest, enforceAlgoChecksum, progressTrackerFactory);
+            } else if (MultipartUtils.shouldSetAdditionalChecksum(
+                    uploadConfiguration, putObjectRequest)) {
+                putObjectRequest =
+                        PutObjectRequest.builder()
+                                .copy(putObjectRequest)
+                                .opcChecksumAlgorithm(algorithm)
+                                .putObjectBody(
+                                        ProgressTrackingInputStreamFactory.create(
+                                                putObjectRequest.getPutObjectBody(),
+                                                progressTrackerFactory.getProgressTracker()))
+                                .build();
+            } else {
+                putObjectRequest =
+                        PutObjectRequest.builder()
+                                .copy(putObjectRequest)
+                                .putObjectBody(
+                                        ProgressTrackingInputStreamFactory.create(
+                                                putObjectRequest.getPutObjectBody(),
+                                                progressTrackerFactory.getProgressTracker()))
+                                .build();
+            }
+
+            /* RetryConfiguration used should either be the one set on this UploadRequest or a default */
+            putObjectRequest.setRetryConfiguration(
+                    getRetryToUse(putObjectRequest.getRetryConfiguration()));
+
+            PutObjectResponse response = objectStorage.putObject(putObjectRequest);
+
+            return buildUploadResponse(
+                    response,
+                    algorithm,
+                    enforceAlgoChecksum,
+                    putObjectRequest.getOpcChecksumAlgorithm(),
+                    false);
+        } finally {
+            // Always close the source stream after upload() returns to avoid leaked file handles.
+            StreamUtils.closeQuietly(uploadRequest.putObjectRequest.getPutObjectBody());
         }
-
-        /* RetryConfiguration used should either be the one set on this UploadRequest or a default */
-        putObjectRequest.setRetryConfiguration(
-                getRetryToUse(putObjectRequest.getRetryConfiguration()));
-
-        PutObjectResponse response = objectStorage.putObject(putObjectRequest);
-
-        return buildUploadResponse(
-                response,
-                algorithm,
-                enforceAlgoChecksum,
-                putObjectRequest.getOpcChecksumAlgorithm(),
-                false);
     }
 
     private UploadResponse multipartUpload(UploadRequest uploadRequest) {

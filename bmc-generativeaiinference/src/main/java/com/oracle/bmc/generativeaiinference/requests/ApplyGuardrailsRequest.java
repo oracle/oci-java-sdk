@@ -15,11 +15,11 @@ public class ApplyGuardrailsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.generativeaiinference.model.ApplyGuardrailsDetails> {
 
-    /** Details for applying guardrails to the input text. */
+    /** Details for applying guardrails to the input content. */
     private com.oracle.bmc.generativeaiinference.model.ApplyGuardrailsDetails
             applyGuardrailsDetails;
 
-    /** Details for applying guardrails to the input text. */
+    /** Details for applying guardrails to the input content. */
     public com.oracle.bmc.generativeaiinference.model.ApplyGuardrailsDetails
             getApplyGuardrailsDetails() {
         return applyGuardrailsDetails;
@@ -69,12 +69,12 @@ public class ApplyGuardrailsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for applying guardrails to the input text. */
+        /** Details for applying guardrails to the input content. */
         private com.oracle.bmc.generativeaiinference.model.ApplyGuardrailsDetails
                 applyGuardrailsDetails = null;
 
         /**
-         * Details for applying guardrails to the input text.
+         * Details for applying guardrails to the input content.
          *
          * @param applyGuardrailsDetails the value to set
          * @return this builder instance

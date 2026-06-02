@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The MySQL error, warning or note raised when a query is run, if any. <br>
+ * The MySQL error, warning, or note raised when a query is run, if any. MySQL support within OCI
+ * Database Management service has been deprecated as of January 29, 2026. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -48,12 +49,12 @@ public final class MySqlQueryMessage
             this.__explicitlySet__.add("level");
             return this;
         }
-        /** The MySQL code of the raised error, warning or note. */
+        /** The MySQL code of the raised error, warning, or note. */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private Integer code;
 
         /**
-         * The MySQL code of the raised error, warning or note.
+         * The MySQL code of the raised error, warning, or note.
          *
          * @param code the value to set
          * @return this builder
@@ -63,12 +64,12 @@ public final class MySqlQueryMessage
             this.__explicitlySet__.add("code");
             return this;
         }
-        /** The MySQL message text of the raised error, warning or note. */
+        /** The MySQL message text of the raised error, warning, or note. */
         @com.fasterxml.jackson.annotation.JsonProperty("messageText")
         private String messageText;
 
         /**
-         * The MySQL message text of the raised error, warning or note.
+         * The MySQL message text of the raised error, warning, or note.
          *
          * @param messageText the value to set
          * @return this builder
@@ -128,12 +129,12 @@ public final class MySqlQueryMessage
         return level;
     }
 
-    /** The MySQL code of the raised error, warning or note. */
+    /** The MySQL code of the raised error, warning, or note. */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final Integer code;
 
     /**
-     * The MySQL code of the raised error, warning or note.
+     * The MySQL code of the raised error, warning, or note.
      *
      * @return the value
      */
@@ -141,12 +142,12 @@ public final class MySqlQueryMessage
         return code;
     }
 
-    /** The MySQL message text of the raised error, warning or note. */
+    /** The MySQL message text of the raised error, warning, or note. */
     @com.fasterxml.jackson.annotation.JsonProperty("messageText")
     private final String messageText;
 
     /**
-     * The MySQL message text of the raised error, warning or note.
+     * The MySQL message text of the raised error, warning, or note.
      *
      * @return the value
      */

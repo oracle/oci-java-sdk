@@ -29,11 +29,11 @@ public class UpdateCloudDbSystemDiscoveryRequest
     public String getCloudDbSystemDiscoveryId() {
         return cloudDbSystemDiscoveryId;
     }
-    /** The details required to update an cloud DB system discovery. */
+    /** The details required to update a cloud DB system discovery. */
     private com.oracle.bmc.databasemanagement.model.UpdateCloudDbSystemDiscoveryDetails
             updateCloudDbSystemDiscoveryDetails;
 
-    /** The details required to update an cloud DB system discovery. */
+    /** The details required to update a cloud DB system discovery. */
     public com.oracle.bmc.databasemanagement.model.UpdateCloudDbSystemDiscoveryDetails
             getUpdateCloudDbSystemDiscoveryDetails() {
         return updateCloudDbSystemDiscoveryDetails;
@@ -99,12 +99,12 @@ public class UpdateCloudDbSystemDiscoveryRequest
             return this;
         }
 
-        /** The details required to update an cloud DB system discovery. */
+        /** The details required to update a cloud DB system discovery. */
         private com.oracle.bmc.databasemanagement.model.UpdateCloudDbSystemDiscoveryDetails
                 updateCloudDbSystemDiscoveryDetails = null;
 
         /**
-         * The details required to update an cloud DB system discovery.
+         * The details required to update a cloud DB system discovery.
          *
          * @param updateCloudDbSystemDiscoveryDetails the value to set
          * @return this builder instance

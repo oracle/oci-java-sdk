@@ -27,7 +27,6 @@ public final class CreateUserDetails
         "compartmentId",
         "firstName",
         "lastName",
-        "csi",
         "phone",
         "timezone",
         "organizationName",
@@ -37,7 +36,6 @@ public final class CreateUserDetails
             String compartmentId,
             String firstName,
             String lastName,
-            String csi,
             String phone,
             String timezone,
             String organizationName,
@@ -46,7 +44,6 @@ public final class CreateUserDetails
         this.compartmentId = compartmentId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.csi = csi;
         this.phone = phone;
         this.timezone = timezone;
         this.organizationName = organizationName;
@@ -98,21 +95,6 @@ public final class CreateUserDetails
         public Builder lastName(String lastName) {
             this.lastName = lastName;
             this.__explicitlySet__.add("lastName");
-            return this;
-        }
-        /** CSI associated with the user. */
-        @com.fasterxml.jackson.annotation.JsonProperty("csi")
-        private String csi;
-
-        /**
-         * CSI associated with the user.
-         *
-         * @param csi the value to set
-         * @return this builder
-         */
-        public Builder csi(String csi) {
-            this.csi = csi;
-            this.__explicitlySet__.add("csi");
             return this;
         }
         /** Contact number of the user. */
@@ -201,7 +183,6 @@ public final class CreateUserDetails
                             this.compartmentId,
                             this.firstName,
                             this.lastName,
-                            this.csi,
                             this.phone,
                             this.timezone,
                             this.organizationName,
@@ -222,9 +203,6 @@ public final class CreateUserDetails
             }
             if (model.wasPropertyExplicitlySet("lastName")) {
                 this.lastName(model.getLastName());
-            }
-            if (model.wasPropertyExplicitlySet("csi")) {
-                this.csi(model.getCsi());
             }
             if (model.wasPropertyExplicitlySet("phone")) {
                 this.phone(model.getPhone());
@@ -288,19 +266,6 @@ public final class CreateUserDetails
      */
     public String getLastName() {
         return lastName;
-    }
-
-    /** CSI associated with the user. */
-    @com.fasterxml.jackson.annotation.JsonProperty("csi")
-    private final String csi;
-
-    /**
-     * CSI associated with the user.
-     *
-     * @return the value
-     */
-    public String getCsi() {
-        return csi;
     }
 
     /** Contact number of the user. */
@@ -387,7 +352,6 @@ public final class CreateUserDetails
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", firstName=").append(String.valueOf(this.firstName));
         sb.append(", lastName=").append(String.valueOf(this.lastName));
-        sb.append(", csi=").append(String.valueOf(this.csi));
         sb.append(", phone=").append(String.valueOf(this.phone));
         sb.append(", timezone=").append(String.valueOf(this.timezone));
         sb.append(", organizationName=").append(String.valueOf(this.organizationName));
@@ -409,7 +373,6 @@ public final class CreateUserDetails
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.firstName, other.firstName)
                 && java.util.Objects.equals(this.lastName, other.lastName)
-                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.phone, other.phone)
                 && java.util.Objects.equals(this.timezone, other.timezone)
                 && java.util.Objects.equals(this.organizationName, other.organizationName)
@@ -426,7 +389,6 @@ public final class CreateUserDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.firstName == null ? 43 : this.firstName.hashCode());
         result = (result * PRIME) + (this.lastName == null ? 43 : this.lastName.hashCode());
-        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.phone == null ? 43 : this.phone.hashCode());
         result = (result * PRIME) + (this.timezone == null ? 43 : this.timezone.hashCode());
         result =

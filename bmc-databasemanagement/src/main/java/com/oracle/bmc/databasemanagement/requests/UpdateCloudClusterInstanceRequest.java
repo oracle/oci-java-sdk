@@ -29,11 +29,11 @@ public class UpdateCloudClusterInstanceRequest
     public String getCloudClusterInstanceId() {
         return cloudClusterInstanceId;
     }
-    /** The details required to update an cloud cluster instance. */
+    /** The details required to update a cloud cluster instance. */
     private com.oracle.bmc.databasemanagement.model.UpdateCloudClusterInstanceDetails
             updateCloudClusterInstanceDetails;
 
-    /** The details required to update an cloud cluster instance. */
+    /** The details required to update a cloud cluster instance. */
     public com.oracle.bmc.databasemanagement.model.UpdateCloudClusterInstanceDetails
             getUpdateCloudClusterInstanceDetails() {
         return updateCloudClusterInstanceDetails;
@@ -99,12 +99,12 @@ public class UpdateCloudClusterInstanceRequest
             return this;
         }
 
-        /** The details required to update an cloud cluster instance. */
+        /** The details required to update a cloud cluster instance. */
         private com.oracle.bmc.databasemanagement.model.UpdateCloudClusterInstanceDetails
                 updateCloudClusterInstanceDetails = null;
 
         /**
-         * The details required to update an cloud cluster instance.
+         * The details required to update a cloud cluster instance.
          *
          * @param updateCloudClusterInstanceDetails the value to set
          * @return this builder instance

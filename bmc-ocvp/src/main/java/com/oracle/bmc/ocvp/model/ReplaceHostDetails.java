@@ -23,10 +23,11 @@ package com.oracle.bmc.ocvp.model;
 public final class ReplaceHostDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"esxiSoftwareVersion"})
-    public ReplaceHostDetails(String esxiSoftwareVersion) {
+    @java.beans.ConstructorProperties({"esxiSoftwareVersion", "vcfByolAllocationId"})
+    public ReplaceHostDetails(String esxiSoftwareVersion, String vcfByolAllocationId) {
         super();
         this.esxiSoftwareVersion = esxiSoftwareVersion;
+        this.vcfByolAllocationId = vcfByolAllocationId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -56,12 +57,32 @@ public final class ReplaceHostDetails
             this.__explicitlySet__.add("esxiSoftwareVersion");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vcfByolAllocationId")
+        private String vcfByolAllocationId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+         *
+         * @param vcfByolAllocationId the value to set
+         * @return this builder
+         */
+        public Builder vcfByolAllocationId(String vcfByolAllocationId) {
+            this.vcfByolAllocationId = vcfByolAllocationId;
+            this.__explicitlySet__.add("vcfByolAllocationId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ReplaceHostDetails build() {
-            ReplaceHostDetails model = new ReplaceHostDetails(this.esxiSoftwareVersion);
+            ReplaceHostDetails model =
+                    new ReplaceHostDetails(this.esxiSoftwareVersion, this.vcfByolAllocationId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -72,6 +93,9 @@ public final class ReplaceHostDetails
         public Builder copy(ReplaceHostDetails model) {
             if (model.wasPropertyExplicitlySet("esxiSoftwareVersion")) {
                 this.esxiSoftwareVersion(model.getEsxiSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("vcfByolAllocationId")) {
+                this.vcfByolAllocationId(model.getVcfByolAllocationId());
             }
             return this;
         }
@@ -109,6 +133,23 @@ public final class ReplaceHostDetails
         return esxiSoftwareVersion;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol
+     * Allocation for VCF (VMware Cloud Foundation) deployment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vcfByolAllocationId")
+    private final String vcfByolAllocationId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol
+     * Allocation for VCF (VMware Cloud Foundation) deployment.
+     *
+     * @return the value
+     */
+    public String getVcfByolAllocationId() {
+        return vcfByolAllocationId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -125,6 +166,7 @@ public final class ReplaceHostDetails
         sb.append("ReplaceHostDetails(");
         sb.append("super=").append(super.toString());
         sb.append("esxiSoftwareVersion=").append(String.valueOf(this.esxiSoftwareVersion));
+        sb.append(", vcfByolAllocationId=").append(String.valueOf(this.vcfByolAllocationId));
         sb.append(")");
         return sb.toString();
     }
@@ -140,6 +182,7 @@ public final class ReplaceHostDetails
 
         ReplaceHostDetails other = (ReplaceHostDetails) o;
         return java.util.Objects.equals(this.esxiSoftwareVersion, other.esxiSoftwareVersion)
+                && java.util.Objects.equals(this.vcfByolAllocationId, other.vcfByolAllocationId)
                 && super.equals(other);
     }
 
@@ -152,6 +195,11 @@ public final class ReplaceHostDetails
                         + (this.esxiSoftwareVersion == null
                                 ? 43
                                 : this.esxiSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vcfByolAllocationId == null
+                                ? 43
+                                : this.vcfByolAllocationId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

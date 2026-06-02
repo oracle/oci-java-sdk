@@ -17,6 +17,8 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     DeleteDbSystem("DELETE_DB_SYSTEM"),
     UpdateExternalDbSystemConnector("UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR"),
     ChangeExternalDbSystemCompartment("CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT"),
+    UpdateCloudDbSystemConnector("UPDATE_CLOUD_DB_SYSTEM_CONNECTOR"),
+    ChangeCloudDbSystemCompartment("CHANGE_CLOUD_DB_SYSTEM_COMPARTMENT"),
     DisableExadataInfrasturcture("DISABLE_EXADATA_INFRASTURCTURE"),
     EnableExadataInfrastructure("ENABLE_EXADATA_INFRASTRUCTURE"),
     DeleteExadataInfrastructure("DELETE_EXADATA_INFRASTRUCTURE"),

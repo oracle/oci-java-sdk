@@ -148,12 +148,12 @@ public final class DiscoveredCloudAsm extends DiscoveredCloudDbSystemComponent {
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** The list of asm instances for the cloud Asm. */
+        /** The list of ASM instances for the cloud Asm. */
         @com.fasterxml.jackson.annotation.JsonProperty("asmInstances")
         private java.util.List<DiscoveredCloudAsmInstance> asmInstances;
 
         /**
-         * The list of asm instances for the cloud Asm.
+         * The list of ASM instances for the cloud Asm.
          *
          * @param asmInstances the value to set
          * @return this builder
@@ -326,12 +326,12 @@ public final class DiscoveredCloudAsm extends DiscoveredCloudDbSystemComponent {
         return version;
     }
 
-    /** The list of asm instances for the cloud Asm. */
+    /** The list of ASM instances for the cloud Asm. */
     @com.fasterxml.jackson.annotation.JsonProperty("asmInstances")
     private final java.util.List<DiscoveredCloudAsmInstance> asmInstances;
 
     /**
-     * The list of asm instances for the cloud Asm.
+     * The list of ASM instances for the cloud Asm.
      *
      * @return the value
      */

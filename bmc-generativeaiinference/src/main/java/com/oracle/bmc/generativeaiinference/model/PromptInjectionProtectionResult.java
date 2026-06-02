@@ -23,10 +23,12 @@ package com.oracle.bmc.generativeaiinference.model;
 public final class PromptInjectionProtectionResult
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"score"})
-    public PromptInjectionProtectionResult(Double score) {
+    @java.beans.ConstructorProperties({"score", "flaggedModalities"})
+    public PromptInjectionProtectionResult(
+            Double score, java.util.List<FlaggedModalities> flaggedModalities) {
         super();
         this.score = score;
+        this.flaggedModalities = flaggedModalities;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,12 +48,32 @@ public final class PromptInjectionProtectionResult
             this.__explicitlySet__.add("score");
             return this;
         }
+        /**
+         * The input modalities flagged by the prompt injection result. Present only when the
+         * request is processed using a non-empty {@code multimodalInput}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("flaggedModalities")
+        private java.util.List<FlaggedModalities> flaggedModalities;
+
+        /**
+         * The input modalities flagged by the prompt injection result. Present only when the
+         * request is processed using a non-empty {@code multimodalInput}.
+         *
+         * @param flaggedModalities the value to set
+         * @return this builder
+         */
+        public Builder flaggedModalities(java.util.List<FlaggedModalities> flaggedModalities) {
+            this.flaggedModalities = flaggedModalities;
+            this.__explicitlySet__.add("flaggedModalities");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PromptInjectionProtectionResult build() {
-            PromptInjectionProtectionResult model = new PromptInjectionProtectionResult(this.score);
+            PromptInjectionProtectionResult model =
+                    new PromptInjectionProtectionResult(this.score, this.flaggedModalities);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +84,9 @@ public final class PromptInjectionProtectionResult
         public Builder copy(PromptInjectionProtectionResult model) {
             if (model.wasPropertyExplicitlySet("score")) {
                 this.score(model.getScore());
+            }
+            if (model.wasPropertyExplicitlySet("flaggedModalities")) {
+                this.flaggedModalities(model.getFlaggedModalities());
             }
             return this;
         }
@@ -89,6 +114,69 @@ public final class PromptInjectionProtectionResult
         return score;
     }
 
+    /** */
+    public enum FlaggedModalities implements com.oracle.bmc.http.internal.BmcEnum {
+        Text("TEXT"),
+        Image("IMAGE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(FlaggedModalities.class);
+
+        private final String value;
+        private static java.util.Map<String, FlaggedModalities> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (FlaggedModalities v : FlaggedModalities.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        FlaggedModalities(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static FlaggedModalities create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'FlaggedModalities', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The input modalities flagged by the prompt injection result. Present only when the request is
+     * processed using a non-empty {@code multimodalInput}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("flaggedModalities")
+    private final java.util.List<FlaggedModalities> flaggedModalities;
+
+    /**
+     * The input modalities flagged by the prompt injection result. Present only when the request is
+     * processed using a non-empty {@code multimodalInput}.
+     *
+     * @return the value
+     */
+    public java.util.List<FlaggedModalities> getFlaggedModalities() {
+        return flaggedModalities;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -105,6 +193,7 @@ public final class PromptInjectionProtectionResult
         sb.append("PromptInjectionProtectionResult(");
         sb.append("super=").append(super.toString());
         sb.append("score=").append(String.valueOf(this.score));
+        sb.append(", flaggedModalities=").append(String.valueOf(this.flaggedModalities));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +208,9 @@ public final class PromptInjectionProtectionResult
         }
 
         PromptInjectionProtectionResult other = (PromptInjectionProtectionResult) o;
-        return java.util.Objects.equals(this.score, other.score) && super.equals(other);
+        return java.util.Objects.equals(this.score, other.score)
+                && java.util.Objects.equals(this.flaggedModalities, other.flaggedModalities)
+                && super.equals(other);
     }
 
     @Override
@@ -127,6 +218,9 @@ public final class PromptInjectionProtectionResult
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.score == null ? 43 : this.score.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.flaggedModalities == null ? 43 : this.flaggedModalities.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

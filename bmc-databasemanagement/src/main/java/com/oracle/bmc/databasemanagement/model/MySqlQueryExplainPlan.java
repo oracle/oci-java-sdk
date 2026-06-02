@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The explain plan for a given MySQL query. <br>
+ * The explain plan for a given MySQL query. MySQL support within OCI Database Management service
+ * has been deprecated as of January 29, 2026. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +33,12 @@ public final class MySqlQueryExplainPlan
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The json format of the explain plan. */
+        /** The JSON format of the explain plan. */
         @com.fasterxml.jackson.annotation.JsonProperty("jsonExplain")
         private String jsonExplain;
 
         /**
-         * The json format of the explain plan.
+         * The JSON format of the explain plan.
          *
          * @param jsonExplain the value to set
          * @return this builder
@@ -47,12 +48,12 @@ public final class MySqlQueryExplainPlan
             this.__explicitlySet__.add("jsonExplain");
             return this;
         }
-        /** The version of the Json format of MySQL Explain. */
+        /** The version of the JSON format of the MySQL explain plan. */
         @com.fasterxml.jackson.annotation.JsonProperty("jsonExplainVersion")
         private MySqlJsonExplainVersion jsonExplainVersion;
 
         /**
-         * The version of the Json format of MySQL Explain.
+         * The version of the JSON format of the MySQL explain plan.
          *
          * @param jsonExplainVersion the value to set
          * @return this builder
@@ -96,12 +97,12 @@ public final class MySqlQueryExplainPlan
         return new Builder().copy(this);
     }
 
-    /** The json format of the explain plan. */
+    /** The JSON format of the explain plan. */
     @com.fasterxml.jackson.annotation.JsonProperty("jsonExplain")
     private final String jsonExplain;
 
     /**
-     * The json format of the explain plan.
+     * The JSON format of the explain plan.
      *
      * @return the value
      */
@@ -109,12 +110,12 @@ public final class MySqlQueryExplainPlan
         return jsonExplain;
     }
 
-    /** The version of the Json format of MySQL Explain. */
+    /** The version of the JSON format of the MySQL explain plan. */
     @com.fasterxml.jackson.annotation.JsonProperty("jsonExplainVersion")
     private final MySqlJsonExplainVersion jsonExplainVersion;
 
     /**
-     * The version of the Json format of MySQL Explain.
+     * The version of the JSON format of the MySQL explain plan.
      *
      * @return the value
      */

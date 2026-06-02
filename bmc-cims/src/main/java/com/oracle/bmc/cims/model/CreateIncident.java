@@ -25,7 +25,6 @@ public final class CreateIncident
     @java.beans.ConstructorProperties({
         "compartmentId",
         "ticket",
-        "csi",
         "userGroupId",
         "problemType",
         "contacts",
@@ -34,7 +33,6 @@ public final class CreateIncident
     public CreateIncident(
             String compartmentId,
             CreateTicketDetails ticket,
-            String csi,
             String userGroupId,
             ProblemType problemType,
             java.util.List<Contact> contacts,
@@ -42,7 +40,6 @@ public final class CreateIncident
         super();
         this.compartmentId = compartmentId;
         this.ticket = ticket;
-        this.csi = csi;
         this.userGroupId = userGroupId;
         this.problemType = problemType;
         this.contacts = contacts;
@@ -73,25 +70,6 @@ public final class CreateIncident
         public Builder ticket(CreateTicketDetails ticket) {
             this.ticket = ticket;
             this.__explicitlySet__.add("ticket");
-            return this;
-        }
-        /**
-         * Deprecated. The Customer Support Identifier (CSI) number associated with the support
-         * account. The CSI is optional for all support request types.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("csi")
-        private String csi;
-
-        /**
-         * Deprecated. The Customer Support Identifier (CSI) number associated with the support
-         * account. The CSI is optional for all support request types.
-         *
-         * @param csi the value to set
-         * @return this builder
-         */
-        public Builder csi(String csi) {
-            this.csi = csi;
-            this.__explicitlySet__.add("csi");
             return this;
         }
         /**
@@ -193,7 +171,6 @@ public final class CreateIncident
                     new CreateIncident(
                             this.compartmentId,
                             this.ticket,
-                            this.csi,
                             this.userGroupId,
                             this.problemType,
                             this.contacts,
@@ -211,9 +188,6 @@ public final class CreateIncident
             }
             if (model.wasPropertyExplicitlySet("ticket")) {
                 this.ticket(model.getTicket());
-            }
-            if (model.wasPropertyExplicitlySet("csi")) {
-                this.csi(model.getCsi());
             }
             if (model.wasPropertyExplicitlySet("userGroupId")) {
                 this.userGroupId(model.getUserGroupId());
@@ -258,23 +232,6 @@ public final class CreateIncident
 
     public CreateTicketDetails getTicket() {
         return ticket;
-    }
-
-    /**
-     * Deprecated. The Customer Support Identifier (CSI) number associated with the support account.
-     * The CSI is optional for all support request types.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("csi")
-    private final String csi;
-
-    /**
-     * Deprecated. The Customer Support Identifier (CSI) number associated with the support account.
-     * The CSI is optional for all support request types.
-     *
-     * @return the value
-     */
-    public String getCsi() {
-        return csi;
     }
 
     /**
@@ -374,7 +331,6 @@ public final class CreateIncident
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", ticket=").append(String.valueOf(this.ticket));
-        sb.append(", csi=").append(String.valueOf(this.csi));
         sb.append(", userGroupId=").append(String.valueOf(this.userGroupId));
         sb.append(", problemType=").append(String.valueOf(this.problemType));
         sb.append(", contacts=").append(String.valueOf(this.contacts));
@@ -395,7 +351,6 @@ public final class CreateIncident
         CreateIncident other = (CreateIncident) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.ticket, other.ticket)
-                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.userGroupId, other.userGroupId)
                 && java.util.Objects.equals(this.problemType, other.problemType)
                 && java.util.Objects.equals(this.contacts, other.contacts)
@@ -411,7 +366,6 @@ public final class CreateIncident
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.ticket == null ? 43 : this.ticket.hashCode());
-        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.userGroupId == null ? 43 : this.userGroupId.hashCode());
         result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
         result = (result * PRIME) + (this.contacts == null ? 43 : this.contacts.hashCode());

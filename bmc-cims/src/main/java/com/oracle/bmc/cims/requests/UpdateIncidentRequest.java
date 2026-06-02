@@ -36,19 +36,6 @@ public class UpdateIncidentRequest
         return compartmentId;
     }
     /**
-     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * optional for all support request types.
-     */
-    private String csi;
-
-    /**
-     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * optional for all support request types.
-     */
-    public String getCsi() {
-        return csi;
-    }
-    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      */
@@ -192,24 +179,6 @@ public class UpdateIncidentRequest
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
-            return this;
-        }
-
-        /**
-         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is optional for all support request types.
-         */
-        private String csi = null;
-
-        /**
-         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is optional for all support request types.
-         *
-         * @param csi the value to set
-         * @return this builder instance
-         */
-        public Builder csi(String csi) {
-            this.csi = csi;
             return this;
         }
 
@@ -380,7 +349,6 @@ public class UpdateIncidentRequest
             incidentKey(o.getIncidentKey());
             updateIncidentDetails(o.getUpdateIncidentDetails());
             compartmentId(o.getCompartmentId());
-            csi(o.getCsi());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
             ocid(o.getOcid());
@@ -438,7 +406,6 @@ public class UpdateIncidentRequest
             request.incidentKey = incidentKey;
             request.updateIncidentDetails = updateIncidentDetails;
             request.compartmentId = compartmentId;
-            request.csi = csi;
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             request.ocid = ocid;
@@ -448,7 +415,7 @@ public class UpdateIncidentRequest
             request.idtoken = idtoken;
             request.domainid = domainid;
             return request;
-            // new UpdateIncidentRequest(incidentKey, updateIncidentDetails, compartmentId, csi,
+            // new UpdateIncidentRequest(incidentKey, updateIncidentDetails, compartmentId,
             // opcRequestId, ifMatch, ocid, homeregion, bearertokentype, bearertoken, idtoken,
             // domainid);
         }
@@ -464,7 +431,6 @@ public class UpdateIncidentRequest
                 .incidentKey(incidentKey)
                 .updateIncidentDetails(updateIncidentDetails)
                 .compartmentId(compartmentId)
-                .csi(csi)
                 .opcRequestId(opcRequestId)
                 .ifMatch(ifMatch)
                 .ocid(ocid)
@@ -492,7 +458,6 @@ public class UpdateIncidentRequest
         sb.append(",incidentKey=").append(String.valueOf(this.incidentKey));
         sb.append(",updateIncidentDetails=").append(String.valueOf(this.updateIncidentDetails));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(",csi=").append(String.valueOf(this.csi));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",ocid=").append(String.valueOf(this.ocid));
@@ -519,7 +484,6 @@ public class UpdateIncidentRequest
                 && java.util.Objects.equals(this.incidentKey, other.incidentKey)
                 && java.util.Objects.equals(this.updateIncidentDetails, other.updateIncidentDetails)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.ocid, other.ocid)
@@ -543,7 +507,6 @@ public class UpdateIncidentRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
