@@ -21,6 +21,7 @@ public enum AssessorCheckStates {
     Started("STARTED"),
     Completed("COMPLETED"),
     Failed("FAILED"),
+    Skipped("SKIPPED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

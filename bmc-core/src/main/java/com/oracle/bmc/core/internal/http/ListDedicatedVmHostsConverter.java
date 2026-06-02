@@ -120,6 +120,14 @@ public class ListDedicatedVmHostsConverter {
                                     request.getRemainingOcpusGreaterThanOrEqualTo()));
         }
 
+        if (request.getRemainingLocalVolumeInGBsGreaterThanOrEqualTo() != null) {
+            target =
+                    target.queryParam(
+                            "remainingLocalVolumeInGBsGreaterThanOrEqualTo",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getRemainingLocalVolumeInGBsGreaterThanOrEqualTo()));
+        }
+
         if (request.getIsMemoryEncryptionEnabled() != null) {
             target =
                     target.queryParam(

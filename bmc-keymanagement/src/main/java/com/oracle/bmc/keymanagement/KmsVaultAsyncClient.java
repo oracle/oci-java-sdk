@@ -1125,6 +1125,62 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateRegisteredVaultForMtlsResponse>
+            updateRegisteredVaultForMtls(
+                    UpdateRegisteredVaultForMtlsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateRegisteredVaultForMtlsRequest,
+                                    UpdateRegisteredVaultForMtlsResponse>
+                            handler) {
+        LOG.trace("Called async updateRegisteredVaultForMtls");
+        final UpdateRegisteredVaultForMtlsRequest interceptedRequest =
+                UpdateRegisteredVaultForMtlsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRegisteredVaultForMtlsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsVault",
+                        "UpdateRegisteredVaultForMtls",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/UpdateRegisteredVaultForMtlsDetails/UpdateRegisteredVaultForMtls");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateRegisteredVaultForMtlsResponse>
+                transformer =
+                        UpdateRegisteredVaultForMtlsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateRegisteredVaultForMtlsRequest, UpdateRegisteredVaultForMtlsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateRegisteredVaultForMtlsRequest,
+                                UpdateRegisteredVaultForMtlsResponse>,
+                        java.util.concurrent.Future<UpdateRegisteredVaultForMtlsResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRegisteredVaultForMtlsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateRegisteredVaultForMtlsRequest, UpdateRegisteredVaultForMtlsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateVaultResponse> updateVault(
             UpdateVaultRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateVaultRequest, UpdateVaultResponse>

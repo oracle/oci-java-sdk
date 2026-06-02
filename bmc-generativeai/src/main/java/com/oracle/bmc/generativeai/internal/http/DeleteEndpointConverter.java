@@ -31,8 +31,14 @@ public class DeleteEndpointConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getEndpointId(), "endpointId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("endpointId", request.getEndpointId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20231130")
                         .path("endpoints")
                         .path(

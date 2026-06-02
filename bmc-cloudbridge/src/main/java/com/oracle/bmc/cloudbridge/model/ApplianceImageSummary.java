@@ -34,9 +34,7 @@ public final class ApplianceImageSummary
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "downloadUrl",
-        "freeformTags",
-        "definedTags"
+        "downloadUrl"
     })
     public ApplianceImageSummary(
             String id,
@@ -50,9 +48,7 @@ public final class ApplianceImageSummary
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
-            String downloadUrl,
-            java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            String downloadUrl) {
         super();
         this.id = id;
         this.fileName = fileName;
@@ -66,8 +62,6 @@ public final class ApplianceImageSummary
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.downloadUrl = downloadUrl;
-        this.freeformTags = freeformTags;
-        this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -264,51 +258,6 @@ public final class ApplianceImageSummary
             this.__explicitlySet__.add("downloadUrl");
             return this;
         }
-        /**
-         * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
-
-        /**
-         * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
-         *
-         * @param freeformTags the value to set
-         * @return this builder
-         **/
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
-            return this;
-        }
-        /**
-         * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        /**
-         * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         * @param definedTags the value to set
-         * @return this builder
-         **/
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -327,9 +276,7 @@ public final class ApplianceImageSummary
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
-                            this.downloadUrl,
-                            this.freeformTags,
-                            this.definedTags);
+                            this.downloadUrl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -373,12 +320,6 @@ public final class ApplianceImageSummary
             }
             if (model.wasPropertyExplicitlySet("downloadUrl")) {
                 this.downloadUrl(model.getDownloadUrl());
-            }
-            if (model.wasPropertyExplicitlySet("freeformTags")) {
-                this.freeformTags(model.getFreeformTags());
-            }
-            if (model.wasPropertyExplicitlySet("definedTags")) {
-                this.definedTags(model.getDefinedTags());
             }
             return this;
         }
@@ -615,46 +556,6 @@ public final class ApplianceImageSummary
         return downloadUrl;
     }
 
-    /**
-     * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    private final java.util.Map<String, String> freeformTags;
-
-    /**
-     * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     * @return the value
-     **/
-    public java.util.Map<String, String> getFreeformTags() {
-        return freeformTags;
-    }
-
-    /**
-     * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-    /**
-     * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     * @return the value
-     **/
-    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
-        return definedTags;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -681,8 +582,6 @@ public final class ApplianceImageSummary
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", downloadUrl=").append(String.valueOf(this.downloadUrl));
-        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
-        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -709,8 +608,6 @@ public final class ApplianceImageSummary
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.downloadUrl, other.downloadUrl)
-                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -732,8 +629,6 @@ public final class ApplianceImageSummary
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.downloadUrl == null ? 43 : this.downloadUrl.hashCode());
-        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
-        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

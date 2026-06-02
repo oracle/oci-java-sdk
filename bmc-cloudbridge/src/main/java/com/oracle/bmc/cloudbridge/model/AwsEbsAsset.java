@@ -143,6 +143,15 @@ public final class AwsEbsAsset extends Asset {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private EnvironmentType environmentType;
+
+        public Builder environmentType(EnvironmentType environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("awsEbs")
         private AwsEbsProperties awsEbs;
 
@@ -171,6 +180,7 @@ public final class AwsEbsAsset extends Asset {
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.environmentType,
                             this.awsEbs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -219,6 +229,9 @@ public final class AwsEbsAsset extends Asset {
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
+            }
             if (model.wasPropertyExplicitlySet("awsEbs")) {
                 this.awsEbs(model.getAwsEbs());
             }
@@ -252,6 +265,7 @@ public final class AwsEbsAsset extends Asset {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            EnvironmentType environmentType,
             AwsEbsProperties awsEbs) {
         super(
                 displayName,
@@ -266,7 +280,8 @@ public final class AwsEbsAsset extends Asset {
                 lifecycleState,
                 freeformTags,
                 definedTags,
-                systemTags);
+                systemTags,
+                environmentType);
         this.awsEbs = awsEbs;
     }
 

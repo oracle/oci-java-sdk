@@ -26,6 +26,7 @@ public final class UpdateCloudExadataInfrastructureDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "maintenanceWindow",
+        "maintenanceVersionPreferences",
         "computeCount",
         "storageCount",
         "freeformTags",
@@ -35,6 +36,7 @@ public final class UpdateCloudExadataInfrastructureDetails
     public UpdateCloudExadataInfrastructureDetails(
             String displayName,
             MaintenanceWindow maintenanceWindow,
+            MaintenanceVersionPreferenceDetails maintenanceVersionPreferences,
             Integer computeCount,
             Integer storageCount,
             java.util.Map<String, String> freeformTags,
@@ -43,6 +45,7 @@ public final class UpdateCloudExadataInfrastructureDetails
         super();
         this.displayName = displayName;
         this.maintenanceWindow = maintenanceWindow;
+        this.maintenanceVersionPreferences = maintenanceVersionPreferences;
         this.computeCount = computeCount;
         this.storageCount = storageCount;
         this.freeformTags = freeformTags;
@@ -77,6 +80,16 @@ public final class UpdateCloudExadataInfrastructureDetails
         public Builder maintenanceWindow(MaintenanceWindow maintenanceWindow) {
             this.maintenanceWindow = maintenanceWindow;
             this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceVersionPreferences")
+        private MaintenanceVersionPreferenceDetails maintenanceVersionPreferences;
+
+        public Builder maintenanceVersionPreferences(
+                MaintenanceVersionPreferenceDetails maintenanceVersionPreferences) {
+            this.maintenanceVersionPreferences = maintenanceVersionPreferences;
+            this.__explicitlySet__.add("maintenanceVersionPreferences");
             return this;
         }
         /**
@@ -181,6 +194,7 @@ public final class UpdateCloudExadataInfrastructureDetails
                     new UpdateCloudExadataInfrastructureDetails(
                             this.displayName,
                             this.maintenanceWindow,
+                            this.maintenanceVersionPreferences,
                             this.computeCount,
                             this.storageCount,
                             this.freeformTags,
@@ -199,6 +213,9 @@ public final class UpdateCloudExadataInfrastructureDetails
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
                 this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceVersionPreferences")) {
+                this.maintenanceVersionPreferences(model.getMaintenanceVersionPreferences());
             }
             if (model.wasPropertyExplicitlySet("computeCount")) {
                 this.computeCount(model.getComputeCount());
@@ -251,6 +268,13 @@ public final class UpdateCloudExadataInfrastructureDetails
 
     public MaintenanceWindow getMaintenanceWindow() {
         return maintenanceWindow;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceVersionPreferences")
+    private final MaintenanceVersionPreferenceDetails maintenanceVersionPreferences;
+
+    public MaintenanceVersionPreferenceDetails getMaintenanceVersionPreferences() {
+        return maintenanceVersionPreferences;
     }
 
     /**
@@ -351,6 +375,8 @@ public final class UpdateCloudExadataInfrastructureDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", maintenanceVersionPreferences=")
+                .append(String.valueOf(this.maintenanceVersionPreferences));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", storageCount=").append(String.valueOf(this.storageCount));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -372,6 +398,8 @@ public final class UpdateCloudExadataInfrastructureDetails
         UpdateCloudExadataInfrastructureDetails other = (UpdateCloudExadataInfrastructureDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(
+                        this.maintenanceVersionPreferences, other.maintenanceVersionPreferences)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.storageCount, other.storageCount)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -388,6 +416,11 @@ public final class UpdateCloudExadataInfrastructureDetails
         result =
                 (result * PRIME)
                         + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceVersionPreferences == null
+                                ? 43
+                                : this.maintenanceVersionPreferences.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + (this.storageCount == null ? 43 : this.storageCount.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

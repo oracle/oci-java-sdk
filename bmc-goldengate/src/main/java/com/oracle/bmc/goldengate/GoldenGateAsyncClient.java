@@ -1244,6 +1244,56 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ClonePipelineResponse> clonePipeline(
+            ClonePipelineRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ClonePipelineRequest, ClonePipelineResponse>
+                    handler) {
+        LOG.trace("Called async clonePipeline");
+        final ClonePipelineRequest interceptedRequest =
+                ClonePipelineConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ClonePipelineConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ClonePipeline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/ClonePipeline");
+        final java.util.function.Function<javax.ws.rs.core.Response, ClonePipelineResponse>
+                transformer =
+                        ClonePipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ClonePipelineRequest, ClonePipelineResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ClonePipelineRequest, ClonePipelineResponse>,
+                        java.util.concurrent.Future<ClonePipelineResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getClonePipelineDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ClonePipelineRequest, ClonePipelineResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CollectDeploymentDiagnosticResponse>
             collectDeploymentDiagnostic(
                     CollectDeploymentDiagnosticRequest request,
@@ -2221,6 +2271,67 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateDisasterRecoveryPrecheckReportResponse>
+            generateDisasterRecoveryPrecheckReport(
+                    GenerateDisasterRecoveryPrecheckReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateDisasterRecoveryPrecheckReportRequest,
+                                    GenerateDisasterRecoveryPrecheckReportResponse>
+                            handler) {
+        LOG.trace("Called async generateDisasterRecoveryPrecheckReport");
+        final GenerateDisasterRecoveryPrecheckReportRequest interceptedRequest =
+                GenerateDisasterRecoveryPrecheckReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateDisasterRecoveryPrecheckReportConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "GenerateDisasterRecoveryPrecheckReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GenerateDisasterRecoveryPrecheckReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GenerateDisasterRecoveryPrecheckReportResponse>
+                transformer =
+                        GenerateDisasterRecoveryPrecheckReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateDisasterRecoveryPrecheckReportRequest,
+                        GenerateDisasterRecoveryPrecheckReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateDisasterRecoveryPrecheckReportRequest,
+                                GenerateDisasterRecoveryPrecheckReportResponse>,
+                        java.util.concurrent.Future<GenerateDisasterRecoveryPrecheckReportResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getGenerateDisasterRecoveryPrecheckReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateDisasterRecoveryPrecheckReportRequest,
+                    GenerateDisasterRecoveryPrecheckReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GenerateLibraryUrlResponse> generateLibraryUrl(
             GenerateLibraryUrlRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2583,6 +2694,59 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetDeploymentUpgradeRequest, GetDeploymentUpgradeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDisasterRecoveryPrecheckReportResponse>
+            getDisasterRecoveryPrecheckReport(
+                    GetDisasterRecoveryPrecheckReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDisasterRecoveryPrecheckReportRequest,
+                                    GetDisasterRecoveryPrecheckReportResponse>
+                            handler) {
+        LOG.trace("Called async getDisasterRecoveryPrecheckReport");
+        final GetDisasterRecoveryPrecheckReportRequest interceptedRequest =
+                GetDisasterRecoveryPrecheckReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDisasterRecoveryPrecheckReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "GetDisasterRecoveryPrecheckReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GetDisasterRecoveryPrecheckReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDisasterRecoveryPrecheckReportResponse>
+                transformer =
+                        GetDisasterRecoveryPrecheckReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDisasterRecoveryPrecheckReportRequest,
+                        GetDisasterRecoveryPrecheckReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDisasterRecoveryPrecheckReportRequest,
+                                GetDisasterRecoveryPrecheckReportResponse>,
+                        java.util.concurrent.Future<GetDisasterRecoveryPrecheckReportResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDisasterRecoveryPrecheckReportRequest,
+                    GetDisasterRecoveryPrecheckReportResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3862,6 +4026,57 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<MigrateConnectionResponse> migrateConnection(
+            MigrateConnectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            MigrateConnectionRequest, MigrateConnectionResponse>
+                    handler) {
+        LOG.trace("Called async migrateConnection");
+        final MigrateConnectionRequest interceptedRequest =
+                MigrateConnectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MigrateConnectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "MigrateConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/MigrateConnection");
+        final java.util.function.Function<javax.ws.rs.core.Response, MigrateConnectionResponse>
+                transformer =
+                        MigrateConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<MigrateConnectionRequest, MigrateConnectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                MigrateConnectionRequest, MigrateConnectionResponse>,
+                        java.util.concurrent.Future<MigrateConnectionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getMigrateConnectionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    MigrateConnectionRequest, MigrateConnectionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

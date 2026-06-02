@@ -25,13 +25,13 @@ public class UpdateCloudClusterRequest
         return cloudClusterId;
     }
     /**
-     * The details required to update an cloud cluster.
+     * The details required to update a cloud cluster.
      */
     private com.oracle.bmc.databasemanagement.model.UpdateCloudClusterDetails
             updateCloudClusterDetails;
 
     /**
-     * The details required to update an cloud cluster.
+     * The details required to update a cloud cluster.
      */
     public com.oracle.bmc.databasemanagement.model.UpdateCloudClusterDetails
             getUpdateCloudClusterDetails() {
@@ -104,13 +104,13 @@ public class UpdateCloudClusterRequest
         }
 
         /**
-         * The details required to update an cloud cluster.
+         * The details required to update a cloud cluster.
          */
         private com.oracle.bmc.databasemanagement.model.UpdateCloudClusterDetails
                 updateCloudClusterDetails = null;
 
         /**
-         * The details required to update an cloud cluster.
+         * The details required to update a cloud cluster.
          * @param updateCloudClusterDetails the value to set
          * @return this builder instance
          */

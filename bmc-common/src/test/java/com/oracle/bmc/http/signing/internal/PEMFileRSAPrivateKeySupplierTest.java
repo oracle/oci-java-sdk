@@ -72,6 +72,40 @@ public class PEMFileRSAPrivateKeySupplierTest {
         assertEquals(decryptedKey.get(), encryptedKey.get());
     }
 
+    /** Test PKCS#1 encrypted parsing with AES-256-CBC legacy OpenSSL PEM */
+    @Test
+    public void testSupplyKeyPKCS1Aes256() throws IOException {
+
+        String pkcs1EncryptedPrivateKey =
+                StreamUtils.toString(
+                        new FileInputStream(
+                                "src/test/resources/pkcs1_encrypted_private_key_aes256.pem"),
+                        StandardCharsets.UTF_8);
+
+        InputStream pkcs1EncryptedPrivateKeyStream =
+                new ByteArrayInputStream(pkcs1EncryptedPrivateKey.getBytes(StandardCharsets.UTF_8));
+
+        String pkcs1DecryptedPrivateKey =
+                StreamUtils.toString(
+                        new FileInputStream("src/test/resources/pkcs1_decrypted_private_key.pem"),
+                        StandardCharsets.UTF_8);
+        InputStream pkcs1DecryptedPrivateKeyStream =
+                new ByteArrayInputStream(pkcs1DecryptedPrivateKey.getBytes(StandardCharsets.UTF_8));
+
+        Optional<RSAPrivateKey> encryptedKey =
+                new PEMFileRSAPrivateKeySupplier(pkcs1EncryptedPrivateKeyStream, CORRECT_PASSPHRASE)
+                        .supplyKey();
+        assertTrue(encryptedKey.isPresent());
+        assertTrue(encryptedKey.get() instanceof RSAPrivateKey);
+
+        Optional<RSAPrivateKey> decryptedKey =
+                new PEMFileRSAPrivateKeySupplier(pkcs1DecryptedPrivateKeyStream, null).supplyKey();
+        assertTrue(decryptedKey.isPresent());
+        assertTrue(decryptedKey.get() instanceof RSAPrivateKey);
+
+        assertEquals(decryptedKey.get(), encryptedKey.get());
+    }
+
     /** Test PKCS#8 encrypted parsing */
     @Test
     public void testSupplyKeyPKCS8() throws IOException {

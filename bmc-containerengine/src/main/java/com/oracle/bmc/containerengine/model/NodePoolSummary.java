@@ -42,7 +42,10 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
         "definedTags",
         "systemTags",
         "nodeEvictionNodePoolSettings",
-        "nodePoolCyclingDetails"
+        "nodePoolCyclingDetails",
+        "secondaryVnics",
+        "networkLaunchType",
+        "primaryVnic"
     })
     public NodePoolSummary(
             String id,
@@ -67,7 +70,10 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             NodeEvictionNodePoolSettings nodeEvictionNodePoolSettings,
-            NodePoolCyclingDetails nodePoolCyclingDetails) {
+            NodePoolCyclingDetails nodePoolCyclingDetails,
+            java.util.List<NodePoolSecondaryVnicDetails> secondaryVnics,
+            NetworkLaunchType networkLaunchType,
+            NodePoolPrimaryVnicDetails primaryVnic) {
         super();
         this.id = id;
         this.lifecycleState = lifecycleState;
@@ -92,6 +98,9 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
         this.systemTags = systemTags;
         this.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
         this.nodePoolCyclingDetails = nodePoolCyclingDetails;
+        this.secondaryVnics = secondaryVnics;
+        this.networkLaunchType = networkLaunchType;
+        this.primaryVnic = primaryVnic;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -472,6 +481,47 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("nodePoolCyclingDetails");
             return this;
         }
+        /**
+         * A list of secondary vnics to attach to nodes
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secondaryVnics")
+        private java.util.List<NodePoolSecondaryVnicDetails> secondaryVnics;
+
+        /**
+         * A list of secondary vnics to attach to nodes
+         * @param secondaryVnics the value to set
+         * @return this builder
+         **/
+        public Builder secondaryVnics(java.util.List<NodePoolSecondaryVnicDetails> secondaryVnics) {
+            this.secondaryVnics = secondaryVnics;
+            this.__explicitlySet__.add("secondaryVnics");
+            return this;
+        }
+        /**
+         * Emulation type for the physical network interface card (NIC) for nodes
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("networkLaunchType")
+        private NetworkLaunchType networkLaunchType;
+
+        /**
+         * Emulation type for the physical network interface card (NIC) for nodes
+         * @param networkLaunchType the value to set
+         * @return this builder
+         **/
+        public Builder networkLaunchType(NetworkLaunchType networkLaunchType) {
+            this.networkLaunchType = networkLaunchType;
+            this.__explicitlySet__.add("networkLaunchType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryVnic")
+        private NodePoolPrimaryVnicDetails primaryVnic;
+
+        public Builder primaryVnic(NodePoolPrimaryVnicDetails primaryVnic) {
+            this.primaryVnic = primaryVnic;
+            this.__explicitlySet__.add("primaryVnic");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -501,7 +551,10 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
                             this.definedTags,
                             this.systemTags,
                             this.nodeEvictionNodePoolSettings,
-                            this.nodePoolCyclingDetails);
+                            this.nodePoolCyclingDetails,
+                            this.secondaryVnics,
+                            this.networkLaunchType,
+                            this.primaryVnic);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -578,6 +631,15 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("nodePoolCyclingDetails")) {
                 this.nodePoolCyclingDetails(model.getNodePoolCyclingDetails());
+            }
+            if (model.wasPropertyExplicitlySet("secondaryVnics")) {
+                this.secondaryVnics(model.getSecondaryVnics());
+            }
+            if (model.wasPropertyExplicitlySet("networkLaunchType")) {
+                this.networkLaunchType(model.getNetworkLaunchType());
+            }
+            if (model.wasPropertyExplicitlySet("primaryVnic")) {
+                this.primaryVnic(model.getPrimaryVnic());
             }
             return this;
         }
@@ -922,6 +984,41 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
         return nodePoolCyclingDetails;
     }
 
+    /**
+     * A list of secondary vnics to attach to nodes
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secondaryVnics")
+    private final java.util.List<NodePoolSecondaryVnicDetails> secondaryVnics;
+
+    /**
+     * A list of secondary vnics to attach to nodes
+     * @return the value
+     **/
+    public java.util.List<NodePoolSecondaryVnicDetails> getSecondaryVnics() {
+        return secondaryVnics;
+    }
+
+    /**
+     * Emulation type for the physical network interface card (NIC) for nodes
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkLaunchType")
+    private final NetworkLaunchType networkLaunchType;
+
+    /**
+     * Emulation type for the physical network interface card (NIC) for nodes
+     * @return the value
+     **/
+    public NetworkLaunchType getNetworkLaunchType() {
+        return networkLaunchType;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryVnic")
+    private final NodePoolPrimaryVnicDetails primaryVnic;
+
+    public NodePoolPrimaryVnicDetails getPrimaryVnic() {
+        return primaryVnic;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -960,6 +1057,9 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", nodeEvictionNodePoolSettings=")
                 .append(String.valueOf(this.nodeEvictionNodePoolSettings));
         sb.append(", nodePoolCyclingDetails=").append(String.valueOf(this.nodePoolCyclingDetails));
+        sb.append(", secondaryVnics=").append(String.valueOf(this.secondaryVnics));
+        sb.append(", networkLaunchType=").append(String.valueOf(this.networkLaunchType));
+        sb.append(", primaryVnic=").append(String.valueOf(this.primaryVnic));
         sb.append(")");
         return sb.toString();
     }
@@ -999,6 +1099,9 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
                         this.nodeEvictionNodePoolSettings, other.nodeEvictionNodePoolSettings)
                 && java.util.Objects.equals(
                         this.nodePoolCyclingDetails, other.nodePoolCyclingDetails)
+                && java.util.Objects.equals(this.secondaryVnics, other.secondaryVnics)
+                && java.util.Objects.equals(this.networkLaunchType, other.networkLaunchType)
+                && java.util.Objects.equals(this.primaryVnic, other.primaryVnic)
                 && super.equals(other);
     }
 
@@ -1057,6 +1160,13 @@ public final class NodePoolSummary extends com.oracle.bmc.http.internal.Explicit
                         + (this.nodePoolCyclingDetails == null
                                 ? 43
                                 : this.nodePoolCyclingDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secondaryVnics == null ? 43 : this.secondaryVnics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkLaunchType == null ? 43 : this.networkLaunchType.hashCode());
+        result = (result * PRIME) + (this.primaryVnic == null ? 43 : this.primaryVnic.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

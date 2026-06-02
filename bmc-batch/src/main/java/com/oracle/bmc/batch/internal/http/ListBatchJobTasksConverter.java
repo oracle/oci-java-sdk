@@ -56,6 +56,38 @@ public class ListBatchJobTasksConverter {
                                     request.getName()));
         }
 
+        if (request.getTaskId() != null) {
+            target =
+                    target.queryParam(
+                            "taskId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTaskId()));
+        }
+
+        if (request.getGroupTaskName() != null) {
+            target =
+                    target.queryParam(
+                            "groupTaskName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getGroupTaskName()));
+        }
+
+        if (request.getType() != null) {
+            target =
+                    target.queryParam(
+                            "type",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getType().getValue()));
+        }
+
+        if (request.getHierarchyView() != null) {
+            target =
+                    target.queryParam(
+                            "hierarchyView",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHierarchyView().getValue()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

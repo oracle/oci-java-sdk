@@ -157,6 +157,19 @@ public interface DataScience extends AutoCloseable {
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
     /**
+     * Moves a compute target into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeComputeTargetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeTargetCompartment API.
+     */
+    ChangeComputeTargetCompartmentResponse changeComputeTargetCompartment(
+            ChangeComputeTargetCompartmentRequest request);
+
+    /**
      * Moves a private endpoint into a different compartment. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
@@ -375,6 +388,18 @@ public interface DataScience extends AutoCloseable {
      */
     ChangeScheduleCompartmentResponse changeScheduleCompartment(
             ChangeScheduleCompartmentRequest request);
+
+    /**
+     * Creates a new compute target resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateComputeTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeTarget API.
+     */
+    CreateComputeTargetResponse createComputeTarget(CreateComputeTargetRequest request);
 
     /**
      * Creates a Data Science private endpoint to be used by a Data Science resource.
@@ -891,6 +916,18 @@ public interface DataScience extends AutoCloseable {
     DeactivateScheduleResponse deactivateSchedule(DeactivateScheduleRequest request);
 
     /**
+     * Deletes the specified compute target.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteComputeTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeTarget API.
+     */
+    DeleteComputeTargetResponse deleteComputeTarget(DeleteComputeTargetRequest request);
+
+    /**
      * Deletes a private endpoint using `privateEndpointId`.
      *
      * @param request The request object containing the details to send
@@ -1150,6 +1187,18 @@ public interface DataScience extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ExportModelArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportModelArtifact API.
      */
     ExportModelArtifactResponse exportModelArtifact(ExportModelArtifactRequest request);
+
+    /**
+     * Retrieves the compute target for the specified `computeTargetId`.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetComputeTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeTarget API.
+     */
+    GetComputeTargetResponse getComputeTarget(GetComputeTargetRequest request);
 
     /**
      * Retrieves an private endpoint using a `privateEndpointId`.
@@ -1584,6 +1633,31 @@ public interface DataScience extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ImportModelArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportModelArtifact API.
      */
     ImportModelArtifactResponse importModelArtifact(ImportModelArtifactRequest request);
+
+    /**
+     * Lists the valid compute target shapes.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListComputeTargetShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeTargetShapes API.
+     */
+    ListComputeTargetShapesResponse listComputeTargetShapes(ListComputeTargetShapesRequest request);
+
+    /**
+     * List all compute targets in the specified compartment. Supports queries on various other parameters in the query alongside compartmentId (must be included).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListComputeTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeTargets API.
+     */
+    ListComputeTargetsResponse listComputeTargets(ListComputeTargetsRequest request);
 
     /**
      * List containers.
@@ -2044,6 +2118,18 @@ public interface DataScience extends AutoCloseable {
      */
     TriggerMlApplicationInstanceViewFlowResponse triggerMlApplicationInstanceViewFlow(
             TriggerMlApplicationInstanceViewFlowRequest request);
+
+    /**
+     * Updates the compute target.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateComputeTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeTarget API.
+     */
+    UpdateComputeTargetResponse updateComputeTarget(UpdateComputeTargetRequest request);
 
     /**
      * Updates a private endpoint using a `privateEndpointId`.  If changes to a private endpoint match

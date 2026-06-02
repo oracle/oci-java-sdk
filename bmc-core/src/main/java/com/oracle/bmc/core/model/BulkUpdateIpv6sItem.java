@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Secondary IPv6 object to update as part of bulk update.
+ * A secondary IPv6 object to update as part of a bulk update.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -117,14 +117,14 @@ public final class BulkUpdateIpv6sItem extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The OCID of the IPv6.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6 object.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6Id")
         private String ipv6Id;
 
         /**
-         * The OCID of the IPv6.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6 object.
          *
          * @param ipv6Id the value to set
          * @return this builder
@@ -295,14 +295,14 @@ public final class BulkUpdateIpv6sItem extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The OCID of the IPv6.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6 object.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6Id")
     private final String ipv6Id;
 
     /**
-     * The OCID of the IPv6.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6 object.
      *
      * @return the value
      **/

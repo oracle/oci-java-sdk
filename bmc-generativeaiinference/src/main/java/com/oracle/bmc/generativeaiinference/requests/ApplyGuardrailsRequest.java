@@ -14,13 +14,13 @@ public class ApplyGuardrailsRequest
                 com.oracle.bmc.generativeaiinference.model.ApplyGuardrailsDetails> {
 
     /**
-     * Details for applying guardrails to the input text.
+     * Details for applying guardrails to the input content.
      */
     private com.oracle.bmc.generativeaiinference.model.ApplyGuardrailsDetails
             applyGuardrailsDetails;
 
     /**
-     * Details for applying guardrails to the input text.
+     * Details for applying guardrails to the input content.
      */
     public com.oracle.bmc.generativeaiinference.model.ApplyGuardrailsDetails
             getApplyGuardrailsDetails() {
@@ -76,13 +76,13 @@ public class ApplyGuardrailsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for applying guardrails to the input text.
+         * Details for applying guardrails to the input content.
          */
         private com.oracle.bmc.generativeaiinference.model.ApplyGuardrailsDetails
                 applyGuardrailsDetails = null;
 
         /**
-         * Details for applying guardrails to the input text.
+         * Details for applying guardrails to the input content.
          * @param applyGuardrailsDetails the value to set
          * @return this builder instance
          */

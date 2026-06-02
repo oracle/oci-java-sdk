@@ -30,12 +30,21 @@ public class ListServicesConverter {
             com.oracle.bmc.logging.requests.ListServicesRequest request) {
         Validate.notNull(request, "request instance is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
-                        .path("/20200531")
-                        .path("v2")
-                        .path("registry")
-                        .path("services");
+                newBaseTarget.path("/20200531").path("v2").path("registry").path("services");
+
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

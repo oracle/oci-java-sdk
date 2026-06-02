@@ -30,6 +30,9 @@ public class IdleConnectionMonitor extends Thread {
      * Single instance of the connection monitor to track idle connections for all clients.
      */
     @VisibleForTesting static volatile IdleConnectionMonitor instance;
+    // Minimal test hooks allow deterministic scheduling of rare lifecycle races.
+    private static volatile Runnable beforeRegisterConnectionManagerPutHookForTest;
+    private static volatile Runnable beforeInterruptCleanupHookForTest;
     private volatile boolean shutdown;
     private volatile int waitTimeInSeconds;
 
@@ -54,21 +57,22 @@ public class IdleConnectionMonitor extends Thread {
      * @param idleTimeoutInSeconds The idle timeout - close connections that have been idle longer than idleTimeoutInSeconds seconds
      * @return {@code true} if the connection manager has been successfully registered; otherwise {@code false}.
      */
-    public static boolean registerConnectionManager(
+    public static synchronized boolean registerConnectionManager(
             HttpClientConnectionManager connectionManager,
             int waitTimeInSeconds,
             int idleTimeoutInSeconds) {
         cleanStaleReferences();
-        if (instance == null) {
-            synchronized (IdleConnectionMonitor.class) {
-                if (instance == null) {
-                    instance = new IdleConnectionMonitor(waitTimeInSeconds);
-                    instance.start();
-                    registerShutdownHook();
-                }
-            }
-        } else {
-            instance.waitTimeInSeconds = Math.min(instance.waitTimeInSeconds, waitTimeInSeconds);
+        IdleConnectionMonitor monitor = instance;
+        if (monitor == null) {
+            monitor = new IdleConnectionMonitor(waitTimeInSeconds);
+            instance = monitor;
+            monitor.start();
+            registerShutdownHook();
+        }
+        monitor.waitTimeInSeconds = Math.min(monitor.waitTimeInSeconds, waitTimeInSeconds);
+        Runnable hook = beforeRegisterConnectionManagerPutHookForTest;
+        if (hook != null) {
+            hook.run();
         }
         LOG.debug(
                 "Registering ConnectionManager {} in IdleConnectionMonitor thread",
@@ -86,7 +90,8 @@ public class IdleConnectionMonitor extends Thread {
      * @return {@code true} if the connection manager has been successfully removed;
      * otherwise {@code false}.
      */
-    public static boolean removeConnectionManager(HttpClientConnectionManager connectionManager) {
+    public static synchronized boolean removeConnectionManager(
+            HttpClientConnectionManager connectionManager) {
         cleanStaleReferences();
         boolean wasRemoved =
                 connectionManagers.keySet().removeIf(ref -> ref.get() == connectionManager);
@@ -110,8 +115,13 @@ public class IdleConnectionMonitor extends Thread {
 
                 TimeUnit.SECONDS.sleep(waitTimeInSeconds);
             } catch (InterruptedException ex) {
-                // terminate
-                clearIdleConnectionMonitorThread();
+                Runnable hook = beforeInterruptCleanupHookForTest;
+                if (hook != null) {
+                    hook.run();
+                }
+                synchronized (IdleConnectionMonitor.class) {
+                    clearIfCurrentMonitor(this);
+                }
                 Thread.currentThread().interrupt();
                 LOG.debug("IdleConnectionMonitorThread was interrupted, terminating", ex);
                 break;
@@ -181,22 +191,26 @@ public class IdleConnectionMonitor extends Thread {
      * @return {@code true} if the shutdown process was initiated successfully, otherwise {@code false}.
      */
     public static synchronized boolean shutdown() {
-        if (instance != null) {
-            instance.interrupt();
-            clearIdleConnectionMonitorThread();
-            return true;
+        IdleConnectionMonitor monitor = instance;
+        if (monitor == null) {
+            return false;
         }
-        return false;
+        monitor.interrupt();
+        clearIfCurrentMonitor(monitor);
+        return true;
     }
 
-    private static synchronized void clearIdleConnectionMonitorThread() {
-        if (instance != null) {
-            LOG.info("Shutting down IdleConnectionMonitor");
-            instance.markShuttingDown();
-            connectionManagers.clear();
-            cleanStaleReferences();
-            instance = null;
+    // Call only while holding the IdleConnectionMonitor.class monitor.
+    private static void clearIfCurrentMonitor(IdleConnectionMonitor expectedMonitor) {
+        // Only the active singleton may clear shared monitor state.
+        if (instance != expectedMonitor) {
+            return;
         }
+        LOG.info("Shutting down IdleConnectionMonitor");
+        expectedMonitor.markShuttingDown();
+        connectionManagers.clear();
+        cleanStaleReferences();
+        instance = null;
     }
 
     private void markShuttingDown() {
@@ -221,6 +235,22 @@ public class IdleConnectionMonitor extends Thread {
     @VisibleForTesting
     public static IdleConnectionMonitor getInstance() {
         return instance;
+    }
+
+    @VisibleForTesting
+    static void setBeforeRegisterConnectionManagerPutHookForTest(Runnable hook) {
+        beforeRegisterConnectionManagerPutHookForTest = hook;
+    }
+
+    @VisibleForTesting
+    static void setBeforeInterruptCleanupHookForTest(Runnable hook) {
+        beforeInterruptCleanupHookForTest = hook;
+    }
+
+    @VisibleForTesting
+    static void clearTestHooks() {
+        beforeRegisterConnectionManagerPutHookForTest = null;
+        beforeInterruptCleanupHookForTest = null;
     }
     /**
      * Keeps the settings for a ConnectionMonitor.

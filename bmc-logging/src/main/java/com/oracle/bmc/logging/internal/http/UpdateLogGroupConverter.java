@@ -32,8 +32,14 @@ public class UpdateLogGroupConverter {
         Validate.notBlank(request.getLogGroupId(), "logGroupId must not be blank");
         Validate.notNull(request.getUpdateLogGroupDetails(), "updateLogGroupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("logGroupId", request.getLogGroupId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20200531")
                         .path("logGroups")
                         .path(

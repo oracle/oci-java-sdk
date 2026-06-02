@@ -23,21 +23,6 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return compartmentId;
     }
     /**
-     * The Customer Support Identifier (CSI) number associated with the support account.
-     * The CSI is optional for all support request types.
-     *
-     */
-    private String csi;
-
-    /**
-     * The Customer Support Identifier (CSI) number associated with the support account.
-     * The CSI is optional for all support request types.
-     *
-     */
-    public String getCsi() {
-        return csi;
-    }
-    /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
@@ -71,6 +56,17 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     public com.oracle.bmc.cims.model.SortOrder getSortOrder() {
         return sortOrder;
+    }
+    /**
+     * Filter to return results updated only after the specified timestamp. Must be an RFC 3339 timestamp (e.g. 2025-12-07T17:42:54Z).
+     */
+    private java.util.Date timeUpdatedGreaterThanOrEqualTo;
+
+    /**
+     * Filter to return results updated only after the specified timestamp. Must be an RFC 3339 timestamp (e.g. 2025-12-07T17:42:54Z).
+     */
+    public java.util.Date getTimeUpdatedGreaterThanOrEqualTo() {
+        return timeUpdatedGreaterThanOrEqualTo;
     }
     /**
      * The current state of the ticket.
@@ -216,25 +212,6 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The Customer Support Identifier (CSI) number associated with the support account.
-         * The CSI is optional for all support request types.
-         *
-         */
-        private String csi = null;
-
-        /**
-         * The Customer Support Identifier (CSI) number associated with the support account.
-         * The CSI is optional for all support request types.
-         *
-         * @param csi the value to set
-         * @return this builder instance
-         */
-        public Builder csi(String csi) {
-            this.csi = csi;
-            return this;
-        }
-
-        /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          */
@@ -278,6 +255,22 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          */
         public Builder sortOrder(com.oracle.bmc.cims.model.SortOrder sortOrder) {
             this.sortOrder = sortOrder;
+            return this;
+        }
+
+        /**
+         * Filter to return results updated only after the specified timestamp. Must be an RFC 3339 timestamp (e.g. 2025-12-07T17:42:54Z).
+         */
+        private java.util.Date timeUpdatedGreaterThanOrEqualTo = null;
+
+        /**
+         * Filter to return results updated only after the specified timestamp. Must be an RFC 3339 timestamp (e.g. 2025-12-07T17:42:54Z).
+         * @param timeUpdatedGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder timeUpdatedGreaterThanOrEqualTo(
+                java.util.Date timeUpdatedGreaterThanOrEqualTo) {
+            this.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
             return this;
         }
 
@@ -470,10 +463,10 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          */
         public Builder copy(ListIncidentsRequest o) {
             compartmentId(o.getCompartmentId());
-            csi(o.getCsi());
             limit(o.getLimit());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            timeUpdatedGreaterThanOrEqualTo(o.getTimeUpdatedGreaterThanOrEqualTo());
             lifecycleState(o.getLifecycleState());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
@@ -517,10 +510,10 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         public ListIncidentsRequest buildWithoutInvocationCallback() {
             ListIncidentsRequest request = new ListIncidentsRequest();
             request.compartmentId = compartmentId;
-            request.csi = csi;
             request.limit = limit;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
+            request.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
             request.lifecycleState = lifecycleState;
             request.page = page;
             request.opcRequestId = opcRequestId;
@@ -532,7 +525,7 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.idtoken = idtoken;
             request.domainid = domainid;
             return request;
-            // new ListIncidentsRequest(compartmentId, csi, limit, sortBy, sortOrder, lifecycleState, page, opcRequestId, ocid, homeregion, problemType, bearertokentype, bearertoken, idtoken, domainid);
+            // new ListIncidentsRequest(compartmentId, limit, sortBy, sortOrder, timeUpdatedGreaterThanOrEqualTo, lifecycleState, page, opcRequestId, ocid, homeregion, problemType, bearertokentype, bearertoken, idtoken, domainid);
         }
     }
 
@@ -543,10 +536,10 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
-                .csi(csi)
                 .limit(limit)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
+                .timeUpdatedGreaterThanOrEqualTo(timeUpdatedGreaterThanOrEqualTo)
                 .lifecycleState(lifecycleState)
                 .page(page)
                 .opcRequestId(opcRequestId)
@@ -573,10 +566,11 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(",csi=").append(String.valueOf(this.csi));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",timeUpdatedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeUpdatedGreaterThanOrEqualTo));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -603,10 +597,11 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         ListIncidentsRequest other = (ListIncidentsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(
+                        this.timeUpdatedGreaterThanOrEqualTo, other.timeUpdatedGreaterThanOrEqualTo)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
@@ -626,10 +621,14 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUpdatedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeUpdatedGreaterThanOrEqualTo.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

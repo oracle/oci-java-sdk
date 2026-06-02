@@ -48,7 +48,8 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         "rerunOfId",
         "retryIntervals",
         "isManagedByAutonomousLinux",
-        "rebootTimeoutInMins"
+        "rebootTimeoutInMins",
+        "snapSpecs"
     })
     public WorkRequest(
             WorkRequestOperationType operationType,
@@ -79,7 +80,8 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             String rerunOfId,
             java.util.List<Integer> retryIntervals,
             Boolean isManagedByAutonomousLinux,
-            Integer rebootTimeoutInMins) {
+            Integer rebootTimeoutInMins,
+            java.util.List<SnapSpecDetails> snapSpecs) {
         super();
         this.operationType = operationType;
         this.status = status;
@@ -110,6 +112,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         this.retryIntervals = retryIntervals;
         this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
         this.rebootTimeoutInMins = rebootTimeoutInMins;
+        this.snapSpecs = snapSpecs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -603,6 +606,22 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("rebootTimeoutInMins");
             return this;
         }
+        /**
+         * The details about the snap.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("snapSpecs")
+        private java.util.List<SnapSpecDetails> snapSpecs;
+
+        /**
+         * The details about the snap.
+         * @param snapSpecs the value to set
+         * @return this builder
+         **/
+        public Builder snapSpecs(java.util.List<SnapSpecDetails> snapSpecs) {
+            this.snapSpecs = snapSpecs;
+            this.__explicitlySet__.add("snapSpecs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -638,7 +657,8 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.rerunOfId,
                             this.retryIntervals,
                             this.isManagedByAutonomousLinux,
-                            this.rebootTimeoutInMins);
+                            this.rebootTimeoutInMins,
+                            this.snapSpecs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -733,6 +753,9 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("rebootTimeoutInMins")) {
                 this.rebootTimeoutInMins(model.getRebootTimeoutInMins());
+            }
+            if (model.wasPropertyExplicitlySet("snapSpecs")) {
+                this.snapSpecs(model.getSnapSpecs());
             }
             return this;
         }
@@ -1180,6 +1203,20 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         return rebootTimeoutInMins;
     }
 
+    /**
+     * The details about the snap.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("snapSpecs")
+    private final java.util.List<SnapSpecDetails> snapSpecs;
+
+    /**
+     * The details about the snap.
+     * @return the value
+     **/
+    public java.util.List<SnapSpecDetails> getSnapSpecs() {
+        return snapSpecs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1224,6 +1261,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
         sb.append(", rebootTimeoutInMins=").append(String.valueOf(this.rebootTimeoutInMins));
+        sb.append(", snapSpecs=").append(String.valueOf(this.snapSpecs));
         sb.append(")");
         return sb.toString();
     }
@@ -1268,6 +1306,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(
                         this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
                 && java.util.Objects.equals(this.rebootTimeoutInMins, other.rebootTimeoutInMins)
+                && java.util.Objects.equals(this.snapSpecs, other.snapSpecs)
                 && super.equals(other);
     }
 
@@ -1332,6 +1371,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
                         + (this.rebootTimeoutInMins == null
                                 ? 43
                                 : this.rebootTimeoutInMins.hashCode());
+        result = (result * PRIME) + (this.snapSpecs == null ? 43 : this.snapSpecs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

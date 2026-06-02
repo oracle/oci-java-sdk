@@ -869,6 +869,51 @@ public class DataScienceClient implements DataScience {
     }
 
     @Override
+    public ChangeComputeTargetCompartmentResponse changeComputeTargetCompartment(
+            ChangeComputeTargetCompartmentRequest request) {
+        LOG.trace("Called changeComputeTargetCompartment");
+        final ChangeComputeTargetCompartmentRequest interceptedRequest =
+                ChangeComputeTargetCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeComputeTargetCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ChangeComputeTargetCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/ChangeComputeTargetCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeComputeTargetCompartmentResponse>
+                transformer =
+                        ChangeComputeTargetCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeComputeTargetCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDataSciencePrivateEndpointCompartmentResponse
             changeDataSciencePrivateEndpointCompartment(
                     ChangeDataSciencePrivateEndpointCompartmentRequest request) {
@@ -1623,6 +1668,48 @@ public class DataScienceClient implements DataScience {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeScheduleCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateComputeTargetResponse createComputeTarget(CreateComputeTargetRequest request) {
+        LOG.trace("Called createComputeTarget");
+        final CreateComputeTargetRequest interceptedRequest =
+                CreateComputeTargetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateComputeTargetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "CreateComputeTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/CreateComputeTarget");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateComputeTargetResponse>
+                transformer =
+                        CreateComputeTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateComputeTargetDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -3004,6 +3091,44 @@ public class DataScienceClient implements DataScience {
     }
 
     @Override
+    public DeleteComputeTargetResponse deleteComputeTarget(DeleteComputeTargetRequest request) {
+        LOG.trace("Called deleteComputeTarget");
+        final DeleteComputeTargetRequest interceptedRequest =
+                DeleteComputeTargetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteComputeTargetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteComputeTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/DeleteComputeTarget");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteComputeTargetResponse>
+                transformer =
+                        DeleteComputeTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteDataSciencePrivateEndpointResponse deleteDataSciencePrivateEndpoint(
             DeleteDataSciencePrivateEndpointRequest request) {
         LOG.trace("Called deleteDataSciencePrivateEndpoint");
@@ -3818,6 +3943,43 @@ public class DataScienceClient implements DataScience {
                                                 ib,
                                                 retriedRequest.getExportModelArtifactDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetComputeTargetResponse getComputeTarget(GetComputeTargetRequest request) {
+        LOG.trace("Called getComputeTarget");
+        final GetComputeTargetRequest interceptedRequest =
+                GetComputeTargetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeTargetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetComputeTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/GetComputeTarget");
+        java.util.function.Function<javax.ws.rs.core.Response, GetComputeTargetResponse>
+                transformer =
+                        GetComputeTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -5136,6 +5298,81 @@ public class DataScienceClient implements DataScience {
                                                 ib,
                                                 retriedRequest.getImportModelArtifactDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListComputeTargetShapesResponse listComputeTargetShapes(
+            ListComputeTargetShapesRequest request) {
+        LOG.trace("Called listComputeTargetShapes");
+        final ListComputeTargetShapesRequest interceptedRequest =
+                ListComputeTargetShapesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeTargetShapesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListComputeTargetShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTargetShapeSummary/ListComputeTargetShapes");
+        java.util.function.Function<javax.ws.rs.core.Response, ListComputeTargetShapesResponse>
+                transformer =
+                        ListComputeTargetShapesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListComputeTargetsResponse listComputeTargets(ListComputeTargetsRequest request) {
+        LOG.trace("Called listComputeTargets");
+        final ListComputeTargetsRequest interceptedRequest =
+                ListComputeTargetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeTargetsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListComputeTargets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTargetSummary/ListComputeTargets");
+        java.util.function.Function<javax.ws.rs.core.Response, ListComputeTargetsResponse>
+                transformer =
+                        ListComputeTargetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -6463,6 +6700,47 @@ public class DataScienceClient implements DataScience {
                                                 ib,
                                                 retriedRequest
                                                         .getTriggerMlApplicationInstanceViewFlowDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateComputeTargetResponse updateComputeTarget(UpdateComputeTargetRequest request) {
+        LOG.trace("Called updateComputeTarget");
+        final UpdateComputeTargetRequest interceptedRequest =
+                UpdateComputeTargetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateComputeTargetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateComputeTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/UpdateComputeTarget");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateComputeTargetResponse>
+                transformer =
+                        UpdateComputeTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateComputeTargetDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

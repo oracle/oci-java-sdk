@@ -244,6 +244,26 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
             return this;
         }
         /**
+         * A legal URL to connect to BigQuery including scheme, server name and port (if not the default port).
+         * Default: https://bigquery.googleapis.com
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+        private String endpoint;
+
+        /**
+         * A legal URL to connect to BigQuery including scheme, server name and port (if not the default port).
+         * Default: https://bigquery.googleapis.com
+         *
+         * @param endpoint the value to set
+         * @return this builder
+         **/
+        public Builder endpoint(String endpoint) {
+            this.endpoint = endpoint;
+            this.__explicitlySet__.add("endpoint");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
          * which contains the credentials required to use Google BigQuery.
          * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
@@ -295,6 +315,7 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
                             this.clusterPlacementGroupId,
                             this.securityAttributes,
                             this.technologyType,
+                            this.endpoint,
                             this.serviceAccountKeyFileSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -373,6 +394,9 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
+            if (model.wasPropertyExplicitlySet("endpoint")) {
+                this.endpoint(model.getEndpoint());
+            }
             if (model.wasPropertyExplicitlySet("serviceAccountKeyFileSecretId")) {
                 this.serviceAccountKeyFileSecretId(model.getServiceAccountKeyFileSecretId());
             }
@@ -416,6 +440,7 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
             String clusterPlacementGroupId,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             GoogleBigQueryConnection.TechnologyType technologyType,
+            String endpoint,
             String serviceAccountKeyFileSecretId) {
         super(
                 id,
@@ -441,6 +466,7 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
                 clusterPlacementGroupId,
                 securityAttributes);
         this.technologyType = technologyType;
+        this.endpoint = endpoint;
         this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
     }
 
@@ -456,6 +482,24 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
      **/
     public GoogleBigQueryConnection.TechnologyType getTechnologyType() {
         return technologyType;
+    }
+
+    /**
+     * A legal URL to connect to BigQuery including scheme, server name and port (if not the default port).
+     * Default: https://bigquery.googleapis.com
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+    private final String endpoint;
+
+    /**
+     * A legal URL to connect to BigQuery including scheme, server name and port (if not the default port).
+     * Default: https://bigquery.googleapis.com
+     *
+     * @return the value
+     **/
+    public String getEndpoint() {
+        return endpoint;
     }
 
     /**
@@ -493,6 +537,7 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
         sb.append("GoogleBigQueryConnectionSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
+        sb.append(", endpoint=").append(String.valueOf(this.endpoint));
         sb.append(", serviceAccountKeyFileSecretId=")
                 .append(String.valueOf(this.serviceAccountKeyFileSecretId));
         sb.append(")");
@@ -510,6 +555,7 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
 
         GoogleBigQueryConnectionSummary other = (GoogleBigQueryConnectionSummary) o;
         return java.util.Objects.equals(this.technologyType, other.technologyType)
+                && java.util.Objects.equals(this.endpoint, other.endpoint)
                 && java.util.Objects.equals(
                         this.serviceAccountKeyFileSecretId, other.serviceAccountKeyFileSecretId)
                 && super.equals(other);
@@ -522,6 +568,7 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
         result =
                 (result * PRIME)
                         + (this.technologyType == null ? 43 : this.technologyType.hashCode());
+        result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
         result =
                 (result * PRIME)
                         + (this.serviceAccountKeyFileSecretId == null

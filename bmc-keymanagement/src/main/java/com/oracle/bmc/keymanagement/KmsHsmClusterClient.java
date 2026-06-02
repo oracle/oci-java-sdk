@@ -685,6 +685,46 @@ public class KmsHsmClusterClient implements KmsHsmCluster {
     }
 
     @Override
+    public DisableAuditMgmtLoggingResponse disableAuditMgmtLogging(
+            DisableAuditMgmtLoggingRequest request) {
+        LOG.trace("Called disableAuditMgmtLogging");
+        final DisableAuditMgmtLoggingRequest interceptedRequest =
+                DisableAuditMgmtLoggingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableAuditMgmtLoggingConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "DisableAuditMgmtLogging",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/DisableAuditMgmtLogging");
+        java.util.function.Function<javax.ws.rs.core.Response, DisableAuditMgmtLoggingResponse>
+                transformer =
+                        DisableAuditMgmtLoggingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DownloadCertificateSigningRequestResponse downloadCertificateSigningRequest(
             DownloadCertificateSigningRequestRequest request) {
         LOG.trace("Called downloadCertificateSigningRequest");
@@ -708,6 +748,46 @@ public class KmsHsmClusterClient implements KmsHsmCluster {
                         javax.ws.rs.core.Response, DownloadCertificateSigningRequestResponse>
                 transformer =
                         DownloadCertificateSigningRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EnableAuditMgmtLoggingResponse enableAuditMgmtLogging(
+            EnableAuditMgmtLoggingRequest request) {
+        LOG.trace("Called enableAuditMgmtLogging");
+        final EnableAuditMgmtLoggingRequest interceptedRequest =
+                EnableAuditMgmtLoggingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableAuditMgmtLoggingConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "EnableAuditMgmtLogging",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/EnableAuditMgmtLogging");
+        java.util.function.Function<javax.ws.rs.core.Response, EnableAuditMgmtLoggingResponse>
+                transformer =
+                        EnableAuditMgmtLoggingConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -838,6 +918,48 @@ public class KmsHsmClusterClient implements KmsHsmCluster {
     }
 
     @Override
+    public InitiateAuditLoggingResponse initiateAuditLogging(InitiateAuditLoggingRequest request) {
+        LOG.trace("Called initiateAuditLogging");
+        final InitiateAuditLoggingRequest interceptedRequest =
+                InitiateAuditLoggingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InitiateAuditLoggingConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "InitiateAuditLogging",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/InitiateAuditLogging");
+        java.util.function.Function<javax.ws.rs.core.Response, InitiateAuditLoggingResponse>
+                transformer =
+                        InitiateAuditLoggingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getInitiateAuditLoggingDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListHsmClustersResponse listHsmClusters(ListHsmClustersRequest request) {
         LOG.trace("Called listHsmClusters");
         final ListHsmClustersRequest interceptedRequest =
@@ -949,6 +1071,51 @@ public class KmsHsmClusterClient implements KmsHsmCluster {
                                                 ib,
                                                 retriedRequest
                                                         .getScheduleHsmClusterDeletionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateAuditLoggingDestinationResponse updateAuditLoggingDestination(
+            UpdateAuditLoggingDestinationRequest request) {
+        LOG.trace("Called updateAuditLoggingDestination");
+        final UpdateAuditLoggingDestinationRequest interceptedRequest =
+                UpdateAuditLoggingDestinationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAuditLoggingDestinationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "UpdateAuditLoggingDestination",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/UpdateAuditLoggingDestination");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateAuditLoggingDestinationResponse>
+                transformer =
+                        UpdateAuditLoggingDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateAuditLoggingDestinationDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

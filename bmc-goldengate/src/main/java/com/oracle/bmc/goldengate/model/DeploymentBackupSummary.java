@@ -57,7 +57,7 @@ public final class DeploymentBackupSummary
             String displayName,
             Boolean isAutomatic,
             BackupSourceType backupSourceType,
-            LifecycleState lifecycleState,
+            DeploymentBackup.LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Date timeOfBackup,
             java.util.Date timeBackupFinished,
@@ -234,19 +234,19 @@ public final class DeploymentBackupSummary
             return this;
         }
         /**
-         * Possible lifecycle states.
+         * Possible lifecycle states for a Deployment Backup.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
+        private DeploymentBackup.LifecycleState lifecycleState;
 
         /**
-         * Possible lifecycle states.
+         * Possible lifecycle states for a Deployment Backup.
          *
          * @param lifecycleState the value to set
          * @return this builder
          **/
-        public Builder lifecycleState(LifecycleState lifecycleState) {
+        public Builder lifecycleState(DeploymentBackup.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -851,18 +851,18 @@ public final class DeploymentBackupSummary
     }
 
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Backup.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final LifecycleState lifecycleState;
+    private final DeploymentBackup.LifecycleState lifecycleState;
 
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Backup.
      *
      * @return the value
      **/
-    public LifecycleState getLifecycleState() {
+    public DeploymentBackup.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 

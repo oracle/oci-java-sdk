@@ -846,6 +846,64 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeComputeTargetCompartmentResponse>
+            changeComputeTargetCompartment(
+                    ChangeComputeTargetCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeTargetCompartmentRequest,
+                                    ChangeComputeTargetCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeComputeTargetCompartment");
+        final ChangeComputeTargetCompartmentRequest interceptedRequest =
+                ChangeComputeTargetCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeComputeTargetCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ChangeComputeTargetCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/ChangeComputeTargetCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeComputeTargetCompartmentResponse>
+                transformer =
+                        ChangeComputeTargetCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeComputeTargetCompartmentRequest,
+                        ChangeComputeTargetCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeComputeTargetCompartmentRequest,
+                                ChangeComputeTargetCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeComputeTargetCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeComputeTargetCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeComputeTargetCompartmentRequest, ChangeComputeTargetCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDataSciencePrivateEndpointCompartmentResponse>
             changeDataSciencePrivateEndpointCompartment(
                     ChangeDataSciencePrivateEndpointCompartmentRequest request,
@@ -1815,6 +1873,59 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeScheduleCompartmentRequest, ChangeScheduleCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateComputeTargetResponse> createComputeTarget(
+            CreateComputeTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateComputeTargetRequest, CreateComputeTargetResponse>
+                    handler) {
+        LOG.trace("Called async createComputeTarget");
+        final CreateComputeTargetRequest interceptedRequest =
+                CreateComputeTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateComputeTargetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "CreateComputeTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/CreateComputeTarget");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateComputeTargetResponse>
+                transformer =
+                        CreateComputeTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateComputeTargetRequest, CreateComputeTargetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateComputeTargetRequest, CreateComputeTargetResponse>,
+                        java.util.concurrent.Future<CreateComputeTargetResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateComputeTargetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateComputeTargetRequest, CreateComputeTargetResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3392,6 +3503,53 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteComputeTargetResponse> deleteComputeTarget(
+            DeleteComputeTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteComputeTargetRequest, DeleteComputeTargetResponse>
+                    handler) {
+        LOG.trace("Called async deleteComputeTarget");
+        final DeleteComputeTargetRequest interceptedRequest =
+                DeleteComputeTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteComputeTargetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteComputeTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/DeleteComputeTarget");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteComputeTargetResponse>
+                transformer =
+                        DeleteComputeTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteComputeTargetRequest, DeleteComputeTargetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteComputeTargetRequest, DeleteComputeTargetResponse>,
+                        java.util.concurrent.Future<DeleteComputeTargetResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteComputeTargetRequest, DeleteComputeTargetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDataSciencePrivateEndpointResponse>
             deleteDataSciencePrivateEndpoint(
                     DeleteDataSciencePrivateEndpointRequest request,
@@ -4415,6 +4573,52 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ExportModelArtifactRequest, ExportModelArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeTargetResponse> getComputeTarget(
+            GetComputeTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeTargetRequest, GetComputeTargetResponse>
+                    handler) {
+        LOG.trace("Called async getComputeTarget");
+        final GetComputeTargetRequest interceptedRequest =
+                GetComputeTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeTargetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetComputeTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/GetComputeTarget");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetComputeTargetResponse>
+                transformer =
+                        GetComputeTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetComputeTargetRequest, GetComputeTargetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetComputeTargetRequest, GetComputeTargetResponse>,
+                        java.util.concurrent.Future<GetComputeTargetResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetComputeTargetRequest, GetComputeTargetResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -6108,6 +6312,100 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListComputeTargetShapesResponse> listComputeTargetShapes(
+            ListComputeTargetShapesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeTargetShapesRequest, ListComputeTargetShapesResponse>
+                    handler) {
+        LOG.trace("Called async listComputeTargetShapes");
+        final ListComputeTargetShapesRequest interceptedRequest =
+                ListComputeTargetShapesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeTargetShapesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListComputeTargetShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTargetShapeSummary/ListComputeTargetShapes");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListComputeTargetShapesResponse>
+                transformer =
+                        ListComputeTargetShapesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeTargetShapesRequest, ListComputeTargetShapesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeTargetShapesRequest, ListComputeTargetShapesResponse>,
+                        java.util.concurrent.Future<ListComputeTargetShapesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeTargetShapesRequest, ListComputeTargetShapesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeTargetsResponse> listComputeTargets(
+            ListComputeTargetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeTargetsRequest, ListComputeTargetsResponse>
+                    handler) {
+        LOG.trace("Called async listComputeTargets");
+        final ListComputeTargetsRequest interceptedRequest =
+                ListComputeTargetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeTargetsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListComputeTargets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTargetSummary/ListComputeTargets");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListComputeTargetsResponse>
+                transformer =
+                        ListComputeTargetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListComputeTargetsRequest, ListComputeTargetsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeTargetsRequest, ListComputeTargetsResponse>,
+                        java.util.concurrent.Future<ListComputeTargetsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeTargetsRequest, ListComputeTargetsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListContainersResponse> listContainers(
             ListContainersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7774,6 +8072,58 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     TriggerMlApplicationInstanceViewFlowRequest,
                     TriggerMlApplicationInstanceViewFlowResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeTargetResponse> updateComputeTarget(
+            UpdateComputeTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeTargetRequest, UpdateComputeTargetResponse>
+                    handler) {
+        LOG.trace("Called async updateComputeTarget");
+        final UpdateComputeTargetRequest interceptedRequest =
+                UpdateComputeTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateComputeTargetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateComputeTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ComputeTarget/UpdateComputeTarget");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateComputeTargetResponse>
+                transformer =
+                        UpdateComputeTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateComputeTargetRequest, UpdateComputeTargetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateComputeTargetRequest, UpdateComputeTargetResponse>,
+                        java.util.concurrent.Future<UpdateComputeTargetResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateComputeTargetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateComputeTargetRequest, UpdateComputeTargetResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

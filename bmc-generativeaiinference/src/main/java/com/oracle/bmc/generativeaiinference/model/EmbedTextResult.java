@@ -22,6 +22,7 @@ public final class EmbedTextResult extends com.oracle.bmc.http.internal.Explicit
     @java.beans.ConstructorProperties({
         "id",
         "inputs",
+        "embedContents",
         "embeddings",
         "embeddingsByType",
         "modelId",
@@ -31,6 +32,7 @@ public final class EmbedTextResult extends com.oracle.bmc.http.internal.Explicit
     public EmbedTextResult(
             String id,
             java.util.List<String> inputs,
+            java.util.List<EmbedContent> embedContents,
             java.util.List<java.util.List<Float>> embeddings,
             Object embeddingsByType,
             String modelId,
@@ -39,6 +41,7 @@ public final class EmbedTextResult extends com.oracle.bmc.http.internal.Explicit
         super();
         this.id = id;
         this.inputs = inputs;
+        this.embedContents = embedContents;
         this.embeddings = embeddings;
         this.embeddingsByType = embeddingsByType;
         this.modelId = modelId;
@@ -78,6 +81,22 @@ public final class EmbedTextResult extends com.oracle.bmc.http.internal.Explicit
         public Builder inputs(java.util.List<String> inputs) {
             this.inputs = inputs;
             this.__explicitlySet__.add("inputs");
+            return this;
+        }
+        /**
+         * The original inputs. Only present if "isEcho" is set to true.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("embedContents")
+        private java.util.List<EmbedContent> embedContents;
+
+        /**
+         * The original inputs. Only present if "isEcho" is set to true.
+         * @param embedContents the value to set
+         * @return this builder
+         **/
+        public Builder embedContents(java.util.List<EmbedContent> embedContents) {
+            this.embedContents = embedContents;
+            this.__explicitlySet__.add("embedContents");
             return this;
         }
         /**
@@ -162,6 +181,7 @@ public final class EmbedTextResult extends com.oracle.bmc.http.internal.Explicit
                     new EmbedTextResult(
                             this.id,
                             this.inputs,
+                            this.embedContents,
                             this.embeddings,
                             this.embeddingsByType,
                             this.modelId,
@@ -180,6 +200,9 @@ public final class EmbedTextResult extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("inputs")) {
                 this.inputs(model.getInputs());
+            }
+            if (model.wasPropertyExplicitlySet("embedContents")) {
+                this.embedContents(model.getEmbedContents());
             }
             if (model.wasPropertyExplicitlySet("embeddings")) {
                 this.embeddings(model.getEmbeddings());
@@ -237,6 +260,20 @@ public final class EmbedTextResult extends com.oracle.bmc.http.internal.Explicit
      **/
     public java.util.List<String> getInputs() {
         return inputs;
+    }
+
+    /**
+     * The original inputs. Only present if "isEcho" is set to true.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("embedContents")
+    private final java.util.List<EmbedContent> embedContents;
+
+    /**
+     * The original inputs. Only present if "isEcho" is set to true.
+     * @return the value
+     **/
+    public java.util.List<EmbedContent> getEmbedContents() {
+        return embedContents;
     }
 
     /**
@@ -318,6 +355,7 @@ public final class EmbedTextResult extends com.oracle.bmc.http.internal.Explicit
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", inputs=").append(String.valueOf(this.inputs));
+        sb.append(", embedContents=").append(String.valueOf(this.embedContents));
         sb.append(", embeddings=").append(String.valueOf(this.embeddings));
         sb.append(", embeddingsByType=").append(String.valueOf(this.embeddingsByType));
         sb.append(", modelId=").append(String.valueOf(this.modelId));
@@ -339,6 +377,7 @@ public final class EmbedTextResult extends com.oracle.bmc.http.internal.Explicit
         EmbedTextResult other = (EmbedTextResult) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.inputs, other.inputs)
+                && java.util.Objects.equals(this.embedContents, other.embedContents)
                 && java.util.Objects.equals(this.embeddings, other.embeddings)
                 && java.util.Objects.equals(this.embeddingsByType, other.embeddingsByType)
                 && java.util.Objects.equals(this.modelId, other.modelId)
@@ -353,6 +392,9 @@ public final class EmbedTextResult extends com.oracle.bmc.http.internal.Explicit
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.inputs == null ? 43 : this.inputs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.embedContents == null ? 43 : this.embedContents.hashCode());
         result = (result * PRIME) + (this.embeddings == null ? 43 : this.embeddings.hashCode());
         result =
                 (result * PRIME)

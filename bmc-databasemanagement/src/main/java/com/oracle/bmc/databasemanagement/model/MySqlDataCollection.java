@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The collection of SQL performance data records for a specific Managed MySQL Database.
+ * The collection of SQL performance data records for a specific Managed MySQL Database. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

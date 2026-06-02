@@ -44,6 +44,7 @@ public class ListRecommendedScheduledActionsRequest
      **/
     public enum PlanIntent {
         ExadataInfrastructureFullSoftwareUpdate("EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"),
+        ExadataInfrastructureSecurityUpdate("EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"),
         ;
 
         private final String value;

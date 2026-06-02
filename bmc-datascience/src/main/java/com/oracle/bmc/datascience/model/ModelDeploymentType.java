@@ -11,6 +11,7 @@ package com.oracle.bmc.datascience.model;
 public enum ModelDeploymentType {
     SingleModel("SINGLE_MODEL"),
     ModelGroup("MODEL_GROUP"),
+    SingleModelFlex("SINGLE_MODEL_FLEX"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

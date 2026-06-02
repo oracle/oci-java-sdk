@@ -5,7 +5,7 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Options for controlling citation generation in RAG flows.
+ * Options for controlling citation generation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -30,14 +30,14 @@ public final class CitationOptionsV2 extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Dictates the approach taken to generating citations as part of the RAG flow. Defaults to "accurate".   - "ACCURATE": More precise citation generation.   - "FAST": Faster but may be less precise.   - "OFF": Disables citation generation.   Note: {@code command-r7b-12-2024} and {@code command-a-03-2025} only support "FAST" and "OFF".
+         * Dictates the approach taken to generating citations.   - "ACCURATE": More precise citation generation.   - "FAST": Faster but may be less precise.   - "OFF": Disables citation generation.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private Mode mode;
 
         /**
-         * Dictates the approach taken to generating citations as part of the RAG flow. Defaults to "accurate".   - "ACCURATE": More precise citation generation.   - "FAST": Faster but may be less precise.   - "OFF": Disables citation generation.   Note: {@code command-r7b-12-2024} and {@code command-a-03-2025} only support "FAST" and "OFF".
+         * Dictates the approach taken to generating citations.   - "ACCURATE": More precise citation generation.   - "FAST": Faster but may be less precise.   - "OFF": Disables citation generation.
          *
          * @param mode the value to set
          * @return this builder
@@ -80,7 +80,7 @@ public final class CitationOptionsV2 extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Dictates the approach taken to generating citations as part of the RAG flow. Defaults to "accurate".   - "ACCURATE": More precise citation generation.   - "FAST": Faster but may be less precise.   - "OFF": Disables citation generation.   Note: {@code command-r7b-12-2024} and {@code command-a-03-2025} only support "FAST" and "OFF".
+     * Dictates the approach taken to generating citations.   - "ACCURATE": More precise citation generation.   - "FAST": Faster but may be less precise.   - "OFF": Disables citation generation.
      *
      **/
     public enum Mode {
@@ -117,14 +117,14 @@ public final class CitationOptionsV2 extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * Dictates the approach taken to generating citations as part of the RAG flow. Defaults to "accurate".   - "ACCURATE": More precise citation generation.   - "FAST": Faster but may be less precise.   - "OFF": Disables citation generation.   Note: {@code command-r7b-12-2024} and {@code command-a-03-2025} only support "FAST" and "OFF".
+     * Dictates the approach taken to generating citations.   - "ACCURATE": More precise citation generation.   - "FAST": Faster but may be less precise.   - "OFF": Disables citation generation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final Mode mode;
 
     /**
-     * Dictates the approach taken to generating citations as part of the RAG flow. Defaults to "accurate".   - "ACCURATE": More precise citation generation.   - "FAST": Faster but may be less precise.   - "OFF": Disables citation generation.   Note: {@code command-r7b-12-2024} and {@code command-a-03-2025} only support "FAST" and "OFF".
+     * Dictates the approach taken to generating citations.   - "ACCURATE": More precise citation generation.   - "FAST": Faster but may be less precise.   - "OFF": Disables citation generation.
      *
      * @return the value
      **/

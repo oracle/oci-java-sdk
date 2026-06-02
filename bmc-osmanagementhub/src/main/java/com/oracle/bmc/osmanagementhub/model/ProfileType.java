@@ -14,6 +14,7 @@ public enum ProfileType {
     Lifecycle("LIFECYCLE"),
     Station("STATION"),
     WindowsStandalone("WINDOWS_STANDALONE"),
+    UbuntuStandalone("UBUNTU_STANDALONE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

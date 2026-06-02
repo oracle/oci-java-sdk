@@ -211,6 +211,14 @@ public class ListScheduledJobsConverter {
                                     request.getIsManagedByAutonomousLinux()));
         }
 
+        if (request.getDynamicSetId() != null) {
+            target =
+                    target.queryParam(
+                            "dynamicSetId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDynamicSetId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

@@ -27,28 +27,28 @@ public class SearchLogsRequest
         return searchLogsDetails;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. The input value can be null but an empty string will return an error.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. The input value can be null but an empty string will return an error.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
      *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The maximum number of items to return in a response. Pagination is not supported in this API.
+     * The maximum number of items to return in a response.
      *
      */
     private Integer limit;
 
     /**
-     * The maximum number of items to return in a response. Pagination is not supported in this API.
+     * The maximum number of items to return in a response.
      *
      */
     public Integer getLimit() {
@@ -56,6 +56,7 @@ public class SearchLogsRequest
     }
     /**
      * For list pagination. The value of the opc-next-page response header from the previous "Search" call.
+     * The input value can be null but an empty string will return an error.
      * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
@@ -63,6 +64,7 @@ public class SearchLogsRequest
 
     /**
      * For list pagination. The value of the opc-next-page response header from the previous "Search" call.
+     * The input value can be null but an empty string will return an error.
      * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
@@ -106,15 +108,15 @@ public class SearchLogsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. The input value can be null but an empty string will return an error.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. The input value can be null but an empty string will return an error.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -125,13 +127,13 @@ public class SearchLogsRequest
         }
 
         /**
-         * The maximum number of items to return in a response. Pagination is not supported in this API.
+         * The maximum number of items to return in a response.
          *
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return in a response. Pagination is not supported in this API.
+         * The maximum number of items to return in a response.
          *
          * @param limit the value to set
          * @return this builder instance
@@ -143,6 +145,7 @@ public class SearchLogsRequest
 
         /**
          * For list pagination. The value of the opc-next-page response header from the previous "Search" call.
+         * The input value can be null but an empty string will return an error.
          * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          */
@@ -150,6 +153,7 @@ public class SearchLogsRequest
 
         /**
          * For list pagination. The value of the opc-next-page response header from the previous "Search" call.
+         * The input value can be null but an empty string will return an error.
          * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set

@@ -33,8 +33,14 @@ public class GetVectorStoreConnectorConverter {
         Validate.notBlank(
                 request.getVectorStoreConnectorId(), "vectorStoreConnectorId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vectorStoreConnectorId", request.getVectorStoreConnectorId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20231130")
                         .path("vectorStoreConnectors")
                         .path(

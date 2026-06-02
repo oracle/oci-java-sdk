@@ -81,14 +81,14 @@ public final class PolarisIcebergCatalog extends IcebergCatalog {
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
         private String clientSecretSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
          *
          * @param clientSecretSecretId the value to set
          * @return this builder
@@ -226,14 +226,14 @@ public final class PolarisIcebergCatalog extends IcebergCatalog {
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
     private final String clientSecretSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
      *
      * @return the value
      **/

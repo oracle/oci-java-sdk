@@ -143,6 +143,15 @@ public final class VmwareVmAsset extends Asset {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private EnvironmentType environmentType;
+
+        public Builder environmentType(EnvironmentType environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compute")
         private ComputeProperties compute;
 
@@ -198,6 +207,7 @@ public final class VmwareVmAsset extends Asset {
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.environmentType,
                             this.compute,
                             this.vm,
                             this.vmwareVm,
@@ -249,6 +259,9 @@ public final class VmwareVmAsset extends Asset {
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
+            }
             if (model.wasPropertyExplicitlySet("compute")) {
                 this.compute(model.getCompute());
             }
@@ -291,6 +304,7 @@ public final class VmwareVmAsset extends Asset {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            EnvironmentType environmentType,
             ComputeProperties compute,
             VmProperties vm,
             VmwareVmProperties vmwareVm,
@@ -308,7 +322,8 @@ public final class VmwareVmAsset extends Asset {
                 lifecycleState,
                 freeformTags,
                 definedTags,
-                systemTags);
+                systemTags,
+                environmentType);
         this.compute = compute;
         this.vm = vm;
         this.vmwareVm = vmwareVm;

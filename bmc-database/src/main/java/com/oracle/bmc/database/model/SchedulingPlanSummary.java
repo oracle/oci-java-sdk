@@ -210,15 +210,13 @@ public final class SchedulingPlanSummary
             return this;
         }
         /**
-         * The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
-         *
+         * The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("planIntent")
         private PlanIntent planIntent;
 
         /**
-         * The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
-         *
+         * The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
          * @param planIntent the value to set
          * @return this builder
          **/
@@ -620,11 +618,11 @@ public final class SchedulingPlanSummary
     }
 
     /**
-     * The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
-     *
+     * The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
      **/
     public enum PlanIntent {
         ExadataInfrastructureFullSoftwareUpdate("EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"),
+        ExadataInfrastructureSecurityUpdate("EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -668,15 +666,13 @@ public final class SchedulingPlanSummary
         }
     };
     /**
-     * The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
-     *
+     * The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planIntent")
     private final PlanIntent planIntent;
 
     /**
-     * The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
-     *
+     * The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
      * @return the value
      **/
     public PlanIntent getPlanIntent() {

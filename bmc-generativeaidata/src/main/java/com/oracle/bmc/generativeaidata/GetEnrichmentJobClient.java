@@ -569,7 +569,10 @@ public class GetEnrichmentJobClient implements GetEnrichmentJob {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "GetEnrichmentJob", "GetEnrichmentJob", ib.getRequestUri().toString(), "");
+                        "GetEnrichmentJob",
+                        "GetEnrichmentJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJob/GetEnrichmentJob");
         java.util.function.Function<javax.ws.rs.core.Response, GetEnrichmentJobResponse>
                 transformer =
                         GetEnrichmentJobConverter.fromResponse(

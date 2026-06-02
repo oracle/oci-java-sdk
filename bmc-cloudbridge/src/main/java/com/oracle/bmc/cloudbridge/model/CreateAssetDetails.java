@@ -31,6 +31,10 @@ package com.oracle.bmc.cloudbridge.model;
         name = "VMWARE_VM"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateInventoryAssetDetails.class,
+        name = "INVENTORY_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateAwsEc2AssetDetails.class,
         name = "AWS_EC2"
     )

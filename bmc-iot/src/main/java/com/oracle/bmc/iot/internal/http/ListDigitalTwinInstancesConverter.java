@@ -98,6 +98,14 @@ public class ListDigitalTwinInstancesConverter {
                                     request.getDigitalTwinModelSpecUri()));
         }
 
+        if (request.getConnectivityType() != null) {
+            target =
+                    target.queryParam(
+                            "connectivityType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getConnectivityType().getValue()));
+        }
+
         target =
                 target.queryParam(
                         "iotDomainId",

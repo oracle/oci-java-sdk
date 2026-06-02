@@ -77,6 +77,24 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Adds a lock to a DatabaseToolsDatabaseApiGatewayConfig resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDatabaseToolsDatabaseApiGatewayConfigLockResponse>
+            addDatabaseToolsDatabaseApiGatewayConfigLock(
+                    AddDatabaseToolsDatabaseApiGatewayConfigLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddDatabaseToolsDatabaseApiGatewayConfigLockRequest,
+                                    AddDatabaseToolsDatabaseApiGatewayConfigLockResponse>
+                            handler);
+
+    /**
      * Adds a lock to a DatabaseToolsIdentity resource.
      *
      * @param request The request object containing the details to send
@@ -94,6 +112,42 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Adds a lock to a DatabaseToolsMcpServer resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDatabaseToolsMcpServerLockResponse>
+            addDatabaseToolsMcpServerLock(
+                    AddDatabaseToolsMcpServerLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddDatabaseToolsMcpServerLockRequest,
+                                    AddDatabaseToolsMcpServerLockResponse>
+                            handler);
+
+    /**
+     * Adds a lock to a DatabaseToolsMcpToolset resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDatabaseToolsMcpToolsetLockResponse>
+            addDatabaseToolsMcpToolsetLock(
+                    AddDatabaseToolsMcpToolsetLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddDatabaseToolsMcpToolsetLockRequest,
+                                    AddDatabaseToolsMcpToolsetLockResponse>
+                            handler);
+
+    /**
      * Adds a lock to a DatabaseToolsPrivateEndpoint resource.
      *
      * @param request The request object containing the details to send
@@ -109,6 +163,43 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     AddDatabaseToolsPrivateEndpointLockRequest,
                                     AddDatabaseToolsPrivateEndpointLockResponse>
+                            handler);
+
+    /**
+     * Adds a lock to a DatabaseToolsSqlReport resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDatabaseToolsSqlReportLockResponse>
+            addDatabaseToolsSqlReportLock(
+                    AddDatabaseToolsSqlReportLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddDatabaseToolsSqlReportLockRequest,
+                                    AddDatabaseToolsSqlReportLockResponse>
+                            handler);
+
+    /**
+     * Deletes Database Tools McpServer resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CascadingDeleteDatabaseToolsMcpServerResponse>
+            cascadingDeleteDatabaseToolsMcpServer(
+                    CascadingDeleteDatabaseToolsMcpServerRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CascadingDeleteDatabaseToolsMcpServerRequest,
+                                    CascadingDeleteDatabaseToolsMcpServerResponse>
                             handler);
 
     /**
@@ -133,6 +224,27 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the specified Database Tools database API gateway config to a different compartment in the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/DbApiGatewayConfig/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentResponse>
+            changeDatabaseToolsDatabaseApiGatewayConfigCompartment(
+                    ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentRequest,
+                                    ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentResponse>
+                            handler);
+
+    /**
      * Moves the specified Database Tools identity to a different compartment in the same tenancy.
      * For information about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -151,6 +263,44 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeDatabaseToolsIdentityCompartmentRequest,
                                     ChangeDatabaseToolsIdentityCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves the specified Database Tools mcpserver to a different compartment in the same tenancy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDatabaseToolsMcpServerCompartmentResponse>
+            changeDatabaseToolsMcpServerCompartment(
+                    ChangeDatabaseToolsMcpServerCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDatabaseToolsMcpServerCompartmentRequest,
+                                    ChangeDatabaseToolsMcpServerCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves the specified Database Tools MCP Toolset to a different compartment in the same tenancy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDatabaseToolsMcpToolsetCompartmentResponse>
+            changeDatabaseToolsMcpToolsetCompartment(
+                    ChangeDatabaseToolsMcpToolsetCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDatabaseToolsMcpToolsetCompartmentRequest,
+                                    ChangeDatabaseToolsMcpToolsetCompartmentResponse>
                             handler);
 
     /**
@@ -175,6 +325,25 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the specified Database Tools SQL Report to a different compartment in the same tenancy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDatabaseToolsSqlReportCompartmentResponse>
+            changeDatabaseToolsSqlReportCompartment(
+                    ChangeDatabaseToolsSqlReportCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDatabaseToolsSqlReportCompartmentRequest,
+                                    ChangeDatabaseToolsSqlReportCompartmentResponse>
+                            handler);
+
+    /**
      * Creates a new Database Tools connection.
      *
      *
@@ -194,6 +363,25 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a new Database Tools database API gateway config.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDatabaseToolsDatabaseApiGatewayConfigResponse>
+            createDatabaseToolsDatabaseApiGatewayConfig(
+                    CreateDatabaseToolsDatabaseApiGatewayConfigRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateDatabaseToolsDatabaseApiGatewayConfigRequest,
+                                    CreateDatabaseToolsDatabaseApiGatewayConfigResponse>
+                            handler);
+
+    /**
      * Creates a new Database Tools identity.
      *
      *
@@ -209,6 +397,43 @@ public interface DatabaseToolsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateDatabaseToolsIdentityRequest, CreateDatabaseToolsIdentityResponse>
                     handler);
+
+    /**
+     * Creates a new Database Tools MCP server.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDatabaseToolsMcpServerResponse> createDatabaseToolsMcpServer(
+            CreateDatabaseToolsMcpServerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDatabaseToolsMcpServerRequest,
+                            CreateDatabaseToolsMcpServerResponse>
+                    handler);
+
+    /**
+     * Creates a new Database Tools MCP Toolset.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDatabaseToolsMcpToolsetResponse>
+            createDatabaseToolsMcpToolset(
+                    CreateDatabaseToolsMcpToolsetRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateDatabaseToolsMcpToolsetRequest,
+                                    CreateDatabaseToolsMcpToolsetResponse>
+                            handler);
 
     /**
      * Creates a new Database Tools private endpoint.
@@ -230,6 +455,24 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a new Database Tools  Sql Report.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDatabaseToolsSqlReportResponse> createDatabaseToolsSqlReport(
+            CreateDatabaseToolsSqlReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDatabaseToolsSqlReportRequest,
+                            CreateDatabaseToolsSqlReportResponse>
+                    handler);
+
+    /**
      * Deletes the specified Database Tools connection resource.
      *
      * @param request The request object containing the details to send
@@ -248,6 +491,24 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes the specified Database Tools database API gateway config resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDatabaseToolsDatabaseApiGatewayConfigResponse>
+            deleteDatabaseToolsDatabaseApiGatewayConfig(
+                    DeleteDatabaseToolsDatabaseApiGatewayConfigRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteDatabaseToolsDatabaseApiGatewayConfigRequest,
+                                    DeleteDatabaseToolsDatabaseApiGatewayConfigResponse>
+                            handler);
+
+    /**
      * Deletes the specified Database Tools identity resource.
      *
      * @param request The request object containing the details to send
@@ -262,6 +523,41 @@ public interface DatabaseToolsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteDatabaseToolsIdentityRequest, DeleteDatabaseToolsIdentityResponse>
                     handler);
+
+    /**
+     * Deletes the specified Database Tools MCP server resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDatabaseToolsMcpServerResponse> deleteDatabaseToolsMcpServer(
+            DeleteDatabaseToolsMcpServerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDatabaseToolsMcpServerRequest,
+                            DeleteDatabaseToolsMcpServerResponse>
+                    handler);
+
+    /**
+     * Deletes the specified Database Tools MCP Toolset resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDatabaseToolsMcpToolsetResponse>
+            deleteDatabaseToolsMcpToolset(
+                    DeleteDatabaseToolsMcpToolsetRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteDatabaseToolsMcpToolsetRequest,
+                                    DeleteDatabaseToolsMcpToolsetResponse>
+                            handler);
 
     /**
      * Deletes the specified Database Tools private endpoint.
@@ -282,6 +578,23 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes the specified Database Tools SQL Report resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDatabaseToolsSqlReportResponse> deleteDatabaseToolsSqlReport(
+            DeleteDatabaseToolsSqlReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDatabaseToolsSqlReportRequest,
+                            DeleteDatabaseToolsSqlReportResponse>
+                    handler);
+
+    /**
      * Gets details of the specified Database Tools connection.
      *
      * @param request The request object containing the details to send
@@ -296,6 +609,24 @@ public interface DatabaseToolsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetDatabaseToolsConnectionRequest, GetDatabaseToolsConnectionResponse>
                     handler);
+
+    /**
+     * Gets details of the specified Database Tools database API gateway config.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseToolsDatabaseApiGatewayConfigResponse>
+            getDatabaseToolsDatabaseApiGatewayConfig(
+                    GetDatabaseToolsDatabaseApiGatewayConfigRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetDatabaseToolsDatabaseApiGatewayConfigRequest,
+                                    GetDatabaseToolsDatabaseApiGatewayConfigResponse>
+                            handler);
 
     /**
      * Gets details for the specified Database Tools endpoint service.
@@ -332,6 +663,38 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets details of the specified Database Tools MCP server.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseToolsMcpServerResponse> getDatabaseToolsMcpServer(
+            GetDatabaseToolsMcpServerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseToolsMcpServerRequest, GetDatabaseToolsMcpServerResponse>
+                    handler);
+
+    /**
+     * Gets details of the specified Database Tools MCP Toolset.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseToolsMcpToolsetResponse> getDatabaseToolsMcpToolset(
+            GetDatabaseToolsMcpToolsetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseToolsMcpToolsetRequest, GetDatabaseToolsMcpToolsetResponse>
+                    handler);
+
+    /**
      * Gets details of a specified Database Tools private endpoint.
      *
      * @param request The request object containing the details to send
@@ -348,6 +711,22 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                                     GetDatabaseToolsPrivateEndpointRequest,
                                     GetDatabaseToolsPrivateEndpointResponse>
                             handler);
+
+    /**
+     * Gets details of the specified Database Tools SQL report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseToolsSqlReportResponse> getDatabaseToolsSqlReport(
+            GetDatabaseToolsSqlReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseToolsSqlReportRequest, GetDatabaseToolsSqlReportResponse>
+                    handler);
 
     /**
      * Gets the status of the specified work request.
@@ -381,6 +760,24 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             ListDatabaseToolsConnectionsRequest,
                             ListDatabaseToolsConnectionsResponse>
                     handler);
+
+    /**
+     * Returns a list of Database Tools database API gateway configs.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDatabaseToolsDatabaseApiGatewayConfigsResponse>
+            listDatabaseToolsDatabaseApiGatewayConfigs(
+                    ListDatabaseToolsDatabaseApiGatewayConfigsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseToolsDatabaseApiGatewayConfigsRequest,
+                                    ListDatabaseToolsDatabaseApiGatewayConfigsResponse>
+                            handler);
 
     /**
      * Returns a list of Database Tools endpoint services.
@@ -418,6 +815,57 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of Database Tools MCP servers.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDatabaseToolsMcpServersResponse> listDatabaseToolsMcpServers(
+            ListDatabaseToolsMcpServersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDatabaseToolsMcpServersRequest, ListDatabaseToolsMcpServersResponse>
+                    handler);
+
+    /**
+     * Returns a list of Database Tools Toolset versions
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDatabaseToolsMcpToolsetVersionsResponse>
+            listDatabaseToolsMcpToolsetVersions(
+                    ListDatabaseToolsMcpToolsetVersionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseToolsMcpToolsetVersionsRequest,
+                                    ListDatabaseToolsMcpToolsetVersionsResponse>
+                            handler);
+
+    /**
+     * Returns a list of Database Tools Toolsets.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDatabaseToolsMcpToolsetsResponse> listDatabaseToolsMcpToolsets(
+            ListDatabaseToolsMcpToolsetsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDatabaseToolsMcpToolsetsRequest,
+                            ListDatabaseToolsMcpToolsetsResponse>
+                    handler);
+
+    /**
      * Returns a list of Database Tools private endpoints.
      *
      *
@@ -435,6 +883,22 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                                     ListDatabaseToolsPrivateEndpointsRequest,
                                     ListDatabaseToolsPrivateEndpointsResponse>
                             handler);
+
+    /**
+     * Returns a list of Database Tools SQL reports.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDatabaseToolsSqlReportsResponse> listDatabaseToolsSqlReports(
+            ListDatabaseToolsSqlReportsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDatabaseToolsSqlReportsRequest, ListDatabaseToolsSqlReportsResponse>
+                    handler);
 
     /**
      * Returns a paginated list of errors for the specified work request.
@@ -524,6 +988,24 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Removes a lock from a DatabaseToolsDatabaseApiGatewayConfig resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDatabaseToolsDatabaseApiGatewayConfigLockResponse>
+            removeDatabaseToolsDatabaseApiGatewayConfigLock(
+                    RemoveDatabaseToolsDatabaseApiGatewayConfigLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDatabaseToolsDatabaseApiGatewayConfigLockRequest,
+                                    RemoveDatabaseToolsDatabaseApiGatewayConfigLockResponse>
+                            handler);
+
+    /**
      * Removes a lock from a DatabaseToolsIdentity resource.
      *
      * @param request The request object containing the details to send
@@ -539,6 +1021,42 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     RemoveDatabaseToolsIdentityLockRequest,
                                     RemoveDatabaseToolsIdentityLockResponse>
+                            handler);
+
+    /**
+     * Removes a lock from a DatabaseToolsMcpServer resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDatabaseToolsMcpServerLockResponse>
+            removeDatabaseToolsMcpServerLock(
+                    RemoveDatabaseToolsMcpServerLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDatabaseToolsMcpServerLockRequest,
+                                    RemoveDatabaseToolsMcpServerLockResponse>
+                            handler);
+
+    /**
+     * Removes a lock from a DatabaseToolsMcpToolset resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDatabaseToolsMcpToolsetLockResponse>
+            removeDatabaseToolsMcpToolsetLock(
+                    RemoveDatabaseToolsMcpToolsetLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDatabaseToolsMcpToolsetLockRequest,
+                                    RemoveDatabaseToolsMcpToolsetLockResponse>
                             handler);
 
     /**
@@ -560,6 +1078,24 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Removes a lock from a DatabaseToolsSqlReport resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDatabaseToolsSqlReportLockResponse>
+            removeDatabaseToolsSqlReportLock(
+                    RemoveDatabaseToolsSqlReportLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDatabaseToolsSqlReportLockRequest,
+                                    RemoveDatabaseToolsSqlReportLockResponse>
+                            handler);
+
+    /**
      * Updates the specified Database Tools connection.
      *
      * @param request The request object containing the details to send
@@ -575,6 +1111,24 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UpdateDatabaseToolsConnectionRequest,
                                     UpdateDatabaseToolsConnectionResponse>
+                            handler);
+
+    /**
+     * Updates the specified Database Tools database API gateway config.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDatabaseToolsDatabaseApiGatewayConfigResponse>
+            updateDatabaseToolsDatabaseApiGatewayConfig(
+                    UpdateDatabaseToolsDatabaseApiGatewayConfigRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDatabaseToolsDatabaseApiGatewayConfigRequest,
+                                    UpdateDatabaseToolsDatabaseApiGatewayConfigResponse>
                             handler);
 
     /**
@@ -594,6 +1148,41 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the specified Database Tools MCP server.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDatabaseToolsMcpServerResponse> updateDatabaseToolsMcpServer(
+            UpdateDatabaseToolsMcpServerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDatabaseToolsMcpServerRequest,
+                            UpdateDatabaseToolsMcpServerResponse>
+                    handler);
+
+    /**
+     * Updates the specified Database Tools MCP Toolset.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDatabaseToolsMcpToolsetResponse>
+            updateDatabaseToolsMcpToolset(
+                    UpdateDatabaseToolsMcpToolsetRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDatabaseToolsMcpToolsetRequest,
+                                    UpdateDatabaseToolsMcpToolsetResponse>
+                            handler);
+
+    /**
      * Updates the specified Database Tools private endpoint.
      *
      * @param request The request object containing the details to send
@@ -610,6 +1199,23 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                                     UpdateDatabaseToolsPrivateEndpointRequest,
                                     UpdateDatabaseToolsPrivateEndpointResponse>
                             handler);
+
+    /**
+     * Updates the specified Database Tools SQL Report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDatabaseToolsSqlReportResponse> updateDatabaseToolsSqlReport(
+            UpdateDatabaseToolsSqlReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDatabaseToolsSqlReportRequest,
+                            UpdateDatabaseToolsSqlReportResponse>
+                    handler);
 
     /**
      * Validates the Database Tools connection details by establishing a connection to the database.

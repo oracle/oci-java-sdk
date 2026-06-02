@@ -22,6 +22,22 @@ package com.oracle.bmc.oda.model;
 public final class UpdateTranslatorDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public UpdateTranslatorDetails(
+            String baseUrl,
+            String authToken,
+            java.util.Map<String, String> properties,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+        super();
+        this.baseUrl = baseUrl;
+        this.authToken = authToken != null ? authToken.toCharArray() : null;
+        this.properties = properties;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "baseUrl",
         "authToken",
@@ -31,7 +47,7 @@ public final class UpdateTranslatorDetails
     })
     public UpdateTranslatorDetails(
             String baseUrl,
-            String authToken,
+            char[] authToken,
             java.util.Map<String, String> properties,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -65,18 +81,25 @@ public final class UpdateTranslatorDetails
          * The authentication token to use when invoking the Translation Service
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("authToken")
-        private String authToken;
+        private char[] authToken;
 
         /**
          * The authentication token to use when invoking the Translation Service
          * @param authToken the value to set
          * @return this builder
          **/
-        public Builder authToken(String authToken) {
+        public Builder authToken(char[] authToken) {
             this.authToken = authToken;
             this.__explicitlySet__.add("authToken");
             return this;
         }
+
+        public Builder authToken(String authToken) {
+            this.authToken = authToken != null ? authToken.toCharArray() : null;
+            this.__explicitlySet__.add("authToken");
+            return this;
+        }
+
         /**
          * Properties used when invoking the translation service.
          * Each property is a simple key-value pair.
@@ -206,13 +229,25 @@ public final class UpdateTranslatorDetails
      * The authentication token to use when invoking the Translation Service
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authToken")
-    private final String authToken;
+    private final char[] authToken;
+
+    /**
+     * The authentication token to use when invoking the Translation Service
+     * return the value
+     * @Deprecated - Use getAuthToken__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAuthToken() {
+        return authToken != null ? new String(authToken) : null;
+    }
 
     /**
      * The authentication token to use when invoking the Translation Service
      * @return the value
      **/
-    public String getAuthToken() {
+    @com.fasterxml.jackson.annotation.JsonProperty("authToken")
+    public char[] getAuthToken__AsCharArray() {
         return authToken;
     }
 

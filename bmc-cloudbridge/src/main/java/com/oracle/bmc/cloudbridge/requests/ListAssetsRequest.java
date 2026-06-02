@@ -194,6 +194,28 @@ public class ListAssetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public String getInventoryId() {
         return inventoryId;
     }
+    /**
+     * The name of the asset class.
+     */
+    private String assetClassName;
+
+    /**
+     * The name of the asset class.
+     */
+    public String getAssetClassName() {
+        return assetClassName;
+    }
+    /**
+     * The version of the asset class.
+     */
+    private String assetClassVersion;
+
+    /**
+     * The version of the asset class.
+     */
+    public String getAssetClassVersion() {
+        return assetClassVersion;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -401,6 +423,36 @@ public class ListAssetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
+         * The name of the asset class.
+         */
+        private String assetClassName = null;
+
+        /**
+         * The name of the asset class.
+         * @param assetClassName the value to set
+         * @return this builder instance
+         */
+        public Builder assetClassName(String assetClassName) {
+            this.assetClassName = assetClassName;
+            return this;
+        }
+
+        /**
+         * The version of the asset class.
+         */
+        private String assetClassVersion = null;
+
+        /**
+         * The version of the asset class.
+         * @param assetClassVersion the value to set
+         * @return this builder instance
+         */
+        public Builder assetClassVersion(String assetClassVersion) {
+            this.assetClassVersion = assetClassVersion;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -441,6 +493,8 @@ public class ListAssetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             inventoryId(o.getInventoryId());
+            assetClassName(o.getAssetClassName());
+            assetClassVersion(o.getAssetClassVersion());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -486,8 +540,10 @@ public class ListAssetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             request.inventoryId = inventoryId;
+            request.assetClassName = assetClassName;
+            request.assetClassVersion = assetClassVersion;
             return request;
-            // new ListAssetsRequest(compartmentId, limit, page, lifecycleState, sourceKey, externalAssetKey, assetType, assetId, displayName, sortOrder, sortBy, opcRequestId, inventoryId);
+            // new ListAssetsRequest(compartmentId, limit, page, lifecycleState, sourceKey, externalAssetKey, assetType, assetId, displayName, sortOrder, sortBy, opcRequestId, inventoryId, assetClassName, assetClassVersion);
         }
     }
 
@@ -509,7 +565,9 @@ public class ListAssetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
-                .inventoryId(inventoryId);
+                .inventoryId(inventoryId)
+                .assetClassName(assetClassName)
+                .assetClassVersion(assetClassVersion);
     }
 
     /**
@@ -538,6 +596,8 @@ public class ListAssetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",inventoryId=").append(String.valueOf(this.inventoryId));
+        sb.append(",assetClassName=").append(String.valueOf(this.assetClassName));
+        sb.append(",assetClassVersion=").append(String.valueOf(this.assetClassVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -565,7 +625,9 @@ public class ListAssetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.inventoryId, other.inventoryId);
+                && java.util.Objects.equals(this.inventoryId, other.inventoryId)
+                && java.util.Objects.equals(this.assetClassName, other.assetClassName)
+                && java.util.Objects.equals(this.assetClassVersion, other.assetClassVersion);
     }
 
     @Override
@@ -591,6 +653,12 @@ public class ListAssetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.inventoryId == null ? 43 : this.inventoryId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assetClassName == null ? 43 : this.assetClassName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assetClassVersion == null ? 43 : this.assetClassVersion.hashCode());
         return result;
     }
 }

@@ -32,8 +32,15 @@ public class DeleteDataSourceConverter {
         Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
         Validate.notBlank(request.getDataSourceKey(), "dataSourceKey must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+        requiredParametersMap.put("dataSourceKey", request.getDataSourceKey());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20200202")
                         .path("managementAgents")
                         .path(

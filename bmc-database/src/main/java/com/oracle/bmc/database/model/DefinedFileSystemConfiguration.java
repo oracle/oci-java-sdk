@@ -25,14 +25,20 @@ public final class DefinedFileSystemConfiguration
     @java.beans.ConstructorProperties({
         "mountPoint",
         "minSizeGb",
+        "maxSizeGb",
         "isResizable",
         "isBackupPartition"
     })
     public DefinedFileSystemConfiguration(
-            String mountPoint, Integer minSizeGb, Boolean isResizable, Boolean isBackupPartition) {
+            String mountPoint,
+            Integer minSizeGb,
+            Integer maxSizeGb,
+            Boolean isResizable,
+            Boolean isBackupPartition) {
         super();
         this.mountPoint = mountPoint;
         this.minSizeGb = minSizeGb;
+        this.maxSizeGb = maxSizeGb;
         this.isResizable = isResizable;
         this.isBackupPartition = isBackupPartition;
     }
@@ -69,6 +75,22 @@ public final class DefinedFileSystemConfiguration
         public Builder minSizeGb(Integer minSizeGb) {
             this.minSizeGb = minSizeGb;
             this.__explicitlySet__.add("minSizeGb");
+            return this;
+        }
+        /**
+         * The maximum size of file system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxSizeGb")
+        private Integer maxSizeGb;
+
+        /**
+         * The maximum size of file system.
+         * @param maxSizeGb the value to set
+         * @return this builder
+         **/
+        public Builder maxSizeGb(Integer maxSizeGb) {
+            this.maxSizeGb = maxSizeGb;
+            this.__explicitlySet__.add("maxSizeGb");
             return this;
         }
         /**
@@ -112,6 +134,7 @@ public final class DefinedFileSystemConfiguration
                     new DefinedFileSystemConfiguration(
                             this.mountPoint,
                             this.minSizeGb,
+                            this.maxSizeGb,
                             this.isResizable,
                             this.isBackupPartition);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -127,6 +150,9 @@ public final class DefinedFileSystemConfiguration
             }
             if (model.wasPropertyExplicitlySet("minSizeGb")) {
                 this.minSizeGb(model.getMinSizeGb());
+            }
+            if (model.wasPropertyExplicitlySet("maxSizeGb")) {
+                this.maxSizeGb(model.getMaxSizeGb());
             }
             if (model.wasPropertyExplicitlySet("isResizable")) {
                 this.isResizable(model.getIsResizable());
@@ -178,6 +204,20 @@ public final class DefinedFileSystemConfiguration
     }
 
     /**
+     * The maximum size of file system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxSizeGb")
+    private final Integer maxSizeGb;
+
+    /**
+     * The maximum size of file system.
+     * @return the value
+     **/
+    public Integer getMaxSizeGb() {
+        return maxSizeGb;
+    }
+
+    /**
      * If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isResizable")
@@ -221,6 +261,7 @@ public final class DefinedFileSystemConfiguration
         sb.append("super=").append(super.toString());
         sb.append("mountPoint=").append(String.valueOf(this.mountPoint));
         sb.append(", minSizeGb=").append(String.valueOf(this.minSizeGb));
+        sb.append(", maxSizeGb=").append(String.valueOf(this.maxSizeGb));
         sb.append(", isResizable=").append(String.valueOf(this.isResizable));
         sb.append(", isBackupPartition=").append(String.valueOf(this.isBackupPartition));
         sb.append(")");
@@ -239,6 +280,7 @@ public final class DefinedFileSystemConfiguration
         DefinedFileSystemConfiguration other = (DefinedFileSystemConfiguration) o;
         return java.util.Objects.equals(this.mountPoint, other.mountPoint)
                 && java.util.Objects.equals(this.minSizeGb, other.minSizeGb)
+                && java.util.Objects.equals(this.maxSizeGb, other.maxSizeGb)
                 && java.util.Objects.equals(this.isResizable, other.isResizable)
                 && java.util.Objects.equals(this.isBackupPartition, other.isBackupPartition)
                 && super.equals(other);
@@ -250,6 +292,7 @@ public final class DefinedFileSystemConfiguration
         int result = 1;
         result = (result * PRIME) + (this.mountPoint == null ? 43 : this.mountPoint.hashCode());
         result = (result * PRIME) + (this.minSizeGb == null ? 43 : this.minSizeGb.hashCode());
+        result = (result * PRIME) + (this.maxSizeGb == null ? 43 : this.maxSizeGb.hashCode());
         result = (result * PRIME) + (this.isResizable == null ? 43 : this.isResizable.hashCode());
         result =
                 (result * PRIME)

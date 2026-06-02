@@ -19,6 +19,45 @@ package com.oracle.bmc.datasafe.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MaskDataDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public MaskDataDetails(
+            String targetId,
+            Boolean isDecrypt,
+            Boolean isRerun,
+            ReRunFromStep reRunFromStep,
+            String tablespace,
+            Boolean isIgnoreErrorsEnabled,
+            String seed,
+            String userDefinedFunctionSeed,
+            Boolean isMoveInterimTablesEnabled,
+            Boolean isExecuteSavedScriptEnabled,
+            Boolean isDropTempTablesEnabled,
+            Boolean isRedoLoggingEnabled,
+            Boolean isRefreshStatsEnabled,
+            String parallelDegree,
+            String recompile,
+            Credentials targetCredentials) {
+        super();
+        this.targetId = targetId;
+        this.isDecrypt = isDecrypt;
+        this.isRerun = isRerun;
+        this.reRunFromStep = reRunFromStep;
+        this.tablespace = tablespace;
+        this.isIgnoreErrorsEnabled = isIgnoreErrorsEnabled;
+        this.seed = seed != null ? seed.toCharArray() : null;
+        this.userDefinedFunctionSeed =
+                userDefinedFunctionSeed != null ? userDefinedFunctionSeed.toCharArray() : null;
+        this.isMoveInterimTablesEnabled = isMoveInterimTablesEnabled;
+        this.isExecuteSavedScriptEnabled = isExecuteSavedScriptEnabled;
+        this.isDropTempTablesEnabled = isDropTempTablesEnabled;
+        this.isRedoLoggingEnabled = isRedoLoggingEnabled;
+        this.isRefreshStatsEnabled = isRefreshStatsEnabled;
+        this.parallelDegree = parallelDegree;
+        this.recompile = recompile;
+        this.targetCredentials = targetCredentials;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "targetId",
         "isDecrypt",
@@ -44,8 +83,8 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
             ReRunFromStep reRunFromStep,
             String tablespace,
             Boolean isIgnoreErrorsEnabled,
-            String seed,
-            String userDefinedFunctionSeed,
+            char[] seed,
+            char[] userDefinedFunctionSeed,
             Boolean isMoveInterimTablesEnabled,
             Boolean isExecuteSavedScriptEnabled,
             Boolean isDropTempTablesEnabled,
@@ -213,34 +252,49 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
          * The seed value to be used in case of Deterministic Encryption and Deterministic Substitution masking formats.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("seed")
-        private String seed;
+        private char[] seed;
 
         /**
          * The seed value to be used in case of Deterministic Encryption and Deterministic Substitution masking formats.
          * @param seed the value to set
          * @return this builder
          **/
-        public Builder seed(String seed) {
+        public Builder seed(char[] seed) {
             this.seed = seed;
             this.__explicitlySet__.add("seed");
             return this;
         }
+
+        public Builder seed(String seed) {
+            this.seed = seed != null ? seed.toCharArray() : null;
+            this.__explicitlySet__.add("seed");
+            return this;
+        }
+
         /**
          * The seed value to be used in case of User Defined Function masking format. This is an optional parameter and needs to be passed only if any User Defined Function uses seed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("userDefinedFunctionSeed")
-        private String userDefinedFunctionSeed;
+        private char[] userDefinedFunctionSeed;
 
         /**
          * The seed value to be used in case of User Defined Function masking format. This is an optional parameter and needs to be passed only if any User Defined Function uses seed.
          * @param userDefinedFunctionSeed the value to set
          * @return this builder
          **/
-        public Builder userDefinedFunctionSeed(String userDefinedFunctionSeed) {
+        public Builder userDefinedFunctionSeed(char[] userDefinedFunctionSeed) {
             this.userDefinedFunctionSeed = userDefinedFunctionSeed;
             this.__explicitlySet__.add("userDefinedFunctionSeed");
             return this;
         }
+
+        public Builder userDefinedFunctionSeed(String userDefinedFunctionSeed) {
+            this.userDefinedFunctionSeed =
+                    userDefinedFunctionSeed != null ? userDefinedFunctionSeed.toCharArray() : null;
+            this.__explicitlySet__.add("userDefinedFunctionSeed");
+            return this;
+        }
+
         /**
          * Indicates if the interim DMASK tables should be moved to the user-specified tablespace. As interim tables can be large in size,
          * set it to false if moving them causes performance overhead during masking.
@@ -679,13 +733,25 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
      * The seed value to be used in case of Deterministic Encryption and Deterministic Substitution masking formats.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("seed")
-    private final String seed;
+    private final char[] seed;
+
+    /**
+     * The seed value to be used in case of Deterministic Encryption and Deterministic Substitution masking formats.
+     * return the value
+     * @Deprecated - Use getSeed__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSeed() {
+        return seed != null ? new String(seed) : null;
+    }
 
     /**
      * The seed value to be used in case of Deterministic Encryption and Deterministic Substitution masking formats.
      * @return the value
      **/
-    public String getSeed() {
+    @com.fasterxml.jackson.annotation.JsonProperty("seed")
+    public char[] getSeed__AsCharArray() {
         return seed;
     }
 
@@ -693,13 +759,25 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
      * The seed value to be used in case of User Defined Function masking format. This is an optional parameter and needs to be passed only if any User Defined Function uses seed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userDefinedFunctionSeed")
-    private final String userDefinedFunctionSeed;
+    private final char[] userDefinedFunctionSeed;
+
+    /**
+     * The seed value to be used in case of User Defined Function masking format. This is an optional parameter and needs to be passed only if any User Defined Function uses seed.
+     * return the value
+     * @Deprecated - Use getUserDefinedFunctionSeed__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getUserDefinedFunctionSeed() {
+        return userDefinedFunctionSeed != null ? new String(userDefinedFunctionSeed) : null;
+    }
 
     /**
      * The seed value to be used in case of User Defined Function masking format. This is an optional parameter and needs to be passed only if any User Defined Function uses seed.
      * @return the value
      **/
-    public String getUserDefinedFunctionSeed() {
+    @com.fasterxml.jackson.annotation.JsonProperty("userDefinedFunctionSeed")
+    public char[] getUserDefinedFunctionSeed__AsCharArray() {
         return userDefinedFunctionSeed;
     }
 

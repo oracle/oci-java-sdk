@@ -140,6 +140,133 @@ public class DatabaseToolsWaiters {
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsDatabaseApiGatewayConfigRequest,
+                    GetDatabaseToolsDatabaseApiGatewayConfigResponse>
+            forDatabaseToolsDatabaseApiGatewayConfig(
+                    GetDatabaseToolsDatabaseApiGatewayConfigRequest request,
+                    com.oracle.bmc.databasetools.model
+                                    .DatabaseToolsDatabaseApiGatewayConfigLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDatabaseToolsDatabaseApiGatewayConfig(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsDatabaseApiGatewayConfigRequest,
+                    GetDatabaseToolsDatabaseApiGatewayConfigResponse>
+            forDatabaseToolsDatabaseApiGatewayConfig(
+                    GetDatabaseToolsDatabaseApiGatewayConfigRequest request,
+                    com.oracle.bmc.databasetools.model
+                                    .DatabaseToolsDatabaseApiGatewayConfigLifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forDatabaseToolsDatabaseApiGatewayConfig(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsDatabaseApiGatewayConfigRequest,
+                    GetDatabaseToolsDatabaseApiGatewayConfigResponse>
+            forDatabaseToolsDatabaseApiGatewayConfig(
+                    GetDatabaseToolsDatabaseApiGatewayConfigRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasetools.model
+                                    .DatabaseToolsDatabaseApiGatewayConfigLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDatabaseToolsDatabaseApiGatewayConfig(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for DatabaseToolsDatabaseApiGatewayConfig.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsDatabaseApiGatewayConfigRequest,
+                    GetDatabaseToolsDatabaseApiGatewayConfigResponse>
+            forDatabaseToolsDatabaseApiGatewayConfig(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetDatabaseToolsDatabaseApiGatewayConfigRequest request,
+                    final com.oracle.bmc.databasetools.model
+                                    .DatabaseToolsDatabaseApiGatewayConfigLifecycleState...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.databasetools.model
+                                .DatabaseToolsDatabaseApiGatewayConfigLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetDatabaseToolsDatabaseApiGatewayConfigRequest,
+                                GetDatabaseToolsDatabaseApiGatewayConfigResponse>() {
+                            @Override
+                            public GetDatabaseToolsDatabaseApiGatewayConfigResponse apply(
+                                    GetDatabaseToolsDatabaseApiGatewayConfigRequest request) {
+                                return client.getDatabaseToolsDatabaseApiGatewayConfig(request);
+                            }
+                        },
+                        new java.util.function.Predicate<
+                                GetDatabaseToolsDatabaseApiGatewayConfigResponse>() {
+                            @Override
+                            public boolean test(
+                                    GetDatabaseToolsDatabaseApiGatewayConfigResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getDatabaseToolsDatabaseApiGatewayConfig()
+                                                .getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasetools.model
+                                        .DatabaseToolsDatabaseApiGatewayConfigLifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     GetDatabaseToolsEndpointServiceRequest, GetDatabaseToolsEndpointServiceResponse>
             forDatabaseToolsEndpointService(
                     GetDatabaseToolsEndpointServiceRequest request,
@@ -363,6 +490,234 @@ public class DatabaseToolsWaiters {
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsMcpServerRequest, GetDatabaseToolsMcpServerResponse>
+            forDatabaseToolsMcpServer(
+                    GetDatabaseToolsMcpServerRequest request,
+                    com.oracle.bmc.databasetools.model.DatabaseToolsMcpServerLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDatabaseToolsMcpServer(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsMcpServerRequest, GetDatabaseToolsMcpServerResponse>
+            forDatabaseToolsMcpServer(
+                    GetDatabaseToolsMcpServerRequest request,
+                    com.oracle.bmc.databasetools.model.DatabaseToolsMcpServerLifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forDatabaseToolsMcpServer(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsMcpServerRequest, GetDatabaseToolsMcpServerResponse>
+            forDatabaseToolsMcpServer(
+                    GetDatabaseToolsMcpServerRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasetools.model.DatabaseToolsMcpServerLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDatabaseToolsMcpServer(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for DatabaseToolsMcpServer.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsMcpServerRequest, GetDatabaseToolsMcpServerResponse>
+            forDatabaseToolsMcpServer(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetDatabaseToolsMcpServerRequest request,
+                    final com.oracle.bmc.databasetools.model.DatabaseToolsMcpServerLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.databasetools.model.DatabaseToolsMcpServerLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetDatabaseToolsMcpServerRequest,
+                                GetDatabaseToolsMcpServerResponse>() {
+                            @Override
+                            public GetDatabaseToolsMcpServerResponse apply(
+                                    GetDatabaseToolsMcpServerRequest request) {
+                                return client.getDatabaseToolsMcpServer(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetDatabaseToolsMcpServerResponse>() {
+                            @Override
+                            public boolean test(GetDatabaseToolsMcpServerResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getDatabaseToolsMcpServer().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasetools.model
+                                        .DatabaseToolsMcpServerLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsMcpToolsetRequest, GetDatabaseToolsMcpToolsetResponse>
+            forDatabaseToolsMcpToolset(
+                    GetDatabaseToolsMcpToolsetRequest request,
+                    com.oracle.bmc.databasetools.model.DatabaseToolsMcpToolsetLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDatabaseToolsMcpToolset(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsMcpToolsetRequest, GetDatabaseToolsMcpToolsetResponse>
+            forDatabaseToolsMcpToolset(
+                    GetDatabaseToolsMcpToolsetRequest request,
+                    com.oracle.bmc.databasetools.model.DatabaseToolsMcpToolsetLifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forDatabaseToolsMcpToolset(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsMcpToolsetRequest, GetDatabaseToolsMcpToolsetResponse>
+            forDatabaseToolsMcpToolset(
+                    GetDatabaseToolsMcpToolsetRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasetools.model.DatabaseToolsMcpToolsetLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDatabaseToolsMcpToolset(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for DatabaseToolsMcpToolset.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsMcpToolsetRequest, GetDatabaseToolsMcpToolsetResponse>
+            forDatabaseToolsMcpToolset(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetDatabaseToolsMcpToolsetRequest request,
+                    final com.oracle.bmc.databasetools.model
+                                    .DatabaseToolsMcpToolsetLifecycleState...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.databasetools.model.DatabaseToolsMcpToolsetLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetDatabaseToolsMcpToolsetRequest,
+                                GetDatabaseToolsMcpToolsetResponse>() {
+                            @Override
+                            public GetDatabaseToolsMcpToolsetResponse apply(
+                                    GetDatabaseToolsMcpToolsetRequest request) {
+                                return client.getDatabaseToolsMcpToolset(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetDatabaseToolsMcpToolsetResponse>() {
+                            @Override
+                            public boolean test(GetDatabaseToolsMcpToolsetResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getDatabaseToolsMcpToolset().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasetools.model
+                                        .DatabaseToolsMcpToolsetLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     GetDatabaseToolsPrivateEndpointRequest, GetDatabaseToolsPrivateEndpointResponse>
             forDatabaseToolsPrivateEndpoint(
                     GetDatabaseToolsPrivateEndpointRequest request,
@@ -462,6 +817,119 @@ public class DatabaseToolsWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.databasetools.model.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsSqlReportRequest, GetDatabaseToolsSqlReportResponse>
+            forDatabaseToolsSqlReport(
+                    GetDatabaseToolsSqlReportRequest request,
+                    com.oracle.bmc.databasetools.model.DatabaseToolsSqlReportLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDatabaseToolsSqlReport(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsSqlReportRequest, GetDatabaseToolsSqlReportResponse>
+            forDatabaseToolsSqlReport(
+                    GetDatabaseToolsSqlReportRequest request,
+                    com.oracle.bmc.databasetools.model.DatabaseToolsSqlReportLifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forDatabaseToolsSqlReport(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsSqlReportRequest, GetDatabaseToolsSqlReportResponse>
+            forDatabaseToolsSqlReport(
+                    GetDatabaseToolsSqlReportRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.databasetools.model.DatabaseToolsSqlReportLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDatabaseToolsSqlReport(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for DatabaseToolsSqlReport.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetDatabaseToolsSqlReportRequest, GetDatabaseToolsSqlReportResponse>
+            forDatabaseToolsSqlReport(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetDatabaseToolsSqlReportRequest request,
+                    final com.oracle.bmc.databasetools.model.DatabaseToolsSqlReportLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.databasetools.model.DatabaseToolsSqlReportLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetDatabaseToolsSqlReportRequest,
+                                GetDatabaseToolsSqlReportResponse>() {
+                            @Override
+                            public GetDatabaseToolsSqlReportResponse apply(
+                                    GetDatabaseToolsSqlReportRequest request) {
+                                return client.getDatabaseToolsSqlReport(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetDatabaseToolsSqlReportResponse>() {
+                            @Override
+                            public boolean test(GetDatabaseToolsSqlReportResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getDatabaseToolsSqlReport().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.databasetools.model
+                                        .DatabaseToolsSqlReportLifecycleState.Deleted)),
                 request);
     }
 

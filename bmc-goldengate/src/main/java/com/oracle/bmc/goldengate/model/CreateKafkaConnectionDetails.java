@@ -228,7 +228,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
-        private java.util.List<KafkaBootstrapServer> bootstrapServers;
+        private java.util.List<CreateKafkaBootstrapServer> bootstrapServers;
 
         /**
          * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka:
@@ -239,7 +239,8 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
          * @param bootstrapServers the value to set
          * @return this builder
          **/
-        public Builder bootstrapServers(java.util.List<KafkaBootstrapServer> bootstrapServers) {
+        public Builder bootstrapServers(
+                java.util.List<CreateKafkaBootstrapServer> bootstrapServers) {
             this.bootstrapServers = bootstrapServers;
             this.__explicitlySet__.add("bootstrapServers");
             return this;
@@ -291,7 +292,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given technology.
@@ -301,11 +302,18 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
          * The password Oracle GoldenGate uses to connect the associated system of the given technology.
@@ -378,7 +386,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
-        private String trustStorePassword;
+        private char[] trustStorePassword;
 
         /**
          * The TrustStore password.
@@ -387,11 +395,19 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
          * @param trustStorePassword the value to set
          * @return this builder
          **/
-        public Builder trustStorePassword(String trustStorePassword) {
+        public Builder trustStorePassword(char[] trustStorePassword) {
             this.trustStorePassword = trustStorePassword;
             this.__explicitlySet__.add("trustStorePassword");
             return this;
         }
+
+        public Builder trustStorePassword(String trustStorePassword) {
+            this.trustStorePassword =
+                    trustStorePassword != null ? trustStorePassword.toCharArray() : null;
+            this.__explicitlySet__.add("trustStorePassword");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
          * Note: When provided, 'trustStorePassword' field must not be provided.
@@ -458,7 +474,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
-        private String keyStorePassword;
+        private char[] keyStorePassword;
 
         /**
          * The KeyStore password.
@@ -467,11 +483,19 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
          * @param keyStorePassword the value to set
          * @return this builder
          **/
-        public Builder keyStorePassword(String keyStorePassword) {
+        public Builder keyStorePassword(char[] keyStorePassword) {
             this.keyStorePassword = keyStorePassword;
             this.__explicitlySet__.add("keyStorePassword");
             return this;
         }
+
+        public Builder keyStorePassword(String keyStorePassword) {
+            this.keyStorePassword =
+                    keyStorePassword != null ? keyStorePassword.toCharArray() : null;
+            this.__explicitlySet__.add("keyStorePassword");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
          * Note: When provided, 'keyStorePassword' field must not be provided.
@@ -499,7 +523,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
-        private String sslKeyPassword;
+        private char[] sslKeyPassword;
 
         /**
          * The password for the cert inside of the KeyStore.
@@ -509,11 +533,18 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
          * @param sslKeyPassword the value to set
          * @return this builder
          **/
-        public Builder sslKeyPassword(String sslKeyPassword) {
+        public Builder sslKeyPassword(char[] sslKeyPassword) {
             this.sslKeyPassword = sslKeyPassword;
             this.__explicitlySet__.add("sslKeyPassword");
             return this;
         }
+
+        public Builder sslKeyPassword(String sslKeyPassword) {
+            this.sslKeyPassword = sslKeyPassword != null ? sslKeyPassword.toCharArray() : null;
+            this.__explicitlySet__.add("sslKeyPassword");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
          * Note: When provided, 'sslKeyPassword' field must not be provided.
@@ -790,7 +821,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
             KafkaConnection.TechnologyType technologyType,
             String streamPoolId,
             String clusterId,
-            java.util.List<KafkaBootstrapServer> bootstrapServers,
+            java.util.List<CreateKafkaBootstrapServer> bootstrapServers,
             KafkaConnection.SecurityProtocol securityProtocol,
             String username,
             String password,
@@ -804,6 +835,85 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
             String keyStorePassword,
             String keyStorePasswordSecretId,
             String sslKeyPassword,
+            String sslKeyPasswordSecretId,
+            String consumerProperties,
+            String producerProperties,
+            Boolean shouldUseResourcePrincipal) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                locks,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
+        this.technologyType = technologyType;
+        this.streamPoolId = streamPoolId;
+        this.clusterId = clusterId;
+        this.bootstrapServers = bootstrapServers;
+        this.securityProtocol = securityProtocol;
+        this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.trustStore = trustStore;
+        this.trustStoreSecretId = trustStoreSecretId;
+        this.trustStorePassword =
+                trustStorePassword != null ? trustStorePassword.toCharArray() : null;
+        this.trustStorePasswordSecretId = trustStorePasswordSecretId;
+        this.keyStore = keyStore;
+        this.keyStoreSecretId = keyStoreSecretId;
+        this.keyStorePassword = keyStorePassword != null ? keyStorePassword.toCharArray() : null;
+        this.keyStorePasswordSecretId = keyStorePasswordSecretId;
+        this.sslKeyPassword = sslKeyPassword != null ? sslKeyPassword.toCharArray() : null;
+        this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
+        this.consumerProperties = consumerProperties;
+        this.producerProperties = producerProperties;
+        this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateKafkaConnectionDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            KafkaConnection.TechnologyType technologyType,
+            String streamPoolId,
+            String clusterId,
+            java.util.List<CreateKafkaBootstrapServer> bootstrapServers,
+            KafkaConnection.SecurityProtocol securityProtocol,
+            String username,
+            char[] password,
+            String passwordSecretId,
+            String trustStore,
+            String trustStoreSecretId,
+            char[] trustStorePassword,
+            String trustStorePasswordSecretId,
+            String keyStore,
+            String keyStoreSecretId,
+            char[] keyStorePassword,
+            String keyStorePasswordSecretId,
+            char[] sslKeyPassword,
             String sslKeyPasswordSecretId,
             String consumerProperties,
             String producerProperties,
@@ -905,7 +1015,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
-    private final java.util.List<KafkaBootstrapServer> bootstrapServers;
+    private final java.util.List<CreateKafkaBootstrapServer> bootstrapServers;
 
     /**
      * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka:
@@ -915,7 +1025,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      *
      * @return the value
      **/
-    public java.util.List<KafkaBootstrapServer> getBootstrapServers() {
+    public java.util.List<CreateKafkaBootstrapServer> getBootstrapServers() {
         return bootstrapServers;
     }
 
@@ -962,7 +1072,21 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
@@ -971,7 +1095,8 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      *
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -1041,7 +1166,20 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
-    private final String trustStorePassword;
+    private final char[] trustStorePassword;
+
+    /**
+     * The TrustStore password.
+     * Deprecated: This field is deprecated and replaced by &quot;trustStorePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getTrustStorePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTrustStorePassword() {
+        return trustStorePassword != null ? new String(trustStorePassword) : null;
+    }
 
     /**
      * The TrustStore password.
@@ -1049,7 +1187,8 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      *
      * @return the value
      **/
-    public String getTrustStorePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
+    public char[] getTrustStorePassword__AsCharArray() {
         return trustStorePassword;
     }
 
@@ -1113,7 +1252,20 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
-    private final String keyStorePassword;
+    private final char[] keyStorePassword;
+
+    /**
+     * The KeyStore password.
+     * Deprecated: This field is deprecated and replaced by &quot;keyStorePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getKeyStorePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getKeyStorePassword() {
+        return keyStorePassword != null ? new String(keyStorePassword) : null;
+    }
 
     /**
      * The KeyStore password.
@@ -1121,7 +1273,8 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      *
      * @return the value
      **/
-    public String getKeyStorePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
+    public char[] getKeyStorePassword__AsCharArray() {
         return keyStorePassword;
     }
 
@@ -1150,7 +1303,21 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
-    private final String sslKeyPassword;
+    private final char[] sslKeyPassword;
+
+    /**
+     * The password for the cert inside of the KeyStore.
+     * In case it differs from the KeyStore password, it should be provided.
+     * Deprecated: This field is deprecated and replaced by &quot;sslKeyPasswordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getSslKeyPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSslKeyPassword() {
+        return sslKeyPassword != null ? new String(sslKeyPassword) : null;
+    }
 
     /**
      * The password for the cert inside of the KeyStore.
@@ -1159,7 +1326,8 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      *
      * @return the value
      **/
-    public String getSslKeyPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
+    public char[] getSslKeyPassword__AsCharArray() {
         return sslKeyPassword;
     }
 

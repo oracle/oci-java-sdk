@@ -51,18 +51,26 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
          * The DB link user password.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dblinkUserPassword")
-        private String dblinkUserPassword;
+        private char[] dblinkUserPassword;
 
         /**
          * The DB link user password.
          * @param dblinkUserPassword the value to set
          * @return this builder
          **/
-        public Builder dblinkUserPassword(String dblinkUserPassword) {
+        public Builder dblinkUserPassword(char[] dblinkUserPassword) {
             this.dblinkUserPassword = dblinkUserPassword;
             this.__explicitlySet__.add("dblinkUserPassword");
             return this;
         }
+
+        public Builder dblinkUserPassword(String dblinkUserPassword) {
+            this.dblinkUserPassword =
+                    dblinkUserPassword != null ? dblinkUserPassword.toCharArray() : null;
+            this.__explicitlySet__.add("dblinkUserPassword");
+            return this;
+        }
+
         /**
          * The OCID of the Source Pluggable Database.
          **/
@@ -83,7 +91,7 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
          * The DB system administrator password of the source Container Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseAdminPassword")
-        private String sourceContainerDatabaseAdminPassword;
+        private char[] sourceContainerDatabaseAdminPassword;
 
         /**
          * The DB system administrator password of the source Container Database.
@@ -91,8 +99,18 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
          * @return this builder
          **/
         public Builder sourceContainerDatabaseAdminPassword(
-                String sourceContainerDatabaseAdminPassword) {
+                char[] sourceContainerDatabaseAdminPassword) {
             this.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
+            this.__explicitlySet__.add("sourceContainerDatabaseAdminPassword");
+            return this;
+        }
+
+        public Builder sourceContainerDatabaseAdminPassword(
+                String sourceContainerDatabaseAdminPassword) {
+            this.sourceContainerDatabaseAdminPassword =
+                    sourceContainerDatabaseAdminPassword != null
+                            ? sourceContainerDatabaseAdminPassword.toCharArray()
+                            : null;
             this.__explicitlySet__.add("sourceContainerDatabaseAdminPassword");
             return this;
         }
@@ -209,6 +227,30 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
             String sourcePluggableDatabaseSnapshotId) {
         super();
         this.dblinkUsername = dblinkUsername;
+        this.dblinkUserPassword =
+                dblinkUserPassword != null ? dblinkUserPassword.toCharArray() : null;
+        this.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
+        this.sourceContainerDatabaseAdminPassword =
+                sourceContainerDatabaseAdminPassword != null
+                        ? sourceContainerDatabaseAdminPassword.toCharArray()
+                        : null;
+        this.refreshableCloneDetails = refreshableCloneDetails;
+        this.isThinClone = isThinClone;
+        this.sourcePluggableDatabaseSnapshotId = sourcePluggableDatabaseSnapshotId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreatePluggableDatabaseFromRemoteCloneDetails(
+            String dblinkUsername,
+            char[] dblinkUserPassword,
+            String sourcePluggableDatabaseId,
+            char[] sourceContainerDatabaseAdminPassword,
+            CreatePluggableDatabaseRefreshableCloneDetails refreshableCloneDetails,
+            Boolean isThinClone,
+            String sourcePluggableDatabaseSnapshotId) {
+        super();
+        this.dblinkUsername = dblinkUsername;
         this.dblinkUserPassword = dblinkUserPassword;
         this.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
         this.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
@@ -235,13 +277,25 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
      * The DB link user password.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dblinkUserPassword")
-    private final String dblinkUserPassword;
+    private final char[] dblinkUserPassword;
+
+    /**
+     * The DB link user password.
+     * return the value
+     * @Deprecated - Use getDblinkUserPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getDblinkUserPassword() {
+        return dblinkUserPassword != null ? new String(dblinkUserPassword) : null;
+    }
 
     /**
      * The DB link user password.
      * @return the value
      **/
-    public String getDblinkUserPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("dblinkUserPassword")
+    public char[] getDblinkUserPassword__AsCharArray() {
         return dblinkUserPassword;
     }
 
@@ -263,13 +317,27 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
      * The DB system administrator password of the source Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseAdminPassword")
-    private final String sourceContainerDatabaseAdminPassword;
+    private final char[] sourceContainerDatabaseAdminPassword;
+
+    /**
+     * The DB system administrator password of the source Container Database.
+     * return the value
+     * @Deprecated - Use getSourceContainerDatabaseAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSourceContainerDatabaseAdminPassword() {
+        return sourceContainerDatabaseAdminPassword != null
+                ? new String(sourceContainerDatabaseAdminPassword)
+                : null;
+    }
 
     /**
      * The DB system administrator password of the source Container Database.
      * @return the value
      **/
-    public String getSourceContainerDatabaseAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseAdminPassword")
+    public char[] getSourceContainerDatabaseAdminPassword__AsCharArray() {
         return sourceContainerDatabaseAdminPassword;
     }
 

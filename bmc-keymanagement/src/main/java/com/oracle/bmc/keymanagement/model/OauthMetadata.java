@@ -19,8 +19,17 @@ package com.oracle.bmc.keymanagement.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OauthMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"idcsAccountNameUrl", "clientAppId", "clientAppSecret"})
     public OauthMetadata(String idcsAccountNameUrl, String clientAppId, String clientAppSecret) {
+        super();
+        this.idcsAccountNameUrl = idcsAccountNameUrl;
+        this.clientAppId = clientAppId;
+        this.clientAppSecret = clientAppSecret != null ? clientAppSecret.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    @java.beans.ConstructorProperties({"idcsAccountNameUrl", "clientAppId", "clientAppSecret"})
+    public OauthMetadata(String idcsAccountNameUrl, String clientAppId, char[] clientAppSecret) {
         super();
         this.idcsAccountNameUrl = idcsAccountNameUrl;
         this.clientAppId = clientAppId;
@@ -65,15 +74,21 @@ public final class OauthMetadata extends com.oracle.bmc.http.internal.Explicitly
          * Secret of the client app created in IDP.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientAppSecret")
-        private String clientAppSecret;
+        private char[] clientAppSecret;
 
         /**
          * Secret of the client app created in IDP.
          * @param clientAppSecret the value to set
          * @return this builder
          **/
-        public Builder clientAppSecret(String clientAppSecret) {
+        public Builder clientAppSecret(char[] clientAppSecret) {
             this.clientAppSecret = clientAppSecret;
+            this.__explicitlySet__.add("clientAppSecret");
+            return this;
+        }
+
+        public Builder clientAppSecret(String clientAppSecret) {
+            this.clientAppSecret = clientAppSecret != null ? clientAppSecret.toCharArray() : null;
             this.__explicitlySet__.add("clientAppSecret");
             return this;
         }
@@ -149,13 +164,25 @@ public final class OauthMetadata extends com.oracle.bmc.http.internal.Explicitly
      * Secret of the client app created in IDP.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientAppSecret")
-    private final String clientAppSecret;
+    private final char[] clientAppSecret;
+
+    /**
+     * Secret of the client app created in IDP.
+     * return the value
+     * @Deprecated - Use getClientAppSecret__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClientAppSecret() {
+        return clientAppSecret != null ? new String(clientAppSecret) : null;
+    }
 
     /**
      * Secret of the client app created in IDP.
      * @return the value
      **/
-    public String getClientAppSecret() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clientAppSecret")
+    public char[] getClientAppSecret__AsCharArray() {
         return clientAppSecret;
     }
 

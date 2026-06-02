@@ -572,7 +572,10 @@ public class SubscriptionClient implements Subscription {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequest/CancelWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -612,7 +615,7 @@ public class SubscriptionClient implements Subscription {
                         "Subscription",
                         "ChangeSubscriptionCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/ChangeSubscriptionCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeSubscriptionCompartmentResponse>
                 transformer =
@@ -653,7 +656,10 @@ public class SubscriptionClient implements Subscription {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "CreateSubscription", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "CreateSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/CreateSubscription");
         java.util.function.Function<javax.ws.rs.core.Response, CreateSubscriptionResponse>
                 transformer =
                         CreateSubscriptionConverter.fromResponse(
@@ -691,7 +697,10 @@ public class SubscriptionClient implements Subscription {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "DeleteSubscription", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "DeleteSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/DeleteSubscription");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteSubscriptionResponse>
                 transformer =
                         DeleteSubscriptionConverter.fromResponse(
@@ -726,7 +735,10 @@ public class SubscriptionClient implements Subscription {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "GetSubscription", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "GetSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/GetSubscription");
         java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
                 transformer =
                         GetSubscriptionConverter.fromResponse(
@@ -760,7 +772,10 @@ public class SubscriptionClient implements Subscription {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "GetSubscriptionToken", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "GetSubscriptionToken",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/SubscriptionToken/GetSubscriptionToken");
         java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionTokenResponse>
                 transformer =
                         GetSubscriptionTokenConverter.fromResponse(
@@ -794,7 +809,10 @@ public class SubscriptionClient implements Subscription {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -826,7 +844,10 @@ public class SubscriptionClient implements Subscription {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "ListSubscriptions", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "ListSubscriptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/SubscriptionCollection/ListSubscriptions");
         java.util.function.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
                 transformer =
                         ListSubscriptionsConverter.fromResponse(
@@ -861,7 +882,10 @@ public class SubscriptionClient implements Subscription {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -895,7 +919,10 @@ public class SubscriptionClient implements Subscription {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -929,7 +956,10 @@ public class SubscriptionClient implements Subscription {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -963,7 +993,10 @@ public class SubscriptionClient implements Subscription {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Subscription", "UpdateSubscription", ib.getRequestUri().toString(), "");
+                        "Subscription",
+                        "UpdateSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/UpdateSubscription");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
                 transformer =
                         UpdateSubscriptionConverter.fromResponse(

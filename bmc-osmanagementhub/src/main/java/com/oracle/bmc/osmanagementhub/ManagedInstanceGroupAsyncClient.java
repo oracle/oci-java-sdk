@@ -1475,6 +1475,61 @@ public class ManagedInstanceGroupAsyncClient implements ManagedInstanceGroupAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ListManagedInstanceGroupManagedInstancesResponse>
+            listManagedInstanceGroupManagedInstances(
+                    ListManagedInstanceGroupManagedInstancesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListManagedInstanceGroupManagedInstancesRequest,
+                                    ListManagedInstanceGroupManagedInstancesResponse>
+                            handler) {
+        LOG.trace("Called async listManagedInstanceGroupManagedInstances");
+        final ListManagedInstanceGroupManagedInstancesRequest interceptedRequest =
+                ListManagedInstanceGroupManagedInstancesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceGroupManagedInstancesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstanceGroup",
+                        "ListManagedInstanceGroupManagedInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupManagedInstances");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListManagedInstanceGroupManagedInstancesResponse>
+                transformer =
+                        ListManagedInstanceGroupManagedInstancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListManagedInstanceGroupManagedInstancesRequest,
+                        ListManagedInstanceGroupManagedInstancesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListManagedInstanceGroupManagedInstancesRequest,
+                                ListManagedInstanceGroupManagedInstancesResponse>,
+                        java.util.concurrent.Future<
+                                ListManagedInstanceGroupManagedInstancesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListManagedInstanceGroupManagedInstancesRequest,
+                    ListManagedInstanceGroupManagedInstancesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListManagedInstanceGroupModulesResponse>
             listManagedInstanceGroupModules(
                     ListManagedInstanceGroupModulesRequest request,
@@ -1684,6 +1739,61 @@ public class ManagedInstanceGroupAsyncClient implements ManagedInstanceGroupAsyn
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RebootManagedInstanceGroupRequest, RebootManagedInstanceGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshSoftwareOnManagedInstanceGroupResponse>
+            refreshSoftwareOnManagedInstanceGroup(
+                    RefreshSoftwareOnManagedInstanceGroupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshSoftwareOnManagedInstanceGroupRequest,
+                                    RefreshSoftwareOnManagedInstanceGroupResponse>
+                            handler) {
+        LOG.trace("Called async refreshSoftwareOnManagedInstanceGroup");
+        final RefreshSoftwareOnManagedInstanceGroupRequest interceptedRequest =
+                RefreshSoftwareOnManagedInstanceGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshSoftwareOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstanceGroup",
+                        "RefreshSoftwareOnManagedInstanceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RefreshSoftwareOnManagedInstanceGroup");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RefreshSoftwareOnManagedInstanceGroupResponse>
+                transformer =
+                        RefreshSoftwareOnManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RefreshSoftwareOnManagedInstanceGroupRequest,
+                        RefreshSoftwareOnManagedInstanceGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshSoftwareOnManagedInstanceGroupRequest,
+                                RefreshSoftwareOnManagedInstanceGroupResponse>,
+                        java.util.concurrent.Future<RefreshSoftwareOnManagedInstanceGroupResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshSoftwareOnManagedInstanceGroupRequest,
+                    RefreshSoftwareOnManagedInstanceGroupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

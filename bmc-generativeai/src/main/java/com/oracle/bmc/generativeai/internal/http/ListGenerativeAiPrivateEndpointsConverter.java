@@ -33,8 +33,14 @@ public class ListGenerativeAiPrivateEndpointsConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20231130").path("generativeAiPrivateEndpoints");
+                newBaseTarget.path("/20231130").path("generativeAiPrivateEndpoints");
 
         if (request.getId() != null) {
             target =

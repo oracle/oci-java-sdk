@@ -5,7 +5,7 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Action details
+ * Action details.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -41,13 +41,13 @@ public class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     }
 
     /**
-     * Unique identifier of the object that represents the action
+     * Unique identifier of the object that represents the action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceKey")
     private final String referenceKey;
 
     /**
-     * Unique identifier of the object that represents the action
+     * Unique identifier of the object that represents the action.
      * @return the value
      **/
     public String getReferenceKey() {
@@ -55,7 +55,7 @@ public class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     }
 
     /**
-     * A string that describes whether the change is applied hot or cold
+     * A string that describes whether the change is applied hot or cold.
      **/
     public enum State {
         Accepted("ACCEPTED"),
@@ -105,13 +105,13 @@ public class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
         }
     };
     /**
-     * A string that describes whether the change is applied hot or cold
+     * A string that describes whether the change is applied hot or cold.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
     /**
-     * A string that describes whether the change is applied hot or cold
+     * A string that describes whether the change is applied hot or cold.
      * @return the value
      **/
     public State getState() {
@@ -181,7 +181,7 @@ public class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     }
 
     /**
-     * Type of action
+     * Type of action.
      **/
     public enum ActionType {
         QuarterlyUpgrade("QUARTERLY_UPGRADE"),

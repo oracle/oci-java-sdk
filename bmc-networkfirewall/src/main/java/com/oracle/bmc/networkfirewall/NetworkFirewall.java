@@ -8,7 +8,7 @@ import com.oracle.bmc.networkfirewall.requests.*;
 import com.oracle.bmc.networkfirewall.responses.*;
 
 /**
- * Use the Network Firewall API to create network firewalls and configure policies that regulates network traffic in and across VCNs.
+ * Use the Network Firewall API to create network firewalls and configure policies that regulates network traffic in and across VCNs. For more information, see [Overview of Network Firewall](https://docs.oracle.com/iaas/Content/network-firewall/overview.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
@@ -1056,6 +1056,20 @@ public interface NetworkFirewall extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/GetNetworkFirewallExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkFirewall API.
      */
     GetNetworkFirewallResponse getNetworkFirewall(GetNetworkFirewallRequest request);
+
+    /**
+     * Get Overall health status of Network Firewall
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/GetNetworkFirewallHealthStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkFirewallHealthStatus API.
+     */
+    GetNetworkFirewallHealthStatusResponse getNetworkFirewallHealthStatus(
+            GetNetworkFirewallHealthStatusRequest request);
 
     /**
      * Gets a NetworkFirewallPolicy given the network firewall policy identifier.

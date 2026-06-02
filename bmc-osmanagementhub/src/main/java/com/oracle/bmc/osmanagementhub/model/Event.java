@@ -49,6 +49,10 @@ package com.oracle.bmc.osmanagementhub.model;
         value = SysadminEvent.class,
         name = "SYSADMIN"
     ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = SnapUpdateEvent.class,
+        name = "SNAP_UPDATE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = RebootEvent.class, name = "REBOOT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ExploitAttemptEvent.class,

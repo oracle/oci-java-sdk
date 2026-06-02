@@ -10,6 +10,7 @@ package com.oracle.bmc.databasetools.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public enum ProxyAuthenticationType {
     UserName("USER_NAME"),
+    UserNameAutoDetect("USER_NAME_AUTO_DETECT"),
     NoProxy("NO_PROXY"),
 
     /**

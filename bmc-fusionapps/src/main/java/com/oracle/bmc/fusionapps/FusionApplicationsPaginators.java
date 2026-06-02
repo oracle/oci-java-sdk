@@ -153,6 +153,119 @@ public class FusionApplicationsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listEmailSubdomains operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListEmailSubdomainsResponse> listEmailSubdomainsResponseIterator(
+            final ListEmailSubdomainsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListEmailSubdomainsRequest.Builder, ListEmailSubdomainsRequest,
+                ListEmailSubdomainsResponse>(
+                new java.util.function.Supplier<ListEmailSubdomainsRequest.Builder>() {
+                    @Override
+                    public ListEmailSubdomainsRequest.Builder get() {
+                        return ListEmailSubdomainsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEmailSubdomainsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailSubdomainsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailSubdomainsRequest.Builder>,
+                        ListEmailSubdomainsRequest>() {
+                    @Override
+                    public ListEmailSubdomainsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailSubdomainsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailSubdomainsRequest, ListEmailSubdomainsResponse>() {
+                    @Override
+                    public ListEmailSubdomainsResponse apply(ListEmailSubdomainsRequest request) {
+                        return client.listEmailSubdomains(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.EmailSubdomainSummary} objects
+     * contained in responses from the listEmailSubdomains operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.EmailSubdomainSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.fusionapps.model.EmailSubdomainSummary>
+            listEmailSubdomainsRecordIterator(final ListEmailSubdomainsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListEmailSubdomainsRequest.Builder, ListEmailSubdomainsRequest,
+                ListEmailSubdomainsResponse, com.oracle.bmc.fusionapps.model.EmailSubdomainSummary>(
+                new java.util.function.Supplier<ListEmailSubdomainsRequest.Builder>() {
+                    @Override
+                    public ListEmailSubdomainsRequest.Builder get() {
+                        return ListEmailSubdomainsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEmailSubdomainsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailSubdomainsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailSubdomainsRequest.Builder>,
+                        ListEmailSubdomainsRequest>() {
+                    @Override
+                    public ListEmailSubdomainsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailSubdomainsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailSubdomainsRequest, ListEmailSubdomainsResponse>() {
+                    @Override
+                    public ListEmailSubdomainsResponse apply(ListEmailSubdomainsRequest request) {
+                        return client.listEmailSubdomains(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailSubdomainsResponse,
+                        java.util.List<com.oracle.bmc.fusionapps.model.EmailSubdomainSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.fusionapps.model.EmailSubdomainSummary>
+                            apply(ListEmailSubdomainsResponse response) {
+                        return response.getEmailSubdomainCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listFusionEnvironmentFamilies operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -387,6 +500,229 @@ public class FusionApplicationsPaginators {
                     public java.util.List<com.oracle.bmc.fusionapps.model.FusionEnvironmentSummary>
                             apply(ListFusionEnvironmentsResponse response) {
                         return response.getFusionEnvironmentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listMarketingBrands operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListMarketingBrandsResponse> listMarketingBrandsResponseIterator(
+            final ListMarketingBrandsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMarketingBrandsRequest.Builder, ListMarketingBrandsRequest,
+                ListMarketingBrandsResponse>(
+                new java.util.function.Supplier<ListMarketingBrandsRequest.Builder>() {
+                    @Override
+                    public ListMarketingBrandsRequest.Builder get() {
+                        return ListMarketingBrandsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMarketingBrandsResponse, String>() {
+                    @Override
+                    public String apply(ListMarketingBrandsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMarketingBrandsRequest.Builder>,
+                        ListMarketingBrandsRequest>() {
+                    @Override
+                    public ListMarketingBrandsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMarketingBrandsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMarketingBrandsRequest, ListMarketingBrandsResponse>() {
+                    @Override
+                    public ListMarketingBrandsResponse apply(ListMarketingBrandsRequest request) {
+                        return client.listMarketingBrands(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.MarketingBrandSummary} objects
+     * contained in responses from the listMarketingBrands operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.MarketingBrandSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.fusionapps.model.MarketingBrandSummary>
+            listMarketingBrandsRecordIterator(final ListMarketingBrandsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMarketingBrandsRequest.Builder, ListMarketingBrandsRequest,
+                ListMarketingBrandsResponse, com.oracle.bmc.fusionapps.model.MarketingBrandSummary>(
+                new java.util.function.Supplier<ListMarketingBrandsRequest.Builder>() {
+                    @Override
+                    public ListMarketingBrandsRequest.Builder get() {
+                        return ListMarketingBrandsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMarketingBrandsResponse, String>() {
+                    @Override
+                    public String apply(ListMarketingBrandsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMarketingBrandsRequest.Builder>,
+                        ListMarketingBrandsRequest>() {
+                    @Override
+                    public ListMarketingBrandsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMarketingBrandsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMarketingBrandsRequest, ListMarketingBrandsResponse>() {
+                    @Override
+                    public ListMarketingBrandsResponse apply(ListMarketingBrandsRequest request) {
+                        return client.listMarketingBrands(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMarketingBrandsResponse,
+                        java.util.List<com.oracle.bmc.fusionapps.model.MarketingBrandSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.fusionapps.model.MarketingBrandSummary>
+                            apply(ListMarketingBrandsResponse response) {
+                        return response.getMarketingBrandCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listMicrosites operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListMicrositesResponse> listMicrositesResponseIterator(
+            final ListMicrositesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMicrositesRequest.Builder, ListMicrositesRequest, ListMicrositesResponse>(
+                new java.util.function.Supplier<ListMicrositesRequest.Builder>() {
+                    @Override
+                    public ListMicrositesRequest.Builder get() {
+                        return ListMicrositesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMicrositesResponse, String>() {
+                    @Override
+                    public String apply(ListMicrositesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMicrositesRequest.Builder>,
+                        ListMicrositesRequest>() {
+                    @Override
+                    public ListMicrositesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMicrositesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListMicrositesRequest, ListMicrositesResponse>() {
+                    @Override
+                    public ListMicrositesResponse apply(ListMicrositesRequest request) {
+                        return client.listMicrosites(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.MicrositeSummary} objects
+     * contained in responses from the listMicrosites operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.MicrositeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.fusionapps.model.MicrositeSummary> listMicrositesRecordIterator(
+            final ListMicrositesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMicrositesRequest.Builder, ListMicrositesRequest, ListMicrositesResponse,
+                com.oracle.bmc.fusionapps.model.MicrositeSummary>(
+                new java.util.function.Supplier<ListMicrositesRequest.Builder>() {
+                    @Override
+                    public ListMicrositesRequest.Builder get() {
+                        return ListMicrositesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMicrositesResponse, String>() {
+                    @Override
+                    public String apply(ListMicrositesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMicrositesRequest.Builder>,
+                        ListMicrositesRequest>() {
+                    @Override
+                    public ListMicrositesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMicrositesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListMicrositesRequest, ListMicrositesResponse>() {
+                    @Override
+                    public ListMicrositesResponse apply(ListMicrositesRequest request) {
+                        return client.listMicrosites(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMicrositesResponse,
+                        java.util.List<com.oracle.bmc.fusionapps.model.MicrositeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.fusionapps.model.MicrositeSummary> apply(
+                            ListMicrositesResponse response) {
+                        return response.getMicrositeCollection().getItems();
                     }
                 });
     }
@@ -859,6 +1195,119 @@ public class FusionApplicationsPaginators {
                                     com.oracle.bmc.fusionapps.model.TimeAvailableForRefreshSummary>
                             apply(ListTimeAvailableForRefreshesResponse response) {
                         return response.getTimeAvailableForRefreshCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listVanityDomains operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListVanityDomainsResponse> listVanityDomainsResponseIterator(
+            final ListVanityDomainsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVanityDomainsRequest.Builder, ListVanityDomainsRequest,
+                ListVanityDomainsResponse>(
+                new java.util.function.Supplier<ListVanityDomainsRequest.Builder>() {
+                    @Override
+                    public ListVanityDomainsRequest.Builder get() {
+                        return ListVanityDomainsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVanityDomainsResponse, String>() {
+                    @Override
+                    public String apply(ListVanityDomainsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVanityDomainsRequest.Builder>,
+                        ListVanityDomainsRequest>() {
+                    @Override
+                    public ListVanityDomainsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVanityDomainsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVanityDomainsRequest, ListVanityDomainsResponse>() {
+                    @Override
+                    public ListVanityDomainsResponse apply(ListVanityDomainsRequest request) {
+                        return client.listVanityDomains(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.VanityDomainSummary} objects
+     * contained in responses from the listVanityDomains operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.VanityDomainSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.fusionapps.model.VanityDomainSummary>
+            listVanityDomainsRecordIterator(final ListVanityDomainsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVanityDomainsRequest.Builder, ListVanityDomainsRequest,
+                ListVanityDomainsResponse, com.oracle.bmc.fusionapps.model.VanityDomainSummary>(
+                new java.util.function.Supplier<ListVanityDomainsRequest.Builder>() {
+                    @Override
+                    public ListVanityDomainsRequest.Builder get() {
+                        return ListVanityDomainsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVanityDomainsResponse, String>() {
+                    @Override
+                    public String apply(ListVanityDomainsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVanityDomainsRequest.Builder>,
+                        ListVanityDomainsRequest>() {
+                    @Override
+                    public ListVanityDomainsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVanityDomainsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVanityDomainsRequest, ListVanityDomainsResponse>() {
+                    @Override
+                    public ListVanityDomainsResponse apply(ListVanityDomainsRequest request) {
+                        return client.listVanityDomains(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVanityDomainsResponse,
+                        java.util.List<com.oracle.bmc.fusionapps.model.VanityDomainSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.fusionapps.model.VanityDomainSummary>
+                            apply(ListVanityDomainsResponse response) {
+                        return response.getVanityDomainCollection().getItems();
                     }
                 });
     }

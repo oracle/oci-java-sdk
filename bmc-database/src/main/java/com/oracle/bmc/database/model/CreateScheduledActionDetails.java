@@ -272,6 +272,7 @@ public final class CreateScheduledActionDetails
         FsuVmClusterOsSoftwareUpdate("FSU_VM_CLUSTER_OS_SOFTWARE_UPDATE"),
         FsuVmClusterGiSoftwareUpdate("FSU_VM_CLUSTER_GI_SOFTWARE_UPDATE"),
         FsuVmClusterGiOsSoftwareUpdate("FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE"),
+        DbServerOnlineSoftwareUpdate("DB_SERVER_ONLINE_SOFTWARE_UPDATE"),
         ;
 
         private final String value;

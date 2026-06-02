@@ -180,6 +180,14 @@ public class ListWorkRequestsConverter {
                                     request.getIsManagedByAutonomousLinux()));
         }
 
+        if (request.getCompartmentIdInSubtree() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentIdInSubtree",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentIdInSubtree()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

@@ -36,7 +36,9 @@ public final class DedicatedVmHostSummary
         "remainingOcpus",
         "totalOcpus",
         "totalMemoryInGBs",
-        "remainingMemoryInGBs"
+        "remainingMemoryInGBs",
+        "totalLocalVolumeInGBs",
+        "remainingLocalVolumeInGBs"
     })
     public DedicatedVmHostSummary(
             String availabilityDomain,
@@ -51,7 +53,9 @@ public final class DedicatedVmHostSummary
             Float remainingOcpus,
             Float totalOcpus,
             Float totalMemoryInGBs,
-            Float remainingMemoryInGBs) {
+            Float remainingMemoryInGBs,
+            Float totalLocalVolumeInGBs,
+            Float remainingLocalVolumeInGBs) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -66,6 +70,8 @@ public final class DedicatedVmHostSummary
         this.totalOcpus = totalOcpus;
         this.totalMemoryInGBs = totalMemoryInGBs;
         this.remainingMemoryInGBs = remainingMemoryInGBs;
+        this.totalLocalVolumeInGBs = totalLocalVolumeInGBs;
+        this.remainingLocalVolumeInGBs = remainingLocalVolumeInGBs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -330,6 +336,42 @@ public final class DedicatedVmHostSummary
             this.__explicitlySet__.add("remainingMemoryInGBs");
             return this;
         }
+        /**
+         * The current total local volume of the dedicated VM host, in GBs.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalLocalVolumeInGBs")
+        private Float totalLocalVolumeInGBs;
+
+        /**
+         * The current total local volume of the dedicated VM host, in GBs.
+         *
+         * @param totalLocalVolumeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder totalLocalVolumeInGBs(Float totalLocalVolumeInGBs) {
+            this.totalLocalVolumeInGBs = totalLocalVolumeInGBs;
+            this.__explicitlySet__.add("totalLocalVolumeInGBs");
+            return this;
+        }
+        /**
+         * The current available local volume of the dedicated VM host, in GBs.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("remainingLocalVolumeInGBs")
+        private Float remainingLocalVolumeInGBs;
+
+        /**
+         * The current available local volume of the dedicated VM host, in GBs.
+         *
+         * @param remainingLocalVolumeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder remainingLocalVolumeInGBs(Float remainingLocalVolumeInGBs) {
+            this.remainingLocalVolumeInGBs = remainingLocalVolumeInGBs;
+            this.__explicitlySet__.add("remainingLocalVolumeInGBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -349,7 +391,9 @@ public final class DedicatedVmHostSummary
                             this.remainingOcpus,
                             this.totalOcpus,
                             this.totalMemoryInGBs,
-                            this.remainingMemoryInGBs);
+                            this.remainingMemoryInGBs,
+                            this.totalLocalVolumeInGBs,
+                            this.remainingLocalVolumeInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -396,6 +440,12 @@ public final class DedicatedVmHostSummary
             }
             if (model.wasPropertyExplicitlySet("remainingMemoryInGBs")) {
                 this.remainingMemoryInGBs(model.getRemainingMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("totalLocalVolumeInGBs")) {
+                this.totalLocalVolumeInGBs(model.getTotalLocalVolumeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("remainingLocalVolumeInGBs")) {
+                this.remainingLocalVolumeInGBs(model.getRemainingLocalVolumeInGBs());
             }
             return this;
         }
@@ -699,6 +749,38 @@ public final class DedicatedVmHostSummary
         return remainingMemoryInGBs;
     }
 
+    /**
+     * The current total local volume of the dedicated VM host, in GBs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalLocalVolumeInGBs")
+    private final Float totalLocalVolumeInGBs;
+
+    /**
+     * The current total local volume of the dedicated VM host, in GBs.
+     *
+     * @return the value
+     **/
+    public Float getTotalLocalVolumeInGBs() {
+        return totalLocalVolumeInGBs;
+    }
+
+    /**
+     * The current available local volume of the dedicated VM host, in GBs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("remainingLocalVolumeInGBs")
+    private final Float remainingLocalVolumeInGBs;
+
+    /**
+     * The current available local volume of the dedicated VM host, in GBs.
+     *
+     * @return the value
+     **/
+    public Float getRemainingLocalVolumeInGBs() {
+        return remainingLocalVolumeInGBs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -727,6 +809,9 @@ public final class DedicatedVmHostSummary
         sb.append(", totalOcpus=").append(String.valueOf(this.totalOcpus));
         sb.append(", totalMemoryInGBs=").append(String.valueOf(this.totalMemoryInGBs));
         sb.append(", remainingMemoryInGBs=").append(String.valueOf(this.remainingMemoryInGBs));
+        sb.append(", totalLocalVolumeInGBs=").append(String.valueOf(this.totalLocalVolumeInGBs));
+        sb.append(", remainingLocalVolumeInGBs=")
+                .append(String.valueOf(this.remainingLocalVolumeInGBs));
         sb.append(")");
         return sb.toString();
     }
@@ -755,6 +840,9 @@ public final class DedicatedVmHostSummary
                 && java.util.Objects.equals(this.totalOcpus, other.totalOcpus)
                 && java.util.Objects.equals(this.totalMemoryInGBs, other.totalMemoryInGBs)
                 && java.util.Objects.equals(this.remainingMemoryInGBs, other.remainingMemoryInGBs)
+                && java.util.Objects.equals(this.totalLocalVolumeInGBs, other.totalLocalVolumeInGBs)
+                && java.util.Objects.equals(
+                        this.remainingLocalVolumeInGBs, other.remainingLocalVolumeInGBs)
                 && super.equals(other);
     }
 
@@ -799,6 +887,16 @@ public final class DedicatedVmHostSummary
                         + (this.remainingMemoryInGBs == null
                                 ? 43
                                 : this.remainingMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalLocalVolumeInGBs == null
+                                ? 43
+                                : this.totalLocalVolumeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remainingLocalVolumeInGBs == null
+                                ? 43
+                                : this.remainingLocalVolumeInGBs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

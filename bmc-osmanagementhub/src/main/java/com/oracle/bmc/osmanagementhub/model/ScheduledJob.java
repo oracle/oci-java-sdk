@@ -33,6 +33,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
         "managedInstanceGroupIds",
         "managedCompartmentIds",
         "lifecycleStageIds",
+        "dynamicSetIds",
         "isSubcompartmentIncluded",
         "operations",
         "workRequestIds",
@@ -61,6 +62,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
             java.util.List<String> managedInstanceGroupIds,
             java.util.List<String> managedCompartmentIds,
             java.util.List<String> lifecycleStageIds,
+            java.util.List<String> dynamicSetIds,
             Boolean isSubcompartmentIncluded,
             java.util.List<ScheduledJobOperation> operations,
             java.util.List<String> workRequestIds,
@@ -88,6 +90,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
         this.managedInstanceGroupIds = managedInstanceGroupIds;
         this.managedCompartmentIds = managedCompartmentIds;
         this.lifecycleStageIds = lifecycleStageIds;
+        this.dynamicSetIds = dynamicSetIds;
         this.isSubcompartmentIncluded = isSubcompartmentIncluded;
         this.operations = operations;
         this.workRequestIds = workRequestIds;
@@ -234,13 +237,19 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The frequency schedule for a recurring scheduled job.
+         * The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format.
+         * Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+         * In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("recurringRule")
         private String recurringRule;
 
         /**
-         * The frequency schedule for a recurring scheduled job.
+         * The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format.
+         * Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+         * In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
+         *
          * @param recurringRule the value to set
          * @return this builder
          **/
@@ -306,7 +315,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
         /**
          * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-         * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+         * managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStageIds")
@@ -315,7 +324,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
         /**
          * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-         * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+         * managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
          *
          * @param lifecycleStageIds the value to set
          * @return this builder
@@ -323,6 +332,28 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
         public Builder lifecycleStageIds(java.util.List<String> lifecycleStageIds) {
             this.lifecycleStageIds = lifecycleStageIds;
             this.__explicitlySet__.add("lifecycleStageIds");
+            return this;
+        }
+        /**
+         * The dynamic set [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+         * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dynamicSetIds")
+        private java.util.List<String> dynamicSetIds;
+
+        /**
+         * The dynamic set [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+         * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+         *
+         * @param dynamicSetIds the value to set
+         * @return this builder
+         **/
+        public Builder dynamicSetIds(java.util.List<String> dynamicSetIds) {
+            this.dynamicSetIds = dynamicSetIds;
+            this.__explicitlySet__.add("dynamicSetIds");
             return this;
         }
         /**
@@ -604,6 +635,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.managedInstanceGroupIds,
                             this.managedCompartmentIds,
                             this.lifecycleStageIds,
+                            this.dynamicSetIds,
                             this.isSubcompartmentIncluded,
                             this.operations,
                             this.workRequestIds,
@@ -663,6 +695,9 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("lifecycleStageIds")) {
                 this.lifecycleStageIds(model.getLifecycleStageIds());
+            }
+            if (model.wasPropertyExplicitlySet("dynamicSetIds")) {
+                this.dynamicSetIds(model.getDynamicSetIds());
             }
             if (model.wasPropertyExplicitlySet("isSubcompartmentIncluded")) {
                 this.isSubcompartmentIncluded(model.getIsSubcompartmentIncluded());
@@ -831,13 +866,19 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The frequency schedule for a recurring scheduled job.
+     * The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format.
+     * Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+     * In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recurringRule")
     private final String recurringRule;
 
     /**
-     * The frequency schedule for a recurring scheduled job.
+     * The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format.
+     * Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+     * In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
+     *
      * @return the value
      **/
     public String getRecurringRule() {
@@ -895,7 +936,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
     /**
      * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-     * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+     * managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStageIds")
@@ -904,12 +945,32 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
     /**
      * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-     * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+     * managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
      *
      * @return the value
      **/
     public java.util.List<String> getLifecycleStageIds() {
         return lifecycleStageIds;
+    }
+
+    /**
+     * The dynamic set [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+     * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dynamicSetIds")
+    private final java.util.List<String> dynamicSetIds;
+
+    /**
+     * The dynamic set [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+     * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getDynamicSetIds() {
+        return dynamicSetIds;
     }
 
     /**
@@ -1225,6 +1286,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
                 .append(String.valueOf(this.managedInstanceGroupIds));
         sb.append(", managedCompartmentIds=").append(String.valueOf(this.managedCompartmentIds));
         sb.append(", lifecycleStageIds=").append(String.valueOf(this.lifecycleStageIds));
+        sb.append(", dynamicSetIds=").append(String.valueOf(this.dynamicSetIds));
         sb.append(", isSubcompartmentIncluded=")
                 .append(String.valueOf(this.isSubcompartmentIncluded));
         sb.append(", operations=").append(String.valueOf(this.operations));
@@ -1268,6 +1330,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
                         this.managedInstanceGroupIds, other.managedInstanceGroupIds)
                 && java.util.Objects.equals(this.managedCompartmentIds, other.managedCompartmentIds)
                 && java.util.Objects.equals(this.lifecycleStageIds, other.lifecycleStageIds)
+                && java.util.Objects.equals(this.dynamicSetIds, other.dynamicSetIds)
                 && java.util.Objects.equals(
                         this.isSubcompartmentIncluded, other.isSubcompartmentIncluded)
                 && java.util.Objects.equals(this.operations, other.operations)
@@ -1325,6 +1388,9 @@ public final class ScheduledJob extends com.oracle.bmc.http.internal.ExplicitlyS
         result =
                 (result * PRIME)
                         + (this.lifecycleStageIds == null ? 43 : this.lifecycleStageIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dynamicSetIds == null ? 43 : this.dynamicSetIds.hashCode());
         result =
                 (result * PRIME)
                         + (this.isSubcompartmentIncluded == null

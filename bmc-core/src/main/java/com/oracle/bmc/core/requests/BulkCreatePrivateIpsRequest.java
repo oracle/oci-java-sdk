@@ -14,12 +14,12 @@ public class BulkCreatePrivateIpsRequest
                 com.oracle.bmc.core.model.BulkCreatePrivateIpsDetails> {
 
     /**
-     * Create private IPs details.
+     * Details used to create secondary private IPs.
      */
     private com.oracle.bmc.core.model.BulkCreatePrivateIpsDetails bulkCreatePrivateIpsDetails;
 
     /**
-     * Create private IPs details.
+     * Details used to create secondary private IPs.
      */
     public com.oracle.bmc.core.model.BulkCreatePrivateIpsDetails getBulkCreatePrivateIpsDetails() {
         return bulkCreatePrivateIpsDetails;
@@ -80,13 +80,13 @@ public class BulkCreatePrivateIpsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Create private IPs details.
+         * Details used to create secondary private IPs.
          */
         private com.oracle.bmc.core.model.BulkCreatePrivateIpsDetails bulkCreatePrivateIpsDetails =
                 null;
 
         /**
-         * Create private IPs details.
+         * Details used to create secondary private IPs.
          * @param bulkCreatePrivateIpsDetails the value to set
          * @return this builder instance
          */

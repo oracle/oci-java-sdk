@@ -577,7 +577,7 @@ public class LimitsIncreaseClient implements LimitsIncrease {
                         "LimitsIncrease",
                         "CancelLimitsIncreaseItemRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseItemRequest/CancelLimitsIncreaseItemRequest");
         java.util.function.Function<
                         javax.ws.rs.core.Response, CancelLimitsIncreaseItemRequestResponse>
                 transformer =
@@ -618,7 +618,7 @@ public class LimitsIncreaseClient implements LimitsIncrease {
                         "LimitsIncrease",
                         "CancelLimitsIncreaseRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/CancelLimitsIncreaseRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelLimitsIncreaseRequestResponse>
                 transformer =
                         CancelLimitsIncreaseRequestConverter.fromResponse(
@@ -658,7 +658,7 @@ public class LimitsIncreaseClient implements LimitsIncrease {
                         "LimitsIncrease",
                         "CreateLimitsIncreaseRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/CreateLimitsIncreaseRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CreateLimitsIncreaseRequestResponse>
                 transformer =
                         CreateLimitsIncreaseRequestConverter.fromResponse(
@@ -701,7 +701,7 @@ public class LimitsIncreaseClient implements LimitsIncrease {
                         "LimitsIncrease",
                         "DeleteLimitsIncreaseRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/DeleteLimitsIncreaseRequest");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteLimitsIncreaseRequestResponse>
                 transformer =
                         DeleteLimitsIncreaseRequestConverter.fromResponse(
@@ -740,7 +740,7 @@ public class LimitsIncreaseClient implements LimitsIncrease {
                         "LimitsIncrease",
                         "GetLimitsIncreaseItemRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseItemRequest/GetLimitsIncreaseItemRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetLimitsIncreaseItemRequestResponse>
                 transformer =
                         GetLimitsIncreaseItemRequestConverter.fromResponse(
@@ -778,7 +778,7 @@ public class LimitsIncreaseClient implements LimitsIncrease {
                         "LimitsIncrease",
                         "GetLimitsIncreaseRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/GetLimitsIncreaseRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetLimitsIncreaseRequestResponse>
                 transformer =
                         GetLimitsIncreaseRequestConverter.fromResponse(
@@ -816,7 +816,7 @@ public class LimitsIncreaseClient implements LimitsIncrease {
                         "LimitsIncrease",
                         "ListLimitsIncreaseItemRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseItemRequestCollection/ListLimitsIncreaseItemRequests");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListLimitsIncreaseItemRequestsResponse>
                 transformer =
@@ -855,7 +855,7 @@ public class LimitsIncreaseClient implements LimitsIncrease {
                         "LimitsIncrease",
                         "ListLimitsIncreaseQuestions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseQuestionCollection/ListLimitsIncreaseQuestions");
         java.util.function.Function<javax.ws.rs.core.Response, ListLimitsIncreaseQuestionsResponse>
                 transformer =
                         ListLimitsIncreaseQuestionsConverter.fromResponse(
@@ -893,7 +893,7 @@ public class LimitsIncreaseClient implements LimitsIncrease {
                         "LimitsIncrease",
                         "ListLimitsIncreaseRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/ListLimitsIncreaseRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListLimitsIncreaseRequestsResponse>
                 transformer =
                         ListLimitsIncreaseRequestsConverter.fromResponse(
@@ -931,7 +931,7 @@ public class LimitsIncreaseClient implements LimitsIncrease {
                         "LimitsIncrease",
                         "PatchLimitsIncreaseRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/PatchLimitsIncreaseRequest");
         java.util.function.Function<javax.ws.rs.core.Response, PatchLimitsIncreaseRequestResponse>
                 transformer =
                         PatchLimitsIncreaseRequestConverter.fromResponse(
@@ -974,7 +974,7 @@ public class LimitsIncreaseClient implements LimitsIncrease {
                         "LimitsIncrease",
                         "UpdateLimitsIncreaseRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/UpdateLimitsIncreaseRequest");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateLimitsIncreaseRequestResponse>
                 transformer =
                         UpdateLimitsIncreaseRequestConverter.fromResponse(

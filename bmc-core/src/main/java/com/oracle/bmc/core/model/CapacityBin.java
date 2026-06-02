@@ -26,6 +26,8 @@ public final class CapacityBin extends com.oracle.bmc.http.internal.ExplicitlySe
         "remainingOcpus",
         "totalMemoryInGBs",
         "remainingMemoryInGBs",
+        "totalLocalVolumeInGBs",
+        "remainingLocalVolumeInGBs",
         "supportedShapes"
     })
     public CapacityBin(
@@ -34,6 +36,8 @@ public final class CapacityBin extends com.oracle.bmc.http.internal.ExplicitlySe
             Float remainingOcpus,
             Float totalMemoryInGBs,
             Float remainingMemoryInGBs,
+            Float totalLocalVolumeInGBs,
+            Float remainingLocalVolumeInGBs,
             java.util.List<String> supportedShapes) {
         super();
         this.capacityIndex = capacityIndex;
@@ -41,6 +45,8 @@ public final class CapacityBin extends com.oracle.bmc.http.internal.ExplicitlySe
         this.remainingOcpus = remainingOcpus;
         this.totalMemoryInGBs = totalMemoryInGBs;
         this.remainingMemoryInGBs = remainingMemoryInGBs;
+        this.totalLocalVolumeInGBs = totalLocalVolumeInGBs;
+        this.remainingLocalVolumeInGBs = remainingLocalVolumeInGBs;
         this.supportedShapes = supportedShapes;
     }
 
@@ -137,6 +143,42 @@ public final class CapacityBin extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
+         * The total local volume of the capacity bucket, in GBs.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalLocalVolumeInGBs")
+        private Float totalLocalVolumeInGBs;
+
+        /**
+         * The total local volume of the capacity bucket, in GBs.
+         *
+         * @param totalLocalVolumeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder totalLocalVolumeInGBs(Float totalLocalVolumeInGBs) {
+            this.totalLocalVolumeInGBs = totalLocalVolumeInGBs;
+            this.__explicitlySet__.add("totalLocalVolumeInGBs");
+            return this;
+        }
+        /**
+         * The remaining local volume of the capacity bucket, in GBs.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("remainingLocalVolumeInGBs")
+        private Float remainingLocalVolumeInGBs;
+
+        /**
+         * The remaining local volume of the capacity bucket, in GBs.
+         *
+         * @param remainingLocalVolumeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder remainingLocalVolumeInGBs(Float remainingLocalVolumeInGBs) {
+            this.remainingLocalVolumeInGBs = remainingLocalVolumeInGBs;
+            this.__explicitlySet__.add("remainingLocalVolumeInGBs");
+            return this;
+        }
+        /**
          * List of VMI shapes supported on each capacity bucket.
          *
          **/
@@ -166,6 +208,8 @@ public final class CapacityBin extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.remainingOcpus,
                             this.totalMemoryInGBs,
                             this.remainingMemoryInGBs,
+                            this.totalLocalVolumeInGBs,
+                            this.remainingLocalVolumeInGBs,
                             this.supportedShapes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -189,6 +233,12 @@ public final class CapacityBin extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("remainingMemoryInGBs")) {
                 this.remainingMemoryInGBs(model.getRemainingMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("totalLocalVolumeInGBs")) {
+                this.totalLocalVolumeInGBs(model.getTotalLocalVolumeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("remainingLocalVolumeInGBs")) {
+                this.remainingLocalVolumeInGBs(model.getRemainingLocalVolumeInGBs());
             }
             if (model.wasPropertyExplicitlySet("supportedShapes")) {
                 this.supportedShapes(model.getSupportedShapes());
@@ -289,6 +339,38 @@ public final class CapacityBin extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
+     * The total local volume of the capacity bucket, in GBs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalLocalVolumeInGBs")
+    private final Float totalLocalVolumeInGBs;
+
+    /**
+     * The total local volume of the capacity bucket, in GBs.
+     *
+     * @return the value
+     **/
+    public Float getTotalLocalVolumeInGBs() {
+        return totalLocalVolumeInGBs;
+    }
+
+    /**
+     * The remaining local volume of the capacity bucket, in GBs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("remainingLocalVolumeInGBs")
+    private final Float remainingLocalVolumeInGBs;
+
+    /**
+     * The remaining local volume of the capacity bucket, in GBs.
+     *
+     * @return the value
+     **/
+    public Float getRemainingLocalVolumeInGBs() {
+        return remainingLocalVolumeInGBs;
+    }
+
+    /**
      * List of VMI shapes supported on each capacity bucket.
      *
      **/
@@ -323,6 +405,9 @@ public final class CapacityBin extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", remainingOcpus=").append(String.valueOf(this.remainingOcpus));
         sb.append(", totalMemoryInGBs=").append(String.valueOf(this.totalMemoryInGBs));
         sb.append(", remainingMemoryInGBs=").append(String.valueOf(this.remainingMemoryInGBs));
+        sb.append(", totalLocalVolumeInGBs=").append(String.valueOf(this.totalLocalVolumeInGBs));
+        sb.append(", remainingLocalVolumeInGBs=")
+                .append(String.valueOf(this.remainingLocalVolumeInGBs));
         sb.append(", supportedShapes=").append(String.valueOf(this.supportedShapes));
         sb.append(")");
         return sb.toString();
@@ -343,6 +428,9 @@ public final class CapacityBin extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.remainingOcpus, other.remainingOcpus)
                 && java.util.Objects.equals(this.totalMemoryInGBs, other.totalMemoryInGBs)
                 && java.util.Objects.equals(this.remainingMemoryInGBs, other.remainingMemoryInGBs)
+                && java.util.Objects.equals(this.totalLocalVolumeInGBs, other.totalLocalVolumeInGBs)
+                && java.util.Objects.equals(
+                        this.remainingLocalVolumeInGBs, other.remainingLocalVolumeInGBs)
                 && java.util.Objects.equals(this.supportedShapes, other.supportedShapes)
                 && super.equals(other);
     }
@@ -366,6 +454,16 @@ public final class CapacityBin extends com.oracle.bmc.http.internal.ExplicitlySe
                         + (this.remainingMemoryInGBs == null
                                 ? 43
                                 : this.remainingMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalLocalVolumeInGBs == null
+                                ? 43
+                                : this.totalLocalVolumeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remainingLocalVolumeInGBs == null
+                                ? 43
+                                : this.remainingLocalVolumeInGBs.hashCode());
         result =
                 (result * PRIME)
                         + (this.supportedShapes == null ? 43 : this.supportedShapes.hashCode());

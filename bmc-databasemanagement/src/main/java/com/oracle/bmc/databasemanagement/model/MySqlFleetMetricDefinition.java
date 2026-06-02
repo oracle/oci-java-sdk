@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The list of aggregated metrics for the Managed MySQL Databases in the fleet.
+ * The list of aggregated metrics for the Managed MySQL Databases in the fleet. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

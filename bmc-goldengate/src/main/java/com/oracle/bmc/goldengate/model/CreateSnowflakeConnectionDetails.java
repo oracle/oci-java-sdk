@@ -245,7 +245,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect to Snowflake platform.
@@ -254,11 +254,18 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
          * The password Oracle GoldenGate uses to connect the associated system of the given technology.
@@ -333,7 +340,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
-        private String privateKeyPassphrase;
+        private char[] privateKeyPassphrase;
 
         /**
          * Password if the private key file is encrypted.
@@ -342,11 +349,19 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
          * @param privateKeyPassphrase the value to set
          * @return this builder
          **/
-        public Builder privateKeyPassphrase(String privateKeyPassphrase) {
+        public Builder privateKeyPassphrase(char[] privateKeyPassphrase) {
             this.privateKeyPassphrase = privateKeyPassphrase;
             this.__explicitlySet__.add("privateKeyPassphrase");
             return this;
         }
+
+        public Builder privateKeyPassphrase(String privateKeyPassphrase) {
+            this.privateKeyPassphrase =
+                    privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null;
+            this.__explicitlySet__.add("privateKeyPassphrase");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
          * Note: When provided, 'privateKeyPassphrase' field must not be provided.
@@ -544,6 +559,63 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
         this.connectionUrl = connectionUrl;
         this.authenticationType = authenticationType;
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.privateKeyFile = privateKeyFile;
+        this.privateKeyFileSecretId = privateKeyFileSecretId;
+        this.privateKeyPassphrase =
+                privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null;
+        this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateSnowflakeConnectionDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            SnowflakeConnection.TechnologyType technologyType,
+            String connectionUrl,
+            SnowflakeConnection.AuthenticationType authenticationType,
+            String username,
+            char[] password,
+            String passwordSecretId,
+            String privateKeyFile,
+            String privateKeyFileSecretId,
+            char[] privateKeyPassphrase,
+            String privateKeyPassphraseSecretId) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                locks,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
+        this.technologyType = technologyType;
+        this.connectionUrl = connectionUrl;
+        this.authenticationType = authenticationType;
+        this.username = username;
         this.password = password;
         this.passwordSecretId = passwordSecretId;
         this.privateKeyFile = privateKeyFile;
@@ -624,7 +696,20 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect to Snowflake platform.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect to Snowflake platform.
@@ -632,7 +717,8 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
      *
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -704,7 +790,20 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
-    private final String privateKeyPassphrase;
+    private final char[] privateKeyPassphrase;
+
+    /**
+     * Password if the private key file is encrypted.
+     * Deprecated: This field is deprecated and replaced by &quot;privateKeyPassphraseSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPrivateKeyPassphrase__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPrivateKeyPassphrase() {
+        return privateKeyPassphrase != null ? new String(privateKeyPassphrase) : null;
+    }
 
     /**
      * Password if the private key file is encrypted.
@@ -712,7 +811,8 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
      *
      * @return the value
      **/
-    public String getPrivateKeyPassphrase() {
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
+    public char[] getPrivateKeyPassphrase__AsCharArray() {
         return privateKeyPassphrase;
     }
 

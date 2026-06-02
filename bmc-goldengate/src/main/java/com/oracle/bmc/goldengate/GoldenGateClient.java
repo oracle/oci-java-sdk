@@ -1167,6 +1167,46 @@ public class GoldenGateClient implements GoldenGate {
     }
 
     @Override
+    public ClonePipelineResponse clonePipeline(ClonePipelineRequest request) {
+        LOG.trace("Called clonePipeline");
+        final ClonePipelineRequest interceptedRequest =
+                ClonePipelineConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ClonePipelineConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ClonePipeline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/ClonePipeline");
+        java.util.function.Function<javax.ws.rs.core.Response, ClonePipelineResponse> transformer =
+                ClonePipelineConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getClonePipelineDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CollectDeploymentDiagnosticResponse collectDeploymentDiagnostic(
             CollectDeploymentDiagnosticRequest request) {
         LOG.trace("Called collectDeploymentDiagnostic");
@@ -1947,6 +1987,52 @@ public class GoldenGateClient implements GoldenGate {
     }
 
     @Override
+    public GenerateDisasterRecoveryPrecheckReportResponse generateDisasterRecoveryPrecheckReport(
+            GenerateDisasterRecoveryPrecheckReportRequest request) {
+        LOG.trace("Called generateDisasterRecoveryPrecheckReport");
+        final GenerateDisasterRecoveryPrecheckReportRequest interceptedRequest =
+                GenerateDisasterRecoveryPrecheckReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateDisasterRecoveryPrecheckReportConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "GenerateDisasterRecoveryPrecheckReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GenerateDisasterRecoveryPrecheckReport");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GenerateDisasterRecoveryPrecheckReportResponse>
+                transformer =
+                        GenerateDisasterRecoveryPrecheckReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getGenerateDisasterRecoveryPrecheckReportDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GenerateLibraryUrlResponse generateLibraryUrl(GenerateLibraryUrlRequest request) {
         LOG.trace("Called generateLibraryUrl");
         final GenerateLibraryUrlRequest interceptedRequest =
@@ -2227,6 +2313,45 @@ public class GoldenGateClient implements GoldenGate {
         java.util.function.Function<javax.ws.rs.core.Response, GetDeploymentUpgradeResponse>
                 transformer =
                         GetDeploymentUpgradeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDisasterRecoveryPrecheckReportResponse getDisasterRecoveryPrecheckReport(
+            GetDisasterRecoveryPrecheckReportRequest request) {
+        LOG.trace("Called getDisasterRecoveryPrecheckReport");
+        final GetDisasterRecoveryPrecheckReportRequest interceptedRequest =
+                GetDisasterRecoveryPrecheckReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDisasterRecoveryPrecheckReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "GetDisasterRecoveryPrecheckReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GetDisasterRecoveryPrecheckReport");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDisasterRecoveryPrecheckReportResponse>
+                transformer =
+                        GetDisasterRecoveryPrecheckReportConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3244,6 +3369,47 @@ public class GoldenGateClient implements GoldenGate {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public MigrateConnectionResponse migrateConnection(MigrateConnectionRequest request) {
+        LOG.trace("Called migrateConnection");
+        final MigrateConnectionRequest interceptedRequest =
+                MigrateConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MigrateConnectionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "MigrateConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/MigrateConnection");
+        java.util.function.Function<javax.ws.rs.core.Response, MigrateConnectionResponse>
+                transformer =
+                        MigrateConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getMigrateConnectionDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

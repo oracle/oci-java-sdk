@@ -22,6 +22,26 @@ package com.oracle.bmc.bds.model;
 public final class CreateBdsMetastoreConfigurationDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public CreateBdsMetastoreConfigurationDetails(
+            String displayName,
+            String metastoreId,
+            String bdsApiKeyId,
+            String bdsApiKeyPassphrase,
+            String clusterAdminPassword,
+            String secretId) {
+        super();
+        this.displayName = displayName;
+        this.metastoreId = metastoreId;
+        this.bdsApiKeyId = bdsApiKeyId;
+        this.bdsApiKeyPassphrase =
+                bdsApiKeyPassphrase != null ? bdsApiKeyPassphrase.toCharArray() : null;
+        this.clusterAdminPassword =
+                clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
+        this.secretId = secretId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
         "metastoreId",
@@ -34,8 +54,8 @@ public final class CreateBdsMetastoreConfigurationDetails
             String displayName,
             String metastoreId,
             String bdsApiKeyId,
-            String bdsApiKeyPassphrase,
-            String clusterAdminPassword,
+            char[] bdsApiKeyPassphrase,
+            char[] clusterAdminPassword,
             String secretId) {
         super();
         this.displayName = displayName;
@@ -100,34 +120,50 @@ public final class CreateBdsMetastoreConfigurationDetails
          * Base-64 encoded passphrase of the BDS Api Key.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
-        private String bdsApiKeyPassphrase;
+        private char[] bdsApiKeyPassphrase;
 
         /**
          * Base-64 encoded passphrase of the BDS Api Key.
          * @param bdsApiKeyPassphrase the value to set
          * @return this builder
          **/
-        public Builder bdsApiKeyPassphrase(String bdsApiKeyPassphrase) {
+        public Builder bdsApiKeyPassphrase(char[] bdsApiKeyPassphrase) {
             this.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
             this.__explicitlySet__.add("bdsApiKeyPassphrase");
             return this;
         }
+
+        public Builder bdsApiKeyPassphrase(String bdsApiKeyPassphrase) {
+            this.bdsApiKeyPassphrase =
+                    bdsApiKeyPassphrase != null ? bdsApiKeyPassphrase.toCharArray() : null;
+            this.__explicitlySet__.add("bdsApiKeyPassphrase");
+            return this;
+        }
+
         /**
          * Base-64 encoded password for the cluster admin user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-        private String clusterAdminPassword;
+        private char[] clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster admin user.
          * @param clusterAdminPassword the value to set
          * @return this builder
          **/
-        public Builder clusterAdminPassword(String clusterAdminPassword) {
+        public Builder clusterAdminPassword(char[] clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
+
+        public Builder clusterAdminPassword(String clusterAdminPassword) {
+            this.clusterAdminPassword =
+                    clusterAdminPassword != null ? clusterAdminPassword.toCharArray() : null;
+            this.__explicitlySet__.add("clusterAdminPassword");
+            return this;
+        }
+
         /**
          * The secretId for the clusterAdminPassword.
          **/
@@ -244,13 +280,25 @@ public final class CreateBdsMetastoreConfigurationDetails
      * Base-64 encoded passphrase of the BDS Api Key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
-    private final String bdsApiKeyPassphrase;
+    private final char[] bdsApiKeyPassphrase;
+
+    /**
+     * Base-64 encoded passphrase of the BDS Api Key.
+     * return the value
+     * @Deprecated - Use getBdsApiKeyPassphrase__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getBdsApiKeyPassphrase() {
+        return bdsApiKeyPassphrase != null ? new String(bdsApiKeyPassphrase) : null;
+    }
 
     /**
      * Base-64 encoded passphrase of the BDS Api Key.
      * @return the value
      **/
-    public String getBdsApiKeyPassphrase() {
+    @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
+    public char[] getBdsApiKeyPassphrase__AsCharArray() {
         return bdsApiKeyPassphrase;
     }
 
@@ -258,13 +306,25 @@ public final class CreateBdsMetastoreConfigurationDetails
      * Base-64 encoded password for the cluster admin user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
-    private final String clusterAdminPassword;
+    private final char[] clusterAdminPassword;
+
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     * return the value
+     * @Deprecated - Use getClusterAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClusterAdminPassword() {
+        return clusterAdminPassword != null ? new String(clusterAdminPassword) : null;
+    }
 
     /**
      * Base-64 encoded password for the cluster admin user.
      * @return the value
      **/
-    public String getClusterAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
+    public char[] getClusterAdminPassword__AsCharArray() {
         return clusterAdminPassword;
     }
 

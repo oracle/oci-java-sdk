@@ -25,6 +25,38 @@ package com.oracle.bmc.database.model;
 public final class CreateDatabaseForStandbyDbSystemDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public CreateDatabaseForStandbyDbSystemDetails(
+            String adminPassword,
+            String tdeWalletPassword,
+            String databaseSoftwareImageId,
+            Boolean isActiveDataGuardEnabled,
+            String dbDomain,
+            String sidPrefix,
+            String dbUniqueName,
+            ProtectionMode protectionMode,
+            EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
+            TransportType transportType,
+            DbBackupConfig dbBackupConfig,
+            java.util.Map<String, String> databaseFreeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags) {
+        super();
+        this.adminPassword = adminPassword;
+        this.tdeWalletPassword = tdeWalletPassword != null ? tdeWalletPassword.toCharArray() : null;
+        this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+        this.dbDomain = dbDomain;
+        this.sidPrefix = sidPrefix;
+        this.dbUniqueName = dbUniqueName;
+        this.protectionMode = protectionMode;
+        this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+        this.transportType = transportType;
+        this.dbBackupConfig = dbBackupConfig;
+        this.databaseFreeformTags = databaseFreeformTags;
+        this.databaseDefinedTags = databaseDefinedTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "adminPassword",
         "tdeWalletPassword",
@@ -42,7 +74,7 @@ public final class CreateDatabaseForStandbyDbSystemDetails
     })
     public CreateDatabaseForStandbyDbSystemDetails(
             String adminPassword,
-            String tdeWalletPassword,
+            char[] tdeWalletPassword,
             String databaseSoftwareImageId,
             Boolean isActiveDataGuardEnabled,
             String dbDomain,
@@ -92,18 +124,26 @@ public final class CreateDatabaseForStandbyDbSystemDetails
          * For TDE Wallet, enter the same password as the primary wallet password.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
-        private String tdeWalletPassword;
+        private char[] tdeWalletPassword;
 
         /**
          * For TDE Wallet, enter the same password as the primary wallet password.
          * @param tdeWalletPassword the value to set
          * @return this builder
          **/
-        public Builder tdeWalletPassword(String tdeWalletPassword) {
+        public Builder tdeWalletPassword(char[] tdeWalletPassword) {
             this.tdeWalletPassword = tdeWalletPassword;
             this.__explicitlySet__.add("tdeWalletPassword");
             return this;
         }
+
+        public Builder tdeWalletPassword(String tdeWalletPassword) {
+            this.tdeWalletPassword =
+                    tdeWalletPassword != null ? tdeWalletPassword.toCharArray() : null;
+            this.__explicitlySet__.add("tdeWalletPassword");
+            return this;
+        }
+
         /**
          * The database software image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          **/
@@ -411,13 +451,25 @@ public final class CreateDatabaseForStandbyDbSystemDetails
      * For TDE Wallet, enter the same password as the primary wallet password.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
-    private final String tdeWalletPassword;
+    private final char[] tdeWalletPassword;
+
+    /**
+     * For TDE Wallet, enter the same password as the primary wallet password.
+     * return the value
+     * @Deprecated - Use getTdeWalletPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTdeWalletPassword() {
+        return tdeWalletPassword != null ? new String(tdeWalletPassword) : null;
+    }
 
     /**
      * For TDE Wallet, enter the same password as the primary wallet password.
      * @return the value
      **/
-    public String getTdeWalletPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
+    public char[] getTdeWalletPassword__AsCharArray() {
         return tdeWalletPassword;
     }
 

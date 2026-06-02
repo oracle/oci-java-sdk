@@ -26,6 +26,23 @@ public class CreateConnectHarnessResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    /**
      * For optimistic concurrency control. See {@code if-match}.
      */
     private String etag;
@@ -55,6 +72,7 @@ public class CreateConnectHarnessResponse extends com.oracle.bmc.responses.BmcRe
         "__httpStatusCode__",
         "headers",
         "opcRequestId",
+        "opcWorkRequestId",
         "etag",
         "connectHarness"
     })
@@ -62,10 +80,12 @@ public class CreateConnectHarnessResponse extends com.oracle.bmc.responses.BmcRe
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
+            String opcWorkRequestId,
             String etag,
             com.oracle.bmc.streaming.model.ConnectHarness connectHarness) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
         this.etag = etag;
         this.connectHarness = connectHarness;
     }
@@ -101,6 +121,25 @@ public class CreateConnectHarnessResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
+         *
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -143,6 +182,7 @@ public class CreateConnectHarnessResponse extends com.oracle.bmc.responses.BmcRe
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             etag(o.getEtag());
             connectHarness(o.getConnectHarness());
 
@@ -155,7 +195,12 @@ public class CreateConnectHarnessResponse extends com.oracle.bmc.responses.BmcRe
          */
         public CreateConnectHarnessResponse build() {
             return new CreateConnectHarnessResponse(
-                    __httpStatusCode__, headers, opcRequestId, etag, connectHarness);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    etag,
+                    connectHarness);
         }
     }
 
@@ -173,6 +218,7 @@ public class CreateConnectHarnessResponse extends com.oracle.bmc.responses.BmcRe
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",connectHarness=").append(String.valueOf(connectHarness));
         sb.append(")");
@@ -191,6 +237,7 @@ public class CreateConnectHarnessResponse extends com.oracle.bmc.responses.BmcRe
         CreateConnectHarnessResponse other = (CreateConnectHarnessResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.connectHarness, other.connectHarness);
     }
@@ -200,6 +247,9 @@ public class CreateConnectHarnessResponse extends com.oracle.bmc.responses.BmcRe
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result =
                 (result * PRIME)

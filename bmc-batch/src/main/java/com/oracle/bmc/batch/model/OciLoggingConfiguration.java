@@ -59,13 +59,31 @@ public final class OciLoggingConfiguration extends LoggingConfiguration {
             this.__explicitlySet__.add("logId");
             return this;
         }
+        /**
+         * A switch to enable or disable propagation of job and task events to the customer's logs in OCI logging service.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isJobTaskEventsPropagationEnabled")
+        private Boolean isJobTaskEventsPropagationEnabled;
+
+        /**
+         * A switch to enable or disable propagation of job and task events to the customer's logs in OCI logging service.
+         * @param isJobTaskEventsPropagationEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isJobTaskEventsPropagationEnabled(
+                Boolean isJobTaskEventsPropagationEnabled) {
+            this.isJobTaskEventsPropagationEnabled = isJobTaskEventsPropagationEnabled;
+            this.__explicitlySet__.add("isJobTaskEventsPropagationEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OciLoggingConfiguration build() {
             OciLoggingConfiguration model =
-                    new OciLoggingConfiguration(this.logGroupId, this.logId);
+                    new OciLoggingConfiguration(
+                            this.logGroupId, this.logId, this.isJobTaskEventsPropagationEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +97,10 @@ public final class OciLoggingConfiguration extends LoggingConfiguration {
             }
             if (model.wasPropertyExplicitlySet("logId")) {
                 this.logId(model.getLogId());
+            }
+            if (model.wasPropertyExplicitlySet("isJobTaskEventsPropagationEnabled")) {
+                this.isJobTaskEventsPropagationEnabled(
+                        model.getIsJobTaskEventsPropagationEnabled());
             }
             return this;
         }
@@ -96,10 +118,12 @@ public final class OciLoggingConfiguration extends LoggingConfiguration {
     }
 
     @Deprecated
-    public OciLoggingConfiguration(String logGroupId, String logId) {
+    public OciLoggingConfiguration(
+            String logGroupId, String logId, Boolean isJobTaskEventsPropagationEnabled) {
         super();
         this.logGroupId = logGroupId;
         this.logId = logId;
+        this.isJobTaskEventsPropagationEnabled = isJobTaskEventsPropagationEnabled;
     }
 
     /**
@@ -130,6 +154,20 @@ public final class OciLoggingConfiguration extends LoggingConfiguration {
         return logId;
     }
 
+    /**
+     * A switch to enable or disable propagation of job and task events to the customer's logs in OCI logging service.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isJobTaskEventsPropagationEnabled")
+    private final Boolean isJobTaskEventsPropagationEnabled;
+
+    /**
+     * A switch to enable or disable propagation of job and task events to the customer's logs in OCI logging service.
+     * @return the value
+     **/
+    public Boolean getIsJobTaskEventsPropagationEnabled() {
+        return isJobTaskEventsPropagationEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -146,6 +184,8 @@ public final class OciLoggingConfiguration extends LoggingConfiguration {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(", logId=").append(String.valueOf(this.logId));
+        sb.append(", isJobTaskEventsPropagationEnabled=")
+                .append(String.valueOf(this.isJobTaskEventsPropagationEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -162,6 +202,9 @@ public final class OciLoggingConfiguration extends LoggingConfiguration {
         OciLoggingConfiguration other = (OciLoggingConfiguration) o;
         return java.util.Objects.equals(this.logGroupId, other.logGroupId)
                 && java.util.Objects.equals(this.logId, other.logId)
+                && java.util.Objects.equals(
+                        this.isJobTaskEventsPropagationEnabled,
+                        other.isJobTaskEventsPropagationEnabled)
                 && super.equals(other);
     }
 
@@ -171,6 +214,11 @@ public final class OciLoggingConfiguration extends LoggingConfiguration {
         int result = super.hashCode();
         result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
         result = (result * PRIME) + (this.logId == null ? 43 : this.logId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isJobTaskEventsPropagationEnabled == null
+                                ? 43
+                                : this.isJobTaskEventsPropagationEnabled.hashCode());
         return result;
     }
 }

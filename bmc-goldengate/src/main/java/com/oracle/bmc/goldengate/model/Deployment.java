@@ -59,7 +59,6 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         "deploymentUrl",
         "systemTags",
         "isLatestVersion",
-        "timeUpgradeRequired",
         "storageUtilizationInBytes",
         "isStorageUtilizationLimitExceeded",
         "deploymentType",
@@ -77,7 +76,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         "ingressIps",
         "subscriptionId",
         "clusterPlacementGroupId",
-        "securityAttributes"
+        "securityAttributes",
+        "disasterRecoveryStatus"
     })
     public Deployment(
             String id,
@@ -118,7 +118,6 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             String deploymentUrl,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Boolean isLatestVersion,
-            java.util.Date timeUpgradeRequired,
             Long storageUtilizationInBytes,
             Boolean isStorageUtilizationLimitExceeded,
             DeploymentType deploymentType,
@@ -136,7 +135,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             java.util.List<IngressIpDetails> ingressIps,
             String subscriptionId,
             String clusterPlacementGroupId,
-            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            DisasterRecoveryStatus disasterRecoveryStatus) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -176,7 +176,6 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         this.deploymentUrl = deploymentUrl;
         this.systemTags = systemTags;
         this.isLatestVersion = isLatestVersion;
-        this.timeUpgradeRequired = timeUpgradeRequired;
         this.storageUtilizationInBytes = storageUtilizationInBytes;
         this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
         this.deploymentType = deploymentType;
@@ -195,6 +194,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         this.subscriptionId = subscriptionId;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.securityAttributes = securityAttributes;
+        this.disasterRecoveryStatus = disasterRecoveryStatus;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -436,14 +436,14 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * Possible lifecycle states.
+         * Possible lifecycle states for a Deployment.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * Possible lifecycle states.
+         * Possible lifecycle states for a Deployment.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -595,18 +595,36 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
-         * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+         * <p>
+         * Rules:
+         * - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+         * - Update:
+         *   - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+         *   - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+         * <p>
+         * Validation:
+         * - Must reference a public subnet.
+         * - Must be a regional subnet.
+         * - Must be in the same VCN as subnetId.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
         private String loadBalancerSubnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
-         * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+         * <p>
+         * Rules:
+         * - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+         * - Update:
+         *   - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+         *   - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+         * <p>
+         * Validation:
+         * - Must reference a public subnet.
+         * - Must be a regional subnet.
+         * - Must be in the same VCN as subnetId.
          *
          * @param loadBalancerSubnetId the value to set
          * @return this builder
@@ -731,16 +749,16 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The deployment category defines the broad separation of the deployment type into three categories.
-         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into four categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private DeploymentCategory category;
 
         /**
-         * The deployment category defines the broad separation of the deployment type into three categories.
-         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into four categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
          *
          * @param category the value to set
          * @return this builder
@@ -920,36 +938,6 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         public Builder isLatestVersion(Boolean isLatestVersion) {
             this.isLatestVersion = isLatestVersion;
             this.__explicitlySet__.add("isLatestVersion");
-            return this;
-        }
-        /**
-         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
-         * to check, when deployment will be forced to upgrade to a newer version.
-         * Old description:
-         * The date the existing version in use will no longer be considered as usable
-         * and an upgrade will be required.  This date is typically 6 months after the
-         * version was released for use by GGS.  The format is defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
-        private java.util.Date timeUpgradeRequired;
-
-        /**
-         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
-         * to check, when deployment will be forced to upgrade to a newer version.
-         * Old description:
-         * The date the existing version in use will no longer be considered as usable
-         * and an upgrade will be required.  This date is typically 6 months after the
-         * version was released for use by GGS.  The format is defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         *
-         * @param timeUpgradeRequired the value to set
-         * @return this builder
-         **/
-        public Builder timeUpgradeRequired(java.util.Date timeUpgradeRequired) {
-            this.timeUpgradeRequired = timeUpgradeRequired;
-            this.__explicitlySet__.add("timeUpgradeRequired");
             return this;
         }
         /**
@@ -1257,6 +1245,26 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             this.__explicitlySet__.add("securityAttributes");
             return this;
         }
+        /**
+         * Indicates if disaster recovery is enabled for a deployment.
+         * If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryStatus")
+        private DisasterRecoveryStatus disasterRecoveryStatus;
+
+        /**
+         * Indicates if disaster recovery is enabled for a deployment.
+         * If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+         *
+         * @param disasterRecoveryStatus the value to set
+         * @return this builder
+         **/
+        public Builder disasterRecoveryStatus(DisasterRecoveryStatus disasterRecoveryStatus) {
+            this.disasterRecoveryStatus = disasterRecoveryStatus;
+            this.__explicitlySet__.add("disasterRecoveryStatus");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1302,7 +1310,6 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.deploymentUrl,
                             this.systemTags,
                             this.isLatestVersion,
-                            this.timeUpgradeRequired,
                             this.storageUtilizationInBytes,
                             this.isStorageUtilizationLimitExceeded,
                             this.deploymentType,
@@ -1320,7 +1327,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.ingressIps,
                             this.subscriptionId,
                             this.clusterPlacementGroupId,
-                            this.securityAttributes);
+                            this.securityAttributes,
+                            this.disasterRecoveryStatus);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1443,9 +1451,6 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             if (model.wasPropertyExplicitlySet("isLatestVersion")) {
                 this.isLatestVersion(model.getIsLatestVersion());
             }
-            if (model.wasPropertyExplicitlySet("timeUpgradeRequired")) {
-                this.timeUpgradeRequired(model.getTimeUpgradeRequired());
-            }
             if (model.wasPropertyExplicitlySet("storageUtilizationInBytes")) {
                 this.storageUtilizationInBytes(model.getStorageUtilizationInBytes());
             }
@@ -1500,6 +1505,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("disasterRecoveryStatus")) {
+                this.disasterRecoveryStatus(model.getDisasterRecoveryStatus());
             }
             return this;
         }
@@ -1727,14 +1735,69 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment.
+     *
+     **/
+    public enum LifecycleState {
+        Creating("CREATING"),
+        Updating("UPDATING"),
+        Active("ACTIVE"),
+        Inactive("INACTIVE"),
+        Deleting("DELETING"),
+        Deleted("DELETED"),
+        Failed("FAILED"),
+        NeedsAttention("NEEDS_ATTENTION"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Possible lifecycle states for a Deployment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment.
      *
      * @return the value
      **/
@@ -1869,18 +1932,36 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
-     * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-     * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     * <p>
+     * Rules:
+     * - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * - Update:
+     *   - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     *   - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     * <p>
+     * Validation:
+     * - Must reference a public subnet.
+     * - Must be a regional subnet.
+     * - Must be in the same VCN as subnetId.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
     private final String loadBalancerSubnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
-     * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-     * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     * <p>
+     * Rules:
+     * - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * - Update:
+     *   - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     *   - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     * <p>
+     * Validation:
+     * - Must reference a public subnet.
+     * - Must be a regional subnet.
+     * - Must be in the same VCN as subnetId.
      *
      * @return the value
      **/
@@ -1991,16 +2072,16 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three categories.
-     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into four categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final DeploymentCategory category;
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three categories.
-     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into four categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
      *
      * @return the value
      **/
@@ -2160,34 +2241,6 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
      **/
     public Boolean getIsLatestVersion() {
         return isLatestVersion;
-    }
-
-    /**
-     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
-     * to check, when deployment will be forced to upgrade to a newer version.
-     * Old description:
-     * The date the existing version in use will no longer be considered as usable
-     * and an upgrade will be required.  This date is typically 6 months after the
-     * version was released for use by GGS.  The format is defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
-    private final java.util.Date timeUpgradeRequired;
-
-    /**
-     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
-     * to check, when deployment will be forced to upgrade to a newer version.
-     * Old description:
-     * The date the existing version in use will no longer be considered as usable
-     * and an upgrade will be required.  This date is typically 6 months after the
-     * version was released for use by GGS.  The format is defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     *
-     * @return the value
-     **/
-    public java.util.Date getTimeUpgradeRequired() {
-        return timeUpgradeRequired;
     }
 
     /**
@@ -2457,6 +2510,24 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         return securityAttributes;
     }
 
+    /**
+     * Indicates if disaster recovery is enabled for a deployment.
+     * If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryStatus")
+    private final DisasterRecoveryStatus disasterRecoveryStatus;
+
+    /**
+     * Indicates if disaster recovery is enabled for a deployment.
+     * If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     *
+     * @return the value
+     **/
+    public DisasterRecoveryStatus getDisasterRecoveryStatus() {
+        return disasterRecoveryStatus;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2510,7 +2581,6 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", deploymentUrl=").append(String.valueOf(this.deploymentUrl));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", isLatestVersion=").append(String.valueOf(this.isLatestVersion));
-        sb.append(", timeUpgradeRequired=").append(String.valueOf(this.timeUpgradeRequired));
         sb.append(", storageUtilizationInBytes=")
                 .append(String.valueOf(this.storageUtilizationInBytes));
         sb.append(", isStorageUtilizationLimitExceeded=")
@@ -2539,6 +2609,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", disasterRecoveryStatus=").append(String.valueOf(this.disasterRecoveryStatus));
         sb.append(")");
         return sb.toString();
     }
@@ -2592,7 +2663,6 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.deploymentUrl, other.deploymentUrl)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.isLatestVersion, other.isLatestVersion)
-                && java.util.Objects.equals(this.timeUpgradeRequired, other.timeUpgradeRequired)
                 && java.util.Objects.equals(
                         this.storageUtilizationInBytes, other.storageUtilizationInBytes)
                 && java.util.Objects.equals(
@@ -2622,6 +2692,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(
+                        this.disasterRecoveryStatus, other.disasterRecoveryStatus)
                 && super.equals(other);
     }
 
@@ -2721,11 +2793,6 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                         + (this.isLatestVersion == null ? 43 : this.isLatestVersion.hashCode());
         result =
                 (result * PRIME)
-                        + (this.timeUpgradeRequired == null
-                                ? 43
-                                : this.timeUpgradeRequired.hashCode());
-        result =
-                (result * PRIME)
                         + (this.storageUtilizationInBytes == null
                                 ? 43
                                 : this.storageUtilizationInBytes.hashCode());
@@ -2798,6 +2865,11 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                         + (this.securityAttributes == null
                                 ? 43
                                 : this.securityAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.disasterRecoveryStatus == null
+                                ? 43
+                                : this.disasterRecoveryStatus.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

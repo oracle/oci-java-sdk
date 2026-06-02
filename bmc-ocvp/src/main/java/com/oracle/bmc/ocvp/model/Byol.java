@@ -33,6 +33,7 @@ public final class Byol extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "timeTermStart",
         "timeTermEnd",
         "entitlementKey",
+        "siteId",
         "timeCreated",
         "timeUpdated",
         "freeformTags",
@@ -51,6 +52,7 @@ public final class Byol extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             java.util.Date timeTermStart,
             java.util.Date timeTermEnd,
             String entitlementKey,
+            String siteId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
@@ -68,6 +70,7 @@ public final class Byol extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.timeTermStart = timeTermStart;
         this.timeTermEnd = timeTermEnd;
         this.entitlementKey = entitlementKey;
+        this.siteId = siteId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.freeformTags = freeformTags;
@@ -298,6 +301,24 @@ public final class Byol extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
+         * The hyperscaler identifier in Broadcom systems.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("siteId")
+        private String siteId;
+
+        /**
+         * The hyperscaler identifier in Broadcom systems.
+         *
+         * @param siteId the value to set
+         * @return this builder
+         **/
+        public Builder siteId(String siteId) {
+            this.siteId = siteId;
+            this.__explicitlySet__.add("siteId");
+            return this;
+        }
+        /**
          * The date and time the BYOL was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          * Example: {@code 2016-08-25T21:10:29.600Z}
@@ -426,6 +447,7 @@ public final class Byol extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.timeTermStart,
                             this.timeTermEnd,
                             this.entitlementKey,
+                            this.siteId,
                             this.timeCreated,
                             this.timeUpdated,
                             this.freeformTags,
@@ -471,6 +493,9 @@ public final class Byol extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("entitlementKey")) {
                 this.entitlementKey(model.getEntitlementKey());
+            }
+            if (model.wasPropertyExplicitlySet("siteId")) {
+                this.siteId(model.getSiteId());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -810,6 +835,22 @@ public final class Byol extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
+     * The hyperscaler identifier in Broadcom systems.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("siteId")
+    private final String siteId;
+
+    /**
+     * The hyperscaler identifier in Broadcom systems.
+     *
+     * @return the value
+     **/
+    public String getSiteId() {
+        return siteId;
+    }
+
+    /**
      * The date and time the BYOL was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      * Example: {@code 2016-08-25T21:10:29.600Z}
@@ -934,6 +975,7 @@ public final class Byol extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", timeTermStart=").append(String.valueOf(this.timeTermStart));
         sb.append(", timeTermEnd=").append(String.valueOf(this.timeTermEnd));
         sb.append(", entitlementKey=").append(String.valueOf(this.entitlementKey));
+        sb.append(", siteId=").append(String.valueOf(this.siteId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -964,6 +1006,7 @@ public final class Byol extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.timeTermStart, other.timeTermStart)
                 && java.util.Objects.equals(this.timeTermEnd, other.timeTermEnd)
                 && java.util.Objects.equals(this.entitlementKey, other.entitlementKey)
+                && java.util.Objects.equals(this.siteId, other.siteId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -997,6 +1040,7 @@ public final class Byol extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result =
                 (result * PRIME)
                         + (this.entitlementKey == null ? 43 : this.entitlementKey.hashCode());
+        result = (result * PRIME) + (this.siteId == null ? 43 : this.siteId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

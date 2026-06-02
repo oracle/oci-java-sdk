@@ -1213,6 +1213,63 @@ public class DbMulticloudGCPProviderAsyncClient implements DbMulticloudGCPProvid
     }
 
     @Override
+    public java.util.concurrent.Future<ReplicateOracleDbGcpKeyRingResponse>
+            replicateOracleDbGcpKeyRing(
+                    ReplicateOracleDbGcpKeyRingRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ReplicateOracleDbGcpKeyRingRequest,
+                                    ReplicateOracleDbGcpKeyRingResponse>
+                            handler) {
+        LOG.trace("Called async replicateOracleDbGcpKeyRing");
+        final ReplicateOracleDbGcpKeyRingRequest interceptedRequest =
+                ReplicateOracleDbGcpKeyRingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReplicateOracleDbGcpKeyRingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbMulticloudGCPProvider",
+                        "ReplicateOracleDbGcpKeyRing",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/ReplicateOracleDbGcpKeyRing");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ReplicateOracleDbGcpKeyRingResponse>
+                transformer =
+                        ReplicateOracleDbGcpKeyRingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ReplicateOracleDbGcpKeyRingRequest, ReplicateOracleDbGcpKeyRingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ReplicateOracleDbGcpKeyRingRequest,
+                                ReplicateOracleDbGcpKeyRingResponse>,
+                        java.util.concurrent.Future<ReplicateOracleDbGcpKeyRingResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getReplicateOracleDbGcpKeyRingDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ReplicateOracleDbGcpKeyRingRequest, ReplicateOracleDbGcpKeyRingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateOracleDbGcpIdentityConnectorResponse>
             updateOracleDbGcpIdentityConnector(
                     UpdateOracleDbGcpIdentityConnectorRequest request,

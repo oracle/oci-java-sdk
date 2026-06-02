@@ -628,6 +628,55 @@ public class KmsHsmClusterAsyncClient implements KmsHsmClusterAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableAuditMgmtLoggingResponse> disableAuditMgmtLogging(
+            DisableAuditMgmtLoggingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisableAuditMgmtLoggingRequest, DisableAuditMgmtLoggingResponse>
+                    handler) {
+        LOG.trace("Called async disableAuditMgmtLogging");
+        final DisableAuditMgmtLoggingRequest interceptedRequest =
+                DisableAuditMgmtLoggingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableAuditMgmtLoggingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "DisableAuditMgmtLogging",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/DisableAuditMgmtLogging");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DisableAuditMgmtLoggingResponse>
+                transformer =
+                        DisableAuditMgmtLoggingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableAuditMgmtLoggingRequest, DisableAuditMgmtLoggingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableAuditMgmtLoggingRequest, DisableAuditMgmtLoggingResponse>,
+                        java.util.concurrent.Future<DisableAuditMgmtLoggingResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableAuditMgmtLoggingRequest, DisableAuditMgmtLoggingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DownloadCertificateSigningRequestResponse>
             downloadCertificateSigningRequest(
                     DownloadCertificateSigningRequestRequest request,
@@ -669,6 +718,54 @@ public class KmsHsmClusterAsyncClient implements KmsHsmClusterAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DownloadCertificateSigningRequestRequest,
                     DownloadCertificateSigningRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAuditMgmtLoggingResponse> enableAuditMgmtLogging(
+            EnableAuditMgmtLoggingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EnableAuditMgmtLoggingRequest, EnableAuditMgmtLoggingResponse>
+                    handler) {
+        LOG.trace("Called async enableAuditMgmtLogging");
+        final EnableAuditMgmtLoggingRequest interceptedRequest =
+                EnableAuditMgmtLoggingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableAuditMgmtLoggingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "EnableAuditMgmtLogging",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/EnableAuditMgmtLogging");
+        final java.util.function.Function<javax.ws.rs.core.Response, EnableAuditMgmtLoggingResponse>
+                transformer =
+                        EnableAuditMgmtLoggingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableAuditMgmtLoggingRequest, EnableAuditMgmtLoggingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableAuditMgmtLoggingRequest, EnableAuditMgmtLoggingResponse>,
+                        java.util.concurrent.Future<EnableAuditMgmtLoggingResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableAuditMgmtLoggingRequest, EnableAuditMgmtLoggingResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -822,6 +919,59 @@ public class KmsHsmClusterAsyncClient implements KmsHsmClusterAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<InitiateAuditLoggingResponse> initiateAuditLogging(
+            InitiateAuditLoggingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            InitiateAuditLoggingRequest, InitiateAuditLoggingResponse>
+                    handler) {
+        LOG.trace("Called async initiateAuditLogging");
+        final InitiateAuditLoggingRequest interceptedRequest =
+                InitiateAuditLoggingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InitiateAuditLoggingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "InitiateAuditLogging",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/InitiateAuditLogging");
+        final java.util.function.Function<javax.ws.rs.core.Response, InitiateAuditLoggingResponse>
+                transformer =
+                        InitiateAuditLoggingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        InitiateAuditLoggingRequest, InitiateAuditLoggingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                InitiateAuditLoggingRequest, InitiateAuditLoggingResponse>,
+                        java.util.concurrent.Future<InitiateAuditLoggingResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getInitiateAuditLoggingDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    InitiateAuditLoggingRequest, InitiateAuditLoggingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListHsmClustersResponse> listHsmClusters(
             ListHsmClustersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -958,6 +1108,63 @@ public class KmsHsmClusterAsyncClient implements KmsHsmClusterAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ScheduleHsmClusterDeletionRequest, ScheduleHsmClusterDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAuditLoggingDestinationResponse>
+            updateAuditLoggingDestination(
+                    UpdateAuditLoggingDestinationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAuditLoggingDestinationRequest,
+                                    UpdateAuditLoggingDestinationResponse>
+                            handler) {
+        LOG.trace("Called async updateAuditLoggingDestination");
+        final UpdateAuditLoggingDestinationRequest interceptedRequest =
+                UpdateAuditLoggingDestinationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAuditLoggingDestinationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "UpdateAuditLoggingDestination",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/UpdateAuditLoggingDestination");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateAuditLoggingDestinationResponse>
+                transformer =
+                        UpdateAuditLoggingDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateAuditLoggingDestinationRequest, UpdateAuditLoggingDestinationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAuditLoggingDestinationRequest,
+                                UpdateAuditLoggingDestinationResponse>,
+                        java.util.concurrent.Future<UpdateAuditLoggingDestinationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAuditLoggingDestinationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAuditLoggingDestinationRequest, UpdateAuditLoggingDestinationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

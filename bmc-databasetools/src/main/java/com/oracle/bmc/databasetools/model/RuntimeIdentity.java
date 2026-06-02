@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * The runtime identity to use.
+ * Determines the identity used when accessing OCI resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller\u2019s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection\u2019s resource principal (RPST).
+ *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public enum RuntimeIdentity {

@@ -260,7 +260,7 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated DB2 database.
@@ -269,11 +269,18 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
          * that Oracle GoldenGate uses to connect the associated DB2 database.
@@ -650,6 +657,70 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
         this.host = host;
         this.port = port;
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.additionalAttributes = additionalAttributes;
+        this.securityProtocol = securityProtocol;
+        this.sslClientKeystoredb = sslClientKeystoredb;
+        this.sslClientKeystoredbSecretId = sslClientKeystoredbSecretId;
+        this.sslClientKeystash = sslClientKeystash;
+        this.sslClientKeystashSecretId = sslClientKeystashSecretId;
+        this.sslServerCertificate = sslServerCertificate;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateDb2ConnectionDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            Db2Connection.TechnologyType technologyType,
+            String databaseName,
+            String host,
+            Integer port,
+            String username,
+            char[] password,
+            String passwordSecretId,
+            java.util.List<NameValuePair> additionalAttributes,
+            Db2Connection.SecurityProtocol securityProtocol,
+            String sslClientKeystoredb,
+            String sslClientKeystoredbSecretId,
+            String sslClientKeystash,
+            String sslClientKeystashSecretId,
+            String sslServerCertificate) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                locks,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
+        this.technologyType = technologyType;
+        this.databaseName = databaseName;
+        this.host = host;
+        this.port = port;
+        this.username = username;
         this.password = password;
         this.passwordSecretId = passwordSecretId;
         this.additionalAttributes = additionalAttributes;
@@ -747,7 +818,20 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated DB2 database.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated DB2 database.
@@ -755,7 +839,8 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
      *
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

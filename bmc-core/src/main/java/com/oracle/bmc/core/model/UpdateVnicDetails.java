@@ -234,6 +234,7 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
          * This is because the source/destination check is always disabled for VNICs in a VLAN.
+         * <p>
          * Example: {@code true}
          *
          **/
@@ -249,6 +250,7 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
          * This is because the source/destination check is always disabled for VNICs in a VLAN.
+         * <p>
          * Example: {@code true}
          *
          * @param skipSourceDestCheck the value to set
@@ -508,6 +510,7 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
      * This is because the source/destination check is always disabled for VNICs in a VLAN.
+     * <p>
      * Example: {@code true}
      *
      **/
@@ -523,6 +526,7 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
      * This is because the source/destination check is always disabled for VNICs in a VLAN.
+     * <p>
      * Example: {@code true}
      *
      * @return the value

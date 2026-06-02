@@ -416,6 +416,7 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Check the status of the external database connection specified in this connector.
      * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send
@@ -687,6 +688,7 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Creates an external MySQL database.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send
@@ -704,6 +706,7 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Creates an external MySQL connector resource.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send
@@ -993,6 +996,7 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Deletes the Oracle Cloud Infrastructure resource representing an external MySQL database.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send
@@ -1010,6 +1014,7 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Deletes the Oracle Cloud Infrastructure resource representing an external MySQL database connector.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send
@@ -1325,6 +1330,7 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Disables Database Management for an external MySQL Database.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send
@@ -1789,6 +1795,7 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Enables Database Management for an external MySQL Database.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send
@@ -2706,6 +2713,7 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Retrieves the external MySQL database information.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send
@@ -2723,6 +2731,7 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Retrieves the MySQL database connector.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send
@@ -3823,6 +3832,7 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Gets the list of External MySQL Databases.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send
@@ -3938,6 +3948,7 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Gets the list of External MySQL Database connectors.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send
@@ -5487,6 +5498,7 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Updates the External Mysql Database.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send
@@ -5504,6 +5516,7 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Updates the External Mysql Database Connector.
+     * MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
      *
      *
      * @param request The request object containing the details to send

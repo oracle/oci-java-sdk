@@ -25,13 +25,13 @@ public class PatchCloudDbSystemDiscoveryRequest
         return cloudDbSystemDiscoveryId;
     }
     /**
-     * The details required to update an cloud DB system discovery.
+     * The details required to update a cloud DB system discovery.
      */
     private com.oracle.bmc.databasemanagement.model.PatchCloudDbSystemDiscoveryDetails
             patchCloudDbSystemDiscoveryDetails;
 
     /**
-     * The details required to update an cloud DB system discovery.
+     * The details required to update a cloud DB system discovery.
      */
     public com.oracle.bmc.databasemanagement.model.PatchCloudDbSystemDiscoveryDetails
             getPatchCloudDbSystemDiscoveryDetails() {
@@ -104,13 +104,13 @@ public class PatchCloudDbSystemDiscoveryRequest
         }
 
         /**
-         * The details required to update an cloud DB system discovery.
+         * The details required to update a cloud DB system discovery.
          */
         private com.oracle.bmc.databasemanagement.model.PatchCloudDbSystemDiscoveryDetails
                 patchCloudDbSystemDiscoveryDetails = null;
 
         /**
-         * The details required to update an cloud DB system discovery.
+         * The details required to update a cloud DB system discovery.
          * @param patchCloudDbSystemDiscoveryDetails the value to set
          * @return this builder instance
          */

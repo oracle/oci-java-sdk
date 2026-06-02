@@ -43,6 +43,24 @@ public final class ComputeTask extends BatchTask {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hierarchicalName")
+        private String hierarchicalName;
+
+        public Builder hierarchicalName(String hierarchicalName) {
+            this.hierarchicalName = hierarchicalName;
+            this.__explicitlySet__.add("hierarchicalName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("groupTaskName")
+        private String groupTaskName;
+
+        public Builder groupTaskName(String groupTaskName) {
+            this.groupTaskName = groupTaskName;
+            this.__explicitlySet__.add("groupTaskName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -170,6 +188,23 @@ public final class ComputeTask extends BatchTask {
             this.__explicitlySet__.add("batchTaskEnvironmentId");
             return this;
         }
+        /**
+         * List of up to 30 most recent execution history entries, from newest to oldest. Be aware that the maximum number of items returned may change in the future.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("mostRecentExecutionHistory")
+        private java.util.List<BatchTaskExecutionDetails> mostRecentExecutionHistory;
+
+        /**
+         * List of up to 30 most recent execution history entries, from newest to oldest. Be aware that the maximum number of items returned may change in the future.
+         * @param mostRecentExecutionHistory the value to set
+         * @return this builder
+         **/
+        public Builder mostRecentExecutionHistory(
+                java.util.List<BatchTaskExecutionDetails> mostRecentExecutionHistory) {
+            this.mostRecentExecutionHistory = mostRecentExecutionHistory;
+            this.__explicitlySet__.add("mostRecentExecutionHistory");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -179,6 +214,8 @@ public final class ComputeTask extends BatchTask {
                     new ComputeTask(
                             this.id,
                             this.name,
+                            this.hierarchicalName,
+                            this.groupTaskName,
                             this.description,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -189,7 +226,8 @@ public final class ComputeTask extends BatchTask {
                             this.command,
                             this.arguments,
                             this.fleetAssignmentPolicy,
-                            this.batchTaskEnvironmentId);
+                            this.batchTaskEnvironmentId,
+                            this.mostRecentExecutionHistory);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -203,6 +241,12 @@ public final class ComputeTask extends BatchTask {
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("hierarchicalName")) {
+                this.hierarchicalName(model.getHierarchicalName());
+            }
+            if (model.wasPropertyExplicitlySet("groupTaskName")) {
+                this.groupTaskName(model.getGroupTaskName());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -237,6 +281,9 @@ public final class ComputeTask extends BatchTask {
             if (model.wasPropertyExplicitlySet("batchTaskEnvironmentId")) {
                 this.batchTaskEnvironmentId(model.getBatchTaskEnvironmentId());
             }
+            if (model.wasPropertyExplicitlySet("mostRecentExecutionHistory")) {
+                this.mostRecentExecutionHistory(model.getMostRecentExecutionHistory());
+            }
             return this;
         }
     }
@@ -256,6 +303,8 @@ public final class ComputeTask extends BatchTask {
     public ComputeTask(
             String id,
             String name,
+            String hierarchicalName,
+            String groupTaskName,
             String description,
             LifecycleState lifecycleState,
             String lifecycleDetails,
@@ -266,10 +315,13 @@ public final class ComputeTask extends BatchTask {
             java.util.List<String> command,
             java.util.List<String> arguments,
             FleetAssignmentPolicy fleetAssignmentPolicy,
-            String batchTaskEnvironmentId) {
+            String batchTaskEnvironmentId,
+            java.util.List<BatchTaskExecutionDetails> mostRecentExecutionHistory) {
         super(
                 id,
                 name,
+                hierarchicalName,
+                groupTaskName,
                 description,
                 lifecycleState,
                 lifecycleDetails,
@@ -281,6 +333,7 @@ public final class ComputeTask extends BatchTask {
         this.arguments = arguments;
         this.fleetAssignmentPolicy = fleetAssignmentPolicy;
         this.batchTaskEnvironmentId = batchTaskEnvironmentId;
+        this.mostRecentExecutionHistory = mostRecentExecutionHistory;
     }
 
     /**
@@ -346,6 +399,20 @@ public final class ComputeTask extends BatchTask {
         return batchTaskEnvironmentId;
     }
 
+    /**
+     * List of up to 30 most recent execution history entries, from newest to oldest. Be aware that the maximum number of items returned may change in the future.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("mostRecentExecutionHistory")
+    private final java.util.List<BatchTaskExecutionDetails> mostRecentExecutionHistory;
+
+    /**
+     * List of up to 30 most recent execution history entries, from newest to oldest. Be aware that the maximum number of items returned may change in the future.
+     * @return the value
+     **/
+    public java.util.List<BatchTaskExecutionDetails> getMostRecentExecutionHistory() {
+        return mostRecentExecutionHistory;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -365,6 +432,8 @@ public final class ComputeTask extends BatchTask {
         sb.append(", arguments=").append(String.valueOf(this.arguments));
         sb.append(", fleetAssignmentPolicy=").append(String.valueOf(this.fleetAssignmentPolicy));
         sb.append(", batchTaskEnvironmentId=").append(String.valueOf(this.batchTaskEnvironmentId));
+        sb.append(", mostRecentExecutionHistory=")
+                .append(String.valueOf(this.mostRecentExecutionHistory));
         sb.append(")");
         return sb.toString();
     }
@@ -385,6 +454,8 @@ public final class ComputeTask extends BatchTask {
                 && java.util.Objects.equals(this.fleetAssignmentPolicy, other.fleetAssignmentPolicy)
                 && java.util.Objects.equals(
                         this.batchTaskEnvironmentId, other.batchTaskEnvironmentId)
+                && java.util.Objects.equals(
+                        this.mostRecentExecutionHistory, other.mostRecentExecutionHistory)
                 && super.equals(other);
     }
 
@@ -409,6 +480,11 @@ public final class ComputeTask extends BatchTask {
                         + (this.batchTaskEnvironmentId == null
                                 ? 43
                                 : this.batchTaskEnvironmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mostRecentExecutionHistory == null
+                                ? 43
+                                : this.mostRecentExecutionHistory.hashCode());
         return result;
     }
 }

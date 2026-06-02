@@ -13,14 +13,14 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.
-     * A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      *
      */
     private String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.
-     * A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      *
      */
     public String getCompartmentId() {
@@ -64,12 +64,12 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
         return displayName;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     private String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     public String getId() {
         return id;
@@ -110,11 +110,15 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
     }
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+     *
      */
     private com.oracle.bmc.multicloud.model.SortOrder sortOrder;
 
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+     *
      */
     public com.oracle.bmc.multicloud.model.SortOrder getSortOrder() {
         return sortOrder;
@@ -173,34 +177,38 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
         return sortBy;
     }
     /**
-     * Check the sub-compartments of a given compartmentId
+     * Check the sub-compartments of a given {@code compartmentId}.
      */
     private Boolean isCompartmentIdInSubtree;
 
     /**
-     * Check the sub-compartments of a given compartmentId
+     * Check the sub-compartments of a given {@code compartmentId}.
      */
     public Boolean getIsCompartmentIdInSubtree() {
         return isCompartmentIdInSubtree;
     }
     /**
-     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * Whether to fetch and include the compartment name.
+     * Setting this field to {@code true} might introduce additional latency.
+     *
      */
     private Boolean shouldFetchCompartmentName;
 
     /**
-     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * Whether to fetch and include the compartment name.
+     * Setting this field to {@code true} might introduce additional latency.
+     *
      */
     public Boolean getShouldFetchCompartmentName() {
         return shouldFetchCompartmentName;
     }
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      */
     private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName;
 
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      */
     public com.oracle.bmc.multicloud.model.SubscriptionType getSubscriptionServiceName() {
         return subscriptionServiceName;
@@ -245,14 +253,14 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.
-         * A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+         * A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
          *
          */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.
-         * A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+         * A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -313,12 +321,12 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          */
         private String id = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          * @param id the value to set
          * @return this builder instance
          */
@@ -371,11 +379,15 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+         *
          */
         private com.oracle.bmc.multicloud.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * In general, the sort order is {@code DESC} when sorting by time and {@code ASC} otherwise.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -404,12 +416,12 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Check the sub-compartments of a given compartmentId
+         * Check the sub-compartments of a given {@code compartmentId}.
          */
         private Boolean isCompartmentIdInSubtree = null;
 
         /**
-         * Check the sub-compartments of a given compartmentId
+         * Check the sub-compartments of a given {@code compartmentId}.
          * @param isCompartmentIdInSubtree the value to set
          * @return this builder instance
          */
@@ -419,12 +431,16 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+         * Whether to fetch and include the compartment name.
+         * Setting this field to {@code true} might introduce additional latency.
+         *
          */
         private Boolean shouldFetchCompartmentName = null;
 
         /**
-         * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+         * Whether to fetch and include the compartment name.
+         * Setting this field to {@code true} might introduce additional latency.
+         *
          * @param shouldFetchCompartmentName the value to set
          * @return this builder instance
          */
@@ -434,12 +450,12 @@ public class ListResourceAnchorsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The subscription service name of the Cloud Service Provider.
+         * The cloud service provider.
          */
         private com.oracle.bmc.multicloud.model.SubscriptionType subscriptionServiceName = null;
 
         /**
-         * The subscription service name of the Cloud Service Provider.
+         * The cloud service provider.
          * @param subscriptionServiceName the value to set
          * @return this builder instance
          */

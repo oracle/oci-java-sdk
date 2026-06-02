@@ -112,6 +112,14 @@ public class ListSchedulingPlansConverter {
                                     request.getId()));
         }
 
+        if (request.getPlanIntent() != null) {
+            target =
+                    target.queryParam(
+                            "planIntent",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPlanIntent().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

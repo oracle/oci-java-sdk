@@ -36,6 +36,7 @@ import java.security.interfaces.RSAPublicKey;
 import java.time.Duration;
 import com.oracle.bmc.util.internal.StringUtils;
 import java.nio.charset.StandardCharsets;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,12 +55,23 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
     private static final String JWT_FORMAT = "Bearer %s";
     private final String KUBERNETES_SERVICE_HOST = "KUBERNETES_SERVICE_HOST";
     private final int PROXYMUX_SERVER_PORT = 12250;
+    private static final long MAX_RETRY_DELAY_SECONDS = 900; // 15 minutes
     private final ServiceAccountTokenSupplier serviceAccountTokenSupplier;
+    private final boolean isUsingDefaultSessionKeySupplier;
 
     /**
      * The authentication provider to sign the internal requests.
      */
     private final OkeTenancyOnlyAuthenticationDetailsProvider provider;
+
+    /** Tracks the time of the last failed refresh attempt. */
+    private volatile Instant lastFailureTime = null;
+
+    /**
+     * The duration for which token refresh should be skipped after a failure. Calculated as a
+     * fraction of the remaining token validity.
+     */
+    private volatile Duration backoffDuration = Duration.ZERO;
 
     /**
      * Constructor of OkeWorkloadIdentityResourcePrincipalsFederationClient.
@@ -86,6 +98,37 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
                 circuitBreakerConfiguration);
         this.serviceAccountTokenSupplier = serviceAccountTokenSupplier;
         this.provider = okeTenancyOnlyAuthenticationDetailsProvider;
+        this.isUsingDefaultSessionKeySupplier = true;
+    }
+
+    /**
+     * Constructor of OkeWorkloadIdentityResourcePrincipalsFederationClient.
+     * @param federationEndpoint
+     * @param sessionKeySupplier the session key supplier.
+     * @param okeTenancyOnlyAuthenticationDetailsProvider the key pair authentication details provider.
+     * @param clientConfigurator the reset client configurator.
+     * @param isUsingDefaultSessionKeySupplier the flag to indicate the type of session key supplier
+     */
+    public OkeWorkloadIdentityResourcePrincipalsFederationClient(
+            String federationEndpoint,
+            SessionKeySupplier sessionKeySupplier,
+            ServiceAccountTokenSupplier serviceAccountTokenSupplier,
+            OkeTenancyOnlyAuthenticationDetailsProvider okeTenancyOnlyAuthenticationDetailsProvider,
+            ClientConfigurator clientConfigurator,
+            CircuitBreakerConfiguration circuitBreakerConfiguration,
+            boolean isUsingDefaultSessionKeySupplier) {
+
+        // we don't use a resourcePrincipalTokenEndpoint, therefore blank
+        super(
+                "",
+                federationEndpoint,
+                sessionKeySupplier,
+                okeTenancyOnlyAuthenticationDetailsProvider,
+                clientConfigurator,
+                circuitBreakerConfiguration);
+        this.serviceAccountTokenSupplier = serviceAccountTokenSupplier;
+        this.provider = okeTenancyOnlyAuthenticationDetailsProvider;
+        this.isUsingDefaultSessionKeySupplier = isUsingDefaultSessionKeySupplier;
     }
 
     /**
@@ -97,24 +140,62 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
     @Override
     public String getSecurityToken() {
         SecurityTokenAdapter securityTokenAdapter = getSecurityTokenAdapter();
+        boolean isTokenValid = securityTokenAdapter.isValid();
+
+        // Check for valid token and ongoing backoff period
+        if (isTokenValid && lastFailureTime != null) {
+            // Check if we are still within the calculated backoff period
+            Duration elapsedSinceFailure = Duration.between(lastFailureTime, Instant.now());
+            if (elapsedSinceFailure.compareTo(backoffDuration) < 0) {
+                // Skip the token refresh request because of previous failure and valid token
+                LOG.info(
+                        "Skipping token refresh due to recent failure (backoff active for {}s). Returning cached token.",
+                        backoffDuration.getSeconds());
+                return securityTokenAdapter.getSecurityToken();
+            }
+            LOG.info("Backoff period expired. Attempting token refresh.");
+        }
+
         try {
             Duration time = Duration.ZERO;
-            if (securityTokenAdapter.isValid()) {
-                if (securityTokenAdapter.getTokenValidDuration() != null) {
-                    // Calculate the half of the token's total valid duration
-                    Duration halfDuration =
-                            securityTokenAdapter.getTokenValidDuration().dividedBy(2);
-                    // Generate Jitter Factor: a random value between 0.95 and 1.05 (i.e., ±5%)
-                    double jitterFactor = 1.0 + (Math.random() * 0.1 - 0.05);
-                    // Apply the jitter factor
-                    time = halfDuration.multipliedBy((long) (jitterFactor * 1000)).dividedBy(1000);
-                }
+            if (isTokenValid) {
+                // Calculate the half of the token's total valid duration
+                Duration halfDuration = securityTokenAdapter.getTokenValidDuration().dividedBy(2);
+                // Generate Jitter Factor: a random value between 0.95 and 1.05 (i.e., ±5%)
+                double jitterFactor = 1.0 + (Math.random() * 0.1 - 0.05);
+                time = halfDuration.multipliedBy((long) (jitterFactor * 1000)).dividedBy(1000);
             }
             String token = refreshAndGetSecurityTokenIfExpiringWithin(time);
+
+            // Success: clear any pending failure state
+            lastFailureTime = null;
+            backoffDuration = Duration.ZERO;
+
             logTokenInfo(token);
             return token;
         } catch (Exception e) {
-            LOG.info("Refresh RPST token failed, use cached RPST token.", e);
+            LOG.error(
+                    "Refresh Workload Identity Auth token failed, use cached Workload Identity Auth token.",
+                    e);
+            // Mark previous execution as failed
+            lastFailureTime = Instant.now();
+
+            if (isTokenValid) {
+                Duration remainingDuration = securityTokenAdapter.getTokenRemainingDuration();
+                LOG.info("remainingDurationSeconds: {}", remainingDuration.getSeconds());
+
+                backoffDuration =
+                        remainingDuration.getSeconds() < Duration.ofHours(2).getSeconds()
+                                ? Duration.ofSeconds(0)
+                                : Duration.ofSeconds(MAX_RETRY_DELAY_SECONDS);
+                LOG.error(
+                        "Token refresh failed. Initiating backoff for {}s.",
+                        backoffDuration.getSeconds());
+            } else {
+                backoffDuration = Duration.ZERO;
+                LOG.error("Token refresh failed and cached token is invalid/expired. No backoff");
+            }
+
             return securityTokenAdapter.getSecurityToken();
         }
     }
@@ -172,6 +253,10 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
         String opcRequestId = generateRequestId();
         LOG.debug("Request id for resourcePrincipalSessionTokens request: '{}'", opcRequestId);
 
+        if (isUsingDefaultSessionKeySupplier) {
+            LOG.info("Using default session key supplier");
+        }
+
         /* If the SettableSessionKeySupplier is configured as sessionKeySupplier then prefer new ServiceAccount
          * level token caching which involves calling new caching enabled endpoint of proxymux else
          * fallback to old endpoint
@@ -211,9 +296,12 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
 
         try {
             setProxymuxEndPoint();
+            String base64EncodedPublicKey = AuthUtils.base64EncodeNoChunking(publicKey);
+            if (StringUtils.isBlank(base64EncodedPublicKey)) {
+                throw new IllegalArgumentException("Public key cannot be blank");
+            }
             GetOkeResourcePrincipalSessionTokenRequest getOkeResourcePrincipalSessionTokenRequest =
-                    new GetOkeResourcePrincipalSessionTokenRequest(
-                            AuthUtils.base64EncodeNoChunking(publicKey));
+                    new GetOkeResourcePrincipalSessionTokenRequest(base64EncodedPublicKey);
             WebTarget target = restClient.getBaseTarget().path("resourcePrincipalSessionTokens");
             Invocation.Builder ib = target.request();
 

@@ -700,7 +700,10 @@ public class EsxiHostClient implements EsxiHost {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getInplaceUpgradeDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

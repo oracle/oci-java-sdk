@@ -208,7 +208,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
@@ -217,11 +217,18 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
          * Note: When provided, 'password' field must not be provided.
@@ -318,28 +325,18 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             return this;
         }
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-         * field, or make sure the host name is resolvable in the target VCN.
+         * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
          * <p>
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-         * In case the privateIp is provided, the subnetId must also be provided.
-         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+         * For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-         * field, or make sure the host name is resolvable in the target VCN.
+         * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
          * <p>
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-         * In case the privateIp is provided, the subnetId must also be provided.
-         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+         * For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
          *
          * @param privateIp the value to set
          * @return this builder
@@ -507,6 +504,56 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         this.host = host;
         this.port = port;
         this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.additionalAttributes = additionalAttributes;
+        this.securityProtocol = securityProtocol;
+        this.sslCa = sslCa;
+        this.shouldValidateServerCertificate = shouldValidateServerCertificate;
+        this.privateIp = privateIp;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateMicrosoftSqlserverConnectionDetails(
+            String displayName,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            String databaseName,
+            String host,
+            Integer port,
+            String username,
+            char[] password,
+            String passwordSecretId,
+            java.util.List<NameValuePair> additionalAttributes,
+            MicrosoftSqlserverConnection.SecurityProtocol securityProtocol,
+            String sslCa,
+            Boolean shouldValidateServerCertificate,
+            String privateIp) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                securityAttributes);
+        this.databaseName = databaseName;
+        this.host = host;
+        this.port = port;
+        this.username = username;
         this.password = password;
         this.passwordSecretId = passwordSecretId;
         this.additionalAttributes = additionalAttributes;
@@ -588,7 +635,20 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
@@ -596,7 +656,8 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
      *
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -685,28 +746,18 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
     }
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-     * field, or make sure the host name is resolvable in the target VCN.
+     * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      * <p>
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-     * In case the privateIp is provided, the subnetId must also be provided.
-     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-     * field, or make sure the host name is resolvable in the target VCN.
+     * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      * <p>
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-     * In case the privateIp is provided, the subnetId must also be provided.
-     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
      *
      * @return the value
      **/

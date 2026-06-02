@@ -61,6 +61,13 @@ public interface EventsAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Determines whether dual stack endpoint should be used or not.
+     * Set dualStackEndpointTemplateEnabled to "true" if the user wants to enable use of dual stack endpoint template. Default value is "false"
+     * @param dualStackEndpointTemplateEnabled flag to enable the use of dual stack endpoint template
+     */
+    void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled);
+
+    /**
      * Moves a rule into a different compartment within the same tenancy. For information about moving
      * resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *

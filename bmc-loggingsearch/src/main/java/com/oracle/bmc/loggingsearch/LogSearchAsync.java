@@ -8,7 +8,7 @@ import com.oracle.bmc.loggingsearch.requests.*;
 import com.oracle.bmc.loggingsearch.responses.*;
 
 /**
- * Search for logs in your compartments, log groups, and log objects.
+ * Use the Logging Search API to search for logs in your compartments, log groups, and log objects. For more information, see [Logging Overview](https://docs.oracle.com/iaas/Content/Logging/Concepts/loggingoverview.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
 public interface LogSearchAsync extends AutoCloseable {
@@ -57,6 +57,13 @@ public interface LogSearchAsync extends AutoCloseable {
      * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
+     * Determines whether dual stack endpoint should be used or not.
+     * Set dualStackEndpointTemplateEnabled to "true" if the user wants to enable use of dual stack endpoint template. Default value is "false"
+     * @param dualStackEndpointTemplateEnabled flag to enable the use of dual stack endpoint template
+     */
+    void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled);
 
     /**
      * Submit a query to search logs.

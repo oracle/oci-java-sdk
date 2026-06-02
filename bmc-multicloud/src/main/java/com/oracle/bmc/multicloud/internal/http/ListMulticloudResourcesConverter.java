@@ -30,9 +30,6 @@ public class ListMulticloudResourcesConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.multicloud.requests.ListMulticloudResourcesRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(
-                request.getSubscriptionServiceName(), "subscriptionServiceName is required");
-        Validate.notNull(request.getSubscriptionId(), "subscriptionId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20180828").path("omHub").path("multicloudResources");
@@ -85,17 +82,21 @@ public class ListMulticloudResourcesConverter {
                                     request.getSortBy().getValue()));
         }
 
-        target =
-                target.queryParam(
-                        "subscriptionServiceName",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getSubscriptionServiceName().getValue()));
+        if (request.getSubscriptionServiceName() != null) {
+            target =
+                    target.queryParam(
+                            "subscriptionServiceName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSubscriptionServiceName().getValue()));
+        }
 
-        target =
-                target.queryParam(
-                        "subscriptionId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getSubscriptionId()));
+        if (request.getSubscriptionId() != null) {
+            target =
+                    target.queryParam(
+                            "subscriptionId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSubscriptionId()));
+        }
 
         if (request.getExternalLocation() != null) {
             target =
@@ -103,6 +104,14 @@ public class ListMulticloudResourcesConverter {
                             "externalLocation",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getExternalLocation()));
+        }
+
+        if (request.getResourceType() != null) {
+            target =
+                    target.queryParam(
+                            "resourceType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getResourceType()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

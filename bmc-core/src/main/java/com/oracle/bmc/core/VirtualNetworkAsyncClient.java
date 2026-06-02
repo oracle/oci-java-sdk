@@ -11125,6 +11125,103 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PatchSubnetResponse> patchSubnet(
+            PatchSubnetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PatchSubnetRequest, PatchSubnetResponse>
+                    handler) {
+        LOG.trace("Called async patchSubnet");
+        final PatchSubnetRequest interceptedRequest =
+                PatchSubnetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchSubnetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "PatchSubnet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/PatchSubnet");
+        final java.util.function.Function<javax.ws.rs.core.Response, PatchSubnetResponse>
+                transformer =
+                        PatchSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<PatchSubnetRequest, PatchSubnetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PatchSubnetRequest, PatchSubnetResponse>,
+                        java.util.concurrent.Future<PatchSubnetResponse>>
+                futureSupplier =
+                        client.patchFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPatchSubnetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PatchSubnetRequest, PatchSubnetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchVcnResponse> patchVcn(
+            PatchVcnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PatchVcnRequest, PatchVcnResponse>
+                    handler) {
+        LOG.trace("Called async patchVcn");
+        final PatchVcnRequest interceptedRequest = PatchVcnConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchVcnConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "PatchVcn",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/PatchVcn");
+        final java.util.function.Function<javax.ws.rs.core.Response, PatchVcnResponse> transformer =
+                PatchVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<PatchVcnRequest, PatchVcnResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<PatchVcnRequest, PatchVcnResponse>,
+                        java.util.concurrent.Future<PatchVcnResponse>>
+                futureSupplier =
+                        client.patchFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPatchVcnDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PatchVcnRequest, PatchVcnResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<PrivateIpVnicDetachResponse> privateIpVnicDetach(
             PrivateIpVnicDetachRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

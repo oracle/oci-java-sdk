@@ -47,7 +47,8 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         "isReadOnly",
         "id",
         "versioning",
-        "autoTiering"
+        "autoTiering",
+        "bucketScope"
     })
     public Bucket(
             String namespace,
@@ -70,7 +71,8 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             Boolean isReadOnly,
             String id,
             Versioning versioning,
-            AutoTiering autoTiering) {
+            AutoTiering autoTiering,
+            BucketScope bucketScope) {
         super();
         this.namespace = namespace;
         this.name = name;
@@ -93,6 +95,7 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         this.id = id;
         this.versioning = versioning;
         this.autoTiering = autoTiering;
+        this.bucketScope = bucketScope;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -506,6 +509,32 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             this.__explicitlySet__.add("autoTiering");
             return this;
         }
+        /**
+         * Scope in which the bucket is unique. Default value is NAMESPACE.
+         * Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+         * tenancies can have a bucket with same name in their namespace.
+         * Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
+         * same name and scope REGION.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("bucketScope")
+        private BucketScope bucketScope;
+
+        /**
+         * Scope in which the bucket is unique. Default value is NAMESPACE.
+         * Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+         * tenancies can have a bucket with same name in their namespace.
+         * Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
+         * same name and scope REGION.
+         *
+         * @param bucketScope the value to set
+         * @return this builder
+         **/
+        public Builder bucketScope(BucketScope bucketScope) {
+            this.bucketScope = bucketScope;
+            this.__explicitlySet__.add("bucketScope");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -533,7 +562,8 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                             this.isReadOnly,
                             this.id,
                             this.versioning,
-                            this.autoTiering);
+                            this.autoTiering,
+                            this.bucketScope);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -604,6 +634,9 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             }
             if (model.wasPropertyExplicitlySet("autoTiering")) {
                 this.autoTiering(model.getAutoTiering());
+            }
+            if (model.wasPropertyExplicitlySet("bucketScope")) {
+                this.bucketScope(model.getBucketScope());
             }
             return this;
         }
@@ -1194,6 +1227,83 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return autoTiering;
     }
 
+    /**
+     * Scope in which the bucket is unique. Default value is NAMESPACE.
+     * Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+     * tenancies can have a bucket with same name in their namespace.
+     * Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
+     * same name and scope REGION.
+     *
+     **/
+    public enum BucketScope {
+        Namespace("NAMESPACE"),
+        Region("REGION"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BucketScope.class);
+
+        private final String value;
+        private static java.util.Map<String, BucketScope> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BucketScope v : BucketScope.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BucketScope(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BucketScope create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BucketScope', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Scope in which the bucket is unique. Default value is NAMESPACE.
+     * Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+     * tenancies can have a bucket with same name in their namespace.
+     * Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
+     * same name and scope REGION.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bucketScope")
+    private final BucketScope bucketScope;
+
+    /**
+     * Scope in which the bucket is unique. Default value is NAMESPACE.
+     * Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+     * tenancies can have a bucket with same name in their namespace.
+     * Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
+     * same name and scope REGION.
+     *
+     * @return the value
+     **/
+    public BucketScope getBucketScope() {
+        return bucketScope;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1230,6 +1340,7 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", versioning=").append(String.valueOf(this.versioning));
         sb.append(", autoTiering=").append(String.valueOf(this.autoTiering));
+        sb.append(", bucketScope=").append(String.valueOf(this.bucketScope));
         sb.append(")");
         return sb.toString();
     }
@@ -1266,6 +1377,7 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.versioning, other.versioning)
                 && java.util.Objects.equals(this.autoTiering, other.autoTiering)
+                && java.util.Objects.equals(this.bucketScope, other.bucketScope)
                 && super.equals(other);
     }
 
@@ -1314,6 +1426,7 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.versioning == null ? 43 : this.versioning.hashCode());
         result = (result * PRIME) + (this.autoTiering == null ? 43 : this.autoTiering.hashCode());
+        result = (result * PRIME) + (this.bucketScope == null ? 43 : this.bucketScope.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

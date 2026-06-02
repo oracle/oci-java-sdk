@@ -33,8 +33,14 @@ public class GetJavaDownloadTokenConverter {
         Validate.notBlank(
                 request.getJavaDownloadTokenId(), "javaDownloadTokenId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("javaDownloadTokenId", request.getJavaDownloadTokenId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/")
                         .path("20230601")
                         .path("javaDownloadTokens")

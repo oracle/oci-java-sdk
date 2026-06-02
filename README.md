@@ -27,6 +27,33 @@ For details on compatibility, advanced configurations, and add-ons, see [Configu
     ```
       System.setProperty("oci.javasdk.token.refresh.enabled", "false");
     ``` 
+- *ConnectionPoolingApacheConfigurator*: Some clients now have `ConnectionPoolingApacheConfigurator` set as their default configurator (called out in the CHANGELOG.md file). Unless a different `ClientConfigurator` is passed when creating the client, this default configurator is used for all client instances using the `ConnectionPoolingApacheConfigurator`. For clients that now use `ConnectionPoolingApacheConfigurator`, this is enabled by default, which is a breaking change. It can be disabled using system properties exposed in `Options.java`.
+    - To disable it for all supported clients, set the global system property:
+      ```
+        System.setProperty("oci.javasdk.ConnectionPoolingApacheConfigurator.enabled.global", "false");
+      ```
+      or pass it to the Java runtime:
+      ```
+      -Doci.javasdk.ConnectionPoolingApacheConfigurator.enabled.global=false
+      ```
+    - To disable it for a specific client class, set the per-class system property using the fully qualified client class name:
+      ```
+        System.setProperty("oci.javasdk.ConnectionPoolingApacheConfigurator.enabled.com.oracle.bmc.vault.VaultsClient", "false");
+      ```
+      or pass it to the Java runtime:
+      ```
+      -Doci.javasdk.ConnectionPoolingApacheConfigurator.enabled.com.oracle.bmc.vault.VaultsClient=false
+      ```
+    - Sync and async clients use separate per-class properties, so if you want to disable both you must set both class-specific properties:
+      ```
+        System.setProperty("oci.javasdk.ConnectionPoolingApacheConfigurator.enabled.com.oracle.bmc.vault.VaultsClient", "false");
+        System.setProperty("oci.javasdk.ConnectionPoolingApacheConfigurator.enabled.com.oracle.bmc.vault.VaultsAsyncClient", "false");
+      ```
+      or pass them to the Java runtime:
+      ```
+      -Doci.javasdk.ConnectionPoolingApacheConfigurator.enabled.com.oracle.bmc.vault.VaultsClient=false -Doci.javasdk.ConnectionPoolingApacheConfigurator.enabled.com.oracle.bmc.vault.VaultsAsyncClient=false
+      ```
+    - The global property applies to all supported clients. The per-class property applies only to the named client class. Both properties default to `"true"`, and the configurator is used only when both the global property and that client class property are enabled.
 
 ## Examples
 

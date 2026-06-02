@@ -3100,6 +3100,45 @@ public class NetworkFirewallClient implements NetworkFirewall {
     }
 
     @Override
+    public GetNetworkFirewallHealthStatusResponse getNetworkFirewallHealthStatus(
+            GetNetworkFirewallHealthStatusRequest request) {
+        LOG.trace("Called getNetworkFirewallHealthStatus");
+        final GetNetworkFirewallHealthStatusRequest interceptedRequest =
+                GetNetworkFirewallHealthStatusConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNetworkFirewallHealthStatusConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetNetworkFirewallHealthStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallHealthStatus/GetNetworkFirewallHealthStatus");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetNetworkFirewallHealthStatusResponse>
+                transformer =
+                        GetNetworkFirewallHealthStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetNetworkFirewallPolicyResponse getNetworkFirewallPolicy(
             GetNetworkFirewallPolicyRequest request) {
         LOG.trace("Called getNetworkFirewallPolicy");

@@ -30,7 +30,8 @@ public final class UpdateBatchContextDetails
         "freeformTags",
         "definedTags",
         "jobPriorityConfigurations",
-        "entitlements"
+        "entitlements",
+        "loggingConfiguration"
     })
     public UpdateBatchContextDetails(
             String displayName,
@@ -38,7 +39,8 @@ public final class UpdateBatchContextDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<JobPriorityConfiguration> jobPriorityConfigurations,
-            java.util.Map<String, Integer> entitlements) {
+            java.util.Map<String, Integer> entitlements,
+            UpdateLoggingConfigurationDetails loggingConfiguration) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -46,6 +48,7 @@ public final class UpdateBatchContextDetails
         this.definedTags = definedTags;
         this.jobPriorityConfigurations = jobPriorityConfigurations;
         this.entitlements = entitlements;
+        this.loggingConfiguration = loggingConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -169,6 +172,16 @@ public final class UpdateBatchContextDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("loggingConfiguration")
+        private UpdateLoggingConfigurationDetails loggingConfiguration;
+
+        public Builder loggingConfiguration(
+                UpdateLoggingConfigurationDetails loggingConfiguration) {
+            this.loggingConfiguration = loggingConfiguration;
+            this.__explicitlySet__.add("loggingConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -180,7 +193,8 @@ public final class UpdateBatchContextDetails
                             this.freeformTags,
                             this.definedTags,
                             this.jobPriorityConfigurations,
-                            this.entitlements);
+                            this.entitlements,
+                            this.loggingConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -206,6 +220,9 @@ public final class UpdateBatchContextDetails
             }
             if (model.wasPropertyExplicitlySet("entitlements")) {
                 this.entitlements(model.getEntitlements());
+            }
+            if (model.wasPropertyExplicitlySet("loggingConfiguration")) {
+                this.loggingConfiguration(model.getLoggingConfiguration());
             }
             return this;
         }
@@ -326,6 +343,13 @@ public final class UpdateBatchContextDetails
         return entitlements;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("loggingConfiguration")
+    private final UpdateLoggingConfigurationDetails loggingConfiguration;
+
+    public UpdateLoggingConfigurationDetails getLoggingConfiguration() {
+        return loggingConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -347,6 +371,7 @@ public final class UpdateBatchContextDetails
         sb.append(", jobPriorityConfigurations=")
                 .append(String.valueOf(this.jobPriorityConfigurations));
         sb.append(", entitlements=").append(String.valueOf(this.entitlements));
+        sb.append(", loggingConfiguration=").append(String.valueOf(this.loggingConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -368,6 +393,7 @@ public final class UpdateBatchContextDetails
                 && java.util.Objects.equals(
                         this.jobPriorityConfigurations, other.jobPriorityConfigurations)
                 && java.util.Objects.equals(this.entitlements, other.entitlements)
+                && java.util.Objects.equals(this.loggingConfiguration, other.loggingConfiguration)
                 && super.equals(other);
     }
 
@@ -385,6 +411,11 @@ public final class UpdateBatchContextDetails
                                 ? 43
                                 : this.jobPriorityConfigurations.hashCode());
         result = (result * PRIME) + (this.entitlements == null ? 43 : this.entitlements.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loggingConfiguration == null
+                                ? 43
+                                : this.loggingConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

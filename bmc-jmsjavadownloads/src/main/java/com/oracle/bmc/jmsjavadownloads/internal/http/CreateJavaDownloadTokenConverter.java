@@ -35,8 +35,13 @@ public class CreateJavaDownloadTokenConverter {
                 request.getCreateJavaDownloadTokenDetails(),
                 "createJavaDownloadTokenDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/").path("20230601").path("javaDownloadTokens");
+                newBaseTarget.path("/").path("20230601").path("javaDownloadTokens");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

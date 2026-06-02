@@ -110,10 +110,16 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
+
+        public Builder password(char[] password) {
+            this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
 
         public Builder password(String password) {
-            this.password = password;
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -128,13 +134,21 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("replicationPassword")
-        private String replicationPassword;
+        private char[] replicationPassword;
 
-        public Builder replicationPassword(String replicationPassword) {
+        public Builder replicationPassword(char[] replicationPassword) {
             this.replicationPassword = replicationPassword;
             this.__explicitlySet__.add("replicationPassword");
             return this;
         }
+
+        public Builder replicationPassword(String replicationPassword) {
+            this.replicationPassword =
+                    replicationPassword != null ? replicationPassword.toCharArray() : null;
+            this.__explicitlySet__.add("replicationPassword");
+            return this;
+        }
+
         /**
          * Connect descriptor or Easy Connect Naming method used to connect to a database.
          *
@@ -383,6 +397,50 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             String password,
             String replicationUsername,
             String replicationPassword,
+            String connectionString,
+            String wallet,
+            String databaseId,
+            String sshHost,
+            String sshKey,
+            String sshUser,
+            String sshSudoLocation) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                subnetId,
+                nsgIds,
+                username,
+                password,
+                replicationUsername,
+                replicationPassword);
+        this.connectionString = connectionString;
+        this.wallet = wallet;
+        this.databaseId = databaseId;
+        this.sshHost = sshHost;
+        this.sshKey = sshKey;
+        this.sshUser = sshUser;
+        this.sshSudoLocation = sshSudoLocation;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateOracleConnectionDetails(
+            String displayName,
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String vaultId,
+            String keyId,
+            String subnetId,
+            java.util.List<String> nsgIds,
+            String username,
+            char[] password,
+            String replicationUsername,
+            char[] replicationPassword,
             String connectionString,
             String wallet,
             String databaseId,

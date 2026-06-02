@@ -180,10 +180,16 @@ public final class OracleConnection extends Connection {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
+
+        public Builder password(char[] password) {
+            this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
 
         public Builder password(String password) {
-            this.password = password;
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -198,10 +204,17 @@ public final class OracleConnection extends Connection {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("replicationPassword")
-        private String replicationPassword;
+        private char[] replicationPassword;
+
+        public Builder replicationPassword(char[] replicationPassword) {
+            this.replicationPassword = replicationPassword;
+            this.__explicitlySet__.add("replicationPassword");
+            return this;
+        }
 
         public Builder replicationPassword(String replicationPassword) {
-            this.replicationPassword = replicationPassword;
+            this.replicationPassword =
+                    replicationPassword != null ? replicationPassword.toCharArray() : null;
             this.__explicitlySet__.add("replicationPassword");
             return this;
         }
@@ -556,6 +569,69 @@ public final class OracleConnection extends Connection {
         this.sshSudoLocation = sshSudoLocation;
     }
 
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public OracleConnection(
+            String id,
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String vaultId,
+            String keyId,
+            String subnetId,
+            java.util.List<IngressIpDetails> ingressIps,
+            java.util.List<String> nsgIds,
+            String username,
+            char[] password,
+            String replicationUsername,
+            char[] replicationPassword,
+            String secretId,
+            String privateEndpointId,
+            TechnologyType technologyType,
+            String connectionString,
+            String databaseId,
+            String sshHost,
+            String sshKey,
+            String sshUser,
+            String sshSudoLocation) {
+        super(
+                id,
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                systemTags,
+                lifecycleState,
+                lifecycleDetails,
+                timeCreated,
+                timeUpdated,
+                vaultId,
+                keyId,
+                subnetId,
+                ingressIps,
+                nsgIds,
+                username,
+                password,
+                replicationUsername,
+                replicationPassword,
+                secretId,
+                privateEndpointId);
+        this.technologyType = technologyType;
+        this.connectionString = connectionString;
+        this.databaseId = databaseId;
+        this.sshHost = sshHost;
+        this.sshKey = sshKey;
+        this.sshUser = sshUser;
+        this.sshSudoLocation = sshSudoLocation;
+    }
     /**
      * The Oracle technology type.
      **/

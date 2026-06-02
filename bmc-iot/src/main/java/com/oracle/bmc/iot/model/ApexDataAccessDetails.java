@@ -31,15 +31,24 @@ public final class ApexDataAccessDetails extends ConfigureIotDomainDataAccessDet
          * Initial admin password for APEX workspace associated with the IoT domain.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkspaceAdminInitialPassword")
-        private String dbWorkspaceAdminInitialPassword;
+        private char[] dbWorkspaceAdminInitialPassword;
 
         /**
          * Initial admin password for APEX workspace associated with the IoT domain.
          * @param dbWorkspaceAdminInitialPassword the value to set
          * @return this builder
          **/
-        public Builder dbWorkspaceAdminInitialPassword(String dbWorkspaceAdminInitialPassword) {
+        public Builder dbWorkspaceAdminInitialPassword(char[] dbWorkspaceAdminInitialPassword) {
             this.dbWorkspaceAdminInitialPassword = dbWorkspaceAdminInitialPassword;
+            this.__explicitlySet__.add("dbWorkspaceAdminInitialPassword");
+            return this;
+        }
+
+        public Builder dbWorkspaceAdminInitialPassword(String dbWorkspaceAdminInitialPassword) {
+            this.dbWorkspaceAdminInitialPassword =
+                    dbWorkspaceAdminInitialPassword != null
+                            ? dbWorkspaceAdminInitialPassword.toCharArray()
+                            : null;
             this.__explicitlySet__.add("dbWorkspaceAdminInitialPassword");
             return this;
         }
@@ -79,6 +88,16 @@ public final class ApexDataAccessDetails extends ConfigureIotDomainDataAccessDet
     @Deprecated
     public ApexDataAccessDetails(String dbWorkspaceAdminInitialPassword) {
         super();
+        this.dbWorkspaceAdminInitialPassword =
+                dbWorkspaceAdminInitialPassword != null
+                        ? dbWorkspaceAdminInitialPassword.toCharArray()
+                        : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public ApexDataAccessDetails(char[] dbWorkspaceAdminInitialPassword) {
+        super();
         this.dbWorkspaceAdminInitialPassword = dbWorkspaceAdminInitialPassword;
     }
 
@@ -86,13 +105,27 @@ public final class ApexDataAccessDetails extends ConfigureIotDomainDataAccessDet
      * Initial admin password for APEX workspace associated with the IoT domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkspaceAdminInitialPassword")
-    private final String dbWorkspaceAdminInitialPassword;
+    private final char[] dbWorkspaceAdminInitialPassword;
+
+    /**
+     * Initial admin password for APEX workspace associated with the IoT domain.
+     * return the value
+     * @Deprecated - Use getDbWorkspaceAdminInitialPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getDbWorkspaceAdminInitialPassword() {
+        return dbWorkspaceAdminInitialPassword != null
+                ? new String(dbWorkspaceAdminInitialPassword)
+                : null;
+    }
 
     /**
      * Initial admin password for APEX workspace associated with the IoT domain.
      * @return the value
      **/
-    public String getDbWorkspaceAdminInitialPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("dbWorkspaceAdminInitialPassword")
+    public char[] getDbWorkspaceAdminInitialPassword__AsCharArray() {
         return dbWorkspaceAdminInitialPassword;
     }
 

@@ -144,6 +144,15 @@ public final class AwsAssetSourceSummary extends AssetSourceSummary {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private EnvironmentType environmentType;
+
+        public Builder environmentType(EnvironmentType environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
+            return this;
+        }
         /**
          * AWS region information, from where the resources are discovered.
          **/
@@ -196,6 +205,7 @@ public final class AwsAssetSourceSummary extends AssetSourceSummary {
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.environmentType,
                             this.awsRegion,
                             this.awsAccountKey);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -245,6 +255,9 @@ public final class AwsAssetSourceSummary extends AssetSourceSummary {
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
+            }
             if (model.wasPropertyExplicitlySet("awsRegion")) {
                 this.awsRegion(model.getAwsRegion());
             }
@@ -281,6 +294,7 @@ public final class AwsAssetSourceSummary extends AssetSourceSummary {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            EnvironmentType environmentType,
             String awsRegion,
             String awsAccountKey) {
         super(
@@ -296,7 +310,8 @@ public final class AwsAssetSourceSummary extends AssetSourceSummary {
                 timeUpdated,
                 freeformTags,
                 definedTags,
-                systemTags);
+                systemTags,
+                environmentType);
         this.awsRegion = awsRegion;
         this.awsAccountKey = awsAccountKey;
     }

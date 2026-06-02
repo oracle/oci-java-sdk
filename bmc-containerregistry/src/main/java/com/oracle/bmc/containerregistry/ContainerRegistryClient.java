@@ -496,7 +496,10 @@ public class ContainerRegistryClient implements ContainerRegistry {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerRegistry", "GetAccessToken", ib.getRequestUri().toString(), "");
+                        "ContainerRegistry",
+                        "GetAccessToken",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-registry/20180419/AccessToken/GetAccessToken");
         java.util.function.Function<javax.ws.rs.core.Response, GetAccessTokenResponse> transformer =
                 GetAccessTokenConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

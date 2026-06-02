@@ -3302,6 +3302,58 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetNetworkFirewallHealthStatusResponse>
+            getNetworkFirewallHealthStatus(
+                    GetNetworkFirewallHealthStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetNetworkFirewallHealthStatusRequest,
+                                    GetNetworkFirewallHealthStatusResponse>
+                            handler) {
+        LOG.trace("Called async getNetworkFirewallHealthStatus");
+        final GetNetworkFirewallHealthStatusRequest interceptedRequest =
+                GetNetworkFirewallHealthStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNetworkFirewallHealthStatusConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetNetworkFirewallHealthStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallHealthStatus/GetNetworkFirewallHealthStatus");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetNetworkFirewallHealthStatusResponse>
+                transformer =
+                        GetNetworkFirewallHealthStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetNetworkFirewallHealthStatusRequest,
+                        GetNetworkFirewallHealthStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetNetworkFirewallHealthStatusRequest,
+                                GetNetworkFirewallHealthStatusResponse>,
+                        java.util.concurrent.Future<GetNetworkFirewallHealthStatusResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetNetworkFirewallHealthStatusRequest, GetNetworkFirewallHealthStatusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetNetworkFirewallPolicyResponse> getNetworkFirewallPolicy(
             GetNetworkFirewallPolicyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

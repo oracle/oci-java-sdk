@@ -58,14 +58,14 @@ public final class ComputeGpuMemoryClusterSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
          *
          * @param id the value to set
          * @return this builder
@@ -76,7 +76,7 @@ public final class ComputeGpuMemoryClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster.
          * compartment.
          *
          **/
@@ -84,7 +84,7 @@ public final class ComputeGpuMemoryClusterSummary
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster.
          * compartment.
          *
          * @param compartmentId the value to set
@@ -96,7 +96,7 @@ public final class ComputeGpuMemoryClusterSummary
             return this;
         }
         /**
-         * The availability domain of GPU memory cluster.
+         * The availability domain of GPU Memory Cluster.
          * <p>
          * Example: {@code Uocm:PHX-AD-1}
          *
@@ -105,7 +105,7 @@ public final class ComputeGpuMemoryClusterSummary
         private String availabilityDomain;
 
         /**
-         * The availability domain of GPU memory cluster.
+         * The availability domain of GPU Memory Cluster.
          * <p>
          * Example: {@code Uocm:PHX-AD-1}
          *
@@ -118,13 +118,13 @@ public final class ComputeGpuMemoryClusterSummary
             return this;
         }
         /**
-         * The current state of the compute GPU memory cluster.
+         * The current state of the compute GPU Memory Cluster.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ComputeGpuMemoryCluster.LifecycleState lifecycleState;
 
         /**
-         * The current state of the compute GPU memory cluster.
+         * The current state of the compute GPU Memory Cluster.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -311,14 +311,14 @@ public final class ComputeGpuMemoryClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
      *
      * @return the value
      **/
@@ -327,7 +327,7 @@ public final class ComputeGpuMemoryClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster.
      * compartment.
      *
      **/
@@ -335,7 +335,7 @@ public final class ComputeGpuMemoryClusterSummary
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster.
      * compartment.
      *
      * @return the value
@@ -345,7 +345,7 @@ public final class ComputeGpuMemoryClusterSummary
     }
 
     /**
-     * The availability domain of GPU memory cluster.
+     * The availability domain of GPU Memory Cluster.
      * <p>
      * Example: {@code Uocm:PHX-AD-1}
      *
@@ -354,7 +354,7 @@ public final class ComputeGpuMemoryClusterSummary
     private final String availabilityDomain;
 
     /**
-     * The availability domain of GPU memory cluster.
+     * The availability domain of GPU Memory Cluster.
      * <p>
      * Example: {@code Uocm:PHX-AD-1}
      *
@@ -365,13 +365,13 @@ public final class ComputeGpuMemoryClusterSummary
     }
 
     /**
-     * The current state of the compute GPU memory cluster.
+     * The current state of the compute GPU Memory Cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ComputeGpuMemoryCluster.LifecycleState lifecycleState;
 
     /**
-     * The current state of the compute GPU memory cluster.
+     * The current state of the compute GPU Memory Cluster.
      * @return the value
      **/
     public ComputeGpuMemoryCluster.LifecycleState getLifecycleState() {

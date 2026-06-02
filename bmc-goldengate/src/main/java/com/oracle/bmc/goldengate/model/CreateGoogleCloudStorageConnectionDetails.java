@@ -181,6 +181,26 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
             return this;
         }
         /**
+         * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+         * Default: https://storage.googleapis.com
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+        private String endpoint;
+
+        /**
+         * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+         * Default: https://storage.googleapis.com
+         *
+         * @param endpoint the value to set
+         * @return this builder
+         **/
+        public Builder endpoint(String endpoint) {
+            this.endpoint = endpoint;
+            this.__explicitlySet__.add("endpoint");
+            return this;
+        }
+        /**
          * The base64 encoded content of the service account key file containing
          * the credentials required to use Google Cloud Storage.
          * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
@@ -247,6 +267,7 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
                             this.clusterPlacementGroupId,
                             this.securityAttributes,
                             this.technologyType,
+                            this.endpoint,
                             this.serviceAccountKeyFile,
                             this.serviceAccountKeyFileSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -305,6 +326,9 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
+            if (model.wasPropertyExplicitlySet("endpoint")) {
+                this.endpoint(model.getEndpoint());
+            }
             if (model.wasPropertyExplicitlySet("serviceAccountKeyFile")) {
                 this.serviceAccountKeyFile(model.getServiceAccountKeyFile());
             }
@@ -344,6 +368,7 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
             String clusterPlacementGroupId,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             GoogleCloudStorageConnection.TechnologyType technologyType,
+            String endpoint,
             String serviceAccountKeyFile,
             String serviceAccountKeyFileSecretId) {
         super(
@@ -363,6 +388,7 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
                 clusterPlacementGroupId,
                 securityAttributes);
         this.technologyType = technologyType;
+        this.endpoint = endpoint;
         this.serviceAccountKeyFile = serviceAccountKeyFile;
         this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
     }
@@ -379,6 +405,24 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
      **/
     public GoogleCloudStorageConnection.TechnologyType getTechnologyType() {
         return technologyType;
+    }
+
+    /**
+     * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+     * Default: https://storage.googleapis.com
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
+    private final String endpoint;
+
+    /**
+     * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+     * Default: https://storage.googleapis.com
+     *
+     * @return the value
+     **/
+    public String getEndpoint() {
+        return endpoint;
     }
 
     /**
@@ -436,6 +480,7 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
         sb.append("CreateGoogleCloudStorageConnectionDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
+        sb.append(", endpoint=").append(String.valueOf(this.endpoint));
         sb.append(", serviceAccountKeyFile=").append(String.valueOf(this.serviceAccountKeyFile));
         sb.append(", serviceAccountKeyFileSecretId=")
                 .append(String.valueOf(this.serviceAccountKeyFileSecretId));
@@ -455,6 +500,7 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
         CreateGoogleCloudStorageConnectionDetails other =
                 (CreateGoogleCloudStorageConnectionDetails) o;
         return java.util.Objects.equals(this.technologyType, other.technologyType)
+                && java.util.Objects.equals(this.endpoint, other.endpoint)
                 && java.util.Objects.equals(this.serviceAccountKeyFile, other.serviceAccountKeyFile)
                 && java.util.Objects.equals(
                         this.serviceAccountKeyFileSecretId, other.serviceAccountKeyFileSecretId)
@@ -468,6 +514,7 @@ public final class CreateGoogleCloudStorageConnectionDetails extends CreateConne
         result =
                 (result * PRIME)
                         + (this.technologyType == null ? 43 : this.technologyType.hashCode());
+        result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
         result =
                 (result * PRIME)
                         + (this.serviceAccountKeyFile == null

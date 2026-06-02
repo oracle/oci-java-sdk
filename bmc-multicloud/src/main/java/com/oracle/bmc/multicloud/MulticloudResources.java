@@ -8,7 +8,7 @@ import com.oracle.bmc.multicloud.requests.*;
 import com.oracle.bmc.multicloud.responses.*;
 
 /**
- * Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see <link to docs>.
+ * Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see [Oracle Multicloud Hub](https://docs.oracle.com/iaas/Content/multicloud-hub/home.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
@@ -60,7 +60,10 @@ public interface MulticloudResources extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+     * Lists Multicloud resources in the specified Multicloud subscription.
+     * Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+     * For more information, see
+     * [Multicloud Resources](https://docs.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

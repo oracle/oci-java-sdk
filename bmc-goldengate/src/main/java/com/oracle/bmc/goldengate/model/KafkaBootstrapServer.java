@@ -5,7 +5,9 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Represents a Kafka bootstrap server with host name, optional port defaults to 9092, and an optional private ip.
+ * Represents a Kafka bootstrap server with host name, optional port defaults to 9092.
+ * Deprecated: privateIp is returned only for legacy deployments created with it.
+ * On update payloads, privateIp can only be set to empty (cleared).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -69,28 +71,18 @@ public final class KafkaBootstrapServer extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-         * field, or make sure the host name is resolvable in the target VCN.
+         * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
          * <p>
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-         * In case the privateIp is provided, the subnetId must also be provided.
-         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+         * For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-         * field, or make sure the host name is resolvable in the target VCN.
+         * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
          * <p>
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-         * In case the privateIp is provided, the subnetId must also be provided.
-         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+         * For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
          *
          * @param privateIp the value to set
          * @return this builder
@@ -172,28 +164,18 @@ public final class KafkaBootstrapServer extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-     * field, or make sure the host name is resolvable in the target VCN.
+     * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      * <p>
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-     * In case the privateIp is provided, the subnetId must also be provided.
-     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-     * field, or make sure the host name is resolvable in the target VCN.
+     * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      * <p>
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-     * In case the privateIp is provided, the subnetId must also be provided.
-     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
      *
      * @return the value
      **/

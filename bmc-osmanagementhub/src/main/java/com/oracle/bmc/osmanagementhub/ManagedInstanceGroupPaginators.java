@@ -583,6 +583,136 @@ public class ManagedInstanceGroupPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listManagedInstanceGroupManagedInstances operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListManagedInstanceGroupManagedInstancesResponse>
+            listManagedInstanceGroupManagedInstancesResponseIterator(
+                    final ListManagedInstanceGroupManagedInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListManagedInstanceGroupManagedInstancesRequest.Builder,
+                ListManagedInstanceGroupManagedInstancesRequest,
+                ListManagedInstanceGroupManagedInstancesResponse>(
+                new java.util.function.Supplier<
+                        ListManagedInstanceGroupManagedInstancesRequest.Builder>() {
+                    @Override
+                    public ListManagedInstanceGroupManagedInstancesRequest.Builder get() {
+                        return ListManagedInstanceGroupManagedInstancesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListManagedInstanceGroupManagedInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListManagedInstanceGroupManagedInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListManagedInstanceGroupManagedInstancesRequest.Builder>,
+                        ListManagedInstanceGroupManagedInstancesRequest>() {
+                    @Override
+                    public ListManagedInstanceGroupManagedInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListManagedInstanceGroupManagedInstancesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListManagedInstanceGroupManagedInstancesRequest,
+                        ListManagedInstanceGroupManagedInstancesResponse>() {
+                    @Override
+                    public ListManagedInstanceGroupManagedInstancesResponse apply(
+                            ListManagedInstanceGroupManagedInstancesRequest request) {
+                        return client.listManagedInstanceGroupManagedInstances(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagementhub.model.ManagedInstanceSummary} objects
+     * contained in responses from the listManagedInstanceGroupManagedInstances operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagementhub.model.ManagedInstanceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagementhub.model.ManagedInstanceSummary>
+            listManagedInstanceGroupManagedInstancesRecordIterator(
+                    final ListManagedInstanceGroupManagedInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListManagedInstanceGroupManagedInstancesRequest.Builder,
+                ListManagedInstanceGroupManagedInstancesRequest,
+                ListManagedInstanceGroupManagedInstancesResponse,
+                com.oracle.bmc.osmanagementhub.model.ManagedInstanceSummary>(
+                new java.util.function.Supplier<
+                        ListManagedInstanceGroupManagedInstancesRequest.Builder>() {
+                    @Override
+                    public ListManagedInstanceGroupManagedInstancesRequest.Builder get() {
+                        return ListManagedInstanceGroupManagedInstancesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListManagedInstanceGroupManagedInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListManagedInstanceGroupManagedInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListManagedInstanceGroupManagedInstancesRequest.Builder>,
+                        ListManagedInstanceGroupManagedInstancesRequest>() {
+                    @Override
+                    public ListManagedInstanceGroupManagedInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListManagedInstanceGroupManagedInstancesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListManagedInstanceGroupManagedInstancesRequest,
+                        ListManagedInstanceGroupManagedInstancesResponse>() {
+                    @Override
+                    public ListManagedInstanceGroupManagedInstancesResponse apply(
+                            ListManagedInstanceGroupManagedInstancesRequest request) {
+                        return client.listManagedInstanceGroupManagedInstances(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListManagedInstanceGroupManagedInstancesResponse,
+                        java.util.List<
+                                com.oracle.bmc.osmanagementhub.model.ManagedInstanceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.osmanagementhub.model.ManagedInstanceSummary>
+                            apply(ListManagedInstanceGroupManagedInstancesResponse response) {
+                        return response.getManagedInstanceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listManagedInstanceGroupModules operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -30,6 +30,8 @@ public final class CreateBatchTaskProfileDetails
         "description",
         "minOcpus",
         "minMemoryInGBs",
+        "minDiskSizeInGBs",
+        "extendedInformation",
         "definedTags",
         "freeformTags"
     })
@@ -39,6 +41,8 @@ public final class CreateBatchTaskProfileDetails
             String description,
             Integer minOcpus,
             Integer minMemoryInGBs,
+            Integer minDiskSizeInGBs,
+            CreateBatchTaskProfileExtendedInformationDetails extendedInformation,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags) {
         super();
@@ -47,6 +51,8 @@ public final class CreateBatchTaskProfileDetails
         this.description = description;
         this.minOcpus = minOcpus;
         this.minMemoryInGBs = minMemoryInGBs;
+        this.minDiskSizeInGBs = minDiskSizeInGBs;
+        this.extendedInformation = extendedInformation;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
     }
@@ -138,6 +144,32 @@ public final class CreateBatchTaskProfileDetails
             return this;
         }
         /**
+         * The minimum required size of disk space in GBs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("minDiskSizeInGBs")
+        private Integer minDiskSizeInGBs;
+
+        /**
+         * The minimum required size of disk space in GBs.
+         * @param minDiskSizeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder minDiskSizeInGBs(Integer minDiskSizeInGBs) {
+            this.minDiskSizeInGBs = minDiskSizeInGBs;
+            this.__explicitlySet__.add("minDiskSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("extendedInformation")
+        private CreateBatchTaskProfileExtendedInformationDetails extendedInformation;
+
+        public Builder extendedInformation(
+                CreateBatchTaskProfileExtendedInformationDetails extendedInformation) {
+            this.extendedInformation = extendedInformation;
+            this.__explicitlySet__.add("extendedInformation");
+            return this;
+        }
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -198,6 +230,8 @@ public final class CreateBatchTaskProfileDetails
                             this.description,
                             this.minOcpus,
                             this.minMemoryInGBs,
+                            this.minDiskSizeInGBs,
+                            this.extendedInformation,
                             this.definedTags,
                             this.freeformTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -222,6 +256,12 @@ public final class CreateBatchTaskProfileDetails
             }
             if (model.wasPropertyExplicitlySet("minMemoryInGBs")) {
                 this.minMemoryInGBs(model.getMinMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("minDiskSizeInGBs")) {
+                this.minDiskSizeInGBs(model.getMinDiskSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("extendedInformation")) {
+                this.extendedInformation(model.getExtendedInformation());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -319,6 +359,27 @@ public final class CreateBatchTaskProfileDetails
     }
 
     /**
+     * The minimum required size of disk space in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minDiskSizeInGBs")
+    private final Integer minDiskSizeInGBs;
+
+    /**
+     * The minimum required size of disk space in GBs.
+     * @return the value
+     **/
+    public Integer getMinDiskSizeInGBs() {
+        return minDiskSizeInGBs;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("extendedInformation")
+    private final CreateBatchTaskProfileExtendedInformationDetails extendedInformation;
+
+    public CreateBatchTaskProfileExtendedInformationDetails getExtendedInformation() {
+        return extendedInformation;
+    }
+
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -381,6 +442,8 @@ public final class CreateBatchTaskProfileDetails
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", minOcpus=").append(String.valueOf(this.minOcpus));
         sb.append(", minMemoryInGBs=").append(String.valueOf(this.minMemoryInGBs));
+        sb.append(", minDiskSizeInGBs=").append(String.valueOf(this.minDiskSizeInGBs));
+        sb.append(", extendedInformation=").append(String.valueOf(this.extendedInformation));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(")");
@@ -402,6 +465,8 @@ public final class CreateBatchTaskProfileDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.minOcpus, other.minOcpus)
                 && java.util.Objects.equals(this.minMemoryInGBs, other.minMemoryInGBs)
+                && java.util.Objects.equals(this.minDiskSizeInGBs, other.minDiskSizeInGBs)
+                && java.util.Objects.equals(this.extendedInformation, other.extendedInformation)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && super.equals(other);
@@ -420,6 +485,14 @@ public final class CreateBatchTaskProfileDetails
         result =
                 (result * PRIME)
                         + (this.minMemoryInGBs == null ? 43 : this.minMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minDiskSizeInGBs == null ? 43 : this.minDiskSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extendedInformation == null
+                                ? 43
+                                : this.extendedInformation.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + super.hashCode();

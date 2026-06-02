@@ -36,6 +36,17 @@ public class ListDbSystemComputePerformancesRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    private String compartmentId;
+
+    /**
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -77,6 +88,21 @@ public class ListDbSystemComputePerformancesRequest
         }
 
         /**
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        private String compartmentId = null;
+
+        /**
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -106,6 +132,7 @@ public class ListDbSystemComputePerformancesRequest
         public Builder copy(ListDbSystemComputePerformancesRequest o) {
             dbSystemShape(o.getDbSystemShape());
             opcRequestId(o.getOpcRequestId());
+            compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -141,8 +168,9 @@ public class ListDbSystemComputePerformancesRequest
                     new ListDbSystemComputePerformancesRequest();
             request.dbSystemShape = dbSystemShape;
             request.opcRequestId = opcRequestId;
+            request.compartmentId = compartmentId;
             return request;
-            // new ListDbSystemComputePerformancesRequest(dbSystemShape, opcRequestId);
+            // new ListDbSystemComputePerformancesRequest(dbSystemShape, opcRequestId, compartmentId);
         }
     }
 
@@ -151,7 +179,10 @@ public class ListDbSystemComputePerformancesRequest
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().dbSystemShape(dbSystemShape).opcRequestId(opcRequestId);
+        return new Builder()
+                .dbSystemShape(dbSystemShape)
+                .opcRequestId(opcRequestId)
+                .compartmentId(compartmentId);
     }
 
     /**
@@ -169,6 +200,7 @@ public class ListDbSystemComputePerformancesRequest
         sb.append("super=").append(super.toString());
         sb.append(",dbSystemShape=").append(String.valueOf(this.dbSystemShape));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -185,7 +217,8 @@ public class ListDbSystemComputePerformancesRequest
         ListDbSystemComputePerformancesRequest other = (ListDbSystemComputePerformancesRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.dbSystemShape, other.dbSystemShape)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId);
     }
 
     @Override
@@ -196,6 +229,9 @@ public class ListDbSystemComputePerformancesRequest
                 (result * PRIME)
                         + (this.dbSystemShape == null ? 43 : this.dbSystemShape.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         return result;
     }
 }

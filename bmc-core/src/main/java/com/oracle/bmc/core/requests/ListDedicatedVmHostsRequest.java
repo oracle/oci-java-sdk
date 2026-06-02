@@ -317,6 +317,17 @@ public class ListDedicatedVmHostsRequest
         return remainingOcpusGreaterThanOrEqualTo;
     }
     /**
+     * The remaining local volume of the dedicated VM host, in GBs.
+     */
+    private Float remainingLocalVolumeInGBsGreaterThanOrEqualTo;
+
+    /**
+     * The remaining local volume of the dedicated VM host, in GBs.
+     */
+    public Float getRemainingLocalVolumeInGBsGreaterThanOrEqualTo() {
+        return remainingLocalVolumeInGBsGreaterThanOrEqualTo;
+    }
+    /**
      * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
      *
      */
@@ -571,6 +582,23 @@ public class ListDedicatedVmHostsRequest
         }
 
         /**
+         * The remaining local volume of the dedicated VM host, in GBs.
+         */
+        private Float remainingLocalVolumeInGBsGreaterThanOrEqualTo = null;
+
+        /**
+         * The remaining local volume of the dedicated VM host, in GBs.
+         * @param remainingLocalVolumeInGBsGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder remainingLocalVolumeInGBsGreaterThanOrEqualTo(
+                Float remainingLocalVolumeInGBsGreaterThanOrEqualTo) {
+            this.remainingLocalVolumeInGBsGreaterThanOrEqualTo =
+                    remainingLocalVolumeInGBsGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
          * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
          *
          */
@@ -628,6 +656,8 @@ public class ListDedicatedVmHostsRequest
             remainingMemoryInGBsGreaterThanOrEqualTo(
                     o.getRemainingMemoryInGBsGreaterThanOrEqualTo());
             remainingOcpusGreaterThanOrEqualTo(o.getRemainingOcpusGreaterThanOrEqualTo());
+            remainingLocalVolumeInGBsGreaterThanOrEqualTo(
+                    o.getRemainingLocalVolumeInGBsGreaterThanOrEqualTo());
             isMemoryEncryptionEnabled(o.getIsMemoryEncryptionEnabled());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -674,9 +704,11 @@ public class ListDedicatedVmHostsRequest
             request.remainingMemoryInGBsGreaterThanOrEqualTo =
                     remainingMemoryInGBsGreaterThanOrEqualTo;
             request.remainingOcpusGreaterThanOrEqualTo = remainingOcpusGreaterThanOrEqualTo;
+            request.remainingLocalVolumeInGBsGreaterThanOrEqualTo =
+                    remainingLocalVolumeInGBsGreaterThanOrEqualTo;
             request.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             return request;
-            // new ListDedicatedVmHostsRequest(compartmentId, availabilityDomain, lifecycleState, displayName, instanceShapeName, limit, page, opcRequestId, sortBy, sortOrder, remainingMemoryInGBsGreaterThanOrEqualTo, remainingOcpusGreaterThanOrEqualTo, isMemoryEncryptionEnabled);
+            // new ListDedicatedVmHostsRequest(compartmentId, availabilityDomain, lifecycleState, displayName, instanceShapeName, limit, page, opcRequestId, sortBy, sortOrder, remainingMemoryInGBsGreaterThanOrEqualTo, remainingOcpusGreaterThanOrEqualTo, remainingLocalVolumeInGBsGreaterThanOrEqualTo, isMemoryEncryptionEnabled);
         }
     }
 
@@ -698,6 +730,8 @@ public class ListDedicatedVmHostsRequest
                 .sortOrder(sortOrder)
                 .remainingMemoryInGBsGreaterThanOrEqualTo(remainingMemoryInGBsGreaterThanOrEqualTo)
                 .remainingOcpusGreaterThanOrEqualTo(remainingOcpusGreaterThanOrEqualTo)
+                .remainingLocalVolumeInGBsGreaterThanOrEqualTo(
+                        remainingLocalVolumeInGBsGreaterThanOrEqualTo)
                 .isMemoryEncryptionEnabled(isMemoryEncryptionEnabled);
     }
 
@@ -728,6 +762,8 @@ public class ListDedicatedVmHostsRequest
                 .append(String.valueOf(this.remainingMemoryInGBsGreaterThanOrEqualTo));
         sb.append(",remainingOcpusGreaterThanOrEqualTo=")
                 .append(String.valueOf(this.remainingOcpusGreaterThanOrEqualTo));
+        sb.append(",remainingLocalVolumeInGBsGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.remainingLocalVolumeInGBsGreaterThanOrEqualTo));
         sb.append(",isMemoryEncryptionEnabled=")
                 .append(String.valueOf(this.isMemoryEncryptionEnabled));
         sb.append(")");
@@ -761,6 +797,9 @@ public class ListDedicatedVmHostsRequest
                 && java.util.Objects.equals(
                         this.remainingOcpusGreaterThanOrEqualTo,
                         other.remainingOcpusGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.remainingLocalVolumeInGBsGreaterThanOrEqualTo,
+                        other.remainingLocalVolumeInGBsGreaterThanOrEqualTo)
                 && java.util.Objects.equals(
                         this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled);
     }
@@ -799,6 +838,11 @@ public class ListDedicatedVmHostsRequest
                         + (this.remainingOcpusGreaterThanOrEqualTo == null
                                 ? 43
                                 : this.remainingOcpusGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remainingLocalVolumeInGBsGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.remainingLocalVolumeInGBsGreaterThanOrEqualTo.hashCode());
         result =
                 (result * PRIME)
                         + (this.isMemoryEncryptionEnabled == null

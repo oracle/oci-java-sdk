@@ -248,7 +248,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password to access Schema Registry using basic authentication.
@@ -258,11 +258,18 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Kafka Schema Registry password is stored,
          * The password to access Schema Registry using basic authentication.
@@ -333,7 +340,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
-        private String trustStorePassword;
+        private char[] trustStorePassword;
 
         /**
          * The TrustStore password.
@@ -342,11 +349,19 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
          * @param trustStorePassword the value to set
          * @return this builder
          **/
-        public Builder trustStorePassword(String trustStorePassword) {
+        public Builder trustStorePassword(char[] trustStorePassword) {
             this.trustStorePassword = trustStorePassword;
             this.__explicitlySet__.add("trustStorePassword");
             return this;
         }
+
+        public Builder trustStorePassword(String trustStorePassword) {
+            this.trustStorePassword =
+                    trustStorePassword != null ? trustStorePassword.toCharArray() : null;
+            this.__explicitlySet__.add("trustStorePassword");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
          * Note: When provided, 'trustStorePassword' field must not be provided.
@@ -413,7 +428,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
-        private String keyStorePassword;
+        private char[] keyStorePassword;
 
         /**
          * The KeyStore password.
@@ -422,11 +437,19 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
          * @param keyStorePassword the value to set
          * @return this builder
          **/
-        public Builder keyStorePassword(String keyStorePassword) {
+        public Builder keyStorePassword(char[] keyStorePassword) {
             this.keyStorePassword = keyStorePassword;
             this.__explicitlySet__.add("keyStorePassword");
             return this;
         }
+
+        public Builder keyStorePassword(String keyStorePassword) {
+            this.keyStorePassword =
+                    keyStorePassword != null ? keyStorePassword.toCharArray() : null;
+            this.__explicitlySet__.add("keyStorePassword");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
          * Note: When provided, 'keyStorePassword' field must not be provided.
@@ -454,7 +477,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
-        private String sslKeyPassword;
+        private char[] sslKeyPassword;
 
         /**
          * The password for the cert inside the KeyStore.
@@ -464,11 +487,18 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
          * @param sslKeyPassword the value to set
          * @return this builder
          **/
-        public Builder sslKeyPassword(String sslKeyPassword) {
+        public Builder sslKeyPassword(char[] sslKeyPassword) {
             this.sslKeyPassword = sslKeyPassword;
             this.__explicitlySet__.add("sslKeyPassword");
             return this;
         }
+
+        public Builder sslKeyPassword(String sslKeyPassword) {
+            this.sslKeyPassword = sslKeyPassword != null ? sslKeyPassword.toCharArray() : null;
+            this.__explicitlySet__.add("sslKeyPassword");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the cert inside the KeyStore.
          * In case it differs from the KeyStore password, it should be provided.
@@ -489,38 +519,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         public Builder sslKeyPasswordSecretId(String sslKeyPasswordSecretId) {
             this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
             this.__explicitlySet__.add("sslKeyPasswordSecretId");
-            return this;
-        }
-        /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-         * field, or make sure the host name is resolvable in the target VCN.
-         * <p>
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-         * In case the privateIp is provided, the subnetId must also be provided.
-         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-        private String privateIp;
-
-        /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-         * field, or make sure the host name is resolvable in the target VCN.
-         * <p>
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-         * In case the privateIp is provided, the subnetId must also be provided.
-         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-         *
-         * @param privateIp the value to set
-         * @return this builder
-         **/
-        public Builder privateIp(String privateIp) {
-            this.privateIp = privateIp;
-            this.__explicitlySet__.add("privateIp");
             return this;
         }
 
@@ -560,8 +558,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                             this.keyStorePassword,
                             this.keyStorePasswordSecretId,
                             this.sslKeyPassword,
-                            this.sslKeyPasswordSecretId,
-                            this.privateIp);
+                            this.sslKeyPasswordSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -663,9 +660,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             if (model.wasPropertyExplicitlySet("sslKeyPasswordSecretId")) {
                 this.sslKeyPasswordSecretId(model.getSslKeyPasswordSecretId());
             }
-            if (model.wasPropertyExplicitlySet("privateIp")) {
-                this.privateIp(model.getPrivateIp());
-            }
             return this;
         }
     }
@@ -713,8 +707,76 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             String keyStorePassword,
             String keyStorePasswordSecretId,
             String sslKeyPassword,
-            String sslKeyPasswordSecretId,
-            String privateIp) {
+            String sslKeyPasswordSecretId) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                locks,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
+        this.technologyType = technologyType;
+        this.url = url;
+        this.authenticationType = authenticationType;
+        this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+        this.trustStore = trustStore;
+        this.trustStoreSecretId = trustStoreSecretId;
+        this.trustStorePassword =
+                trustStorePassword != null ? trustStorePassword.toCharArray() : null;
+        this.trustStorePasswordSecretId = trustStorePasswordSecretId;
+        this.keyStore = keyStore;
+        this.keyStoreSecretId = keyStoreSecretId;
+        this.keyStorePassword = keyStorePassword != null ? keyStorePassword.toCharArray() : null;
+        this.keyStorePasswordSecretId = keyStorePasswordSecretId;
+        this.sslKeyPassword = sslKeyPassword != null ? sslKeyPassword.toCharArray() : null;
+        this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateKafkaSchemaRegistryConnectionDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            KafkaSchemaRegistryConnection.TechnologyType technologyType,
+            String url,
+            KafkaSchemaRegistryConnection.AuthenticationType authenticationType,
+            String username,
+            char[] password,
+            String passwordSecretId,
+            String trustStore,
+            String trustStoreSecretId,
+            char[] trustStorePassword,
+            String trustStorePasswordSecretId,
+            String keyStore,
+            String keyStoreSecretId,
+            char[] keyStorePassword,
+            String keyStorePasswordSecretId,
+            char[] sslKeyPassword,
+            String sslKeyPasswordSecretId) {
         super(
                 displayName,
                 description,
@@ -747,7 +809,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         this.keyStorePasswordSecretId = keyStorePasswordSecretId;
         this.sslKeyPassword = sslKeyPassword;
         this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
-        this.privateIp = privateIp;
     }
 
     /**
@@ -825,7 +886,21 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password to access Schema Registry using basic authentication.
+     * This value is injected into &#39;schema.registry.basic.auth.user.info&#x3D;user:password&#39; configuration property.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password to access Schema Registry using basic authentication.
@@ -834,7 +909,8 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
      *
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -902,7 +978,20 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
-    private final String trustStorePassword;
+    private final char[] trustStorePassword;
+
+    /**
+     * The TrustStore password.
+     * Deprecated: This field is deprecated and replaced by &quot;trustStorePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getTrustStorePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTrustStorePassword() {
+        return trustStorePassword != null ? new String(trustStorePassword) : null;
+    }
 
     /**
      * The TrustStore password.
@@ -910,7 +999,8 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
      *
      * @return the value
      **/
-    public String getTrustStorePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
+    public char[] getTrustStorePassword__AsCharArray() {
         return trustStorePassword;
     }
 
@@ -974,7 +1064,20 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
-    private final String keyStorePassword;
+    private final char[] keyStorePassword;
+
+    /**
+     * The KeyStore password.
+     * Deprecated: This field is deprecated and replaced by &quot;keyStorePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getKeyStorePassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getKeyStorePassword() {
+        return keyStorePassword != null ? new String(keyStorePassword) : null;
+    }
 
     /**
      * The KeyStore password.
@@ -982,7 +1085,8 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
      *
      * @return the value
      **/
-    public String getKeyStorePassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
+    public char[] getKeyStorePassword__AsCharArray() {
         return keyStorePassword;
     }
 
@@ -1011,7 +1115,21 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
-    private final String sslKeyPassword;
+    private final char[] sslKeyPassword;
+
+    /**
+     * The password for the cert inside the KeyStore.
+     * In case it differs from the KeyStore password, it should be provided.
+     * Deprecated: This field is deprecated and replaced by &quot;sslKeyPasswordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getSslKeyPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSslKeyPassword() {
+        return sslKeyPassword != null ? new String(sslKeyPassword) : null;
+    }
 
     /**
      * The password for the cert inside the KeyStore.
@@ -1020,7 +1138,8 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
      *
      * @return the value
      **/
-    public String getSslKeyPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
+    public char[] getSslKeyPassword__AsCharArray() {
         return sslKeyPassword;
     }
 
@@ -1042,36 +1161,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
      **/
     public String getSslKeyPasswordSecretId() {
         return sslKeyPasswordSecretId;
-    }
-
-    /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-     * field, or make sure the host name is resolvable in the target VCN.
-     * <p>
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-     * In case the privateIp is provided, the subnetId must also be provided.
-     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-    private final String privateIp;
-
-    /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-     * field, or make sure the host name is resolvable in the target VCN.
-     * <p>
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-     * In case the privateIp is provided, the subnetId must also be provided.
-     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-     *
-     * @return the value
-     **/
-    public String getPrivateIp() {
-        return privateIp;
     }
 
     @Override
@@ -1106,7 +1195,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                 .append(String.valueOf(this.keyStorePasswordSecretId));
         sb.append(", sslKeyPassword=").append("<redacted>");
         sb.append(", sslKeyPasswordSecretId=").append(String.valueOf(this.sslKeyPasswordSecretId));
-        sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(")");
         return sb.toString();
     }
@@ -1141,7 +1229,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                 && java.util.Objects.equals(this.sslKeyPassword, other.sslKeyPassword)
                 && java.util.Objects.equals(
                         this.sslKeyPasswordSecretId, other.sslKeyPasswordSecretId)
-                && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && super.equals(other);
     }
 
@@ -1199,7 +1286,6 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                         + (this.sslKeyPasswordSecretId == null
                                 ? 43
                                 : this.sslKeyPasswordSecretId.hashCode());
-        result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         return result;
     }
 }

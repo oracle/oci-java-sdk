@@ -80,6 +80,15 @@ public class ListManagedInstanceUpdatablePackagesConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getAdvisorySeverity() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "advisorySeverity",
+                            request.getAdvisorySeverity(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getCompartmentId() != null) {
             target =
                     target.queryParam(

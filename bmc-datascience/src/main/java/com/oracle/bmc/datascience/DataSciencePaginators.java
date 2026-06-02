@@ -34,6 +34,237 @@ public class DataSciencePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeTargetShapes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeTargetShapesResponse> listComputeTargetShapesResponseIterator(
+            final ListComputeTargetShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeTargetShapesRequest.Builder, ListComputeTargetShapesRequest,
+                ListComputeTargetShapesResponse>(
+                new java.util.function.Supplier<ListComputeTargetShapesRequest.Builder>() {
+                    @Override
+                    public ListComputeTargetShapesRequest.Builder get() {
+                        return ListComputeTargetShapesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeTargetShapesResponse, String>() {
+                    @Override
+                    public String apply(ListComputeTargetShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeTargetShapesRequest.Builder>,
+                        ListComputeTargetShapesRequest>() {
+                    @Override
+                    public ListComputeTargetShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeTargetShapesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeTargetShapesRequest, ListComputeTargetShapesResponse>() {
+                    @Override
+                    public ListComputeTargetShapesResponse apply(
+                            ListComputeTargetShapesRequest request) {
+                        return client.listComputeTargetShapes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ComputeTargetShapeSummary} objects
+     * contained in responses from the listComputeTargetShapes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ComputeTargetShapeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.ComputeTargetShapeSummary>
+            listComputeTargetShapesRecordIterator(final ListComputeTargetShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeTargetShapesRequest.Builder, ListComputeTargetShapesRequest,
+                ListComputeTargetShapesResponse,
+                com.oracle.bmc.datascience.model.ComputeTargetShapeSummary>(
+                new java.util.function.Supplier<ListComputeTargetShapesRequest.Builder>() {
+                    @Override
+                    public ListComputeTargetShapesRequest.Builder get() {
+                        return ListComputeTargetShapesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeTargetShapesResponse, String>() {
+                    @Override
+                    public String apply(ListComputeTargetShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeTargetShapesRequest.Builder>,
+                        ListComputeTargetShapesRequest>() {
+                    @Override
+                    public ListComputeTargetShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeTargetShapesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeTargetShapesRequest, ListComputeTargetShapesResponse>() {
+                    @Override
+                    public ListComputeTargetShapesResponse apply(
+                            ListComputeTargetShapesRequest request) {
+                        return client.listComputeTargetShapes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeTargetShapesResponse,
+                        java.util.List<
+                                com.oracle.bmc.datascience.model.ComputeTargetShapeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datascience.model.ComputeTargetShapeSummary>
+                            apply(ListComputeTargetShapesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeTargets operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeTargetsResponse> listComputeTargetsResponseIterator(
+            final ListComputeTargetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeTargetsRequest.Builder, ListComputeTargetsRequest,
+                ListComputeTargetsResponse>(
+                new java.util.function.Supplier<ListComputeTargetsRequest.Builder>() {
+                    @Override
+                    public ListComputeTargetsRequest.Builder get() {
+                        return ListComputeTargetsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeTargetsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeTargetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeTargetsRequest.Builder>,
+                        ListComputeTargetsRequest>() {
+                    @Override
+                    public ListComputeTargetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeTargetsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeTargetsRequest, ListComputeTargetsResponse>() {
+                    @Override
+                    public ListComputeTargetsResponse apply(ListComputeTargetsRequest request) {
+                        return client.listComputeTargets(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ComputeTargetSummary} objects
+     * contained in responses from the listComputeTargets operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ComputeTargetSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.ComputeTargetSummary>
+            listComputeTargetsRecordIterator(final ListComputeTargetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeTargetsRequest.Builder, ListComputeTargetsRequest,
+                ListComputeTargetsResponse, com.oracle.bmc.datascience.model.ComputeTargetSummary>(
+                new java.util.function.Supplier<ListComputeTargetsRequest.Builder>() {
+                    @Override
+                    public ListComputeTargetsRequest.Builder get() {
+                        return ListComputeTargetsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeTargetsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeTargetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeTargetsRequest.Builder>,
+                        ListComputeTargetsRequest>() {
+                    @Override
+                    public ListComputeTargetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeTargetsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeTargetsRequest, ListComputeTargetsResponse>() {
+                    @Override
+                    public ListComputeTargetsResponse apply(ListComputeTargetsRequest request) {
+                        return client.listComputeTargets(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeTargetsResponse,
+                        java.util.List<com.oracle.bmc.datascience.model.ComputeTargetSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datascience.model.ComputeTargetSummary>
+                            apply(ListComputeTargetsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listContainers operation. This iterable
      * will fetch more data from the server as needed.
      *

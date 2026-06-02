@@ -35,8 +35,14 @@ public class UpdateManagementAgentConverter {
                 request.getUpdateManagementAgentDetails(),
                 "updateManagementAgentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("managementAgentId", request.getManagementAgentId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20200202")
                         .path("managementAgents")
                         .path(

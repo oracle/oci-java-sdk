@@ -299,13 +299,13 @@ public final class FusionEnvironmentSummary
             return this;
         }
         /**
-         * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
         private Boolean isIPv6DualStackEnabled;
 
         /**
-         * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
          * @param isIPv6DualStackEnabled the value to set
          * @return this builder
          **/
@@ -745,13 +745,13 @@ public final class FusionEnvironmentSummary
     }
 
     /**
-     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIPv6DualStackEnabled")
     private final Boolean isIPv6DualStackEnabled;
 
     /**
-     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
      * @return the value
      **/
     public Boolean getIsIPv6DualStackEnabled() {

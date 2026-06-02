@@ -33,7 +33,8 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
                     .serviceName(GenerativeAiClient.class.getName())
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://generativeai.{region}.oci.{secondLevelDomain}")
+                            "https://generativeai.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
+                    .endpointServiceName("generativeai")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -53,6 +54,7 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private String regionId;
+    private final java.util.Map<String, Boolean> optionsMap = new java.util.HashMap<>();
 
     // This pattern matches substrings that are enclosed within curly braces {}
     private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
@@ -305,6 +307,9 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
                 }
             }
         }
+        enableDualStackEndpoints(
+                com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils
+                        .isDualStackEnabledForClientDefault(SERVICE));
         if (endpoint != null) {
             setEndpoint(endpoint);
         }
@@ -463,6 +468,14 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
                 com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
                         .getRealmSpecificEndpointTemplate(
                                 useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public synchronized void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled) {
+        optionsMap.put(
+                com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils.DUAL_STACK_OPTION,
+                dualStackEndpointTemplateEnabled);
+        client.setOptionsMap(optionsMap);
     }
 
     @Override

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The level of severity of the MySQL message. Indicates whether it is an ERROR, a WARNING, or a NOTE.
+ * The level of severity of the MySQL message. Indicates whether it is an ERROR, a WARNING, or a NOTE. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum MySqlMessageSeverity {

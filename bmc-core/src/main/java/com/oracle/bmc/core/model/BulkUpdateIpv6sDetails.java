@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Bulk Secondary IPv6 addresses update object.
+ * Address details to update for a Secondary IPv6 object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -53,14 +53,14 @@ public final class BulkUpdateIpv6sDetails
             return this;
         }
         /**
-         * Secondary IPv6 addresses to updated.
+         * A secondary IPv6 address to update.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bulkUpdateIpv6sItem")
         private java.util.List<BulkUpdateIpv6sItem> bulkUpdateIpv6sItem;
 
         /**
-         * Secondary IPv6 addresses to updated.
+         * A secondary IPv6 address to update.
          *
          * @param bulkUpdateIpv6sItem the value to set
          * @return this builder
@@ -126,14 +126,14 @@ public final class BulkUpdateIpv6sDetails
     }
 
     /**
-     * Secondary IPv6 addresses to updated.
+     * A secondary IPv6 address to update.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bulkUpdateIpv6sItem")
     private final java.util.List<BulkUpdateIpv6sItem> bulkUpdateIpv6sItem;
 
     /**
-     * Secondary IPv6 addresses to updated.
+     * A secondary IPv6 address to update.
      *
      * @return the value
      **/

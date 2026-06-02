@@ -97,7 +97,9 @@ public interface RedisCluster extends AutoCloseable {
             ChangeRedisClusterCompartmentRequest request);
 
     /**
-     * Creates a new OCI Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
+     * Creates a new OCI Cache cluster. A cluster is a memory-based storage solution.
+     * You can optionally initialize the cluster data by restoring from an OCI Cache Backup (backupId) or by importing from Object Storage RDB file(s) (importFromObjectStorageDetails).
+     * For more information, see [OCI Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

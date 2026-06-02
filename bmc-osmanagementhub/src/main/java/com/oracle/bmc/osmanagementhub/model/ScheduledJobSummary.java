@@ -35,6 +35,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         "managedInstanceGroupIds",
         "managedCompartmentIds",
         "lifecycleStageIds",
+        "dynamicSetIds",
         "operations",
         "lifecycleState",
         "isManagedByAutonomousLinux",
@@ -59,6 +60,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
             java.util.List<String> managedInstanceGroupIds,
             java.util.List<String> managedCompartmentIds,
             java.util.List<String> lifecycleStageIds,
+            java.util.List<String> dynamicSetIds,
             java.util.List<ScheduledJobOperation> operations,
             ScheduledJob.LifecycleState lifecycleState,
             Boolean isManagedByAutonomousLinux,
@@ -82,6 +84,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         this.managedInstanceGroupIds = managedInstanceGroupIds;
         this.managedCompartmentIds = managedCompartmentIds;
         this.lifecycleStageIds = lifecycleStageIds;
+        this.dynamicSetIds = dynamicSetIds;
         this.operations = operations;
         this.lifecycleState = lifecycleState;
         this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
@@ -242,7 +245,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         /**
          * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-         * managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
+         * managedInstanceGroupIds, managedCompartmentIds, lifecycleStageIds, and dynamicSetIds.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
@@ -251,7 +254,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         /**
          * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-         * managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
+         * managedInstanceGroupIds, managedCompartmentIds, lifecycleStageIds, and dynamicSetIds.
          *
          * @param managedInstanceIds the value to set
          * @return this builder
@@ -264,7 +267,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         /**
          * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-         * managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
+         * managedInstanceIds, managedCompartmentIds, lifecycleStageIds, and dynamicSetIds.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroupIds")
@@ -273,7 +276,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         /**
          * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-         * managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
+         * managedInstanceIds, managedCompartmentIds, lifecycleStageIds, and dynamicSetIds.
          *
          * @param managedInstanceGroupIds the value to set
          * @return this builder
@@ -286,7 +289,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         /**
          * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-         * managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
+         * managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, and dynamicSetIds.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedCompartmentIds")
@@ -295,7 +298,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         /**
          * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-         * managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
+         * managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, and dynamicSetIds.
          *
          * @param managedCompartmentIds the value to set
          * @return this builder
@@ -308,7 +311,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         /**
          * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-         * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+         * managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStageIds")
@@ -317,7 +320,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         /**
          * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-         * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+         * managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
          *
          * @param lifecycleStageIds the value to set
          * @return this builder
@@ -325,6 +328,28 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         public Builder lifecycleStageIds(java.util.List<String> lifecycleStageIds) {
             this.lifecycleStageIds = lifecycleStageIds;
             this.__explicitlySet__.add("lifecycleStageIds");
+            return this;
+        }
+        /**
+         * The dynamic set [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+         * managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dynamicSetIds")
+        private java.util.List<String> dynamicSetIds;
+
+        /**
+         * The dynamic set [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+         * managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds.
+         *
+         * @param dynamicSetIds the value to set
+         * @return this builder
+         **/
+        public Builder dynamicSetIds(java.util.List<String> dynamicSetIds) {
+            this.dynamicSetIds = dynamicSetIds;
+            this.__explicitlySet__.add("dynamicSetIds");
             return this;
         }
         /**
@@ -540,6 +565,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
                             this.managedInstanceGroupIds,
                             this.managedCompartmentIds,
                             this.lifecycleStageIds,
+                            this.dynamicSetIds,
                             this.operations,
                             this.lifecycleState,
                             this.isManagedByAutonomousLinux,
@@ -595,6 +621,9 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("lifecycleStageIds")) {
                 this.lifecycleStageIds(model.getLifecycleStageIds());
+            }
+            if (model.wasPropertyExplicitlySet("dynamicSetIds")) {
+                this.dynamicSetIds(model.getDynamicSetIds());
             }
             if (model.wasPropertyExplicitlySet("operations")) {
                 this.operations(model.getOperations());
@@ -767,7 +796,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     /**
      * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-     * managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
+     * managedInstanceGroupIds, managedCompartmentIds, lifecycleStageIds, and dynamicSetIds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
@@ -776,7 +805,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     /**
      * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-     * managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
+     * managedInstanceGroupIds, managedCompartmentIds, lifecycleStageIds, and dynamicSetIds.
      *
      * @return the value
      **/
@@ -787,7 +816,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     /**
      * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-     * managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
+     * managedInstanceIds, managedCompartmentIds, lifecycleStageIds, and dynamicSetIds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroupIds")
@@ -796,7 +825,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     /**
      * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-     * managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
+     * managedInstanceIds, managedCompartmentIds, lifecycleStageIds, and dynamicSetIds.
      *
      * @return the value
      **/
@@ -807,7 +836,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     /**
      * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-     * managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
+     * managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, and dynamicSetIds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedCompartmentIds")
@@ -816,7 +845,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     /**
      * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-     * managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
+     * managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, and dynamicSetIds.
      *
      * @return the value
      **/
@@ -827,7 +856,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     /**
      * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-     * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+     * managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStageIds")
@@ -836,12 +865,32 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     /**
      * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-     * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+     * managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
      *
      * @return the value
      **/
     public java.util.List<String> getLifecycleStageIds() {
         return lifecycleStageIds;
+    }
+
+    /**
+     * The dynamic set [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+     * managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dynamicSetIds")
+    private final java.util.List<String> dynamicSetIds;
+
+    /**
+     * The dynamic set [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+     * managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getDynamicSetIds() {
+        return dynamicSetIds;
     }
 
     /**
@@ -1046,6 +1095,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
                 .append(String.valueOf(this.managedInstanceGroupIds));
         sb.append(", managedCompartmentIds=").append(String.valueOf(this.managedCompartmentIds));
         sb.append(", lifecycleStageIds=").append(String.valueOf(this.lifecycleStageIds));
+        sb.append(", dynamicSetIds=").append(String.valueOf(this.dynamicSetIds));
         sb.append(", operations=").append(String.valueOf(this.operations));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", isManagedByAutonomousLinux=")
@@ -1084,6 +1134,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
                         this.managedInstanceGroupIds, other.managedInstanceGroupIds)
                 && java.util.Objects.equals(this.managedCompartmentIds, other.managedCompartmentIds)
                 && java.util.Objects.equals(this.lifecycleStageIds, other.lifecycleStageIds)
+                && java.util.Objects.equals(this.dynamicSetIds, other.dynamicSetIds)
                 && java.util.Objects.equals(this.operations, other.operations)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(
@@ -1134,6 +1185,9 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         result =
                 (result * PRIME)
                         + (this.lifecycleStageIds == null ? 43 : this.lifecycleStageIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dynamicSetIds == null ? 43 : this.dynamicSetIds.hashCode());
         result = (result * PRIME) + (this.operations == null ? 43 : this.operations.hashCode());
         result =
                 (result * PRIME)

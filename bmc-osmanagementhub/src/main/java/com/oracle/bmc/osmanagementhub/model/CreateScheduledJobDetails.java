@@ -34,6 +34,7 @@ public final class CreateScheduledJobDetails
         "managedInstanceGroupIds",
         "managedCompartmentIds",
         "lifecycleStageIds",
+        "dynamicSetIds",
         "isSubcompartmentIncluded",
         "operations",
         "freeformTags",
@@ -54,6 +55,7 @@ public final class CreateScheduledJobDetails
             java.util.List<String> managedInstanceGroupIds,
             java.util.List<String> managedCompartmentIds,
             java.util.List<String> lifecycleStageIds,
+            java.util.List<String> dynamicSetIds,
             Boolean isSubcompartmentIncluded,
             java.util.List<ScheduledJobOperation> operations,
             java.util.Map<String, String> freeformTags,
@@ -73,6 +75,7 @@ public final class CreateScheduledJobDetails
         this.managedInstanceGroupIds = managedInstanceGroupIds;
         this.managedCompartmentIds = managedCompartmentIds;
         this.lifecycleStageIds = lifecycleStageIds;
+        this.dynamicSetIds = dynamicSetIds;
         this.isSubcompartmentIncluded = isSubcompartmentIncluded;
         this.operations = operations;
         this.freeformTags = freeformTags;
@@ -181,13 +184,19 @@ public final class CreateScheduledJobDetails
             return this;
         }
         /**
-         * The frequency schedule for a recurring scheduled job.
+         * The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format.
+         * Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+         * In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("recurringRule")
         private String recurringRule;
 
         /**
-         * The frequency schedule for a recurring scheduled job.
+         * The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format.
+         * Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+         * In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
+         *
          * @param recurringRule the value to set
          * @return this builder
          **/
@@ -199,7 +208,7 @@ public final class CreateScheduledJobDetails
         /**
          * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore you must supply either this or
-         * managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
+         * managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
@@ -208,7 +217,7 @@ public final class CreateScheduledJobDetails
         /**
          * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore you must supply either this or
-         * managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
+         * managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
          *
          * @param managedInstanceIds the value to set
          * @return this builder
@@ -221,7 +230,7 @@ public final class CreateScheduledJobDetails
         /**
          * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
-         * or managedCompartmentIds, or lifecycleStageIds.
+         * or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroupIds")
@@ -230,7 +239,7 @@ public final class CreateScheduledJobDetails
         /**
          * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
-         * or managedCompartmentIds, or lifecycleStageIds.
+         * or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
          *
          * @param managedInstanceGroupIds the value to set
          * @return this builder
@@ -244,7 +253,7 @@ public final class CreateScheduledJobDetails
          * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set
          * isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must
-         * supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
+         * supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedCompartmentIds")
@@ -254,7 +263,7 @@ public final class CreateScheduledJobDetails
          * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set
          * isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must
-         * supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
+         * supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
          *
          * @param managedCompartmentIds the value to set
          * @return this builder
@@ -267,7 +276,7 @@ public final class CreateScheduledJobDetails
         /**
          * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
-         * or managedInstanceGroupIds, or managedCompartmentIds.
+         * or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStageIds")
@@ -276,7 +285,7 @@ public final class CreateScheduledJobDetails
         /**
          * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
-         * or managedInstanceGroupIds, or managedCompartmentIds.
+         * or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
          *
          * @param lifecycleStageIds the value to set
          * @return this builder
@@ -284,6 +293,28 @@ public final class CreateScheduledJobDetails
         public Builder lifecycleStageIds(java.util.List<String> lifecycleStageIds) {
             this.lifecycleStageIds = lifecycleStageIds;
             this.__explicitlySet__.add("lifecycleStageIds");
+            return this;
+        }
+        /**
+         * The dynamic set [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+         * managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dynamicSetIds")
+        private java.util.List<String> dynamicSetIds;
+
+        /**
+         * The dynamic set [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+         * managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
+         *
+         * @param dynamicSetIds the value to set
+         * @return this builder
+         **/
+        public Builder dynamicSetIds(java.util.List<String> dynamicSetIds) {
+            this.dynamicSetIds = dynamicSetIds;
+            this.__explicitlySet__.add("dynamicSetIds");
             return this;
         }
         /**
@@ -461,6 +492,7 @@ public final class CreateScheduledJobDetails
                             this.managedInstanceGroupIds,
                             this.managedCompartmentIds,
                             this.lifecycleStageIds,
+                            this.dynamicSetIds,
                             this.isSubcompartmentIncluded,
                             this.operations,
                             this.freeformTags,
@@ -508,6 +540,9 @@ public final class CreateScheduledJobDetails
             }
             if (model.wasPropertyExplicitlySet("lifecycleStageIds")) {
                 this.lifecycleStageIds(model.getLifecycleStageIds());
+            }
+            if (model.wasPropertyExplicitlySet("dynamicSetIds")) {
+                this.dynamicSetIds(model.getDynamicSetIds());
             }
             if (model.wasPropertyExplicitlySet("isSubcompartmentIncluded")) {
                 this.isSubcompartmentIncluded(model.getIsSubcompartmentIncluded());
@@ -630,13 +665,19 @@ public final class CreateScheduledJobDetails
     }
 
     /**
-     * The frequency schedule for a recurring scheduled job.
+     * The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format.
+     * Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+     * In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recurringRule")
     private final String recurringRule;
 
     /**
-     * The frequency schedule for a recurring scheduled job.
+     * The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format.
+     * Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+     * In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
+     *
      * @return the value
      **/
     public String getRecurringRule() {
@@ -646,7 +687,7 @@ public final class CreateScheduledJobDetails
     /**
      * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore you must supply either this or
-     * managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
+     * managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
@@ -655,7 +696,7 @@ public final class CreateScheduledJobDetails
     /**
      * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore you must supply either this or
-     * managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
+     * managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      *
      * @return the value
      **/
@@ -666,7 +707,7 @@ public final class CreateScheduledJobDetails
     /**
      * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
-     * or managedCompartmentIds, or lifecycleStageIds.
+     * or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroupIds")
@@ -675,7 +716,7 @@ public final class CreateScheduledJobDetails
     /**
      * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
-     * or managedCompartmentIds, or lifecycleStageIds.
+     * or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      *
      * @return the value
      **/
@@ -687,7 +728,7 @@ public final class CreateScheduledJobDetails
      * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set
      * isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must
-     * supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
+     * supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedCompartmentIds")
@@ -697,7 +738,7 @@ public final class CreateScheduledJobDetails
      * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set
      * isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must
-     * supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
+     * supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
      *
      * @return the value
      **/
@@ -708,7 +749,7 @@ public final class CreateScheduledJobDetails
     /**
      * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
-     * or managedInstanceGroupIds, or managedCompartmentIds.
+     * or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStageIds")
@@ -717,12 +758,32 @@ public final class CreateScheduledJobDetails
     /**
      * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
-     * or managedInstanceGroupIds, or managedCompartmentIds.
+     * or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
      *
      * @return the value
      **/
     public java.util.List<String> getLifecycleStageIds() {
         return lifecycleStageIds;
+    }
+
+    /**
+     * The dynamic set [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+     * managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dynamicSetIds")
+    private final java.util.List<String> dynamicSetIds;
+
+    /**
+     * The dynamic set [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+     * managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getDynamicSetIds() {
+        return dynamicSetIds;
     }
 
     /**
@@ -893,6 +954,7 @@ public final class CreateScheduledJobDetails
                 .append(String.valueOf(this.managedInstanceGroupIds));
         sb.append(", managedCompartmentIds=").append(String.valueOf(this.managedCompartmentIds));
         sb.append(", lifecycleStageIds=").append(String.valueOf(this.lifecycleStageIds));
+        sb.append(", dynamicSetIds=").append(String.valueOf(this.dynamicSetIds));
         sb.append(", isSubcompartmentIncluded=")
                 .append(String.valueOf(this.isSubcompartmentIncluded));
         sb.append(", operations=").append(String.valueOf(this.operations));
@@ -928,6 +990,7 @@ public final class CreateScheduledJobDetails
                         this.managedInstanceGroupIds, other.managedInstanceGroupIds)
                 && java.util.Objects.equals(this.managedCompartmentIds, other.managedCompartmentIds)
                 && java.util.Objects.equals(this.lifecycleStageIds, other.lifecycleStageIds)
+                && java.util.Objects.equals(this.dynamicSetIds, other.dynamicSetIds)
                 && java.util.Objects.equals(
                         this.isSubcompartmentIncluded, other.isSubcompartmentIncluded)
                 && java.util.Objects.equals(this.operations, other.operations)
@@ -975,6 +1038,9 @@ public final class CreateScheduledJobDetails
         result =
                 (result * PRIME)
                         + (this.lifecycleStageIds == null ? 43 : this.lifecycleStageIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dynamicSetIds == null ? 43 : this.dynamicSetIds.hashCode());
         result =
                 (result * PRIME)
                         + (this.isSubcompartmentIncluded == null

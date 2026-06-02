@@ -81,6 +81,15 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private EnvironmentType environmentType;
+
+        public Builder environmentType(EnvironmentType environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
+            return this;
+        }
         /**
          * Endpoint for VMware asset discovery and replication in the form of {@code https://<host>:<port>/sdk}
          **/
@@ -160,6 +169,7 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.environmentType,
                             this.vcenterEndpoint,
                             this.discoveryCredentials,
                             this.replicationCredentials,
@@ -190,6 +200,9 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
             }
             if (model.wasPropertyExplicitlySet("vcenterEndpoint")) {
                 this.vcenterEndpoint(model.getVcenterEndpoint());
@@ -229,6 +242,7 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            EnvironmentType environmentType,
             String vcenterEndpoint,
             AssetSourceCredentials discoveryCredentials,
             AssetSourceCredentials replicationCredentials,
@@ -240,7 +254,8 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
                 discoveryScheduleId,
                 freeformTags,
                 definedTags,
-                systemTags);
+                systemTags,
+                environmentType);
         this.vcenterEndpoint = vcenterEndpoint;
         this.discoveryCredentials = discoveryCredentials;
         this.replicationCredentials = replicationCredentials;

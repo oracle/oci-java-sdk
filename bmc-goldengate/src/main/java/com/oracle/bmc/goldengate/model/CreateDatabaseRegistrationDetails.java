@@ -23,6 +23,48 @@ package com.oracle.bmc.goldengate.model;
 public final class CreateDatabaseRegistrationDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public CreateDatabaseRegistrationDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String fqdn,
+            String ipAddress,
+            String subnetId,
+            String databaseId,
+            String username,
+            String password,
+            String connectionString,
+            SessionMode sessionMode,
+            String wallet,
+            String aliasName,
+            String vaultId,
+            String keyId,
+            String secretCompartmentId) {
+        super();
+        this.displayName = displayName;
+        this.description = description;
+        this.compartmentId = compartmentId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.fqdn = fqdn;
+        this.ipAddress = ipAddress;
+        this.subnetId = subnetId;
+        this.databaseId = databaseId;
+        this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.connectionString = connectionString;
+        this.sessionMode = sessionMode;
+        this.wallet = wallet;
+        this.aliasName = aliasName;
+        this.vaultId = vaultId;
+        this.keyId = keyId;
+        this.secretCompartmentId = secretCompartmentId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
@@ -54,7 +96,7 @@ public final class CreateDatabaseRegistrationDetails
             String subnetId,
             String databaseId,
             String username,
-            String password,
+            char[] password,
             String connectionString,
             SessionMode sessionMode,
             String wallet,
@@ -289,7 +331,7 @@ public final class CreateDatabaseRegistrationDetails
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given technology.
@@ -299,11 +341,18 @@ public final class CreateDatabaseRegistrationDetails
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         /**
          * Connect descriptor or Easy Connect Naming method used to connect to a database.
          *
@@ -733,7 +782,21 @@ public final class CreateDatabaseRegistrationDetails
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     *
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
@@ -742,7 +805,8 @@ public final class CreateDatabaseRegistrationDetails
      *
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 

@@ -35,7 +35,8 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         "timeCreated",
         "timeScheduled",
         "isManagedByAutonomousLinux",
-        "rebootTimeoutInMins"
+        "rebootTimeoutInMins",
+        "timeFinished"
     })
     public WorkRequestSummary(
             WorkRequestOperationType operationType,
@@ -51,7 +52,8 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             java.util.Date timeCreated,
             java.util.Date timeScheduled,
             Boolean isManagedByAutonomousLinux,
-            Integer rebootTimeoutInMins) {
+            Integer rebootTimeoutInMins,
+            java.util.Date timeFinished) {
         super();
         this.operationType = operationType;
         this.status = status;
@@ -67,6 +69,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         this.timeScheduled = timeScheduled;
         this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
         this.rebootTimeoutInMins = rebootTimeoutInMins;
+        this.timeFinished = timeFinished;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -305,6 +308,24 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("rebootTimeoutInMins");
             return this;
         }
+        /**
+         * The date and time the work request completed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
+        private java.util.Date timeFinished;
+
+        /**
+         * The date and time the work request completed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
+        public Builder timeFinished(java.util.Date timeFinished) {
+            this.timeFinished = timeFinished;
+            this.__explicitlySet__.add("timeFinished");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -325,7 +346,8 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
                             this.timeCreated,
                             this.timeScheduled,
                             this.isManagedByAutonomousLinux,
-                            this.rebootTimeoutInMins);
+                            this.rebootTimeoutInMins,
+                            this.timeFinished);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -375,6 +397,9 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("rebootTimeoutInMins")) {
                 this.rebootTimeoutInMins(model.getRebootTimeoutInMins());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
             }
             return this;
         }
@@ -597,6 +622,22 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         return rebootTimeoutInMins;
     }
 
+    /**
+     * The date and time the work request completed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
+    private final java.util.Date timeFinished;
+
+    /**
+     * The date and time the work request completed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -626,6 +667,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
         sb.append(", rebootTimeoutInMins=").append(String.valueOf(this.rebootTimeoutInMins));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
         sb.append(")");
         return sb.toString();
     }
@@ -655,6 +697,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(
                         this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
                 && java.util.Objects.equals(this.rebootTimeoutInMins, other.rebootTimeoutInMins)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
                 && super.equals(other);
     }
 
@@ -692,6 +735,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
                         + (this.rebootTimeoutInMins == null
                                 ? 43
                                 : this.rebootTimeoutInMins.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

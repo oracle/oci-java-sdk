@@ -33,11 +33,13 @@ package com.oracle.bmc.core.model;
 public final class InstanceReservationShapeConfigDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs"})
-    public InstanceReservationShapeConfigDetails(Float ocpus, Float memoryInGBs) {
+    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs", "resourceManagement"})
+    public InstanceReservationShapeConfigDetails(
+            Float ocpus, Float memoryInGBs, ResourceManagement resourceManagement) {
         super();
         this.ocpus = ocpus;
         this.memoryInGBs = memoryInGBs;
+        this.resourceManagement = resourceManagement;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -78,13 +80,32 @@ public final class InstanceReservationShapeConfigDetails
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
+        /**
+         * This field is reserved for internal use.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceManagement")
+        private ResourceManagement resourceManagement;
+
+        /**
+         * This field is reserved for internal use.
+         *
+         * @param resourceManagement the value to set
+         * @return this builder
+         **/
+        public Builder resourceManagement(ResourceManagement resourceManagement) {
+            this.resourceManagement = resourceManagement;
+            this.__explicitlySet__.add("resourceManagement");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceReservationShapeConfigDetails build() {
             InstanceReservationShapeConfigDetails model =
-                    new InstanceReservationShapeConfigDetails(this.ocpus, this.memoryInGBs);
+                    new InstanceReservationShapeConfigDetails(
+                            this.ocpus, this.memoryInGBs, this.resourceManagement);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -98,6 +119,9 @@ public final class InstanceReservationShapeConfigDetails
             }
             if (model.wasPropertyExplicitlySet("memoryInGBs")) {
                 this.memoryInGBs(model.getMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("resourceManagement")) {
+                this.resourceManagement(model.getResourceManagement());
             }
             return this;
         }
@@ -146,6 +170,71 @@ public final class InstanceReservationShapeConfigDetails
         return memoryInGBs;
     }
 
+    /**
+     * This field is reserved for internal use.
+     *
+     **/
+    public enum ResourceManagement {
+        Dynamic("DYNAMIC"),
+        Static("STATIC"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ResourceManagement.class);
+
+        private final String value;
+        private static java.util.Map<String, ResourceManagement> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ResourceManagement v : ResourceManagement.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ResourceManagement(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ResourceManagement create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ResourceManagement', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * This field is reserved for internal use.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceManagement")
+    private final ResourceManagement resourceManagement;
+
+    /**
+     * This field is reserved for internal use.
+     *
+     * @return the value
+     **/
+    public ResourceManagement getResourceManagement() {
+        return resourceManagement;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -162,6 +251,7 @@ public final class InstanceReservationShapeConfigDetails
         sb.append("super=").append(super.toString());
         sb.append("ocpus=").append(String.valueOf(this.ocpus));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", resourceManagement=").append(String.valueOf(this.resourceManagement));
         sb.append(")");
         return sb.toString();
     }
@@ -178,6 +268,7 @@ public final class InstanceReservationShapeConfigDetails
         InstanceReservationShapeConfigDetails other = (InstanceReservationShapeConfigDetails) o;
         return java.util.Objects.equals(this.ocpus, other.ocpus)
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(this.resourceManagement, other.resourceManagement)
                 && super.equals(other);
     }
 
@@ -187,6 +278,11 @@ public final class InstanceReservationShapeConfigDetails
         int result = 1;
         result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
         result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceManagement == null
+                                ? 43
+                                : this.resourceManagement.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
