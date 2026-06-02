@@ -61,19 +61,6 @@ public class PutAttachmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return isRestrictedFlag;
     }
     /**
-     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * optional for all support request types.
-     */
-    private String csi;
-
-    /**
-     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * optional for all support request types.
-     */
-    public String getCsi() {
-        return csi;
-    }
-    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      */
@@ -263,24 +250,6 @@ public class PutAttachmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is optional for all support request types.
-         */
-        private String csi = null;
-
-        /**
-         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is optional for all support request types.
-         *
-         * @param csi the value to set
-         * @return this builder instance
-         */
-        public Builder csi(String csi) {
-            this.csi = csi;
-            return this;
-        }
-
-        /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          */
@@ -463,7 +432,6 @@ public class PutAttachmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
             attachmentName(o.getAttachmentName());
             compartmentId(o.getCompartmentId());
             isRestrictedFlag(o.getIsRestrictedFlag());
-            csi(o.getCsi());
             opcRequestId(o.getOpcRequestId());
             ocid(o.getOcid());
             ifMatch(o.getIfMatch());
@@ -524,7 +492,6 @@ public class PutAttachmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.attachmentName = attachmentName;
             request.compartmentId = compartmentId;
             request.isRestrictedFlag = isRestrictedFlag;
-            request.csi = csi;
             request.opcRequestId = opcRequestId;
             request.ocid = ocid;
             request.ifMatch = ifMatch;
@@ -536,7 +503,7 @@ public class PutAttachmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.domainid = domainid;
             return request;
             // new PutAttachmentRequest(putAttachmentDetails, incidentKey, attachmentName,
-            // compartmentId, isRestrictedFlag, csi, opcRequestId, ocid, ifMatch, homeregion,
+            // compartmentId, isRestrictedFlag, opcRequestId, ocid, ifMatch, homeregion,
             // problemtype, bearertokentype, bearertoken, idtoken, domainid);
         }
     }
@@ -553,7 +520,6 @@ public class PutAttachmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .attachmentName(attachmentName)
                 .compartmentId(compartmentId)
                 .isRestrictedFlag(isRestrictedFlag)
-                .csi(csi)
                 .opcRequestId(opcRequestId)
                 .ocid(ocid)
                 .ifMatch(ifMatch)
@@ -584,7 +550,6 @@ public class PutAttachmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",attachmentName=").append(String.valueOf(this.attachmentName));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",isRestrictedFlag=").append(String.valueOf(this.isRestrictedFlag));
-        sb.append(",csi=").append(String.valueOf(this.csi));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ocid=").append(String.valueOf(this.ocid));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
@@ -614,7 +579,6 @@ public class PutAttachmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.attachmentName, other.attachmentName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.isRestrictedFlag, other.isRestrictedFlag)
-                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.ocid, other.ocid)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
@@ -645,7 +609,6 @@ public class PutAttachmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result =
                 (result * PRIME)
                         + (this.isRestrictedFlag == null ? 43 : this.isRestrictedFlag.hashCode());
-        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());

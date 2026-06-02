@@ -5,8 +5,9 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of a given MySQL query, it consists of the query sample details, the explain plan and
- * potential warnings. <br>
+ * The details of a given MySQL query, which consists of the query sample details, the explain plan,
+ * and potential warnings. MySQL support within OCI Database Management service has been deprecated
+ * as of January 29, 2026. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -55,12 +56,12 @@ public final class MySqlQueryDetails
             this.__explicitlySet__.add("queryExplainPlan");
             return this;
         }
-        /** The errors, warnings and notes that could be raised by the execution of the query. */
+        /** The errors, warnings, and notes that could be raised by the execution of the query. */
         @com.fasterxml.jackson.annotation.JsonProperty("queryMessages")
         private java.util.List<MySqlQueryMessage> queryMessages;
 
         /**
-         * The errors, warnings and notes that could be raised by the execution of the query.
+         * The errors, warnings, and notes that could be raised by the execution of the query.
          *
          * @param queryMessages the value to set
          * @return this builder
@@ -122,12 +123,12 @@ public final class MySqlQueryDetails
         return queryExplainPlan;
     }
 
-    /** The errors, warnings and notes that could be raised by the execution of the query. */
+    /** The errors, warnings, and notes that could be raised by the execution of the query. */
     @com.fasterxml.jackson.annotation.JsonProperty("queryMessages")
     private final java.util.List<MySqlQueryMessage> queryMessages;
 
     /**
-     * The errors, warnings and notes that could be raised by the execution of the query.
+     * The errors, warnings, and notes that could be raised by the execution of the query.
      *
      * @return the value
      */

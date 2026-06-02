@@ -153,7 +153,7 @@ public final class CloudDbSystemDiscovery
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS
+         * parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS
          * and ExaCC, it will be the cloudVmClusterId and vmClusterId respectively.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbaasParentInfrastructureId")
@@ -161,7 +161,7 @@ public final class CloudDbSystemDiscovery
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS
+         * parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS
          * and ExaCC, it will be the cloudVmClusterId and vmClusterId respectively.
          *
          * @param dbaasParentInfrastructureId the value to set
@@ -172,12 +172,12 @@ public final class CloudDbSystemDiscovery
             this.__explicitlySet__.add("dbaasParentInfrastructureId");
             return this;
         }
-        /** The deployment type of cloud dbsystem. */
+        /** The deployment type of cloud DB system. */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private CloudDbSystemDeploymentType deploymentType;
 
         /**
-         * The deployment type of cloud dbsystem.
+         * The deployment type of cloud DB system.
          *
          * @param deploymentType the value to set
          * @return this builder
@@ -529,7 +529,7 @@ public final class CloudDbSystemDiscovery
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and
+     * parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and
      * ExaCC, it will be the cloudVmClusterId and vmClusterId respectively.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbaasParentInfrastructureId")
@@ -537,7 +537,7 @@ public final class CloudDbSystemDiscovery
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and
+     * parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and
      * ExaCC, it will be the cloudVmClusterId and vmClusterId respectively.
      *
      * @return the value
@@ -546,12 +546,12 @@ public final class CloudDbSystemDiscovery
         return dbaasParentInfrastructureId;
     }
 
-    /** The deployment type of cloud dbsystem. */
+    /** The deployment type of cloud DB system. */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final CloudDbSystemDeploymentType deploymentType;
 
     /**
-     * The deployment type of cloud dbsystem.
+     * The deployment type of cloud DB system.
      *
      * @return the value
      */

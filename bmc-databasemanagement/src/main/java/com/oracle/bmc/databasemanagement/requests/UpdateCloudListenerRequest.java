@@ -28,11 +28,11 @@ public class UpdateCloudListenerRequest
     public String getCloudListenerId() {
         return cloudListenerId;
     }
-    /** The details required to update an cloud listener. */
+    /** The details required to update a cloud listener. */
     private com.oracle.bmc.databasemanagement.model.UpdateCloudListenerDetails
             updateCloudListenerDetails;
 
-    /** The details required to update an cloud listener. */
+    /** The details required to update a cloud listener. */
     public com.oracle.bmc.databasemanagement.model.UpdateCloudListenerDetails
             getUpdateCloudListenerDetails() {
         return updateCloudListenerDetails;
@@ -98,12 +98,12 @@ public class UpdateCloudListenerRequest
             return this;
         }
 
-        /** The details required to update an cloud listener. */
+        /** The details required to update a cloud listener. */
         private com.oracle.bmc.databasemanagement.model.UpdateCloudListenerDetails
                 updateCloudListenerDetails = null;
 
         /**
-         * The details required to update an cloud listener.
+         * The details required to update a cloud listener.
          *
          * @param updateCloudListenerDetails the value to set
          * @return this builder instance

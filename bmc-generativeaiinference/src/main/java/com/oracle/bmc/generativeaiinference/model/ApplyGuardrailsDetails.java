@@ -5,7 +5,14 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Details for applying guardrails to the input text. <br>
+ * Details for applying guardrails to the input content. Case 1: Use {@code input} for simple
+ * single-text moderation. Existing customers can continue to use this field for the current
+ * text-only flow. Case 2: Use {@code multimodalInput} for moderation over text, image, or a
+ * combination of both. {@code multimodalInput} supports a single text item, an array of text items
+ * only, an array of images only, or a mixed ordered combination of text and image items. Clients
+ * may provide {@code input}, {@code multimodalInput}, or both. At least one of these fields must be
+ * provided. If both {@code input} and {@code multimodalInput} are provided, the service will
+ * process {@code input} and discard {@code multimodalInput}. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -25,17 +32,20 @@ public final class ApplyGuardrailsDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "input",
+        "multimodalInput",
         "guardrailConfigs",
         "guardrailVersionConfig",
         "compartmentId"
     })
     public ApplyGuardrailsDetails(
             GuardrailsInput input,
+            java.util.List<GuardrailsInput> multimodalInput,
             GuardrailConfigs guardrailConfigs,
             GuardrailVersionConfig guardrailVersionConfig,
             String compartmentId) {
         super();
         this.input = input;
+        this.multimodalInput = multimodalInput;
         this.guardrailConfigs = guardrailConfigs;
         this.guardrailVersionConfig = guardrailVersionConfig;
         this.compartmentId = compartmentId;
@@ -50,6 +60,29 @@ public final class ApplyGuardrailsDetails
         public Builder input(GuardrailsInput input) {
             this.input = input;
             this.__explicitlySet__.add("input");
+            return this;
+        }
+        /**
+         * An ordered list of text and image inputs for multimodal guardrail evaluation. This field
+         * supports a single text item, an array of text items only, an array of images only, or a
+         * mixed ordered combination of text and image items. If both {@code input} and {@code
+         * multimodalInput} are provided, this field is ignored.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("multimodalInput")
+        private java.util.List<GuardrailsInput> multimodalInput;
+
+        /**
+         * An ordered list of text and image inputs for multimodal guardrail evaluation. This field
+         * supports a single text item, an array of text items only, an array of images only, or a
+         * mixed ordered combination of text and image items. If both {@code input} and {@code
+         * multimodalInput} are provided, this field is ignored.
+         *
+         * @param multimodalInput the value to set
+         * @return this builder
+         */
+        public Builder multimodalInput(java.util.List<GuardrailsInput> multimodalInput) {
+            this.multimodalInput = multimodalInput;
+            this.__explicitlySet__.add("multimodalInput");
             return this;
         }
 
@@ -93,6 +126,7 @@ public final class ApplyGuardrailsDetails
             ApplyGuardrailsDetails model =
                     new ApplyGuardrailsDetails(
                             this.input,
+                            this.multimodalInput,
                             this.guardrailConfigs,
                             this.guardrailVersionConfig,
                             this.compartmentId);
@@ -106,6 +140,9 @@ public final class ApplyGuardrailsDetails
         public Builder copy(ApplyGuardrailsDetails model) {
             if (model.wasPropertyExplicitlySet("input")) {
                 this.input(model.getInput());
+            }
+            if (model.wasPropertyExplicitlySet("multimodalInput")) {
+                this.multimodalInput(model.getMultimodalInput());
             }
             if (model.wasPropertyExplicitlySet("guardrailConfigs")) {
                 this.guardrailConfigs(model.getGuardrailConfigs());
@@ -134,6 +171,27 @@ public final class ApplyGuardrailsDetails
 
     public GuardrailsInput getInput() {
         return input;
+    }
+
+    /**
+     * An ordered list of text and image inputs for multimodal guardrail evaluation. This field
+     * supports a single text item, an array of text items only, an array of images only, or a mixed
+     * ordered combination of text and image items. If both {@code input} and {@code
+     * multimodalInput} are provided, this field is ignored.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("multimodalInput")
+    private final java.util.List<GuardrailsInput> multimodalInput;
+
+    /**
+     * An ordered list of text and image inputs for multimodal guardrail evaluation. This field
+     * supports a single text item, an array of text items only, an array of images only, or a mixed
+     * ordered combination of text and image items. If both {@code input} and {@code
+     * multimodalInput} are provided, this field is ignored.
+     *
+     * @return the value
+     */
+    public java.util.List<GuardrailsInput> getMultimodalInput() {
+        return multimodalInput;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("guardrailConfigs")
@@ -179,6 +237,7 @@ public final class ApplyGuardrailsDetails
         sb.append("ApplyGuardrailsDetails(");
         sb.append("super=").append(super.toString());
         sb.append("input=").append(String.valueOf(this.input));
+        sb.append(", multimodalInput=").append(String.valueOf(this.multimodalInput));
         sb.append(", guardrailConfigs=").append(String.valueOf(this.guardrailConfigs));
         sb.append(", guardrailVersionConfig=").append(String.valueOf(this.guardrailVersionConfig));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -197,6 +256,7 @@ public final class ApplyGuardrailsDetails
 
         ApplyGuardrailsDetails other = (ApplyGuardrailsDetails) o;
         return java.util.Objects.equals(this.input, other.input)
+                && java.util.Objects.equals(this.multimodalInput, other.multimodalInput)
                 && java.util.Objects.equals(this.guardrailConfigs, other.guardrailConfigs)
                 && java.util.Objects.equals(
                         this.guardrailVersionConfig, other.guardrailVersionConfig)
@@ -209,6 +269,9 @@ public final class ApplyGuardrailsDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.input == null ? 43 : this.input.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.multimodalInput == null ? 43 : this.multimodalInput.hashCode());
         result =
                 (result * PRIME)
                         + (this.guardrailConfigs == null ? 43 : this.guardrailConfigs.hashCode());

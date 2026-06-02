@@ -29,11 +29,11 @@ public class UpdateCloudAsmInstanceRequest
     public String getCloudAsmInstanceId() {
         return cloudAsmInstanceId;
     }
-    /** The details required to update an cloud ASM instance. */
+    /** The details required to update a cloud ASM instance. */
     private com.oracle.bmc.databasemanagement.model.UpdateCloudAsmInstanceDetails
             updateCloudAsmInstanceDetails;
 
-    /** The details required to update an cloud ASM instance. */
+    /** The details required to update a cloud ASM instance. */
     public com.oracle.bmc.databasemanagement.model.UpdateCloudAsmInstanceDetails
             getUpdateCloudAsmInstanceDetails() {
         return updateCloudAsmInstanceDetails;
@@ -99,12 +99,12 @@ public class UpdateCloudAsmInstanceRequest
             return this;
         }
 
-        /** The details required to update an cloud ASM instance. */
+        /** The details required to update a cloud ASM instance. */
         private com.oracle.bmc.databasemanagement.model.UpdateCloudAsmInstanceDetails
                 updateCloudAsmInstanceDetails = null;
 
         /**
-         * The details required to update an cloud ASM instance.
+         * The details required to update a cloud ASM instance.
          *
          * @param updateCloudAsmInstanceDetails the value to set
          * @return this builder instance

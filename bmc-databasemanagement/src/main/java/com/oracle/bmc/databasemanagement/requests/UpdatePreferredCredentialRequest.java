@@ -29,10 +29,18 @@ public class UpdatePreferredCredentialRequest
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
-    /** The name of the preferred credential. */
+    /**
+     * The name of the preferred credential. There are 3 built-in preferred credentials with display
+     * names and names as below: Basic Monitoring(MONITORING) Advanced diagnostics(PC_READ)
+     * Administrator(PC_WRITE)
+     */
     private String credentialName;
 
-    /** The name of the preferred credential. */
+    /**
+     * The name of the preferred credential. There are 3 built-in preferred credentials with display
+     * names and names as below: Basic Monitoring(MONITORING) Advanced diagnostics(PC_READ)
+     * Administrator(PC_WRITE)
+     */
     public String getCredentialName() {
         return credentialName;
     }
@@ -106,11 +114,17 @@ public class UpdatePreferredCredentialRequest
             return this;
         }
 
-        /** The name of the preferred credential. */
+        /**
+         * The name of the preferred credential. There are 3 built-in preferred credentials with
+         * display names and names as below: Basic Monitoring(MONITORING) Advanced
+         * diagnostics(PC_READ) Administrator(PC_WRITE)
+         */
         private String credentialName = null;
 
         /**
-         * The name of the preferred credential.
+         * The name of the preferred credential. There are 3 built-in preferred credentials with
+         * display names and names as below: Basic Monitoring(MONITORING) Advanced
+         * diagnostics(PC_READ) Administrator(PC_WRITE)
          *
          * @param credentialName the value to set
          * @return this builder instance

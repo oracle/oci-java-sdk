@@ -6,7 +6,8 @@ package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The status of the HeatWave cluster. Indicates whether the status of the HeatWave cluster is UP,
- * DOWN, or UNKNOWN at the current time.
+ * DOWN, or UNKNOWN at the current time. MySQL support within OCI Database Management service has
+ * been deprecated as of January 29, 2026.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum HeatWaveClusterStatus implements com.oracle.bmc.http.internal.BmcEnum {

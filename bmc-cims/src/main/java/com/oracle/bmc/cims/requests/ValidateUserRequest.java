@@ -14,19 +14,6 @@ import com.oracle.bmc.cims.model.*;
 public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * optional for all support request types.
-     */
-    private String csi;
-
-    /**
-     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * optional for all support request types.
-     */
-    public String getCsi() {
-        return csi;
-    }
-    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      */
@@ -108,24 +95,6 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
                     ValidateUserRequest, java.lang.Void> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
-
-        /**
-         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is optional for all support request types.
-         */
-        private String csi = null;
-
-        /**
-         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is optional for all support request types.
-         *
-         * @param csi the value to set
-         * @return this builder instance
-         */
-        public Builder csi(String csi) {
-            this.csi = csi;
-            return this;
-        }
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -283,7 +252,6 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
          * @return this builder instance
          */
         public Builder copy(ValidateUserRequest o) {
-            csi(o.getCsi());
             opcRequestId(o.getOpcRequestId());
             problemType(o.getProblemType());
             ocid(o.getOcid());
@@ -326,7 +294,6 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
          */
         public ValidateUserRequest buildWithoutInvocationCallback() {
             ValidateUserRequest request = new ValidateUserRequest();
-            request.csi = csi;
             request.opcRequestId = opcRequestId;
             request.problemType = problemType;
             request.ocid = ocid;
@@ -336,8 +303,8 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.idtoken = idtoken;
             request.domainid = domainid;
             return request;
-            // new ValidateUserRequest(csi, opcRequestId, problemType, ocid, homeregion,
-            // bearertokentype, bearertoken, idtoken, domainid);
+            // new ValidateUserRequest(opcRequestId, problemType, ocid, homeregion, bearertokentype,
+            // bearertoken, idtoken, domainid);
         }
     }
 
@@ -348,7 +315,6 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     public Builder toBuilder() {
         return new Builder()
-                .csi(csi)
                 .opcRequestId(opcRequestId)
                 .problemType(problemType)
                 .ocid(ocid)
@@ -373,7 +339,6 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",csi=").append(String.valueOf(this.csi));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",problemType=").append(String.valueOf(this.problemType));
         sb.append(",ocid=").append(String.valueOf(this.ocid));
@@ -397,7 +362,6 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         ValidateUserRequest other = (ValidateUserRequest) o;
         return super.equals(o)
-                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.problemType, other.problemType)
                 && java.util.Objects.equals(this.ocid, other.ocid)
@@ -412,7 +376,6 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
         result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());

@@ -90,14 +90,14 @@ public final class CloudDatabaseSummary
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external DB system.
+         * cloud DB system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external DB system.
+         * cloud DB system.
          *
          * @param id the value to set
          * @return this builder
@@ -141,12 +141,12 @@ public final class CloudDatabaseSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The {@code DB_UNIQUE_NAME} of the external database. */
+        /** The {@code DB_UNIQUE_NAME} of the cloud database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
         /**
-         * The {@code DB_UNIQUE_NAME} of the external database.
+         * The {@code DB_UNIQUE_NAME} of the cloud database.
          *
          * @param dbUniqueName the value to set
          * @return this builder
@@ -211,14 +211,14 @@ public final class CloudDatabaseSummary
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external DB home.
+         * cloud DB home.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudDbHomeId")
         private String cloudDbHomeId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external DB home.
+         * cloud DB home.
          *
          * @param cloudDbHomeId the value to set
          * @return this builder
@@ -262,12 +262,12 @@ public final class CloudDatabaseSummary
             this.__explicitlySet__.add("instanceDetails");
             return this;
         }
-        /** The current lifecycle state of the external database resource. */
+        /** The current lifecycle state of the cloud database resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current lifecycle state of the external database resource.
+         * The current lifecycle state of the cloud database resource.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -277,12 +277,12 @@ public final class CloudDatabaseSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The date and time the external DB system was created. */
+        /** The date and time the cloud DB system was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the external DB system was created.
+         * The date and time the cloud DB system was created.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -518,14 +518,14 @@ public final class CloudDatabaseSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external DB system.
+     * cloud DB system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external DB system.
+     * cloud DB system.
      *
      * @return the value
      */
@@ -563,12 +563,12 @@ public final class CloudDatabaseSummary
         return compartmentId;
     }
 
-    /** The {@code DB_UNIQUE_NAME} of the external database. */
+    /** The {@code DB_UNIQUE_NAME} of the cloud database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
     /**
-     * The {@code DB_UNIQUE_NAME} of the external database.
+     * The {@code DB_UNIQUE_NAME} of the cloud database.
      *
      * @return the value
      */
@@ -625,14 +625,14 @@ public final class CloudDatabaseSummary
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external DB home.
+     * cloud DB home.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudDbHomeId")
     private final String cloudDbHomeId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external DB home.
+     * cloud DB home.
      *
      * @return the value
      */
@@ -667,7 +667,7 @@ public final class CloudDatabaseSummary
         return instanceDetails;
     }
 
-    /** The current lifecycle state of the external database resource. */
+    /** The current lifecycle state of the cloud database resource. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -718,12 +718,12 @@ public final class CloudDatabaseSummary
             return UnknownEnumValue;
         }
     };
-    /** The current lifecycle state of the external database resource. */
+    /** The current lifecycle state of the cloud database resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current lifecycle state of the external database resource.
+     * The current lifecycle state of the cloud database resource.
      *
      * @return the value
      */
@@ -731,12 +731,12 @@ public final class CloudDatabaseSummary
         return lifecycleState;
     }
 
-    /** The date and time the external DB system was created. */
+    /** The date and time the cloud DB system was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the external DB system was created.
+     * The date and time the cloud DB system was created.
      *
      * @return the value
      */

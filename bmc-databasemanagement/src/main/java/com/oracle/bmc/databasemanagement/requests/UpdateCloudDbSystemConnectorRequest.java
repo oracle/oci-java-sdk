@@ -29,11 +29,11 @@ public class UpdateCloudDbSystemConnectorRequest
     public String getCloudDbSystemConnectorId() {
         return cloudDbSystemConnectorId;
     }
-    /** The details required to update an cloud connector. */
+    /** The details required to update a cloud connector. */
     private com.oracle.bmc.databasemanagement.model.UpdateCloudDbSystemConnectorDetails
             updateCloudDbSystemConnectorDetails;
 
-    /** The details required to update an cloud connector. */
+    /** The details required to update a cloud connector. */
     public com.oracle.bmc.databasemanagement.model.UpdateCloudDbSystemConnectorDetails
             getUpdateCloudDbSystemConnectorDetails() {
         return updateCloudDbSystemConnectorDetails;
@@ -99,12 +99,12 @@ public class UpdateCloudDbSystemConnectorRequest
             return this;
         }
 
-        /** The details required to update an cloud connector. */
+        /** The details required to update a cloud connector. */
         private com.oracle.bmc.databasemanagement.model.UpdateCloudDbSystemConnectorDetails
                 updateCloudDbSystemConnectorDetails = null;
 
         /**
-         * The details required to update an cloud connector.
+         * The details required to update a cloud connector.
          *
          * @param updateCloudDbSystemConnectorDetails the value to set
          * @return this builder instance

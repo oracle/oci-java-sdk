@@ -94,19 +94,6 @@ public class ListIncidentResourceTypesRequest
         return name;
     }
     /**
-     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * optional for all support request types.
-     */
-    private String csi;
-
-    /**
-     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * optional for all support request types.
-     */
-    public String getCsi() {
-        return csi;
-    }
-    /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
      * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
      * Multicloud users.
@@ -277,24 +264,6 @@ public class ListIncidentResourceTypesRequest
         }
 
         /**
-         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is optional for all support request types.
-         */
-        private String csi = null;
-
-        /**
-         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is optional for all support request types.
-         *
-         * @param csi the value to set
-         * @return this builder instance
-         */
-        public Builder csi(String csi) {
-            this.csi = csi;
-            return this;
-        }
-
-        /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
          * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
          * Multicloud users.
@@ -384,7 +353,6 @@ public class ListIncidentResourceTypesRequest
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             name(o.getName());
-            csi(o.getCsi());
             ocid(o.getOcid());
             homeregion(o.getHomeregion());
             domainid(o.getDomainid());
@@ -430,13 +398,12 @@ public class ListIncidentResourceTypesRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.name = name;
-            request.csi = csi;
             request.ocid = ocid;
             request.homeregion = homeregion;
             request.domainid = domainid;
             return request;
             // new ListIncidentResourceTypesRequest(problemType, compartmentId, opcRequestId, limit,
-            // page, sortBy, sortOrder, name, csi, ocid, homeregion, domainid);
+            // page, sortBy, sortOrder, name, ocid, homeregion, domainid);
         }
     }
 
@@ -455,7 +422,6 @@ public class ListIncidentResourceTypesRequest
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .name(name)
-                .csi(csi)
                 .ocid(ocid)
                 .homeregion(homeregion)
                 .domainid(domainid);
@@ -483,7 +449,6 @@ public class ListIncidentResourceTypesRequest
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",name=").append(String.valueOf(this.name));
-        sb.append(",csi=").append(String.valueOf(this.csi));
         sb.append(",ocid=").append(String.valueOf(this.ocid));
         sb.append(",homeregion=").append(String.valueOf(this.homeregion));
         sb.append(",domainid=").append(String.valueOf(this.domainid));
@@ -510,7 +475,6 @@ public class ListIncidentResourceTypesRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.ocid, other.ocid)
                 && java.util.Objects.equals(this.homeregion, other.homeregion)
                 && java.util.Objects.equals(this.domainid, other.domainid);
@@ -530,7 +494,6 @@ public class ListIncidentResourceTypesRequest
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
-        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
         result = (result * PRIME) + (this.homeregion == null ? 43 : this.homeregion.hashCode());
         result = (result * PRIME) + (this.domainid == null ? 43 : this.domainid.hashCode());

@@ -227,6 +227,7 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", InplaceUpgradeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(

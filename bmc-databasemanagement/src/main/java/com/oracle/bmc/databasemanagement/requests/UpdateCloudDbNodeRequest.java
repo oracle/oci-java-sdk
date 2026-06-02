@@ -28,11 +28,11 @@ public class UpdateCloudDbNodeRequest
     public String getCloudDbNodeId() {
         return cloudDbNodeId;
     }
-    /** The details required to update an cloud DB node. */
+    /** The details required to update a cloud DB node. */
     private com.oracle.bmc.databasemanagement.model.UpdateCloudDbNodeDetails
             updateCloudDbNodeDetails;
 
-    /** The details required to update an cloud DB node. */
+    /** The details required to update a cloud DB node. */
     public com.oracle.bmc.databasemanagement.model.UpdateCloudDbNodeDetails
             getUpdateCloudDbNodeDetails() {
         return updateCloudDbNodeDetails;
@@ -98,12 +98,12 @@ public class UpdateCloudDbNodeRequest
             return this;
         }
 
-        /** The details required to update an cloud DB node. */
+        /** The details required to update a cloud DB node. */
         private com.oracle.bmc.databasemanagement.model.UpdateCloudDbNodeDetails
                 updateCloudDbNodeDetails = null;
 
         /**
-         * The details required to update an cloud DB node.
+         * The details required to update a cloud DB node.
          *
          * @param updateCloudDbNodeDetails the value to set
          * @return this builder instance

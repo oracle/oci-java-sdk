@@ -28,11 +28,11 @@ public class UpdateCloudDbHomeRequest
     public String getCloudDbHomeId() {
         return cloudDbHomeId;
     }
-    /** The details required to update an cloud DB home. */
+    /** The details required to update a cloud DB home. */
     private com.oracle.bmc.databasemanagement.model.UpdateCloudDbHomeDetails
             updateCloudDbHomeDetails;
 
-    /** The details required to update an cloud DB home. */
+    /** The details required to update a cloud DB home. */
     public com.oracle.bmc.databasemanagement.model.UpdateCloudDbHomeDetails
             getUpdateCloudDbHomeDetails() {
         return updateCloudDbHomeDetails;
@@ -98,12 +98,12 @@ public class UpdateCloudDbHomeRequest
             return this;
         }
 
-        /** The details required to update an cloud DB home. */
+        /** The details required to update a cloud DB home. */
         private com.oracle.bmc.databasemanagement.model.UpdateCloudDbHomeDetails
                 updateCloudDbHomeDetails = null;
 
         /**
-         * The details required to update an cloud DB home.
+         * The details required to update a cloud DB home.
          *
          * @param updateCloudDbHomeDetails the value to set
          * @return this builder instance

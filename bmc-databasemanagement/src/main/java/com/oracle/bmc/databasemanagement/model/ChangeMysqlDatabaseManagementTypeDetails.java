@@ -5,7 +5,9 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Details to change managed MySQL database management type. <br>
+ * Details required to change the management type for a HeatWave MySQL instance, from BASIC to FULL
+ * and vice versa. MySQL support within OCI Database Management service has been deprecated as of
+ * January 29, 2026. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -49,15 +51,15 @@ public final class ChangeMysqlDatabaseManagementTypeDetails
             return this;
         }
         /**
-         * The type of operation to perform: update managementType, enable or disable database
-         * management.
+         * The type of operation to perform: Update managementType, enable, or disable Database
+         * Management.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Operation operation;
 
         /**
-         * The type of operation to perform: update managementType, enable or disable database
-         * management.
+         * The type of operation to perform: Update managementType, enable, or disable Database
+         * Management.
          *
          * @param operation the value to set
          * @return this builder
@@ -116,8 +118,8 @@ public final class ChangeMysqlDatabaseManagementTypeDetails
     }
 
     /**
-     * The type of operation to perform: update managementType, enable or disable database
-     * management.
+     * The type of operation to perform: Update managementType, enable, or disable Database
+     * Management.
      */
     public enum Operation implements com.oracle.bmc.http.internal.BmcEnum {
         EnableDbmgmt("ENABLE_DBMGMT"),
@@ -153,15 +155,15 @@ public final class ChangeMysqlDatabaseManagementTypeDetails
         }
     };
     /**
-     * The type of operation to perform: update managementType, enable or disable database
-     * management.
+     * The type of operation to perform: Update managementType, enable, or disable Database
+     * Management.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final Operation operation;
 
     /**
-     * The type of operation to perform: update managementType, enable or disable database
-     * management.
+     * The type of operation to perform: Update managementType, enable, or disable Database
+     * Management.
      *
      * @return the value
      */

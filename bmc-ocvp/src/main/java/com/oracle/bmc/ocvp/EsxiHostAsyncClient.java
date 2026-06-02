@@ -210,6 +210,7 @@ public class EsxiHostAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", InplaceUpgradeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
